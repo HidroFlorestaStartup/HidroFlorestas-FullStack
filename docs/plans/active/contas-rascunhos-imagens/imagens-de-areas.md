@@ -1,5 +1,15 @@
 # Imagens de áreas monitoradas
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 DECISAO_CONFIRMADA nesta conversa em 2026-10-10: uma capa por área, leitura somente autorizada, mutação OWNER/ADMIN de laboratório ativo, Cloudinary authenticated, JPEG/PNG/WebP até 10 MiB e 4096 px por lado, remoção de EXIF, cleanup só com ownership comprovado de uploads abandonados/substituídos/removidos. Resposta: “1- aprovo, mas documente essa implementacao e decisoes”. Operação real/credenciais/créditos continuam pendentes. Assinatura de URL por si só não será tratada como prova de expiração da entrega.

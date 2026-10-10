@@ -58,3 +58,15 @@ A execução atual usa a [matriz única](docs/plans/active/contas-rascunhos-imag
 ## Entrega de rascunhos 015 — 2026-10-10
 
 EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais 015 implementados com tabela separada, save explícito, OCC/idempotência, consumo transacional e cleanup pessoal na exclusão permitida. Sem expiração automática. Decisão PD-CRI-005/006 aprovada pelo usuário nesta conversa. Artefatos em specs/015-environmental-drafts/ e docs/operations/environmental-drafts-runbook.md; evidências finais registradas na spec.
+
+
+## Entrega de capas 016 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: uma capa privada por área com Cloudinary authenticated,
+edição OWNER/ADMIN contextual, proxy autorizado sem URL CDN, validação/EXIF,
+revisão/retry e cleanup por identidade imutável comprovada. Tentativas/jobs
+persistidos antes de I/O; conta removida não remove a capa da área nem dados científicos.
+Integração187, migrations37, E2E67 e Bootstrap14 PASS; operação real pendente.
+Ver [spec/evidências](specs/016-area-covers/implementation-evidence.md),
+[runbook](docs/operations/area-covers-runbook.md) e [matriz](docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
+Nenhuma qualificação científica do IHFR foi alterada.

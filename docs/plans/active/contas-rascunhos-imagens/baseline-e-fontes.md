@@ -1,5 +1,15 @@
 # Baseline e fontes
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 O corte estático atual é `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`, após fetch no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. As ausências de Nodemailer, outbox, desafios, versão de credencial e recuperação registradas abaixo descrevem somente 2026-10-03. Agora estão presentes nas specs mail-foundation/012/013. Persistência, contratos, serviços e formulário ambiental ainda não têm drafts; áreas têm apenas o campo legado image, sem integração Cloudinary conectada nesse corte.

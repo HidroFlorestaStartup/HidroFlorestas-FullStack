@@ -1,17 +1,47 @@
 # Matriz única de estado e evidências
 
 **Reconciliação:** 2026-10-10. **Corte auditado:** `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`.
-**Estado:** `EM_ANDAMENTO`. Intenção, código, teste e homologação são eixos independentes.
+**Estado:** `AGUARDANDO_REVISAO` (gates locais concluídos; aceite externo pendente). Intenção, código, teste e homologação são eixos independentes.
 O [plano transversal](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md) registra isolamento e cronologia.
 
-## Entrega corrente 015
+## Entrega corrente integrada 014/015/016
 
-EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados/validados na spec 015;
-65 E2E gerais PASS, Bootstrap 13 PASS, parser/HTTP/Pg/OCC/consume/exclusão cobertos.
-[Comandos, snapshots e falhas preservadas](../../../../specs/015-environmental-drafts/implementation-evidence.md).
-Capas 016 seguem próxima etapa. A tabela abaixo preserva explicitamente o corte inicial.
+EVIDENCIA_IMPLEMENTACAO: estado abaixo após a execução autorizada; cortes
+anteriores permanecem datados e não representam código ausente no HEAD entregue.
 
-## Frentes
+| Frente/requisito | Intenção/fonte | Código e testes atuais | Validação desta execução | Homologação | Pendência/próximo passo |
+|---|---|---|---|---|---|
+| E-mail / MAIL-FR | DEC-001 e mail-foundation | transporte/outbox/worker existentes preservados; mail e Pg | 17 Mail PASS + integração187; R1 sobreposto | SMTP/scheduler históricos não reexecutados | operador contínuo PD-CRI-004; sem alteração remota |
+| Verificação / EMAIL-FR | spec012 e confirmação2026-10-04 | códigos/reenvio/invalidação/consumo único existentes | integração e E2E sintéticos PASS | Gate B/T025/T028 não fechados | reenvio real: antigo recusado/novo aceito |
+| Reset/troca / RESET-FR | spec012 | link/prova única/credentialVersion existentes | integração, E2E sintético, HTTPS2 PASS | recebimento real/reset remoto pendentes | runbook: navegadorB consome link, A perde sessão |
+| Exclusão / 013FR | recorte aprovado2026-10-05 | blockers/rollback/outbox existentes; drafts removidos; uploader FKSetNull | Pg/rollback e dedicado3 PASS | aceite humano pendente | somente conta sintética removível/destino autorizado |
+| Draft / DRAFT-FR001–006 | PD-CRI005/006 desta conversa | tabela pessoal, serviço/API/UI, OCC/consumo/descarte/exclusão; spec015 | parser/Pg/migration/browser/retry/duas abas PASS; regressão67E2E | uso humano não realizado | sem expiração; histórico SPA só comprovado Chromium/NavigationAPI |
+| Capa / IMAGE-FR-001–005 e 016FR001–009 | DEC-003 + PD-CRI007/008/009 | tabela/tentativas/jobs/provider/API/proxy/UI; spec016 | 6Pg+3provider+1HTTP; migration; 2E2E fake; integração187/geral67 PASS | Cloudinary real NÃO EXECUTADO | configurar preset congelado/cloud; operador/créditos PD-CRI010; smoke/cleanup autorizado |
+
+Local: Unit291 + Mail17, Integration187, Migration37, Contract6, E2E67, HTTPS2,
+exclusão3, Bootstrap14, typecheck/lint/build PASS; auditoria zero. R1/Mail e focais
+são sobrepostos. Fingerprint completo 7f540ba4; final5f36eb7e contém só assertion
+multiframe e exceção do exemplo env. [Comandos/UTC/duração/FAIL preservados](../../../../specs/016-area-covers/implementation-evidence.md).
+
+### Correspondência CRI-T atual (IDs históricos preservados abaixo)
+
+| IDs | Spec/estado atual | Limite |
+|---|---|---|
+| CRI-T001–002 | reconciliação/matriz/decisões atuais registradas | T002 mantém operação/autoridade pendente, sem fechar globalmente |
+| CRI-T003–006 | mail-foundation existente revalidada; 014 corrige harness | não reenvia SMTP nem muda scheduler |
+| CRI-T007–010 | 012 existente revalidada; 013 regressão dedicada | Gate B012/aceite013 pendentes |
+| CRI-T011–013 | 015FR001–009/T001–T018 implementados/validados | recorte pessoal aprovado; sem expiry |
+| CRI-T014–016 | 016FR001–009/T001–T020 implementados/validados | uma capa privada, fake local; sem ativação Cloudinary |
+| CRI-T017 | regressão integrada e runbooks entregues | smoke/monitoramento remoto ainda não executados |
+| CRI-T018 | documentos, evidências e série local reconciliados | handoff distingue aceite remoto do gate local |
+
+PD-CRI005–009 resolvidas pela aprovação do usuário2026-10-10, não pela existência
+do código. PD-CRI003 tem configuração histórica por ambiente, sem designar novo destino;
+PD-CRI004/010 mantêm responsabilidade operacional não especificada. T025/T028012
+permanecem abertos. [Decisões/proveniência](decisoes-e-pendencias.md).
+
+## Frentes no corte inicial beba96f (registro preservado)
+
 
 | Frente/requisito | Intenção e fonte | Código observado no corte | Testes existentes | Validação histórica | Validação desta execução | Homologação | Pendências/próximo passo |
 |---|---|---|---|---|---|---|---|

@@ -38,6 +38,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.images.example
 
 # vercel
 .vercel
@@ -97,3 +98,5 @@ prisma/migrations/*
 !prisma/migrations/20261005000100_account_deletion_mail_ownership/migration.sql
 !prisma/migrations/20261010000100_environmental_drafts/
 !prisma/migrations/20261010000100_environmental_drafts/migration.sql
+!prisma/migrations/20261010000200_area_covers/
+!prisma/migrations/20261010000200_area_covers/migration.sql

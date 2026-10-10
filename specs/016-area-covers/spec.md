@@ -1,7 +1,7 @@
 # Feature Specification: Capa privada por área
 
 **Feature Branch**: `016-area-covers` | **Created**: 2026-10-10
-**Status**: Especificada; política material aprovada nesta conversa
+**Status**: Implementada e validada localmente; operação real pendente
 **Input**: PD-CRI-007/008/009; uma capa privada, edição contextual e cleanup próprio.
 
 ## User Scenarios & Testing *(mandatory)*
@@ -38,7 +38,7 @@ limpa somente ativos com ownership comprovado, nunca uma referência vigente.
 **Independent Test**: limpeza fake é idempotente; ownership divergente e ativo
 referenciado são preservados; erro gera retry rastreável sem revelar segredos.
 **Acceptance Scenarios**:
-1. Given ativo próprio elegível, When cleanup executa, Then remove aquele asset e conclui job.
+1. Given ativo próprio elegível, When cleanup executa, Then remove aquele asset, registra resultado e mantém reconciliação para uploads tardios.
 2. Given ownership divergente/vínculo vigente, When cleanup tenta, Then preserva ativo.
 
 ### Edge Cases
@@ -49,13 +49,13 @@ EXIF; concorrência; remoção repetida; nova tentativa após falha; asset estra
 
 ## Requirements *(mandatory)*
 
-- **FR-001 / IMG-FR-001/002**: uma capa por área, leitura com autorização contextual atual; somente OWNER/ADMIN de laboratório ativo edita/remove, sem bypass por role global.
-- **FR-002 / IMG-FR-003**: identificar destino/área/titular no servidor; assinatura de upload sem segredo no cliente e finalização não confia em URL/metadata do cliente.
-- **FR-003 / IMG-FR-004**: aceitar apenas JPEG/PNG/WebP reais, até 10 MiB e 4096 por lado; remover EXIF e validar conteúdo no servidor antes de vincular.
+- **FR-001 / IMAGE-FR-001/004**: uma capa por área, leitura com autorização contextual atual; somente OWNER/ADMIN de laboratório ativo edita/remove, sem bypass por role global.
+- **FR-002 / IMAGE-FR-001/002/003**: identificar destino/área/titular no servidor; assinatura de upload sem segredo no cliente e finalização não confia em URL/metadata do cliente.
+- **FR-003 / IMAGE-FR-003**: aceitar apenas JPEG/PNG/WebP reais, até 10 MiB e 4096 por lado; remover EXIF e validar conteúdo no servidor antes de vincular.
 - **FR-004**: originais/derivados finais authenticated; aplicação não expõe URL de entrega reutilizável e valida sessão/vínculo a cada leitura.
-- **FR-005 / IMG-FR-005**: substituição transacional preserva antiga até commit; controle de revisão e retry/replay sem sobrescrita silenciosa.
-- **FR-006 / IMG-FR-006**: tentativas abandonadas/substituídas/removidas têm cleanup idempotente, apenas com identidade/contexto comprovados e ausência de referência vigente.
-- **FR-007 / IMG-FR-007**: selecionar/progresso/erro/retry/substituir/remover/fallback acessíveis, com teclado/mobile e nenhuma exposição de segredo.
+- **FR-005 / IMAGE-FR-004**: substituição transacional preserva antiga até commit; controle de revisão e retry/replay sem sobrescrita silenciosa.
+- **FR-006 / IMAGE-FR-005**: tentativas abandonadas/substituídas/removidas têm cleanup idempotente, apenas com identidade/contexto comprovados e ausência de referência vigente.
+- **FR-007**: selecionar/progresso/erro/retry/substituir/remover/fallback acessíveis, com teclado/mobile e nenhuma exposição de segredo.
 - **FR-008**: limites/quota/prazo/timeout técnicos documentados; nenhum upload real, alteração de conta/scheduler remoto ou consumo de crédito durante esta execução.
 - **FR-009**: integração local usa provedor fake determinístico para falhas/concorrência/ownership; operação real/credits ficam pendentes sem homologação fictícia.
 

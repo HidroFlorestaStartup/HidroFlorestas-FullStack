@@ -1,5 +1,15 @@
 # Plano de execução futuro
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 PLAN-CRI-001 é a entrega documental histórica de 2026-10-03; suas tarefas/IDs são preservados. A execução atual é coordenada pelo PLAN-CRI-002 (link abaixo) e a matriz única mapeia CRI-T001 a CRI-T018 às specs. Não reimplementar T004 a T010 já observadas em mail-foundation/012. Rascunhos e imagens são independentes do Gate B remoto de contas.

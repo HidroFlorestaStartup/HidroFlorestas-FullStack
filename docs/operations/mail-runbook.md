@@ -131,3 +131,12 @@ Em 2026-10-04, o usuário informou disponibilidade de Senhas de app e concluiu c
 ## Reconciliação de 2026-10-10
 
 Fundação/R1 presentes no HEAD auditado; testes locais sintéticos serão registrados na [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Smoke/recebimento de 2026-10-04 e worker automático de 2026-10-05 continuam evidências históricas dos candidatos originais. Nenhum envio ou scheduler remoto alterado nesta execução.
+
+
+## Checkpoint local integrado — 2026-10-10
+
+Regressão de mail/contas após drafts/capas executada em PostgreSQL próprio e
+transporte sintético; exclusão dedicada e HTTPS também passaram. [Evidências reais](../../specs/016-area-covers/implementation-evidence.md).
+Gate B de reset recebido/reenvio antigo invalidado e aceite humano de exclusão
+continuam pendentes; reutilizar este roteiro somente após autorização específica
+do destino e candidato. Nenhum SMTP/scheduler/deploy foi alterado nesta sessão.

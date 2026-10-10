@@ -73,6 +73,8 @@ assinar, antes de validar e antes do upload final. Snapshot/hash na tentativa;
 alteração do preset recusa finalize. Mesmo preset controlado é mutável no
 provedor: operação exige congelá-lo enquanto houver assinaturas válidas. Isso
 é dependência operacional documentada, sem configuração remota nesta execução.
+RECOMENDACAO técnica: nunca modificar um preset versionado usado; criar outra
+versão, pois não existe bound publicado para término de upload já aceito.
 Presets não limitam file size: bytes rejeitados no staging ainda podem consumir
 créditos. Quota e janela limitam exposição, mas não provarão custo zero remoto.
 

@@ -1,5 +1,15 @@
 # Rascunhos ambientais
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 DECISAO_CONFIRMADA nesta conversa em 2026-10-10: recorte A pessoal por usuário/coleta confirmada, salvamento explícito, descarte definitivo pelo dono, sem expiração automática, remoção dos drafts pessoais na exclusão de conta permitida e consumo ao confirmar; dados científicos confirmados preservados. A resposta do usuário foi “1 Aprovo, masdeixe essa decisao e implementacao documentadas”. A retenção de 30 dias abaixo não foi adotada.

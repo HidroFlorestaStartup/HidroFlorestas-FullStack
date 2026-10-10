@@ -1,5 +1,15 @@
 # Modelo de dados e estratégia de migrations
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 Persistência implementada: AccountEmailChallenge, MailOutbox, MailRateLimitBucket, AccountRequest e campos emailVerifiedAt/credentialVersion/emailCanonical/verificationRequired em User. São 12 migrations versionadas no corte auditado, incluindo ownership de mensagens para exclusão. Modelos separados de desafios e fila genérica de cleanup abaixo são propostas históricas. Novas migrations serão aditivas e validadas isoladamente; retenção automática de drafts não foi aprovada.

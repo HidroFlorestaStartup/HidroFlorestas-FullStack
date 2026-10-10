@@ -30,6 +30,7 @@ model User {
   collectionData                   CollectionData[]
   environmentalMeasurementSets     EnvironmentalMeasurementSet[]
   environmentalDrafts              EnvironmentalDraft[]
+  coverUploadAttempts              CoverUploadAttempt[]
   experimentalIHFRInputSupplements ExperimentalIHFRInputSupplement[]
   experimentalIHFROperations       IHFRDiagnosisOperation[]          @relation("ExperimentalIHFROperationActor")
   experimentalIHFRLifecycleEvents  IHFRDiagnosisLifecycleEvent[]     @relation("ExperimentalIHFRLifecycleActor")
@@ -239,6 +240,9 @@ model CollectionArea {
   collectionData             CollectionData[]
   experimentalIHFROperations IHFRDiagnosisOperation[]
 
+  cover                     AreaCover?
+  coverUploadAttempts       CoverUploadAttempt[]
+
   @@unique([id, laboratoryRoomId])
   @@index([laboratoryRoomId, createdAt])
 }
@@ -303,6 +307,63 @@ model EnvironmentalDraft {
   collectionData CollectionData @relation(fields: [collectionDataId], references: [id], onDelete: Restrict)
   @@unique([userId, collectionDataId])
   @@index([collectionDataId])
+}
+
+model AreaCover {
+  areaId String @id
+  revision Int @default(0)
+  assetId String?
+  publicId String?
+  version Int?
+  format String?
+  bytes Int?
+  width Int?
+  height Int?
+  attemptId String?
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  area CollectionArea @relation(fields:[areaId], references:[id], onDelete:Restrict)
+  attempt CoverUploadAttempt? @relation(fields:[attemptId], references:[id], onDelete:Restrict)
+}
+model CoverUploadAttempt {
+  id String @id
+  areaId String
+  userId String?
+  key String @db.VarChar(36)
+  expectedRevision Int
+  stagingPublicId String @unique
+  finalPublicId String @unique
+  presetHash String @db.VarChar(64)
+  issuedAt DateTime @db.Timestamptz(3)
+  expiresAt DateTime @db.Timestamptz(3)
+  state String @default("ISSUED") @db.VarChar(16)
+  leaseId String?
+  leaseUntil DateTime? @db.Timestamptz(3)
+  finalAssetId String?
+  resultRevision Int?
+  area CollectionArea @relation(fields:[areaId], references:[id], onDelete:Restrict)
+  user User? @relation(fields:[userId], references:[id], onDelete:SetNull)
+  covers AreaCover[]
+  cleanupJobs CoverCleanupJob[]
+  @@unique([userId,key])
+  @@index([userId,issuedAt])
+}
+model CoverCleanupJob {
+  id String @id
+  attemptId String
+  publicId String
+  resourceType String @db.VarChar(8)
+  kind String @db.VarChar(8)
+  assetId String?
+  notBefore DateTime @db.Timestamptz(3)
+  nextAttemptAt DateTime @db.Timestamptz(3)
+  state String @default("PENDING") @db.VarChar(16)
+  leaseId String?
+  leaseUntil DateTime? @db.Timestamptz(3)
+  tries Int @default(0)
+  lastError String? @db.VarChar(32)
+  attempt CoverUploadAttempt @relation(fields:[attemptId], references:[id], onDelete:Restrict)
+  @@unique([publicId,resourceType])
+  @@index([nextAttemptAt,state])
 }
 
 model IHFRDiagnosis {

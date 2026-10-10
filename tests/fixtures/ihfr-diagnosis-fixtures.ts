@@ -18,6 +18,7 @@ export async function setupIHFRDiagnosisFixtures(client: PoolClient) {
   await client.query(await readFile("prisma/migrations/20261004000300_account_rate_limit_actions/migration.sql", "utf8"));
   await client.query(await readFile("prisma/migrations/20261005000100_account_deletion_mail_ownership/migration.sql", "utf8"));
   await client.query(await readFile("prisma/migrations/20261010000100_environmental_drafts/migration.sql", "utf8"));
+  await client.query(await readFile("prisma/migrations/20261010000200_area_covers/migration.sql", "utf8"));
   await client.query("BEGIN");
   try {
     await insertIHFRActorFixtures(client);

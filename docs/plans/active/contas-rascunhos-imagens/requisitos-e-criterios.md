@@ -1,5 +1,15 @@
 # Requisitos e critérios verificáveis
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 Os requisitos de e-mail/contas abaixo possuem implementação observada nas specs mail-foundation/012; seus contratos atuais prevalecem para o comportamento aprovado. DRAFT-FR-001 a DRAFT-FR-006 e IMAGE-FR-001 a IMAGE-FR-005 tiveram recorte confirmado nesta execução. Não confundir essa decisão com código entregue nem aceite externo. As políticas aprovadas estão em decisoes-e-pendencias.md.

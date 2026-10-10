@@ -46,6 +46,7 @@ test("IMP-006 migration keeps its published slot before the additive account cha
     "20261004000300_account_rate_limit_actions",
     "20261005000100_account_deletion_mail_ownership",
     "20261010000100_environmental_drafts",
+    "20261010000200_area_covers",
   ];
   assert.deepEqual(migrations.slice(migrations.indexOf(mailFoundationMigration), migrations.indexOf(mailFoundationMigration)+publishedChain.length), publishedChain);
   for (const name of publishedChain) assert.equal(existsSync(`prisma/migrations/${name}/migration.sql`), true);

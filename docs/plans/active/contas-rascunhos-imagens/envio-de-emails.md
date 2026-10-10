@@ -1,5 +1,15 @@
 # Envio de e-mails
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 Fundação implementada em src/app/api/server/mail, rota /api/internal/mail/process e scripts de worker. Contrato/runbook vigentes: specs/mail-foundation/contracts/mail.md e docs/operations/mail-runbook.md. Leases, fencing pré-SMTP/final, prazo operacional e R1 já existem e serão preservados. Smoke de 2026-10-04 e envio automático de 2026-10-05 são históricos; nenhum envio externo nesta execução.

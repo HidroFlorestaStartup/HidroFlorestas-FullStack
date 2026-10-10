@@ -112,3 +112,14 @@ Bootstrap 13, Typecheck/Lint/Build PASS; migração 36 e integração 177 PASS n
 registrado. Revisão independente resolvida; sem expiração; operação remota não
 executada. [Evidências](../../../specs/015-environmental-drafts/implementation-evidence.md).
 Próxima etapa autorizada: spec/implementação 016 de capas privadas.
+
+
+### Checkpoint 016 — 2026-10-10
+
+G3/G4 local de capas PASS. Unit291+Mail17, Integration187, Migration37, Contract6,
+E2E67, HTTPS2, exclusão3, Bootstrap14, typecheck/lint/build PASS; auditoria zero.
+Revisão independente /root/image_research: P2 do adaptador resolvidos com RED/green;
+lacunas de cobertura T020 resolvidas. CLI offline/dry-run PASS, providerCalls0.
+[Evidências](../../../specs/016-area-covers/implementation-evidence.md).
+Operação/créditos, Gate B012 e aceite013 continuam pendentes; não arquivar pacote.
+Consolidação/commit final em andamento; os checkpoints anteriores são históricos.

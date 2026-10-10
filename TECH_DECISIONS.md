@@ -126,3 +126,18 @@ Cada mudança deve acrescentar uma linha com a origem e manter as linhas anterio
 ## Entrega de rascunhos 015 — 2026-10-10
 
 DECISAO_CONFIRMADA PD-CRI-005/006: usuário desta conversa em 2026-10-10 aprovou um draft pessoal por usuário/coleta confirmada, save explícito/descarte definitivo/sem expiração, cleanup pessoal na exclusão permitida e consumo ao confirmar, preservando ciência. EVIDENCIA_IMPLEMENTACAO: EnvironmentalDraft segregado, revisão/ID/key, Serializable e autorização contextual atual. Detalhes em specs/015-environmental-drafts/plan.md e docs/operations/environmental-drafts-runbook.md. Limite de histórico fora de Chromium documentado, sem homologação universal.
+
+
+## Implementação focal de capas 016 — 2026-10-10
+
+DECISAO_CONFIRMADA PD-CRI007/008/009 tem origem na resposta do usuário desta
+conversa, já registrada acima; implementação não adiciona aprovação de operação.
+EVIDENCIA_IMPLEMENTACAO: Cloudinary2.11.0 para assinatura oficial e sharp0.35.4
+direto (já transitivo Next) para decoder/auto-orient/reencode sem EXIF/ICC/XMP/IPTC.
+Nenhuma outra versão foi alterada. Upload staging/final authenticated; leitura
+same-origin reautoriza depois do download. IDs/contextos prévios e delete por
+asset_id imutável; leases/CAS/replay preservam antiga. Tombstones RECONCILE não
+expiram automaticamente. RECOMENDACAO técnica implementada: quota3 ativa/10h,
+TTL app10min, staging70min, preset versionado congelado; não revoga assinatura1h
+nem prova custo zero. [Justificativas/limites](specs/016-area-covers/plan.md),
+[operação](docs/operations/area-covers-runbook.md). PD-CRI010 continua pendente.

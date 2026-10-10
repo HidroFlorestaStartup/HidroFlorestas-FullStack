@@ -15,7 +15,7 @@ export class AreasService {
  async list(userId:string,laboratoryId:string){
   return this.db.$transaction(async tx=>{
    const context=await authorizeLaboratoryAccess({id:userId},laboratoryId,"READ_AREAS",tx);
-   const areas=await tx.collectionArea.findMany({where:{laboratoryRoomId:laboratoryId},orderBy:[{createdAt:"desc"},{id:"desc"}]});
+   const areas=await tx.collectionArea.findMany({where:{laboratoryRoomId:laboratoryId},orderBy:[{createdAt:"desc"},{id:"desc"}],include:{cover:{select:{revision:true,assetId:true}}}});
    return {context,areas:areas.map(serializeAreaSummary)};
   });
  }

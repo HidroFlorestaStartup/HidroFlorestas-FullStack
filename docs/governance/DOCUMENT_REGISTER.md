@@ -142,3 +142,13 @@ Acrescentados [PLAN-CRI-002](../plans/active/reconciliacao-e-evolucao-contas-ras
 ## Entrega de rascunhos 015 — 2026-10-10
 
 Registrados artefatos vivos specs/015-environmental-drafts/** (spec/plan/tasks/modelo/contratos/evidências) e docs/operations/environmental-drafts-runbook.md. Origem: aprovação explícita PD-CRI-005/006 em 2026-10-10; evidência de engenharia local, sem autoridade científica ou encerramento de gates remotos.
+
+
+## Artefatos da entrega local 016 — 2026-10-10
+
+Registro adicional sem renumerar identificadores históricos: specs/016-area-covers/
+(spec/plan/tasks/research/data-model/contracts/quickstart/checklists/evidências)
+e docs/operations/area-covers-runbook.md são artefatos atuais de implementação
+local, com proveniência de decisão identificada; não são homologação nem contrato
+científico. A matriz CRI concentra estado. [Evidências](../../specs/016-area-covers/implementation-evidence.md),
+[runbook](../operations/area-covers-runbook.md). Responsável operacional não especificado.
