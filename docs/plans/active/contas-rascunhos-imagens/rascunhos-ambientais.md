@@ -16,6 +16,20 @@ DECISAO_CONFIRMADA nesta conversa em 2026-10-10: recorte A pessoal por usuário/
 
 Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
 
+### Contrato vigente do recorte aprovado
+
+DECISAO_CONFIRMADA PD-CRI-005/006 supera a proposta histórica de expiração em
+30 dias e recuperação após descarte: não há expiração, purge ou período de
+recuperação. EVIDENCIA_IMPLEMENTACAO: [spec 015](../../../../specs/015-environmental-drafts/spec.md),
+[contrato](../../../../specs/015-environmental-drafts/contracts/drafts.md),
+[migration aditiva](../../../../prisma/migrations/20261010000100_environmental_drafts/migration.sql)
+e [runbook](../../../operations/environmental-drafts-runbook.md).
+Revisão obsoleta devolve conflito sem cópia automática: consulta/reload é explícita.
+O envelope não persiste status CONFIRMED; a confirmação consome o draft. Leitura
+em laboratório inativo autorizado é permitida; mutações são bloqueadas.
+RECOMENDACAO histórica de localStorage não foi adotada. Autosave, colaboração,
+offline e rascunho de criação de coleta continuam fora deste recorte.
+
 ## Registro histórico preservado — 2026-10-03
 
 ## Dois escopos que não devem ser confundidos

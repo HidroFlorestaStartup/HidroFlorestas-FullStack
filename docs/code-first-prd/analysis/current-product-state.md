@@ -151,3 +151,12 @@ EVIDENCIA_IMPLEMENTACAO: spec 015 entrega rascunho ambiental pessoal de coleta c
 EVIDENCIA_IMPLEMENTACAO: runners focais corrigidos; drafts pessoais e uma capa
 privada por área entregues e validados localmente após aprovação do usuário.
 Não constituem aprovação global do PRD. [Estado/requisitos/pendências](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
+
+## Revisão focal posterior CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: corte final5f36eb7e revalidado com regressão completa;
+sem mudança funcional. Equivalência histórica 7f→5f NÃO VERIFICADA, registrada
+como ressalva em vez de promover PASS antigo. RECOMENDACAO: APTO COM RESSALVAS
+para solicitar homologação; gates externos/humanos seguem pendentes.
+[Relatório, fontes, achados e limites](../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).
+Não reclassifica requisitos candidatos ou o baseline global como intenção aprovada.

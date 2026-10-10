@@ -1,13 +1,26 @@
 # Matriz única de estado e evidências
 
-**Reconciliação:** 2026-10-10. **Corte auditado:** `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`.
+**Reconciliação:** 2026-10-10. **Corte inicial histórico:** `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`.
+**Base da revisão focal:** `41f33db7ca30db3f9d971999c3f8131f4fc188a0`.
 **Estado:** `AGUARDANDO_REVISAO` (gates locais concluídos; aceite externo pendente). Intenção, código, teste e homologação são eixos independentes.
 O [plano transversal](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md) registra isolamento e cronologia.
 
+## Revisão focal vigente — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: regressão completa reexecutada no final5f36eb7e e
+manifesto de 520 arquivos verificado. Nenhuma alteração funcional foi necessária.
+RECOMENDACAO: APTO COM RESSALVAS; equivalência histórica 7f→5f NÃO VERIFICADA,
+capas testadas com fake, gates externos/humanos permanecem pendentes.
+[Achados/escopo e parecer](../../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[comandos novos/UTC/exit/log hashes](../../../reports/audits/2026-10-10-cri-local-validation.json).
+Tabela seguinte descreve a entrega anterior, revalidada nos cenários desta revisão.
+
 ## Checkpoint Git da entrega
 
-Funcional016 `06fcbe005b7198b0708f280d9844f5edc0c7451d`, ancestral de todas as
-etapas anteriores. [Série/base/branches/status/pendências](handoff.md),
+Funcional016 `06fcbe005b7198b0708f280d9844f5edc0c7451d`, descendente dos commits
+das etapas anteriores e ancestral do fechamento `41f33db7ca30db3f9d971999c3f8131f4fc188a0`.
+Errata da auditoria posterior: a redação original invertia a ancestralidade.
+[Série/base/branches/status/pendências](handoff.md),
 [inventário de arquivos](arquivos-da-entrega.md). G0–G5 locais atendidos; plano
 global AGUARDANDO_REVISAO, preservado ativo pelos aceites externos pendentes.
 
@@ -28,8 +41,10 @@ anteriores permanecem datados e não representam código ausente no HEAD entregu
 Local: Unit291 + Mail17, Integration187, Migration37, Contract6, E2E67, HTTPS2,
 exclusão3, Bootstrap14, typecheck/lint/build PASS; auditoria zero. R1 repete 14
 casos Pg de Integration e 3 SMTP locais de Mail; focais também são sobrepostos.
-Fingerprint completo 7f540ba4; final5f36eb7e contém só assertion
-multiframe e exceção do exemplo env. [Comandos/UTC/duração/FAIL preservados](../../../../specs/016-area-covers/implementation-evidence.md).
+O registro histórico usa fingerprint completo 7f540ba4 e final5f36eb7e. A afirmação
+histórica de que só mudaram assertion multiframe e exceção do exemplo env não foi
+demonstrada nesta auditoria: NÃO VERIFICADO sem manifesto anterior correspondente.
+[Comandos/UTC/duração/FAIL preservados](../../../../specs/016-area-covers/implementation-evidence.md).
 
 ### Correspondência CRI-T atual (IDs históricos preservados abaixo)
 

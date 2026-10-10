@@ -1,13 +1,18 @@
 # Reconciliação e evolução de contas, rascunhos e imagens
 
-**ID:** PLAN-CRI-002. **Estado:** `EM_ANDAMENTO` (auditoria local posterior iniciada; aceites externos continuam pendentes).
+**ID:** PLAN-CRI-002. **Estado:** `AGUARDANDO_REVISAO` (auditoria local encerrada; aceites externos continuam pendentes).
 **Início:** 2026-10-10, America/Sao_Paulo (mesmo UTC−03 de America/Fortaleza nesta data); preflight 16:42:08 UTC.
 
 ## Ciclo corrente: auditoria posterior da entrega local — 2026-10-10
 
 Origem: solicitação explícita do usuário nesta conversa, após a entrega de oito
-commits. Anexo disponível: prompt_execucao_hidrofloresta v1.0 de 2026-10-10;
-pergunta assíncrona verifica se há outro arquivo, sem bloquear a inspeção autorizada.
+commits. Anexo inicialmente disponível: prompt_execucao_hidrofloresta v1.0.
+Após a resposta do usuário, lido o prompt focal v1.0 na raiz do checkout original:
+`prompt-revisao-focal-pre-homologacao-hidrofloresta.md`, SHA-256
+`3c0cb8b24423d3fad958156625e846ab6e8e83e06f783b3e8e2292010918cb28`.
+Esse arquivo não rastreado foi observado durante a auditoria e preservado no
+checkout original; não foi copiado/incorporado à entrega. Este ciclo do plano
+transversal já é o plano focal equivalente; não criar outro plano duplicado.
 As instruções atuais vedam operações remotas, inclusive fetch nesta rodada.
 
 Preflight 19:16:05 UTC (16:16:05 America/Sao_Paulo): checkout de entrega
@@ -26,12 +31,12 @@ ou promover aprovação de escopo a homologação. Qualificadores IHFR preservad
 
 | Etapa de auditoria | Estado | Critério de conclusão |
 |---|---|---|
-| A0 isolamento/histórico | EM_ANDAMENTO | oito SHAs/base/branches/status e ausência de alterações preexistentes registrados |
-| A1 código/contratos/concorrência/privacidade | NAO_INICIADO | evidência por frente; suspeitas distinguidas de defeitos reproduzidos |
-| A2 correspondência de testes e snapshots | NAO_INICIADO | manifest/fingerprint, comandos, contagens/overlap e snapshots históricos conferidos |
-| A3 correções materiais | NAO_INICIADO | documentos corrigidos; qualquer correção funcional inédita planejada antes no Spec Kit |
-| A4 execução dos gates locais | NAO_INICIADO | fixtures próprias e logs separados, UTC/exit/duração/HEAD/fingerprint reais |
-| A5 revisão/commits/parecer | NAO_INICIADO | série nova revisável, oito commits preservados, prontidão e limites fundamentados |
+| A0 isolamento/histórico | CONCLUIDO_LOCAL | oito SHAs/base/branches/status registrados; prompt do usuário preservado |
+| A1 código/contratos/concorrência/privacidade | CONCLUIDO_LOCAL | cenários de 014/015/016 inspecionados; nenhum defeito funcional novo reproduzido |
+| A2 correspondência de testes e snapshots | CONCLUIDO_COM_RESSALVA | 520 arquivos do final verificados; equivalência 7f→5f NÃO VERIFICADA e corrigida na documentação |
+| A3 correções materiais | CONCLUIDO_LOCAL | ancestralidade, cortes históricos, overlap, status, rastreabilidade e propostas superadas corrigidos; sem alteração funcional |
+| A4 execução dos gates locais | CONCLUIDO_LOCAL | regressão completa em 5f36eb7e; FAIL do dry-run no banco de referência preservado, PASS no alvo próprio correto |
+| A5 revisão/commits/parecer | CONCLUIDO_LOCAL | série nova depois dos oito; relatório/evidências/diff/links; parecer APTO COM RESSALVAS |
 
 Responsável pela execução: agente; aprovador operacional/humano não especificado.
 Arquivos possíveis: pacote CRI, registros vivos specs014/015/016 e mail/012/013,
@@ -56,6 +61,16 @@ ser corrigida após revalidação, preservando o relato anterior como histórico
 Histórico desta fase: 2026-10-10 19:16 UTC, nova auditoria EM_ANDAMENTO; nenhum
 defeito funcional comprovado até este checkpoint e nenhuma correção funcional
 autorizada por inferência. Os checkpoints abaixo pertencem à execução anterior.
+
+Fechamento: [relatório focal](../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md)
+e [evidências novas](../../reports/audits/2026-10-10-cri-local-validation.json).
+Checkpoints reais `497d2e5326ea33232bf9fbd44442162d77f0a86c` (plano anterior às
+correções) e `d8a32d39572785d87744e2b10c87e79ad019ba46` (primeiras erratas).
+Commit documental posterior fecha os achados específicos do prompt focal e
+registra a evidência; seu SHA será informado na resposta final. Nenhuma feature
+ou tarefa funcional nova foi criada, pois não foi comprovado defeito funcional.
+Não houve nova revisão por subagente; revisões anteriores permanecem históricas.
+Plano não arquivado: Gate B012/T025/T028, aceite013 e cloud/operador seguem abertos.
 
 ## Objetivo, escopo e autoridade
 

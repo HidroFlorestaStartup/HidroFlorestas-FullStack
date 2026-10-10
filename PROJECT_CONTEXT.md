@@ -70,3 +70,11 @@ Integração187, migrations37, E2E67 e Bootstrap14 PASS; operação real pendent
 Ver [spec/evidências](specs/016-area-covers/implementation-evidence.md),
 [runbook](docs/operations/area-covers-runbook.md) e [matriz](docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
 Nenhuma qualificação científica do IHFR foi alterada.
+
+## Revisão focal posterior da entrega CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: branch audit/cri-local-20261010 preserva os oito commits
+até41f33db, sem alteração funcional. Nova regressão completa no final5f36eb7e;
+erratas documentais e limite de equivalência histórica explicitados.
+RECOMENDACAO: APTO COM RESSALVAS para solicitar homologação controlada;
+Gate B012/aceite013/Cloudinary/operador pendentes. [Relatório e evidências](docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).

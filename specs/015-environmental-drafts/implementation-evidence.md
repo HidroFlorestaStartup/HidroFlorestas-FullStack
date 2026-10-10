@@ -1,5 +1,14 @@
 # Evidências de implementação 015 — 2026-10-10
 
+## Revisão focal posterior — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: regressão completa no final5f36eb7e revalida os cenários
+de drafts/Pg/rollback/exclusão e três E2E de drafts em Chromium. Status e referência
+do domínio corrigidos documentalmente; nenhuma mudança funcional.
+[Relatório](../../docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md)
+e [comandos/UTC/HEAD/fingerprint](../../docs/reports/audits/2026-10-10-cri-local-validation.json).
+Não comprova suporte universal ou uso humano; registros seguintes são históricos.
+
 G3/G4 PASS local. DECISAO_CONFIRMADA PD-CRI-005/006 aprovada pelo usuário desta
 conversa com documentação exigida; [proveniência](../../docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md).
 Implementação e operação em [plan.md](plan.md), [contratos](contracts/drafts.md) e

@@ -1,5 +1,36 @@
 # Handoff da entrega local CRI — 2026-10-10
 
+## Revisão focal posterior — 2026-10-10
+
+RECOMENDACAO: **APTO COM RESSALVAS** para solicitar homologação controlada;
+não constitui homologação. Auditoria encerrada localmente na branch
+`audit/cri-local-20261010`, base `41f33db7ca30db3f9d971999c3f8131f4fc188a0`.
+Oito commits anteriores preservados; nenhuma alteração funcional nesta rodada.
+[Relatório/achados e cronologia](../../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[evidências desta revisão](../../../reports/audits/2026-10-10-cri-local-validation.json)
+e [manifesto final](../../../reports/audits/2026-10-10-cri-local-manifest.json).
+
+Nova regressão completa no fingerprint final 5f36eb7e: Unit291+Mail17,
+Integration187, Migration37, Contract6, E2E67, HTTPS2, exclusão3, Bootstrap14,
+typecheck/lint/build PASS; lint zero erros/três warnings preexistentes.
+Equivalência histórica 7f→5f NÃO VERIFICADA; nenhum PASS anterior promovido.
+Dry-run inicialmente FAIL por banco de referência vazio no coletor; PASS ao
+selecionar o banco sintético próprio correto, eligible0/providerCalls0.
+Cloudinary continua fake/HTTP interceptado; nenhum efeito remoto foi executado.
+
+Fechamento anterior confirmado: `41f33db7ca30db3f9d971999c3f8131f4fc188a0`
+(`docs(handoff): consolida evidências, commits e pendências da entrega`), depois
+de `06fcbe0`. Checkpoints novos reais: `497d2e5326ea33232bf9fbd44442162d77f0a86c`
+(plano) → `d8a32d39572785d87744e2b10c87e79ad019ba46` (erratas) → fechamento
+documental desta revisão, SHA informado na resposta final. Branch016 preservada
+em 41f33db, main em beba96fb; refs remotas apenas lidas localmente.
+
+O checkout original preserva o prompt focal não rastreado indicado pelo usuário,
+observado após o preflight; esse arquivo não integra os commits. Dados e artefatos
+ignorados anteriores preservados. Seções seguintes são a entrega anterior e seus
+cortes históricos, com erratas explícitas. Estado global AGUARDANDO_REVISAO:
+Gate B012/T025/T028, aceite013, preset/cloud e operador/créditos permanecem abertos.
+
 ## Estado entregue e limites
 
 EVIDENCIA_IMPLEMENTACAO: entrega local das specs014/015/016 concluída, com
@@ -52,9 +83,13 @@ R1 reexecuta 14 casos de Integration/Pg e 3 SMTP locais de Mail, sem soma dupla.
 Errata da auditoria posterior de 2026-10-10: o texto original “R1 reexecuta os
 17 Mail” confundia a composição; os 17 PASS históricos continuam registrados.
 Focais são subconjuntos/repetições.
-Regressão completa fingerprint `7f540ba4160402d710bbe164dbba630a41f80e58c267dc9a46820446e853b8ce`;
-final `5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d` difere
-somente pela assertion multiframe e exceção do exemplo env; implementação igual.
+Regressão histórica fingerprint `7f540ba4160402d710bbe164dbba630a41f80e58c267dc9a46820446e853b8ce`;
+final `5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d`.
+Errata da auditoria posterior: o texto original afirmava diferença “somente pela
+assertion multiframe e exceção do exemplo env; implementação igual”. Essa
+equivalência é NÃO VERIFICADA sem manifesto histórico correspondente; a
+reconstrução limitada às duas alterações não recuperou 7f540ba4. O corte final
+recebeu uma nova regressão completa nesta auditoria, registrada separadamente.
 Focal2, CLI, exclusão3, typecheck/audit foram reexecutados no final. Comandos,
 UTC/duração/exit code, ambiente, FAIL e PASS em [evidências016](../../../../specs/016-area-covers/implementation-evidence.md)
 e [JSON](../../../../specs/016-area-covers/validation-evidence.json).
@@ -145,9 +180,9 @@ registram a regressão integrada. Gate B012, aceite humano013 e operação/créd
 Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
 não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
 
-## Reconciliação de 2026-10-10
+## Corte histórico de reconciliação — 2026-10-10
 
-Estado atual: `EM_ANDAMENTO`. O corte auditado já contém implementação de e-mail/contas/exclusão; não reexecutar a lista abaixo como se tudo estivesse ausente. Os recortes de drafts e imagens foram aprovados nesta conversa; acompanhe a matriz única e o plano transversal para branches, snapshots, verificações e limites. Operações remotas não realizadas nesta execução.
+Estado naquele corte histórico: `EM_ANDAMENTO`. O corte auditado já contém implementação de e-mail/contas/exclusão; não reexecutar a lista abaixo como se tudo estivesse ausente. Os recortes de drafts e imagens foram aprovados nesta conversa; acompanhe a matriz única e o plano transversal para branches, snapshots, verificações e limites. Operações remotas não realizadas naquela execução.
 
 Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
 
@@ -199,7 +234,10 @@ Uma frente só termina quando comportamento, dados, autorização, concorrência
 
 Integração Lovable deve adaptar a estrutura visual aos contratos implementados, nunca criar upload, sessão, estado ou permissão apenas no cliente. Qualquer nova exigência visual volta à spec/decisão correspondente.
 
-## Estado desta entrega
+## Estado da entrega documental original — 2026-10-03
+
+FATO_DOCUMENTADO histórico: o parágrafo a seguir descreve somente a entrega de
+03/10/2026, anterior às implementações 014/015/016 e à auditoria atual.
 
 Os 14 arquivos deste pacote são documentação de planejamento. Nenhuma funcionalidade, teste executável, migration, dependência, variável, envio real, upload real, banco, merge, deploy, push ou PR foi realizado. A branch documental contém somente commits locais do pacote e deve ser revisada antes de qualquer publicação futura.
 

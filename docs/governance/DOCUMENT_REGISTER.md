@@ -161,3 +161,13 @@ científico. A matriz CRI concentra estado. [Evidências](../../specs/016-area-c
 registram os SHAs funcionais reais, bases/branches, resultados desta execução,
 recursos preservados e passos remotos não autorizados. Estado global
 AGUARDANDO_REVISAO; não são relatórios científicos nem aceite humano presumido.
+
+## Revisão focal posterior CRI — 2026-10-10
+
+Registrados [relatório focal](../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[evidências novas](../reports/audits/2026-10-10-cri-local-validation.json) e
+[manifesto de bytes](../reports/audits/2026-10-10-cri-local-manifest.json).
+Origem: prompt focal v1.0 indicado pelo usuário; hash/localizador no relatório.
+EVIDENCIA_IMPLEMENTACAO e RECOMENDACAO de engenharia, sem autoridade científica
+ou homologação. Plano focal equivalente mantido em PLAN-CRI-002; oito commits
+preservados. Erratas não reescrevem os JSON ou resultados históricos.
