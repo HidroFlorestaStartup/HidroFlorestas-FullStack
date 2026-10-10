@@ -1,7 +1,61 @@
 # Reconciliação e evolução de contas, rascunhos e imagens
 
-**ID:** PLAN-CRI-002. **Estado:** `AGUARDANDO_REVISAO` (entrega local concluída; aceite externo pendente).
+**ID:** PLAN-CRI-002. **Estado:** `EM_ANDAMENTO` (auditoria local posterior iniciada; aceites externos continuam pendentes).
 **Início:** 2026-10-10, America/Sao_Paulo (mesmo UTC−03 de America/Fortaleza nesta data); preflight 16:42:08 UTC.
+
+## Ciclo corrente: auditoria posterior da entrega local — 2026-10-10
+
+Origem: solicitação explícita do usuário nesta conversa, após a entrega de oito
+commits. Anexo disponível: prompt_execucao_hidrofloresta v1.0 de 2026-10-10;
+pergunta assíncrona verifica se há outro arquivo, sem bloquear a inspeção autorizada.
+As instruções atuais vedam operações remotas, inclusive fetch nesta rodada.
+
+Preflight 19:16:05 UTC (16:16:05 America/Sao_Paulo): checkout de entrega
+`C:/projetos/ifma/HidroFlorestas-cri-exec`, origem `016-area-covers`, HEAD/base
+`41f33db7ca30db3f9d971999c3f8131f4fc188a0`, sem upstream. Tracked/untracked,
+staged/unstaged vazios. Nova branch `audit/cri-local-20261010` criada nesse HEAD,
+no mesmo worktree; todas as branches existentes preservadas. Checkout original
+main permanece em beba96fb, sem integrar alterações. Apenas os dois worktrees
+anteriores; recursos ignorados anteriores (.accounts-validation/node_modules/.next)
+preservados, sem reescrever seus coletores ou logs.
+
+Git2.55.0.windows.4/Node24.19.0/npm12.0.2; PostgreSQL local próprio inicialmente
+STOPPED. Remote configurado conferido por leitura local, sem comunicação externa.
+Não reimplementar features prontas, editar migrations aplicadas, normativas/raw
+ou promover aprovação de escopo a homologação. Qualificadores IHFR preservados.
+
+| Etapa de auditoria | Estado | Critério de conclusão |
+|---|---|---|
+| A0 isolamento/histórico | EM_ANDAMENTO | oito SHAs/base/branches/status e ausência de alterações preexistentes registrados |
+| A1 código/contratos/concorrência/privacidade | NAO_INICIADO | evidência por frente; suspeitas distinguidas de defeitos reproduzidos |
+| A2 correspondência de testes e snapshots | NAO_INICIADO | manifest/fingerprint, comandos, contagens/overlap e snapshots históricos conferidos |
+| A3 correções materiais | NAO_INICIADO | documentos corrigidos; qualquer correção funcional inédita planejada antes no Spec Kit |
+| A4 execução dos gates locais | NAO_INICIADO | fixtures próprias e logs separados, UTC/exit/duração/HEAD/fingerprint reais |
+| A5 revisão/commits/parecer | NAO_INICIADO | série nova revisável, oito commits preservados, prontidão e limites fundamentados |
+
+Responsável pela execução: agente; aprovador operacional/humano não especificado.
+Arquivos possíveis: pacote CRI, registros vivos specs014/015/016 e mail/012/013,
+runbooks e registros canônicos diretamente afetados; relatório/evidências desta
+auditoria. Código/testes novos somente após spec/plan/tasks correspondentes.
+Critérios de parada permanecem os de PLANS.md, limitados à parte dependente;
+nenhum conflito material de intenção será resolvido silenciosamente.
+
+Verificações previstas: revisão do diff/histórico, contratos/roles/isolation/
+leases/rollback, fingerprints e manifestos de bytes; suites unit/mail/R1/contract/
+Pg/migration/E2E/HTTPS/exclusão/bootstrap, typecheck/lint/build conforme riscos.
+Operações que compartilhem DB/porta/.next são sequenciais. Registros da auditoria
+ficam em subdiretório ignorado novo, sem anexar resultados aos logs anteriores.
+Relatório histórico datado será criado em docs/reports/audits/ após coletar evidências.
+
+Achado inicial D1 (EVIDENCIA_IMPLEMENTACAO documental): texto anterior atribui os
+17 R1 aos mesmos 17 Mail. package.json e nomes em integration/mail-outbox e
+mail/mail-smtp mostram 14 Pg +3 SMTP, reexecutados a partir de Integration e Mail.
+Omitir a soma dupla permanece correto; a explicação da correspondência precisa
+ser corrigida após revalidação, preservando o relato anterior como histórico.
+
+Histórico desta fase: 2026-10-10 19:16 UTC, nova auditoria EM_ANDAMENTO; nenhum
+defeito funcional comprovado até este checkpoint e nenhuma correção funcional
+autorizada por inferência. Os checkpoints abaixo pertencem à execução anterior.
 
 ## Objetivo, escopo e autoridade
 
