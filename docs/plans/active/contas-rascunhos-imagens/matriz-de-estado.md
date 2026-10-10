@@ -4,6 +4,13 @@
 **Estado:** `AGUARDANDO_REVISAO` (gates locais concluídos; aceite externo pendente). Intenção, código, teste e homologação são eixos independentes.
 O [plano transversal](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md) registra isolamento e cronologia.
 
+## Checkpoint Git da entrega
+
+Funcional016 `06fcbe005b7198b0708f280d9844f5edc0c7451d`, ancestral de todas as
+etapas anteriores. [Série/base/branches/status/pendências](handoff.md),
+[inventário de arquivos](arquivos-da-entrega.md). G0–G5 locais atendidos; plano
+global AGUARDANDO_REVISAO, preservado ativo pelos aceites externos pendentes.
+
 ## Entrega corrente integrada 014/015/016
 
 EVIDENCIA_IMPLEMENTACAO: estado abaixo após a execução autorizada; cortes

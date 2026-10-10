@@ -17,7 +17,7 @@
 - [x] T013 Cobrir E2E fake UI/mobile/keyboard/error/retry/fallback em tests/e2e/area-covers.spec.ts; distinguir fake de homologação (FR-007/FR-009).
 - [x] T014 Executar regressão completa/contas/mail/IHFR/exclusão/HTTPS/schema audit; evidências com fingerprints em implementation-evidence.md (SC-001 a SC-004).
 - [x] T015 Revisar independentemente/converge/diff/links/secrets/ownership e resolver achados materiais; não fechar gates remotos (FR-008/FR-009).
-- [ ] T016 Sincronizar pacote/matriz/decisões/PRD/contexto/runbook e commit validado; atualizar plano transversal.
+- [x] T016 Sincronizar pacote/matriz/decisões/PRD/contexto/runbook e commit validado; atualizar plano transversal.
 
 ## Dependencies & Execution Order
 

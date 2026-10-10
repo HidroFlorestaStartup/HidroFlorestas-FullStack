@@ -90,3 +90,14 @@ aceite humano013 seguem pendentes. Acessibilidade foi verificada por papéis,
 teclado e viewport390 em Chromium; não constitui auditoria universal WCAG.
 IHFR mantém CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
 SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
+
+
+## Checkpoint Git posterior à execução
+
+Commit funcional real `06fcbe005b7198b0708f280d9844f5edc0c7451d`, branch `016-area-covers`, base de feature
+`45da350c34f873619a81bb5b3022bf97a1d1bc7c`, planejamento `1ae3ca51ebb0291751a39c1b2f873431ab09da52`.
+T016 concluída após esse checkpoint. G5 local: documentação/escopo/diff/links e
+provas de privacidade/ownership revisadas; todos os 20 itens entregues. Nenhuma
+alteração em docs/raw, AGENTS, PLANS ou constituição. Corte funcional final
+verificado antes do commit: 5f36eb7e; nenhum byte funcional mudou depois.
+PostgreSQL próprio restaurado STOPPED, dados preservados; schemas de teste zero.

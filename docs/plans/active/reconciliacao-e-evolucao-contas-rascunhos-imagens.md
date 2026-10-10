@@ -1,6 +1,6 @@
 # Reconciliação e evolução de contas, rascunhos e imagens
 
-**ID:** PLAN-CRI-002. **Estado:** `EM_ANDAMENTO`.
+**ID:** PLAN-CRI-002. **Estado:** `AGUARDANDO_REVISAO` (entrega local concluída; aceite externo pendente).
 **Início:** 2026-10-10, America/Sao_Paulo (mesmo UTC−03 de America/Fortaleza nesta data); preflight 16:42:08 UTC.
 
 ## Objetivo, escopo e autoridade
@@ -46,11 +46,11 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 | Etapa | Estado | Critério | Responsável |
 |---|---|---|---|
 | G0 preflight/isolamento/plano | Concluída | base atual, escopo e alterações preservadas | agente executor |
-| G1 auditoria/matriz única | Em andamento | intenção/código/schema/UI/testes/histórico separados; CRI-T001 a CRI-T018 e PD-CRI-001 a PD-CRI-010 mapeados | agente executor |
-| G2 reconciliação | Pendente | estado atual primeiro, histórico preservado e referências válidas | agente executor |
-| G3 specs por incremento | Pendente | skill instalada, tarefas anteriores ao código, decisões materiais resolvidas | agente executor; autoridade de produto não especificada |
-| G4 execução local | Pendente | cenários pertinentes, regressões e limites registrados por snapshot | agente executor |
-| G5 consolidação/commits | Pendente | revisão de diff/links/segredos, série real e handoff | agente executor |
+| G1 auditoria/matriz única | Concluída no recorte | intenção/código/schema/UI/testes/histórico separados; CRI-T001 a CRI-T018 e PD-CRI-001 a PD-CRI-010 mapeados | agente executor |
+| G2 reconciliação | Concluída no recorte | estado atual primeiro, histórico preservado e referências válidas | agente executor |
+| G3 specs por incremento | Concluída | skill instalada, tarefas anteriores ao código, decisões materiais resolvidas | agente executor; autoridade de produto não especificada |
+| G4 execução local | Concluída | cenários pertinentes, regressões e limites registrados por snapshot | agente executor |
+| G5 consolidação/commits | Concluída localmente | revisão de diff/links/segredos, série real e handoff | agente executor |
 
 Riscos: aprovações históricas confundidas com autorização operacional atual;
 pendências de ownership/retention/privacy de drafts/imagens; bootstrap Pg não
@@ -123,3 +123,17 @@ lacunas de cobertura T020 resolvidas. CLI offline/dry-run PASS, providerCalls0.
 [Evidências](../../../specs/016-area-covers/implementation-evidence.md).
 Operação/créditos, Gate B012 e aceite013 continuam pendentes; não arquivar pacote.
 Consolidação/commit final em andamento; os checkpoints anteriores são históricos.
+
+
+### Encerramento local e aceite externo — 2026-10-10
+
+G0–G5 locais atendidos. Resultado/validações/arquivos/série/recursos e pendências
+no [handoff](contas-rascunhos-imagens/handoff.md). Todos os incrementos liberados
+foram entregues em commits reais; nenhuma alteração preexistente incorporada,
+raw/políticas/ciência preservados. Base/branches/SHAs e fases anteriores continuam
+no histórico. Plano permanece AGUARDANDO_REVISAO, sem arquivamento: Gate B012,
+aceite humano013 e operação/créditos Cloudinary exigem destino/autoridade próprios.
+Isso não reabre G3/G4 locais nem transforma ciência experimental em validada.
+PostgreSQL voltou ao STOPPED inicial, dados preservados. Sem push/PR/deploy/envio
+real/upload real/migration remota. Último checkpoint funcional06fcbe0; fechamento
+documental posterior registra a série, com seu SHA informado na resposta final.

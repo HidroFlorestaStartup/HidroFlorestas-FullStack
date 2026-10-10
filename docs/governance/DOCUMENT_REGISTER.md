@@ -152,3 +152,12 @@ e docs/operations/area-covers-runbook.md são artefatos atuais de implementaçã
 local, com proveniência de decisão identificada; não são homologação nem contrato
 científico. A matriz CRI concentra estado. [Evidências](../../specs/016-area-covers/implementation-evidence.md),
 [runbook](../operations/area-covers-runbook.md). Responsável operacional não especificado.
+
+
+## Handoff consolidado CRI — 2026-10-10
+
+[Handoff](../plans/active/contas-rascunhos-imagens/handoff.md) e
+[inventário](../plans/active/contas-rascunhos-imagens/arquivos-da-entrega.md)
+registram os SHAs funcionais reais, bases/branches, resultados desta execução,
+recursos preservados e passos remotos não autorizados. Estado global
+AGUARDANDO_REVISAO; não são relatórios científicos nem aceite humano presumido.
