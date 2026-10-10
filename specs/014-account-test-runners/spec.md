@@ -27,6 +27,7 @@ com skip dentro do teste. Guards, assertions e domínio ficam intactos.
 - **FR-001**: selecionar testes de exclusão exclusivamente no runner dedicado existente.
 - **FR-002**: manter cobertura de contas/HTTPS e executar os três casos de exclusão com fixtures próprias.
 - **FR-003**: preservar falha inicial e distinguir erro de configuração local de defeito do produto.
+- **FR-004**: o preparador local deve aceitar checksums de SQL idêntico com LF ou CRLF, sem alterar migrations, checksums persistidos ou aceitar alterações reais de conteúdo.
 
 ## Success Criteria *(mandatory)*
 
@@ -40,3 +41,10 @@ mas esses casos exigem DELETION_E2E_IDS/PASSWORD/BASE_URL do runner dedicado.
 Falha atual: 52 PASS/5 FAIL/8 não executados; três FAIL são dessa seleção.
 As duas falhas 403 decorrem da configuração `none` do wrapper desta execução,
 corrigida localmente para `local`, sem mudança do produto. CRI-T017; spec 013.
+
+Investigação posterior: com ingresso local a suíte teve 60 PASS/1 FAIL/1 não
+executado. O cadastro retornou 500 porque o banco sintético ainda não tinha a
+migration de ownership do outbox. RegressionSetup recusou o histórico: as nove
+primeiras migrations tinham checksum CRLF e as duas seguintes LF. A comparação
+com os arquivos Git confirmou diferença exclusiva de fim de linha. A correção
+do preparador precede a aplicação aditiva da migration, sem reset do banco.

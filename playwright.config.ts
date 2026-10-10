@@ -52,8 +52,8 @@ export default defineConfig({
   // These specs have dedicated runners that provision their required fixtures.
   testIgnore:
     process.env.AUTH_HTTPS_E2E === "1"
-      ? ["**/full-ui-flow.spec.ts", "**/ihfr-diagnosis-*.spec.ts"]
-      : ["**/authenticated-access-https.spec.ts", "**/full-ui-flow.spec.ts", "**/ihfr-diagnosis-*.spec.ts"],
+      ? ["**/account-deletion.spec.ts", "**/full-ui-flow.spec.ts", "**/ihfr-diagnosis-*.spec.ts"]
+      : ["**/account-deletion.spec.ts", "**/authenticated-access-https.spec.ts", "**/full-ui-flow.spec.ts", "**/ihfr-diagnosis-*.spec.ts"],
   fullyParallel: false,
   workers: 1,
   retries: 0,
