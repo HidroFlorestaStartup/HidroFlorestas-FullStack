@@ -14,9 +14,24 @@ Branch completa: `release/cri-rc-20261010`.
 | 3 | review/015-environmental-drafts | review/014-account-test-runners | 015-environmental-drafts | 45da350c34f873619a81bb5b3022bf97a1d1bc7c |
 | 4 | review/016-area-covers | review/015-environmental-drafts | 016-area-covers | 41f33db7ca30db3f9d971999c3f8131f4fc188a0 |
 | 5 | review/cri-audit-20261010 | review/016-area-covers | audit/cri-local-20261010 | 539f38d52bba207d2822528d4afd6b936aa64d9f |
-| 6 | release/cri-rc-20261010 | review/cri-audit-20261010 | nova branch de documentação/integracão | consultar evidence e HEAD remoto |
+| 6 | release/cri-rc-20261010 | review/cri-audit-20261010 | nova branch de documentação/integração | consultar evidências e HEAD remoto |
 
-Os links reais dos PRs serão registrados após a criação nesta execução.
+PRs publicados e abertos para revisão (nenhum integrado):
+
+| Ordem | Pull Request | Conteúdo |
+|---|---|---|
+| 1 | [PR #1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/1) | Reconciliação e proteção Git |
+| 2 | [PR #2](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/2) | Spec014: runners/checksums |
+| 3 | [PR #3](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/3) | Spec015: drafts pessoais |
+| 4 | [PR #4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4) | Spec016: capas privadas |
+| 5 | [PR #5](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5) | Auditoria, erratas e evidências |
+| 6 | [PR #6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6) | Documentação operacional e publicação |
+
+As descrições incluem a cadeia #1→#2→#3→#4→#5→#6 e as ressalvas específicas.
+Commit documental inicial:832e7c9cd67917c75d4a3010454832e13d075e78;
+o commit posterior fecha os links/evidências. Obter seu SHA completo pelo head do
+PR6 ou `git rev-parse origin/release/cri-rc-20261010` após fetch. Todos os SHAs
+originais/auxiliares e o snapshot remoto pré-fechamento estão no manifesto JSON.
 
 Cada PR mostra apenas sua etapa no Files changed. O primeiro inclui reconciliação
 documental e proteção de publicação; 014 contém dois commits originais;015 dois;

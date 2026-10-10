@@ -1,6 +1,7 @@
 # Release Candidate CRI — 10/10/2026
 
-Estado: preparada para revisão; APTO COM RESSALVAS é o parecer da
+Estado: PUBLICADA NO GITHUB, aguardando revisão dos estudantes;
+APTO COM RESSALVAS é o parecer da
 [revisão focal](../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).
 Homologação e autorização de produção permanecem pendentes.
 

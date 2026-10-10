@@ -18,7 +18,7 @@ Não cria migration, variável de produção nem mudança de negócio de contas.
 [Spec015](../../../specs/015-environmental-drafts/spec.md): salvar explicitamente
 medições parciais, retomar após reload e descartar com confirmação. Um draft por
 usuário/coleta confirmada; conflito em outra aba exige recarga deliberada e conserva
-edição local. Zero, false e ausência continuam distintos. Confirmação consume a
+edição local. Zero, false e ausência continuam distintos. Confirmação consome a
 revisão pessoal vigente na transação; rollback a preserva. Sem expiração automática.
 Draft alheio não é exposto/consumido; draft não alimenta ciência nem diagnósticos.
 Exclusão permitida de conta remove somente seus drafts e respeita bloqueios013.

@@ -19,9 +19,11 @@ identificado pelo HEAD remoto/PR6, sem autorreferência circular.
 | Manifesto histórico520 arquivos |49 diferenças no novo worktree comprovadas individualmente como LF/CRLF; uma diferença deliberada no guard Git. Não atribuir fingerprint5f aos novos bytes |
 | Banco |14 migrations rastreadas;12 antigas byte a byte iguais; duas novas aditivas, hashes Git/worktree no JSON |
 | Specs/tarefas |014:6/6;015:18/18;016:20/20 concluídas; aceites externos permanecem separados |
-| Links relativos |113 conferidos na primeira coleta, zero alvo ausente; coleta final inclui relatório/PRs |
+| Links relativos |113 na primeira coleta e119 no fechamento, zero alvo ausente |
 | Git diff --check | PASS para as alterações da preparação; diff completo da série conferido também |
 | Push --dry-run --atomic | PASS para somente as seis refs protegidas; main/development fora do refspec |
+| Push e inspeção remota | PASS: seis refs e PRs#1–6 abertos; heads/bases/arquivos/commits correspondem ao Git;17 commits nos ranges,11 originais presentes exatamente uma vez |
+| Checks dos heads no GitHub | Zero statuses e zero check-runs no snapshot; ausência não é PASS de CI nem inventário autenticado de provedores |
 | Segredos/escopo | Diff documental e exemplos revistos; somente nomes de variáveis/IDs não secretos, sem valores de credenciais/PII/tokens |
 | Provedores | Homepage declarada HTTP200; metadados/status GitHub somente leitura. Nenhuma consulta autenticada Vercel/Neon/Cloudinary |
 
@@ -49,8 +51,22 @@ Esses resultados não são homologação real nem validação do ambiente produt
 
 ## Publicação e limites
 
-Links/estados/bases/SHAs reais e diferenças de cada PR são registrados depois
-do push em integration-guide e JSON. Verificar heads remotos e evitar interpretar
+PRs#1–6 criados abertos, sem draft/merge/auto-merge. As bases seguem a cadeia
+descrita no integration-guide; heads conferidos contra as refs Git publicadas.
+Push atômico publicou somente seis refs protegidas. Commit documental inicial
+832e7c9cd67917c75d4a3010454832e13d075e78; fechamento posterior só documenta
+publicação/evidência. O JSON registra snapshot imediatamente anterior a esse
+commit final; HEAD remoto/PR6 identifica o fechamento sem autorreferência.
+
+O conector GitHub recusou create_pull_request com403 Resource not accessible by
+integration. Alternativa autorizada: REST GitHub usando autenticação Git local
+já válida para o push, carregada só em memória, sem copiar token para arquivos/
+argumentos/logs. Os seis PRs e descrições foram criados/atualizados com essa
+autenticação; ausência de gh não bloqueou a entrega. Não houve bypass de rejeição
+de aprovação automática: o erro era permissão do conector.
+
+Links/estados/bases/SHAs reais e diferenças de cada PR estão registrados
+em integration-guide e JSON. Verificar heads remotos e evitar interpretar
 status antigo herdado como deploy desta RC. Ausência de checks não é PASS de CI.
 Nenhum merge em development/main, deploy ou escrita em banco remoto foi executado.
 Nenhuma configuração/credencial/recurso existente de provedor foi alterado.

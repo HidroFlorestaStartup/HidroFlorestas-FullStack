@@ -1,6 +1,7 @@
 # PLAN-RC-001 — Preparação da Release Candidate CRI
 
-Estado: EM_ANDAMENTO. Data: 2026-10-10, America/Sao_Paulo.
+Estado: CONCLUIDO para preparação/publicação da RC; revisão dos estudantes pendente.
+Data: 2026-10-10, America/Sao_Paulo.
 Responsável pela execução: agente; revisão e operação humanas: não especificado.
 
 ## Objetivo, autorização e fontes
@@ -38,8 +39,9 @@ independentemente; conferência humana nos painéis é pré-requisito de operaç
    encadear com merges auxiliares sem tocar nas branches originais/principais.
 3. CONCLUIDO: notas, integração, ambiente, atualização, migrations e checklist.
 4. CONCLUIDO: diff/links/segredos, identidade do código e migrations, dry-run Git.
-5. EM_ANDAMENTO: push explícito/atômico de seis refs protegidas; PRs encadeados.
-6. NAO_INICIADO: conferir SHAs/bases/diffs/estados remotos; evidências e commit final.
+5. CONCLUIDO: push explícito/atômico de seis refs protegidas; PRs#1–6 abertos.
+6. CONCLUIDO: SHAs/bases/diffs/estados remotos conferidos; evidências finais neste
+   fechamento documental, cujo SHA é identificado pelo head do PR6.
 
 Arquivos autorizados afetados: vercel.json (proposta restrita para impedir deploy
 na publicação), docs/releases/2026-10-10-cri-rc/**, este plano, README,
@@ -70,3 +72,19 @@ scripts/prisma/package/config, excetuando proteção Git, antes de decidir rerun
   Git idêntico,49 mudanças de bytes comprovadas LF/CRLF e guard restrito. Coletor
   inicial corrigido sem editar runtime.14 migrations e tasks6/18/20 conferidos;
   push dry-run aprovado. Verificações em verification-report/publication-evidence.
+- 2026-10-10: CONCLUIDO; push atômico PASS e PRs#1–6 abertos/encadeados. Conector
+  GitHub403 resolvido por REST com autenticação Git vigente em memória.17 commits
+  nos ranges dos PRs sem repetição, incluindo11 originais; files/heads/bases remotos
+  correspondem ao Git. main/development intactas; zero statuses/check-runs nos heads
+  observados.119 links finais válidos,14 migrations, runtime inalterado. Commit
+  inicial832e7c9; fechamento acrescenta publicação, rastreabilidade e pendências.
+
+## Encerramento e pendências externas
+
+Documentos/arquivos e verificações estão no pacote RC e manifesto. Nenhum bloqueio
+restante da preparação/publicação. GateB012, aceite013, browsers alvo, Cloudinary
+real, operadores PD-CRI-004/010, destino/backup/ensaio/aprovação produtiva permanecem
+pendentes para os estudantes, conforme checklist. Sem merge/deploy/migration
+remota ou alteração de provedores. Manter este plano no local ativo até a revisão
+humana da entrega, sem mover/renomear planos anteriores. Conclusão desta preparação
+não equivale a aprovação dos PRs nem autorização produtiva.
