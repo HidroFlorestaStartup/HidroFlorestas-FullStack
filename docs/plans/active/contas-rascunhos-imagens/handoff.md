@@ -1,5 +1,13 @@
 # Handoff para implementação futura
 
+## Reconciliação de 2026-10-10
+
+Estado atual: `EM_ANDAMENTO`. O corte auditado já contém implementação de e-mail/contas/exclusão; não reexecutar a lista abaixo como se tudo estivesse ausente. Os recortes de drafts e imagens foram aprovados nesta conversa; acompanhe a matriz única e o plano transversal para branches, snapshots, verificações e limites. Operações remotas não realizadas nesta execução.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Antes de começar
 
 1. Leia este pacote na ordem do [readme](readme.md), depois `AGENTS.md`, contexto, decisões, constituição e política de fontes atuais.

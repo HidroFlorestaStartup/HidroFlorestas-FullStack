@@ -1,5 +1,13 @@
 # Rascunhos ambientais
 
+## Reconciliação de 2026-10-10
+
+DECISAO_CONFIRMADA nesta conversa em 2026-10-10: recorte A pessoal por usuário/coleta confirmada, salvamento explícito, descarte definitivo pelo dono, sem expiração automática, remoção dos drafts pessoais na exclusão de conta permitida e consumo ao confirmar; dados científicos confirmados preservados. A resposta do usuário foi “1 Aprovo, masdeixe essa decisao e implementacao documentadas”. A retenção de 30 dias abaixo não foi adotada.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Dois escopos que não devem ser confundidos
 
 | Escopo | Objeto | Estado |

@@ -1,5 +1,13 @@
 # Contas, rascunhos ambientais e imagens de áreas
 
+## Reconciliação de 2026-10-10
+
+Estado atual: `EM_ANDAMENTO`. Fundação de e-mail, verificação/recuperação e exclusão de conta estão presentes no HEAD auditado. Rascunhos e capas autenticadas tiveram recorte aprovado nesta execução; implementação será entregue em specs próprias. Gate B de contas e aceite humano de exclusão permanecem pendentes.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 **Estado:** `AGUARDANDO_REVISAO` — pacote documental, sem implementação.
 **Data de corte:** 2026-10-03, America/Fortaleza.
 **Branch documental:** `docs/contas-rascunhos-imagens`.

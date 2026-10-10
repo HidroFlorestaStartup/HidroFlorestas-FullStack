@@ -1,5 +1,13 @@
 # Envio de e-mails
 
+## Reconciliação de 2026-10-10
+
+Fundação implementada em src/app/api/server/mail, rota /api/internal/mail/process e scripts de worker. Contrato/runbook vigentes: specs/mail-foundation/contracts/mail.md e docs/operations/mail-runbook.md. Leases, fencing pré-SMTP/final, prazo operacional e R1 já existem e serão preservados. Smoke de 2026-10-04 e envio automático de 2026-10-05 são históricos; nenhum envio externo nesta execução.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Transporte confirmado e pré-requisitos
 
 `DECISAO_CONFIRMADA`: Nodemailer, SMTP Gmail e senha de aplicativo. O transporte é exclusivamente server-side em runtime Node.js.

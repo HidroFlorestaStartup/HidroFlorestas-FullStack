@@ -97,3 +97,8 @@ o commit `8597b6d` igual ao HEAD local nesse envio, incluindo `38811a1`, `24c6be
 e a proteção operacional adicional. O status Git ficou limpo. Este registro
 substitui o bloqueio de publicação Git anterior para esta branch; o candidato
 de homologação e a aprovação humana pendente continuam como registrados.
+
+
+## Reconciliação de 2026-10-10
+
+Código e ancestralidade reconfirmados em beba96f no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. Resultados antigos permanecem ligados aos snapshots originais. Verificações desta execução e estado por frente estão na [matriz única](../../docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Testes locais não fecham homologação humana/remota; nenhuma operação externa efetuada.

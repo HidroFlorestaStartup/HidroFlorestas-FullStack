@@ -1,5 +1,13 @@
 # Baseline e fontes
 
+## Reconciliação de 2026-10-10
+
+O corte estático atual é `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`, após fetch no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. As ausências de Nodemailer, outbox, desafios, versão de credencial e recuperação registradas abaixo descrevem somente 2026-10-03. Agora estão presentes nas specs mail-foundation/012/013. Persistência, contratos, serviços e formulário ambiental ainda não têm drafts; áreas têm apenas o campo legado image, sem integração Cloudinary conectada nesse corte.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Corte e método
 
 Pesquisa estática na base `cfda9dfb65cc13186c76e69fbb2b385eb85783d6`. `EVIDENCIA_IMPLEMENTACAO` abaixo significa código/schema/teste conectado localizado, não execução nesta rodada. Os quatro relatórios de `docs/reports/estabilizacao-relatorios-interface/` foram lidos integralmente como corte histórico de 2026-10-01, não como prova automática do código de 2026-10-03.

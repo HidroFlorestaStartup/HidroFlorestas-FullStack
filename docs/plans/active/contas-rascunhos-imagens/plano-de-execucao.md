@@ -1,5 +1,13 @@
 # Plano de execução futuro
 
+## Reconciliação de 2026-10-10
+
+PLAN-CRI-001 é a entrega documental histórica de 2026-10-03; suas tarefas/IDs são preservados. A execução atual é coordenada pelo PLAN-CRI-002 (link abaixo) e a matriz única mapeia CRI-T001 a CRI-T018 às specs. Não reimplementar T004 a T010 já observadas em mail-foundation/012. Rascunhos e imagens são independentes do Gate B remoto de contas.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 **ID:** PLAN-CRI-001
 
 **Estado:** `AGUARDANDO_REVISAO`

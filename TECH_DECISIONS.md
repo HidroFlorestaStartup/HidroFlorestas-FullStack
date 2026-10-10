@@ -116,3 +116,8 @@ Cada mudança deve acrescentar uma linha com a origem e manter as linhas anterio
 | `TD-017` | 2026-09-28 | `signUp` passa a definir `ACTIVE` e projetar DTO público; teste focal comprova hash e login imediato sem banco real | `CONFIRMADO` | `IMPLEMENTADO_VERIFICADO` | `src/app/api/server/services/auth.service.ts`, `tests/unit/auth-service.test.ts` e validações registradas na entrega |
 
 `TD-015` e `TD-016` possuem `ADR-0001`. As demais entradas continuam sem ADR relacionado; novos ADRs exigem decisão aprovada e natureza compatível.
+
+
+## Reconciliação de contas, rascunhos e capas — 2026-10-10
+
+`DECISAO_CONFIRMADA`: nesta conversa o usuário aprovou rascunho pessoal por usuário/coleta confirmada, salvamento explícito, descarte definitivo, sem expiração automática, consumo ao confirmar e limpeza na exclusão permitida da conta. Aprovou também uma capa autenticada por área, mutação OWNER/ADMIN, JPEG/PNG/WebP 10 MiB/4096 px por lado, remoção EXIF e cleanup restrito a ownership comprovado. Origem e respostas em [decisões CRI](docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md); estados de implementação em [matriz](docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Sem autorização operacional externa. As políticas posteriores da spec 012 refinam TD-017 somente quanto à sessão: novas contas continuam ACTIVE, porém restritas até verificar; legado segue coorte explicitamente aprovada em 2026-10-04. Não alteram a origem histórica de TD-017.

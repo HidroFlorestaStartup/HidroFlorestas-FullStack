@@ -1,5 +1,13 @@
 # Modelo de dados e estratégia de migrations
 
+## Reconciliação de 2026-10-10
+
+Persistência implementada: AccountEmailChallenge, MailOutbox, MailRateLimitBucket, AccountRequest e campos emailVerifiedAt/credentialVersion/emailCanonical/verificationRequired em User. São 12 migrations versionadas no corte auditado, incluindo ownership de mensagens para exclusão. Modelos separados de desafios e fila genérica de cleanup abaixo são propostas históricas. Novas migrations serão aditivas e validadas isoladamente; retenção automática de drafts não foi aprovada.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 Todos os nomes são `PROPOSTA`. O schema final deve nascer nas specs futuras e ser reconciliado com a base então vigente.
 
 ## Modelos candidatos

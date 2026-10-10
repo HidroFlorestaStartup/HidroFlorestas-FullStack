@@ -1,5 +1,13 @@
 # Decisões, recomendações e pendências
 
+## Reconciliação de 2026-10-10
+
+DEC-004 limita somente a rodada documental de 2026-10-03. O pedido de execução v1.0 de 2026-10-10 autoriza código/testes/commits locais relacionados. PD-CRI-001/002 foram resolvidas pelo checkpoint aprovado da spec 012 em 2026-10-04. PD-CRI-005/006/007/008/009 foram resolvidas nesta conversa em 2026-10-10 (registros abaixo); operação externa continua fora da autorização atual.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Decisões confirmadas
 
 | ID | Decisão | Origem | Efeito |
@@ -40,3 +48,12 @@
 | PD-CRI-010 | Quem acompanha créditos/uso do plano gratuito Cloudinary? | Operação | Alertas e revisão antes de atingir limite; sem promessa de gratuidade permanente. |
 
 Pendências bloqueiam somente a etapa indicada. Pesquisa, contratos e testes das partes independentes podem avançar sem promover o padrão recomendado a decisão.
+
+
+## Decisões desta execução — 2026-10-10
+
+| Registro | Origem | Decisão e limite |
+|---|---|---|
+| PD-CRI-005/006 | resposta explícita do usuário à pergunta de recorte, nesta conversa | Pessoal por usuário/coleta confirmada; salvar explicitamente; descarte definitivo; sem expiração automática; consumir ao confirmar; remover drafts na exclusão permitida. Não remover vínculos científicos para permitir excluir conta. |
+| PD-CRI-007/008/009 | resposta explícita do usuário à pergunta de recorte, nesta conversa | Uma capa autenticada; OWNER/ADMIN mutam em laboratório ativo; JPEG/PNG/WebP 10 MiB/4096 px por lado; remover EXIF; cleanup somente de ativos próprios abandonados/substituídos/removidos. Não autoriza upload/exclusão externos. |
+| PD-CRI-010 | nenhuma designação registrada nesta execução | Responsável por créditos permanece não especificado; bloqueia ativação real, não adaptador fake local. |

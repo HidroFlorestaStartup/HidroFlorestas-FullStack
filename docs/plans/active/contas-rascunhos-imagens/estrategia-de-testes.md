@@ -1,5 +1,13 @@
 # Estratégia de testes futuros
 
+## Reconciliação de 2026-10-10
+
+Execuções atuais e históricas são separadas pela matriz única. O runner real inclui test:mail:unit e test:mail:r1; Unit já inclui Mail, portanto não somar Mail novamente ao total. PostgreSQL local próprio 55427 foi encontrado via harness; ausência no PATH não impediu validação. Nenhum SMTP/upload remoto será executado.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Registro mínimo por caso
 
 Cada evidência deve registrar ID, requisito, nível, fixture sintética, pré-condições, ação, resultado, invariantes, ambiente, SHA/data e estado `PASS`, `FAIL`, `SKIP`, `BLOQUEIO_DE_SETUP` ou `NAO_EXECUTADO`. Relatórios antigos não contam como execução futura.

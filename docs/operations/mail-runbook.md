@@ -126,3 +126,8 @@ Retomada posterior autorizada: usuário informou Senhas de app disponível na co
 ## Aceite local vigente — nova senha e smoke recebido
 
 Em 2026-10-04, o usuário informou disponibilidade de Senhas de app e concluiu coleta privada de senha nova; bloqueio de reutilização da recusada e preservação das chaves verificados. SmtpVerify PASS no snapshot aedd43d9. Smoke completo PASS, uma aceitação SMTP, recebimento confirmado pelo usuário em resposta “Sim”, separado da saída NOT_OBSERVED do script. Todos os 15 gates reexecutados e revisões de privacidade, segurança, bundle e escopo PASS. Os registros anteriores de indisponibilidade/rejeição são históricos. Não houve mudança de autenticação/arquitetura de e-mail nem prova sobre qual ajuste tornou a conta elegível. Consulte a última seção da evidência e a quarta continuação do JSON para comandos/horários/limites. Produção/agendamento e fluxos da Execução 2 continuam pendentes.
+
+
+## Reconciliação de 2026-10-10
+
+Fundação/R1 presentes no HEAD auditado; testes locais sintéticos serão registrados na [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Smoke/recebimento de 2026-10-04 e worker automático de 2026-10-05 continuam evidências históricas dos candidatos originais. Nenhum envio ou scheduler remoto alterado nesta execução.

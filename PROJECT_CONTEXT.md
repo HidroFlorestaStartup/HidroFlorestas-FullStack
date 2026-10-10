@@ -48,3 +48,8 @@ Permanecem `NAO_ESPECIFICADO` ou não validados nesta base de contexto:
 - o conteúdo e a aprovação de um PRD.
 
 Essas ausências não devem ser convertidas em requisitos, decisões, conflitos resolvidos ou evidências de implementação.
+
+
+## Reconciliação funcional — 2026-10-10
+
+A execução atual usa a [matriz única](docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md) e o [plano transversal](docs/plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md). `EVIDENCIA_IMPLEMENTACAO`: o corte beba96f já contém mail-foundation, verificação/recuperação 012 e exclusão 013. O pacote de 2026-10-03 é histórico; Gate B de contas e aceite humano de exclusão permanecem pendentes. Recortes pessoais de drafts e capa autenticada foram aprovados nesta conversa; implementação não equivale a homologação ou validação científica.

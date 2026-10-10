@@ -1,5 +1,13 @@
 # Arquitetura e contratos propostos
 
+## Reconciliação de 2026-10-10
+
+Os contratos vigentes de contas estão vinculados abaixo. Signup retorna 201/200 e sessão restrita; reset usa confirmPassword. O schema atual usa AccountEmailChallenge para ambas as finalidades, não os dois modelos propostos abaixo. Endpoints de drafts/imagens abaixo continuam propostas até a spec correspondente; não são API implementada no corte auditado.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Fronteiras
 
 ```mermaid

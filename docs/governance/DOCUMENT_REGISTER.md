@@ -132,3 +132,8 @@ Use `não especificado` quando a fonte não informar versão, data, responsável
 | `DOC-RAW-014` | `HISTORICO_IMUTAVEL` | Evidência histórica de UX; autoridade depende de aprovação explícita de UX, não identificada nem avaliada nesta etapa. | Histórico imutável. | não especificado | não especificado | 2026-08-24; metadados, identificação estrutural e checksum | `SHA-256:80f2a41632c401a041503d4a001cd498e5e5ff1f8bb15bd47eb6c9151e31ac1b` | 5826 bytes; Markdown (`text/plain`) legível; título interno declarado. Origem, versão documental, data documental e responsável não especificados; nenhuma aprovação ou substituição explicitamente declarada foi identificada na leitura controlada. |
 
 Novos registros, versões, relações de substituição e checksums só devem ser acrescentados quando verificados. O histórico anterior deve ser preservado.
+
+
+## Registro da reconciliação CRI — 2026-10-10
+
+Acrescentados [PLAN-CRI-002](../plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md), estado EM_ANDAMENTO, e [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md), evidência/coordenação sem autoridade científica. Origem: pedido de execução v1.0 e respostas explícitas do usuário de 2026-10-10; responsável humano não especificado. Os 14 documentos de PLAN-CRI-001 receberam estado atual primeiro e registro de 2026-10-03 preservado. Nenhum arquivo de docs/raw modificado; inclusão não promove propostas históricas.
