@@ -1,5 +1,15 @@
 # Handoff da entrega local CRI — 2026-10-10
 
+## Release Candidate para os estudantes — 2026-10-10
+
+FATO_DOCUMENTADO: nova solicitação do usuário autoriza publicação GitHub e
+documentação de atualização, sem merge/deploy/migration remota. O
+[pacote de entrega](../../../releases/2026-10-10-cri-rc/readme.md) acrescenta PRs,
+branch release/cri-rc-20261010 e runbooks operacionais. Preserve os checkpoints
+e limitações abaixo; "não houve push/PR" nas seções históricas descreve aquela
+rodada. Os11 commits até539f38d e as branches originais permanecem intactos.
+GateB012/aceite013/Cloudinary/operação seguem pendentes.
+
 ## Revisão focal posterior — 2026-10-10
 
 RECOMENDACAO: **APTO COM RESSALVAS** para solicitar homologação controlada;

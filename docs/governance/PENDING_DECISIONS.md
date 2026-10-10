@@ -132,3 +132,14 @@ pendência foi fechada pela presença de código. PD-CRI004/010: responsável po
 operação de mail/cleanup/créditos não especificado. Gate B012/T025/T028 e aceite
 humano013 permanecem abertos. Ciência/PRD global continuam sob suas autoridades.
 [Estado único](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
+
+## Condições operacionais da RC — 2026-10-10
+
+Publicação para revisão não fecha GateB012/T025/T028, aceite humano013, Cloudinary
+real nem PD-CRI-004/010. O [checklist RC](../releases/2026-10-10-cri-rc/review-checklist.md)
+registra condições de fechamento e [guia operacional](../releases/2026-10-10-cri-rc/production-update-runbook.md)
+exige confirmar repo conectado à produção, projeto/banco/cloud existentes, backup
+restaurado, ensaio e aprovação da janela. PENDENCIA_DE_DECISAO: donos/aprovadores
+operacionais e eventual rollout parcial de capas desabilitadas não especificados.
+O fork de entrega não prova o vínculo Git de produção. Nenhuma aprovação científica,
+recurso novo, mudança de credencial ou homologação foi inferida desta RC.

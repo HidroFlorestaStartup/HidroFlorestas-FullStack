@@ -1,0 +1,650 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "release": "cri-rc-20261010",
+  "capturedUtc": "2026-10-10T20:08:51.053193+00:00",
+  "reviewState": "APTO_COM_RESSALVAS_HOMOLOGACAO_PENDENTE",
+  "base": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "auditedHead": "539f38d52bba207d2822528d4afd6b936aa64d9f",
+  "localCheckpoint": "bbd0efccd447632497895780141b62516bc7b7bf",
+  "publicationState": "PREPARED",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "originalCommits": [
+    {
+      "sha": "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+      "parents": [
+        "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+      ],
+      "authorDate": "2026-10-10T13:55:03-03:00",
+      "committerDate": "2026-10-10T13:55:03-03:00",
+      "subject": "docs(plans): reconcilia contas e registra evolução autorizada"
+    },
+    {
+      "sha": "6bf9f2ba94698516282e482b690fbe5d812088f5",
+      "parents": [
+        "c59a7b6eb1198e20535356934805f0b93d2e99c2"
+      ],
+      "authorDate": "2026-10-10T13:56:38-03:00",
+      "committerDate": "2026-10-10T13:56:38-03:00",
+      "subject": "docs(specs): planeja correção dos runners de contas"
+    },
+    {
+      "sha": "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+      "parents": [
+        "6bf9f2ba94698516282e482b690fbe5d812088f5"
+      ],
+      "authorDate": "2026-10-10T14:11:20-03:00",
+      "committerDate": "2026-10-10T14:11:20-03:00",
+      "subject": "fix(accounts): corrige runners e checksums locais de migrations"
+    },
+    {
+      "sha": "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+      "parents": [
+        "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a"
+      ],
+      "authorDate": "2026-10-10T14:11:38-03:00",
+      "committerDate": "2026-10-10T14:11:38-03:00",
+      "subject": "docs(specs): planeja rascunhos pessoais de medições"
+    },
+    {
+      "sha": "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+      "parents": [
+        "26f2bd77568fb7be01ae6347e08a4a2796c917a0"
+      ],
+      "authorDate": "2026-10-10T14:51:50-03:00",
+      "committerDate": "2026-10-10T14:51:50-03:00",
+      "subject": "feat(drafts): salva medições parciais pessoais com consumo transacional"
+    },
+    {
+      "sha": "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+      "parents": [
+        "45da350c34f873619a81bb5b3022bf97a1d1bc7c"
+      ],
+      "authorDate": "2026-10-10T14:52:17-03:00",
+      "committerDate": "2026-10-10T14:52:17-03:00",
+      "subject": "docs(specs): planeja capas privadas com ownership e reconciliação"
+    },
+    {
+      "sha": "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+      "parents": [
+        "1ae3ca51ebb0291751a39c1b2f873431ab09da52"
+      ],
+      "authorDate": "2026-10-10T15:27:18-03:00",
+      "committerDate": "2026-10-10T15:27:18-03:00",
+      "subject": "feat(images): integra capas privadas com validação e cleanup próprio"
+    },
+    {
+      "sha": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+      "parents": [
+        "06fcbe005b7198b0708f280d9844f5edc0c7451d"
+      ],
+      "authorDate": "2026-10-10T15:32:01-03:00",
+      "committerDate": "2026-10-10T15:32:01-03:00",
+      "subject": "docs(handoff): consolida evidências, commits e pendências da entrega"
+    },
+    {
+      "sha": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "parents": [
+        "41f33db7ca30db3f9d971999c3f8131f4fc188a0"
+      ],
+      "authorDate": "2026-10-10T16:18:48-03:00",
+      "committerDate": "2026-10-10T16:18:48-03:00",
+      "subject": "docs(audit): registra revisão técnica da entrega local"
+    },
+    {
+      "sha": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "parents": [
+        "497d2e5326ea33232bf9fbd44442162d77f0a86c"
+      ],
+      "authorDate": "2026-10-10T16:26:52-03:00",
+      "committerDate": "2026-10-10T16:26:52-03:00",
+      "subject": "docs(audit): corrige estados e rastreabilidade das evidências"
+    },
+    {
+      "sha": "539f38d52bba207d2822528d4afd6b936aa64d9f",
+      "parents": [
+        "d8a32d39572785d87744e2b10c87e79ad019ba46"
+      ],
+      "authorDate": "2026-10-10T16:38:42-03:00",
+      "committerDate": "2026-10-10T16:38:42-03:00",
+      "subject": "docs(audit): reconcilia revisão focal e prontidão local"
+    }
+  ],
+  "originalBranchesPreserved": {
+    "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "docs/reconciliacao-cri-20261010": "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+    "014-account-test-runners": "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+    "015-environmental-drafts": "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+    "016-area-covers": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+    "audit/cri-local-20261010": "539f38d52bba207d2822528d4afd6b936aa64d9f"
+  },
+  "stack": [
+    {
+      "order": 1,
+      "head": "review/cri-reconciliation-20261010",
+      "headSha": "a88d846a64234af3279b1283ae6c459b7658689a",
+      "base": "development",
+      "baseSha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+      "newCommits": [
+        "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+        "a88d846a64234af3279b1283ae6c459b7658689a"
+      ]
+    },
+    {
+      "order": 2,
+      "head": "review/014-account-test-runners",
+      "headSha": "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+      "base": "review/cri-reconciliation-20261010",
+      "baseSha": "a88d846a64234af3279b1283ae6c459b7658689a",
+      "newCommits": [
+        "6bf9f2ba94698516282e482b690fbe5d812088f5",
+        "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+        "71802095d1e8d03b8548c3fe138eea5d8907e7bd"
+      ]
+    },
+    {
+      "order": 3,
+      "head": "review/015-environmental-drafts",
+      "headSha": "443d20ee8b70607995320c511c36c73be00f3302",
+      "base": "review/014-account-test-runners",
+      "baseSha": "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+      "newCommits": [
+        "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+        "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+        "443d20ee8b70607995320c511c36c73be00f3302"
+      ]
+    },
+    {
+      "order": 4,
+      "head": "review/016-area-covers",
+      "headSha": "dace407e51b5034e69e22055658c651147a7caa3",
+      "base": "review/015-environmental-drafts",
+      "baseSha": "443d20ee8b70607995320c511c36c73be00f3302",
+      "newCommits": [
+        "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+        "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+        "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+        "dace407e51b5034e69e22055658c651147a7caa3"
+      ]
+    },
+    {
+      "order": 5,
+      "head": "review/cri-audit-20261010",
+      "headSha": "bbd0efccd447632497895780141b62516bc7b7bf",
+      "base": "review/016-area-covers",
+      "baseSha": "dace407e51b5034e69e22055658c651147a7caa3",
+      "newCommits": [
+        "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+        "d8a32d39572785d87744e2b10c87e79ad019ba46",
+        "539f38d52bba207d2822528d4afd6b936aa64d9f",
+        "bbd0efccd447632497895780141b62516bc7b7bf"
+      ]
+    },
+    {
+      "order": 6,
+      "head": "release/cri-rc-20261010",
+      "headSha": "bbd0efccd447632497895780141b62516bc7b7bf",
+      "base": "review/cri-audit-20261010",
+      "baseSha": "bbd0efccd447632497895780141b62516bc7b7bf",
+      "newCommits": []
+    }
+  ],
+  "protectedBranches": [
+    "review/cri-reconciliation-20261010",
+    "review/014-account-test-runners",
+    "review/015-environmental-drafts",
+    "review/016-area-covers",
+    "review/cri-audit-20261010",
+    "release/cri-rc-20261010"
+  ],
+  "auxiliaryCommits": [
+    "a88d846a64234af3279b1283ae6c459b7658689a",
+    "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+    "443d20ee8b70607995320c511c36c73be00f3302",
+    "dace407e51b5034e69e22055658c651147a7caa3",
+    "bbd0efccd447632497895780141b62516bc7b7bf"
+  ],
+  "runtimeGitBlobEquality": true,
+  "runtimeChangedFiles": [],
+  "historicalManifest": {
+    "fingerprint": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+    "files": 520,
+    "changedWorktreeFiles": [
+      {
+        "path": ".gitignore",
+        "present": true,
+        "sha256": "8faa3035be8a8248d74e025fdecf0af53d15f641165b89ec459c460b7b635d34",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "playwright.config.ts",
+        "present": true,
+        "sha256": "fc5ecc34955bbedf9d0b14f0ca0d7b6d3ac13dbe162f27963751e217d6c16376",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "prisma/migrations/20261010000100_environmental_drafts/migration.sql",
+        "present": true,
+        "sha256": "0bee59c94ef8a3236b9a27750fe1d0e1a6a7a67298ca8f513f9367b33eb39b5b",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "prisma/migrations/20261010000200_area_covers/migration.sql",
+        "present": true,
+        "sha256": "c6f2a8e99a061a85a06f5ee6374f98a0c07fb25c7ea42df0a1b77fd2a21be65d",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "prisma/schema.prisma",
+        "present": true,
+        "sha256": "34ddab68b64f5db066b1ba4dc39fab9e12c0898e5bee63942b89b40319ec4088",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "scripts/accounts-database-setup.ts",
+        "present": true,
+        "sha256": "123eb659c2ee2baa5dd136c0e024d165261b22b0930df9980fbb6af710872d1a",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "scripts/accounts-migration-source.ts",
+        "present": true,
+        "sha256": "ebda07f16e5163f3bf29b75f30bbc822a6b97ebb132408dea04b27ce6145fbb8",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "scripts/area-cover-cleanup.ts",
+        "present": true,
+        "sha256": "74bae43e84c0755933482418ba5513659601570aab4f00269cb9c2040a4f5960",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "scripts/area-cover-preset.ts",
+        "present": true,
+        "sha256": "85fc6ddf6c93b491254ce5d837e41052feacc3f42358e56d0a64a28ad5fd09d5",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx",
+        "present": true,
+        "sha256": "e0fbfea7ed7b2bc8b5f97633082d33ee3398a76ae10485dfbf2c93a6efb8b6d8",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/draft/route.ts",
+        "present": true,
+        "sha256": "4e609da6fa7e0619bfcbc0e789a24813a56a9f286874ca1f2df34b3a7869dc39",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/accounts/service.ts",
+        "present": true,
+        "sha256": "3df735514132fe7d7f7bc9e3a4614bb772791dea57a7da67a7b9a7564caf6b1d",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/areas/area.authorization.ts",
+        "present": true,
+        "sha256": "c60d26ef7d7dacd5e431da8a11cc7b07c26121048b8aa9afa6d4e1f697800823",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/areas/area.contracts.ts",
+        "present": true,
+        "sha256": "fc37c0ae7d12732ef929f673bee94c7a2ed55ee6a721dffa05ae4e11e4f45fa1",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/environmental-data/draft.http.ts",
+        "present": true,
+        "sha256": "dd4374b938ff74b90e61aaebbe7578fa22864714aeec1a3c1b376f10346843bb",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/environmental-data/draft.service.ts",
+        "present": true,
+        "sha256": "e946ec45b947bf5c7f4a9d287069651e0f315fb2a621bca7aef3ffc782014ed7",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/environmental-data/environmental-data.http.ts",
+        "present": true,
+        "sha256": "2a4bd0a37aeb473cb3baa52eaabba93d47ed19efd1f67d8a1947c7550267f7b6",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/cloudinary.ts",
+        "present": true,
+        "sha256": "09c4217d752ab7bb1338f38079d5aecd8ae92d839152b1f719249432d6f56824",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/contracts.ts",
+        "present": true,
+        "sha256": "2d53309443e10e55feaeea0180e7415b18ebe759d037c7dd3c71977b7d3aa9fb",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/http.ts",
+        "present": true,
+        "sha256": "cc819b25f6364ca470d7321de29b219a29787dc24c45418b9ae7ffb8e94b08e9",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/provider.ts",
+        "present": true,
+        "sha256": "d0e97d34b2619afed96d4509ce76a7d76c6ce09df42245b92ccc8b07beeecc47",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/sanitize.ts",
+        "present": true,
+        "sha256": "163af9d2848ee0ed56b83483b8091eab773aefaa37e454cf32b5a845b43fb9aa",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/images/service.ts",
+        "present": true,
+        "sha256": "0d9e700d2a348e28b8f264a4ec5dee2fe3ce13f4a70663a42bfee71ed0aeb3e9",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/services/areas.service.ts",
+        "present": true,
+        "sha256": "ac1d143c2d506d34ab76e860c5fce643b87d61d1490fa96fea57fa1591945724",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/app/api/server/services/environmental-data.service.ts",
+        "present": true,
+        "sha256": "531d05b49c87b6f3edbf53fc575dbefd35f38787a1e0d016031aa41102fac1de",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/components/areas/area-cover.tsx",
+        "present": true,
+        "sha256": "4c36449b416bcfa4d24391dddac4eba40e5e47384ca03b24b43f226896eff97e",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/components/areas/area-list.tsx",
+        "present": true,
+        "sha256": "0b21de924fb46b42694a721cbe9eabea2c9e4f40a612440759a62ab533b297f6",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/components/environmental-data/environmental-data-form.tsx",
+        "present": true,
+        "sha256": "0e59a67554d6fe04f35b4edf681c7e1771cab066a2b6d44c03228f2cb2ffef02",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/components/environmental-data/environmental-data-page.tsx",
+        "present": true,
+        "sha256": "ca1126c1209700fea7b31412eeb6fa567da741b75f9fd45a1ccab12aa2921618",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/components/environmental-data/environmental-draft-actions.tsx",
+        "present": true,
+        "sha256": "e8c4e37cce88b3780f317f45d086dfaa7fa89ba75697ffa6c4920e859036ccbe",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/types/area.type.ts",
+        "present": true,
+        "sha256": "efa35a070b86254ff100d605f0b2c182899020f1e03543589211409478c8d09f",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "src/types/environmental-draft.ts",
+        "present": true,
+        "sha256": "9a2047c00c10102c981b51de364973c73ea8eca072d0f99f43a92e2703719c45",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/e2e/area-covers.spec.ts",
+        "present": true,
+        "sha256": "005e6cdd46888b1bd22b076a335be8cace473da72e59641c5c5d6e0b46c627e8",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/e2e/environmental-drafts.spec.ts",
+        "present": true,
+        "sha256": "9c5d3f77c00831d5b446493c812e5452283063082080d0531372ca9fc9a8596a",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/fixtures/area-cover-provider.ts",
+        "present": true,
+        "sha256": "83bcda70a16ddd8dea0b3cecdd7c321efc9c2c119747334932002f5a9df7009f",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/fixtures/environmental-data-fixtures.ts",
+        "present": true,
+        "sha256": "1d90703c9a8c1f91e5fe3c89cda86c32ddfb26a60aacd8847e20cb5e69bd5766",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/fixtures/ihfr-diagnosis-fixtures.ts",
+        "present": true,
+        "sha256": "3474203f0339734c8f4850059bba9866bf3067531bb46eb02d7e87a997231dbb",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/integration/area-cover-http.test.ts",
+        "present": true,
+        "sha256": "b4d6d0c0233a279977ac9f2c1578e19bcbcb70471990137f9df6cf3ef43e0821",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/integration/area-cover-provider.test.ts",
+        "present": true,
+        "sha256": "322d628a4c6544967212d473840c055cd0a4263b0815f87a9d4530c531b9c1e7",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/integration/area-covers.test.ts",
+        "present": true,
+        "sha256": "482bc8c936a0df7032122ec2953c8f48fd1237eaf386b530bde960f26d757f3e",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/integration/environmental-draft-http.test.ts",
+        "present": true,
+        "sha256": "047c2dc33b79eebbbb84c8a5ca1a5753010d3693cf36b66d9c1ea1f43ca0d09d",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/integration/environmental-drafts.test.ts",
+        "present": true,
+        "sha256": "4776dba48eae836bdef5d0e8808370cd556d1b364eb0ee49abfd920c7384b8c3",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/migration/area-covers.test.ts",
+        "present": true,
+        "sha256": "cb0bf720effa1f28f1b8552fd737b398bb6b04e40b333815a906e4ff19dc0c56",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/migration/environmental-drafts.test.ts",
+        "present": true,
+        "sha256": "1bef308a86493a8c31b76c40bc585c621aad683fdcf2703077eabc45d4f32601",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/migration/ihfr-diagnosis-preflight.test.ts",
+        "present": true,
+        "sha256": "2f7dbc4cb2f7a5182015d5db0eb693d09530c9407946e197cfa72b75bfb1d25d",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/unit/account-migration-source.test.ts",
+        "present": true,
+        "sha256": "fb60a0452d2a6ee39f78b4d7a3e55acd1257b637b2ce9f29a98c9b4f1eb26d49",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/unit/area-cover-contracts.test.ts",
+        "present": true,
+        "sha256": "f05a93e572c4e2dbf5eb4386a750341502663077ee76892fe675c075f9b4c6a0",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/unit/areas-service.test.ts",
+        "present": true,
+        "sha256": "24406b4e4d20a6cdc9b64f9e79fbcd688af35dfd061ada73657f3a9a6b6d6267",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "tests/unit/environmental-draft-contracts.test.ts",
+        "present": true,
+        "sha256": "274ce536a189b0b2e9fdb0a7a7ffdf3d8be0e20cc8e0594b70b4f4e012a365b9",
+        "reason": "LF_CRLF_ONLY"
+      },
+      {
+        "path": "vercel.json",
+        "present": true,
+        "sha256": "41729805d99fc28c5007d21f00dfa2e002c49a98da5d0b7d3983708b418a4108",
+        "reason": "REVIEW_BRANCH_GIT_DEPLOYMENT_GUARD"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "name": "20260907120000_unique_laboratory_access_code",
+      "path": "prisma/migrations/20260907120000_unique_laboratory_access_code/migration.sql",
+      "sha256GitBlob": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+      "sha256Worktree": "df72aa3c959a70421d2f51f4d6b43b8c985344652ee031611d7eef6871036864",
+      "newInRelease": false
+    },
+    {
+      "name": "20260914000100_area_registration_and_membership_roles",
+      "path": "prisma/migrations/20260914000100_area_registration_and_membership_roles/migration.sql",
+      "sha256GitBlob": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+      "sha256Worktree": "0805370fe8cb0739fc0138e93cbf22aa4b45529a1f96d2068b1ec82557d1dc9f",
+      "newInRelease": false
+    },
+    {
+      "name": "20260915000100_collection_registration_metadata",
+      "path": "prisma/migrations/20260915000100_collection_registration_metadata/migration.sql",
+      "sha256GitBlob": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+      "sha256Worktree": "a6c3e3c3923cfc3cc64a53ac3298e225d18024ce44a4d3a2b5e543f64e84bb8d",
+      "newInRelease": false
+    },
+    {
+      "name": "20260917000100_environmental_measurement_set",
+      "path": "prisma/migrations/20260917000100_environmental_measurement_set/migration.sql",
+      "sha256GitBlob": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+      "sha256Worktree": "7bf703f432987b67f8d661a7412738e765b2c34c87bf53055e14818ee201d221",
+      "newInRelease": false
+    },
+    {
+      "name": "20260919000100_user_administration",
+      "path": "prisma/migrations/20260919000100_user_administration/migration.sql",
+      "sha256GitBlob": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+      "sha256Worktree": "1bf5a9081b2c67e3e81a559132c1e8fba83fa4a3d20da65a262db1ac39bfe267",
+      "newInRelease": false
+    },
+    {
+      "name": "20260920000100_ihfr_experimental_diagnosis",
+      "path": "prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql",
+      "sha256GitBlob": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+      "sha256Worktree": "0e4159e3396a78caf35a05e2157caebbf7eafb28291dc47ea51a10e9c5cb8da7",
+      "newInRelease": false
+    },
+    {
+      "name": "20260920000100_remove_legacy_is_admin",
+      "path": "prisma/migrations/20260920000100_remove_legacy_is_admin/migration.sql",
+      "sha256GitBlob": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+      "sha256Worktree": "c88273dcb87094d30b5f24024ea9fe8479618148e4784ecc2e6ebebff95b8543",
+      "newInRelease": false
+    },
+    {
+      "name": "20260926000100_ihfr_lifecycle_reference_integrity",
+      "path": "prisma/migrations/20260926000100_ihfr_lifecycle_reference_integrity/migration.sql",
+      "sha256GitBlob": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+      "sha256Worktree": "aef418aadba30698f977770bb2c9cb6e1230b259a5b0417f38fc41d6652f2fd6",
+      "newInRelease": false
+    },
+    {
+      "name": "20261004000100_mail_foundation",
+      "path": "prisma/migrations/20261004000100_mail_foundation/migration.sql",
+      "sha256GitBlob": "ba923a694ae362e114c8ae003224bf5b102139e2c3e7328b09b5d77fa3626029",
+      "sha256Worktree": "ed83c958b8e95353f627e8df49de476e6a82980c5529e57ec0df12cbed70d6a4",
+      "newInRelease": false
+    },
+    {
+      "name": "20261004000200_account_verification_recovery",
+      "path": "prisma/migrations/20261004000200_account_verification_recovery/migration.sql",
+      "sha256GitBlob": "4f36b168678d882e9a55e19a255b64e5752d8babc212977b59c162c1e84f6222",
+      "sha256Worktree": "726513b9fddea53be55e89e14b532102fe0d88a43c845e20495c8676caabceed",
+      "newInRelease": false
+    },
+    {
+      "name": "20261004000300_account_rate_limit_actions",
+      "path": "prisma/migrations/20261004000300_account_rate_limit_actions/migration.sql",
+      "sha256GitBlob": "65e030a67736ee1bb3b2390e1e4eb54218f8c5882c50e7205b47a8030d52d771",
+      "sha256Worktree": "9328d52e5041dfd12b9b84d6e8603c574fce1a103feb88fb8ab060de62d1c402",
+      "newInRelease": false
+    },
+    {
+      "name": "20261005000100_account_deletion_mail_ownership",
+      "path": "prisma/migrations/20261005000100_account_deletion_mail_ownership/migration.sql",
+      "sha256GitBlob": "38c609f75b9789e8cc41f5d490c682155eb0c70cb973d71d52ba2d9aa0380fcd",
+      "sha256Worktree": "545114a111851f63283a0b216f427529d68a4b72528eb33a9a25250fbde69895",
+      "newInRelease": false
+    },
+    {
+      "name": "20261010000100_environmental_drafts",
+      "path": "prisma/migrations/20261010000100_environmental_drafts/migration.sql",
+      "sha256GitBlob": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+      "sha256Worktree": "0bee59c94ef8a3236b9a27750fe1d0e1a6a7a67298ca8f513f9367b33eb39b5b",
+      "newInRelease": true
+    },
+    {
+      "name": "20261010000200_area_covers",
+      "path": "prisma/migrations/20261010000200_area_covers/migration.sql",
+      "sha256GitBlob": "d6ca4a6b7d79617a83eeccc84b9bf9383d99f5f4dfdee1bae893362563d8003d",
+      "sha256Worktree": "c6f2a8e99a061a85a06f5ee6374f98a0c07fb25c7ea42df0a1b77fd2a21be65d",
+      "newInRelease": true
+    }
+  ],
+  "featureTasks": {
+    "014-account-test-runners": {
+      "done": 6,
+      "pending": 0
+    },
+    "015-environmental-drafts": {
+      "done": 18,
+      "pending": 0
+    },
+    "016-area-covers": {
+      "done": 20,
+      "pending": 0
+    }
+  },
+  "checks": {
+    "originalLinearOrder": true,
+    "originalRefsUnchanged": true,
+    "stackAncestry": true,
+    "headProtection": true,
+    "oldMigrationsUnchanged": true,
+    "relativeLinksChecked": 119,
+    "brokenLinks": []
+  },
+  "testsRerun": false,
+  "testsRerunReason": "Runtime Git blobs unchanged; worktree differences individually confirmed as LF/CRLF representation plus Git branch deployment guard. Historical focal regression remains evidence for audited runtime; no claim that the new worktree has fingerprint5f.",
+  "pending": [
+    "Gate B012/T025/T028",
+    "human acceptance 013",
+    "draft target browsers",
+    "real Cloudinary smoke",
+    "PD-CRI-004 mail operator",
+    "PD-CRI-010 cleanup/credits",
+    "production mapping/backup/rehearsal/approval"
+  ],
+  "forbiddenOperationsPerformed": [],
+  "providerReadLimit": "Vercel CLI auth unavailable; Vercel/Neon plugins discovered but not connected. No authenticated provider inventory. Historical GitHub Vercel status is not current fork-link proof."
+}

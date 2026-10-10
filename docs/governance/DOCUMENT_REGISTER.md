@@ -171,3 +171,13 @@ Origem: prompt focal v1.0 indicado pelo usuário; hash/localizador no relatório
 EVIDENCIA_IMPLEMENTACAO e RECOMENDACAO de engenharia, sem autoridade científica
 ou homologação. Plano focal equivalente mantido em PLAN-CRI-002; oito commits
 preservados. Erratas não reescrevem os JSON ou resultados históricos.
+
+## Release Candidate CRI para revisão — 2026-10-10
+
+FATO_DOCUMENTADO: pedido do usuário autoriza a publicação GitHub sem integração
+ou operação produtiva. Registrados [PLAN-RC-001](../plans/active/preparacao-release-candidate-cri.md),
+[pacote RC](../releases/2026-10-10-cri-rc/readme.md), release-notes, integration-guide,
+production-update-runbook, migration-runbook, review-checklist e publication-evidence.json.
+EVIDENCIA_IMPLEMENTACAO registra preservação/publicação; RECOMENDACAO identifica
+roteiros futuros, sem autoridade científica ou aceite humano. Responsáveis por
+review/banco/deploy/mail/cleanup: não especificado. O handoff anterior é preservado.
