@@ -3,7 +3,13 @@
   "git": {
     "deploymentEnabled": {
       "feat/account-verification-recovery": false,
-      "feat/account-deletion": false
+      "feat/account-deletion": false,
+      "review/cri-reconciliation-20261010": false,
+      "review/014-account-test-runners": false,
+      "review/015-environmental-drafts": false,
+      "review/016-area-covers": false,
+      "review/cri-audit-20261010": false,
+      "release/cri-rc-20261010": false
     }
   }
 }
