@@ -1,0 +1,233 @@
+[
+  {
+    "gate": "Unit",
+    "command": "npm run test:unit",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:46:57.860Z",
+    "endedUtc": "2026-10-10T16:47:13.149Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 15.289
+  },
+  {
+    "gate": "Integration",
+    "command": "npm run test:integration",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:47:13.536Z",
+    "endedUtc": "2026-10-10T16:48:24.341Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 70.805
+  },
+  {
+    "gate": "Migration",
+    "command": "npm run test:migration",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:48:24.660Z",
+    "endedUtc": "2026-10-10T16:48:36.920Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 12.26
+  },
+  {
+    "gate": "Contract",
+    "command": "npm run test:contract",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:48:37.216Z",
+    "endedUtc": "2026-10-10T16:48:39.892Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 2.676
+  },
+  {
+    "gate": "R1",
+    "command": "npm run test:mail:r1",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:48:40.184Z",
+    "endedUtc": "2026-10-10T16:48:48.217Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 8.033
+  },
+  {
+    "gate": "Typecheck",
+    "command": "npm run typecheck",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:48:48.546Z",
+    "endedUtc": "2026-10-10T16:48:54.396Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 5.85
+  },
+  {
+    "gate": "Lint",
+    "command": "npm run lint",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:48:54.730Z",
+    "endedUtc": "2026-10-10T16:49:06.277Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 11.547
+  },
+  {
+    "gate": "Build",
+    "command": "npm run build",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:49:06.633Z",
+    "endedUtc": "2026-10-10T16:49:28.599Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 21.966
+  },
+  {
+    "gate": "E2E",
+    "command": "npm run test:e2e",
+    "snapshot": "a14fd935c8602803c9043d8330813f17fd791f3acea3c0aacd8655e1767477b7",
+    "startedUtc": "2026-10-10T16:49:28.892Z",
+    "endedUtc": "2026-10-10T16:51:47.174Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 138.282
+  },
+  {
+    "gate": "E2E",
+    "command": "npm run test:e2e",
+    "snapshot": "dea4e0b3f536c58dced4ff1f3566c6c78935c62fe2eaf84d19c71046cf4031a4",
+    "startedUtc": "2026-10-10T16:56:40.209Z",
+    "endedUtc": "2026-10-10T16:58:30.854Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 110.645
+  },
+  {
+    "gate": "RegressionSetup",
+    "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+    "snapshot": "dea4e0b3f536c58dced4ff1f3566c6c78935c62fe2eaf84d19c71046cf4031a4",
+    "startedUtc": "2026-10-10T16:59:45.716Z",
+    "endedUtc": "2026-10-10T16:59:46.271Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 0.555
+  },
+  {
+    "gate": "RegressionSetup",
+    "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+    "snapshot": "cae0c0e364a6a409f25ba220f72411e293a973747dd7cc1b0fdb7256f5011cf6",
+    "startedUtc": "2026-10-10T17:05:44.058Z",
+    "endedUtc": "2026-10-10T17:05:46.937Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 2.879
+  },
+  {
+    "gate": "E2E",
+    "command": "npm run test:e2e",
+    "snapshot": "cae0c0e364a6a409f25ba220f72411e293a973747dd7cc1b0fdb7256f5011cf6",
+    "startedUtc": "2026-10-10T17:05:50.855Z",
+    "endedUtc": "2026-10-10T17:08:07.229Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 136.374
+  },
+  {
+    "gate": "Https",
+    "command": "npm run test:e2e:https",
+    "snapshot": "cae0c0e364a6a409f25ba220f72411e293a973747dd7cc1b0fdb7256f5011cf6",
+    "startedUtc": "2026-10-10T17:08:07.539Z",
+    "endedUtc": "2026-10-10T17:08:40.623Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 33.084
+  },
+  {
+    "gate": "SchemaAudit",
+    "command": "npm run test:ihfr:audit:assert-zero",
+    "snapshot": "cae0c0e364a6a409f25ba220f72411e293a973747dd7cc1b0fdb7256f5011cf6",
+    "startedUtc": "2026-10-10T17:08:40.911Z",
+    "endedUtc": "2026-10-10T17:08:41.521Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 0.61
+  },
+  {
+    "gate": "DeletionE2E",
+    "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:09:06.245Z",
+    "endedUtc": "2026-10-10T17:09:15.469Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 9.224
+  },
+  {
+    "gate": "Unit",
+    "command": "npm run test:unit",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:09:44.942Z",
+    "endedUtc": "2026-10-10T17:09:53.664Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 8.722
+  },
+  {
+    "gate": "Typecheck",
+    "command": "npm run typecheck",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:09:54.009Z",
+    "endedUtc": "2026-10-10T17:09:59.901Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 5.892
+  },
+  {
+    "gate": "Lint",
+    "command": "npm run lint",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:10:00.187Z",
+    "endedUtc": "2026-10-10T17:10:08.137Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 7.95
+  },
+  {
+    "gate": "Bootstrap",
+    "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:10:08.407Z",
+    "endedUtc": "2026-10-10T17:10:12.468Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 4.061
+  },
+  {
+    "gate": "SchemaAudit",
+    "command": "npm run test:ihfr:audit:assert-zero",
+    "snapshot": "f493971ee19848043e0274896ee2ec47ed8011e2a776924c7bdb48b139d725ef",
+    "startedUtc": "2026-10-10T17:10:12.810Z",
+    "endedUtc": "2026-10-10T17:10:13.330Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "durationSeconds": 0.52
+  }
+]

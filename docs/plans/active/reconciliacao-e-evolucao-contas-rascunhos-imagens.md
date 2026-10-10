@@ -93,3 +93,13 @@ nesta conversa; proveniência no pacote. Baseline local até build PASS; E2E ger
 52 PASS/5 FAIL/8 não executados. Lacuna de seleção de suíte de exclusão e erro
 de configuração do wrapper local identificados; ver matriz. Antes de implementar
 drafts, planejar correção focal do runner; sem regressão de produto demonstrada.
+
+### Checkpoint funcional 014 — 2026-10-10
+
+Correção focal planejada/implementada e validada: seleção de exclusão dedicada;
+checksums LF/CRLF íntegros no preparador local, sem alteração de SQL histórico.
+E2E geral 62, HTTPS 2, exclusão dedicada 3 PASS; Unit 286 + Mail 17 PASS;
+Bootstrap 12 migrations PASS; Typecheck/Lint PASS, três warnings anteriores;
+auditoria zero schemas próprios. Falhas anteriores preservadas em
+[evidências 014](../../../specs/014-account-test-runners/implementation-evidence.md).
+Pendências remotas/humanas permanecem abertas. Próximo incremento: rascunhos 015.

@@ -103,3 +103,13 @@ o novo. Registrar UTC/candidato e recebimento sem reproduzir provas/PII.
 Para exclusão, titular de conta sintética removível confirma senha e vê bloqueios
 antes de uma operação real autorizada. Para Cloudinary, verificar configuração,
 credits/limites, smoke e cleanup próprios em destino explicitamente aprovado.
+
+### Checkpoint funcional 014 — 2026-10-10
+
+Correção focal planejada/implementada e validada: seleção de exclusão dedicada;
+checksums LF/CRLF íntegros no preparador local, sem alteração de SQL histórico.
+E2E geral 62, HTTPS 2, exclusão dedicada 3 PASS; Unit 286 + Mail 17 PASS;
+Bootstrap 12 migrations PASS; Typecheck/Lint PASS, três warnings anteriores;
+auditoria zero schemas próprios. Falhas anteriores preservadas em
+[evidências 014](../../../../specs/014-account-test-runners/implementation-evidence.md).
+Pendências remotas/humanas permanecem abertas. Próximo incremento: rascunhos 015.
