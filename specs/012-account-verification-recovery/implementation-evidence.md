@@ -402,3 +402,8 @@ e scheduler operacional. Push não executado: risco da integração histórica
 ainda não comprovado. Nenhum merge, force-push ou alteração de produção/juniors.
 Nova solicitação do usuário de implementar exclusão de conta será uma feature
 separada, sem alterar esta homologação antes de suas próprias verificações.
+
+
+## Reconciliação de 2026-10-10
+
+Código e ancestralidade reconfirmados em beba96f no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. Resultados antigos permanecem ligados aos snapshots originais. Verificações desta execução e estado por frente estão na [matriz única](../../docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Testes locais não fecham homologação humana/remota; nenhuma operação externa efetuada.

@@ -1,5 +1,13 @@
 # Imagens de áreas monitoradas
 
+## Reconciliação de 2026-10-10
+
+DECISAO_CONFIRMADA nesta conversa em 2026-10-10: uma capa por área, leitura somente autorizada, mutação OWNER/ADMIN de laboratório ativo, Cloudinary authenticated, JPEG/PNG/WebP até 10 MiB e 4096 px por lado, remoção de EXIF, cleanup só com ownership comprovado de uploads abandonados/substituídos/removidos. Resposta: “1- aprovo, mas documente essa implementacao e decisoes”. Operação real/credenciais/créditos continuam pendentes. Assinatura de URL por si só não será tratada como prova de expiração da entrega.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Decisão e primeiro recorte
 
 `DECISAO_CONFIRMADA`: upload via API Cloudinary, plano gratuito inicialmente.

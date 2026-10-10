@@ -1,5 +1,13 @@
 # Requisitos e critérios verificáveis
 
+## Reconciliação de 2026-10-10
+
+Os requisitos de e-mail/contas abaixo possuem implementação observada nas specs mail-foundation/012; seus contratos atuais prevalecem para o comportamento aprovado. DRAFT-FR-001 a DRAFT-FR-006 e IMAGE-FR-001 a IMAGE-FR-005 tiveram recorte confirmado nesta execução. Não confundir essa decisão com código entregue nem aceite externo. As políticas aprovadas estão em decisoes-e-pendencias.md.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Convenções
 
 Cada requisito é futuro. `MUST` indica condição recomendada para aceite técnico, não implementação existente. Os parâmetros marcados `PROPOSTA` dependem das pendências em [decisões](decisoes-e-pendencias.md).

@@ -25,3 +25,8 @@
 
 Nenhum item desta lista substitui `tasks.md` de uma feature. A decomposição executável será gerada
 somente dentro de `specs/<feature>/**` pelo fluxo do Spec Kit.
+
+
+## Incrementos CRI — 2026-10-10
+
+Mail-foundation/012/013 já têm código integrado no corte beba96f; Gate B de contas e aceite humano de exclusão continuam abertos. As novas entregas aprovadas são drafts pessoais de medições e uma capa autenticada de área; autosave/colaboração/offline/galeria permanecem fora. [Matriz única e mapeamento CRI-T](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). IDs existentes preservados; nenhuma reimplementação das frentes presentes.

@@ -130,3 +130,8 @@ Riscos descrevem condições atuais ou possíveis efeitos; não constituem requi
 - acessibilidade, erros, responsividade e qualidade têm sinais parciais, sem validação executada;
 - segurança e deploy permanecem com riscos e lacunas explícitos;
 - nenhuma condição insegura, mock, rota quebrada ou alegação comercial é tratada como requisito desejado.
+
+
+## Recorte de contas/rascunhos/capas — 2026-10-10
+
+`EVIDENCIA_IMPLEMENTACAO`: HEAD beba96f contém infraestrutura mail, verificação/recuperação/troca e exclusão da conta; não contém persistência de drafts ou integração de capas. A [matriz de estado](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) documenta camadas inspecionadas, ancestralidade e validação atual. Recortes de drafts e capas aprovados nesta conversa serão implementados em specs próprias. Não reclassifica todo o baseline Code-First nem concede aprovação normativa ao PRD.

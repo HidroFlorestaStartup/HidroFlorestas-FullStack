@@ -64,3 +64,8 @@ Se o código/link vencer, solicite outro pelo fluxo indicado. Se recarregar a p�
 Registrar resultado de cada jornada, horário, contexto/dispositivo e recebimento sem reproduzir endereço completo/prova. Aceitação SMTP, recebimento humano, testes do agente e execução humana são evidências distintas. Gate B exige as duas jornadas e duas invocações automáticas do scheduler hospedado, incluindo recuperação controlada de backlog, com app acessível sem depender do computador do agente.
 
 O responsável consolida SHA/fingerprint/gates em [implementation-evidence.md](implementation-evidence.md) e validation-results.json. Atualizar este estado e URL somente após comprovação; commits candidatos dependem de Gate A e a conclusão integral depende de Gate B. Não restaurar aplicação anterior que ignore verificação ou revogação; preservar schema/dados/versões/coorte e seguir o runbook para suspensão/correção compatível.
+
+
+## Reconciliação de 2026-10-10
+
+Código e ancestralidade reconfirmados em beba96f no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. Resultados antigos permanecem ligados aos snapshots originais. Verificações desta execução e estado por frente estão na [matriz única](../../docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Testes locais não fecham homologação humana/remota; nenhuma operação externa efetuada.

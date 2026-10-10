@@ -190,3 +190,8 @@ Quando forem efetivamente apresentados, arquivos, páginas, frames, telas e flux
 A matriz foi construída na Etapa 3 a partir do registro canônico e de leitura estrutural controlada. Na Etapa 8, foi atualizada exclusivamente com as evidências analíticas registradas em `DOC-009` a `DOC-013`, sem nova leitura ampla de `docs/raw/`. Na Etapa 9, somente metadados de controle e `GAP-016` foram atualizados a partir de `DOC-014`; os 13 nós, 22 relações e 16 lacunas foram preservados. O mérito de regras, fórmulas, requisitos, wireframes, implementação e escolhas técnicas não foi validado.
 
 Este documento foi promovido a `CANONICO_ATUAL` após aprovação humana da Etapa 3, exclusivamente para controle documental. A atualização analítica da Etapa 8 foi aprovada pela equipe na solicitação da Etapa 9, em 2026-08-28, com o mesmo limite. A atualização da Etapa 9 permanece `EM_REVISAO`. As relações inferenciais continuam identificadas como inferências, as lacunas preservam seus limites e a alocação não concede autoridade normativa. A atualização não valida conteúdo científico, funcional, de UX, de dados, técnico ou implementado e não substitui as auditorias de cada camada.
+
+
+## Rastreabilidade CRI — 2026-10-10
+
+A [matriz única](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) relaciona os 18 CRI-T e 10 PD-CRI às specs mail-foundation/012/013 e às novas entregas. Mantém intenção, implementação, teste atual, validação histórica e homologação em eixos separados. Esta referência navegacional não aprova modelo científico ou intenção de produto.
