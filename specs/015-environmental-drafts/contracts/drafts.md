@@ -10,5 +10,10 @@ ID/revisão divergentes 409, não remove versão recriada.
 Mutações validam Origin/fetch-site e principal atual; id do ator deriva da sessão.
 POST de confirmação ambiental mantém payload científico e Idempotency-Key;
 headers Draft-Id/Draft-Revision opcionais, ambos ou nenhum. Consumo e criação
-na mesma transação; erro/revisão obsoleta preservam draft. Replay retorna 200
+ocorrem na mesma transação; erro/revisão obsoleta preservam draft. A confirmação
+exigem a referência se houver draft pessoal vigente na transação, inclusive se
+outra aba o criou depois de abrir o formulário. Ausência de referência nesse
+caso retorna conflito; confirmação sem draft continua compatível. Campos da UI
+não editados preservam suas células originais/omissão ao salvar outros campos.
+Replay retorna 200
 do conjunto original sem consumir novo draft.

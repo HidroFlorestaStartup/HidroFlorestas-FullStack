@@ -195,3 +195,11 @@ Este documento foi promovido a `CANONICO_ATUAL` após aprovação humana da Etap
 ## Rastreabilidade CRI — 2026-10-10
 
 A [matriz única](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) relaciona os 18 CRI-T e 10 PD-CRI às specs mail-foundation/012/013 e às novas entregas. Mantém intenção, implementação, teste atual, validação histórica e homologação em eixos separados. Esta referência navegacional não aprova modelo científico ou intenção de produto.
+
+
+## Recorte 015 — 2026-10-10
+
+CRI-T011/T012/T013 e DRAFT-FR-001–006: aprovação PD-CRI-005/006 →
+[spec 015](../../specs/015-environmental-drafts/spec.md) → [tarefas](../../specs/015-environmental-drafts/tasks.md) →
+[implementação/validação](../../specs/015-environmental-drafts/implementation-evidence.md).
+Sem expiração; ciência preservada. Não fecha gates remotos/humanos 012/013.

@@ -16,6 +16,7 @@ export const ENVIRONMENTAL_FIXTURES = {
   collectionIds: [531, 532, 533].map(uuid),
   cleanupOrder: [
     "EnvironmentalMeasurementSet",
+    "EnvironmentalDraft",
     "CollectionData",
     "CollectionArea",
     "ResearchersLinked",
@@ -65,6 +66,7 @@ export function createEnvironmentalFixtureActions(
   return {
     async cleanup() {
       await prisma.$transaction(async (tx) => {
+        await tx.environmentalDraft.deleteMany({where:{userId:{in:userIds},collectionData:{collectionAreaId:{in:areaIds},laboratoryRoomId:{in:laboratoryIds}}}});
         await tx.$executeRawUnsafe(`ALTER TABLE "EnvironmentalMeasurementSet" DISABLE TRIGGER imp005_measurement_immutable`);
         try {
           await tx.environmentalMeasurementSet.deleteMany({where:{userId:{in:userIds},collectionData:{collectionAreaId:{in:areaIds},laboratoryRoomId:{in:laboratoryIds}}}});

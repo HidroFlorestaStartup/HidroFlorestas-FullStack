@@ -48,3 +48,15 @@ Migrations sobre cadeia existente em schema próprio; serviço/contratos negativ
 OCC/ABA/replay/concurrency/rollback, UI/mobile e regressão 005/013/IHFR/mail/contas.
 Rollback da aplicação conserva tabela; não excluir dados nem remover triggers
 científicas. Fora do produto, sem deploy/migration remoto. Evidência por fingerprint.
+
+## Contratos verificados durante a implementação
+
+Confirmação sem headers recusa quando há rascunho próprio vigente na transação;
+replay confirmado continua idempotente. UI preserva células omitted/absent/blank
+não editadas, zero/false e texto parcial. Raw acima de 1000 tem feedback recuperável.
+Controle de saída usa beforeunload, links da aplicação e navigate cancelável da
+Navigation API para histórico. Voltar/Avançar cancelados preservam posição e campos
+no Chromium testado; navegador sem Navigation API cancelável não tem garantia de
+interceptação do histórico. Não há autosave: salvar explicitamente antes de sair.
+Sem expiração ou cleanup automático de rascunhos. Discard é definitivo; exclusão
+de conta permitida limpa somente drafts próprios; ciência confirmada é preservada.

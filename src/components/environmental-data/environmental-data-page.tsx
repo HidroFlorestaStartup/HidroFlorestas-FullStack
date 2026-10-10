@@ -12,6 +12,8 @@ import { environmentalDataService } from "@/app/api/server/services/environmenta
 import type { EnvironmentalContext } from "@/types/environmental-data.type";
 import { EnvironmentalDetail } from "./environmental-data-detail";
 import { EnvironmentalForm } from "./environmental-data-form";
+import { environmentalDraftService } from "@/app/api/server/environmental-data/draft.service";
+import { EnvironmentalDraftActions } from "./environmental-draft-actions";
 
 export async function EnvironmentalDataPage({
   params,
@@ -23,6 +25,7 @@ export async function EnvironmentalDataPage({
   const ids = await params;
   let collection;
   let data;
+  let draft;
 
   try {
     const principal = await requireAuth();
@@ -36,6 +39,7 @@ export async function EnvironmentalDataPage({
     ).collection;
     data = (await environmentalDataService.detail(principal.id, ids))
       .environmentalData;
+    draft = await environmentalDraftService.detail(principal.id, ids);
   } catch (error) {
     if (error instanceof AuthBoundaryError && error.code === "UNAUTHORIZED") {
       redirect("/login");
@@ -118,6 +122,7 @@ export async function EnvironmentalDataPage({
         <EnvironmentalForm
           apiPath={basePath.replace("/dashboard/", "/api/")}
           basePath={basePath}
+          initialDraft={draft}
         />
       ) : (
         <EnvironmentalDetail
@@ -126,6 +131,7 @@ export async function EnvironmentalDataPage({
           basePath={basePath}
         />
       )}
+      {draft && (!registration || data || collection.readOnly) && <EnvironmentalDraftActions apiPath={basePath.replace("/dashboard/", "/api/")} initialDraft={draft} readOnly={collection.readOnly} />}
     </article>
   );
 }

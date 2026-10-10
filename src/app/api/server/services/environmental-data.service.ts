@@ -10,10 +10,12 @@ export type MeasurementTransaction = {
  findByKey(userId:string,key:string):Promise<MeasurementRecord|null>;
  findByCollection(collectionId:string):Promise<MeasurementRecord|null>;
  create(record:MeasurementRecord):Promise<MeasurementRecord>;
+ consumeDraft?(userId:string,collectionId:string,id:string,revision:number):Promise<boolean>;
+ hasDraft?(userId:string,collectionId:string):Promise<boolean>;
 };
 export type MeasurementStore = { transaction<T>(fn:(tx:MeasurementTransaction)=>Promise<T>):Promise<T> };
 export type MeasurementAuthorization = (userId:string,laboratoryId:string,tx:MeasurementTransaction,write:boolean)=>Promise<LaboratoryContext>;
-export type MeasurementCommand = EnvironmentalContext & {userId:string;confirmationKey:string;payload:EnvironmentalPayload};
+export type MeasurementCommand = EnvironmentalContext & {userId:string;confirmationKey:string;payload:EnvironmentalPayload;draft?:{id:string;revision:number}};
 export class EnvironmentalServiceError extends Error { constructor(public readonly code:"NOT_FOUND"|"CONFLICT"|"INTERNAL_ERROR"|"FORBIDDEN") { super(code); } }
 export class EnvironmentalDataService {
  constructor(private readonly dependencies:{store:MeasurementStore;authorize:MeasurementAuthorization;clock:()=>Date;createId:()=>string}) {}
@@ -29,6 +31,8 @@ export class EnvironmentalDataService {
      return {created:false,environmentalData:project(existing,access)};
     }
     if(await tx.findByCollection(command.collectionId))throw new EnvironmentalServiceError("CONFLICT");
+    if(command.draft && (!tx.consumeDraft || !await tx.consumeDraft(command.userId,command.collectionId,command.draft.id,command.draft.revision)))throw new EnvironmentalServiceError("CONFLICT");
+    if(!command.draft && tx.hasDraft && await tx.hasDraft(command.userId,command.collectionId))throw new EnvironmentalServiceError("CONFLICT");
     const record=await tx.create({id:this.dependencies.createId(),collectionDataId:command.collectionId,userId:command.userId,measurementContractVersion:MEASUREMENT_CONTRACT_VERSION,payload,payloadHash,confirmationKey:command.confirmationKey,confirmedAt:this.dependencies.clock()});
     return {created:true,environmentalData:project(record,access)};
    }); } catch(error) {
@@ -66,6 +70,8 @@ export class PrismaMeasurementStore implements MeasurementStore {
    findByKey:async(userId,confirmationKey)=>raw.environmentalMeasurementSet.findUnique({where:{userId_confirmationKey:{userId,confirmationKey}}}),
    findByCollection:async collectionDataId=>raw.environmentalMeasurementSet.findUnique({where:{collectionDataId}}),
    create:async record=>raw.environmentalMeasurementSet.create({data:{...record,payload:record.payload as Prisma.InputJsonValue}}),
+   consumeDraft:async(userId,collectionDataId,id,revision)=>(await raw.environmentalDraft.deleteMany({where:{id,userId,collectionDataId,revision}})).count===1,
+   hasDraft:async(userId,collectionDataId)=>Boolean(await raw.environmentalDraft.findUnique({where:{userId_collectionDataId:{userId,collectionDataId}},select:{id:true}})),
   }),{isolationLevel:'Serializable',maxWait:15000,timeout:30000});
  }
 }

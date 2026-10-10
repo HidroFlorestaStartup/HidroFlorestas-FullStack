@@ -75,3 +75,8 @@ Extensão futura `DRAFT-FR-FUT-001`: rascunho pré-coleta de metadados terá ent
 - `DATA-NFR-002`: operações mutáveis relevantes têm chave idempotente e semântica para payload divergente.
 - `OPS-NFR-001`: limpeza/retry é observável, limitada e segura para repetição.
 - `UX-NFR-001`: teclado, foco, `aria-live`, erros recuperáveis e estado ocupado são critérios de aceite.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

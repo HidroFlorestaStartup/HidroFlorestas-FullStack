@@ -65,3 +65,8 @@ Todos os nomes são `PROPOSTA`. O schema final deve nascer nas specs futuras e s
 - Depois de ativar verificação/revogação, rollback de comportamento exige plano específico; não remover `credentialVersion` nem marcar contas verificadas/desverificadas em massa.
 - Objetos Cloudinary e e-mails são efeitos externos irreversíveis por transação SQL. Use jobs reconciliáveis, idempotency e relatório de órfãos; rollback nunca promete “desenviar” mensagem.
 - Purge só ocorre após retenção aprovada, backup/observabilidade e seleção exata; nunca apagar históricos confirmados para liberar fixtures.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

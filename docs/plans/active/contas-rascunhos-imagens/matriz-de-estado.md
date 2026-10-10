@@ -4,6 +4,13 @@
 **Estado:** `EM_ANDAMENTO`. Intenção, código, teste e homologação são eixos independentes.
 O [plano transversal](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md) registra isolamento e cronologia.
 
+## Entrega corrente 015
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados/validados na spec 015;
+65 E2E gerais PASS, Bootstrap 13 PASS, parser/HTTP/Pg/OCC/consume/exclusão cobertos.
+[Comandos, snapshots e falhas preservadas](../../../../specs/015-environmental-drafts/implementation-evidence.md).
+Capas 016 seguem próxima etapa. A tabela abaixo preserva explicitamente o corte inicial.
+
 ## Frentes
 
 | Frente/requisito | Intenção e fonte | Código observado no corte | Testes existentes | Validação histórica | Validação desta execução | Homologação | Pendências/próximo passo |
