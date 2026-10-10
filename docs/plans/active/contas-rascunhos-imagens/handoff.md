@@ -48,7 +48,10 @@ Snapshots anteriores não foram promovidos ao HEAD final.
 | test:ihfr:audit:assert-zero | zero schemas candidatos |
 | area-cover-preset.ts / area-cover-cleanup.ts dry-run | PASS; zero providerCalls; eligible0 |
 
-R1 reexecuta os 17 Mail, sem soma dupla. Focais são subconjuntos/repetições.
+R1 reexecuta 14 casos de Integration/Pg e 3 SMTP locais de Mail, sem soma dupla.
+Errata da auditoria posterior de 2026-10-10: o texto original “R1 reexecuta os
+17 Mail” confundia a composição; os 17 PASS históricos continuam registrados.
+Focais são subconjuntos/repetições.
 Regressão completa fingerprint `7f540ba4160402d710bbe164dbba630a41f80e58c267dc9a46820446e853b8ce`;
 final `5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d` difere
 somente pela assertion multiframe e exceção do exemplo env; implementação igual.

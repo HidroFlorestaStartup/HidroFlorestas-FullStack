@@ -26,8 +26,9 @@ anteriores permanecem datados e não representam código ausente no HEAD entregu
 | Capa / IMAGE-FR-001–005 e 016FR001–009 | DEC-003 + PD-CRI007/008/009 | tabela/tentativas/jobs/provider/API/proxy/UI; spec016 | 6Pg+3provider+1HTTP; migration; 2E2E fake; integração187/geral67 PASS | Cloudinary real NÃO EXECUTADO | configurar preset congelado/cloud; operador/créditos PD-CRI010; smoke/cleanup autorizado |
 
 Local: Unit291 + Mail17, Integration187, Migration37, Contract6, E2E67, HTTPS2,
-exclusão3, Bootstrap14, typecheck/lint/build PASS; auditoria zero. R1/Mail e focais
-são sobrepostos. Fingerprint completo 7f540ba4; final5f36eb7e contém só assertion
+exclusão3, Bootstrap14, typecheck/lint/build PASS; auditoria zero. R1 repete 14
+casos Pg de Integration e 3 SMTP locais de Mail; focais também são sobrepostos.
+Fingerprint completo 7f540ba4; final5f36eb7e contém só assertion
 multiframe e exceção do exemplo env. [Comandos/UTC/duração/FAIL preservados](../../../../specs/016-area-covers/implementation-evidence.md).
 
 ### Correspondência CRI-T atual (IDs históricos preservados abaixo)

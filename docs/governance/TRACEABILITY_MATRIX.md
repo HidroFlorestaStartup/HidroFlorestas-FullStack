@@ -204,6 +204,12 @@ CRI-T011/T012/T013 e DRAFT-FR-001–006: aprovação PD-CRI-005/006 →
 [implementação/validação](../../specs/015-environmental-drafts/implementation-evidence.md).
 Sem expiração; ciência preservada. Não fecha gates remotos/humanos 012/013.
 
+Errata de rastreabilidade na auditoria posterior de 2026-10-10: INFERENCIA, o
+domínio principal de drafts se relaciona a CF-PRD-FR-007 (dados ambientais da
+coleta), enquanto CF-PRD-FR-009 (consulta IHFR) é somente uma fronteira preservada.
+A [spec 015](../../specs/015-environmental-drafts/spec.md) corrige a referência
+anterior, sem promover o requisito candidato do PRD a intenção normativa.
+
 
 ## Recorte 016 — 2026-10-10
 

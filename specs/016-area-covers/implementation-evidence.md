@@ -31,9 +31,15 @@ Documentos não integram fingerprint; SHA Git normalizado é outro identificador
 | `npm run test:e2e:https` | 2026-10-10T18:18:21.222Z → 2026-10-10T18:18:48.836Z | 27.614s | PASS; exit 0; 2 |
 | `npm run test:ihfr:audit:assert-zero` | 2026-10-10T18:18:49.149Z → 2026-10-10T18:18:49.658Z | 0.509s | PASS; exit 0; zero schemas candidatos |
 
-Unit roda 291 casos Node e 17 Mail. R1 reexecuta os mesmos Mail; não somar duas
-vezes. Repetições focais/regressões de cortes anteriores também não aumentam um
+Unit roda 291 casos Node e 17 Mail. R1 reexecuta 14 casos PostgreSQL de Integration
+e 3 SMTP locais de Mail; não somar novamente. Repetições focais/regressões de cortes anteriores também não aumentam um
 total exclusivo. Lint: warnings anteriores em page.tsx, user-profile e white-box.
+
+Errata documental de 2026-10-10, auditoria posterior: o texto original
+“R1 reexecuta os mesmos Mail” descrevia incorretamente o overlap. O seletor de
+package.json usa integration/mail-outbox.test.ts e mail/mail-smtp.test.ts com
+test-name-pattern=R1. As contagens, snapshots e resultados históricos acima e no
+JSON permanecem intactos; a nova execução confirmou a composição 14 + 3.
 
 ## Corte final e utilitários
 
