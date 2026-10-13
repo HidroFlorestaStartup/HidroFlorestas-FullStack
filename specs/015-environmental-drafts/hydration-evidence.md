@@ -53,3 +53,19 @@ Runner Regression/fixtures próprios usado sem reprovisionamento pela árvore an
 Integração/SQL/contas/IHFR e gates cumulativos serão reconferidos na árvore combinada,
 com dependências originais99d8363 e checks de CI descritos no
 [plano da pilha](rc-stack-plan.md). Testes locais não fecham gates humanos/cloud.
+
+## Integração cumulativa e CI posteriores
+
+EVIDENCIA_IMPLEMENTACAO: os gates cumulativos foram executados novamente na
+RC9fe2bec com dependências originais99d8363 e RC-UI-001:15 gates PASS,
+E2E70/70, Unit291+Mail17, Integration187, Migration37, Contract6, HTTPS2,
+Deletion3, IHFR6, Bootstrap14 e SchemaAudit0; typecheck/lint/build PASS.
+Fingerprint f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c.
+Resultados não substituem os registros da fase015 acima. Artefatos da RC estão
+na documentação de release do head cumulativo, sem duplicar essa árvore na PR3.
+
+CI015: run38452226442 FAIL na ACL inicial, antes dos gates. Preparo privado do
+diretório fresco corrigido em bc3a751, guard preservado; run38452752261 SUCCESS.
+[Recibo com15 resultados reais](hydration-evidence/ci-validation.json).
+Nenhum check ausente/interrompido foi contado como PASS. Confirmar os checks
+do head final no GitHub; revisão dos estudantes e gates externos continuam abertos.
