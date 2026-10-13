@@ -128,3 +128,11 @@ RECOMENDACAO: banco/servidor/build/E2E sequenciais nos runners atuais, cluster
 sintético próprio loopback e saída redigida; nunca copiar dotenv de outro checkout.
 A instrução posterior do usuário proíbe qualquer merge nesta execução: preparar
 #5/#6/#7 e revisão das dependências separadamente, sem retarget ou mudar reviews.
+
+Progresso EVIDENCIA_IMPLEMENTACAO: T021 commitado em 366432a; T022 RED em
+17:28:01.637–17:28:19.727 UTC; T023/T024 GREEN focal e regressão nova 68 E2E,
+291+17 Unit/Mail, 187 Integration, 37 Migration, 6 Contract, HTTPS2, typecheck,
+lint/build/schema audit. Detalhes em rc-ui-001-evidence.md; FAIL de diagnóstico
+de drafts preservado separadamente. T025 depende da publicação e re-review,
+sem executar propagação por merge. Testes temporários das dependências de #7
+não alteram a ordem dos commits nem a versão destinada ao PR #4.

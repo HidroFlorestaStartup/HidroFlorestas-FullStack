@@ -1,0 +1,38 @@
+ℹ tests 187
+ℹ pass 187
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+IMP-006 schema owned by this run: imp006_test_b112e5c194de4b3c8813dd220d9b4aee
+✔ provider outage retries with bounded backoff/jitter, max attempts and permanent failure (581.3528ms)
+IMP-006 schema owned by this run: imp006_test_eccdc21c14024bf694723797187dee70
+✔ expiration and invalidated challenge prevent sends; cancellation fences in-flight result (517.9801ms)
+IMP-006 schema owned by this run: imp006_test_958468209dbc4445bffc481e51846b1b
+✔ abandoned claims exhaust finite attempts; cleanup bounded/repeated and active rows preserved (449.3747ms)
+IMP-006 schema owned by this run: imp006_test_b9d1505415334c748a4d4f019738ffe5
+✔ enforced batch/concurrency bounds and authenticated payload failure without retries (438.8962ms)
+IMP-006 schema owned by this run: imp006_test_5d9e1e37049e43668ccb1a986f327915
+✔ database failure awaits sibling SMTP before rejecting; no work escapes server response (480.3096ms)
+IMP-006 schema owned by this run: imp006_test_4ae2a27e188b470c851682adba0e8406
+✔ four claims respect concurrency two and pre-send expiry fence after earlier wave (439.3552ms)
+✔ derives the principal, forwards context and returns no-store (3.6168ms)
+✔ sanitizes unauthenticated, inaccessible and internal failures (2.2155ms)
+✔ one request wins each account revision and mutation/audit remain atomic (304.7356ms)
+✔ concurrent changes never remove both final ACTIVE ADMIN accounts (318.4325ms)
+✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (383.0033ms)
+▶ user administration routes
+  ✔ derives the actor and forwards only parsed list filters (3.8592ms)
+  ✔ validates status input before invoking the service (2.3475ms)
+  ✔ returns sanitized authentication, authorization, and conflict errors (3.3327ms)
+✔ user administration routes (10.7994ms)
+ℹ tests 187
+ℹ suites 15
+ℹ pass 187
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 85033.0033
+[2026-10-13T17:41:48.821Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=0 duration_ms=85098
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-woDNIF\integration-attempt-1.log

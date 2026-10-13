@@ -1,5 +1,28 @@
 # Evidências de implementação 016 — 2026-10-10
 
+## Registro focal posterior — RC-UI-001, 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: planejamento 366432a antes de teste novo RED real;
+patch de código autorizado e o mesmo teste GREEN comprovam novo GET da capa
+com revision=1, naturalWidth>0 e nova tentativa após segunda falha. Banco/API/
+autorização/provider/ciência inalterados. Execução exclusiva no worktree da
+branch review/016-area-covers; main e três arquivos não rastreados preservados.
+[Evidência focal](rc-ui-001-evidence.md),
+[JSON/logs/manifestos](rc-ui-001-evidence/validation-records.json) e
+[propagação preparada](rc-ui-001-propagation.md).
+
+Regressão nova do fix: 291 Node+17 Mail, 187 Integration, 37 Migration,
+6 Contract, 68 E2E (incluindo teste novo), 2 HTTPS, typecheck/lint/build e zero
+schemas PASS; lint mantém três avisos preexistentes. Snapshot 54d45235 completo
+registrado no artefato focal. Não substitui os fingerprints históricos abaixo.
+Diagnóstico exploratório de hidratação reproduziu perda do primeiro valor de
+draft e FAIL; mecanismo observado, vínculo com falha histórica é INFERENCIA.
+Não alegar resolução dos rascunhos. Dependências de #7 testadas separadamente
+antes de futura integração autorizada; nenhum merge/deploy nesta execução.
+
+As seções seguintes preservam o registro histórico de 2026-10-10, inclusive
+afirmações cuja errata pertence à auditoria posterior da pilha.
+
 G3/G4 PASS local. DECISAO_CONFIRMADA PD-CRI-007/008/009: usuário desta conversa
 aprovou capa privada por área, roles contextuais, limites e cleanup próprio,
 exigindo documentação. [Proveniência](../../docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md).
