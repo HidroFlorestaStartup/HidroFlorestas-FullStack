@@ -20,10 +20,12 @@ interface ou domínio foi implementada nesta revisão.
 | Candidato original | ca80376e6e0f60aac9b94ec598e8e4a7c937d17c |
 | Branch candidata | release/cri-rc-20261010 |
 | PR final | [PR #6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6) |
-| Base development/main do fork relatada inicialmente | beba96fbf6bbaac8771dbb29abea2f9f8f5b0054 |
+| development/main do fork reconferidas em 2026-10-13 | beba96fbf6bbaac8771dbb29abea2f9f8f5b0054 |
 | Patch local de dependências | 99d8363fba4d13a8a02937be1ff2e606d35b3fa6 |
 | Branch isolada da revisão | review/cri-rc-validation-20261012 |
-| Última reconferência remota e SHA final dos registros | Pendente de preenchimento no fechamento |
+| Checkpoint documental durável da retomada | ffd04a240d885cb32eb4d26d4e4881908b003443 |
+| Última reconferência remota | 2026-10-13, GitHub API e git ls-remote; RC continua em ca80376 |
+| Publicação da branch isolada e SHA final dos registros | Branch ainda ausente do remoto na reconferência; publicação pendente |
 
 FATO_DOCUMENTADO: a entrega tem seis PRs encadeados. PR #6 contém a etapa
 documental final e não representa sozinho o diff funcional. A revisão aplica-se
@@ -34,14 +36,34 @@ Não houve merge, deploy, promoção para main nem migrations em banco hospedado
 
 EVIDENCIA_IMPLEMENTACAO: a inspeção Git da retomada encontrou o patch 99d8363
 restrito a package.json/package-lock.json, com o componente de capa inalterado.
+O checkpoint ffd04a2 acrescenta somente o plano e este relatório em rascunho;
+o runtime sob validação conserva a árvore funcional de 99d8363. Não houve avanço
+do candidato remoto entre a referência anterior ca80376 e a consulta de 2026-10-13.
 A árvore e alterações preexistentes do checkout principal foram preservadas.
 
 ## Proveniência após as interrupções
 
 FATO_DOCUMENTADO: resultados executados em 2026-10-12 foram observados pela
 sessão, mas logs/screenshot/rascunhos não commitados em /tmp perderam-se após o
-desligamento. O commit de dependências sobreviveu. Em 2026-10-13, a execução foi
-retomada em worktree persistente e também interrompida pelo limite de uso.
+desligamento. O commit de dependências sobreviveu. A retomada solicitada após
+esse desligamento também foi interrompida pelo limite de uso; o usuário voltou
+a solicitar continuação em 2026-10-13. O worktree, runtime e novos logs passaram
+a usar diretório persistente no workspace; plano/relatório foram preservados
+no checkpoint ffd04a2.
+
+EVIDENCIA_IMPLEMENTACAO de ambiente: a consulta ao journal do kernel na retomada
+encontrou evento OOM em 2026-10-12 às 18:00:56, no horário exibido pelo journal,
+com encerramento do processo code pelo OOM killer. /tmp é tmpfs com capacidade
+de aproximadamente 2,8 GiB. Isso comprova pressão de memória na execução anterior;
+não identifica sozinho todos os processos que causaram o desligamento. A
+retomada passou a executar cargas pesadas sequencialmente, com limite de heap,
+um worker e armazenamento persistente.
+
+EVIDENCIA_IMPLEMENTACAO nova de 2026-10-13: npm ci --no-audit --no-fund concluiu
+com instalação limpa de 562 pacotes em 16 s; prisma generate gerou o Client
+7.4.2 em 753 ms. Os logs npm-ci-20261013.log e prisma-generate-20261013.log estão
+preservados em .accounts-validation/rc-runtime/logs; seus anexos públicos serão
+vinculados no fechamento.
 
 Este rascunho separa três grupos: resultado histórico observado na sessão,
 verificação nova com artefato preservado e verificação pendente. Nenhum log perdido
@@ -51,8 +73,8 @@ promovidos a execução desta revisão.
 
 ## Achado RC-UI-001 — recarga da capa sem nova tentativa
 
-**Conclusão anterior: confirmada na execução de 2026-10-12; nova coleta
-persistente pendente.** Severidade proposta: P2. Local:
+**Conclusão anterior: CONFIRMADA, com nova coleta persistente de 2026-10-13.**
+Severidade proposta: P2. Local:
 [src/components/areas/area-cover.tsx](../../../src/components/areas/area-cover.tsx),
 AreaCoverPreview (linhas 7–9), reload() (linha 47) e key da prévia (linha 50).
 Requisito pertinente: spec 016 FR-007, feedback/retry/fallback recuperáveis.
@@ -99,17 +121,51 @@ Critérios de aceite e teste de regressão:
 4. Se a segunda tentativa também falhar, preservar feedback de falha recuperável
    e permitir nova tentativa; revisão persistida continua inalterada.
 
-Nova evidência, comando de reprodução, contagem de requests e screenshots:
-pendentes de vinculação no fechamento. Registro no PR #4: pendente de publicação.
+EVIDENCIA_IMPLEMENTACAO na retomada: a reprodução percorreu a **rota real de
+detalhe da área**, com sessão/contexto e leitura reais no PostgreSQL local; somente
+metadados/conteúdo da capa receberam respostas controladas. Next16.3.8,
+Chromium140, elemento `next/image` original (`data-nimg=1`). Componente byte a byte
+igual ao candidato ca80376, SHA256
+`fdc0aaa42077b0a480c11429147dcb5d583fdc379c76076f603563b34d371858`.
+Árvore executada: `ffd04a240d885cb32eb4d26d4e4881908b003443`, cujo runtime é99d8363;
+mudanças adicionais são somente plano/relatório/proteção da branch.
+
+O primeiro GET de conteúdo foi503. Após o clique, a contagem continuou1,
+`imageCount=0`, fallback visível e status “Capa recarregada.”. Reload inteiro
+elevou a contagem a2, recebeu200 e exibiu imagem30×20 com a mesma revisão1.
+Após retirar a interceptação, o backend real de metadados respondeu200. Teardown
+do ensaio confirmou zero fixtures ambientais. Nenhuma operação Cloudinary real.
+
+Artefatos: [requisições e observações](2026-10-13-cri-rc-evidence/cover-reproduction.json),
+[sucesso sem recuperação](2026-10-13-cri-rc-evidence/cover-after-reload.png) e
+[imagem recuperada após reload](2026-10-13-cri-rc-evidence/cover-after-page-reload.png).
+Comando: `node --import=tsx ../rc-runtime/browser/browser-driver.mjs general`,
+no worktree, Node24, ambiente sintético injetado e Next dev local próprio.
+Registro no PR #4: [REQUEST_CHANGES publicado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988),
+com comentário na linha50 do head dace407. Review confirmado pela resposta da API;
+nenhum registro duplicado foi criado.
 
 ## Dependências — estado original e patch focal
 
-FATO_DOCUMENTADO no histórico da sessão: npm audit original apontou 13 high; o
-patch reduziu a contagem a cinco high na árvore de desenvolvimento, associados
-à cadeia braces, e npm audit --omit=dev apontou zero vulnerabilidades. A consulta
-então feita não indicava correção aplicável para o residual braces. Esses números
-exigem nova consulta atual e anexos persistentes antes da publicação final.
-Alertas de pacote não são exploração comprovada da aplicação.
+EVIDENCIA_IMPLEMENTACAO nova de 2026-10-13: os três JSONs de npm audit foram
+recoletados e analisados sem erro de consulta. O original veio do lockfile
+ca80376; o patch corresponde ao lockfile 99d8363. Todos os alertas classificados
+no resultado original são high; a contagem de cinco remanescentes inclui pacote
+vulnerável e propagação pela cadeia de dependentes, não cinco explorações
+independentes.
+
+| Comando/árvore auditada | High | Total | Resultado |
+|---|---:|---:|---|
+| npm audit --json --package-lock-only, original ca80376 | 13 | 13 | Confirmado; correções disponíveis para parte dos pacotes |
+| npm audit --json, patch 99d8363 | 5 | 5 | Somente cadeia dev de braces/ESLint |
+| npm audit --omit=dev --json, patch 99d8363 | 0 | 0 | Sem vulnerabilidade reportada na árvore de produção consultada |
+
+JSONs preservados: npm-audit-original-20261013.json,
+npm-audit-patched-20261013.json e npm-audit-production-20261013.json em
+.accounts-validation/rc-runtime/logs. A vinculação dos anexos versionados e
+saídas npm ls/npm explain permanece para o fechamento. Alertas de pacote não
+são exploração comprovada da aplicação; ausência no audit não é garantia geral
+de segurança.
 
 EVIDENCIA_IMPLEMENTACAO no diff do commit 99d8363:
 
@@ -121,22 +177,58 @@ EVIDENCIA_IMPLEMENTACAO no diff do commit 99d8363:
 | override brace-expansion@1 | 1.1.18 | 1.1.21 |
 | override brace-expansion@5 | 5.0.9 | 5.0.12 |
 
-A alteração foi preservada em commit próprio. Não houve audit fix --force.
-Mudanças dos pacotes auxiliares de Next/sharp e do grafo do lockfile devem ser
-avaliadas pelo diff/ls/explain; não atribuir cada linha alterada a dependência
-direta nova. Nenhuma mudança funcional acompanhou o patch.
+A alteração foi preservada em commit próprio. Não houve audit fix --force nem
+troca indiscriminada de majors. As alterações auxiliares acompanham as famílias
+Next/sharp e o grafo de dependências do lockfile; source-map-js foi atualizado
+transitivamente. Nenhuma mudança funcional acompanhou o patch. A auditoria
+original também justificou atualizar os overrides de brace-expansion dentro
+das majors 1 e 5, cobrindo os advisories de
+[recursão no parser](https://github.com/advisories/GHSA-6j4f-fj2g-mc7p),
+[recursão em grupos aninhados](https://github.com/advisories/GHSA-qhr7-859c-m2p7) e
+[expansão de custo quadrático](https://github.com/advisories/GHSA-q2hr-2g5m-vwhr).
 
 EVIDENCIA_IMPLEMENTACAO estática: next.config.ts não define images.remotePatterns.
-O componente de capa usa Image unoptimized e rota same-origin. Essas condições
-limitam a hipótese específica do advisory de SSRF que exige remotePatterns;
-não demonstram imunidade a todos os advisories de Next. source-map-js foi
-identificado como transitivo de PostCSS na sessão anterior.
+O componente de capa usa Image unoptimized e rota same-origin. FATO_DOCUMENTADO:
+o advisory oficial de SSRF diz que aplicações sem images.remotePatterns não são
+afetadas por esse vetor específico. INFERENCIA de alcance: a condição do vetor
+não foi localizada na configuração desta RC. Essa observação anterior foi
+confirmada e não implica imunidade aos demais advisories de Next. A página
+oficial exibiu o campo de patch como “16.3.?”; 16.3.8 foi selecionado pelo audit
+do lockfile, cujo alerta de Next desapareceu após a atualização.
+[GHSA-cjq9-62q9-8jv4, Next.js](https://github.com/vercel/next.js/security/advisories/GHSA-cjq9-62q9-8jv4).
 
-Advisories oficiais atuais, alcance de sharp/source-map-js/Next, npm ls/explain,
-audits originais e patch, justificativa de brace-expansion e análise do residual:
-pendentes de anexação no fechamento. RECOMENDACAO: publicar o commit focal para
-revisão e documentar o residual dev; não alegar que o candidato remoto já recebeu
-o patch enquanto o seu head continuar em ca80376.
+FATO_DOCUMENTADO: o advisory de sharp descreve possível RCE em Linux/glibc sob
+condições específicas de runtime, decorrente de librsvg; sharp 0.35.5 inclui
+librsvg 2.63.2 corrigido nos binários distribuídos. EVIDENCIA_IMPLEMENTACAO:
+o serviço valida metadados JPEG/PNG/WebP do provedor antes do download, mas
+sanitizeCover chama sharp(...).metadata() antes da allowlist do formato
+decodificado. INFERENCIA: essas verificações reduzem o alcance esperado, porém
+não comprovam isolamento do decoder SVG contra bytes divergentes. Não foi
+demonstrada exploração; o patch evita depender dessa hipótese de proteção.
+[GHSA-wq5f-xc86-pv6w, sharp](https://github.com/lovell/sharp/security/advisories/GHSA-wq5f-xc86-pv6w).
+
+FATO_DOCUMENTADO: source-map-js até 1.2.1 permite bloqueio síncrono por offsets
+malformados de source maps indexados; 1.2.2 é a versão corrigida.
+EVIDENCIA_IMPLEMENTACAO: o lockfile liga source-map-js a PostCSS e
+@tailwindcss/node; nenhum endpoint de ingestão de source maps foi localizado
+no recorte inspecionado. INFERENCIA: o alcance observado concentra-se em
+processamento/build, sem exploração remota da aplicação demonstrada.
+[GHSA-68fv-2mgg-jv7q, source-map-js](https://github.com/advisories/GHSA-68fv-2mgg-jv7q).
+
+EVIDENCIA_IMPLEMENTACAO: os cinco high remanescentes são braces, micromatch,
+fast-glob, @next/eslint-plugin-next e eslint-config-next. O lockfile marca essa
+cadeia como dev: eslint-config-next → @next/eslint-plugin-next → fast-glob →
+micromatch → braces 3.0.3. FATO_DOCUMENTADO: o advisory de braces informa ausência
+de patch publicado para o problema de exaustão de stack; 3.0.3 ainda é afetado.
+O audit propõe downgrade de eslint-config-next para 14.2.35, incompatível com a
+linha Next 16 aqui adotada; esse contorno não foi aplicado. INFERENCIA: o risco
+remanescente afeta ferramentas que processem padrões glob não confiáveis; não
+foi demonstrada exposição a esses padrões via endpoint da aplicação.
+[GHSA-vfj7-8cjw-p6xm, braces](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm).
+
+RECOMENDACAO: publicar o commit focal para revisão, acompanhar o patch upstream
+de braces e repetir o audit quando disponível. O residual dev está explicitado;
+o candidato remoto ca80376 continua sem o patch até a integração autorizada.
 
 ## Verificações e limites do resultado histórico
 
@@ -187,8 +279,33 @@ JWT_SECRET e E2E_USER_PASSWORD são gerados sinteticamente. Configurações de
 contas e runners devem seguir os guards e exemplos já versionados. Não publicar
 valores privados, URLs completas de conexão, cookies, tokens ou senhas.
 
-Identidade redigida do cluster, porta/adapter do servidor, comandos efetivos,
-contagem de testes da retomada e inventário final: pendentes de preenchimento.
+EVIDENCIA_IMPLEMENTACAO atual: PostgreSQL17.10 próprio, loopback55427,
+owner sintético `accounts_owner`, marker `hidroflorestas:accounts-local-postgresql:v1`
+e diretório persistente comprovados pelo setup oficial. Testes usam
+`TEST_DATABASE_URL` direto/`accounts_regression_test`; `DATABASE_URL` dos runners
+é `accounts_regression_reference` vazio. O servidor Next recebe explicitamente
+`DATABASE_URL=TEST_DATABASE_URL`, `IMP006_LOCAL_REGRESSION_PUBLIC=1` e
+`NODE_ENV=development`; guard foi preservado. O modo test aplica-se aos runners,
+e não foi presumido para o processo Next.
+
+[Prova do banco efetivo](2026-10-13-cri-rc-evidence/database-server-proof.json):
+quatro sockets TCP do processo Next corresponderam a quatro `client_port`
+observados no PostgreSQL local, todos no banco de teste esperado. Comparações
+do ambiente sintético/JWT retornam somente booleanos; identidade/data_directory,
+read-only e tabelas-base foram conferidos. Valores privados não foram publicados.
+
+Setup14, integração187/187, migrations37/37, contrato6/6 e bootstrap14 passaram
+na retomada, sem falhas/skips/cancelamentos. Bootstrap ensaiou uma escrita em
+transação com rollback e descartou apenas seu banco próprio. Antes de E2E,
+inventário/guard/reset/setup comprovaram zero linhas de domínio, 14 migrations,
+zero schemas extras e referência vazia. A suite antiga de administração deixou54
+usuários sintéticos e2 eventos em `public`, embora os schemas temporários estivessem
+limpos. RECOMENDACAO: teardown explícito com ownership comprovado ou descarte
+documentado do banco de testes; não afirmar zero fixtures a partir de zero schemas.
+Nesta execução, o reset do banco próprio conferiu identidades/contagens, SQL/hashes,
+marker/owner/diretório e ausência de conexões antes da recriação.
+
+Inventário final após os E2E/limpeza: pendente de preenchimento.
 Nenhum uso de Neon/produção, remoção de guard ou migração hospedada está autorizado.
 
 ## Registros e conclusão a fechar
@@ -196,7 +313,7 @@ Nenhum uso de Neon/produção, remoção de guard ou migração hospedada está 
 | Registro autorizado | Estado/URL |
 |---|---|
 | Relatório e evidências no repositório | DRAFT local; URL de commit/branch pendente |
-| Achado de capa no PR #4 | Pendente de publicação; conferir duplicatas |
+| Achado de capa no PR #4 | [REQUEST_CHANGES](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988), review5499177988 |
 | Parecer consolidado REQUEST_CHANGES no PR #6 | Pendente de publicação; conferir duplicatas |
 | Patch de dependências | Commit local 99d8363; URL publicada pendente |
 

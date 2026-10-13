@@ -1,0 +1,50 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "head": "ffd04a240d885cb32eb4d26d4e4881908b003443",
+  "runtimeCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "started": "2026-10-13T05:22:09.565Z",
+  "finished": "2026-10-13T05:22:53.611Z",
+  "heapMB": 1024,
+  "testConcurrency": 1,
+  "stages": [
+    {
+      "runner": [
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/unit/account-client-contracts.test.ts",
+        "tests/unit/account-contracts.test.ts"
+      ],
+      "started": "2026-10-13T05:22:09.567Z",
+      "finished": "2026-10-13T05:22:49.630Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 291,
+        "pass": 291,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "runner": [
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/mail/account-proof.test.ts"
+      ],
+      "started": "2026-10-13T05:22:49.630Z",
+      "finished": "2026-10-13T05:22:53.611Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 17,
+        "pass": 17,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "minimumAvailableMemoryMB": 1953
+}
