@@ -54,8 +54,8 @@ Testes escritos antes do código correspondente; não fabricar resultado RED.
 - [x] T020 [US1] Acrescentar RED determinístico de controles SSR bloqueados, primeiro PUT false/0/ausência e retomada em tests/e2e/environmental-drafts.spec.ts; conservar testes originais.
 - [x] T021 [US1] Implementar prontidão SSR/hidratação e desabilitação/feedback em src/components/environmental-data/environmental-data-form.tsx, mantendo conversores e API.
 - [x] T022 [US1] Executar GREEN/focais/unit/typecheck/lint/build em runners atuais e registrar comandos/UTC/fingerprints/FAIL em specs/015-environmental-drafts/hydration-evidence.md. E2E geral67 PASS após rodada66 PASS/1 ECONNRESET preservada.
-- [ ] T023 Atualizar evidências/runbook em specs/015-environmental-drafts/implementation-evidence.md e docs/operations/environmental-drafts-runbook.md; commit e publicação fast-forward da branch protegida.
-- [ ] T024 Sincronizar pilha por merges internos, resolver conflito #5, incorporar SHA99d8363 uma vez e revalidar combinação final; registrar resultado em specs/015-environmental-drafts/rc-stack-plan.md e documentação da RC nas branches que a contêm.
+- [x] T023 Atualizar evidências/runbook em specs/015-environmental-drafts/implementation-evidence.md e docs/operations/environmental-drafts-runbook.md; commit e publicação fast-forward da branch protegida. Publicação confirmada no PR3, sem deploy.
+- [x] T024 Sincronizar pilha por merges internos, resolver conflito #5, incorporar SHA99d8363 uma vez e revalidar combinação final; registrar resultado em specs/015-environmental-drafts/rc-stack-plan.md e documentação da RC nas branches que a contêm. Árvore9fe2bec:15 gates PASS, E2E70; CI015 run38452752261 SUCCESS. Aprovação/integração principal permanecem humanas.
 
 T019 → T020 → T021 → T022 → T023 → T024. Testes DB/porta/build são sequenciais.
 MVP é US1 com dois baselines; não introduzir autosave, novo modelo ou nova ciência.

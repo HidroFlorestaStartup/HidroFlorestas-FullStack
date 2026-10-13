@@ -1,6 +1,6 @@
 # PLAN-RC-SYNC-20261013 — consolidação da Release Candidate
 
-Estado EM_ANDAMENTO. Autoridade: pedido explícito do usuário em2026-10-13.
+Estado VALIDADO_TECNICAMENTE; revisão/aprovação humana pendentes. Autoridade: pedido explícito do usuário em2026-10-13.
 DECISAO_CONFIRMADA: merges internos das branches de revisão autorizados para
 sincronização da pilha, sem merges em main/development, deploy/migrations remotas,
 remoção de recursos reais ou alteração dos bloqueios de deployment.
@@ -70,3 +70,34 @@ Collector recebe aliases explícitos para os dois CLIs locais já existentes,
 mantendo redaction/fingerprint. Consulta administrativa Actions403; disponibilidade
 efetiva será comprovada por runs/checks ou registrada como bloqueio, sem alterar
 settings. Checklist015 requirements16/16 reconferido, sem modificar seus itens.
+
+## Encerramento técnico — 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: plano d6b1323 precede RED, fix/evidências fc82ecc e
+GREEN; commits c65265f/bc3a751 adicionam CI e preparo privado de diretório fresco.
+Push015 confirmado. Merges86c468c/e14c0a9 propagam015→016; 2186e06 resolve
+três conflitos documentais da auditoria conservando erratas e fixes, seguido de
+2bbab41; 5975427 sincroniza a RC. Merge9fe2bec incorpora99d8363 original uma
+vez, e8fe53d1 sincroniza a revisão7 preservando seus quatro commits documentais.
+Bases/estados de review e11 originais mantidos; PR5 já mergeabletrue após push.
+
+Combo local9fe2bec, Node24.19/Next16.3.8/Pg próprio:15 gates PASS,
+Unit291+Mail17, Integration187, Migration37, Contract6, R117 subconjunto,
+Build/typecheck/lint, E2E70, HTTPS2, Deletion3, IHFR6, Bootstrap14, SchemaAudit0.
+Fingerprint f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c.
+Cluster voltou STOPPED preservando dados. Audit omit=dev0, completo5high dev.
+Documentação/evidências da combinação pertencem à branch de release; consultar
+o documento `docs/releases/2026-10-10-cri-rc/rc-readiness-20261013.md` naquele head.
+
+CI efetivo: primeira run38452226442 FAIL por ACL antes dos gates; recusa não foi
+relaxada. Run38452752261 do headbc3a751 concluiu SUCCESS com os15 gates.
+Recibo em hydration-evidence/ci-validation.json. Workflow também verifica heads
+publicados posteriores; conferir SHA/conclusão real no GitHub, sem presumir PASS.
+Fechamentos e propagação documental não modificam inputs funcionais testados.
+Re-review é solicitado aos estudantes no fechamento da publicação; decisões
+CHANGES_REQUESTED anteriores continuam próprias dos revisores.
+
+Nenhum merge principal, deploy, migration hospedada ou recurso real removido.
+Os FAILs de admin-read ECONNRESET e revisão independente permanecem históricos,
+causa daquela intermitência não é declarada resolvida. Ciência, gates humanos,
+provedores reais, operadores, inventário/backup/ensaio continuam pendentes.
