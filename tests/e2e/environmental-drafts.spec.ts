@@ -1,4 +1,6 @@
 import { expect,test } from "@playwright/test";
+import { randomUUID } from "node:crypto";
+import { DRAFT_VERSION } from "../../src/types/environmental-draft";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 import { ENVIRONMENTAL_FIXTURES as F,setupEnvironmentalFixtures,cleanupEnvironmentalFixtures,countEnvironmentalFixtures } from "../fixtures/environmental-data-fixtures";
 test.describe.configure({mode:"serial"});test.setTimeout(90000);
@@ -48,4 +50,40 @@ test("outsider cannot read draft and inactive laboratory offers only reading",as
  await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[3]),url:String(info.project.use.baseURL)}]);expect((await page.request.get(api+"/draft")).status()).toBe(404);
  await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[0]),url:String(info.project.use.baseURL)}]);
  await page.goto(`/dashboard/laboratories/${F.laboratoryIds[1]}/areas/${F.areaIds[1]}/collections/${F.collectionIds[1]}/environmental-data/new`);await expect(page.getByText("Laboratório inativo — somente leitura.",{exact:true})).toBeVisible();await expect(page.getByRole("button",{name:"Salvar rascunho",exact:true})).toHaveCount(0);
+});
+
+for(const withBaseline of [false,true])test(`slow hydration preserves the first draft save and reload (${withBaseline?"absent and blank baseline":"new draft"})`,async({page,context},info)=>{
+ await setupEnvironmentalFixtures(process.env);
+ await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);
+ const baseline=withBaseline?{"water.salinityIndicator":{kind:"absent"},"vegetation.hasRiparianApp":{kind:"editing",raw:""}}:{};
+ if(withBaseline){
+  const seeded=await page.request.put(api+"/draft",{headers:{Origin:String(info.project.use.baseURL),"Sec-Fetch-Site":"same-origin"},data:{draftId:null,expectedRevision:0,saveKey:randomUUID(),formVersion:DRAFT_VERSION,fields:baseline}});
+  expect(seeded.status()).toBe(200);
+ }
+ let release!:()=>void;const scriptsReady=new Promise<void>(resolve=>{release=resolve;});let blockedScripts=0;
+ await page.route(url=>url.pathname.startsWith("/_next/static/")&&url.pathname.endsWith(".js"),async route=>{blockedScripts++;await scriptsReady;await route.continue();});
+ const spring=page.getByLabel("Há nascente"),infiltration=page.getByLabel("Taxa de infiltração"),elevation=page.getByLabel("Elevação");
+ const save=page.getByRole("button",{name:"Salvar rascunho",exact:true});
+ try{
+  await page.goto(base+"/new",{waitUntil:"commit"});await expect(spring).toBeVisible();
+  expect(blockedScripts).toBeGreaterThan(0);
+  await expect(spring).toBeDisabled();await expect(infiltration).toBeDisabled();await expect(elevation).toBeDisabled();
+  await expect(save).toBeDisabled();await expect(page.getByRole("button",{name:"Recarregar rascunho",exact:true})).toBeDisabled();
+  await expect(page.getByRole("button",{name:"Revisar dados",exact:true})).toBeDisabled();
+  await expect(spring).toHaveValue("");
+ }finally{release();}
+ await expect(spring).toBeEnabled();await spring.selectOption("false");await infiltration.fill("0");await elevation.fill("12.");
+ const requested=page.waitForRequest(r=>r.url().endsWith("/draft")&&r.method()==="PUT");
+ const responded=page.waitForResponse(r=>r.url().endsWith("/draft")&&r.request().method()==="PUT");
+ await save.click();const body=(await requested).postDataJSON(),response=await responded;
+ const fields={...baseline,"water.hasSpring":{kind:"editing",raw:"false"},"soil.infiltrationRateMmPerHour":{kind:"editing",raw:"0"},"terrain.elevationMeters":{kind:"editing",raw:"12."}};
+ expect(body.formVersion).toBe(DRAFT_VERSION);expect(body.expectedRevision).toBe(withBaseline?1:0);expect(body.fields).toEqual(fields);
+ if(!withBaseline)expect(body.draftId).toBeNull();
+ expect(response.status()).toBe(200);const result=await response.json();expect(result.draft.fields).toEqual(fields);expect(result.draft.revision).toBe(withBaseline?2:1);
+ await expect(page.getByRole("status")).toContainText("Rascunho salvo.");
+ const persisted=await page.request.get(api+"/draft");expect(persisted.status()).toBe(200);expect((await persisted.json()).draft.fields).toEqual(fields);
+ await page.reload();await expect(spring).toBeEnabled();await expect(spring).toHaveValue("false");await expect(infiltration).toHaveValue("0");await expect(elevation).toHaveValue("12.");
+ await expect(page.getByLabel("Indicador de salinidade")).toHaveValue("");await expect(page.getByLabel("Presença de APP ripária")).toHaveValue("");
+ const resumed=await page.request.get(api+"/draft");expect((await resumed.json()).draft.fields).toEqual(fields);
+ await info.attach("first-save-payload",{body:Buffer.from(JSON.stringify({fields:body.fields,expectedRevision:body.expectedRevision,persistedRevision:result.draft.revision})),contentType:"application/json"});
 });
