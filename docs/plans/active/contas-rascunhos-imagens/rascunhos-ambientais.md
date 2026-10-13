@@ -56,3 +56,8 @@ Autosave futuro pode usar debounce, abort de requests obsoletos e flush explíci
 `PROPOSTA`: expirar após 30 dias sem edição, aviso visual a partir de 7 dias antes, descarte pelo usuário com período técnico curto de recuperação somente se aprovado, purge idempotente. Guardar métricas agregadas, não payload, depois do purge. Dados confirmados jamais são modificados ou apagados pelo cleanup de drafts.
 
 Rascunhos ficam fora de dashboard, histórico de registros, mapas, elegibilidade e diagnósticos IHFR. A confirmação normal pode atualizar essas projeções porque cria o conjunto confirmado regular.
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

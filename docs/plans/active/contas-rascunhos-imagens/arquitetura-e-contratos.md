@@ -117,3 +117,8 @@ sequenceDiagram
 - Draft: `WHERE id AND revision = expected`; incremento em cada save; retorno 409 inclui revisão atual, não payload sem autorização.
 - Confirmação: reutiliza invariantes da IMP-005 e chave do ator; marca draft `CONFIRMED` após criar/recuperar conjunto.
 - Imagem: `revision`/ponteiro atual evita duas substituições silenciosas; objetos perdedores viram cleanup jobs.
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

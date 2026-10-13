@@ -29,6 +29,7 @@ model User {
   collectionAreas                  CollectionArea[]
   collectionData                   CollectionData[]
   environmentalMeasurementSets     EnvironmentalMeasurementSet[]
+  environmentalDrafts              EnvironmentalDraft[]
   experimentalIHFRInputSupplements ExperimentalIHFRInputSupplement[]
   experimentalIHFROperations       IHFRDiagnosisOperation[]          @relation("ExperimentalIHFROperationActor")
   experimentalIHFRLifecycleEvents  IHFRDiagnosisLifecycleEvent[]     @relation("ExperimentalIHFRLifecycleActor")
@@ -276,6 +277,7 @@ model CollectionData {
   terrainData                      TerrainData[]
   diagnoses                        IHFRDiagnosis[]
   environmentalMeasurementSet      EnvironmentalMeasurementSet?
+  environmentalDrafts              EnvironmentalDraft[]
   experimentalIHFRInputSupplements ExperimentalIHFRInputSupplement[]
   experimentalIHFRDiagnoses        ExperimentalIHFRDiagnosis[]
   currentExperimentalIHFRDiagnosis CurrentExperimentalIHFRDiagnosis?
@@ -284,6 +286,23 @@ model CollectionData {
 
   @@unique([userId, confirmationKey])
   @@index([collectionAreaId, laboratoryRoomId])
+}
+
+model EnvironmentalDraft {
+  id String @id @default(uuid())
+  userId String
+  collectionDataId String
+  formVersion String @db.VarChar(64)
+  fields Json @db.JsonB
+  revision Int @default(1)
+  lastSaveKey String @db.VarChar(36)
+  lastSaveHash String @db.VarChar(64)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+  collectionData CollectionData @relation(fields: [collectionDataId], references: [id], onDelete: Restrict)
+  @@unique([userId, collectionDataId])
+  @@index([collectionDataId])
 }
 
 model IHFRDiagnosis {

@@ -135,3 +135,8 @@ Riscos descrevem condições atuais ou possíveis efeitos; não constituem requi
 ## Recorte de contas/rascunhos/capas — 2026-10-10
 
 `EVIDENCIA_IMPLEMENTACAO`: HEAD beba96f contém infraestrutura mail, verificação/recuperação/troca e exclusão da conta; não contém persistência de drafts ou integração de capas. A [matriz de estado](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) documenta camadas inspecionadas, ancestralidade e validação atual. Recortes de drafts e capas aprovados nesta conversa serão implementados em specs próprias. Não reclassifica todo o baseline Code-First nem concede aprovação normativa ao PRD.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: spec 015 entrega rascunho ambiental pessoal de coleta confirmada, separado da medição imutável; salvar/retomar/OCC/descarte, consumo transacional e exclusão pessoal. Aprovação do usuário 2026-10-10 registrada; sem expiração. Ver specs/015-environmental-drafts/ e runbook de rascunhos. Capas 016 seguem próxima entrega; gates remotos 012/013 continuam pendentes.

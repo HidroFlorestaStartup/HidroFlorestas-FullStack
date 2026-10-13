@@ -57,3 +57,8 @@ Integração Lovable deve adaptar a estrutura visual aos contratos implementados
 ## Estado desta entrega
 
 Os 14 arquivos deste pacote são documentação de planejamento. Nenhuma funcionalidade, teste executável, migration, dependência, variável, envio real, upload real, banco, merge, deploy, push ou PR foi realizado. A branch documental contém somente commits locais do pacote e deve ser revisada antes de qualquer publicação futura.
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

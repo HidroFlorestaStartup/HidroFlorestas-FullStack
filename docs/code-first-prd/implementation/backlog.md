@@ -30,3 +30,8 @@ somente dentro de `specs/<feature>/**` pelo fluxo do Spec Kit.
 ## Incrementos CRI — 2026-10-10
 
 Mail-foundation/012/013 já têm código integrado no corte beba96f; Gate B de contas e aceite humano de exclusão continuam abertos. As novas entregas aprovadas são drafts pessoais de medições e uma capa autenticada de área; autosave/colaboração/offline/galeria permanecem fora. [Matriz única e mapeamento CRI-T](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). IDs existentes preservados; nenhuma reimplementação das frentes presentes.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: recorte de draft pessoal aprovado PD-CRI-005/006 foi implementado na 015. Funcionalidade cobre salvamento explícito, retomada, conflitos, descarte, consumo transacional e exclusão pessoal; sem prazo automático. Evidências/gates locais na spec; imagens 016 e operação remota continuam separadas.

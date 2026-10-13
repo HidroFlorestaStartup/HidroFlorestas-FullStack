@@ -68,3 +68,8 @@ Comandos focais para e-mail/drafts/imagens são futuros e devem ser adicionados 
 4. E2E e acessibilidade automatizável.
 5. Smoke controlado de provedores, com limpeza/reconciliação.
 6. Revisão humana de mensagens, política de acesso, privacidade de imagens e operação.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

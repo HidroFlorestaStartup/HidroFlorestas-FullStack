@@ -71,3 +71,8 @@ Nesta rodada: conferir 14 arquivos, links relativos, referências de código, ID
 |---|---|---|
 | 2026-10-03 | `EM_ANDAMENTO` | Base remota confirmada; worktree isolado; pesquisa local/externa. |
 | 2026-10-03 | `AGUARDANDO_REVISAO` | Pacote redigido; implementação permanece não iniciada. |
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

@@ -103,3 +103,12 @@ Bootstrap 12 migrations PASS; Typecheck/Lint PASS, três warnings anteriores;
 auditoria zero schemas próprios. Falhas anteriores preservadas em
 [evidências 014](../../../specs/014-account-test-runners/implementation-evidence.md).
 Pendências remotas/humanas permanecem abertas. Próximo incremento: rascunhos 015.
+
+
+### Checkpoint 015 — 2026-10-10
+
+G1/G2 concluídos para corte inicial; G3/G4 de rascunhos concluídos. 65 E2E gerais,
+Bootstrap 13, Typecheck/Lint/Build PASS; migração 36 e integração 177 PASS no corte
+registrado. Revisão independente resolvida; sem expiração; operação remota não
+executada. [Evidências](../../../specs/015-environmental-drafts/implementation-evidence.md).
+Próxima etapa autorizada: spec/implementação 016 de capas privadas.

@@ -137,3 +137,8 @@ Novos registros, versões, relações de substituição e checksums só devem se
 ## Registro da reconciliação CRI — 2026-10-10
 
 Acrescentados [PLAN-CRI-002](../plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md), estado EM_ANDAMENTO, e [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md), evidência/coordenação sem autoridade científica. Origem: pedido de execução v1.0 e respostas explícitas do usuário de 2026-10-10; responsável humano não especificado. Os 14 documentos de PLAN-CRI-001 receberam estado atual primeiro e registro de 2026-10-03 preservado. Nenhum arquivo de docs/raw modificado; inclusão não promove propostas históricas.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+Registrados artefatos vivos specs/015-environmental-drafts/** (spec/plan/tasks/modelo/contratos/evidências) e docs/operations/environmental-drafts-runbook.md. Origem: aprovação explícita PD-CRI-005/006 em 2026-10-10; evidência de engenharia local, sem autoridade científica ou encerramento de gates remotos.
