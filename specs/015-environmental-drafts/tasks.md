@@ -51,9 +51,9 @@ Testes escritos antes do código correspondente; não fabricar resultado RED.
 ## RC-DRAFT-001 — hidratação lenta (2026-10-13)
 
 - [x] T019 Reconciliar FR-002/FR-003/FR-009 e planejar prontidão/TDD em specs/015-environmental-drafts/{spec.md,plan.md,research.md,data-model.md,contracts/drafts.md,quickstart.md}.
-- [ ] T020 [US1] Acrescentar RED determinístico de controles SSR bloqueados, primeiro PUT false/0/ausência e retomada em tests/e2e/environmental-drafts.spec.ts; conservar testes originais.
-- [ ] T021 [US1] Implementar prontidão SSR/hidratação e desabilitação/feedback em src/components/environmental-data/environmental-data-form.tsx, mantendo conversores e API.
-- [ ] T022 [US1] Executar GREEN/focais/unit/typecheck/lint/build em runners atuais e registrar comandos/UTC/fingerprints/FAIL em specs/015-environmental-drafts/hydration-evidence.md.
+- [x] T020 [US1] Acrescentar RED determinístico de controles SSR bloqueados, primeiro PUT false/0/ausência e retomada em tests/e2e/environmental-drafts.spec.ts; conservar testes originais.
+- [x] T021 [US1] Implementar prontidão SSR/hidratação e desabilitação/feedback em src/components/environmental-data/environmental-data-form.tsx, mantendo conversores e API.
+- [x] T022 [US1] Executar GREEN/focais/unit/typecheck/lint/build em runners atuais e registrar comandos/UTC/fingerprints/FAIL em specs/015-environmental-drafts/hydration-evidence.md. E2E geral67 PASS após rodada66 PASS/1 ECONNRESET preservada.
 - [ ] T023 Atualizar evidências/runbook em specs/015-environmental-drafts/implementation-evidence.md e docs/operations/environmental-drafts-runbook.md; commit e publicação fast-forward da branch protegida.
 - [ ] T024 Sincronizar pilha por merges internos, resolver conflito #5, incorporar SHA99d8363 uma vez e revalidar combinação final; registrar resultado em specs/015-environmental-drafts/rc-stack-plan.md e documentação da RC nas branches que a contêm.
 

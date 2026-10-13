@@ -2,7 +2,7 @@
 
 **Feature Branch**: `015-environmental-drafts`
 **Created**: 2026-10-10
-**Status**: Implementação histórica preservada; remediação de hidratação em andamento
+**Status**: Remediação de hidratação validada localmente; integração/revisão pendentes
 **Input**: Aprovação explícita do recorte pessoal e política de descarte/retenção nesta conversa.
 
 ## User Scenarios & Testing *(mandatory)*

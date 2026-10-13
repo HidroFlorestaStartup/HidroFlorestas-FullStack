@@ -1,0 +1,34 @@
+ℹ tests 289
+ℹ pass 289
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ tests 17
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+✔ verification HMAC binds purpose/challenge/account/email/version and preserves zero (1.2325ms)
+✔ rotation retains old proof key and fails closed when it is removed (0.7989ms)
+✔ request commitments are keyed and purpose-separated; config is lazy/closed (1.2085ms)
+✔ password-change notification is closed, escaped, and has no proof/reset link (1.1408ms)
+✔ MAIL-FR-002/TEST-001 strict lazy config for 465/587 and no secret in errors (1.2506ms)
+✔ MAIL-FR-004 versioned Portuguese HTML/text escape, zero, supplied expiry and trusted origin (1.2661ms)
+✔ AEAD recipient/content confidentiality, AAD, tampering, unknown key, rotation, no fallback (2.8452ms)
+✔ TEST-003 typed failures never return raw provider details (0.2647ms)
+✔ operational evidence redacts secrets and provider headers without environment disclosure (0.7301ms)
+✔ machine trigger protects no/missing/wrong secret, query/body, awaits and redacts failures (18.7777ms)
+✔ Nodemailer real implicit TLS: accepted MIME and verify distinct (1126.7852ms)
+✔ Nodemailer real required STARTTLS: accepted MIME and verify distinct (338.8226ms)
+✔ Nodemailer refuses untrusted certificate, no STARTTLS and bad authentication (350.2203ms)
+✔ R1 operational deadline after SMTP accepts DATA destroys connection and remains ambiguous (1508.1225ms)
+✔ R1 transport deadline is the minimum of SMTP cap, proof validity and operational lease deadline (1.1238ms)
+✔ R1 expired operational deadline or proof never opens SMTP connection (4.4231ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4550.3144

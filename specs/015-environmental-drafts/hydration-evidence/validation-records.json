@@ -1,0 +1,214 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "planningCommit": "d6b13231444970b15b86de5582217a641e2015c0",
+  "initialHead": "443d20ee8b70607995320c511c36c73be00f3302",
+  "worktree": "C:/projetos/ifma/HidroFlorestas-rc-drafts",
+  "branch": "review/015-environmental-drafts",
+  "records": [
+    {
+      "gate": "PrismaGenerate",
+      "command": "node node_modules/prisma/build/index.js generate",
+      "snapshot": "dc748addfca65a6b67b8d838387cb9f57278b9cd919990780ef7eda1ecdee92d",
+      "startedUtc": "2026-10-13T18:44:32.959Z",
+      "endedUtc": "2026-10-13T18:44:37.913Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "01-prisma-generate.txt",
+      "sourceLogSha256": "59e873b561cf7e4d3c83cf44c8523e43fc64595ef51d32e65532a01fe8379f02",
+      "excerptSha256": "671c101b582a384eb7017c38dacdd156b800357ee49fcfaaeaff853b6117302a"
+    },
+    {
+      "gate": "HydrationRed",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/environmental-drafts.spec.ts --grep slow hydration",
+      "snapshot": "dc748addfca65a6b67b8d838387cb9f57278b9cd919990780ef7eda1ecdee92d",
+      "startedUtc": "2026-10-13T18:44:38.256Z",
+      "endedUtc": "2026-10-13T18:44:56.591Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "02-hydration-red.txt",
+      "sourceLogSha256": "e8983bfd276e0a9f9f0fe4be6013fc35b457e7f111ce101d503da8d3ff1f466d",
+      "excerptSha256": "bbd11bdb5cda6aa1fb9010b2fcf50a4126c204c0e2b8fffd2f9bdd4b0ccd9de5"
+    },
+    {
+      "gate": "HydrationGreen",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/environmental-drafts.spec.ts --grep slow hydration",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:46:12.259Z",
+      "endedUtc": "2026-10-13T18:46:24.933Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "03-hydration-green.txt",
+      "sourceLogSha256": "8ebc8fd24f019a0cca94ff83876aa4a52fd4d6a2ebd23e6d7d8176a9374391ad",
+      "excerptSha256": "b9cec77cd1c19a806c9f73f84196e67cf48a788f204994d73b8aa9fe4af8e84c"
+    },
+    {
+      "gate": "DraftsAll",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/environmental-drafts.spec.ts",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:47:11.218Z",
+      "endedUtc": "2026-10-13T18:47:35.007Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "04-drafts-all.txt",
+      "sourceLogSha256": "59b12ea29bc8acb63ce6ad73cd524ec56a721b66241d17a6bb7c943d43dab23d",
+      "excerptSha256": "76a9ee384ce45f0d966d24245dd21326e1250e9e10266c33e0480642f3de1311"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:47:35.414Z",
+      "endedUtc": "2026-10-13T18:47:48.097Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "05-unit.txt",
+      "sourceLogSha256": "549ebefd6ff554090113de3b7551531a45288a8f5d9d233cbc80004c578c07ed",
+      "excerptSha256": "24b2ad81614be3a7af01d3887c0dab67695660f95a5f74968bb9e01cf200bc5c"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:47:48.438Z",
+      "endedUtc": "2026-10-13T18:47:54.398Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "06-typecheck.txt",
+      "sourceLogSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "excerptSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:47:54.722Z",
+      "endedUtc": "2026-10-13T18:48:05.751Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "07-lint.txt",
+      "sourceLogSha256": "d1cbd465797eca0933f6f1594aab2894f69049cab2a6b91c57446c4dc31a6fbd",
+      "excerptSha256": "445bb6cc3d82a814173c27ee2460d03c13dab6456a6563239c84fe2bc751f19f"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:48:06.073Z",
+      "endedUtc": "2026-10-13T18:48:26.348Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "08-build.txt",
+      "sourceLogSha256": "674959d3a891f07205b48e719000a657f82ecfc3a981a9430730fc463faca3e2",
+      "excerptSha256": "44becf275cad54cf4126f5ca757faa421e018c00c964bbb1c4cf36c9f4b29a77"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:48:26.657Z",
+      "endedUtc": "2026-10-13T18:51:05.426Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "09-e2e.txt",
+      "sourceLogSha256": "f42f32346748f4c2bedb8f9d85cf3a523c42cf9463bae98f6d333dcf4e09ac62",
+      "excerptSha256": "6d99fd4d46395b310f951e14059d0a898e1bb7a6d1a2b6b607984112d6b362ee"
+    },
+    {
+      "gate": "HydrationPayloadProof",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/environmental-drafts.spec.ts --grep slow hydration --reporter=line,json",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:51:29.900Z",
+      "endedUtc": "2026-10-13T18:51:41.050Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "10-hydration-payload-proof.txt",
+      "sourceLogSha256": "cfebef74484b53ca015f9d5b03c03f2aacf14f9183b56e8fff28eb529af0baf1",
+      "excerptSha256": "a7031c35de0e9e0dbd3f4519389bf4a63ad5ac65b43d844249c7e08e9cc67a57"
+    },
+    {
+      "gate": "AdminReadRepeat",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/user-administration-read.spec.ts",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:52:44.365Z",
+      "endedUtc": "2026-10-13T18:52:52.521Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "11-admin-read-repeat.txt",
+      "sourceLogSha256": "590c4a9503ba92bc01cebed95c1de00e5555ecc9218557236846fe538e78eeac",
+      "excerptSha256": "c12286de8146192188ac167ccdfe7eb626446856334b764ba1cc942badf3868e"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "a84248047758f83a4bd8b2f4582823f1fe34fde537d48d4349f4e54a4e85b636",
+      "startedUtc": "2026-10-13T18:52:52.815Z",
+      "endedUtc": "2026-10-13T18:55:16.927Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "12-e2e.txt",
+      "sourceLogSha256": "7272d87dcd7d99bc94226680333cf1d571e99f983ec51d90c514221806261848",
+      "excerptSha256": "9809122fa28776636e9963e0ac4d66842fcf34cfc353209a341320d3f9198b1a"
+    }
+  ],
+  "payloadAttachments": [
+    {
+      "fields": {
+        "water.hasSpring": {
+          "kind": "editing",
+          "raw": "false"
+        },
+        "soil.infiltrationRateMmPerHour": {
+          "kind": "editing",
+          "raw": "0"
+        },
+        "terrain.elevationMeters": {
+          "kind": "editing",
+          "raw": "12."
+        }
+      },
+      "expectedRevision": 0,
+      "persistedRevision": 1
+    },
+    {
+      "fields": {
+        "water.hasSpring": {
+          "kind": "editing",
+          "raw": "false"
+        },
+        "water.salinityIndicator": {
+          "kind": "absent"
+        },
+        "soil.infiltrationRateMmPerHour": {
+          "kind": "editing",
+          "raw": "0"
+        },
+        "vegetation.hasRiparianApp": {
+          "kind": "editing",
+          "raw": ""
+        },
+        "terrain.elevationMeters": {
+          "kind": "editing",
+          "raw": "12."
+        }
+      },
+      "expectedRevision": 1,
+      "persistedRevision": 2
+    }
+  ],
+  "limits": [
+    "Synthetic owned local PostgreSQL, no remote migrations/providers.",
+    "Historical failure timing unproved; deterministic RED and current GREEN recorded separately."
+  ]
+}
