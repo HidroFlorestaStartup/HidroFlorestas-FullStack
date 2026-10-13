@@ -8,7 +8,11 @@ posterior atualiza somente o vínculo Git; o inventário histórico abaixo conti
 exigindo confirmação de domínio/root/Node/banco/cloud/owners/backup/ensaio antes
 de qualquer operação. Nenhuma credencial/configuração do provedor foi alterada.
 
-RECOMENDACAO para execução futura pelos estudantes. Nenhum comando de deploy,
+RECOMENDACAO para execução futura pelos operadores designados pelo projeto,
+com acompanhamento dos estudantes. Aplicar a separação de responsabilidades,
+aprovações e reuso do [roteiro de seis entregas](plano-execucao-estudantes.md).
+Este runbook mantém procedimentos técnicos de referência: consulta não atribui
+privilégios, custos ou titularidade dos dados aos estudantes. Nenhum comando de deploy,
 migration remota ou modificação de provedor foi executado nesta preparação.
 Seguir do início ao fim; uma caixa pendente impede a etapa que dela depende.
 Operador de aplicação, operador de banco e aprovador da janela: não especificado.
@@ -115,7 +119,10 @@ esta atualização não recria superadmin nem faz seed.
 
 ## 5. Atualizar o projeto existente, em janela autorizada
 
-RECOMENDACAO de sequência; somente estudantes autorizados executam esta etapa.
+RECOMENDACAO de sequência: operadores autorizados executam, aprovadores do
+projeto decidem GO/NO-GO/reabertura e estudantes acompanham uso/evidências.
+Estudante só assume função operacional se houver designação/delegação explícita
+do projeto, com escopo e acesso confirmados. Não presumir acesso administrativo.
 
 1. Registrar deployment/SHA anterior e guardar artefato/configuração recuperáveis.
    Confirmar se a branch de produção ou development dispara deploy automático.

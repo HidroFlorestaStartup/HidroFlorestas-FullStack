@@ -1,9 +1,14 @@
 # Checklist de revisão, homologação e pós-deploy
 
-RECOMENDACAO para estudantes; todas as caixas abaixo aguardam sua execução/aceite.
+RECOMENDACAO compartilhada por estudantes, revisores e operadores do projeto.
+Selecionar itens pelo recorte; marcar com evidência pertinente e aceite do responsável.
+Uma prova existente aplicável pode fechar a conferência sem repetir sua execução.
 
 Usar o [plano de execução dos estudantes](plano-execucao-estudantes.md) para
-responsáveis, dependências, evidências e gates; este checklist detalha a revisão.
+seis entregas, executores/aprovadores e regras de reuso; este checklist é referência
+técnica, não uma bateria obrigatória adicional. Reviews/testes são dos estudantes
+designados; ações de provedor/banco/deploy/cleanup são dos operadores autorizados;
+custos/dados/GO são decisões das autoridades do projeto.
 
 Atualização2026-10-13: revisar as sete etapas e os heads atuais na
 [prontidão](rc-readiness-20261013.md). A regressão cumulativa agora inclui os
@@ -51,10 +56,16 @@ Não registrar PII, provas, bearer, connection string, cookies ou URLs de delive
 
 ## Testes e regressão local
 
+Escolher cobertura pelo diff, risco e lacunas: conservar SHA/ambiente originais
+das provas aproveitadas e documentar equivalência ao candidato. Mudança apenas
+documental/merge equivalente não exige repetir toda a suíte. Ampliar testes quando
+impacto material/cobertura insuficiente justificar, com aceite do revisor.
+
 - [ ] Conferir Node/lockfile/client e usar PostgreSQL próprio/loopback com marcadores
   de ownership. Não configurar TEST_DATABASE_URL ou PLAYWRIGHT_BASE_URL produtivos.
-- [ ] Executar gates proporcionais ao diff do SHA aprovado; novas mudanças em
-  schema/auth/serviços exigem regressão pertinente. Não recontar subconjuntos R1.
+- [ ] Conferir provas existentes e executar apenas gates adicionais necessários
+  ao diff/contexto; schema/auth/serviços exigem cobertura pertinente. Registrar
+  justificativa de reuso/seleção, sem recontar subconjuntos R1.
 - [ ] Confirmar draft após reload/duas abas/conflito/conexão perdida; confirmar
   medição e rollback; preservação de draft alheio, descarte/cancelamento e ciência.
 - [ ] Testar capas: ausência/fallback, inválido/oversize/multiframe, substituir,
@@ -66,8 +77,9 @@ Não registrar PII, provas, bearer, connection string, cookies ou URLs de delive
 - [ ] Teardown de fixtures/zero schemas e estado do cluster restaurado; não remover
   recursos preexistentes para fechar o gate.
 
-Harness existente (Windows, destino LOCAL com ownership): instalar dependências/
-gerar Prisma antes. RegressionSetup inicializa somente bancos locais próprios.
+Catálogo de comandos do harness para os gates escolhidos, sem obrigação de rodar
+a lista inteira. Windows, destino LOCAL com ownership: instalar dependências/
+gerar Prisma quando necessário. RegressionSetup inicializa somente bancos próprios.
 Não executar esses wrappers no banco hospedado. Consultar guard e output redigido.
 
 ```powershell
@@ -96,13 +108,13 @@ resíduos. Smoke/cleanup reais não pertencem à regressão comum.
 
 | Gate/pendência atual | Ação necessária | Evidência que fecha e alcance |
 |---|---|---|
-| Revisão/integração humana | Estudantes revisam e aprovam cada PR; repo produtivo confirmado | Aprovações/links/SHA e ordem de merges; revisão não é deploy |
+| Revisão/integração humana | Estudantes revisam/preparam; revisor independente designado aprova, mantenedor autorizado integra e operador confirma repo produtivo | Aprovações/links/SHA e ordem de merges; revisão não é deploy |
 | Mapa produção/backup/ensaio | Owner confirma Vercel→repo→Neon, snapshot, restore e schema compatível | IDs/fingerprint/UTC privados, backup/restore PASS, ensaio e aprovação da janela |
 | GateB012, T025/T028 | Em candidato autorizado, navegadorB recebe reset real, consome uma vez e revogaA; depois do cooldown, reenvio invalida código antigo e aceita novo | Humano confirma recebimento e jornadas com candidato/UTC, sem tokens; SMTP aceito não basta. [Runbook](../../operations/account-homologation-runbook.md) |
 | Aceite humano013 | Conta sintética removível autorizada: cancelamento, senha errada/correta, blockers e revogação | Registro humano do fluxo; 3 testes automáticos locais não encerram aceite |
 | Drafts em browsers alvo | Exercitar save/retomar/OCC/descarte/confirmar/saída, teclado e mobile | Matriz browser/versão/candidato e limitações aceitas; não ampliar promessa do aviso |
 | Cloudinary016 real | Confirmar cloud/preset frozen/hash; synthetic upload authenticated, EXIF removido, delivery público recusado; revogar vínculo; substituir/perda resposta/remover/raw/tardio/cleanup próprio | Registro do provedor, custo/créditos/privacidade e reconciliação, sem IDs/URLs sensíveis desnecessários; [runbook](../../operations/area-covers-runbook.md) |
-| PD-CRI-010 cleanup/créditos | Designar operador/scheduler/cadência, alertas/BLOCKED e orçamento no plano real | Nome/função/aprovação e execução contínua observada; necessária antes de ativar capas |
+| PD-CRI-010 cleanup/créditos | Projeto designa operador/scheduler/alertas e autoridade financeira decide orçamento; estudantes acompanham provas sanitizadas | Nome/função/aprovação e execução contínua observada; necessária antes de ativar capas |
 | PD-CRI-004 mail contínuo | Designar owner; validar scheduler produtivo existente com bearer/destino/frequência e alertas | Execuções automáticas após atualização e fila dentro da validade; histórico homologação60s não prova produção |
 | Ciência IHFR | Autoridade científica executa validação/calibração/campo próprios | Parecer científico futuro; não bloqueia automaticamente review técnico desta RC e não é fechado por software |
 
@@ -112,6 +124,11 @@ fecha016 real nem dispensa GateB/aceite de exclusão quando esses fluxos estiver
 
 ## Antes da janela produtiva
 
+Operadores e aprovadores do projeto confirmam os itens abaixo e entregam registro
+sanitizado à equipe. Inventários/ensaios podem ocorrer em paralelo ao review e aos
+testes isolados. Prontidão operacional condiciona a ação produtiva correspondente;
+não bloqueia automaticamente merge sem efeito produtivo ou teste de outra frente.
+
 - [ ] Repo/branch/root/Node/projeto/domínio/banco confirmados por dois operadores.
 - [ ] Política de merge preserva SHAs; gatilhos Git/deploy conhecidos antes da promoção.
 - [ ] Backup final restaurável, ensaio/compatibilidade, RPO/RTO e deployment anterior.
@@ -120,23 +137,30 @@ fecha016 real nem dispensa GateB/aceite de exclusão quando esses fluxos estiver
 - [ ] Configuração mínima mail/contas preservada; Cloudinary só habilitado com gates
   fechados; schedulers/operadores/alertas prontos. Sem uso de projeto novo presumido.
 
-## Pós-deploy e encerramento pelos estudantes
+## Pós-deploy — acompanhamento e operação do projeto
+
+Estudantes acompanham uso/leitura autorizados e consolidam o relatório; operadores
+verificam banco, serviços e filas, executam ações privilegiadas e mantêm operação
+contínua. Cenários sintéticos/destrutivos, falhas e cleanup de teste ficam no alvo
+isolado; aproveitar as provas pertinentes anteriores sem repeti-los na produção.
 
 - [ ] Deployment READY, SHA aprovado, alias/domínio correto e mesmas identidades
   de banco/cloud;14 migrations sem falhas/pendências e constraints presentes.
 - [ ] Contagens legadas/ciência preservadas no congelamento de escrita; nenhuma
   fixture ou dado sintético de teste integrado ao domínio produtivo por engano.
-- [ ] Login/logout e sessão revogada funcionam; fluxos reais mail/contas com caixa
-  de teste autorizada, uso único/reenvio/reset, exclusão somente de conta sintética.
-- [ ] Draft pessoal sobrevive reload, conflitos conservam edição, confirmação consome
-  só seu draft; ciência/histórico/diagnóstico/mapa continuam coerentes.
-- [ ] Capa/fallback e autorização funcionam; se habilitada, privacy/EXIF/substituição/
-  cleanup/late/raw reais confirmados. Sem delete de asset corrente ou alheio.
+- [ ] Login/logout e autorização de leitura funcionam no smoke de uso permitido;
+  provas de reset/reenvio/revogação/exclusão permanecem no candidato isolado aceito.
+- [ ] UI de drafts, consulta/histórico/diagnóstico/mapa coerentes; aproveitar prova
+  isolada de reload/conflito/consumo próprio, sem gerar medições sintéticas produtivas.
+- [ ] Leitura de capa/fallback e autorização funcionam; quando ativada, evidências
+  isoladas de EXIF/substituição/raw/tardio/cleanup aceitas pelo projeto. Sem smoke
+  sintético de upload/delete em produção ou remoção de asset corrente/alheio.
 - [ ] Regressão mínima de labs/áreas/coletas/medições/admin e headers de segurança.
 - [ ] Schedulers retomados com execução automática observada, filas saudáveis,
   nenhum BLOCKED sem owner, créditos/custos monitorados; observar erros/latência.
-- [ ] Registrar aprovações, URL/deployment/SHA/UTC, backup, gates/pending e decisão
-  de reabertura/recuperação. Encerrar cada pendência só com evidência pertinente.
+- [ ] Estudantes registram aprovações, URL/deployment/SHA/UTC e extratos operacionais
+  sanitizados; projeto aceita relatório e mantém pendências com owners. Encerrar
+  cada gate apenas com evidência correspondente, sem transferir custos/dados/plantão.
 
 ## PASS histórico local — referência, não execução deste checklist
 

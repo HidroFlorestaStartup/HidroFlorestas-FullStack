@@ -1,9 +1,12 @@
 # Release Candidate CRI — 10/10/2026
 
 Ponto de entrada para a equipe: [plano de execução dos estudantes](plano-execucao-estudantes.md).
-São 43 tarefas pendentes, com papéis a preencher, sete fases e gates de revisão,
-integração, homologação e atualização da aplicação já existente. A publicação
-do plano não fecha os aceites humanos nem autoriza operações produtivas.
+O roteiro principal tem seis entregas: revisão, testes, tratamento de achados,
+integração, atualização acompanhada e registro final. As 43 referências técnicas
+são consultas condicionais. Estudantes entregam trabalho técnico; operadores e
+aprovadores do projeto assumem serviços, dados, custos e produção. Provas existentes
+são reaproveitadas conforme alcance/impacto, sem repetição geral dos testes.
+A publicação do plano não fecha aceites nem autoriza operações produtivas.
 
 Atualização de2026-10-13: correções RC-DRAFT-001/RC-UI-001, merges internos da
 pilha e dependências originais99d8363 na RC. Consultar
@@ -24,16 +27,22 @@ Os PRs e SHAs estão no [guia de integração](integration-guide.md) e em
 [evidências da publicação](publication-evidence.json), com
 [relatório das verificações](verification-report.md).
 
-RECOMENDACAO: estudantes devem seguir esta ordem:
+RECOMENDACAO: usar as seis entregas do plano; frentes independentes podem avançar
+em paralelo, com evidências e responsabilidades separadas:
 
-1. Ler [release notes](release-notes.md), [integração](integration-guide.md) e
-   [checklist](review-checklist.md); revisar os sete PRs pelo diff de cada etapa.
-2. Cumprir revisão/aceites e identificar os recursos existentes pelo
-   [guia operacional](production-update-runbook.md). Registrar o SHA aprovado.
-3. Ensaiar a atualização em destino isolado autorizado, com backup restaurado,
-   seguindo o [runbook de migrations](migration-runbook.md).
-4. Somente com os pré-requisitos fechados e autorização própria, integrar no
-   repositório conectado e atualizar o projeto existente; validar e monitorar.
+1. Revisão: estudantes analisam os sete PRs pelo diff; revisores independentes
+   designados aprovam conforme política. Consultar [checklist](review-checklist.md).
+2. Testes: estudantes/testadores complementam lacunas no alvo autorizado;
+   revisor e responsável pelo aceite aceitam cobertura/reuso e resultados humanos.
+3. Achados: estudantes registram/planejam correções; revisores aceitam mudanças,
+   e autoridades do projeto decidem risco, dados e custos.
+4. Integração: estudantes preparam/conferem; mantenedor autorizado realiza merges
+   pela cadeia Git, conforme [guia](integration-guide.md), com aprovações pertinentes.
+5. Atualização acompanhada: estudantes apoiam; operadores executam
+   [preparação/janela](production-update-runbook.md) e [banco](migration-runbook.md)
+   com backup/ensaio/recuperação e GO aprovados pelo projeto.
+6. Registro final: estudantes consolidam situação real/evidências; projeto aceita
+   relatório e mantém operadores contínuos. Sem pressupor privilégios dos estudantes.
 
 Nenhum merge em development/main, deploy, migration remota, alteração de
 credencial ou recurso de provedor faz parte desta preparação. Não confundir
