@@ -4,9 +4,15 @@ import Image from "next/image";
 import { createClientUuid } from "@/lib/client-uuid";
 import type { CoverDto,UploadTicket } from "@/app/api/server/images/contracts";
 
-export function AreaCoverPreview({apiPath,name,hasImage,revision}:{apiPath:string;name:string;hasImage:boolean;revision:number}){
+export function AreaCoverPreview({apiPath,name,hasImage,revision,retryAttempt=0,onLoaded,onFailed}:{
+ apiPath:string;name:string;hasImage:boolean;revision:number;
+ retryAttempt?:number;onLoaded?:()=>void;onFailed?:()=>void;
+}){
  const [failed,setFailed]=useState(false);
- return hasImage&&!failed?<Image unoptimized src={`${apiPath}/content?revision=${revision}`} width={1200} height={800} alt={`Capa da área ${name}`} onError={()=>setFailed(true)} className="aspect-[3/2] max-h-80 w-full object-cover"/>:<div className="flex aspect-[3/2] max-h-64 items-center justify-center bg-green-50 p-5 text-sm text-green-900">{hasImage?"Capa indisponível.":"Área sem capa."}</div>;
+ // The retry counter is local to the browser; persisted revision changes only
+ // when the cover asset changes. A new query prevents caching a failed response.
+ const src=`${apiPath}/content?revision=${revision}${retryAttempt>0?`&retry=${retryAttempt}`:""}`;
+ return hasImage&&!failed?<Image unoptimized src={src} width={1200} height={800} alt={`Capa da área ${name}`} onLoad={onLoaded} onError={()=>{setFailed(true);onFailed?.();}} className="aspect-[3/2] max-h-80 w-full object-cover"/>:<div className="flex aspect-[3/2] max-h-64 items-center justify-center bg-green-50 p-5 text-sm text-green-900">{hasImage?"Capa indisponível.":"Área sem capa."}</div>;
 }
 class CoverRequestError extends Error {constructor(message:string,readonly code:string){super(message);}}
 async function jsonRequest(path:string,method:string,body?:unknown){
@@ -26,6 +32,8 @@ export function AreaCoverEditor({laboratoryId,areaId,name}:{laboratoryId:string;
  const [data,setData]=useState<CoverDto|null>(null),[file,setFile]=useState<File|null>(null),[busy,setBusy]=useState(false),[progress,setProgress]=useState(0),[error,setError]=useState(""),[message,setMessage]=useState("Carregando capa…");
  const lock=useRef(false),pending=useRef<{key:string;ticket:UploadTicket|null}>({key:createClientUuid(),ticket:null});
  const fileInput=useRef<HTMLInputElement>(null),selection=useRef(0);
+ const [previewAttempt,setPreviewAttempt]=useState(0);
+ const previewSequence=useRef(0),pendingPreviewRetry=useRef<number|null>(null);
  useEffect(()=>{const controller=new AbortController();fetch(apiPath,{cache:"no-store",signal:controller.signal}).then(async r=>{const v=await r.json();if(!r.ok)throw Error();if(!controller.signal.aborted){setData(v);setMessage("");}}).catch(()=>{if(!controller.signal.aborted){setError("Não foi possível carregar a capa.");setMessage("");}});return()=>controller.abort();},[apiPath]);
  async function select(selected:File|undefined){
   const token=++selection.current;setError("");setFile(null);pending.current={key:createClientUuid(),ticket:null};if(!selected)return;
@@ -40,14 +48,29 @@ export function AreaCoverEditor({laboratoryId,areaId,name}:{laboratoryId:string;
    // authoritative server confirmation reconciles it, ignoring client metadata.
    try{await directUpload(ticket,file,setProgress);}catch{setMessage("Verificando o resultado do envio…");}
    setMessage("Validando imagem…");const current=await jsonRequest(`${apiPath}/uploads/${ticket.attemptId}/confirm`,"POST",{}) as CoverDto;
-   setData(current);setFile(null);if(fileInput.current)fileInput.current.value="";pending.current={key:createClientUuid(),ticket:null};setMessage("Capa salva.");
+   pendingPreviewRetry.current=null;setData(current);setFile(null);if(fileInput.current)fileInput.current.value="";pending.current={key:createClientUuid(),ticket:null};setMessage("Capa salva.");
   }catch(e){if(e instanceof CoverRequestError&&e.code==="EXPIRED")pending.current={key:createClientUuid(),ticket:null};setError(e instanceof Error?e.message:"Falha ao enviar imagem.");setMessage("O preenchimento foi preservado. Recarregue se a capa mudou em outra sessão.");}
   finally{lock.current=false;setBusy(false);}
  }
- async function reload(){if(lock.current)return;lock.current=true;setBusy(true);try{setData(await jsonRequest(apiPath,"GET") as CoverDto);pending.current={key:createClientUuid(),ticket:null};setError("");setMessage("Capa recarregada.");}catch{setError("Não foi possível recarregar a capa.");}finally{lock.current=false;setBusy(false);}}
- async function remove(){if(!data||lock.current||!window.confirm("Remover a capa desta área?"))return;lock.current=true;setBusy(true);setError("");try{await jsonRequest(apiPath,"DELETE",{expectedRevision:data.image.revision});setData(await jsonRequest(apiPath,"GET") as CoverDto);pending.current={key:createClientUuid(),ticket:null};setMessage("Capa removida.");}catch(e){setError(e instanceof Error?e.message:"Não foi possível remover.");}finally{lock.current=false;setBusy(false);}}
+ async function reload(){
+  if(lock.current)return;lock.current=true;setBusy(true);
+  // Never let an old image event report success for a newer request.
+  pendingPreviewRetry.current=null;
+  try{
+   const current=await jsonRequest(apiPath,"GET") as CoverDto;
+   const attempt=++previewSequence.current;
+   pendingPreviewRetry.current=current.image.hasImage?attempt:null;
+   setData(current);setPreviewAttempt(attempt);
+   pending.current={key:createClientUuid(),ticket:null};setError("");
+   setMessage(current.image.hasImage?"Tentando recarregar a capa…":"Área sem capa.");
+  }catch{setError("Não foi possível recarregar a capa.");}
+  finally{lock.current=false;setBusy(false);}
+ }
+ async function remove(){if(!data||lock.current||!window.confirm("Remover a capa desta área?"))return;lock.current=true;setBusy(true);setError("");try{await jsonRequest(apiPath,"DELETE",{expectedRevision:data.image.revision});pendingPreviewRetry.current=null;setData(await jsonRequest(apiPath,"GET") as CoverDto);pending.current={key:createClientUuid(),ticket:null};setMessage("Capa removida.");}catch(e){setError(e instanceof Error?e.message:"Não foi possível remover.");}finally{lock.current=false;setBusy(false);}}
  return <section aria-label="Capa da área" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-  <AreaCoverPreview key={`${areaId}:${data?.image.revision??0}`} apiPath={apiPath} name={name} hasImage={data?.image.hasImage??false} revision={data?.image.revision??0}/>
+  <AreaCoverPreview key={`${areaId}:${data?.image.revision??0}:${previewAttempt}`} apiPath={apiPath} name={name} hasImage={data?.image.hasImage??false} revision={data?.image.revision??0} retryAttempt={previewAttempt}
+   onLoaded={()=>{if(pendingPreviewRetry.current===previewAttempt){pendingPreviewRetry.current=null;setMessage("Capa recarregada.");}}}
+   onFailed={()=>{if(pendingPreviewRetry.current===previewAttempt){pendingPreviewRetry.current=null;setMessage("Capa ainda indisponível. Tente novamente.");}}}/>
   <div className="space-y-3 p-5"><h2 className="text-xl font-bold">Capa da área</h2><p className="text-sm text-slate-600">Visível à equipe autorizada deste laboratório.</p>
   {error&&<p role="alert" className="text-red-800">{error}</p>}<p role="status" aria-live="polite">{message}</p>
   {busy&&file&&<progress aria-label="Progresso do envio da capa" value={progress} max={100} className="w-full"/>}

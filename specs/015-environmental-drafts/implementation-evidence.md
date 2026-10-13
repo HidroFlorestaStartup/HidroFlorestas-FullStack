@@ -1,5 +1,20 @@
 # Evidências de implementação 015 — 2026-10-10
 
+## Remediação posterior — RC-DRAFT-001, 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: plano d6b1323 precede RED determinístico de controles
+habilitados antes da hidratação. Fix de prontidão e GREEN2/2 comprovam primeiro
+PUT/resposta/GET/reload com false/0/ausência/vazio explícito preservados; suíte de
+drafts5/5 e Unit289+Mail17/typecheck/lint/build PASS. Nenhum parser/serviço/schema
+alterado; guards e três testes originais intactos. E2E geral inicial66 PASS/1 FAIL
+por ECONNRESET no admin-read; repetição e gate final registrados separadamente.
+[Evidências completas](hydration-evidence.md) e
+[registros/logs/payloads](hydration-evidence/validation-records.json).
+
+Este registro não substitui a evidência histórica abaixo nem prova o timing da
+falha anterior do PR7. Integração/CI final seguem o plano da pilha; ciência/gates
+humanos/operacionais preservados.
+
 ## Revisão focal posterior — 2026-10-10
 
 EVIDENCIA_IMPLEMENTACAO: regressão completa no final5f36eb7e revalida os cenários

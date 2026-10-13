@@ -14,3 +14,7 @@ lastError seguro; estados PENDING/PROCESSING/RECONCILE/BLOCKED. Tombstones não 
 de ausências/deleções só nas identidades controladas, nunca prefix/tag/all.
 IDs/contextos esperados gerados antes do upload; final aponta asset sanitizado.
 Nenhuma FK para medições/diagnóstico; CollectionArea.image legado não vira intenção.
+
+RC-UI-001: previewAttempt e pendingPreviewRetry pertencem somente ao componente
+no navegador. Recarga autorizada cria nova tentativa local; revision persistida
+continua representando mudança de asset. Sem mudança de schema/migration.
