@@ -1,0 +1,3 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:ihfr:audit:assert-zero
+npm notice run node --import=tsx scripts/imp006-audit-schemas.ts assert-zero
+IMP-006 read-only audit target 3ca357615da4: 0 managed test candidate schemas.

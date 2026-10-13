@@ -1,5 +1,12 @@
 # Evidências da preparação e publicação
 
+Atualização2026-10-13: [prontidão atual](rc-readiness-20261013.md) registra nova
+regressão da combinação corrigida, dependências originais e checks automatizados.
+O restante deste documento e publication-evidence.json preservam o snapshot
+histórico da publicação inicial; ausência de CI naquele snapshot não descreve
+as novas runs e seus resultados. Merges internos autorizados foram usados para
+sincronização; nenhuma branch principal foi integrada.
+
 EVIDENCIA_IMPLEMENTACAO de2026-10-10. Corte funcional auditado539f38d; branch
 de revisão completa release/cri-rc-20261010. Manifesto legível por máquina:
 [publication-evidence.json](publication-evidence.json). Seu localCheckpoint é o

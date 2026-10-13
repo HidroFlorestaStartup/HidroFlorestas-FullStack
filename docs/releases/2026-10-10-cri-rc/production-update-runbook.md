@@ -1,5 +1,13 @@
 # Atualização operacional da aplicação existente
 
+Atualização2026-10-13: consultar [candidato corrigido](rc-readiness-20261013.md).
+Consulta autenticada Vercel somente leitura confirmou projeto existente
+hidro-florestas-full-stack ligado a HidroFlorestaStartup/HidroFlorestas-FullStack,
+produção main, sem deploy hooks/deployments das branches de revisão. Este achado
+posterior atualiza somente o vínculo Git; o inventário histórico abaixo continua
+exigindo confirmação de domínio/root/Node/banco/cloud/owners/backup/ensaio antes
+de qualquer operação. Nenhuma credencial/configuração do provedor foi alterada.
+
 RECOMENDACAO para execução futura pelos estudantes. Nenhum comando de deploy,
 migration remota ou modificação de provedor foi executado nesta preparação.
 Seguir do início ao fim; uma caixa pendente impede a etapa que dela depende.

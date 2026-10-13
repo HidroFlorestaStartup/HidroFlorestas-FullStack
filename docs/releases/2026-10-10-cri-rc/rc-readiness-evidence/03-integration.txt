@@ -1,0 +1,33 @@
+ℹ tests 187
+ℹ pass 187
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+IMP-006 schema owned by this run: imp006_test_e5de1de5ba074712a96c40b2a8b33333
+✔ abandoned claims exhaust finite attempts; cleanup bounded/repeated and active rows preserved (424.7028ms)
+IMP-006 schema owned by this run: imp006_test_7b81d790b7034ecbafdb82f4218dd01e
+✔ enforced batch/concurrency bounds and authenticated payload failure without retries (397.7697ms)
+IMP-006 schema owned by this run: imp006_test_c9aaf86b848247b58aa657b0cf87ce7e
+✔ database failure awaits sibling SMTP before rejecting; no work escapes server response (454.7466ms)
+IMP-006 schema owned by this run: imp006_test_3dc17bf247ed4e92ac0d1421638e9658
+✔ four claims respect concurrency two and pre-send expiry fence after earlier wave (470.3441ms)
+✔ derives the principal, forwards context and returns no-store (3.2124ms)
+✔ sanitizes unauthenticated, inaccessible and internal failures (1.4452ms)
+✔ one request wins each account revision and mutation/audit remain atomic (305.4219ms)
+✔ concurrent changes never remove both final ACTIVE ADMIN accounts (319.6609ms)
+✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (432.655ms)
+▶ user administration routes
+  ✔ derives the actor and forwards only parsed list filters (3.3483ms)
+  ✔ validates status input before invoking the service (1.0713ms)
+  ✔ returns sanitized authentication, authorization, and conflict errors (1.11ms)
+✔ user administration routes (6.2219ms)
+ℹ tests 187
+ℹ suites 15
+ℹ pass 187
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78192.5757
+[2026-10-13T19:15:45.846Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=0 duration_ms=78250
+IMP-006 sanitized gate log: <USER>\AppData\Local\Temp\hidroflorestas-imp006-gate-pKo33N\integration-attempt-1.log

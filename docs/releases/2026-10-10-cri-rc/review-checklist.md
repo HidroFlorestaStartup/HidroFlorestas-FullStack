@@ -1,6 +1,15 @@
 # Checklist de revisão, homologação e pós-deploy
 
 RECOMENDACAO para estudantes; todas as caixas abaixo aguardam sua execução/aceite.
+
+Atualização2026-10-13: revisar as sete etapas e os heads atuais na
+[prontidão](rc-readiness-20261013.md). A regressão cumulativa agora inclui os
+dois baselines de hidratação e retry da capa revision1, sem substituir o aceite
+humano/browser/provedor. Conferir primeiro PUT/GET/reload de false/0/ausência,
+novo GET503→200/naturalWidth e retentativa após outra falha. O patch99d8363 já
+pertence à RC6; PR7 conserva a revisão independente, sem duplicação do commit.
+Os checks atuais e seu runner estão no [runbook CI](../../operations/rc-review-ci-runbook.md).
+As caixas humanas abaixo continuam abertas; o agente não aprovou nenhum PR.
 PASS histórico local está separado em seção própria. Para cada evidência registrar
 UTC, SHA, ambiente/fingerprint redigido, comando/cenário, resultado e revisor.
 Não registrar PII, provas, bearer, connection string, cookies ou URLs de delivery.

@@ -1,5 +1,26 @@
 # Notas da Release Candidate CRI
 
+## Atualização focal — 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: RC-DRAFT-001 impede edição/salvamento antes de os handlers
+do formulário ambiental estarem prontos. RED determinístico bloqueia scripts;
+GREEN valida primeiro PUT, persistência e reload com false, 0, ausência e vazio
+explícito, sem mudar parser/API/schema. Os três E2E originais foram preservados.
+
+RC-UI-001 faz “Recarregar capa” tentar novo GET após503, mantendo revision1 e
+comprovando naturalWidth>0, inclusive após outra falha. Nenhum UPDATE de revisão
+no banco foi usado. Ambas as correções integram a árvore cumulativa por merges.
+
+O commit99d8363 revisado do PR7 foi integrado com SHA/autoria originais:
+Next/config-next16.3.8, sharp0.35.5/libvips1.3.4, source-map-js1.2.2 e os dois
+patches brace-expansion. Sem atualização geral. Os valores0.35.4/16.3.6 nas
+seções originais abaixo descrevem o baseline histórico da publicação.
+
+Checks Windows/Node24/PostgreSQL sintético próprio foram adicionados às cinco
+branches da revisão, sem segredos de produção/deploy. Resultados atuais, FAILs
+históricos e condições de aprovação estão em [prontidão](rc-readiness-20261013.md)
+e no [runbook CI](../../operations/rc-review-ci-runbook.md).
+
 Data: 2026-10-10. Recorte: base beba96f → auditoria539f38d, acrescido de proteção
 das branches de revisão e documentação de entrega. Identificador operacional
 `cri-rc-20261010`; package.json continua0.1.0. Esta RC não é homologação concluída.
