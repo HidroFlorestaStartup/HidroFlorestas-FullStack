@@ -1,5 +1,36 @@
 # RC-UI-001 — publicação e propagação preparada
 
+## Atualização posterior da pilha — 2026-10-13
+
+DECISAO_CONFIRMADA: novo pedido do usuário autorizou exclusivamente merges
+internos entre branches de revisão para sincronização, depois da entrega
+RC-UI-001. Esse mandato posterior permite executar a propagação que o registro
+histórico abaixo somente preparava. Main/development, deploy, migrations remotas
+e recursos reais continuam fora do escopo; estados de review são dos estudantes.
+
+EVIDENCIA_IMPLEMENTACAO: merges015→016→auditoria→RC→revisão7 preservaram
+os11 originais. Conflitos de spec015/spec.md e implementation-evidence015/016
+mantiveram erratas de auditoria e novas evidências. Commit99d8363 de dependências
+entrou uma vez na RC6 via merge9fe2bec, mantendo identidade/autoria; os quatro
+commits documentais próprios do PR7 foram preservados. PR5 deixou de ser dirty
+após publicação. Refs/bases não foram retargetadas nem houve force-push.
+
+RC-DRAFT-001 corrigiu o recorte de hidratação com Spec Kit, plano d6b1323,
+RED determinístico e fix fc82ecc; primeiro payload/GET/reload preservam
+false/0/ausência/vazio. [Evidência015](../015-environmental-drafts/hydration-evidence.md).
+Nenhuma assertion/guard/timeout original foi relaxada. O vínculo com o timing
+da falha histórica do PR7 continua INFERENCIA; não se inventou PASS daquele teste.
+
+Combo9fe2bec:15 gates locais PASS, Unit291+Mail17, Integration187, Migration37,
+Contract6, E2E70, HTTPS2, Deletion3, IHFR6, Bootstrap14, SchemaAudit0 e
+typecheck/lint/build. CI015 run38452752261 SUCCESS; primeira runFAIL preservada.
+Conferir checks e heads finais nos PRs. [Prontidão cumulativa na branch de RC](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/release/cri-rc-20261010/docs/releases/2026-10-10-cri-rc/rc-readiness-20261013.md).
+Nova revisão continua necessária; CHANGES_REQUESTED de #4/#6 não foi dispensado.
+Cluster próprio voltou STOPPED com dados; principais/produção intactas e guardfalse.
+
+As seções seguintes são o registro histórico do mandato anterior, incluindo
+restrições então vigentes, verificações temporárias e pendências daquele momento.
+
 DECISAO_CONFIRMADA: solicitação do usuário em 2026-10-13 autoriza a correção
 e push fast-forward somente da branch existente `review/016-area-covers` após
 gates. A instrução posterior proíbe qualquer merge e exige execução exclusiva
