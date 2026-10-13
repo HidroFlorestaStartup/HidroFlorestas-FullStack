@@ -31,3 +31,16 @@ Fontes primárias consultadas em 2026-10-10:
 - [Invalidation e limitações](https://cloudinary.com/documentation/invalidate_cached_media_assets_on_the_cdn)
 Guias Next locais de route/image consultados; optimizer não encaminha headers,
 portanto img same-origin ou Image unoptimized com autorização em cada pedido.
+
+## RC-UI-001 — pesquisa focal 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: preimages e revisão independente
+[PR #4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988)
+confirmam failed persistente com key areaId/revision; GET de metadados não é prova
+de carregamento da imagem. RECOMENDACAO adotada no patch autorizado: contador
+local na key e query, feedback em onLoad/onError e guarda contra evento obsoleto.
+Alternativas descartadas: incrementar revisão no banco (proibido pelo usuário),
+reload inteiro da página (não satisfaz a ação focal) e mostrar sucesso após só
+metadados (reproduz o defeito). Sem nova entidade, API ou dependência para o fix.
+Pendências operacionais anteriores continuam abertas; nenhuma pesquisa remota
+do provedor é necessária para esta remediação de estado local da prévia.

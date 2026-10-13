@@ -29,6 +29,13 @@ interceptados. Voltar/Avançar cancelados foram verificados em Chromium via Navi
 API cancelável; outros navegadores sem essa API não têm essa garantia. Salve antes
 de navegar. Fechar processo/dispositivo não garante disparo do aviso.
 
+RC-DRAFT-001 (2026-10-13): o formulário exibe “Preparando formulário…” e mantém
+edição/salvamento/revisão desabilitados enquanto os handlers ainda não estão
+prontos. Após hidratação, funciona o fluxo existente; false, zero, ausência e
+células não editadas mantêm semântica. Não usar reload/sleep como contorno da
+perda de seleção. Testes com scripts retardados validam primeiro PUT e retomada;
+[evidências](../../specs/015-environmental-drafts/hydration-evidence.md).
+
 Validação local usa Pg loopback próprio/synthetic fixtures e fake de e-mail. Migração
 aditiva 20261010000100_environmental_drafts; rollback da aplicação conserva tabela,
 nunca remove ciência ou migrations históricas. Nenhuma migration remota executada.

@@ -32,3 +32,37 @@ test("member has reading/fallback only and outsider receives contextual HTTP ref
  await page.route("**/image",r=>r.fulfill({json:{image:{revision:1,hasImage:true},canEdit:false}}));await page.route("**/image/content**",r=>r.fulfill({status:404}));await page.goto(area);const panel=page.getByRole("region",{name:"Capa da área"});await expect(panel.getByText("Capa indisponível.",{exact:true})).toBeVisible();await expect(panel.getByRole("button",{name:"Enviar capa",exact:true})).toHaveCount(0);await expect(panel.getByRole("button",{name:"Remover capa",exact:true})).toHaveCount(0);
  await page.unrouteAll({behavior:"wait"});await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[3]),url:String(info.project.use.baseURL)}]);expect((await page.request.get(api)).status()).toBe(404);expect((await page.request.get(api+"/content")).status()).toBe(404);
 });
+
+// RC-UI-001: same persisted revision must allow a new content attempt after 503.
+// The UI is real; only metadata/content provider responses are controlled.
+test("reloading a temporarily unavailable cover retries its content at the same revision",async({page,context},info)=>{
+ await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[0]),url:String(info.project.use.baseURL)}]);
+ const image=await sharp({create:{width:30,height:20,channels:3,background:"#326646"}}).png().toBuffer();
+ let contentRequests=0,metadataRequests=0;const observedRevisions:string[]=[];
+ await page.route(url=>url.pathname===api||url.pathname===api+"/content",async route=>{
+  const url=new URL(route.request().url());
+  if(url.pathname===api){metadataRequests++;return route.fulfill({json:{image:{revision:1,hasImage:true},canEdit:false},headers:{"Cache-Control":"private, no-store"}});}
+  contentRequests++;observedRevisions.push(url.searchParams.get("revision")??"");
+  if(contentRequests===1||contentRequests===3)return route.fulfill({status:503,headers:{"Cache-Control":"private, no-store"}});
+  return route.fulfill({status:200,contentType:"image/png",body:image,headers:{"Cache-Control":"private, no-store"}});
+ });
+ await page.goto(area);const panel=page.getByRole("region",{name:"Capa da área"});
+ await expect(panel.getByText("Capa indisponível.",{exact:true})).toBeVisible();
+ expect(contentRequests).toBe(1);const reload=panel.getByRole("button",{name:"Recarregar capa",exact:true});
+ await reload.click();
+ await expect(panel.getByRole("status")).toHaveText("Capa recarregada.");
+ await expect(panel.getByRole("img")).toBeVisible();
+ expect(await panel.getByRole("img").evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+ expect(contentRequests).toBe(2);
+ // A new temporary failure must still permit a subsequent retry.
+ await reload.click();
+ await expect(panel.getByText("Capa indisponível.",{exact:true})).toBeVisible();
+ await expect(panel.getByRole("status")).toContainText("Tente novamente.");
+ expect(contentRequests).toBe(3);
+ await reload.click();
+ await expect(panel.getByRole("status")).toHaveText("Capa recarregada.");
+ expect(await panel.getByRole("img").evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+ expect(contentRequests).toBe(4);expect(metadataRequests).toBeGreaterThanOrEqual(4);
+ expect(observedRevisions).toEqual(["1","1","1","1"]);
+ expect(await panel.getByRole("img").getAttribute("src")).toContain(api+"/content?revision=1");
+});

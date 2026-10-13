@@ -17,6 +17,7 @@ outsider não obtém imagem nem metadados; perda de vínculo revoga nova leitura
 1. Given contexto autorizado, When upload válido conclui, Then há uma única capa privada por área.
 2. Given acesso de outro laboratório ou vínculo removido, When lê/edita, Then recebe recusa contextual.
 3. Given arquivo inválido/excessivo, When finaliza, Then não vincula capa e mostra erro recuperável.
+4. Given conteúdo indisponível com 503 e revisão 1, When o endpoint recupera e o membro usa “Recarregar capa”, Then há novo GET, imagem real visível na revisão 1 e sucesso somente após carregamento; outra falha continua permitindo nova tentativa.
 
 ### User Story 2 - Substituir e remover com segurança (Priority: P1)
 
@@ -55,7 +56,7 @@ EXIF; concorrência; remoção repetida; nova tentativa após falha; asset estra
 - **FR-004**: originais/derivados finais authenticated; aplicação não expõe URL de entrega reutilizável e valida sessão/vínculo a cada leitura.
 - **FR-005 / IMAGE-FR-004**: substituição transacional preserva antiga até commit; controle de revisão e retry/replay sem sobrescrita silenciosa.
 - **FR-006 / IMAGE-FR-005**: tentativas abandonadas/substituídas/removidas têm cleanup idempotente, apenas com identidade/contexto comprovados e ausência de referência vigente.
-- **FR-007**: selecionar/progresso/erro/retry/substituir/remover/fallback acessíveis, com teclado/mobile e nenhuma exposição de segredo.
+- **FR-007**: selecionar/progresso/erro/retry/substituir/remover/fallback acessíveis, com teclado/mobile e nenhuma exposição de segredo. A ação explícita de recarga DEVE tentar novamente o conteúdo da capa mesmo se a revisão persistida não mudou, inclusive após segunda falha. Mensagem de sucesso da imagem depende de onLoad real; falha conserva fallback e retry.
 - **FR-008**: limites/quota/prazo/timeout técnicos documentados; nenhum upload real, alteração de conta/scheduler remoto ou consumo de crédito durante esta execução.
 - **FR-009**: integração local usa provedor fake determinístico para falhas/concorrência/ownership; operação real/credits ficam pendentes sem homologação fictícia.
 
@@ -79,3 +80,10 @@ OWNER/ADMIN, Cloudinary authenticated, JPEG/PNG/WebP 10MiB/4096, EXIF removido,
 cleanup próprio. [Registro](../../docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md).
 Responsável por operação/créditos: não especificado; PENDENCIA_DE_DECISAO.
 Fora: galeria, foto de coleta/perfil, imagens públicas e alterações científicas IHFR.
+
+DECISAO_CONFIRMADA focal: pedido explícito do usuário em 2026-10-13 para executar
+RC-UI-001, com patches anexos e revisão do PR #4 como evidência do defeito.
+Não alterar revision no banco; preservar guards/assertions e executar RED antes
+da correção. Publicação somente fast-forward na branch existente protegida.
+Nova instrução do usuário nesta sessão: nenhum merge nem deploy; preparar a
+propagação aos descendentes sem executá-la. Aprovação técnica permanece humana.
