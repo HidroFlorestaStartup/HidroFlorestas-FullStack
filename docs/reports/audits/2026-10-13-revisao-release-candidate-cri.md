@@ -16,6 +16,8 @@ necessário. As seções seguintes são o relatório histórico original sobre
 ca80376/99d8363, inclusive65 PASS/1FAIL/1não executado e artefatos preservados;
 não descrevem novos resultados da árvore corrigida e não foram recontadas.
 
+[Acompanhamento dos checks atuais e falhas preservadas](2026-10-13-cri-rc-ci-followup.md).
+
 Estado: FINAL — revisão técnica encerrada, relatório e reviews publicados.
 Início da execução: 2026-10-12. Fechamento: 2026-10-13. Fuso: America/Fortaleza.
 Mandato: pedido do usuário de revisão e testes solicitado pelo professor Thales.
