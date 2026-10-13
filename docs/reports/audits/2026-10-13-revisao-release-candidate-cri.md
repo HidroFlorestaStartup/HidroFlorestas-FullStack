@@ -1,11 +1,11 @@
 # Revisão independente da Release Candidate CRI — 2026-10-13
 
-Estado: DRAFT / EM_ANDAMENTO; aguardando fechamento das verificações retomadas e
-publicação no GitHub. Início da execução: 2026-10-12. Fuso: America/Fortaleza.
+Estado: verificações técnicas encerradas; registros finais em publicação.
+Início da execução: 2026-10-12. Fechamento: 2026-10-13. Fuso: America/Fortaleza.
 Mandato: pedido do usuário de revisão e testes solicitado pelo professor Thales.
 Plano: [PLAN-RC-REVIEW-20261012](../../plans/active/revisao-release-candidate-cri-20261012.md).
 
-RECOMENDACAO provisória: **CORREÇÕES NECESSÁRIAS** antes da integração em
+RECOMENDACAO: **CORREÇÕES NECESSÁRIAS** antes da integração em
 development. A recarga da capa preserva o estado de falha quando a revisão não
 muda; deve receber instrução de correção no PR #4 e REQUEST_CHANGES no PR #6.
 A atualização focal de dependências foi feita em commit separado e ainda precisa
@@ -230,38 +230,83 @@ RECOMENDACAO: publicar o commit focal para revisão, acompanhar o patch upstream
 de braces e repetir o audit quando disponível. O residual dev está explicitado;
 o candidato remoto ca80376 continua sem o patch até a integração autorizada.
 
-## Verificações e limites do resultado histórico
+## Verificações retomadas, comandos e limites
 
-Resultados abaixo foram observados na sessão de 2026-10-12; os artefatos temporários
-perderam-se. A execução exata por SHA/variante será conciliada com os novos logs
-no fechamento. O patch modifica dependências, portanto testes pertinentes foram
-repetidos nessa sessão; regressão futura deve citar o SHA correspondente.
+EVIDENCIA_IMPLEMENTACAO de 2026-10-13. Node24.19.0, Prisma Client7.4.2,
+PostgreSQL17.10, Playwright1.55.1, Chromium140.0.7339.186. Runtime funcional
+`99d8363fba4d13a8a02937be1ff2e606d35b3fa6`; árvores executadas ffd04a2 e db68cdd
+acrescentam somente documentação/evidências/proteção Git. Código de UI/domínio,
+SQL, scripts/testes e guards permanecem idênticos ao candidato ca80376.
 
-| Verificação histórica | Resultado observado | Estado da nova coleta |
-|---|---|---|
-| npm ci / Prisma Client 7.4.2 | Instalação e geração executadas | npm ci retomado em worktree persistente; completar registro |
-| Unidade Node + Mail | 291 + 17 PASS | Pendente |
-| Integração PostgreSQL | 187 PASS | Pendente |
-| Migrations/constraints | 37 PASS | Pendente |
-| Contratos HTTP/provider | 6 PASS | Pendente |
-| Bootstrap local controlado | 14 PASS | Pendente |
-| Typecheck antes/depois do patch | PASS | Pendente |
-| Build padrão pós-patch, Turbopack | PASS | Pendente de avaliação proporcional na retomada |
-| Lint | Sem erros, 3 warnings preexistentes | Pendente |
-| git diff --check | PASS na sessão anterior | Reexecutar antes da publicação |
-| E2E geral, 67 selecionados | Interrompida; aproximadamente 13 executados, falhas iniciais e um skip serial | Não é PASS; execução nova pendente |
-| HTTPS e exclusão dedicada | Histórico da release não substitui execução nesta revisão | Pendente |
-| Provedores reais / homologação humana | Não executados nesta revisão | Permanecem pendentes |
+| Comando/cenário executado | Resultado atual |
+|---|---|
+| `npm ci --no-audit --no-fund`; `npm exec -- prisma generate` | PASS562 pacotes/16s; Client7.4.2 |
+| Equivalente a `npm run test:unit`, Node `--test-concurrency=1`, seguido do runner Mail original | **291 Node +17 Mail PASS**, zero fail/skipped/cancelled |
+| `node --import=tsx scripts/imp006-test-runner.ts integration` | **187/187 PASS**, 15 suites, zero fail/skipped/cancelled |
+| Mesmo runner `migration` | **37/37 PASS**, constraints/compatibilidade aditiva e dados legados locais |
+| Mesmo runner `contract` | **6/6 PASS**; contas/OpenAPI/IHFR, incluindo cenário HTTP/PostgreSQL real |
+| `scripts/imp006-clean-bootstrap.ts --with-versioned-baseline` | **14 migrations PASS**, smoke/leitura/escrita com rollback e descarte do banco próprio |
+| `playwright.config.ts`, seleção geral original, workers1/retries0 | **65 PASS, 1 FAIL, 1 não executado** por sequência serial; registro integral preservado |
+| Repetição isolada dos três testes originais `environmental-drafts.spec.ts` | **3/3 PASS**, assertions/timeouts/guards inalterados; não somar como casos novos |
+| `scripts/account-deletion-e2e.ts`, runner dedicado | **3/3 PASS**, schema próprio e cleanup |
+| `tests/e2e/run-auth-https.mjs`, runner original | **2/2 PASS**, produção HTTPS/sessão/cookies; teardown zero usuários de fixture |
+| `npm run build`, executado integralmente pelo runner HTTPS | **PASS padrão Turbopack/Next16.3.8**, compilação e TypeScript; nenhum checker relaxado |
+| Equivalente a `npm run typecheck`, após build completo | **PASS** |
+| Equivalente a `npm run lint` | **Zero erros, 3 avisos preexistentes**: ShieldCheck/useAuth/className |
+| `scripts/imp006-local-e2e.ts`, runner IHFR local original | **6/6 PASS**, schema próprio: criação/substituição/revogação/replay/leitura e estados de acesso |
+| `scripts/imp006-audit-schemas.ts assert-zero` | **PASS zero schemas managed**, conferido novamente após browser |
+| `git diff --check` e comparação de fontes | PASS; **12 SQL históricos intactos +2 novos**, sem diff funcional após patch |
 
-A tentativa de build --webpack apresentou TS2344 na rota logout com argumento
-request opcional; essa variante já falhava no candidato original. O build
-padrão Turbopack passou depois do patch na sessão anterior. Resultado da variante
-webpack permanece registrado como falha de compatibilidade de ferramenta/tipagem,
-sem atribuí-lo automaticamente ao patch ou esconder que o comando falhou.
+Os wrappers privados apenas injetam ambiente sintético, limitam recursos,
+iniciam servidores próprios e preservam logs em disco. A suíte geral usa
+Turbopack/configuração original, sem reescrever componentes, assertions ou
+seleção. Warm-up de GETs locais antes da suíte está registrado nos metadados;
+não alterou timeouts nem retries. Unitários executados em sequência para reduzir
+memória, incluindo todos os arquivos das duas extensões e os17 Mail.
 
-INFERENCIA a investigar: as falhas iniciais da E2E interrompida podem depender
-de compilação a frio/timeouts. Não há evidência suficiente neste rascunho para
-classificá-las como defeito funcional. O restante da suíte não foi executado.
+Artefatos publicados: [unit/Mail](2026-10-13-cri-rc-evidence/unit-mail-summary.json),
+[PostgreSQL/contratos/migrations](2026-10-13-cri-rc-evidence/database-tests.json),
+[execuções de navegador e falha inicial](2026-10-13-cri-rc-evidence/browser-results.json),
+[build/typecheck/lint](2026-10-13-cri-rc-evidence/build-typecheck-lint.json) e
+[hashes SQL](2026-10-13-cri-rc-evidence/migration-integrity.json).
+
+### Falha inicial dos rascunhos: causa inconclusiva
+
+No primeiro E2E geral, `environmental-drafts.spec.ts:32` esperava “Há nascente”
+igual a `false` após reload e recebeu vazio. Salvamento perdido/retry havia
+retornado200; zero e texto parcial12. permaneciam. O cenário seguinte ficou
+não executado devido à sequência serial. A repetição dos três testes originais
+passou, incluindo preservação de false/zero, conflito entre abas, recarga,
+descarte/cancelamento, confirmação e autorização.
+
+**Não converter a execução geral inicial em67/67 PASS.** A causa não foi comprovada.
+INFERENCIA: timing de hidratação/interação do select no carregamento pode explicar
+a diferença; mapper observado converte false para string corretamente. Nenhuma
+correção ou alteração de assertion foi aplicada. RECOMENDACAO: investigar com
+registro de seleção/hidratação e payload do primeiro save e estabilizar a prontidão
+sem afrouxar o aceite; manter o caso como ressalva de confiabilidade da regressão.
+As duas falhas de contas vistas antes do desligamento não reapareceram nesta suíte.
+
+### Verificações não executadas e alcance
+
+O runner `imp006-full-ui-e2e.ts` exige explicitamente branch remota E2E/public e
+recusa `IMP006_LOCAL_POSTGRESQL`; **não foi executado nem teve guard removido**.
+O runner IHFR local de seis casos cobre jornadas técnicas reais, mas não substitui
+esse checkpoint remoto. Nenhuma identidade Neon de homologação foi comprovada
+ou utilizada. Compatibilidade do aplicativo anterior em clone/restauração com
+dados reais, ensaio de backup/locks no hospedado e browsers Firefox/Safari também
+não foram executados. Migrations37 e bootstrap14 comprovam somente o ensaio local.
+
+A tentativa histórica `build --webpack` original apresentouTS2344 na assinatura
+opcional da rota logout. O build padrão passou em12/10 e novamente na retomada;
+falha daquela variante preexistente não é apresentada como bloqueio do padrão.
+RECOMENDACAO se Webpack for necessário: adaptar a fronteira POST ao contrato
+validado e reexecutar build limpo, preservando CSRF/cookies; não ignorar tipos.
+
+Cloudinary nas integrações é fake com decoder sharp real; as capas de E2E usam
+rede interceptada para UI e backend real para autorização. Contas/SMTP automatizados
+usam transportes sintéticos/local TLS. Não houve homologação real de e-mail/Cloudinary,
+aceite humano, deploy ou validação científica do IHFR.
 
 ## Banco real, ambiente e isolamento
 
@@ -305,7 +350,24 @@ documentado do banco de testes; não afirmar zero fixtures a partir de zero sche
 Nesta execução, o reset do banco próprio conferiu identidades/contagens, SQL/hashes,
 marker/owner/diretório e ausência de conexões antes da recriação.
 
-Inventário final após os E2E/limpeza: pendente de preenchimento.
+Inventário final após E2E: zero schemas extras e zero clientes ativos; `public`
+conservava54 usuários IMP009,3 auditorias e27 `MailRateLimitBucket`, com todos os
+demais modelos vazios. O guard de reset por linhas **recusou corretamente** os
+buckets; não foi removido nem ampliado para esconder o resíduo.
+
+A limpeza foi concluída por **descarte integral do cluster criado exclusivamente
+nesta retomada**. Guard independente de recurso verificou marker/owner, datadir e
+ancestrais reais, UID/proveniência13/10/setup inicialmente vazio, catálogo exato
+dos três bancos locais próprios e bancos template oficiais, ausência de clientes,
+tablespaces externos e symlinks. Após parada controlada, somente esse clusterRoot
+foi removido. Verificação independente confirmou cluster/datadir ausentes e
+nenhuma fixture física desse recurso restante. Logs/helpers e ambiente sintético
+0600 fora do recurso foram preservados; produto/runners/guards permanecem intactos.
+Ver [resultado de limpeza](2026-10-13-cri-rc-evidence/database-cleanup.json).
+
+Os resíduos são uma limitação dos teardowns públicos existentes, não vazamento
+de produção. RECOMENDACAO: melhorar cleanup dos fixtures/buckets com escopo
+comprovado, ou manter descarte explícito do recurso de regressão após o gate.
 Nenhum uso de Neon/produção, remoção de guard ou migração hospedada está autorizado.
 
 ## Registros e conclusão a fechar
@@ -317,7 +379,7 @@ Nenhum uso de Neon/produção, remoção de guard ou migração hospedada está 
 | Parecer consolidado REQUEST_CHANGES no PR #6 | Pendente de publicação; conferir duplicatas |
 | Patch de dependências | Commit local 99d8363; URL publicada pendente |
 
-RECOMENDACAO provisória: corrigir RC-UI-001 em commit funcional futuro com spec,
+RECOMENDACAO: corrigir RC-UI-001 em commit funcional futuro com spec,
 plano/tarefas pertinentes e teste de regressão real; incluir o patch focal de
 dependências após revisão; concluir ou delimitar E2E e provas de isolamento.
 A decisão de integração permanece com a equipe. Quando apropriada, preservar
@@ -330,6 +392,40 @@ pendentes. Referências operacionais:
 [checklist da RC](../../releases/2026-10-10-cri-rc/review-checklist.md) e
 [runbook operacional](../../releases/2026-10-10-cri-rc/production-update-runbook.md).
 Nenhum valor privado é exigido neste rascunho para concluir testes locais.
+
+### Conclusões da revisão anterior e ações manuais
+
+| Conclusão | Estado atual |
+|---|---|
+| Recarga de capa sem nova tentativa na mesma revisão | **CONFIRMADA**, componente real em rota real, requests/capturas preservados |
+| next/sharp/source-map-js originais high | **CONFIRMADA**; contagem completa de apenas3 **REFUTADA**: audit atual13 registros propagados |
+| Ausência de remotePatterns e source-map-js via PostCSS | **CONFIRMADA**; SSRF específico inaplicável à configuração observada, sem exploração comprovada |
+| 291 Node+17 Mail/typecheck/lint3 avisos/build | **CONFIRMADOS na retomada**, build padrão; variante Webpack original permanece delimitada |
+| Integração PostgreSQL/migrations/contratos ausentes na revisão anterior | Lacunas cobertas localmente187/37/6 e bootstrap14, sem fingir execução passada |
+| E2E integral | Geral65/1/1 e focaldrafts3/3, exclusão3, HTTPS2 e IHFR6; falha inicial e checkpoint remoto não executado permanecem explícitos |
+| Ciência/provedores reais/homologação humana | **PENDENTES**, fora do alcance dos testes locais |
+
+Correções materiais comprovadas: recuperação da prévia de capa (RC-UI-001).
+Configuração/ferramentas: OOM/sandbox/instalação interrompida resolvidos;
+inconsistência inicial de E2E draft sem causa comprovada; residual braces dev sem
+patch publicado. Manter essas categorias distintas. O patch99d8363 está na branch
+de revisão e ainda não integra o candidato remoto ca80376.
+
+Não foi necessário receber valor privado do usuário para os testes locais.
+Para as etapas humanas/remotas restantes, os campos e fontes são:
+
+| Etapa/campos | Origem e preenchimento correto |
+|---|---|
+| Checkpoint remoto full-ui | Identificar primeiro project/branch/database/role **E2E isolados** no Neon Console; Connection details fornece `TEST_DATABASE_URL` com endpoint direto. Preservar `TEST_DATABASE_CONFIRMATION=HIDROFLORESTAS_AUTH_TEST`, `IMP006_DATABASE_VARIABLE=TEST_DATABASE_URL`, `NODE_ENV=test` no runner. `IMP006_UI_RUN_ID` deve ser único e corresponder a `HF007-UI-[A-Za-z0-9-]{6,50}`. Para perfil legacy, `IMP006_UI_EMAIL` deve corresponder exatamente a `identities.legacy.email` em `scripts/imp006-ui-account.ts`; `IMP006_UI_PASSWORD` vem do secret store privado da conta técnica autorizada. Perfis de reserva usam o preparo/secret próprio do runbook006. Não desativar guards para apontar esse runner ao cluster local ou à produção. |
+| Cloudinary real | Dashboard do cloud aprovado→API Keys: `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`. Upload presets: preset assinado/versionado/frozen em `CLOUDINARY_COVER_PRESET`; `npx tsx scripts/area-cover-preset.ts` produz seu fingerprint para `CLOUDINARY_COVER_PRESET_SHA256`. Manter `CLOUDINARY_IMAGE_ENABLED=0` até homologação real; somente então aprovação própria permite1. Valores no secret store, nunca NEXT_PUBLIC. Validar authenticated/EXIF/recusa de delivery público/revogação/substituição/remoção/cleanup/créditos. |
+| E-mail real e GateB012 | Obter do provedor/secret store `SMTP_HOST/PORT/SECURE/REQUIRE_TLS/USER/APP_PASSWORD` e `MAIL_FROM`; preservar keyrings/IDs ativos, `MAIL_WORKER_SECRET`, `MAIL_IDEMPOTENCY_KEY`, provas e schedulers existentes. Caixa sintética real autorizada recebe reset/reenvio; confirmar uso único e revogação em navegadorB/A. SMTP local/aceito não comprova recebimento humano. |
+| Aceite013 e browsers | Humano executa cancelamento/senha/blockers/exclusão autorizada e documenta aceite. Homologar drafts/teclado/mobile em Firefox/Safari e investigar a interação inicial do select, sem afrouxar assertions. |
+| Integração/operação futura | Confirmar Vercel→repositório→banco, backup restaurado/checksums/drift, janela/locks, owners mail/cleanup, scheduler/alertas/orçamento. Operador de banco e aprovador: não especificado. Não aplicar seed/bootstrap/migrations/deploy hospedados por este parecer. |
+
+Quando a equipe corrigir e autorizar a integração, seguir **#1→#6**, merge commits
+e retarget de cada próximo PR para **development deste fork**. Revisão adicional
+de dependências/documentos deve ser integrada preservando seus commits e bases
+corretas; não fazer squash/cherry-pick ou merges nesta execução.
 
 O IHFR conserva CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
 SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.

@@ -73,11 +73,11 @@ Alterações preexistentes do checkout principal permanecem fora desta entrega.
 
 | Etapa | Estado | Critério de conclusão |
 |---|---|---|
-| Identificar candidato, autenticação, refs e pilha | EM_ANDAMENTO | SHAs/bases remotos recentes registrados; checkout principal preservado |
-| Reconstituir plano e relatório duráveis | EM_ANDAMENTO | Documentos em Git, sem dados sensíveis ou alegações de logs recuperados |
-| Reproduzir recarga de capa | EM_ANDAMENTO | Componente real, 503→200 com revisão fixa, contagem de requests e evidência persistente |
-| Auditar dependências e verificar patch focal | EM_ANDAMENTO | Audit original/patch/prod, explain/ls e advisories vinculados; commit separado |
-| Regressão PostgreSQL, contratos e E2E | EM_ANDAMENTO | Resultado por comando, SHA, banco real do servidor e teardown; nenhum teste não executado como PASS |
+| Identificar candidato, autenticação, refs e pilha | CONCLUIDO | SHAs/bases remotos recentes registrados; checkout principal preservado |
+| Reconstituir plano e relatório duráveis | CONCLUIDO | Documentos em Git, sem dados sensíveis ou alegações de logs recuperados |
+| Reproduzir recarga de capa | CONCLUIDO | Componente real, 503→200 com revisão fixa, contagem de requests e evidência persistente |
+| Auditar dependências e verificar patch focal | CONCLUIDO | Audit original/patch/prod, explain/ls e advisories vinculados; commit separado |
+| Regressão PostgreSQL, contratos e E2E | CONCLUIDO | Resultado por comando, SHA, banco real do servidor e teardown; nenhum teste não executado como PASS |
 | Revisar escopo, links e segurança documental | NAO_INICIADO | Diff e links válidos; ciência e docs/raw preservados |
 | Publicar relatório e registros PR #4/#6 | NAO_INICIADO | URLs verificadas e ausência de duplicatas; REQUEST_CHANGES fundamentado |
 | Encerrar revisão | NAO_INICIADO | Parecer, pendências e verificações não realizadas registrados |
@@ -102,10 +102,12 @@ históricos da publicação de 2026-10-10 não serão recontados como testes atu
 
 ## Riscos, desvios e pontos de parada
 
-FATO_DOCUMENTADO: interrupção por desligamento em 2026-10-12, associada pelo
-usuário a possível excesso de RAM; interrupção posterior por limite de uso em
-2026-10-13. INFERENCIA: consumo simultâneo de Next/build/browser/PostgreSQL pode
-agravar pressão de memória; a causa exata do desligamento não foi comprovada.
+EVIDENCIA_IMPLEMENTACAO: journal do kernel registra OOM global em2026-10-12
+18:00:56/America/Fortaleza, com encerramento de processo code. /tmp era tmpfs
+2,8GiB e continha artefatos grandes. INFERENCIA: esses artefatos e cargas
+simultâneas contribuíram para a pressão; o evento OOM foi comprovado, sem atribuir
+exclusivamente ao teste toda a causa do desligamento. Interrupção por limite de
+uso e retomadas de12/13-10 preservam o mandato.
 RECOMENDACAO operacional aplicada: executar cargas pesadas uma de cada vez,
 usar um worker e manter artefatos fora de /tmp quando possível.
 
@@ -130,5 +132,10 @@ normativo material sem autoridade suficiente vira PENDENCIA_DE_DECISAO.
 - 2026-10-13 — EM_ANDAMENTO: worktree persistente reconstituído; npm ci retomado
   com limite de heap; documentos reconstruídos; novo checkpoint e verificações
   com logs persistentes em preparação. Interrupção por quota não encerra tarefa.
-- Encerramento: pendente de evidências finais e publicação. Plano permanece no
-  diretório ativo até revisão humana; não arquivar planos anteriores.
+- 2026-10-13 — Verificações concluídas:187/37/6/14 PostgreSQL;291+17 unit/Mail;
+  geral65/1/1 com focaldrafts3/3; exclusão3,HTTPS2,IHFR6;build/typecheck PASS;
+  lint3avisos; cluster próprio descartado após provas de isolamento/ownership.
+- 2026-10-13 — Achado de capa publicado no PR4 como REQUEST_CHANGES; relatório,
+  evidências e parecer PR6 em fechamento. Nenhum merge/deploy/correção funcional.
+- Encerramento: pendente da revisão documental final e publicação. Homologações
+  humanas futuras não equivalem à revisão técnica desta tarefa e ficam no relatório.

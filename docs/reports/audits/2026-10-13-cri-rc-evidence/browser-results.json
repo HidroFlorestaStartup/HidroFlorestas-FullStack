@@ -1,0 +1,503 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "runtimeCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "runs": [
+    {
+      "mode": "general",
+      "head": "ffd04a240d885cb32eb4d26d4e4881908b003443",
+      "started": "2026-10-13T05:24:23.714Z",
+      "finished": "2026-10-13T05:27:58.126Z",
+      "exitCode": 1,
+      "heapMB": 1024,
+      "minimumAvailableMemoryMB": 411,
+      "lowMemoryStopped": false,
+      "stats": {
+        "startTime": "2026-10-13T05:24:50.223Z",
+        "duration": 187222.027,
+        "expected": 65,
+        "skipped": 1,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 17,
+          "title": "verification preserves a zero prefix, announces errors, and obeys server cooldown",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 41,
+          "title": "expired verification offers a resend and a lost session offers legitimate login",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 53,
+          "title": "reset removes the fragment, preserves the proof on GET, and recovers after reload",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 71,
+          "title": "forgot password works by keyboard on mobile and displays a neutral response",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 83,
+          "title": "a new reset fragment in an existing tab is removed and clears the previous form without consuming it",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 193,
+          "title": "registers, verifies from received mail, logs out, resumes, and revokes another browser after reset",
+          "status": "expected"
+        },
+        {
+          "file": "account-verification-recovery.spec.ts",
+          "line": 247,
+          "title": "an ACTIVE unverified account can reset and then returns to verification",
+          "status": "expected"
+        },
+        {
+          "file": "area-covers.spec.ts",
+          "line": 8,
+          "title": "cover UI fake: invalid input, lost response retry, mobile keyboard replacement/removal and private preview",
+          "status": "expected"
+        },
+        {
+          "file": "area-covers.spec.ts",
+          "line": 30,
+          "title": "member has reading/fallback only and outsider receives contextual HTTP refusal",
+          "status": "expected"
+        },
+        {
+          "file": "area-registration.spec.ts",
+          "line": 17,
+          "title": "backend enforces current role, isolation, ownership privacy and account eligibility",
+          "status": "expected"
+        },
+        {
+          "file": "area-registration.spec.ts",
+          "line": 43,
+          "title": "explicit context and manual registration survive reload without tiles",
+          "status": "expected"
+        },
+        {
+          "file": "area-registration.spec.ts",
+          "line": 53,
+          "title": "map selection remains editable and saves only on confirmation",
+          "status": "expected"
+        },
+        {
+          "file": "area-registration.spec.ts",
+          "line": 62,
+          "title": "late and denied geolocation preserve edited fields",
+          "status": "expected"
+        },
+        {
+          "file": "area-registration.spec.ts",
+          "line": 71,
+          "title": "essential flow and map have usable dimensions across viewports",
+          "status": "expected"
+        },
+        {
+          "file": "area-viewing.spec.ts",
+          "line": 26,
+          "title": "lists persistent coordinates without an aggregate map and opens one-marker detail",
+          "status": "expected"
+        },
+        {
+          "file": "area-viewing.spec.ts",
+          "line": 38,
+          "title": "renders list and detail for every contextual role, including inactive read-only",
+          "status": "expected"
+        },
+        {
+          "file": "area-viewing.spec.ts",
+          "line": 50,
+          "title": "keeps list and detail usable on mobile, intermediate and wide viewports",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 58,
+          "title": "rejects syntactically invalid input before credential lookup",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 73,
+          "title": "rejects well-formed incorrect and ineligible credentials uniformly",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 98,
+          "title": "logs an ACTIVE user into workspace with an exact public DTO and safe cookie",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 136,
+          "title": "restores an ACTIVE session across reload and both private trees",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 161,
+          "title": "denies missing, malformed, tampered, expired, invalid-payload, and orphan sessions",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 205,
+          "title": "denies sessions for every user that is not ACTIVE",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 220,
+          "title": "expires an obsolete cookie through /me without exposing protected fields",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 239,
+          "title": "revokes protected access on the next validation after ACTIVE becomes BLOCKED",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 260,
+          "title": "logout prevents back, reload, and direct access to both private trees",
+          "status": "expected"
+        },
+        {
+          "file": "authenticated-access.spec.ts",
+          "line": 288,
+          "title": "repeated logout without a session remains stable",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 37,
+          "title": "US1 starts only from the explicit authorized area without persistence",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 57,
+          "title": "US1 rejects crossed, missing, revoked, ineligible and inactive mutation contexts",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 91,
+          "title": "US2 validates an explicit temporal offset in memory without POST",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 127,
+          "title": "US3 reviews derived authorship and confirms once after a double click",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 160,
+          "title": "US3 retries a failed confirmation with the same key and surfaces access loss",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 196,
+          "title": "US3 converges concurrent real POSTs and rejects a divergent replay",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 225,
+          "title": "US4 reads a minimal immutable detail for current roles and inactive laboratories",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 247,
+          "title": "US4 hides crossed, missing and revoked collection contexts",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 263,
+          "title": "US4 detail remains keyboard-usable across responsive viewports",
+          "status": "expected"
+        },
+        {
+          "file": "collection-registration.spec.ts",
+          "line": 279,
+          "title": "US4 completes independent form-to-detail flows in two laboratory contexts",
+          "status": "expected"
+        },
+        {
+          "file": "create-laboratory.spec.ts",
+          "line": 36,
+          "title": "creates with name only and remains visible after reload",
+          "status": "expected"
+        },
+        {
+          "file": "create-laboratory.spec.ts",
+          "line": 54,
+          "title": "rejects client supplied identity",
+          "status": "expected"
+        },
+        {
+          "file": "create-laboratory.spec.ts",
+          "line": 60,
+          "title": "enforces five accessible laboratories and exposes the limit in the UI",
+          "status": "expected"
+        },
+        {
+          "file": "create-laboratory.spec.ts",
+          "line": 73,
+          "title": "does not expose one user's laboratory to another",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 43,
+          "title": "US1 shows real contextual totals, an empty laboratory and the areas destination",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 59,
+          "title": "US2 traverses more than 20 stable derived items without duplicates and opens real destinations",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 87,
+          "title": "US2 keeps continuation stable and includes a newer source after returning to the first page",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 119,
+          "title": "US3 reloads persisted sources and keeps loading, failure and retry distinct",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 182,
+          "title": "US3 discards a delayed response when the laboratory context changes",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 197,
+          "title": "US4 preserves isolation, reauthorization and minimized API payloads",
+          "status": "expected"
+        },
+        {
+          "file": "dashboard-history.spec.ts",
+          "line": 225,
+          "title": "US4 remains keyboard-operable and free of main horizontal overflow",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-data-read.spec.ts",
+          "line": 13,
+          "title": "independent read shows provenance, null/zero/false, mobile and desktop without overflow",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-data-read.spec.ts",
+          "line": 25,
+          "title": "absence and direct API access distinguish missing data from inaccessible context",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-data-registration.spec.ts",
+          "line": 8,
+          "title": "registers through review, rejects invalid values and retries the same operation after lost response",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-data-registration.spec.ts",
+          "line": 39,
+          "title": "inactive laboratory only permits reading and has no registration controls",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 9,
+          "title": "unsaved browser history cancellation preserves fields and excessive raw gives feedback",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 25,
+          "title": "personal draft retries a lost save, resumes partial values, resolves two-tab conflict, discards and confirms on mobile",
+          "status": "unexpected",
+          "errors": [
+            "Error: expect(locator).toHaveValue(expected) failed\n\nLocator: getByLabel('Há nascente')\nExpected string: \"false\"\nReceived string: \"\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toHaveValue\" with timeout 5000ms\n  - waiting for getByLabel('Há nascente')\n    9 × locator resolved to <select id=\"water.hasSpring\" aria-required=\"true\" aria-invalid=\"false\" name=\"water.hasSpring\" aria-describedby=\"water.hasSpring-hint\" class=\"w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-slate-900 outline-none focus:border-green-700 focus:ring-2 focus:ring-green-700/20 disabled:bg-slate-100\">…</select>\n      - unexpected value \"\"\n\n\n  30 |  await page.getByRole(\"button\",{name:\"Salvar rascunho\",exact:true}).click();await expect(page.getByText(\"Não foi possível verificar o salvamento.\")).toBeVisible();await expect(page.getByLabel(\"Elevação\")).toBeDisabled();\n  31 |  await page.getByRole(\"button\",{name:\"Repetir salvamento\",exact:true}).click();await expect(page.getByRole(\"status\")).toContainText(\"Rascunho salvo.\");expect(keys).toHaveLength(2);expect(keys[0]).toBe(keys[1]);\n> 32 |  await page.reload();await expect(page.getByLabel(\"Há nascente\")).toHaveValue(\"false\");await expect(page.getByLabel(\"Taxa de infiltração\")).toHaveValue(\"0\");await expect(page.getByLabel(\"Elevação\")).toHaveValue(\"12.\");\n     |                                                                   ^\n  33 |  const second=await context.newPage();await second.goto(base+\"/new\");\n  34 |  await page.getByLabel(\"Elevação\").fill(\"20\");await page.getByRole(\"button\",{name:\"Salvar rascunho\",exact:true}).click();await expect(page.getByRole(\"status\")).toContainText(\"Rascunho salvo.\");\n  35 |  await second.getByLabel(\"Elevação\").fill(\"30\");await second.getByRole(\"button\",{name:\"Salvar rascunho\",exact:true}).click();await expect(second.getByRole(\"status\")).toContainText(\"mudou em outra sessão\");await expect(second.getByLabel(\"Elevação\")).toHaveValue(\"30\");\n    at /home/pedrovitor237/Documents/Projects/ForkedHF/HidroFlorestas-FullStack/.accounts-validation/rc-review/tests/e2e/environmental-drafts.spec.ts:32:67"
+          ]
+        },
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 47,
+          "title": "outsider cannot read draft and inactive laboratory offers only reading",
+          "status": "skipped",
+          "errors": []
+        },
+        {
+          "file": "laboratory-context.spec.ts",
+          "line": 26,
+          "title": "requires explicit selection and keeps laboratory context in links and reloads",
+          "status": "expected"
+        },
+        {
+          "file": "laboratory-context.spec.ts",
+          "line": 40,
+          "title": "revoked and cross-laboratory access remain indistinguishable from missing resources",
+          "status": "expected"
+        },
+        {
+          "file": "laboratory-membership-roles.spec.ts",
+          "line": 7,
+          "title": "owner promotes and demotes; stale role and inactive laboratory reject changes",
+          "status": "expected"
+        },
+        {
+          "file": "laboratory-membership-roles.spec.ts",
+          "line": 25,
+          "title": "administrator cannot manage contextual roles",
+          "status": "expected"
+        },
+        {
+          "file": "territorial-map.spec.ts",
+          "line": 27,
+          "title": "shows one authorized textual item and marker per area and excludes partial collections",
+          "status": "expected"
+        },
+        {
+          "file": "territorial-map.spec.ts",
+          "line": 56,
+          "title": "keeps inactive laboratories readable and inaccessible contexts indistinguishable",
+          "status": "expected"
+        },
+        {
+          "file": "territorial-map.spec.ts",
+          "line": 75,
+          "title": "preserves the complete textual interface without horizontal overflow",
+          "status": "expected"
+        },
+        {
+          "file": "user-administration-audit.spec.ts",
+          "line": 5,
+          "title": "successful changes appear in minimized history",
+          "status": "expected"
+        },
+        {
+          "file": "user-administration-read.spec.ts",
+          "line": 5,
+          "title": "ADMIN lists, searches and opens details while non-admin is denied",
+          "status": "expected"
+        },
+        {
+          "file": "user-administration-read.spec.ts",
+          "line": 27,
+          "title": "legacy user administration route redirects to the canonical protected route",
+          "status": "expected"
+        },
+        {
+          "file": "user-administration-role.spec.ts",
+          "line": 5,
+          "title": "role promotion is confirmed and self-change controls are rejected by API",
+          "status": "expected"
+        },
+        {
+          "file": "user-administration-status.spec.ts",
+          "line": 5,
+          "title": "status confirmation is keyboard-operable and audited",
+          "status": "expected"
+        }
+      ]
+    },
+    {
+      "mode": "drafts",
+      "head": "ffd04a240d885cb32eb4d26d4e4881908b003443",
+      "started": "2026-10-13T05:32:46.513Z",
+      "finished": "2026-10-13T05:33:03.480Z",
+      "exitCode": 0,
+      "heapMB": 1024,
+      "minimumAvailableMemoryMB": 1495,
+      "lowMemoryStopped": false,
+      "stats": {
+        "startTime": "2026-10-13T05:32:51.406Z",
+        "duration": 11971.606,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 9,
+          "title": "unsaved browser history cancellation preserves fields and excessive raw gives feedback",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 25,
+          "title": "personal draft retries a lost save, resumes partial values, resolves two-tab conflict, discards and confirms on mobile",
+          "status": "expected"
+        },
+        {
+          "file": "environmental-drafts.spec.ts",
+          "line": 47,
+          "title": "outsider cannot read draft and inactive laboratory offers only reading",
+          "status": "expected"
+        }
+      ]
+    },
+    {
+      "mode": "deletion",
+      "head": "db68cdde3658c460d20929ae47a8e1285120e5ef",
+      "started": "2026-10-13T05:34:53.067Z",
+      "finished": "2026-10-13T05:35:01.386Z",
+      "exitCode": 0,
+      "heapMB": 1024,
+      "minimumAvailableMemoryMB": 929,
+      "lowMemoryStopped": false,
+      "passed": 3
+    },
+    {
+      "mode": "https",
+      "head": "db68cdde3658c460d20929ae47a8e1285120e5ef",
+      "started": "2026-10-13T05:37:14.292Z",
+      "finished": "2026-10-13T05:37:51.524Z",
+      "exitCode": 0,
+      "heapMB": 1024,
+      "minimumAvailableMemoryMB": 615,
+      "lowMemoryStopped": false,
+      "passed": 2
+    },
+    {
+      "mode": "ihfr",
+      "head": "db68cdde3658c460d20929ae47a8e1285120e5ef",
+      "started": "2026-10-13T05:40:59.378Z",
+      "finished": "2026-10-13T05:41:38.069Z",
+      "exitCode": 0,
+      "heapMB": 1024,
+      "passed": 6,
+      "minimumAvailableMemoryMB": 668,
+      "lowMemoryStopped": false
+    }
+  ]
+}
