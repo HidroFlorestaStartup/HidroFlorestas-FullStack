@@ -1,5 +1,11 @@
 # Release Candidate CRI — 10/10/2026
 
+Atualização de2026-10-13: correções RC-DRAFT-001/RC-UI-001, merges internos da
+pilha e dependências originais99d8363 na RC. Consultar
+[prontidão atual](rc-readiness-20261013.md) antes dos registros históricos abaixo.
+O PR7 mantém a revisão independente; conferir todas as sete etapas.
+Revisão humana e autorização de produção continuam pendentes.
+
 Estado: PUBLICADA NO GITHUB, aguardando revisão dos estudantes;
 APTO COM RESSALVAS é o parecer da
 [revisão focal](../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).

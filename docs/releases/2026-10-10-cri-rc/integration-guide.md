@@ -1,5 +1,37 @@
 # Revisão e integração dos PRs
 
+## Atualização da pilha — 2026-10-13
+
+DECISAO_CONFIRMADA: o pedido posterior do usuário autorizou exclusivamente merges
+internos das branches de revisão para sincronização. As seções originais abaixo
+registram a publicação de 2026-10-10 e seu mandato naquele momento. Nenhum merge
+em development/main, deploy ou migration remota foi realizado nesta atualização.
+
+EVIDENCIA_IMPLEMENTACAO: Spec015/RC-DRAFT-001 e RC-UI-001 foram propagadas por
+merges3→4→5→6; os conflitos em spec015/spec.md e implementation-evidence015/016
+conservaram erratas da auditoria e novos registros focais. O commit99d8363 original
+de dependências foi integrado à RC6, sem cherry-pick ou duplicação. A branch7
+recebeu a RC6 mantendo os quatro commits de revisão documental independentes.
+Os11 originais, checkpoints, bases e ordem da pilha foram preservados.
+
+O [PR #7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7)
+continua aberto, base release/cri-rc-20261010. Seu patch99d8363 já pertence ao
+candidato; seu diff restante conserva revisão/evidências. Conferir PR1→7 na
+revisão humana. Aprovar e integrar continuam sendo ações dos estudantes.
+
+[Prontidão atual e evidências](rc-readiness-20261013.md) distinguem árvore testada,
+heads publicados, checks reais e limitações. Verificar o HEAD remoto final antes
+de promover. Para integração futura, após aprovação e autorização própria,
+aplicar as regras de merge commit/retarget abaixo também à etapa7; não absorver
+o head7 inteiro na sua base para encerrar silenciosamente a revisão independente.
+
+Consulta autenticada somente leitura Vercel confirmou projeto existente
+hidro-florestas-full-stack ligado ao fork HidroFlorestaStartup/HidroFlorestas-FullStack,
+produção main, sem deploy hooks e sem deployments das branches de revisão.
+Bloqueios false nos nomes exatos e workflow CI sem deploy foram reconferidos.
+Essa evidência fecha o vínculo Git consultado, não o inventário de banco/cloud,
+domínio atendido, backup, configuração operacional ou autorização produtiva.
+
 RECOMENDACAO operacional para os estudantes. Publicação autorizada pelo usuário
 em2026-10-10; merge/deploy não foram autorizados nesta preparação.
 Repositório de revisão: HidroFlorestaStartup/HidroFlorestas-FullStack.
