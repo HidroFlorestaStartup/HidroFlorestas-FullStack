@@ -2,6 +2,9 @@
 
 RECOMENDACAO para estudantes; todas as caixas abaixo aguardam sua execução/aceite.
 
+Usar o [plano de execução dos estudantes](plano-execucao-estudantes.md) para
+responsáveis, dependências, evidências e gates; este checklist detalha a revisão.
+
 Atualização2026-10-13: revisar as sete etapas e os heads atuais na
 [prontidão](rc-readiness-20261013.md). A regressão cumulativa agora inclui os
 dois baselines de hidratação e retry da capa revision1, sem substituir o aceite
@@ -16,7 +19,7 @@ Não registrar PII, provas, bearer, connection string, cookies ou URLs de delive
 
 ## Code review e rastreabilidade
 
-- [ ] Revisar PR1→6 pelo diff da etapa; confirmar base/head/dependência, specs,
+- [ ] Revisar PR1→7 pelo diff da etapa; confirmar base/head/dependência, specs,
   contratos, tasks e implementação. Não comparar todos com main simultaneamente.
 - [ ] Conferir11 SHAs originais/ordem e branches preservadas; proteção Git limitada
   aos nomes review/release e nenhum deploy automático dessas refs.

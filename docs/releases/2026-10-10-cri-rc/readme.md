@@ -1,5 +1,10 @@
 # Release Candidate CRI — 10/10/2026
 
+Ponto de entrada para a equipe: [plano de execução dos estudantes](plano-execucao-estudantes.md).
+São 43 tarefas pendentes, com papéis a preencher, sete fases e gates de revisão,
+integração, homologação e atualização da aplicação já existente. A publicação
+do plano não fecha os aceites humanos nem autoriza operações produtivas.
+
 Atualização de2026-10-13: correções RC-DRAFT-001/RC-UI-001, merges internos da
 pilha e dependências originais99d8363 na RC. Consultar
 [prontidão atual](rc-readiness-20261013.md) antes dos registros históricos abaixo.
@@ -22,7 +27,7 @@ Os PRs e SHAs estão no [guia de integração](integration-guide.md) e em
 RECOMENDACAO: estudantes devem seguir esta ordem:
 
 1. Ler [release notes](release-notes.md), [integração](integration-guide.md) e
-   [checklist](review-checklist.md); revisar os seis PRs pelo diff de cada etapa.
+   [checklist](review-checklist.md); revisar os sete PRs pelo diff de cada etapa.
 2. Cumprir revisão/aceites e identificar os recursos existentes pelo
    [guia operacional](production-update-runbook.md). Registrar o SHA aprovado.
 3. Ensaiar a atualização em destino isolado autorizado, com backup restaurado,
