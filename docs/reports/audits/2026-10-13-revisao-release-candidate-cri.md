@@ -1,5 +1,21 @@
 # Revisão independente da Release Candidate CRI — 2026-10-13
 
+## Recibo posterior do executor das correções — 2026-10-13
+
+EVIDENCIA_IMPLEMENTACAO: o candidato foi atualizado depois do encerramento
+desta revisão independente. RC-UI-001 e RC-DRAFT-001 agora integram a RC por
+merges internos autorizados; commit99d8363 foi incorporado com SHA original,
+sem duplicação, e os quatro commits documentais desta revisão foram preservados.
+Novo combo9fe2bec:15 gates locais PASS, incluindo E2E70, primeiro payload/
+retomada e retry revision1/naturalWidth>0. CI efetivo também foi adicionado.
+[Prontidão/evidências atuais](../../releases/2026-10-10-cri-rc/rc-readiness-20261013.md).
+
+Esta nota é do executor da correção; não substitui o parecer do revisor nem
+dispensa CHANGES_REQUESTED de #4/#6. Novo review dos estudantes permanece
+necessário. As seções seguintes são o relatório histórico original sobre
+ca80376/99d8363, inclusive65 PASS/1FAIL/1não executado e artefatos preservados;
+não descrevem novos resultados da árvore corrigida e não foram recontadas.
+
 Estado: FINAL — revisão técnica encerrada, relatório e reviews publicados.
 Início da execução: 2026-10-12. Fechamento: 2026-10-13. Fuso: America/Fortaleza.
 Mandato: pedido do usuário de revisão e testes solicitado pelo professor Thales.
