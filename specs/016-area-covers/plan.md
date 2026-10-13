@@ -86,3 +86,45 @@ aditiva sobre cadeia; E2E de UI/fallback/teclado/mobile com HTTP fake explicitad
 regressão geral/IHFR/contas/mail/exclusão/typecheck/lint/build. Sem smoke externo.
 Rollback mantém tabelas/ponteiros/jobs para reconciliação; não exclui ativos reais.
 Operação/créditos/configuração real aguardam responsável e autorização específica.
+
+## Correção focal RC-UI-001 (revisão de 2026-10-13)
+
+O reviewer reproduziu `GET image/content?revision=1` com 503, seguido de
+recuperação 200 sem alteração de `revision`. O botão atual só atualiza os
+metadados e não reinicia `AreaCoverPreview.failed` (key `areaId:revision`).
+
+Plano de correção, limitado a FR-007:
+1. Especificar o cenário 503→200 e escrever o teste Playwright RED na rota real.
+2. Depois de recarga de metadados autorizada, incrementar somente um contador
+   local de tentativa, remontando a prévia e adicionando um query param não
+   sensível para garantir novo GET same-origin mesmo com revisão invariável.
+3. Exibir "Capa recarregada." somente após `onLoad` da nova imagem; após
+   `onError`, conservar o fallback e possibilitar outra tentativa. Ignorar
+   eventos de tentativa obsoleta.
+4. Manter inalterados revisão no banco, autorização, Cache-Control privado,
+   contratos, migrations, integração Cloudinary e dados científicos.
+5. Executar Playwright focal, typecheck, lint e regressões afetadas em runtime
+   Node 24/Next/Prisma/PostgreSQL sintético. Registrar RED/PASS e fingerprints
+   verdadeiros; sem runner local, não alegar testes não executados.
+
+Integração: preservar PR #4 e branches dependentes. Preparar revisão sem
+merge/deploy; após teste e aprovação, a equipe deverá propagar o patch à
+pilha #5/#6 e revalidar os diffs antes de merge em development.
+
+Preflight EVIDENCIA_IMPLEMENTACAO (2026-10-13): worktree dedicado
+`C:/projetos/ifma/HidroFlorestas-rc-ui-001`, branch `review/016-area-covers`,
+HEAD inicial `dace407e51b5034e69e22055658c651147a7caa3` confirmado por fetch/API.
+Preimages: componente `99a6f39062ccaa09de605a5d79020c9f5420fced`; teste
+`2c1096182f340107afa00a0926e9d0c794ed2beb`. Checkout principal preservado em
+main/beba96f com ZIP e dois prompts não rastreados. Node 24.19.0 disponível.
+`setup-plan.sh --json` e `check-prerequisites.sh --json --require-tasks
+--include-tasks` executados via Git Bash com feature explícita 016; plano existente
+preservado. Sem extensions.yml e sem checklists nesta feature. Constituição
+reconferida: PASS; nenhum requisito científico, migration ou autorização alterado.
+
+Sequência obrigatória: este planejamento commitado → patch de teste RED → patch
+de código → GREEN/regressões/build → evidências e commits → push protegido.
+RECOMENDACAO: banco/servidor/build/E2E sequenciais nos runners atuais, cluster
+sintético próprio loopback e saída redigida; nunca copiar dotenv de outro checkout.
+A instrução posterior do usuário proíbe qualquer merge nesta execução: preparar
+#5/#6/#7 e revisão das dependências separadamente, sem retarget ou mudar reviews.

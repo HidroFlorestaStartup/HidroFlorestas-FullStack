@@ -31,3 +31,13 @@ MVP é US1, entrega local exige todas as histórias. Testes críticos escritos a
 - [x] T018 Atualizar tests/unit/areas-service.test.ts para projeção mínima de capa autorizada na lista, mantendo filtro/contexto/ordem e verificando que assetId não integra DTO. Falha real de Unit após inclusão da relação; precede T014.
 - [x] T019 Fornecer cálculo offline do fingerprint do preset em scripts/area-cover-preset.ts e documentar configuração/cleanup/tombstones/custos/smoke em docs/operations/area-covers-runbook.md, sem configuração ou execução remota. Precede T016.
 - [x] T020 Completar cobertura identificada pela revisão em tests/integration/area-covers.test.ts e fake fixture: ADMIN contextual/global, ator diferente, quota3/10h/expiração, downgrade/revogação/inatividade após ticket e durante download, exclusão efetiva do uploader com rollback/leitura/cleanup da equipe restante. Precede T014/T015; nenhum novo recorte de produto.
+
+## Correção focal RC-UI-001 (2026-10-13)
+
+- [x] T021 [US1] Reconciliar requisito FR-007, cenário 503→200 e decisão de não alterar revision em specs/016-area-covers/{spec.md,plan.md,tasks.md}.
+- [ ] T022 [US1] Escrever teste E2E RED da mesma revision e segunda falha/retentativa em tests/e2e/area-covers.spec.ts.
+- [ ] T023 [US1] Corrigir remontagem/novo GET/feedback com contador local e onLoad/onError em src/components/areas/area-cover.tsx.
+- [ ] T024 Executar E2E focal, typecheck, lint e regressões pertinentes, registrando ambiente, resultados reais e snapshot em specs/016-area-covers/implementation-evidence.md.
+- [ ] T025 Atualizar review da PR #4 e plano de propagação da correção às branches dependentes da RC em specs/016-area-covers/rc-ui-001-propagation.md; orientar futura atualização de docs/releases/2026-10-10-cri-rc/integration-guide.md (ausente na branch #4), sem executar merge/deploy.
+
+Dependência: T021 → T022 → T023 → T024 → T025. Não reabrir migrações, autorização ou ciência fora do recorte.

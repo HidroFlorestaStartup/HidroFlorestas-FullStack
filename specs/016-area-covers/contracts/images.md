@@ -10,3 +10,8 @@ GET /content: bytes WebP de capa atual, sessão/contexto revistos, private/no-st
 sem redirect e com nosniff; erros sanitizados e ausência 404.
 Mutações JSON <=16KiB e CSRF Origin/fetch-site. 401/403/404/409/429/503 sanitizados.
 BODY não aceita userId/areaId/publicId/type/assetId/URLs; principal deriva da sessão.
+
+RC-UI-001: a prévia pode acrescentar retry inteiro local não sensível à query de
+conteúdo, preservando revision. Cada GET continua same-origin autorizado e
+private/no-store; retry não altera revisão nem concede acesso. O status “Capa
+recarregada.” exige onLoad da tentativa atual; onError conserva fallback/retry.
