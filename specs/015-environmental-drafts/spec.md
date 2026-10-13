@@ -2,7 +2,7 @@
 
 **Feature Branch**: `015-environmental-drafts`
 **Created**: 2026-10-10
-**Status**: Especificada; decisão material confirmada
+**Status**: Remediação de hidratação validada localmente; integração/revisão pendentes
 **Input**: Aprovação explícita do recorte pessoal e política de descarte/retenção nesta conversa.
 
 ## User Scenarios & Testing *(mandatory)*
@@ -17,6 +17,7 @@ retoma depois de recarregar, sem perder zero, Não ou texto ainda incompleto.
 1. Given coleta confirmada e permissão atual, When salva conteúdo parcial, Then só o titular consegue retomá-lo.
 2. Given valor zero, Não, ausência e texto `12.`, When salva e recarrega, Then todos mantêm sua semântica.
 3. Given acesso a outro laboratório ou usuário, When consulta/escreve, Then não obtém o rascunho alheio.
+4. Given HTML visível enquanto scripts ainda não chegaram, When o formulário inicia, Then controles de edição/salvamento ficam desabilitados até seus handlers estarem prontos; o primeiro save após liberação preserva false, 0, ausência e texto parcial no payload e na retomada.
 
 ### User Story 2 - Resolver conflito e descartar (Priority: P1)
 
@@ -58,7 +59,7 @@ ser consultados/descartados pelo titular, sem gerar segundo conjunto.
 - **FR-006 / DRAFT-FR-005**: confirmação integral valida contrato vigente e consome draft atomicamente junto ao conjunto único imutável/idempotente.
 - **FR-007 / DRAFT-FR-006**: drafts ficam fora de dashboard/mapa/histórico confirmado/IHFR; nenhum dado científico confirmado é modificado.
 - **FR-008**: sem expiração/cleanup automático; exclusão de conta remove drafts pessoais somente quando os demais vínculos permitirem, no mesmo commit.
-- **FR-009 / UX-NFR-001**: teclado/foco/mobile/feedback acessível e recuperação de rede/conflito sem apagar tentativa local silenciosamente.
+- **FR-009 / UX-NFR-001**: teclado/foco/mobile/feedback acessível e recuperação de rede/conflito sem apagar tentativa local silenciosamente. Controles inicialmente desabilitados até a hidratação impedirão aceitar uma seleção que depois se perde; liberação não reinterpreta false, zero, ausência nem células originais não editadas.
 
 ### Key Entities
 
@@ -78,3 +79,9 @@ DECISAO_CONFIRMADA: usuário respondeu “1 Aprovo, masdeixe essa decisao e impl
 CRI-T011/012/013; CF-PRD-FR-009, IMP-005 e spec 013 são referências do domínio
 implementado. Fora: rascunho de criação da coleta, autosave, colaboração,
 offline, galeria e qualquer alteração de regra científica IHFR.
+
+DECISAO_CONFIRMADA focal (pedido do usuário, 2026-10-13): corrigir perda de seleção
+durante hidratação lenta, com planejamento/commit, RED determinístico, correção
+de interface e GREEN validando primeiro payload/retomada. Merges internos das
+branches de revisão autorizados para sincronizar a pilha; main/development,
+deploy, migrations hospedadas e recursos reais permanecem fora do escopo.

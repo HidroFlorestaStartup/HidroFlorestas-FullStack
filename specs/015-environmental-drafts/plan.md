@@ -60,3 +60,40 @@ no Chromium testado; navegador sem Navigation API cancelável não tem garantia 
 interceptação do histórico. Não há autosave: salvar explicitamente antes de sair.
 Sem expiração ou cleanup automático de rascunhos. Discard é definitivo; exclusão
 de conta permitida limpa somente drafts próprios; ciência confirmada é preservada.
+
+## Remediação de hidratação — RC-DRAFT-001, 2026-10-13
+
+Estado EM_ANDAMENTO. EVIDENCIA_IMPLEMENTACAO: diagnóstico anterior reproduziu
+seleção false no DOM sem handler React; após hidratação/nova edição, valor vazio
+e primeiro PUT omitiu water.hasSpring. A causa temporal da rodada histórica de
+#7 permanece INFERENCIA; o mecanismo controlado foi observado diretamente.
+
+Preflight: worktree C:/projetos/ifma/HidroFlorestas-rc-drafts na branch existente
+review/015-environmental-drafts, HEAD443d20ee8b70607995320c511c36c73be00f3302.
+Preimages formulário96537ca9ff3a1decac4b69702db637f682ccd691 e
+testebdd5e1a1281d8d1551348672f1926850db2955c5. Checkout main/beba96f conserva ZIP
+e dois prompts não rastreados; worktrees anteriores limpos preservados.
+
+RECOMENDACAO técnica: snapshot SSR/hidratação false e snapshot de cliente true
+em useSyncExternalStore com funções estáveis; desabilitar inputs/selects e ações
+de draft/revisão até prontidão, anunciada no status já existente. Não mudar form,
+conversor touched/baseline, serviços, parser, SQL, contrato científico ou política.
+Alternativas: waits no teste mascaram interação prematura; typeof window causa
+divergência SSR; readiness por effect exige transição extra e setState no effect.
+
+TDD: testes novos bloqueiam scripts por promessa, sem sleeps, no browser/rota
+reais; RED exige controles desabilitados no HTML inicial. GREEN libera a rede,
+edita false/0/12., verifica primeiro PUT/resposta/GET/reload, tanto em draft novo
+quanto baseline com absent/vazio explícito e campos omitidos. Nenhuma interceptação
+de dados/API; PostgreSQL sintético existente, guards e assertions intactos.
+O banco próprio existente já tem 14 migrations; não remover nem reconciliar à
+força para testar a branch015 (13). Usar o runner Regression e fixtures aprovados
+sem reprovisionar esse banco pela árvore antiga; gates completos após merge016.
+
+Sequência: planejamento commitado → teste RED → código → GREEN/gates proporcionais
+→ evidência/commit/push protegido #3 → sincronização #4/#5/#6/#7 e dependências
+originais99d8363 por merge preservando SHAs → gates da combinação final → docs/review.
+Constituição PASS antes do design: decisão explícita, branch/spec próprias, fonte
+e limites preservados; nenhuma pendência científica bloqueia esse estado de UI.
+setup-plan/setup-tasks/check-prerequisites via Git Bash e feature explícita015;
+sem hooks/checklists adicionais. Sem mudanças em docs/raw ou governança normativa.
