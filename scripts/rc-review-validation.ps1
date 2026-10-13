@@ -13,6 +13,19 @@ if ($InitializeCiCluster) {
   if (-not $rcCluster.StartsWith($rcParent+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)) { throw 'Unexpected cluster directory.' }
   if (Test-Path -LiteralPath $rcCluster) { throw 'CI installation requires a fresh directory; existing data is preserved.' }
   New-Item -ItemType Directory -Path $rcCluster -Force | Out-Null
+  # Establish the exact private ACL on this newly created CI directory before
+  # npm writes any files. The existing ownership/ACL guard still verifies it.
+  if ((Get-Item -LiteralPath $rcCluster).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Fresh CI directory is redirected.' }
+  $rcAcl=New-Object Security.AccessControl.DirectorySecurity
+  $rcAcl.SetAccessRuleProtection($true,$false)
+  $rcCurrentSid=[Security.Principal.WindowsIdentity]::GetCurrent().User
+  foreach ($rcSid in @($rcCurrentSid,[Security.Principal.SecurityIdentifier]::new('S-1-5-18'))) {
+    $rcRule=[Security.AccessControl.FileSystemAccessRule]::new($rcSid,'FullControl','ContainerInherit, ObjectInherit','None','Allow')
+    $rcAcl.AddAccessRule($rcRule)
+  }
+  Set-Acl -LiteralPath $rcCluster -AclObject $rcAcl
+  $rcVerifiedAcl=Get-Acl -LiteralPath $rcCluster
+  if (-not $rcVerifiedAcl.AreAccessRulesProtected -or @($rcVerifiedAcl.Access).Count -ne 2) { throw 'Fresh CI private ACL setup failed.' }
   & npm install --prefix $rcCluster --ignore-scripts --no-audit --no-fund '@embedded-postgres/windows-x64@17.10.0-beta.17'
   if ($LASTEXITCODE -ne 0) { throw 'Pinned PostgreSQL binary installation failed.' }
   # Reviewed package script only; never enable all dependency lifecycle scripts.
