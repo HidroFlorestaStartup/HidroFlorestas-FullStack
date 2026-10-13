@@ -1,6 +1,6 @@
 # PLAN-RC-REVIEW-20261012 — Revisão independente da RC CRI
 
-Estado: EM_ANDAMENTO. Início: 2026-10-12. Retomada: 2026-10-13, America/Fortaleza.
+Estado: CONCLUIDO. Início: 2026-10-12. Retomada e encerramento: 2026-10-13, America/Fortaleza.
 Execução: agente. Revisores humanos e operador produtivo: não especificado.
 
 ## Objetivo e autorização
@@ -78,9 +78,9 @@ Alterações preexistentes do checkout principal permanecem fora desta entrega.
 | Reproduzir recarga de capa | CONCLUIDO | Componente real, 503→200 com revisão fixa, contagem de requests e evidência persistente |
 | Auditar dependências e verificar patch focal | CONCLUIDO | Audit original/patch/prod, explain/ls e advisories vinculados; commit separado |
 | Regressão PostgreSQL, contratos e E2E | CONCLUIDO | Resultado por comando, SHA, banco real do servidor e teardown; nenhum teste não executado como PASS |
-| Revisar escopo, links e segurança documental | NAO_INICIADO | Diff e links válidos; ciência e docs/raw preservados |
-| Publicar relatório e registros PR #4/#6 | NAO_INICIADO | URLs verificadas e ausência de duplicatas; REQUEST_CHANGES fundamentado |
-| Encerrar revisão | NAO_INICIADO | Parecer, pendências e verificações não realizadas registrados |
+| Revisar escopo, links e segurança documental | CONCLUIDO | Diff e links válidos; ciência e docs/raw preservados |
+| Publicar relatório e registros PR #4/#6 | CONCLUIDO | URLs verificadas e ausência de duplicatas; REQUEST_CHANGES fundamentado |
+| Encerrar revisão | CONCLUIDO | Parecer, pendências e verificações não realizadas registrados |
 
 Execução das etapas: agente. Correção funcional futura e homologações: equipe,
 responsável individual não especificado. Trabalho pesado será sequencial, com
@@ -137,5 +137,15 @@ normativo material sem autoridade suficiente vira PENDENCIA_DE_DECISAO.
   lint3avisos; cluster próprio descartado após provas de isolamento/ownership.
 - 2026-10-13 — Achado de capa publicado no PR4 como REQUEST_CHANGES; relatório,
   evidências e parecer PR6 em fechamento. Nenhum merge/deploy/correção funcional.
-- Encerramento: pendente da revisão documental final e publicação. Homologações
-  humanas futuras não equivalem à revisão técnica desta tarefa e ficam no relatório.
+- 2026-10-13 — CONCLUIDO: QA documental independente e final executada; JSONs,
+  contagens, SQL, links, diff/escopo e ausência de dados privados conferidos.
+  Plano arquivado após essa revisão. [PR #7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7)
+  publica evidências e patch separado; reviews reais [PR #4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988)
+  e [PR #6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5499467293)
+  estão em CHANGES_REQUESTED no GitHub. Parecer: CORREÇÕES NECESSÁRIAS pela capa;
+  falha inicial dos drafts inconclusiva, residual dev braces e gates humanos/
+  remotos/científicos explicitados no relatório. Sem dependência de valor privado
+  para concluir esta revisão local. Checkout principal e RC original preservados.
+- Encerramento: resultado, evidências, ajustes, limitações e ações manuais
+  registrados. Homologações humanas futuras não equivalem à revisão técnica
+  desta tarefa; não foram encerradas. Não houve merge/deploy/promoção.

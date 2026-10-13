@@ -1,15 +1,15 @@
 # Revisão independente da Release Candidate CRI — 2026-10-13
 
-Estado: verificações técnicas encerradas; registros finais em publicação.
+Estado: FINAL — revisão técnica encerrada, relatório e reviews publicados.
 Início da execução: 2026-10-12. Fechamento: 2026-10-13. Fuso: America/Fortaleza.
 Mandato: pedido do usuário de revisão e testes solicitado pelo professor Thales.
-Plano: [PLAN-RC-REVIEW-20261012](../../plans/active/revisao-release-candidate-cri-20261012.md).
+Plano: [PLAN-RC-REVIEW-20261012](../../plans/completed/revisao-release-candidate-cri-20261012.md).
 
 RECOMENDACAO: **CORREÇÕES NECESSÁRIAS** antes da integração em
 development. A recarga da capa preserva o estado de falha quando a revisão não
-muda; deve receber instrução de correção no PR #4 e REQUEST_CHANGES no PR #6.
-A atualização focal de dependências foi feita em commit separado e ainda precisa
-ter seus registros/evidências finais publicados. Nenhuma alteração funcional de
+muda; recebeu instrução de correção no PR #4 e REQUEST_CHANGES no PR #6.
+A atualização focal de dependências foi publicada em commit separado na PR #7,
+com evidências e limitações. Nenhuma alteração funcional de
 interface ou domínio foi implementada nesta revisão.
 
 ## Candidato, pilha e alcance
@@ -25,7 +25,8 @@ interface ou domínio foi implementada nesta revisão.
 | Branch isolada da revisão | review/cri-rc-validation-20261012 |
 | Checkpoint documental durável da retomada | ffd04a240d885cb32eb4d26d4e4881908b003443 |
 | Última reconferência remota | 2026-10-13, GitHub API e git ls-remote; RC continua em ca80376 |
-| Publicação da branch isolada e SHA final dos registros | Branch ainda ausente do remoto na reconferência; publicação pendente |
+| Publicação da branch isolada | [PR #7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7), base release/cri-rc-20261010; head dos registros consultável na PR |
+| Checkpoint com resultados completos antes do fechamento editorial | f25b7c1f8e770531586dec9ca6bfb47a114b1707 |
 
 FATO_DOCUMENTADO: a entrega tem seis PRs encadeados. PR #6 contém a etapa
 documental final e não representa sozinho o diff funcional. A revisão aplica-se
@@ -36,7 +37,8 @@ Não houve merge, deploy, promoção para main nem migrations em banco hospedado
 
 EVIDENCIA_IMPLEMENTACAO: a inspeção Git da retomada encontrou o patch 99d8363
 restrito a package.json/package-lock.json, com o componente de capa inalterado.
-O checkpoint ffd04a2 acrescenta somente o plano e este relatório em rascunho;
+O checkpoint ffd04a2 acrescenta o plano, este relatório em rascunho e a proteção
+de deployment da branch de revisão em vercel.json;
 o runtime sob validação conserva a árvore funcional de 99d8363. Não houve avanço
 do candidato remoto entre a referência anterior ca80376 e a consulta de 2026-10-13.
 A árvore e alterações preexistentes do checkout principal foram preservadas.
@@ -62,10 +64,11 @@ um worker e armazenamento persistente.
 EVIDENCIA_IMPLEMENTACAO nova de 2026-10-13: npm ci --no-audit --no-fund concluiu
 com instalação limpa de 562 pacotes em 16 s; prisma generate gerou o Client
 7.4.2 em 753 ms. Os logs npm-ci-20261013.log e prisma-generate-20261013.log estão
-preservados em .accounts-validation/rc-runtime/logs; seus anexos públicos serão
-vinculados no fechamento.
+preservados em .accounts-validation/rc-runtime/logs e publicados com caminhos
+locais redigidos: [npm ci](2026-10-13-cri-rc-evidence/npm-ci.txt) e
+[Prisma generate](2026-10-13-cri-rc-evidence/prisma-generate.txt).
 
-Este rascunho separa três grupos: resultado histórico observado na sessão,
+Este relatório separa três grupos: resultado histórico observado na sessão,
 verificação nova com artefato preservado e verificação pendente. Nenhum log perdido
 foi recriado como se fosse evidência original; nenhum teste interrompido é PASS.
 Os resultados do pacote de 2026-10-10 são históricos distintos e não foram
@@ -84,7 +87,7 @@ onError define true e então a imagem deixa de ser renderizada. reload() consult
 somente os metadados e mostra “Capa recarregada.”. A key da prévia depende apenas
 de areaId e revision; metadados com a mesma revisão não reiniciam failed.
 
-FATO_DOCUMENTADO no histórico da sessão: reprodução usou o componente real
+FATO_DOCUMENTADO no histórico da sessão de **2026-10-12**: reprodução usou o componente real
 AreaCoverEditor em Next.js e Chromium 140, com respostas interceptadas para
 controlar a recuperação. O comportamento foi observado tanto no original quanto
 no patch de dependências; não houve componente substituto simulando o defeito.
@@ -160,10 +163,12 @@ independentes.
 | npm audit --json, patch 99d8363 | 5 | 5 | Somente cadeia dev de braces/ESLint |
 | npm audit --omit=dev --json, patch 99d8363 | 0 | 0 | Sem vulnerabilidade reportada na árvore de produção consultada |
 
-JSONs preservados: npm-audit-original-20261013.json,
-npm-audit-patched-20261013.json e npm-audit-production-20261013.json em
-.accounts-validation/rc-runtime/logs. A vinculação dos anexos versionados e
-saídas npm ls/npm explain permanece para o fechamento. Alertas de pacote não
+Artefatos versionados: [audit original](2026-10-13-cri-rc-evidence/npm-audit-original.json),
+[audit do patch](2026-10-13-cri-rc-evidence/npm-audit-patched.json),
+[audit de produção](2026-10-13-cri-rc-evidence/npm-audit-production.json),
+[npm ls next sharp source-map-js brace-expansion braces --all](2026-10-13-cri-rc-evidence/npm-ls.txt) e
+[npm explain source-map-js](2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt).
+Saídas da árvore instalada 99d8363, com Node24 no PATH. Alertas de pacote não
 são exploração comprovada da aplicação; ausência no audit não é garantia geral
 de segurança.
 
@@ -226,7 +231,7 @@ remanescente afeta ferramentas que processem padrões glob não confiáveis; nã
 foi demonstrada exposição a esses padrões via endpoint da aplicação.
 [GHSA-vfj7-8cjw-p6xm, braces](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm).
 
-RECOMENDACAO: publicar o commit focal para revisão, acompanhar o patch upstream
+RECOMENDACAO: integrar o commit focal após revisão, acompanhar o patch upstream
 de braces e repetir o audit quando disponível. O residual dev está explicitado;
 o candidato remoto ca80376 continua sem o patch até a integração autorizada.
 
@@ -249,7 +254,7 @@ SQL, scripts/testes e guards permanecem idênticos ao candidato ca80376.
 | `playwright.config.ts`, seleção geral original, workers1/retries0 | **65 PASS, 1 FAIL, 1 não executado** por sequência serial; registro integral preservado |
 | Repetição isolada dos três testes originais `environmental-drafts.spec.ts` | **3/3 PASS**, assertions/timeouts/guards inalterados; não somar como casos novos |
 | `scripts/account-deletion-e2e.ts`, runner dedicado | **3/3 PASS**, schema próprio e cleanup |
-| `tests/e2e/run-auth-https.mjs`, runner original | **2/2 PASS**, produção HTTPS/sessão/cookies; teardown zero usuários de fixture |
+| `tests/e2e/run-auth-https.mjs`, runner original | **2/2 PASS**, modo production em HTTPS local, sessão/cookies; teardown zero usuários de fixture |
 | `npm run build`, executado integralmente pelo runner HTTPS | **PASS padrão Turbopack/Next16.3.8**, compilação e TypeScript; nenhum checker relaxado |
 | Equivalente a `npm run typecheck`, após build completo | **PASS** |
 | Equivalente a `npm run lint` | **Zero erros, 3 avisos preexistentes**: ShieldCheck/useAuth/className |
@@ -314,7 +319,7 @@ FATO_DOCUMENTADO no histórico: foi usado PostgreSQL local próprio, com runners
 inspecionados antes da execução e valores sintéticos de autenticação. O ambiente
 de teste precisa chegar também ao processo Next iniciado por Playwright; criar
 .env.test.local isoladamente não comprova o destino desse servidor. A retomada
-deve preservar prova do adapter/configuração efetivamente utilizada, inventário
+preservou prova do adapter/configuração efetivamente utilizada, inventário
 de schemas/fixtures antes/depois e teardown.
 
 Campos obrigatórios locais: DATABASE_URL e TEST_DATABASE_URL apontam ao destino
@@ -370,35 +375,35 @@ de produção. RECOMENDACAO: melhorar cleanup dos fixtures/buckets com escopo
 comprovado, ou manter descarte explícito do recurso de regressão após o gate.
 Nenhum uso de Neon/produção, remoção de guard ou migração hospedada está autorizado.
 
-## Registros e conclusão a fechar
+## Registros publicados e conclusão
 
 | Registro autorizado | Estado/URL |
 |---|---|
-| Relatório e evidências no repositório | DRAFT local; URL de commit/branch pendente |
+| Relatório e evidências no repositório | [Relatório versionado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/review/cri-rc-validation-20261012/docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md) e [PR #7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7) |
 | Achado de capa no PR #4 | [REQUEST_CHANGES](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988), review5499177988 |
-| Parecer consolidado REQUEST_CHANGES no PR #6 | Pendente de publicação; conferir duplicatas |
-| Patch de dependências | Commit local 99d8363; URL publicada pendente |
+| Parecer consolidado REQUEST_CHANGES no PR #6 | [REQUEST_CHANGES publicado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5499467293), review5499467293, commit ca80376; sem duplicata |
+| Patch de dependências | [Commit separado 99d8363](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/commit/99d8363fba4d13a8a02937be1ff2e606d35b3fa6), publicado na PR #7 |
 
 RECOMENDACAO: corrigir RC-UI-001 em commit funcional futuro com spec,
 plano/tarefas pertinentes e teste de regressão real; incluir o patch focal de
 dependências após revisão; concluir ou delimitar E2E e provas de isolamento.
 A decisão de integração permanece com a equipe. Quando apropriada, preservar
 sequência #1→#6, merge commits e retarget de cada próximo PR para development,
-conforme o guia. Nenhum registro pendente acima deve ser apresentado como publicado.
+conforme o guia. Os reviews acima foram confirmados pela GitHub API, sem duplicatas.
 
 Homologações humanas Gate B012/aceite013, navegadores alvo, Cloudinary real,
 e-mail/scheduler, operadores e identificação/backup/ensaio de produção continuam
 pendentes. Referências operacionais:
 [checklist da RC](../../releases/2026-10-10-cri-rc/review-checklist.md) e
 [runbook operacional](../../releases/2026-10-10-cri-rc/production-update-runbook.md).
-Nenhum valor privado é exigido neste rascunho para concluir testes locais.
+Nenhum valor privado foi exigido do usuário para concluir testes locais.
 
 ### Conclusões da revisão anterior e ações manuais
 
 | Conclusão | Estado atual |
 |---|---|
 | Recarga de capa sem nova tentativa na mesma revisão | **CONFIRMADA**, componente real em rota real, requests/capturas preservados |
-| next/sharp/source-map-js originais high | **CONFIRMADA**; contagem completa de apenas3 **REFUTADA**: audit atual13 registros propagados |
+| next/sharp/source-map-js originais high | **CONFIRMADA** para os três pacotes citados; a coleta completa atual encontrou13 registros propagados |
 | Ausência de remotePatterns e source-map-js via PostCSS | **CONFIRMADA**; SSRF específico inaplicável à configuração observada, sem exploração comprovada |
 | 291 Node+17 Mail/typecheck/lint3 avisos/build | **CONFIRMADOS na retomada**, build padrão; variante Webpack original permanece delimitada |
 | Integração PostgreSQL/migrations/contratos ausentes na revisão anterior | Lacunas cobertas localmente187/37/6 e bootstrap14, sem fingir execução passada |
@@ -416,9 +421,9 @@ Para as etapas humanas/remotas restantes, os campos e fontes são:
 
 | Etapa/campos | Origem e preenchimento correto |
 |---|---|
-| Checkpoint remoto full-ui | Identificar primeiro project/branch/database/role **E2E isolados** no Neon Console; Connection details fornece `TEST_DATABASE_URL` com endpoint direto. Preservar `TEST_DATABASE_CONFIRMATION=HIDROFLORESTAS_AUTH_TEST`, `IMP006_DATABASE_VARIABLE=TEST_DATABASE_URL`, `NODE_ENV=test` no runner. `IMP006_UI_RUN_ID` deve ser único e corresponder a `HF007-UI-[A-Za-z0-9-]{6,50}`. Para perfil legacy, `IMP006_UI_EMAIL` deve corresponder exatamente a `identities.legacy.email` em `scripts/imp006-ui-account.ts`; `IMP006_UI_PASSWORD` vem do secret store privado da conta técnica autorizada. Perfis de reserva usam o preparo/secret próprio do runbook006. Não desativar guards para apontar esse runner ao cluster local ou à produção. |
-| Cloudinary real | Dashboard do cloud aprovado→API Keys: `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`. Upload presets: preset assinado/versionado/frozen em `CLOUDINARY_COVER_PRESET`; `npx tsx scripts/area-cover-preset.ts` produz seu fingerprint para `CLOUDINARY_COVER_PRESET_SHA256`. Manter `CLOUDINARY_IMAGE_ENABLED=0` até homologação real; somente então aprovação própria permite1. Valores no secret store, nunca NEXT_PUBLIC. Validar authenticated/EXIF/recusa de delivery público/revogação/substituição/remoção/cleanup/créditos. |
-| E-mail real e GateB012 | Obter do provedor/secret store `SMTP_HOST/PORT/SECURE/REQUIRE_TLS/USER/APP_PASSWORD` e `MAIL_FROM`; preservar keyrings/IDs ativos, `MAIL_WORKER_SECRET`, `MAIL_IDEMPOTENCY_KEY`, provas e schedulers existentes. Caixa sintética real autorizada recebe reset/reenvio; confirmar uso único e revogação em navegadorB/A. SMTP local/aceito não comprova recebimento humano. |
+| Checkpoint remoto full-ui | Identificar primeiro project/branch/database/role **E2E isolados** no Neon Console; o destino deve coincidir com `approvedUiTargetFingerprint` de `scripts/imp006-ui-account.ts`, em schema `public`. Connection details fornece `TEST_DATABASE_URL` com endpoint direto. Preencher também `DATABASE_URL` com a referência de desenvolvimento identificada e **distinta** do banco de teste. Usar ambiente limpo, sem `IMP006_TEST_SCHEMA`, `IMP006_LOCAL_REGRESSION_PUBLIC`, `IMP006_LOCAL_POSTGRESQL` ou `PLAYWRIGHT_BASE_URL` herdadas. Se o destino aprovado não estiver disponível, registrar o bloqueio sem alterar a allowlist. Preservar `TEST_DATABASE_CONFIRMATION=HIDROFLORESTAS_AUTH_TEST`, `IMP006_DATABASE_VARIABLE=TEST_DATABASE_URL`, `NODE_ENV=test` no runner. `IMP006_UI_RUN_ID` deve ser único e corresponder a `HF007-UI-[A-Za-z0-9-]{6,50}`. Para perfil legacy, `IMP006_UI_EMAIL` deve corresponder exatamente a `identities.legacy.email` em `scripts/imp006-ui-account.ts`; `IMP006_UI_PASSWORD` vem do secret store privado da conta técnica autorizada. Perfis de reserva usam o preparo/secret próprio do runbook006. Não desativar guards para apontar esse runner ao cluster local ou à produção. |
+| Cloudinary real | Dashboard do cloud aprovado→API Keys: `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`. Upload presets: preset assinado/versionado/frozen em `CLOUDINARY_COVER_PRESET`; Obter JSON revisado do preset via Admin API, sem segredos, com nome `hfr-cover-vN`; `npx tsx scripts/area-cover-preset.ts <preset-revisado.json>` produz `sha256`, a copiar para `CLOUDINARY_COVER_PRESET_SHA256`. Manter `CLOUDINARY_IMAGE_ENABLED=0` até homologação real; somente então aprovação própria permite1. Valores no secret store, nunca NEXT_PUBLIC. Validar authenticated/EXIF/recusa de delivery público/revogação/substituição/remoção/cleanup/créditos. |
+| E-mail real e GateB012 | Obter do provedor/secret store `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_REQUIRE_TLS`, `SMTP_USER`, `SMTP_APP_PASSWORD` e `MAIL_FROM`. O contrato atual exige `SMTP_HOST=smtp.gmail.com`, combinação `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_REQUIRE_TLS=true` ou `SMTP_PORT=587`, `SMTP_SECURE=false`, `SMTP_REQUIRE_TLS=true`; preencher `MAIL_FROM` igual a `SMTP_USER` da conta autorizada e usar sua senha de app existente; preservar keyrings/IDs ativos, `MAIL_WORKER_SECRET`, `MAIL_IDEMPOTENCY_KEY`, provas e schedulers existentes. Caixa sintética real autorizada recebe reset/reenvio; confirmar uso único e revogação em navegadorB/A. SMTP local/aceito não comprova recebimento humano. |
 | Aceite013 e browsers | Humano executa cancelamento/senha/blockers/exclusão autorizada e documenta aceite. Homologar drafts/teclado/mobile em Firefox/Safari e investigar a interação inicial do select, sem afrouxar assertions. |
 | Integração/operação futura | Confirmar Vercel→repositório→banco, backup restaurado/checksums/drift, janela/locks, owners mail/cleanup, scheduler/alertas/orçamento. Operador de banco e aprovador: não especificado. Não aplicar seed/bootstrap/migrations/deploy hospedados por este parecer. |
 
