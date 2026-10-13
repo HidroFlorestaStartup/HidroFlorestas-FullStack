@@ -60,3 +60,13 @@ dependências já revisadas não prova combo final; reexecutar gates. Bancos exi
 não serão resetados para acomodar branch antiga. Revisão humana e gates de provedores
 continuam próprios: disponibilidade técnica para review não equivale a homologação.
 Encerramento deverá registrar SHAs/heads/resultados reais e operadores/gates pendentes.
+
+Atualização de design CI: workflow rc-review.yml dispara somente nos cinco nomes
+existentes3–7, com permissions contents:read, actions oficiais pinadas por SHA,
+Node24.19, Windows e cluster fresco privado no próprio runner. Script versionado
+rc-review-validation.ps1 reutiliza guards/coletores atuais, gera somente segredos
+sintéticos e recusa instalação sobre diretório existente; never deploy/SMTP/cloud.
+Collector recebe aliases explícitos para os dois CLIs locais já existentes,
+mantendo redaction/fingerprint. Consulta administrativa Actions403; disponibilidade
+efetiva será comprovada por runs/checks ou registrada como bloqueio, sem alterar
+settings. Checklist015 requirements16/16 reconferido, sem modificar seus itens.

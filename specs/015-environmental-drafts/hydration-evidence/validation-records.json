@@ -160,6 +160,58 @@
       "log": "12-e2e.txt",
       "sourceLogSha256": "7272d87dcd7d99bc94226680333cf1d571e99f983ec51d90c514221806261848",
       "excerptSha256": "9809122fa28776636e9963e0ac4d66842fcf34cfc353209a341320d3f9198b1a"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "9d7c16948219d8048b72fc01e2f38a5496d0c48d458fac52e2a1fc8a9ece492f",
+      "startedUtc": "2026-10-13T18:58:36.940Z",
+      "endedUtc": "2026-10-13T18:58:45.880Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "13-unit.txt",
+      "sourceLogSha256": "868385e19ac82ddf14555270b0a037c5bd5b88eb74cb26c2ea4e35b33a789cf6",
+      "excerptSha256": "2000cc0458b94d6d888bbf95cfd2e6bb1fe126bfec98ba84b4674a5dd48b8486"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "9d7c16948219d8048b72fc01e2f38a5496d0c48d458fac52e2a1fc8a9ece492f",
+      "startedUtc": "2026-10-13T18:58:46.226Z",
+      "endedUtc": "2026-10-13T18:58:52.548Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "14-typecheck.txt",
+      "sourceLogSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "excerptSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "9d7c16948219d8048b72fc01e2f38a5496d0c48d458fac52e2a1fc8a9ece492f",
+      "startedUtc": "2026-10-13T18:58:52.881Z",
+      "endedUtc": "2026-10-13T18:59:01.299Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "15-lint.txt",
+      "sourceLogSha256": "d1cbd465797eca0933f6f1594aab2894f69049cab2a6b91c57446c4dc31a6fbd",
+      "excerptSha256": "445bb6cc3d82a814173c27ee2460d03c13dab6456a6563239c84fe2bc751f19f"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "9d7c16948219d8048b72fc01e2f38a5496d0c48d458fac52e2a1fc8a9ece492f",
+      "startedUtc": "2026-10-13T18:59:01.604Z",
+      "endedUtc": "2026-10-13T18:59:12.165Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "16-build.txt",
+      "sourceLogSha256": "5fdd0c69601406d82d03b3fa150ed014f4cb0545d3f2757aa89de4f355b4f6e2",
+      "excerptSha256": "44becf275cad54cf4126f5ca757faa421e018c00c964bbb1c4cf36c9f4b29a77"
     }
   ],
   "payloadAttachments": [
