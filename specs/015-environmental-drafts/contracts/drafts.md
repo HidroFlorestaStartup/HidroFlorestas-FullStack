@@ -17,3 +17,8 @@ caso retorna conflito; confirmação sem draft continua compatível. Campos da U
 não editados preservam suas células originais/omissão ao salvar outros campos.
 Replay retorna 200
 do conjunto original sem consumir novo draft.
+
+RC-DRAFT-001: controles de edição e ações de draft/revisão não aceitam interação
+antes da hidratação; status informa preparação. Primeiro PUT após liberação deve
+conter raw false e0, conservar células não editadas e omitir campos ausentes como
+antes. API/envelope/versionamento/CSRF/idempotência permanecem inalterados.
