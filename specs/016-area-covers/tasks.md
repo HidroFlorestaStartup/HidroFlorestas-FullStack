@@ -38,6 +38,6 @@ MVP é US1, entrega local exige todas as histórias. Testes críticos escritos a
 - [x] T022 [US1] Escrever teste E2E RED da mesma revision e segunda falha/retentativa em tests/e2e/area-covers.spec.ts.
 - [x] T023 [US1] Corrigir remontagem/novo GET/feedback com contador local e onLoad/onError em src/components/areas/area-cover.tsx.
 - [x] T024 Executar E2E focal, typecheck, lint e regressões pertinentes, registrando ambiente, resultados reais e snapshot em specs/016-area-covers/implementation-evidence.md.
-- [ ] T025 Atualizar review da PR #4 e plano de propagação da correção às branches dependentes da RC em specs/016-area-covers/rc-ui-001-propagation.md; orientar futura atualização de docs/releases/2026-10-10-cri-rc/integration-guide.md (ausente na branch #4), sem executar merge/deploy.
+- [x] T025 Atualizar review da PR #4 e plano de propagação da correção às branches dependentes da RC em specs/016-area-covers/rc-ui-001-propagation.md; orientar futura atualização de docs/releases/2026-10-10-cri-rc/integration-guide.md (ausente na branch #4), sem executar merge/deploy. Push fast-forward e re-review #4/#6 confirmados; não significa aprovação dos revisores.
 
 Dependência: T021 → T022 → T023 → T024 → T025. Não reabrir migrações, autorização ou ciência fora do recorte.

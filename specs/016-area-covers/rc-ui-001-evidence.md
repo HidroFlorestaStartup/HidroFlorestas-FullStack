@@ -138,7 +138,21 @@ e sem deployments dessa branch na consulta de três deployments existentes.
 [Contrato oficial do bloqueio](https://vercel.com/docs/project-configuration/git-configuration).
 Nenhum setting remoto foi alterado pelo agente.
 
-Push e pedidos de re-review ainda não realizados neste corte documental.
+Push fast-forward dace407→c317271 concluído; API do PR #4 confirmou o novo head
+com planejamento 366432a e correção/evidências
+[c317271](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/commit/c3172718011ee70d3613387c61b3774601010a85).
+Novo manifesto no commit publicado confirmou fingerprint 54d45235, idêntico aos
+gates. PostgreSQL próprio voltou STOPPED, dados preservados e porta3001 sem servidor.
+
+Conector GitHub recusou as quatro escritas com HTTP403 Resource not accessible
+by integration. Autenticação local já usada pelo Git executou os pedidos
+autorizados, com credencial somente em memória: re-review #4/#6 e comentários
+HTTP201. [Recibos](rc-ui-001-evidence/rereview-publication.json),
+[resposta no thread #4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4262167643) e
+[atualização #6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6151817393).
+CHANGES_REQUESTED de PedroVitor237 reconferido e preservado em ambos; nenhuma
+aprovação, dispensa de review, resolução do thread ou retarget foi executada.
+
 [Propagação preparada e pendências](rc-ui-001-propagation.md) preservam estados e
 ordem da pilha. Integração das dependências e propagação ficam pendentes porque
 a instrução posterior do usuário proíbe merges. Aprovações/homologações e ciência

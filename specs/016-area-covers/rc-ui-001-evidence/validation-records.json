@@ -1,6 +1,6 @@
 {
   "classification": "EVIDENCIA_IMPLEMENTACAO",
-  "createdUtc": "2026-10-13T17:53:49.607059+00:00",
+  "createdUtc": "2026-10-13T17:58:42.350898+00:00",
   "worktree": "C:/projetos/ifma/HidroFlorestas-rc-ui-001",
   "branch": "review/016-area-covers",
   "planningCommit": "366432acf8a0134e2c1142b64a4d5f6588b3fa42",
@@ -19,7 +19,7 @@
       "exitCode": 0,
       "result": "PASS",
       "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
-      "log": "01-dotenv_config_path.txt",
+      "log": "01-prisma-generate.txt",
       "originalLog": ".accounts-validation/DOTENV_CONFIG_PATH-1791912414920.log",
       "originalLogSha256": "1ecf523d32d88f5fa90f56cfd0eb68919be6d2e1618b0245f590b33c14ab92b2",
       "publishedExcerptSha256": "6e78b908fa6c7541da54eccb2a0c4d57fda9b17bf22ed5d5534ef4121eab9f90",

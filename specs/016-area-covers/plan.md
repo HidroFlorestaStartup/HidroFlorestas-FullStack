@@ -136,3 +136,9 @@ lint/build/schema audit. Detalhes em rc-ui-001-evidence.md; FAIL de diagnóstico
 de drafts preservado separadamente. T025 depende da publicação e re-review,
 sem executar propagação por merge. Testes temporários das dependências de #7
 não alteram a ordem dos commits nem a versão destinada ao PR #4.
+
+Fechamento T025: c317271 publicado fast-forward após os gates; head do PR #4
+conferido. Re-review #4/#6 e comentários HTTP201 usando autenticação local do Git
+após HTTP403 do conector; CHANGES_REQUESTED anteriores preservados. Propagação
+e integração de #7 preparadas, não executadas. PostgreSQL voltou STOPPED com
+dados preservados. Fechamento documental não altera o fingerprint testado.

@@ -83,7 +83,17 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 
 ## Estado de publicação desta sessão
 
-Planejamento commitado: 366432acf8a0134e2c1142b64a4d5f6588b3fa42.
-Correção/evidências em validação local; push/re-review ainda não executados neste
-corte documental. Registrar os resultados efetivos no fechamento, sem presumir
-permissão de escrita a partir de consultas somente leitura.
+Planejamento: 366432acf8a0134e2c1142b64a4d5f6588b3fa42;
+correção/evidências: c3172718011ee70d3613387c61b3774601010a85.
+Push fast-forward dace407→c317271 concluído e confirmado pelo head do PR #4.
+Re-review PedroVitor237 #4/#6 HTTP201; CHANGES_REQUESTED anteriores preservados.
+[Thread #4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4262167643),
+[comentário #6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6151817393) e
+[recibos](rc-ui-001-evidence/rereview-publication.json).
+
+Escritas do conector retornaram HTTP403; execução autorizada completada pela
+autenticação local do Git, sem expor credenciais. #5/#6/#7 continuam nos heads
+da tabela; não houve propagação/integração. Fechamento documental posterior
+registra esses recibos; obter seu SHA pelo head do PR #4 após o push final.
+PostgreSQL próprio voltou STOPPED, dados preservados; main/beba96f e os três
+arquivos locais não rastreados intactos. Nenhum deploy na branch de revisão.
