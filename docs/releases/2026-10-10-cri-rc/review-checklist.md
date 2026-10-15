@@ -10,6 +10,20 @@ técnica, não uma bateria obrigatória adicional. Reviews/testes são dos estud
 designados; ações de provedor/banco/deploy/cleanup são dos operadores autorizados;
 custos/dados/GO são decisões das autoridades do projeto.
 
+## Bloqueios encontrados em 2026-10-15
+
+Parecer atual: **CORREÇÕES NECESSÁRIAS — NÃO INTEGRAR EM `development` ainda**.
+Consultar os [achados](achados-revisao-2026-10-15.md) e seguir o
+[guia de correção](guia-correcao-achados-2026-10-15.md).
+
+- [ ] CRI-REV-001: representar o estado desabilitado das capas no contrato e na UI.
+- [ ] CRI-REV-002: rejeitar stale/replay/quota antes de consultar a Admin API.
+- [ ] CRI-REV-003: sincronizar e revalidar o PR 7 no head atual da RC.
+- [ ] CRI-REV-004: resolver `CHANGES_REQUESTED` e obter nova aprovação.
+
+Não marcar esses itens apenas por haver CI verde; cada fechamento exige o critério
+e a evidência definidos nos documentos vinculados.
+
 Atualização2026-10-13: revisar as sete etapas e os heads atuais na
 [prontidão](rc-readiness-20261013.md). A regressão cumulativa agora inclui os
 dois baselines de hidratação e retry da capa revision1, sem substituir o aceite

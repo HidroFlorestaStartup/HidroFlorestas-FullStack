@@ -8,6 +8,13 @@ aprovadores do projeto assumem serviços, dados, custos e produção. Provas exi
 são reaproveitadas conforme alcance/impacto, sem repetição geral dos testes.
 A publicação do plano não fecha aceites nem autoriza operações produtivas.
 
+Revisão independente de 2026-10-15: **CORREÇÕES NECESSÁRIAS**. Antes de integrar
+esta RC em `development`, consultar os
+[achados detalhados](achados-revisao-2026-10-15.md) e o
+[guia de correção para desenvolvimento com IA](guia-correcao-achados-2026-10-15.md).
+Os documentos registram dois defeitos no fluxo de capas, a defasagem do PR 7 e
+reviews pendentes. Eles não autorizam merge, deploy ou operação produtiva.
+
 Atualização de2026-10-13: correções RC-DRAFT-001/RC-UI-001, merges internos da
 pilha e dependências originais99d8363 na RC. Consultar
 [prontidão atual](rc-readiness-20261013.md) antes dos registros históricos abaixo.
