@@ -45,24 +45,24 @@ Dependência: T021 → T022 → T023 → T024 → T025. Não reabrir migrações
 ## Correções CRI-REV — preparação e fundação (2026-10-15)
 
 - [x] T026 Reconciliar achados/branches/autoridade e decisão A em specs/016-area-covers/{spec.md,plan.md,research.md,contracts/images.md}; commitar antes de código.
-- [ ] T027 Instrumentar presetCalls/ticketCalls/barreira determinística em tests/fixtures/area-cover-provider.ts e registrar testes RED em specs/016-area-covers/cri-rev-20261015-evidence.md.
+- [x] T027 Instrumentar presetCalls/ticketCalls/barreira determinística em tests/fixtures/area-cover-provider.ts e registrar testes RED em specs/016-area-covers/cri-rev-20261015-evidence.md.
 
 ### US1 — disponibilidade (CRI-REV-001)
 
-- [ ] T028 [US1] Escrever/executar RED de flag/config/roles/DTO/preservação e mutações fechadas em tests/integration/area-covers.test.ts e tests/integration/area-cover-provider.test.ts (FR-010/011).
-- [ ] T029 [US1] Escrever/executar RED Playwright de ausência/desabilitação/retorno da disponibilidade em tests/e2e/area-covers.spec.ts (SC-005).
-- [ ] T030 [US1] Implementar capacidade offline/DTO/guards em src/app/api/server/images/{cloudinary,contracts,service}.ts e consumidores de src/components/areas/area-cover.tsx e src/app/dashboard/laboratories/[laboratoryId]/areas/page.tsx; repetir GREEN sem reduzir assertions (FR-010/011).
+- [x] T028 [US1] Escrever/executar RED de flag/config/roles/DTO/preservação e mutações fechadas em tests/integration/area-covers.test.ts e tests/integration/area-cover-provider.test.ts (FR-010/011).
+- [x] T029 [US1] Escrever/executar RED Playwright de ausência/desabilitação/retorno da disponibilidade em tests/e2e/area-covers.spec.ts (SC-005).
+- [x] T030 [US1] Implementar capacidade offline/DTO/guards em src/app/api/server/images/{settings,cloudinary,contracts,service}.ts e consumidores src/components/areas/{area-cover,area-list}.tsx, src/types/area.type.ts e src/app/api/server/{areas/area.contracts,services/areas.service}.ts; repetir GREEN sem reduzir assertions (FR-010/011).
 
 ### US1/US2 — preflight (CRI-REV-002)
 
-- [ ] T031 [US2] Escrever/executar RED de quotas/stale/replay/expiração antes de I/O e corridas no preset em tests/integration/area-covers.test.ts (FR-012/013).
-- [ ] T032 [US2] Implementar duas transações sem rede/validação compartilhada/criação atômica em src/app/api/server/images/service.ts e repetir GREEN (SC-006).
-- [ ] T033 [US2] Verificar quotas por ator, mesma chave concorrente, erro/retry serializável e preset sem órfãos em tests/integration/area-covers.test.ts (FR-013).
+- [x] T031 [US2] Escrever/executar RED de quotas/stale/replay/expiração antes de I/O e corridas no preset em tests/integration/area-covers.test.ts (FR-012/013).
+- [x] T032 [US2] Implementar duas transações sem rede/validação compartilhada/criação atômica em src/app/api/server/images/service.ts e repetir GREEN (SC-006).
+- [x] T033 [US2] Verificar quotas por ator, mesma chave concorrente, erro/retry serializável e preset sem órfãos em tests/integration/area-covers.test.ts (FR-013).
 
 ### Fechamento transversal e publicação (CRI-REV-003/004)
 
-- [ ] T034 Executar regressão oficial Unit/Integration/Migration/Contract/R1/Build/Typecheck/Lint/E2E/Https/Deletion/Ihfr/Bootstrap/SchemaAudit e registrar resultados em specs/016-area-covers/cri-rev-20261015-evidence.md.
-- [ ] T035 Revisar adversarialmente autorização/DTO/fail-closed/replay/quota/OCC/cleanup/compatibilidade, corrigir achados e registrar em specs/016-area-covers/cri-rev-20261015-evidence.md.
+- [x] T034 Executar regressão oficial Unit/Integration/Migration/Contract/R1/Build/Typecheck/Lint/E2E/Https/Deletion/Ihfr/Bootstrap/SchemaAudit e registrar resultados em specs/016-area-covers/cri-rev-20261015-evidence.md.
+- [x] T035 Revisar adversarialmente autorização/DTO/fail-closed/replay/quota/OCC/cleanup/compatibilidade, corrigir achados e registrar em specs/016-area-covers/cri-rev-20261015-evidence.md.
 - [ ] T036 Atualizar docs/operations/area-covers-runbook.md e .env.images.example; commitar/publicar 016 após fetch/status/diff/checks.
 - [ ] T037 Propagar via worktrees/merge commits audit→RC→validation, preservar 11 originais/99d8363 e docs/reports/audits; atualizar docs/releases/2026-10-10-cri-rc/ com prontidão/release notes/integração e conferir PR #7 sem diff funcional.
 - [ ] T038 Confirmar HEAD/checks/diffs remotos, responder Pedro e pedir re-review #4/#6/#7; registrar recibo final em specs/016-area-covers/cri-rev-20261015-evidence.md e manter aprovação humana pendente.
