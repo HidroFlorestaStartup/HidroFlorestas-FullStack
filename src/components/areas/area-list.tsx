@@ -122,7 +122,7 @@ export function AreaList({ laboratoryId }: { laboratoryId: string }) {
                     className={`h-2 ${index % 3 === 0 ? "bg-green-600" : index % 3 === 1 ? "bg-blue-500" : "bg-amber-600"}`}
                   />
                   <div className="p-5 sm:p-6">
-                    {area.cover?.hasImage&&<AreaCoverPreview key={`${area.id}:${area.cover.revision}`} apiPath={`/api/laboratories/${laboratoryId}/areas/${area.id}/image`} name={area.name} hasImage revision={area.cover.revision}/>}
+                    {area.cover?.hasImage&&<AreaCoverPreview key={`${area.id}:${area.cover.revision}:${area.cover.featureEnabled}`} apiPath={`/api/laboratories/${laboratoryId}/areas/${area.id}/image`} name={area.name} hasImage revision={area.cover.revision} featureEnabled={area.cover.featureEnabled}/>}
                     <div className="flex items-start gap-3">
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-50 text-green-700">
                         <MapPin size={22} />

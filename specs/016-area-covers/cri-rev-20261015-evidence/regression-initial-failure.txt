@@ -1,0 +1,41 @@
+✔ concurrent changes never remove both final ACTIVE ADMIN accounts (303.2844ms)
+✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (449.3271ms)
+▶ user administration routes
+  ✔ derives the actor and forwards only parsed list filters (4.7689ms)
+  ✔ validates status input before invoking the service (2.0391ms)
+  ✔ returns sanitized authentication, authorization, and conflict errors (1.2929ms)
+✔ user administration routes (9.0655ms)
+ℹ tests 207
+ℹ suites 15
+ℹ pass 206
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222499.2451
+
+✖ failing tests:
+
+test at tests\integration\ihfr-diagnosis-concurrency.test.ts:2:6063
+✖ PostgreSQL contested transaction: REPLACE distinct keys (16234.3924ms)
+  AssertionError [ERR_ASSERTION]: REPLACE distinct keys
+  + actual - expected
+
+  + 'P2028'
+  - 'STATE_CONFLICT'
+
+      at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\ihfr-diagnosis-concurrency.test.ts:66:37)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async TestContext.<anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\ihfr-diagnosis-concurrency.test.ts:54:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'P2028',
+    expected: 'STATE_CONFLICT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+[2026-10-16T02:52:08.818Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=1 duration_ms=222569
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-5ppkdk\integration-attempt-1.log

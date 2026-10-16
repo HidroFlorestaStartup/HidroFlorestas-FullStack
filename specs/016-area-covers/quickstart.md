@@ -1,5 +1,14 @@
 # Operação e validação
 
+CRI-REV-20261015: após commit de planejamento, executar os novos testes de
+area-covers/area-cover-provider e Playwright via accounts-local-postgresql.ps1
+Run (Regression) e runners oficiais. Registrar RED antes de código e repetir
+os mesmos testes GREEN. Regressão completa: scripts/rc-review-validation.ps1
+(sem InitializeCiCluster em máquina local). Nunca copiar .env de outro checkout.
+Usar capacidade fake/sintética; nenhuma requisição Cloudinary real. Registrar
+SHA, diff/fingerprint, UTC, exit codes e contagens na evidência focal. Confirmar
+checklists/hooks e git diff --check antes dos commits/pushes autorizados.
+
 Somente local nesta execução: instalar pelo lockfile, generate Prisma,
 RegressionSetup/Bootstrap em cluster próprio, Unit/Integration/Migration/Contract,
 typecheck/lint/build/E2E, exclusão dedicada e SchemaAudit sequenciais.

@@ -1,10 +1,17 @@
 import assert from "node:assert/strict";
 import {test} from "node:test";
 import { randomUUID } from "node:crypto";
-import { CloudinaryCoverProvider,presetFingerprint } from "../../src/app/api/server/images/cloudinary";
+import { CloudinaryCoverProvider,presetFingerprint,cloudinarySettings } from "../../src/app/api/server/images/cloudinary";
 import type {CoverAsset} from "../../src/app/api/server/images/provider";
 const preset={name:"hfr-cover-v1",unsigned:false,settings:{type:"authenticated",overwrite:false,allowed_formats:"jpg,png,webp"}};
 const config={cloudName:"synthetic",apiKey:"123456789",apiSecret:"synthetic-only-not-a-real-secret",preset:preset.name,presetHash:"a".repeat(64)};
+
+test("CRI-REV-001 configuration fails closed for disabled, absent, invalid and incomplete settings",()=>{
+ const env={CLOUDINARY_IMAGE_ENABLED:"1",CLOUDINARY_CLOUD_NAME:config.cloudName,CLOUDINARY_API_KEY:config.apiKey,CLOUDINARY_API_SECRET:config.apiSecret,CLOUDINARY_COVER_PRESET:config.preset,CLOUDINARY_COVER_PRESET_SHA256:config.presetHash};
+ assert.deepEqual(cloudinarySettings(env),config);
+ for(const flag of [undefined,"0","true","invalid"])assert.throws(()=>cloudinarySettings({...env,CLOUDINARY_IMAGE_ENABLED:flag}),{code:"UNAVAILABLE"});
+ for(const key of Object.keys(env))assert.throws(()=>cloudinarySettings({...env,[key]:undefined}),{code:"UNAVAILABLE"});
+});
 test("preset accepts documented CSV/array equivalently and rejects unsigned or transforming options",()=>{
  const hash=presetFingerprint(preset,preset.name);assert.equal(hash,presetFingerprint({...preset,settings:{...preset.settings,allowed_formats:["webp","jpg","png"]}},preset.name));
  for(const value of [{...preset,unsigned:true},{...preset,settings:{incoming:"c_scale,w_1"}},{...preset,settings:{allowed_formats:"png,pdf"}}])assert.throws(()=>presetFingerprint(value,preset.name),{code:"UNAVAILABLE"});
