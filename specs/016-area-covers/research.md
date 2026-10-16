@@ -1,5 +1,19 @@
 # Pesquisa de fontes e escolhas
 
+## Pesquisa focal CRI-REV — 2026-10-15
+
+DECISAO_CONFIRMADA de produto: política A, origem/resposta atual em spec.md.
+RECOMENDACAO técnica adotada pelo mandato explícito: preflight Serializable e
+segunda validação após preset fora da transação. Fonte: código local do serviço,
+guia de correção na RC f351373 e contrato existente; nenhuma nova tecnologia.
+Alternativas: transação envolvendo rede aumenta lock/timeout; mover preset após
+criação deixa registros órfãos; validar só antes permite corrida. Todas recusadas.
+Replay conserva validação de preset e precedência anterior, evitando mudar
+idempotência observada. Capacidade offline reutiliza cloudinarySettings, sem
+construir provider. Fake injeta capacidade e barreira, sem configuração real.
+Sem pendência material para implementação após confirmação A; revisão humana e
+homologações operacionais permanecem pendentes. Constituição pós-design: PASS.
+
 DECISAO_CONFIRMADA: política na spec, proveniência na conversa/pacote CRI.
 RECOMENDACAO técnica adotada: staging privado + sanitização server-side + proxy,
 em vez de URL signed no browser: a assinatura de delivery não expira nem verifica

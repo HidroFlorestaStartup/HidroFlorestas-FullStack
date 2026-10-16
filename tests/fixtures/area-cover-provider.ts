@@ -5,8 +5,9 @@ import type { CoverProvider,CoverAsset,ProviderAttempt,ResourceType } from "../.
 export class FakeCoverProvider implements CoverProvider {
  assets=new Map<string,{asset:CoverAsset;bytes:Buffer}>();deleted:string[]=[];failUpload=false;loseUpload=false;failDestroy=false;hash="a".repeat(64);
  onDownload:(()=>Promise<void>)|null=null;
- async preset(){return this.hash;}
- ticket(a:ProviderAttempt){return{attemptId:a.id,expiresAt:a.expiresAt.toISOString(),upload:{url:"https://cloudinary.invalid/image/upload",params:{public_id:a.stagingPublicId,signature:"synthetic-signature",context:`hfr_attempt=${a.id}|hfr_kind=staging`}}};}
+ presetCalls=0;ticketCalls=0;failPreset=false;onPreset:(()=>Promise<void>)|null=null;
+ async preset(){this.presetCalls++;await this.onPreset?.();if(this.failPreset)throw new CoverError("UNAVAILABLE");return this.hash;}
+ ticket(a:ProviderAttempt){this.ticketCalls++;return{attemptId:a.id,expiresAt:a.expiresAt.toISOString(),upload:{url:"https://cloudinary.invalid/image/upload",params:{public_id:a.stagingPublicId,signature:"synthetic-signature",context:`hfr_attempt=${a.id}|hfr_kind=staging`}}};}
  async inspect(id:string,type:ResourceType){return this.assets.get(`${type}:${id}`)?.asset??null;}
  async download(a:CoverAsset){const entry=this.assets.get(`${a.resourceType}:${a.publicId}`);if(!entry)throw new CoverError("UNAVAILABLE");const run=this.onDownload;this.onDownload=null;await run?.();return entry.bytes;}
  async uploadFinal(a:ProviderAttempt,bytes:Buffer){if(this.failUpload)throw new CoverError("UNAVAILABLE");const result=await this.store(a.finalPublicId,a.id,"final",bytes);if(this.loseUpload){this.loseUpload=false;throw new CoverError("UNAVAILABLE");}return result;}

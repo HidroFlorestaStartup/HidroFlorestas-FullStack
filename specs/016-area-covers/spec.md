@@ -87,3 +87,54 @@ Não alterar revision no banco; preservar guards/assertions e executar RED antes
 da correção. Publicação somente fast-forward na branch existente protegida.
 Nova instrução do usuário nesta sessão: nenhum merge nem deploy; preparar a
 propagação aos descendentes sem executá-la. Aprovação técnica permanece humana.
+
+## Correções CRI-REV-001 a CRI-REV-004 — 2026-10-15
+
+O parágrafo anterior registra o mandato histórico de 13/10. DECISAO_CONFIRMADA:
+o pedido anexado de 15/10 autoriza commits, pushes e merges internos na cadeia
+016 → audit → RC → validation, preservando história e sem integrar main/development.
+Achados/guia de 15/10 na RC f351373 são evidências de revisão, sem aprovação automática.
+
+### US1 — disponibilidade explícita (CRI-REV-001, P1)
+
+DECISAO_CONFIRMADA: inicialmente PENDENCIA_DE_DECISAO no pedido; após pergunta
+explícita nesta conversa de 15/10/2026, o usuário respondeu “Confirmo a política A
+e autorizo sua implementação.” Responsável: usuário solicitante, em resposta à
+pergunta sobre autoridade de produto. A confirmação não é aprovação dos PRs.
+
+- **FR-010 / IMAGE-FR-001/004**: autorização contextual, disponibilidade do recurso,
+  existência da capa e leitura de conteúdo são estados distintos. `canEdit`
+  conserva exclusivamente autorização contextual; disponibilidade nunca concede
+  acesso nem revela configuração, nomes internos ou segredos.
+- **FR-011**: política A: flag desligado, ausente, inválido ou configuração
+  incompleta tornam upload, confirmação, remoção e conteúdo indisponíveis.
+  Metadados, revisão e assets persistidos permanecem intactos. A interface informa
+  que capas estão desabilitadas, não oferece mutações operáveis e não busca conteúdo.
+  Sem capa exibe “Área sem capa.”; capa existente desabilitada tem fallback distinto.
+- **SC-005**: OWNER/ADMIN/MEMBER, laboratório inativo e externo mantêm as permissões
+  anteriores nos estados ligado/desligado; nenhum byte nem mutação passa desligado.
+
+### US1/US2 — elegibilidade antes de integração (CRI-REV-002, P2)
+
+- **FR-012 / FR-005/008**: requisição já inelegível por contexto, replay,
+  expiração, revisão ou quotas não consulta o provedor. Pedido elegível faz
+  preflight, validação externa sem transação aberta e revalidação atômica antes
+  de criar tentativa e seus quatro jobs. Mudanças durante a rede são respeitadas.
+- **FR-013**: replay compatível vigente revalida preset e reutiliza tentativa,
+  expiração, IDs e jobs, mesmo após mudança da revisão vigente, conforme contrato
+  anterior. Replay incompatível/expirado recusa antes de I/O. Preset divergente
+  recusa sem criar registros; concorrência não excede 3 ativas/10 por hora por ator.
+- **SC-006**: contador de preset não cresce nas recusas locais; barreiras
+  determinísticas comprovam reautorização, OCC e quotas após rede, sem órfãos.
+
+### Integração/revisão (CRI-REV-003/004)
+
+SC-007: HEAD da RC é ancestral da revisão independente; diff de #7 conserva
+somente evidências pretendidas; checks novos referem-se aos HEADs publicados.
+SC-008: resposta técnica e re-review publicados; CHANGES_REQUESTED e aprovação
+continuam sob controle dos estudantes. Implementado/validado/publicado/aprovado
+são estados independentes. Aprovação humana permanece pendente até novo parecer.
+
+Fora do recorte: novas migrations, outros fluxos, ciência, produção, Cloudinary
+real, mudanças de autorização, redução de guards/assertions/timeouts e integração
+nas principais. As tarefas concluídas T001–T025 permanecem históricas.

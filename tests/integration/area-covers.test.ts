@@ -6,13 +6,120 @@ import type {AccountPolicy} from "../../src/app/api/server/accounts/policy";
 import {signSessionToken} from "../../src/app/api/server/auth/session";
 import sharp from "sharp";
 import { AreaCoverService } from "../../src/app/api/server/images/service";
+import { createCoverHandlers } from "../../src/app/api/server/images/http";
+import type { Prisma } from "../../src/generated/prisma";
 import { FakeCoverProvider,coverBytes } from "../fixtures/area-cover-provider";
 import { selectedImp006DatabaseVariable,withImp006PostgresqlSchema } from "../fixtures/postgresql-schema-lifecycle";
 import { setupIHFRDiagnosisFixtures } from "../fixtures/ihfr-diagnosis-fixtures";
 import { IHFR_ACTORS as A,IHFR_LABORATORIES as L } from "../fixtures/ihfr-diagnosis-actors";
 import { IHFR_CONTEXTS as C } from "../fixtures/ihfr-diagnosis-contexts";
 const context={laboratoryId:L.active,areaId:C.activeArea};
-const fixture=(run:(db:Parameters<Parameters<typeof withImp006PostgresqlSchema>[1]>[1],service:AreaCoverService,p:FakeCoverProvider,advance:(ms:number)=>void)=>Promise<void>)=>withImp006PostgresqlSchema(selectedImp006DatabaseVariable(),async(client,db)=>{await setupIHFRDiagnosisFixtures(client);let now=new Date("2026-10-10T12:00:00Z");const p=new FakeCoverProvider(),service=new AreaCoverService(db,()=>p,()=>now);await run(db,service,p,ms=>{now=new Date(now.getTime()+ms);});});
+const command=()=>({expectedRevision:0,key:randomUUID()});
+function barrier(parties=1){let enteredResolve!:()=>void,release!:()=>void;let arrived=0;const entered=new Promise<void>(r=>{enteredResolve=r;}),waiting=new Promise<void>(r=>{release=r;});return{entered,release,wait:async()=>{if(++arrived===parties)enteredResolve();await waiting;}};}
+const fixture=(run:(db:Parameters<Parameters<typeof withImp006PostgresqlSchema>[1]>[1],service:AreaCoverService,p:FakeCoverProvider,advance:(ms:number)=>void)=>Promise<void>)=>withImp006PostgresqlSchema(selectedImp006DatabaseVariable(),async(client,db)=>{await setupIHFRDiagnosisFixtures(client);let now=new Date("2026-10-10T12:00:00Z");const p=new FakeCoverProvider(),service=new AreaCoverService(db,()=>p,()=>now,()=>true);await run(db,service,p,ms=>{now=new Date(now.getTime()+ms);});});
+test("CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket",()=>fixture(async(db,s,p,advance)=>{
+ await assert.rejects(s.initiate(A.owner,context,{...command(),expectedRevision:1}),{code:"STALE_REVISION"});assert.equal(p.presetCalls,0);assert.equal(await db.areaCover.count(),0);
+ const input=command(),ticket=await s.initiate(A.owner,context,input);assert.equal(p.presetCalls,1);assert.equal(p.ticketCalls,1);
+ assert.deepEqual(await s.initiate(A.owner,context,input),ticket);assert.equal(p.presetCalls,2);assert.equal(await db.coverCleanupJob.count(),4);
+ await assert.rejects(s.initiate(A.owner,context,{...input,expectedRevision:1}),{code:"STALE_REVISION"});assert.equal(p.presetCalls,2);assert.equal(p.ticketCalls,2);
+ advance(11*60000);await assert.rejects(s.initiate(A.owner,context,input),{code:"EXPIRED"});assert.equal(p.presetCalls,2);
+}));
+
+test("CRI-REV-002 hourly quota independently rejects without provider I/O",()=>fixture(async(db,s,p,advance)=>{
+ for(let n=0;n<10;n++){await s.initiate(A.owner,context,command());advance(4*60000);}
+ const before=p.presetCalls;await assert.rejects(s.initiate(A.owner,context,command()),{code:"RATE_LIMITED"});assert.equal(p.presetCalls,before);assert.equal(p.ticketCalls,10);assert.equal(await db.coverCleanupJob.count(),40);
+}));
+
+test("CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job",()=>fixture(async(db,s,p)=>{
+ p.failPreset=true;await assert.rejects(s.initiate(A.owner,context,command()),{code:"UNAVAILABLE"});assert.equal(p.presetCalls,1);assert.equal(p.ticketCalls,0);assert.equal(await db.areaCover.count(),0);assert.equal(await db.coverUploadAttempt.count(),0);assert.equal(await db.coverCleanupJob.count(),0);
+}));
+
+for(const mutation of ["role","membership","laboratory","account","revision"] as const)test(`CRI-REV-002 revalidates ${mutation} during preset without an open transaction`,()=>fixture(async(db,s,p)=>{
+ const gate=barrier();p.onPreset=gate.wait;const issuing=s.initiate(A.contextualAdmin,context,command());
+ // Attach rejection immediately; the write below must finish before releasing I/O.
+ const outcome=assert.rejects(issuing,{code:{role:"FORBIDDEN",membership:"NOT_FOUND",laboratory:"READ_ONLY",account:"UNAUTHENTICATED",revision:"STALE_REVISION"}[mutation]});
+ await gate.entered;
+ try{
+  const where={userId_laboratoryRoomId:{userId:A.contextualAdmin,laboratoryRoomId:L.active}};
+  if(mutation==="role")await db.researchersLinked.update({where,data:{role:"MEMBER"}});
+  if(mutation==="membership")await db.researchersLinked.delete({where});
+  if(mutation==="laboratory")await db.laboratoryRoom.update({where:{id:L.active},data:{isActive:false}});
+  if(mutation==="account")await db.user.update({where:{id:A.contextualAdmin},data:{status:"BLOCKED"}});
+  if(mutation==="revision")await db.areaCover.upsert({where:{areaId:context.areaId},create:{areaId:context.areaId,revision:1},update:{revision:1}});
+ }finally{gate.release();}
+ await outcome;assert.equal(p.ticketCalls,0);assert.equal(await db.coverUploadAttempt.count(),0);assert.equal(await db.coverCleanupJob.count(),0);
+}));
+
+test("CRI-REV-002 simultaneous eligible requests respect per-user active quota",()=>fixture(async(db,s,p)=>{
+ await s.initiate(A.owner,context,command());await s.initiate(A.owner,context,command());
+ const gate=barrier(2);p.onPreset=gate.wait;
+ const results=Promise.allSettled([s.initiate(A.owner,context,command()),s.initiate(A.owner,context,command())]);await gate.entered;gate.release();
+ const outcomes=await results;assert.equal(outcomes.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(outcomes.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"]);assert.equal(await db.coverUploadAttempt.count({where:{userId:A.owner}}),3);assert.equal(await db.coverCleanupJob.count(),12);
+ p.onPreset=null;await s.initiate(A.contextualAdmin,context,command());assert.equal(await db.coverUploadAttempt.count(),4);
+}));
+
+test("CRI-REV-002 simultaneous same-key requests converge and changed preset preserves jobs",()=>fixture(async(db,s,p)=>{
+ const input=command(),gate=barrier(2);p.onPreset=gate.wait;
+ const results=Promise.all([s.initiate(A.owner,context,input),s.initiate(A.owner,context,input)]);await gate.entered;gate.release();const tickets=await results;
+ assert.deepEqual(tickets[0],tickets[1]);assert.equal(await db.coverUploadAttempt.count(),1);assert.equal(await db.coverCleanupJob.count(),4);
+ p.onPreset=null;p.hash="b".repeat(64);await assert.rejects(s.initiate(A.owner,context,input),{code:"UNAVAILABLE"});assert.equal(await db.coverUploadAttempt.count(),1);assert.equal(await db.coverCleanupJob.count(),4);
+}));
+
+test("CRI-REV-002 concurrent hourly quota is checked again after preset",()=>fixture(async(db,s,p,advance)=>{
+ for(let n=0;n<9;n++){await s.initiate(A.owner,context,command());advance(4*60000);}advance(11*60000);
+ const gate=barrier(2);p.onPreset=gate.wait;const pending=Promise.allSettled([s.initiate(A.owner,context,command()),s.initiate(A.owner,context,command())]);await gate.entered;gate.release();const results=await pending;
+ assert.equal(results.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(results.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"]);assert.equal(await db.coverUploadAttempt.count(),10);assert.equal(await db.coverCleanupJob.count(),40);
+}));
+
+test("CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota",()=>fixture(async(db,s,p)=>{
+ const input=command(),ticket=await s.initiate(A.owner,context,input);await p.store(ticket.upload.params.public_id,ticket.attemptId,"staging",await coverBytes());await s.confirm(A.owner,context,ticket.attemptId);
+ for(let n=0;n<3;n++)await s.initiate(A.owner,context,{...command(),expectedRevision:1});const before=p.presetCalls;
+ assert.deepEqual(await s.initiate(A.owner,context,input),ticket);assert.equal(p.presetCalls,before+1);assert.equal(await db.coverUploadAttempt.count(),4);assert.equal(await db.coverCleanupJob.count(),16);
+ const other=await db.collectionArea.create({data:{name:"Synthetic second area",laboratoryRoomId:L.active,userId:A.owner,latitude:0,longitude:0}});
+ await assert.rejects(s.initiate(A.owner,{...context,areaId:other.id},input),{code:"STALE_REVISION"});assert.equal(p.presetCalls,before+1);
+}));
+
+for(const phase of [1,2])for(const code of ["P2034","P2002"])test(`CRI-REV-002 retries ${code} in transaction ${phase} without duplicate jobs or repeated I/O`,()=>fixture(async(db,_s,p)=>{
+ let calls=0;
+ const retryDb={$transaction:async(run:(tx:Prisma.TransactionClient)=>Promise<unknown>,options:{isolationLevel:"Serializable";maxWait:number;timeout:number})=>db.$transaction(async tx=>{calls++;const result=await run(tx);if(calls===phase)throw Object.assign(new Error("synthetic serialization conflict"),{code});return result;},options)} as unknown as typeof db;
+ const service=new AreaCoverService(retryDb,()=>p,()=>new Date("2026-10-10T12:00:00Z"),()=>true);
+ await service.initiate(A.owner,context,command());assert.equal(calls,3);assert.equal(p.presetCalls,1);assert.equal(p.ticketCalls,1);assert.equal(await db.coverUploadAttempt.count(),1);assert.equal(await db.coverCleanupJob.count(),4);
+}));
+
+test("CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability",()=>fixture(async(db,_s,p)=>{
+ const names=["CLOUDINARY_IMAGE_ENABLED","CLOUDINARY_CLOUD_NAME","CLOUDINARY_API_KEY","CLOUDINARY_API_SECRET","CLOUDINARY_COVER_PRESET","CLOUDINARY_COVER_PRESET_SHA256"];
+ const saved=names.map(name=>process.env[name]);
+ try{
+  Object.assign(process.env,{CLOUDINARY_CLOUD_NAME:"synthetic",CLOUDINARY_API_KEY:"123456789",CLOUDINARY_API_SECRET:"synthetic-only",CLOUDINARY_COVER_PRESET:"hfr-cover-v1",CLOUDINARY_COVER_PRESET_SHA256:"a".repeat(64)});
+  const service=new AreaCoverService(db,()=>p);
+  for(const flag of ["0",undefined,"invalid","1"]){
+   if(flag===undefined)delete process.env.CLOUDINARY_IMAGE_ENABLED;else process.env.CLOUDINARY_IMAGE_ENABLED=flag;
+   for(const [actor,canEdit] of [[A.owner,true],[A.contextualAdmin,true],[A.member,false]] as const){const dto=await service.detail(actor,context);assert.deepEqual(dto,{image:{revision:0,hasImage:false},canEdit,featureEnabled:flag==="1"});}
+   await assert.rejects(service.detail(A.outsider,context),{code:"NOT_FOUND"});await assert.rejects(service.initiate(A.member,context,command()),{code:"FORBIDDEN"});
+   await assert.rejects(service.initiate(A.outsider,context,command()),{code:"NOT_FOUND"});
+   if(flag!=="1"){await assert.rejects(service.initiate(A.owner,context,command()),{code:"UNAVAILABLE"});await assert.rejects(service.remove(A.owner,context,{expectedRevision:0}),{code:"UNAVAILABLE"});await assert.rejects(service.confirm(A.owner,context,randomUUID()),{code:"UNAVAILABLE"});await assert.rejects(service.content(A.member,context),{code:"UNAVAILABLE"});}
+   await db.laboratoryRoom.update({where:{id:L.active},data:{isActive:false}});assert.equal((await service.detail(A.owner,context)).canEdit,false);await assert.rejects(service.remove(A.owner,context,{expectedRevision:0}),{code:"READ_ONLY"});await db.laboratoryRoom.update({where:{id:L.active},data:{isActive:true}});
+  }
+  delete process.env.CLOUDINARY_API_SECRET;assert.equal((await service.detail(A.owner,context)).featureEnabled,false);assert.equal(p.presetCalls,0);
+ }finally{names.forEach((name,i)=>{if(saved[i]===undefined)delete process.env[name];else process.env[name]=saved[i];});}
+}));
+
+test("CRI-REV-001 real service HTTP contract has safe availability and preserves disabled content refusal",()=>fixture(async(db,_s,p)=>{
+ const service=new AreaCoverService(db,()=>p,()=>new Date(),()=>false),handlers=createCoverHandlers({requireAuth:async()=>({id:A.owner,firstName:"Synthetic",lastName:"Test",image:"",role:"USER" as const}),service});
+ const c={params:Promise.resolve(context)},response=await handlers.GET(new Request("http://localhost/api/image"),c);
+ assert.equal(response.status,200);assert.equal(response.headers.get("cache-control"),"private, no-store");assert.deepEqual(await response.json(),{image:{revision:0,hasImage:false},canEdit:true,featureEnabled:false});
+ const content=await handlers.CONTENT(new Request("http://localhost/api/image/content"),c);assert.equal(content.status,503);const body=await content.text();for(const word of ["CLOUDINARY","apiSecret","apiKey","presetHash"])assert.equal(body.includes(word),false);assert.equal(p.presetCalls,0);
+}));
+
+test("CRI-REV-001 policy A preserves persisted cover and blocks all provider operations",()=>fixture(async(db,s,p)=>{
+ const ticket=await s.initiate(A.owner,context,command());await p.store(ticket.upload.params.public_id,ticket.attemptId,"staging",await coverBytes());await s.confirm(A.owner,context,ticket.attemptId);
+ const prior=await db.areaCover.findUniqueOrThrow({where:{areaId:context.areaId}}),jobs=await db.coverCleanupJob.findMany({orderBy:{id:"asc"}}),before=p.presetCalls;
+ const disabled=new AreaCoverService(db,()=>{throw Error("disabled must not construct provider");},()=>new Date("2026-10-10T12:01:00Z"),()=>false);
+ assert.deepEqual(await disabled.detail(A.owner,context),{image:{revision:1,hasImage:true,width:32,height:24},canEdit:true,featureEnabled:false});
+ await assert.rejects(disabled.initiate(A.owner,context,{...command(),expectedRevision:1}),{code:"UNAVAILABLE"});await assert.rejects(disabled.confirm(A.owner,context,ticket.attemptId),{code:"UNAVAILABLE"});await assert.rejects(disabled.remove(A.owner,context,{expectedRevision:1}),{code:"UNAVAILABLE"});await assert.rejects(disabled.content(A.member,context),{code:"UNAVAILABLE"});
+ await assert.rejects(disabled.content(A.outsider,context),{code:"NOT_FOUND"});assert.deepEqual(await db.areaCover.findUniqueOrThrow({where:{areaId:context.areaId}}),prior);assert.deepEqual(await db.coverCleanupJob.findMany({orderBy:{id:"asc"}}),jobs);assert.equal(p.presetCalls,before);
+}));
+
 test("cover authorization uses current laboratory role, validates context, strips EXIF and revokes read",()=>fixture(async(db,s,p)=>{
  await assert.rejects(s.initiate(A.member,context,{expectedRevision:0,key:randomUUID()}),{code:"FORBIDDEN"});
  await assert.rejects(s.detail(A.outsider,context),{code:"NOT_FOUND"});await assert.rejects(s.detail(A.owner,{...context,areaId:C.inactiveArea}),{code:"NOT_FOUND"});
@@ -59,10 +166,10 @@ test("contextual ADMIN edits, global ADMIN has no bypass and live revocation/dow
 }));
 test("app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures",()=>fixture(async(db,s,p,advance)=>{
  const first=await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});await p.store(first.upload.params.public_id,first.attemptId,"staging",await coverBytes());p.hash="b".repeat(64);await assert.rejects(s.confirm(A.owner,context,first.attemptId),{code:"UNAVAILABLE"});p.hash="a".repeat(64);
- for(let n=0;n<2;n++)await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});await assert.rejects(s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()}),{code:"RATE_LIMITED"});
+ for(let n=0;n<2;n++)await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});const beforeActive=p.presetCalls;await assert.rejects(s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()}),{code:"RATE_LIMITED"});assert.equal(p.presetCalls,beforeActive,"CRI-REV-002 active quota must precede provider I/O");
  advance(11*60000);await assert.rejects(s.confirm(A.owner,context,first.attemptId),{code:"EXPIRED"});assert.equal((await s.detail(A.owner,context)).image.hasImage,false);
  for(let batch=0;batch<2;batch++){for(let n=0;n<3;n++)await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});advance(11*60000);}
- await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});assert.equal(await db.coverUploadAttempt.count({where:{userId:A.owner}}),10);await assert.rejects(s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()}),{code:"RATE_LIMITED"});
+ await s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()});assert.equal(await db.coverUploadAttempt.count({where:{userId:A.owner}}),10);const beforeHourly=p.presetCalls;await assert.rejects(s.initiate(A.owner,context,{expectedRevision:0,key:randomUUID()}),{code:"RATE_LIMITED"});assert.equal(p.presetCalls,beforeHourly,"CRI-REV-002 hourly quota must precede provider I/O");
 }));
 test("permitted uploader account deletion rolls back safely then preserves team reading and owned cleanup",()=>fixture(async(db,s,p,advance)=>{
  const priorSecret=process.env.JWT_SECRET;process.env.JWT_SECRET=randomBytes(48).toString("base64");

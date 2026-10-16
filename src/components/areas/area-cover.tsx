@@ -4,15 +4,15 @@ import Image from "next/image";
 import { createClientUuid } from "@/lib/client-uuid";
 import type { CoverDto,UploadTicket } from "@/app/api/server/images/contracts";
 
-export function AreaCoverPreview({apiPath,name,hasImage,revision,retryAttempt=0,onLoaded,onFailed}:{
- apiPath:string;name:string;hasImage:boolean;revision:number;
+export function AreaCoverPreview({apiPath,name,hasImage,revision,featureEnabled=false,retryAttempt=0,onLoaded,onFailed}:{
+ apiPath:string;name:string;hasImage:boolean;revision:number;featureEnabled?:boolean;
  retryAttempt?:number;onLoaded?:()=>void;onFailed?:()=>void;
 }){
  const [failed,setFailed]=useState(false);
  // The retry counter is local to the browser; persisted revision changes only
  // when the cover asset changes. A new query prevents caching a failed response.
  const src=`${apiPath}/content?revision=${revision}${retryAttempt>0?`&retry=${retryAttempt}`:""}`;
- return hasImage&&!failed?<Image unoptimized src={src} width={1200} height={800} alt={`Capa da área ${name}`} onLoad={onLoaded} onError={()=>{setFailed(true);onFailed?.();}} className="aspect-[3/2] max-h-80 w-full object-cover"/>:<div className="flex aspect-[3/2] max-h-64 items-center justify-center bg-green-50 p-5 text-sm text-green-900">{hasImage?"Capa indisponível.":"Área sem capa."}</div>;
+ return hasImage&&featureEnabled&&!failed?<Image unoptimized src={src} width={1200} height={800} alt={`Capa da área ${name}`} onLoad={onLoaded} onError={()=>{setFailed(true);onFailed?.();}} className="aspect-[3/2] max-h-80 w-full object-cover"/>:<div className="flex aspect-[3/2] max-h-64 items-center justify-center bg-green-50 p-5 text-sm text-green-900">{!hasImage?"Área sem capa.":!featureEnabled?"Capa indisponível enquanto o recurso está desabilitado.":"Capa indisponível."}</div>;
 }
 class CoverRequestError extends Error {constructor(message:string,readonly code:string){super(message);}}
 async function jsonRequest(path:string,method:string,body?:unknown){
@@ -40,7 +40,7 @@ export function AreaCoverEditor({laboratoryId,areaId,name}:{laboratoryId:string;
   try{if(!["image/jpeg","image/png","image/webp"].includes(selected.type)||selected.size===0||selected.size>10*1024*1024)throw Error();const bitmap=await createImageBitmap(selected);const valid=bitmap.width<=4096&&bitmap.height<=4096;bitmap.close();if(token!==selection.current)return;if(!valid)throw Error();setFile(selected);setMessage("Imagem selecionada. Confirme o envio para salvar a capa.");}catch{if(token===selection.current)setError("Use JPEG, PNG ou WebP até 10 MiB e 4096 pixels por lado.");}
  }
  async function upload(){
-  if(!file||!data||lock.current)return;lock.current=true;setBusy(true);setError("");setProgress(0);
+  if(!file||!data?.canEdit||!data.featureEnabled||lock.current)return;lock.current=true;setBusy(true);setError("");setProgress(0);
   try{
    if(!pending.current.ticket)pending.current.ticket=await jsonRequest(`${apiPath}/uploads`,"POST",{expectedRevision:data.image.revision,key:pending.current.key}) as UploadTicket;
    const ticket=pending.current.ticket;setMessage("Enviando imagem…");
@@ -59,22 +59,23 @@ export function AreaCoverEditor({laboratoryId,areaId,name}:{laboratoryId:string;
   try{
    const current=await jsonRequest(apiPath,"GET") as CoverDto;
    const attempt=++previewSequence.current;
-   pendingPreviewRetry.current=current.image.hasImage?attempt:null;
+   pendingPreviewRetry.current=current.image.hasImage&&current.featureEnabled?attempt:null;
    setData(current);setPreviewAttempt(attempt);
    pending.current={key:createClientUuid(),ticket:null};setError("");
-   setMessage(current.image.hasImage?"Tentando recarregar a capa…":"Área sem capa.");
+   setMessage(!current.featureEnabled?"As capas de áreas estão desabilitadas neste momento.":current.image.hasImage?"Tentando recarregar a capa…":"Área sem capa.");
   }catch{setError("Não foi possível recarregar a capa.");}
   finally{lock.current=false;setBusy(false);}
  }
- async function remove(){if(!data||lock.current||!window.confirm("Remover a capa desta área?"))return;lock.current=true;setBusy(true);setError("");try{await jsonRequest(apiPath,"DELETE",{expectedRevision:data.image.revision});pendingPreviewRetry.current=null;setData(await jsonRequest(apiPath,"GET") as CoverDto);pending.current={key:createClientUuid(),ticket:null};setMessage("Capa removida.");}catch(e){setError(e instanceof Error?e.message:"Não foi possível remover.");}finally{lock.current=false;setBusy(false);}}
+ async function remove(){if(!data?.canEdit||!data.featureEnabled||lock.current||!window.confirm("Remover a capa desta área?"))return;lock.current=true;setBusy(true);setError("");try{await jsonRequest(apiPath,"DELETE",{expectedRevision:data.image.revision});pendingPreviewRetry.current=null;setData(await jsonRequest(apiPath,"GET") as CoverDto);pending.current={key:createClientUuid(),ticket:null};setMessage("Capa removida.");}catch(e){setError(e instanceof Error?e.message:"Não foi possível remover.");}finally{lock.current=false;setBusy(false);}}
  return <section aria-label="Capa da área" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-  <AreaCoverPreview key={`${areaId}:${data?.image.revision??0}:${previewAttempt}`} apiPath={apiPath} name={name} hasImage={data?.image.hasImage??false} revision={data?.image.revision??0} retryAttempt={previewAttempt}
+  <AreaCoverPreview key={`${areaId}:${data?.image.revision??0}:${data?.featureEnabled??false}:${previewAttempt}`} apiPath={apiPath} name={name} hasImage={data?.image.hasImage??false} revision={data?.image.revision??0} featureEnabled={data?.featureEnabled??false} retryAttempt={previewAttempt}
    onLoaded={()=>{if(pendingPreviewRetry.current===previewAttempt){pendingPreviewRetry.current=null;setMessage("Capa recarregada.");}}}
    onFailed={()=>{if(pendingPreviewRetry.current===previewAttempt){pendingPreviewRetry.current=null;setMessage("Capa ainda indisponível. Tente novamente.");}}}/>
   <div className="space-y-3 p-5"><h2 className="text-xl font-bold">Capa da área</h2><p className="text-sm text-slate-600">Visível à equipe autorizada deste laboratório.</p>
+  {data&&!data.featureEnabled&&message!=="As capas de áreas estão desabilitadas neste momento."&&<p className="text-sm text-slate-600">As capas de áreas estão desabilitadas neste momento.</p>}
   {error&&<p role="alert" className="text-red-800">{error}</p>}<p role="status" aria-live="polite">{message}</p>
   {busy&&file&&<progress aria-label="Progresso do envio da capa" value={progress} max={100} className="w-full"/>}
-  {data?.canEdit&&<><label className="block font-medium" htmlFor={`cover-${areaId}`}>{data.image.hasImage?"Substituir capa":"Selecionar capa"}</label><input ref={fileInput} id={`cover-${areaId}`} type="file" accept="image/jpeg,image/png,image/webp" disabled={busy} onChange={e=>void select(e.target.files?.[0])} className="block max-w-full text-sm"/><p className="text-xs text-slate-600">JPEG, PNG ou WebP; até 10 MiB e 4096 pixels por lado. Metadados serão removidos.</p><div className="flex flex-wrap gap-2"><button type="button" disabled={busy||!file} onClick={()=>void upload()} className="min-h-11 rounded-lg bg-green-800 px-4 py-2 font-semibold text-white">{busy?"Aguarde…":error&&file?"Tentar envio novamente":"Enviar capa"}</button>{data.image.hasImage&&<button type="button" disabled={busy} onClick={()=>void remove()} className="min-h-11 rounded-lg border border-red-300 px-4 py-2 text-red-800">Remover capa</button>}</div></>}
+  {data?.canEdit&&data.featureEnabled&&<><label className="block font-medium" htmlFor={`cover-${areaId}`}>{data.image.hasImage?"Substituir capa":"Selecionar capa"}</label><input ref={fileInput} id={`cover-${areaId}`} type="file" accept="image/jpeg,image/png,image/webp" disabled={busy} onChange={e=>void select(e.target.files?.[0])} className="block max-w-full text-sm"/><p className="text-xs text-slate-600">JPEG, PNG ou WebP; até 10 MiB e 4096 pixels por lado. Metadados serão removidos.</p><div className="flex flex-wrap gap-2"><button type="button" disabled={busy||!file} onClick={()=>void upload()} className="min-h-11 rounded-lg bg-green-800 px-4 py-2 font-semibold text-white">{busy?"Aguarde…":error&&file?"Tentar envio novamente":"Enviar capa"}</button>{data.image.hasImage&&<button type="button" disabled={busy} onClick={()=>void remove()} className="min-h-11 rounded-lg border border-red-300 px-4 py-2 text-red-800">Remover capa</button>}</div></>}
   <button type="button" disabled={busy} onClick={()=>void reload()} className="min-h-11 rounded-lg border px-4 py-2">Recarregar capa</button></div>
  </section>;
 }

@@ -2,6 +2,7 @@ import { Prisma, type PrismaClient } from "@/generated/prisma";
 import { prisma } from "../lib/prisma";
 import { AreaAccessError, authorizeLaboratoryAccess, validResourceId } from "../areas/area.authorization";
 import { parseAreaInput, serializeAreaDetail, serializeAreaSummary, type CreateAreaInput } from "../areas/area.contracts";
+import { coverFeatureEnabled } from "../images/settings";
 export class AreasService {
  constructor(private readonly db:PrismaClient=prisma){}
  async create(userId:string,laboratoryId:string,input:CreateAreaInput){
@@ -16,7 +17,7 @@ export class AreasService {
   return this.db.$transaction(async tx=>{
    const context=await authorizeLaboratoryAccess({id:userId},laboratoryId,"READ_AREAS",tx);
    const areas=await tx.collectionArea.findMany({where:{laboratoryRoomId:laboratoryId},orderBy:[{createdAt:"desc"},{id:"desc"}],include:{cover:{select:{revision:true,assetId:true}}}});
-   return {context,areas:areas.map(serializeAreaSummary)};
+   const featureEnabled=coverFeatureEnabled();return {context,areas:areas.map(area=>serializeAreaSummary(area,featureEnabled))};
   });
  }
  async detail(userId:string,laboratoryId:string,areaId:string){
