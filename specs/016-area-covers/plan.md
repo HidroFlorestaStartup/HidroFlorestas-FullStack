@@ -228,3 +228,14 @@ T039 deve capturar somente nome/códigos/kind seguros em conflito Pg real e prod
 RED determinístico dos formatos suportados. T040 implementa reconhecimento
 restrito de conflitos (sem retry de erros arbitrários), mantém teto3 e timeouts,
 e repete testes/gates/propagação. Não repetir preset em retry transacional.
+
+### Handoff técnico e revisão — 16/10/2026
+
+Estado: AGUARDANDO_REVISAO humana. T026–T040 executadas; código/testes/runbook
+publicados e propagados. Recibo de heads, merges, CI observado e comunicações em
+cri-rev-20261015-evidence.md. Os fechamentos documentais são propagados pela mesma
+cadeia sem mudar o snapshot funcional; seus Actions são conferidos separadamente
+e a conclusão final fica também nos comentários/descrições dos PRs atuais.
+Não há decisão A pendente: confirmação registrada. CHANGES_REQUESTED de #4/#6 e
+novo parecer independente de #7 continuam abertos sob controle dos revisores.
+Operação real/homologação/produção e ciência mantêm limites anteriores.
