@@ -169,7 +169,8 @@ Spec 016, contratos e código são baseline. Histórico/docs/raw intactos.
 Constituição: PASS antes do design; nenhuma mudança científica ou de schema.
 Skills specify/plan/tasks/implement atualizam a feature existente; scripts
 setup-plan/setup-tasks/check-prerequisites com feature explícita 016 executados;
-sem extensions.yml/hooks e sem checklists preexistentes. Dependências pelo lockfile.
+sem extensions.yml/hooks. Checklist de requisitos existente: 16/16; atualização
+focal de qualidade: 7/7, mantida por specify. Dependências pelo lockfile.
 
 ### Design
 
