@@ -8,10 +8,10 @@ abertas. Este acompanhamento atualiza a leitura do candidato sem reescrever os
 
 | Achado | Correção e estado |
 |---|---|
-| CRI-REV-001 | Política A explicitamente confirmada pelo usuário; DTO separa featureEnabled/canEdit/hasImage; servidor bloqueia mutações/conteúdo desligado; UI/lista usam fallback e não pedem bytes. Implementado e validado localmente; publicação pela cadeia em andamento |
-| CRI-REV-002 | Duas transações Serializable com validação compartilhada; preset entre elas, sem transação aberta; replay/preset/quota/reautorização preservados. Implementado e validado localmente; publicação pela cadeia em andamento |
-| CRI-REV-003 | RC corrigida; sincronização da revisão independente e seus novos checks ainda em andamento. Parecer independente permanece humano |
-| CRI-REV-004 | Resposta técnica/re-review após publicação. CHANGES_REQUESTED mantidos; aprovação não foi emitida pelo executor |
+| CRI-REV-001 | Política A explicitamente confirmada pelo usuário; DTO separa featureEnabled/canEdit/hasImage; servidor bloqueia mutações/conteúdo desligado; UI/lista usam fallback e não pedem bytes. Implementado, validado localmente e publicado na cadeia; aprovação humana pendente |
+| CRI-REV-002 | Duas transações Serializable, preset entre elas e retry restrito de conflito ao commit; replay/preset/quota/reautorização preservados. Implementado, validado localmente e publicado na cadeia; aprovação humana pendente |
+| CRI-REV-003 | Revisão independente sincronizada com RC3add054 em94b37a8, sem diff funcional e com24 arquivos documentais preservados. Fechamentos documentais posteriores recebem novos HEADs/checks; parecer independente permanece humano |
+| CRI-REV-004 | Respostas técnicas publicadas e re-review solicitado. CHANGES_REQUESTED/thread mantidos; nenhuma aprovação emitida pelo executor |
 
 ## Decisão e rastreabilidade
 
@@ -74,6 +74,22 @@ e [manifesto](cri-rev-evidence-20261015/b1d770c/functional-manifest.json).
 Os novos HEADs continuam sujeitos à conclusão do Actions; não reutilizar o check
 de SHA antigo. Migrations, E2E72/HTTPS2/Deletion3/IHFR6/Bootstrap14/R1 e demais
 gates integrais anteriores foram preservados como evidência com alcance explícito.
+
+### Fechamento documental da publicação
+
+T026–T040 concluídas no alcance técnico; plano aguarda revisão humana. Origem
+final0b154ce1ea5b2e528c1c84227880060ce452adf7, audit final
+3a514097ed027a9af4f286ff7fcf5b2d2277588d; recebidas na RC por
+edbb7ddef5140262c94cfb940a6842da816273c4, sem mudança funcional contra b1d770c.
+O commit deste recibo e a nova sincronização de #7 conservam código/testes/lockfile.
+HEADs/checks finais são conferidos por SHA e publicados nas descrições/comentários
+dos PRs; estados em execução deste documento são snapshots, não PASS presumido.
+
+[Resposta a Pedro no PR4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6207465699),
+[resposta no PR6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6207466027)
+e [thread mantida aberta](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4290653372).
+Re-review Pedro/Luciano solicitado em4/6; Luciano em7, cujo autor é Pedro.
+Nenhuma aprovação ou resolução de thread em nome dos estudantes.
 
 ## Operação, estudantes e aprovação
 
