@@ -1,0 +1,16 @@
+✔ CRI-REV-002 transaction retries explicit conflict P2034 (1.1402ms)
+✔ CRI-REV-002 transaction retries explicit conflict P2002 (0.1507ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40001 (0.1049ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40P01 (0.1258ms)
+✔ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (0.168ms)
+✔ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (0.1439ms)
+✔ CRI-REV-002 transaction retry remains bounded to three and sanitized (0.6087ms)
+✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.1657ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 717.4204

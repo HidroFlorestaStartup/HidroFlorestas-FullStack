@@ -13,7 +13,7 @@ const minute=60000;
 export class AreaCoverService {
  constructor(private readonly db:PrismaClient=prisma,private readonly provider:()=>CoverProvider=()=>configuredCoverProvider(),private readonly clock:()=>Date=()=>new Date(),private readonly featureEnabled:()=>boolean=coverFeatureEnabled){}
  private requireEnabled(){if(!this.featureEnabled())throw new CoverError("UNAVAILABLE");}
- private async transaction<T>(run:(tx:Prisma.TransactionClient)=>Promise<T>):Promise<T>{for(let i=0;i<3;i++){try{return await this.db.$transaction(run,{isolationLevel:"Serializable",maxWait:15000,timeout:30000});}catch(e){if(e instanceof CoverError||e instanceof AreaAccessError)throw e;if(e&&typeof e==="object"&&"code"in e&&["P2034","P2002"].includes(String(e.code))&&i<2)continue;throw new CoverError("INTERNAL_ERROR");}}throw new CoverError("INTERNAL_ERROR");}
+ private async transaction<T>(run:(tx:Prisma.TransactionClient)=>Promise<T>):Promise<T>{for(let i=0;i<3;i++){try{return await this.db.$transaction(run,{isolationLevel:"Serializable",maxWait:15000,timeout:30000});}catch(e){if(e instanceof CoverError||e instanceof AreaAccessError)throw e;if(retryableConflict(e)&&i<2)continue;throw new CoverError("INTERNAL_ERROR");}}throw new CoverError("INTERNAL_ERROR");}
  private async context(tx:Prisma.TransactionClient,userId:string,ids:CoverContext,write=false){const context=await authorizeLaboratoryAccess({id:userId},ids.laboratoryId,write?"MANAGE_AREA_IMAGE":"READ_AREAS",tx,write);if(!validResourceId(ids.areaId)||!await tx.collectionArea.findFirst({where:{id:ids.areaId,laboratoryRoomId:ids.laboratoryId},select:{id:true}}))throw new AreaAccessError("NOT_FOUND");return context;}
  async detail(userId:string,ids:CoverContext):Promise<CoverDto>{return this.transaction(async tx=>{const c=await this.context(tx,userId,ids);return project(await tx.areaCover.findUnique({where:{areaId:ids.areaId}}),!c.readOnly&&c.membershipRole!=="MEMBER",this.featureEnabled());});}
  // CRI-REV-002: identical local gates before and after network I/O. Replay
@@ -119,6 +119,15 @@ export class AreaCoverService {
    }catch(error){const blocked=error instanceof CoverError&&error.code==="OWNERSHIP_MISMATCH";if(blocked)stats.blocked++;else stats.retry++;await finish(blocked?"BLOCKED":"PENDING",blocked?"OWNERSHIP_MISMATCH":"PROVIDER_UNAVAILABLE",Math.min(60,2**Math.min(job.tries,6))*minute);}
   }return stats;
  }
+}
+function retryableConflict(error:unknown):boolean{
+ if(!error||typeof error!=="object")return false;
+ if("code"in error&&["P2034","P2002","40001","40P01"].includes(String(error.code)))return true;
+ // Prisma's PostgreSQL adapter can surface a commit failure before it is
+ // wrapped as P2034. Retry only these known transaction-conflict shapes.
+ if(!("name"in error)||error.name!=="DriverAdapterError"||!("cause"in error)||!error.cause||typeof error.cause!=="object")return false;
+ const cause=error.cause as {kind?:unknown;code?:unknown;originalCode?:unknown};
+ return cause.kind==="TransactionWriteConflict"||(cause.kind==="postgres"&&[cause.code,cause.originalCode].some(code=>["40001","40P01"].includes(String(code))));
 }
 function project(cover:AreaCover|null,canEdit:boolean,featureEnabled:boolean):CoverDto{return{image:{revision:cover?.revision??0,hasImage:Boolean(cover?.assetId),...(cover?.assetId?{width:cover.width!,height:cover.height!}:{})},canEdit,featureEnabled};}
 function prove(asset:CoverAsset,attempt:CoverUploadAttempt,kind:"STAGING"|"FINAL",resourceType:ResourceType){if(asset.publicId!==(kind==="STAGING"?attempt.stagingPublicId:attempt.finalPublicId)||asset.type!=="authenticated"||asset.resourceType!==resourceType||asset.context.hfr_attempt!==attempt.id||asset.context.hfr_kind!==kind.toLowerCase())throw new CoverError("OWNERSHIP_MISMATCH");}
