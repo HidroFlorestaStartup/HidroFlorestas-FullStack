@@ -5,6 +5,8 @@ Atualização da revisão de 15/10, executada em 16/10:
 Consultar esse acompanhamento para o estado das correções; a revisão original
 abaixo permanece histórica. Aprovação humana ainda pendente.
 
+[Próximas ações de Pedro Vitor e Luciano — 16/10/2026](proximas-acoes-revisores-2026-10-16.md).
+
 Ponto de entrada para a equipe: [plano de execução dos estudantes](plano-execucao-estudantes.md).
 O roteiro principal tem seis entregas: revisão, testes, tratamento de achados,
 integração, atualização acompanhada e registro final. As 43 referências técnicas
