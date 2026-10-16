@@ -76,8 +76,8 @@ T001–T025 não são reabertas; aprovações dos estudantes não são tarefas d
 
 ### Convergência após CI materialmente reprovado
 
-- [ ] T039 [US2] Diagnosticar formato seguro do conflito ao commit Pg e registrar RED do retry do adaptador em tests/integration/area-covers.test.ts e specs/016-area-covers/cri-rev-20261015-evidence.md; preservar FAILs das runs38843869327/38843986244.
-- [ ] T040 [US2] Corrigir reconhecimento restrito de serialização/deadlock em src/app/api/server/images/service.ts, repetir GREEN/gates sem mudar assertions/timeouts e propagar pela cadeia antes de concluir T036–T038.
+- [x] T039 [US2] Diagnosticar formato seguro do conflito ao commit Pg e registrar RED do retry do adaptador em tests/integration/area-cover-transactions.test.ts e specs/016-area-covers/cri-rev-20261015-evidence.md; preservar FAILs das runs38843869327/38843986244.
+- [x] T040 [US2] Corrigir reconhecimento restrito de serialização/deadlock em src/app/api/server/images/service.ts e repetir GREEN/gates sem mudar assertions/timeouts; propagação rastreada por T036–T038.
 
 T039 → T040 → T034/T035 revalidados → T036–T038. A cobertura anterior e os
 PASSs locais são históricos; os novos HEADs exigem checks próprios.

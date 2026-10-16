@@ -160,3 +160,51 @@ rejeição INTERNAL_ERROR, esperado RATE_LIMITED. Unit e setup PASS; gates poste
 não executados. Artefato12022396819 baixado para inspeção; sem suprimir FAIL.
 Run audit38843986244 também FAIL. T039/T040 adicionadas ao plano antes da correção
 adicional. Os PASSs locais não validam esses HEADs no ambiente do CI.
+
+T039 RED determinístico do helper antes de corrigi-lo: 03:14:42.304–03:14:43.217Z,
+node --conditions=react-server --import=tsx --test --test-concurrency=1
+tests/integration/area-cover-transactions.test.ts, exit1, 7 testes/3PASS/4FAIL.
+P2034/P2002 e recusa de erro arbitrário passam; SQLSTATE40001/40P01 e
+DriverAdapterError/TransactionWriteConflict não são repetidos (1 chamada, esperado3
+no caso de limite). Simulação baseada no formato do adaptador instalado; captura
+de conflito Pg real ainda pendente, sem atribuir causalidade definitiva ao CI.
+
+RED final com deadlock do adaptador: 03:15:06.902–03:15:07.711Z, 8 testes,
+3PASS/5FAIL, exit1. GREEN dos mesmos oito, sem alterar assertions: 03:15:27.689–
+03:15:28.498Z, 8/8, exit0. Helper reconhece somente P2034/P2002, SQLSTATE40001/
+40P01 e formas exatas de conflito do DriverAdapterError, não erros arbitrários.
+Limite3/maxWait15000/timeout30000 intactos. Preset continua fora do retry.
+
+Captura PostgreSQL real após concluir a regressão isolada da RC: três conflitos
+determinísticos de commit em transações Serializable produziram exatamente
+`{name:DriverAdapterError,cause:{kind:TransactionWriteConflict,originalCode:40001}}`.
+Somente nomes/códigos/kind foram registrados; sem SQL, parâmetros ou mensagens
+internas. Schema sintético próprio descartado pelo fixture oficial. Isso confirma
+o formato omitido no helper anterior; os FAILs do CI permanecem preservados como
+ocorreram, e a nova publicação ainda precisa passar seus checks.
+
+Regressão cumulativa RC inicial (antes desse ajuste de retry): 15 gates PASS no
+merge b842b292bc4cd2580770abda408d6be16eb17a92, snapshot
+`4fb194adbf089983b1c45e73ed633004ad7ea78e25a84efa3e2fe960f3e4c552`,
+03:08:34.245–03:18:47.536Z. Contagens iguais à origem207/72 e demais gates acima;
+Node24/Next16.3.8/sharp0.35.5, dependências idênticas ao99d8363. Esse PASS local
+não encerra a lacuna de retry identificada pelo CI. Evidência preservada na RC.
+
+Revalidação do ajuste: snapshot
+`2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5`,
+HEAD-base a8d5819671d2fda693d9b6b0ebcffd8209fd4627 mais diff funcional.
+03:19:23.289–03:23:36.377Z: Unit291+Mail17, Integration215/215,
+Build/Typecheck/Lint (0erros/3avisos anteriores), SchemaAudit0 PASS. E2E focal
+5/5, 03:24:18.598–03:24:34.143Z PASS; cluster STOPPED. Demais gates integrais
+anteriores foram preservados e o CI final executará novamente todos os15 gates.
+Nenhuma assertion das corridas ativa/horária foi alterada para aceitar erro500.
+
+[Registros do ajuste](cri-rev-20261015-evidence/adapter-retry/validation-records.json),
+[manifesto atualizado](cri-rev-20261015-evidence/adapter-retry/functional-manifest.json),
+[RED específico](cri-rev-20261015-evidence/adapter-red.txt),
+[GREEN específico](cri-rev-20261015-evidence/adapter-green.txt),
+[captura Pg real](cri-rev-20261015-evidence/postgres-commit-conflict.txt),
+[FAIL CI preservado](cri-rev-20261015-evidence/ci-initial-failure.txt).
+Revisão adversarial adicional: retry restrito, limitado, sem redes dentro de
+transação, sem repetição de preset e sem capturar/repetir erros de autorização,
+negócio ou conexão. Sem achado material conhecido após esse ajuste.
