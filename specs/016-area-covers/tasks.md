@@ -41,3 +41,35 @@ MVP é US1, entrega local exige todas as histórias. Testes críticos escritos a
 - [x] T025 Atualizar review da PR #4 e plano de propagação da correção às branches dependentes da RC em specs/016-area-covers/rc-ui-001-propagation.md; orientar futura atualização de docs/releases/2026-10-10-cri-rc/integration-guide.md (ausente na branch #4), sem executar merge/deploy. Push fast-forward e re-review #4/#6 confirmados; não significa aprovação dos revisores.
 
 Dependência: T021 → T022 → T023 → T024 → T025. Não reabrir migrações, autorização ou ciência fora do recorte.
+
+## Correções CRI-REV — preparação e fundação (2026-10-15)
+
+- [x] T026 Reconciliar achados/branches/autoridade e decisão A em specs/016-area-covers/{spec.md,plan.md,research.md,contracts/images.md}; commitar antes de código.
+- [ ] T027 Instrumentar presetCalls/ticketCalls/barreira determinística em tests/fixtures/area-cover-provider.ts e registrar testes RED em specs/016-area-covers/cri-rev-20261015-evidence.md.
+
+### US1 — disponibilidade (CRI-REV-001)
+
+- [ ] T028 [US1] Escrever/executar RED de flag/config/roles/DTO/preservação e mutações fechadas em tests/integration/area-covers.test.ts e tests/integration/area-cover-provider.test.ts (FR-010/011).
+- [ ] T029 [US1] Escrever/executar RED Playwright de ausência/desabilitação/retorno da disponibilidade em tests/e2e/area-covers.spec.ts (SC-005).
+- [ ] T030 [US1] Implementar capacidade offline/DTO/guards em src/app/api/server/images/{cloudinary,contracts,service}.ts e consumidores de src/components/areas/area-cover.tsx e src/app/dashboard/laboratories/[laboratoryId]/areas/page.tsx; repetir GREEN sem reduzir assertions (FR-010/011).
+
+### US1/US2 — preflight (CRI-REV-002)
+
+- [ ] T031 [US2] Escrever/executar RED de quotas/stale/replay/expiração antes de I/O e corridas no preset em tests/integration/area-covers.test.ts (FR-012/013).
+- [ ] T032 [US2] Implementar duas transações sem rede/validação compartilhada/criação atômica em src/app/api/server/images/service.ts e repetir GREEN (SC-006).
+- [ ] T033 [US2] Verificar quotas por ator, mesma chave concorrente, erro/retry serializável e preset sem órfãos em tests/integration/area-covers.test.ts (FR-013).
+
+### Fechamento transversal e publicação (CRI-REV-003/004)
+
+- [ ] T034 Executar regressão oficial Unit/Integration/Migration/Contract/R1/Build/Typecheck/Lint/E2E/Https/Deletion/Ihfr/Bootstrap/SchemaAudit e registrar resultados em specs/016-area-covers/cri-rev-20261015-evidence.md.
+- [ ] T035 Revisar adversarialmente autorização/DTO/fail-closed/replay/quota/OCC/cleanup/compatibilidade, corrigir achados e registrar em specs/016-area-covers/cri-rev-20261015-evidence.md.
+- [ ] T036 Atualizar docs/operations/area-covers-runbook.md e .env.images.example; commitar/publicar 016 após fetch/status/diff/checks.
+- [ ] T037 Propagar via worktrees/merge commits audit→RC→validation, preservar 11 originais/99d8363 e docs/reports/audits; atualizar docs/releases/2026-10-10-cri-rc/ com prontidão/release notes/integração e conferir PR #7 sem diff funcional.
+- [ ] T038 Confirmar HEAD/checks/diffs remotos, responder Pedro e pedir re-review #4/#6/#7; registrar recibo final em specs/016-area-covers/cri-rev-20261015-evidence.md e manter aprovação humana pendente.
+
+Dependências: T026 → T027 → T028/T029/T031 (RED) → T030/T032/T033 →
+T034/T035 → T036 → T037 → T038. US1 e US2 têm aceites independentes, mas
+service.ts e banco/build/E2E são sequenciais. Leitura de docs e revisão do diff
+podem ocorrer em paralelo; nenhum agente adicional é necessário nesta atualização.
+MVP funcional: US1/US2 corrigidas; entrega exige publicação/sincronização também.
+T001–T025 não são reabertas; aprovações dos estudantes não são tarefas do agente.

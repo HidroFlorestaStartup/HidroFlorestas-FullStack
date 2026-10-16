@@ -142,3 +142,69 @@ conferido. Re-review #4/#6 e comentários HTTP201 usando autenticação local do
 após HTTP403 do conector; CHANGES_REQUESTED anteriores preservados. Propagação
 e integração de #7 preparadas, não executadas. PostgreSQL voltou STOPPED com
 dados preservados. Fechamento documental não altera o fingerprint testado.
+
+## Plano focal CRI-REV-001/002/003/004 — 2026-10-15
+
+Estado: EM_ANDAMENTO. Resultado: correções testadas/publicadas na origem e
+propagadas por merges até #7; aprovações humanas explicitamente abertas.
+Mandato atual substitui a proibição histórica de merges internos de 13/10 somente
+na cadeia de revisão. Main/development/produção permanecem fora do escopo.
+
+### Reconciliação e estado inicial
+
+Clone independente `C:/projetos/consolidados/HidroFlorestas-cri-review-20261015`,
+016 inicialmente limpo em 8f183983e9134efd651e15fd872209faf4503468.
+Remotos iniciais: audit 52f612ff9c8aed279212ee5ba61581c3d66474cc;
+RC f351373ab19eab7d4331d5d72d988f34a621e337;
+validation 59baff4f5cbe44164014aaf760a0651604177abb;
+main/development beba96fbf6bbaac8771dbb29abea2f9f8f5b0054.
+Checkout do IDE preservado em feat/mail-foundation/80ff1cf, outro remoto,
+AGENTS.md modificado e arquivos não rastreados preexistentes, sem incorporação.
+Somente AGENTS.md raiz aplicável; instruções estruturais não serão alteradas.
+As quatro branches já estão bloqueadas em vercel.json; workflow somente CI.
+
+Fontes: pedido atual e confirmação explícita da política A na spec prevalecem;
+achados/guia/integration-guide da RC são evidências/instruções operacionais;
+Spec 016, contratos e código são baseline. Histórico/docs/raw intactos.
+Constituição: PASS antes do design; nenhuma mudança científica ou de schema.
+Skills specify/plan/tasks/implement atualizam a feature existente; scripts
+setup-plan/setup-tasks/check-prerequisites com feature explícita 016 executados;
+sem extensions.yml/hooks e sem checklists preexistentes. Dependências pelo lockfile.
+
+### Design
+
+1. DTO aditivo `featureEnabled:boolean`: validação offline da mesma configuração
+   do provider, sem rede/instanciação. `canEdit` contextual inalterado.
+   Disponibilidade injetável no serviço para fake; padrão fechado.
+2. Política A protege initiate/confirm/remove/content após autorização;
+   detail continua disponível. UI/preview/lista não buscam bytes desabilitados;
+   fallback distingue capa ausente de capa persistida indisponível.
+3. Uma validação local reutilizada em duas transações Serializable:
+   contexto → replay compatível/vigente → revisão (ausência = 0) → quotas do ator.
+   Preflight não cria registros. Preset fora da transação. Segunda transação
+   repete tudo e cria ponteiro/tentativa/quatro jobs atomicamente.
+4. Replay vigente preserva precedência anterior sobre revisão/quota e revalida
+   preset antes do ticket. Mesma chave criada durante I/O converge no mesmo registro.
+   Retries P2034/P2002 preservados; nenhuma assinatura antes do commit.
+5. Fake conta preset/ticket e oferece hook aguardável, com barreiras sem sleep.
+   Testar quotas/stale/replay/expiração, role/vínculo/lab/conta/revisão durante
+   rede, concorrência e preset falho/divergente sem órfãos.
+
+### Ordem, riscos e gates
+
+Planejamento commitado → RED registrado → implementação → mesmos testes GREEN →
+regressão oficial → revisão adversarial/diff → commit → fetch/reconferência →
+push origem → worktrees por descendente/merges → gates/push/HEAD/checks/diff →
+docs/PRs/re-review/handoff. T026–T038 detalham arquivos e dependências.
+Banco/build/E2E sequenciais no harness oficial com ownership/ACL preservados.
+Registrar SHA, tree/diff, UTC, ambiente, comandos, exit codes e contagens sanitizadas.
+Riscos: consumidores de DTO/preview da lista, replay após confirmação, corrida
+preflight/criação, revogação na rede, quota por ator e conflitos documentais.
+Gate adversarial cobre cada risco antes de push funcional. Sem novas dependências,
+guards/timeouts/assertions reduzidos ou chamadas Cloudinary reais.
+
+Parada humana: decisão A inicialmente pendente, confirmada nesta conversa antes
+da implementação. Aprovação dos estudantes/homologação real permanecem abertas;
+não impedem publicação autorizada e não serão declaradas concluídas pelo agente.
+Histórico: 15/10 reconciliação e decisão A registradas; testes/publicação ainda
+não executados nesta entrada. Evidências em cri-rev-20261015-evidence.md.

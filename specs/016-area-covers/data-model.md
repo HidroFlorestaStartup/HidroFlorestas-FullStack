@@ -1,5 +1,10 @@
 # Modelo de capas
 
+CRI-REV-001/002: sem mudança persistida/schema/migration. `featureEnabled` é
+projeção efêmera da disponibilidade validada offline; `canEdit` permanece contextual.
+Preflight não insere AreaCover nem tentativas/jobs. Criação final é atômica na
+segunda transação e reutiliza as entidades/IDs/restrições existentes.
+
 AreaCover: areaId PK/FK Restrict; revision Int >=0; publicId/assetId/version/format/
 bytes/width/height nullable conjuntamente; attemptId UUID nullable; updatedAt.
 Sem URL pública. CoverUploadAttempt: id UUID; areaId FK Restrict; userId FK SetNull;
