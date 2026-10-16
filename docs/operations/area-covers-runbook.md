@@ -1,5 +1,19 @@
 # Capas privadas de áreas
 
+## Correção de rollout — 15/10/2026
+
+DECISAO_CONFIRMADA: usuário solicitante confirmou nesta conversa a política A
+(origem textual em specs/016-area-covers/spec.md). Desligado/ausente/inválido ou
+configuração incompleta bloqueia upload, confirmação, remoção e conteúdo, mantém
+metadados/revisão/assets e usa fallback explícito. `featureEnabled` indica somente
+disponibilidade validada offline; `canEdit` continua contextual. Rollout parcial
+exige aprovação operacional própria e não fecha homologação de capas.
+CRI-REV-002: pedidos já inelegíveis são barrados antes da Admin API; elegíveis
+revalidam contexto/replay/revisão/quotas depois do preset e antes da criação.
+Replay vigente ainda valida preset; quotas não prometem custo zero para corridas
+que eram elegíveis no preflight. Implementação e validação desta correção serão
+registradas na evidência focal da Spec 016; esta entrada registra o contrato alvo.
+
 DECISAO_CONFIRMADA: usuário desta conversa em 2026-10-10 aprovou PD-CRI-007/008/009
 e exigiu documentação. [Origem e limites](../plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md),
 [spec 016](../../specs/016-area-covers/spec.md), [contratos](../../specs/016-area-covers/contracts/images.md).

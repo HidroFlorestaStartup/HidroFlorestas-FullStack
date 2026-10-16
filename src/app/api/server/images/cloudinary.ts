@@ -3,8 +3,9 @@ import { createHash } from "node:crypto";
 import { v2 as cloudinary } from "cloudinary";
 import { COVER_MAX_BYTES,CoverError } from "./contracts";
 import type { CoverAsset,CoverProvider,ProviderAttempt,ResourceType } from "./provider";
+import { cloudinarySettings,type Settings } from "./settings";
+export { cloudinarySettings } from "./settings";
 
-type Settings={cloudName:string;apiKey:string;apiSecret:string;preset:string;presetHash:string};
 const record=(v:unknown):Record<string,unknown>=>{if(!v||typeof v!=="object"||Array.isArray(v))throw new CoverError("UNAVAILABLE");return v as Record<string,unknown>;};
 function canonical(v:unknown):string {if(Array.isArray(v))return`[${v.map(canonical).join(",")}]`;if(v&&typeof v==="object")return`{${Object.entries(v).sort(([a],[b])=>a.localeCompare(b)).map(([k,x])=>`${JSON.stringify(k)}:${canonical(x)}`).join(",")}}`;return JSON.stringify(v);}
 export function presetFingerprint(value:unknown,name:string):string{
@@ -13,11 +14,6 @@ export function presetFingerprint(value:unknown,name:string):string{
  if(p.name!==name||p.unsigned!==false||Object.keys(s).some(k=>!allowed.includes(k))||("type"in s&&s.type!=="authenticated")||["overwrite","unique_filename","use_filename","disallow_public_id"].some(k=>k in s&&s[k]!==false))throw new CoverError("UNAVAILABLE");
  const normalized={...s};if("allowed_formats"in s){const formats=typeof s.allowed_formats==="string"?s.allowed_formats.split(",").map(x=>x.trim()):s.allowed_formats;if(!Array.isArray(formats)||formats.length===0||formats.some(x=>typeof x!=="string"||!["jpg","jpeg","png","webp"].includes(x)))throw new CoverError("UNAVAILABLE");normalized.allowed_formats=[...new Set(formats)].sort();}
  return createHash("sha256").update(canonical({name:p.name,unsigned:p.unsigned,settings:normalized})).digest("hex");
-}
-export function cloudinarySettings(environment:Record<string,string|undefined>):Settings{
- const {CLOUDINARY_IMAGE_ENABLED:enabled,CLOUDINARY_CLOUD_NAME:cloudName,CLOUDINARY_API_KEY:apiKey,CLOUDINARY_API_SECRET:apiSecret,CLOUDINARY_COVER_PRESET:preset,CLOUDINARY_COVER_PRESET_SHA256:presetHash}=environment;
- if(enabled!=="1"||!cloudName||!apiKey||!apiSecret||!preset||!presetHash||!/^[-a-z0-9_]+$/i.test(cloudName)||!/^\d+$/.test(apiKey)||!/^hfr-cover-v\d+[-a-z0-9_]*$/i.test(preset)||! /^[0-9a-f]{64}$/.test(presetHash))throw new CoverError("UNAVAILABLE");
- return{cloudName,apiKey,apiSecret,preset,presetHash};
 }
 async function bounded(response:Response,limit:number):Promise<Buffer>{
  const length=response.headers.get("content-length");if(length&&Number(length)>limit)throw new CoverError("UNAVAILABLE");

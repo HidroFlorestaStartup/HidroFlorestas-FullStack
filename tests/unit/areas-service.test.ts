@@ -17,7 +17,7 @@ it("scopes queries to laboratory and serializes without private fields or legacy
  assert.deepEqual(calls[0].args,{where:{laboratoryRoomId:lab},orderBy:[{createdAt:"desc"},{id:"desc"}],include:{cover:{select:{revision:true,assetId:true}}}});
  assert.deepEqual(calls[1].args,{where:{id,laboratoryRoomId:lab}});
  assert.equal(list.areas[0].latitude,-3);assert.equal(Object.hasOwn(detail.area,"userId"),false);assert.equal(Object.hasOwn(detail.area,"isActive"),false);
- assert.deepEqual(list.areas[0].cover,{revision:2,hasImage:true});assert.equal(JSON.stringify(list.areas).includes("private-provider-id"),false);
+ assert.deepEqual(list.areas[0].cover,{revision:2,hasImage:true,featureEnabled:false});assert.equal(JSON.stringify(list.areas).includes("private-provider-id"),false);
 });
 it("rechecks eligibility, membership, role and inactivity before a write",async()=>{
  for(const [role,active,linked,status,code] of [["MEMBER",true,true,"ACTIVE","FORBIDDEN"],["OWNER",false,true,"ACTIVE","READ_ONLY"],["MEMBER",false,true,"ACTIVE","READ_ONLY"],["OWNER",true,false,"ACTIVE","NOT_FOUND"],["OWNER",true,true,"BLOCKED","UNAUTHENTICATED"]] as const){
