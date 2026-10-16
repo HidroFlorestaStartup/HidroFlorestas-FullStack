@@ -1,5 +1,10 @@
 # Release Candidate CRI — 10/10/2026
 
+Atualização da revisão de 15/10, executada em 16/10:
+[correções, decisão A, RED/GREEN, prontidão e handoff](cri-rev-readiness-20261015.md).
+Consultar esse acompanhamento para o estado das correções; a revisão original
+abaixo permanece histórica. Aprovação humana ainda pendente.
+
 Ponto de entrada para a equipe: [plano de execução dos estudantes](plano-execucao-estudantes.md).
 O roteiro principal tem seis entregas: revisão, testes, tratamento de achados,
 integração, atualização acompanhada e registro final. As 43 referências técnicas

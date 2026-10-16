@@ -1032,3 +1032,11 @@ mas a atualização permanece pendente até execução e aceite reais.
 Preservar versão, autoridade e origem de cada aprovação; não transformar orientação
 do agente em decisão da equipe. Catalogação documental e registros canônicos
 só são atualizados no escopo expressamente autorizado; docs/raw é imutável.
+## Acompanhamento das correções CRI-REV
+
+Atualização de execução 16/10/2026: o roteiro abaixo mantém suas seis entregas,
+papéis e limites. Para corrigir/revisar os achados de15/10, consultar
+[prontidão e evidências atuais](cri-rev-readiness-20261015.md). Política A foi
+confirmada pelo usuário; homologações reais e novo parecer dos revisores continuam
+pendentes. Não repetir testes sem relação com o impacto nem declarar aprovação
+humana com base em automação. O texto histórico do plano foi preservado.

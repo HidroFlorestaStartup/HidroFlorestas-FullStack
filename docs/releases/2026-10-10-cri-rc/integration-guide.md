@@ -1,5 +1,15 @@
 # Revisão e integração dos PRs
 
+## Correções CRI-REV — mandato de 15/10/2026
+
+O pedido atual autoriza somente a sincronização interna 016→audit→RC→validation
+com merge commits, sem main/development/deploy. A origem e auditoria já publicaram
+as correções; os demais recibos/checks estão no
+[acompanhamento atual](cri-rev-readiness-20261015.md). Não confundir essa autorização
+com a integração principal descrita historicamente abaixo. Preservar o99d8363
+original na RC e o diff documental independente de #7, sem absorvê-lo na RC.
+Revisão/reaprovação permanecem pendentes e não são substituídas por checks verdes.
+
 ## Atualização da pilha — 2026-10-13
 
 DECISAO_CONFIRMADA: o pedido posterior do usuário autorizou exclusivamente merges

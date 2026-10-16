@@ -1,5 +1,15 @@
 # Notas da Release Candidate CRI
 
+## Correções da revisão de 15/10/2026
+
+CRI-REV-001: disponibilidade explícita separada de autorização/existência. Política
+A confirmada: desligado bloqueia upload/confirm/remove/content, preserva metadados
+e capas persistidas. UI e lista usam fallback sem GET de conteúdo desabilitado.
+CRI-REV-002: preflight local antes do preset e segunda validação Serializable
+após rede, sem transação aberta durante I/O. Replay/quotas/contexto são revalidados
+e tentativa/jobs continuam atômicos. Sem schema/migration/dependência nova.
+[Evidências e estado atual](cri-rev-readiness-20261015.md); aprovação humana aberta.
+
 ## Atualização focal — 2026-10-13
 
 EVIDENCIA_IMPLEMENTACAO: RC-DRAFT-001 impede edição/salvamento antes de os handlers
