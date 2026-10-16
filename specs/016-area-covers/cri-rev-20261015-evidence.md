@@ -141,3 +141,8 @@ Instruções AGENTS/PLANS/constituição são idênticas nas quatro branches.
 
 Pendentes nesta etapa: publicação na origem, merges autorizados, revalidação da
 RC com dependências99d8363 e checks nos HEADs finais. Aprovação humana permanece aberta.
+
+Commit funcional d93124e21974c0e571ad30f28fd04010a399e757. Antes do push,
+normalizados somente espaços finais das três cópias textuais de evidência para
+git diff --check; logs originais/JSONL e seus hashes continuam preservados em
+.accounts-validation. Conteúdo de assertions, erros, contagens e tempos intacto.

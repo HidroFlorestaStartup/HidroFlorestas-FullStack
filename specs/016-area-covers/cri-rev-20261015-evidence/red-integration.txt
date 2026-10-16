@@ -47,15 +47,15 @@ stdout: ℹ cancelled 0
 stdout: ℹ skipped 0
 stdout: ℹ todo 0
 stdout: ℹ duration_ms 11387.2809
-stdout: 
+stdout:
 stdout: ✖ failing tests:
-stdout: 
+stdout:
 stdout: test at tests\integration\area-covers.test.ts:2:2706
 stdout: ✖ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (1063.8674ms)
 stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-stdout:   
+stdout:
 stdout:   1 !== 0
-stdout:   
+stdout:
 stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:19:117)
 stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
@@ -69,13 +69,13 @@ stdout:     expected: 0,
 stdout:     operator: 'strictEqual',
 stdout:     diff: 'simple'
 stdout:   }
-stdout: 
+stdout:
 stdout: test at tests\integration\area-covers.test.ts:2:3982
 stdout: ✖ CRI-REV-002 hourly quota independently rejects without provider I/O (561.9781ms)
 stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-stdout:   
+stdout:
 stdout:   11 !== 10
-stdout:   
+stdout:
 stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:28:118)
 stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
@@ -89,12 +89,12 @@ stdout:     expected: 10,
 stdout:     operator: 'strictEqual',
 stdout:     diff: 'simple'
 stdout:   }
-stdout: 
+stdout:
 stdout: test at tests\integration\area-covers.test.ts:2:8751
 stdout: ✖ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (403.3998ms)
 stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
 stdout:   + actual - expected
-stdout:   
+stdout:
 stdout:     {
 stdout:       canEdit: true,
 stdout:   -   featureEnabled: false,
@@ -103,7 +103,7 @@ stdout:         hasImage: false,
 stdout:         revision: 0
 stdout:       }
 stdout:     }
-stdout:   
+stdout:
 stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:74:155)
 stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
@@ -117,12 +117,12 @@ stdout:     expected: { image: { revision: 0, hasImage: false }, canEdit: true, 
 stdout:     operator: 'deepStrictEqual',
 stdout:     diff: 'simple'
 stdout:   }
-stdout: 
+stdout:
 stdout: test at tests\integration\area-covers.test.ts:2:11019
 stdout: ✖ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (451.1142ms)
 stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
 stdout:   + actual - expected
-stdout:   
+stdout:
 stdout:     {
 stdout:       canEdit: true,
 stdout:   -   featureEnabled: false,
@@ -131,7 +131,7 @@ stdout:         hasImage: true,
 stdout:         height: 24,
 stdout:         revision: 1,
 stdout:         width: 32
-stdout:   
+stdout:
 stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:86:9)
 stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
@@ -145,13 +145,13 @@ stdout:     expected: { image: { revision: 1, hasImage: true, width: 32, height:
 stdout:     operator: 'deepStrictEqual',
 stdout:     diff: 'simple'
 stdout:   }
-stdout: 
+stdout:
 stdout: test at tests\integration\area-covers.test.ts:2:24020
 stdout: ✖ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (568.8467ms)
 stdout:   AssertionError [ERR_ASSERTION]: CRI-REV-002 active quota must precede provider I/O
-stdout:   
+stdout:
 stdout:   5 !== 4
-stdout:   
+stdout:
 stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:137:244)
 stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
 stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)

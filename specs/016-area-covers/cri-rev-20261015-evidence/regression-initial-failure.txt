@@ -1,4 +1,4 @@
-﻿✔ concurrent changes never remove both final ACTIVE ADMIN accounts (303.2844ms)
+✔ concurrent changes never remove both final ACTIVE ADMIN accounts (303.2844ms)
 ✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (449.3271ms)
 ▶ user administration routes
   ✔ derives the actor and forwards only parsed list filters (4.7689ms)
@@ -20,10 +20,10 @@ test at tests\integration\ihfr-diagnosis-concurrency.test.ts:2:6063
 ✖ PostgreSQL contested transaction: REPLACE distinct keys (16234.3924ms)
   AssertionError [ERR_ASSERTION]: REPLACE distinct keys
   + actual - expected
-  
+
   + 'P2028'
   - 'STATE_CONFLICT'
-  
+
       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\ihfr-diagnosis-concurrency.test.ts:66:37)
       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)

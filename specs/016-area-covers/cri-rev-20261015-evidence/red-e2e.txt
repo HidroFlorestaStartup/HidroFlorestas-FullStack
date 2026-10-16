@@ -7,9 +7,9 @@ stderr: [2m[WebServer] [22m(node:30668) Warning: The 'NO_COLOR' env is ignored
 stderr: [2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
 stderr: [2m[WebServer] [22m(node:39428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 stderr: [2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
-stdout: 
+stdout:
 stdout: Running 5 tests using 1 worker
-stdout: 
+stdout:
 stderr: (node:32180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 stderr: (Use `node --trace-warnings ...` to show where the warning was created)
 stderr: (node:32180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
@@ -21,22 +21,22 @@ stdout:   -  2 [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001
 stdout:   -  3 [chromium] › tests\e2e\area-covers.spec.ts:26:5 › cover UI fake: invalid input, lost response retry, mobile keyboard replacement/removal and private preview
 stdout:   -  4 [chromium] › tests\e2e\area-covers.spec.ts:48:5 › member has reading/fallback only and outsider receives contextual HTTP refusal
 stdout:   -  5 [chromium] › tests\e2e\area-covers.spec.ts:56:5 › reloading a temporarily unavailable cover retries its content at the same revision
-stdout: 
-stdout: 
-stdout:   1) [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes 
-stdout: 
+stdout:
+stdout:
+stdout:   1) [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes
+stdout:
 stdout:     Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
-stdout: 
+stdout:
 stdout:     Locator:  getByRole('region', { name: 'Capa da área' }).getByText('As capas de áreas estão desabilitadas neste momento.', { exact: true })
 stdout:     Expected: visible
 stdout:     Received: <element(s) not found>
 stdout:     Timeout:  5000ms
-stdout: 
+stdout:
 stdout:     Call log:
 stdout:     [2m  - Expect "toBeVisible" with timeout 5000ms[22m
 stdout:     [2m  - waiting for getByRole('region', { name: 'Capa da área' }).getByText('As capas de áreas estão desabilitadas neste momento.', { exact: true })[22m
-stdout: 
-stdout: 
+stdout:
+stdout:
 stdout:       15 |  });
 stdout:       16 |  await page.goto(area);const panel=page.getByRole("region",{name:"Capa da área"});
 stdout:     > 17 |  await expect(panel.getByText("As capas de áreas estão desabilitadas neste momento.",{exact:true})).toBeVisible();
@@ -45,10 +45,10 @@ stdout:       18 |  await expect(panel.getByText(hasImage?"Capa indisponível en
 stdout:       19 |  await expect(panel.locator('input[type="file"]')).toHaveCount(0);await expect(panel.getByRole("button",{name:"Enviar capa",exact:true})).toHaveCount(0);await expect(panel.getByRole("button",{name:"Remover capa",exact:true})).toHaveCount(0);
 stdout:       20 |  await panel.getByRole("button",{name:"Recarregar capa",exact:true}).click();await expect(panel.getByRole("status")).not.toContainText("Tentando");expect(contentCalls).toBe(0);expect(mutations).toBe(0);
 stdout:         at C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\e2e\area-covers.spec.ts:17:101
-stdout: 
+stdout:
 stdout:     Error Context: test-results\area-covers-CRI-REV-001-di-faf22-se-and-never-requests-bytes-chromium\error-context.md
-stdout: 
+stdout:
 stdout:   1 failed
-stdout:     [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes 
+stdout:     [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes
 stdout:   4 did not run
 [2026-10-16T02:45:16.897Z] END phase=cri-red-e2e attempt=1 target=3ca357615da4 exit=1 duration_ms=17334
