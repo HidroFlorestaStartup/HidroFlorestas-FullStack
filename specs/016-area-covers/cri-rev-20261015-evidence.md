@@ -208,3 +208,49 @@ Nenhuma assertion das corridas ativa/horária foi alterada para aceitar erro500.
 Revisão adversarial adicional: retry restrito, limitado, sem redes dentro de
 transação, sem repetição de preset e sem capturar/repetir erros de autorização,
 negócio ou conexão. Sem achado material conhecido após esse ajuste.
+
+## Publicação e sincronização conferidas — recibo de 16/10
+
+HEADs publicados por push normal, confirmados com ls-remote e metadados de PR:
+
+| Branch / PR | HEAD deste recibo | Actions no SHA (consulta inicial) |
+|---|---|---|
+| review/016-area-covers / #4 | 247fe5e1b1a1864968e0c1118c651c95e288bd0b | 38845398678 em execução |
+| review/cri-audit-20261010 / #5 | 1c28288f73f089064c5dcf14793da423354e4e6d | 38845449260 em execução |
+| release/cri-rc-20261010 / #6 | 3add0541110999b4406fd77500e5eff2c47aac64 | 38845752070 em execução |
+| review/cri-rc-validation-20261012 / #7 | 94b37a841e9b2d5beb7e392177c6a766ea637aa9 | 38845877519 em execução |
+
+Merges preservados: audit98d8aaca7e3938fed60677c54b14846d4e234c2f e
+1c28288f73f089064c5dcf14793da423354e4e6d; RC b842b292bc4cd2580770abda408d6be16eb17a92
+e b1d770c37eef319d599f6abb7da43a7bcc5c9aab; documentação RC
+3add0541110999b4406fd77500e5eff2c47aac64; revisão independente
+94b37a841e9b2d5beb7e392177c6a766ea637aa9. Sem conflitos, sem reescrita, sem
+cherry-pick/squash/rebase. Typegen/typecheck extras PASS em audit e validation.
+RC pós-retry: Integration215/Build/Typecheck/Lint/SchemaAudit PASS, snapshot
+`85cdcfd55a070615392894eb311c43c035840e2d31237832b9d0f0c1ea71cc08`.
+
+Ancestralidade: os11 originais do publication-evidence.json e o SHA original
+99d8363fba4d13a8a02937be1ff2e606d35b3fa6 estão em RC/validation;99d8363 aparece
+uma vez em cada DAG. Código/testes/scripts/dependências de validation idênticos
+à RC; diff do PR7 limitado aos24 arquivos documentais históricos pretendidos.
+docs/reports/audits, plano independente e DOCUMENT_REGISTER de #7 iguais ao59baff4.
+Nenhuma absorção da revisão inteira na RC para eliminar o diff.
+
+Respostas técnicas publicadas e consultáveis:
+[PR4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6207465699),
+[PR6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6207466027),
+[thread preservada](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4290653372).
+Re-review solicitado a PedroVitor237/luciano-mendesz9 em4/6; Luciano em7
+(Pedro é autor de7). Conector retornou403 por escopo; escrita concluída pela
+autenticação local do Git, sem exibir/persistir credencial. Nenhum review dispensado,
+thread resolvida ou APPROVED criado pelo executor.
+
+Este recibo antecede seu próprio commit e merges documentais finais: conferir
+HEADs finais nas refs/PRs e novos checks por SHA. Os estados “em execução” acima
+são históricos, não PASS presumido. A conclusão será acompanhada nos Actions e
+registrada nas descrições/comentários finais dos PRs, evitando autorreferência.
+Worktrees: clone de origem e três worktrees independentes audit/rc/validation em
+C:/projetos/consolidados/HidroFlorestas-cri-*-20261015; nenhum removido. Status
+limpo após os commits/publicações; outputs locais ignorados preservados.
+main/development e checkout do IDE preservados; deploy/provedor/banco remoto
+não executados. IHFR e pendências operacionais/científicas inalterados.

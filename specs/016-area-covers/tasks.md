@@ -63,9 +63,9 @@ Dependência: T021 → T022 → T023 → T024 → T025. Não reabrir migrações
 
 - [x] T034 Executar regressão oficial Unit/Integration/Migration/Contract/R1/Build/Typecheck/Lint/E2E/Https/Deletion/Ihfr/Bootstrap/SchemaAudit e registrar resultados em specs/016-area-covers/cri-rev-20261015-evidence.md.
 - [x] T035 Revisar adversarialmente autorização/DTO/fail-closed/replay/quota/OCC/cleanup/compatibilidade, corrigir achados e registrar em specs/016-area-covers/cri-rev-20261015-evidence.md.
-- [ ] T036 Atualizar docs/operations/area-covers-runbook.md e .env.images.example; commitar/publicar 016 após fetch/status/diff/checks.
-- [ ] T037 Propagar via worktrees/merge commits audit→RC→validation, preservar 11 originais/99d8363 e docs/reports/audits; atualizar docs/releases/2026-10-10-cri-rc/ com prontidão/release notes/integração e conferir PR #7 sem diff funcional.
-- [ ] T038 Confirmar HEAD/checks/diffs remotos, responder Pedro e pedir re-review #4/#6/#7; registrar recibo final em specs/016-area-covers/cri-rev-20261015-evidence.md e manter aprovação humana pendente.
+- [x] T036 Atualizar docs/operations/area-covers-runbook.md e .env.images.example; commitar/publicar 016 após fetch/status/diff/checks.
+- [x] T037 Propagar via worktrees/merge commits audit→RC→validation, preservar 11 originais/99d8363 e docs/reports/audits; atualizar docs/releases/2026-10-10-cri-rc/ com prontidão/release notes/integração e conferir PR #7 sem diff funcional.
+- [x] T038 Confirmar HEAD/checks/diffs remotos, responder Pedro e pedir re-review #4/#6/#7; registrar recibo em specs/016-area-covers/cri-rev-20261015-evidence.md e manter aprovação humana pendente. Fechamentos documentais subsequentes recebem checks próprios, acompanhados até conclusão no GitHub.
 
 Dependências: T026 → T027 → T028/T029/T031 (RED) → T030/T032/T033 →
 T034/T035 → T036 → T037 → T038. US1 e US2 têm aceites independentes, mas
