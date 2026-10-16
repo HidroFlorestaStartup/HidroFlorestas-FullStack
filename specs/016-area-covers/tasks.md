@@ -73,3 +73,11 @@ service.ts e banco/build/E2E são sequenciais. Leitura de docs e revisão do dif
 podem ocorrer em paralelo; nenhum agente adicional é necessário nesta atualização.
 MVP funcional: US1/US2 corrigidas; entrega exige publicação/sincronização também.
 T001–T025 não são reabertas; aprovações dos estudantes não são tarefas do agente.
+
+### Convergência após CI materialmente reprovado
+
+- [ ] T039 [US2] Diagnosticar formato seguro do conflito ao commit Pg e registrar RED do retry do adaptador em tests/integration/area-covers.test.ts e specs/016-area-covers/cri-rev-20261015-evidence.md; preservar FAILs das runs38843869327/38843986244.
+- [ ] T040 [US2] Corrigir reconhecimento restrito de serialização/deadlock em src/app/api/server/images/service.ts, repetir GREEN/gates sem mudar assertions/timeouts e propagar pela cadeia antes de concluir T036–T038.
+
+T039 → T040 → T034/T035 revalidados → T036–T038. A cobertura anterior e os
+PASSs locais são históricos; os novos HEADs exigem checks próprios.

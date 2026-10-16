@@ -146,3 +146,17 @@ Commit funcional d93124e21974c0e571ad30f28fd04010a399e757. Antes do push,
 normalizados somente espaços finais das três cópias textuais de evidência para
 git diff --check; logs originais/JSONL e seus hashes continuam preservados em
 .accounts-validation. Conteúdo de assertions, erros, contagens e tempos intacto.
+
+## CI reprovado e convergência adicional
+
+Push inicial origem036f54a529b5097c3b8c787b7e598a8af3c76a44 confirmado por
+ls-remote e PR4. Audit98d8aaca7e3938fed60677c54b14846d4e234c2f publicado após
+merge limpo, igualdade funcional com origem e typegen/typecheck PASS.
+RC merge local b842b292bc4cd2580770abda408d6be16eb17a92, ainda sem push.
+
+[Run origem38843869327](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/38843869327)
+FAIL: Integration205/207, falhas de quota ativa/horária concorrente em473/820ms;
+rejeição INTERNAL_ERROR, esperado RATE_LIMITED. Unit e setup PASS; gates posteriores
+não executados. Artefato12022396819 baixado para inspeção; sem suprimir FAIL.
+Run audit38843986244 também FAIL. T039/T040 adicionadas ao plano antes da correção
+adicional. Os PASSs locais não validam esses HEADs no ambiente do CI.
