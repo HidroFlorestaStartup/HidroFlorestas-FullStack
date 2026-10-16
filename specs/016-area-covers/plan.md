@@ -209,3 +209,22 @@ da implementação. Aprovação dos estudantes/homologação real permanecem abe
 não impedem publicação autorizada e não serão declaradas concluídas pelo agente.
 Histórico: 15/10 reconciliação e decisão A registradas; testes/publicação ainda
 não executados nesta entrada. Evidências em cri-rev-20261015-evidence.md.
+
+### Ajuste após o primeiro CI — 16/10/2026
+
+As runs38843869327 (origem036f54a) e38843986244 (audit98d8aac) falharam em
+concorrência, embora as regressões locais tenham passado. Artefato da origem:
+207 testes/205PASS/2FAIL, nas corridas ativa/horária; perdedor recebeu INTERNAL_ERROR
+em vez de RATE_LIMITED em menos de1s, sem evidência de timeout nessa rodada.
+Não enfraquecer o aceite nem presumir falha ambiental. Publicação da RC fica
+suspensa até diagnosticar e corrigir; sua regressão local anterior pode terminar
+sem alterar sua árvore durante a coleta.
+
+EVIDENCIA_CODIGO: adapter-pg7.4.2 converte SQLSTATE40001 em DriverAdapterError
+com cause.kind=TransactionWriteConflict. O helper atual de imagens só reconhece
+e.code P2034/P2002; o serviço IHFR também trata SQLSTATE40001/40P01 direto.
+INFERENCIA a confirmar: conflito ao commit pode escapar no formato do adaptador.
+T039 deve capturar somente nome/códigos/kind seguros em conflito Pg real e produzir
+RED determinístico dos formatos suportados. T040 implementa reconhecimento
+restrito de conflitos (sem retry de erros arbitrários), mantém teto3 e timeouts,
+e repete testes/gates/propagação. Não repetir preset em retry transacional.

@@ -1,0 +1,66 @@
+✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (434.2053ms)
+▶ user administration routes
+  ✔ derives the actor and forwards only parsed list filters (3.4416ms)
+  ✔ validates status input before invoking the service (1.1355ms)
+  ✔ returns sanitized authentication, authorization, and conflict errors (1.246ms)
+✔ user administration routes (6.5803ms)
+ℹ tests 207
+ℹ suites 15
+ℹ pass 205
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 96643.8652
+
+✖ failing tests:
+
+test at tests\integration\area-covers.test.ts:2:6728
+✖ CRI-REV-002 simultaneous eligible requests respect per-user active quota (473.1489ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'INTERNAL_ERROR'
+  -   'RATE_LIMITED'
+    ]
+
+      at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:57:104)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:19:426)
+      at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'INTERNAL_ERROR' ],
+    expected: [ 'RATE_LIMITED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\integration\area-covers.test.ts:2:8815
+✖ CRI-REV-002 concurrent hourly quota is checked again after preset (820.015ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'INTERNAL_ERROR'
+  -   'RATE_LIMITED'
+    ]
+
+      at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:71:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:19:426)
+      at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'INTERNAL_ERROR' ],
+    expected: [ 'RATE_LIMITED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+[2026-10-16T03:10:09.461Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=1 duration_ms=96696
+IMP-006 sanitized gate log: C:\Users\RUNNER~1\AppData\Local\Temp\hidroflorestas-imp006-gate-abqGof\integration-attempt-1.log

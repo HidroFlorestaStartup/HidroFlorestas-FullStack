@@ -1,0 +1,474 @@
+{
+  "capturedUtc": "2026-10-16T03:24:34.528Z",
+  "head": "a8d5819671d2fda693d9b6b0ebcffd8209fd4627",
+  "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+  "records": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "89febb880b7f469445e0bcf3a0ee95aa3f3bcf7d1fcdaf9305e2c8e13e391519",
+      "startedUtc": "2026-10-16T02:44:21.998Z",
+      "endedUtc": "2026-10-16T02:44:25.766Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "regressionsetup-1792118661997.log",
+      "logSha256": "b3eddb4c954687050cbf47763c7ed5fb1675b43e2d1596cec1006ff387bb7232",
+      "summary": []
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "5c0f31fb6c2869d21aeecae57d7315a5d14ded6eccebc1275b8109d61158d86a",
+      "startedUtc": "2026-10-16T02:45:44.613Z",
+      "endedUtc": "2026-10-16T02:45:52.037Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "unit-1792118744613.log",
+      "logSha256": "b8ddd001dc4707c7a1514c0da79b0b66ef0b999ef8952c0a97e197ea74eedc14",
+      "summary": [
+        "✔ v1 preserves zero/false, normalizes only absent optional fields and canonicalizes ordering (3.3132ms)",
+        "✔ zero/false/null remain distinct and retry retains key only for identical payload (0.6919ms)",
+        "✔ draft preserves false, zero, missing, absent, blank and incomplete text (2.6256ms)",
+        "✔ each scored optional absence is excluded while zero and false remain values (0.6938ms)",
+        "✔ IMP-006 audit reports candidates while assert-zero fails closed (0.3576ms)",
+        "ℹ tests 291",
+        "ℹ pass 290",
+        "ℹ fail 1"
+      ]
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T02:48:15.292Z",
+      "endedUtc": "2026-10-16T02:48:25.359Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "unit-1792118895292.log",
+      "logSha256": "4aeecb103c703f48a8385d04e343e49d8514705d74fb937ed886d06e4a31fb42",
+      "summary": [
+        "ℹ tests 291",
+        "ℹ pass 291",
+        "ℹ fail 0",
+        "✔ verification HMAC binds purpose/challenge/account/email/version and preserves zero (0.7357ms)",
+        "✔ MAIL-FR-004 versioned Portuguese HTML/text escape, zero, supplied expiry and trusted origin (1.5138ms)",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T02:48:25.667Z",
+      "endedUtc": "2026-10-16T02:52:08.845Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "integration-1792118905667.log",
+      "logSha256": "f0e012f1018ed865bc34abaf7c20b135c543e293aea5df3379a090fc06a7bf88",
+      "summary": [
+        "ℹ tests 207",
+        "ℹ pass 206",
+        "ℹ fail 1"
+      ]
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T02:58:33.499Z",
+      "endedUtc": "2026-10-16T02:59:53.241Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "integration-1792119513498.log",
+      "logSha256": "1cebe80f4e8c13bc32e863e203591bacd4626c4260ad384012fea19d49f8e2aa",
+      "summary": [
+        "ℹ tests 207",
+        "ℹ pass 207",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T02:59:53.560Z",
+      "endedUtc": "2026-10-16T03:00:07.020Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "migration-1792119593560.log",
+      "logSha256": "b282899c1cc781c2b789ef878746602cc41b2843cdb643771f9a06bdbf39fc1d",
+      "summary": [
+        "✔ IMP-006 migration preserves legacy rows and performs zero backfill (303.5917ms)",
+        "✔ applied IMP-006 schema has the expected constraints, indexes, triggers and zero backfill (416.3402ms)",
+        "ℹ tests 37",
+        "ℹ pass 37",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:00:07.285Z",
+      "endedUtc": "2026-10-16T03:00:10.169Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "contract-1792119607285.log",
+      "logSha256": "30238b632f69213b3a96b5ccd2c72264ac9db0379979360cad0f13644c804a8f",
+      "summary": [
+        "ℹ tests 6",
+        "ℹ pass 6",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:00:10.446Z",
+      "endedUtc": "2026-10-16T03:00:19.388Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "r1-1792119610445.log",
+      "logSha256": "51eaf5d508539d758dc3289f1c9064017272500bff1152f8b3e5f6efabd6cd3d",
+      "summary": [
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:00:19.672Z",
+      "endedUtc": "2026-10-16T03:00:41.258Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "build-1792119619671.log",
+      "logSha256": "67469ccc3dca536f537566497ebaa8f33b653fee9fc7000e9f6882c89c123be1",
+      "summary": []
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:00:41.581Z",
+      "endedUtc": "2026-10-16T03:00:48.014Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "typecheck-1792119641581.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "summary": []
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:00:48.316Z",
+      "endedUtc": "2026-10-16T03:01:01.417Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "lint-1792119648316.log",
+      "logSha256": "c046e875a13e29b2adf04c0be50610c157160bbd885ac7929b3e3b24cb9aeec4",
+      "summary": []
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:01:01.809Z",
+      "endedUtc": "2026-10-16T03:03:51.290Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "e2e-1792119661809.log",
+      "logSha256": "be6c738b6066a111d6fb6acdf15aac1fcabe41240d90dc2b2ebef136ab062050",
+      "summary": [
+        "  ok  1 [chromium] › tests\\e2e\\account-verification-recovery.spec.ts:17:7 › account forms and privacy › verification preserves a zero prefix, announces errors, and obeys server cooldown (995ms)",
+        "  ok 52 [chromium] › tests\\e2e\\environmental-data-read.spec.ts:13:5 › independent read shows provenance, null/zero/false, mobile and desktop without overflow (3.3s)",
+        "  72 passed (2.8m)"
+      ]
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:03:51.587Z",
+      "endedUtc": "2026-10-16T03:04:20.645Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "https-1792119831586.log",
+      "logSha256": "4211d14b87c578ee41077907f20cff99a11ee03d0976486a83d623f62426127c",
+      "summary": [
+        "  2 passed (9.8s)"
+      ]
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:04:20.952Z",
+      "endedUtc": "2026-10-16T03:04:30.663Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "deletion-1792119860952.log",
+      "logSha256": "d85c26fbfd17d705346503b8171299bbb8df006cf97bb941e8db2d3bd7b4781c",
+      "summary": [
+        "  3 passed (5.1s)"
+      ]
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:04:30.943Z",
+      "endedUtc": "2026-10-16T03:05:09.128Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "ihfr-1792119870943.log",
+      "logSha256": "55d4991fa6f0e1fbba5f8b152e07d14baa622a9d214a62b4da55bd576c757425",
+      "summary": [
+        "  6 passed (24.3s)"
+      ]
+    },
+    {
+      "gate": "Bootstrap",
+      "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:05:09.446Z",
+      "endedUtc": "2026-10-16T03:05:19.558Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "bootstrap-1792119909446.log",
+      "logSha256": "acd80e1d018fc6c74617f30979755bbd42303586e0b7d0de9ca1176515a5ac8f",
+      "summary": [
+        "IMP-006 clean bootstrap preflight: zero application tables and no Prisma history.",
+        "IMP-006 clean bootstrap: 14 migrations completed, zero failed, core tables present."
+      ]
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "53a4cfed410d842e5ab4a05bf1dd8b67a42f3cb98b6fa2994f440cb8f2e0492d",
+      "startedUtc": "2026-10-16T03:05:19.844Z",
+      "endedUtc": "2026-10-16T03:05:20.506Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "schemaaudit-1792119919844.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "summary": [
+        "npm notice run hidro-florestas-fullstack@0.1.0 test:ihfr:audit:assert-zero",
+        "npm notice run node --import=tsx scripts/imp006-audit-schemas.ts assert-zero"
+      ]
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:19:23.289Z",
+      "endedUtc": "2026-10-16T03:19:34.939Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "unit-1792120763289.log",
+      "logSha256": "a6561f0d668540775f925e4a6f05d47461a862a73c2bf9d5fd02a8d853dec641",
+      "summary": [
+        "ℹ tests 291",
+        "ℹ pass 291",
+        "ℹ fail 0",
+        "✔ verification HMAC binds purpose/challenge/account/email/version and preserves zero (0.7823ms)",
+        "✔ MAIL-FR-004 versioned Portuguese HTML/text escape, zero, supplied expiry and trusted origin (2.3156ms)",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:19:35.293Z",
+      "endedUtc": "2026-10-16T03:20:59.400Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "integration-1792120775292.log",
+      "logSha256": "96685a7c26d74aa75bf57ff0e476fcfce36d56a3ac808ab01a118df18d341a8d",
+      "summary": [
+        "ℹ tests 215",
+        "ℹ pass 215",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:20:59.716Z",
+      "endedUtc": "2026-10-16T03:21:12.166Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "build-1792120859716.log",
+      "logSha256": "70d26523c9304fd0f571380ae6d3e93ab20979ec66baf5e4c50556d609e56ddb",
+      "summary": []
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:21:12.506Z",
+      "endedUtc": "2026-10-16T03:21:15.857Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "typecheck-1792120872506.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "summary": []
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:21:16.156Z",
+      "endedUtc": "2026-10-16T03:23:35.541Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "lint-1792120876156.log",
+      "logSha256": "c046e875a13e29b2adf04c0be50610c157160bbd885ac7929b3e3b24cb9aeec4",
+      "summary": []
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:23:35.852Z",
+      "endedUtc": "2026-10-16T03:23:36.377Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "schemaaudit-1792121015852.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "summary": [
+        "npm notice run hidro-florestas-fullstack@0.1.0 test:ihfr:audit:assert-zero",
+        "npm notice run node --import=tsx scripts/imp006-audit-schemas.ts assert-zero"
+      ]
+    }
+  ],
+  "focal": [
+    {
+      "phase": "cri-red-integration",
+      "args": [
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/integration/area-covers.test.ts",
+        "tests/integration/area-cover-provider.test.ts",
+        "tests/integration/area-cover-http.test.ts"
+      ],
+      "snapshot": "89febb880b7f469445e0bcf3a0ee95aa3f3bcf7d1fcdaf9305e2c8e13e391519",
+      "startedUtc": "2026-10-16T02:44:36.432Z",
+      "endedUtc": "2026-10-16T02:44:48.030Z",
+      "exitCode": 1,
+      "durationMs": 11450,
+      "logPath": ".accounts-validation\\cri-red-integration-attempt-1.log",
+      "summary": [
+        "stdout: ✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (437.3388ms)"
+      ]
+    },
+    {
+      "phase": "cri-red-e2e",
+      "args": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/e2e/area-covers.spec.ts"
+      ],
+      "snapshot": "89febb880b7f469445e0bcf3a0ee95aa3f3bcf7d1fcdaf9305e2c8e13e391519",
+      "startedUtc": "2026-10-16T02:44:59.461Z",
+      "endedUtc": "2026-10-16T02:45:16.917Z",
+      "exitCode": 1,
+      "durationMs": 17334,
+      "logPath": ".accounts-validation\\cri-red-e2e-attempt-1.log",
+      "summary": [
+        "stdout:     Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed",
+        "stdout:   1 failed"
+      ]
+    },
+    {
+      "phase": "cri-green-integration",
+      "args": [
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/integration/area-covers.test.ts",
+        "tests/integration/area-cover-provider.test.ts",
+        "tests/integration/area-cover-http.test.ts"
+      ],
+      "snapshot": "1c49bef280aa7053948c2ad81155fbe1640a608a215692f3de5b5189836f9eea",
+      "startedUtc": "2026-10-16T02:47:05.384Z",
+      "endedUtc": "2026-10-16T02:47:16.039Z",
+      "exitCode": 0,
+      "durationMs": 10521,
+      "logPath": ".accounts-validation\\cri-green-integration-attempt-1.log",
+      "summary": [
+        "stdout: ✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (393.6836ms)"
+      ]
+    },
+    {
+      "phase": "cri-green-e2e",
+      "args": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/e2e/area-covers.spec.ts"
+      ],
+      "snapshot": "1c49bef280aa7053948c2ad81155fbe1640a608a215692f3de5b5189836f9eea",
+      "startedUtc": "2026-10-16T02:47:27.831Z",
+      "endedUtc": "2026-10-16T02:47:41.795Z",
+      "exitCode": 0,
+      "durationMs": 13824,
+      "logPath": ".accounts-validation\\cri-green-e2e-attempt-1.log",
+      "summary": [
+        "stdout:   5 passed (13.1s)"
+      ]
+    },
+    {
+      "phase": "adapter-green-e2e",
+      "args": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "tests/e2e/area-covers.spec.ts"
+      ],
+      "snapshot": "2f4366f07153d9c2c5961798d22c734aa7708b49b8078c425b2bbbe310906ad5",
+      "startedUtc": "2026-10-16T03:24:18.598Z",
+      "endedUtc": "2026-10-16T03:24:34.143Z",
+      "exitCode": 0,
+      "durationMs": 15397,
+      "logPath": ".accounts-validation\\adapter-green-e2e-attempt-1.log",
+      "summary": [
+        "stdout:   5 passed (14.7s)"
+      ]
+    }
+  ]
+}

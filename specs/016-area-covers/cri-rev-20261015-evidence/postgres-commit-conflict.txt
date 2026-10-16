@@ -1,0 +1,5 @@
+Accounts PostgreSQL started on loopback.
+IMP-006 schema owned by this run: imp006_test_0336751bf10f4745a81c9975c6f50329
+{"iteration":0,"outcomes":[{"status":"rejected","error":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}},{"status":"fulfilled"}]}
+{"iteration":1,"outcomes":[{"status":"fulfilled"},{"status":"rejected","error":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}]}
+{"iteration":2,"outcomes":[{"status":"fulfilled"},{"status":"rejected","error":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}]}
