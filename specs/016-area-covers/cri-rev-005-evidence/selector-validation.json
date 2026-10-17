@@ -1,0 +1,96 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "capturedUtc": "2026-10-17T19:24:23.506896+00:00",
+  "ciFailure": {
+    "sha": "2e4576b0dc008ed293d0cbabc3531e8d79dd6083",
+    "run": 39060376048,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39060376048",
+    "result": "FAIL Ihfr5/6; global land-use label resolved two select elements",
+    "rawEvidence": "ci-selector-field-failure.txt"
+  },
+  "candidateTestSha256": "7869db1747736d847a83a1b1672aa544a1249f1200dfe1ed18bf6837c79b5b7c",
+  "previousTestSha256": "8b912f26d4488a1eaf0e4efedb505701e9e95e111d5506cb2d89d43012be7863",
+  "scope": "OWNER/ADMIN locators scoped to current accessible reading/management regions; dialog remains page role; all assertions, HTTP statuses, scores, idempotency, focus, keyboard, viewport, timeouts and retries preserved",
+  "totalExpectCallsUnchanged": 71,
+  "productionServiceUnchangedSince": "bf7a2b1ec3dc3026b99c0cb8b2f26e5085ec7bfb",
+  "qualityChecks": [
+    {
+      "command": "npx tsc --noEmit",
+      "result": "PASS"
+    },
+    {
+      "command": "npx eslint tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "result": "PASS"
+    }
+  ],
+  "officialCommand": "./scripts/rc-review-validation.ps1 -Gates Ihfr,SchemaAudit",
+  "candidateValidation": [
+    {
+      "worktree": "source",
+      "headDuringValidation": "1d9fb680985fa23c7d3a19a40ee102f72d73a8fb",
+      "records": [
+        {
+          "gate": "Ihfr",
+          "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+          "snapshot": "f9c6648cab4132b1a667b518a3a513ab245853adff3714d369b16046dedaa6eb",
+          "startedUtc": "2026-10-17T19:17:18.555Z",
+          "endedUtc": "2026-10-17T19:19:25.761Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "ihfr-1792264638555.log",
+          "logSha256": "2a5f4d5d8c085f14ef303ce7898161b04f7217db4cbbfa8e6726f7e5ec7e9975",
+          "summary": "6/6 PASS"
+        },
+        {
+          "gate": "SchemaAudit",
+          "command": "npm run test:ihfr:audit:assert-zero",
+          "snapshot": "f9c6648cab4132b1a667b518a3a513ab245853adff3714d369b16046dedaa6eb",
+          "startedUtc": "2026-10-17T19:19:26.156Z",
+          "endedUtc": "2026-10-17T19:19:26.806Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "schemaaudit-1792264766156.log",
+          "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+          "summary": "0 managed schemas"
+        }
+      ]
+    },
+    {
+      "worktree": "rc",
+      "headDuringValidation": "2e4576b0dc008ed293d0cbabc3531e8d79dd6083",
+      "records": [
+        {
+          "gate": "Ihfr",
+          "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T19:20:03.934Z",
+          "endedUtc": "2026-10-17T19:21:50.910Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "ihfr-1792264803934.log",
+          "logSha256": "88b87227b1b6f9f966d4c0107a6b1d441f8645ba92bb1162b7223b5aff3c71ce",
+          "summary": "6/6 PASS"
+        },
+        {
+          "gate": "SchemaAudit",
+          "command": "npm run test:ihfr:audit:assert-zero",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T19:21:51.406Z",
+          "endedUtc": "2026-10-17T19:21:52.078Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "schemaaudit-1792264911405.log",
+          "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+          "summary": "0 managed schemas"
+        }
+      ]
+    }
+  ],
+  "rcOriginalRestoredByteForByte": true,
+  "environment": "Node24.19; owned loopback PostgreSQL17; no production data; cluster STOPPED by runner finally",
+  "finalPublicationChecks": "New source/audit/RC/validation SHAs require own GitHub Actions; final receipt is in stable PR comments linked by publication.json."
+}
