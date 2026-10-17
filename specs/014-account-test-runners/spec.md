@@ -2,7 +2,7 @@
 
 **Feature Branch**: `014-account-test-runners`
 **Created**: 2026-10-10
-**Status**: Especificada; correção focal autorizada pelo pedido v1.0
+**Status**: Implementada e revalidada localmente; não substitui os aceites externos de contas
 **Input**: Reexecutar contas/exclusão com evidência real e corrigir regressões materiais.
 
 ## User Scenarios & Testing *(mandatory)*
@@ -35,6 +35,13 @@ com skip dentro do teste. Guards, assertions e domínio ficam intactos.
 - **SC-002**: nenhum guard/assertion é enfraquecido e nenhum envio real ocorre.
 
 ## Proveniência e limites
+
+Atualização documental na auditoria de 2026-10-10: o status anterior
+“Especificada; correção focal autorizada pelo pedido v1.0” era o checkpoint de
+planejamento e ficou desatualizado após o commit `857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a`.
+EVIDENCIA_IMPLEMENTACAO: seis tarefas concluídas; regressão geral, HTTPS,
+exclusão dedicada e bootstrap reexecutados na branch audit/cri-local-20261010.
+Não altera a origem da autorização nem fecha Gate B012 ou aceite humano013.
 
 EVIDENCIA_IMPLEMENTACAO: beba96f seleciona account-deletion.spec.ts na suíte geral,
 mas esses casos exigem DELETION_E2E_IDS/PASSWORD/BASE_URL do runner dedicado.

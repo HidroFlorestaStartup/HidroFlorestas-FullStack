@@ -2,7 +2,7 @@
 
 **Feature Branch**: `015-environmental-drafts`
 **Created**: 2026-10-10
-**Status**: Remediação de hidratação validada localmente; integração/revisão pendentes
+**Status**: Implementada e remediação de hidratação revalidada localmente; integração, revisão humana e homologação externa pendentes
 **Input**: Aprovação explícita do recorte pessoal e política de descarte/retenção nesta conversa.
 
 ## User Scenarios & Testing *(mandatory)*
@@ -76,8 +76,12 @@ conjunto ambiental confirmado e operação idempotente já existentes.
 ## Proveniência e limites
 
 DECISAO_CONFIRMADA: usuário respondeu “1 Aprovo, masdeixe essa decisao e implementacao documentadas” à pergunta completa de PD-CRI-005/006 em 2026-10-10. [Registro](../../docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md).
-CRI-T011/012/013; CF-PRD-FR-009, IMP-005 e spec 013 são referências do domínio
-implementado. Fora: rascunho de criação da coleta, autosave, colaboração,
+CRI-T011/012/013; CF-PRD-FR-007, IMP-005 e spec 013 são referências do domínio
+implementado. INFERENCIA de rastreabilidade: o recorte parcial aprovado se liga
+ao registro de dados ambientais da coleta (CF-PRD-FR-007); não aprova a taxonomia
+científica candidata do PRD. CF-PRD-FR-009 trata da consulta do resultado IHFR,
+cuja fronteira é preservada por FR-007, e não é o requisito principal de drafts.
+Fora: rascunho de criação da coleta, autosave, colaboração,
 offline, galeria e qualquer alteração de regra científica IHFR.
 
 DECISAO_CONFIRMADA focal (pedido do usuário, 2026-10-13): corrigir perda de seleção
@@ -85,3 +89,13 @@ durante hidratação lenta, com planejamento/commit, RED determinístico, corre�
 de interface e GREEN validando primeiro payload/retomada. Merges internos das
 branches de revisão autorizados para sincronizar a pilha; main/development,
 deploy, migrations hospedadas e recursos reais permanecem fora do escopo.
+
+### Correção documental na auditoria de 2026-10-10
+
+O status anterior “Especificada; decisão material confirmada” ficou desatualizado
+após `45da350c34f873619a81bb5b3022bf97a1d1bc7c` e as 18 tarefas concluídas.
+EVIDENCIA_IMPLEMENTACAO: revalidação local do corte entregue, sem nova aprovação
+de produto ou científica. A referência anterior a CF-PRD-FR-009 como domínio
+principal foi corrigida consultando o título e a formulação de CF-PRD-FR-007 em
+[requirements.md](../../docs/code-first-prd/specifications/requirements.md).
+O catálogo histórico do PRD não foi reescrito como evidência de runtime atual.

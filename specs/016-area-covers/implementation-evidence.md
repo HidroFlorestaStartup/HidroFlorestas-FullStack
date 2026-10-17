@@ -23,6 +23,15 @@ antes de futura integração autorizada; nenhum merge/deploy nesta execução.
 As seções seguintes preservam o registro histórico de 2026-10-10, inclusive
 afirmações cuja errata pertence à auditoria posterior da pilha.
 
+## Revisão focal posterior — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: nova regressão completa no final5f36eb7e, sem alteração
+funcional. A equivalência histórica 7f→5f é NÃO VERIFICADA, conforme errata abaixo.
+[Relatório](../../docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[manifesto](../../docs/reports/audits/2026-10-10-cri-local-manifest.json) e
+[comandos/UTC/HEAD/fingerprint](../../docs/reports/audits/2026-10-10-cri-local-validation.json).
+Provider/HTTP fake não é Cloudinary real; registros seguintes são históricos.
+
 G3/G4 PASS local. DECISAO_CONFIRMADA PD-CRI-007/008/009: usuário desta conversa
 aprovou capa privada por área, roles contextuais, limites e cleanup próprio,
 exigindo documentação. [Proveniência](../../docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md).
@@ -54,15 +63,24 @@ Documentos não integram fingerprint; SHA Git normalizado é outro identificador
 | `npm run test:e2e:https` | 2026-10-10T18:18:21.222Z → 2026-10-10T18:18:48.836Z | 27.614s | PASS; exit 0; 2 |
 | `npm run test:ihfr:audit:assert-zero` | 2026-10-10T18:18:49.149Z → 2026-10-10T18:18:49.658Z | 0.509s | PASS; exit 0; zero schemas candidatos |
 
-Unit roda 291 casos Node e 17 Mail. R1 reexecuta os mesmos Mail; não somar duas
-vezes. Repetições focais/regressões de cortes anteriores também não aumentam um
+Unit roda 291 casos Node e 17 Mail. R1 reexecuta 14 casos PostgreSQL de Integration
+e 3 SMTP locais de Mail; não somar novamente. Repetições focais/regressões de cortes anteriores também não aumentam um
 total exclusivo. Lint: warnings anteriores em page.tsx, user-profile e white-box.
+
+Errata documental de 2026-10-10, auditoria posterior: o texto original
+“R1 reexecuta os mesmos Mail” descrevia incorretamente o overlap. O seletor de
+package.json usa integration/mail-outbox.test.ts e mail/mail-smtp.test.ts com
+test-name-pattern=R1. As contagens, snapshots e resultados históricos acima e no
+JSON permanecem intactos; a nova execução confirmou a composição 14 + 3.
 
 ## Corte final e utilitários
 
-`5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d` difere do
-corte completo somente pela assertion de WebP animado e pela exceção .gitignore
-para o exemplo sem credenciais; nenhum byte de implementação foi alterado.
+O registro anterior afirmava que `5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d`
+diferia do corte completo somente pela assertion de WebP animado e pela exceção
+.gitignore para o exemplo sem credenciais, sem alteração de implementação.
+Errata da auditoria posterior: essa equivalência é NÃO VERIFICADA; sem o manifesto
+original de 7f540ba4, a reversão limitada às duas mudanças não reproduziu o hash.
+Os resultados históricos seguintes continuam associados aos snapshots originais.
 Parser/decoder: 2 PASS incluindo animação real de duas páginas. Preset offline:
 PASS, providerCalls=0. Cleanup dry-run: PASS, eligible=0/providerCalls=0; não é
 prova de delete real. Exclusão dedicada: 3 PASS, UTC18:20:22.316–18:20:31.313.

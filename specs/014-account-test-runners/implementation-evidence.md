@@ -1,5 +1,13 @@
 # Evidências de implementação — 2026-10-10
 
+## Revisão focal posterior — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: 014 revalidada na regressão final5f36eb7e, com E2E67,
+HTTPS2, exclusão3, Bootstrap14 e contratos de checksum presentes na Unit291.
+[Relatório e limites novos](../../docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md)
+e [comandos/UTC/HEAD/fingerprint](../../docs/reports/audits/2026-10-10-cri-local-validation.json).
+Nenhuma alteração funcional nesta rodada; registros seguintes são históricos.
+
 G3/G4 PASS local. Seleção de exclusão corrigida sem alterar suas assertions;
 preparador aceita representação LF/CRLF com UTF-8 íntegro, mantendo SQL/checksums
 históricos e guards de ownership. Setup aplicou somente migration 12 pendente.

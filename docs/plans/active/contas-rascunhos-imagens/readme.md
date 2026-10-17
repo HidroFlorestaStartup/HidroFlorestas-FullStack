@@ -1,5 +1,13 @@
 # Contas, rascunhos ambientais e imagens de áreas
 
+## Revisão focal posterior — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: oito commits preservados, correções documentais focais
+e nova regressão completa no corte final5f36eb7e. RECOMENDACAO: APTO COM
+RESSALVAS; equivalência histórica 7f→5f não demonstrada, homologação externa e
+aceites humanos pendentes. Consultar primeiro o [relatório focal](../../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md)
+e a [matriz vigente](matriz-de-estado.md); seções seguintes preservam a entrega anterior.
+
 ## Estado corrente após entrega local — 2026-10-10
 
 EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
