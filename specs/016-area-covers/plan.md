@@ -373,15 +373,28 @@ não mudar timeouts, retries ou dados/guardas científicos. A seleção do dialo
 continua por role visível. RED do CI preservado; executar os seis cenários e
 typecheck/lint do teste antes de propagar. Nenhuma alteração de produção adicional.
 
-### Conclus?o focal dos seletores
+### Conclusão focal dos seletores
 
-Planejamento complementar registrado em 1d9fb68 antes do ajuste. O cen?rio
-OWNER/ADMIN usa agora as regi?es ARIA exatas de leitura e gerenciamento para
-todos os seus campos/mensagens/a??es; dialog continua por role na p?gina.
-Asser??es e resultados esperados foram preservados. Typecheck/lint PASS;
+Planejamento complementar registrado em 1d9fb68 antes do ajuste. O cenário
+OWNER/ADMIN usa agora as regiões ARIA exatas de leitura e gerenciamento para
+todos os seus campos/mensagens/ações; dialog continua por role na página.
+Asserções e resultados esperados foram preservados. Typecheck/lint PASS;
 runner oficial Ihfr6/6 e SchemaAudit0 PASS na origem e na RC cumulativa,
-19:17?19:21Z. RC restaurada byte a byte ap?s a valida??o tempor?ria do candidato.
-Nenhuma mudan?a adicional no servi?o ou nas regras IHFR. Recibo focal em
+19:17–19:21Z. RC restaurada byte a byte após a validação temporária do candidato.
+Nenhuma mudança adicional no serviço ou nas regras IHFR. Recibo focal em
 cri-rev-005-evidence/selector-validation.json; FAIL39060376048 preservado.
-Os pr?ximos HEADs exigem CI pr?prio e seu resultado final ? registrado nos
-coment?rios est?veis dos PRs; aprova??o humana permanece pendente.
+Os próximos HEADs exigem CI próprio e seu resultado final é registrado nos
+comentários estáveis dos PRs; aprovação humana permanece pendente.
+
+### Checkpoint de CI e correção da codificação documental
+
+Origem9412e9a, auditoria806c87e, RC9f89a2d e validação4b33a34 têm15 gates PASS
+em seus próprios SHAs; auditoria na segunda tentativa, demais na primeira.
+A primeira tentativa da auditoria falhou Ihfr0/6 com controles ausentes, causa
+INCONCLUSIVA; raw e recibo de ambas as tentativas preservados, sem inferir
+correção de produto a partir do rerun. Ver ci-published-checkpoint.json.
+A conferência do recibo detectou perda de acentos somente nos trechos
+portugueses acrescentados no fechamento9412e9a por pipe PowerShell/Python.
+Corrigir esses trechos em UTF-8, registrar o checkpoint e propagar documentação;
+nenhum arquivo funcional deve mudar. Os próximos quatro checks serão novamente
+acompanhados nos comentários ligados na evidência, sem herdar SUCCESS do pai.
