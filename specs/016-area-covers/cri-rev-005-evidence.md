@@ -163,3 +163,16 @@ o registro inclui separadamente o hash do OpenAPI. Logs completos sanitizados
 permanecem no coletor local; o CI preserva seus próprios artefatos por SHA.
 PostgreSQL restaurado STOPPED, dados sintéticos preservados.
 T041–T044 executadas; T045 segue aberta até publicação, sincronização e re-review.
+
+## FAIL material do primeiro CI publicado
+
+Origem publicada `60eaa4224c7cbd7d28a591e8a295b31022e4859a`,
+[run39056678227](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39056678227):
+RegressionSetup e Unit PASS; Integration 214/215, FAIL no cenário de quota ativa
+simultânea (`area-covers.test.ts:57`): INTERNAL_ERROR, esperado RATE_LIMITED,
+819.5017ms. Artefato `12109288704` baixado para inspeção. Nenhuma relação causal
+com a mudança contratual foi demonstrada; o erro original é sanitizado pelo
+serviço e ainda precisa ser capturado. A nova paridade Ajv passou no Unit do CI.
+Auditoria publicada `10980f13fb52877972fbcec25aff462affdc0c44`; RC local
+`06842809377343473bfa8c82432af3224160552d` ainda não publicada. A propagação da
+RC está suspensa para diagnóstico T046/T047; os PASSs locais não substituem CI.

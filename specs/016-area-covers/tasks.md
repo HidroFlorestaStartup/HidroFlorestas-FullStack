@@ -92,3 +92,8 @@ PASSs locais são históricos; os novos HEADs exigem checks próprios.
 
 Sequência: T041→T042(RED)→T043(GREEN)→T044→T045. O plano atual é um pacote
 candidato; não marcar tarefas como executadas antes das evidências no checkout.
+
+### Convergência por FAIL material do CI
+
+- [ ] T046 Diagnosticar a run39056678227 (Integration214/215, quota ativa INTERNAL_ERROR) e registrar formato seguro do erro original e reprodução no PostgreSQL sintético em specs/016-area-covers/cri-rev-005-evidence.md; precede a continuação de T045.
+- [ ] T047 Condicionado a causa demonstrada por T046: acrescentar RED determinístico pertinente em tests/integration/area-cover-transactions.test.ts e ajustar minimamente src/app/api/server/images/service.ts, mantendo contrato, teto3, timeouts, quotas e I/O; repetir GREEN/gates e T045. Se não houver ajuste justificável, registrar achado e limite sem inventar correção.

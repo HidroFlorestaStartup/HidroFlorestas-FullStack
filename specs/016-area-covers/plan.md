@@ -285,3 +285,18 @@ Nova execução do mesmo gate passou sem mudanças; erro idêntico está documen
 desde 13/10. Não se declara a intermitência corrigida. Detalhes/comandos/hashes
 na evidência focal. Estado EM_ANDAMENTO para T045: publicação autorizada na
 origem, merges cumulativos, CI dos novos HEADs e solicitação de revisão humana.
+
+### Reabertura após CI da correção contratual
+
+Run `39056678227`, origem `60eaa42`: Unit PASS, Integration 214/215, corrida de
+quota ativa rejeitou com INTERNAL_ERROR em vez de RATE_LIMITED. O teste e o
+serviço são idênticos aos anteriores ao patch; os PASSs locais não explicam o
+FAIL remoto. Não repetir até obter verde nem atribuir causa ambiental sem prova.
+T045 tem publicação da RC suspensa enquanto T046 diagnostica o erro original,
+antes da sanitização, em PostgreSQL sintético e com somente códigos/kinds seguros.
+Se houver incompatibilidade real comprovada, T047 fará o ajuste mínimo permitido
+pelo mandato atual, com RED/GREEN e nova regressão, sem mudar quota/asserts/teto3,
+timeouts, sem reintroduzir rede em transação e sem tocar regras científicas.
+O runner cumulativo da RC já iniciado pode concluir no snapshot anterior; seus
+resultados serão históricos caso haja ajuste adicional. Nenhum arquivo da RC
+será alterado enquanto essa coleta estiver em execução.
