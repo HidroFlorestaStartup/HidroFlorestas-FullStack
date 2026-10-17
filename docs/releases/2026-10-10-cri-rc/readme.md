@@ -1,5 +1,15 @@
 # Release Candidate CRI — 10/10/2026
 
+Atualização CRI-REV-005 — 17/10/2026: contrato da listagem, exemplo e modelo
+documental reconciliados com o serializer real; RED/GREEN Ajv, testes de
+privacidade e distinção do detalhe registrados. O CI revelou esgotamento de
+retries sob contenção, tratado por recuo limitado sem aumentar teto/quotas;
+o alvo ambíguo de um teste IHFR foi corrigido sem alterar ciência.
+[Evidências, arquivos, commits, gates e pedidos de revisão](../../../specs/016-area-covers/cri-rev-005-evidence.md).
+Os HEADs/checks finais são conferidos nos comentários de PR ligados nesse recibo.
+Aprovação humana e homologações reais permanecem pendentes; não é GO de integração
+ou produção. Os parágrafos seguintes preservam os snapshots anteriores à correção.
+
 Revisão independente pós-correções de 17/10/2026:
 [análise técnica e novo achado CRI-REV-005](2026-10-17-analise-pos-correcoes-thalles.md)
 e [guia cirúrgico de correção/revisão final](2026-10-17-guia-correcao-e-revisao-final.md).
