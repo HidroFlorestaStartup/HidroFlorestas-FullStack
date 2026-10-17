@@ -203,3 +203,12 @@ CRI-T011/T012/T013 e DRAFT-FR-001–006: aprovação PD-CRI-005/006 →
 [spec 015](../../specs/015-environmental-drafts/spec.md) → [tarefas](../../specs/015-environmental-drafts/tasks.md) →
 [implementação/validação](../../specs/015-environmental-drafts/implementation-evidence.md).
 Sem expiração; ciência preservada. Não fecha gates remotos/humanos 012/013.
+
+
+## Recorte 016 — 2026-10-10
+
+CRI-T014/T015/T016 e IMAGE-FR-001–005: PD-CRI007/008/009 desta conversa →
+[spec016](../../specs/016-area-covers/spec.md) → [20 tarefas](../../specs/016-area-covers/tasks.md) →
+[implementação/testes](../../specs/016-area-covers/implementation-evidence.md).
+CRI-T017/T018 ligam regressão/handoff; mail/012/013 preservados e revalidados.
+Não fecha PD-CRI010, Gate B012, aceite013 ou validação científica IHFR.

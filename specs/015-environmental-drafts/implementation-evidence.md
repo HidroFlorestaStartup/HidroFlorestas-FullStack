@@ -55,3 +55,12 @@ Drafts são pessoais, sem expiração automática/ledger de descartados; consumo
 exclusão própria são transacionais. Medições/IHFR continuam imutáveis e com suas
 classificações experimentais. Gate B remoto 012 e aceite humano 013 permanecem
 pendentes; a aprovação de escopo não os encerra.
+
+
+## Regressão integrada CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: suites pertinentes desta feature passaram novamente
+na regressão integrada após 014/015/016. [Comandos, UTC, snapshots e resultados](../016-area-covers/implementation-evidence.md).
+O corte anterior e seus resultados permanecem históricos. Transporte sintético
+e provedor fake não fecham Gate B012/aceite humano013 ou smoke Cloudinary real.
+Não houve operação remota nesta execução.

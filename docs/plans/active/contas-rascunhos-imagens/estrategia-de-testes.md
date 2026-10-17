@@ -1,5 +1,15 @@
 # Estratégia de testes futuros
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
 ## Reconciliação de 2026-10-10
 
 Execuções atuais e históricas são separadas pela matriz única. O runner real inclui test:mail:unit e test:mail:r1; Unit já inclui Mail, portanto não somar Mail novamente ao total. PostgreSQL local próprio 55427 foi encontrado via harness; ausência no PATH não impediu validação. Nenhum SMTP/upload remoto será executado.

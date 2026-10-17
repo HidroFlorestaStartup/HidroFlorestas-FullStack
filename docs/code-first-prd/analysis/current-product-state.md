@@ -1,5 +1,9 @@
 # Estado atual do produto
 
+## Estado corrente do recorte CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: as funcionalidades aprovadas 014/015/016 têm evidências locais em runtime. O baseline anterior abaixo permanece histórico e não descreve sua implementação atual. Consulte a [matriz corrente](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Aceites remotos e humanos permanecem pendentes.
+
 - **Base:** commit `2fe5541c068903fb512474d90f9b2c452c1143b2`
 - **Método:** inspeção estática nas fontes permitidas
 - **Estado do documento:** `EM_REVISAO`
@@ -140,3 +144,10 @@ Riscos descrevem condições atuais ou possíveis efeitos; não constituem requi
 ## Entrega de rascunhos 015 — 2026-10-10
 
 EVIDENCIA_IMPLEMENTACAO: spec 015 entrega rascunho ambiental pessoal de coleta confirmada, separado da medição imutável; salvar/retomar/OCC/descarte, consumo transacional e exclusão pessoal. Aprovação do usuário 2026-10-10 registrada; sem expiração. Ver specs/015-environmental-drafts/ e runbook de rascunhos. Capas 016 seguem próxima entrega; gates remotos 012/013 continuam pendentes.
+
+
+## Entrega integrada CRI 014/015/016 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: runners focais corrigidos; drafts pessoais e uma capa
+privada por área entregues e validados localmente após aprovação do usuário.
+Não constituem aprovação global do PRD. [Estado/requisitos/pendências](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).

@@ -29,3 +29,12 @@ trabalho funcional restante neste recorte. Revisão P2/P3 resolvida, sem P1;
 diff/links/escopo revistos. Gate B remoto da 012 e aceite humano da 013 continuam
 pendentes; aprovação local não os fecha. Regressão E2E/HTTPS antecede somente o
 reforço do helper UTF-8, testado posteriormente em Unit/Bootstrap.
+
+
+## Regressão integrada CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: suites pertinentes desta feature passaram novamente
+na regressão integrada após 014/015/016. [Comandos, UTC, snapshots e resultados](../016-area-covers/implementation-evidence.md).
+O corte anterior e seus resultados permanecem históricos. Transporte sintético
+e provedor fake não fecham Gate B012/aceite humano013 ou smoke Cloudinary real.
+Não houve operação remota nesta execução.
