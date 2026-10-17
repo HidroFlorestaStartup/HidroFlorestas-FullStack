@@ -348,29 +348,60 @@ dados reais, migration remota ou operação Neon/Vercel/Cloudinary. Homologaçã
 GateB012, aceite humano013 e operador continuam pendentes. O IHFR conserva as
 quatro qualificações experimentais já registradas, sem validação científica nova.
 
-### Converg?ncia final do teste de formul?rio
+### Convergência final do teste de formulário
 
-O fechamento anterior n?o encerrou o acompanhamento: a run
+O fechamento anterior não encerrou o acompanhamento: a run
 [39060376048](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39060376048),
 HEAD RC `2e4576b`, falhou em Ihfr5/6 no seletor global de uso da terra, que
 encontrou dois selects. A mensagem escopada passou, mas o primeiro ajuste
-de seletor era incompleto. Integration218/E2E72 e os demais gates at? Deletion
-passaram. Origem `aa9d2ce`, auditoria `97957a0` e valida??o `7e55d0f` conclu?ram
-SUCCESS em seus pr?prios SHAs. [Falha preservada](cri-rev-005-evidence/ci-selector-field-failure.txt).
+de seletor era incompleto. Integration218/E2E72 e os demais gates até Deletion
+passaram. Origem `aa9d2ce`, auditoria `97957a0` e validação `7e55d0f` concluíram
+SUCCESS em seus próprios SHAs. [Falha preservada](cri-rev-005-evidence/ci-selector-field-failure.txt).
 T048/T045 foram reabertas em `1d9fb68` antes de modificar o teste.
 
-O cen?rio OWNER/ADMIN agora delimita todos os campos, mensagens, status e a??es
-?s regi?es ARIA vis?veis de leitura/gerenciamento com nomes exatos. Dialog
-continua selecionado por role. Valores, HTTP, scores, idempot?ncia, foco, teclado,
-viewport e todas as asser??es foram mantidos; sem aumentar timeout/retry.
+O cenário OWNER/ADMIN agora delimita todos os campos, mensagens, status e ações
+às regiões ARIA visíveis de leitura/gerenciamento com nomes exatos. Dialog
+continua selecionado por role. Valores, HTTP, scores, idempotência, foco, teclado,
+viewport e todas as asserções foram mantidos; sem aumentar timeout/retry.
 O mesmo candidato passou **Ihfr6/6 + SchemaAudit0 na origem e na RC**, pelo runner
-oficial, 19:17:18.555?19:21:52.078Z. Typecheck/lint PASS. Na RC, c?pia tempor?ria
+oficial, 19:17:18.555–19:21:52.078Z. Typecheck/lint PASS. Na RC, cópia temporária
 restaurada byte a byte e worktree limpa.
 [Hashes, comandos e registros dos dois snapshots](cri-rev-005-evidence/selector-validation.json).
-Servi?o permanece exatamente em `bf7a2b1`; nenhuma regra cient?fica mudou.
+Serviço permanece exatamente em `bf7a2b1`; nenhuma regra científica mudou.
 
-O recibo de publica??o preserva o checkpoint anterior e acrescenta esse FAIL e
-a revalida??o focal. A sincroniza??o segue origem?auditoria?RC?valida??o, por
-merge commits. Os quatro checks dos novos HEADs s?o acompanhados at? o fim;
-seus SHAs, resultados e pedidos de re-review s?o atualizados nos quatro
-coment?rios est?veis ligados acima. Nenhum SUCCESS anterior substitui esses checks.
+O recibo de publicação preserva o checkpoint anterior e acrescenta esse FAIL e
+a revalidação focal. A sincronização segue origem→auditoria→RC→validação, por
+merge commits. Os checks dos novos HEADs são acompanhados até o fim nos
+comentários estáveis ligados acima; nenhum SUCCESS anterior os substitui.
+
+### Checkpoint dos quatro CI e ocorrência inconclusiva
+
+Conferência em 17/10 às19:54Z: os quatro HEADs abaixo concluíram seus próprios
+**15 gates PASS**, confirmados nos artefatos, sem somar snapshots diferentes:
+
+| PR | HEAD | Actions | Tentativa aprovada |
+|---|---|---|---|
+|4|9412e9a0d2c56ad1f2feba86bb7326d454d8fda0|[39062361014](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39062361014)|1|
+|5|806c87ef20676e78886d69cc4df71d96d2fdf784|[39062363513](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39062363513/attempts/2)|2|
+|6|9f89a2def8c26183375560c9d829ce0961cc833c|[39062367739](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39062367739)|1|
+|7|4b33a34a9576ea7186993324a47a0ba8a25e24df|[39062371460](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39062371460)|1|
+
+Unit296+Mail17, Integration218, Migration37, Contract6, R117, Build, Typecheck,
+Lint (0 erros/3 avisos anteriores), E2E72, Https2, Deletion3, Ihfr6, Bootstrap14,
+SchemaAudit0. [Registros, tempos, hashes dos logs e recibos](cri-rev-005-evidence/ci-published-checkpoint.json).
+
+A primeira tentativa do PR5 passou os12 gates até Deletion e falhou **Ihfr0/6**:
+controles ausentes em todos os cenários. Causa **INCONCLUSIVA**; o artefato não
+incluiu a página/error-context ou a saída do servidor, portanto não se atribui
+causa a produto, seletores ou infraestrutura. A reprodução controlada do mesmo
+SHA, sem mudar código/assertions/timeouts/guards, passou todos15. Isso não
+explica a primeira falha nem a apaga. [Saída preservada](cri-rev-005-evidence/ci-audit-attempt1-failure.txt)
+e [recibo durável com hashes e limites](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5#issuecomment-6239782988).
+Ocorrência encaminhada a Pedro/Luciano; aprovação e causa continuam pendentes.
+
+A leitura de conferência detectou perda de acentuação em três trechos de
+fechamento inseridos via pipe PowerShell/Python; corrigidos para UTF-8 neste
+recibo. Nenhum input funcional foi alterado. Este novo commit documental e suas
+sincronizações recebem checks próprios, acompanhados até a conclusão e
+registrados nos quatro comentários estáveis acima. O checkpoint desta tabela
+é histórico e não atribui seu SUCCESS aos próximos SHAs.
