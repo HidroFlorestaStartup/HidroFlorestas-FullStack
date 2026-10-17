@@ -228,3 +228,17 @@ quota não é apresentado como correção desse erro. A publicação nos ramos d
 revisão autorizados pode prosseguir para coletar CI e avaliação independente,
 mantendo esse achado explícito. Isso não declara a RC pronta para integração
 em development/main nem substitui decisão humana sobre qualquer risco residual.
+
+### Nova captura do CI: teto de retry atingido com conflitos reconhecidos
+
+[Run39058159071](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39058159071),
+origem8f1f927, artefato12110417253: Integration214/215; quota horária recusou
+INTERNAL_ERROR. A instrumentação preservou um DriverAdapterError/40001 seguido
+de dois P2034/40001; todos com kind TransactionWriteConflict. Portanto o código
+reconhece os formatos, mas atinge o teto3. Não se trata da omissão de adapter
+anterior nem de timeout demonstrado (794.1628ms no cenário).
+
+Planejamento de T047 atualizado antes de código: introduzir recuo assíncrono
+limitado entre os mesmos retries reconhecidos, preservando teto e fronteiras.
+INFERENCIA sobre contenção foi registrada no plano; não se muda contrato de
+quota nem se inventa RATE_LIMITED quando o banco não confirma esse estado.
