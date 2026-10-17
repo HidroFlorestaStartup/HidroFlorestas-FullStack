@@ -138,3 +138,27 @@ são estados independentes. Aprovação humana permanece pendente até novo pare
 Fora do recorte: novas migrations, outros fluxos, ciência, produção, Cloudinary
 real, mudanças de autorização, redução de guards/assertions/timeouts e integração
 nas principais. As tarefas concluídas T001–T025 permanecem históricas.
+
+## Correção CRI-REV-005 — paridade de área (2026-10-17)
+
+**Achado independente:** a listagem da Spec003 serializa
+`cover: {revision,hasImage,featureEnabled}` mesmo quando não há capa, mas
+`AreaSummary` do OpenAPI fechado não reconhece a propriedade. Esta correção
+reconcilia **contrato e documentação**, sem mudar o payload já consumido pela UI.
+
+- **FR-014 (interface da Spec003):** cada item da listagem autenticada deve
+  conter `cover` com `revision >= 0`, `hasImage:boolean` e
+  `featureEnabled:boolean`, sem expor `assetId`, public ID, URL, bytes ou
+  configuração do provedor. O schema fechado `AreaSummary` e os exemplos da
+  Spec003 devem refletir essa projeção real. `AreaDetail` continua sem exigência
+  de `cover`, pois é outra projeção; TypeScript permite `cover?` na interface
+  compartilhada, mas a **listagem** o exige.
+- **SC-009:** uma saída de `serializeAreaSummary()` validada com Ajv2020 contra
+  `AreaListResponse` passa com capa/sem capa, flag ligada/desligada e exemplo
+  OpenAPI. Propriedades extras, sobretudo privadas, são rejeitadas por schemas
+  fechados. Teste RED pré-YAML e GREEN pós-correção devem ser registrados.
+
+Fonte: relatório independente
+[publicado na RC em 832560a](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/832560ac0e2b9a50671b871f077472685b1af963/docs/releases/2026-10-10-cri-rc/2026-10-17-analise-pos-correcoes-thalles.md).
+Nenhuma alteração de banco, autorização, ciência ou comportamento funcional é
+introduzida por este requisito contratual; a revisão e aprovação seguem humanas.
