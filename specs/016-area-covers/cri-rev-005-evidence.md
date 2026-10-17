@@ -88,3 +88,78 @@ nenhuma mudança ao schema do detalhe, serializer, serviço ou comportamento.
 O teste passa a validar também esses exemplos contra os respectivos schemas.
 A frase sobre valores opcionais do modelo foi delimitada aos campos textuais
 anuláveis para não contradizer a projeção compartilhada `cover?`.
+
+## Revisão adversarial dos campos e fronteiras
+
+Revisão estática conforme o guia de 17/10, complementada pelos gates abaixo.
+
+| Campo/fronteira | Rastro e conclusão |
+|---|---|
+| `cover` e opcionalidade | `area.type.ts` compartilha o tipo opcional com detalhe; `areas.service.ts:list` sempre inclui a relação; serializer usa a presença da chave; OpenAPI exige somente na lista. Teste real de detalhe sem a relação permanece válido. |
+| `revision` | Prisma Int/default 0; serializer preserva revisão ou usa 0 sem registro; schema exige inteiro >=0; teste recusa negativo/fracionário/ausente. UI usa revisão para identificar a prévia, sem alterar o banco. |
+| `hasImage` | Derivado exclusivamente de `Boolean(assetId)`; não é disponibilidade nem autorização. Capa ausente retorna false; flag desligada com capa conserva true. |
+| `featureEnabled` | `settings.ts` valida offline e falha fechado; listagem avalia uma vez por resposta, sem provider/rede. Teste cobre true/false; UI só busca bytes com hasImage && featureEnabled. |
+| Privacidade | Serializer possui allowlist explícita; teste injeta ID interno, URL e configuração sintéticos e exige somente sete chaves da área/três da capa. Schemas recusam campos extras, IDs, URL e configuração; nenhum bytes, largura ou canEdit é acrescentado ao resumo. |
+| Contexto, HTTP e cache | Guard reconsulta conta/vínculo/lab; GET passa a identidade autenticada ao serviço. `areaJson` conserva no-store; recursos de imagem mantêm private/no-store/nosniff, CSRF e reautorização. Guia Next local de Route Handlers consultado; nenhuma rota alterada. |
+| Disponibilidade versus permissão | canEdit continua contextual; política A conserva metadados e bloqueia mutações/conteúdo. Testes existentes cobrem membro, outsider, papel global, laboratório errado/inativo e revogação após I/O. |
+| I/O, replay, quota e concorrência | `initiate` mantém preflight → preset sem transação → segunda transação/tentativa+4jobs → ticket após commit. Retry restrito/teto3 não repete preset; testes Pg existentes cobrem corridas ativa/horária/mesma chave e revogação. Cleanup verifica identidade imutável/referência vigente. |
+| Contratos e exemplos | Listagem, capa fechada, detalhe real e exemplos de lista/detalhe/criação validados por Ajv. Único achado adicional real: status ausente nos exemplos, corrigido e com RED preservado. |
+| Persistência e ciência | Diff de src/**, prisma/**, dependências, workflow, env/deploy e AGENTS.md vazio nesta correção. Migrations existentes mantidas; bootstrap/migrations/audit executados somente no harness sintético. Nenhuma regra IHFR alterada. |
+
+O fingerprint oficial não inclui specs/**. Por isso o registro desta execução
+acrescenta SHA256 do OpenAPI e SHA/tree Git ao manifesto funcional do runner.
+As saídas RED preservam mensagens/resultado; somente espaços no fim das linhas
+foram normalizados para permitir `git diff --check`.
+
+## FAIL de regressão preservado — IHFR dedicado
+
+A primeira execução do runner oficial em `f38d439` parou no gate Ihfr,
+18:03:51.137–18:04:29.413Z: 5/6 PASS, exit 1. O Playwright encontrou **dois**
+elementos com a mensagem de ausência em `ihfr-diagnosis-manage.spec.ts:119`
+(`strict mode violation`), depois de observar um elemento oculto. O snapshot
+de erro mostrou o contexto do ADMIN e a mensagem correta na região de leitura.
+[Log integral sanitizado](cri-rev-005-evidence/ihfr-initial-failure.txt).
+
+`EVIDENCIA_IMPLEMENTACAO`: o mesmo erro, seletor, linha e dois elementos estão
+documentados no PR7 em
+`docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt`
+(consultado em `dc180cb`). O patch não altera src/**, esse teste nem seu runner.
+`INFERENCIA`: há uma condição intermitente preexistente de seleção/visibilidade;
+a causa de dois elementos no DOM não foi demonstrada nesta correção.
+
+Nova execução justificada para medir reprodutibilidade no mesmo snapshot, sem
+alterar assertions, waits, timeouts, fixtures, ciência ou código. Comando:
+`./scripts/rc-review-validation.ps1 -Gates Ihfr,Bootstrap,SchemaAudit`.
+Um eventual PASS não será apresentado como correção dessa intermitência nem
+apagará o FAIL; os registros de ambas as tentativas ficam no mesmo recibo.
+`RECOMENDACAO`: tratar a estabilidade desse seletor em entrega separada.
+
+## Gates locais da origem
+
+Comando integral: `./scripts/rc-review-validation.ps1`, seguido somente dos gates
+Ihfr/Bootstrap/SchemaAudit após o diagnóstico acima. HEAD funcional `f38d439`;
+snapshot `71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13`.
+Execuções: 17:53:43.799–18:05:50.058Z. Todos os gates alcançaram PASS; não se
+trata de um único pipeline sem falhas. O gate Ihfr teve FAIL preservado e PASS
+no mesmo snapshot às 18:05:08.354–18:05:44.532Z, sem causa corrigida pelo patch.
+
+| Verificação | Resultado |
+|---|---|
+| Paridade Ajv preparada/ampliada | GREEN 3/3 e 5/5; REDs preservados |
+| Unit / Mail | 296/296 + 17/17 |
+| Integration / Migration / Contract | 215/215 / 37/37 / 6/6 |
+| R1 | 17/17 |
+| Build / Typecheck / Lint | PASS / PASS / 0 erros, 3 avisos preexistentes |
+| E2E / HTTPS / Deletion | 72/72 / 2/2 / 3/3 |
+| Ihfr dedicado | 5/6 FAIL inicial; 6/6 PASS na nova execução |
+| Bootstrap / SchemaAudit | 14 migrations / zero schemas de teste remanescentes |
+| Dependências instaladas | npm ls: 43 dependências, zero inconsistências |
+| Diff / escopo | PASS; código funcional e dependências preservados |
+
+[Registros de 16 execuções, comandos, UTC, resultados e hashes dos logs](cri-rev-005-evidence/origin/validation-records.json).
+[Manifesto funcional](cri-rev-005-evidence/origin/functional-manifest.json).
+O manifesto também prova ausência de mudanças posteriores em código/testes;
+o registro inclui separadamente o hash do OpenAPI. Logs completos sanitizados
+permanecem no coletor local; o CI preserva seus próprios artefatos por SHA.
+PostgreSQL restaurado STOPPED, dados sintéticos preservados.
+T041–T044 executadas; T045 segue aberta até publicação, sincronização e re-review.

@@ -1,4 +1,4 @@
-﻿✖ CRI-REV-005: real detail projection and its published examples remain valid without cover (14.3625ms)
+✖ CRI-REV-005: real detail projection and its published examples remain valid without cover (14.3625ms)
 ℹ tests 1
 ℹ suites 0
 ℹ pass 0
@@ -13,9 +13,9 @@
 test at tests\unit\area-openapi-parity.test.ts:2:5714
 ✖ CRI-REV-005: real detail projection and its published examples remain valid without cover (14.3625ms)
   AssertionError [ERR_ASSERTION]: [{"instancePath":"/area/laboratory","schemaPath":"#/required","keyword":"required","params":{"missingProperty":"status"},"message":"must have required property 'status'"}]
-  
+
   false !== true
-  
+
       at TestContext.<anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\unit\area-openapi-parity.test.ts:125:12)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)

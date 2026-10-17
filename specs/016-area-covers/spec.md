@@ -159,6 +159,6 @@ reconcilia **contrato e documentação**, sem mudar o payload já consumido pela
   fechados. Teste RED pré-YAML e GREEN pós-correção devem ser registrados.
 
 Fonte: relatório independente
-`docs/releases/2026-10-10-cri-rc/2026-10-17-analise-pos-correcoes-thalles.md`.
+[publicado na RC em 832560a](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/832560ac0e2b9a50671b871f077472685b1af963/docs/releases/2026-10-10-cri-rc/2026-10-17-analise-pos-correcoes-thalles.md).
 Nenhuma alteração de banco, autorização, ciência ou comportamento funcional é
 introduzida por este requisito contratual; a revisão e aprovação seguem humanas.

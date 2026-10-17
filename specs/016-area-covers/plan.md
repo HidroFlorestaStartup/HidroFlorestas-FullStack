@@ -278,3 +278,10 @@ correção desses dois exemplos no mesmo YAML e a proteção do detalhe sem capa
 Esse desvio comprovado e seu RED são registrados na evidência focal.
 T041–T045 seguem dependências do pacote; publicação/re-review ainda pendentes.
 Os dados e HEADs iniciais, restrições, riscos e gates estão na evidência focal.
+
+17/10, 18:05:50Z: T041–T044 executadas; gates locais concluídos no snapshot
+funcional f38d439, com 15 gates em PASS e FAIL inicial do IHFR preservado.
+Nova execução do mesmo gate passou sem mudanças; erro idêntico está documentado
+desde 13/10. Não se declara a intermitência corrigida. Detalhes/comandos/hashes
+na evidência focal. Estado EM_ANDAMENTO para T045: publicação autorizada na
+origem, merges cumulativos, CI dos novos HEADs e solicitação de revisão humana.

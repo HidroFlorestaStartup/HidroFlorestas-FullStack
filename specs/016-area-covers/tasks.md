@@ -84,18 +84,11 @@ PASSs locais são históricos; os novos HEADs exigem checks próprios.
 
 ## CRI-REV-005 — contrato da listagem (2026-10-17)
 
-- [x] T041 Planejar e registrar na Spec016 a paridade `AreaSummary`/`AreaCoverSummary`
-  da listagem e sua distinção de `AreaDetail`, preservando optionalidade TS.
-- [x] T042 Escrever teste RED Ajv2020 da resposta real de `serializeAreaSummary()`,
-  em `tests/unit/area-openapi-parity.test.ts`, mantendo a OpenAPI anterior.
-- [x] T043 Atualizar OpenAPI Spec003, exemplo e data-model e contrato Spec016;
-  repetir o GREEN com schema fechado sem reduzir as asserções.
-- [ ] T044 Revisar ponta a ponta os campos tocados, autorização/flag/privacidade,
-  testes negativos e possíveis desvios da Spec003/016; registrar achados reais.
-- [ ] T045 Executar gates proporcionais no Node24/Prisma/PostgreSQL local próprio,
-  documentar RED/GREEN, publicar na origem #4, propagar #5/#6/#7 com merges e
-  conferir checks e pareceres nos HEADs finais. Aprovações humanas não são
-  responsabilidade do agente executor.
+- [x] T041 Planejar paridade da listagem e distinção do detalhe em specs/016-area-covers/{spec.md,plan.md,tasks.md}; preservar opcionalidade TS e commitar antes do RED.
+- [x] T042 [US1] Executar teste preparado tests/unit/area-openapi-parity.test.ts em RED com OpenAPI antigo e registrar comando/SHA/saída em specs/016-area-covers/cri-rev-005-evidence/.
+- [x] T043 [US1] Atualizar specs/003-area-registration-and-viewing/{contracts/area-registration-api.openapi.yaml,data-model.md} e specs/016-area-covers/contracts/images.md; repetir GREEN fechado e proteger detalhe sem cover; corrigir os dois exemplos com status omitido demonstrado pelo Ajv.
+- [x] T044 Revisar campos, autorização/flag/privacidade, testes negativos e registrar a matriz transversal e achados reais em specs/016-area-covers/cri-rev-005-evidence.md.
+- [ ] T045 Executar scripts/rc-review-validation.ps1 com Node24/PostgreSQL sintético; registrar evidências em specs/016-area-covers/cri-rev-005-evidence.md, publicar origem e propagar audit→RC→validation por merges, conferir checks/HEADs/diffs e solicitar re-review. Aprovações humanas permanecem pendentes.
 
 Sequência: T041→T042(RED)→T043(GREEN)→T044→T045. O plano atual é um pacote
 candidato; não marcar tarefas como executadas antes das evidências no checkout.
