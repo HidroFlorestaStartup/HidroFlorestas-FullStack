@@ -265,3 +265,16 @@ permissões, testes científicos ou produção.
    preparar commits na origem `review/016-area-covers`, com propagação por merge
    audit→RC→validation. CI dos novos HEADs e reviews humanos ficam pendentes
    até a publicação no ambiente Git autenticado.
+
+### Execução focal e reconciliação do pacote
+
+Estado em 17/10: EM_ANDAMENTO. Planejamento commitado em `7a5681a`;
+RED original 0/3 e GREEN original 3/3 registrados em cri-rev-005-evidence.md.
+Dry-run confirmou todas as âncoras no HEAD real `0b154ce`.
+Sem nova decisão de produto nem dependência; constituição e checklist PASS.
+Durante a revisão, o Ajv demonstrou que os exemplos de detalhe/criação omitem
+`laboratory.status`, já obrigatório e emitido pelo serializer. T043 inclui a
+correção desses dois exemplos no mesmo YAML e a proteção do detalhe sem capa.
+Esse desvio comprovado e seu RED são registrados na evidência focal.
+T041–T045 seguem dependências do pacote; publicação/re-review ainda pendentes.
+Os dados e HEADs iniciais, restrições, riscos e gates estão na evidência focal.

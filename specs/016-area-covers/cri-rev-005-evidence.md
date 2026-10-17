@@ -62,3 +62,29 @@ Limites: sem merge em development/main, deploy, migration remota, dados reais ou
 operação Cloudinary. IHFR permanece CONTRATO_EXPERIMENTAL,
 VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
 NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
+
+## RED/GREEN e revisão focal
+
+Planejamento registrado em `7a5681a` antes de `--red`.
+Comando: `node --import=tsx --test tests/unit/area-openapi-parity.test.ts`.
+O teste original do pacote produziu 0/3 PASS, exit 1; o Ajv apontou
+`/areas/0`, `AreaSummary/additionalProperties`, `additionalProperty: cover`.
+[Saída completa RED](cri-rev-005-evidence/red.txt) e
+[SHA, horário, hash do teste e blob YAML anterior](cri-rev-005-evidence/red.json).
+Após `--apply`, o mesmo teste original passou 3/3, exit 0, sem mudar assertions:
+[GREEN original](cri-rev-005-evidence/green.txt).
+
+O teste preparado foi mantido e ampliado para verificar a allowlist da área,
+configuração privada injetada, campos obrigatórios da capa, revisão inteira
+não negativa e a projeção real de detalhe sem carregar `cover`.
+
+Achado adicional comprovado, sem mudança de produto: os exemplos de
+`AreaDetailResponse` e `AreaMutationResponse` omitiam `laboratory.status`,
+obrigatório em `LaboratoryPublicReference` e presente no serializer real.
+O teste de detalhe falhou em Ajv por `missingProperty: status`:
+[RED adicional](cri-rev-005-evidence/detail-example-red.txt).
+Correção limitada a acrescentar `status: ACTIVE` nos dois exemplos existentes;
+nenhuma mudança ao schema do detalhe, serializer, serviço ou comportamento.
+O teste passa a validar também esses exemplos contra os respectivos schemas.
+A frase sobre valores opcionais do modelo foi delimitada aos campos textuais
+anuláveis para não contradizer a projeção compartilhada `cover?`.

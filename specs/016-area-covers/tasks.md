@@ -84,11 +84,11 @@ PASSs locais são históricos; os novos HEADs exigem checks próprios.
 
 ## CRI-REV-005 — contrato da listagem (2026-10-17)
 
-- [ ] T041 Planejar e registrar na Spec016 a paridade `AreaSummary`/`AreaCoverSummary`
+- [x] T041 Planejar e registrar na Spec016 a paridade `AreaSummary`/`AreaCoverSummary`
   da listagem e sua distinção de `AreaDetail`, preservando optionalidade TS.
-- [ ] T042 Escrever teste RED Ajv2020 da resposta real de `serializeAreaSummary()`,
+- [x] T042 Escrever teste RED Ajv2020 da resposta real de `serializeAreaSummary()`,
   em `tests/unit/area-openapi-parity.test.ts`, mantendo a OpenAPI anterior.
-- [ ] T043 Atualizar OpenAPI Spec003, exemplo e data-model e contrato Spec016;
+- [x] T043 Atualizar OpenAPI Spec003, exemplo e data-model e contrato Spec016;
   repetir o GREEN com schema fechado sem reduzir as asserções.
 - [ ] T044 Revisar ponta a ponta os campos tocados, autorização/flag/privacidade,
   testes negativos e possíveis desvios da Spec003/016; registrar achados reais.
