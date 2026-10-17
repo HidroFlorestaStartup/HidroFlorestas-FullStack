@@ -81,3 +81,21 @@ T001–T025 não são reabertas; aprovações dos estudantes não são tarefas d
 
 T039 → T040 → T034/T035 revalidados → T036–T038. A cobertura anterior e os
 PASSs locais são históricos; os novos HEADs exigem checks próprios.
+
+## CRI-REV-005 — contrato da listagem (2026-10-17)
+
+- [ ] T041 Planejar e registrar na Spec016 a paridade `AreaSummary`/`AreaCoverSummary`
+  da listagem e sua distinção de `AreaDetail`, preservando optionalidade TS.
+- [ ] T042 Escrever teste RED Ajv2020 da resposta real de `serializeAreaSummary()`,
+  em `tests/unit/area-openapi-parity.test.ts`, mantendo a OpenAPI anterior.
+- [ ] T043 Atualizar OpenAPI Spec003, exemplo e data-model e contrato Spec016;
+  repetir o GREEN com schema fechado sem reduzir as asserções.
+- [ ] T044 Revisar ponta a ponta os campos tocados, autorização/flag/privacidade,
+  testes negativos e possíveis desvios da Spec003/016; registrar achados reais.
+- [ ] T045 Executar gates proporcionais no Node24/Prisma/PostgreSQL local próprio,
+  documentar RED/GREEN, publicar na origem #4, propagar #5/#6/#7 com merges e
+  conferir checks e pareceres nos HEADs finais. Aprovações humanas não são
+  responsabilidade do agente executor.
+
+Sequência: T041→T042(RED)→T043(GREEN)→T044→T045. O plano atual é um pacote
+candidato; não marcar tarefas como executadas antes das evidências no checkout.

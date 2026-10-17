@@ -239,3 +239,29 @@ e a conclusão final fica também nos comentários/descrições dos PRs atuais.
 Não há decisão A pendente: confirmação registrada. CHANGES_REQUESTED de #4/#6 e
 novo parecer independente de #7 continuam abertos sob controle dos revisores.
 Operação real/homologação/produção e ciência mantêm limites anteriores.
+
+## Plano focal CRI-REV-005 — paridade de contrato (2026-10-17)
+
+**Origem do achado:** revisão independente de 17/10, na RC `832560a`.
+`AreasService.list()` consulta `include.cover` e serializa `cover` com
+`featureEnabled`, mas `AreaSummary` do OpenAPI fechado não o declara.
+**Escopo:** reconciliação dos contratos da Spec003/016 e teste Ajv da saída real
+de `serializeAreaSummary()`; não alterar implementação, migration, Cloudinary,
+permissões, testes científicos ou produção.
+
+1. RED: executar o novo `tests/unit/area-openapi-parity.test.ts` **antes** da
+   mudança no YAML. Registrar a falha por `additionalProperties: false` em
+   `AreaSummary`, guardando comando, SHA e output.
+2. GREEN: acrescentar `AreaCoverSummary` fechado, tornar `cover` obrigatório
+   **somente no schema de listagem** `AreaSummary`, atualizar o exemplo e
+   documentar que `AreaDetail` continua sem `cover`. Preservar a projeção
+   TypeScript opcional porque também é usada no detalhe.
+3. Exercitar lista com e sem asset, flag ligada/desligada, rejeição de extras,
+   ausência de assetId/URL/segredos, exemplo OpenAPI e serialização real.
+4. Validar com Node24, dependências versionadas, Unit/Contract/Typecheck/Lint/Build
+   e regressão afetada conforme runbook. Nenhum `npm ci` ou banco remoto no teste
+   isolado entregue nesta tarefa.
+5. Revisar adversarialmente cada campo transversal, documentar RED/GREEN e
+   preparar commits na origem `review/016-area-covers`, com propagação por merge
+   audit→RC→validation. CI dos novos HEADs e reviews humanos ficam pendentes
+   até a publicação no ambiente Git autenticado.
