@@ -1,0 +1,42 @@
+{
+  "headBase": "4a3ce49",
+  "testSha256": "029ea42e3bf2b11d9ee95ab1919179d0e1a90adb16bbd511372417eac32a5479",
+  "records": [
+    {
+      "phase": "cri005retryred",
+      "args": [
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/integration/area-cover-transactions.test.ts"
+      ],
+      "snapshot": "a6357b2997505ca7e84afa645f7c5fbc0bc961b468e90ea8f0453ec0f4d75367",
+      "startedUtc": "2026-10-17T18:37:45.441Z",
+      "endedUtc": "2026-10-17T18:37:46.322Z",
+      "exitCode": 1,
+      "durationMs": 725,
+      "logPath": "cri005retryred-attempt-1.log",
+      "summary": [],
+      "logSha256": "d03c9e13ac4e9ca047a576eda6c71e002e78efc3ea5d75b6bbbcf1649330290e"
+    },
+    {
+      "phase": "cri005retrygreen",
+      "args": [
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/integration/area-cover-transactions.test.ts"
+      ],
+      "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+      "startedUtc": "2026-10-17T18:38:41.497Z",
+      "endedUtc": "2026-10-17T18:38:43.415Z",
+      "exitCode": 0,
+      "durationMs": 1763,
+      "logPath": "cri005retrygreen-attempt-1.log",
+      "summary": [],
+      "logSha256": "ec1785c11ba2c63fa4a2f611596eb8e2c19e5cb939c7d1377e05c1203aa260ac"
+    }
+  ]
+}

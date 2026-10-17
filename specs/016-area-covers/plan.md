@@ -319,3 +319,23 @@ Prosseguir publicação nos ramos de revisão conforme autorização do usuário
 mantendo o achado de quota aberto para CI/avaliação humana; sem parecer de pronto
 para integração. A suspensão anterior permitiu investigar e preservar a falha,
 não constitui proibição de publicar evidências nos PRs de revisão autorizados.
+
+### Causa adicional demonstrada pelo diagnóstico do CI
+
+Run39058159071 em 8f1f927: quota horária214/215, mesma resposta INTERNAL_ERROR.
+A nova asserção capturou exatamente três conflitos suportados: um
+DriverAdapterError/TransactionWriteConflict/40001 e dois P2034 com a mesma causa.
+O helper atual repete imediatamente e devolve INTERNAL_ERROR quando esgota três
+tentativas. A captura afasta a hipótese anterior de tipo de erro desconhecido.
+INFERENCIA: retries imediatos sob contenção podem competir novamente antes que
+o outro commit esteja disponível; a causa de cada conflito não é extrapolada.
+
+T047 passa a ter implementação justificada: espera assíncrona entre conflitos
+reconhecidos, de 100–150ms antes da segunda tentativa e 200–250ms antes da terceira.
+Teto3, maxWait15000, timeout30000, allowlist de conflitos, quotas e I/O preservados.
+Espera injetável só para testes determinísticos; padrão usa timer Node e jitter
+criptográfico. RED deve provar que a próxima transação não começa antes da
+espera autorizada, que são somente duas esperas em três tentativas e que erro
+arbitrário não espera/reexecuta. Revalidar os cenários Pg/provider, Unit, tipos,
+lint/build/E2E afetados e CI dos quatro HEADs. Não declarar todo conflito sob
+contenção ilimitada resolvido; não aumentar tentativas nem retornar quota falsa.
