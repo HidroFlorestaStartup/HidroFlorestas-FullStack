@@ -5,6 +5,7 @@ import { requireAuth } from "@/app/api/server/middlewares/auth.middleware";
 import { areasService } from "@/app/api/server/services/areas.service";
 import { AreaAccessError } from "@/app/api/server/areas/area.authorization";
 import { AreaMap } from "@/components/areas/area-map";
+import { AreaCoverEditor } from "@/components/areas/area-cover";
 export default async function AreaDetail({
   params,
 }: {
@@ -61,6 +62,7 @@ export default async function AreaDetail({
           <ClipboardPlus size={20} /> Registrar coleta
         </Link>
       )}
+      <AreaCoverEditor laboratoryId={laboratoryId} areaId={areaId} name={area.name}/>
       <div className="grid gap-6 lg:grid-cols-[1.35fr_.65fr]">
         <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 p-5 sm:p-6">

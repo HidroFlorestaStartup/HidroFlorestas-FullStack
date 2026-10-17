@@ -116,3 +116,28 @@ Cada mudança deve acrescentar uma linha com a origem e manter as linhas anterio
 | `TD-017` | 2026-09-28 | `signUp` passa a definir `ACTIVE` e projetar DTO público; teste focal comprova hash e login imediato sem banco real | `CONFIRMADO` | `IMPLEMENTADO_VERIFICADO` | `src/app/api/server/services/auth.service.ts`, `tests/unit/auth-service.test.ts` e validações registradas na entrega |
 
 `TD-015` e `TD-016` possuem `ADR-0001`. As demais entradas continuam sem ADR relacionado; novos ADRs exigem decisão aprovada e natureza compatível.
+
+
+## Reconciliação de contas, rascunhos e capas — 2026-10-10
+
+`DECISAO_CONFIRMADA`: nesta conversa o usuário aprovou rascunho pessoal por usuário/coleta confirmada, salvamento explícito, descarte definitivo, sem expiração automática, consumo ao confirmar e limpeza na exclusão permitida da conta. Aprovou também uma capa autenticada por área, mutação OWNER/ADMIN, JPEG/PNG/WebP 10 MiB/4096 px por lado, remoção EXIF e cleanup restrito a ownership comprovado. Origem e respostas em [decisões CRI](docs/plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md); estados de implementação em [matriz](docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Sem autorização operacional externa. As políticas posteriores da spec 012 refinam TD-017 somente quanto à sessão: novas contas continuam ACTIVE, porém restritas até verificar; legado segue coorte explicitamente aprovada em 2026-10-04. Não alteram a origem histórica de TD-017.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+DECISAO_CONFIRMADA PD-CRI-005/006: usuário desta conversa em 2026-10-10 aprovou um draft pessoal por usuário/coleta confirmada, save explícito/descarte definitivo/sem expiração, cleanup pessoal na exclusão permitida e consumo ao confirmar, preservando ciência. EVIDENCIA_IMPLEMENTACAO: EnvironmentalDraft segregado, revisão/ID/key, Serializable e autorização contextual atual. Detalhes em specs/015-environmental-drafts/plan.md e docs/operations/environmental-drafts-runbook.md. Limite de histórico fora de Chromium documentado, sem homologação universal.
+
+
+## Implementação focal de capas 016 — 2026-10-10
+
+DECISAO_CONFIRMADA PD-CRI007/008/009 tem origem na resposta do usuário desta
+conversa, já registrada acima; implementação não adiciona aprovação de operação.
+EVIDENCIA_IMPLEMENTACAO: Cloudinary2.11.0 para assinatura oficial e sharp0.35.4
+direto (já transitivo Next) para decoder/auto-orient/reencode sem EXIF/ICC/XMP/IPTC.
+Nenhuma outra versão foi alterada. Upload staging/final authenticated; leitura
+same-origin reautoriza depois do download. IDs/contextos prévios e delete por
+asset_id imutável; leases/CAS/replay preservam antiga. Tombstones RECONCILE não
+expiram automaticamente. RECOMENDACAO técnica implementada: quota3 ativa/10h,
+TTL app10min, staging70min, preset versionado congelado; não revoga assinatura1h
+nem prova custo zero. [Justificativas/limites](specs/016-area-covers/plan.md),
+[operação](docs/operations/area-covers-runbook.md). PD-CRI010 continua pendente.

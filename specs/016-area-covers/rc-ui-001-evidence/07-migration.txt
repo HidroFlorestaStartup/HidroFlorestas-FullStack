@@ -1,0 +1,38 @@
+ℹ tests 37
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+IMP-006 schema owned by this run: imp006_test_c8bde01e59af4b43b70c63e1e3c09f95
+✔ IMP-006 reference migration aborts without backfill on invalid existing events (477.4144ms)
+IMP-006 schema owned by this run: imp006_test_9e4eb97c166d4d4489870ae3b7678070
+✔ IHFR supplement, diagnosis, operation and event reject UPDATE and DELETE with triggers enabled (587.7538ms)
+IMP-006 schema owned by this run: imp006_test_8af57e896fa84fa1a196680ce63d6e77
+✔ IMP-006 migration applies on empty integrated baseline (462.0831ms)
+IMP-006 schema owned by this run: imp006_test_3df99d862cb04f8a8ae5bd3be84d1594
+✔ IMP-006 migration preserves legacy rows and performs zero backfill (321.7715ms)
+IMP-006 schema owned by this run: imp006_test_9ef624dc29e6403c8b8fafb0413bac2e
+✔ IMP-006 score constraint accepts finite domain values and rejects non-finite or out-of-domain values (332.8531ms)
+✔ IMP-006 migration keeps its published slot before the additive account chain (1.6981ms)
+✔ legacy, IMP-005 and additive IMP-006 models coexist (0.4819ms)
+✔ migration is additive, immutable and contains no backfill (0.3151ms)
+✔ all explicit IMP-006 database identifiers are ASCII, unique and PostgreSQL-safe (0.5661ms)
+✔ PostgreSQL text arrays normalize independently of driver representation (0.4019ms)
+IMP-006 schema owned by this run: imp006_test_8d403111295748c6bba18817c740d3de
+✔ applied IMP-006 schema has the expected constraints, indexes, triggers and zero backfill (578.4823ms)
+IMP-006 schema owned by this run: imp006_test_ce241932ede14a6f95a18bd4f935ee10
+✔ a failed transactional migration leaves no IMP-006 objects and can be retried in the same owned schema (423.4474ms)
+✔ mail additive migration preserves legacy identity/status/role/password; nullable fields and constraints (335.5196ms)
+✔ IMP-009 creates revisioned immutable audit storage and removes legacy authority (160.8584ms)
+✔ IMP-009 preflight rolls back cleanly on contradictory legacy authority (133.3106ms)
+ℹ tests 37
+ℹ suites 1
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14143.4547
+[2026-10-13T17:31:43.328Z] END phase=migration attempt=1 target=879442b8b64c schema=public exit=0 duration_ms=14208
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-XIxVgM\migration-attempt-1.log

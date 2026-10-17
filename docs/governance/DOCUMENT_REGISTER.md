@@ -132,3 +132,52 @@ Use `não especificado` quando a fonte não informar versão, data, responsável
 | `DOC-RAW-014` | `HISTORICO_IMUTAVEL` | Evidência histórica de UX; autoridade depende de aprovação explícita de UX, não identificada nem avaliada nesta etapa. | Histórico imutável. | não especificado | não especificado | 2026-08-24; metadados, identificação estrutural e checksum | `SHA-256:80f2a41632c401a041503d4a001cd498e5e5ff1f8bb15bd47eb6c9151e31ac1b` | 5826 bytes; Markdown (`text/plain`) legível; título interno declarado. Origem, versão documental, data documental e responsável não especificados; nenhuma aprovação ou substituição explicitamente declarada foi identificada na leitura controlada. |
 
 Novos registros, versões, relações de substituição e checksums só devem ser acrescentados quando verificados. O histórico anterior deve ser preservado.
+
+
+## Registro da reconciliação CRI — 2026-10-10
+
+Acrescentados [PLAN-CRI-002](../plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md), estado EM_ANDAMENTO, e [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md), evidência/coordenação sem autoridade científica. Origem: pedido de execução v1.0 e respostas explícitas do usuário de 2026-10-10; responsável humano não especificado. Os 14 documentos de PLAN-CRI-001 receberam estado atual primeiro e registro de 2026-10-03 preservado. Nenhum arquivo de docs/raw modificado; inclusão não promove propostas históricas.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+Registrados artefatos vivos specs/015-environmental-drafts/** (spec/plan/tasks/modelo/contratos/evidências) e docs/operations/environmental-drafts-runbook.md. Origem: aprovação explícita PD-CRI-005/006 em 2026-10-10; evidência de engenharia local, sem autoridade científica ou encerramento de gates remotos.
+
+
+## Artefatos da entrega local 016 — 2026-10-10
+
+Registro adicional sem renumerar identificadores históricos: specs/016-area-covers/
+(spec/plan/tasks/research/data-model/contracts/quickstart/checklists/evidências)
+e docs/operations/area-covers-runbook.md são artefatos atuais de implementação
+local, com proveniência de decisão identificada; não são homologação nem contrato
+científico. A matriz CRI concentra estado. [Evidências](../../specs/016-area-covers/implementation-evidence.md),
+[runbook](../operations/area-covers-runbook.md). Responsável operacional não especificado.
+
+
+## Handoff consolidado CRI — 2026-10-10
+
+[Handoff](../plans/active/contas-rascunhos-imagens/handoff.md) e
+[inventário](../plans/active/contas-rascunhos-imagens/arquivos-da-entrega.md)
+registram os SHAs funcionais reais, bases/branches, resultados desta execução,
+recursos preservados e passos remotos não autorizados. Estado global
+AGUARDANDO_REVISAO; não são relatórios científicos nem aceite humano presumido.
+
+## Revisão focal posterior CRI — 2026-10-10
+
+Registrados [relatório focal](../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[evidências novas](../reports/audits/2026-10-10-cri-local-validation.json) e
+[manifesto de bytes](../reports/audits/2026-10-10-cri-local-manifest.json).
+Origem: prompt focal v1.0 indicado pelo usuário; hash/localizador no relatório.
+EVIDENCIA_IMPLEMENTACAO e RECOMENDACAO de engenharia, sem autoridade científica
+ou homologação. Plano focal equivalente mantido em PLAN-CRI-002; oito commits
+preservados. Erratas não reescrevem os JSON ou resultados históricos.
+
+## Release Candidate CRI para revisão — 2026-10-10
+
+FATO_DOCUMENTADO: pedido do usuário autoriza a publicação GitHub sem integração
+ou operação produtiva. Registrados [PLAN-RC-001](../plans/active/preparacao-release-candidate-cri.md),
+[pacote RC](../releases/2026-10-10-cri-rc/readme.md), release-notes, integration-guide,
+production-update-runbook, migration-runbook, review-checklist e publication-evidence.json.
+EVIDENCIA_IMPLEMENTACAO registra preservação/publicação; RECOMENDACAO identifica
+roteiros futuros, sem autoridade científica ou aceite humano. Responsáveis por
+review/banco/deploy/mail/cleanup: não especificado. O handoff anterior é preservado.

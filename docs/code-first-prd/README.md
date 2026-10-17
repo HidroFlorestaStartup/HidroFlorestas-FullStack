@@ -156,3 +156,10 @@ A versão Code-First baseada no código anterior permanece `CONCLUIDA_EM_REVISAO
 `FASE_2_COMPLEMENTACAO_INCREMENTAL_NAO_INICIADA`
 
 `FASE_2_NAO_INICIADA`
+
+
+## Entrega integrada CRI 014/015/016 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: runners focais corrigidos; drafts pessoais e uma capa
+privada por área entregues e validados localmente após aprovação do usuário.
+Não constituem aprovação global do PRD. [Estado/requisitos/pendências](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).

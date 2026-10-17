@@ -1,5 +1,23 @@
 # Recuperação de senha
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+Spec 012 implementa token de 32 bytes/30 min/uso único, resposta neutra, confirmação via POST, fragmento removido, bcrypt e revogação por credentialVersion. ACTIVE não verificada pode recuperar sem virar verificada; PENDING/INACTIVE/BLOCKED não são reativadas. A política central atual exige 15 codepoints e até 72 bytes para novas senhas. O JWT somente userId e a elegibilidade proposta abaixo são históricos. Reset por link real continua pendente no Gate B.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Separação do fluxo vigente
 
 A troca autenticada atual exige senha corrente e deve permanecer. Recuperação é pública, baseada em posse do e-mail, e nunca aceita o código de seis dígitos da verificação cadastral como prova de reset.

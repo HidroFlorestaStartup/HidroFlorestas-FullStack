@@ -1,5 +1,13 @@
 # 🌿 Hidro Florestas Fullstack
 
+## Release Candidate para revisão dos estudantes — 2026-10-10
+
+Consulte o [pacote de entrega CRI](docs/releases/2026-10-10-cri-rc/readme.md) para
+PRs encadeados, release notes, configuração, atualização da aplicação existente,
+migrations/backup/recuperação e checklist. Estado: APTO COM RESSALVAS para revisão;
+homologação e produção pendentes. Para atualizar um banco hospedado existente,
+seguir o runbook da RC antes dos comandos genéricos de desenvolvimento abaixo.
+
 Bem-vindo ao repositório do **Hidro Florestas**, uma aplicação fullstack desenvolvida com **Next.js** e **Prisma**. Este guia ajudará você a configurar o ambiente de desenvolvimento local do zero.
 
 ## IHFR experimental

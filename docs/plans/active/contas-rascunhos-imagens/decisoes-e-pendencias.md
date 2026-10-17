@@ -1,5 +1,23 @@
 # Decisões, recomendações e pendências
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+DEC-004 limita somente a rodada documental de 2026-10-03. O pedido de execução v1.0 de 2026-10-10 autoriza código/testes/commits locais relacionados. PD-CRI-001/002 foram resolvidas pelo checkpoint aprovado da spec 012 em 2026-10-04. PD-CRI-005/006/007/008/009 foram resolvidas nesta conversa em 2026-10-10 (registros abaixo); operação externa continua fora da autorização atual.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Decisões confirmadas
 
 | ID | Decisão | Origem | Efeito |
@@ -40,3 +58,12 @@
 | PD-CRI-010 | Quem acompanha créditos/uso do plano gratuito Cloudinary? | Operação | Alertas e revisão antes de atingir limite; sem promessa de gratuidade permanente. |
 
 Pendências bloqueiam somente a etapa indicada. Pesquisa, contratos e testes das partes independentes podem avançar sem promover o padrão recomendado a decisão.
+
+
+## Decisões desta execução — 2026-10-10
+
+| Registro | Origem | Decisão e limite |
+|---|---|---|
+| PD-CRI-005/006 | resposta explícita do usuário à pergunta de recorte, nesta conversa | Pessoal por usuário/coleta confirmada; salvar explicitamente; descarte definitivo; sem expiração automática; consumir ao confirmar; remover drafts na exclusão permitida. Não remover vínculos científicos para permitir excluir conta. |
+| PD-CRI-007/008/009 | resposta explícita do usuário à pergunta de recorte, nesta conversa | Uma capa autenticada; OWNER/ADMIN mutam em laboratório ativo; JPEG/PNG/WebP 10 MiB/4096 px por lado; remover EXIF; cleanup somente de ativos próprios abandonados/substituídos/removidos. Não autoriza upload/exclusão externos. |
+| PD-CRI-010 | nenhuma designação registrada nesta execução | Responsável por créditos permanece não especificado; bloqueia ativação real, não adaptador fake local. |

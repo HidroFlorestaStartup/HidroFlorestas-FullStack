@@ -1,0 +1,28 @@
+    └─ migration.sql
+  └─ 20260919000100_user_administration/
+    └─ migration.sql
+  └─ 20260920000100_ihfr_experimental_diagnosis/
+    └─ migration.sql
+  └─ 20260920000100_remove_legacy_is_admin/
+    └─ migration.sql
+  └─ 20260926000100_ihfr_lifecycle_reference_integrity/
+    └─ migration.sql
+  └─ 20261004000100_mail_foundation/
+    └─ migration.sql
+  └─ 20261004000200_account_verification_recovery/
+    └─ migration.sql
+  └─ 20261004000300_account_rate_limit_actions/
+    └─ migration.sql
+  └─ 20261005000100_account_deletion_mail_ownership/
+    └─ migration.sql
+  └─ 20261010000100_environmental_drafts/
+    └─ migration.sql
+  └─ 20261010000200_area_covers/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+[2026-10-13T19:21:22.579Z] END phase=clean-migrate-deploy attempt=1 target=86ffab487f18 schema=public exit=0 duration_ms=1269
+IMP-006 sanitized gate log: <USER>\AppData\Local\Temp\hidroflorestas-imp006-gate-xq8E7s\clean-migrate-deploy-attempt-1.log
+IMP-006 clean bootstrap: 14 migrations completed, zero failed, core tables present.
+IMP-006 clean bootstrap: synthetic read/write transaction passed and rolled back.
+IMP-006 clean bootstrap disposed owned database imp006_bootstrap_6179ceb73a1cf597.

@@ -16,8 +16,8 @@ export function parseAreaInput(value: unknown): CreateAreaInput | null {
  if(!name||municipality===false||state===false||landType===false||description===false)return null;
  return {name,latitude:body.latitude,longitude:body.longitude,municipality,state,landType,description};
 }
-export function serializeAreaSummary(area: CollectionArea): AreaSummaryDto {
- return {id:area.id,name:area.name,latitude:Number(area.latitude),longitude:Number(area.longitude),municipality:area.municipality,state:area.state};
+export function serializeAreaSummary(area: CollectionArea&{cover?:{revision:number;assetId:string|null}|null},featureEnabled=false): AreaSummaryDto {
+ return {id:area.id,name:area.name,latitude:Number(area.latitude),longitude:Number(area.longitude),municipality:area.municipality,state:area.state,...("cover"in area?{cover:{revision:area.cover?.revision??0,hasImage:Boolean(area.cover?.assetId),featureEnabled}}:{})};
 }
 export function serializeAreaDetail(area:CollectionArea,context:LaboratoryContext):AreaDetailDto {
  return {...serializeAreaSummary(area),landType:area.landType,description:area.description,createdAt:area.createdAt.toISOString(),laboratory:{id:context.id,name:context.name,status:context.status},readOnly:context.readOnly};

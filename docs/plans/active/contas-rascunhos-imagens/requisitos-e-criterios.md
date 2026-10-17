@@ -1,5 +1,23 @@
 # Requisitos e critérios verificáveis
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+Os requisitos de e-mail/contas abaixo possuem implementação observada nas specs mail-foundation/012; seus contratos atuais prevalecem para o comportamento aprovado. DRAFT-FR-001 a DRAFT-FR-006 e IMAGE-FR-001 a IMAGE-FR-005 tiveram recorte confirmado nesta execução. Não confundir essa decisão com código entregue nem aceite externo. As políticas aprovadas estão em decisoes-e-pendencias.md.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Convenções
 
 Cada requisito é futuro. `MUST` indica condição recomendada para aceite técnico, não implementação existente. Os parâmetros marcados `PROPOSTA` dependem das pendências em [decisões](decisoes-e-pendencias.md).
@@ -67,3 +85,8 @@ Extensão futura `DRAFT-FR-FUT-001`: rascunho pré-coleta de metadados terá ent
 - `DATA-NFR-002`: operações mutáveis relevantes têm chave idempotente e semântica para payload divergente.
 - `OPS-NFR-001`: limpeza/retry é observável, limitada e segura para repetição.
 - `UX-NFR-001`: teclado, foco, `aria-live`, erros recuperáveis e estado ocupado são critérios de aceite.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

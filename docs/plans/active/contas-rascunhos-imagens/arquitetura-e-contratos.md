@@ -1,5 +1,23 @@
 # Arquitetura e contratos propostos
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+Os contratos vigentes de contas estão vinculados abaixo. Signup retorna 201/200 e sessão restrita; reset usa confirmPassword. O schema atual usa AccountEmailChallenge para ambas as finalidades, não os dois modelos propostos abaixo. Endpoints de drafts/imagens abaixo continuam propostas até a spec correspondente; não são API implementada no corte auditado.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Fronteiras
 
 ```mermaid
@@ -109,3 +127,8 @@ sequenceDiagram
 - Draft: `WHERE id AND revision = expected`; incremento em cada save; retorno 409 inclui revisão atual, não payload sem autorização.
 - Confirmação: reutiliza invariantes da IMP-005 e chave do ator; marca draft `CONFIRMED` após criar/recuperar conjunto.
 - Imagem: `revision`/ponteiro atual evita duas substituições silenciosas; objetos perdedores viram cleanup jobs.
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

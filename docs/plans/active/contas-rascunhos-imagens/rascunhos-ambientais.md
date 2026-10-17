@@ -1,5 +1,37 @@
 # Rascunhos ambientais
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+DECISAO_CONFIRMADA nesta conversa em 2026-10-10: recorte A pessoal por usuário/coleta confirmada, salvamento explícito, descarte definitivo pelo dono, sem expiração automática, remoção dos drafts pessoais na exclusão de conta permitida e consumo ao confirmar; dados científicos confirmados preservados. A resposta do usuário foi “1 Aprovo, masdeixe essa decisao e implementacao documentadas”. A retenção de 30 dias abaixo não foi adotada.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+### Contrato vigente do recorte aprovado
+
+DECISAO_CONFIRMADA PD-CRI-005/006 supera a proposta histórica de expiração em
+30 dias e recuperação após descarte: não há expiração, purge ou período de
+recuperação. EVIDENCIA_IMPLEMENTACAO: [spec 015](../../../../specs/015-environmental-drafts/spec.md),
+[contrato](../../../../specs/015-environmental-drafts/contracts/drafts.md),
+[migration aditiva](../../../../prisma/migrations/20261010000100_environmental_drafts/migration.sql)
+e [runbook](../../../operations/environmental-drafts-runbook.md).
+Revisão obsoleta devolve conflito sem cópia automática: consulta/reload é explícita.
+O envelope não persiste status CONFIRMED; a confirmação consome o draft. Leitura
+em laboratório inativo autorizado é permitida; mutações são bloqueadas.
+RECOMENDACAO histórica de localStorage não foi adotada. Autosave, colaboração,
+offline e rascunho de criação de coleta continuam fora deste recorte.
+
+## Registro histórico preservado — 2026-10-03
+
 ## Dois escopos que não devem ser confundidos
 
 | Escopo | Objeto | Estado |
@@ -48,3 +80,8 @@ Autosave futuro pode usar debounce, abort de requests obsoletos e flush explíci
 `PROPOSTA`: expirar após 30 dias sem edição, aviso visual a partir de 7 dias antes, descarte pelo usuário com período técnico curto de recuperação somente se aprovado, purge idempotente. Guardar métricas agregadas, não payload, depois do purge. Dados confirmados jamais são modificados ou apagados pelo cleanup de drafts.
 
 Rascunhos ficam fora de dashboard, histórico de registros, mapas, elegibilidade e diagnósticos IHFR. A confirmação normal pode atualizar essas projeções porque cria o conjunto confirmado regular.
+
+
+### Entrega local 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: draft pessoal aprovado implementado e validado. [Spec/evidências](../../../../specs/015-environmental-drafts/implementation-evidence.md), [runbook](../../../operations/environmental-drafts-runbook.md). Sem expiração; rollback e consumo preservam ciência; limitação de histórico fora de Chromium documentada.

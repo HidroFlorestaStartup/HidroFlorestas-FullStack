@@ -1,5 +1,40 @@
 # Imagens de áreas monitoradas
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+DECISAO_CONFIRMADA nesta conversa em 2026-10-10: uma capa por área, leitura somente autorizada, mutação OWNER/ADMIN de laboratório ativo, Cloudinary authenticated, JPEG/PNG/WebP até 10 MiB e 4096 px por lado, remoção de EXIF, cleanup só com ownership comprovado de uploads abandonados/substituídos/removidos. Resposta: “1- aprovo, mas documente essa implementacao e decisoes”. Operação real/credenciais/créditos continuam pendentes. Assinatura de URL por si só não será tratada como prova de expiração da entrega.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+### Contrato vigente do recorte aprovado
+
+DECISAO_CONFIRMADA PD-CRI-007/008/009 resolve a pendência histórica de privacidade
+e confirma capa única/limites/ownership. EVIDENCIA_IMPLEMENTACAO:
+[spec 016](../../../../specs/016-area-covers/spec.md),
+[contrato](../../../../specs/016-area-covers/contracts/images.md),
+[migration aditiva](../../../../prisma/migrations/20261010000200_area_covers/migration.sql)
+e [runbook](../../../operations/area-covers-runbook.md).
+O DTO histórico com URL externa foi superado por proxy same-origin autorizado.
+Assinatura Cloudinary vale até 1h; appTTL10min não a revoga. Confirmação consulta
+metadata e bytes no servidor, sem aceitar resposta do cliente como prova.
+Não há varredura por namespace/tag nem exclusão de desconhecidos: somente jobs
+prévios com ID imutável/contexto comprovados; tombstones continuam reconciliados.
+RECOMENDACAO técnica implementada: quota de tentativas 3 vigentes/10 por hora,
+sem presumir franquias do plano gratuito. Galeria, publicação e gratuidade
+permanente não foram aprovadas. Operação real/preset/créditos permanecem pendentes.
+
+## Registro histórico preservado — 2026-10-03
+
 ## Decisão e primeiro recorte
 
 `DECISAO_CONFIRMADA`: upload via API Cloudinary, plano gratuito inicialmente.

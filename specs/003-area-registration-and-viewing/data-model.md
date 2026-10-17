@@ -222,8 +222,23 @@ type AreaSummaryDto = {
   longitude: number;
   municipality: string | null;
   state: string | null;
+  cover?: {
+    revision: number;
+    hasImage: boolean;
+    featureEnabled: boolean;
+  };
 };
 ```
+
+A projeção compartilhada em TypeScript mantém `cover?` opcional porque
+`serializeAreaDetail()` reutiliza `AreaSummaryDto` **sem carregar a relação de capa**.
+A resposta da rota de **listagem**, entretanto, sempre consulta `include.cover`
+e serializa um resumo `cover` obrigatório, com `revision`, `hasImage` e
+`featureEnabled`. Ausência de registro de capa resulta em
+`{revision: 0, hasImage: false, featureEnabled: <disponibilidade>}`.
+O resumo não expõe `assetId`, `publicId`, URL, bytes ou configuração do provedor.
+O contrato de listagem é o `AreaSummary` fechado da OpenAPI 3.1; o contrato
+`AreaDetail` é separado e não passa a exigir capa por esta correção.
 
 ### Area detail
 
@@ -241,7 +256,7 @@ type AreaDetailDto = AreaSummaryDto & {
 };
 ```
 
-Optional values are always represented as `null`, never omitted. No DTO contains area creator, `userId`, email, access code, CEP, image, coordinate-record ID or `isActive`.
+Nullable textual values are always represented as `null`, never omitted. The shared `cover?` projection follows the list/detail distinction above. No DTO contains area creator, `userId`, email, access code, CEP, image, coordinate-record ID or `isActive`.
 
 ## Query and Ordering Rules
 

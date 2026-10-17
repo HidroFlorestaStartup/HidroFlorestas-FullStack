@@ -117,3 +117,29 @@ As 17 entradas originalmente levantadas cobrem todas as decisões materiais iden
 | `PD-017` | `IMP-FND-016`; Figma não consultado e não necessário | A implementação observada não define estado ou aprovação dos artefatos de UX. |
 
 As 17 entradas foram revisadas naquela auditoria; posteriormente, `PD-009` foi resolvida por confirmação explícita e as outras 16 permanecem `ABERTA`. Nenhuma nova pendência foi necessária naquela auditoria e nenhuma evidência de implementação foi tratada como decisão. `PD-018` surgiu depois, na execução da IMP-006, e foi resolvida pela confirmação explícita da equipe em 2026-09-23.
+
+
+## Reconciliação CRI — 2026-10-10
+
+PD-CRI-001/002 foram resolvidas pelo checkpoint aprovado de 2026-10-04 da spec 012. PD-CRI-005/006/007/008/009 foram resolvidas pelo usuário nesta conversa; [proveniência e limites](../plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md). PD-CRI-003/004 possuem setup/mecanismo históricos, sem nova autorização operacional. PD-CRI-010 permanece aberta para responsável por créditos. Gate B/reset/reenvio e aceite humano de exclusão permanecem pendentes; não são fechados por testes sintéticos. [Matriz única](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Nenhuma pendência científica histórica é encerrada por essas decisões.
+
+
+## Implementação após decisões CRI — 2026-10-10
+
+DECISAO_CONFIRMADA PD-CRI005–009: aprovação do usuário registrada nesta conversa,
+com exigência de documentação atendida nas specs015/016 e runbooks. Nenhuma
+pendência foi fechada pela presença de código. PD-CRI004/010: responsável por
+operação de mail/cleanup/créditos não especificado. Gate B012/T025/T028 e aceite
+humano013 permanecem abertos. Ciência/PRD global continuam sob suas autoridades.
+[Estado único](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
+
+## Condições operacionais da RC — 2026-10-10
+
+Publicação para revisão não fecha GateB012/T025/T028, aceite humano013, Cloudinary
+real nem PD-CRI-004/010. O [checklist RC](../releases/2026-10-10-cri-rc/review-checklist.md)
+registra condições de fechamento e [guia operacional](../releases/2026-10-10-cri-rc/production-update-runbook.md)
+exige confirmar repo conectado à produção, projeto/banco/cloud existentes, backup
+restaurado, ensaio e aprovação da janela. PENDENCIA_DE_DECISAO: donos/aprovadores
+operacionais e eventual rollout parcial de capas desabilitadas não especificados.
+O fork de entrega não prova o vínculo Git de produção. Nenhuma aprovação científica,
+recurso novo, mudança de credencial ou homologação foi inferida desta RC.

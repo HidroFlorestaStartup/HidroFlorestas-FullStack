@@ -4,6 +4,7 @@ import { CollectionContractError, parseIdempotencyKey } from "../collections/col
 import { EnvironmentalServiceError, type EnvironmentalDataService } from "../services/environmental-data.service";
 import { EnvironmentalValidationError, parseEnvironmentalInput } from "./environmental-data.contracts";
 import type { EnvironmentalContext } from "@/types/environmental-data.type";
+import { parseDraftReference } from "@/types/environmental-draft";
 type Context={params:Promise<EnvironmentalContext>};
 const messages={INVALID_REQUEST:'Verifique os campos indicados.',UNAUTHENTICATED:'Autenticação necessária.',FORBIDDEN:'Conta sem permissão para esta operação.',NOT_FOUND:'Recurso não encontrado.',READ_ONLY:'O laboratório está em modo somente leitura.',CONFLICT:'Já existe um conjunto confirmado ou a chave foi usada com outros dados.',INTERNAL_ERROR:'Não foi possível concluir a operação.'};
 function json(body:unknown,status:number,headers:Record<string,string>={}){return Response.json(body,{status,headers:{'Cache-Control':'no-store',...headers}});}
@@ -25,7 +26,13 @@ export function createEnvironmentalHandlers(dependencies:{requireAuth:typeof req
    if(request.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase()!=='application/json')throw new EnvironmentalValidationError({form:'Envie JSON.'});
    let body:unknown;try{body=await request.json();}catch{throw new EnvironmentalValidationError({form:'JSON inválido.'});}
    const payload=parseEnvironmentalInput(body);
-   const result=await dependencies.service.create({...ids,userId:principal.id,confirmationKey,payload});
+   const draftId=request.headers.get('Draft-Id'),revision=request.headers.get('Draft-Revision');
+   let draft: {id:string;revision:number}|undefined;
+   if(draftId!==null || revision!==null) {
+    try{if(!revision || !/^[1-9]\d*$/.test(revision))throw Error();const ref=parseDraftReference({draftId,expectedRevision:Number(revision)});draft={id:ref.draftId,revision:ref.expectedRevision};}
+    catch{throw new EnvironmentalValidationError({form:'Referência do rascunho inválida.'});}
+   }
+   const result=await dependencies.service.create({...ids,userId:principal.id,confirmationKey,payload,...(draft?{draft}:{})});
    return json({environmentalData:result.environmentalData},result.created?201:200,{Location:`/api/laboratories/${ids.laboratoryId}/areas/${ids.areaId}/collections/${ids.collectionId}/environmental-data`});
   }catch(error){return failure(error);}},
   GET:async(_request:Request,context:Context)=>{try{const principal=await dependencies.requireAuth();return json(await dependencies.service.detail(principal.id,await context.params),200);}catch(error){return failure(error);}},
