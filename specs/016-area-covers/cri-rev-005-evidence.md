@@ -347,3 +347,30 @@ T041–T048 executadas no recorte técnico. Sem merge em development/main, deplo
 dados reais, migration remota ou operação Neon/Vercel/Cloudinary. Homologação real,
 GateB012, aceite humano013 e operador continuam pendentes. O IHFR conserva as
 quatro qualificações experimentais já registradas, sem validação científica nova.
+
+### Converg?ncia final do teste de formul?rio
+
+O fechamento anterior n?o encerrou o acompanhamento: a run
+[39060376048](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39060376048),
+HEAD RC `2e4576b`, falhou em Ihfr5/6 no seletor global de uso da terra, que
+encontrou dois selects. A mensagem escopada passou, mas o primeiro ajuste
+de seletor era incompleto. Integration218/E2E72 e os demais gates at? Deletion
+passaram. Origem `aa9d2ce`, auditoria `97957a0` e valida??o `7e55d0f` conclu?ram
+SUCCESS em seus pr?prios SHAs. [Falha preservada](cri-rev-005-evidence/ci-selector-field-failure.txt).
+T048/T045 foram reabertas em `1d9fb68` antes de modificar o teste.
+
+O cen?rio OWNER/ADMIN agora delimita todos os campos, mensagens, status e a??es
+?s regi?es ARIA vis?veis de leitura/gerenciamento com nomes exatos. Dialog
+continua selecionado por role. Valores, HTTP, scores, idempot?ncia, foco, teclado,
+viewport e todas as asser??es foram mantidos; sem aumentar timeout/retry.
+O mesmo candidato passou **Ihfr6/6 + SchemaAudit0 na origem e na RC**, pelo runner
+oficial, 19:17:18.555?19:21:52.078Z. Typecheck/lint PASS. Na RC, c?pia tempor?ria
+restaurada byte a byte e worktree limpa.
+[Hashes, comandos e registros dos dois snapshots](cri-rev-005-evidence/selector-validation.json).
+Servi?o permanece exatamente em `bf7a2b1`; nenhuma regra cient?fica mudou.
+
+O recibo de publica??o preserva o checkpoint anterior e acrescenta esse FAIL e
+a revalida??o focal. A sincroniza??o segue origem?auditoria?RC?valida??o, por
+merge commits. Os quatro checks dos novos HEADs s?o acompanhados at? o fim;
+seus SHAs, resultados e pedidos de re-review s?o atualizados nos quatro
+coment?rios est?veis ligados acima. Nenhum SUCCESS anterior substitui esses checks.

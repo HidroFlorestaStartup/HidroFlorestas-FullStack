@@ -372,3 +372,16 @@ Manter respostas HTTP, scores, idempotência, foco, teclado e viewport esperados
 não mudar timeouts, retries ou dados/guardas científicos. A seleção do dialog
 continua por role visível. RED do CI preservado; executar os seis cenários e
 typecheck/lint do teste antes de propagar. Nenhuma alteração de produção adicional.
+
+### Conclus?o focal dos seletores
+
+Planejamento complementar registrado em 1d9fb68 antes do ajuste. O cen?rio
+OWNER/ADMIN usa agora as regi?es ARIA exatas de leitura e gerenciamento para
+todos os seus campos/mensagens/a??es; dialog continua por role na p?gina.
+Asser??es e resultados esperados foram preservados. Typecheck/lint PASS;
+runner oficial Ihfr6/6 e SchemaAudit0 PASS na origem e na RC cumulativa,
+19:17?19:21Z. RC restaurada byte a byte ap?s a valida??o tempor?ria do candidato.
+Nenhuma mudan?a adicional no servi?o ou nas regras IHFR. Recibo focal em
+cri-rev-005-evidence/selector-validation.json; FAIL39060376048 preservado.
+Os pr?ximos HEADs exigem CI pr?prio e seu resultado final ? registrado nos
+coment?rios est?veis dos PRs; aprova??o humana permanece pendente.

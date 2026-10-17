@@ -88,7 +88,7 @@ PASSs locais são históricos; os novos HEADs exigem checks próprios.
 - [x] T042 [US1] Executar teste preparado tests/unit/area-openapi-parity.test.ts em RED com OpenAPI antigo e registrar comando/SHA/saída em specs/016-area-covers/cri-rev-005-evidence/.
 - [x] T043 [US1] Atualizar specs/003-area-registration-and-viewing/{contracts/area-registration-api.openapi.yaml,data-model.md} e specs/016-area-covers/contracts/images.md; repetir GREEN fechado e proteger detalhe sem cover; corrigir os dois exemplos com status omitido demonstrado pelo Ajv.
 - [x] T044 Revisar campos, autorização/flag/privacidade, testes negativos e registrar a matriz transversal e achados reais em specs/016-area-covers/cri-rev-005-evidence.md.
-- [ ] T045 Executar scripts/rc-review-validation.ps1 com Node24/PostgreSQL sintético; registrar evidências em specs/016-area-covers/cri-rev-005-evidence.md, publicar origem e propagar audit→RC→validation por merges, conferir checks/HEADs/diffs e solicitar re-review. Aprovações humanas permanecem pendentes.
+- [x] T045 Executar scripts/rc-review-validation.ps1 com Node24/PostgreSQL sintético; registrar evidências em specs/016-area-covers/cri-rev-005-evidence.md, publicar origem e propagar audit→RC→validation por merges, conferir checks/HEADs/diffs e solicitar re-review. Aprovações humanas permanecem pendentes.
 
 Sequência: T041→T042(RED)→T043(GREEN)→T044→T045. O plano atual é um pacote
 candidato; não marcar tarefas como executadas antes das evidências no checkout.
@@ -97,7 +97,7 @@ candidato; não marcar tarefas como executadas antes das evidências no checkout
 
 - [x] T046 Diagnosticar a run39056678227 (Integration214/215, quota ativa INTERNAL_ERROR) e registrar formato seguro do erro original e reprodução no PostgreSQL sintético em specs/016-area-covers/cri-rev-005-evidence.md; precede a continuação de T045. Sessenta corridas locais passaram; a captura da run39058159071 demonstrou esgotamento de três conflitos reconhecidos.
 - [x] T047 Condicionado a causa demonstrada por T046: acrescentar RED determinístico pertinente em tests/integration/area-cover-transactions.test.ts e ajustar minimamente src/app/api/server/images/service.ts, mantendo contrato, teto3, timeouts, quotas e I/O; repetir GREEN/gates e T045. Se não houver ajuste justificável, registrar achado e limite sem inventar correção.
-- [ ] T048 Corrigir a ambiguidade comprovada de tests/e2e/ihfr-diagnosis-manage.spec.ts:119–120, escopando o cenário OWNER/ADMIN às regiões visíveis de leitura/gestão com nomes exatos; preservar valores/visibilidade/asserts de domínio, foco, timeouts/guards e executar os seis cenários pelo runner oficial. Não alterar regras científicas ou produto.
+- [x] T048 Corrigir a ambiguidade comprovada de tests/e2e/ihfr-diagnosis-manage.spec.ts:119–120, escopando o cenário OWNER/ADMIN às regiões visíveis de leitura/gestão com nomes exatos; preservar valores/visibilidade/asserts de domínio, foco, timeouts/guards e executar os seis cenários pelo runner oficial. Não alterar regras científicas ou produto.
 
 T047 foi acionada pela captura real de três conflitos reconhecidos na
 run39058159071. Recorte: espera limitada entre retries em service.ts, com RED/GREEN
@@ -113,3 +113,10 @@ SUCCESS de pai. Aprovação dos revisores não é tarefa concluída pelo executo
 Reabertura: RC2e4576b/run39060376048 demonstrou outro seletor global ambíguo no
 mesmo formulário (uso da terra). O RED é preservado; completar T048 e repetir
 T045, sem reabrir regras científicas ou modificar produção.
+
+Conclus?o complementar T048: todos os seletores do cen?rio escopados;
+Ihfr6/6 e SchemaAudit0 na origem e RC, typecheck/lint PASS, recibo focal
+selector-validation.json. T045 registra execu??es/publica??es j? comprovadas;
+os checks pr?prios da sincroniza??o deste fechamento s?o acompanhados at?
+a conclus?o e registrados nos coment?rios de PR. Nenhum SUCCESS futuro ?
+pressuposto por este checkbox; aprova??es humanas continuam pendentes.
