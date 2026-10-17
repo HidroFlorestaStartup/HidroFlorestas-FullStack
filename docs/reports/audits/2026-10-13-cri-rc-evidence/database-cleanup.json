@@ -1,0 +1,140 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "inventoryAndGuardOutcome": {
+    "phase": "final-owned-database-cleanup",
+    "schemaAuditPassed": true,
+    "managedSchemasRemainingBeforeDisposal": 0,
+    "rowGuardAttempt": {
+      "exitCode": 1,
+      "refusedForNonallowlistedTables": [
+        "MailRateLimitBucket"
+      ],
+      "guardsPreserved": true,
+      "countsPreservedOnRefusal": true,
+      "allowConnectionsRestored": true
+    },
+    "countsBeforeResourceDisposal": {
+      "User": 54,
+      "AdministrativeAuditEvent": 3,
+      "MailRateLimitBucket": 27,
+      "otherModelRows": 0,
+      "migrationHistoryRows": 14,
+      "extraSchemas": 0
+    },
+    "ownedDisposableResourceRemoval": {
+      "phase": "owned-disposable-cluster-removal",
+      "creationDate": "2026-10-13",
+      "filesystemIdentityVerified": true,
+      "ancestryUnredirected": true,
+      "noSymlinksOrExternalTablespaces": true,
+      "initialEmptyDatabaseProvenanceVerified": true,
+      "officialSetupProvenanceVerified": true,
+      "builtInCommentsVerifiedAgainstInitializationSource": true,
+      "catalog": [
+        {
+          "name": "accounts_development",
+          "owner": "accounts_owner",
+          "marker": "hidroflorestas:accounts-development:v1"
+        },
+        {
+          "name": "accounts_regression_reference",
+          "owner": "accounts_owner",
+          "marker": "hidroflorestas:accounts-regression:v1"
+        },
+        {
+          "name": "accounts_regression_test",
+          "owner": "accounts_owner",
+          "marker": "hidroflorestas:accounts-regression:v1"
+        },
+        {
+          "name": "postgres",
+          "owner": "accounts_owner",
+          "marker": "default administrative connection database"
+        },
+        {
+          "name": "template0",
+          "owner": "accounts_owner",
+          "marker": "unmodifiable empty database"
+        },
+        {
+          "name": "template1",
+          "owner": "accounts_owner",
+          "marker": "default template for new databases"
+        }
+      ],
+      "zeroExternalClientsBeforeStop": true,
+      "smartStopExit": 0,
+      "postStopControlExit": 3,
+      "serverRunning": false,
+      "clusterRootExists": false,
+      "dataRootExists": false,
+      "verifiedFiles": 2242,
+      "removedOnlyOwnedClusterRoot": true,
+      "privateSyntheticEnvironmentPreservedOutsideCluster": true,
+      "logsAndHelpersPreserved": true,
+      "applicationGuardsUnchanged": true
+    },
+    "finalState": {
+      "serverRunning": false,
+      "clusterRootExists": false,
+      "dataRootExists": false,
+      "physicalFixtureStorageRetained": false,
+      "privateSyntheticEnvironmentRetainedOutsideCluster": true,
+      "environmentMode": "0600",
+      "logsAndHelpersRetained": true,
+      "applicationGuardsUnchanged": true
+    }
+  },
+  "resourceDisposalProof": {
+    "phase": "owned-disposable-cluster-removal",
+    "creationDate": "2026-10-13",
+    "filesystemIdentityVerified": true,
+    "ancestryUnredirected": true,
+    "noSymlinksOrExternalTablespaces": true,
+    "initialEmptyDatabaseProvenanceVerified": true,
+    "officialSetupProvenanceVerified": true,
+    "builtInCommentsVerifiedAgainstInitializationSource": true,
+    "catalog": [
+      {
+        "name": "accounts_development",
+        "owner": "accounts_owner",
+        "marker": "hidroflorestas:accounts-development:v1"
+      },
+      {
+        "name": "accounts_regression_reference",
+        "owner": "accounts_owner",
+        "marker": "hidroflorestas:accounts-regression:v1"
+      },
+      {
+        "name": "accounts_regression_test",
+        "owner": "accounts_owner",
+        "marker": "hidroflorestas:accounts-regression:v1"
+      },
+      {
+        "name": "postgres",
+        "owner": "accounts_owner",
+        "marker": "default administrative connection database"
+      },
+      {
+        "name": "template0",
+        "owner": "accounts_owner",
+        "marker": "unmodifiable empty database"
+      },
+      {
+        "name": "template1",
+        "owner": "accounts_owner",
+        "marker": "default template for new databases"
+      }
+    ],
+    "zeroExternalClientsBeforeStop": true,
+    "smartStopExit": 0,
+    "postStopControlExit": 3,
+    "serverRunning": false,
+    "clusterRootExists": false,
+    "dataRootExists": false,
+    "removedOnlyOwnedClusterRoot": true,
+    "privateSyntheticEnvironmentPreservedOutsideCluster": true,
+    "logsAndHelpersPreserved": true,
+    "applicationGuardsUnchanged": true
+  }
+}

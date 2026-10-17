@@ -1,0 +1,17 @@
+(node:8) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+source-map-js@1.2.2
+node_modules/source-map-js
+  source-map-js@"^1.2.1" from postcss@8.5.23
+  node_modules/postcss
+    postcss@"8.5.23" from next@16.3.8
+    node_modules/next
+      next@"16.3.8" from the root project
+    postcss@"^8.5.6" from @tailwindcss/postcss@4.2.1
+    node_modules/@tailwindcss/postcss
+      dev @tailwindcss/postcss@"^4" from the root project
+  source-map-js@"^1.2.1" from @tailwindcss/node@4.2.1
+  node_modules/@tailwindcss/node
+    @tailwindcss/node@"4.2.1" from @tailwindcss/postcss@4.2.1
+    node_modules/@tailwindcss/postcss
+      dev @tailwindcss/postcss@"^4" from the root project

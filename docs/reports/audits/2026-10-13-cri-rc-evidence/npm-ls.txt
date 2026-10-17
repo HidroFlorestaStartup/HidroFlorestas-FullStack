@@ -1,0 +1,32 @@
+(node:8) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+hidro-florestas-fullstack@0.1.0 <workspace>/.accounts-validation/rc-review
+├─┬ @tailwindcss/postcss@4.2.1
+│ ├─┬ @tailwindcss/node@4.2.1
+│ │ └── source-map-js@1.2.2
+│ └─┬ postcss@8.5.23
+│   └── source-map-js@1.2.2 deduped
+├─┬ eslint-config-next@16.3.8
+│ ├─┬ @next/eslint-plugin-next@16.3.8
+│ │ └─┬ fast-glob@3.3.1
+│ │   └─┬ micromatch@4.0.8
+│ │     └── braces@3.0.3
+│ ├─┬ eslint-plugin-import@2.32.0
+│ │ └─┬ minimatch@3.1.5
+│ │   └── brace-expansion@1.1.21 overridden
+│ └─┬ typescript-eslint@8.56.1
+│   └─┬ @typescript-eslint/typescript-estree@8.56.1
+│     └─┬ minimatch@10.2.4
+│       └── brace-expansion@5.0.12 overridden
+├─┬ eslint@9.39.5
+│ ├─┬ @eslint/config-array@0.21.2
+│ │ └─┬ minimatch@3.1.5
+│ │   └── brace-expansion@1.1.21 overridden
+│ ├─┬ @eslint/eslintrc@3.3.7
+│ │ └─┬ minimatch@3.1.5
+│ │   └── brace-expansion@1.1.21 overridden
+│ └─┬ minimatch@3.1.5
+│   └── brace-expansion@1.1.21 overridden
+├─┬ next@16.3.8
+│ └── sharp@0.35.5 deduped
+└── sharp@0.35.5

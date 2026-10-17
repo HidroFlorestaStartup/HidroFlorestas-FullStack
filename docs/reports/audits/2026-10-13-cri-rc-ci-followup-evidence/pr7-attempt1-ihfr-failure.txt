@@ -1,0 +1,32 @@
+  1) tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+
+    Error: expect.toBeVisible: Error: strict mode violation: getByText('Nenhum diagnóstico IHFR vigente para esta coleta.') resolved to 2 elements:
+        1) <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p> aka getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true }).getByRole('paragraph')
+        2) <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p> aka getByText('Nenhum diagnóstico IHFR').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Nenhum diagnóstico IHFR vigente para esta coleta.')
+        2 × locator resolved to <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p>
+          - unexpected value "hidden"
+
+
+      117 |     await authenticate(page, actor.id, String(info.project.use.baseURL));
+      118 |     await page.goto(actor.url);
+    > 119 |     await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+          |                                                                                       ^
+      120 |     await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
+      121 |     await page.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+      122 |     await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
+        at <RUNNER-WORKTREE>\tests\e2e\ihfr-diagnosis-manage.spec.ts:119:87
+
+    Error Context: test-results\ihfr-diagnosis-manage-OWNE-e2786-recover-with-one-stable-key\error-context.md
+
+  1 failed
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+  5 passed (20.5s)
+Error: IMP-006 Playwright failed with exit code 1
+    at <anonymous> (<RUNNER-WORKTREE>\scripts\imp006-local-e2e.ts:94:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async withImp006PostgresqlSchema (<RUNNER-WORKTREE>\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+    at async main (<RUNNER-WORKTREE>\scripts\imp006-local-e2e.ts:53:3)
