@@ -202,3 +202,29 @@ Integration215/Migration37/Contract6/R117/Build/Typecheck/Lint/E2E72/Https2/
 Deletion3 e falhou no mesmo seletor IHFR preexistente. Bootstrap/SchemaAudit
 não foram executados nessa tentativa. [Registros preservados](cri-rev-005-evidence/rc-initial/validation-records.json).
 Nenhum PASS posterior será apresentado como reparo da causa dessas intermitências.
+
+### T048 — correção comprovada do alvo do seletor, sem mudança científica
+
+A recomendação inicial de tratar o seletor separadamente foi reavaliada após
+ele bloquear também a coleta cumulativa da RC. Planejamento `6e03872` precede
+a mudança de uma linha no teste: o mesmo texto exato é exigido **visível** na
+região com nome exato `Diagnóstico IHFR experimental`. A API local instalada
+do Playwright documenta que getByRole exclui conteúdo oculto por padrão; isso
+distingue o alvo atual das duas correspondências observadas pelo getByText global.
+Nenhum first(), sleep, novo retry, timeout ou relaxamento de aceite foi adicionado.
+O RED real está preservado nos dois registros locais e no relatório histórico.
+
+GREEN: seis cenários dedicados, incluindo OWNER e ADMIN no fluxo original,
+18:25:20.401–18:25:57.659Z. Bootstrap14/SchemaAudit0 passaram em seguida.
+Snapshot após os dois ajustes exclusivamente de teste:
+`06d2697efb8cc324c1f8dbe8512a20d255058d391911ae05527e288147549165`.
+Typecheck e lint dos dois arquivos de teste PASS. Não há alteração em src/**,
+regras IHFR, contratos científicos, dependências ou configuração.
+[Registros e manifesto dessa validação](cri-rev-005-evidence/diagnostic/validation-records.json);
+[30 testes focais de capas com diagnóstico sanitizado](cri-rev-005-evidence/diagnostic/focal-validation.json).
+
+A causa do INTERNAL_ERROR remoto continua não demonstrada; o diagnóstico de
+quota não é apresentado como correção desse erro. A publicação nos ramos de
+revisão autorizados pode prosseguir para coletar CI e avaliação independente,
+mantendo esse achado explícito. Isso não declara a RC pronta para integração
+em development/main nem substitui decisão humana sobre qualquer risco residual.

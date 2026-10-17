@@ -309,3 +309,13 @@ pelo locator; não adiciona first()/sleep, retry, timeout ou tolerância de dom�
 Trata-se de correção do alvo do teste com RED real preservado, sem mudança em
 src/**, ciência ou produto. O teste com novo alvo deve passar pelo fluxo real
 de OWNER e ADMIN e todos os seis cenários dedicados antes da propagação.
+
+18:26:02Z: T048 GREEN6/6, bootstrap14 e audit0; typecheck/lint focais PASS.
+T046: 60 corridas locais sem reproduzir o erro remoto; formas P2034/40001
+comprovadas são tratadas pelo código atual. Fixtures agora preservam somente
+códigos/kinds para uma próxima ocorrência no CI, sem mudar valores das asserções.
+T047 não é acionada por hipótese: serviço/serializer permanecem intactos.
+Prosseguir publicação nos ramos de revisão conforme autorização do usuário,
+mantendo o achado de quota aberto para CI/avaliação humana; sem parecer de pronto
+para integração. A suspensão anterior permitiu investigar e preservar a falha,
+não constitui proibição de publicar evidências nos PRs de revisão autorizados.
