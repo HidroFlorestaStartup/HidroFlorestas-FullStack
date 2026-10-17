@@ -354,5 +354,38 @@
         "conclusion": "success"
       }
     ]
+  },
+  "selectorFollowup": {
+    "planningCommit": "1d9fb680985fa23c7d3a19a40ee102f72d73a8fb",
+    "priorDocumentationHeads": [
+      {
+        "pr": 4,
+        "sha": "aa9d2ce60a026f95109fc514b191af4668e8f7cc",
+        "run": 39060327579,
+        "conclusion": "success"
+      },
+      {
+        "pr": 5,
+        "sha": "97957a0f0437cd4df29491b27f6e2cd232cd583d",
+        "run": 39060335663,
+        "conclusion": "success"
+      },
+      {
+        "pr": 6,
+        "sha": "2e4576b0dc008ed293d0cbabc3531e8d79dd6083",
+        "run": 39060376048,
+        "conclusion": "failure",
+        "gate": "Ihfr; two matches for global land-use label"
+      },
+      {
+        "pr": 7,
+        "sha": "7e55d0fa371d6caad3835d31b916106c9b972bd0",
+        "run": 39060390506,
+        "conclusion": "success"
+      }
+    ],
+    "validation": "selector-validation.json",
+    "productionChangesSinceBackoff": false,
+    "finalChecks": "Each new publication SHA requires its own checks; final results and reviewer requests are recorded in the stable PR comments. This receipt precedes its own commit."
   }
 }
