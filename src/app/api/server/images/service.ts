@@ -1,5 +1,6 @@
 import "server-only";
-import { randomUUID } from "node:crypto";
+import { randomInt,randomUUID } from "node:crypto";
+import { setTimeout as delay } from "node:timers/promises";
 import sharp from "sharp";
 import type { AreaCover,CoverUploadAttempt,Prisma,PrismaClient } from "@/generated/prisma";
 import { prisma } from "../lib/prisma";
@@ -11,9 +12,9 @@ import { sanitizeCover,previewCover } from "./sanitize";
 import { coverFeatureEnabled } from "./settings";
 const minute=60000;
 export class AreaCoverService {
- constructor(private readonly db:PrismaClient=prisma,private readonly provider:()=>CoverProvider=()=>configuredCoverProvider(),private readonly clock:()=>Date=()=>new Date(),private readonly featureEnabled:()=>boolean=coverFeatureEnabled){}
+ constructor(private readonly db:PrismaClient=prisma,private readonly provider:()=>CoverProvider=()=>configuredCoverProvider(),private readonly clock:()=>Date=()=>new Date(),private readonly featureEnabled:()=>boolean=coverFeatureEnabled,private readonly retryWait:(retry:number)=>Promise<void>=retry=>delay(100*retry+randomInt(0,51))){}
  private requireEnabled(){if(!this.featureEnabled())throw new CoverError("UNAVAILABLE");}
- private async transaction<T>(run:(tx:Prisma.TransactionClient)=>Promise<T>):Promise<T>{for(let i=0;i<3;i++){try{return await this.db.$transaction(run,{isolationLevel:"Serializable",maxWait:15000,timeout:30000});}catch(e){if(e instanceof CoverError||e instanceof AreaAccessError)throw e;if(retryableConflict(e)&&i<2)continue;throw new CoverError("INTERNAL_ERROR");}}throw new CoverError("INTERNAL_ERROR");}
+ private async transaction<T>(run:(tx:Prisma.TransactionClient)=>Promise<T>):Promise<T>{for(let i=0;i<3;i++){try{return await this.db.$transaction(run,{isolationLevel:"Serializable",maxWait:15000,timeout:30000});}catch(e){if(e instanceof CoverError||e instanceof AreaAccessError)throw e;if(retryableConflict(e)&&i<2){await this.retryWait(i+1);continue;}throw new CoverError("INTERNAL_ERROR");}}throw new CoverError("INTERNAL_ERROR");}
  private async context(tx:Prisma.TransactionClient,userId:string,ids:CoverContext,write=false){const context=await authorizeLaboratoryAccess({id:userId},ids.laboratoryId,write?"MANAGE_AREA_IMAGE":"READ_AREAS",tx,write);if(!validResourceId(ids.areaId)||!await tx.collectionArea.findFirst({where:{id:ids.areaId,laboratoryRoomId:ids.laboratoryId},select:{id:true}}))throw new AreaAccessError("NOT_FOUND");return context;}
  async detail(userId:string,ids:CoverContext):Promise<CoverDto>{return this.transaction(async tx=>{const c=await this.context(tx,userId,ids);return project(await tx.areaCover.findUnique({where:{areaId:ids.areaId}}),!c.readOnly&&c.membershipRole!=="MEMBER",this.featureEnabled());});}
  // CRI-REV-002: identical local gates before and after network I/O. Replay
