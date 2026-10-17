@@ -116,7 +116,7 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
   for (const actor of actors) {
     await authenticate(page, actor.id, String(info.project.use.baseURL));
     await page.goto(actor.url);
-    await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+    await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true }).getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
     await page.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
     await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
