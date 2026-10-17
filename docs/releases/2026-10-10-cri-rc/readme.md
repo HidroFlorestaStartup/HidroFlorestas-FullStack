@@ -1,5 +1,13 @@
 # Release Candidate CRI — 10/10/2026
 
+Parecer final de 17/10/2026: o mantenedor solicitante aprovou expressamente o
+SHA funcional `0f669b79a5e73a329832593229c2557d8b12bbce` para integração em
+`development`, após revisão técnica das correções. Consultar o
+[parecer de aprovação e seus limites](2026-10-17-parecer-aprovacao-integracao-development.md).
+O registro não autoriza promoção para `main`, deploy, migrations hospedadas nem
+operações em provedores. As declarações posteriores neste README sobre aprovação
+pendente ou ausência de merge são snapshots históricos anteriores a esse parecer.
+
 Atualização CRI-REV-005 — 17/10/2026: contrato da listagem, exemplo e modelo
 documental reconciliados com o serializer real; RED/GREEN Ajv, testes de
 privacidade e distinção do detalhe registrados. O CI revelou esgotamento de
