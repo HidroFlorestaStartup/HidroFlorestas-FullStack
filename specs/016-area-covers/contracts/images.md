@@ -32,3 +32,15 @@ RC-UI-001: a prévia pode acrescentar retry inteiro local não sensível à quer
 conteúdo, preservando revision. Cada GET continua same-origin autorizado e
 private/no-store; retry não altera revisão nem concede acesso. O status “Capa
 recarregada.” exige onLoad da tentativa atual; onError conserva fallback/retry.
+
+## CRI-REV-005 — paridade da listagem de áreas
+
+A rota `GET /api/laboratories/{laboratoryId}/areas` inclui um resumo **sempre
+presente** `cover: {revision,hasImage,featureEnabled}` em cada item, inclusive sem
+capa persistida. Este resumo é derivado de `include.cover` pela listagem e
+serializado sem `assetId`, `publicId`, URLs assinadas ou configuração do provedor.
+Seu contrato canônico é `AreaSummary`/`AreaCoverSummary` da OpenAPI 3.1 da Spec003.
+A rota de **detalhe** não passa a exigir `cover`: a projeção TypeScript
+`AreaSummaryDto.cover?` é opcional porque atende também ao detalhe. Os testes
+Ajv devem validar uma resposta produzida por `serializeAreaSummary()` e os
+exemplos publicados, com `additionalProperties: false` em ambos os objetos.
