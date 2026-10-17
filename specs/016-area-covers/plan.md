@@ -356,3 +356,19 @@ funcionais e exige seus próprios checks, acompanhados até a conclusão no GitH
 o recibo final dos HEADs/checks está nos comentários ligados na evidência focal.
 Não há aprovação humana concedida pelo executor nem operação produtiva autorizada
 por este plano. Os checkpoints e FAILs anteriores permanecem históricos.
+
+### Reabertura focal do seletor após o CI do fechamento
+
+Run39060376048, RC2e4576b: todos os gates até Deletion passaram, inclusive
+Integration218/E2E72. Ihfr5/6 falhou na linha120: getByLabel global de uso da
+terra encontrou dois selects. A mensagem da linha119, já escopada, passou.
+O ajuste anterior de T048 foi insuficiente para os demais seletores do mesmo
+formulário. T048/T045 reabertas; não é regressão da paridade ou dos retries.
+Origemaa9d2ce/auditoria97957a0/validação7e55d0f concluíram SUCCESS no mesmo runtime.
+
+Recorte comprovado: no cenário OWNER/ADMIN, obter as regiões visíveis de leitura
+e gestão por nomes ARIA exatos e escopar campos, mensagens e ações a seus alvos.
+Manter respostas HTTP, scores, idempotência, foco, teclado e viewport esperados;
+não mudar timeouts, retries ou dados/guardas científicos. A seleção do dialog
+continua por role visível. RED do CI preservado; executar os seis cenários e
+typecheck/lint do teste antes de propagar. Nenhuma alteração de produção adicional.
