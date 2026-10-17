@@ -1,0 +1,22 @@
+{
+  "phase": "cri005rcfocal",
+  "args": [
+    "--conditions=react-server",
+    "--import=tsx",
+    "--test",
+    "--test-concurrency=1",
+    "tests/integration/area-covers.test.ts",
+    "tests/integration/area-cover-provider.test.ts",
+    "tests/integration/area-cover-http.test.ts"
+  ],
+  "snapshot": "9330f0ba2647e4126125a5cd55e02c7e7fa8d0327580071837ee510b417453d7",
+  "startedUtc": "2026-10-17T18:27:57.472Z",
+  "endedUtc": "2026-10-17T18:28:11.568Z",
+  "exitCode": 0,
+  "durationMs": 13944,
+  "logPath": "cri005rcfocal-attempt-1.log",
+  "summary": [
+    "stdout: \u2714 CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (521.0986ms)"
+  ],
+  "logSha256": "453450bbe305a5f7911bb92774005b3b6c8d7d2c836e90238cd34cb73b27d939"
+}
