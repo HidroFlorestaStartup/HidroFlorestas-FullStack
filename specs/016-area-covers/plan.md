@@ -339,3 +339,20 @@ espera autorizada, que são somente duas esperas em três tentativas e que erro
 arbitrário não espera/reexecuta. Revalidar os cenários Pg/provider, Unit, tipos,
 lint/build/E2E afetados e CI dos quatro HEADs. Não declarar todo conflito sob
 contenção ilimitada resolvido; não aumentar tentativas nem retornar quota falsa.
+
+### Fechamento técnico — aguardando revisão humana
+
+Estado: AGUARDANDO_REVISAO. T041–T048 executadas; paridade do pacote, exemplos,
+teste de seletor e recuo de retries comprovados por RED/GREEN e regressão.
+RC4b03798: 15 gates PASS em uma única rodada, 18:43:06.722–18:49:57.419Z,
+Integration218/E2E72/Ihfr6, três avisos de lint anteriores, zero schemas e cluster
+STOPPED. Serviço só recebeu o ajuste de retry justificado pelo CI; serializer,
+regras científicas, dependências e schema persistido preservados.
+
+Branches publicadas na ordem autorizada; pais dos merges, preservação dos11
+originais/99d8363/832560a e diff independente do PR7 conferidos. Pedidos de revisão
+e comentários publicados. Fechamento documental subsequente mantém inputs
+funcionais e exige seus próprios checks, acompanhados até a conclusão no GitHub;
+o recibo final dos HEADs/checks está nos comentários ligados na evidência focal.
+Não há aprovação humana concedida pelo executor nem operação produtiva autorizada
+por este plano. Os checkpoints e FAILs anteriores permanecem históricos.
