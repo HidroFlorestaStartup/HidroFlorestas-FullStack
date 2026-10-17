@@ -242,3 +242,30 @@ Planejamento de T047 atualizado antes de código: introduzir recuo assíncrono
 limitado entre os mesmos retries reconhecidos, preservando teto e fronteiras.
 INFERENCIA sobre contenção foi registrada no plano; não se muda contrato de
 quota nem se inventa RATE_LIMITED quando o banco não confirma esse estado.
+
+T047 RED determinístico no HEAD de planejamento `4a3ce49`, 18:37:45.441–
+18:37:46.322Z: 11 testes, 9 PASS/2 FAIL. Sem espera, o resultado era completed
+antes da barreira de backoff e a lista de esperas permanecia vazia.
+[RED](cri-rev-005-evidence/retry-red.txt).
+O mesmo teste, sem mudar assertions, ficou GREEN11/11 às 18:38:41.497–
+18:38:43.415Z; [GREEN](cri-rev-005-evidence/retry-green.txt).
+Comando dos dois: Node24, condições react-server, --import=tsx --test
+--test-concurrency=1 tests/integration/area-cover-transactions.test.ts,
+via accounts-local-postgresql.ps1/focal.ts em ambiente sintético guardado.
+
+Mudança adicional autorizada pela incompatibilidade demonstrada: somente o helper
+transacional do serviço recebe espera injetável, com padrão100–150ms/200–250ms.
+Não se alteram serializer, DTO, payload, decisão A, quotas, timeout/maxWait,
+allowlist de conflitos, teto3, assinatura/ticket ou a ordem de transações/I/O.
+Esperar fora da transação permite nova tentativa reautorizar e reler o estado;
+não é garantia de sucesso sob contenção ilimitada. Runbook atualizado nesse recorte.
+Typecheck e lint dos arquivos alterados PASS; Unit/Integration/Contract/audit
+serão registrados no snapshot novo, seguido da revalidação cumulativa da RC.
+
+Após o recuo limitado: Unit296+Mail17, Integration218/218 (incluindo os três
+casos novos de agendamento), Contract6/6 e SchemaAudit0 PASS, 18:38:50.101–
+18:40:28.851Z. [Recibo do novo snapshot e manifesto](cri-rev-005-evidence/retry/validation-records.json)
+e [registros RED/GREEN com hash do mesmo teste](cri-rev-005-evidence/retry/red-green-records.json).
+A conclusão local justifica publicar a correção complementar e revalidar a
+árvore cumulativa da RC; os CI anteriores permanecem históricos, sem atribuir
+SUCCESS de pai ao novo HEAD.

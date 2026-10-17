@@ -14,6 +14,15 @@ Replay vigente ainda valida preset; quotas não prometem custo zero para corrida
 que eram elegíveis no preflight. Implementação e validação desta correção serão
 registradas na evidência focal da Spec 016; esta entrada registra o contrato alvo.
 
+CRI-REV-005 / convergência do CI: conflitos transacionais reconhecidos mantêm
+o teto de três tentativas e agora aguardam 100–150ms antes da segunda e
+200–250ms antes da terceira, com jitter limitado. A espera ocorre após o
+encerramento da transação falha, sem repetir preset/ticket, abrir transação
+durante a espera, alterar quotas ou os limites maxWait15s/timeout30s.
+Cada nova tentativa repete autorização, revisão, replay e quotas aplicáveis.
+Esgotamento continua sanitizado como INTERNAL_ERROR; não se inventa quota excedida
+sem leitura válida do banco. A paridade OpenAPI não muda o payload funcional.
+
 DECISAO_CONFIRMADA: usuário desta conversa em 2026-10-10 aprovou PD-CRI-007/008/009
 e exigiu documentação. [Origem e limites](../plans/active/contas-rascunhos-imagens/decisoes-e-pendencias.md),
 [spec 016](../../specs/016-area-covers/spec.md), [contratos](../../specs/016-area-covers/contracts/images.md).

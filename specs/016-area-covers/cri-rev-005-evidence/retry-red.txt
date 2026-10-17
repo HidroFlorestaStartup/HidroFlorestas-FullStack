@@ -1,0 +1,64 @@
+[2026-10-17T18:37:45.586Z] START phase=cri005retryred attempt=1 target=3ca357615da4
+stdout: ✔ CRI-REV-002 transaction retries explicit conflict P2034 (1.0844ms)
+stdout: ✔ CRI-REV-002 transaction retries explicit conflict P2002 (0.1357ms)
+stdout: ✔ CRI-REV-002 transaction retries explicit conflict 40001 (0.0974ms)
+stdout: ✔ CRI-REV-002 transaction retries explicit conflict 40P01 (0.1146ms)
+stdout: ✔ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (0.1681ms)
+stdout: ✔ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (0.1293ms)
+stdout: ✔ CRI-REV-002 transaction retry remains bounded to three and sanitized (0.5834ms)
+stdout: ✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.4661ms)
+stdout: ✖ CRI-REV-005 waits for bounded contention backoff before starting the next transaction (1.8849ms)
+stdout: ✖ CRI-REV-005 keeps three attempts and only two backoffs on repeated supported conflicts (0.7829ms)
+stdout: ✔ CRI-REV-005 never backs off or retries arbitrary failures (0.2561ms)
+stdout: ℹ tests 11
+stdout: ℹ suites 0
+stdout: ℹ pass 9
+stdout: ℹ fail 2
+stdout: ℹ cancelled 0
+stdout: ℹ skipped 0
+stdout: ℹ todo 0
+stdout: ℹ duration_ms 659.8294
+stdout:
+stdout: ✖ failing tests:
+stdout:
+stdout: test at tests\integration\area-cover-transactions.test.ts:2:3817
+stdout: ✖ CRI-REV-005 waits for bounded contention backoff before starting the next transaction (1.8849ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+stdout:   + actual - expected
+stdout:
+stdout:   + 'completed'
+stdout:   - 'waiting'
+stdout:
+stdout:       at TestContext.<anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-cover-transactions.test.ts:19:13)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: 'completed',
+stdout:     expected: 'waiting',
+stdout:     operator: 'strictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+stdout:
+stdout: test at tests\integration\area-cover-transactions.test.ts:2:4620
+stdout: ✖ CRI-REV-005 keeps three attempts and only two backoffs on repeated supported conflicts (0.7829ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+stdout:   + actual - expected
+stdout:
+stdout:   + []
+stdout:   - [
+stdout:   -   1,
+stdout:   -   2
+stdout:   - ]
+stdout:
+stdout:       at TestContext.<anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-cover-transactions.test.ts:25:115)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: [],
+stdout:     expected: [ 1, 2 ],
+stdout:     operator: 'deepStrictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+[2026-10-17T18:37:46.311Z] END phase=cri005retryred attempt=1 target=3ca357615da4 exit=1 duration_ms=725
