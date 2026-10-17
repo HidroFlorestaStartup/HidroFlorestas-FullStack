@@ -114,9 +114,11 @@ Reabertura: RC2e4576b/run39060376048 demonstrou outro seletor global ambíguo no
 mesmo formulário (uso da terra). O RED é preservado; completar T048 e repetir
 T045, sem reabrir regras científicas ou modificar produção.
 
-Conclus?o complementar T048: todos os seletores do cen?rio escopados;
+Conclusão complementar T048: todos os seletores do cenário escopados;
 Ihfr6/6 e SchemaAudit0 na origem e RC, typecheck/lint PASS, recibo focal
-selector-validation.json. T045 registra execu??es/publica??es j? comprovadas;
-os checks pr?prios da sincroniza??o deste fechamento s?o acompanhados at?
-a conclus?o e registrados nos coment?rios de PR. Nenhum SUCCESS futuro ?
-pressuposto por este checkbox; aprova??es humanas continuam pendentes.
+selector-validation.json. Origem9412e9a/auditoria806c87e/RC9f89a2d/validação4b33a34
+concluíram seus15 gates; auditoria na segunda tentativa, FAIL anterior preservado
+com causa INCONCLUSIVA. T045 executada; aprovações humanas continuam pendentes.
+Correção de codificação e registro desse checkpoint não alteram inputs funcionais.
+Os checks próprios dos próximos commits documentais serão acompanhados até a
+conclusão e registrados nos comentários estáveis de PR, sem presumir SUCCESS.
