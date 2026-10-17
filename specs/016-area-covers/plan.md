@@ -300,3 +300,12 @@ timeouts, sem reintroduzir rede em transação e sem tocar regras científicas.
 O runner cumulativo da RC já iniciado pode concluir no snapshot anterior; seus
 resultados serão históricos caso haja ajuste adicional. Nenhum arquivo da RC
 será alterado enquanto essa coleta estiver em execução.
+
+Após a coleta da RC, o mesmo seletor global de IHFR falhou novamente (5/6),
+com dois elementos para a mensagem de ausência. T048 limita a busca à região
+de leitura acessível, visível e nomeada exatamente, preservando a exigência de
+mesmo texto visível. Isso distingue a página atual do conteúdo oculto observado
+pelo locator; não adiciona first()/sleep, retry, timeout ou tolerância de domínio.
+Trata-se de correção do alvo do teste com RED real preservado, sem mudança em
+src/**, ciência ou produto. O teste com novo alvo deve passar pelo fluxo real
+de OWNER e ADMIN e todos os seis cenários dedicados antes da propagação.
