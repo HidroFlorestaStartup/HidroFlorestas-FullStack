@@ -356,3 +356,32 @@ funcionais e exige seus próprios checks, acompanhados até a conclusão no GitH
 o recibo final dos HEADs/checks está nos comentários ligados na evidência focal.
 Não há aprovação humana concedida pelo executor nem operação produtiva autorizada
 por este plano. Os checkpoints e FAILs anteriores permanecem históricos.
+
+### Reabertura focal do seletor após o CI do fechamento
+
+Run39060376048, RC2e4576b: todos os gates até Deletion passaram, inclusive
+Integration218/E2E72. Ihfr5/6 falhou na linha120: getByLabel global de uso da
+terra encontrou dois selects. A mensagem da linha119, já escopada, passou.
+O ajuste anterior de T048 foi insuficiente para os demais seletores do mesmo
+formulário. T048/T045 reabertas; não é regressão da paridade ou dos retries.
+Origemaa9d2ce/auditoria97957a0/validação7e55d0f concluíram SUCCESS no mesmo runtime.
+
+Recorte comprovado: no cenário OWNER/ADMIN, obter as regiões visíveis de leitura
+e gestão por nomes ARIA exatos e escopar campos, mensagens e ações a seus alvos.
+Manter respostas HTTP, scores, idempotência, foco, teclado e viewport esperados;
+não mudar timeouts, retries ou dados/guardas científicos. A seleção do dialog
+continua por role visível. RED do CI preservado; executar os seis cenários e
+typecheck/lint do teste antes de propagar. Nenhuma alteração de produção adicional.
+
+### Conclus?o focal dos seletores
+
+Planejamento complementar registrado em 1d9fb68 antes do ajuste. O cen?rio
+OWNER/ADMIN usa agora as regi?es ARIA exatas de leitura e gerenciamento para
+todos os seus campos/mensagens/a??es; dialog continua por role na p?gina.
+Asser??es e resultados esperados foram preservados. Typecheck/lint PASS;
+runner oficial Ihfr6/6 e SchemaAudit0 PASS na origem e na RC cumulativa,
+19:17?19:21Z. RC restaurada byte a byte ap?s a valida??o tempor?ria do candidato.
+Nenhuma mudan?a adicional no servi?o ou nas regras IHFR. Recibo focal em
+cri-rev-005-evidence/selector-validation.json; FAIL39060376048 preservado.
+Os pr?ximos HEADs exigem CI pr?prio e seu resultado final ? registrado nos
+coment?rios est?veis dos PRs; aprova??o humana permanece pendente.
