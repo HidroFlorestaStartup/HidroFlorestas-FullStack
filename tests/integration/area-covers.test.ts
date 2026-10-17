@@ -16,7 +16,18 @@ import { IHFR_CONTEXTS as C } from "../fixtures/ihfr-diagnosis-contexts";
 const context={laboratoryId:L.active,areaId:C.activeArea};
 const command=()=>({expectedRevision:0,key:randomUUID()});
 function barrier(parties=1){let enteredResolve!:()=>void,release!:()=>void;let arrived=0;const entered=new Promise<void>(r=>{enteredResolve=r;}),waiting=new Promise<void>(r=>{release=r;});return{entered,release,wait:async()=>{if(++arrived===parties)enteredResolve();await waiting;}};}
-const fixture=(run:(db:Parameters<Parameters<typeof withImp006PostgresqlSchema>[1]>[1],service:AreaCoverService,p:FakeCoverProvider,advance:(ms:number)=>void)=>Promise<void>)=>withImp006PostgresqlSchema(selectedImp006DatabaseVariable(),async(client,db)=>{await setupIHFRDiagnosisFixtures(client);let now=new Date("2026-10-10T12:00:00Z");const p=new FakeCoverProvider(),service=new AreaCoverService(db,()=>p,()=>now,()=>true);await run(db,service,p,ms=>{now=new Date(now.getTime()+ms);});});
+function transactionDiagnostic(error:unknown,depth=0):unknown{
+ if(!error||typeof error!=="object"||depth>3)return undefined;
+ const row=error as Record<string,unknown>;
+ // Never print SQL, parameters, stack, raw messages or connection information.
+ return{...Object.fromEntries(["name","code","kind","originalCode"].filter(key=>typeof row[key]==="string").map(key=>[key,row[key]])),...Object.fromEntries(["cause","meta","driverAdapterError"].filter(key=>row[key]&&typeof row[key]==="object").map(key=>[key,transactionDiagnostic(row[key],depth+1)]))};
+}
+const fixture=(run:(db:Parameters<Parameters<typeof withImp006PostgresqlSchema>[1]>[1],service:AreaCoverService,p:FakeCoverProvider,advance:(ms:number)=>void,diagnostics:unknown[])=>Promise<void>)=>withImp006PostgresqlSchema(selectedImp006DatabaseVariable(),async(client,db)=>{
+ await setupIHFRDiagnosisFixtures(client);let now=new Date("2026-10-10T12:00:00Z");const diagnostics:unknown[]=[];
+ const transaction=async(run:(tx:Prisma.TransactionClient)=>Promise<unknown>,options:{isolationLevel:"Serializable";maxWait:number;timeout:number})=>{try{return await db.$transaction(run,options);}catch(error){diagnostics.push(transactionDiagnostic(error));throw error;}};
+ const tracedDb=new Proxy(db,{get:(target,key)=>key==="$transaction"?transaction:Reflect.get(target,key,target)});
+ const p=new FakeCoverProvider(),service=new AreaCoverService(tracedDb,()=>p,()=>now,()=>true);await run(db,service,p,ms=>{now=new Date(now.getTime()+ms);},diagnostics);
+});
 test("CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket",()=>fixture(async(db,s,p,advance)=>{
  await assert.rejects(s.initiate(A.owner,context,{...command(),expectedRevision:1}),{code:"STALE_REVISION"});assert.equal(p.presetCalls,0);assert.equal(await db.areaCover.count(),0);
  const input=command(),ticket=await s.initiate(A.owner,context,input);assert.equal(p.presetCalls,1);assert.equal(p.ticketCalls,1);
@@ -50,11 +61,11 @@ for(const mutation of ["role","membership","laboratory","account","revision"] as
  await outcome;assert.equal(p.ticketCalls,0);assert.equal(await db.coverUploadAttempt.count(),0);assert.equal(await db.coverCleanupJob.count(),0);
 }));
 
-test("CRI-REV-002 simultaneous eligible requests respect per-user active quota",()=>fixture(async(db,s,p)=>{
+test("CRI-REV-002 simultaneous eligible requests respect per-user active quota",()=>fixture(async(db,s,p,_advance,diagnostics)=>{
  await s.initiate(A.owner,context,command());await s.initiate(A.owner,context,command());
  const gate=barrier(2);p.onPreset=gate.wait;
  const results=Promise.allSettled([s.initiate(A.owner,context,command()),s.initiate(A.owner,context,command())]);await gate.entered;gate.release();
- const outcomes=await results;assert.equal(outcomes.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(outcomes.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"]);assert.equal(await db.coverUploadAttempt.count({where:{userId:A.owner}}),3);assert.equal(await db.coverCleanupJob.count(),12);
+ const outcomes=await results;assert.equal(outcomes.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(outcomes.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"],JSON.stringify({transactionErrors:diagnostics}));assert.equal(await db.coverUploadAttempt.count({where:{userId:A.owner}}),3);assert.equal(await db.coverCleanupJob.count(),12);
  p.onPreset=null;await s.initiate(A.contextualAdmin,context,command());assert.equal(await db.coverUploadAttempt.count(),4);
 }));
 
@@ -65,10 +76,10 @@ test("CRI-REV-002 simultaneous same-key requests converge and changed preset pre
  p.onPreset=null;p.hash="b".repeat(64);await assert.rejects(s.initiate(A.owner,context,input),{code:"UNAVAILABLE"});assert.equal(await db.coverUploadAttempt.count(),1);assert.equal(await db.coverCleanupJob.count(),4);
 }));
 
-test("CRI-REV-002 concurrent hourly quota is checked again after preset",()=>fixture(async(db,s,p,advance)=>{
+test("CRI-REV-002 concurrent hourly quota is checked again after preset",()=>fixture(async(db,s,p,advance,diagnostics)=>{
  for(let n=0;n<9;n++){await s.initiate(A.owner,context,command());advance(4*60000);}advance(11*60000);
  const gate=barrier(2);p.onPreset=gate.wait;const pending=Promise.allSettled([s.initiate(A.owner,context,command()),s.initiate(A.owner,context,command())]);await gate.entered;gate.release();const results=await pending;
- assert.equal(results.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(results.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"]);assert.equal(await db.coverUploadAttempt.count(),10);assert.equal(await db.coverCleanupJob.count(),40);
+ assert.equal(results.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(results.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"],JSON.stringify({transactionErrors:diagnostics}));assert.equal(await db.coverUploadAttempt.count(),10);assert.equal(await db.coverCleanupJob.count(),40);
 }));
 
 test("CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota",()=>fixture(async(db,s,p)=>{
