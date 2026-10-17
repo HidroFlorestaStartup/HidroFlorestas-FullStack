@@ -163,3 +163,42 @@ o registro inclui separadamente o hash do OpenAPI. Logs completos sanitizados
 permanecem no coletor local; o CI preserva seus próprios artefatos por SHA.
 PostgreSQL restaurado STOPPED, dados sintéticos preservados.
 T041–T044 executadas; T045 segue aberta até publicação, sincronização e re-review.
+
+## FAIL material do primeiro CI publicado
+
+Origem publicada `60eaa4224c7cbd7d28a591e8a295b31022e4859a`,
+[run39056678227](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39056678227):
+RegressionSetup e Unit PASS; Integration 214/215, FAIL no cenário de quota ativa
+simultânea (`area-covers.test.ts:57`): INTERNAL_ERROR, esperado RATE_LIMITED,
+819.5017ms. Artefato `12109288704` baixado para inspeção. Nenhuma relação causal
+com a mudança contratual foi demonstrada; o erro original é sanitizado pelo
+serviço e ainda precisa ser capturado. A nova paridade Ajv passou no Unit do CI.
+Auditoria publicada `10980f13fb52877972fbcec25aff462affdc0c44`; RC local
+`06842809377343473bfa8c82432af3224160552d` ainda não publicada. A propagação da
+RC está suspensa para diagnóstico T046/T047; os PASSs locais não substituem CI.
+
+### Diagnóstico local e captura adicional, sem alteração de produção
+
+O CI da auditoria `10980f1`, run39056714955, terminou SUCCESS com o mesmo serviço.
+Sessenta repetições locais do cenário de quota ativa em schemas sintéticos
+independentes não reproduziram INTERNAL_ERROR: 60/60 tiveram um vencedor e uma
+recusa RATE_LIMITED. Foram observados 57 conflitos P2034 e 3 conflitos de commit
+DriverAdapterError/TransactionWriteConflict/originalCode40001, todos reconhecidos
+pelo retry existente. [Formas seguras e contagens](cri-rev-005-evidence/transaction-diagnostic.json).
+Isso não demonstra a causa do FAIL remoto nem permite declarar o serviço corrigido.
+
+Para uma nova ocorrência revelar o erro original, a fixture de integração passa
+a interceptar somente `$transaction`, preservando callback/options/relógio e
+delegando o restante do Prisma sem alteração. As duas asserções de quota mantêm
+seus valores e incluem apenas name/code/kind/originalCode e causas estruturadas
+na mensagem de falha. Mensagem bruta, SQL, parâmetros e stack não são registrados.
+Esse é diagnóstico de teste, sem alteração de src/**, serializer, quota ou retry.
+Validação focal: 30/30 Pg/provider/HTTP, typecheck e lint do arquivo PASS,
+18:22:39.805–18:22:54.973Z; snapshot
+`7a95946320a8f6b15155d5603963ba35670ba628c28c15eef2ed064f5615f9ff`.
+
+A primeira coleta cumulativa local da RC `0684280` passou Unit296+Mail17,
+Integration215/Migration37/Contract6/R117/Build/Typecheck/Lint/E2E72/Https2/
+Deletion3 e falhou no mesmo seletor IHFR preexistente. Bootstrap/SchemaAudit
+não foram executados nessa tentativa. [Registros preservados](cri-rev-005-evidence/rc-initial/validation-records.json).
+Nenhum PASS posterior será apresentado como reparo da causa dessas intermitências.
