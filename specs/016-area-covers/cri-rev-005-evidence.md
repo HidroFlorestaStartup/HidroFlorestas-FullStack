@@ -1,7 +1,8 @@
 # CRI-REV-005 — evidências de execução
 
 Data de referência: 2026-10-17. Classificação dos resultados observados:
-`EVIDENCIA_IMPLEMENTACAO`. Estado: EM_ANDAMENTO; revisão humana pendente.
+`EVIDENCIA_IMPLEMENTACAO`. Estado: AGUARDANDO_REVISAO humana; checks do
+fechamento documental acompanhados até a conclusão no GitHub.
 
 ## Reconciliação inicial
 
@@ -92,6 +93,8 @@ anuláveis para não contradizer a projeção compartilhada `cover?`.
 ## Revisão adversarial dos campos e fronteiras
 
 Revisão estática conforme o guia de 17/10, complementada pelos gates abaixo.
+Esta matriz registra o recorte contratual anterior à convergência T047; a revisão
+do helper adicional e o resultado cumulativo atual estão no encerramento abaixo.
 
 | Campo/fronteira | Rastro e conclusão |
 |---|---|
@@ -269,3 +272,78 @@ e [registros RED/GREEN com hash do mesmo teste](cri-rev-005-evidence/retry/red-g
 A conclusão local justifica publicar a correção complementar e revalidar a
 árvore cumulativa da RC; os CI anteriores permanecem históricos, sem atribuir
 SUCCESS de pai ao novo HEAD.
+
+## Encerramento técnico e publicação
+
+Correção contratual implementada em `f38d439`, após planejamento `7a5681a`,
+aproveitando o aplicador e o teste do pacote. `cover` obrigatório somente no
+schema de listagem, três campos fechados; detalhe e serializer preservados.
+Exemplos de detalhe/criação receberam o status já exigido e emitido pelo código.
+O seletor de regressão foi corrigido em `8f1f927` sem mudar regras científicas.
+Convergência adicional do serviço em `bf7a2b1`, após planejamento `4a3ce49` e
+RED/GREEN11 casos: recuo limitado entre os três retries existentes, motivado
+pelas duas falhas reais de CI, sem repetir provider ou alterar critérios de quota.
+`RECOMENDACAO` técnica implementada sob o mandato de corrigir incompatibilidade
+real demonstrada; não é nova decisão da equipe sobre produto ou ciência.
+
+### Regressão cumulativa com o serviço final
+
+HEAD RC testado `4b03798f8d35c5bb3756afc54494661681e4bb59`, Node24.19.0,
+Next16.3.8/sharp0.35.5, PostgreSQL sintético próprio. Comando integral
+`./scripts/rc-review-validation.ps1`, 18:43:06.722–18:49:57.419Z:
+**15 gates PASS em uma única execução**, sem rerun dessa rodada.
+Unit296+Mail17; Integration218; Migration37; Contract6; R117; Build/Typecheck/
+Lint PASS (0 erros, 3 avisos anteriores); E2E72; Https2; Deletion3; Ihfr6;
+Bootstrap14 migrations; SchemaAudit0. Não somar subconjuntos como testes únicos.
+[Registros, comandos, tempos, SHA/tree, hash OpenAPI e hashes dos logs](cri-rev-005-evidence/rc-retry/validation-records.json)
+e [manifesto do candidato cumulativo](cri-rev-005-evidence/rc-retry/functional-manifest.json).
+Os CI oficiais do runtime final também concluíram SUCCESS:
+[origem bf7a2b1 / run39059264824](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059264824)
+e [auditoria25d014c / run39059318548](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059318548).
+Os commits documentais subsequentes recebem checks próprios conforme o recibo.
+As pastas rc-initial/rc-final preservam checkpoints anteriores ao recuo; a rodada
+integral posterior está em rc-retry. Todos os FAILs anteriores continuam visíveis.
+PostgreSQL retornou STOPPED; dados preservados e zero schemas de teste.
+
+### Conferência adversarial final
+
+- O único delta de produção em relação à RC832560a é o helper de retry de
+  imagens. A espera está no catch após a transação, somente para conflitos já
+  permitidos e antes da próxima tentativa; não há espera com callback transacional
+  aberto, I/O externo repetido ou quarto retry. Uma nova tentativa reautoriza e
+  relê o estado. Falha arbitrária recusa sem backoff; esgotamento continua genérico.
+- Campos públicos, privacidade, flags, revisão, OCC, idempotência, quotas,
+  transações, cleanup e UI foram revalidados pelos testes antigos e novos.
+  A revisão não identificou outro bloqueio material no recorte após esses ajustes;
+  isso não substitui revisão independente nem promete eliminar toda contenção.
+- Nenhuma migration, dependência, configuração de deploy, workflow, arquivo
+  imutável ou regra científica foi alterada. Os11 originais,99d8363 e832560a
+  permanecem ancestrais da RC/validação. Propagação somente por merge commits.
+- O PR7 contém a RC atual como ancestral e preserva exatamente seu diff
+  independente de26 arquivos: SHA256
+  `d94966767b272cae0294cceb2cbe91b62a5f61f4b08d7236771c69333e7b067c`.
+
+### Recibo, arquivos e revisão humana
+
+[Relação completa dos arquivos alterados](cri-rev-005-evidence/changed-files.json).
+[Commits, pais dos merges, HEADs publicados, checks realmente observados e pedidos de revisão](cri-rev-005-evidence/publication.json).
+O recibo registra o corte anterior ao seu próprio commit de fechamento; não
+atribui o PASS de um pai a um novo SHA. Os quatro checks desse fechamento e das
+sincronizações são acompanhados até a conclusão e o recibo final é atualizado nos
+comentários estáveis:
+[PR4](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6238618015),
+[PR5](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5#issuecomment-6238618626),
+[PR6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6238619301),
+[PR7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7#issuecomment-6238619960).
+
+PedroVitor237 e luciano-mendesz9 receberam solicitação formal de re-review4/5/6;
+Luciano em7 (Pedro é autor e foi chamado à conferência de sincronização).
+CHANGES_REQUESTED e thread antiga não foram dispensados/resolvidos pelo executor;
+aprovação humana no candidato atual permanece pendente. Nenhum APPROVED criado.
+Houve correção da codificação dos próprios comentários e do payload de lista
+unitária do pedido7; todos os pedidos/comentários foram reconferidos no GitHub.
+
+T041–T048 executadas no recorte técnico. Sem merge em development/main, deploy,
+dados reais, migration remota ou operação Neon/Vercel/Cloudinary. Homologação real,
+GateB012, aceite humano013 e operador continuam pendentes. O IHFR conserva as
+quatro qualificações experimentais já registradas, sem validação científica nova.
