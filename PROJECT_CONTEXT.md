@@ -1,5 +1,14 @@
 # Contexto do projeto HidroFlorestas
 
+## Entrega para revisão dos estudantes — 2026-10-10
+
+FATO_DOCUMENTADO: o usuário autorizou publicar a RC no GitHub, preservando os11
+commits até539f38d, sem merge em development/main, deploy ou migrations remotas.
+[Pacote operacional e PRs](docs/releases/2026-10-10-cri-rc/readme.md).
+As homologações GateB012/aceite013/Cloudinary e operadores seguem pendentes.
+Esta entrega não altera o estado científico nem transforma o fork de revisão
+em repositório produtivo; confirmar o vínculo Git e os recursos existentes.
+
 ## Identidade e propósito
 
 - `FATO_DOCUMENTADO` — O HidroFlorestas é uma plataforma web desenvolvida no contexto de uma iniciativa de extensão e startup. Fonte: contexto fornecido pela equipe para a governança e identidade básica apresentada no `README.md`.
