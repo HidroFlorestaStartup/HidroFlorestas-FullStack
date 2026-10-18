@@ -182,6 +182,26 @@ EVIDENCIA_IMPLEMENTACAO registra preservação/publicação; RECOMENDACAO identi
 roteiros futuros, sem autoridade científica ou aceite humano. Responsáveis por
 review/banco/deploy/mail/cleanup: não especificado. O handoff anterior é preservado.
 
+## Correções e sincronização da RC — 2026-10-13
+
+Origem: pedido posterior do usuário, com autorização explícita somente para
+merges internos entre branches de revisão. Registrados o
+[plano Spec Kit da pilha](../../specs/015-environmental-drafts/rc-stack-plan.md),
+[evidências de hidratação](../../specs/015-environmental-drafts/hydration-evidence.md),
+[evidências RC-UI-001](../../specs/016-area-covers/rc-ui-001-evidence.md),
+[prontidão cumulativa](../releases/2026-10-10-cri-rc/rc-readiness-20261013.md),
+[runbook CI](../operations/rc-review-ci-runbook.md) e
+[acompanhamento dos checks](../reports/audits/2026-10-13-cri-rc-ci-followup.md).
+Logs/JSON/manifestos ficam nos conjuntos de evidência ligados por esses documentos.
+
+EVIDENCIA_IMPLEMENTACAO: TDD, preservação de11 originais, propagação por merges,
+99d8363 original uma vez, gates locais/CI executados e FAILs preservados. A nova
+documentação não reescreve os snapshots históricos da publicação/revisão inicial.
+RECOMENDACAO técnica/operacional é limitada à revisão e reproduções locais;
+não tem autoridade científica ou valor de homologação real. Estudantes receberam
+solicitação de revisão; aprovação e operadores produtivos permanecem pendentes.
+Main/development, dados existentes e bloqueios de deployment preservados.
+
 ## Preparação da incorporação do frontend — 2026-10-18
 
 Origem: pedido de Pedro nesta sessão, com preparação documental e commit local

@@ -1,0 +1,77 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "candidate": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c",
+  "base": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "sql": [
+    {
+      "path": "prisma/migrations/20260907120000_unique_laboratory_access_code/migration.sql",
+      "sha256": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260914000100_area_registration_and_membership_roles/migration.sql",
+      "sha256": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260915000100_collection_registration_metadata/migration.sql",
+      "sha256": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260917000100_environmental_measurement_set/migration.sql",
+      "sha256": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260919000100_user_administration/migration.sql",
+      "sha256": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql",
+      "sha256": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260920000100_remove_legacy_is_admin/migration.sql",
+      "sha256": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20260926000100_ihfr_lifecycle_reference_integrity/migration.sql",
+      "sha256": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20261004000100_mail_foundation/migration.sql",
+      "sha256": "ba923a694ae362e114c8ae003224bf5b102139e2c3e7328b09b5d77fa3626029",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20261004000200_account_verification_recovery/migration.sql",
+      "sha256": "4f36b168678d882e9a55e19a255b64e5752d8babc212977b59c162c1e84f6222",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20261004000300_account_rate_limit_actions/migration.sql",
+      "sha256": "65e030a67736ee1bb3b2390e1e4eb54218f8c5882c50e7205b47a8030d52d771",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20261005000100_account_deletion_mail_ownership/migration.sql",
+      "sha256": "38c609f75b9789e8cc41f5d490c682155eb0c70cb973d71d52ba2d9aa0380fcd",
+      "status": "unchanged"
+    },
+    {
+      "path": "prisma/migrations/20261010000100_environmental_drafts/migration.sql",
+      "sha256": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+      "status": "new"
+    },
+    {
+      "path": "prisma/migrations/20261010000200_area_covers/migration.sql",
+      "sha256": "d6ca4a6b7d79617a83eeccc84b9bf9383d99f5f4dfdee1bae893362563d8003d",
+      "status": "new"
+    }
+  ]
+}

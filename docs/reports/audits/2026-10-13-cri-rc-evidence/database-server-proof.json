@@ -1,0 +1,49 @@
+{
+  "phase": "actual-server-database-proof",
+  "verifiedOwnedRuntime": true,
+  "readOnly": true,
+  "candidates": [
+    {
+      "pid": 18446,
+      "workspaceMatches": true,
+      "syntheticTestDatabaseMatches": true,
+      "localOptInMatches": true,
+      "readinessConfirmationMatches": true,
+      "jwtMatchesSynthetic": true
+    },
+    {
+      "pid": 18459,
+      "workspaceMatches": true,
+      "syntheticTestDatabaseMatches": true,
+      "localOptInMatches": true,
+      "readinessConfirmationMatches": true,
+      "jwtMatchesSynthetic": true
+    },
+    {
+      "pid": 18520,
+      "workspaceMatches": true,
+      "syntheticTestDatabaseMatches": true,
+      "localOptInMatches": true,
+      "readinessConfirmationMatches": true,
+      "jwtMatchesSynthetic": true
+    },
+    {
+      "pid": 20484,
+      "workspaceMatches": true,
+      "syntheticTestDatabaseMatches": true,
+      "localOptInMatches": true,
+      "readinessConfirmationMatches": true,
+      "jwtMatchesSynthetic": true
+    }
+  ],
+  "establishedProcessTcpConnections": 4,
+  "postgresClientsMatchedToServer": 4,
+  "poolStates": [
+    "idle",
+    "idle",
+    "idle",
+    "idle"
+  ],
+  "publicCoreTablesPresent": true,
+  "valuesRedacted": true
+}
