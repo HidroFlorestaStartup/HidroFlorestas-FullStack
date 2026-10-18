@@ -1,4 +1,4 @@
-  1) [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error 
+  1) [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -29,7 +29,7 @@
 
     Error Context: test-results\frontend-login-login-prese-6fd8c-sion-and-announces-an-error-chromium\error-context.md
 
-  2) [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating 
+  2) [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -56,7 +56,7 @@
 
     Error Context: test-results\frontend-login-login-submi-35df5--failure-without-navigating-chromium\error-context.md
 
-  3) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend 
+  3) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -83,7 +83,7 @@
 
     Error Context: test-results\frontend-login-login-with--0a7c4-rd-through-the-real-backend-chromium\error-context.md
 
-  4) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend 
+  4) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -110,7 +110,7 @@
 
     Error Context: test-results\frontend-login-login-with--e2b06-nt-through-the-real-backend-chromium\error-context.md
 
-  5) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only 
+  5) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -137,7 +137,7 @@
 
     Error Context: test-results\frontend-login-login-aria--10f04-nly-empty-fields-email-only-chromium\error-context.md
 
-  6) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only 
+  6) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -164,7 +164,7 @@
 
     Error Context: test-results\frontend-login-login-aria--f03fd--empty-fields-password-only-chromium\error-context.md
 
-  7) [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level 
+  7) [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level
 
     Error: expect(locator).not.toHaveAttribute(expected) failed
 
@@ -192,11 +192,11 @@
     Error Context: test-results\frontend-login-login-aria--701fb--HTTP-failure-at-form-level-chromium\error-context.md
 
   7 failed
-    [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error 
-    [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating 
-    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend 
-    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend 
-    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only 
-    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only 
-    [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level 
+    [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error
+    [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating
+    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend
+    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend
+    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only
+    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only
+    [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level
   79 passed (3.5m)

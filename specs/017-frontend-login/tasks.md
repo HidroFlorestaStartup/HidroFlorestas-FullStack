@@ -50,8 +50,15 @@ Publicação e solicitação concluídas no PR9. Todos os checks acima descrevem
 
 - [x] T015 Reconciliar este adendo e contracts/login-ui.md, registrar planejamento antes da correção; preservar T001–T014.
 - [x] T016 Executar RED no Next oficial com os testes de aria-invalid em tests/e2e/frontend-login.spec.ts: rede/erro genérico e campos vazios sem POST. Provas isoladas do pacote não fecham esta tarefa.
-- [ ] T017 Aplicar src/app/login/page.tsx, executar GREEN do mesmo recorte, typecheck/lint e regressões pertinentes; manter payload, contexto, campos, loading e hidratação.
+- [x] T017 Aplicar src/app/login/page.tsx, executar GREEN do mesmo recorte, typecheck/lint e regressões pertinentes; manter payload, contexto, campos, loading e hidratação.
 - [ ] T018 Revisar semântica, escopo e evidências; commitar/publicar somente feat/frontend-login, verificar CI do novo SHA e atualizar o PR #9. Aprovação humana permanece pendente.
 
 Dependência: T015 → T016 → T017 → T018. Não criar nova Spec, branch/worktree,
 novo PR, configuração global ou investigação de IHFR para este ajuste.
+
+T015 comprovada por ee9b98f; T016 por 7286a5f e evidence/aria-invalid-red.json;
+T017 por ea93b34 e evidence/aria-invalid-green.json. T018 é capturada aberta
+neste registro anterior ao push: o fechamento verificável, SHA final e resultado
+do CI serão registrados no [PR9](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9),
+sem commit de recibo que reinicie a suíte. Consultar esse registro vivo para seu
+estado final; a aprovação humana é independente e permanece pendente.

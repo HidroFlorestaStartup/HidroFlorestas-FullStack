@@ -143,3 +143,14 @@ Sem falha fora do arquivo focal; caso de ambos vazios já passou.
 Evidências: [journal RED](evidence/aria-invalid-red.json) e
 [assertions oficiais](evidence/aria-invalid-red.log). Nenhuma assertion, timeout,
 fixture ou guard foi alterado. Próxima etapa: aplicar page.tsx e repetir E2E.
+
+GREEN e regressão oficial concluídos em 2026-10-18: os mesmos testes sem edição
+passaram 14/14 no login e 86/86 no E2E geral. Unit296 + mail17, build padrão,
+typecheck, lint (0 erros/3 avisos preexistentes) e HTTPS2 também PASS. Os seis
+gates compartilham fingerprint funcional local 9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b.
+Correção commitada em ea93b34, após testes/RED em 7286a5f. Ver
+[review focal](2026-10-18-aria-invalid.md) e [journal GREEN](evidence/aria-invalid-green.json).
+Estado: AGUARDANDO_REVISAO humana; execução local concluída. Publicação e CI do
+novo SHA têm acompanhamento vivo no PR9, sem commits sucessivos de recibo.
+O resultado remoto anterior não é prova desta correção; seu histórico de FAIL
+IHFR e posterior SUCCESS permanece preservado e não foi investigado aqui.

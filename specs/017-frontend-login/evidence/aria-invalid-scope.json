@@ -1,0 +1,23 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "baseline": "acba40d6dbbef10f1307f858f5db59bf819bbbd4",
+  "productCommit": "ea93b344b42a0ceaba28d204ba57f7bcb7b278af",
+  "changedPathsBeforeThisRecord": [
+    "specs/017-frontend-login/2026-10-18-aria-invalid.md",
+    "specs/017-frontend-login/contracts/login-ui.md",
+    "specs/017-frontend-login/evidence/aria-invalid-green.json",
+    "specs/017-frontend-login/evidence/aria-invalid-red.json",
+    "specs/017-frontend-login/evidence/aria-invalid-red.log",
+    "specs/017-frontend-login/plan.md",
+    "specs/017-frontend-login/tasks.md",
+    "src/app/login/page.tsx",
+    "tests/e2e/frontend-login.spec.ts"
+  ],
+  "allowedScope": "Login page, its E2E test and Spec017 only",
+  "protectedPathsDiff": [],
+  "authContextByteExact": true,
+  "localMarkdownLinksChecked": 8,
+  "sensitivePatternScan": "PASS",
+  "tasks": "T001-T017 checked; T018 final publication/CI receipt maintained in PR9",
+  "preexistingWorktrees": "Preserved; RC 0f669b7 and both untracked ZIPs unchanged"
+}
