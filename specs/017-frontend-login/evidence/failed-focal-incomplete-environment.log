@@ -1,0 +1,84 @@
+[WebServer] npm notice run hidro-florestas-fullstack@0.1.0 dev
+
+
+[WebServer] npm notice run next dev --hostname 127.0.0.1 --port 3001
+[WebServer] (node:44340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:46960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:39536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 10 tests using 1 worker
+
+(node:36976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:36976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 375px without horizontal overflow
+[2/10] [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 768px without horizontal overflow
+[3/10] [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 1440px without horizontal overflow
+[4/10] [chromium] › tests\e2e\frontend-login.spec.ts:23:5 › login reflows at 320px with enlarged root text
+[5/10] [chromium] › tests\e2e\frontend-login.spec.ts:39:5 › login preserves password visibility controls and keyboard order
+[6/10] [chromium] › tests\e2e\frontend-login.spec.ts:70:5 › login is inert until hydration and then accepts the first input
+[7/10] [chromium] › tests\e2e\frontend-login.spec.ts:100:5 › login preserves the payload, prevents duplicate submission and announces an error
+[8/10] [chromium] › tests\e2e\frontend-login.spec.ts:152:5 › login submits with Enter and announces a network failure without navigating
+[9/10] [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects incorrect password through the real backend
+  1) [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects incorrect password through the real backend
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 403
+
+      197 |       await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+      198 |       const response = await responsePromise;
+    > 199 |       expect(response.status()).toBe(401);
+          |                                 ^
+      200 |       expect(response.headers()["set-cookie"]).toBeUndefined();
+      201 |       await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+      202 |       await expect(page).toHaveURL(/\/login$/);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:199:33
+
+    Error Context: test-results\frontend-login-login-with--0a7c4-rd-through-the-real-backend-chromium\error-context.md
+
+
+(node:24980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:24980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/10] [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects blocked account through the real backend
+  2) [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects blocked account through the real backend
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 403
+
+      197 |       await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+      198 |       const response = await responsePromise;
+    > 199 |       expect(response.status()).toBe(401);
+          |                                 ^
+      200 |       expect(response.headers()["set-cookie"]).toBeUndefined();
+      201 |       await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+      202 |       await expect(page).toHaveURL(/\/login$/);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:199:33
+
+    Error Context: test-results\frontend-login-login-with--e2b06-nt-through-the-real-backend-chromium\error-context.md
+
+
+  2 failed
+    [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects incorrect password through the real backend
+    [chromium] › tests\e2e\frontend-login.spec.ts:189:9 › login with real ineligible credentials › login rejects blocked account through the real backend
+  8 passed (12.1s)

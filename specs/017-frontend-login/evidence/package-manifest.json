@@ -1,0 +1,92 @@
+{
+  "base_commit": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+  "source_repo": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "branch": "feat/frontend-login",
+  "files": [
+    {
+      "path": ".github/workflows/rc-review.yml",
+      "stage": "implementation",
+      "before_blob": "dc5e821e3ef6708d81aead7ebb873b03bc122aa2",
+      "sha256": "096f599e1cb20fa32b4c472c5eff7f64806135ab40a00537f58066d01543d783",
+      "bytes": 2197
+    },
+    {
+      "path": "specs/017-frontend-login/contracts/login-ui.md",
+      "stage": "plan",
+      "before_blob": null,
+      "sha256": "508617286eab41b4173d15eaec50db98c6f92ec1c29157ef0d49d165a07d7a6d",
+      "bytes": 1614
+    },
+    {
+      "path": "specs/017-frontend-login/implementation-evidence.md",
+      "stage": "review",
+      "before_blob": null,
+      "sha256": "5f887e5364731b5e517d0cf712e96a827732f8f6e5e6c5363454167df6b2af39",
+      "bytes": 4133
+    },
+    {
+      "path": "specs/017-frontend-login/plan.md",
+      "stage": "plan",
+      "before_blob": null,
+      "sha256": "24c0727323e5c210614c5e819c11947e4fbb8474454aba0b8ea9080443014082",
+      "bytes": 4306
+    },
+    {
+      "path": "specs/017-frontend-login/quickstart.md",
+      "stage": "plan",
+      "before_blob": null,
+      "sha256": "2252614fd327c1d4c2cd40e1a50410d50836bddcfbc47cb11bdd3e4e791baba4",
+      "bytes": 2443
+    },
+    {
+      "path": "specs/017-frontend-login/spec.md",
+      "stage": "plan",
+      "before_blob": null,
+      "sha256": "14e272a537c7c903ad920a22e3a0367ed1991bf4d1f38df477898dcf3ae4717d",
+      "bytes": 4451
+    },
+    {
+      "path": "specs/017-frontend-login/tasks.md",
+      "stage": "plan",
+      "before_blob": null,
+      "sha256": "8eac43f0b66d61c1862c9fa235ec80af33d92f9ab9b9b0ff4758dcf1047cfd3a",
+      "bytes": 1391
+    },
+    {
+      "path": "src/app/login/login.module.css",
+      "stage": "implementation",
+      "before_blob": null,
+      "sha256": "9c217c9f93343c4ae2721d30c61ea3a03e89f44617e761ff6771d0f554abeddd",
+      "bytes": 4958
+    },
+    {
+      "path": "src/app/login/page.tsx",
+      "stage": "implementation",
+      "before_blob": "f3c30e54fbc7f6e86e2490c81ba5425fc610cb14",
+      "sha256": "d823f0f56ebff34d4a92e4ea030ba3cdad24732880daebd1e3cbf9deb9d9fa53",
+      "bytes": 5624
+    },
+    {
+      "path": "tests/e2e/frontend-login.spec.ts",
+      "stage": "tests",
+      "before_blob": null,
+      "sha256": "61d978fe9092abf9dac8c57a1a07bdce8a1002238091b1817713070754dbfc45",
+      "bytes": 7150
+    },
+    {
+      "path": "vercel.json",
+      "stage": "implementation",
+      "before_blob": "dc91711f0af76df3644aa425eec1166a5590248a",
+      "sha256": "0d1972674d515d11c436fb18f83d54c5f016724722a4f2c2a078e1c378fdb1ea",
+      "bytes": 548
+    }
+  ],
+  "protected_blobs": {
+    "src/contexts/auth.context.tsx": "126b6695e3fbabc69e1a4930392f0fa6f9643dd7",
+    "src/app/globals.css": "ef1ba361534f05c4442bccafa06e59a2db70370e",
+    "src/app/layout.tsx": "4e41efcecfc1d0556dbe3114113de8f221b37435",
+    "src/assets/logo/logo-hf.png": "2bbdfd56caa472c269ddfdc36e0ca4f3aca70d51",
+    "AGENTS.md": "bf39919afe898357871f31f5d1ca52e082dee3ec",
+    ".specify/memory/constitution.md": "1340110c28c54c669e35355ab037812f051c20fb"
+  }
+}

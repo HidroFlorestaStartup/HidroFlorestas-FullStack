@@ -1,0 +1,11 @@
+{
+  "scope": "PASS",
+  "protectedPathsUnchanged": true,
+  "authContextByteExact": true,
+  "authCallAndImports": "PASS",
+  "diffCheck": "PASS",
+  "localLinksChecked": 23,
+  "taskFormat": "14 unique sequential tasks",
+  "sensitivePatternScan": "PASS",
+  "originalOverlayHashes": "11 PASS"
+}

@@ -3,6 +3,8 @@
 Data: 2026-10-18. Estado: EM_ANDAMENTO no checkout oficial; os bloqueios do pacote parcial abaixo são históricos.
 Base: development `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Spec: [spec.md](spec.md).
 
+As seções até “Reconciliação no checkout oficial” preservam o planejamento e as limitações do pacote parcial; o estado corrente é registrado na reconciliação e nas evidências da execução.
+
 ## Contexto técnico e recorte
 
 Destino: Next16.3.8, React19.2.4, Node24.19.0, npm/package-lock, Tailwind4. Alterar página do login + CSS Module; manter contexto de autenticação, serviços, banco, imagens da marca, fonte e layout global. Não importar o grafo de dependências do starter.
@@ -55,3 +57,11 @@ Node24.19.0 confirmado; `npm ci --no-audit --no-fund`, `npx prisma generate` e i
 Constitution Check I–VII: PASS no planejamento. Referência visual e preparação documental são fontes de apresentação e handoff, não base Git nem contrato de auth. Sem novas entidades, dependências, backend ou mudanças científicas. `research.md`, `data-model.md`, contrato e quickstart completam os artefatos existentes. A aprovação visual humana permanece pendente.
 
 Histórico: pacote parcial preservado nas seções anteriores → planejamento reconciliado no checkout real → commit local antes dos testes e implementação → RED → GREEN/regressão → revisão/publicação/checks.
+
+Revisão das capturas após E2E80 PASS: a transição global de 300ms em html ainda estava ampliando a fonte quando a captura320 foi dimensionada. RECOMENDACAO aplicada no recorte de testes: aguardar fonte computada em32px antes de verificar reflow e estabilizar animações nas capturas, sem alterar CSS global, timeout ou assertion existente. Capturas iniciais ficam no diretório externo do pacote; substituir somente as cópias de evidência final por novas capturas reais estáveis. Acrescentar dois cenários UI de resposta401 real (senha incorreta e BLOCKED) com as fixtures sintéticas oficiais para comprovar os casos exigidos diretamente no navegador, além da cobertura API existente. Reexecutar o arquivo focal, typecheck e lint afetados; código de produto permanece igual ao build aprovado.
+
+O focal ampliado executado diretamente pelo accounts-local produziu 8 PASS/2 FAIL (403 esperado pelo guard, não401): faltou o ambiente sintético completo criado pelo rc-review-validation, em especial ingresso local/política de contas. Nenhum guard/backend foi alterado; os mesmos testes estão sendo reexecutados pelo runner RC completo. As duas falhas e seus snapshots sem senha foram preservados.
+
+Na captura320 estável, paddings em rem também dobram e deixam somente160px úteis no cartão, partindo ENTRAR e Cadastrar-se. Correção focal planejada após terminar o gate corrente: manter em pixels somente os espaçamentos horizontais de página/cartão abaixo de400px, preservando ampliação do texto/controles e as outras larguras. Acrescentar verificação de rótulo ENTRAR em uma linha no cenário320; executar antes para comprovar a falha e depois para GREEN. Em seguida repetir build padrão e os gates afetados no runner oficial; nenhuma configuração global.
+
+Encerramento da execução local: RED de reflow FAIL1 antes do CSS → GREEN1 após; commits de implementação61b27ac e correção9bb0eb9. Build padrão/typecheck/lint/E2E82/HTTPS2/SchemaAudit finais PASS; unit296+mail17 PASS. Spec Kit/checklist/análise de consistência e revisão adversarial concluídos sem achado bloqueante. Estado: EM_ANDAMENTO somente para publicação/CI e solicitação de revisão; ver implementation-evidence.md. O aceite humano permanece fora da autoaprovação do executor.

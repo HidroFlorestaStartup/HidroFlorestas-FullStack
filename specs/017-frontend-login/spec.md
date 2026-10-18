@@ -1,11 +1,11 @@
 # Spec 017 — Login com visual incorporado e autenticação real
 
-Data: 2026-10-18. Estado: IMPLEMENTAÇÃO CANDIDATA; aceite e validação oficial pendentes.
+Data: 2026-10-18. Estado: IMPLEMENTAÇÃO VALIDADA LOCALMENTE; publicação/CI e aceite humano pendentes.
 Branch prevista: `feat/frontend-login`, derivada de `development/e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`.
 
 ## Origem e autoridade
 
-DECISAO_CONFIRMADA: após a avaliação do handoff de Pedro, o usuário autorizou nesta conversa “pode prossegguir, mas sempre usando nosso padrao plan, execute, review”. O recorte autorizado é somente o login real, com ajustes focais de Preview/CI antes de publicar. A aprovação não autoriza merge em development/main ou serviços reais.
+FATO_DOCUMENTADO (origem: spec do pacote recebido): o material relata autorização anterior, após avaliação do handoff de Pedro, para prosseguir com plan→execute→review. A autorização atual verificável está registrada abaixo. O recorte permanece somente o login real, com ajustes focais de Preview/CI antes de publicar, sem merge em development/main ou serviços reais.
 
 Referências: prompt-de-execucao.md e plano-de-incorporacao.md em `docs/preparacao-frontend-20261018` (95463d5b0a29d75e916d2115765792444438db44); origem visual `HidroFlorestaStartup/hidroflorestas-frontend-starter`, main cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f. Sua apresentação é referência; mocks, contas demonstrativas e políticas de navegação não são requisitos do produto.
 
