@@ -2,16 +2,23 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, type FormEvent } from 'react';
-
-import { Eye, EyeOff, LockKeyhole, Mail } from 'lucide-react';
+import { useRef, useState, useSyncExternalStore, type FormEvent } from 'react';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
 
 import LogoHF from '@/assets/logo/logo-hf.png';
 import { useAuth } from '@/contexts/auth.context';
+import styles from './login.module.css';
+
+// Same readiness pattern used by the environmental form: the SSR and first
+// hydration render are inert, before React enables the interactive controls.
+const subscribeToReadiness = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 
 export default function LoginPage() {
   const { signIn } = useAuth();
-
+  const hydrated = useSyncExternalStore(subscribeToReadiness, clientReady, serverReady);
+  const submitting = useRef(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,236 +27,113 @@ export default function LoginPage() {
 
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (loading) return;
+    if (!hydrated || loading || submitting.current) return;
 
+    // Preserve the existing empty-field policy without transforming the payload.
     if (!email.trim() || !password.trim()) {
       setErrorMessage('Informe seu email e sua senha.');
       return;
     }
 
+    submitting.current = true;
     setErrorMessage('');
     setLoading(true);
 
     try {
-      const result = await signIn({
-        email,
-        password,
-      });
-      if (!result.success) {
-        setErrorMessage(result.message);
-      }
+      const result = await signIn({ email, password });
+      if (!result.success) setErrorMessage(result.message);
     } finally {
+      submitting.current = false;
       setLoading(false);
     }
   }
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB]">
-      {/* Header */}
-      <header className="h-25 border-b border-black/10 bg-white">
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
-          <Image
-            src={LogoHF}
-            alt="HidroFlorestas"
-            width={220}
-            priority
-          />
+    <main className={styles.page}>
+      <section className={styles.card} aria-labelledby="login-title">
+        <Image src={LogoHF} alt="HidroFlorestas" width={210} preload className={styles.logo} />
+        <h1 id="login-title" className={styles.heading}>FAÇA SEU LOGIN</h1>
+        <p className={styles.intro}>Acesse sua conta para gerenciar seus projetos</p>
 
-          <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="#"
-              className="text-[16px] font-medium text-[#3E3E3E] underline hover:text-[#0084DD]"
-            >
-              Sobre nós
-            </Link>
+        <p role="status" aria-live="polite" className={styles.status}>
+          {!hydrated ? 'Preparando formulário…' : loading ? 'Entrando…' : ''}
+        </p>
 
-            <Link
-              href="#"
-              className="text-[16px] font-medium text-[#3E3E3E] underline hover:text-[#0084DD]"
-            >
-              O que são laboratórios IHFR?
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Conteúdo */}
-      <main className="flex min-h-[calc(100vh-100px)] items-center justify-center p-6">
-        <form onSubmit={handleLogin} aria-busy={loading} className="w-full max-w-[500px] rounded-[20px] bg-white p-8 shadow-[0px_4px_18px_-3px_rgba(0,0,0,0.25)] md:p-10">
-          {/* Logo */}
-          <div className="flex justify-center">
-            <Image
-              src={LogoHF}
-              alt="HidroFlorestas"
-              width={230}
-              priority
-            />
-          </div>
-
-          <hr className="my-6 border-black/20" />
-
-          {/* Título */}
-          <h1 className="text-center text-[25px] font-bold text-amber-700">
-            FAÇA SEU LOGIN
-          </h1>
-
-          <p className="mt-2 text-center text-[18px] text-[#3E3E3E]">
-            Acesse sua conta para gerenciar seus projetos
-          </p>
-
-          {/* Email */}
-          <div className="mt-8">
-            <label htmlFor="email" className="mb-2 block text-[18px] font-bold text-amber-700">
-              E-mail
-            </label>
-
-            <div className="flex items-center gap-3 rounded-[10px] bg-[#EFEFEF] px-4 py-4 focus-within:ring-2 focus-within:ring-amber-700text-amber-700">
-              <Mail size={24} className="text-[#858585]" />
-
+        <form onSubmit={handleLogin} aria-busy={loading}>
+          <fieldset className={styles.fields} disabled={!hydrated || loading}>
+            <legend className={styles.srOnly}>Credenciais de acesso</legend>
+            <div className={styles.field}>
+              <label htmlFor="email" className={styles.label}>E-mail</label>
               <input
-                type="email"
                 id="email"
-                placeholder="seu@email.com"
                 name="email"
+                type="email"
                 autoComplete="email"
+                placeholder="seu@email.com"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setErrorMessage('');
-                }}
+                onChange={(event) => { setEmail(event.target.value); setErrorMessage(''); }}
+                aria-required="true"
+                aria-invalid={errorMessage ? true : undefined}
                 aria-describedby={errorMessage ? 'login-error' : undefined}
-                className="w-full bg-transparent outline-none placeholder:text-[#858585]"
+                className={styles.input}
               />
             </div>
-          </div>
 
-          {/* Senha */}
-          <div className="mt-6">
-            <label htmlFor="password" className="mb-2 block text-[18px] font-bold text-amber-700">
-              Senha
-            </label>
-
-            <div className="flex items-center gap-3 rounded-[10px] bg-[#EFEFEF] px-4 py-4 focus-within:ring-2 focus-within:ring-amber-700text-amber-700">
-              <LockKeyhole size={24} className="text-[#858585]" />
-
-              <input
-                type={showPassword ? 'text' : 'password'}
-                id="password"
-                placeholder="••••••••"
-                name="password"
-                autoComplete="current-password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  setErrorMessage('');
-                }}
-                aria-describedby={errorMessage ? 'login-error' : undefined}
-                className="w-full bg-transparent text-[16px] text-[#3E3E3E] outline-none placeholder:text-[#858585]"
-              />
-
-              <button
-                type="button"
-                aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
-                onClick={() => setShowPassword(!showPassword)}
-                className="cursor-pointer text-[#858585]"
-              >
-                {showPassword ? (
-                  <EyeOff size={22} />
-                ) : (
-                  <Eye size={22} />
-                )}
-              </button>
+            <div className={styles.field}>
+              <label htmlFor="password" className={styles.label}>Senha</label>
+              <div className={styles.passwordControl}>
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(event) => { setPassword(event.target.value); setErrorMessage(''); }}
+                  aria-required="true"
+                  aria-invalid={errorMessage ? true : undefined}
+                  aria-describedby={errorMessage ? 'login-error' : undefined}
+                  className={`${styles.input} ${styles.passwordInput}`}
+                />
+                <button
+                  type="button"
+                  aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
+                  aria-pressed={showPassword}
+                  onClick={() => setShowPassword((value) => !value)}
+                  className={styles.eyeButton}
+                >
+                  {showPassword ? <EyeOff size={20} aria-hidden="true" /> : <Eye size={20} aria-hidden="true" />}
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* Mostrar senha / Esqueceu senha */}
-          <div className="mt-3 flex items-center justify-between">
-            <label className="flex cursor-pointer items-center gap-2">
-              <input
-                type="checkbox"
-                checked={showPassword}
-                onChange={() => setShowPassword(!showPassword)}
-                className="h-4 w-4"
-              />
+            <div className={styles.options}>
+              <label className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={showPassword}
+                  onChange={() => setShowPassword((value) => !value)}
+                  className={styles.checkbox}
+                />
+                <span>Mostrar senha</span>
+              </label>
+              <Link href="/forgot-password" className={styles.link}>Esqueceu sua senha?</Link>
+            </div>
 
-              <span className="text-sm text-[#858585]">
-                Mostrar senha
-              </span>
-            </label>
+            {errorMessage ? <p id="login-error" role="alert" className={styles.error}>{errorMessage}</p> : null}
 
-            <Link
-              href="/forgot-password"
-              className="text-sm font-medium text-amber-700 underline"
-            >
-              Esqueceu sua senha?
-            </Link>
-          </div>
-
-          {errorMessage ? (
-            <p id="login-error" role="alert" className="mt-4 text-sm text-red-700">
-              {errorMessage}
-            </p>
-          ) : null}
-
-          {/* Botão */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="
-              mt-8
-              w-full
-              cursor-pointer
-              rounded-[10px]
-              bg-green-600
-              py-4
-              text-[22px]
-              font-bold
-              text-white
-              hover:opacity-90
-              disabled:cursor-not-allowed
-              disabled:opacity-70
-              active:scale-[0.98]
-            "
-          >
-            {loading ? 'ENTRANDO...' : 'ENTRAR'}
-          </button>
-
-          {/* Cadastro */}
-          <div className="mt-8 text-center text-[16px] text-[#3E3E3E]">
-            Não tem uma conta?{' '}
-            <Link
-              href="/register"
-              className="font-semibold text-amber-700 underline"
-            >
-              Cadastrar-se
-            </Link>
-          </div>
+            <button type="submit" disabled={!hydrated || loading} className={styles.submit}>
+              {loading && <Loader2 size={20} aria-hidden="true" className={styles.spinner} />}
+              {loading ? 'ENTRANDO...' : 'ENTRAR'}
+            </button>
+          </fieldset>
         </form>
-      </main>
-    </div>
+
+        <p className={styles.signup}>
+          Não tem uma conta?{' '}
+          <Link href="/register" className={styles.link}>Cadastrar-se</Link>
+        </p>
+      </section>
+    </main>
   );
 }
-
-
-
-
-
-
-// 'use client';
-
-// import { useAuth } from "@/contexts/auth.context";
-
-// export default function LoginPage() {
-
-//     const { signIn, user } = useAuth();
-
-//     return (
-//         <div>
-//             Login Page Aqui <br /><br />
-            
-//             <button 
-//             className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
-//             onClick={() => signIn({email: 'admin@admin.com', password: 'admin1234'})}>Fazer Login Admin</button>
-//         </div>
-//     );
-// }
