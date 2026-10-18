@@ -3,6 +3,41 @@
 ID: PLAN-FRONT-PREP-20261018. Estado: `CONCLUIDO` para a preparação documental.
 Plano de incorporação completo: `AGUARDANDO_REVISAO` por Pedro; execução futura.
 
+## Continuação autorizada — conclusão dos PRs, 18/10/2026
+
+Estado desta continuação: `EM_ANDAMENTO`. Origem: novo pedido anexado por Pedro
+nesta sessão, autorizando expressamente retarget/atualização/aprovação de Pedro e
+merge commit de #6, retarget/atualização/comentário/merge commit de #7, encerramento
+comentado de #2–#5 e publicação desta branch documental com PR aberto para revisão.
+Essa autorização substitui os limites de escrita remota da primeira rodada apenas
+nesse recorte. Não autoriza main, exclusão de branches, bypass de proteção,
+rebase/squash/force push, deploy, serviços/banco reais ou frontend.
+
+`FATO_DOCUMENTADO`: Pedro informou que Luciano já revisou. A origem é a declaração
+de Pedro nesta continuação; não equivale a evento APPROVED de Luciano no GitHub.
+Conta autenticada confirmada: PedroVitor237; aprovação de #6 só será submetida por
+essa conta no SHA conferido. #7 é de Pedro e não receberá autoaprovação.
+
+Estado inicial: checkout original limpo em development118a3a8; worktree documental
+limpa em dcc54e1, nove documentos preservados; revisão local a01857b. Origin oficial
+conferido e fetch realizado. Repositório permite merge commit; exclusão automática
+de branch false. Development protected=false e rulesets vazios na consulta atual;
+regras e checks serão reavaliados no momento de cada merge, sem bypass.
+
+| Etapa desta continuação | Estado | Critério |
+|---|---|---|
+| Conferir e integrar #6 | EM_ANDAMENTO | Dois documentos apenas; head/checks/review de Pedro e pais do merge confirmados |
+| Conferir e integrar #7 | NAO_INICIADO | 26 arquivos documentais preservados e parecer/README de #6 intactos, sem autoaprovação |
+| Encerrar #2–#5 | NAO_INICIADO | Head atual ancestral, comentário rastreável e closed sem novo merge/exclusão |
+| Atualizar/publicar preparação | NAO_INICIADO | dcc54e1 preservado; development sincronizada; branch documental/PR próprio sem merge |
+| Conferir entrega | NAO_INICIADO | Estados remotos, SHAs, paths e equivalência funcional; main preservada |
+
+Paradas: proteção efetiva impedindo ação, check novo falho, alteração funcional
+inesperada ou conflito que possa descartar conteúdo. Prosseguir nas etapas
+independentes seguras e relatar o impedimento exato, sem inventar aprovação humana.
+Não repetir bateria funcional por diferenças documentais; manter evidências novas
+e reaproveitadas da preparação com seus resultados/limites originais.
+
 ## Objetivo e autoridade
 
 Executar com Pedro a sincronização, reconstrução da entrega, revisão dos PRs e
