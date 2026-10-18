@@ -1,0 +1,46 @@
+.shell { min-height: 100dvh; background: #f5f8f6; color: #183c2c; font-family: var(--font-poppins), Arial, sans-serif; overflow-wrap: anywhere; }
+.header { position: sticky; top: 0; z-index: 30; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 24px; border-bottom: 1px solid #dce6df; background: #fff; }
+.brand { display: inline-flex; min-height: 44px; align-items: center; flex-shrink: 0; border-radius: 8px; }
+.brand img { width: 150px; height: auto; }
+.headerInfo { display: flex; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; gap: 16px; }
+.identity { display: none; min-width: 0; max-width: 220px; font-size: .875rem; }
+.identity small { display: block; color: #486354; font-size: .75rem; }
+.accountLinks { display: none; flex-wrap: wrap; align-items: center; gap: 8px; }
+.accountLink { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid #d2ded5; border-radius: 10px; font-size: .8125rem; font-weight: 600; text-decoration: none; color: #285c43; }
+.accountLink:hover { background: #edf5ef; }
+.accountDanger { color: #a12626; }
+.mobileAccount { position: relative; margin-left: auto; }
+.mobileAccount summary { display: flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border: 1px solid #d2ded5; border-radius: 10px; cursor: pointer; font-size: .875rem; font-weight: 600; list-style: none; }
+.mobileAccount summary::-webkit-details-marker { display: none; }
+.accountMenu { position: absolute; right: 0; top: calc(100% + 8px); width: min(320px, calc(100vw - 32px)); max-height: 65dvh; overflow: auto; padding: 16px; border: 1px solid #d2ded5; border-radius: 16px; background: #fff; box-shadow: 0 12px 32px #183c2c20; }
+.accountMenu p { margin-bottom: 12px; font-size: .875rem; font-weight: 600; }
+.accountMenu nav { display: grid; gap: 8px; }
+.frame { display: flex; align-items: flex-start; min-width: 0; }
+.content { flex: 1; min-width: 0; padding: 24px 16px calc(12rem + env(safe-area-inset-bottom)); outline-offset: -3px; }
+.contentInner { max-width: 1200px; min-width: 0; margin-inline: auto; }
+.rail { position: fixed; inset: auto 0 0; z-index: 20; display: flex; align-items: stretch; border-top: 1px solid #d2ded5; background: #fff; padding: 8px 4px calc(8px + env(safe-area-inset-bottom)); }
+.railLink { display: flex; flex: 1; min-width: 0; min-height: 52px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; padding: 8px 4px; color: #42634e; font-size: .75rem; font-weight: 600; line-height: 1.35; text-align: center; text-decoration: none; }
+.railLink svg { flex-shrink: 0; }
+.railLink:hover { background: #edf5ef; }
+.railLink[aria-current="page"] { color: #fff; background: #236548; }
+.context { margin-bottom: 24px; padding: 20px; border: 1px solid #dce6df; border-radius: 20px; background: #fff; }
+.contextLabel { color: #87621d; font-size: .75rem; font-weight: 700; }
+.context h2 { margin-top: 6px; font-size: 1.25rem; font-weight: 700; }
+.contextRole { margin-top: 8px; color: #486354; font-size: .875rem; }
+.contextNav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.contextNav a { display: inline-flex; flex: 1 1 100px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 10px 12px; border: 1px solid #d2ded5; border-radius: 10px; color: #285c43; font-size: .875rem; font-weight: 600; text-decoration: none; }
+.contextNav a[aria-current="page"] { background: #236548; color: #fff; border-color: #236548; }
+.contextNav svg { flex-shrink: 0; }
+.header :is(a,summary):focus-visible, .rail a:focus-visible, .contextNav a:focus-visible, .skip:focus-visible { outline: 3px solid #9a6b10; outline-offset: 3px; }
+.skip { position: fixed; top: 8px; left: 8px; z-index: 60; transform: translateY(-180%); padding: 12px 16px; border-radius: 10px; background: #fff; color: #183c2c; font-weight: 700; }
+.skip:focus { transform: translateY(0); }
+@media (min-width: 768px) {
+  .accountLinks { display: flex; }
+  .mobileAccount { display: none; }
+  .rail { position: sticky; top: 110px; inset-inline: auto; bottom: auto; flex: 0 0 144px; flex-direction: column; gap: 8px; margin: 24px 0 0 16px; padding: 12px; border: 1px solid #dce6df; border-radius: 20px; }
+  .railLink { flex: none; min-height: 64px; padding: 12px 6px; }
+  .mobileExit { display: none; }
+  .content { padding: 24px 24px 48px; }
+}
+@media (min-width: 1024px) { .identity { display: flex; flex-direction: column; } }
+@media (max-width: 399px) { .header { padding-inline: 16px; gap: 8px; } .brand img { width: 130px; } .context { padding: 16px; } .contextNav a { flex-basis: 100%; } .rail { flex-wrap: wrap; } .railLink { flex-basis: 130px; font-size: .6875rem; } }

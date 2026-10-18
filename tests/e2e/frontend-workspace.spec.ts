@@ -1,4 +1,4 @@
-import { expect, test, type BrowserContext, type Page, type TestInfo } from "@playwright/test";
+import { expect, test, type BrowserContext, type Locator, type Page, type TestInfo } from "@playwright/test";
 import { copyFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
@@ -9,7 +9,7 @@ import { cleanupLaboratoryFixtures, LABORATORY_FIXTURE_PREFIX } from "../fixture
 // Real authorization/lifecycle fixtures. Only tests explicitly labelled transient
 // transport intercept failures; they never provide invented permissions or data.
 test.use({ trace: "off", screenshot: "off", video: "off" });
-test.beforeEach(async ({ page }) => { await page.route("**://*.tile.openstreetmap.org/**", route => route.abort()); });
+test.beforeEach(async ({ page }) => { await page.route("https://tile.openstreetmap.org/**", route => route.abort()); });
 test.beforeAll(async () => {
   await cleanupLaboratoryFixtures(process.env);
   await cleanupAreaFixtures(process.env);
@@ -45,7 +45,8 @@ async function capture(page: Page, info: TestInfo, name: string) {
   for (const input of await page.locator('input:not([type="checkbox"])').all()) {
     if (await input.evaluate(node => (node as HTMLInputElement).value.length > 0)) mask.push(input);
   }
-  await page.screenshot({ path, fullPage: true, animations: "disabled", mask });
+  const overlay = /settings|menu|focus|risk|delete-blocker/.test(name);
+  await page.screenshot({ path, fullPage: !overlay, animations: "disabled", mask });
   const archive = join(process.cwd(), ".accounts-validation", "frontend-workspace");
   await mkdir(archive, { recursive: true });
   await copyFile(path, join(archive, `frontend-workspace-${name}.png`));
@@ -57,6 +58,19 @@ async function enlarge(page: Page, width: number) {
     await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
     await expect.poll(() => page.evaluate(() => getComputedStyle(document.documentElement).fontSize)).toBe("32px");
   }
+}
+async function hasBrokenWord(target: Locator) {
+  return target.evaluate(node => {
+    const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT); let child: Node | null;
+    while ((child = walker.nextNode())) {
+      const value = child.textContent ?? ""; const words = /[A-Za-zÀ-ÿ]+/g; let match: RegExpExecArray | null;
+      while ((match = words.exec(value))) {
+        const range = document.createRange(); range.setStart(child, match.index); range.setEnd(child, match.index + match[0].length);
+        if (range.getClientRects().length > 1) return true;
+      }
+    }
+    return false;
+  });
 }
 
 for (const width of [375, 768, 1440, 320]) {
@@ -75,10 +89,27 @@ for (const width of [375, 768, 1440, 320]) {
     await expect(card(page, `${AREA_FIXTURES.prefix} 1`).getByText("Inativo", { exact: true })).toBeVisible();
     await capture(page, info, `list-${width}`);
     if (!await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)) issues.push("list overflow");
+    if (width === 320) {
+      for (const target of await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link").all()) {
+        if (await hasBrokenWord(target)) issues.push(`primary navigation breaks a word: ${await target.innerText()}`);
+      }
+      if (await hasBrokenWord(card(page).getByRole("button", { name: "Configurações", exact: true }))) issues.push("card settings label breaks inside a word");
+    }
     await card(page).getByRole("button", { name: "Configurações", exact: true }).click();
     await expect(page.getByRole("dialog").getByText("Zona de perigo", { exact: true })).toBeVisible();
     await capture(page, info, `settings-${width}`);
     if (!await page.getByRole("dialog").evaluate(node => node.scrollWidth <= node.clientWidth)) issues.push("dialog overflow");
+    const dialog = page.getByRole("dialog");
+    if (width === 320 && await hasBrokenWord(dialog.getByText("Configurações", { exact: true }))) issues.push("settings heading breaks inside a word");
+    await dialog.getByRole("button", { name: "Excluir laboratório", exact: true }).click();
+    await expect(dialog.getByRole("button", { name: "Excluir permanentemente", exact: true })).toBeDisabled();
+    await capture(page, info, `settings-confirmation-${width}`);
+    if (width === 320) {
+      const broken = await hasBrokenWord(dialog.getByRole("button", { name: "Excluir permanentemente", exact: true }));
+      if (broken) issues.push("risk confirmation label breaks inside a word");
+    }
+    await dialog.getByRole("button", { name: "Cancelar", exact: true }).click();
+    await expect(dialog.getByRole("button", { name: "Excluir laboratório", exact: true })).toBeFocused();
     await page.getByRole("button", { name: "Fechar configurações" }).click();
     // These pages retain their existing content; inspect the new surrounding
     // chrome and keep existing domain assertions in their original suites.
@@ -195,11 +226,13 @@ test("mobile account disclosure closes with Escape, navigation and desktop resiz
   const menu = page.getByRole("button", { name: "Conta", exact: true });
   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
   await menu.focus(); await page.keyboard.press("Enter"); await page.keyboard.press("Tab");
+  await expect(menu).toHaveAttribute("aria-expanded", "true");
   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toBeFocused();
   await capture(page, info, "mobile-menu-focus");
   await page.keyboard.press("Escape"); await expect(menu).toBeFocused();
+  await expect(menu).toHaveAttribute("aria-expanded", "false");
   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
-  await menu.click(); await page.getByRole("heading", { level: 1 }).click();
+  await menu.click(); await page.mouse.click(8, 8);
   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
   await menu.click(); await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Laboratórios", exact: true }).focus();
   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
@@ -215,26 +248,39 @@ test("mobile account disclosure closes with Escape, navigation and desktop resiz
 
 test("transient list loading and error retry recover the real empty workspace", async ({ page, context }, info) => {
   await login(context, info, AUTH_FIXTURE_USERS[0].id); let release!: () => void;
-  const held = new Promise<void>(resolve => { release = resolve; }); let failed = false;
+  const held = new Promise<void>(resolve => { release = resolve; }); let failAttempt = true;
   await page.route("**/api/laboratories", async route => {
-    if (route.request().method() !== "GET" || failed) return route.continue();
-    failed = true; await held; await route.fulfill({ status: 503, json: { success: false, code: "INTERNAL_ERROR", message: "Falha transitória sintética." } });
+    if (route.request().method() !== "GET" || !failAttempt) return route.continue();
+    await held; await route.fulfill({ status: 503, json: { success: false, code: "INTERNAL_ERROR", message: "Falha transitória sintética." } });
   });
   try {
     await page.goto("/workspace"); await expect(page.getByRole("status")).toContainText("Carregando laboratórios");
     await capture(page, info, "list-loading"); release();
     await expect(page.locator("main").getByRole("alert")).toContainText("Não foi possível carregar"); await capture(page, info, "list-error");
+    failAttempt = false;
     await page.getByRole("button", { name: "Tentar novamente", exact: true }).click();
     await expect(page.getByText("Você ainda não participa de um laboratório.")).toBeVisible();
   } finally { release(); }
 });
 
 test("keyboard skip link focuses content without adding a second main", async ({ page, context }, info) => {
-  await login(context, info); await page.goto("/workspace"); await settled(page);
-  await page.keyboard.press("Tab");
-  const skip = page.getByRole("link", { name: "Pular para o conteúdo", exact: true });
-  await expect(skip).toBeFocused(); await capture(page, info, "skip-focus"); await page.keyboard.press("Enter");
-  await expect(page.locator("#application-content")).toBeFocused(); await expect(page.locator("main")).toHaveCount(1);
+  await login(context, info);
+  for (const width of [375, 768, 1440, 320]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/workspace"); await settled(page); await enlarge(page, width);
+    await page.keyboard.press("Tab");
+    const skip = page.getByRole("link", { name: "Pular para o conteúdo", exact: true });
+    await expect(skip).toBeFocused(); await capture(page, info, `skip-focus-${width}`); await page.keyboard.press("Enter");
+    await expect(page.locator("#application-content")).toBeFocused(); await expect(page.locator("main")).toHaveCount(1);
+    await capture(page, info, `skip-content-focus-${width}`);
+    await expect.poll(async () => {
+      const heading = await page.getByRole("heading", { level: 1 }).boundingBox();
+      const header = await page.locator("#application-header").boundingBox();
+      const footer = width < 768 ? await page.locator("#application-navigation").boundingBox() : null;
+      return Boolean(heading && header && heading.y >= header.y + header.height + 8
+        && heading.y < header.y + header.height + 72 && heading.y + heading.height <= (footer?.y ?? 900) - 8);
+    }).toBe(true);
+  }
 });
 
 test("mobile focused content stays between sticky header and bottom navigation with text200", async ({ page, context }, info) => {

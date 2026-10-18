@@ -15,6 +15,7 @@ test("normal account: GET and cancellation preserve access; wrong password, keyb
     expect((await second.request.get(`${origin}/api/auth/me`)).status()).toBe(200);
     await page.getByRole("link", { name: "Cancelar e voltar" }).click();
     await expect(page).toHaveURL(/\/workspace$/);
+    await page.getByRole("button", { name: "Conta", exact: true }).click();
     await page.getByRole("link", { name: "Excluir conta", exact: true }).click();
     await page.getByLabel("Senha atual", { exact: true }).fill("incorrect");
     await page.getByRole("checkbox").check();

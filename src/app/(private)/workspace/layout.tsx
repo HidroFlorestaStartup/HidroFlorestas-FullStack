@@ -1,13 +1,6 @@
-'use client';
-
-import TopBar from "@/components/top-bar";
-
-export default function LayoutPrivate({ children }: { children: React.ReactNode }) {
-
-    return (
-        <div className="w-full h-screen bg-[#F9FAFB]">
-            <TopBar showLinks showProfile showLogout />
-            {children}
-        </div>
-    )
+import { requireAuth } from "@/app/api/server/middlewares/auth.middleware";
+import { ApplicationShell } from "@/components/shell/application-shell";
+export default async function WorkspaceLayout({ children }: { children: React.ReactNode }) {
+  const principal = await requireAuth();
+  return <ApplicationShell canAdmin={principal.role === "ADMIN"}>{children}</ApplicationShell>;
 }
