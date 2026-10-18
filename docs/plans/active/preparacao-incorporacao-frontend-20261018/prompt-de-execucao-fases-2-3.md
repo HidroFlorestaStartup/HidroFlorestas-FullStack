@@ -5,6 +5,9 @@ Cadastro e conjunto de conta** e **fase 3 — Workspace e shell**. Este arquivo 
 autossuficiente para o professor/outro desenvolvedor trabalhar com seu Codex,
 sem o chat, o prompt antigo do login ou a análise externa de revisão dos PRs.
 
+[PR documental10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+sem merge nesta preparação. O handoff pode ser usado diretamente nesta branch.
+
 ## Autoridade, autonomia e resultado esperado
 
 `DECISAO_CONFIRMADA`: Pedro, no pedido “sincronização, merges #8/#9 e handoff das

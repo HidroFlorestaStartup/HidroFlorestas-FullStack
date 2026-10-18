@@ -165,3 +165,6 @@ Branch `docs/handoff-frontend-fases-2-3`, preparada de afef5db: o executor pode
 ler o handoff nessa branch antes do merge documental. Fase3 pode ser preparada
 em PR empilhado sobre a fase2 validada enquanto aguarda o mantenedor, conforme
 o novo prompt. Esta preparação não implementou as duas fases nem operou deploy.
+
+Publicação deste adendo: [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+branch docs/handoff-frontend-fases-2-3; sem merge nesta preparação.

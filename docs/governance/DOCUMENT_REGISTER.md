@@ -265,3 +265,6 @@ operação manual de deploy. Mainbeba96f e branches anteriores preservadas.
 PROJECT_CONTEXT recebeu adendo navegacional. Não houve nova decisão técnica
 global ou reclassificação de pendências que exigisse editar TECH_DECISIONS.md
 ou PENDING_DECISIONS.md. Registros antigos permanecem como cortes históricos.
+
+Publicação deste adendo: [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+branch docs/handoff-frontend-fases-2-3; sem merge nesta preparação.

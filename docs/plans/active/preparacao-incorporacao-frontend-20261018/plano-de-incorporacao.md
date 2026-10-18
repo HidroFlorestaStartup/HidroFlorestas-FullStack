@@ -38,6 +38,9 @@ nenhuma nova bateria só pelo merge documental. Ressalva aceita por Pedro:
 CI292dd95 falhou nos seis IHFR, causa não demonstrada; acba40d/5503082 PASS não
 provam correção. Preservar esse histórico e registrar recorrência material.
 
+[PR documental10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+sem merge nesta preparação. O handoff pode ser usado diretamente nesta branch.
+
 ## Sequência vigente e critérios
 
 | Fase | Estado e execução | Critério de entrega |

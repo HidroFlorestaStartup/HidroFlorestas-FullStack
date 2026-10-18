@@ -329,10 +329,21 @@
   "publication": {
     "branch": "docs/handoff-frontend-fases-2-3",
     "base": "afef5db6ced1a4604a114d842bf85950ac32c69b",
-    "state": "IN_PROGRESS",
+    "state": "PUBLISHED",
     "pr_target": "development",
     "merge_authorized": false,
-    "prompt": "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md"
+    "prompt": "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md",
+    "first_verified_commit": "7ff421c9f560b8846a1b5d782eb6432324afd782",
+    "pr_number": 10,
+    "pr_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10",
+    "pr_state": "OPEN",
+    "auto_merge": null,
+    "initial_head_status": {
+      "head": "7ff421c9f560b8846a1b5d782eb6432324afd782",
+      "Vercel": "PENDING",
+      "Vercel Preview Comments": "SUCCESS"
+    },
+    "closing_commit": "head final conferido e informado na entrega; sem autorreferência"
   },
   "verification": {
     "git_merge_parents": "PASS",
@@ -347,7 +358,8 @@
       "sensitive_patterns": "PASS",
       "required_prompt_content": "PASS",
       "git_diff_check": "PASS"
-    }
+    },
+    "remote_first_publication": "PASS: remote branch and PR10 head match 7ff421c; OPEN against development"
   },
   "not_performed": [
     "Nova bateria funcional local nesta preparação",

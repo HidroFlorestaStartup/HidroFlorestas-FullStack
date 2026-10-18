@@ -2,8 +2,8 @@
 
 ## Continuação vigente — merges8/9 e handoff2/3, 18/10/2026
 
-ID: PLAN-FRONT-HANDOFF-20261018. Estado: `EM_ANDAMENTO` para a publicação
-documental; sincronização/revisão/review/merges `CONCLUIDO`. Plano de incorporação:
+ID: PLAN-FRONT-HANDOFF-20261018. Estado: `CONCLUIDO` para sincronização,
+revisão/review/merges e publicação documental. PR documental `AGUARDANDO_REVISAO`. Plano de incorporação:
 fase1 concluída, fases2/3 autorizadas e ainda não executadas, fases4+ propostas.
 As seções anteriores de mandato são preservadas sob o marco histórico abaixo.
 
@@ -65,7 +65,7 @@ novo JSON sanitizado e adendos em PROJECT_CONTEXT/DOCUMENT_REGISTER.
 | Rechecar, aprovar e integrar9 | Pedro com Codex | CONCLUIDO | Head5503082, diff disjunto, árvore integrada equivalente, CI15 PASS e review5564336503, mergeafef5db |
 | Conferência pós-merge | Pedro com Codex | CONCLUIDO | Pais/árvore/SHAs reais; branches preservadas, development0/0/main0/0 |
 | Atualizar plano e handoff2/3 | Pedro com Codex | CONCLUIDO | Autorização autossuficiente, escopo completo, specs próprias, branches/CI/PRs empilhados, fases4+ propostas |
-| Validar/commitar/push/abrir PR documental | Pedro com Codex | EM_ANDAMENTO | Oito documentos, links/JSON/diff/segredos, head remoto e PR aberto para development sem merge |
+| Validar/commitar/push/abrir PR documental | Pedro com Codex | CONCLUIDO | Oito documentos, links/JSON/diff/segredos, head remoto e PR aberto para development sem merge |
 
 ### Validação, limites e paradas
 
@@ -111,12 +111,27 @@ corpos históricos preservados, conteúdo obrigatório do prompt conferido,
 `git diff --check` e padrões sensíveis PASS. Script temporário fora do
 repositório, sem instalação de ferramenta ou teste de produto artificial.
 Nova bateria funcional local não executada: mudança somente documental e
-equivalência/CI do candidato demonstrados. Publicação remota ainda em andamento.
+equivalência/CI do candidato demonstrados. Publicação remota confirmada abaixo.
 
 Detalhes: [relatório atualizado](relatorio-de-prontidao.md) e
 [JSON da integração](integracao-login-e-handoff-fases-2-3.json).
-Próxima entrega: publicar branch/PR documental para revisão, sem seu merge;
-executor pode ler o prompt nessa branch e executar ambas as fases.
+Publicação confirmada: primeiro commit **7ff421c9f560b8846a1b5d782eb6432324afd782** em origin,
+tracking da própria branch; [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) **OPEN** para development,
+sem autoMergeRequest e sem merge. Oito arquivos documentais conferidos no PR.
+Este adendo de encerramento é commit posterior; o head final é verificado no
+GitHub e informado na entrega, sem registrar o próprio hash dentro do commit.
+Consulta inicial do head7ff421c: Vercel PENDING e Preview Comments SUCCESS;
+isso não é FAIL nem nova bateria funcional. Status do head final é observação
+separada, sem disparo manual de deploy. Executor pode ler o prompt na branch.
+
+2026-10-18 — `CONCLUIDO`: validação documental PASS; commit7ff421c publicado,
+PR10 aberto para development; encerramento documentado sem merge do PR10.
+
+Resultado: login integrado e handoff2/3 disponível. Sem bloqueio material nesta
+preparação. Pendentes revisão/merge documental, implementação/validação das duas
+fases e aceites/merges pelo mantenedor; gates operacionais/científicos nos próprios
+alcances. Não arquivar o pacote ativo de incorporação antes da revisão; plano
+global da incorporação permanece EM_ANDAMENTO.
 
 ## Registro histórico da preparação anterior
 

@@ -4,9 +4,9 @@
 
 **Login/Spec017 integrado em development; execução completa das fases2 e3
 autorizada por Pedro para o outro desenvolvedor.** A preparação documental desta
-continuação está em publicação na branch `docs/handoff-frontend-fases-2-3`,
-criada de `afef5db6ced1a4604a114d842bf85950ac32c69b`. O novo PR será somente
-documental, para development, sem merge nesta rodada. O handoff pode ser lido
+continuação está publicada na branch `docs/handoff-frontend-fases-2-3`,
+criada de `afef5db6ced1a4604a114d842bf85950ac32c69b`. O [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) está aberto, somente
+documental, para development, sem auto-merge ou merge nesta rodada. O handoff pode ser lido
 diretamente da branch enquanto o mantenedor o revisa.
 
 `DECISAO_CONFIRMADA`: origem no pedido de Pedro “sincronização, merges #8/#9 e
@@ -115,7 +115,7 @@ com dependência/base temporária explícita e futuro retarget/revalidação; o 
 não foi delegado. Fases4+ continuam propostas. A análise externa anterior não é
 pré-requisito nem foi copiada para o repositório.
 
-Verificações documentais/resultados e encerramento serão registrados no
+Verificações documentais/resultados e encerramento registrados no
 [acompanhamento](plano-de-acompanhamento.md) e no
 [JSON sanitizado](integracao-login-e-handoff-fases-2-3.json).
 Pendências reais: revisão/merge do PR documental pelo mantenedor; implementação
@@ -123,6 +123,14 @@ e validação das fases2/3 pelo outro desenvolvedor; respectivos aceites/merges;
 gates operacionais/científicos anteriores nos próprios alcances. Nenhuma nova
 autorização normal de execução das fases2/3 é pendente. TECH_DECISIONS e
 PENDING_DECISIONS não requerem alteração global nesta preparação.
+
+Publicação remota conferida: commit inicial **7ff421c9f560b8846a1b5d782eb6432324afd782**,
+branch com upstream próprio e PR10 OPEN/MERGEABLE, oito caminhos documentais.
+Validação nova desta preparação: diff/check/escopo,75 links locais, JSONs,
+preservação dos corpos históricos e padrões sensíveis PASS. O commit posterior
+de encerramento registra esses fatos; seu head final é conferido separadamente.
+Vercel inicial do head7ff421c PENDING e Preview Comments SUCCESS, sem confundir
+esse status automático com validate funcional ou homologação.
 
 ## Registro histórico de prontidão e da continuação anterior
 
