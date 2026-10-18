@@ -24,13 +24,21 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [invalidFields, setInvalidFields] = useState({ email: false, password: false });
+
+  function clearFeedback() {
+    setErrorMessage('');
+    setInvalidFields({ email: false, password: false });
+  }
 
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!hydrated || loading || submitting.current) return;
 
     // Preserve the existing empty-field policy without transforming the payload.
-    if (!email.trim() || !password.trim()) {
+    const emptyFields = { email: !email.trim(), password: !password.trim() };
+    setInvalidFields(emptyFields);
+    if (emptyFields.email || emptyFields.password) {
       setErrorMessage('Informe seu email e sua senha.');
       return;
     }
@@ -71,9 +79,9 @@ export default function LoginPage() {
                 autoComplete="email"
                 placeholder="seu@email.com"
                 value={email}
-                onChange={(event) => { setEmail(event.target.value); setErrorMessage(''); }}
+                onChange={(event) => { setEmail(event.target.value); clearFeedback(); }}
                 aria-required="true"
-                aria-invalid={errorMessage ? true : undefined}
+                aria-invalid={invalidFields.email ? true : undefined}
                 aria-describedby={errorMessage ? 'login-error' : undefined}
                 className={styles.input}
               />
@@ -89,9 +97,9 @@ export default function LoginPage() {
                   autoComplete="current-password"
                   placeholder="••••••••"
                   value={password}
-                  onChange={(event) => { setPassword(event.target.value); setErrorMessage(''); }}
+                  onChange={(event) => { setPassword(event.target.value); clearFeedback(); }}
                   aria-required="true"
-                  aria-invalid={errorMessage ? true : undefined}
+                  aria-invalid={invalidFields.password ? true : undefined}
                   aria-describedby={errorMessage ? 'login-error' : undefined}
                   className={`${styles.input} ${styles.passwordInput}`}
                 />
