@@ -1,6 +1,6 @@
 # Spec 017 — Login com visual incorporado e autenticação real
 
-Data: 2026-10-18. Estado: IMPLEMENTAÇÃO VALIDADA LOCALMENTE; publicação/CI e aceite humano pendentes.
+Data: 2026-10-18. Estado: IMPLEMENTAÇÃO VALIDADA LOCALMENTE, PR9 ABERTO; CI final acompanhado no PR e aceite humano pendente.
 Branch prevista: `feat/frontend-login`, derivada de `development/e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`.
 
 ## Origem e autoridade

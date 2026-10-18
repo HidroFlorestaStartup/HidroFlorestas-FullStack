@@ -1,6 +1,6 @@
 # Plan — Primeira incorporação visual do login
 
-Data: 2026-10-18. Estado: EM_ANDAMENTO no checkout oficial; os bloqueios do pacote parcial abaixo são históricos.
+Data: 2026-10-18. Estado: AGUARDANDO_REVISAO no PR9; resultado do CI final mantido no PR. Os bloqueios do pacote parcial abaixo são históricos.
 Base: development `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Spec: [spec.md](spec.md).
 
 As seções até “Reconciliação no checkout oficial” preservam o planejamento e as limitações do pacote parcial; o estado corrente é registrado na reconciliação e nas evidências da execução.
@@ -65,3 +65,5 @@ O focal ampliado executado diretamente pelo accounts-local produziu 8 PASS/2 FAI
 Na captura320 estável, paddings em rem também dobram e deixam somente160px úteis no cartão, partindo ENTRAR e Cadastrar-se. Correção focal planejada após terminar o gate corrente: manter em pixels somente os espaçamentos horizontais de página/cartão abaixo de400px, preservando ampliação do texto/controles e as outras larguras. Acrescentar verificação de rótulo ENTRAR em uma linha no cenário320; executar antes para comprovar a falha e depois para GREEN. Em seguida repetir build padrão e os gates afetados no runner oficial; nenhuma configuração global.
 
 Encerramento da execução local: RED de reflow FAIL1 antes do CSS → GREEN1 após; commits de implementação61b27ac e correção9bb0eb9. Build padrão/typecheck/lint/E2E82/HTTPS2/SchemaAudit finais PASS; unit296+mail17 PASS. Spec Kit/checklist/análise de consistência e revisão adversarial concluídos sem achado bloqueante. Estado: EM_ANDAMENTO somente para publicação/CI e solicitação de revisão; ver implementation-evidence.md. O aceite humano permanece fora da autoaprovação do executor.
+
+Publicação: primeiro push protegido5720646 e PR9 para development; revisão solicitada a PedroVitor237. Workflow de push39133594916 iniciou efetivamente. Esta atualização final de documentação gera novo HEAD, cujo check e resultado serão registrados no corpo do PR após execução, sem reclassificar o check anterior como prova do HEAD novo. Estado: AGUARDANDO_REVISAO humana; missão técnica continua até conferir o CI do último SHA. Nenhum merge/deploy.

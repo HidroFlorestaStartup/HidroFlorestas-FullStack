@@ -102,3 +102,11 @@ Fonte funcional final: `9bb0eb99a543391dd0f8a6bb452c65752d74673a`. Fingerprint f
 Integration/Migration/Contract/R1/Deletion/Ihfr/Bootstrap não foram repetidos localmente neste recorte visual; o workflow publicado conserva os15 gates para sua execução no HEAD. O resultado remoto final e seu SHA são registrados no PR, separadamente deste snapshot de validação local.
 
 RECOMENDACAO: apto para publicação e revisão humana do login. Aceite visual/copy por Pedro/mantenedor, leitura manual com tecnologias assistivas e navegadores adicionais permanecem pendentes; nenhuma certificação WCAG ou homologação de provedores reais é inferida. Sem merge/deploy.
+
+### Publicação e referência viva do CI
+
+EVIDENCIA_IMPLEMENTACAO: primeiro push exclusivo de feat/frontend-login em `5720646f7cf26efc218f5fc185a4af8b32906408`, com Preview bloqueado e job habilitado já no commit. origin/development reconferida em e17f64a, sem drift. [PR9 para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9), autor thalesvalente; revisão formal solicitada a PedroVitor237. A integração do conector retornou403 ao criar PR; a mesma operação autorizada foi concluída pela API com a autenticação local já usada pelo Git, mantida somente em memória e sem valores registrados.
+
+O [primeiro workflow39133594916](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39133594916) foi observado in_progress/event=push no SHA5720646, não skipped. Esta fotografia não declara seu resultado final. O commit documental seguinte gera outro HEAD; o corpo do PR registra o **SHA final exato, run/job e conclusão efetivamente conferidos**, evitando uma cadeia circular de commits documentais que invalidem o SHA recém-verificado. Não usar o check anterior como prova do novo HEAD.
+
+Todos os commits de planejamento/testes/implementação/correção/evidências foram preservados, em português. As cópias de logs de evidência removem ANSI e espaços no fim de linha; os logs originais permanecem fora do Git. RC em0f669b7, ZIP original e demais worktrees preservados. Próxima ação humana: revisar composição/copy e configuração no PR; mantenedor decide integração. Não houve merge, deploy, operação de provedor ou alteração de ambiente remoto.
