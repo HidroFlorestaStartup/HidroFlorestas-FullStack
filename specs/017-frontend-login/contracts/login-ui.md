@@ -13,3 +13,11 @@ Nenhum contrato HTTP novo. `useAuth().signIn` é a única porta de autenticaçã
 Revisão visual: fonte Poppins do root, logo-hf.png existente; composição/cores/raio/espaçamento do starter adaptados ao destino. Sem mock/demo/painel de personas, links # ou substituição da marca. Estado disabled e foco devem ser visualmente claros; reduced-motion local.
 
 Evidência exigida: reais no Next para UI/hidratação e nos testes de auth existentes para login/credenciais/cookies/verify-email/HTTPS. Interceptação 401 do novo teste serve apenas para busy/payload/mensagem e deve ser identificada como tal.
+
+## Distinção entre validação local e falha geral — 2026-10-18
+
+- aria-invalid não é derivado da presença de uma mensagem geral. O estado inicial não marca campos inválidos.
+- No submit, a verificação de vazio já existente marca somente os campos recusados, com aria-invalid=true; campo preenchido não recebe essa marcação. Nenhum POST ocorre nessa recusa local.
+- Edição limpa mensagem e marcações obsoletas, sem alterar o valor digitado; uma nova tentativa valida novamente os campos.
+- Rede, indisponibilidade e falha genérica retornada por signIn são comunicadas por role=alert e aria-describedby, sem presumir qual credencial falhou nem classificar pela mensagem. O contrato atual do contexto não contém erro por campo.
+- O payload, a política de whitespace e a validação nativa de type=email não mudam. Ausência de aria-invalid e valor false representam campo não marcado como inválido.

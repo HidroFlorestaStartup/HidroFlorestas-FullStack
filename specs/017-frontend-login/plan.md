@@ -69,3 +69,67 @@ Encerramento da execução local: RED de reflow FAIL1 antes do CSS → GREEN1 ap
 Publicação: primeiro push protegido5720646 e PR9 para development; revisão solicitada a PedroVitor237. Workflow de push39133594916 iniciou efetivamente. Esta atualização final de documentação gera novo HEAD, cujo check e resultado serão registrados no corpo do PR após execução, sem reclassificar o check anterior como prova do HEAD novo. Estado: AGUARDANDO_REVISAO humana; missão técnica continua até conferir o CI do último SHA. Nenhum merge/deploy.
 
 Desvio de validação remota: SHA292dd95 passou12 gates e falhou nos6 testes do gate Ihfr; os2 gates posteriores não rodaram. Evidência preservada em implementation-evidence.md. Reexecução oficial local dos mesmos testes:6 PASS, bootstrap14 migrations e auditoria0 PASS. Causa remota ainda NAO_ESPECIFICADO; não alterar backend/fixtures/guards/ciência por inferência. Nova rodada CI com insumos funcionais idênticos e somente documentação adicional para preservar o FAIL; manter resultados anteriores e conferir o novo SHA no PR. Aceite humano e avaliação da intermitência continuam pendentes.
+
+## Ajuste focal: aria-invalid e falhas gerais — 2026-10-18
+
+Base: PR #9, feat/frontend-login/acba40d6dbbef10f1307f858f5db59bf819bbbd4.
+DECISAO_CONFIRMADA: o usuário autorizou, nesta conversa, executar o ajuste
+focal de acessibilidade identificado na revisão, mantendo Plan → Execute → Review.
+
+EVIDENCIA_IMPLEMENTACAO: a página deriva aria-invalid de qualquer errorMessage;
+a asserção de rede exige senha inválida quando só houve falha do transporte.
+Referência técnica: W3C ARIA21, especialmente o teste de não marcar um campo
+inválido sem falha de validação correspondente:
+https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA21.html.
+
+RECOMENDACAO implementável: estado local por campo, separado do alerta geral.
+Somente os campos vazios recusados pela validação já existente recebem
+aria-invalid=true. Edição e nova submissão limpam marcações obsoletas em conjunto
+com a mensagem, conservando o comportamento de limpar feedback ao editar.
+Falhas do contexto (rede, indisponibilidade, credenciais genéricas) continuam
+em role=alert e aria-describedby. O resultado de signIn não identifica qual
+campo falhou; não inferir pelo texto, modificar AuthContext ou revelar se uma
+conta existe. A validação nativa type=email permanece intacta.
+
+Sequência: registrar T015–T018 → testes RED → alteração local de page.tsx →
+GREEN e revisão de escopo → publicação no PR #9 após validação oficial.
+Preservar política atual de whitespace, payload original, hidratação, loading,
+trava síncrona, mensagens e CSS. Não alterar backend, dependências, CI, Vercel,
+IHFR ou outros fluxos. Não criar branch nem worktree adicionais.
+
+Casos: campo e-mail vazio, senha vazia, ambos vazios (zero POST); primeira
+renderização; limpeza após edição; falha de rede, erro HTTP genérico e 401
+sem atribuir invalidade a um campo; retry sem perda de valores; envio duplicado
+e controles inertes preservados. Os testes de rede e erro HTTP são de
+UI/transporte interceptado; os dois casos de credenciais reais continuam reais.
+
+Resultados isolados do pacote não substituem Node24/Next/Playwright/harness
+oficiais. CI anterior e aceites humanos permanecem históricos e independentes.
+A intermitência IHFR continua registrada, sem investigação neste recorte.
+
+### Reconciliação oficial do ajuste focal
+
+Estado: EM_ANDAMENTO. Origem da autorização: pedido atual do usuário para concluir
+este pacote na feature existente, com commit/push e atualização do PR9.
+EVIDENCIA_IMPLEMENTACAO: fetch confirmou HEAD e origin/feat/frontend-login em
+acba40d6dbbef10f1307f858f5db59bf819bbbd4; origin/development permanece e17f64a.
+A worktree existente estava limpa. A RC permanece em 0f669b7, com os dois ZIPs
+não rastreados preservados; as demais worktrees não serão alteradas.
+
+Pacote extraído fora do Git: hidrofloresta-login-aria-20261018.zip, SHA256
+3f37082a28558306323fd6a0be70918784c287841f62b36307343ab140333627.
+Manifesto, aplicador e patches revisados; preimages e integridade passaram sem
+adaptação. Somente os três adendos documentais foram aplicados nesta etapa.
+setup-plan preservou os artefatos da Spec017; não há extensions.yml/hooks.
+Constitution Check I–VII: PASS; não há decisão material pendente para o recorte.
+Guia Next local de Client Components e referência W3C ARIA21 consultados.
+
+Validação prevista: commit deste planejamento; aplicar somente os testes do
+pacote; RED pelo runner oficial `rc-review-validation.ps1 -Gates E2E`, com o
+ambiente sintético completo e fixtures reais existentes. Após preservar o FAIL,
+aplicar somente page.tsx e repetir E2E para GREEN dos mesmos casos. Regressão
+proporcional: Unit, Build, Typecheck, Lint, E2E e Https pelos runners oficiais.
+Nenhum runner, guard, fixture ou timeout será alterado. Revisar diff e privacidade,
+registrar resultados e commitar antes de publicar exclusivamente a feature.
+O CI do SHA final será registrado no PR9, sem commits sucessivos de recibo.
+Revisão humana continua pendente; sem merge, deploy ou investigação de IHFR.
