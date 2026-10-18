@@ -1,0 +1,447 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "recordedUtc": "2026-10-18T06:07:17.743452+00:00",
+  "clientDate": "2026-10-18",
+  "timezone": "America/Fortaleza",
+  "authorization": {
+    "origin": "Novo pedido anexado por Pedro nesta sessao",
+    "allowed": [
+      "retarget/update/approve-by-Pedro/merge-commit PR6",
+      "retarget/update/context-comment/merge-commit PR7",
+      "traceability-comments and close-without-merge PR2-5",
+      "documentary-branch publication and PR left open for review"
+    ],
+    "lucianoReview": {
+      "classification": "FATO_DOCUMENTADO",
+      "source": "Declaracao expressa de Pedro nesta continuacao",
+      "formalReviewCreatedInLucianoName": false
+    },
+    "authenticatedAccount": "PedroVitor237"
+  },
+  "rulesObserved": {
+    "developmentProtected": false,
+    "rulesets": [],
+    "applicableBranchRules": [],
+    "branchProtectionRule": null,
+    "branchProtectionEndpointStatus": 404,
+    "mergeCommitsEnabled": true,
+    "deleteBranchOnMerge": false,
+    "bypassUsed": false,
+    "settingsChanged": false
+  },
+  "initialDevelopment": "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+  "finalDevelopment": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+  "mainPreserved": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "merges": [
+    {
+      "pr": 6,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6",
+      "base": "development",
+      "expectedHead": "5ea982374e787e2f9844453add317f3949be4f8a",
+      "merge": "ebbd9cb707ac2db98c56ad1ba5f344802233057c",
+      "parents": [
+        "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+        "5ea982374e787e2f9844453add317f3949be4f8a"
+      ],
+      "tree": "8885a1cf75a3bc134518b2197c3e828002fd8d53",
+      "changedPathsFromPreviousBase": [
+        "A\tdocs/releases/2026-10-10-cri-rc/2026-10-17-parecer-aprovacao-integracao-development.md",
+        "M\tdocs/releases/2026-10-10-cri-rc/readme.md"
+      ],
+      "originalDescriptionSha256": "4e47a9ea91408e25d12f5872ecb457a188e36c201f567de313f08fa1999e073c",
+      "originalDescriptionPreservedAsExactSuffix": true,
+      "newDescriptionSha256": "262666df81ee4a288dcec7579012b9321d96fb47bf15f3bd731f502afde50795",
+      "newChecks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "ebbd9cb707ac2db98c56ad1ba5f344802233057c",
+          "url": "https://vercel.com/github"
+        }
+      ],
+      "newLegacyStatuses": [
+        {
+          "context": "Vercel",
+          "state": "success",
+          "url": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/5uWnFQUU9hHuAV4v8kQFcuehMkfd"
+        }
+      ]
+    },
+    {
+      "pr": 7,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7",
+      "base": "development",
+      "expectedHead": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "merge": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+      "parents": [
+        "ebbd9cb707ac2db98c56ad1ba5f344802233057c",
+        "a01857b3d1a44fc0668054d03096d743ba0aede0"
+      ],
+      "tree": "178f0e468aee4f38444a9d1370876987d4243738",
+      "changedPathsFromPreviousBase": [
+        "M\tdocs/governance/DOCUMENT_REGISTER.md",
+        "A\tdocs/plans/completed/revisao-release-candidate-cri-20261012.md",
+        "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json",
+        "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+        "A\tdocs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+      ],
+      "originalDescriptionSha256": "1d2d924c96aec75414547a6c66a35092ef7e452ec887d76b742a11a5c353da07",
+      "originalDescriptionPreservedAsExactSuffix": true,
+      "newDescriptionSha256": "2560f1da572f8577a19bc8dc37bda5c8b2b2170cd9200c354166843ef24bc547",
+      "newChecks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+          "url": "https://vercel.com/github"
+        }
+      ],
+      "newLegacyStatuses": [
+        {
+          "context": "Vercel",
+          "state": "success",
+          "url": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/EY8CkQnvXuwRjFJZWNNX2fmpdrr4"
+        }
+      ]
+    }
+  ],
+  "approvalActuallyRecorded": {
+    "pr": 6,
+    "id": 5561665473,
+    "state": "APPROVED",
+    "account": "PedroVitor237",
+    "commitId": "5ea982374e787e2f9844453add317f3949be4f8a",
+    "submittedAt": "2026-10-18T05:57:12Z",
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5561665473",
+    "body": "Aprovação de Pedro Vítor registrada por assistente com autorização expressa em 18/10/2026, pela conta autenticada PedroVitor237. As correções apontadas na revisão anterior — RC-UI-001, RC-DRAFT-001, CRI-REV-001/002 e CRI-REV-005 — foram entregues na RC funcional 0f669b79a5e73a329832593229c2557d8b12bbce, já incorporada em development por 118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed. O diff atual deste PR para development foi conferido e é exclusivamente documental: parecer posterior e atualização do README, dois arquivos. Aprovo sua preservação em development no head 5ea982374e787e2f9844453add317f3949be4f8a, com check validate/SUCCESS conferido. A review histórica CHANGES_REQUESTED e os resultados históricos permanecem íntegros. Pedro informou que Luciano já revisou; isso é declaração de Pedro, sem criação de review em nome de Luciano. Homologações reais/produção e validação científica do IHFR permanecem pendentes."
+  },
+  "pr7": {
+    "selfApprovalAttempted": false,
+    "reviews": [],
+    "contextCommentUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7#issuecomment-6246335720",
+    "contextCommentBody": "Atualização contextual autorizada por Pedro Vítor em 18/10/2026, registrada por assistente pela conta PedroVitor237. As correções decorrentes desta revisão e o patch original 99d8363 já integram development por 118a3a8 (candidato 0f669b7). O parecer posterior e o README foram preservados no merge do PR #6: ebbd9cb707ac2db98c56ad1ba5f344802233057c.\n\nO diff remanescente deste PR foi conferido: 26 arquivos documentais/de evidências, com relatórios datados, capturas, FAILs e limites históricos intactos. O merge calculado preserva todos esses blobs e os dois documentos do #6, sem mudança funcional. Check validate/SUCCESS do head a01857b3d1a44fc0668054d03096d743ba0aede0 confirmado. O merge commit em development será executado após a conferência final de base, head, checks e regras.\n\nPedro declarou que Luciano já revisou e autorizou esta integração; essa é a origem da informação, sem criação de review em nome de Luciano. Não foi tentada autoaprovação de Pedro neste PR de sua autoria. Não há dispensa de regra ou alteração de proteção. Homologações externas e produção permanecem separadas; IHFR continua CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.",
+    "preservationProof": {
+      "base": "ebbd9cb707ac2db98c56ad1ba5f344802233057c",
+      "head": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "tree": "178f0e468aee4f38444a9d1370876987d4243738",
+      "files": [
+        "docs/governance/DOCUMENT_REGISTER.md",
+        "docs/plans/completed/revisao-release-candidate-cri-20261012.md",
+        "docs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json",
+        "docs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md",
+        "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+        "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+        "docs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+        "docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+      ],
+      "all26BlobsEqualSource": true,
+      "pr6DocumentsPreserved": true
+    }
+  },
+  "closedPrs": [
+    {
+      "pr": 5,
+      "head": "333abde242950a07686b973d2e715e5ddc68caf7",
+      "baseRetained": "review/016-area-covers",
+      "state": "CLOSED",
+      "merged": false,
+      "closedAt": "2026-10-18T06:01:10Z",
+      "exclusiveCommits": 0,
+      "headIsAncestorOfFinalDevelopment": true,
+      "commentUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5#issuecomment-6246347215",
+      "commentSha256": "509d826528189959aba3e2299b5a80db0e77c1d159819ea2d0770f06e9029a85",
+      "commentBody": "Conteúdo já incorporado em development pela integração cumulativa da RC no merge `118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed`. O head atual deste PR, `333abde242950a07686b973d2e715e5ddc68caf7`, foi reconferido como ancestral da development atual `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`, sem commits exclusivos pendentes.\n\nAs correções posteriores e seus pareceres/evidências foram preservados na RC e nos PRs [#6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6), merge `ebbd9cb707ac2db98c56ad1ba5f344802233057c`, e [#7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7), merge `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Conferência das árvores confirmou somente documentação adicionada por esses dois merges.\n\nEncerramento administrativo sem novo merge autorizado expressamente por Pedro Vítor em 18/10/2026, executado por assistente pela conta PedroVitor237 para concluir a organização da pilha. Não representa descarte das alterações nem exclusão de branch. Os registros históricos de revisão, threads e testes permanecem preservados; este comentário não altera reviews de terceiros ou declara aprovação produtiva/científica."
+    },
+    {
+      "pr": 4,
+      "head": "8856b8570e555eda108182eb0c654a24b336b198",
+      "baseRetained": "review/015-environmental-drafts",
+      "state": "CLOSED",
+      "merged": false,
+      "closedAt": "2026-10-18T06:01:26Z",
+      "exclusiveCommits": 0,
+      "headIsAncestorOfFinalDevelopment": true,
+      "commentUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6246348988",
+      "commentSha256": "dec6c3dcd6c4679f8fa33a3fe8772025c64db5ad006e08035dce6c7acd572c35",
+      "commentBody": "Conteúdo já incorporado em development pela integração cumulativa da RC no merge `118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed`. O head atual deste PR, `8856b8570e555eda108182eb0c654a24b336b198`, foi reconferido como ancestral da development atual `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`, sem commits exclusivos pendentes.\n\nAs correções posteriores e seus pareceres/evidências foram preservados na RC e nos PRs [#6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6), merge `ebbd9cb707ac2db98c56ad1ba5f344802233057c`, e [#7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7), merge `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Conferência das árvores confirmou somente documentação adicionada por esses dois merges.\n\nEncerramento administrativo sem novo merge autorizado expressamente por Pedro Vítor em 18/10/2026, executado por assistente pela conta PedroVitor237 para concluir a organização da pilha. Não representa descarte das alterações nem exclusão de branch. Os registros históricos de revisão, threads e testes permanecem preservados; este comentário não altera reviews de terceiros ou declara aprovação produtiva/científica."
+    },
+    {
+      "pr": 3,
+      "head": "65516f6d675e8d4ae38f0f860fe93b6dc768dd66",
+      "baseRetained": "review/014-account-test-runners",
+      "state": "CLOSED",
+      "merged": false,
+      "closedAt": "2026-10-18T06:01:40Z",
+      "exclusiveCommits": 0,
+      "headIsAncestorOfFinalDevelopment": true,
+      "commentUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/3#issuecomment-6246351226",
+      "commentSha256": "4157c57f0657f1fd443989bef22429ad052fbd6f342ce3f21a7ac1fb92e497c6",
+      "commentBody": "Conteúdo já incorporado em development pela integração cumulativa da RC no merge `118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed`. O head atual deste PR, `65516f6d675e8d4ae38f0f860fe93b6dc768dd66`, foi reconferido como ancestral da development atual `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`, sem commits exclusivos pendentes.\n\nAs correções posteriores e seus pareceres/evidências foram preservados na RC e nos PRs [#6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6), merge `ebbd9cb707ac2db98c56ad1ba5f344802233057c`, e [#7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7), merge `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Conferência das árvores confirmou somente documentação adicionada por esses dois merges.\n\nEncerramento administrativo sem novo merge autorizado expressamente por Pedro Vítor em 18/10/2026, executado por assistente pela conta PedroVitor237 para concluir a organização da pilha. Não representa descarte das alterações nem exclusão de branch. Os registros históricos de revisão, threads e testes permanecem preservados; este comentário não altera reviews de terceiros ou declara aprovação produtiva/científica."
+    },
+    {
+      "pr": 2,
+      "head": "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+      "baseRetained": "review/cri-reconciliation-20261010",
+      "state": "CLOSED",
+      "merged": false,
+      "closedAt": "2026-10-18T06:01:53Z",
+      "exclusiveCommits": 0,
+      "headIsAncestorOfFinalDevelopment": true,
+      "commentUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/2#issuecomment-6246352717",
+      "commentSha256": "ce2c93a47741b475d9804f54ea22fe7de555e620578d851cd4f12436b2c66619",
+      "commentBody": "Conteúdo já incorporado em development pela integração cumulativa da RC no merge `118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed`. O head atual deste PR, `71802095d1e8d03b8548c3fe138eea5d8907e7bd`, foi reconferido como ancestral da development atual `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`, sem commits exclusivos pendentes.\n\nAs correções posteriores e seus pareceres/evidências foram preservados na RC e nos PRs [#6](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6), merge `ebbd9cb707ac2db98c56ad1ba5f344802233057c`, e [#7](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7), merge `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Conferência das árvores confirmou somente documentação adicionada por esses dois merges.\n\nEncerramento administrativo sem novo merge autorizado expressamente por Pedro Vítor em 18/10/2026, executado por assistente pela conta PedroVitor237 para concluir a organização da pilha. Não representa descarte das alterações nem exclusão de branch. Os registros históricos de revisão, threads e testes permanecem preservados; este comentário não altera reviews de terceiros ou declara aprovação produtiva/científica."
+    }
+  ],
+  "reviewsAndThreadsAfterOperations": {
+    "2": {
+      "reviews": [],
+      "threads": []
+    },
+    "3": {
+      "reviews": [],
+      "threads": []
+    },
+    "4": {
+      "reviews": [
+        {
+          "state": "CHANGES_REQUESTED",
+          "submittedAt": "2026-10-13T05:28:19Z",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "commit": {
+            "oid": "dace407e51b5034e69e22055658c651147a7caa3"
+          },
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988"
+        },
+        {
+          "state": "COMMENTED",
+          "submittedAt": "2026-10-13T17:56:44Z",
+          "author": {
+            "login": "thalesvalente"
+          },
+          "commit": {
+            "oid": "c3172718011ee70d3613387c61b3774601010a85"
+          },
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5507799247"
+        },
+        {
+          "state": "COMMENTED",
+          "submittedAt": "2026-10-16T03:32:38Z",
+          "author": {
+            "login": "thalesvalente"
+          },
+          "commit": {
+            "oid": "247fe5e1b1a1864968e0c1118c651c95e288bd0b"
+          },
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5542756039"
+        }
+      ],
+      "threads": [
+        {
+          "isResolved": false,
+          "isOutdated": true,
+          "path": "src/components/areas/area-cover.tsx"
+        }
+      ]
+    },
+    "5": {
+      "reviews": [],
+      "threads": []
+    },
+    "6": {
+      "reviews": [
+        {
+          "state": "CHANGES_REQUESTED",
+          "submittedAt": "2026-10-13T06:09:55Z",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "commit": {
+            "oid": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c"
+          },
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5499467293"
+        },
+        {
+          "state": "APPROVED",
+          "submittedAt": "2026-10-18T05:57:12Z",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "commit": {
+            "oid": "5ea982374e787e2f9844453add317f3949be4f8a"
+          },
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5561665473"
+        }
+      ],
+      "threads": []
+    },
+    "7": {
+      "reviews": [],
+      "threads": []
+    }
+  },
+  "changedPathsInDevelopment": [
+    "M\tdocs/governance/DOCUMENT_REGISTER.md",
+    "A\tdocs/plans/completed/revisao-release-candidate-cri-20261012.md",
+    "A\tdocs/releases/2026-10-10-cri-rc/2026-10-17-parecer-aprovacao-integracao-development.md",
+    "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json",
+    "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md",
+    "M\tdocs/releases/2026-10-10-cri-rc/readme.md",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+    "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+    "A\tdocs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+  ],
+  "changedPathsOutsideDocs": [],
+  "all26Pr7BlobsMatchSource": true,
+  "twoPr6DocumentsPreserved": true,
+  "localSync": {
+    "developmentBefore": "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+    "aheadBehindBefore": [
+      0,
+      19
+    ],
+    "developmentAfter": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+    "aheadBehindAfter": [
+      0,
+      0
+    ],
+    "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "reviewBranch": "a01857b3d1a44fc0668054d03096d743ba0aede0"
+  },
+  "documentaryBranch": {
+    "name": "docs/preparacao-frontend-20261018",
+    "originalCommit": "dcc54e1942be5e6fb7ab6edf756730f86c6a7fee",
+    "originalNinePathsPreserved": [
+      "PROJECT_CONTEXT.md",
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/evidencias.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/revisao-dos-prs.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/textos-de-encerramento.md"
+    ],
+    "authorizationPlanCommit": "80e5ac19d80a7ce063800a0a82f41a3352084c76",
+    "mergeFromDevelopment": "e70d8d6846c1dacd1cc8625ef13aa4e0f025aa31",
+    "additiveConflict": "DOCUMENT_REGISTER: exact additions from both sides preserved; no ours/theirs whole-document selection",
+    "initialEvidenceJsonUnmodified": true,
+    "publication": {
+      "pr": 8,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8",
+      "base": "development",
+      "state": "OPEN",
+      "autoMergeRequest": null,
+      "initialPublishedHead": "c2adb4040b1f3a2ec9b9f2c063b1acda5ca42c42",
+      "initialCheckSnapshot": [
+        {
+          "__typename": "StatusContext",
+          "context": "Vercel",
+          "startedAt": "2026-10-18T06:08:38Z",
+          "state": "PENDING",
+          "targetUrl": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/GX2vgjtZVdkk6bE8oskF8nYvtqdQ"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T06:09:12Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://vercel.com/github",
+          "name": "Vercel Preview Comments",
+          "startedAt": "2026-10-18T06:09:12Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "scope": "10 documentary paths only; original 9 preserved; new conclusion evidence JSON",
+      "finalHead": "Resolved from branch/PR; reported in final delivery to avoid commit self-reference"
+    }
+  },
+  "validationReuse": {
+    "newFunctionalTestBattery": false,
+    "previousLocalPass": "296 Node + 17 Mail + 15 focal; typecheck/lint",
+    "previousLocalBuild": "FAIL; environment Google Fonts/port restriction, not reclassified",
+    "exactHeadCI": [
+      {
+        "head": "5ea982374e787e2f9844453add317f3949be4f8a",
+        "run": 39071712863,
+        "validate": "SUCCESS"
+      },
+      {
+        "head": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+        "run": 39064689472,
+        "validate": "SUCCESS"
+      }
+    ],
+    "reason": "Only documentation changed; full diff outside docs is empty; no new failing check observed"
+  },
+  "externalOperations": {
+    "manualDeploymentRequested": false,
+    "automaticVercelStatusesObserved": true,
+    "realCloudinaryOrDatabaseOperation": false,
+    "frontendImplemented": false,
+    "mainMergedOrPushed": false,
+    "branchesDeleted": false,
+    "threadsResolved": false
+  }
+}
