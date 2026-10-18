@@ -170,7 +170,9 @@ Documentos da preparação de Pedro: acompanhamento, relatório, revisão dos PR
 evidencias.json, conclusao-dos-prs.json e plano-de-incorporacao.md no diretório
 `docs/plans/active/preparacao-incorporacao-frontend-20261018/` da branch
 `docs/preparacao-frontend-20261018`, cuja publicação e PR para development foram
-autorizados na continuação de18/10/2026; o novo PR documental fica para revisão,
-sem merge automático. Preserve o commit originaldcc54e1 e o histórico subsequente.
+autorizados na continuação de18/10/2026. O [PR documental8](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8)
+está aberto para revisão, sem merge automático. Preserve o commit original
+dcc54e1 e o histórico subsequente. A base de execução continua sendo a development
+verificada; não integrar o PR documental por iniciativa própria para começar o login.
 Este prompt contém os dados essenciais para uso sem acesso ao chat ou à branch
 documental; Pedro deve fornecer o plano junto para revisar as etapas posteriores.

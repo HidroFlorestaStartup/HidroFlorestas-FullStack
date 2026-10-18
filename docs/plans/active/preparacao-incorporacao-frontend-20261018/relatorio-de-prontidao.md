@@ -257,6 +257,14 @@ Plano e prompt atualizados para a base e17f64a. Gestão da pilha concluída por
 Pedro com seu Codex; não há encerramento/revisão preparatória delegado ao futuro
 executor do login. Próximo passo: Pedro revisar o plano com o ChatGPT.
 
+Publicação da preparação: branch `docs/preparacao-frontend-20261018`, primeiro
+head publicado c2adb40 e [PR8 aberto para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
+sem auto-merge. Dez arquivos documentais: nove da entrega inicial preservados e
+novo JSON de conclusão. O commit posterior deste registro mantém o histórico;
+o SHA final é informado na entrega. A consulta inicial do PR8 observou Vercel
+Preview Comments/SUCCESS e status automático Vercel/PENDING; resultado do head
+final deve ser lido separadamente, sem confundir status com teste funcional novo.
+
 ### Caminhos alterados em development nesta continuação
 
 Diff completo de 118a3a8 até e17f64a: **28 caminhos, exclusivamente docs/**.

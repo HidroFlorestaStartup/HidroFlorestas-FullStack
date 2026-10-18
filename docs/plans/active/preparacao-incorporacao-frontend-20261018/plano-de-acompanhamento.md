@@ -5,7 +5,9 @@ Plano de incorporação completo: `AGUARDANDO_REVISAO` por Pedro; execução fut
 
 ## Continuação autorizada — conclusão dos PRs, 18/10/2026
 
-Estado desta continuação: `EM_ANDAMENTO`. Origem: novo pedido anexado por Pedro
+Estado desta continuação: `CONCLUIDO` para gestão dos PRs e publicação documental.
+O plano da incorporação e o PR documental ficam `AGUARDANDO_REVISAO`.
+Origem: novo pedido anexado por Pedro
 nesta sessão, autorizando expressamente retarget/atualização/aprovação de Pedro e
 merge commit de #6, retarget/atualização/comentário/merge commit de #7, encerramento
 comentado de #2–#5 e publicação desta branch documental com PR aberto para revisão.
@@ -29,8 +31,8 @@ regras e checks serão reavaliados no momento de cada merge, sem bypass.
 | Conferir e integrar #6 | CONCLUIDO | Dois documentos apenas; head/checks/APPROVED de Pedro e pais de ebbd9cb confirmados |
 | Conferir e integrar #7 | CONCLUIDO | 26 blobs preservados e parecer/README de #6 intactos em e17f64a, sem autoaprovação |
 | Encerrar #2–#5 | CONCLUIDO | Heads ancestrais, comentários rastreáveis e CLOSED sem novo merge/exclusão |
-| Atualizar/publicar preparação | EM_ANDAMENTO | dcc54e1 preservado; development sincronizada; branch documental/PR próprio sem merge |
-| Conferir entrega | NAO_INICIADO | Estados remotos, SHAs, paths e equivalência funcional; main preservada |
+| Atualizar/publicar preparação | CONCLUIDO | dcc54e1 preservado; development sincronizada; branch publicada e PR8 aberto, sem auto-merge |
+| Conferir entrega | CONCLUIDO | Estados remotos, SHAs,28 paths e equivalência funcional; main preservada; checks automáticos do PR8 separados da validação funcional |
 
 Paradas: proteção efetiva impedindo ação, check novo falho, alteração funcional
 inesperada ou conflito que possa descartar conteúdo. Prosseguir nas etapas
@@ -51,6 +53,22 @@ foram conservados byte a byte, sem escolher ours/theirs para o documento inteiro
 Evidência originalevidencias.json preservada integralmente; eventos novos no
 conclusao-dos-prs.json. Relatório/revisão atualizados sem apagar o diagnóstico
 inicial; plano/prompt usam developmente17f64a e não delegam a gestão já concluída.
+
+Publicação confirmada: branch docs/preparacao-frontend-20261018 em origin,
+tracking da própria branch; [PR8 aberto para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
+sem autoMergeRequest. Commit inicial publicado c2adb40, com dcc54e1/80e5ac1/
+e70d8d6 preservados; este registro integra o commit posterior de encerramento,
+cujo SHA é informado na entrega, sem autorreferência no próprio commit.
+PR8 contém somente10 arquivos da preparação (nove originais e novo JSON da
+conclusão), incluindo os dois apontadores canônicos. Nenhum frontend implementado.
+Primeira consulta dos checks de PR8: Vercel Preview Comments SUCCESS e status
+automático Vercel PENDING; isso não é falha nem PASS de build local. Resultado
+final do head publicado será conferido e informado na entrega, sem disparo manual.
+
+Verificações documentais: links, dois JSON válidos, escopo/diff, ausência de
+padrões sensíveis reconhecíveis e preservação do commit/evidência original PASS.
+Sem pendência preparatória de #2–#7. Pendências restantes: revisão de Pedro do
+plano e PR8, homologações externas e ciência, nos alcances já registrados.
 
 ## Objetivo e autoridade
 

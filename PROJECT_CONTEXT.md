@@ -129,3 +129,6 @@ statuses automáticos dos merges conferidos; nenhum deploy solicitado por comand
 e [evidência da conclusão](docs/plans/active/preparacao-incorporacao-frontend-20261018/conclusao-dos-prs.json).
 Preparação/documentação conduzida por Pedro; próximo passo é sua revisão do plano.
 Frontend não implementado; homologações reais e ciência mantêm os limites anteriores.
+Documentação da preparação publicada em branch própria, com
+[PR8 aberto para revisão](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
+sem merge automático.

@@ -237,3 +237,6 @@ FATO_DOCUMENTADO: Pedro informou revisão de Luciano, sem criar evento em nome d
 DECISAO_CONFIRMADA: autorização de Pedro nesta continuação para essas operações;
 não confere aprovação científica/produtiva. Commit originaldcc54e1 e nove arquivos
 mantidos; conflito aditivo do inventário resolvido preservando ambas as seções.
+Publicação autorizada da branch docs/preparacao-frontend-20261018 e
+[PR8 aberto para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
+sem integração automática; revisão do plano e da documentação permanece com Pedro.

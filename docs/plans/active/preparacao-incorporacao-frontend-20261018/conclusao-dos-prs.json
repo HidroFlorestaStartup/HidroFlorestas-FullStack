@@ -386,7 +386,36 @@
     "authorizationPlanCommit": "80e5ac19d80a7ce063800a0a82f41a3352084c76",
     "mergeFromDevelopment": "e70d8d6846c1dacd1cc8625ef13aa4e0f025aa31",
     "additiveConflict": "DOCUMENT_REGISTER: exact additions from both sides preserved; no ours/theirs whole-document selection",
-    "initialEvidenceJsonUnmodified": true
+    "initialEvidenceJsonUnmodified": true,
+    "publication": {
+      "pr": 8,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8",
+      "base": "development",
+      "state": "OPEN",
+      "autoMergeRequest": null,
+      "initialPublishedHead": "c2adb4040b1f3a2ec9b9f2c063b1acda5ca42c42",
+      "initialCheckSnapshot": [
+        {
+          "__typename": "StatusContext",
+          "context": "Vercel",
+          "startedAt": "2026-10-18T06:08:38Z",
+          "state": "PENDING",
+          "targetUrl": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/GX2vgjtZVdkk6bE8oskF8nYvtqdQ"
+        },
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-10-18T06:09:12Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://vercel.com/github",
+          "name": "Vercel Preview Comments",
+          "startedAt": "2026-10-18T06:09:12Z",
+          "status": "COMPLETED",
+          "workflowName": ""
+        }
+      ],
+      "scope": "10 documentary paths only; original 9 preserved; new conclusion evidence JSON",
+      "finalHead": "Resolved from branch/PR; reported in final delivery to avoid commit self-reference"
+    }
   },
   "validationReuse": {
     "newFunctionalTestBattery": false,
