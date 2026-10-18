@@ -28,7 +28,7 @@ Teste independente: menu por teclado e logout real375/1440 com histórico.
 - [x] T016 Validar/capturar4 larguras, estados e foco em specs/019-frontend-workspace-shell/evidence/ e registrar GREEN15 gates em implementation-evidence.md (FR-006/010, SC-001/002/003).
 - [x] T017 Revisar diff/capturas adversarialmente com revisão independente; registrar/corrigir achados demonstrados em specs/019-frontend-workspace-shell/implementation-evidence.md (SC-004).
 - [x] T018 Adicionar branch exata à allowlist/if em .github/workflows/rc-review.yml e Previewfalse em vercel.json, conservando15 gates/guards/Actions (FR-010).
-- [ ] T019 Fazer commits/push e PR empilhado; registrar base/HEAD/ordem em specs/019-frontend-workspace-shell/implementation-evidence.md e no PR (FR-010).
+- [x] T019 Fazer commits/push e PR empilhado; registrar base/HEAD/ordem em specs/019-frontend-workspace-shell/implementation-evidence.md e no PR (FR-010).
 - [ ] T020 Acompanhar15 gates do SHA cumulativo publicado e inspecionar artefato; registrar recibo final no PR, preservar main/development/RC e reportar limites (FR-010, SC-001/004).
 ## Dependencies & Execution Order
 T001–T004 → T005/RED → US1 → US2/US3 → T016–T020. MVP é US1; missão exige todas. RED antes de código; nenhum deploy.

@@ -62,7 +62,20 @@ Capturas finais:58 arquivos `evidence/after-frontend-workspace-*.png`, seleciona
 
 ## Publicação
 
-Allowlist/if da branch e Previewfalse preparados antes do push;15 gates e guardas conservados. Commits de planejamento e testes precedem a implementação. PR empilhado e CI do SHA publicado serão registrados após sua execução; não presumir PASS remoto a partir do resultado local. Um recibo documental poderá registrar o primeiro CI; o HEAD desse recibo também será validado, com resultado final vivo no PR para evitar recursão de commits.
+Allowlist/if da branch e Previewfalse preparados antes do push;15 gates e guardas conservados. Commits de planejamento e testes precedem a implementação. Commits próprios publicados:
+
+- `23d77ed6fde8196fb1936aeb40163fa8c27b4b6f` — plano/contratos/qualidade.
+- `87123c5f2a5d0d0d049bb0989e55996ba32c7739` — testes e baseline RED.
+- `cb506a74d33b8a8c72d456bc327510fcef69f911` — implementação e correções demonstradas.
+- `90d60e3dedcb918a1585ccc7bd21a9ec6439f983` —15 gates locais, revisão e capturas finais.
+
+[PR12](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/12) aberto com base temporária feat/frontend-account, SHA-base8cacfc99ba0e2876c1036a0f67ec41375806b9ac. GitHub confirmou4 commits/161 arquivos próprios na publicação inicial, ancestralidade verificada e zero caminhos inesperados. Fetch anterior ao push reconfirmou main/development/PR11 sem avanço. PR11 também aponta para12 e preserva a ordem de integração; nenhum merge/deploy.
+
+[CI inicial39170036587](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39170036587), HEAD `90d60e3dedcb918a1585ccc7bd21a9ec6439f983`: **FAIL**. Nove gates PASS; E2E119 PASS/1 FAIL; cinco gates posteriores não executados. Fingerprint único `2f7ff2f05d953a5e545013698336fb8ea101ef2e97866a76baecdbcdc43cc6d8`. [Journal](evidence/ci-initial-red.jsonl), [erro completo](evidence/ci-initial-red.log). Artefato12151584361 baixado/inspecionado,196 PNGs: contém duplicatas do archive e test-results, pois o gate falhou antes da limpeza dos posteriores;58 capturas únicas do workspace. Digest do ZIP `f9c023db11c954b314379ff1eb242a2f3807a9c2e4731faa21638065c66b40e9`, conferido localmente; expira2026-11-01. Download parcial de entradas e arquivo completo produziram journals idênticos. Nenhuma falha foi atribuída ao IHFR nem ocultada por retry.
+
+Falha do novo teste de histórico: goBack terminou, mas URL permaneceu em /areas durante5s. A pré-condição anterior aguardava apenas URL e nome do laboratório do layout SSR; não comprovava leitura/hidratação da página de áreas. Correção somente no teste: aguardar cartão exato da área fixture, carregado pelo useEffect/GET real, antes e depois de reload, e estabilizar navegação; conservar um goBack e URL exata, acrescentando título e papel após retorno e mantendo API200/403. Fonte da aplicação, AuthContext, AuthSessionRestorer e guardas intactos. INFERENCIA: uma corrida durante conclusão da navegação pode explicar a intermitência; não houve prova de histórico duplicado nem de defeito da aplicação. A conclusão remota dependerá de nova execução completa, sem presumir PASS.
+
+Validação local afetada22:11–22:16 UTC: Typecheck/Lint PASS (0 erros/3 avisos preexistentes), E2E120/120 PASS, fingerprint único `5a64846a138ba3b225272b8409e79429a87443ed7ab2f6b6d2262255a5a21e62`. [Journal](evidence/green-history-sync.jsonl). Revisão independente do diff mínimo sem achados: todas as assertions anteriores conservadas, pré-condição comprova leitura/hidratação real, sem alterar src. As58 capturas finais continuam representando a mesma fonte de apresentação; somente sincronização/assertions do teste de histórico mudaram após a rodada completa local. O CI do próximo SHA executará novamente15 gates. Após PASS e inspeção, um recibo documental será publicado; o HEAD desse recibo também será validado, com resultado final vivo no PR para evitar recursão de commits.
 
 ## Limites
 

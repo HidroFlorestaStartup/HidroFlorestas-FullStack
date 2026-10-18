@@ -1,0 +1,27 @@
+  1) [chromium] › tests\e2e\frontend-workspace.spec.ts:185:5 › contextual roles, inactive access, explicit change and history stay real 
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Expected pattern: [32m/\/dashboard\/laboratories\/00000000-0000-4000-8000-000000000311$/[39m
+    Received string:  [31m"http://127.0.0.1:3001/dashboard/laboratories/00000000-0000-4000-8000-000000000311/areas"[39m
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toHaveURL" with timeout 5000ms[22m
+    [2m    9 × unexpected value "http://127.0.0.1:3001/dashboard/laboratories/00000000-0000-4000-8000-000000000311/areas"[22m
+
+
+      192 |     await expect(page).toHaveURL(new RegExp(`${base}/areas$`)); await page.reload();
+      193 |     await expect(page.getByText(laboratoryName, { exact: true })).toBeVisible();
+    > 194 |     await page.goBack(); await expect(page).toHaveURL(new RegExp(`${base}$`));
+          |                                             ^
+      195 |     const membership = await context.request.get(`/api/laboratories/${laboratoryId}/memberships`);
+      196 |     expect(membership.status()).toBe(index === 0 ? 200 : 403);
+      197 |   }
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\frontend-workspace.spec.ts:194:45
+
+    Error Context: test-results\frontend-workspace-context-9cd1c-hange-and-history-stay-real-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\e2e\frontend-workspace.spec.ts:185:5 › contextual roles, inactive access, explicit change and history stay real 
+  119 passed (4.7m)

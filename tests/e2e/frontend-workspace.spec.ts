@@ -189,9 +189,16 @@ test("contextual roles, inactive access, explicit change and history stay real",
     const nav = page.getByRole("navigation", { name: "Laboratório", exact: true });
     await expect(nav.getByRole("link", { name: "Membros", exact: true })).toHaveCount(index === 0 ? 1 : 0);
     await nav.getByRole("link", { name: "Áreas", exact: true }).click();
-    await expect(page).toHaveURL(new RegExp(`${base}/areas$`)); await page.reload();
+    await expect(page).toHaveURL(new RegExp(`${base}/areas$`));
+    // The shared laboratory label is SSR content. The area arrives only after
+    // hydration and the real read complete, so reload/back exercise ready pages.
+    const area = page.getByRole("heading", { name: `${AREA_FIXTURES.prefix} area 0`, exact: true });
+    await expect(area).toBeVisible(); await settled(page); await page.reload();
+    await expect(area).toBeVisible(); await settled(page);
     await expect(page.getByText(laboratoryName, { exact: true })).toBeVisible();
     await page.goBack(); await expect(page).toHaveURL(new RegExp(`${base}$`));
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.getByText(`${["OWNER", "ADMIN", "MEMBER"][index]} · Ativo`, { exact: true })).toBeVisible();
     const membership = await context.request.get(`/api/laboratories/${laboratoryId}/memberships`);
     expect(membership.status()).toBe(index === 0 ? 200 : 403);
   }
