@@ -11,7 +11,8 @@
       "review/cri-audit-20261010": false,
       "release/cri-rc-20261010": false,
       "review/cri-rc-validation-20261012": false,
-      "feat/frontend-login": false
+      "feat/frontend-login": false,
+      "feat/frontend-account": false
     }
   }
 }
