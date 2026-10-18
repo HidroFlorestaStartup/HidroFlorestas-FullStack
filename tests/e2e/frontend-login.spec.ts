@@ -31,6 +31,12 @@ test("login reflows at 320px with enlarged root text", async ({ page }, testInfo
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await expect(page.getByLabel("Senha", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeVisible();
+  const submitLabelLines = await page.getByRole("button", { name: "ENTRAR", exact: true }).evaluate((button) => {
+    const label = document.createRange();
+    label.selectNodeContents(button);
+    return label.getClientRects().length;
+  });
+  expect(submitLabelLines).toBe(1);
   const path = testInfo.outputPath("frontend-login-320-text200.png");
   await page.screenshot({ path, fullPage: true, animations: "disabled" });
   await testInfo.attach("Login 320px — texto 200%", { path, contentType: "image/png" });

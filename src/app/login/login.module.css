@@ -236,6 +236,12 @@
 
 @media (min-width: 640px) { .card { padding: 2.5rem; } }
 
+@media (max-width: 399px) {
+  /* Keep usable space when text is enlarged on narrow screens. */
+  .page { padding-inline: 16px; }
+  .card { padding-inline: 24px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page *, .page *::before, .page *::after {
     transition-duration: 0.01ms;
