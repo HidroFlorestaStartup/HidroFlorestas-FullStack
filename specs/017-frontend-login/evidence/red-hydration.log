@@ -1,0 +1,55 @@
+[WebServer] npm notice run hidro-florestas-fullstack@0.1.0 dev
+
+
+[WebServer] npm notice run next dev --hostname 127.0.0.1 --port 3001
+[WebServer] (node:34532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:27120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:5916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:39340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:39340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] [chromium] › tests\e2e\frontend-login.spec.ts:64:5 › login is inert until hydration and then accepts the first input
+  1) [chromium] › tests\e2e\frontend-login.spec.ts:64:5 › login is inert until hydration and then accepts the first input
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  getByLabel('E-mail', { exact: true })
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input value="" id="email" type="email" name="email" autocomplete="email" placeholder="seu@email.com" class="w-full bg-transparent outline-none placeholder:text-[#858585]"/>
+          - unexpected value "enabled"
+
+
+      77 |     const email = page.getByLabel("E-mail", { exact: true });
+      78 |     await expect(email).toBeVisible();
+    > 79 |     await expect(email).toBeDisabled();
+         |                         ^
+      80 |     await expect(page.getByLabel("Senha", { exact: true })).toBeDisabled();
+      81 |     await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeDisabled();
+      82 |     expect(authRequests).toBe(0);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:79:25
+
+    Error Context: test-results\frontend-login-login-is-in-e3d1b-hen-accepts-the-first-input-chromium\error-context.md
+
+
+  1 failed
+    [chromium] › tests\e2e\frontend-login.spec.ts:64:5 › login is inert until hydration and then accepts the first input

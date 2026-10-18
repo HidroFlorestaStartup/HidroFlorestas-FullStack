@@ -1,0 +1,42 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - region "FAÇA SEU LOGIN" [ref=e3]:
+      - img "HidroFlorestas" [ref=e4]
+      - heading "FAÇA SEU LOGIN" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Acesse sua conta para gerenciar seus projetos
+      - status [ref=e7]
+      - group "Credenciais de acesso" [ref=e9]:
+        - generic [ref=e10]: Credenciais de acesso
+        - generic [ref=e11]:
+          - generic [ref=e12]: E-mail
+          - textbox "E-mail" [ref=e13]: active@auth-test.hidroflorestas.invalid
+        - generic [ref=e14]:
+          - generic [ref=e15]: Senha
+          - generic [ref=e16]:
+            - textbox "Senha" [ref=e17]: <REDACTED>
+            - button "Mostrar senha" [ref=e18] [cursor=pointer]:
+              - img [ref=e19] [cursor=pointer]
+        - generic [ref=e22]:
+          - generic [ref=e23] [cursor=pointer]:
+            - checkbox "Mostrar senha" [ref=e24]
+            - generic [ref=e25] [cursor=pointer]: Mostrar senha
+          - link "Esqueceu sua senha?" [ref=e26] [cursor=pointer]:
+            - /url: /forgot-password
+        - alert [ref=e27]: Solicitação não permitida.
+        - button "ENTRAR" [ref=e28] [cursor=pointer]
+      - paragraph [ref=e29]:
+        - text: Não tem uma conta?
+        - link "Cadastrar-se" [ref=e30] [cursor=pointer]:
+          - /url: /register
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e31]:
+        - img [ref=e33]
+        - generic [ref=e36]: Solicitação não permitida.
+  - button "Open Next.js Dev Tools" [ref=e42] [cursor=pointer]:
+    - img [ref=e43] [cursor=pointer]
+  - alert [ref=e46]
+```

@@ -1,0 +1,113 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "command": "./scripts/rc-review-validation.ps1 -Gates Unit,Build,Typecheck,Lint,E2E,Https",
+  "officialGates": [
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:22:41.992Z",
+      "endedUtc": "2026-10-18T16:22:51.467Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/unit-1792340561991.log",
+      "logSha256": "a85af2ed87e63868465bb76a5f810151b5607fb3668565e36c3b7b844106e5aa"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:22:51.789Z",
+      "endedUtc": "2026-10-18T16:23:04.022Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/build-1792340571789.log",
+      "logSha256": "9cce427cd7782424fb04fb7d665bc8b455c411c10591fda4c3f7e47bbf53184c"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:23:04.317Z",
+      "endedUtc": "2026-10-18T16:23:07.776Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/typecheck-1792340584317.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:23:08.079Z",
+      "endedUtc": "2026-10-18T16:23:17.246Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/lint-1792340588079.log",
+      "logSha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:23:17.540Z",
+      "endedUtc": "2026-10-18T16:25:59.413Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/e2e-1792340597540.log",
+      "logSha256": "0a17c8ba2f687ea6afe5532e54d7f029ffb5422f414dcfd69358513db74a29a1"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "9e8850a48f2444a58f4f97fdd691a503763cadc3b99ab6e0e18ef0746adc648b",
+      "startedUtc": "2026-10-18T16:25:59.686Z",
+      "endedUtc": "2026-10-18T16:26:28.063Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/https-1792340759686.log",
+      "logSha256": "65296221c3517722bd052262ee35cf952d20191b1537a4338e7fbe42df6858d0"
+    }
+  ],
+  "results": {
+    "unit": 296,
+    "mail": 17,
+    "e2e": 86,
+    "login": 14,
+    "https": 2,
+    "lintErrors": 0,
+    "lintPreexistingWarnings": 3
+  },
+  "candidateSha256Lf": {
+    "src/app/login/page.tsx": "1eb7437c0580ac16451c0e48eb994b1f1f838869ec9616cc3788e73ea1ef56b9",
+    "tests/e2e/frontend-login.spec.ts": "e3545d192c25d7a0299a974b3d7e05de4ec911059a8745aa97a1606b8011c0fe"
+  },
+  "sameTestsAsRed": true,
+  "loginCases": [
+    "  ok 61 [chromium] › tests\\e2e\\frontend-login.spec.ts:8:7 › login presentation fits 375px without horizontal overflow (521ms)",
+    "  ok 62 [chromium] › tests\\e2e\\frontend-login.spec.ts:8:7 › login presentation fits 768px without horizontal overflow (518ms)",
+    "  ok 63 [chromium] › tests\\e2e\\frontend-login.spec.ts:8:7 › login presentation fits 1440px without horizontal overflow (569ms)",
+    "  ok 64 [chromium] › tests\\e2e\\frontend-login.spec.ts:23:5 › login reflows at 320px with enlarged root text (911ms)",
+    "  ok 65 [chromium] › tests\\e2e\\frontend-login.spec.ts:45:5 › login preserves password visibility controls and keyboard order (466ms)",
+    "  ok 66 [chromium] › tests\\e2e\\frontend-login.spec.ts:76:5 › login is inert until hydration and then accepts the first input (565ms)",
+    "  ok 67 [chromium] › tests\\e2e\\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error (701ms)",
+    "  ok 68 [chromium] › tests\\e2e\\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating (736ms)",
+    "  ok 69 [chromium] › tests\\e2e\\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend (473ms)",
+    "  ok 70 [chromium] › tests\\e2e\\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend (473ms)",
+    "  ok 71 [chromium] › tests\\e2e\\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only (517ms)",
+    "  ok 72 [chromium] › tests\\e2e\\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only (511ms)",
+    "  ok 73 [chromium] › tests\\e2e\\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: both fields (505ms)",
+    "  ok 74 [chromium] › tests\\e2e\\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level (540ms)"
+  ],
+  "limitations": [
+    "Chromium only; no manual screen-reader acceptance.",
+    "Package isolated Node22 results remain historical, separate from these official results.",
+    "Final published SHA and CI result are maintained in PR9."
+  ]
+}
