@@ -145,6 +145,9 @@ test("login preserves the payload, prevents duplicate submission and announces a
     releaseResponse();
     await expect(page.locator("form").getByRole("alert")).toBeVisible();
     await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+    // The public result does not identify which credential failed.
+    await expect(email).not.toHaveAttribute("aria-invalid", "true");
+    await expect(password).not.toHaveAttribute("aria-invalid", "true");
     expect(payloads).toEqual([{ email: "login-ui@hidroflorestas.invalid", password: "  senha-sintetica-com-espacos  " }]);
     await expect(password).toHaveValue("  senha-sintetica-com-espacos  ");
     await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeEnabled();
@@ -172,7 +175,11 @@ test("login submits with Enter and announces a network failure without navigatin
   const error = page.locator("form").getByRole("alert");
   await expect(error).toHaveText("Não foi possível conectar ao servidor.");
   await expect(email).toHaveAttribute("aria-describedby", "login-error");
-  await expect(password).toHaveAttribute("aria-invalid", "true");
+  await expect(email).not.toHaveAttribute("aria-invalid", "true");
+  await expect(password).not.toHaveAttribute("aria-invalid", "true");
+  await expect(password).toHaveAttribute("aria-describedby", "login-error");
+  await expect(email).toHaveValue("login-ui@hidroflorestas.invalid");
+  await expect(password).toHaveValue("senha-sintetica-de-transporte");
   await expect(page.locator("form")).toHaveAttribute("aria-busy", "false");
   await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeEnabled();
   await expect(page).toHaveURL(/\/login$/);
@@ -180,6 +187,14 @@ test("login submits with Enter and announces a network failure without navigatin
   const path = testInfo.outputPath("frontend-login-network-error.png");
   await page.screenshot({ path, fullPage: true, mask: [email, password], animations: "disabled" });
   await testInfo.attach("Erro de rede — campos mascarados", { path, contentType: "image/png" });
+  // A deliberate retry preserves the same input and yields another general error.
+  await password.press("Enter");
+  await expect.poll(() => attempts).toBe(2);
+  await expect(error).toHaveText("Não foi possível conectar ao servidor.");
+  await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeEnabled();
+  await expect(email).not.toHaveAttribute("aria-invalid", "true");
+  await expect(password).not.toHaveAttribute("aria-invalid", "true");
+  await expect(password).toHaveValue("senha-sintetica-de-transporte");
 });
 
 test.describe("login with real ineligible credentials", () => {
@@ -205,8 +220,81 @@ test.describe("login with real ineligible credentials", () => {
       expect(response.status()).toBe(401);
       expect(response.headers()["set-cookie"]).toBeUndefined();
       await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+      await expect(page.getByLabel("E-mail", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
+      await expect(page.getByLabel("Senha", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
       await expect(page).toHaveURL(/\/login$/);
       expect((await context.cookies()).some(cookie => cookie.name === "auth_token")).toBe(false);
     });
+  }
+});
+
+// UI validation cases: no credentials are sent to a provider or application API.
+for (const scenario of [
+  { name: "email only", email: "", password: "senha-sintetica", invalidEmail: true, invalidPassword: false },
+  { name: "password only", email: "login-ui@hidroflorestas.invalid", password: "", invalidEmail: false, invalidPassword: true },
+  { name: "both fields", email: "", password: "", invalidEmail: true, invalidPassword: true },
+]) {
+  test(`login aria-invalid marks only empty fields: ${scenario.name}`, async ({ page }) => {
+    let authRequests = 0;
+    page.on("request", (request) => {
+      if (new URL(request.url()).pathname === "/api/auth/sign-in") authRequests++;
+    });
+    await page.goto("/login");
+    const email = page.getByLabel("E-mail", { exact: true });
+    const password = page.getByLabel("Senha", { exact: true });
+    await expect(email).toBeEnabled();
+    await expect(email).not.toHaveAttribute("aria-invalid", "true");
+    await expect(password).not.toHaveAttribute("aria-invalid", "true");
+    await email.fill(scenario.email);
+    await password.fill(scenario.password);
+    await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+    const error = page.locator("form").getByRole("alert");
+    await expect(error).toHaveText("Informe seu email e sua senha.");
+    if (scenario.invalidEmail) await expect(email).toHaveAttribute("aria-invalid", "true");
+    else await expect(email).not.toHaveAttribute("aria-invalid", "true");
+    if (scenario.invalidPassword) await expect(password).toHaveAttribute("aria-invalid", "true");
+    else await expect(password).not.toHaveAttribute("aria-invalid", "true");
+    expect(authRequests).toBe(0);
+    // Preserve the current policy: editing clears the previous feedback;
+    // the next submit performs validation again, rather than guessing remotely.
+    if (scenario.invalidEmail) await email.fill("login-ui@hidroflorestas.invalid");
+    else await password.fill("senha-sintetica");
+    await expect(error).toHaveCount(0);
+    await expect(email).not.toHaveAttribute("aria-invalid", "true");
+    await expect(password).not.toHaveAttribute("aria-invalid", "true");
+    expect(authRequests).toBe(0);
+  });
+}
+
+test("login aria-invalid keeps a generic HTTP failure at form level", async ({ page }) => {
+  // Only transport is intercepted. This is not a server-authentication test.
+  const payloads: unknown[] = [];
+  await page.route("**/api/auth/sign-in", async (route) => {
+    payloads.push(route.request().postDataJSON());
+    await route.fulfill({
+      status: 503,
+      contentType: "application/json",
+      body: JSON.stringify({ success: false, code: "INTERNAL_ERROR", message: "Não foi possível concluir a solicitação." }),
+    });
+  });
+  try {
+    await page.goto("/login");
+    const email = page.getByLabel("E-mail", { exact: true });
+    const password = page.getByLabel("Senha", { exact: true });
+    await expect(email).toBeEnabled();
+    await email.fill("login-ui@hidroflorestas.invalid");
+    await password.fill("  senha-sintetica-com-espacos  ");
+    await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+    await expect(page.locator("form").getByRole("alert")).toHaveText("Não foi possível concluir a solicitação.");
+    await expect(email).not.toHaveAttribute("aria-invalid", "true");
+    await expect(password).not.toHaveAttribute("aria-invalid", "true");
+    await expect(email).toHaveAttribute("aria-describedby", "login-error");
+    await expect(password).toHaveAttribute("aria-describedby", "login-error");
+    await expect(password).toHaveValue("  senha-sintetica-com-espacos  ");
+    await expect(page.getByRole("button", { name: "ENTRAR", exact: true })).toBeEnabled();
+    await expect(page).toHaveURL(/\/login$/);
+    expect(payloads).toEqual([{ email: "login-ui@hidroflorestas.invalid", password: "  senha-sintetica-com-espacos  " }]);
+  } finally {
+    await page.unrouteAll({ behavior: "wait" });
   }
 });

@@ -48,8 +48,8 @@ Publicação e solicitação concluídas no PR9. Todos os checks acima descrevem
 
 ## Ajuste focal de aria-invalid — 2026-10-18
 
-- [ ] T015 Reconciliar este adendo e contracts/login-ui.md, registrar planejamento antes da correção; preservar T001–T014.
-- [ ] T016 Executar RED no Next oficial com os testes de aria-invalid em tests/e2e/frontend-login.spec.ts: rede/erro genérico e campos vazios sem POST. Provas isoladas do pacote não fecham esta tarefa.
+- [x] T015 Reconciliar este adendo e contracts/login-ui.md, registrar planejamento antes da correção; preservar T001–T014.
+- [x] T016 Executar RED no Next oficial com os testes de aria-invalid em tests/e2e/frontend-login.spec.ts: rede/erro genérico e campos vazios sem POST. Provas isoladas do pacote não fecham esta tarefa.
 - [ ] T017 Aplicar src/app/login/page.tsx, executar GREEN do mesmo recorte, typecheck/lint e regressões pertinentes; manter payload, contexto, campos, loading e hidratação.
 - [ ] T018 Revisar semântica, escopo e evidências; commitar/publicar somente feat/frontend-login, verificar CI do novo SHA e atualizar o PR #9. Aprovação humana permanece pendente.
 

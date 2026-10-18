@@ -133,3 +133,13 @@ Nenhum runner, guard, fixture ou timeout será alterado. Revisar diff e privacid
 registrar resultados e commitar antes de publicar exclusivamente a feature.
 O CI do SHA final será registrado no PR9, sem commits sucessivos de recibo.
 Revisão humana continua pendente; sem merge, deploy ou investigação de IHFR.
+
+RED oficial concluído antes da correção: planejamento ee9b98f, página idêntica
+ao baseline, testes idênticos ao overlay. Runner RC completo, gate E2E:
+79 PASS / 7 FAIL; no arquivo de login, 7 PASS / 7 FAIL. Todas as sete falhas
+esperavam ausência de aria-invalid=true e receberam true (401 interceptado,
+rede, duas negativas reais, um campo vazio e o outro preenchido, HTTP503).
+Sem falha fora do arquivo focal; caso de ambos vazios já passou.
+Evidências: [journal RED](evidence/aria-invalid-red.json) e
+[assertions oficiais](evidence/aria-invalid-red.log). Nenhuma assertion, timeout,
+fixture ou guard foi alterado. Próxima etapa: aplicar page.tsx e repetir E2E.

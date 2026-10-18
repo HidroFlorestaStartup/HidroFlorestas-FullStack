@@ -1,0 +1,202 @@
+  1) [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      147 |     await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+      148 |     // The public result does not identify which credential failed.
+    > 149 |     await expect(email).not.toHaveAttribute("aria-invalid", "true");
+          |                             ^
+      150 |     await expect(password).not.toHaveAttribute("aria-invalid", "true");
+      151 |     expect(payloads).toEqual([{ email: "login-ui@hidroflorestas.invalid", password: "  senha-sintetica-com-espacos  " }]);
+      152 |     await expect(password).toHaveValue("  senha-sintetica-com-espacos  ");
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:149:29
+
+    attachment #1: Login em envio — campos mascarados (image/png) ──────────────────────────────────
+    test-results\frontend-login-login-prese-6fd8c-sion-and-announces-an-error-chromium\attachments\Login-em-envio-—-campos-mascarados-f8a6feb3267fe4690ca365aa739f30bca144227f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-login-login-prese-6fd8c-sion-and-announces-an-error-chromium\error-context.md
+
+  2) [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      176 |   await expect(error).toHaveText("Não foi possível conectar ao servidor.");
+      177 |   await expect(email).toHaveAttribute("aria-describedby", "login-error");
+    > 178 |   await expect(email).not.toHaveAttribute("aria-invalid", "true");
+          |                           ^
+      179 |   await expect(password).not.toHaveAttribute("aria-invalid", "true");
+      180 |   await expect(password).toHaveAttribute("aria-describedby", "login-error");
+      181 |   await expect(email).toHaveValue("login-ui@hidroflorestas.invalid");
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:178:27
+
+    Error Context: test-results\frontend-login-login-submi-35df5--failure-without-navigating-chromium\error-context.md
+
+  3) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      221 |       expect(response.headers()["set-cookie"]).toBeUndefined();
+      222 |       await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+    > 223 |       await expect(page.getByLabel("E-mail", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
+          |                                                                    ^
+      224 |       await expect(page.getByLabel("Senha", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
+      225 |       await expect(page).toHaveURL(/\/login$/);
+      226 |       expect((await context.cookies()).some(cookie => cookie.name === "auth_token")).toBe(false);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:223:68
+
+    Error Context: test-results\frontend-login-login-with--0a7c4-rd-through-the-real-backend-chromium\error-context.md
+
+  4) [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      221 |       expect(response.headers()["set-cookie"]).toBeUndefined();
+      222 |       await expect(page.locator("form").getByRole("alert")).toHaveText("Email ou senha inválidos.");
+    > 223 |       await expect(page.getByLabel("E-mail", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
+          |                                                                    ^
+      224 |       await expect(page.getByLabel("Senha", { exact: true })).not.toHaveAttribute("aria-invalid", "true");
+      225 |       await expect(page).toHaveURL(/\/login$/);
+      226 |       expect((await context.cookies()).some(cookie => cookie.name === "auth_token")).toBe(false);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:223:68
+
+    Error Context: test-results\frontend-login-login-with--e2b06-nt-through-the-real-backend-chromium\error-context.md
+
+  5) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('Senha', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('Senha', { exact: true })
+        9 × locator resolved to <input id="password" type="password" name="password" aria-invalid="true" aria-required="true" placeholder="••••••••" value="<REDACTED>" aria-describedby="login-error" autocomplete="current-password" class="login-module__WEZH7G__input login-module__WEZH7G__passwordInput"/>
+          - unexpected value "true"
+
+
+      254 |     else await expect(email).not.toHaveAttribute("aria-invalid", "true");
+      255 |     if (scenario.invalidPassword) await expect(password).toHaveAttribute("aria-invalid", "true");
+    > 256 |     else await expect(password).not.toHaveAttribute("aria-invalid", "true");
+          |                                     ^
+      257 |     expect(authRequests).toBe(0);
+      258 |     // Preserve the current policy: editing clears the previous feedback;
+      259 |     // the next submit performs validation again, rather than guessing remotely.
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:256:37
+
+    Error Context: test-results\frontend-login-login-aria--10f04-nly-empty-fields-email-only-chromium\error-context.md
+
+  6) [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      252 |     await expect(error).toHaveText("Informe seu email e sua senha.");
+      253 |     if (scenario.invalidEmail) await expect(email).toHaveAttribute("aria-invalid", "true");
+    > 254 |     else await expect(email).not.toHaveAttribute("aria-invalid", "true");
+          |                                  ^
+      255 |     if (scenario.invalidPassword) await expect(password).toHaveAttribute("aria-invalid", "true");
+      256 |     else await expect(password).not.toHaveAttribute("aria-invalid", "true");
+      257 |     expect(authRequests).toBe(0);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:254:34
+
+    Error Context: test-results\frontend-login-login-aria--f03fd--empty-fields-password-only-chromium\error-context.md
+
+  7) [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level 
+
+    Error: expect(locator).not.toHaveAttribute(expected) failed
+
+    Locator: getByLabel('E-mail', { exact: true })
+    Expected string: not "true"
+    Received string: "true"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveAttribute" with timeout 5000ms
+      - waiting for getByLabel('E-mail', { exact: true })
+        9 × locator resolved to <input id="email" type="email" name="email" aria-invalid="true" autocomplete="email" aria-required="true" placeholder="seu@email.com" aria-describedby="login-error" class="login-module__WEZH7G__input" value="<REDACTED>"/>
+          - unexpected value "true"
+
+
+      287 |     await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+      288 |     await expect(page.locator("form").getByRole("alert")).toHaveText("Não foi possível concluir a solicitação.");
+    > 289 |     await expect(email).not.toHaveAttribute("aria-invalid", "true");
+          |                             ^
+      290 |     await expect(password).not.toHaveAttribute("aria-invalid", "true");
+      291 |     await expect(email).toHaveAttribute("aria-describedby", "login-error");
+      292 |     await expect(password).toHaveAttribute("aria-describedby", "login-error");
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-login.spec.ts:289:29
+
+    Error Context: test-results\frontend-login-login-aria--701fb--HTTP-failure-at-form-level-chromium\error-context.md
+
+  7 failed
+    [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error 
+    [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating 
+    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend 
+    [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend 
+    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only 
+    [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only 
+    [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level 
+  79 passed (3.5m)
