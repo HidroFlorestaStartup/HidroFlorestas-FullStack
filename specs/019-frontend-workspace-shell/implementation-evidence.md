@@ -1,6 +1,6 @@
 # Evidências — workspace e shell
 
-Estado: implementação em validação, 2026-10-18. Classificação dos resultados abaixo: EVIDENCIA_IMPLEMENTACAO. Orientações de integração: RECOMENDACAO. Nenhum resultado automatizado substitui aceite humano.
+Estado: implementação validada técnica e visualmente, 2026-10-18; aceite humano pendente. Classificação dos resultados abaixo: EVIDENCIA_IMPLEMENTACAO. Orientações de integração: RECOMENDACAO. Nenhum resultado automatizado substitui aceite humano.
 
 ## Baseline e dependência
 
@@ -75,7 +75,11 @@ Allowlist/if da branch e Previewfalse preparados antes do push;15 gates e guarda
 
 Falha do novo teste de histórico: goBack terminou, mas URL permaneceu em /areas durante5s. A pré-condição anterior aguardava apenas URL e nome do laboratório do layout SSR; não comprovava leitura/hidratação da página de áreas. Correção somente no teste: aguardar cartão exato da área fixture, carregado pelo useEffect/GET real, antes e depois de reload, e estabilizar navegação; conservar um goBack e URL exata, acrescentando título e papel após retorno e mantendo API200/403. Fonte da aplicação, AuthContext, AuthSessionRestorer e guardas intactos. INFERENCIA: uma corrida durante conclusão da navegação pode explicar a intermitência; não houve prova de histórico duplicado nem de defeito da aplicação. A conclusão remota dependerá de nova execução completa, sem presumir PASS.
 
-Validação local afetada22:11–22:16 UTC: Typecheck/Lint PASS (0 erros/3 avisos preexistentes), E2E120/120 PASS, fingerprint único `5a64846a138ba3b225272b8409e79429a87443ed7ab2f6b6d2262255a5a21e62`. [Journal](evidence/green-history-sync.jsonl). Revisão independente do diff mínimo sem achados: todas as assertions anteriores conservadas, pré-condição comprova leitura/hidratação real, sem alterar src. As58 capturas finais continuam representando a mesma fonte de apresentação; somente sincronização/assertions do teste de histórico mudaram após a rodada completa local. O CI do próximo SHA executará novamente15 gates. Após PASS e inspeção, um recibo documental será publicado; o HEAD desse recibo também será validado, com resultado final vivo no PR para evitar recursão de commits.
+Validação local afetada22:11–22:16 UTC: Typecheck/Lint PASS (0 erros/3 avisos preexistentes), E2E120/120 PASS, fingerprint único `5a64846a138ba3b225272b8409e79429a87443ed7ab2f6b6d2262255a5a21e62`. [Journal](evidence/green-history-sync.jsonl). Revisão independente do diff mínimo sem achados: todas as assertions anteriores conservadas, pré-condição comprova leitura/hidratação real, sem alterar src. As58 capturas finais continuam representando a mesma fonte de apresentação; somente sincronização/assertions do teste de histórico mudaram após a rodada completa local.
+
+Correção publicada em `5b988b67688838a24de54f2acd95429121337e43`. [CI39171525062](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39171525062): **15/15 PASS**, job117805406779 concluído com sucesso, no HEAD cumulativo exato. [Journal do artefato](evidence/ci-repair-all-gates.jsonl) conferido:15 entradas PASS/exitCode0 e fingerprint único `b8169f4d3ba2a4e70c7fe955e2301baa28f79d22c87dd5698be305dfa9ac6427`. Logs oficiais também confirmam E2E120, HTTPS2, exclusão3, IHFR6, bootstrap14 e auditoria0. Artefato12152863426 completo baixado/inspecionado:95 PNGs (58 workspace/37 contas), sem resíduo antigo do skip; confirmação e salto320/texto200 também conferidos visualmente no artefato. SHA256 do ZIP `4b0582114f6fafd278ac7c92543bb1ed4510063c84f2ccc8f493b25a5b25a5a6`, conferido; expira2026-11-01. Resultado positivo após reforço da pré-condição não prova retrospectivamente um mecanismo exato para o FAIL inicial; seu registro permanece.
+
+O recibo documental e conclusão das tarefas constituirão o último commit. Seu novo HEAD também terá15 gates acompanhados e artefato inspecionado; recibo final vivo no PR evita ciclo de commits somente de recibo. Nenhum merge/deploy autorizado por esses resultados.
 
 ## Limites
 

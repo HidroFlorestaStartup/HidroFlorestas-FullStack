@@ -1,7 +1,7 @@
 # Feature Specification: Workspace, navegação e shell
 **Feature Branch**: `feat/frontend-workspace-shell`
 **Created**: 2026-10-18
-**Status**: EM_IMPLEMENTACAO; aceite humano pendente.
+**Status**: IMPLEMENTADO_E_VALIDADO_TECNICAMENTE; aceite humano pendente.
 **Input**: Fase3 do pedido atual e handoff de Pedro de18/10/2026, lido em origin/docs/handoff-frontend-fases-2-3, sem merge documental.
 
 ## User Scenarios & Testing *(mandatory)*

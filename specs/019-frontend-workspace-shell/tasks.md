@@ -29,7 +29,7 @@ Teste independente: menu por teclado e logout real375/1440 com histórico.
 - [x] T017 Revisar diff/capturas adversarialmente com revisão independente; registrar/corrigir achados demonstrados em specs/019-frontend-workspace-shell/implementation-evidence.md (SC-004).
 - [x] T018 Adicionar branch exata à allowlist/if em .github/workflows/rc-review.yml e Previewfalse em vercel.json, conservando15 gates/guards/Actions (FR-010).
 - [x] T019 Fazer commits/push e PR empilhado; registrar base/HEAD/ordem em specs/019-frontend-workspace-shell/implementation-evidence.md e no PR (FR-010).
-- [ ] T020 Acompanhar15 gates do SHA cumulativo publicado e inspecionar artefato; registrar recibo final no PR, preservar main/development/RC e reportar limites (FR-010, SC-001/004).
+- [x] T020 Acompanhar15 gates do SHA cumulativo publicado e inspecionar artefato; registrar recibo final no PR, preservar main/development/RC e reportar limites (FR-010, SC-001/004).
 ## Dependencies & Execution Order
 T001–T004 → T005/RED → US1 → US2/US3 → T016–T020. MVP é US1; missão exige todas. RED antes de código; nenhum deploy.
 US1, US2 e US3 testáveis com fixtures próprias/existentes, sem depender de criação manual prévia. Testes compartilham arquivo e são escritos sequencialmente. Shell/TopBar/Sidebar/layouts têm um implementador; nenhuma edição paralela desses arquivos. Pesquisa/revisão de documentação/capturas pode ser paralela e somente leitura (exemplo US1: inspecionar confirmação enquanto implementador verifica CSS; US2: matriz/review de consumidores; US3: inspeção de teclado/capturas).

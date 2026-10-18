@@ -1,6 +1,6 @@
 # Implementation Plan: Workspace, navegação e shell
 **Branch**: `feat/frontend-workspace-shell` | **Date**: 2026-10-18 | **Spec**: [spec.md](spec.md)
-**Estado**: implementação em validação; histórico RED e revisão em implementation-evidence.md.
+**Estado**: implementação validada técnica e visualmente; CI15/15 e histórico RED/revisão em implementation-evidence.md. Aceite humano pendente.
 ## Summary
 Adaptar hierarquia/cartões/workspace e chrome do starter ao Next real, mantendo serviços, contexto, seleção explícita e consumidores antigos.
 ## Technical Context
