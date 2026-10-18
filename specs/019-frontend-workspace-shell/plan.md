@@ -1,6 +1,6 @@
 # Implementation Plan: Workspace, navegação e shell
 **Branch**: `feat/frontend-workspace-shell` | **Date**: 2026-10-18 | **Spec**: [spec.md](spec.md)
-**Estado**: PLAN; código ainda não alterado.
+**Estado**: implementação em validação; histórico RED e revisão em implementation-evidence.md.
 ## Summary
 Adaptar hierarquia/cartões/workspace e chrome do starter ao Next real, mantendo serviços, contexto, seleção explícita e consumidores antigos.
 ## Technical Context
@@ -21,7 +21,7 @@ Código: src/components/shell/{application-shell.tsx,shell.module.css,laboratory
 Testes: tests/e2e/frontend-workspace.spec.ts e abertura explícita do menu no teste móvel existente account-deletion.spec.ts, sem alterar assertions de domínio. Workflow/vercel: somente nome exato da branch e PNGs sanitizados.
 ## Baseline e estratégia
 Worktree única reutilizada C:/projetos/consolidados/HidroFlorestas-frontend-login. origin/development afef5db6ced1a4604a114d842bf85950ac32c69b e main beba96fbf6bbaac8771dbb29abea2f9f8f5b0054 reconferidos após fetch; sem avanço. RC0f669b79a5e73a329832593229c2557d8b12bbce e dois ZIPs preservados.
-Fase2 PR11 aberto/não integrado, HEAD8cacfc99ba0e2876c1036a0f67ec41375806b9ac. Sua fonte passou15 gates locais e CI39165060917 em5d8733f;8cacfc9 só acrescenta recibos documentais e tem novo CI em acompanhamento. Esta fase parte desse HEAD cumulativo, sem duplicação. Dependência: AccountShell/estilos018 para logout e configuração cumulativa CI/Vercel. Base temporária do PR: feat/frontend-account. Ordem recomendada: mantenedor revisa/integra11; depois conferir ancestralidade/diff e redirecionar este PR para development. Sem merge/rebase/force-push.
+Fase2 PR11 aberto/não integrado, HEAD8cacfc99ba0e2876c1036a0f67ec41375806b9ac. Sua fonte passou15 gates locais e CI39165060917 em5d8733f; o CI39166203271 do HEAD final8cacfc9 também passou15/15, com artefato baixado e inspecionado. Esta fase parte desse HEAD cumulativo, sem duplicação. Dependência: AccountShell/estilos018 para logout e configuração cumulativa CI/Vercel. Base temporária do PR: feat/frontend-account. RECOMENDACAO: mantenedor revisa/integra11; depois conferir ancestralidade/diff e redirecionar este PR para development. Sem merge/rebase/force-push.
 Starter oficial cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f somente leitura. Guias locais Next consultados; sem AGENTS mais específico, numbering sequential,019 realmente livre, branch preferida inexistente. feature.json ignorado é seletor local. Hooks ausentes.
 ## Execução e commits
 1. specify/checklist → plan/research/contracts → tasks → analyze; commit documental português.
