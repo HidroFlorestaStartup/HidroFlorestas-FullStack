@@ -11,7 +11,7 @@ Adaptar hierarquia/cartões/workspace e chrome do starter ao Next real, mantendo
 **Target Platform**: desktop/mobile375/768/1440 e320px/texto200.
 **Project Type**: web full-stack existente.
 **Performance Goals**: nenhum request/métrica/pacote novo para reproduzir apresentação.
-**Constraints**: sem alteração de backend/guardas/AuthContext/ciência ou páginas de domínio; CSS Module local; um main e um Sair visível.
+**Constraints**: sem alteração de backend/guardas/AuthContext/ciência ou páginas de domínio; CSS Module local; contagem de main preservada por consumidor e um Sair visível.
 **Scale/Scope**: workspace, TopBar, Sidebar, dois layouts, navegação contextual e logout.
 ## Constitution Check
 I: pedido/handoff de Pedro18/10 têm autoridade no recorte; starter só visual. II: jornada vertical seleção/navegação/gestão/saída. III: artefatos próprios019. IV: CF-PRD-FR-003/004 e CF-US-004/005/007/008/CF-UC-004/006/016/017 mantêm classificação, requisitos globais EM_REVISAO não são aprovados silenciosamente. V: isolamento/fixtures/mascaramento e regressão transversal. VI: docs/raw/histórico preservados. VII: branch própria empilhada, edição de shared files por um implementador; revisão independente somente leitura. PASS antes/depois do desenho, sem exceção.

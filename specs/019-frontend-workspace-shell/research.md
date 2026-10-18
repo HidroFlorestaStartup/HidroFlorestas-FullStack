@@ -13,7 +13,7 @@ Observado: modal atual tem role/aria-modal sem foco inicial/trap/Escape/restaura
 Não usar form method=dialog nas ações. Preservar nome exato/payloads/servidor. Corrigir travas síncronas somente se RED demonstrar duplicação.
 
 ## Consumidores/testes
-Pesquisa independente somente leitura confirmou matriz em contracts/ui-contracts.md e armadilhas: um único main, um Sair visível, saudação exata, li/headings/link ACESSAR LABORATÓRIO. Exclusão de conta móvel precisa abrir o novo menu antes do link; manter integralmente assertions de revogação/segurança. Não trocar seletores por first() para esconder duplicação.
+Pesquisa independente somente leitura confirmou matriz em contracts/ui-contracts.md e armadilhas: não adicionar main e preservar contagem por consumidor, um Sair visível, saudação exata, li/headings/link ACESSAR LABORATÓRIO. Exclusão de conta móvel precisa abrir o novo menu antes do link; manter integralmente assertions de revogação/segurança. Não trocar seletores por first() para esconder duplicação.
 Fixtures reais AREA301–304 e auth001–004, cleanup exato; laboratórios extras usam prefixo do cleanup existente. Evitar helper global que cria54 usuários sem teardown próprio. Roles sintéticos no banco permitido do harness, nunca permissões mock de apresentação.
 
 ## Guias e evidência
