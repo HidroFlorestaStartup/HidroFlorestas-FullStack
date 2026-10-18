@@ -1,7 +1,7 @@
 # Implementation Plan: Cadastro e contas
 
 **Branch**: `feat/frontend-account` | **Date**: 2026-10-18 | **Spec**: [spec.md](spec.md)
-**Estado**: EM_ANDAMENTO. Execução autorizada pelo pedido atual e handoff de Pedro de 18/10/2026.
+**Estado**: IMPLEMENTADO_E_REVISADO_LOCALMENTE. Publicação/CI rastreados no PR. Execução autorizada pelo pedido atual e handoff de Pedro de 18/10/2026.
 
 ## Summary
 
@@ -51,4 +51,4 @@ Fase3 provavelmente usará PR empilhado sobre HEAD validado desta fase para mant
 
 ## Verificações e histórico
 
-2026-10-18: PLAN iniciado, baseline e consumidores inspecionados. Nenhum resultado de runtime desta fase declarado ainda. Pendências operacionais históricas e validação científica não são alteradas.
+2026-10-18: PLAN → EXECUTE → REVIEW concluídos localmente. Checklist8/8 e análise100% sem críticos; RED preservado,15 gates locais PASS em rodada intermediária e última rodada de UI com100 E2E PASS. Ver implementation-evidence.md para fingerprints, falhas intermediárias, revisão independente e limites. Code-First CF-PRD-FR-001 permanece EM_REVISAO; não promovido a aprovação de produto. CI do HEAD publicado acompanhado no PR. Pendências operacionais históricas e validação científica não são alteradas.
