@@ -45,6 +45,12 @@ Revisão independente após GREEN: diff e todas as37 capturas inspecionados; sem
 
 ## Publicação e limites
 
+CI oficial: [run39165060917](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39165060917) do SHA `5d8733f3081bffa188c23dda9721a2844a7d0ee9`:15/15 PASS. [Journal baixado do artefato](evidence/ci-initial-all-gates.jsonl), fingerprint único `8cdade645e026efe093ab80c153100b18fd07bb7144bc721438c58eabc65e517`. Artefato12150204970, SHA256 `8e02f361755f2d862aa3575f55b1dd9dfc1e14c3e1b9793156433bd5f6803551`, contém37 PNGs sanitizados de conta; expira em2026-11-01. E2E100, HTTPS2, exclusão3 e IHFR6 confirmados também no log oficial. [PR11](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/11) aberto, base development. Conector recusou escrita de PR por403; publicação concluída pela API com credencial Git local, sem exposição de segredo.
+
+Este recibo e o journal local final compõem commit somente documental posterior; seu novo HEAD também terá CI acompanhado e registrado no PR, sem ciclo de commits de recibo. Fase3 continuará em Spec019, base nesta sequência validada e PR empilhado enquanto11 estiver aberto. Nenhum merge realizado.
+
+Rodada final completa em20:50–20:57UTC, após o ajuste de privacidade:15/15 gates PASS no mesmo fingerprint `24fd4f205161d7395ce31a8e0c927b22c6619af345521616eb0c15b7768e8d0e`, sem alteração de fonte durante a execução. E2E100/100, HTTPS2/2, exclusão3/3 e IHFR6/6; bootstrap14 migrations, zero falhas, transação revertida e banco próprio descartado; auditoria0. [Journal final](evidence/green-final-all-gates.jsonl). Isso substitui a ressalva de cobertura local do último ajuste, sem apagar as rodadas anteriores.
+
 Branch `feat/frontend-account`, PR com base `development`. Commits, HEAD final, URL do PR e resultado exato dos15 gates constam no histórico Git e no próprio PR/relatório de entrega. O resultado remoto não é presumido neste documento preparado antes da execução. Não alterar main/development diretamente nem fazer merge/deploy. A próxima fase reutiliza a mesma worktree, após validação e publicação, com base reconferida.
 
 Capturas automatizadas não provam leitor de tela manual, WCAG integral, Gmail real, homologação produtiva ou validação científica. A intermitência histórica do IHFR permanece registrada; nenhuma regra científica, retry ou guarda foi alterada.

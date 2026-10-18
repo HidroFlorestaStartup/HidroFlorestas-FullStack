@@ -42,8 +42,8 @@ Teste independente: impedimentos reais e confirmação sem exclusão incidental.
 - [x] T014 Validar seis jornadas/teclado/foco/reflow e salvar capturas em specs/018-frontend-account/evidence/ (FR-008, SC-001–SC-004).
 - [x] T015 Executar GREEN/regressão pelo scripts/rc-review-validation.ps1, registrar resultados em specs/018-frontend-account/implementation-evidence.md.
 - [x] T016 Revisar diff adversarialmente e registrar achados em specs/018-frontend-account/implementation-evidence.md; corrigir somente riscos demonstrados.
-- [ ] T017 Incluir branch exata em .github/workflows/rc-review.yml e desligar preview em vercel.json; commits/push/PR para development sem merge.
-- [ ] T018 Acompanhar15 gates do SHA publicado e registrar no PR/evidências; continuar fase3 em specs/<próximo-livre>/plan.md.
+- [x] T017 Incluir branch exata em .github/workflows/rc-review.yml e desligar preview em vercel.json; commits/push/PR para development sem merge.
+- [x] T018 Acompanhar15 gates do SHA publicado e registrar no PR/evidências; continuar fase3 em specs/<próximo-livre>/plan.md.
 
 ## Dependencies & Execution Order
 
