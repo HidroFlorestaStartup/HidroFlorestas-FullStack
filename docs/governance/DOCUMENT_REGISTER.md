@@ -181,3 +181,22 @@ production-update-runbook, migration-runbook, review-checklist e publication-evi
 EVIDENCIA_IMPLEMENTACAO registra preservação/publicação; RECOMENDACAO identifica
 roteiros futuros, sem autoridade científica ou aceite humano. Responsáveis por
 review/banco/deploy/mail/cleanup: não especificado. O handoff anterior é preservado.
+
+## Preparação da incorporação do frontend — 2026-10-18
+
+Origem: pedido de Pedro nesta sessão, com preparação documental e commit local
+autorizados, sem implementação ou publicação. Registrado o acompanhamento
+[PLAN-FRONT-PREP-20261018](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md),
+com [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md),
+[revisão dos PRs](../plans/active/preparacao-incorporacao-frontend-20261018/revisao-dos-prs.md),
+[textos não publicados](../plans/active/preparacao-incorporacao-frontend-20261018/textos-de-encerramento.md),
+[evidências estruturadas](../plans/active/preparacao-incorporacao-frontend-20261018/evidencias.json),
+[plano proposto](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md)
+e [prompt autossuficiente](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md).
+
+Classificações: EVIDENCIA_IMPLEMENTACAO para Git/código/testes; INFERENCIA para
+prontidão técnica; RECOMENDACAO para sequência futura/ações de PR; DECISAO_CONFIRMADA
+somente para a escolha do login por Pedro em resposta nesta sessão. Preparação
+executada por Pedro com seu Codex; execução futura de incorporação por outro
+desenvolvedor, sem transferir a ele as pendências de gestão dos PRs. Nenhum
+registro histórico foi apagado nem homologação real/científica declarada.

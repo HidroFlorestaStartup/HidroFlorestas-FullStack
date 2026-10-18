@@ -1,0 +1,99 @@
+# Preparação da incorporação do frontend — acompanhamento
+
+ID: PLAN-FRONT-PREP-20261018. Estado: `CONCLUIDO` para a preparação documental.
+Plano de incorporação completo: `AGUARDANDO_REVISAO` por Pedro; execução futura.
+
+## Objetivo e autoridade
+
+Executar com Pedro a sincronização, reconstrução da entrega, revisão dos PRs e
+validação de development. Somente com prontidão demonstrada, preparar plano e
+prompt para a execução futura por outro desenvolvedor. Fonte do mandato:
+pedido anexado por Pedro nesta sessão em 18/10/2026. Não implementar a incorporação.
+
+Aplicam-se AGENTS.md, PROJECT_CONTEXT.md, TECH_DECISIONS.md, PLANS.md, constituição,
+política Code-First e SOURCE_AUTHORITY.md. Git/código/testes são
+`EVIDENCIA_IMPLEMENTACAO`; relatos documentais são `FATO_DOCUMENTADO`;
+conclusões derivadas são `INFERENCIA`; próximos passos são `RECOMENDACAO`.
+Decisões sem autoridade suficiente serão `PENDENCIA_DE_DECISAO`.
+
+## Estado inicial e preservação
+
+- FullStack oficial: origin em HidroFlorestaStartup; development e main locais
+  em beba96fbf6bbaac8771dbb29abea2f9f8f5b0054, árvore limpa. Upstream antigo
+  de outro proprietário não será usado.
+- Worktree de revisão limpa em b20143adcd5d36fbde381c28ba220881f3f2d53d.
+- Starter oficial: branch fix/login-http-rede-local em 2267250; main local em
+  8984bb8; package-lock.json não rastreado preexistente, a preservar integralmente.
+- Trabalho documental isolado em /tmp/hidro-preparacao-frontend-20261018,
+  branch docs/preparacao-frontend-20261018, criada de origin/development em
+  118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed.
+
+## Escopo, dependências e limites
+
+Arquivos novos deste diretório; atualização datada de contexto e registro documental
+quando necessária. Consultar planos CRI e estabilização/interface existentes,
+sem substituir seu histórico. Não alterar aplicação, specs funcionais, docs/raw,
+assertions, timeouts ou guardas. Sem push, integração entre branches, fechamento,
+comentário, aprovação de PR, deploy ou serviços/dados reais.
+
+Node 24.19.0 e npm/package-lock são o contrato atual de execução. Banco somente
+no harness sintético autorizado. Homologação real e ciência são gates separados.
+
+## Etapas e critérios de conclusão
+
+| Etapa | Responsável | Estado | Critério |
+|---|---|---|---|
+| Inventariar e sincronizar | Pedro com seu Codex | CONCLUIDO | URLs, worktrees, SHAs e ahead/behind antes/depois registrados; só FF seguro |
+| Reconstruir entrega e seis PRs atuais | Pedro com seu Codex | CONCLUIDO | Código, commits, árvores, reviews/threads/checks e conteúdo exclusivo rastreados |
+| Validar prontidão | Pedro com seu Codex | CONCLUIDO | Execuções novas e reaproveitadas delimitadas por SHA/hash; decisão explícita |
+| Planejar e preparar handoff, se apta | Pedro com seu Codex | CONCLUIDO | Mapa concreto, etapas, primeira entrega, aceite, recuperação e prompt autossuficiente |
+| Revisar documentos e entregar commit local | Pedro com seu Codex | CONCLUIDO | Links/diff/segredos/refs finais; só documentos da tarefa no commit de encerramento, sem push |
+
+## Pontos de parada
+
+Se faltar correção funcional, houver regressão material, perda de conteúdo necessário
+ou evidência insuficiente, concluir diagnóstico e parar antes do planejamento dependente.
+Conflito de autoridade será registrado, sem escolha silenciosa. A futura execução
+depende do plano aprovado por Pedro; merge permanece decisão do mantenedor.
+
+## Verificações e histórico
+
+Previstas: ancestralidade e diff de árvores; PRs/checks no GitHub; typecheck, lint,
+build e testes focais; equivalência de evidências existentes; links locais,
+git diff --check, escopo e preservação de alterações. Registro detalhado no relatório.
+
+| Data | Estado | Evento |
+|---|---|---|
+| 2026-10-18 | EM_ANDAMENTO | Mandato lido; inventário inicial preservado; fetch e FF seguros iniciados; branch documental isolada criada |
+| 2026-10-18 | EM_ANDAMENTO | Git confirma árvore aprovada em development; seis PRs reconsultados; #6/#7 só com exclusividade documental; testes novos e CI equivalente sustentam prontidão técnica |
+| 2026-10-18 | EM_ANDAMENTO | Pedro escolheu login real como primeiro recorte; plano e prompt redigidos após a conclusão de prontidão, sem copiar código |
+| 2026-10-18 | CONCLUIDO | Relatório/matriz e revisão de PRs concluídos; plano/handoff prontos para revisão de Pedro; nove documentos, 16 links locais e JSON conferidos; diff/check de escopo e padrões sensíveis PASS; refs remotas e heads/bases dos PRs reconferidos sem mudança; commit documental local de encerramento |
+
+Bloqueios/desvios: rg ausente; buscas usam find/Python. Node padrão20 substituído
+pelo runtime24.19 para validações. Instalação inicial22 interrompida e refeita.
+Build local FAIL por Google Fonts e binding de porta Turbopack; cobertura de build
+reaproveitada de CI com arquivos relevantes idênticos, sem contornar guardas.
+Primeira Unit restrita falhou em três arquivos, causa interna não demonstrada;
+execução autorizada posterior296+17PASS. Nenhum bloqueio funcional novo demonstrado.
+
+Pendências: preservação documental de #6/#7 e fechamento formal pertencem a Pedro/
+mantenedor; revisão do plano completo e gates humanos/operacionais/científicos
+permanecem separados. Nenhuma decisão técnica global nova justifica alterar
+TECH_DECISIONS.md; pendências locais deste recorte ficam neste acompanhamento,
+sem reclassificar entradas antigas de PENDING_DECISIONS.md.
+
+## Resultado e localização da entrega
+
+**PRONTO PARA PLANEJAR A INCORPORAÇÃO**; login real escolhido por Pedro.
+Sete arquivos novos neste diretório (seis Markdown e evidencias.json) e duas
+seções datadas aditivas em PROJECT_CONTEXT.md e DOCUMENT_REGISTER.md.
+O hash do commit de encerramento é obtido por `git rev-parse
+docs/preparacao-frontend-20261018` e informado na entrega; não se tenta registrar
+o próprio hash dentro do commit. Worktree documental em
+/tmp/hidro-preparacao-frontend-20261018; branch local preserva todos os documentos.
+Não arquivar este acompanhamento antes da revisão de Pedro; nenhuma implementação
+ou publicação remota foi feita. Checkout original do FullStack limpo em
+development118a3a8, revisão local alinhada a a01857b; starter original conserva sua
+branch e package-lock.json não rastreado. Main local de cada repositório está
+alinhada à sua própria remota. Verificações não realizadas e alcance dos CI
+reaproveitados estão explicitados no relatório e no JSON.

@@ -87,3 +87,25 @@ até41f33db, sem alteração funcional. Nova regressão completa no final5f36eb7
 erratas documentais e limite de equivalência histórica explicitados.
 RECOMENDACAO: APTO COM RESSALVAS para solicitar homologação controlada;
 Gate B012/aceite013/Cloudinary/operador pendentes. [Relatório e evidências](docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).
+
+## Preparação da incorporação visual — 2026-10-18
+
+`EVIDENCIA_IMPLEMENTACAO`: origin/development está em
+118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed, merge de beba96f e 0f669b7,
+com árvore idêntica ao candidato aprovado. Runners014, drafts015, capas016,
+dependências e correções posteriores estão integrados. Os registros anteriores
+deste documento preservam os cortes históricos; não descrevem a ponta atual.
+
+`INFERENCIA`: **PRONTO PARA PLANEJAR A INCORPORAÇÃO**, com validações novas e CI
+equivalente delimitados no [relatório datado](docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md).
+Build local falhou por restrições de rede/porta; não é PASS local. PRs2–5 têm
+heads ancestrais de development; PRs6/7 conservam conteúdo documental exclusivo,
+com recomendação de preservação antes de encerramento. Nenhum PR foi modificado.
+
+`DECISAO_CONFIRMADA`: Pedro escolheu nesta sessão de 18/10 a adaptação visual do
+login preservando autenticação real como primeira entrega futura. O restante do
+[plano e handoff](docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md)
+é `RECOMENDACAO`, para revisão de Pedro. Starter main de referência: cbb954a;
+Vite/TanStack exige adaptação ao Next/App Router. Incorporação não implementada;
+sem push/merge entre branches/deploy/banco real. Serviços reais, homologações e
+ciência do IHFR conservam seus gates próprios e o contrato permanece experimental.
