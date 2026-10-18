@@ -1,9 +1,15 @@
 # Prompt autossuficiente — primeira incorporação visual do login
 
-Este prompt é para a execução futura por outro desenvolvedor, com seu próprio
-Codex, quando Pedro lhe entregar o plano para executar. Não é autorização para
-implementar durante a preparação documental de 18/10/2026. Escopo da primeira
-entrega escolhido por Pedro: **adaptar o visual do login mantendo autenticação real**.
+Este prompt orienta a execução por outro desenvolvedor, com seu próprio Codex.
+`DECISAO_CONFIRMADA`: Pedro autorizou expressamente, no pedido de atualização
+deste handoff em 18/10/2026, o executor a **implementar, validar, fazer commits,
+push na branch de incorporação e abrir ou atualizar PR para development, sem
+autorização ou confirmação adicional para essas operações**.
+
+A primeira entrega continua sendo **adaptar o visual do login mantendo
+autenticação real**, dentro do recorte e dos critérios abaixo. A revisão das
+etapas posteriores do plano não bloqueia essa entrega autorizada. O merge
+permanece sob decisão do mantenedor.
 
 ## Contexto já preparado por Pedro
 
@@ -154,9 +160,10 @@ O IHFR é CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
 SUJEITO_A_RECALIBRACAO, NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 
 Entregue commit(s) pequenos e PR **para development**, com problema/resultado,
-origem visual, caminhos alterados, capturas, validações e limites. Publicar
-somente a branch de incorporação quando o mandato futuro de Pedro autorizar
-push/PR; na ausência dele, entregue branch/commit e descrição local prontos.
+origem visual, caminhos alterados, capturas, validações e limites. Implemente e
+valide o recorte, faça os commits, publique ou atualize somente a branch de
+incorporação e abra ou atualize o PR para development. Essas operações já estão
+autorizadas por Pedro; prossiga sem solicitar nova autorização ou confirmação.
 Não merge nem faça push nas principais, rebase/force push, retarget/fechamento/
 aprovação dos PRs antigos ou resolução de threads. Merge é do mantenedor.
 Não iniciar a etapa seguinte automaticamente após o primeiro PR.

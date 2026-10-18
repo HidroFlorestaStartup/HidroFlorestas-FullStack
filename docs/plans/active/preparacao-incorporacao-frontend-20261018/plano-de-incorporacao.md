@@ -1,14 +1,21 @@
 # Plano proposto de incorporação do frontend
 
-Estado: `AGUARDANDO_REVISAO` por Pedro para a sequência completa.
+Estado: `AGUARDANDO_REVISAO` por Pedro para as etapas posteriores ao login.
 `DECISAO_CONFIRMADA`: Pedro escolheu **login com autenticação real** como primeira
 entrega, em resposta nesta sessão de 18/10/2026. Isso delimita o recorte inicial;
 não aprova antecipadamente marca/copy definitivos, dependências ou merges futuros.
 
+`DECISAO_CONFIRMADA`: no pedido de atualização deste plano em 18/10/2026, Pedro
+autorizou o executor a **implementar, validar, fazer commits, push na branch de
+incorporação e abrir ou atualizar PR para development, sem autorização ou
+confirmação adicional para essas operações**, no recorte da primeira entrega.
+A revisão das etapas posteriores não bloqueia a execução do login. O merge
+permanece sob decisão do mantenedor.
+
 `RECOMENDACAO`: adaptar a proposta visual em incrementos para o FullStack;
-conservar serviços, contratos e comportamento persistido existentes. Esta rodada
-somente planeja. A execução futura começa com outro desenvolvedor após entrega
-do plano por Pedro. Preparação e revisão dos PRs foram executadas por Pedro com
+conservar serviços, contratos e comportamento persistido existentes. O executor
+pode seguir com a primeira entrega e suas validações, commits, push e PR dentro
+da autorização acima. Preparação e revisão dos PRs foram executadas por Pedro com
 seu Codex, conforme [relatório](relatorio-de-prontidao.md), e não integram a fila
 de tarefas desse desenvolvedor.
 
@@ -104,7 +111,7 @@ decide merge. Demais etapas abaixo são `RECOMENDACAO`, aguardando revisão.
 
 | Etapa | Origem → destino / dependência | Aceite e validação | Recuperação |
 |---|---|---|---|
-| 1. Login real — escolhida por Pedro | S/login.tsx → src/app/login/page.tsx; partes puras de styles/primitives; nova apresentação local opcional em components/account/login-presentation.tsx | Mesmo signIn/contexto/API/destino; credencial inválida, conta bloqueada, ACTIVE verificada e destino verify-email; loading/erro, senha visível, Enter/Tab e links reais. 375/768/1440px, zoom/reflow, foco visível e labels. Typecheck/lint/build + unit/contas/HTTPS pertinentes em harness sintético; capturas antes/depois | Commit isolado de apresentação; antes do merge retirar/revisar esse commit sem tocar no backend. Depois de merge só revert normal autorizado, sem reset/force. Parar ao abrir o PR delimitado |
+| 1. Login real — execução autorizada por Pedro | S/login.tsx → src/app/login/page.tsx; partes puras de styles/primitives; nova apresentação local opcional em components/account/login-presentation.tsx | Mesmo signIn/contexto/API/destino; credencial inválida, conta bloqueada, ACTIVE verificada e destino verify-email; loading/erro, senha visível, Enter/Tab e links reais. 375/768/1440px, zoom/reflow, foco visível e labels. Typecheck/lint/build + unit/contas/HTTPS pertinentes em harness sintético; capturas antes/depois | Commit isolado de apresentação; antes do merge retirar/revisar esse commit sem tocar no backend. Depois de merge só revert normal autorizado, sem reset/force. Abrir ou atualizar o PR do login; não avançar etapas seguintes automaticamente |
 | 2. Cadastro e conjunto de conta | Register visual + palette da etapa1 → register e account-shell/forms existentes; após aceite1 | Cadastro → verificação → uso, reenvio/reset/troca/revogação/exclusão e blockers sem alterar estados; testes de conta existentes com transporte sintético e HTTPS. Nenhuma prova de e-mail real inferida | PRs separados de cadastro e das demais telas se necessário; preservar endpoints/challenges/migrations |
 | 3. Workspace e shell | AppShell/workspace/primitives → componentes workspace/sidebar/top-bar e layouts; após conta | Contexto explícito, saída móvel/desktop, sem bypass global, retorno/histórico/sem sessão/inativo; dados reais, vazio/erro/retry e keyboard | Alterações de shell isoladas de fluxos de dados; comparar outras páginas ainda no visual anterior |
 | 4. Laboratório, dashboard, histórico e membros | Rotas de resumo/membros → componentes já listados; depende3 | CRUD/limite/cancelamentos/papéis/concorrência preservados; não transformar placeholders em capacidades; E2E contextual e contratos | Pequeno PR por tela ou grupo de leitura; não migrar regras para cliente |
@@ -145,8 +152,10 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 
 ## Decisões e paradas
 
-- Confirmado por Pedro nesta sessão: primeira entrega/login real. Plano das
-  demais etapas: proposta para revisão, não aprovação de execução integral.
+- Confirmado por Pedro nesta sessão: primeira entrega/login real, com execução,
+  validação, commits, push na branch de incorporação e abertura ou atualização de
+  PR para development autorizados sem confirmação adicional. Plano das demais
+  etapas: proposta para revisão, não aprovação de execução integral.
 - CONCLUIDO nesta continuação por autorização expressa de Pedro: preservação
   documental #6/#7 por merges em development e encerramento formal #2–#5.
   Descrições/reviews/FAILs históricos preservados; sem autoaprovação de #7 ou
@@ -159,7 +168,8 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
   dependência de provedor real ou escopo além do recorte autorizado. Diagnosticar
   e devolver evidência; não completar silenciosamente outra feature.
 
-A continuação autorizou somente gestão da pilha CRI e publicação desta preparação
-documental em branch/PR próprios. Não autorizou copiar/implementar frontend ou
-integrar o novo PR documental. O handoff permanece para revisão de Pedro e
-execução futura do login por outro desenvolvedor.
+A gestão da pilha CRI e a publicação desta preparação documental estão concluídas.
+A autorização atual permite ao executor implementar e validar o login, fazer
+commits e push na branch de incorporação e abrir ou atualizar PR para development,
+sem nova autorização ou confirmação. Os PRs de implementação e o PR documental
+continuam sujeitos à revisão; a decisão de merge permanece com o mantenedor.
