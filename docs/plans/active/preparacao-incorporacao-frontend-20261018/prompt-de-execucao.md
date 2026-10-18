@@ -8,31 +8,40 @@ entrega escolhido por Pedro: **adaptar o visual do login mantendo autenticação
 ## Contexto já preparado por Pedro
 
 Pedro e seu Codex executaram inventário, fetch e FF local seguro, reconstrução da
-RC, revisão dos seis PRs e validação de prontidão em 18/10/2026.
+RC, revisão dos seis PRs e validação de prontidão em 18/10/2026. Em continuação
+expressamente autorizada, concluíram também a organização da pilha #2–#7 e a
+publicação da documentação de preparação em branch/PR próprios para revisão.
 Conclusão: **PRONTO PARA PLANEJAR A INCORPORAÇÃO**, no corte abaixo.
 Você não recebe sincronização/revisão pendente daquela execução como tarefa.
 A conferência inicial é apenas para detectar deriva desde a entrega.
 
 - Destino oficial: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack.git
   — branch development, SHA
-  `118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed`.
+  `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`.
 - Referência visual oficial, somente leitura:
   https://github.com/HidroFlorestaStartup/hidroflorestas-frontend-starter.git
   — main, SHA `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f`.
 - A development integra o candidato aprovado
-  `0f669b79a5e73a329832593229c2557d8b12bbce` por merge com pais beba96f e
-  0f669b7. Árvores iguais: `9cde83df95785cf6115d489ca6e3584268cb6fcc`.
-  Main continua beba96f; não promover development para main.
+  `0f669b79a5e73a329832593229c2557d8b12bbce` pelo merge funcional118a3a8,
+  cujos pais são beba96f/0f669b7 e cuja árvore é9cde83df95785cf6115d489ca6e3584268cb6fcc.
+  Depois, os merges documentais #6/ebbd9cb e #7/e17f64a acrescentaram28 caminhos
+  somente em docs. Árvore atual178f0e468aee4f38444a9d1370876987d4243738;
+  código/testes/specs/migrations/dependências/configuração continuam idênticos ao
+  corte funcional validado. Main continua beba96f; não promover development para main.
 - RC release/cri-rc-20261010 em
-  `5ea982374e787e2f9844453add317f3949be4f8a` acrescenta só parecer/README;
+  `5ea982374e787e2f9844453add317f3949be4f8a` acrescentou parecer/README;
   review/cri-rc-validation-20261012 em
-  `a01857b3d1a44fc0668054d03096d743ba0aede0` conserva 26 documentos/evidências
-  exclusivos. O código dessas pontas é igual ao de development.
-- PRs2–5: heads ancestrais de development, candidatos a fechamento. PRs6/7:
-  conteúdo documental exclusivo, sem feature faltante; recomendações de
-  preservação e fechamento entregues a Pedro. Nenhum PR foi fechado, retargetado,
-  aprovado ou comentado pela preparação. Reviews históricos e thread4 permanecem.
-  **A gestão dessas pendências continua com Pedro/mantenedor, não com você.**
+  `a01857b3d1a44fc0668054d03096d743ba0aede0` conservou26 documentos/evidências
+  independentes. Ambos os conjuntos já foram preservados em development.
+- PRs2–5: CLOSED sem novo merge, heads ancestrais de development, com comentários
+  de rastreabilidade; nenhuma branch excluída. PR6: base development, APPROVED de
+  Pedro no head5ea9823 (review5561665473, registro por assistente autorizado),
+  MERGED em `ebbd9cb707ac2db98c56ad1ba5f344802233057c`. PR7: base development,
+  sem autoaprovação ou review inventada, MERGED em
+  `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. Descrições anteriores, reviews,
+  thread4 e FAILs históricos preservados. Pedro declarou que Luciano já revisou;
+  isso é declaração de Pedro, sem evento APPROVED fabricado de Luciano.
+  **A gestão preparatória destes seis PRs está concluída; não é tarefa sua.**
 - Starter PRs1/2 merged em 09/10; main cbb954a inclui a correção do login
   demonstrativo em HTTP local. Esse login é mock, não autenticação do produto.
 
@@ -45,6 +54,11 @@ Migration37, Contract6, E2E72, HTTPS2, Deletion3, Ihfr6, Bootstrap14, audit0,
 Build/Typecheck/Lint/Unit/R1/Setup. Reuso justificado por igualdade de todos os
 arquivos fora de docs. Nenhum teste local de banco nesta preparação; nenhum
 serviço real homologado. Falhas históricas e reruns continuam preservados.
+
+Checks dos heads documentais5ea9823/a01857b: validate/SUCCESS conferidos.
+Checks Vercel Preview Comments e status automático Vercel/SUCCESS observados nos
+dois merges, sem disparo manual de deploy. Não equivalem a nova bateria funcional,
+homologação real ou autorização produtiva. O CI RC não roda em development.
 
 O FullStack é Next16.3.8/App Router, React19, Tailwind4, TypeScript,
 Prisma/PostgreSQL, Node24.19.0/npm/package-lock. O starter é Vite/TanStack
@@ -153,8 +167,10 @@ eventual revert normal depende do mantenedor; nunca reset/force push. Não há
 rollback de banco a executar neste recorte visual.
 
 Documentos da preparação de Pedro: acompanhamento, relatório, revisão dos PRs,
-evidencias.json e plano-de-incorporacao.md no diretório
+evidencias.json, conclusao-dos-prs.json e plano-de-incorporacao.md no diretório
 `docs/plans/active/preparacao-incorporacao-frontend-20261018/` da branch
-`docs/preparacao-frontend-20261018`, entrega local sem push em 18/10/2026.
+`docs/preparacao-frontend-20261018`, cuja publicação e PR para development foram
+autorizados na continuação de18/10/2026; o novo PR documental fica para revisão,
+sem merge automático. Preserve o commit originaldcc54e1 e o histórico subsequente.
 Este prompt contém os dados essenciais para uso sem acesso ao chat ou à branch
 documental; Pedro deve fornecer o plano junto para revisar as etapas posteriores.

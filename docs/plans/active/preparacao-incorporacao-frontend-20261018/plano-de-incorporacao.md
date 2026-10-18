@@ -15,7 +15,9 @@ de tarefas desse desenvolvedor.
 ## Bases, arquitetura e origem visual
 
 - Destino: `HidroFlorestaStartup/HidroFlorestas-FullStack`, development
-  118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed, árvore validada equivalente a 0f669b7.
+  e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8, código funcional equivalente ao
+  corte validado118a3a8/0f669b7. Merges posteriores #6/ebbd9cb e #7/e17f64a
+  acrescentaram somente28 caminhos documentais; árvore atual178f0e468aee4f38444a9d1370876987d4243738.
   Next.js 16.3.8/App Router, React19.2.4, TypeScript, Tailwind4, Prisma/PostgreSQL;
   npm/package-lock e Node24.19.0.
 - Origem de leitura: `HidroFlorestaStartup/hidroflorestas-frontend-starter`, main
@@ -136,7 +138,8 @@ encaminhamento a Pedro, sem instalar/operar serviços reais por inferência.
 
 Cloudinary real, Gmail real, aceite humano, outros navegadores, migrations
 hospedadas e deploy são gates separados de Pedro/mantenedor/operador. O executor
-do visual não recebe a execução das pendências preparatórias #6/#7. O IHFR mantém
+do visual não recebe gestão preparatória de PRs: #6/#7 já foram integrados e
+#2–#5 encerrados por Pedro com seu Codex na continuação18/10. O IHFR mantém
 CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
 NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 
@@ -144,8 +147,10 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
 
 - Confirmado por Pedro nesta sessão: primeira entrega/login real. Plano das
   demais etapas: proposta para revisão, não aprovação de execução integral.
-- PENDENCIA_DE_DECISAO de Pedro/mantenedor: preservação documental #6/#7 e
-  encerramento formal #2–#5; recomendações concretas já entregues nesta rodada.
+- CONCLUIDO nesta continuação por autorização expressa de Pedro: preservação
+  documental #6/#7 por merges em development e encerramento formal #2–#5.
+  Descrições/reviews/FAILs históricos preservados; sem autoaprovação de #7 ou
+  review fabricada de Luciano, cuja revisão foi relatada por Pedro.
 - PENDENCIA_DE_DECISAO futura: marca/copy definitivos, gráficos adicionais,
   qualquer capacidade sem contrato ou biblioteca nova material. Não bloqueiam
   o login delimitado que preserva marca/fluxo atuais.
@@ -154,5 +159,7 @@ NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
   dependência de provedor real ou escopo além do recorte autorizado. Diagnosticar
   e devolver evidência; não completar silenciosamente outra feature.
 
-Não há autorização nesta preparação para copiar código, criar PR remoto,
-push ou merge. O handoff está pronto para a revisão de Pedro e execução futura.
+A continuação autorizou somente gestão da pilha CRI e publicação desta preparação
+documental em branch/PR próprios. Não autorizou copiar/implementar frontend ou
+integrar o novo PR documental. O handoff permanece para revisão de Pedro e
+execução futura do login por outro desenvolvedor.

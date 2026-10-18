@@ -1,5 +1,37 @@
 # Revisão individual dos PRs — 18/10/2026
 
+## Estado final após a continuação autorizada
+
+`EVIDENCIA_IMPLEMENTACAO`: estados, reviews, heads e refs reconsultados após as
+operações. Development final e17f64a; main beba96f preservada. `FATO_DOCUMENTADO`:
+Pedro informou que Luciano já revisou; nenhum evento em nome dele foi fabricado.
+
+| PR | Base final | Resultado | Rastreabilidade |
+|---|---|---|---|
+| #6 | development | MERGED, ebbd9cb707ac2db98c56ad1ba5f344802233057c | Head5ea9823; [APPROVED de Pedro,5561665473](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5561665473); CHANGES_REQUESTED anterior preservada; só dois documentos |
+| #7 | development | MERGED, e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8 | Heada01857b; zero reviews, sem autoaprovação; [comentário contextual](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7#issuecomment-6246335720);26 blobs preservados e dois documentos de #6 intactos |
+| #5 | review/016-area-covers | CLOSED, sem novo merge | Head333abde ancestral, zero exclusivos; [comentário](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5#issuecomment-6246347215) |
+| #4 | review/015-environmental-drafts | CLOSED, sem novo merge | Head8856b85 ancestral, zero exclusivos; [comentário](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6246348988); CHANGES_REQUESTED/thread outdated aberta preservadas |
+| #3 | review/014-account-test-runners | CLOSED, sem novo merge | Head65516f6 ancestral, zero exclusivos; [comentário](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/3#issuecomment-6246351226) |
+| #2 | review/cri-reconciliation-20261010 | CLOSED, sem novo merge | Head7180209 ancestral, zero exclusivos; [comentário](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/2#issuecomment-6246352717) |
+
+Nenhuma branch excluída; descrições anteriores de #6/#7 preservadas integralmente
+em seção histórica; nenhuma resolução de thread ou dispensa de review. Approve
+do #6 pela conta PedroVitor237 identifica o registro por assistente com autorização
+expressa. #7 não exigia aprovação independente pelas regras efetivas consultadas;
+ausência de evento de Luciano não foi convertida em aprovação nem contornada.
+Heads/checks exatos conferidos após os retargets, ambos validate/SUCCESS. Checks
+novos Vercel Preview Comments e status automático Vercel/SUCCESS nos merges;
+sem repetir CI funcional ou solicitar deploy manual.
+
+Detalhes, pais, árvores, URLs, hashes de descrições e28 caminhos em
+[conclusao-dos-prs.json](conclusao-dos-prs.json). Todos os conteúdos antes
+classificados como exclusivos estão preservados em development. A recomendação
+histórica abaixo foi executada dentro da autorização posterior de Pedro; não há
+trabalho de fechamento destes seis PRs para o executor futuro do frontend.
+
+## Snapshot anterior — diagnóstico e recomendações preservados
+
 `EVIDENCIA_IMPLEMENTACAO`: inventário remoto reconsultado; seis PRs abertos,
 #2–#7. REST/GraphQL completos para descrições, comentários, reviews e threads
 (nenhuma coleção atingiu o limite 100). `RECOMENDACAO`: classificações e ações

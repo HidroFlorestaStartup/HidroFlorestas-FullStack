@@ -26,10 +26,10 @@ regras e checks serão reavaliados no momento de cada merge, sem bypass.
 
 | Etapa desta continuação | Estado | Critério |
 |---|---|---|
-| Conferir e integrar #6 | EM_ANDAMENTO | Dois documentos apenas; head/checks/review de Pedro e pais do merge confirmados |
-| Conferir e integrar #7 | NAO_INICIADO | 26 arquivos documentais preservados e parecer/README de #6 intactos, sem autoaprovação |
-| Encerrar #2–#5 | NAO_INICIADO | Head atual ancestral, comentário rastreável e closed sem novo merge/exclusão |
-| Atualizar/publicar preparação | NAO_INICIADO | dcc54e1 preservado; development sincronizada; branch documental/PR próprio sem merge |
+| Conferir e integrar #6 | CONCLUIDO | Dois documentos apenas; head/checks/APPROVED de Pedro e pais de ebbd9cb confirmados |
+| Conferir e integrar #7 | CONCLUIDO | 26 blobs preservados e parecer/README de #6 intactos em e17f64a, sem autoaprovação |
+| Encerrar #2–#5 | CONCLUIDO | Heads ancestrais, comentários rastreáveis e CLOSED sem novo merge/exclusão |
+| Atualizar/publicar preparação | EM_ANDAMENTO | dcc54e1 preservado; development sincronizada; branch documental/PR próprio sem merge |
 | Conferir entrega | NAO_INICIADO | Estados remotos, SHAs, paths e equivalência funcional; main preservada |
 
 Paradas: proteção efetiva impedindo ação, check novo falho, alteração funcional
@@ -37,6 +37,20 @@ inesperada ou conflito que possa descartar conteúdo. Prosseguir nas etapas
 independentes seguras e relatar o impedimento exato, sem inventar aprovação humana.
 Não repetir bateria funcional por diferenças documentais; manter evidências novas
 e reaproveitadas da preparação com seus resultados/limites originais.
+
+Execução desta continuação: #6 APPROVED real5561665473/5ea9823 pela conta Pedro,
+mergeebbd9cb; #7 mergee17f64a, zero reviews; encerramentos5→4→3→2 comentados.
+Mainbeba96f preservada, development local FF0/19→0/0. Heads validate/SUCCESS
+conferidos; Vercel Preview Comments e status Vercel/SUCCESS novos observados, sem
+solicitar deploy manual. Não houve nova bateria funcional por diferenças documentais.
+Readiness anterior mantida com seu build local FAIL e CI equivalente PASS.
+
+Branch documental preserva dcc54e1, commit80e5ac1 de autorização e mergee70d8d6
+da development. Houve conflito aditivo somente no inventário: ambos os blocos
+foram conservados byte a byte, sem escolher ours/theirs para o documento inteiro.
+Evidência originalevidencias.json preservada integralmente; eventos novos no
+conclusao-dos-prs.json. Relatório/revisão atualizados sem apagar o diagnóstico
+inicial; plano/prompt usam developmente17f64a e não delegam a gestão já concluída.
 
 ## Objetivo e autoridade
 

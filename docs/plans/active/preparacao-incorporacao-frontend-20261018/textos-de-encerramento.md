@@ -1,5 +1,12 @@
 # Textos preparados para encerramento — não publicados
 
+**Snapshot histórico da primeira rodada.** Na continuação autorizada de18/10,
+foram publicados comentários atualizados, com os heads e merges reais de #6/#7,
+e encerrados #2–#5. Os textos abaixo permanecem como rascunhos históricos; não
+se afirma que foram publicados literalmente. Textos efetivamente usados, seus
+hashes e URLs estão em [conclusao-dos-prs.json](conclusao-dos-prs.json), e os links
+individuais na [revisão atualizada](revisao-dos-prs.md).
+
 `RECOMENDACAO`: usar somente após decisão do mantenedor, nova conferência das
 refs e sequência de preservação descrita na revisão dos PRs. Estes textos não
 constituem reviews APPROVED e não foram enviados ao GitHub. Não excluir branches.

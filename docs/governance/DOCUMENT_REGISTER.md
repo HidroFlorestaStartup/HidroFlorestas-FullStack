@@ -220,3 +220,20 @@ somente para a escolha do login por Pedro em resposta nesta sessão. Preparaçã
 executada por Pedro com seu Codex; execução futura de incorporação por outro
 desenvolvedor, sem transferir a ele as pendências de gestão dos PRs. Nenhum
 registro histórico foi apagado nem homologação real/científica declarada.
+
+## Continuação: conclusão dos PRs CRI — 2026-10-18
+
+Origem: novo pedido expresso de Pedro autorizando gestão de #2–#7 e publicação da
+preparação em branch/PR próprios, sem implementar frontend ou integrar o PR novo.
+Atualizados relatório, revisão dos PRs, acompanhamento, plano e prompt no pacote
+acima; rascunhos de encerramento mantidos como históricos. Acrescentado
+[conclusao-dos-prs.json](../plans/active/preparacao-incorporacao-frontend-20261018/conclusao-dos-prs.json),
+com SHAs/pais/árvores, review efetivamente registrada, comentários, checks e28 paths.
+
+EVIDENCIA_IMPLEMENTACAO: #6/ebbd9cb e #7/e17f64a integrados em development,26 blobs
+da revisão e dois documentos do parecer preservados; #2–#5 fechados sem novo merge.
+Descrição antiga de6/7 preservada integralmente; CHANGES_REQUESTED/thread4 mantidas.
+FATO_DOCUMENTADO: Pedro informou revisão de Luciano, sem criar evento em nome dele.
+DECISAO_CONFIRMADA: autorização de Pedro nesta continuação para essas operações;
+não confere aprovação científica/produtiva. Commit originaldcc54e1 e nove arquivos
+mantidos; conflito aditivo do inventário resolvido preservando ambas as seções.

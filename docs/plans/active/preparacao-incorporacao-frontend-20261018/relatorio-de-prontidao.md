@@ -2,6 +2,16 @@
 
 **Development: PRONTO PARA PLANEJAR A INCORPORAÇÃO.**
 
+**Atualização posterior, 18/10/2026:** a base atual é
+`e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`. A continuação expressamente autorizada
+por Pedro integrou o #6 por `ebbd9cb707ac2db98c56ad1ba5f344802233057c` e o #7
+por `e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8`, ambos em development, com merge
+commits e head esperado. #2–#5 foram encerrados sem novo merge, com comentários.
+Somente 28 caminhos em docs/** mudaram em development; código, dependências,
+tests, specs, migrations e configuração continuam iguais ao corte inicial.
+A conclusão técnica e os limites dos testes permanecem válidos. Evidência desta
+continuação em [conclusao-dos-prs.json](conclusao-dos-prs.json) e na seção final.
+
 `INFERENCIA` técnica sustentada por Git, inspeção de código, validações locais e CI
 equivalente. Próximo passo: Pedro revisar o [plano](plano-de-incorporacao.md) e
 entregar o [prompt](prompt-de-execucao.md) ao outro desenvolvedor para executar
@@ -9,6 +19,11 @@ somente o primeiro recorte aprovado: visual do login com autenticação real.
 A incorporação não foi implementada nesta rodada.
 
 ## Autoridade, método e alcance
+
+As seções até “Preservação e encerramento” abaixo preservam o **snapshot da
+preparação anterior aos merges documentais desta continuação**. Afirmações ali
+sobre conteúdo exclusivo, recomendações e ausência de ações remotas pertencem
+àquele corte; a seção final registra o estado posterior efetivamente observado.
 
 Mandato: pedido anexado por Pedro em 18/10/2026; escolha do login confirmada por
 resposta de Pedro nesta sessão. Aplicadas as instruções raiz, contexto, decisões,
@@ -194,3 +209,87 @@ com apontadores datados no contexto e inventário canônicos.
 Rechecagem final de refs, integridade, links, diff e commit local: registrada no
 [acompanhamento](plano-de-acompanhamento.md) e no JSON de evidências. A branch
 documental permanece separada de development; sua entrega é local, sem push.
+
+## Continuação autorizada — estado posterior dos PRs
+
+`DECISAO_CONFIRMADA`: novo pedido de Pedro nesta sessão de 18/10/2026 autorizou
+retarget, aprovação de Pedro no #6, merges documentais #6/#7, encerramentos #2–#5
+e publicação da preparação em branch/PR próprios, sem merge do novo PR.
+`FATO_DOCUMENTADO`: Pedro declarou que Luciano já revisou. A origem dessa
+informação é a declaração de Pedro; não foi criado APPROVED, comentário ou
+resolução de thread em nome de Luciano.
+
+| Operação | Resultado efetivamente confirmado |
+|---|---|
+| #6 | Base development; head5ea9823; [APPROVED de Pedro](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5561665473), review5561665473, explicitamente registrada por assistente autorizado. Review CHANGES_REQUESTED antiga preservada. MERGED em ebbd9cb, pais118a3a8/5ea9823, árvore8885a1cf75a3bc134518b2197c3e828002fd8d53; somente parecer130 linhas e README+8 |
+| #7 | Base development atualizada; heada01857b; MERGED em e17f64a, paisebbd9cb/a01857b, árvore178f0e468aee4f38444a9d1370876987d4243738. Sem autoaprovação: zero reviews; [comentário contextual](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7#issuecomment-6246335720). Os26 blobs exclusivos iguais à fonte, dois documentos de #6 intactos |
+| #5 → #4 → #3 → #2 | CLOSED sem novo merge, heads originais reconferidos ancestrais da development final e zero commits exclusivos. Comentários/URLs na revisão dos PRs; sem excluir branches ou alterar reviews/threads |
+
+Descrições anteriores de #6/#7 preservadas integralmente sob histórico; conferência
+por comparação do sufixo exato e SHA256 do texto original. Retarget/título/resumo
+descrevem agora a diferença documental real. Antes dos merges: conta
+PedroVitor237 com push; merge commit habilitado; delete_branch_on_merge=false;
+development protected=false, rulesets/regras aplicáveis vazios e
+branchProtectionRule=null. Endpoint de proteção detalhada retornou404. Nenhum
+bypass foi solicitado, nenhuma regra alterada. Mergeabilidade CLEAN e SUCCESS dos
+checks dos heads exatos foram reconferidos após retarget; nenhum novo check falho.
+
+Checks reaproveitados: validate/SUCCESS de 5ea9823 (run39071712863) e a01857b
+(run39064689472). Novo Vercel Preview Comments/SUCCESS nos dois merges;
+status automático Vercel/SUCCESS também observado nos dois commits.
+Não foi solicitado deploy por comando/API nem operado o provedor; o status
+Vercel resulta da integração Git já conectada e não é homologação operacional,
+autorização de produção ou nova execução dos15 gates. O workflow RC não inclui
+development. Não houve nova bateria funcional por mudanças documentais; os
+296+17/15 focais locais e CI equivalente conservam seu alcance anterior. O build
+local continua registrado como FAIL por restrições do ambiente.
+
+Sincronização: development local118a3a8 estava0/19 frente à remota final; FF seguro
+para e17f64a, agora0/0. Main local/remota continuam beba96f,0/0. Revisão local
+a01857b segue alinhada à própria remota, preservada. Branch documental preserva
+dcc54e1 e seus nove arquivos, mais commit80e5ac1 e merge local e70d8d6 com
+development; sem reescrever histórico. Conflito aditivo em DOCUMENT_REGISTER
+resolvido conservando integralmente ambas as seções13/10 e18/10, comprovadas
+contra os estágios Git. O novo PR da preparação contém só essa documentação e
+permanece para revisão; o frontend não foi implementado.
+
+Plano e prompt atualizados para a base e17f64a. Gestão da pilha concluída por
+Pedro com seu Codex; não há encerramento/revisão preparatória delegado ao futuro
+executor do login. Próximo passo: Pedro revisar o plano com o ChatGPT.
+
+### Caminhos alterados em development nesta continuação
+
+Diff completo de 118a3a8 até e17f64a: **28 caminhos, exclusivamente docs/**.
+Lista exata também preservada no JSON, com verificação de ausência de mudanças
+fora desse diretório. A relação abaixo é saída do Git, não inventário inferido.
+
+```text
+M	docs/governance/DOCUMENT_REGISTER.md
+A	docs/plans/completed/revisao-release-candidate-cri-20261012.md
+A	docs/releases/2026-10-10-cri-rc/2026-10-17-parecer-aprovacao-integracao-development.md
+A	docs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json
+A	docs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md
+M	docs/releases/2026-10-10-cri-rc/readme.md
+A	docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json
+A	docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt
+A	docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt
+A	docs/reports/audits/2026-10-13-cri-rc-ci-followup.md
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt
+A	docs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json
+A	docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md
+```
