@@ -240,3 +240,28 @@ mantidos; conflito aditivo do inventário resolvido preservando ambas as seçõe
 Publicação autorizada da branch docs/preparacao-frontend-20261018 e
 [PR8 aberto para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
 sem integração automática; revisão do plano e da documentação permanece com Pedro.
+
+## Login integrado e execução autorizada das fases 2 e 3 — 2026-10-18
+
+Origem: pedido explícito de Pedro “sincronização, merges #8/#9 e handoff das fases
+2 e 3”, anexado ao seu Codex em18/10/2026. `DECISAO_CONFIRMADA`: integrar #8/#9,
+publicar novo handoff e autorizar o outro desenvolvedor a implementar/validar/
+commitar/push/abrir ou atualizar PRs das duas fases, sem nova confirmação normal.
+Fases4+ continuam propostas; aceite humano/merge pertencem ao mantenedor.
+
+| Artefato | Estado e alcance atual |
+|---|---|
+| [Prompt das fases2/3](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md) | Novo handoff principal autossuficiente, execução das duas fases autorizada; sem implementação nesta preparação |
+| [Plano de incorporação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md) | Login concluído; fases2/3 autorizadas; PRs empilhados permitidos; histórico e fases4+ como proposta preservados |
+| [Acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md) e [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md) | Continuação da sincronização/revisão/merges/publicação e limites de validação |
+| [Prompt anterior](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md) | Histórico da fase1 concluída, com apontador ao novo handoff; corpo original preservado |
+| [Evidência da integração](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-login-e-handoff-fases-2-3.json) | Registro sanitizado de heads/merges/review/CI/equivalência/branches, separado dos JSON históricos |
+
+`EVIDENCIA_IMPLEMENTACAO`: #8 mergecf7f086 e #9 mergeafef5db em development;
+APPROVED de Pedro no head5503082 registrado por Codex autorizado, review5564336503.
+CI exato15 gates PASS; ressalva histórica IHFR292dd95 preservada, causa não
+demonstrada. Sem nova bateria funcional local, homologação real/científica ou
+operação manual de deploy. Mainbeba96f e branches anteriores preservadas.
+PROJECT_CONTEXT recebeu adendo navegacional. Não houve nova decisão técnica
+global ou reclassificação de pendências que exigisse editar TECH_DECISIONS.md
+ou PENDING_DECISIONS.md. Registros antigos permanecem como cortes históricos.

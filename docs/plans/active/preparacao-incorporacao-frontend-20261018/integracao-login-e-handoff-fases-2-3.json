@@ -1,0 +1,366 @@
+{
+  "date": "2026-10-18",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "authorization": {
+    "classification": "DECISAO_CONFIRMADA",
+    "responsible": "Pedro",
+    "date": "2026-10-18",
+    "origin": "Pedido anexado por Pedro ao seu Codex: sincronização, merges #8/#9 e handoff das fases 2 e 3",
+    "preparation": "Sincronizar, revisar, aprovar9 pela conta de Pedro cabível, merge8/9 e documentação/commit/push/PR documental sem seu merge",
+    "executor": "Implementar, validar, commits, push e abrir/atualizar PRs das fases2/3 completas sem nova confirmação normal; continuar3 após validação técnica de2",
+    "maintainer": "Aceite humano e merge dos PRs futuros; fases4+ não autorizadas"
+  },
+  "repository": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack.git",
+  "initial_development": "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+  "final_development": "afef5db6ced1a4604a114d842bf85950ac32c69b",
+  "preserved_main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "initial_working_tree": "clean",
+  "local_branches_after_merges": [
+    {
+      "branch": "main",
+      "sha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0
+    },
+    {
+      "branch": "development",
+      "sha": "afef5db6ced1a4604a114d842bf85950ac32c69b",
+      "upstream": "origin/development",
+      "ahead": 0,
+      "behind": 0
+    },
+    {
+      "branch": "docs/preparacao-frontend-20261018",
+      "sha": "95463d5b0a29d75e916d2115765792444438db44",
+      "upstream": "origin/docs/preparacao-frontend-20261018",
+      "ahead": 0,
+      "behind": 0
+    },
+    {
+      "branch": "feat/frontend-login",
+      "sha": "550308247d712c920dede8d96b5f1e6140767d10",
+      "upstream": "origin/feat/frontend-login",
+      "ahead": 0,
+      "behind": 0
+    },
+    {
+      "branch": "review/cri-rc-validation-20261012",
+      "sha": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "upstream": "origin/review/cri-rc-validation-20261012",
+      "ahead": 0,
+      "behind": 0
+    }
+  ],
+  "preservation": {
+    "local_divergences": [],
+    "reset_force_rebase_stash": false,
+    "deleted_branches": [],
+    "old_missing_worktree_records": "preserved",
+    "review_worktree": "clean at a01857b3d1a44fc0668054d03096d743ba0aede0"
+  },
+  "starter": {
+    "url": "https://github.com/HidroFlorestaStartup/hidroflorestas-frontend-starter.git",
+    "main": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "fetch": "completed in official clone",
+    "main_ahead_behind": [
+      0,
+      0
+    ],
+    "current_branch": "fix/login-http-rede-local",
+    "current_sha": "22672507dc006fd4e7767ab34d70b70a75357d92",
+    "current_ahead_behind": [
+      0,
+      0
+    ],
+    "historical_branch": "feat/incorporacao-frontend-hidroflorestas",
+    "historical_sha": "1472166e9b64433bcd6e6cde543035d93ac1692e",
+    "historical_updated": false,
+    "preexisting_untracked": "package-lock.json",
+    "package_lock_sha256_before_after": "e3e1790a8eec7dcb26780cd57ec870783dc41877a56ade101f3e165e0c7f26cb",
+    "code_modified": false
+  },
+  "rules": {
+    "authenticated_account": "PedroVitor237",
+    "push_permission": true,
+    "allow_merge_commit": true,
+    "delete_branch_on_merge": false,
+    "development_protected": false,
+    "rulesets": [],
+    "effective_rules": [],
+    "bypass": false
+  },
+  "pull_requests": [
+    {
+      "pr": 8,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8",
+      "state": "MERGED",
+      "head_ref": "docs/preparacao-frontend-20261018",
+      "reviewed_head": "95463d5b0a29d75e916d2115765792444438db44",
+      "base_ref": "development",
+      "merge_sha": "cf7f086351c952be5b7cc51f9616bc68bfd84f4d",
+      "parents": [
+        "e17f64a1a9d8bdf48edd9ca1bc9443e118a41bc8",
+        "95463d5b0a29d75e916d2115765792444438db44"
+      ],
+      "tree": "5884c404769dad31b7d129158f5b1f87b56751af",
+      "merged_at_utc": "2026-10-18T18:42:36Z",
+      "changed_paths": 10,
+      "reviews": []
+    },
+    {
+      "pr": 9,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9",
+      "state": "MERGED",
+      "head_ref": "feat/frontend-login",
+      "reviewed_head": "550308247d712c920dede8d96b5f1e6140767d10",
+      "base_ref": "development",
+      "merge_sha": "afef5db6ced1a4604a114d842bf85950ac32c69b",
+      "parents": [
+        "cf7f086351c952be5b7cc51f9616bc68bfd84f4d",
+        "550308247d712c920dede8d96b5f1e6140767d10"
+      ],
+      "tree": "0210b54b648b42e38fea853e650061463c3fd365",
+      "merged_at_utc": "2026-10-18T18:44:44Z",
+      "changed_paths": 43,
+      "reviews": [
+        {
+          "id": 5564336503,
+          "state": "APPROVED",
+          "commit_id": "550308247d712c920dede8d96b5f1e6140767d10",
+          "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9#pullrequestreview-5564336503",
+          "submitted_at": "2026-10-18T18:44:27Z",
+          "account": "PedroVitor237"
+        }
+      ]
+    }
+  ],
+  "initial_review_threads": {
+    "8": 0,
+    "9": 0,
+    "source": "GraphQL queries before merges"
+  },
+  "review_scope": "Codex autorizado por Pedro; leitura estática/diff/equivalência e CI do head exato, sem teste manual ou revisão de terceiros",
+  "equivalence": {
+    "merge8": "cf7f086351c952be5b7cc51f9616bc68bfd84f4d",
+    "head9": "550308247d712c920dede8d96b5f1e6140767d10",
+    "integration_tree": "0210b54b648b42e38fea853e650061463c3fd365",
+    "merge8_paths": [
+      "PROJECT_CONTEXT.md",
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/conclusao-dos-prs.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/evidencias.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/revisao-dos-prs.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/textos-de-encerramento.md"
+    ],
+    "integration_vs_head9": [
+      "PROJECT_CONTEXT.md",
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/conclusao-dos-prs.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/evidencias.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/revisao-dos-prs.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/textos-de-encerramento.md"
+    ],
+    "functional_test_config_equivalence": true,
+    "overlap": [],
+    "actual_merge_tree_matches_predicted": true
+  },
+  "ci": {
+    "run_id": 39145086835,
+    "attempt": 1,
+    "event": "push",
+    "head_sha": "550308247d712c920dede8d96b5f1e6140767d10",
+    "job_id": 117727186936,
+    "job_name": "validate",
+    "conclusion": "success",
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39145086835/job/117727186936",
+    "artifact_id": 12143033430,
+    "artifact_sha256": "e265fe2c8e2a40fd6bee1a15f8772c3ec9dd31b9a079f0c7b7d40002e0c09085",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "gates": [
+      {
+        "gate": "RegressionSetup",
+        "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Unit",
+        "command": "npm run test:unit",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Integration",
+        "command": "npm run test:integration",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Migration",
+        "command": "npm run test:migration",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Contract",
+        "command": "npm run test:contract",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "R1",
+        "command": "npm run test:mail:r1",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Build",
+        "command": "npm run build",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Typecheck",
+        "command": "npm run typecheck",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Lint",
+        "command": "npm run lint",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "E2E",
+        "command": "npm run test:e2e",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Https",
+        "command": "npm run test:e2e:https",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Deletion",
+        "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Ihfr",
+        "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "Bootstrap",
+        "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      },
+      {
+        "gate": "SchemaAudit",
+        "command": "npm run test:ihfr:audit:assert-zero",
+        "snapshot": "21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5",
+        "exitCode": 0,
+        "result": "PASS"
+      }
+    ],
+    "counts": {
+      "e2e": 86,
+      "login_cases_in_current_suite": 14,
+      "https": 2,
+      "deletion": 3,
+      "ihfr": 6
+    },
+    "new_local_functional_battery": false
+  },
+  "ihfr_history": {
+    "failed_head": "292dd95",
+    "failed_tests": 6,
+    "cause": "NAO_ESPECIFICADO; não demonstrada",
+    "later_pass_heads": [
+      "acba40d",
+      "5503082"
+    ],
+    "failure_declared_fixed": false,
+    "acceptance_origin": "Pedro concordou com integrar o login revisado incluindo a ressalva, no pedido atual",
+    "qualifiers": [
+      "CONTRATO_EXPERIMENTAL",
+      "VALIDACAO_CIENTIFICA_PENDENTE",
+      "SUJEITO_A_RECALIBRACAO",
+      "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+    ]
+  },
+  "automatic_status": {
+    "merge8_vercel": "SUCCESS",
+    "merge9_vercel": "SUCCESS",
+    "merge9_preview_comments": "SUCCESS",
+    "manual_deploy": false,
+    "new_validate_on_development": false,
+    "operational_acceptance": false
+  },
+  "publication": {
+    "branch": "docs/handoff-frontend-fases-2-3",
+    "base": "afef5db6ced1a4604a114d842bf85950ac32c69b",
+    "state": "IN_PROGRESS",
+    "pr_target": "development",
+    "merge_authorized": false,
+    "prompt": "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md"
+  },
+  "verification": {
+    "git_merge_parents": "PASS",
+    "functional_test_config_equivalence": "PASS",
+    "ci_exact_sha_and_artifact": "PASS",
+    "starter_untracked_preservation": "PASS",
+    "document_checks": {
+      "scope_files": 8,
+      "relative_links_checked": 75,
+      "historical_content_preserved": true,
+      "original_json_preserved": true,
+      "sensitive_patterns": "PASS",
+      "required_prompt_content": "PASS",
+      "git_diff_check": "PASS"
+    }
+  },
+  "not_performed": [
+    "Nova bateria funcional local nesta preparação",
+    "Implementação das fases2/3",
+    "Teste manual de leitor de tela",
+    "Homologação operacional/científica",
+    "Operação manual de provedores/deploy",
+    "Merge do novo PR documental"
+  ],
+  "remaining": [
+    "Revisão/merge documental pelo mantenedor, sem bloquear leitura do handoff na branch",
+    "Implementação/validação/PRs das fases2/3 pelo outro desenvolvedor",
+    "Aceite humano e merges dos futuros PRs pelo mantenedor",
+    "Gates operacionais/científicos anteriores em seus próprios alcances"
+  ]
+}

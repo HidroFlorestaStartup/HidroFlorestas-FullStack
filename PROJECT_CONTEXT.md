@@ -132,3 +132,36 @@ Frontend não implementado; homologações reais e ciência mantêm os limites a
 Documentação da preparação publicada em branch própria, com
 [PR8 aberto para revisão](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
 sem merge automático.
+
+## Login integrado e handoff das fases 2 e 3 — 2026-10-18
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “sincronização, merges #8/#9 e
+handoff das fases 2 e 3” de18/10/2026, autorizou a integração #8/#9 e a preparação
+publicada deste novo handoff. Autorizou o outro desenvolvedor a implementar,
+validar, fazer commits, push e abrir/atualizar PRs de **cadastro e conjunto de
+conta (fase2)** e **workspace e shell (fase3)**, sem confirmação adicional normal.
+Substitui a proposta limitada ao cadastro e a espera de autorização depois do
+login. Fases4+ continuam propostas; aceite humano e merge são do mantenedor.
+
+`EVIDENCIA_IMPLEMENTACAO`: #8/head95463d5 foi integrado em
+`cf7f086351c952be5b7cc51f9616bc68bfd84f4d`; #9/head5503082 em
+`afef5db6ced1a4604a114d842bf85950ac32c69b`, ponta conferida de development.
+Spec017/login concluído. Main permanece beba96f, alinhada à própria remota.
+APPROVED real de Pedro no #9:
+[review5564336503](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9#pullrequestreview-5564336503),
+registrado por Codex com autorização expressa, sem alegar teste manual.
+CI validate5503082 SUCCESS,15 gates PASS/E2E86/login14/HTTPS2/IHFR6;
+equivalência de código/testes/configuração após o merge documental conferida.
+Nenhuma nova bateria funcional ou homologação real nessa integração.
+
+Ressalva preservada e aceita para o login: CI292dd95 falhou nos seis IHFR,
+causa não demonstrada; acba40d/5503082 PASS não provam correção dessa falha.
+Ciência e gates operacionais externos mantêm seus estados próprios.
+
+Execução principal: **[prompt autossuficiente das fases 2 e 3](docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md)**.
+[Plano vigente](docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md),
+[relatório e evidências](docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md).
+Branch `docs/handoff-frontend-fases-2-3`, preparada de afef5db: o executor pode
+ler o handoff nessa branch antes do merge documental. Fase3 pode ser preparada
+em PR empilhado sobre a fase2 validada enquanto aguarda o mantenedor, conforme
+o novo prompt. Esta preparação não implementou as duas fases nem operou deploy.
