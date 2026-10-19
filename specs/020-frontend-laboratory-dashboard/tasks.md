@@ -40,8 +40,8 @@ T001→T004→T005→T008 antes do conteúdo.T009/T013 podem ser preparados junt
 
 ## Adendo focal OBS-UI-01 — PLAN → EXECUTE → REVIEW
 - [x] T020 Registrar baseline, autoridade, reprodução histórica e plano focal em spec.md/plan.md antes do código.
-- [ ] T021 Aplicar/commitar teste de palavra inteira em tests/e2e/frontend-mobile-navigation.spec.ts e obter RED oficial completo; preservar FAIL/capturas.
-- [ ] T022 Aplicar somente CSS local em src/components/workspace/workspace.module.css; obter GREEN oficial e Build/Typecheck/Lint, preservando escala/alvos/foco.
-- [ ] T023 Revisar delta e capturas por agente independente, registrar evidências e validar eventuais correções.
+- [x] T021 Aplicar/commitar teste de palavra inteira em tests/e2e/frontend-mobile-navigation.spec.ts e obter RED oficial completo; preservar FAIL/capturas.
+- [x] T022 Aplicar somente CSS local em src/components/workspace/workspace.module.css; obter GREEN oficial e Build/Typecheck/Lint, preservando escala/alvos/foco.
+- [x] T023 Revisar delta e capturas por agente independente, registrar evidências e validar eventuais correções.
 - [ ] T024 Publicar na branch existente, conferir15gates PASS no HEAD exato e atualizar PR14 com recibo; sem merge/deploy.
 Dependências: T020→T021→T022→T023→T024. Sem suítes/cluster simultâneos. Recibo remoto encerra T024 sem commit documental circular.

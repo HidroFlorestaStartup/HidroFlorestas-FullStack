@@ -1,0 +1,125 @@
+{
+  "head": "3c356d78d22074e01193bb41205e434b552daaaf",
+  "since": "2026-10-19T17:01:47.500Z",
+  "records": 2,
+  "snapshots": [
+    "e3f0ef212747111b69285ce9fbeea82881d0c50a219490147ad93c4e6bdc0c8a"
+  ],
+  "files": [
+    {
+      "path": "01-regressionsetup.log",
+      "sha256": "435da61d7e3e03330546e225d5312ce19c0d608d0eeaa2e534fc6646820ae48d",
+      "bytes": 1428
+    },
+    {
+      "path": "02-e2e.log",
+      "sha256": "cfce93fc6ff0883d5c15ea90cd643ec50f813a72f5dcb1a942a5a2af5a1796e4",
+      "bytes": 141946
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text100-four-links-actual-last-control.png",
+      "sha256": "0cdebf4425b2a87deb252828d98575c3e9230aabec75493e97167a01ba7f2b77",
+      "bytes": 56565
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text100-four-links-landscape-safe-area34.png",
+      "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+      "bytes": 37795
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text100-geometry.json",
+      "sha256": "4e95cb0599fd5b9edae0540c584f59d5e8a591b669e91a47aa9a6388190c4445",
+      "bytes": 24640
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text100-three-links-actual-last-control.png",
+      "sha256": "54b096568c25fe45c3528a6cfb0cb88b1604aea2003be3d508964037f6a09488",
+      "bytes": 55147
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text100-three-links-landscape-safe-area34.png",
+      "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+      "bytes": 35639
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text200-four-links-actual-last-control.png",
+      "sha256": "be99f80dc8b61419952efb665829878fc8acf74436498888b8e0108600520361",
+      "bytes": 61491
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text200-four-links-landscape-safe-area34.png",
+      "sha256": "db363a45f0f90e4fbe5a19170b356778fa7c8857dd8f220278435f14d48fd6e5",
+      "bytes": 38869
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text200-geometry.json",
+      "sha256": "0398869e5f5a4017102ad4d8b5569e3ae5cda8dcf88bfc81f27076e0446f4dfa",
+      "bytes": 24608
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text200-three-links-actual-last-control.png",
+      "sha256": "7a8172a85f54167e7fc9b16c7a2e5313f2aa2355c4988a103155b58bbb5ae0ad",
+      "bytes": 60004
+    },
+    {
+      "path": "frontend-mobile-navigation-before-320-text200-three-links-landscape-safe-area34.png",
+      "sha256": "f1343fded2982d15e49fbe63d9efde3b818f4ddaaa890b7436ab913c4af5de7c",
+      "bytes": 35756
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text100-four-links-actual-last-control.png",
+      "sha256": "66e605b6918fadd5247f77c19841291b1b521163df442be4418aae1032b545cf",
+      "bytes": 56718
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text100-four-links-landscape-safe-area34.png",
+      "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+      "bytes": 37795
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text100-geometry.json",
+      "sha256": "f2938052e04ed335f2cca08ca7bacc439f3e6f4efb44824caad924df723ac5d0",
+      "bytes": 24661
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text100-three-links-actual-last-control.png",
+      "sha256": "2b4da4efa77aacbaa1b7ced145fe280ded5f3df7a883141b7cd8ddffb05bab32",
+      "bytes": 55206
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text100-three-links-landscape-safe-area34.png",
+      "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+      "bytes": 35639
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text200-four-links-actual-last-control.png",
+      "sha256": "7b01bbc6bd6afc4fac5aec829b3a1101f2c34b1fc14a4d4b97ca2cbc2563ffa6",
+      "bytes": 62595
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text200-four-links-landscape-safe-area34.png",
+      "sha256": "db363a45f0f90e4fbe5a19170b356778fa7c8857dd8f220278435f14d48fd6e5",
+      "bytes": 38869
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text200-geometry.json",
+      "sha256": "50704cc497e54168e66915ffd649052bf19a664b6b24dfbeac00639d5471fccc",
+      "bytes": 24602
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text200-three-links-actual-last-control.png",
+      "sha256": "338aefea51fba10abd4f0b01b3c6ba284f763b28c1be880b163a0c4b311b67cd",
+      "bytes": 64719
+    },
+    {
+      "path": "frontend-mobile-navigation-before-375-text200-three-links-landscape-safe-area34.png",
+      "sha256": "f1343fded2982d15e49fbe63d9efde3b818f4ddaaa890b7436ab913c4af5de7c",
+      "bytes": 35756
+    },
+    {
+      "path": "results.jsonl",
+      "sha256": "fcad94dd8bf03702af38b84fb976bbf04d48614c5df1d5cedb62b189a19e83c3",
+      "bytes": 906
+    }
+  ]
+}
