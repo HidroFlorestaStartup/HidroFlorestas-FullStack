@@ -42,6 +42,7 @@ async function capture(page: Page, info: TestInfo, name: string, records: unknow
     return { width: innerWidth, height: innerHeight, text: getComputedStyle(document.documentElement).fontSize,
       scrollY, content: box("application-content"), header: box("application-header"), navigation: box("application-navigation"),
       active: { tag: document.activeElement?.tagName, id: document.activeElement?.id },
+      timeOrigin: performance.timeOrigin, navigationType: (performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined)?.type,
       safeAreaMethod: "Chromium; labelled safe-area34 frames use CDP, no physical device", screenshot: "viewport/fullPage:false" };
   });
   records.push({ name, ...geometry });
@@ -53,7 +54,28 @@ async function scrollPosition(page: Page) {
     return getComputedStyle(content).overflowY === "auto" ? content.scrollTop : scrollY;
   });
 }
+async function restorationDifference(page: Page, saved: number) {
+  return page.evaluate(saved => {
+    const content = document.getElementById("application-content")!;
+    const root = getComputedStyle(content).overflowY === "auto" ? content : document.scrollingElement!;
+    const maximum = Math.max(0, root.scrollHeight - root.clientHeight);
+    return Math.abs(root.scrollTop - Math.min(saved, maximum));
+  }, saved);
+}
+async function settleTransitions(page: Page) {
+  // Await the existing global .3s transitions naturally. New transitions can
+  // replace an inherited font-size transition while the root text scale changes.
+  await page.evaluate(async () => {
+    for (;;) {
+      const finite = document.getAnimations().filter(animation =>
+        animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
+      if (!finite.length) return;
+      await Promise.allSettled(finite.map(animation => animation.finished));
+    }
+  });
+}
 async function focusAndExpose(target: Locator) {
+  await settleTransitions(target.page());
   await target.focus();
   await expect.poll(async () => (await visibleWithinReadingArea(target)).visible).toBe(true);
 }
@@ -162,16 +184,20 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
             return Array.isArray(values) ? values.filter(entry => Array.isArray(entry) && (entry[0] === "/workspace" || entry[0] === base)) : [];
           } catch { return []; }
         }, "/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0]) });
+        await settleTransitions(page);
         await capture(page, info, state + "-back-workspace-initial", records);
-        await expect.poll(async () => Math.abs((await scrollPosition(page)) - originScroll)).toBeLessThanOrEqual(2);
+        await expect.poll(() => restorationDifference(page, originScroll), "Restore the saved offset clamped to the current available scroll range").toBeLessThanOrEqual(2);
         await capture(page, info, state + "-back-workspace", records);
         if (!isAdmin) {
           await page.goForward(); await expect(page.locator("#history-title")).toBeVisible();
           await page.waitForLoadState("networkidle"); await page.reload();
           await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle");
           await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
+          await expect.poll(() => page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(16 * percent / 100);
+          await settleTransitions(page);
           await page.goBack(); await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
-          await expect.poll(async () => Math.abs((await scrollPosition(page)) - originScroll)).toBeLessThanOrEqual(2);
+          await settleTransitions(page);
+          await expect.poll(() => restorationDifference(page, originScroll), "Restore after reload within the current scroll range").toBeLessThanOrEqual(2);
           await capture(page, info, state + "-back-after-forward-reload", records);
         }
         await page.setViewportSize({ width: 667, height: 375 });

@@ -1,0 +1,323 @@
+{
+  "scope": "Instrumented probes; not full E2E gate",
+  "journals": [
+    {
+      "gate": "MobileDiagnostic",
+      "command": "owned official Regression Run; playwright frontend-mobile-navigation 375px text100 only",
+      "snapshot": "60d1ce324e4de1f5a4e0919ef80d8fc1d3cb9cad5e70fd3d28b95ee8285ca21e",
+      "startedUtc": "2026-10-19T13:31:26.463Z",
+      "endedUtc": "2026-10-19T13:31:44.382Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "scope": "ONE CASE; not the full E2E gate",
+      "log": ".accounts-validation/scroll-diagnostics/mobile-1792416686539.log"
+    },
+    {
+      "gate": "MobileDiagnostic",
+      "command": "owned official Regression Run; playwright frontend-mobile-navigation 375px text100 only",
+      "snapshot": "05ffb3242ab352faacccb7d9a2cd9c3850ba699fee9475b5a71eedd5f83173fa",
+      "startedUtc": "2026-10-19T13:35:28.058Z",
+      "endedUtc": "2026-10-19T13:35:46.883Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "scope": "ONE CASE; not the full E2E gate",
+      "log": ".accounts-validation/scroll-diagnostics/mobile-1792416928131.log"
+    },
+    {
+      "gate": "MobileDiagnostic",
+      "command": "owned official Regression Run; playwright frontend-mobile-navigation all four mobile cases only",
+      "snapshot": "6bdf36ce60b4db0441ee8effe395a013e8580e87111ca3bd00514f5ab0b7ab7e",
+      "startedUtc": "2026-10-19T13:38:23.115Z",
+      "endedUtc": "2026-10-19T13:39:30.757Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "scope": "FOUR MOBILE CASES; not the full E2E gate",
+      "log": ".accounts-validation/scroll-diagnostics/mobile-1792417103188.log"
+    }
+  ],
+  "transfer": [
+    {
+      "event": "tab-pop-enter",
+      "timeOrigin": 1792417110053.3,
+      "now": 6030.699999988079,
+      "instance": "tab",
+      "scope": null,
+      "renderPath": null,
+      "locationPath": "/workspace",
+      "pending": null,
+      "marker": null
+    },
+    {
+      "event": "tab-pop-published",
+      "timeOrigin": 1792417110053.3,
+      "now": 6030.699999988079,
+      "instance": "tab",
+      "scope": null,
+      "renderPath": null,
+      "locationPath": "/workspace",
+      "pending": null,
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": false
+      }
+    },
+    {
+      "event": "claim-ok",
+      "timeOrigin": 1792417110053.3,
+      "now": 6048.5,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": {
+        "path": "/workspace",
+        "top": 766
+      },
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    },
+    {
+      "event": "restore-attempt",
+      "timeOrigin": 1792417110053.3,
+      "now": 6051.5,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": {
+        "path": "/workspace",
+        "top": 766
+      },
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    },
+    {
+      "event": "restore-clamped",
+      "timeOrigin": 1792417110053.3,
+      "now": 6051.5,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": {
+        "path": "/workspace",
+        "top": 766
+      },
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    },
+    {
+      "event": "restore-clamped",
+      "timeOrigin": 1792417110053.3,
+      "now": 6053.899999976158,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": {
+        "path": "/workspace",
+        "top": 766
+      },
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    },
+    {
+      "event": "restore-attempt",
+      "timeOrigin": 1792417110053.3,
+      "now": 6085.5,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": {
+        "path": "/workspace",
+        "top": 766
+      },
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    },
+    {
+      "event": "restore-done",
+      "timeOrigin": 1792417110053.3,
+      "now": 6085.5,
+      "instance": 3,
+      "scope": "/workspace",
+      "renderPath": "/workspace",
+      "locationPath": "/workspace",
+      "pending": null,
+      "marker": {
+        "path": "/workspace",
+        "top": 766,
+        "sequence": 1,
+        "claimed": true
+      }
+    }
+  ],
+  "positions": [
+    {
+      "name": "375-text100-three-links-before-push",
+      "scroll": 766
+    },
+    {
+      "name": "375-text100-three-links-back-workspace",
+      "width": 375,
+      "height": 900,
+      "text": "16px",
+      "scrollY": 0,
+      "content": {
+        "top": 69,
+        "bottom": 824.15625,
+        "height": 755.15625,
+        "scrollTop": 766,
+        "scrollHeight": 1521,
+        "clientHeight": 755
+      },
+      "header": {
+        "top": 0,
+        "bottom": 69,
+        "height": 69,
+        "scrollTop": 0,
+        "scrollHeight": 68,
+        "clientHeight": 68
+      },
+      "navigation": {
+        "top": 824.15625,
+        "bottom": 900,
+        "height": 75.84375,
+        "scrollTop": 0,
+        "scrollHeight": 75,
+        "clientHeight": 75
+      },
+      "active": {
+        "tag": "BODY",
+        "id": ""
+      },
+      "timeOrigin": 1792417110053.3,
+      "navigationType": "navigate",
+      "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+      "screenshot": "viewport/fullPage:false"
+    },
+    {
+      "name": "375-text100-three-links-back-after-forward-reload",
+      "width": 375,
+      "height": 900,
+      "text": "16px",
+      "scrollY": 0,
+      "content": {
+        "top": 69,
+        "bottom": 824.15625,
+        "height": 755.15625,
+        "scrollTop": 766,
+        "scrollHeight": 1521,
+        "clientHeight": 755
+      },
+      "header": {
+        "top": 0,
+        "bottom": 69,
+        "height": 69,
+        "scrollTop": 0,
+        "scrollHeight": 68,
+        "clientHeight": 68
+      },
+      "navigation": {
+        "top": 824.15625,
+        "bottom": 900,
+        "height": 75.84375,
+        "scrollTop": 0,
+        "scrollHeight": 75,
+        "clientHeight": 75
+      },
+      "active": {
+        "tag": "BODY",
+        "id": ""
+      },
+      "timeOrigin": 1792417116563.5,
+      "navigationType": "reload",
+      "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+      "screenshot": "viewport/fullPage:false"
+    },
+    {
+      "name": "375-text100-three-links-landscape-safe-area34-control",
+      "top": 193.140625,
+      "bottom": 240.140625,
+      "header": 73.625,
+      "footer": 263.8125,
+      "visible": true,
+      "hit": true
+    },
+    {
+      "name": "375-text100-four-links-before-push",
+      "scroll": 766
+    },
+    {
+      "name": "375-text100-four-links-back-workspace",
+      "width": 375,
+      "height": 900,
+      "text": "16px",
+      "scrollY": 0,
+      "content": {
+        "top": 69,
+        "bottom": 824.15625,
+        "height": 755.15625,
+        "scrollTop": 766,
+        "scrollHeight": 1521,
+        "clientHeight": 755
+      },
+      "header": {
+        "top": 0,
+        "bottom": 69,
+        "height": 69,
+        "scrollTop": 0,
+        "scrollHeight": 68,
+        "clientHeight": 68
+      },
+      "navigation": {
+        "top": 824.15625,
+        "bottom": 900,
+        "height": 75.84375,
+        "scrollTop": 0,
+        "scrollHeight": 75,
+        "clientHeight": 75
+      },
+      "active": {
+        "tag": "BODY",
+        "id": ""
+      },
+      "timeOrigin": 1792417119122.3,
+      "navigationType": "navigate",
+      "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+      "screenshot": "viewport/fullPage:false"
+    },
+    {
+      "name": "375-text100-four-links-landscape-safe-area34-control",
+      "top": 193.140625,
+      "bottom": 240.140625,
+      "header": 73.625,
+      "footer": 263.8125,
+      "visible": true,
+      "hit": true
+    }
+  ]
+}
