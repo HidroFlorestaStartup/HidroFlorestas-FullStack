@@ -35,3 +35,11 @@ Os consumidores reais s?o workspace/layout.tsx e dashboard/layout.tsx, com inst?
 ### Inten??o POP com ciclo de vida da aba
 Reprodu??o focal confirmou que a assinatura da inst?ncia sa?a antes de observar o evento de retorno. Um listener ?nico da aba publica inten??o e notifica assinantes locais; setup/update do destino reivindicam a sequ?ncia. Cleanup de layout remove apenas sua assinatura e observers. O listener n?o ret?m DOM e o cache continua limitado a paths/offsets; sa?da para autentica??o limpa posi??es. Marcador de outra rota ativa ? invalidado. Sem patch de history/router nem altera??o de Auth.
 Valida??o de retorno aceita clamp ao m?ximo atual, pois dados/layout podem encurtar; aguarda estados reais carregados e transi??es finitas existentes. N?o aumentar toler?ncia para esconder retorno ao topo.
+
+### REVIEW: consumidor público e entrada documental na exclusão
+
+EVIDENCIA_IMPLEMENTACAO: a candidata f8c5e7114ebc86ca55f5d0690120bd608f280c0e concluiu os15gates locais no snapshot f6225ec0aa48a15e4120d82195cba99d3a7d02b683106edd59008ed04b710894 (2026-10-19T14:02:40Z–14:12:29Z): E2E136, HTTPS2, exclusão3, IHFR6 PASS. Não é ainda o HEAD final publicado.
+
+RECOMENDACAO do revisor separado: caracterizar também a entrada documental em /delete-account após cache produzido por interação real no workspace. O cleanup de uma instância React não cobre necessariamente essa entrada. Trata-se de hipótese até a execução; não atribuir novo RED antes dela.
+
+Plano focal autorizado pela preservação dos consumidores do shell: ampliar tests/e2e/account-deletion.spec.ts mantendo todos os passos/assertions existentes; comprovar precondição de storage não vazio sem ler/semear valores e navegar por documento. Se RED, exportar limpeza exclusiva do cache de UI em use-content-scroll.ts e chamá-la em src/components/account/account-deletion-form.tsx somente após o sucesso HTTP/DTO já estritamente confirmado. Sem mudar AuthContext, backend, autorização, mensagens/contrato de exclusão ou limpar chaves alheias. Cancelar, senha incorreta e resultado incerto não autorizam essa limpeza de sucesso. Revisar delta e repetir gate oficial afetado, build/typecheck/lint e CI15gates no HEAD final. Reversão por commit delimitado, sem reset.
