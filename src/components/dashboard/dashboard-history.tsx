@@ -1,17 +1,138 @@
 "use client";
+
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, RefreshCw } from "lucide-react";
+import { ChevronLeft, ChevronRight, ClipboardCheck, MapPinned, RefreshCw } from "lucide-react";
 import type { DashboardHistoryPage } from "@/types/dashboard.type";
+import styles from "./dashboard.module.css";
+
+const eventDate = new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short" });
 
 export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
-  const [data, setData] = useState<DashboardHistoryPage | null>(null), [error, setError] = useState<string | null>(null), [stack, setStack] = useState<(string | null)[]>([null]), [index, setIndex] = useState(0), [attempt, setAttempt] = useState(0);
+  const [data, setData] = useState<DashboardHistoryPage | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [stack, setStack] = useState<(string | null)[]>([null]);
+  const [index, setIndex] = useState(0);
+  const [attempt, setAttempt] = useState(0);
   const cursor = stack[index];
-  const load = useCallback(async (signal: AbortSignal) => { setData(null); setError(null); try { const query = cursor ? `?cursor=${encodeURIComponent(cursor)}` : ""; const response = await fetch(`/api/laboratories/${laboratoryId}/dashboard/history${query}`, { cache: "no-store", signal }); const body = await response.json(); if (!response.ok) throw new Error(body?.error?.message ?? "Não foi possível carregar o histórico."); setData(body); } catch (cause) { if (!signal.aborted) setError(cause instanceof Error ? cause.message : "Não foi possível carregar o histórico."); } }, [cursor, laboratoryId]);
-  useEffect(() => { setStack([null]); setIndex(0); }, [laboratoryId]);
-  useEffect(() => { const controller = new AbortController(); void load(controller.signal); return () => controller.abort(); }, [load, attempt]);
-  if (error) return <section aria-labelledby="history-title" className="rounded-2xl border border-red-200 bg-white p-6"><h2 id="history-title" className="text-xl font-bold">Histórico indisponível</h2><p role="alert" className="mt-2 text-red-700">{error}</p><button onClick={() => setAttempt((value) => value + 1)} className="mt-4 min-h-11 rounded-xl bg-red-700 px-4 font-bold text-white focus-visible:ring-2">Tentar novamente</button></section>;
-  if (!data) return <section role="status" aria-label="Carregando histórico" className="rounded-2xl border border-slate-200 bg-white p-8 text-slate-600"><RefreshCw className="mr-2 inline animate-spin" aria-hidden="true" /> Carregando histórico…</section>;
-  return <section aria-labelledby="history-title" className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6"><div className="flex items-center justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[.16em] text-blue-700">Registros reais</p><h2 id="history-title" className="mt-1 text-xl font-bold text-slate-900">Histórico</h2></div><button onClick={() => { setStack([null]); setIndex(0); setAttempt((value) => value + 1); }} className="min-h-11 rounded-xl border border-slate-300 px-3 font-bold focus-visible:ring-2" aria-label="Atualizar histórico"><RefreshCw size={18} aria-hidden="true"/></button></div>{data.items.length === 0 ? <p className="mt-8 rounded-xl border border-dashed border-slate-300 p-8 text-center text-slate-600">Nenhuma atividade elegível neste laboratório.</p> : <ol className="mt-5 divide-y divide-slate-100">{data.items.map((item) => <li key={item.id} className="py-4"><Link href={item.destination} className="block rounded-xl p-2 hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-blue-600"><span className="font-bold text-slate-900">{item.label}</span><span className="mt-1 block break-words text-sm text-slate-600">{item.area.name}</span><time dateTime={item.eventAt} className="mt-2 block text-sm text-slate-500">{new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short" }).format(new Date(item.eventAt))}</time></Link></li>)}</ol>}<nav aria-label="Paginação do histórico" className="mt-5 flex flex-wrap justify-between gap-3"><button disabled={index === 0} onClick={() => setIndex((value) => value - 1)} className="min-h-11 rounded-xl border border-slate-300 px-4 font-bold disabled:opacity-40"><ChevronLeft className="mr-1 inline" size={18}/>Mais recentes</button><button disabled={!data.page.nextCursor} onClick={() => { if (!data.page.nextCursor) return; setStack((current) => [...current.slice(0, index + 1), data.page.nextCursor]); setIndex((value) => value + 1); }} className="min-h-11 rounded-xl bg-blue-700 px-4 font-bold text-white disabled:opacity-40">Mais antigos<ChevronRight className="ml-1 inline" size={18}/></button></nav></section>;
-}
 
+  const load = useCallback(async (signal: AbortSignal) => {
+    setData(null);
+    setError(null);
+    try {
+      const query = cursor ? "?cursor=" + encodeURIComponent(cursor) : "";
+      const response = await fetch("/api/laboratories/" + laboratoryId + "/dashboard/history" + query, {
+        cache: "no-store",
+        signal,
+      });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body?.error?.message ?? "Não foi possível carregar o histórico.");
+      if (!signal.aborted) setData(body);
+    } catch (cause) {
+      if (!signal.aborted) {
+        setError(cause instanceof Error ? cause.message : "Não foi possível carregar o histórico.");
+      }
+    }
+  }, [cursor, laboratoryId]);
+
+  useEffect(() => {
+    setStack([null]);
+    setIndex(0);
+  }, [laboratoryId]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void load(controller.signal);
+    return () => controller.abort();
+  }, [load, attempt]);
+
+  if (error) {
+    return (
+      <section aria-labelledby="history-title" className={styles.errorState}>
+        <h2 id="history-title" className={styles.sectionTitle}>Histórico indisponível</h2>
+        <p role="alert">{error}</p>
+        <button onClick={() => setAttempt(value => value + 1)} className={styles.outline}>
+          Tentar novamente
+        </button>
+      </section>
+    );
+  }
+
+  if (!data) {
+    return (
+      <section role="status" aria-label="Carregando histórico" className={styles.loading}>
+        <span className={styles.spinner} aria-hidden="true"><RefreshCw size={20} /></span>
+        Carregando histórico…
+      </section>
+    );
+  }
+
+  return (
+    <section aria-labelledby="history-title" className={styles.history}>
+      <div className={styles.historyHeader}>
+        <div className={styles.heading}>
+          <p className={styles.eyebrow + " " + styles.water}>Registros reais</p>
+          <h2 id="history-title" className={styles.sectionTitle}>Histórico</h2>
+          <p className={styles.description}>Áreas criadas e coletas confirmadas, das mais recentes às mais antigas.</p>
+        </div>
+        <button
+          onClick={() => {
+            setStack([null]);
+            setIndex(0);
+            setAttempt(value => value + 1);
+          }}
+          className={styles.outline + " " + styles.refresh}
+          aria-label="Atualizar histórico"
+        >
+          <RefreshCw size={18} aria-hidden="true" />
+        </button>
+      </div>
+      {data.items.length === 0 ? (
+        <p className={styles.empty}>Nenhuma atividade elegível neste laboratório.</p>
+      ) : (
+        <ol className={styles.historyList}>
+          {data.items.map(item => (
+            <li key={item.id}>
+              <Link href={item.destination} className={styles.historyLink}>
+                <span
+                  className={styles.eventIcon + " " + (item.type === "AREA_CREATED" ? styles.eventArea : styles.eventCollection)}
+                  aria-hidden="true"
+                >
+                  {item.type === "AREA_CREATED" ? <MapPinned size={20} /> : <ClipboardCheck size={20} />}
+                </span>
+                <span className={styles.eventBody}>
+                  <span className={styles.eventLabel}>{item.label}</span>
+                  <span className={styles.eventAreaName}>{item.area.name}</span>
+                  <time dateTime={item.eventAt} className={styles.eventTime}>
+                    {eventDate.format(new Date(item.eventAt))}
+                  </time>
+                </span>
+                <span className={styles.destination}>{item.type === "AREA_CREATED" ? "Ver área" : "Ver coleta"}</span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      )}
+      <nav aria-label="Paginação do histórico" className={styles.pagination}>
+        <button
+          disabled={index === 0}
+          onClick={() => setIndex(value => value - 1)}
+          className={styles.outline}
+        >
+          <ChevronLeft size={18} aria-hidden="true" /><span>Mais recentes</span>
+        </button>
+        <button
+          disabled={!data.page.nextCursor}
+          onClick={() => {
+            if (!data.page.nextCursor) return;
+            setStack(current => [...current.slice(0, index + 1), data.page.nextCursor]);
+            setIndex(value => value + 1);
+          }}
+          className={styles.button}
+        >
+          <span>Mais antigos</span><ChevronRight size={18} aria-hidden="true" />
+        </button>
+      </nav>
+    </section>
+  );
+}
