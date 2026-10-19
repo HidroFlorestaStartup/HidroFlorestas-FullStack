@@ -38,3 +38,5 @@ Falha de metadados e falha de conteúdo são recuperáveis e distintas. SemURL p
 ViewportfullPage:false, altura900,375/768/1440 e320htmlfont200% (emulaçãoCSS, semzoom físico); Chromium/Playwright. Alvo/rolagem de conteúdo declarado; fotosde posição nativa separadas se necessárias. Campos preenchidos mascarados; semcookies/token/env/provas/senhas/traces. Fakes rotulados e APIs reais identificadas.
 
 Resultado incerto + reload de metadados/conteúdo: retry conserva chave, ticket vigente e expectedRevision original. Resposta autoritativa EXPIRED/STALE_REVISION é tratada separadamente, preservando seleção para nova tentativa. onLoad anterior não troca mensagem após seleção ou início de envio atual. Esses candidatos serão demonstrados em RED antes de correção; não são novas garantias atribuídas a backend.
+
+Precisão do registro executado: altura900 nos quatro perfis responsivos; cenários funcionais usam1280×720. O JSON de cada viewport registra a dimensão efetiva. FullPage=false; Chromium140 emulado, sem prova de dispositivo físico/leitor de tela manual.

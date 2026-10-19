@@ -34,3 +34,9 @@ Revisor separado identificou por fluxo um candidato adicional: recarregar enquan
 ## RED adicional e correção focal
 
 HEAD6abd312415cc86ee2216431bc3cf6a284f69d6fc, snapshot4d407e6e8a3a0b1b0d568a511c9f4a25dad463d39576d12902850444dae6cf51: Setup/Typecheck/Lint PASS; probe17 de15:02:48Z a15:04:06Z com16PASS/1FAIL. Matriz acessível passou após ajuste CSS. O novo caso confirmou status Tentando permanente após GET503 e onLoad real anterior; [log e captura RED](evidence/reload-status-red/). Correção restrita ao catch de reload: mensagem terminal de nova tentativa, mantendo alerta, dados, key, ticket e expectedRevision. Sem alteração de assertions/timeout. Nova validação ainda necessária.
+
+## GREEN focal e início da regressão completa
+
+Fontee3a9c09f910e18e25c97e6926ea9ed57fd6ca3aa/snapshot1b80704bd9e8ae7cac1050da260d1efcccc17421591b85289f4852817f64b025: Setup/Typecheck/Lint PASS e17/17 casos focais PASS,15:07:21Z–15:08:36Z. Este resultado não é o E2E153 completo. [Journal/log/capturas e hashes](evidence/local-focused-green/). Revisor visual_contracts conferiu delta6abd312..e3a9c09 semnovoP1/P2: status terminal, alerta/dados/key/ticket/revisões/lock preservados. Revisão visual e15gates completos seguem pendentes.
+
+Acesso de publicação resolvido pelo CLI autenticado indicado pelo usuário, sem extrair credenciais. PRfase4 publicado: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14, reviewerPedroVitor237 solicitado. CI tentativa2:12PASS/IhfrFAIL6/6/Bootstrap eSchemaAudit não executados; causa indeterminada, sem alteração científica/Auth/guards/timeouts. ZIP12196855106 conferido SHA256f48170a3f35490a70ba419eea5fa67c6fe9e5c47183ab391767a89ab4dc3ed55. Tentativa3 em andamento no mesmoHEAD7b8d9c0.

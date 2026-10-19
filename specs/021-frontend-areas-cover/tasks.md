@@ -12,22 +12,22 @@
 - [x] T006 Executar baseline oficial congelada; registrar RED real/caracterização e capturas before em specs/021-frontend-areas-cover/evidence/.
 
 ## Phase 3: US1 — lista e detalhe
-- [ ] T007 [US1] Adaptar AreaList em src/components/areas/area-list.tsx e areas.module.css sem alterar efeito/DTO/projeções.
-- [ ] T008 [US1] Adaptar composiçãoSSR do detalhe em src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx.
-- [ ] T009 [US1] Validar navegação/dados/readOnly/recusas e opcionais em tests/e2e/frontend-areas.spec.ts.
+- [x] T007 [US1] Adaptar AreaList em src/components/areas/area-list.tsx e areas.module.css sem alterar efeito/DTO/projeções.
+- [x] T008 [US1] Adaptar composiçãoSSR do detalhe em src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx.
+- [x] T009 [US1] Validar navegação/dados/readOnly/recusas e opcionais em tests/e2e/frontend-areas.spec.ts.
 
 ## Phase 4: US2 — formulário e ponto
-- [ ] T010 [US2] Adaptar somente apresentação em src/components/areas/area-form.tsx e areas.module.css.
-- [ ] T011 [US2] Validar0/limites/UF/opcionais/geo negada/timeout/tardia/mapa/confirmação/uncerto/cancelar, preservando testes existentes e src/components/areas/area-form-state.ts.
+- [x] T010 [US2] Adaptar somente apresentação em src/components/areas/area-form.tsx e areas.module.css.
+- [x] T011 [US2] Validar0/limites/UF/opcionais/geo negada/timeout/tardia/mapa/confirmação/uncerto/cancelar, preservando testes existentes e src/components/areas/area-form-state.ts.
 
 ## Phase 5: US3 — capa
-- [ ] T012 [US3] Adaptar AreaCoverPreview/Editor em src/components/areas/area-cover.tsx e novo cover.module.css preservando proxy/keys/unoptimized/validadores/protocolo.
-- [ ] T013 [US3] Se RED demonstrar falso sucesso/evento anterior ou descarte de tentativa incerta, separar status local e preservar chave/ticket/expectedRevision originais em src/components/areas/area-cover.tsx; EXPIRED/STALE_REVISION autoritativos permitem nova tentativa, sem alterar backend.
-- [ ] T014 [US3] Validar matriz8, OCC/retryestável/EXPIRED/STALE_REVISION/removal/metadata vsbytes eeventotardio em tests/e2e/frontend-areas.spec.ts e suítes atuais.
+- [x] T012 [US3] Adaptar AreaCoverPreview/Editor em src/components/areas/area-cover.tsx e novo cover.module.css preservando proxy/keys/unoptimized/validadores/protocolo.
+- [x] T013 [US3] Se RED demonstrar falso sucesso/evento anterior ou descarte de tentativa incerta, separar status local e preservar chave/ticket/expectedRevision originais em src/components/areas/area-cover.tsx; EXPIRED/STALE_REVISION autoritativos permitem nova tentativa, sem alterar backend.
+- [x] T014 [US3] Validar matriz8, OCC/retryestável/EXPIRED/STALE_REVISION/removal/metadata vsbytes eeventotardio em tests/e2e/frontend-areas.spec.ts e suítes atuais.
 
 ## Phase 6: REVIEW / publicação
 - [ ] T015 Conferir375/768/1440/320texto200, campos mascarados, mapa/foco/viewport e consumidores em specs/021-frontend-areas-cover/evidence/.
-- [ ] T016 Incluir nomeexato/if/uploadfocal em .github/workflows/rc-review.yml e Previewfalse em vercel.json antespush.
+- [x] T016 Incluir nomeexato/if/uploadfocal em .github/workflows/rc-review.yml e Previewfalse em vercel.json antespush.
 - [ ] T017 Executar15gates congelados e guardar journal/fingerprint em specs/021-frontend-areas-cover/implementation-evidence.md.
 - [ ] T018 Revisar diff/testes/capturas e consistênciaSpecKit com revisor separado; corrigir achados materiais e validar delta em specs/021-frontend-areas-cover/review.md.
 - [ ] T019 Publicarbranch/PR dependente, solicitarrevisor confirmado e conferirCI do HEADexato; recibofinal noPR e referência em specs/021-frontend-areas-cover/implementation-evidence.md.

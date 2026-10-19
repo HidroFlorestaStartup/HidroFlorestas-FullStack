@@ -1,0 +1,38 @@
+{
+  "name": "detail-focus-768",
+  "screenshot": {
+    "filename": "after-frontend-areas-detail-focus-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 1788,
+      "extent": 1788
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 184,
+    "y": 306.625,
+    "width": 138.0625,
+    "height": 44
+  },
+  "target": null,
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}
