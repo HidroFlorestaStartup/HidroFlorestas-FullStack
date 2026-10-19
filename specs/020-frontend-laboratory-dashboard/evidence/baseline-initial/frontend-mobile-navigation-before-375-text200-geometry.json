@@ -1,0 +1,211 @@
+[
+  {
+    "name": "375-text200-empty-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-empty-create-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1719,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-middle",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1758,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-end",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-last-control-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-landscape",
+    "width": 667,
+    "height": 375,
+    "text": "32px",
+    "scrollY": 239,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 281.609375,
+      "bottom": 375,
+      "height": 93.390625
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-middle",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1758,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-end",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-last-control-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  }
+]
