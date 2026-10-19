@@ -1,0 +1,59 @@
+IMP-006 PostgreSQL is already running.
+IMP-006 schema owned by this run: imp006_test_649d726d961345a6a26333e6c19b3b5b
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-commit","snapshot":[{"tx":"10291","snapshot":"10291:10291:","pid":27580}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-commit","snapshot":[{"tx":"10293","snapshot":"10293:10293:","pid":27580}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-commit","snapshot":[{"tx":"10295","snapshot":"10295:10295:","pid":27580}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"DriverAdapterError","sqlstate":"40001"}],"attempts":10,"jobs":40}
+✖ three real Serializable commit conflicts resolve the resulting hourly quota (1468.9607ms)
+IMP-006 schema owned by this run: imp006_test_8575a480ed5044e3a11c9ff6d40e5c55
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-write","snapshot":[{"tx":"10322","snapshot":"10322:10322:","pid":46600}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-write","snapshot":[{"tx":"10324","snapshot":"10324:10324:","pid":46600}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-write","snapshot":[{"tx":"10326","snapshot":"10326:10326:","pid":46600}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"}],"attempts":10,"jobs":40}
+✖ three real Serializable write conflicts resolve the resulting hourly quota (1023.7056ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3388.1308
+
+✖ failing tests:
+
+test at tests\integration\area-covers-contention.test.ts:2:1777
+✖ three real Serializable commit conflicts resolve the resulting hourly quota (1468.9607ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'INTERNAL_ERROR'
+  - 'RATE_LIMITED'
+
+      at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\integration\area-covers-contention.test.ts:87:47)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'INTERNAL_ERROR',
+    expected: 'RATE_LIMITED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\integration\area-covers-contention.test.ts:2:1777
+✖ three real Serializable write conflicts resolve the resulting hourly quota (1023.7056ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'INTERNAL_ERROR'
+  - 'RATE_LIMITED'
+
+      at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\integration\area-covers-contention.test.ts:87:47)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'INTERNAL_ERROR',
+    expected: 'RATE_LIMITED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

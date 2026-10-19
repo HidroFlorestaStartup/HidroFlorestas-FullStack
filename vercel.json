@@ -15,7 +15,8 @@
       "feat/frontend-account": false,
       "feat/frontend-workspace-shell": false,
       "feat/frontend-laboratory-dashboard": false,
-      "feat/frontend-areas-cover": false
+      "feat/frontend-areas-cover": false,
+      "022-fix-concurrency-ihfr": false
     }
   }
 }

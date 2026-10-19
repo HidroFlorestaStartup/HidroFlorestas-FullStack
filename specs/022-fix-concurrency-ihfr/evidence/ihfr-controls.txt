@@ -1,0 +1,118 @@
+IMP-006 PostgreSQL is already running.
+IMP-006 E2E preflight passed: target 5cb6eff47a0f, schema public.
+IMP-006 schema owned by this run: imp006_test_b51574f63f3e477383970239d8840703
+Next stdout: ▲ Next.js 16.3.8 (Turbopack)
+Next stdout: - Local:         http://127.0.0.1:55780
+Next stdout: - Network:       http://127.0.0.1:55780
+Next stdout: ✓ Ready in 375ms
+Next stdout: ✓ Running next.config.ts took 29ms
+Next stdout: Creating turbopack project {
+Next stdout:   dir: 'C:\\projetos\\consolidados\\HidroFlorestas-cri-rc-20261015\\.worktrees\\022-fix-concurrency-ihfr',
+Next stdout:   testMode: true
+Next stdout: }
+Next stdout:
+Next stdout:  GET /login 200 in 938ms (next.js: 745ms, application-code: 193ms)
+Next stdout:  GET /login 200 in 44ms (next.js: 6ms, application-code: 37ms)
+
+Running 4 tests using 1 worker
+
+Next stdout:  GET /dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041 200 in 1128ms (next.js: 528ms, proxy.ts: 49ms, application-code: 552ms)
+IMP-006 no-JavaScript projection: [{"heading":"ihfr-diagnosis-heading","ancestors":[{"tag":"SECTION","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"S:1","hidden":true,"ariaHidden":null,"inert":false,"display":"none","visibility":"visible","width":0,"height":0},{"tag":"BODY","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720},{"tag":"HTML","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720}]},{"heading":"ihfr-management-heading","ancestors":[{"tag":"SECTION","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":0,"height":0},{"tag":"DIV","id":"S:1","hidden":true,"ariaHidden":null,"inert":false,"display":"none","visibility":"visible","width":0,"height":0},{"tag":"BODY","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720},{"tag":"HTML","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720}]}]
+IMP-006 browser diagnostic: {"test":"IHFR control distinguishes missing hydration from missing server-rendered diagnosis","status":"failed","navigation":[{"path":"/dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041","status":200}],"assets":[{"path":"/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js","failure":"csp"}],"errors":[],"state":{"path":"/dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041","ready":"complete","login":false,"occurrence":false,"regions":[{"name":"Diagnóstico IHFR experimental","hiddenAncestor":"S:1","display":"block","visibility":"visible","width":0,"height":0},{"name":"Gerenciar diagnóstico IHFR experimental","hiddenAncestor":"S:1","display":"block","visibility":"visible","width":0,"height":0}]}}
+  x  1 tests\experiments\ihfr-initialization-controls.spec.ts:27:7 › IHFR without JavaScript › IHFR control distinguishes missing hydration from missing server-rendered diagnosis (6.3s)
+Next stdout:  GET /dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/new 200 in 704ms (next.js: 520ms, proxy.ts: 4ms, application-code: 179ms)
+IMP-006 no-JavaScript occurrence: {"occurrence":0,"preparing":1}
+IMP-006 browser diagnostic: {"test":"IHFR no-JavaScript collection control reproduces the missing occurrence selector","status":"failed","navigation":[{"path":"/dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/new","status":200}],"assets":[{"path":"/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js","failure":"csp"}],"errors":[],"state":{"path":"/dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/new","ready":"complete","login":false,"occurrence":false,"regions":[]}}
+  x  2 tests\experiments\ihfr-initialization-controls.spec.ts:34:7 › IHFR without JavaScript › IHFR no-JavaScript collection control reproduces the missing occurrence selector (5.9s)
+Next stdout:  GET /dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041 200 in 336ms (next.js: 10ms, proxy.ts: 4ms, application-code: 322ms)
+IMP-006 JavaScript-enabled projection: [{"heading":"ihfr-diagnosis-heading","ancestors":[{"tag":"SECTION","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":768,"height":718},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":768,"height":1324},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1694},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1935},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1935},{"tag":"DIV","id":"application-content","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1120,"height":2007},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"flex","visibility":"visible","width":1280,"height":2007},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":2080.625},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720},{"tag":"BODY","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720}]},{"heading":"ihfr-management-heading","ancestors":[{"tag":"SECTION","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":768,"height":586},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":768,"height":1324},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1694},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1935},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1072,"height":1935},{"tag":"DIV","id":"application-content","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1120,"height":2007},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"flex","visibility":"visible","width":1280,"height":2007},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":2080.625},{"tag":"DIV","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720},{"tag":"BODY","id":"","hidden":false,"ariaHidden":null,"inert":false,"display":"block","visibility":"visible","width":1280,"height":720}]}]
+  ok 3 tests\experiments\ihfr-initialization-controls.spec.ts:44:5 › IHFR JavaScript-enabled control exposes the server-rendered diagnosis (725ms)
+Next stderr: ⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+Next stderr:     at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+Next stderr:     at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+Next stderr:   24 |
+Next stderr:   25 |     if (!result.success) {
+Next stderr: > 26 |         throw new AuthBoundaryError(
+Next stderr:      |               ^
+Next stderr:   27 |             result.reason === "UNAUTHENTICATED" ? "UNAUTHORIZED" : "INTERNAL_ERROR",
+Next stderr:   28 |         );
+Next stderr:   29 |     } {
+Next stderr:   code: 'UNAUTHORIZED',
+Next stderr:   digest: '799800880'
+Next stderr: }
+Next stdout:  GET /dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041 307 in 76ms (next.js: 9ms, proxy.ts: 5ms, application-code: 61ms)
+Next stdout:  GET /login 200 in 33ms (next.js: 2ms, application-code: 31ms)
+IMP-006 control: invalid session/absent actor redirects to login without IHFR region.
+Next stderr: ⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+Next stderr:     at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+Next stderr:     at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+Next stderr:   24 |
+Next stderr:   25 |     if (!result.success) {
+Next stderr: > 26 |         throw new AuthBoundaryError(
+Next stderr:      |               ^
+Next stderr:   27 |             result.reason === "UNAUTHENTICATED" ? "UNAUTHORIZED" : "INTERNAL_ERROR",
+Next stderr:   28 |         );
+Next stderr:   29 |     } {
+Next stderr:   code: 'UNAUTHORIZED',
+Next stderr:   digest: '80568189'
+Next stderr: }
+Next stdout:  GET /dashboard/laboratories/60000000-0000-4000-8000-000000000011/areas/60000000-0000-4000-8000-000000000031/collections/60000000-0000-4000-8000-000000000041 307 in 71ms (next.js: 7ms, proxy.ts: 3ms, application-code: 61ms)
+Next stdout:  GET /login 200 in 37ms (next.js: 3ms, application-code: 34ms)
+IMP-006 control: invalid session/absent actor redirects to login without IHFR region.
+  ok 4 tests\experiments\ihfr-initialization-controls.spec.ts:52:5 › IHFR control records login redirect for invalid session and absent actor (615ms)
+
+
+  1) tests\experiments\ihfr-initialization-controls.spec.ts:27:7 › IHFR without JavaScript › IHFR control distinguishes missing hydration from missing server-rendered diagnosis
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true })
+
+
+      30 |     await page.goto(baseURL + required("IMP006_E2E_COLLECTION_URL"));
+      31 |     console.log(`IMP-006 no-JavaScript projection: ${JSON.stringify(await projection(page))}`);
+    > 32 |     await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true })).toBeVisible();
+         |                                                                                                    ^
+      33 |   });
+      34 |   test("IHFR no-JavaScript collection control reproduces the missing occurrence selector", async ({ page, context }, info) => {
+      35 |     const baseURL = String(info.project.use.baseURL);
+        at C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\experiments\ihfr-initialization-controls.spec.ts:32:100
+
+    Error Context: test-results\ihfr-initialization-contro-3ed33-g-server-rendered-diagnosis\error-context.md
+
+  2) tests\experiments\ihfr-initialization-controls.spec.ts:34:7 › IHFR without JavaScript › IHFR no-JavaScript collection control reproduces the missing occurrence selector
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByLabel('Fuso da coleta')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByLabel('Fuso da coleta')
+
+
+      38 |     await page.goto(baseURL + newUrl);
+      39 |     console.log(`IMP-006 no-JavaScript occurrence: ${JSON.stringify({ occurrence: await page.getByLabel("Fuso da coleta").count(), preparing: await page.getByText("Preparando formulário de coleta…", { exact: true }).count() })}`);
+    > 40 |     await expect(page.getByLabel("Fuso da coleta")).toBeVisible();
+         |                                                     ^
+      41 |   });
+      42 | });
+      43 |
+        at C:\projetos\consolidados\HidroFlorestas-cri-rc-20261015\.worktrees\022-fix-concurrency-ihfr\tests\experiments\ihfr-initialization-controls.spec.ts:40:53
+
+    Error Context: test-results\ihfr-initialization-contro-3ae57-missing-occurrence-selector\error-context.md
+
+  2 failed
+    tests\experiments\ihfr-initialization-controls.spec.ts:27:7 › IHFR without JavaScript › IHFR control distinguishes missing hydration from missing server-rendered diagnosis
+    tests\experiments\ihfr-initialization-controls.spec.ts:34:7 › IHFR without JavaScript › IHFR no-JavaScript collection control reproduces the missing occurrence selector
+  2 passed (16.0s)

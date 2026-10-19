@@ -42,6 +42,22 @@ export function describeImp006Error(error: unknown, env: Record<string, string |
   return redactImp006Diagnostics(parts.join(" <- caused by: "), env);
 }
 
+/** Preserve owned Next output in the surrounding gate log, redacting complete lines. */
+export function forwardImp006Diagnostics(stream: NodeJS.ReadableStream | null, env: Record<string, string | undefined>, label: string, destination: Pick<NodeJS.WriteStream, "write"> = process.stdout) {
+  if (!stream) return;
+  let pending = "";
+  stream.setEncoding("utf8");
+  const write = (line: string) => destination.write(`${label}: ${redactImp006Diagnostics(line, env)}\n`);
+  stream.on("data", (chunk: string) => {
+    pending += chunk;
+    const lines = pending.split("\n");
+    pending = lines.pop() ?? "";
+    for (const line of lines) write(line.length <= 1_048_576 ? line : "OUTPUT_LINE_LIMIT_EXCEEDED");
+    if (pending.length > 1_048_576) { pending = ""; write("OUTPUT_LINE_LIMIT_EXCEEDED"); }
+  });
+  stream.on("end", () => { if (pending) write(pending); });
+}
+
 export interface Imp006GateResult {
   exitCode: number;
   durationMs: number;
