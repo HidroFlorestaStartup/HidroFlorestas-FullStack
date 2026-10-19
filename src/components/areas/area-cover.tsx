@@ -71,6 +71,8 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("Carregando capa…");
+  // Only a completed byte load (or confirmed removal) has positive feedback.
+  const [positiveStatus, setPositiveStatus] = useState(false);
   const lock = useRef(false), pending = useRef<PendingUpload>(newPendingUpload());
   const fileInput = useRef<HTMLInputElement>(null), selection = useRef(0);
   const [previewAttempt, setPreviewAttempt] = useState(0);
@@ -93,6 +95,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
     const attempt = ++previewSequence.current;
     pendingPreview.current = current.image.hasImage && current.featureEnabled ? { attempt, purpose } : null;
     setData(current);
+    setPositiveStatus(false);
     setPreviewAttempt(attempt);
     if (purpose === "save") {
       setMessage(!current.image.hasImage ? "Envio confirmado. A área está sem capa no estado atual."
@@ -108,6 +111,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
     const operation = pendingPreview.current;
     if (!operation || operation.attempt !== attempt) return;
     pendingPreview.current = null;
+    setPositiveStatus(loaded);
     setMessage(operation.purpose === "save"
       ? loaded ? "Capa salva." : "Capa confirmada, mas a imagem ainda está indisponível. Recarregue a capa."
       : loaded ? "Capa recarregada." : "Capa ainda indisponível. Tente novamente.");
@@ -116,7 +120,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
   async function select(selected: File | undefined) {
     const token = ++selection.current;
     pendingPreview.current = null;
-    setError(""); setMessage(""); setFile(null);
+    setError(""); setMessage(""); setFile(null); setPositiveStatus(false);
     pending.current = newPendingUpload();
     if (!selected) return;
     try {
@@ -137,7 +141,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
     if (!file || !data?.canEdit || !data.featureEnabled || lock.current) return;
     lock.current = true;
     pendingPreview.current = null;
-    setBusy(true); setError(""); setProgress(0);
+    setBusy(true); setError(""); setProgress(0); setPositiveStatus(false);
     try {
       // The original command survives uncertain responses and preview reloads.
       pending.current.expectedRevision ??= data.image.revision;
@@ -166,7 +170,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
 
   async function reload() {
     if (lock.current) return;
-    lock.current = true; setBusy(true);
+    lock.current = true; setBusy(true); setPositiveStatus(false);
     pendingPreview.current = null;
     try {
       const current = await jsonRequest(apiPath, "GET") as CoverDto;
@@ -182,7 +186,9 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
 
   async function remove() {
     if (!data?.canEdit || !data.featureEnabled || lock.current || !window.confirm("Remover a capa desta área?")) return;
-    lock.current = true; setBusy(true); setError("");
+    lock.current = true; setBusy(true); setError(""); setPositiveStatus(false);
+    // Accepted removal retires the earlier preview and its announcement.
+    pendingPreview.current = null; setMessage("");
     let removalConfirmed = false;
     try {
       await jsonRequest(apiPath, "DELETE", { expectedRevision: data.image.revision });
@@ -190,7 +196,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
       pendingPreview.current = null;
       pending.current = newPendingUpload();
       setData(await jsonRequest(apiPath, "GET") as CoverDto);
-      setMessage("Capa removida.");
+      setMessage("Capa removida."); setPositiveStatus(true);
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Não foi possível remover.");
       if (removalConfirmed) setMessage("Remoção confirmada. Recarregue para atualizar a visualização.");
@@ -210,7 +216,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
         </div>
         {data && !data.featureEnabled && message !== "As capas de áreas estão desabilitadas neste momento." && <p className={styles.notice}>As capas de áreas estão desabilitadas neste momento.</p>}
         {error && <p role="alert" className={styles.error}>{error}</p>}
-        <p role="status" aria-live="polite" className={styles.feedback}>{message}</p>
+        <p role="status" aria-live="polite" className={positiveStatus ? styles.feedback : styles.neutral}>{message}</p>
         {busy && file && <progress aria-label="Progresso do envio da capa" value={progress} max={100} className={styles.progress} />}
         {data?.canEdit && data.featureEnabled && <>
           <div className={styles.field}>

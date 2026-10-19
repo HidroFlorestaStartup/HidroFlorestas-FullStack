@@ -24,10 +24,12 @@
 .button:disabled { border-color: #cbd7ce; background: #e4e9e5; color: #5a6c60; cursor: not-allowed; }
 .editor :is(button,input):focus-visible { outline: 3px solid #245f83; outline-offset: 3px; }
 .reload { min-width: 0; padding-top: 16px; border-top: 1px solid #e5e7e5; }
-.notice, .feedback, .error { min-width: 0; padding: 16px; border: 1px solid; border-radius: 12px; font-size: .875rem; line-height: 1.6; overflow-wrap: anywhere; }
+.notice, .feedback, .neutral, .error { min-width: 0; padding: 16px; border: 1px solid; border-radius: 12px; font-size: .875rem; line-height: 1.6; overflow-wrap: anywhere; }
 .notice { color: #795015; border-color: #ead5af; background: #fff7e7; }
 .feedback { color: #245237; border-color: #c9dfcf; background: #eaf5ed; }
 .feedback:empty { padding: 0; border: 0; background: transparent; }
+.neutral { color: #42634e; border-color: #d2ded5; background: #f5f8f6; }
+.neutral:empty { padding: 0; border: 0; background: transparent; }
 .error { color: #992525; border-color: #e9bdbd; background: #fff0f0; }
 .progress { width: 100%; min-width: 0; max-width: 100%; height: 12px; accent-color: #236548; }
 @media (max-width: 399px) {
