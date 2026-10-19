@@ -30,3 +30,8 @@ A composição de membros recebe key por laboratoryId como fronteira de estado; 
 
 ### Retorno entre layouts ? delta focal
 Os consumidores reais s?o workspace/layout.tsx e dashboard/layout.tsx, com inst?ncias separadas. Ambos recebem somente scope de UI expl?cito, sem alterar requireAuth/canAdmin. Pend?ncia de restore passa a ser local por inst?ncia; posi??es e inten??o POP sequenciada s?o compartilhadas. O listener POP em captura publica a inten??o antes da atualiza??o dos layouts pelo Next. A revis?o do desenho n?o equivale a provar qual callback causou o FAIL hist?rico; o teste comprova o comportamento de retorno. O reset de topo ? restrito ao avan?o para destino novo, n?o usado para ocultar Back nem para fabricar foto nativa.
+
+
+### Inten??o POP com ciclo de vida da aba
+Reprodu??o focal confirmou que a assinatura da inst?ncia sa?a antes de observar o evento de retorno. Um listener ?nico da aba publica inten??o e notifica assinantes locais; setup/update do destino reivindicam a sequ?ncia. Cleanup de layout remove apenas sua assinatura e observers. O listener n?o ret?m DOM e o cache continua limitado a paths/offsets; sa?da para autentica??o limpa posi??es. Marcador de outra rota ativa ? invalidado. Sem patch de history/router nem altera??o de Auth.
+Valida??o de retorno aceita clamp ao m?ximo atual, pois dados/layout podem encurtar; aguarda estados reais carregados e transi??es finitas existentes. N?o aumentar toler?ncia para esconder retorno ao topo.

@@ -12,6 +12,8 @@ type RestorePosition = { path: string; top: number };
 export type ContentScrollScope = "/workspace" | "/dashboard";
 let popSequence = 0;
 let popRestore: (RestorePosition & { sequence: number; timestamp: number; claimed: boolean }) | null = null;
+let popListenerAttached = false;
+const popSubscribers = new Set<() => void>();
 function belongsToScope(path: string, scope: ContentScrollScope) { return path === scope || path.startsWith(scope + "/"); }
 function visibleContent(content: HTMLElement) { return content.isConnected && content.getClientRects().length > 0; }
 function ownScroll(content: HTMLElement) { return getComputedStyle(content).overflowY === "auto"; }
@@ -32,6 +34,18 @@ function hydrate() {
       }
     }
   } catch { /* A malformed UI cache never affects access or navigation. */ }
+}
+function attachPopListener() {
+  hydrate();
+  if (popListenerAttached) return;
+  popListenerAttached = true;
+  // Navigation can replace both layout instances before the POP is delivered.
+  // The tab-level intent therefore outlives every individual shell effect.
+  window.addEventListener("popstate", event => {
+    const path = window.location.pathname;
+    popRestore = { path, top: positions.get(path) ?? 0, sequence: ++popSequence, timestamp: event.timeStamp, claimed: false };
+    for (const notify of popSubscribers) notify();
+  }, true);
 }
 function remember(path: string, content: HTMLElement) {
   if (!content.isConnected || !content.getClientRects().length || !ownScroll(content)) return;
@@ -63,6 +77,7 @@ export function useContentScroll(scope: ContentScrollScope) {
   const claimedSequence = useRef(0);
   useEffect(() => {
     const content = contentRef.current;
+    attachPopListener();
     // usePathname can already expose the destination while its previous layout
     // is still mounted. That previous shell must not own the new route's UI.
     if (!content || !belongsToScope(pathname, scope) || !visibleContent(content) || window.location.pathname !== pathname) return;
@@ -70,6 +85,12 @@ export function useContentScroll(scope: ContentScrollScope) {
     const changedPath = currentPath.current !== pathname;
     currentPath.current = pathname;
     hydrate();
+    const invalidateForeignMarker = () => {
+      if (active() && popRestore && popRestore.path !== pathname) {
+        popRestore = null;
+      }
+    };
+    invalidateForeignMarker();
     const claimPop = () => {
       if (!active() || !popRestore || popRestore.claimed || popRestore.path !== pathname || popRestore.sequence <= claimedSequence.current) return false;
       pendingRestore.current = { path: pathname, top: popRestore.top };
@@ -97,6 +118,9 @@ export function useContentScroll(scope: ContentScrollScope) {
     let attemptedRestore: { path: string; top: number; maximum: number } | null = null;
     const update = () => {
       if (disposed || !active()) return;
+      invalidateForeignMarker();
+      // A POP may arrive after this layout's effect has already mounted.
+      if (claimPop()) attemptedRestore = null;
       if (pendingRestore.current) {
         if (ownScroll(content)) {
           const desired = pendingRestore.current.top;
@@ -121,7 +145,8 @@ export function useContentScroll(scope: ContentScrollScope) {
     };
     const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
     const scrolled = () => {
-      if (active() && !pendingRestore.current) remember(pathname, content);
+      const willRemember = active() && !pendingRestore.current;
+      if (willRemember) remember(pathname, content);
     };
     const intent = () => {
       if (!active()) return;
@@ -129,22 +154,7 @@ export function useContentScroll(scope: ContentScrollScope) {
       remember(pathname, content);
       persist();
     };
-    const popped = (event: PopStateEvent) => {
-      if (!visibleContent(content) || !belongsToScope(pathname, scope) || !ownScroll(content)) return;
-      // Only remember the route rendered by this outgoing instance. The POP
-      // target is transferred as an intent; this instance cannot consume it
-      // while it still belongs to another path or another layout scope.
-      if (!pendingRestore.current) remember(pathname, content);
-      persist();
-      const path = window.location.pathname;
-      if (popRestore?.timestamp !== event.timeStamp) {
-        popRestore = { path, top: positions.get(path) ?? 0, sequence: ++popSequence, timestamp: event.timeStamp, claimed: false };
-      }
-      if (path === pathname && claimPop()) {
-        attemptedRestore = null;
-        schedule();
-      }
-    };
+    const popNotified = () => schedule();
     const hidden = () => {
       if (active() && !pendingRestore.current) remember(pathname, content);
       persist();
@@ -156,7 +166,7 @@ export function useContentScroll(scope: ContentScrollScope) {
     content.addEventListener("pointerdown", intent);
     content.addEventListener("keydown", intent);
     content.addEventListener("wheel", intent, { passive: true });
-    window.addEventListener("popstate", popped, true);
+    popSubscribers.add(popNotified);
     window.addEventListener("pagehide", hidden);
     schedule();
     return () => {
@@ -165,7 +175,7 @@ export function useContentScroll(scope: ContentScrollScope) {
       content.removeEventListener("pointerdown", intent);
       content.removeEventListener("keydown", intent);
       content.removeEventListener("wheel", intent);
-      window.removeEventListener("popstate", popped, true);
+      popSubscribers.delete(popNotified);
       window.removeEventListener("pagehide", hidden);
       if (window.location.pathname !== pathname) {
         currentPath.current = null;
