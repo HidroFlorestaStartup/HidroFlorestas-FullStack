@@ -40,3 +40,15 @@ HEAD6abd312415cc86ee2216431bc3cf6a284f69d6fc, snapshot4d407e6e8a3a0b1b0d568a511c
 Fontee3a9c09f910e18e25c97e6926ea9ed57fd6ca3aa/snapshot1b80704bd9e8ae7cac1050da260d1efcccc17421591b85289f4852817f64b025: Setup/Typecheck/Lint PASS e17/17 casos focais PASS,15:07:21Z–15:08:36Z. Este resultado não é o E2E153 completo. [Journal/log/capturas e hashes](evidence/local-focused-green/). Revisor visual_contracts conferiu delta6abd312..e3a9c09 semnovoP1/P2: status terminal, alerta/dados/key/ticket/revisões/lock preservados. Revisão visual e15gates completos seguem pendentes.
 
 Acesso de publicação resolvido pelo CLI autenticado indicado pelo usuário, sem extrair credenciais. PRfase4 publicado: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14, reviewerPedroVitor237 solicitado. CI tentativa2:12PASS/IhfrFAIL6/6/Bootstrap eSchemaAudit não executados; causa indeterminada, sem alteração científica/Auth/guards/timeouts. ZIP12196855106 conferido SHA256f48170a3f35490a70ba419eea5fa67c6fe9e5c47183ab391767a89ab4dc3ed55. Tentativa3 em andamento no mesmoHEAD7b8d9c0.
+
+## Regressão oficial completa GREEN
+
+HEAD6448f21a59dc08e52963d5f46a0a4b459efa69a4; fontefuncionale3a9c09f910e18e25c97e6926ea9ed57fd6ca3aa; snapshot1b80704bd9e8ae7cac1050da260d1efcccc17421591b85289f4852817f64b025.2026-10-19T15:09:16.998Z–15:20:20.224Z. Todos15gates PASS/exit0; Unit296+17,Integration218,Migration37,Contract6,R1=17,Buildpadrão,Typecheck,Lint0erros/3avisos anteriores,E2E153(136anteriores+17novos),Https2,Deletion3,Ihfr6,Bootstrap14migrations/rollback/descarteDBpróprio,SchemaAudit0. Setup também PASS. [Journal completo e logs sanitizados](evidence/local-full-reviewed/), manifests porbytesPNG/textoUTF8LFsemBOM. Cluster próprio parado/dados preservados. SemInitializeCiCluster na estação e sem suítes concorrentes.
+
+Revisão final local registrada em [review](review.md). Branch/PRfase5 ainda não publicados neste instante; T019/CI exato fecham apenas no recibo remoto final. CI fase4 tentativa3 terminouSUCCESS noHEAD7b8d9c0; journal/artefato sendo conferidos antes do reciboPR14. As causas das falhas anteriores permanecem indeterminadas.
+
+## CI exato da fase 4 conferido
+
+Run39267705060/attempt3/job118134854957, HEAD7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d,15gates únicos PASS/exit0, fingerprint9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6. Artefato12197323787,289entradas/14359184bytes, SHA256download=digestAPI86d8237b51e749cb249e93215848b82f33707a15f33fa976ae42bc7961627364. [Recibo estruturado](evidence/phase4-ci-final-receipt.json); [recibo publicadoPR14](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14#issuecomment-6270896754). Causas dosFAILanteriores continuam indeterminadas. Sem mudança de runner/backend/Auth/ciência para conseguirPASS.
+
+[RelatórioPLAN/EXECUTE/REVIEW e cronologia completa](mission-report.md). O estado de publicação/CI da fase5 deste arquivo é anterior ao push; o recibo final noPR registrará HEAD/gates/checksum sem reabrir ciclo documental.

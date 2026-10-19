@@ -1,14 +1,14 @@
 # Feature Specification: Áreas e capa
 **Feature Branch**: feat/frontend-areas-cover
 **Created**: 2026-10-19
-**Status**: Planejada
+**Status**: Implementada e revisada localmente; publicação/CI final dependem do recibo remoto
 **Input**: Missão local hidrofloresta-prompt-codex-fases-4-5-20261019.md e handoff oficial docs/handoff-frontend-fases-4-5@4144e12; fase5 após validação técnica da fase4.
 
 ## Objective and Authority
 Adaptar listagem, formulário, detalhe e capa ao starter oficial cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f, preservando os fluxos reais do produto.
 FATO_DOCUMENTADO: autorização operacional e recorte provêm da missão atual do usuário; não são novas decisões atribuídas a Pedro.
 EVIDENCIA_IMPLEMENTACAO: Spec003, Spec016, contratos e código atual estabelecem campos, papéis, projeções e protocolo privado. Code-First permanece EM_REVISAO, com rastreabilidade CF-PRD-FR-005/011/012/013, CF-UC-007/008 e CF-PFLOW-004. A intenção operacional atual não altera domínio científico.
-Base funcional: 7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d; PR fase4 pendente por403 do conector; branch publicada https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/tree/feat/frontend-laboratory-dashboard. Base temporária da fase5 é a branch fase4 se ainda aberta; destino final development.
+Base funcional: 7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d; PR fase4 #14 publicado pelo CLI autenticado indicado pelo usuário, CI final15PASS na tentativa3; branch publicada https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/tree/feat/frontend-laboratory-dashboard. Base temporária da fase5 é a branch fase4 se ainda aberta; destino final development.
 
 ## User Scenarios & Testing *(mandatory)*
 ### User Story 1 — Encontrar e consultar área autorizada (Priority: P1)

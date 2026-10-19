@@ -21,3 +21,5 @@
 - [x] Implementação específica delimitada ao plano.
 ## Notes
 A qualidade da spec não aprova teste, código ou aceite humano. Matriz/protocolo e hipótese de status aguardam execução antes de GREEN.
+
+Atualização de execução: matriz/protocolo demonstrados emRED/GREEN, reviewlocal e15gates locais concluídos. Publicação/CI doHEAD final eaceite humano continuam distintos; fechamento operacional no recibo remoto.

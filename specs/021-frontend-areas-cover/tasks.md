@@ -26,11 +26,13 @@
 - [x] T014 [US3] Validar matriz8, OCC/retryestável/EXPIRED/STALE_REVISION/removal/metadata vsbytes eeventotardio em tests/e2e/frontend-areas.spec.ts e suítes atuais.
 
 ## Phase 6: REVIEW / publicação
-- [ ] T015 Conferir375/768/1440/320texto200, campos mascarados, mapa/foco/viewport e consumidores em specs/021-frontend-areas-cover/evidence/.
+- [x] T015 Conferir375/768/1440/320texto200, campos mascarados, mapa/foco/viewport e consumidores em specs/021-frontend-areas-cover/evidence/.
 - [x] T016 Incluir nomeexato/if/uploadfocal em .github/workflows/rc-review.yml e Previewfalse em vercel.json antespush.
-- [ ] T017 Executar15gates congelados e guardar journal/fingerprint em specs/021-frontend-areas-cover/implementation-evidence.md.
-- [ ] T018 Revisar diff/testes/capturas e consistênciaSpecKit com revisor separado; corrigir achados materiais e validar delta em specs/021-frontend-areas-cover/review.md.
+- [x] T017 Executar15gates congelados e guardar journal/fingerprint em specs/021-frontend-areas-cover/implementation-evidence.md.
+- [x] T018 Revisar diff/testes/capturas e consistênciaSpecKit com revisor separado; corrigir achados materiais e validar delta em specs/021-frontend-areas-cover/review.md.
 - [ ] T019 Publicarbranch/PR dependente, solicitarrevisor confirmado e conferirCI do HEADexato; recibofinal noPR e referência em specs/021-frontend-areas-cover/implementation-evidence.md.
 
 ## Dependencies & Parallel Opportunities
 T001→T003 antesT004/005. T004 eT005 no mesmoarquivo têm um escritor. T006 antesT007/008/010/012/013. T007/T010 podem ser um escritor eT008/T012 outro, sem compartilharCSSna mesmahora. T009/011/014 usam suites oficiais sequenciais, nunca clusters concorrentes. T016 antesprimeiropush. T017→T018→T019; mudança material após revisão exige novosgates afetados/CI atual. As três histórias fazem parte da missão, semencerrarnoMVP.
+
+T019 permanece aberto neste registro anterior ao push. Seu fechamento efetivo será confirmado pelo recibo final do PR, com HEAD/CI/artefato, evitando commits documentais que reabram o ciclo de CI.
