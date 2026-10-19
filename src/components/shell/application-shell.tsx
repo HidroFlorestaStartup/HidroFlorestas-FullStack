@@ -2,11 +2,11 @@
 import type { ReactNode } from "react";
 import TopBar from "@/components/top-bar";
 import Sidebar from "@/components/sidebar";
-import { useContentScroll } from "./use-content-scroll";
+import { useContentScroll, type ContentScrollScope } from "./use-content-scroll";
 import styles from "./shell.module.css";
 
-export function ApplicationShell({ children, canAdmin }: { children: ReactNode; canAdmin: boolean }) {
-  const { contentRef, keepFocusVisible } = useContentScroll();
+export function ApplicationShell({ children, canAdmin, scope }: { children: ReactNode; canAdmin: boolean; scope: ContentScrollScope }) {
+  const { contentRef, keepFocusVisible } = useContentScroll(scope);
   return <div className={styles.shell}>
     <a href="#application-content" className={styles.skip}>Pular para o conteúdo</a>
     <TopBar showProfile showLogout />

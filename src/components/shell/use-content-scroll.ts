@@ -8,7 +8,12 @@ const positions = new Map<string, number>();
 const storageKey = "hidroflorestas.content-scroll.v1";
 let hydrated = false;
 let initialNavigationRead = false;
-let pendingRestore: { path: string; top: number } | null = null;
+type RestorePosition = { path: string; top: number };
+export type ContentScrollScope = "/workspace" | "/dashboard";
+let popSequence = 0;
+let popRestore: (RestorePosition & { sequence: number; timestamp: number; claimed: boolean }) | null = null;
+function belongsToScope(path: string, scope: ContentScrollScope) { return path === scope || path.startsWith(scope + "/"); }
+function visibleContent(content: HTMLElement) { return content.isConnected && content.getClientRects().length > 0; }
 function ownScroll(content: HTMLElement) { return getComputedStyle(content).overflowY === "auto"; }
 function persist() {
   try { sessionStorage.setItem(storageKey, JSON.stringify([...positions].slice(-50))); }
@@ -50,26 +55,39 @@ function revealFocus(target: HTMLElement, content: HTMLDivElement) {
     target.scrollIntoView({ block: "center", behavior: "instant" });
   }
 }
-export function useContentScroll() {
+export function useContentScroll(scope: ContentScrollScope) {
   const pathname = usePathname();
   const contentRef = useRef<HTMLDivElement>(null);
   const currentPath = useRef<string | null>(null);
+  const pendingRestore = useRef<RestorePosition | null>(null);
+  const claimedSequence = useRef(0);
   useEffect(() => {
     const content = contentRef.current;
-    if (!content) return;
+    // usePathname can already expose the destination while its previous layout
+    // is still mounted. That previous shell must not own the new route's UI.
+    if (!content || !belongsToScope(pathname, scope) || !visibleContent(content) || window.location.pathname !== pathname) return;
+    const active = () => visibleContent(content) && window.location.pathname === pathname && belongsToScope(pathname, scope);
     const changedPath = currentPath.current !== pathname;
     currentPath.current = pathname;
     hydrate();
+    const claimPop = () => {
+      if (!active() || !popRestore || popRestore.claimed || popRestore.path !== pathname || popRestore.sequence <= claimedSequence.current) return false;
+      pendingRestore.current = { path: pathname, top: popRestore.top };
+      claimedSequence.current = popRestore.sequence;
+      popRestore.claimed = true;
+      return true;
+    };
+    const claimedPop = claimPop();
     if (!initialNavigationRead) {
       initialNavigationRead = true;
       const navigation = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
       const top = positions.get(pathname);
       if (ownScroll(content) && top !== undefined && (navigation?.type === "reload" || navigation?.type === "back_forward")) {
-        pendingRestore = { path: pathname, top };
+        pendingRestore.current = { path: pathname, top };
       }
     }
-    if (changedPath && ownScroll(content) && pendingRestore?.path !== pathname) {
-      pendingRestore = null;
+    if (pendingRestore.current?.path !== pathname) pendingRestore.current = null;
+    if (changedPath && ownScroll(content) && !claimedPop && !pendingRestore.current) {
       // Native Next scrolling targets the document. A new route also needs to
       // start at the top of this scrollport; leave fragment targets to Next.
       if (!window.location.hash) content.scrollTo({ top: 0, behavior: "instant" });
@@ -78,11 +96,10 @@ export function useContentScroll() {
     let disposed = false;
     let attemptedRestore: { path: string; top: number; maximum: number } | null = null;
     const update = () => {
-      if (disposed) return;
-      if (pendingRestore) {
-        if (pendingRestore.path !== pathname) return;
+      if (disposed || !active()) return;
+      if (pendingRestore.current) {
         if (ownScroll(content)) {
-          const desired = pendingRestore.top;
+          const desired = pendingRestore.current.top;
           const maximum = Math.max(0, content.scrollHeight - content.clientHeight);
           if (!attemptedRestore || attemptedRestore.path !== pathname || attemptedRestore.top !== desired || maximum > attemptedRestore.maximum) {
             content.scrollTo({ top: desired, behavior: "instant" });
@@ -91,37 +108,45 @@ export function useContentScroll() {
           // Client reads can initially render a shorter loading state.
           // Retry when its available extent grows, without repeatedly forcing
           // the same clamped position on unrelated resize notifications.
-          if (Math.abs(content.scrollTop - desired) <= 1) pendingRestore = null;
-        } else pendingRestore = null;
+          if (Math.abs(content.scrollTop - desired) <= 1) pendingRestore.current = null;
+        } else pendingRestore.current = null;
       }
-      const active = document.activeElement;
-      if (active instanceof HTMLElement && active !== content && content.contains(active) && !active.closest("dialog[open]")) {
+      const focused = document.activeElement;
+      if (focused instanceof HTMLElement && focused !== content && content.contains(focused) && !focused.closest("dialog[open]")) {
         // A shorter final page may never reach the saved offset. Restoration
         // must not suppress focus protection while waiting for more content.
-        pendingRestore = null;
-        revealFocus(active, content);
+        pendingRestore.current = null;
+        revealFocus(focused, content);
       }
     };
     const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
     const scrolled = () => {
-      if (!pendingRestore && window.location.pathname === pathname) remember(pathname, content);
+      if (active() && !pendingRestore.current) remember(pathname, content);
     };
     const intent = () => {
-      pendingRestore = null;
+      if (!active()) return;
+      pendingRestore.current = null;
       remember(pathname, content);
       persist();
     };
-    const popped = () => {
-      if (!ownScroll(content)) { pendingRestore = null; return; }
-      remember(pathname, content);
+    const popped = (event: PopStateEvent) => {
+      if (!visibleContent(content) || !belongsToScope(pathname, scope) || !ownScroll(content)) return;
+      // Only remember the route rendered by this outgoing instance. The POP
+      // target is transferred as an intent; this instance cannot consume it
+      // while it still belongs to another path or another layout scope.
+      if (!pendingRestore.current) remember(pathname, content);
       persist();
       const path = window.location.pathname;
-      const top = positions.get(path);
-      pendingRestore = top === undefined ? null : { path, top };
-      schedule();
+      if (popRestore?.timestamp !== event.timeStamp) {
+        popRestore = { path, top: positions.get(path) ?? 0, sequence: ++popSequence, timestamp: event.timeStamp, claimed: false };
+      }
+      if (path === pathname && claimPop()) {
+        attemptedRestore = null;
+        schedule();
+      }
     };
     const hidden = () => {
-      if (!pendingRestore && window.location.pathname === pathname) remember(pathname, content);
+      if (active() && !pendingRestore.current) remember(pathname, content);
       persist();
     };
     const observer = new ResizeObserver(schedule);
@@ -131,7 +156,7 @@ export function useContentScroll() {
     content.addEventListener("pointerdown", intent);
     content.addEventListener("keydown", intent);
     content.addEventListener("wheel", intent, { passive: true });
-    window.addEventListener("popstate", popped);
+    window.addEventListener("popstate", popped, true);
     window.addEventListener("pagehide", hidden);
     schedule();
     return () => {
@@ -140,22 +165,28 @@ export function useContentScroll() {
       content.removeEventListener("pointerdown", intent);
       content.removeEventListener("keydown", intent);
       content.removeEventListener("wheel", intent);
-      window.removeEventListener("popstate", popped);
+      window.removeEventListener("popstate", popped, true);
       window.removeEventListener("pagehide", hidden);
+      if (window.location.pathname !== pathname) {
+        currentPath.current = null;
+        pendingRestore.current = null;
+      }
       if (["/login", "/logout", "/register"].includes(window.location.pathname)) {
-        positions.clear(); pendingRestore = null;
+        positions.clear(); pendingRestore.current = null; popRestore = null;
         try { sessionStorage.removeItem(storageKey); } catch { /* Optional UI cache. */ }
       } else persist();
     };
-  }, [pathname]);
+  }, [pathname, scope]);
   function keepFocusVisible(event: FocusEvent<HTMLDivElement>) {
     const target = event.target;
     const content = event.currentTarget;
-    if (!(target instanceof HTMLElement) || target.closest("dialog[open]")) return;
+    if (!(target instanceof HTMLElement) || target.closest("dialog[open]") || !belongsToScope(pathname, scope) || window.location.pathname !== pathname || !visibleContent(content)) return;
     // Programmatic focus is also an explicit navigation intent, even without a
     // preceding key or pointer event. It takes priority over cached offsets.
-    pendingRestore = null;
-    requestAnimationFrame(() => revealFocus(target, content));
+    pendingRestore.current = null;
+    requestAnimationFrame(() => {
+      if (window.location.pathname === pathname && visibleContent(content)) revealFocus(target, content);
+    });
   }
   return { contentRef, keepFocusVisible };
 }
