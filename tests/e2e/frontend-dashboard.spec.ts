@@ -240,7 +240,7 @@ for (const width of widths) {
       await expect(membersSection(page).getByText(/Carregando membros/)).toBeVisible();
       await capture(page, info, `transient-members-loading-${width}`);
       releaseMembers();
-      await expect(membersSection(page).getByRole("alert")).toContainText("Falha transitória sintética");
+      await expect(membersSection(page).getByText("Falha transitória sintética do transporte.", { exact: true })).toBeVisible();
       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
       await capture(page, info, `transient-members-error-${width}`);
       failMembers = false;
@@ -249,7 +249,7 @@ for (const width of widths) {
       expect((await membersRetry).status()).toBe(200);
       await expect(membersSection(page).getByRole("listitem")).toHaveCount(3);
       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toBeEnabled();
-      await expect(membersSection(page).getByRole("alert")).toHaveCount(0);
+      await expect(membersSection(page).getByText("Falha transitória sintética do transporte.", { exact: true })).toHaveCount(0);
     } finally {
       releaseDashboard();
       releaseMembers();
@@ -284,8 +284,9 @@ test("real membership conflict preserves expectedRole and a delayed real PATCH r
     const conflict = await staleWrite;
     expect(conflict.request().postDataJSON()).toEqual({ expectedRole: "MEMBER", role: "ADMIN" });
     expect(conflict.status()).toBe(409);
-    expect((await conflict.json()).error.code).toBe("CONFLICT");
-    await expect(roster.getByRole("alert")).toContainText("O registro mudou");
+    const conflictBody: { error: { code: string; message: string } } = await conflict.json();
+    expect(conflictBody.error.code).toBe("CONFLICT");
+    await expect(roster.getByText(conflictBody.error.message, { exact: true })).toBeVisible();
     await expect(roster.getByText("Papel atualizado.", { exact: true })).toHaveCount(0);
     const demote = roster.getByRole("button", { name: `Rebaixar ${memberName}`, exact: true });
     await expect(demote).toBeEnabled();

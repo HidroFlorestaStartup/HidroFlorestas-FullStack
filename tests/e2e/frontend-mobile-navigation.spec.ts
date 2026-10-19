@@ -38,9 +38,9 @@ async function capture(page: Page, info: TestInfo, name: string, records: unknow
   await page.screenshot({ path, fullPage: false, animations: "disabled", mask });
   await copyFile(path, join(archive, filename + ".png"));
   const geometry = await page.evaluate(() => {
-    const box = (id: string) => { const r = document.getElementById(id)?.getBoundingClientRect(); return r ? { top: r.top, bottom: r.bottom, height: r.height } : null; };
+    const box = (id: string) => { const node = document.getElementById(id); const r = node?.getBoundingClientRect(); return r && node ? { top: r.top, bottom: r.bottom, height: r.height, scrollTop: node.scrollTop, scrollHeight: node.scrollHeight, clientHeight: node.clientHeight } : null; };
     return { width: innerWidth, height: innerHeight, text: getComputedStyle(document.documentElement).fontSize,
-      scrollY, header: box("application-header"), navigation: box("application-navigation"),
+      scrollY, content: box("application-content"), header: box("application-header"), navigation: box("application-navigation"),
       safeAreaMethod: "Chromium; labelled safe-area34 frames use CDP, no physical device", screenshot: "viewport/fullPage:false" };
   });
   records.push({ name, ...geometry });
@@ -90,9 +90,28 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         await expect(list).toBeVisible();
         const nav = page.getByRole("navigation", { name: "Navegação principal", exact: true });
         expect(await nav.getByRole("link").count()).toBe(isAdmin ? 4 : 3);
+        for (const link of await nav.getByRole("link").all()) {
+          const broken = await link.evaluate(node => {
+            const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT); let child: Node | null;
+            while ((child = walker.nextNode())) {
+              const words = /[A-Za-zÀ-ÿ]+/g; let match: RegExpExecArray | null;
+              while ((match = words.exec(child.textContent ?? ""))) {
+                const range = document.createRange(); range.setStart(child, match.index); range.setEnd(child, match.index + match[0].length);
+                if (range.getClientRects().length > 1) return true;
+              }
+            }
+            return false;
+          });
+          expect.soft(broken, "Navigation labels keep whole words: " + await link.innerText()).toBe(false);
+        }
         const state = name + (isAdmin ? "-four-links" : "-three-links");
         for (const position of ["start", "middle", "end"]) {
-          await page.evaluate(position => window.scrollTo(0, position === "start" ? 0 : position === "middle" ? (document.documentElement.scrollHeight - innerHeight) / 2 : document.documentElement.scrollHeight), position);
+          await page.evaluate(position => {
+            const content = document.getElementById("application-content")!;
+            const root = getComputedStyle(content).overflowY === "auto" ? content : document.scrollingElement!;
+            const maximum = root.scrollHeight - root.clientHeight;
+            root.scrollTo(0, position === "start" ? 0 : position === "middle" ? maximum / 2 : maximum);
+          }, position);
           await capture(page, info, state + "-" + position, records);
         }
         const controls = [page.getByRole("button", { name: "Criar laboratório", exact: true }),
@@ -118,8 +137,18 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
-        await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle"); await page.goBack();
+        await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle");
+        await page.getByRole("heading", { level: 1 }).scrollIntoViewIfNeeded();
+        await capture(page, info, state + "-destination-summary", records);
+        await page.goBack();
         await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
+        await capture(page, info, state + "-back-workspace", records);
+        if (!isAdmin) {
+          await page.goForward(); await expect(page.locator("#history-title")).toBeVisible();
+          await page.waitForLoadState("networkidle"); await page.reload();
+          await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle");
+          await page.goBack(); await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
+        }
         await page.setViewportSize({ width: 667, height: 375 });
         await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
         await settings.focus(); await page.waitForTimeout(50);
