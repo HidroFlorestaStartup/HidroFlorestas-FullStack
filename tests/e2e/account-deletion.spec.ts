@@ -21,7 +21,7 @@ test("normal account: GET and cancellation preserve access; wrong password, keyb
     // Keep the existing cancellation/menu/password/deletion assertions intact.
     await expect(page.getByLabel("Senha atual", { exact: true })).toBeVisible();
     await page.goto("/workspace");
-    await page.getByLabel("Nome do laborat?rio", { exact: true }).click();
+    await page.getByLabel("Nome do laborat\u00f3rio", { exact: true }).click();
     await page.keyboard.press("Tab");
     await expect.poll(() => page.evaluate(() => sessionStorage.length)).toBeGreaterThan(0);
     await page.goto("/delete-account");
