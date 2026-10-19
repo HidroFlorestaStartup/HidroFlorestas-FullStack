@@ -1,0 +1,9 @@
+# Evidências de implementação — fase5
+Estado inicial: PLAN. Base 7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d; PRfase4 pendente por403 do conector; branch publicada https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/tree/feat/frontend-laboratory-dashboard; base temporária conforme estado real. Startercbb954a somenteleitura.
+Nenhum teste novo PASS ou problema funcional confirmado por esta inspeção. Hipótese de anúncio antesonLoad será testada antes do produto.
+
+## Análise independente antes do commit PLAN
+
+mission_context, somente leitura sobre HEADbase7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d:0P1/P2 materiais,12FR/4SC/19tarefas com cobertura documental completa, sem tarefas órfãs/violação de constituição. Pré-requisitos SpecKit PASS; hooks ausentes. LOWs editoriais ajustados: nome STALE_REVISION e repetição da mesma seleção incerta, distinguindo resets explícitos por nova seleção/sucesso/remoção confirmada. Limite: nenhuma suíte nova ou implementação validada ainda.
+
+Evento posterior ao preflight de14:20Z: CI fase4 run39267705060/job118111516392 terminou FAIL em Integration. RegressionSetup e Unit PASS; CRI-REV-002 quota concorrente recebeu INTERNAL_ERROR em vez de RATE_LIMITED, com conflitos40001/P2034 registrados. Os12gates seguintes não executaram. Artefato12192554979 ZIP conferido, SHA25618f1bec27a42ae84c049d69ee634c402a61b53d041f706acfbf60c7fbe886566. Nenhuma alteração de backend/teste/guard para conseguir PASS; rerun pelo conector também403. Usuário indicará CLI autenticado; PRs/review/rerun seguem pendentes de acesso, código da fase5 pode continuar. O FAIL será preservado e novo resultado deverá ser conferido no HEAD exato.
