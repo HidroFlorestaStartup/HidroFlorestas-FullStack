@@ -123,6 +123,7 @@ type CoverTransport = {
   onContent?: (route: Route, url: URL, count: number) => Promise<void>;
   onInitiate?: (route: Route, body: UploadCommand, count: number) => Promise<void>;
   onConfirm?: (route: Route, path: string, count: number) => Promise<void>;
+  onRemove?: (route: Route, count: number) => Promise<void>;
 };
 
 function ticket(index = 1): UploadTicket {
@@ -180,6 +181,7 @@ async function fakeCover(page: Page, context: BrowserContext, info: TestInfo, op
     if (url.pathname === coverApi && request.method() === "DELETE") {
       expect(request.postDataJSON()).toEqual({ expectedRevision: transport.dto.image.revision });
       transport.removals.push(transport.dto.image.revision);
+      if (transport.onRemove) return transport.onRemove(route, transport.removals.length);
       transport.dto = { ...transport.dto, image: { revision: transport.dto.image.revision + 1, hasImage: false } };
       return route.fulfill({ status: 204, headers: privateHeaders });
     }
@@ -510,12 +512,15 @@ test("UI fake RED/GREEN confirmed upload does not announce success before its ne
     await expect.poll(() => transport.content.some(query => new URLSearchParams(query).get("revision") === "2")).toBe(true);
     await expect(panel(page).getByRole("img")).toHaveAttribute("src", /revision=2(?:&|$)/);
     expect(await panel(page).getByRole("img").evaluate(node => (node as HTMLImageElement).naturalWidth)).toBe(0);
+    await expect.soft(status(page)).toHaveCSS("background-color", "rgb(245, 248, 246)");
     await capture(page, info, "ui-fake-confirmed-new-bytes-pending", status(page));
     // A successful server confirmation and a loaded preview are distinct facts.
     await expect(status(page)).not.toContainText("Capa salva.");
     held.release();
     await decoded(panel(page).getByRole("img"));
     await expect(status(page)).toContainText("Capa salva.");
+    await expect.soft(status(page)).toHaveCSS("background-color", "rgb(234, 245, 237)");
+    await capture(page, info, "ui-fake-visual-confirmed-loaded-success", status(page));
     expect(transport.commands).toHaveLength(1); expect(transport.commands[0].expectedRevision).toBe(1);
   } finally { held.release(); }
 });
@@ -658,11 +663,20 @@ test("UI fake metadata failure and byte retry remain distinct while the persiste
   failMetadataNext = true;
   await reloadButton(page).click();
   await expect(panel(page).getByRole("alert")).toHaveText("Não foi possível recarregar a capa.");
+  // An error and its retry instruction cannot have the background of success.
+  const statusBackground = () => status(page).evaluate(node => getComputedStyle(node).backgroundColor);
+  const visualExpect = expect.configure({ soft: true });
+  await visualExpect.poll(statusBackground).toBe("rgb(245, 248, 246)");
+  await capture(page, info, "ui-fake-visual-metadata-error", status(page));
   expect(transport.content).toHaveLength(1);
   await reloadButton(page).click();
   await expect(status(page)).toHaveText("Capa recarregada."); await decoded(panel(page).getByRole("img"));
+  await visualExpect.poll(statusBackground).toBe("rgb(234, 245, 237)");
+  await capture(page, info, "ui-fake-visual-loaded-success", status(page));
   await reloadButton(page).click();
   await expect(status(page)).toContainText("Tente novamente.");
+  await visualExpect.poll(statusBackground).toBe("rgb(245, 248, 246)");
+  await capture(page, info, "ui-fake-visual-byte-error", status(page));
   await expect(panel(page).getByText("Capa indisponível.", { exact: true })).toBeVisible();
   await reloadButton(page).click();
   await expect(status(page)).toHaveText("Capa recarregada."); await decoded(panel(page).getByRole("img"));
@@ -670,6 +684,51 @@ test("UI fake metadata failure and byte retry remain distinct while the persiste
   expect(transport.content.map(query => new URLSearchParams(query).get("revision"))).toEqual(["1", "1", "1", "1"]);
   expect(new Set(transport.content).size).toBe(4);
   expect(transport.commands).toHaveLength(0); expect(transport.directUploads).toBe(0);
+});
+
+test("UI fake accepted removal retires an older preview even when deletion fails", async ({ page, context }, info) => {
+  const transport = await fakeCover(page, context, info);
+  const olderBytes = gate(), deletion = gate();
+  transport.onContent = async (route, _url, count) => {
+    if (count === 2) await olderBytes.promise;
+    await route.fulfill({ status: 200, contentType: "image/png", body: transport.bytes, headers: privateHeaders });
+  };
+  transport.onRemove = async route => {
+    await deletion.promise;
+    await route.fulfill({ status: 503, json: { error: { code: "UNAVAILABLE", message: "Falha sintética ao remover." } }, headers: privateHeaders });
+  };
+  try {
+    await page.goto(coverArea); await decoded(panel(page).getByRole("img"));
+    await reloadButton(page).click();
+    await expect.poll(() => transport.content.length).toBe(2);
+    await expect(status(page)).toHaveText("Tentando recarregar a capa…");
+    const olderImage = await panel(page).getByRole("img").elementHandle();
+    expect(olderImage).not.toBeNull();
+    await olderImage!.evaluate(node => node.addEventListener("load", () => node.setAttribute("data-frontend-areas-observed-load", "yes"), { once: true }));
+    expect(await olderImage!.evaluate(node => (node as HTMLImageElement).naturalWidth)).toBe(0);
+    page.once("dialog", dialog => dialog.accept());
+    const remove = panel(page).getByRole("button", { name: "Remover capa", exact: true });
+    await remove.click();
+    await expect.poll(() => transport.removals.length).toBe(1);
+    await expect(remove).toBeDisabled();
+    olderBytes.release();
+    await expect.poll(() => olderImage!.getAttribute("data-frontend-areas-observed-load")).toBe("yes");
+    await decoded(panel(page).getByRole("img")); await rendered(page);
+    await expect.soft(status(page)).not.toContainText("Capa recarregada.");
+    await expect.soft(status(page)).not.toHaveCSS("background-color", "rgb(234, 245, 237)");
+    await capture(page, info, "ui-fake-visual-removal-pending-after-old-load", status(page));
+    deletion.release();
+    const alert = panel(page).getByRole("alert");
+    await expect(alert).toHaveText("Falha sintética ao remover.");
+    await expect(remove).toBeEnabled();
+    await expect.soft(status(page)).not.toContainText(/Capa recarregada|Tentando|Carregando/);
+    await expect.soft(status(page)).not.toHaveCSS("background-color", "rgb(234, 245, 237)");
+    await capture(page, info, "ui-fake-visual-removal-error-after-old-load", alert);
+    expect(transport.removals).toEqual([1]);
+    expect(transport.dto.image.revision).toBe(1); expect(transport.dto.image.hasImage).toBe(true);
+    expect(transport.commands).toHaveLength(0); expect(transport.confirmations).toHaveLength(0);
+    expect(transport.directUploads).toBe(0);
+  } finally { olderBytes.release(); deletion.release(); }
 });
 
 test("UI fake authoritative expiry and stale revision preserve selection and allow a fresh attempt, replacement and removal", async ({ page, context }, info) => {
