@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Crosshair, MapPin, Save } from "lucide-react";
 import { AreaMap } from "./area-map";
 import { pointReducer } from "./area-form-state";
+import styles from "./areas.module.css";
 export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
   const router = useRouter();
   const [point, dispatch] = useReducer(pointReducer, {
@@ -120,27 +121,26 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       setSubmitting(false);
     }
   }
-  const inputClass =
-    "mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none placeholder:text-slate-400 focus:border-green-600 focus:ring-4 focus:ring-green-100";
-  const labelClass = "block text-sm font-bold text-slate-700";
+  const inputClass = styles.input;
+  const labelClass = styles.label;
   return (
-    <section className="space-y-6">
-      <div className="flex items-start gap-3">
+    <section className={styles.page}>
+      <div className={styles.formIntro}>
         <Link
           aria-label="Voltar às áreas"
           href={`/dashboard/laboratories/${laboratoryId}/areas`}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-700 text-white hover:bg-amber-800"
+          className={styles.back}
         >
-          <ArrowLeft size={22} />
+          <ArrowLeft size={22} aria-hidden="true" />
         </Link>
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-green-700">
+        <div className={styles.heading}>
+          <p className={styles.eyebrow}>
             Novo ponto
           </p>
-          <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h1 className={styles.title}>
             Nova Área para Monitoramento
           </h1>
-          <p className="mt-2 text-slate-500">
+          <p className={styles.description}>
             Informe os dados e confirme um único ponto no mapa ou pelas
             coordenadas.
           </p>
@@ -148,10 +148,10 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       </div>
       <form
         onSubmit={submit}
-        className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+        className={styles.form + " " + styles.card}
       >
-        <div className="grid gap-7 p-5 sm:p-7 lg:grid-cols-[1.1fr_.9fr]">
-          <div className="space-y-5">
+        <div className={styles.formGrid}>
+          <div className={styles.fields}>
             <label className={labelClass}>
               Nome da área
               <input
@@ -163,7 +163,7 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
                 className={inputClass}
               />
             </label>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className={styles.fieldGrid}>
               <label className={labelClass}>
                 Latitude
                 <input
@@ -201,12 +201,12 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               type="button"
               disabled={locating}
               onClick={locate}
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-green-600 px-4 py-2.5 font-bold text-green-700 hover:bg-green-50 disabled:opacity-50"
+              className={styles.outline}
             >
-              <Crosshair size={18} />
+              <Crosshair size={18} aria-hidden="true" />
               {locating ? "Obtendo localização…" : "Usar minha localização"}
             </button>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className={styles.fieldGrid}>
               {[
                 ["municipality", "Município"],
                 ["state", "UF"],
@@ -214,14 +214,14 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               ].map(([name, label]) => (
                 <label key={name} className={labelClass}>
                   {label}{" "}
-                  <span className="font-normal text-slate-400">(opcional)</span>
+                  <span className={styles.optional}>(opcional)</span>
                   <input name={name} maxLength={100} className={inputClass} />
                 </label>
               ))}
             </div>
             <label className={labelClass}>
               Descrição{" "}
-              <span className="font-normal text-slate-400">(opcional)</span>
+              <span className={styles.optional}>(opcional)</span>
               <textarea
                 name="description"
                 maxLength={2000}
@@ -230,41 +230,41 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               />
             </label>
           </div>
-          <div className="min-w-0">
-            <div className="mb-3 flex items-center gap-2 text-sm font-bold text-slate-700">
-              <MapPin className="text-green-600" size={18} /> Selecione o ponto
+          <div className={styles.mapColumn}>
+            <div className={styles.mapTitle}>
+              <MapPin size={18} aria-hidden="true" /> Selecione o ponto
             </div>
             <AreaMap
               latitude={latitude}
               longitude={longitude}
               onSelect={(lat, lng) => select(String(lat), String(lng))}
             />
-            <p className="mt-3 text-xs leading-5 text-slate-500">
+            <p className={styles.mapHelp}>
               Clique no mapa ou digite as coordenadas. Nada será salvo antes da
               confirmação.
             </p>
           </div>
         </div>
-        <div className="border-t border-slate-200 bg-slate-50 px-5 py-4 sm:px-7">
+        <div className={styles.formFooter}>
           <p
             role="status"
             aria-live="polite"
-            className="mb-3 min-h-5 text-sm font-medium text-amber-800"
+            className={styles.status}
           >
             {message}
           </p>
-          <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <div className={styles.actions}>
             <Link
               href={`/dashboard/laboratories/${laboratoryId}/areas`}
-              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-slate-300 px-5 py-2.5 font-bold text-slate-700 hover:bg-white"
+              className={styles.outline}
             >
               Cancelar
             </Link>
             <button
               disabled={submitting}
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-2.5 font-bold text-white shadow-sm hover:bg-green-700 disabled:opacity-50"
+              className={styles.button}
             >
-              <Save size={18} />
+              <Save size={18} aria-hidden="true" />
               {submitting ? "Salvando…" : "Confirmar ponto e cadastrar"}
             </button>
           </div>
