@@ -37,3 +37,11 @@
 
 ## Dependencies & Parallel Opportunities
 T001→T004→T005→T008 antes do conteúdo.T009/T013 podem ser preparados junto de T005 em arquivos distintos;T006 caracteriza todos os testes novos antes de T010/T014 (RED somente quando defeito real).T016 antes de push.T017→T018→T019;se T018 alterar fonte/testes,voltar aos gates afetados e rodada final estável T017. MVP verificável US1,mas missão inclui US2/US3 e fase5 posterior.Sem deploy.
+
+## Adendo focal OBS-UI-01 — PLAN → EXECUTE → REVIEW
+- [x] T020 Registrar baseline, autoridade, reprodução histórica e plano focal em spec.md/plan.md antes do código.
+- [ ] T021 Aplicar/commitar teste de palavra inteira em tests/e2e/frontend-mobile-navigation.spec.ts e obter RED oficial completo; preservar FAIL/capturas.
+- [ ] T022 Aplicar somente CSS local em src/components/workspace/workspace.module.css; obter GREEN oficial e Build/Typecheck/Lint, preservando escala/alvos/foco.
+- [ ] T023 Revisar delta e capturas por agente independente, registrar evidências e validar eventuais correções.
+- [ ] T024 Publicar na branch existente, conferir15gates PASS no HEAD exato e atualizar PR14 com recibo; sem merge/deploy.
+Dependências: T020→T021→T022→T023→T024. Sem suítes/cluster simultâneos. Recibo remoto encerra T024 sem commit documental circular.

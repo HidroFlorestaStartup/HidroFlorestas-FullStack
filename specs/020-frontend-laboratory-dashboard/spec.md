@@ -62,3 +62,9 @@ Laboratório/contexto autorizado; resumo com contagens e links; página de event
 DECISAO_CONFIRMADA: autorização do usuário nesta missão; handoff de Pedro fornece recorte operacional. Starter cbb954a é apoio visual, não domínio.
 Rastreabilidade: CF-PRD-FR-010, CF-UC-014, CF-PFLOW-007 e IMP-002/IMP-007 conforme specs002/003/007; Spec019 para shell. PRD Code-First permanece EM_REVISAO, sem promoção normativa.
 Fase5 depende desta fase pelo shell; PR empilhado se4 aberta. Sem backend,AuthContext,globals,root,lockfile,ciência,provedores reais ou merge.
+
+## Adendo focal OBS-UI-01 — 2026-10-19
+FATO_DOCUMENTADO: PROMPT-CODEX.md do pacote hidrofloresta-fix-visual-pr14-pr15-20261019.zip e solicitação atual autorizam somente duas correções nos PRs existentes. Este adendo cobre OBS-UI-01, vinculado a FR-002/SC-001/SC-003.
+- A palavra Configurações deve ocupar uma única linha interna, inclusive em paisagem667×375 com texto200%, Poppins e safe-area34 emulada; ícone e palavra podem ocupar linhas flex distintas. Não reduzir a fonte ampliada.
+- Preservar alvos44px, toque, Tab/ShiftTab, foco/rolagem e três/quatro links em320/375, além de768/1440.
+- Aceite técnico: RED oficial antes do CSS, GREEN oficial após CSS, revisão independente e15gates PASS no novo HEAD. Aceite humano continua pendente.
