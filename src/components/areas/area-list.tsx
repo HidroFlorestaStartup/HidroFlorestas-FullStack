@@ -39,7 +39,9 @@ export function AreaList({ laboratoryId }: { laboratoryId: string }) {
           setError("Falha de conexão. Tente novamente.");
         }
       });
-    return (
+    return () => controller.abort();
+  }, [laboratoryId, attempt]);
+  return (
     <section className={styles.page} aria-labelledby="areas-title">
       <div className={styles.listHeader}>
         <div className={styles.pageIntro}>
