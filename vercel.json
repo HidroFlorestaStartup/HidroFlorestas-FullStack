@@ -14,7 +14,8 @@
       "feat/frontend-login": false,
       "feat/frontend-account": false,
       "feat/frontend-workspace-shell": false,
-      "feat/frontend-laboratory-dashboard": false
+      "feat/frontend-laboratory-dashboard": false,
+      "feat/frontend-areas-cover": false
     }
   }
 }
