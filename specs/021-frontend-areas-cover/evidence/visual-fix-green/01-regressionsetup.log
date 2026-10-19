@@ -1,0 +1,27 @@
+[2026-10-19T17:50:02.985Z] START phase=accounts-migrate-deploy attempt=1
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "accounts_development", schema "public" at "127.0.0.1:55427"
+
+14 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+[2026-10-19T17:50:04.021Z] END phase=accounts-migrate-deploy attempt=1 exit=0 duration_ms=1036
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-tQnKEZ\accounts-migrate-deploy-attempt-1.log
+Accounts database accounts_development: 14 migrations verified; no account data imported.
+[2026-10-19T17:50:04.221Z] START phase=accounts-migrate-deploy attempt=1
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "accounts_regression_test", schema "public" at "127.0.0.1:55427"
+
+14 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+[2026-10-19T17:50:05.281Z] END phase=accounts-migrate-deploy attempt=1 exit=0 duration_ms=1061
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-f4pijY\accounts-migrate-deploy-attempt-1.log
+Accounts database accounts_regression_test: 14 migrations verified; no account data imported.
+Accounts development, regression test and empty reference databases are ready on the dedicated cluster.

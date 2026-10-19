@@ -1,0 +1,148 @@
+{
+  "head": "38c15c25b8164e3e22f7a09e0419cce89d571693",
+  "since": "2026-10-19T17:38:47.341Z",
+  "records": 2,
+  "snapshots": [
+    "e26ace32656de6af3ec3cde0a3a4f466b30614ab21363c918ff099238857edcb"
+  ],
+  "files": [
+    {
+      "path": "01-regressionsetup.log",
+      "sha256": "7c2bd78edcf92a0fcbfd65b91798c4623776280627887e731554fd5868bf7b52",
+      "bytes": 1429
+    },
+    {
+      "path": "02-e2e.log",
+      "sha256": "bbcaf7101d4949a214b0f13aa59ecfd59e48290f43e91aef836c6bc95ef47d8c",
+      "bytes": 158219
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-confirmed-new-bytes-pending-viewport.json",
+      "sha256": "ba6700c6de2756492f2543de673b009923cadfc5e06cf8c0e1c3a6727fa731a9",
+      "bytes": 875
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-confirmed-new-bytes-pending-viewport.png",
+      "sha256": "d17deff8c41c9c68f2f4e6382a7157de7ea1394894f9129655df491678a8170f",
+      "bytes": 58873
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.json",
+      "sha256": "5179258f09e36d0f88df5781e1bfd0af5a41f4d71744c588153bcc60e8958bac",
+      "bytes": 803
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.png",
+      "sha256": "88c17b5b38b75bc4291c9f0cdcfa307048a8c970c6060c6e7a4acf27266a08dd",
+      "bytes": 71919
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.json",
+      "sha256": "20898a487aa1b822a788342106ebc428544364ab6fa6b925b6875b2aec015f49",
+      "bytes": 793
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.png",
+      "sha256": "3050835fecf891b3252800e723bf89d5a45b8bc10a735ba1fe99d40ffdcc1c41",
+      "bytes": 49206
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.json",
+      "sha256": "684fc3f5533f735f623f8d0cb102d4d9bef3767dbb84a17f127397f8731a6986",
+      "bytes": 795
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.png",
+      "sha256": "5f01cf6e584988864446ad5440a0fed7f2acdc3bb9aa9581e8ed2c011e2bbcc8",
+      "bytes": 47717
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.json",
+      "sha256": "a10db2f9bf5545625d3d7054dfce907d5e4ab7c081750093e2cf3779c3a51ce9",
+      "bytes": 800
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.png",
+      "sha256": "30b8b89a149a1c52ca3a4561b8822f217880c26e994f0e07a79c714fe766a09b",
+      "bytes": 56704
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-metadata-error-after-pending-preview-viewport.json",
+      "sha256": "14bb82dcc1fe8e4876ff25da76fecee3e8a38b927c11fa51d1ef20fe3e7307a9",
+      "bytes": 893
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-metadata-error-after-pending-preview-viewport.png",
+      "sha256": "adea44f07e8459473752cea3a921c605f6b0191322cb2df4c51fe42c8ee3a9d1",
+      "bytes": 60615
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-byte-error-viewport.json",
+      "sha256": "c5afe9b625a6f014776d55268cbefe5c5b07b05ba376043af875238e64b2a1d6",
+      "bytes": 855
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-byte-error-viewport.png",
+      "sha256": "8fcdb58b53bd4ff4259f92174b3922e66bbd73e4420a62b5fdbf69f9376e9c6d",
+      "bytes": 61293
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-confirmed-loaded-success-viewport.json",
+      "sha256": "831bde588445627d3d134d0d8d20ba9508294755b90837c1f4dacd346f721c6a",
+      "bytes": 883
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-confirmed-loaded-success-viewport.png",
+      "sha256": "a040f6b2b66aa9e9636dcc590b043d283d1a7c03a22d994545121d142cf87ab9",
+      "bytes": 57238
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-loaded-success-viewport.json",
+      "sha256": "9c6e8aaa0d6c243141af194e036b3694d2577a7e72083623eb1af2326bfac9db",
+      "bytes": 863
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-loaded-success-viewport.png",
+      "sha256": "61d1ed2755d38a4fa511a78772b128bc86aecb0c579f73478c6ba2e6869018a1",
+      "bytes": 56420
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-metadata-error-viewport.json",
+      "sha256": "6b4033f7198b554e004161d6505c30bdf75595efd4c6ad18ebcb524104399a7a",
+      "bytes": 861
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-metadata-error-viewport.png",
+      "sha256": "9c2375facdc2de2f3efcbd800651bd9b91259b2d4603240f69b2cda5661e82e9",
+      "bytes": 61348
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-removal-error-after-old-load-viewport.json",
+      "sha256": "c1e0a1e525e6ba3f066117d5d1f02e64badde36f16d27ffbaafc2c6aa41f670d",
+      "bytes": 891
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-removal-error-after-old-load-viewport.png",
+      "sha256": "77a42fc8306724920ea9ec9e3c8c1f210fecf746cbb4ba8629ca0548baac367b",
+      "bytes": 58594
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-removal-pending-after-old-load-viewport.json",
+      "sha256": "47aa174f6e81eef32fefeea3089e361a4548173402fd5d9c9edc7897b87d26da",
+      "bytes": 895
+    },
+    {
+      "path": "before-frontend-areas-ui-fake-visual-removal-pending-after-old-load-viewport.png",
+      "sha256": "550c9b22cd4b39aa38e4ee28ec6775153d6365f62c9d1df3cb3eb7d88e24cce2",
+      "bytes": 57288
+    },
+    {
+      "path": "results.jsonl",
+      "sha256": "ce95479a57faef7f76d5591d99452c4710f215af7a8bfd000163768cfa68473b",
+      "bytes": 904,
+      "original_sha256": "5e3afe50f07943f774de6e41aa5105555b82fb1e200bcb1fbc994fee499e440c",
+      "original_bytes": 906
+    }
+  ],
+  "checksum_scope": "sha256/bytes identify LF-normalized versioned text blobs; original_sha256/original_bytes preserve original archived bytes where different."
+}

@@ -1,0 +1,102 @@
+npm notice run hidro-florestas-fullstack@0.1.0 build
+npm notice run npx prisma generate && next build
+npm notice run hidro-florestas-fullstack@0.1.0 npx
+npm notice run prisma generate
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+✔ Generated Prisma Client (v7.4.2) to .\src\generated\prisma in 872ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 35ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.9s
+  Running TypeScript ...
+  Finished TypeScript in 25.0s ...
+  Collecting page data using 13 workers ...
+  Generating static pages using 13 workers (0/32) ...
+  Generating static pages using 13 workers (8/32) 
+  Generating static pages using 13 workers (16/32) 
+  Generating static pages using 13 workers (24/32) 
+✓ Generating static pages using 13 workers (32/32) in 383ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /admin
+├ ƒ /admin/users
+├ ƒ /api/admin/users
+├ ƒ /api/admin/users/[userId]
+├ ƒ /api/admin/users/[userId]/audit
+├ ƒ /api/admin/users/[userId]/role
+├ ƒ /api/admin/users/[userId]/status
+├ ƒ /api/auth/account-deletion
+├ ƒ /api/auth/change-password
+├ ƒ /api/auth/email-verification
+├ ƒ /api/auth/email-verification/confirm
+├ ƒ /api/auth/email-verification/resend
+├ ƒ /api/auth/logout
+├ ƒ /api/auth/me
+├ ƒ /api/auth/password-reset/confirm
+├ ƒ /api/auth/password-reset/request
+├ ƒ /api/auth/sign-in
+├ ƒ /api/auth/sign-up
+├ ƒ /api/internal/mail/process
+├ ƒ /api/laboratories
+├ ƒ /api/laboratories/[laboratoryId]
+├ ƒ /api/laboratories/[laboratoryId]/areas
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/draft
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/current
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/revocations
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/eligibility
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/operations/[idempotencyKey]
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/image
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/image/content
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/image/uploads
+├ ƒ /api/laboratories/[laboratoryId]/areas/[areaId]/image/uploads/[attemptId]/confirm
+├ ƒ /api/laboratories/[laboratoryId]/dashboard/history
+├ ƒ /api/laboratories/[laboratoryId]/dashboard/summary
+├ ƒ /api/laboratories/[laboratoryId]/memberships
+├ ƒ /api/laboratories/[laboratoryId]/memberships/[membershipId]
+├ ƒ /api/laboratories/[laboratoryId]/territorial-map
+├ ƒ /change-password
+├ ƒ /dashboard
+├ ƒ /dashboard/admin/users
+├ ƒ /dashboard/collects
+├ ƒ /dashboard/laboratories/[laboratoryId]
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/map
+├ ƒ /dashboard/laboratories/[laboratoryId]/members
+├ ○ /delete-account
+├ ○ /forgot-password
+├ ƒ /login
+├ ○ /logout
+├ ○ /register
+├ ○ /reset-password
+├ ○ /verify-email
+└ ƒ /workspace
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

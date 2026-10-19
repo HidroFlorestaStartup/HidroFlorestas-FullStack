@@ -39,8 +39,8 @@ T019 permanece aberto neste registro anterior ao push. Seu fechamento efetivo se
 
 ## Adendo focal OBS-UI-02 — PLAN → EXECUTE → REVIEW
 - [x] T020 Registrar autoridade, baseline/merge cumulativo, hipótese focal, contratos e plano antes do código em spec.md/plan.md.
-- [ ] T021 Aplicar/commitar testes de cor e corrida de remoção em tests/e2e/frontend-areas.spec.ts; executar RED oficial completo e preservar logs/capturas.
-- [ ] T022 Implementar somente apresentação em src/components/areas/area-cover.tsx e cover.module.css; GREEN oficial incluindo capas/concorrência/reflow e Build/Typecheck/Lint.
-- [ ] T023 Revisar delta/capturas com revisor independente, registrar evidências/checksums e validar correções materiais.
+- [x] T021 Aplicar/commitar testes de cor e corrida de remoção em tests/e2e/frontend-areas.spec.ts; executar RED oficial completo e preservar logs/capturas.
+- [x] T022 Implementar somente apresentação em src/components/areas/area-cover.tsx e cover.module.css; GREEN oficial incluindo capas/concorrência/reflow e Build/Typecheck/Lint.
+- [x] T023 Revisar delta/capturas com revisor independente, registrar evidências/checksums e validar correções materiais.
 - [ ] T024 Confirmar CI14final, publicar na branch15 original, conferir15gates no HEAD15exato e atualizar PR15; recibo remoto encerra publicação sem ciclo documental.
 Dependências: T020→T021→T022→T023→T024. Um escritor por arquivo, nenhuma suíte/cluster local simultâneo, sem Cloudinary real ou merge de PR/deploy.
