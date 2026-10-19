@@ -72,3 +72,10 @@ Zero coordenada;±90/±180; precisão decimal; opcionais vazios; nome100/descri�
 
 ## Assumptions and Boundaries
 Ambiente sintético próprio preparado e runners existentes. Fakes de transporte provam UI, não operação de Cloudinary. Nenhum backend/API/AuthContext/schema/migration/dependência/lockfile/globals/layout-fonte raiz alterado. Mapa territorial, coletas, ambientais/drafts/IHFR recebem regressão, sem redesenho. Qualificadores IHFR/ADR0001 preservados.
+
+## Adendo focal OBS-UI-02 — 2026-10-19
+FATO_DOCUMENTADO: missão atual e PROMPT-CODEX.md do ZIP autorizam a correção visual no PR15 existente; vinculada a FR-009/SC-003, sem nova fase.
+- Status de sucesso verde somente após onLoad da tentativa atual ou remoção confirmada com atualização concluída. Loading, seleção, retry, falha e confirmação ainda sem bytes usam apresentação neutra ou status vazio.
+- Falhas de GET de metadados e dos bytes continuam distintas, com alerta vermelho preservado. Não comparar palavras das mensagens para inferir sucesso.
+- Remoção efetivamente aceita invalida callbacks visuais anteriores; cancelar mantém o comportamento atual. Bytes antigos completando durante DELETE pendente/falho não podem restaurar sucesso.
+- Aceite técnico: RED real no harness oficial antes da implementação, GREEN completo, revisão independente e15gates no novo HEAD cumulativo. Transporte fake rotulado não comprova Cloudinary real; aceite humano separado.

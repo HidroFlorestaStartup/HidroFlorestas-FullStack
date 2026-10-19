@@ -36,3 +36,11 @@
 T001→T003 antesT004/005. T004 eT005 no mesmoarquivo têm um escritor. T006 antesT007/008/010/012/013. T007/T010 podem ser um escritor eT008/T012 outro, sem compartilharCSSna mesmahora. T009/011/014 usam suites oficiais sequenciais, nunca clusters concorrentes. T016 antesprimeiropush. T017→T018→T019; mudança material após revisão exige novosgates afetados/CI atual. As três histórias fazem parte da missão, semencerrarnoMVP.
 
 T019 permanece aberto neste registro anterior ao push. Seu fechamento efetivo será confirmado pelo recibo final do PR, com HEAD/CI/artefato, evitando commits documentais que reabram o ciclo de CI.
+
+## Adendo focal OBS-UI-02 — PLAN → EXECUTE → REVIEW
+- [x] T020 Registrar autoridade, baseline/merge cumulativo, hipótese focal, contratos e plano antes do código em spec.md/plan.md.
+- [ ] T021 Aplicar/commitar testes de cor e corrida de remoção em tests/e2e/frontend-areas.spec.ts; executar RED oficial completo e preservar logs/capturas.
+- [ ] T022 Implementar somente apresentação em src/components/areas/area-cover.tsx e cover.module.css; GREEN oficial incluindo capas/concorrência/reflow e Build/Typecheck/Lint.
+- [ ] T023 Revisar delta/capturas com revisor independente, registrar evidências/checksums e validar correções materiais.
+- [ ] T024 Confirmar CI14final, publicar na branch15 original, conferir15gates no HEAD15exato e atualizar PR15; recibo remoto encerra publicação sem ciclo documental.
+Dependências: T020→T021→T022→T023→T024. Um escritor por arquivo, nenhuma suíte/cluster local simultâneo, sem Cloudinary real ou merge de PR/deploy.
