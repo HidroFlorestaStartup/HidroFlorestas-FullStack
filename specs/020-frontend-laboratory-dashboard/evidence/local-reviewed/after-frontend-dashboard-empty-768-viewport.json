@@ -1,0 +1,38 @@
+{
+  "name": "empty-768",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-empty-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 130
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 956,
+      "extent": 956
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "p",
+    "x": 208,
+    "y": 638.359375,
+    "width": 512,
+    "height": 72.390625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

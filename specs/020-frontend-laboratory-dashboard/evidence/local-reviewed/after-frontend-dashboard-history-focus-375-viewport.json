@@ -1,0 +1,38 @@
+{
+  "name": "history-focus-375",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-history-focus-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 210,
+      "height": 755,
+      "extent": 4063
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "button",
+    "x": 299,
+    "y": 760.9375,
+    "width": 44,
+    "height": 44
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

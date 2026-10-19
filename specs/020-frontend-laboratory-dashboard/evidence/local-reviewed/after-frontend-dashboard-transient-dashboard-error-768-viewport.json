@@ -1,0 +1,38 @@
+{
+  "name": "transient-dashboard-error-768",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-transient-dashboard-error-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 690,
+      "extent": 690
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "p",
+    "x": 209,
+    "y": 576.015625,
+    "width": 279.859375,
+    "height": 22.390625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

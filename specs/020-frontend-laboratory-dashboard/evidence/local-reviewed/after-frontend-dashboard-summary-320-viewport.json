@@ -1,0 +1,38 @@
+{
+  "name": "summary-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-summary-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 959,
+      "height": 724,
+      "extent": 9586
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "a",
+    "x": 16,
+    "y": 308.75,
+    "width": 288,
+    "height": 281.1875
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}
