@@ -1,0 +1,141 @@
+  1) [chromium] › tests\e2e\frontend-workspace.spec.ts:64:7 › workspace and existing consumers at 320px text200 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "risk confirmation label breaks inside a word",[39m
+    [31m+ ][39m
+
+      115 |       }
+      116 |     }
+    > 117 |     expect(issues).toEqual([]);
+          |                    ^
+      118 |   });
+      119 | }
+      120 |
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:117:20
+
+    attachment #1: empty-320 (image/png) ───────────────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\empty-320-8cc0052c00711a1fb219b80abb72ed184ef4f715.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: list-320 (image/png) ────────────────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\list-320-aaf123b4124b1b6cc518a411693a368d86d81782.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: settings-320 (image/png) ────────────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\settings-320-e837cb7980576b7de36c501b18fdd8620fef3746.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: settings-confirmation-320 (image/png) ───────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\settings-confirmation-320-f877d96a474e724861782253e7f9c42ee47b4ac5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: consumer-summary-320 (image/png) ────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\consumer-summary-320-a311fe202ae2d687215347b4fd0b46a6af17d2a9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: consumer-areas-320 (image/png) ──────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\consumer-areas-320-a9c7138e1db1c8aa24f0de9f83647dae843427e1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: consumer-map-320 (image/png) ────────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\consumer-map-320-ce6682b0be67579d3d1f0420d59ef52ab1d9b508.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: consumer-members-320 (image/png) ────────────────────────────────────────────────
+    test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\attachments\consumer-members-320-d35e2c5e53743b73a9d5c24d4ed9a15ad9693a65.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-workspace-workspa-9186f--consumers-at-320px-text200-chromium\error-context.md
+
+  2) [chromium] › tests\e2e\frontend-workspace.spec.ts:213:5 › mobile account disclosure closes with Escape, navigation and desktop resize 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('heading', { level: 1 })[22m
+    [2m    - locator resolved to <h1 class="workspace-module__dP-vpW__title" aria-label="Olá, Owner! 👋 Ambiente de Análises HIDROFLORESTAS">…</h1>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <a href="/change-password" class="shell-module__aN5Q9a__accountLink">Alterar senha</a> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <a href="/change-password" class="shell-module__aN5Q9a__accountLink">Alterar senha</a> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m  2 × retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <div class="shell-module__aN5Q9a__headerInfo">…</div> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m  13 × retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m       - waiting for element to be visible, enabled and stable[22m
+    [2m       - element is visible, enabled and stable[22m
+    [2m       - scrolling into view if needed[22m
+    [2m       - done scrolling[22m
+    [2m       - <a href="/change-password" class="shell-module__aN5Q9a__accountLink">Alterar senha</a> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m       - waiting for element to be visible, enabled and stable[22m
+    [2m       - element is visible, enabled and stable[22m
+    [2m       - scrolling into view if needed[22m
+    [2m       - done scrolling[22m
+    [2m       - <a href="/change-password" class="shell-module__aN5Q9a__accountLink">Alterar senha</a> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m       - waiting for element to be visible, enabled and stable[22m
+    [2m       - element is visible, enabled and stable[22m
+    [2m       - scrolling into view if needed[22m
+    [2m       - done scrolling[22m
+    [2m       - <div class="shell-module__aN5Q9a__headerInfo">…</div> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m       - waiting for element to be visible, enabled and stable[22m
+    [2m       - element is visible, enabled and stable[22m
+    [2m       - scrolling into view if needed[22m
+    [2m       - done scrolling[22m
+    [2m       - <div class="shell-module__aN5Q9a__headerInfo">…</div> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m  2 × retrying click action[22m
+    [2m      - waiting 500ms[22m
+    [2m      - waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <a href="/change-password" class="shell-module__aN5Q9a__accountLink">Alterar senha</a> from <header id="application-header" class="shell-module__aN5Q9a__header">…</header> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting 500ms[22m
+
+
+      223 |   await expect(menu).toHaveAttribute("aria-expanded", "false");
+      224 |   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
+    > 225 |   await menu.click(); await page.getByRole("heading", { level: 1 }).click();
+          |                                                                     ^
+      226 |   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
+      227 |   await menu.click(); await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Laboratórios", exact: true }).focus();
+      228 |   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:225:69
+
+    attachment #1: mobile-menu-focus (image/png) ───────────────────────────────────────────────────
+    test-results\frontend-workspace-mobile--5d44a-vigation-and-desktop-resize-chromium\attachments\mobile-menu-focus-f4efd684515cb570cb9a81b04d56311346a361fc.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-workspace-mobile--5d44a-vigation-and-desktop-resize-chromium\error-context.md
+
+  2 failed
+    [chromium] › tests\e2e\frontend-workspace.spec.ts:64:7 › workspace and existing consumers at 320px text200 
+    [chromium] › tests\e2e\frontend-workspace.spec.ts:213:5 › mobile account disclosure closes with Escape, navigation and desktop resize 
+  118 passed (4.7m)

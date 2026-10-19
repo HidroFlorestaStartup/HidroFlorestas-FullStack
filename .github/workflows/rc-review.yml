@@ -10,6 +10,7 @@ on:
       - review/cri-rc-validation-20261012
       - feat/frontend-login
       - feat/frontend-account
+      - feat/frontend-workspace-shell
   workflow_dispatch:
 
 permissions:
@@ -28,7 +29,8 @@ jobs:
       github.ref_name == 'release/cri-rc-20261010' ||
       github.ref_name == 'review/cri-rc-validation-20261012' ||
       github.ref_name == 'feat/frontend-login' ||
-      github.ref_name == 'feat/frontend-account'
+      github.ref_name == 'feat/frontend-account' ||
+      github.ref_name == 'feat/frontend-workspace-shell'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -65,6 +67,8 @@ jobs:
             test-results/**/frontend-login-*.png
             test-results/**/frontend-account-*.png
             .accounts-validation/frontend-account/*.png
+            test-results/**/frontend-workspace-*.png
+            .accounts-validation/frontend-workspace/*.png
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true
