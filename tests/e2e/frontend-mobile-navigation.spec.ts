@@ -203,6 +203,22 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         await page.setViewportSize({ width: 667, height: 375 });
         await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
         await focusAndExpose(settings);
+        // The control may be reachable but the word must not be split internally.
+        const labelRectCount = await settings.evaluate(node => {
+          const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+          let part: Node | null;
+          while ((part = walker.nextNode())) {
+            const value = part.textContent ?? "";
+            const start = value.indexOf("Configurações");
+            if (start === -1) continue;
+            const range = document.createRange();
+            range.setStart(part, start);
+            range.setEnd(part, start + "Configurações".length);
+            return range.getClientRects().length;
+          }
+          return 0;
+        });
+        expect.soft(labelRectCount, "Configurações deve permanecer uma palavra inteira em paisagem").toBe(1);
         expect.soft((await visibleWithinReadingArea(settings)).visible, "Focused control exposed in landscape").toBe(true);
         await capture(page, info, state + "-landscape", records);
         const cdp = await context.newCDPSession(page);
