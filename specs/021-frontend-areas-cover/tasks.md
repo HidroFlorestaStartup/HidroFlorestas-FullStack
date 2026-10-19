@@ -7,9 +7,9 @@
 - [x] T003 Analisar consistência e commitar PLAN antes do código em specs/021-frontend-areas-cover/review.md.
 
 ## Phase 2: Foundation / testes antes do produto
-- [ ] T004 Criar testes reais de lista/form/detail e estado responsivo em tests/e2e/frontend-areas.spec.ts.
-- [ ] T005 Criar testes matriz8/protocolo privado de capa com GETreal/canEdit e fake explícito em tests/e2e/frontend-areas.spec.ts.
-- [ ] T006 Executar baseline oficial congelada; registrar RED real/caracterização e capturas before em specs/021-frontend-areas-cover/evidence/.
+- [x] T004 Criar testes reais de lista/form/detail e estado responsivo em tests/e2e/frontend-areas.spec.ts.
+- [x] T005 Criar testes matriz8/protocolo privado de capa com GETreal/canEdit e fake explícito em tests/e2e/frontend-areas.spec.ts.
+- [x] T006 Executar baseline oficial congelada; registrar RED real/caracterização e capturas before em specs/021-frontend-areas-cover/evidence/.
 
 ## Phase 3: US1 — lista e detalhe
 - [ ] T007 [US1] Adaptar AreaList em src/components/areas/area-list.tsx e areas.module.css sem alterar efeito/DTO/projeções.

@@ -1,0 +1,187 @@
+[
+  {
+    "file": "before-frontend-areas-transient-list-error-viewport.json",
+    "sha256": "c4d814d03602aa9bda12448aa9ad3a179b7ae614a8acfc9618e227650e901ba1",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-transient-list-error-viewport.png",
+    "sha256": "c82ab5a938c63828bf5190ce9e873cbcb034e6f10e0598d3084cb338f3574bd0",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-1440-viewport.json",
+    "sha256": "d540c249a269d7d9b5920ef39d1c4e4e00cd2c229584f3464615d12273e1a6ed",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-1440-viewport.png",
+    "sha256": "1ce1293b6381394c730b5b54ae34dc39c5b1d504128ea83709c920058d1162d5",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-320-viewport.json",
+    "sha256": "c6af40170273cee6be2740e6b9db5780d2284e7b693b10c676cc6059e3ee95a5",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-320-viewport.png",
+    "sha256": "409205ab376ec5d64c2b4dc24899dc7b9c3426b649116c3c43d3517ac4e55263",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-375-viewport.json",
+    "sha256": "f539ba57e73bae298edbc82e864ba97f8249e0da421caaceb428b1b413d66fd2",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-375-viewport.png",
+    "sha256": "dbdbc9ad0ff8572b77e5ff64e5e18d6d6b8d0982b0a2a4e56fac0745c2f3c2bd",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-768-viewport.json",
+    "sha256": "ebfe6b12b85f43f1fede0f23e09dd4258cf014297dddf897163cb48e4dccdad9",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-confirmation-progress-768-viewport.png",
+    "sha256": "553a8a00926b1193ce800ee5c522639a4c36d53c8eeec0234dd38df48b2e76a1",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-1440-viewport.json",
+    "sha256": "c43c72fae0062bdcae23aa291282a1bf38d4416de73828908d848ca545f2a188",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-1440-viewport.png",
+    "sha256": "b5754d4bb93d538df15982699dee36806c5533bd383abe8006623551a2e6adf1",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-320-viewport.json",
+    "sha256": "4ee085fb3ebccac249b5332ee9d31546aff2fd2d31b767bb5bbd253d5bd52911",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-320-viewport.png",
+    "sha256": "e6511d00eeb80cbcf2774885954a9650ceaf122fa3f589a4ffcdb9fd211a853b",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-375-viewport.json",
+    "sha256": "b984a6fdca3ad1a2f150e62c3dd33ef9b632a774d602263dd20b41e99489070d",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-375-viewport.png",
+    "sha256": "325e3cc5ce0fa9ffd87dd91fe7e25104db320ca5cc3aa21e9fab7ed1fe7c42ae",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-768-viewport.json",
+    "sha256": "c1c957aa697eba114310d9e569a6ca120966c56cb2bd4ae80a8436e6d305f23d",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-native-file-focus-768-viewport.png",
+    "sha256": "62e91087cd5d0c4fb253a7ba608ff9ec22d81d83edc79535c5ea97c9945e4600",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-1440-viewport.json",
+    "sha256": "1b6e2b46e0d836a760473547d09e811684efb88c1ac2a8b4652f26f460668062",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-1440-viewport.png",
+    "sha256": "04dbd7ff740238dddd109e24de9bae24e87f018101a5fc89d349cc459819301a",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-320-viewport.json",
+    "sha256": "0bf70ac217a200ef58bb83d586a0d85f0e63ba4c3381515a4722ee575141148c",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-320-viewport.png",
+    "sha256": "fa606d5d53d6cc3819b4310761cc738ff817e153230e36dab83eb7fce8eb644b",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-375-viewport.json",
+    "sha256": "6d33197e82ca5b9ee229fc7eed57e871e92dc72a86d517646596273d92ab44ff",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-375-viewport.png",
+    "sha256": "173364c5272dd90241189c5ce06ec5c088080dfe6b7b023838454ed703887253",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-768-viewport.json",
+    "sha256": "699d94bb064c311f9e6f5013b08d6793936f45ef49f76f43da65cceb6517e141",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-preview-768-viewport.png",
+    "sha256": "df98415d9c10fb1f2ccc503f2f7204c0362b7202f02b031448db6d31077f2ffc",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.json",
+    "sha256": "069d34cb36c3fb622e5dbbc93fe3ab05664454c7d0bd1ee48114eb076f013a5f",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.png",
+    "sha256": "43b99d773de1377b5e9e78567f26c7a899790606e32e41742325cd04d44c3211",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.json",
+    "sha256": "cdad94ebbe20448da62904b9436ab97e207c2263624a7c82a813db655f6c8217",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.png",
+    "sha256": "1101602b1d0607dacb5b7bda00e1e1a167e045e4bd1aa4a5d694da7a81edce10",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.json",
+    "sha256": "66a7322a658feb79d8ed07c340c868cd271b76af64cb5bea0ed7bae66fd13623",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.png",
+    "sha256": "5ebeb997e4a2c75ddfbce966dcd1ba034d015e157d16883212551a77085c756f",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.json",
+    "sha256": "a3e3f3a96a6772d263501b35bfcabdfddde83e33bb730e8650ef87d2c069ee52",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "before-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.png",
+    "sha256": "37ffde2d63d7aa9f2d5f8b076f362e0d7496fe7e0286326a32ec736b24cac0ad",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "diagnostic-1.log",
+    "sha256": "e0dd63d79cef6823db8e93724eb510c83d615ab136521174d031d2c1d163b380",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "diagnostic-2.log",
+    "sha256": "7400ae684f53fa6d731ff8422d471f0bdd592ddfa671e15fa24c142d46e33db8",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "diagnostics.jsonl",
+    "sha256": "89abec68295468877b6c04310e93f701f88975687ea6014c8ae4b0bbd9c21250",
+    "basis": "UTF-8-LF-without-BOM"
+  }
+]
