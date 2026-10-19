@@ -17,6 +17,10 @@ const popSubscribers = new Set<() => void>();
 function belongsToScope(path: string, scope: ContentScrollScope) { return path === scope || path.startsWith(scope + "/"); }
 function visibleContent(content: HTMLElement) { return content.isConnected && content.getClientRects().length > 0; }
 function ownScroll(content: HTMLElement) { return getComputedStyle(content).overflowY === "auto"; }
+export function clearContentScrollCache() {
+  positions.clear(); popRestore = null;
+  try { sessionStorage.removeItem(storageKey); } catch { /* Optional UI cache. */ }
+}
 function persist() {
   try {
     if (positions.size === 0) sessionStorage.removeItem(storageKey);
@@ -187,8 +191,8 @@ export function useContentScroll(scope: ContentScrollScope) {
       // Successful deletion stays on its public confirmation page. Discard this
       // disposable view cache on entry, rather than waiting for a login redirect.
       if (["/login", "/logout", "/register", "/delete-account"].includes(window.location.pathname)) {
-        positions.clear(); pendingRestore.current = null; popRestore = null;
-        try { sessionStorage.removeItem(storageKey); } catch { /* Optional UI cache. */ }
+        clearContentScrollCache();
+        pendingRestore.current = null;
       } else persist();
     };
   }, [pathname, scope]);
