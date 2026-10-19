@@ -1,5 +1,5 @@
-import { expect, test, type BrowserContext, type Page, type TestInfo } from "@playwright/test";
-import { copyFile, mkdir } from "node:fs/promises";
+import { expect, test, type BrowserContext, type Locator, type Page, type TestInfo } from "@playwright/test";
+import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 import { signSessionToken } from "../../src/app/api/server/auth/session";
@@ -73,23 +73,64 @@ async function noHorizontalOverflow(page: Page) {
   }
 }
 
-async function capture(page: Page, info: TestInfo, name: string) {
+async function capture(page: Page, info: TestInfo, name: string, target?: Locator) {
   const prefix = process.env.FRONTEND_DASHBOARD_CAPTURE_PREFIX ?? "after";
   if (!["before", "after"].includes(prefix)) throw new Error("Invalid dashboard evidence prefix");
-  const filename = `${prefix}-frontend-dashboard-${name}-viewport.png`;
+  const filename = prefix + "-frontend-dashboard-" + name + "-viewport.png";
   const path = info.outputPath(filename);
+  const scrolling = target
+    ? "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+    : "Preserved viewport after focus/navigation; no screenshot scrolling";
+  if (target) {
+    await target.evaluate(node => node.scrollIntoView({ block: "center", inline: "nearest", behavior: "instant" }));
+  }
+  await finishBrowserRendering(page);
   const mask = [];
   for (const input of await page.locator('input:not([type="checkbox"])').all()) {
     if (await input.evaluate(node => (node as HTMLInputElement).value.length > 0)) mask.push(input);
   }
-  // A true 900px viewport, including its fixed layers. Never a fullPage composite.
+  // A true 900px viewport, including the shell's own header/content/navigation
+  // regions. These captures never compose a fullPage document screenshot.
   await page.screenshot({ path, fullPage: false, animations: "disabled", mask });
+  const targetPosition = target
+    ? await target.evaluate(node => {
+      const box = node.getBoundingClientRect();
+      return { kind: "explicit screenshot target", tag: node.tagName.toLowerCase(), x: box.x, y: box.y, width: box.width, height: box.height };
+    })
+    : await page.evaluate(() => {
+      const node = document.activeElement;
+      if (!(node instanceof HTMLElement)) return null;
+      const box = node.getBoundingClientRect();
+      return { kind: "active element", tag: node.tagName.toLowerCase(), x: box.x, y: box.y, width: box.width, height: box.height };
+    });
+  const state = await page.evaluate(() => {
+    const content = document.getElementById("application-content");
+    const rootFontSize = getComputedStyle(document.documentElement).fontSize;
+    return {
+      viewport: { width: innerWidth, height: innerHeight },
+      text: { rootFontSize, percentRelativeTo16px: Number.parseFloat(rootFontSize) / 16 * 100, method: "computed html font-size; no browser zoom" },
+      scroll: {
+        document: { x: scrollX, y: scrollY },
+        content: content ? { left: content.scrollLeft, top: content.scrollTop, height: content.clientHeight, extent: content.scrollHeight } : null,
+      },
+    };
+  });
+  const metadataName = filename.replace(/\.png$/, ".json");
+  const metadataPath = info.outputPath(metadataName);
+  await writeFile(metadataPath, JSON.stringify({
+    name,
+    screenshot: { filename, fullPage: false, browserProject: info.project.name },
+    ...state,
+    target: targetPosition,
+    scrolling,
+  }, null, 2) + "\n", "utf8");
   const archive = join(process.cwd(), ".accounts-validation", "frontend-dashboard");
   await mkdir(archive, { recursive: true });
   await copyFile(path, join(archive, filename));
+  await copyFile(metadataPath, join(archive, metadataName));
   await info.attach(filename, { path, contentType: "image/png" });
+  await info.attach(metadataName, { path: metadataPath, contentType: "application/json" });
 }
-
 test.beforeAll(async () => {
   expect(process.env.DASHBOARD_FIXTURE_CONFIRMATION).toBe(DASHBOARD_FIXTURE_CONFIRMATION);
   await setupDashboardFixtures(process.env);
@@ -131,7 +172,7 @@ for (const width of widths) {
       .toEqual(history.items.map(item => item.destination));
     await textScale(page, width);
     await noHorizontalOverflow(page);
-    await capture(page, info, `summary-${width}`);
+    await capture(page, info, `summary-${width}`, overview.getByRole("link", { name: /Ver áreas/ }));
 
     const refresh = activity.getByRole("button", { name: "Atualizar histórico", exact: true });
     await refresh.focus();
@@ -175,7 +216,10 @@ for (const width of widths) {
     const owner = members.memberships.find(member => member.role === "OWNER")!;
     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
-    await promote.focus();
+    await roster.getByRole("link", { name: "Voltar ao resumo", exact: true }).focus();
+    for (let tabs = 0; tabs < 12 && !await promote.evaluate(node => document.activeElement === node); tabs += 1) {
+      await page.keyboard.press("Tab");
+    }
     await expect(promote).toBeFocused();
     await noHorizontalOverflow(page);
     await capture(page, info, `members-focus-${width}`);
@@ -191,7 +235,7 @@ for (const width of widths) {
     await expect(historySection(page).getByRole("button", { name: "Mais antigos", exact: true })).toBeDisabled();
     await expect(page.getByText(`${DASHBOARD_FIXTURE_PREFIX} laboratory 0`, { exact: true })).toHaveCount(0);
     await noHorizontalOverflow(page);
-    await capture(page, info, `empty-${width}`);
+    await capture(page, info, `empty-${width}`, historySection(page).getByText("Nenhuma atividade elegível neste laboratório.", { exact: true }));
   });
 
   test(`transient transport loading and failures retry real dashboard and members at ${width}px${width === 320 ? " text200" : ""}`, async ({ page, context }, info) => {
@@ -215,11 +259,11 @@ for (const width of widths) {
       await expect(page.getByRole("status", { name: "Carregando resumo", exact: true })).toBeVisible();
       await expect(page.getByRole("status", { name: "Carregando histórico", exact: true })).toBeVisible();
       await expect(page.getByText("Nenhuma atividade elegível neste laboratório.", { exact: true })).toHaveCount(0);
-      await capture(page, info, `transient-dashboard-loading-${width}`);
+      await capture(page, info, `transient-dashboard-loading-${width}`, page.getByRole("status", { name: "Carregando histórico", exact: true }));
       releaseDashboard();
       await expect(summarySection(page).getByRole("alert")).toContainText("Falha transitória sintética");
       await expect(historySection(page).getByRole("alert")).toContainText("Falha transitória sintética");
-      await capture(page, info, `transient-dashboard-error-${width}`);
+      await capture(page, info, `transient-dashboard-error-${width}`, historySection(page).getByRole("alert"));
       failDashboard = false;
       const summaryRetry = page.waitForResponse(response => response.url().endsWith(summaryEndpoint));
       await summarySection(page).getByRole("button", { name: "Tentar novamente", exact: true }).click();
@@ -238,11 +282,11 @@ for (const width of widths) {
       await page.goto(`${base}/members`);
       await textScale(page, width);
       await expect(membersSection(page).getByText(/Carregando membros/)).toBeVisible();
-      await capture(page, info, `transient-members-loading-${width}`);
+      await capture(page, info, `transient-members-loading-${width}`, membersSection(page).getByText(/Carregando membros/));
       releaseMembers();
       await expect(membersSection(page).getByText("Falha transitória sintética do transporte.", { exact: true })).toBeVisible();
       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
-      await capture(page, info, `transient-members-error-${width}`);
+      await capture(page, info, `transient-members-error-${width}`, membersSection(page).getByText("Falha transitória sintética do transporte.", { exact: true }));
       failMembers = false;
       const membersRetry = page.waitForResponse(response => response.url().endsWith(membershipsEndpoint));
       await membersSection(page).getByRole("button", { name: "Tentar novamente", exact: true }).click();
@@ -384,7 +428,7 @@ test("real redirects and global/contextual authority preserve owner-only roles a
     });
     expect(rejected.status()).toBe(409);
     expect((await rejected.json()).error.code).toBe("READ_ONLY");
-    await capture(page, info, "members-inactive-320");
+    await capture(page, info, "members-inactive-320", membersSection(page).getByText("Laboratório inativo — somente leitura.", { exact: true }));
   } finally {
     try {
       await db.user.update({ where: { id: DASHBOARD_FIXTURES.userIds[2] }, data: { role: "USER" } });
