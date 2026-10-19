@@ -554,6 +554,28 @@
     ],
     "authorization": "implementar/validar/commits/push/abrir-atualizar PRs de ambas sem confirmação adicional normal; merges com mantenedor",
     "phase4And5ImplementedInThisPreparation": false,
-    "publication": "commit/push/PR serão registrados por adendo após confirmação remota, sem antecipar SHA"
+    "publication": {
+      "state": "OPEN_FOR_REVIEW",
+      "prNumber": 13,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13",
+      "base": "development",
+      "branch": "docs/handoff-frontend-fases-4-5",
+      "firstPublishedCommit": "519ba69dac8fac8cf3c6088b124456a3e5718552",
+      "autoMerge": false,
+      "changedFiles": 9,
+      "directPromptUsableBeforeMerge": true,
+      "firstHeadChecksObserved": [
+        {
+          "name": "Vercel Preview Comments",
+          "state": "success"
+        },
+        {
+          "context": "Vercel",
+          "state": "pending"
+        }
+      ],
+      "finalClosingCommit": "informado na entrega; registro integra commit posterior sem autorreferência",
+      "note": "checks automáticos separados do CI funcional dos heads11/12; RC workflow não inclui branch documental; sem merge13/deploy manual"
+    }
   }
 }

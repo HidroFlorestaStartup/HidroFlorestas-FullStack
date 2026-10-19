@@ -1,6 +1,7 @@
 # Integração das fases 2/3 e preparação das fases 4/5
 
-ID: PLAN-FRONT-CONT-20261019. Estado: `EM_ANDAMENTO`.
+ID: PLAN-FRONT-CONT-20261019. Estado: `CONCLUIDO` para esta preparação.
+PR documental e aceite do handoff: `AGUARDANDO_REVISAO` do mantenedor.
 Data: 19/10/2026, America/Fortaleza. Executor: Pedro com seu Codex.
 
 ## Mandato, fontes e resultado
@@ -49,7 +50,7 @@ não há nova aprovação necessária para essas operações. Novo PR ficará em
 | Rechecar e integrar 11 | CONCLUIDO | Contratos e CI exato/15 gates; review assistida de Pedro e merge |
 | Retarget/rechecar/integrar 12 | CONCLUIDO | Base development, fase 2 ancestral, diff fase 3, CI exato/regras/review/merge |
 | Sincronizar e preparar handoff | CONCLUIDO | Development real, main preservada; prompt completo 4/5 e registros aditivos |
-| Validar e publicar documentação | EM_ANDAMENTO | Links/JSON/diff/terminologia/preservação; commit/push/PR e link direto |
+| Validar e publicar documentação | CONCLUIDO | Links/JSON/diff/terminologia/preservação; commit/push/PR e link direto |
 
 Verificações: ancestralidade, merge trees e blobs cumulativos; heads/bases/reviews,
 checks/15 gates no SHA dos PRs; políticas efetivas; diff documental final,
@@ -87,3 +88,28 @@ externas/científicas permanecem com as respectivas autoridades.
   seis originais preservados integralmente,94 links locais, JSON/campos,
   whitespace/diff e padrões sensíveis reconhecíveis. Vercel/SUCCESS nos três
   merges; developmentc33bf50/mainbeba96f remotas sem avanço. Publicação pendente.
+
+- 19/10/2026 — CONCLUIDO: branch documental publicada e PR13 aberto para
+  development, nove documentos e sem auto-merge. Primeiro commit publicado
+  519ba69dac8fac8cf3c6088b124456a3e5718552; este adendo integra commit posterior.
+  Validações documentais PASS; nenhuma pendência preparatória dos PRs10/11/12.
+
+### Publicação e encerramento desta preparação
+
+Branch docs/handoff-frontend-fases-4-5 publicada, tracking da própria remota;
+primeiro commit519ba69dac8fac8cf3c6088b124456a3e5718552.
+[PR13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) **OPEN** para development, nove arquivos exclusivamente
+documentais, mergeable=true e auto_merge=null na consulta. Nenhum merge do13.
+Este registro acompanha commit posterior de encerramento; seu SHA final será
+informado na entrega, sem autorreferência dentro do próprio commit.
+
+Estado preparatório: `CONCLUIDO`; PR/documentação `AGUARDANDO_REVISAO` do
+mantenedor. Sem bloqueio técnico novo. Prompt autossuficiente acessível na branch
+publicada; fases4/5 serão implementadas pelo professor, com futuros merges do
+mantenedor. Homologações externas e validação científica mantêm gates separados.
+
+Checks do primeiro head documental: Vercel Preview Comments/SUCCESS;
+Vercel/PENDING na primeira consulta. São observações automáticas, separadas dos
+15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
+O workflow RC não inclui a branch documental. Resultado final do head de
+encerramento será reconferido na entrega; pending isolado não é falha comprovada.

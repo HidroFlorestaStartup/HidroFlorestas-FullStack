@@ -5,6 +5,7 @@ Execute **as duas fases completas** no clone oficial do HidroFlorestas FullStack
 Este prompt é autossuficiente para o professor/outro desenvolvedor usar com seu
 Codex, sem o chat de Pedro ou outra revisão preparatória.
 
+[PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development, sem auto-merge.
 Branch documental: `docs/handoff-frontend-fases-4-5`. O prompt pode ser usado
 **diretamente desta branch, sem aguardar o merge do PR documental**. Leia o
 arquivo nessa branch e crie as branches de implementação da development

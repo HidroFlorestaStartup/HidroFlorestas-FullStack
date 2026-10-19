@@ -518,3 +518,23 @@ JSON, campos obrigatórios, whitespace/diff e padrões sensíveis reconhecíveis
 Sem alteração em docs/raw, produto, backend, specs, dependências ou configuração.
 Vercel/SUCCESS reconfirmado nos três merges, separado do CI funcional dos heads.
 Main/development remotas reconferidas sem avanço; publicação documental a seguir.
+
+### Publicação e encerramento desta preparação
+
+Branch docs/handoff-frontend-fases-4-5 publicada, tracking da própria remota;
+primeiro commit519ba69dac8fac8cf3c6088b124456a3e5718552.
+[PR13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) **OPEN** para development, nove arquivos exclusivamente
+documentais, mergeable=true e auto_merge=null na consulta. Nenhum merge do13.
+Este registro acompanha commit posterior de encerramento; seu SHA final será
+informado na entrega, sem autorreferência dentro do próprio commit.
+
+Estado preparatório: `CONCLUIDO`; PR/documentação `AGUARDANDO_REVISAO` do
+mantenedor. Sem bloqueio técnico novo. Prompt autossuficiente acessível na branch
+publicada; fases4/5 serão implementadas pelo professor, com futuros merges do
+mantenedor. Homologações externas e validação científica mantêm gates separados.
+
+Checks do primeiro head documental: Vercel Preview Comments/SUCCESS;
+Vercel/PENDING na primeira consulta. São observações automáticas, separadas dos
+15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
+O workflow RC não inclui a branch documental. Resultado final do head de
+encerramento será reconferido na entrega; pending isolado não é falha comprovada.

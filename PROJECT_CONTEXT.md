@@ -196,3 +196,6 @@ registram merges/reviews/CI/equivalência. Sem nova suíte local ou aceite visua
 manual; FAIL histórico de navegação12 e IHFR conservados, causas não comprovadas.
 Status automáticos de provedor não são homologação; nenhum deploy manual.
 Homologações reais e qualificadores experimentais do IHFR permanecem separados.
+
+Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
+branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.

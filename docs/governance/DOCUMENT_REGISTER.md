@@ -294,3 +294,6 @@ validado e a integração final, produto/testes/configuração idênticos. Main 
 branches preservadas. Sem nova suíte local, aceite visual manual ou causa provada
 dos FAILs históricos. Não surgiu decisão técnica global ou reclassificação que
 exigisse editar TECH_DECISIONS.md/PENDING_DECISIONS.md. docs/raw/** intacto.
+
+Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
+branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.
