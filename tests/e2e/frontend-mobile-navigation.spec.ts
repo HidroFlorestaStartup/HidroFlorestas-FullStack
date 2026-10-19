@@ -31,13 +31,17 @@ async function capture(page: Page, info: TestInfo, name: string, records: unknow
   await mkdir(archive, { recursive: true });
   const filename = "frontend-mobile-navigation-" + prefix + "-" + name;
   const path = info.outputPath(filename + ".png");
-  await page.screenshot({ path, fullPage: false, animations: "disabled", mask: await page.locator("input").all() });
+  const mask = [];
+  for (const input of await page.locator("input").all()) {
+    if (await input.evaluate(node => (node as HTMLInputElement).value.length > 0)) mask.push(input);
+  }
+  await page.screenshot({ path, fullPage: false, animations: "disabled", mask });
   await copyFile(path, join(archive, filename + ".png"));
   const geometry = await page.evaluate(() => {
     const box = (id: string) => { const r = document.getElementById(id)?.getBoundingClientRect(); return r ? { top: r.top, bottom: r.bottom, height: r.height } : null; };
     return { width: innerWidth, height: innerHeight, text: getComputedStyle(document.documentElement).fontSize,
       scrollY, header: box("application-header"), navigation: box("application-navigation"),
-      safeAreaMethod: "Chromium emulation; no physical display inset", screenshot: "viewport/fullPage:false" };
+      safeAreaMethod: "Chromium; labelled safe-area34 frames use CDP, no physical device", screenshot: "viewport/fullPage:false" };
   });
   records.push({ name, ...geometry });
   await info.attach(name, { path, contentType: "image/png" });
@@ -73,7 +77,7 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
       await capture(page, info, name + "-empty-create-focus", records);
       expect.soft((await visibleWithinReadingArea(create)).visible, "Create wholly inside actual reading area after application focus handling").toBe(true);
       await page.getByLabel("Nome do laboratório", { exact: true }).fill("IMP-002 E2E Mobile viewport");
-      await create.click();
+      await create.tap();
       const created = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: "IMP-002 E2E Mobile viewport", exact: true }) });
       await expect(created).toBeVisible();
       await cleanupLaboratoryFixtures(process.env);
@@ -88,7 +92,7 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         expect(await nav.getByRole("link").count()).toBe(isAdmin ? 4 : 3);
         const state = name + (isAdmin ? "-four-links" : "-three-links");
         for (const position of ["start", "middle", "end"]) {
-          await page.evaluate(position => window.scrollTo(0, position === "start" ? 0 : position === "middle" ? document.documentElement.scrollHeight / 2 : document.documentElement.scrollHeight), position);
+          await page.evaluate(position => window.scrollTo(0, position === "start" ? 0 : position === "middle" ? (document.documentElement.scrollHeight - innerHeight) / 2 : document.documentElement.scrollHeight), position);
           await capture(page, info, state + "-" + position, records);
         }
         const controls = [page.getByRole("button", { name: "Criar laboratório", exact: true }),
@@ -97,20 +101,43 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         for (const control of controls) {
           await control.focus(); await page.waitForTimeout(50);
           const result = await visibleWithinReadingArea(control);
+          records.push({ name: state + "-focused-control", label: await control.innerText(), ...result });
           expect.soft(result.visible, state + ": focused " + await control.innerText() + ": " + JSON.stringify(result)).toBe(true);
           expect.soft(result.hit, "Control center receives a real pointer hit").toBe(true);
         }
+        const lastControl = page.locator("#application-content").locator("a:visible,button:visible,input:visible,textarea:visible,select:visible").last();
+        await lastControl.focus(); await page.waitForTimeout(50);
+        records.push({ name: state + "-actual-last-control", label: await lastControl.innerText(), ...await visibleWithinReadingArea(lastControl) });
+        expect.soft((await visibleWithinReadingArea(lastControl)).visible, "The actual final DOM control is exposed").toBe(true);
+        await capture(page, info, state + "-actual-last-control", records);
         const settings = list.getByRole("button", { name: "Configurações", exact: true });
         await settings.focus(); await page.waitForTimeout(50);
         await capture(page, info, state + "-last-control-focus", records);
-        await settings.tap(); await expect(page.getByRole("dialog")).toBeVisible(); await page.keyboard.press("Escape");
+        await settings.tap(); await expect(page.getByRole("dialog").getByText("Zona de perigo", { exact: true })).toBeVisible(); await page.keyboard.press("Escape");
         await expect(settings).toBeFocused();
         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
         await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle"); await page.goBack();
         await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
-        await page.setViewportSize({ width: 667, height: 375 }); await capture(page, info, state + "-landscape", records);
+        await page.setViewportSize({ width: 667, height: 375 });
+        await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
+        await settings.focus(); await page.waitForTimeout(50);
+        expect.soft((await visibleWithinReadingArea(settings)).visible, "Focused control exposed in landscape").toBe(true);
+        await capture(page, info, state + "-landscape", records);
+        const cdp = await context.newCDPSession(page);
+        try {
+          await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 34, bottomMax: 34 } });
+          await expect.poll(() => nav.evaluate(node => parseFloat(getComputedStyle(node).paddingBottom))).toBe(42);
+          await settings.focus(); await page.waitForTimeout(50);
+          const insetResult = await visibleWithinReadingArea(settings);
+          records.push({ name: state + "-landscape-safe-area34-control", ...insetResult });
+          expect.soft(insetResult.visible, "Focused control exposed with emulated 34px inset").toBe(true);
+          await capture(page, info, state + "-landscape-safe-area34", records);
+        } finally {
+          await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 0, bottomMax: 0 } });
+          await cdp.detach();
+        }
         await page.setViewportSize({ width, height: 900 });
         await page.getByRole("button", { name: "Conta", exact: true }).click();
         await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toBeVisible(); await page.keyboard.press("Escape");

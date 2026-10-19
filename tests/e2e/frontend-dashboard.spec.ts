@@ -65,7 +65,12 @@ async function textScale(page: Page, width: number) {
 
 async function noHorizontalOverflow(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  expect(await page.locator("main").evaluate(main => main.scrollWidth <= main.clientWidth)).toBe(true);
+  const content = page.locator("#application-content");
+  await expect(content).toHaveCount(1);
+  const containers = [content, ...await page.locator("main").all()];
+  for (const container of containers) {
+    expect(await container.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true);
+  }
 }
 
 async function capture(page: Page, info: TestInfo, name: string) {
@@ -166,7 +171,7 @@ for (const width of widths) {
     expect(members.memberships.map(member => member.role).sort()).toEqual(["ADMIN", "MEMBER", "OWNER"]);
     const roster = membersSection(page);
     await expect(roster.getByRole("listitem")).toHaveCount(3);
-    for (const member of members.memberships) await expect(roster.getByText(member.name, { exact: true })).toBeVisible();
+    for (const member of members.memberships) await expect(roster.getByRole("listitem").filter({ hasText: member.name })).toHaveCount(1);
     const owner = members.memberships.find(member => member.role === "OWNER")!;
     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
