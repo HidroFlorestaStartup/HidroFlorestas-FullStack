@@ -269,3 +269,52 @@ A autorização atual permite ao executor implementar e validar o login, fazer
 commits e push na branch de incorporação e abrir ou atualizar PR para development,
 sem nova autorização ou confirmação. Os PRs de implementação e o PR documental
 continuam sujeitos à revisão; a decisão de merge permanece com o mantenedor.
+
+## Adendo vigente — integração2/3 e execução4/5, 19/10/2026
+
+Este adendo atualiza o recorte corrente; os estados/limites anteriores permanecem
+como histórico de suas datas. `DECISAO_CONFIRMADA`: Pedro, no pedido anexado
+“Revisão e continuação — PRs #10/#11/#12 e fases 4/5”, recebido nesta sessão em
+19/10/2026, autorizou integrar10/11/12 e preparar/publicar novo handoff. Autoriza
+expressamente o outro desenvolvedor a **implementar, validar, fazer commits,
+push e abrir/atualizar PRs das fases4 e5 completas sem confirmação adicional para
+operações normais**, concluindo a primeira e seguindo à segunda. Merges e aceite
+humano seguem com o mantenedor. Fases6+ conservam seu estado anterior de proposta.
+
+`EVIDENCIA_IMPLEMENTACAO`: #10/1956a3e, #11/f0333fd e #12/c33bf50 integrados em
+**development c33bf50b510dd7af7ad59cde039839f56519c87e**, árvore
+fc61515c32c0fe2ee456e06bb39bbff0888041f7. Mainbeba96f preservada. #12 recebeu
+base development antes do merge; head11 ancestral e165 caminhos próprios
+confirmados. Produto/testes/configuração final idênticos ao headd555f9e validado;
+oito diferenças documentais do10. Reviews reais assistidas de Pedro nos11/12;
+nenhuma autoaprovação10. [Evidência completa](integracao-contas-workspace-e-handoff-fases-4-5.json).
+
+| Fase | Estado neste corte | Escopo e próxima ação |
+|---|---|---|
+| 1 — login | CONCLUIDO no recorte, integração já registrada | Preservar implementação017 e CI histórico |
+| 2 — cadastro/contas | CONCLUIDO no recorte integrado | Spec018/head8cacfc9, CI15 gates/E2E100; sem novo aceite visual manual |
+| 3 — workspace/shell | CONCLUIDO no recorte integrado | Spec019/headd555f9e, CI15 gates/E2E120 cumulativo; workspace e configurações já entregues |
+| 4 — laboratório/dashboard/histórico/membros | EXECUCAO_AUTORIZADA | Preservar DTOs, contagens, links/readOnly, cursor/ordenação, papéis reais/OWNER, PATCH expectedRole e concorrência; não recriar workspace |
+| 5 — áreas/capa | EXECUCAO_AUTORIZADA | Preservar campos/UF/coordenadas/revisão/geolocalização tardia; protocolo privado de capa/OCC/tentativa estável/retry de conteúdo na mesma revision |
+| 6–10 | PROPOSTA, fora desta execução | Sem autorização adicional por este adendo |
+
+[Prompt principal4/5](prompt-de-execucao-fases-4-5.md) é a instrução operacional
+atual, disponível diretamente na branch documental antes do merge. Mantém fonte
+visual startercbb954a, adaptação TanStack→Next, marca/Poppins/Node/npm/lockfile,
+Spec Kit no próximo diretório livre por fase, CI completo no SHA publicado,
+allowlist trigger+if/exclusão de preview por branch antes de push e capturas
+sanitizadas. Fase5 pode ser empilhada sobre o head validado da4 ainda em revisão,
+sem aguardar novo aceite de execução; retarget final para development após
+merge4 pelo mantenedor. Não fazer merge na branch da4 como destino definitivo.
+
+Fase9/mapa territorial fica fora; mapa atual de coordenadas de área permanece
+funcional com OSM/atribuição/wrapper client/SSR. Capas distinguem featureEnabled,
+canEdit e hasImage; lista/detalhe não compartilham projeção automaticamente.
+Recarregar tenta conteúdo na mesma revisão e só anuncia sucesso após load,
+preservando key/retryAttempt e eventos antigos. Nenhuma alteração de backend,
+schema, ciência ou operação real de provedor autorizada para adaptar visual.
+
+Preservar FAIL inicial de histórico12 e FAIL IHFR antigo sem inventar causa a
+partir de PASS posteriores. Nenhuma nova suíte local ou homologação manual nesta
+integração. CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
+SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO mantidos.

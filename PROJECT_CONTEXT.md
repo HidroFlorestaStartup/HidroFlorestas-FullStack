@@ -168,3 +168,31 @@ o novo prompt. Esta preparação não implementou as duas fases nem operou deplo
 
 Publicação deste adendo: [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
 branch docs/handoff-frontend-fases-2-3; sem merge nesta preparação.
+
+## Contas e workspace integrados; fases 4/5 autorizadas — 2026-10-19
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “Revisão e continuação — PRs
+#10/#11/#12 e fases 4/5” desta sessão em19/10/2026, autorizou concluir os três
+merges e publicar handoff das duas próximas fases. O executor pode implementar,
+validar, commitar, fazer push e abrir/atualizar PRs de **ambas**, sem nova
+confirmação normal; merges futuros e aceite humano continuam com o mantenedor.
+
+`EVIDENCIA_IMPLEMENTACAO`: #10/1956a3e (oito documentos), #11/f0333fd (contas,
+Spec018) e #12/c33bf50 (workspace/shell, Spec019) integrados nessa ordem em
+**development c33bf50b510dd7af7ad59cde039839f56519c87e**. PR12 foi redirecionado
+para development antes do merge, conservando165 caminhos próprios. APPROVED de
+Pedro efetivamente registrados por Codex autorizado: reviews5566561057/5566567231,
+nos heads8cacfc9/d555f9e; sem autoaprovação do10 ou evento em nome de Luciano.
+CI exato:15 gates PASS em ambos, E2E100/120; produto/testes/configuração final
+iguais ao head validado do12, com oito diferenças só documentais do10.
+Mainbeba96f, branches e trabalhos locais anteriores preservados; FF local seguro.
+
+Novo [prompt autossuficiente das fases4/5](docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md):
+laboratório/dashboard/histórico/membros, depois áreas/capa. Pode ser usado na
+branch docs/handoff-frontend-fases-4-5 antes do merge documental. Fases1–3
+entregues; fases6+ fora desta autorização. Fonte visual continua startercbb954a,
+com adaptação TanStack→Next. [Evidências e limites](docs/plans/active/preparacao-incorporacao-frontend-20261018/integracao-contas-workspace-e-handoff-fases-4-5.json)
+registram merges/reviews/CI/equivalência. Sem nova suíte local ou aceite visual
+manual; FAIL histórico de navegação12 e IHFR conservados, causas não comprovadas.
+Status automáticos de provedor não são homologação; nenhum deploy manual.
+Homologações reais e qualificadores experimentais do IHFR permanecem separados.

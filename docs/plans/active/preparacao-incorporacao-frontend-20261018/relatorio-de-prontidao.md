@@ -438,3 +438,83 @@ A	docs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt
 A	docs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json
 A	docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md
 ```
+
+## Adendo — conclusão das fases2/3 e prontidão do handoff4/5, 19/10/2026
+
+`DECISAO_CONFIRMADA`: autorização de Pedro no pedido anexado “Revisão e
+continuação — PRs #10/#11/#12 e fases4/5”, desta sessão, para sincronizar/integrar
+e preparar/publicar as instruções seguintes. Parecer remoto favorável fornecido
+pelo usuário foi reconferido nos mesmos heads, sem novo achado bloqueante.
+A tentativa403 remota anterior permanece histórica; não foi tomada como merge.
+Os eventos abaixo são operações efetivamente confirmadas nesta execução local.
+
+| PR | Head examinado | Resultado real |
+|---|---|---|
+| [10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) | 58407b34d4f00c087b920607e79dcb21ce27956b | Oito documentos; checks do head SUCCESS; merge1956a3e6d57a43ab13367b86fc0b4f2e7ac3b447 para development, sem autoaprovação |
+| [11](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/11) | 8cacfc99ba0e2876c1036a0f67ec41375806b9ac | APPROVED assistido de Pedro5566561057; mergef0333fd9458d154dd6fa345c48ce0595942bf5fb |
+| [12](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/12) | d555f9e6686228f0af38ff16f66598bdd75b1f89 | Após merge11, base alterada de feat/frontend-account para development;165 caminhos próprios conferidos; APPROVED assistido de Pedro5566567231; mergec33bf50b510dd7af7ad59cde039839f56519c87e |
+
+Reviews reais registradas pela conta PedroVitor237 com autoria assistida e limites
+explícitos, nos respectivos SHAs. Nenhuma review em nome de Luciano/outro revisor.
+Merge commit habilitado, delete_branch_on_merge=false, development protected=false,
+rulesets vazios na consulta; nenhuma proteção contornada ou regra alterada.
+
+### Evidência técnica e alcance
+
+[CI11/run39166203271/job117789543612](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39166203271/job/117789543612)
+e [CI12/run39172722118/job117808968032](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39172722118/job/117808968032)
+conferidos nos heads exatos: push/completed/SUCCESS;15 entradas PASS/exitCode0
+por execução, snapshot único; E2E100 e120, respectivamente. Ambos: integração218,
+migration37, contrato6, R1 17, build/typecheck/lint PASS, HTTPS2, exclusão3, IHFR6,
+bootstrap14 migrations e SchemaAudit0. Unit PASS e mail17 observados;296 unit
+constam dos recibos versionados, sem nova execução própria nesta preparação.
+
+Rechecagem focal de código: cadastro conserva signUp/payload/senha/chave na
+incerteza e renovação por edição; seis jornadas de conta e travas locais sem
+diff backend/AuthContext/login/schema/dependências/CSS global. Layouts privados
+mantêm requireAuth/getLaboratoryContext no servidor; papéis globais/contextuais,
+workspace/limite/inativos/confirmação, foco/busy/erro do diálogo e logout real
+preservados. Configuração altera só branches/globs focais, conservando15 gates.
+
+Git comprova head11 ancestral do12 e da development final; pais dos três merges
+conferidos e árvores calculadas antes. Árvore finalfc61515c32c0fe2ee456e06bb39bbff0888041f7
+igual ao candidato calculado. Diff completo contra d555f9e: oito arquivos
+exclusivamente documentais do10. **Produto/testes/configuração são idênticos ao
+head12 validado**; por isso não foi repetida toda a suíte por merge documental/
+retarget sem mudança funcional. [JSON sanitizado](integracao-contas-workspace-e-handoff-fases-4-5.json)
+registra gates, SHAs/URLs/pais/árvores/reviews e diferenças exatas.
+
+Nenhuma nova aplicação ou bateria funcional local, captura, inspeção visual
+integral, leitor de tela manual ou aceite humano realizado por esta preparação.
+O parecer remoto fornecido inspecionou capturas selecionadas; não certifica WCAG.
+FAIL inicial12 de histórico após reload permanece: teste final aguarda área lida/
+hidratada, mantém goBack/URL/permissões; PASS posteriores não comprovam mecanismo
+exato da falha. FAIL IHFR histórico anterior ao login também permanece sem causa
+comprovada; não foi reclassificado como corrigido pelas alterações visuais.
+
+Status/checks automáticos Vercel dos merges foram consultados separadamente;
+não equivalem aos15 gates ou homologação. Exclusões exatas de preview nas branches
+de feature não desativam deploys automáticos já conectados de development. Nenhum
+deploy manual ou operação de provedor foi solicitado por comando/API.
+
+### Sincronização e próximo recorte
+
+Development original e documental sincronizadas por FF seguro para **c33bf50**;
+main local/remota permanecem **beba96f**. Branches de origem/worktree de revisão,
+refs temporárias antigas e lockfile não rastreado do starter preservados. Starter
+maincbb954a após fetch, sem avanço. Nenhum conflito ou código novo para integrar.
+
+`INFERENCIA`: **PRONTO PARA EXECUTAR AS FASES4/5 NO RECORTE AUTORIZADO**, conforme
+[prompt autossuficiente](prompt-de-execucao-fases-4-5.md). Professor executará
+laboratório/dashboard/histórico/membros e áreas/capa com contratos reais, Spec Kit,
+CI por SHA e capturas sanitizadas. Não refaz fases1–3/gestão de PRs; não implementa
+fase6+ nem altera backend/schema/ciência. Merge futuro permanece com o mantenedor.
+Handoff pode ser lido diretamente na branch documental antes de seu merge.
+Homologações externas e qualificadores científicos experimentais preservados.
+
+Verificação documental antes da publicação: nove arquivos dentro do recorte;
+seis documentos anteriores preservados integralmente por adendo;94 links locais,
+JSON, campos obrigatórios, whitespace/diff e padrões sensíveis reconhecíveis PASS.
+Sem alteração em docs/raw, produto, backend, specs, dependências ou configuração.
+Vercel/SUCCESS reconfirmado nos três merges, separado do CI funcional dos heads.
+Main/development remotas reconferidas sem avanço; publicação documental a seguir.
