@@ -22,8 +22,9 @@ não encerra a missão e não exige nova autorização de execução.
 
 Aceite humano e **merges de implementação continuam com o mantenedor**. Não
 faça merge em nome dele, push direto em development/main ou promoção para main.
-Fases 6 e posteriores não integram esta entrega. Não refaça fases 1–3 nem a gestão
-dos PRs #10/#11/#12: essa integração já foi concluída por Pedro com seu Codex.
+Fases 6 e posteriores não integram esta entrega. Não refaça fases 1–3, ressalvado
+o ajuste focal prioritário do shell descrito abaixo; não reimplemente a fase3
+inteira. A gestão dos PRs #10/#11/#12 já foi concluída por Pedro com seu Codex.
 
 Leia AGENTS.md aplicáveis, PROJECT_CONTEXT.md, TECH_DECISIONS.md, PLANS.md,
 .specify/memory/constitution.md, docs/code-first-prd/README.md,
@@ -32,6 +33,81 @@ Use decisões atuais somente no recorte autorizado; código/configurações/test
 são `EVIDENCIA_IMPLEMENTACAO`, sem provar intenção. Identifique `INFERENCIA` e
 `RECOMENDACAO`; registre `DECISAO_CONFIRMADA` somente com origem identificada.
 Preserve docs/raw/** e todo histórico documental.
+
+## Ajuste focal prioritário — navegação móvel sobreposta ao workspace
+
+`DECISAO_CONFIRMADA`: em 19/10/2026 Pedro apontou, na captura móvel de375px,
+a navegação inferior cobrindo o formulário e parte de **Criar laboratório**,
+e pediu incluir a correção neste handoff. Nesta rodada, as imagens atuais são
+suficientes para registrar o apontamento; não foi solicitado preparar localhost
+para navegação manual.
+
+Referência já versionada:
+[workspace375](../../../../specs/019-frontend-workspace-shell/evidence/after-frontend-workspace-list-375.png).
+`FATO_DOCUMENTADO`: conforme o pedido de Pedro desta sessão, seu anexo
+tem375x1750px e SHA256
+`570652949bd093306806cc1fbf63fcf94ecffd62683dbc0ec4041bd80c6418e5`.
+A captura demonstra a sobreposição visual; é uma imagem de página inteira com
+camada fixa na região do viewport original. Não prova, sozinha, que o botão
+continue inacessível em toda posição de rolagem.
+
+`EVIDENCIA_IMPLEMENTACAO`: no shell atual, .rail é fixed no mobile;
+abaixo de400px há flex-wrap e flex-basis130px para os links, formando duas linhas
+com três itens. .content reserva padding-bottom fixo no final da página.
+`INFERENCIA`: essa combinação pode explicar a área encoberta na captura.
+Reproduza no Next real e diferencie obstrução da aplicação de composição de
+screenshot fullPage; registre o resultado, sem presumir defeito específico de
+evento, foco ou histórico.
+
+Antes de encerrar a fase4, execute este ajuste no shell já integrado:
+
+- Inspecione src/components/shell/shell.module.css, application-shell.tsx,
+  sidebar/index.tsx e o workspace consumidor. Preserve os fluxos reais.
+- Se confirmar obstrução na aplicação, faça a navegação ocupar uma região própria
+  da composição móvel ou delimite
+  a área rolável de conteúdo pela altura efetiva de cabeçalho e navegação.
+  Trate quebra de linha, safe-area, orientação e texto ampliado. Um espaçador
+  fixo no fim da página não demonstra que a área útil atual está livre.
+- Campos e botões devem permanecer acessíveis por toque e teclado, com o foco
+  visível e sem controles cobertos pela navegação na área útil de leitura.
+  Conteúdo longo continua rolável; não é necessário caber tudo numa tela.
+- Preserve os atalhos Laboratórios/Áreas/Sair, papéis/contexto, menu de conta,
+  logout e navegação do laboratório. O shell é compartilhado: confira os
+  consumidores existentes sem redesenhar conteúdos fora das fases autorizadas.
+
+Se a sobreposição for exclusivamente composição do screenshot fullPage, corrija
+as capturas/legendas e demonstre a acessibilidade dos controles no viewport real,
+sem inventar uma alteração de runtime. Se houver obstrução real, corrija o layout.
+Em ambos os casos entregue evidência que esclareça o apontamento de Pedro.
+
+Registre o ajuste em commit delimitado na branch de implementação da fase4,
+ou na branch pertinente já em andamento; a branch documental guarda apenas
+as instruções. A Spec019 pode receber adendo focal se necessário, preservando
+o histórico e sem repetir toda a fase3. Depois continue ambas as fases4/5
+autorizadas, sem pedir nova autorização de execução.
+
+Critérios de verificação:
+
+1. Reproduzir375px e320px, texto100%/200%, vazio/lista e formulário de criação;
+   verificar posições de rolagem que exponham Criar laboratório, Acessar
+   laboratório e Configurações, além do último elemento do conteúdo.
+2. Verificar a área real ocupada por cabeçalho/rodapé, controles e foco;
+   testar Tab/ShiftTab, toque/clique, menu, logout e resize. Acrescentar
+   regressão que demonstre o problema observado; os testes atuais de ausência
+   de overflow e foco de um único card não bastam para essa situação.
+3. Capturar viewport real com fullPage:false antes/depois nas posições
+   relevantes. Se também houver fullPage, identificá-lo separadamente para
+   não apresentar a composição da camada fixa como tela inteira navegável.
+   Capturas existentes documentam o apontamento; a correção requer nova
+   evidência da aplicação, sem declarar validação apenas por mudança de CSS.
+4. Confirmar desktop768/1440 e regressões pertinentes do shell/workspace;
+   preservar guardas, assertions e contratos. Seguir a validação/CI já prevista
+   neste handoff para a implementação que será publicada.
+
+Estado deste apontamento: **correção/verificação pelo executor PENDENTE**.
+Nesta atualização são publicadas somente instruções. O parecer favorável e os
+PASSs históricos descrevem o head d555f9e/integração c33bf50 examinados antes
+deste apontamento; não representam resolução ou aceite da sobreposição móvel.
 
 ## Base real e entregas já integradas
 
@@ -104,8 +180,10 @@ Node24.19.0/npm/package-lock**. Confira versões vigentes nos arquivos do destin
    `.agents/skills/`: **speckit-specify → speckit-plan → speckit-tasks →
    speckit-implement**, lendo os SKILL.md; esclarecer quando material e analisar
    consistência quando útil. Use **o próximo diretório livre por fase**,
-   sem presumir020/021 livres. Specs018/019 já entregues não serão reabertas.
-   Mantenha spec/plan/tasks/contratos/evidências próprios, rastreabilidade
+   sem presumir020/021 livres. Specs018/019 mantêm a entrega e o histórico;
+   permite-se adendo focal à019 para o ajuste prioritário do shell, sem repetir
+   toda a fase3. Mantenha spec/plan/tasks/contratos/evidências próprios,
+   rastreabilidade
    Code-First e estado das fontes; sem TASKS.md global ou OpenSpec duplicado.
 4. Antes de escrever código, leia os guias relevantes em
    `node_modules/next/dist/docs/`. Preserve limites server/client e autorização
@@ -135,8 +213,9 @@ Mapa confirmado no commit visual acima. Caminhos relativos ao starter:
 
 Leia os consumidores, DTOs, contextos e contratos antes de editar. **Workspace,
 criação/configurações de laboratório e shell já pertencem à fase3 integrada**.
-Confira seu resultado e complemente somente o conteúdo da fase4; não duplique
-workspace/CRUD nem recrie seleção de laboratório. Layouts existentes conservam
+Confira seu resultado e acrescente o ajuste focal prioritário do shell e o
+conteúdo da fase4; não duplique workspace/CRUD nem recrie seleção de laboratório.
+Layouts existentes conservam
 requireAuth/getLaboratoryContext no servidor e capacidades autorizadas.
 
 Preserve e demonstre:

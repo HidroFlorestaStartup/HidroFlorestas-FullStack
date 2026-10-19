@@ -113,3 +113,64 @@ Vercel/PENDING na primeira consulta. São observações automáticas, separadas 
 15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
 O workflow RC não inclui a branch documental. Resultado final do head de
 encerramento será reconferido na entrega; pending isolado não é falha comprovada.
+
+## Continuação documental — apontamento visual móvel, 19/10/2026
+
+Estado desta continuação: `EM_ANDAMENTO`. Correção/verificação pelo executor:
+**PENDENTE**. Este estado não altera o encerramento histórico da preparação
+anterior nem declara corrigido o produto.
+
+`DECISAO_CONFIRMADA`: Pedro, no novo pedido anexado “atualizar o handoff das
+fases4/5 com o apontamento visual”, recebido nesta sessão em19/10/2026, autorizou
+somente atualizar o prompt e os dois planos, commitar/push na branch existente
+e atualizar a descrição do PR13 preservando seu histórico. Não implementar
+correção, abrir outro PR, mesclar, preparar localhost ou executar bateria funcional.
+Mantidas as autorizações de implementação/validação/commits/push/PRs de ambas
+as fases4/5 pelo executor, sem nova confirmação normal.
+
+Estado inicial: worktree documental limpa em
+2150002e4bb344aa6631c2a55b29ddb9f18c38a9, branch/upstream
+docs/handoff-frontend-fases-4-5; fetch confirmou head local/remoto do PR13 igual,
+OPEN/base development e sem auto-merge. Checkout principal limpo emc33bf50,
+mainbeba96f; trabalhos anteriores preservados. Nenhuma instrução AGENTS.md mais
+específica encontrada em docs. Evidência fornecida por Pedro e captura
+versionada375 são suficientes para registrar o apontamento; não foi reproduzido
+runtime. CSS lido somente para conferir a evidência estática.
+
+Escopo: prompt-de-execucao-fases-4-5.md, este plano e plano-de-incorporacao.md;
+PR13 recebe adendo de descrição. Fontes/autoridade do plano mantidas. Anexo de
+Pedro e dados de dimensão/hash são `FATO_DOCUMENTADO` do novo pedido; captura
+versionada e CSS constituem `EVIDENCIA_IMPLEMENTACAO` nos seus limites. Causa
+sugerida continua `INFERENCIA`, a diferenciar de composição de fullPage.
+
+Etapas: inserir o adendo antes de “Base real e entregas já integradas”;
+conciliar exceção focal do shell/Spec019 sem repetir fase3; preservar histórico
+nos planos; validar diff/referências/escopo/coerência; commit/push na mesma
+branch e adendo à descrição13. Parar somente se deriva/conflito ameaçar conteúdo
+ou a operação autorizada for impedida; nenhuma nova aprovação normal necessária.
+Validação prevista: três Markdown, links, adendo fornecido, autorizações ambas
+fases, ausência de código e diff/check; sem suíte funcional por alteração documental.
+
+### Encerramento do adendo documental
+
+Estado desta entrega documental: `CONCLUIDO` — **instruções novas publicadas**
+na branch docs/handoff-frontend-fases-4-5, mantendo o PR13 para revisão. Este
+registro integra o commit do adendo; SHA e publicação são conferidos na entrega,
+sem autorreferência no próprio commit. A descrição13 recebe o apontamento
+prioritário, preservando integralmente o texto anterior como histórico.
+
+Validação: git diff --check PASS; escopo de três Markdown PASS;14 referências
+locais e duas âncoras PASS; dois planos anteriores preservados byte a byte por
+adendo. Conteúdo fornecido incorporado antes da base, três restrições do prompt
+conciliadas com a exceção focal da019 e autorizações de ambas fases4/5 conservadas.
+Leitura da captura versionada/CSS apenas, sem reprodução ou nova captura Next.
+Sem alteração em código, Spec019, testes, configs, imagens, registros canônicos
+ou docs/raw. Busca de padrões sensíveis reconhecíveis sem ocorrência.
+
+**Correção/verificação de produto pelo executor: PENDENTE.** Deve diferenciar
+obstrução runtime de composição fullPage, entregar nova evidência viewport e
+regressão material antes de encerrar a fase4, e continuar as duas fases autorizadas.
+Parecer anterior preservado no corte d555f9e/c33bf50, sem alegar aceite desta
+ocorrência. Sem bateria funcional nesta tarefa documental, conforme pedido.
+Sem bloqueio documental novo; revisão do PR13 e implementação seguem pendentes
+com seus executores, sem merge ou PR adicional nesta rodada.

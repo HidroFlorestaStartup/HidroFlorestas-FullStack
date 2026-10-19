@@ -318,3 +318,42 @@ Preservar FAIL inicial de histórico12 e FAIL IHFR antigo sem inventar causa a
 partir de PASS posteriores. Nenhuma nova suíte local ou homologação manual nesta
 integração. CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
 SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO mantidos.
+
+## Adendo vigente — apontamento visual do workspace móvel, 19/10/2026
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “atualizar o handoff das fases4/5
+com o apontamento visual”, desta sessão em19/10/2026, autorizou incluir instruções
+prioritárias sobre a navegação inferior cobrindo formulário e parte de Criar
+laboratório na captura375. Este adendo publica a instrução no mesmo handoff e
+PR13; **correção/verificação pelo executor PENDENTE**, sem correção de produto
+nesta rodada documental.
+
+[Adendo do prompt4/5](prompt-de-execucao-fases-4-5.md#ajuste-focal-prioritário--navegação-móvel-sobreposta-ao-workspace)
+e [captura versionada375](../../../../specs/019-frontend-workspace-shell/evidence/after-frontend-workspace-list-375.png)
+registram o apontamento. A imagem mostra camada fixa na composição fullPage;
+não prova inacessibilidade do botão em toda posição de rolagem. O CSS em
+shell.module.css confirma .rail fixa, wrap/flex-basis130px abaixo de400 e
+padding inferior fixo de .content; hipótese de causa permanece `INFERENCIA`.
+A reprodução no Next real e as novas evidências pertencem ao executor.
+
+Antes de encerrar a fase4, diferenciar obstrução real de composição fullPage:
+se real, corrigir a composição móvel por região própria de navegação ou área
+rolável delimitada pela altura efetiva; se só captura, corrigir capturas/legendas
+e demonstrar acesso no viewport. Não inventar alteração de runtime ou presumir
+defeito de evento/foco/histórico. Verificar375/320, texto100%/200%, vazio/lista,
+criação, posições de rolagem e último elemento, toque/Tab/ShiftTab/menu/logout/
+resize, orientação/safe-area, consumidores e desktop768/1440. Capturas novas
+fullPage:false antes/depois e regressão material, conforme CI já previsto.
+
+A restrição anterior de não refazer fases1–3 admite somente esse ajuste focal
+do shell. Spec019 pode receber adendo preservando histórico, sem reimplementar
+fase3 inteira. Commit delimitado na branch de implementação da4 ou pertinente
+já em andamento; branch documental conserva somente instruções. As autorizações
+para concluir **ambas as fases4/5**, validar/commitar/push/abrir-atualizar PRs
+sem nova confirmação normal permanecem. Merges futuros com o mantenedor.
+
+Parecer favorável/estados CONCLUIDO e CI15 gates/E2E120 anteriores referem-se ao
+corte headd555f9e/integraçãoc33bf50 examinado antes deste apontamento. São histórico
+de integração, sem aceite desta ocorrência visual ou comprovação de correção.
+Nenhum backend/contrato/guarda/código alterado, localhost preparado ou bateria
+funcional executada nesta atualização. [Acompanhamento desta continuação](plano-de-continuacao-fases-4-5.md#continuação-documental--apontamento-visual-móvel-19102026).
