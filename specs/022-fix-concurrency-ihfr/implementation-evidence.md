@@ -2,7 +2,7 @@
 
 **Data**: 19/10/2026. **Fluxo**: PLAN → EXECUTE → REVIEW / Spec Kit022.
 **Baseline**: `3f1eba566a1f4f01e469f75a6c174fd2e602a9d2`.
-**Estado**: correção A comprovada no reprodutor; causa histórica A/duas chamadas e intermitência histórica B permanecem inconclusivas. CI/PR finais serão identificados no recibo de publicação; não se presume PASS antes do journal final.
+**Estado**: correção A comprovada no reprodutor; causa histórica A/duas chamadas e intermitência histórica B permanecem inconclusivas. Quinze gates PASS no commit inicial; a entrega depende também do journal do SHA final, identificado no recibo externo do PR16.
 
 ## PLAN — autorização, isolamento e contratos
 
@@ -42,9 +42,9 @@ A consulta excepcional pode consumir nova aquisição/maxWait15s/timeout30s já 
 
 EVIDENCIA_IMPLEMENTACAO: artefatos FAIL/PASS de mesmoSHA/snapshot estão discriminados na [comparação](evidence/historical-comparison.md). Fixtures são commitadas antes do servidor, schemas são próprios, JWT é passado ao servidor/driver, workers1/retries0. Nada disso comprova que o CI falho consumiu corretamente a página/fixture; faltam seus logs de navegação/servidor.
 
-O runner oficial passou os seis testes com diagnóstico, sem mudança de asserções, readiness, retries, workers ou timeouts. O diff acrescenta forwarding de linhas Next sanitizadas e, quando um teste falha, status/URL sem query, erros e metadados limitados do DOM. Sem cookies, headers, corpos de resposta ou traces brutos. Testes de sanitização cobrem segredo dividido em chunks, cookie e última linha parcial.
+O [runner oficial](evidence/ihfr-official.txt) passou os seis testes com diagnóstico em 29,5s, sem mudança de asserções, readiness, retries, workers ou timeouts. O diff acrescenta forwarding de linhas Next sanitizadas e, quando um teste falha, status/URL sem query, erros de console, scripts falhos e metadados limitados de visibilidade do DOM. Registros e tamanho das mensagens são limitados. Sem cookies, headers, corpos de resposta ou traces brutos. Testes de sanitização cobrem segredo dividido em chunks, cookie e última linha parcial. O [caso limite de linha longa](evidence/logger-boundary.md) foi reproduzido RED e corrigido GREEN no logger novo, descartando toda a continuação até newline; oito testes de diagnóstico PASS.
 
-Controles artificiais ficam em `tests/experiments/` e configuração separada, executados somente com `--initialization-controls`. Não aquecem os seis testes originais nem são confundidos com gates de aceitação. A expectativa de visibilidade do controle sem JavaScript permanece RED, deliberadamente; os dados de domínio não são alterados.
+Os [controles artificiais](evidence/ihfr-controls.txt) ficam em `tests/experiments/` e configuração separada, executados somente com `--initialization-controls`. Resultado: dois RED deliberados sem JavaScript e dois PASS, em 16,0s. Não aquecem os seis testes originais nem são confundidos com gates de aceitação. As expectativas de visibilidade dos controles sem JavaScript permanecem RED; os dados de domínio não são alterados.
 
 Observação confirmada: sem JavaScript, a região IHFR chega no DOM sob ancestral `DIV#S:1`, com `hidden=true`, `display:none` e retângulo0×0. Com JavaScript habilitado, a região tem retângulo visível e nenhum ancestral oculto nessa cadeia. Sessão inválida/ator ausente redirecionam para/login e removem a região. Esses controles discriminam sintomas; **não demonstram que JavaScript falhou no CI histórico**.
 
@@ -60,11 +60,12 @@ A hipótese inicial de que SSR implicaria independência de JavaScript foi corri
 | Mesmos reprodutores com correção | GREEN2PASS |
 | Regressões focais de capas/transações |47/47PASS |
 | Repetição original/duas chamadas |30/30PASS; histórico inconclusivo |
-| Unitários oficiais |297/297PASS; e-mail17/17PASS |
+| Unitários oficiais |298/298PASS; e-mail17/17PASS; execução final após correção do logger |
 | Typecheck |PASS |
 | Lint |PASS, três warnings preexistentes |
 | Integração integral local, modoSchema |214/218PASS; quatro recusas de guard; não vale como gatePASS |
-| Integração integral local, modoRegressionIMP006 |Falha nos testes públicos legados por coluna de conta ausente; schemas isolados passam. Não vale como gatePASS |
+| Integração integral local, modoRegressionIMP006 |215/219PASS; quatro testes públicos legados falham por coluna de conta ausente. Não vale como gatePASS |
+| CI inicial, commitbace4be |15/15gates PASS/exit0, snapshot único; integração229/229PASS e IHFR6/6PASS em34,9s; [recibo](evidence/ci-initial.json) |
 | Quinze gates oficiais do SHA final |A conferir no recibo externo do PR, com journal individual |
 
 As falhas de ambiente local não foram contornadas modificando guards/schema/configurações para obter verde. O harnessIMP006 legado prepara menos migrations no public que o harness oficial de contas; o CI usa o cluster efêmero de contas com as14migrations. A primeira tentativa de Unit no sandbox falhou antes dos testes com `uv_os_get_passwd/ENOMEM`; execução oficial fora dessa identidade restrita passou. Uma captura PowerShell5 foi interrompida por avisoNO_COLOR/FORCE_COLOR; seu resultado não foi usado como evidência do produto.
@@ -72,9 +73,11 @@ As falhas de ambiente local não foram contornadas modificando guards/schema/con
 ## REVIEW e entrega
 
 - [Revisor independente A](evidence/review-concurrency.md): favorável, sem achado material remanescente; riscos e limite histórico explícitos.
-- Revisor independente B: achados metodológicos corrigidos; parecer final e controles são registrados em `evidence/review-ihfr.md`.
-- `@codex review`: solicitar no novo PR; disponibilidade/resposta deve ser registrada no recibo, sem inventar aprovação.
+- [Revisor independente B](evidence/review-ihfr.md): achados metodológicos corrigidos, sem P1/P2 material remanescente; causa histórica inconclusiva.
+- [PR16](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16), empilhado sobre PR15, aberto em draft. [`@codex review` solicitado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16#issuecomment-6276254802); resposta/disponibilidade será registrada no recibo, sem inventar aprovação.
 - Conferir15gates no mesmo SHA final e comparar SHA/snapshot/digest dos artefatos. Recibo final no PR evita que a incorporação do próprio journal crie circularidade de SHA.
 - Sem merge, deploy, operação em produção, alteração da demo, PR14/15 ou `docs/raw/**`. Não há nova decisão científica/produto/arquitetura que exija editar registros canônicos globais.
 
 O IHFR permanece **CONTRATO_EXPERIMENTAL**, **VALIDACAO_CIENTIFICA_PENDENTE**, **SUJEITO_A_RECALIBRACAO**, **NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO**.
+
+Conferência final do diff local: `git diff --check` PASS;23arquivos de evidência/spec e27links locais conferidos; testes históricos IHFR com corpos idênticos após remover imports; configurações oficiais intactas; cinco digests das cópias publicadas PASS. Varredura focada não encontrou JWT, URL PostgreSQL com credencial ou chave privada nos artefatos da funcionalidade. Typecheck e lint novamente PASS após o último delta do logger. O journal final fica no PR; nenhum PASS posterior será apresentado como prova causal dos históricos inconclusivos.

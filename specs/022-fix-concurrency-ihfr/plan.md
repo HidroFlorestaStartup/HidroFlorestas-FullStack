@@ -65,4 +65,18 @@ Correção mínima: uma transação final apenas de consultas após terceiro con
 
 IHFR: seis originais PASS; controles artificiais separados2RED/2PASS mostram conteúdo SSR oculto sem JavaScript e redirect por sessão inválida. Causa histórica continua inconclusiva. Apenas observabilidade acrescentada; ciência/asserts/readiness/limites intactos.
 
-Revisores independentes A/B favoráveis ao diff após correção dos achados de lifecycle/observabilidade/metodologia. Pareceres e evidências em `evidence/`. Unit297+Mail17 PASS; typecheck/lint PASS(3warnings preexistentes). Execução local integral não substitui CI: harnessIMP006 legado/public tem coluna de conta ausente. Quinze gates e recibo externo ainda pendentes nesta revisão.
+Revisores independentes A/B favoráveis ao diff após correção dos achados de lifecycle/observabilidade/metodologia. Pareceres e evidências em `evidence/`. Unit298+Mail17 PASS após o caso limite do logger; typecheck/lint PASS(3warnings preexistentes). Execução local integral não substitui CI: harnessIMP006 legado/public tem coluna de conta ausente. Quinze gates e recibo externo ainda pendentes nesta revisão.
+
+## Publicação inicial e preservação
+
+Commit de implementação `bace4beb01d8cf3a760a3916222d39060f6972ec` publicado na branch própria. [PR16](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16), draft, base temporária `feat/frontend-areas-cover`; [pedido de @codex review](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16#issuecomment-6276254802). O conector GitHub recusou escrita403; a autenticação Git local já existente criou o PR e o comentário, sem exibir/persistir credenciais. Nenhuma mensagem foi enviada aos PRs14/15.
+
+[CI inicial](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39316586779) concluído com15/15gates PASS/exit0, snapshot único7c9d024e5cc51c93d3b3ffb3525217b1ce8f2d226a91d7552c686d0bcf15d727. Artefato12219770424 com SHA/digest conferidos; [recibo](evidence/ci-initial.json). Integração229PASS, IHFR6PASS em34,9s. Esse recibo é do predecessor; o recibo do SHA final permanece obrigatório no PR16 após o commit do último delta do logger e fechamento documental.
+
+Conferência somente leitura da demo: checkout limpo no SHA15; Next3101/PID14160, HTTPS3443/PID16648 e processo externo3000/PID40268 preservados. PostgreSQL da demo55427/PID41616 permanece separado do cluster novo55426/PID40356. Nenhuma requisição foi enviada à demo para esta conferência e nenhum dado seu foi consultado.
+
+Auditoria oficial local: zero schemas de teste remanescentes no banco administrativo e no banco Regression próprios. Após todos os testes, somente o cluster novo55426 foi parado; dados preservados. Nenhuma parada foi enviada ao cluster da demo.
+
+## REVIEW — fechamento do código e condição de entrega
+
+Escopo, referências, evidências, sanitização e diffs verificados. Nenhuma alteração de contratos científicos, migrations, configurações oficiais ou asserções históricas. Revisores independentes favoráveis ao delta final; proteção de linha longa do logger novo comprovada RED/GREEN. Unit298+Mail17, typecheck e lint PASS. O recibo final externo do PR16 registra os quinze gates do último SHA e o resultado/disponibilidade de `@codex review`, sem gerar commit documental posterior que invalide esse SHA. A entrega permanece condicionada à conferência efetiva desse journal; eventual falha exige investigação e nova validação, sem presumir PASS.

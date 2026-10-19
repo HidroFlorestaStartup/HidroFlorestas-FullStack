@@ -25,3 +25,13 @@ RECOMENDACAO: observar URL/status/HTML/logs sanitizados; comparar execução iso
 ## Isolamento
 
 RECOMENDACAO adotada: harness IMP00655426 com LOCALAPPDATA próprio ignorado. Não acessar PG55427 da demo. Gates integrais de contas no cluster efêmero oficial Windows Actions, sem flexibilizar guards.
+
+## Resultado dos experimentos e desenho adotado
+
+EVIDENCIA_IMPLEMENTACAO: o cenário original de duas operações passou em 30 repetições. Um controle de commit mostrou que o snapshot novo vê a quota preenchida. Um reprodutor distinto, de quatro operações em três ondas, gerou três conflitos reais tanto no COMMIT (`DriverAdapterError/40001`) quanto no INSERT (`P2034/40001`). As transações da vítima têm snapshots novos; o terceiro concorrente completa a quota depois da última leitura permitida. O helper original transforma o conflito final em erro técnico sem observar esse estado. RED: 2 FAIL; GREEN: 2 PASS; tentativas/jobs: 10/40 em todos os casos.
+
+RECOMENDACAO de engenharia adotada no escopo autorizado: manter as três tentativas de escrita e acrescentar uma única transação de consultas, sem retry, após o último conflito reconhecido no pós-preset. Reusar a elegibilidade e recuperar apenas replay persistido/compatível. Se a recusa não estiver comprovada, conservar `INTERNAL_ERROR`. Alternativas não adotadas: aumentar retries/backoff, locks globais, transações atravessando I/O do provedor, alteração de quotas e mapeamento incondicional de conflito para limite. Risco: latência excepcional adicional e consulta final ainda sujeita a erro técnico.
+
+EVIDENCIA_IMPLEMENTACAO: controles IHFR separados demonstram duas assinaturas possíveis. Sem JavaScript, conteúdo entregue fica sob ancestral oculto e Fuso não hidrata; com JavaScript, o diagnóstico é visível. Sessão inválida ou ator inexistente redirecionam para login. Isso corrige a inferência inicial de independência de JavaScript por SSR. Nenhuma evidência histórica identifica qual condição ocorreu no CI falho.
+
+RECOMENDACAO adotada na frente B: manter a falha histórica inconclusiva e acrescentar observabilidade sanitizada. Preservar os seis testes oficiais, sua ordem fria, asserções, readiness e limites. Controles artificiais são executados separadamente por flag explícita; seus REDs não são gates de aceitação. Pareceres independentes e dados em [implementation-evidence.md](implementation-evidence.md).

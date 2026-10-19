@@ -17,3 +17,5 @@ Essa evidência corrigiu a inferência inicial de independência de JavaScript p
 Forwarding sanitiza linhas completas e possui teste de segredos divididos em chunks. Logs não capturam cookies, headers, corpos ou traces. O delta final de diagnóstico também captura scripts/documentos falhos, console e visibilidade com limites de tamanho e sem query strings. Revisor aprovou esse delta; sua rodada de controles registrou2RED/2PASS em16,0s, incluindo `hiddenAncestor: S:1` e falha de asset.
 
 **Limite**: condições artificiais reproduzem assinaturas, não a causa do CI histórico. Sem correção funcional ou científica B. Nova falha natural requer confrontar servidor, navegação, recursos e DOM no mesmo SHA. `git diff --check` PASS no recorte B.
+
+Revisão adicional do delta de descarte de linha longa: sem achado material remanescente. O estado `discarding` conserva o descarte até newline e retoma a linha seguinte. O revisor conferiu código e novo teste, sem executá-lo; a execução pelo implementador registrou oito testes PASS. Evidência em [logger-boundary.md](logger-boundary.md).

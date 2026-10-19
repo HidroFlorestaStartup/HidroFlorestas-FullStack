@@ -25,6 +25,19 @@ test("IMP-006 Next output redacts across chunks and flushes the final partial li
   assert.doesNotMatch(captured, /synthetic-split-secret|private/);
 });
 
+test("IMP-006 Next output discards an oversized line through its final continuation", async () => {
+  const input = new PassThrough(), output = new PassThrough();
+  let captured = "";
+  output.on("data", chunk => { captured += chunk; });
+  forwardImp006Diagnostics(input, { JWT_SECRET: "hidden-secret-complete-tail" }, "Next", output);
+  const ended = once(input, "end");
+  input.write("x".repeat(1_048_570) + "hidden");
+  input.write("-secret-");
+  input.end("complete-tail\nsafe next line");
+  await ended;
+  assert.equal(captured, "Next: OUTPUT_LINE_LIMIT_EXCEEDED\nNext: safe next line\n");
+});
+
 test("IMP-006 diagnostic output redacts database URLs, tokens and known secrets", () => {
   const env = { DATABASE_URL: "postgresql://owner:private@localhost:5432/test", JWT_SECRET: "jwt-private-key" };
   const text = "db=postgresql://owner:private@localhost:5432/test token=Bearer opaque-token jwt-private-key Cookie: session=private-cookie";

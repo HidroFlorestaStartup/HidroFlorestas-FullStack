@@ -2,7 +2,7 @@
 
 **Feature Branch**: `022-fix-concurrency-ihfr`
 **Created**: 2026-10-19
-**Status**: Em investigação
+**Status**: Correção A implementada; causas históricas A/duas chamadas e B inconclusivas; validação final em andamento
 **Input**: Missão do usuário de 19/10/2026: PLAN → EXECUTE → REVIEW, duas pendências técnicas, reprodução antes de correção; preservar demo, PRs 14/15 e contratos; sem merge, deploy ou produção.
 
 ## User Scenarios & Testing *(mandatory)*

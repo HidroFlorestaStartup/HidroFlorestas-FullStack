@@ -33,9 +33,9 @@
 ## Phase 5: Review e entrega
 
 - [x] T012 Permitir CI somente da branch nova em `.github/workflows/rc-review.yml` e bloquear seu deploy em `vercel.json`.
-- [ ] T013 Executar testes oficiais, conferir15gates/SHA e registrar `implementation-evidence.md`.
-- [ ] T014 Conferir diff/escopo/links/segredos/demo e concluir `plan.md`/`tasks.md`.
-- [ ] T015 Commit/push/PR próprio e `@codex review`; registrar URLs/resultados em `implementation-evidence.md` ou recibo do PR.
+- [x] T013 Executar testes oficiais e registrar `implementation-evidence.md`;15gates iniciais conferidos em `evidence/ci-initial.json`. Conferência obrigatória do último SHA no recibo externo do PR16 condiciona a entrega, sem novo commit após o journal final.
+- [x] T014 Conferir diff/escopo/links/segredos/demo e concluir `plan.md`/`tasks.md`; preservar a condição de entrega do SHA final.
+- [x] T015 Commit/push/PR16 próprio e `@codex review`; URLs em `implementation-evidence.md`, recibo final pendente do CI.
 
 ## Dependencies & Execution Order
 

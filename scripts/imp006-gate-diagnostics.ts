@@ -46,14 +46,21 @@ export function describeImp006Error(error: unknown, env: Record<string, string |
 export function forwardImp006Diagnostics(stream: NodeJS.ReadableStream | null, env: Record<string, string | undefined>, label: string, destination: Pick<NodeJS.WriteStream, "write"> = process.stdout) {
   if (!stream) return;
   let pending = "";
+  let discarding = false;
   stream.setEncoding("utf8");
   const write = (line: string) => destination.write(`${label}: ${redactImp006Diagnostics(line, env)}\n`);
   stream.on("data", (chunk: string) => {
+    if (discarding) {
+      const boundary = chunk.indexOf("\n");
+      if (boundary < 0) return;
+      chunk = chunk.slice(boundary + 1);
+      discarding = false;
+    }
     pending += chunk;
     const lines = pending.split("\n");
     pending = lines.pop() ?? "";
     for (const line of lines) write(line.length <= 1_048_576 ? line : "OUTPUT_LINE_LIMIT_EXCEEDED");
-    if (pending.length > 1_048_576) { pending = ""; write("OUTPUT_LINE_LIMIT_EXCEEDED"); }
+    if (pending.length > 1_048_576) { pending = ""; discarding = true; write("OUTPUT_LINE_LIMIT_EXCEEDED"); }
   });
   stream.on("end", () => { if (pending) write(pending); });
 }
