@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useAuth } from "@/contexts/auth.context";
 import { DELETION_MESSAGES, parseAccountDeletionState, type AccountDeletionState } from "@/app/api/server/accounts/deletion.contracts";
-import { AccountShell, accountButtonClass } from "./account-shell";
+import { AccountShell, accountDangerButtonClass } from "./account-shell";
 import { PasswordField } from "./password-field";
 import { readAccountJson } from "./account-client";
+import styles from "./account.module.css";
 
 export function AccountDeletionForm() {
   const { clearAuthenticatedUser } = useAuth();
@@ -61,8 +62,9 @@ export function AccountDeletionForm() {
       {state && !expired ? <>
         {state.blockers.length ? <section aria-labelledby="deletion-links"><h2 id="deletion-links" className="font-semibold">Vínculos que impedem a exclusão</h2><ul className="my-3 list-disc space-y-2 pl-5">{state.blockers.map(item => <li key={item.code}>{item.label}{item.count === null ? "" : `: ${item.count}`}</li>)}</ul><p className="mb-5">Procure o responsável pelo laboratório ou pela administração para resolver esses vínculos. Registros científicos e históricos são preservados.</p></section> : <form onSubmit={submit} aria-busy={busy} className="space-y-5">
           <PasswordField id="deletion-password" label="Senha atual" current value={password} onChange={setPassword} disabled={busy} />
-          <label className="flex items-start gap-3"><input type="checkbox" checked={confirmed} onChange={event => setConfirmed(event.target.checked)} required disabled={busy} className="mt-1 h-5 w-5 shrink-0" /><span>Confirmo que quero excluir permanentemente minha conta.</span></label>
-          <button type="submit" disabled={busy || !confirmed} className={`${accountButtonClass} bg-red-700 hover:bg-red-800 focus:ring-red-800`}>{busy ? "Excluindo…" : "Excluir minha conta"}</button>
+          <label className={styles.confirmation}><input type="checkbox" checked={confirmed} onChange={event => setConfirmed(event.target.checked)} required disabled={busy} /><span>Confirmo que quero excluir permanentemente minha conta.</span></label>
+          {busy ? <p role="status">Excluindo conta…</p> : null}
+          <button type="submit" disabled={busy || !confirmed} className={accountDangerButtonClass}>{busy ? "Excluindo…" : "Excluir minha conta"}</button>
         </form>}
         <Link href={state.returnTo} className="mt-6 inline-block font-semibold text-amber-800 underline">Cancelar e voltar</Link>
       </> : null}
