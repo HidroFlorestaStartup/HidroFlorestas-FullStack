@@ -46,6 +46,16 @@ async function capture(page: Page, info: TestInfo, name: string, records: unknow
   records.push({ name, ...geometry });
   await info.attach(name, { path, contentType: "image/png" });
 }
+async function scrollPosition(page: Page) {
+  return page.evaluate(() => {
+    const content = document.getElementById("application-content")!;
+    return getComputedStyle(content).overflowY === "auto" ? content.scrollTop : scrollY;
+  });
+}
+async function focusAndExpose(target: Locator) {
+  await target.focus();
+  await expect.poll(async () => (await visibleWithinReadingArea(target)).visible).toBe(true);
+}
 async function visibleWithinReadingArea(target: Locator) {
   return target.evaluate(node => {
     const r = node.getBoundingClientRect();
@@ -73,7 +83,7 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
       await expect(page.getByText("Você ainda não participa de um laboratório.", { exact: true })).toBeVisible();
       await capture(page, info, name + "-empty-start", records);
       const create = page.getByRole("button", { name: "Criar laboratório", exact: true });
-      await create.focus(); await page.waitForTimeout(50);
+      await focusAndExpose(create);
       await capture(page, info, name + "-empty-create-focus", records);
       expect.soft((await visibleWithinReadingArea(create)).visible, "Create wholly inside actual reading area after application focus handling").toBe(true);
       await page.getByLabel("Nome do laboratório", { exact: true }).fill("IMP-002 E2E Mobile viewport");
@@ -118,47 +128,54 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
           ...await page.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true }).all(),
           ...await page.getByRole("button", { name: "Configurações", exact: true }).all()];
         for (const control of controls) {
-          await control.focus(); await page.waitForTimeout(50);
+          await focusAndExpose(control);
           const result = await visibleWithinReadingArea(control);
           records.push({ name: state + "-focused-control", label: await control.innerText(), ...result });
           expect.soft(result.visible, state + ": focused " + await control.innerText() + ": " + JSON.stringify(result)).toBe(true);
           expect.soft(result.hit, "Control center receives a real pointer hit").toBe(true);
         }
         const lastControl = page.locator("#application-content").locator("a:visible,button:visible,input:visible,textarea:visible,select:visible").last();
-        await lastControl.focus(); await page.waitForTimeout(50);
+        await focusAndExpose(lastControl);
         records.push({ name: state + "-actual-last-control", label: await lastControl.innerText(), ...await visibleWithinReadingArea(lastControl) });
         expect.soft((await visibleWithinReadingArea(lastControl)).visible, "The actual final DOM control is exposed").toBe(true);
         await capture(page, info, state + "-actual-last-control", records);
         const settings = list.getByRole("button", { name: "Configurações", exact: true });
-        await settings.focus(); await page.waitForTimeout(50);
+        await focusAndExpose(settings);
         await capture(page, info, state + "-last-control-focus", records);
         await settings.tap(); await expect(page.getByRole("dialog").getByText("Zona de perigo", { exact: true })).toBeVisible(); await page.keyboard.press("Escape");
         await expect(settings).toBeFocused();
         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
+        await focusAndExpose(access);
+        const originScroll = await scrollPosition(page);
+        records.push({ name: state + "-before-push", scroll: originScroll });
         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
         await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle");
-        await page.getByRole("heading", { level: 1 }).scrollIntoViewIfNeeded();
-        await capture(page, info, state + "-destination-summary", records);
+        records.push({ name: state + "-native-destination-heading", bounds: await page.getByRole("heading", { level: 1 }).boundingBox() });
+        await capture(page, info, state + "-destination-summary-native", records);
         await page.goBack();
         await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
+        await expect.poll(async () => Math.abs((await scrollPosition(page)) - originScroll)).toBeLessThanOrEqual(2);
         await capture(page, info, state + "-back-workspace", records);
         if (!isAdmin) {
           await page.goForward(); await expect(page.locator("#history-title")).toBeVisible();
           await page.waitForLoadState("networkidle"); await page.reload();
           await expect(page.locator("#history-title")).toBeVisible(); await page.waitForLoadState("networkidle");
+          await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
           await page.goBack(); await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
+          await expect.poll(async () => Math.abs((await scrollPosition(page)) - originScroll)).toBeLessThanOrEqual(2);
+          await capture(page, info, state + "-back-after-forward-reload", records);
         }
         await page.setViewportSize({ width: 667, height: 375 });
         await page.addStyleTag({ content: "html { font-size:" + percent + "% !important; }" });
-        await settings.focus(); await page.waitForTimeout(50);
+        await focusAndExpose(settings);
         expect.soft((await visibleWithinReadingArea(settings)).visible, "Focused control exposed in landscape").toBe(true);
         await capture(page, info, state + "-landscape", records);
         const cdp = await context.newCDPSession(page);
         try {
           await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 34, bottomMax: 34 } });
           await expect.poll(() => nav.evaluate(node => parseFloat(getComputedStyle(node).paddingBottom))).toBe(42);
-          await settings.focus(); await page.waitForTimeout(50);
+          await focusAndExpose(settings);
           const insetResult = await visibleWithinReadingArea(settings);
           records.push({ name: state + "-landscape-safe-area34-control", ...insetResult });
           expect.soft(insetResult.visible, "Focused control exposed with emulated 34px inset").toBe(true);

@@ -394,3 +394,208 @@ test("real redirects and global/contextual authority preserve owner-only roles a
     }
   }
 });
+function responseBarrier() {
+  let release!: () => void;
+  const ready = new Promise<void>(resolve => { release = resolve; });
+  return { ready, release };
+}
+
+async function chooseEmptyLaboratoryThroughWorkspace(page: Page) {
+  await page.getByRole("navigation", { name: "Navegação principal", exact: true })
+    .getByRole("link", { name: "Laboratórios", exact: true }).click();
+  await expect(page).toHaveURL(/\/workspace$/);
+  const laboratory = page.getByRole("listitem").filter({
+    has: page.getByRole("heading", { name: DASHBOARD_FIXTURE_PREFIX + " laboratory 2", exact: true }),
+  });
+  await expect(laboratory).toBeVisible();
+  await laboratory.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true }).click();
+  await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + emptyLaboratoryId + "$"));
+}
+
+async function expectEmptyDashboardContext(page: Page) {
+  await expect(summarySection(page).getByRole("heading", {
+    name: DASHBOARD_FIXTURE_PREFIX + " laboratory 2", exact: true,
+  })).toBeVisible();
+  await expect(summarySection(page).getByText("0", { exact: true })).toHaveCount(2);
+  const history = historySection(page);
+  await expect(history.getByText("Nenhuma atividade elegível neste laboratório.", { exact: true })).toBeVisible();
+  await expect(history.locator("ol a")).toHaveCount(0);
+  await expect(history.getByRole("button", { name: "Mais recentes", exact: true })).toBeDisabled();
+  await expect(history.getByRole("button", { name: "Mais antigos", exact: true })).toBeDisabled();
+  const destinations = await page.locator("#application-content a[href]:visible")
+    .evaluateAll(links => links.map(link => link.getAttribute("href")).join(" "));
+  for (const sourceId of [laboratoryId, ...DASHBOARD_FIXTURES.areaIds.slice(0, 12)]) {
+    expect(destinations).not.toContain(sourceId);
+  }
+}
+
+async function finishBrowserRendering(page: Page) {
+  await page.evaluate(() => new Promise<void>(resolve => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+  }));
+}
+
+test("real summary and refreshed history responses cannot replace an empty context after client navigation from page two", async ({ page, context }, info) => {
+  await page.setViewportSize({ width: 375, height: 900 });
+  await login(context, info);
+  const releaseResponses = responseBarrier();
+  const summaryFetched = responseBarrier();
+  const historyFetched = responseBarrier();
+  const summaryDelivered = responseBarrier();
+  const historyDelivered = responseBarrier();
+  const heldReads: { summary?: DashboardSummary; history?: DashboardHistoryPage; summaryStatus?: number; historyStatus?: number } = {};
+  let holdHistoryRefresh = false;
+  const summaryPattern = "**" + summaryEndpoint;
+  const historyPattern = "**" + historyEndpoint + "*";
+
+  // Fetch the real authorized payload first; only its delivery to this browser
+  // is held. No DTO, permission or cursor is synthesized by the transport.
+  await page.route(summaryPattern, async route => {
+    if (route.request().method() !== "GET") return route.continue();
+    const response = await route.fetch();
+    heldReads.summary = await response.json();
+    heldReads.summaryStatus = response.status();
+    summaryFetched.release();
+    await releaseResponses.ready;
+    try {
+      await route.fulfill({ response });
+    } finally {
+      summaryDelivered.release();
+    }
+  });
+  await page.route(historyPattern, async route => {
+    if (!holdHistoryRefresh || route.request().method() !== "GET") return route.continue();
+    const response = await route.fetch();
+    heldReads.history = await response.json();
+    heldReads.historyStatus = response.status();
+    historyFetched.release();
+    await releaseResponses.ready;
+    try {
+      await route.fulfill({ response });
+    } finally {
+      historyDelivered.release();
+    }
+  });
+
+  try {
+    await page.goto(base);
+    await summaryFetched.ready;
+    expect(heldReads.summaryStatus).toBe(200);
+    expect(heldReads.summary).toMatchObject({ context: { id: laboratoryId }, totals: { areas: 12, confirmedCollections: 12 } });
+    const activity = historySection(page);
+    await expect(activity.locator("ol a")).toHaveCount(20);
+    const pageTwo = page.waitForResponse(response => {
+      const url = new URL(response.url());
+      return url.pathname === historyEndpoint && url.searchParams.has("cursor");
+    });
+    await activity.getByRole("button", { name: "Mais antigos", exact: true }).click();
+    expect((await pageTwo).status()).toBe(200);
+    await expect(activity.locator("ol a")).toHaveCount(4);
+
+    holdHistoryRefresh = true;
+    await activity.getByRole("button", { name: "Atualizar histórico", exact: true }).click();
+    await historyFetched.ready;
+    expect(heldReads.historyStatus).toBe(200);
+    expect(heldReads.history).toMatchObject({ context: { id: laboratoryId } });
+    expect(heldReads.history?.items).toHaveLength(20);
+    await expect(page.getByRole("status", { name: "Carregando resumo", exact: true })).toBeVisible();
+    await expect(page.getByRole("status", { name: "Carregando histórico", exact: true })).toBeVisible();
+
+    const documentTimeOrigin = await page.evaluate(() => performance.timeOrigin);
+    const targetSummaryEndpoint = "/api/laboratories/" + emptyLaboratoryId + "/dashboard/summary";
+    const targetHistoryEndpoint = "/api/laboratories/" + emptyLaboratoryId + "/dashboard/history";
+    const targetSummaryRead = page.waitForResponse(response => new URL(response.url()).pathname === targetSummaryEndpoint);
+    const targetHistoryRead = page.waitForResponse(response => new URL(response.url()).pathname === targetHistoryEndpoint);
+    await chooseEmptyLaboratoryThroughWorkspace(page);
+    const targetSummary = await targetSummaryRead;
+    const targetHistory = await targetHistoryRead;
+    expect(targetSummary.status()).toBe(200);
+    expect(targetHistory.status()).toBe(200);
+    expect(new URL(targetHistory.url()).search).toBe("");
+    expect(await targetSummary.json()).toMatchObject({
+      context: { id: emptyLaboratoryId }, totals: { areas: 0, confirmedCollections: 0 },
+    });
+    expect(await targetHistory.json()).toMatchObject({
+      context: { id: emptyLaboratoryId }, items: [], page: { nextCursor: null },
+    });
+    await expectEmptyDashboardContext(page);
+    expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+
+    releaseResponses.release();
+    await Promise.all([summaryDelivered.ready, historyDelivered.ready]);
+    await finishBrowserRendering(page);
+    await expectEmptyDashboardContext(page);
+    expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+    await capture(page, info, "client-late-dashboard-context-375");
+  } finally {
+    releaseResponses.release();
+    await page.unrouteAll({ behavior: "wait" });
+  }
+});
+
+test("real delayed members from the previous client context cannot replace the selected owner's roster", async ({ page, context }, info) => {
+  await page.setViewportSize({ width: 375, height: 900 });
+  await login(context, info);
+  const releaseResponse = responseBarrier();
+  const membersFetched = responseBarrier();
+  const membersDelivered = responseBarrier();
+  const heldRead: { status?: number; body?: { context: { id: string }; memberships: MembershipDto[] } } = {};
+  const pattern = "**" + membershipsEndpoint;
+  await page.route(pattern, async route => {
+    if (route.request().method() !== "GET") return route.continue();
+    const response = await route.fetch();
+    heldRead.status = response.status();
+    heldRead.body = await response.json();
+    membersFetched.release();
+    await releaseResponse.ready;
+    try {
+      await route.fulfill({ response });
+    } finally {
+      membersDelivered.release();
+    }
+  });
+
+  try {
+    await page.goto(base + "/members");
+    await membersFetched.ready;
+    expect(heldRead.status).toBe(200);
+    expect(heldRead.body).toMatchObject({ context: { id: laboratoryId } });
+    expect(heldRead.body?.memberships).toHaveLength(3);
+    await expect(membersSection(page).getByText(/Carregando membros/)).toBeVisible();
+    const documentTimeOrigin = await page.evaluate(() => performance.timeOrigin);
+    await chooseEmptyLaboratoryThroughWorkspace(page);
+    await expect(summarySection(page).getByText("0", { exact: true })).toHaveCount(2);
+
+    const targetEndpoint = "/api/laboratories/" + emptyLaboratoryId + "/memberships";
+    const targetRead = page.waitForResponse(response => new URL(response.url()).pathname === targetEndpoint);
+    await page.getByRole("navigation", { name: "Laboratório", exact: true })
+      .getByRole("link", { name: "Membros", exact: true }).click();
+    const targetResponse = await targetRead;
+    expect(targetResponse.status()).toBe(200);
+    const target: { context: { id: string; membershipRole: string }; memberships: MembershipDto[] } = await targetResponse.json();
+    expect(target.context).toMatchObject({ id: emptyLaboratoryId, membershipRole: "OWNER" });
+    expect(target.memberships).toHaveLength(1);
+    expect(target.memberships[0].role).toBe("OWNER");
+    const roster = membersSection(page);
+    await expect(roster.getByRole("listitem")).toHaveCount(1);
+    await expect(roster.getByRole("listitem").filter({ hasText: target.memberships[0].name })).toHaveCount(1);
+    await expect(roster.getByRole("button", { name: /^(Promover|Rebaixar) / })).toHaveCount(0);
+    expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+
+    releaseResponse.release();
+    await membersDelivered.ready;
+    await finishBrowserRendering(page);
+    await expect(roster.getByRole("listitem")).toHaveCount(1);
+    for (const previous of heldRead.body!.memberships.filter(member => member.role !== "OWNER")) {
+      await expect(roster.getByRole("listitem").filter({ hasText: previous.name })).toHaveCount(0);
+    }
+    await expect(roster.getByText("Papel atualizado.", { exact: true })).toHaveCount(0);
+    await expect(page.getByRole("navigation", { name: "Laboratório", exact: true })
+      .getByRole("link", { name: "Resumo", exact: true })).toHaveAttribute("href", "/dashboard/laboratories/" + emptyLaboratoryId);
+    expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+    await capture(page, info, "client-late-members-context-375");
+  } finally {
+    releaseResponse.release();
+    await page.unrouteAll({ behavior: "wait" });
+  }
+});
