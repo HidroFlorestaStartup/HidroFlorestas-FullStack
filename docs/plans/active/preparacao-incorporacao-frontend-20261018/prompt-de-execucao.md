@@ -1,5 +1,13 @@
 # Prompt autossuficiente — primeira incorporação visual do login
 
+> **HISTÓRICO — FASE 1 CONCLUÍDA EM 18/10/2026.** O login/Spec017 foi integrado
+> pelo PR9, merge `afef5db6ced1a4604a114d842bf85950ac32c69b`, após o merge do PR8.
+> Para continuar, execute o **[novo prompt das fases 2 e 3](prompt-de-execucao-fases-2-3.md)**,
+> autorizado por Pedro para ambas as fases, incluindo validação/commits/push/PRs.
+> A orientação abaixo de não avançar após o login pertence ao mandato anterior
+> e foi substituída para essas duas fases. O conteúdo original fica preservado
+> como histórico; não é necessário reaplicá-lo. Merge permanece com o mantenedor.
+
 Este prompt orienta a execução por outro desenvolvedor, com seu próprio Codex.
 `DECISAO_CONFIRMADA`: Pedro autorizou expressamente, no pedido de atualização
 deste handoff em 18/10/2026, o executor a **implementar, validar, fazer commits,

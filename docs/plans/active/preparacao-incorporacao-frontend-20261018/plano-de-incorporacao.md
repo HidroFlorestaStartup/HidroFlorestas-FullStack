@@ -1,4 +1,100 @@
-# Plano proposto de incorporação do frontend
+# Plano de incorporação do frontend
+
+## Estado vigente — login integrado; fases 2 e 3 autorizadas em 18/10/2026
+
+Estado: `EM_ANDAMENTO` para a incorporação; fase 1 `CONCLUIDO`; fases 2 e 3
+autorizadas e ainda não implementadas por esta preparação. Fases 4–10 permanecem
+`PROPOSTA`, aguardando decisão própria. O registro anterior, preservado ao final,
+descreve o mandato e o corte de sua época, sem limitar a autorização atual.
+
+`DECISAO_CONFIRMADA`: origem no pedido de Pedro “sincronização, merges #8/#9 e
+handoff das fases 2 e 3”, anexado ao seu Codex em 18/10/2026. Pedro autorizou o
+outro desenvolvedor, com seu Codex, a **implementar, validar, commitar, fazer push
+e abrir/atualizar PRs das fases 2 e 3 completas**, sem confirmação adicional nas
+operações normais. Substitui a proposta limitada ao cadastro e a espera de nova
+autorização de execução depois do login. **Aceite humano e merge continuam com
+o mantenedor**. Nenhuma autorização para fase 4 em diante, main ou operação real.
+
+`EVIDENCIA_IMPLEMENTACAO`: preparação #8 integrada pelo merge
+`cf7f086351c952be5b7cc51f9616bc68bfd84f4d`, head
+`95463d5b0a29d75e916d2115765792444438db44`; login/Spec017 #9 integrado pelo merge
+`afef5db6ced1a4604a114d842bf85950ac32c69b`, head
+`550308247d712c920dede8d96b5f1e6140767d10`. Este é o novo corte de
+origin/development; árvore `0210b54b648b42e38fea853e650061463c3fd365`.
+Main local/remota permanece `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`.
+Starter main reconferida em `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f`.
+
+Login real mantém signIn/payload/senha/destinos, hidratação/trava de envio,
+aria-invalid por campo somente na validação local e erro geral no alerta.
+AuthContext/API/banco/globals/layout/dependências sem diff; CSS local, marca e
+Poppins mantidas. APPROVED de Pedro registrado por Codex autorizado na
+[review5564336503](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9#pullrequestreview-5564336503).
+Não houve autoaprovação de #8, teste manual ou revisão de terceiro inventados.
+
+CI do head5503082: [validate/SUCCESS](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39145086835/job/117727186936),
+artefato12143033430 inspecionado,15 gates PASS; E2E86/login14, HTTPS2, IHFR6.
+Equivalência da árvore integrada comprovada para código/testes/configuração;
+nenhuma nova bateria só pelo merge documental. Ressalva aceita por Pedro:
+CI292dd95 falhou nos seis IHFR, causa não demonstrada; acba40d/5503082 PASS não
+provam correção. Preservar esse histórico e registrar recorrência material.
+
+[PR documental10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+sem merge nesta preparação. O handoff pode ser usado diretamente nesta branch.
+
+## Sequência vigente e critérios
+
+| Fase | Estado e execução | Critério de entrega |
+|---|---|---|
+| 1. Login real / Spec017 | CONCLUIDO em #9, integrado após #8 | Head revisado e aprovado, CI exato e contratos preservados; ressalva IHFR mantida |
+| 2. Cadastro e conjunto de conta | AUTORIZADO para outro desenvolvedor | Cadastro, verificação, recuperação/redefinição, troca e exclusão completos; signUp/Idempotency-Key, senha original, verify-email, provas, sessões e blockers reais; capturas e validações próprias; commits/push/PR |
+| 3. Workspace e shell | AUTORIZADO na mesma missão, após validação técnica da fase2 | Workspace/sidebar/top-bar/layouts/navegação/logout desktop/mobile; contexto, seleção, permissões e guardas reais; integração com telas antigas; capturas, regressão e commits/push/PR |
+| 4–10. Demais recortes do mapa histórico abaixo | PROPOSTA; execução não autorizada neste mandato | Decisão posterior; não implementar conteúdo dessas telas ao adaptar o shell |
+
+Instrução principal para execução: **[prompt-de-execucao-fases-2-3.md](prompt-de-execucao-fases-2-3.md)**.
+O prompt anterior é histórico da fase1 concluída. O novo arquivo contém bases,
+autorização, caminhos, critérios, contratos, CI e entrega sem depender deste chat
+ou da análise externa “revisao-prs-8-9-e-proxima-etapa.md”, que não foi incorporada.
+
+`RECOMENDACAO`: uma branch/spec/PR por fase, nos próximos diretórios **livres**
+do Spec Kit, sem presumir018/019. Iniciar da development verificada; registrar
+SHA e deriva. Se a fase2 estiver merged, fase3 parte da development atualizada.
+Se aguardar merge e houver dependência, fase3 parte do head validado da fase2,
+com PR empilhado temporariamente contra a branch da fase2, dependência explícita
+e destino final development. Após merge pelo mantenedor, reconferir diff/CI e
+retarget quando cabível, preservando commits e branch-base enquanto necessária.
+Sem dependência de código, branches independentes exigem comprovar o conjunto e
+evitar duplicação compartilhada. Não parar depois do primeiro PR por falta de
+autorização de execução já concedida. Não delegar merge ao executor.
+
+Preservar marca/fonte, Next/App Router, serviços reais e Node/npm/lockfile.
+Starter é referência visual TanStack; sem adapters/mocks/personas/roteador ou
+reporting Lovable. Não substituir globals/layout raiz, instalar o pacote inteiro
+de dependências, mudar schema/ciência/drafts/capas/mapa/administração funcional
+ou ativar provedores reais. Biblioteca nova/alteração funcional material exige
+justificativa e tratamento próprio. Usar guias Next instalados e estilos focais.
+
+Antes do primeiro push de cada branch, incluí-la no trigger **e** no if do job
+RC e excluir o preview por branch, preservando15 gates/Actions/runners/guards.
+Node24.19/npm ci/Prisma/typecheck/lint/build padrão; harness sintético oficial e
+CI do head exato, inclusive fase3 empilhada. Não usar -InitializeCiCluster fora
+do runner isolado Actions nem E2E focal fora do ambiente completo exigido.
+Capturas reais375/768/1440 e reflow320/texto ampliado, estados/foco/teclado;
+publicar somente evidências sintéticas sanitizadas. Screenshot não prova leitor
+de tela manual; transporte sintético não prova Gmail real.
+
+Paradas: novo defeito/regressão material, conflito que ameace preservação,
+regra/permissão impeditiva ou decisão necessária de produto/domínio/ciência.
+Homologações externas históricas conservam seu alcance, sem bloquear
+automaticamente a apresentação. Qualificadores IHFR mantidos. Resultados e
+pendências no [relatório](relatorio-de-prontidao.md) e
+[acompanhamento](plano-de-acompanhamento.md).
+
+## Registro histórico anterior — preservado, substituído nos pontos acima
+
+As orientações abaixo sobre “somente login”, branches sempre de development e
+espera de autorização após login descrevem o mandato anterior. Para fases2/3,
+prevalecem a decisão atual e a estratégia de PRs acima; o mapa de fases4–10
+permanece proposta. Bases e resultados antigos não descrevem a ponta atual.
 
 Estado: `AGUARDANDO_REVISAO` por Pedro para as etapas posteriores ao login.
 `DECISAO_CONFIRMADA`: Pedro escolheu **login com autenticação real** como primeira

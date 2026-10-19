@@ -1,5 +1,142 @@
 # Atualização de contexto e prontidão — 18/10/2026
 
+## Resultado vigente — integração do login e handoff das fases 2 e 3
+
+**Login/Spec017 integrado em development; execução completa das fases2 e3
+autorizada por Pedro para o outro desenvolvedor.** A preparação documental desta
+continuação está publicada na branch `docs/handoff-frontend-fases-2-3`,
+criada de `afef5db6ced1a4604a114d842bf85950ac32c69b`. O [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) está aberto, somente
+documental, para development, sem auto-merge ou merge nesta rodada. O handoff pode ser lido
+diretamente da branch enquanto o mantenedor o revisa.
+
+`DECISAO_CONFIRMADA`: origem no pedido de Pedro “sincronização, merges #8/#9 e
+handoff das fases 2 e 3”, anexado ao seu Codex em18/10/2026. Autoriza esta
+sincronização/revisão/aprovação cabível/merges/publicação; autoriza o outro
+desenvolvedor a implementar, validar, fazer commits, push e abrir/atualizar PRs
+de cadastro/conjunto de conta e workspace/shell. Substitui a proposta limitada
+ao cadastro e a espera de autorização de execução após login. Fases4+ não
+autorizadas. Aceite humano/merge dos futuros PRs continuam com o mantenedor.
+
+### Operações remotas efetivamente confirmadas
+
+| PR | Head revisado | Resultado |
+|---|---|---|
+| [8](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8) | 95463d5b0a29d75e916d2115765792444438db44 | MERGED em **cf7f086351c952be5b7cc51f9616bc68bfd84f4d**, pais e17f64a/95463d5; dez documentos; sem autoaprovação de Pedro |
+| [9](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9) | 550308247d712c920dede8d96b5f1e6140767d10 | MERGED em **afef5db6ced1a4604a114d842bf85950ac32c69b**, pais cf7f086/5503082; APPROVED de Pedro no head exato |
+
+[Review5564336503](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/9#pullrequestreview-5564336503):
+conta autenticada **PedroVitor237**, APPROVED no SHA5503082, registro transparente
+por Codex autorizado por Pedro, sem alegar teste manual ou revisão de terceiros.
+Horários GitHub: merge8 2026-10-18T18:42:36Z; review9 18:44:27Z; merge9 18:44:44Z
+(15:42:36/15:44:27/15:44:44 em America/Fortaleza).
+
+Mergeabilidade CLEAN, sem conflitos; sem reviews/threads anteriores nos dois
+PRs. Conta tem push, merge commit habilitado, delete_branch_on_merge=false;
+development protected=false, rulesets e regras efetivas vazios. Nenhum bypass,
+alteração de proteção ou exclusão de branch. Merges via API com sha esperado;
+estados MERGED e pais/árvore conferidos depois por Git/API.
+
+### Revisão material e equivalência
+
+Leitura do diff contra a development e do AuthContext: login continua por
+`useAuth().signIn({email,password})`; senha e payload não transformados, destinos
+continuam no servidor/contexto. Readiness via useSyncExternalStore, fieldset
+inerte antes de hidratar e useRef de envio duplicado; aria-invalid deriva apenas
+dos campos localmente vazios, erros gerais permanecem no alerta. CSS Module
+local, marca e Poppins preservadas. Sem mocks/TanStack no produto.
+
+AuthContext/API/banco/prisma/globals/layout/package/lockfile sem diff. Workflow
+inclui feat/frontend-login em push.branches **e** if do validate; ajuste de upload
+somente para screenshots focais. vercel.json exclui preview dessa branch.
+Runners,15 gates, Actions/permissões/guards preservados. Ausência de status Vercel
+no head9 não é ausência de CI: validate oficial foi consultado diretamente.
+
+PR8 alterou dez documentos; PR9 tem43 caminhos: dois de produto, um teste, dois
+de configuração e38 de specs/evidências. Nenhum caminho comum. Merge-tree antes
+da integração produziu **0210b54b648b42e38fea853e650061463c3fd365**, exatamente
+a árvore do merge9 real. Diff merge9 versus head9 contém somente os dez arquivos
+documentais de8; **todos os blobs de produto/testes/configuração são iguais**.
+Não atribuímos CI do head a uma árvore funcional diferente.
+
+### CI utilizado e ressalva histórica
+
+[validate/SUCCESS](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39145086835/job/117727186936),
+run39145086835, attempt1, evento push, SHA exato5503082. Artefato12143033430,
+rc-validation-550308247d712c920dede8d96b5f1e6140767d10, baixado e inspecionado.
+Seu results.jsonl contém **15 gates PASS/exit0**, um único snapshot funcional
+21b7d67392dea33fc4721f07abe8392afce4624fd4b26f6913b70c6200cf81a5:
+RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck,
+Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit. Logs confirmam E2E86,
+HTTPS2, exclusão3 e IHFR6;14 casos de login integram a suíte atual.
+Ambiente: Windows/Node24.19/PostgreSQL17 próprio em loopback.
+
+Ressalva aceita por Pedro na autorização atual: **292dd95 falhou nos seis IHFR,
+causa não demonstrada**. acba40d e5503082 passaram; PASS posterior não prova
+correção nem elimina o FAIL anterior. Arquivos históricos da017 preservados.
+Nenhuma investigação paralela, relaxamento de teste/assertion/guard ou alteração
+científica foi introduzida. Registrar eventual recorrência material nas fases.
+
+Não se repetiu bateria funcional local apenas por merge documental, conforme
+autorização e equivalência demonstrada. Não se executaram teste manual de
+leitor de tela, homologação de e-mail/Cloudinary, migração remota ou deploy manual.
+Workflow RC não roda em development nem na nova branch documental. Checks/status
+automáticos da integração conectada são observações separadas, não nova bateria,
+aceite operacional ou promoção para main.
+
+Consulta posterior confirmou status **Vercel/SUCCESS** nos merges cf7f086 e
+afef5db e **Vercel Preview Comments/SUCCESS** em afef5db. São efeitos automáticos
+da integração Git conectada; nenhum comando/API de deploy foi executado e
+nenhum novo validate foi atribuído a esses merges.
+
+### Sincronização e handoff
+
+Checkout principal inicialmente limpo em developmente17f64a; fetch pós-merges e
+`git merge --ff-only origin/development` para **afef5db**, agora0/0. Main local/
+remota **beba96fbf6bbaac8771dbb29abea2f9f8f5b0054**,0/0, sem promoção. Branch
+docs/preparacao-frontend-20261018 continua95463d5,0/0; feat/frontend-login criada
+localmente como tracking5503082,0/0; review/cri-rc-validation-20261012 continua
+a01857b,0/0 e worktree limpa. Registro da worktree documental antiga ausente
+preservado, sem prune. Nenhuma divergência local ou mudança preexistente descartada.
+Origin oficial FullStack e starter conferidos; upstream antigo não utilizado.
+Fetch do starter realizado para consulta; main visual continua cbb954a.
+
+No clone visual oficial, origin foi atualizado por fetch; maincbb954a e branch
+atual fix/login-http-rede-local2267250 já estão0/0; a branch histórica1472166
+foi somente registrada, também0/0. package-lock.json não rastreado preservado,
+SHA256 e3e1790a8eec7dcb26780cd57ec870783dc41877a56ade101f3e165e0c7f26cb
+antes/depois. Nenhum código alterado, troca de checkout ou prune de worktree
+ausente no starter. Instruções AGENTS locais consultadas, sem reescrita de histórico.
+
+O [novo prompt](prompt-de-execucao-fases-2-3.md) contém autorização, bases reais,
+mapa completo de contas e shell, contratos/idempotência/hidratação/contexto,
+Spec Kit por fase sem presumir IDs, CI/preview por branch e evidências sanitizadas.
+Fase3 pode usar PR empilhado sobre o head validado da2 enquanto aguarda merge,
+com dependência/base temporária explícita e futuro retarget/revalidação; o merge
+não foi delegado. Fases4+ continuam propostas. A análise externa anterior não é
+pré-requisito nem foi copiada para o repositório.
+
+Verificações documentais/resultados e encerramento registrados no
+[acompanhamento](plano-de-acompanhamento.md) e no
+[JSON sanitizado](integracao-login-e-handoff-fases-2-3.json).
+Pendências reais: revisão/merge do PR documental pelo mantenedor; implementação
+e validação das fases2/3 pelo outro desenvolvedor; respectivos aceites/merges;
+gates operacionais/científicos anteriores nos próprios alcances. Nenhuma nova
+autorização normal de execução das fases2/3 é pendente. TECH_DECISIONS e
+PENDING_DECISIONS não requerem alteração global nesta preparação.
+
+Publicação remota conferida: commit inicial **7ff421c9f560b8846a1b5d782eb6432324afd782**,
+branch com upstream próprio e PR10 OPEN/MERGEABLE, oito caminhos documentais.
+Validação nova desta preparação: diff/check/escopo,75 links locais, JSONs,
+preservação dos corpos históricos e padrões sensíveis PASS. O commit posterior
+de encerramento registra esses fatos; seu head final é conferido separadamente.
+Vercel inicial do head7ff421c PENDING e Preview Comments SUCCESS, sem confundir
+esse status automático com validate funcional ou homologação.
+
+## Registro histórico de prontidão e da continuação anterior
+
+Tudo abaixo conserva os cortes anteriores. Afirmações de PR8 aberto, login
+futuro ou espera de autorização depois dele foram superadas nos pontos acima.
+
 **Development: PRONTO PARA PLANEJAR A INCORPORAÇÃO.**
 
 **Atualização posterior, 18/10/2026:** a base atual é
