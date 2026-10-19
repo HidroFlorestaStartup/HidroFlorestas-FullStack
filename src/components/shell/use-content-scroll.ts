@@ -18,7 +18,10 @@ function belongsToScope(path: string, scope: ContentScrollScope) { return path =
 function visibleContent(content: HTMLElement) { return content.isConnected && content.getClientRects().length > 0; }
 function ownScroll(content: HTMLElement) { return getComputedStyle(content).overflowY === "auto"; }
 function persist() {
-  try { sessionStorage.setItem(storageKey, JSON.stringify([...positions].slice(-50))); }
+  try {
+    if (positions.size === 0) sessionStorage.removeItem(storageKey);
+    else sessionStorage.setItem(storageKey, JSON.stringify([...positions].slice(-50)));
+  }
   catch { /* Scroll and focus still work when tab storage is unavailable. */ }
 }
 function hydrate() {
@@ -181,7 +184,9 @@ export function useContentScroll(scope: ContentScrollScope) {
         currentPath.current = null;
         pendingRestore.current = null;
       }
-      if (["/login", "/logout", "/register"].includes(window.location.pathname)) {
+      // Successful deletion stays on its public confirmation page. Discard this
+      // disposable view cache on entry, rather than waiting for a login redirect.
+      if (["/login", "/logout", "/register", "/delete-account"].includes(window.location.pathname)) {
         positions.clear(); pendingRestore.current = null; popRestore = null;
         try { sessionStorage.removeItem(storageKey); } catch { /* Optional UI cache. */ }
       } else persist();

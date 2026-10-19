@@ -52,3 +52,10 @@ O listener ?nico observou tab-pop, publicou posi??o766; destino reivindicou, ini
 Classifica??o das falhas focais preservada nos journals: probe1FAILseminten??o; probe2FAILapesarBackcorrigido por amostra imediata em transi??o; probe4casos3PASS/1FAIL e candidato limpo3PASS/1FAIL por exigir offset fisicamente indispon?vel. Fonte global existente transition .3s ? aguardada naturalmente antes da medi??o e a escalaCSS ? restabelecida ap?sreload antes de voltar. Diferen?a38 tinha origem2782 e novo m?ximo2744; a restaura??o j? estava2744, corretamente clampada. A expectation agora ? min(posi??o salva,m?ximo atual), com mesma toler?ncia2px/timeout5s; o retorno incorreto0 continua reprovado.
 Instrumenta??o tempor?ria inteiramente retirada. Runners/config/package/guards n?o foram alterados para os probes. Listener da aba n?o captura campos, autentica??o ou history.state; inst?ncias mant?m pend?ncia/ref e assinaturas locais. Revis?o independente do hook limpo n?o encontrou bloqueio concreto.
 A regress?o completa e o CI do HEAD publicado ainda precisam confirmar a candidata.
+
+
+## Regress?o completa: exclus?o detecta reten??o do cache
+
+EVIDENCIA_IMPLEMENTACAO. HEAD c0f74db3d7d8c16720bb6f6a04a66fb0b8b1d3d8; snapshot e801a73a8f9e541f9bcdaa040be5ff3595a7073f9fd4652c18ef02a154566339; 2026-10-19T13:46:58Z?13:56:00Z. Primeiros nove gates PASS; E2E **136/136 PASS** (inclui o teste preexistente de mapa, sem alterar asser??es/timeouts/retries); HTTPS **2/2 PASS**. Deletion **FAIL: 2 PASS/1 FAIL**, porque ap?s excluir a conta localStorage.length + sessionStorage.length era 1, esperado 0. Este resultado bloqueia publica??o at? corre??o. Ihfr, Bootstrap e SchemaAudit n?o executaram nessa rodada.
+
+[Journal](evidence/deletion-red/results.jsonl), logs redigidos E2E/HTTPS/Deletion na mesma pasta. O cache m?vel n?o pode recriar armazenamento ao sair do shell para exclus?o, nem reter estado de uma sess?o terminada. A corre??o ser? restrita ao hook de UI, preservando AuthContext, fluxo de exclus?o e teste preexistente. Nenhum PASS global inferido.
