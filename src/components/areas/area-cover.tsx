@@ -173,7 +173,10 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
       setError("");
       // Metadata/content retries must not discard an uncertain upload attempt.
       startPreview(current, "reload");
-    } catch { setError("Não foi possível recarregar a capa."); }
+    } catch {
+      setError("Não foi possível recarregar a capa.");
+      setMessage("Tente recarregar a capa novamente.");
+    }
     finally { lock.current = false; setBusy(false); }
   }
 
