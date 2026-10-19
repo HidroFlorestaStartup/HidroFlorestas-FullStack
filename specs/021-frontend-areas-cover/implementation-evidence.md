@@ -26,3 +26,8 @@ HEADda57eb7a80ccb6406733fd952e36feb21a078ed9; snapshot05158fc38a9c6145e66bd519f3
 ## REVIEW: omissão de encerramento do efeito corrigida
 
 Candidata0f83a9fe01e613ab75b6cc2d8a82c67671ecae66/snapshote1b22f35a7e1c5784dd89cb98547ded22edaa44090a971fa52765040a4732c24: RegressionSetup PASS; Typecheck FAIL TS1005 emAreaList. Lint e navegador não executaram. Revisor separado visual_contracts identificou que a edição de JSX omitiu return de cleanup, dependências e fechamento de useEffect. A comparação estática anterior de prefixo era insuficiente e não comprovava preservação do bloco completo. Root restaurou exatamente return () => controller.abort(); e [laboratoryId, attempt] da base, sem mudar fetch/estado/contrato. [Journal e logs](evidence/candidate-compile-red/). Nova rodada necessária; nenhuma publicação dessa candidata.
+## Primeiro candidato funcional e achado adicional
+
+Fonte1e75ea4c645df2076e6f3c37aca4d8f4294ff5ea, snapshot4dae7657ed006d4689dd7d2d43df8918ac90517856cae7f63909f66821d10541: Setup/Typecheck/Lint PASS; probe16 com15PASS/1FAIL. Cinco REDs originais passaram. A matriz parou no status vazio porque CSSdisplay:none o removia da consulta acessível. CSS ajustado para conservar a região live montada, sem painel visual vazio; não é nova prova de leitor de tela manual. [Journal/log](evidence/candidate-first/).
+
+Revisor separado identificou por fluxo um candidato adicional: recarregar enquanto bytes estão pendentes, depois falhar metadados, cancela o token anterior mas mantém texto Tentando/Carregando.17ºcaso foi escrito com MEMBER/canEdit real, barreiras, evento real de imagem e zero mutações; deve obter RED antes de qualquer mudança no catch. Nova contagem futura153E2E; não apresentar a rodada anterior152 como teste da fonte alterada.

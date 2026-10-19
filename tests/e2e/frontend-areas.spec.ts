@@ -711,3 +711,50 @@ test("UI fake authoritative expiry and stale revision preserve selection and all
     expect(transport.removals).toHaveLength(1);
   }
 });
+
+test("UI fake RED/GREEN failed metadata reload cannot leave a completed older preview announced as pending", async ({ page, context }, info) => {
+  const transport = await fakeCover(page, context, info, { userIndex: 2 });
+  expect(transport.source.canEdit).toBe(false);
+  const olderBytes = gate();
+  let failMetadataNext = false;
+  transport.onMetadata = async route => {
+    if (failMetadataNext) {
+      failMetadataNext = false;
+      return route.fulfill({ status: 503, json: { error: { code: "UNAVAILABLE", message: "Metadados temporariamente indisponíveis." } }, headers: privateHeaders });
+    }
+    return route.fulfill({ json: transport.dto, headers: privateHeaders });
+  };
+  transport.onContent = async (route, _url, count) => {
+    if (count === 2) await olderBytes.promise;
+    await route.fulfill({ status: 200, contentType: "image/png", body: transport.bytes, headers: privateHeaders });
+  };
+  try {
+    await page.goto(coverArea);
+    await decoded(panel(page).getByRole("img"));
+    expect(transport.content).toHaveLength(1);
+    await reloadButton(page).click();
+    await expect.poll(() => transport.content.length).toBe(2);
+    await expect(status(page)).toHaveText("Tentando recarregar a capa…");
+    const olderImage = await panel(page).getByRole("img").elementHandle();
+    expect(olderImage).not.toBeNull();
+    await olderImage!.evaluate(node => node.addEventListener("load", () => node.setAttribute("data-frontend-areas-observed-load", "yes"), { once: true }));
+    expect(await olderImage!.evaluate(node => (node as HTMLImageElement).naturalWidth)).toBe(0);
+    // Arm the failure at this action boundary, never by an initial effect count.
+    failMetadataNext = true;
+    await reloadButton(page).click();
+    const alert = panel(page).getByRole("alert");
+    await expect(alert).toHaveText("Não foi possível recarregar a capa.");
+    expect(transport.content).toHaveLength(2);
+    olderBytes.release();
+    await expect.poll(() => olderImage!.getAttribute("data-frontend-areas-observed-load")).toBe("yes");
+    await decoded(panel(page).getByRole("img"));
+    expect(transport.content.map(query => new URLSearchParams(query).get("revision"))).toEqual(["1", "1"]);
+    expect(transport.commands).toHaveLength(0); expect(transport.confirmations).toHaveLength(0);
+    expect(transport.removals).toHaveLength(0); expect(transport.directUploads).toBe(0);
+    await capture(page, info, "ui-fake-metadata-error-after-pending-preview", alert);
+    // The metadata error remains recoverable. The earlier byte request actually
+    // completed, so its obsolete loading announcement must not remain forever.
+    await expect(status(page)).not.toContainText(/Tentando|Carregando|Validando/);
+    await expect(alert).toHaveText("Não foi possível recarregar a capa.");
+  } finally { olderBytes.release(); }
+});

@@ -27,7 +27,7 @@
 .notice, .feedback, .error { min-width: 0; padding: 16px; border: 1px solid; border-radius: 12px; font-size: .875rem; line-height: 1.6; overflow-wrap: anywhere; }
 .notice { color: #795015; border-color: #ead5af; background: #fff7e7; }
 .feedback { color: #245237; border-color: #c9dfcf; background: #eaf5ed; }
-.feedback:empty { display: none; }
+.feedback:empty { padding: 0; border: 0; background: transparent; }
 .error { color: #992525; border-color: #e9bdbd; background: #fff0f0; }
 .progress { width: 100%; min-width: 0; max-width: 100%; height: 12px; accent-color: #236548; }
 @media (max-width: 399px) {
