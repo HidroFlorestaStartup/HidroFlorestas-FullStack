@@ -1,0 +1,72 @@
+[
+    {
+        "file":  "e2e.log",
+        "sha256":  "3076013141A0FD7EDFD98CA7D397D5AF2299CCFD6A40B7F0F0C29E6C3EDE3DAD",
+        "bytes":  128064
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text100-geometry.json",
+        "sha256":  "945D575173FC74AB8AFE78D7C3C020CB956AEAE8B5692908F8573D535DCF1A0F",
+        "bytes":  7702
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text100-three-links-destination-summary-native.png",
+        "sha256":  "A1B941D32AF8C8FB9D312CA2140F2507C2E23A280A645153A65A0097C05438FC",
+        "bytes":  47594
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text100-three-links-last-control-focus.png",
+        "sha256":  "B1A16D4A6DB0BEEA68885701EA2A36C4449140F93CF002EA81CF0B66E80E6F1B",
+        "bytes":  55152
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text200-geometry.json",
+        "sha256":  "507A56251C7820C5F4BA034EA634A3A187642CB956B28B9A78DC1EF22F8FC2FC",
+        "bytes":  7720
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text200-three-links-destination-summary-native.png",
+        "sha256":  "2845B359C424C6541C1B7F2AEFAA98E685CBCA775BD1A65376443E410F3A0CEB",
+        "bytes":  50372
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-320-text200-three-links-last-control-focus.png",
+        "sha256":  "7A8172A85F54167E7FC9B16C7A2E5313F2AA2355C4988A103155B58BBB5AE0AD",
+        "bytes":  60004
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text100-geometry.json",
+        "sha256":  "3D2F9A08C4DB30DDB02530E031FB1EA7C042D66EC13D73F6355F18F1AF6E3B78",
+        "bytes":  7754
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text100-three-links-destination-summary-native.png",
+        "sha256":  "03CFF834D13457152B7C3F8622196970C3E4F6BD40EF006F7A6D0750FCB3B196",
+        "bytes":  48391
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text100-three-links-last-control-focus.png",
+        "sha256":  "2B4DA4EFA77AACBAA1B7CED145FE280DED5F3DF7A883141B7CD8DDFFB05BAB32",
+        "bytes":  55206
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text200-geometry.json",
+        "sha256":  "1F9D5BDA089DA30DEE1637A23CF374336214D3E6818D34875839BEF07B8B3A34",
+        "bytes":  7716
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text200-three-links-destination-summary-native.png",
+        "sha256":  "DB8601B009065BC25D3DA4F317421A71217B235C41214639AC2451995EE66F37",
+        "bytes":  58125
+    },
+    {
+        "file":  "frontend-mobile-navigation-after-375-text200-three-links-last-control-focus.png",
+        "sha256":  "40294079C58860586697E1563700ED824EC5788698F6F6A19BF4BB5A1DC07E94",
+        "bytes":  64723
+    },
+    {
+        "file":  "results.jsonl",
+        "sha256":  "D56606E2D57A9B628984F00E2472AAC69CCF22A6AA9CCDFB28CA1F8B42A9A643",
+        "bytes":  4170
+    }
+]

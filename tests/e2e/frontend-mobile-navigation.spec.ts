@@ -41,6 +41,7 @@ async function capture(page: Page, info: TestInfo, name: string, records: unknow
     const box = (id: string) => { const node = document.getElementById(id); const r = node?.getBoundingClientRect(); return r && node ? { top: r.top, bottom: r.bottom, height: r.height, scrollTop: node.scrollTop, scrollHeight: node.scrollHeight, clientHeight: node.clientHeight } : null; };
     return { width: innerWidth, height: innerHeight, text: getComputedStyle(document.documentElement).fontSize,
       scrollY, content: box("application-content"), header: box("application-header"), navigation: box("application-navigation"),
+      active: { tag: document.activeElement?.tagName, id: document.activeElement?.id },
       safeAreaMethod: "Chromium; labelled safe-area34 frames use CDP, no physical device", screenshot: "viewport/fullPage:false" };
   });
   records.push({ name, ...geometry });
@@ -155,6 +156,13 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         await capture(page, info, state + "-destination-summary-native", records);
         await page.goBack();
         await expect(list).toBeVisible(); await page.waitForLoadState("networkidle");
+        records.push({ name: state + "-back-cache", positions: await page.evaluate(base => {
+          try {
+            const values: unknown = JSON.parse(sessionStorage.getItem("hidroflorestas.content-scroll.v1") ?? "[]");
+            return Array.isArray(values) ? values.filter(entry => Array.isArray(entry) && (entry[0] === "/workspace" || entry[0] === base)) : [];
+          } catch { return []; }
+        }, "/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0]) });
+        await capture(page, info, state + "-back-workspace-initial", records);
         await expect.poll(async () => Math.abs((await scrollPosition(page)) - originScroll)).toBeLessThanOrEqual(2);
         await capture(page, info, state + "-back-workspace", records);
         if (!isAdmin) {
