@@ -35,6 +35,7 @@
 .labCard h3 { font-size: 1.125rem; font-weight: 700; }
 .cardTop { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 12px; color: #245f83; }
 .cardActions { display: grid; gap: 8px; align-self: stretch; margin-top: auto; padding-top: 8px; }
+.cardActions > :is(a, button) { flex-wrap: wrap; overflow-wrap: normal; word-break: normal; }
 .notice, .feedback, .error { padding: 16px; border: 1px solid #d8e4dc; border-radius: 12px; font-size: .875rem; }
 .notice { background: #fff7e7; color: #795015; border-color: #ead5af; }
 .feedback { background: #eaf5ed; color: #245237; }

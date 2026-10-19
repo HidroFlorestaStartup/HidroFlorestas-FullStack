@@ -77,3 +77,30 @@ APIs reais no ambiente sintético comprovam contagens, cursores, papéis e confl
 [Journal completo anterior, delta, falhas documentais, capturas finais e manifesto](evidence/local-reviewed/). PNG têm hash dos bytes; textos hash UTF8/LF semBOM para verificação entre checkouts. Capturas são viewport fullPage:false,900px em portrait e375em paisagem, Chromium140.0.7339.186/Playwright1.55.1; metadados registram scroll/alvo/escala. Texto200% é escalaCSS de fonte; safe-area/toque são emulação, não aparelho físico. Campos preenchidos mascarados; nenhum env,cookie,token,senha ou trace publicado.
 
 Pendências humanas: aceite visual/manual, leitor de tela/dispositivo físico e integração pelo mantenedor. Previewfalse e CI focal prontos antes do primeiro push. Sem merge/deploy/operação em provedores ou bancos reais; RC/ZIPs/processos alheios preservados. Estado publicado e HEAD/CI finais serão registrados no PR, sem transformar resultado local em publicação.
+## Correção focal OBS-UI-01 — PLAN / EXECUTE / REVIEW — 2026-10-19
+
+### PLAN
+FATO_DOCUMENTADO: solicitação atual e PROMPT-CODEX.md do ZIP (SHA2567faea0ad19e4efcc00fce85b5ee6637b82854d18f65b689ba4dab5f04d6916d3). Adendos Spec Kit em spec/plan/tasks, sem nova spec/branch/worktree. Commit PLAN42dd5f3e93deb5074d5bf678b9ddc584e99e3d23 precede o teste3c356d78d22074e01193bb41205e434b552daaaf e o produto2909ce33d900331fd05d754b04f3a860eb035056.
+
+### EXECUTE
+EVIDENCIA_IMPLEMENTACAO: somente tests/e2e/frontend-mobile-navigation.spec.ts e uma regra em src/components/workspace/workspace.module.css. Range delimita a palavra Configurações; flex-wrap permite distribuir ícone/texto sem quebrar o interior das palavras. Nenhuma redução da fonte ou mudança de alvo/foco/contrato.
+
+| Rodada oficial | Intervalo UTC | Resultado | Fingerprint funcional |
+|---|---|---|---|
+| RED no teste3c356d7 |17:01:47–17:07:51|RegressionSetup PASS; E2E134PASS/2FAIL (375/320texto200, Range2)|e3f0ef212747111b69285ce9fbeea82881d0c50a219490147ad93c4e6bdc0c8a|
+| GREEN no produto2909ce3 |17:08:13–17:14:39|RegressionSetup/Build/Typecheck/Lint/E2E PASS;136E2E|b7c7aa993accff559d51dcf57da7b927aaf34bc03bd30fb70f791a7ae31cdf0f|
+
+Entrypoint oficial rc-review-validation.ps1; RED -Gates RegressionSetup,E2E e GREEN -Gates RegressionSetup,Build,Typecheck,Lint,E2E. Runners/guards/timeouts/asserts anteriores preservados; cluster próprio encerrado, dados preservados. Lint0erros e3warnings preexistentes fora do delta. Nenhum PASS inferido dos gates não executados localmente; os15remotos serão conferidos no HEAD final.
+
+[Manifest RED](evidence/visual-fix-red/manifest.json) e [manifest GREEN](evidence/visual-fix-green/manifest.json) preservam journals, logs e SHA256 de cada arquivo. Before/after do mesmo cenário são viewport fullPage:false:320/375texto100/200, três/quatro links, paisagem667×375/safe-area34 e foco. Os PNGs desktop768/1440 do teste existente são composições fullPage, identificadas como tal; não provam exposição de viewport. Capturas históricas não foram substituídas. Falhas anteriores do CI permanecem nos recibos anteriores do PR14.
+
+### REVIEW
+RECOMENDACAO do revisor independente /root/review_visual (somente leitura do delta/capturas): nenhum achado material após a correção. Conferidos ícone/palavra, fonte ampliada html32px, foco, hit e geometrias atuais. Range antes do override não afirma safe-area/recorte/Poppins sozinho; evidência visual e geometria corroboram esses cenários.
+Limites: Chromium com ampliação CSS e safe-area emulada, sem dispositivo físico/leitor de tela/WCAG integral. Aceite humano continua pendente. Sem API/DTO/AuthContext/autorização/ciência/provedor real/merge em development/main/deploy. Não houve alteração material de decisão técnica ou registro canônico global.
+Publicação: usar branch/PR14 existentes. O recibo remoto em https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14 registrará o SHA final,15gates,run/artefato/checksum e encerrará T024 sem novo commit documental circular. Até esse recibo, CI final não é alegado.
+
+
+### Precisão dos checksums versionados
+EVIDENCIA_IMPLEMENTACAO: conferência pós-push encontrou somente normalização CRLF→LF em results.jsonl de ambas rodadas e02-build.log. Manifestos distinguem sha256/bytes do blob Git e original_sha256/original_bytes da captura original; nenhuma evidência funcional foi alterada. Todos os51blobs e os3originais foram conferidos independentemente, sem divergência. Run39292587225 do HEADe1cde57 foi cancelado automaticamente após push documental; somente RegressionSetup eUnit constam PASS, sem conclusão dos demais. Artefato12206101956, SHA256912a52ff2d0e92bca075ac98eff8132548582dca1d937fb3a274e7ee5bfac60d.
+
+EVIDENCIA_IMPLEMENTACAO: run39292821274/tentativa1/job118198134470 no HEAD9b0806ed86b6611cd766b028070963a8eb21e341 concluiu SUCCESS;15registros/15gates PASS/exit0, fingerprintdfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91. Artefato12207263687 baixado e conferido contra digestAPI:735e93945b22c000c1a372601ec1eab43b34c9bbeb27c46c85c66e5ba4a92e77. Esse resultado valida a fonte funcional. A presente correção de codificação é exclusivamente documental e exige CI do novo HEAD, a ser registrado no recibo final do PR14; não se atribui ao novo SHA o resultado anterior.
