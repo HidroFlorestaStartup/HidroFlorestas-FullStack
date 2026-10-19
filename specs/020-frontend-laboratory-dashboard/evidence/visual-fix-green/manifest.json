@@ -13,8 +13,10 @@
     },
     {
       "path": "02-build.log",
-      "sha256": "131c6546b5617147c65c5a7f64b2b02c51d84cd001506570a31f614adb9658d4",
-      "bytes": 4519
+      "sha256": "a2d9a7c09e700b009a3600781154c1cec1b864d5474ec3fc9556f5c44a0c42aa",
+      "bytes": 4516,
+      "original_sha256": "131c6546b5617147c65c5a7f64b2b02c51d84cd001506570a31f614adb9658d4",
+      "original_bytes": 4519
     },
     {
       "path": "03-typecheck.log",
@@ -143,8 +145,11 @@
     },
     {
       "path": "results.jsonl",
-      "sha256": "41c4b0c927aa7e56f56d6ec64859ea11a5b15fa586399b25c484567e44e7835f",
-      "bytes": 2178
+      "sha256": "360d6a09a459abc570f8dee9ce34e20d8980054b04d88e6bf608af966c93abdc",
+      "bytes": 2173,
+      "original_sha256": "41c4b0c927aa7e56f56d6ec64859ea11a5b15fa586399b25c484567e44e7835f",
+      "original_bytes": 2178
     }
-  ]
+  ],
+  "checksum_scope": "sha256/bytes identify versioned Git blobs after CRLF-to-LF normalization; original_sha256/original_bytes preserve original archived bytes where different."
 }

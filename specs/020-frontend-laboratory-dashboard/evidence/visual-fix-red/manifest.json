@@ -118,8 +118,11 @@
     },
     {
       "path": "results.jsonl",
-      "sha256": "fcad94dd8bf03702af38b84fb976bbf04d48614c5df1d5cedb62b189a19e83c3",
-      "bytes": 906
+      "sha256": "695333696982666e6fa72f25337af83fcdcd15f155d2ea59658cf14dee984124",
+      "bytes": 904,
+      "original_sha256": "fcad94dd8bf03702af38b84fb976bbf04d48614c5df1d5cedb62b189a19e83c3",
+      "original_bytes": 906
     }
-  ]
+  ],
+  "checksum_scope": "sha256/bytes identify versioned Git blobs after CRLF-to-LF normalization; original_sha256/original_bytes preserve original archived bytes where different."
 }
