@@ -292,6 +292,42 @@ for (const width of widths) test(`real areas, form, detail, focus and empty cont
   await expect(empty).toBeVisible();
   await capture(page, info, `empty-${width}`, empty);
   await noOverflow(page);
+
+  // The real cover above is disabled in the isolated runner. This separately
+  // labelled UI transport scenario proves enabled cover reflow at the SAME
+  // viewport/text profile, preserving the owner's actual contextual capability.
+  const transport = await fakeCover(page, context, info, { enabled: true, hasImage: true, revision: 8 });
+  const confirmation = gate();
+  transport.onConfirm = async route => {
+    await confirmation.promise;
+    transport.dto = { ...transport.dto, image: { revision: 9, hasImage: true, width: 32, height: 24 } };
+    await route.fulfill({ json: transport.dto, headers: privateHeaders });
+  };
+  try {
+    await page.goto(coverArea);
+    await textScale(page, width);
+    const image = panel(page).getByRole("img");
+    await decoded(image);
+    await capture(page, info, `ui-fake-enabled-preview-${width}`, image);
+    const file = panel(page).locator('input[type="file"]');
+    await expect(file).toHaveValue("");
+    await file.focus(); await expect(file).toBeFocused();
+    await capture(page, info, `ui-fake-enabled-native-file-focus-${width}`, file);
+    await reloadButton(page).focus(); await expect(reloadButton(page)).toBeFocused();
+    await capture(page, info, `ui-fake-enabled-reload-focus-${width}`);
+    await selectFile(page, transport.bytes);
+    await uploadButton(page).click();
+    await expect.poll(() => transport.confirmations.length).toBe(1);
+    const progress = panel(page).getByRole("progressbar", { name: "Progresso do envio da capa", exact: true });
+    await expect(progress).toBeVisible();
+    await expect(status(page)).toHaveText("Validando imagem…");
+    await capture(page, info, `ui-fake-enabled-confirmation-progress-${width}`, progress);
+    await noOverflow(page);
+    confirmation.release();
+    await expect(image).toHaveAttribute("src", /revision=9(?:&|$)/);
+    await decoded(image);
+    await expect(status(page)).toContainText("Capa salva.");
+  } finally { confirmation.release(); }
 });
 
 test("real point registration preserves zero, both bounds, free-text UF, uncertain response and cancel", async ({ page, context }, info) => {
@@ -414,7 +450,7 @@ test("transient list transport keeps loading and failure distinct and retries th
     const loading = page.getByRole("status").filter({ hasText: "Carregando áreas" });
     await expect(loading).toBeVisible(); await capture(page, info, "transient-list-loading", loading);
     held.release();
-    const alert = page.getByRole("alert");
+    const alert = page.getByRole("alert").filter({ hasText: "Falha transitória sintética do transporte de áreas." });
     await expect(alert).toContainText("Falha transitória sintética"); await capture(page, info, "transient-list-error", alert);
     fail = false;
     const recovered = page.waitForResponse(response => new URL(response.url()).pathname === api);
@@ -602,8 +638,12 @@ for (const operation of ["selection", "upload"] as const) test(`UI fake RED/GREE
 
 test("UI fake metadata failure and byte retry remain distinct while the persisted revision stays unchanged", async ({ page, context }, info) => {
   const transport = await fakeCover(page, context, info, { userIndex: 2 });
-  transport.onMetadata = async (route, count) => {
-    if (count === 2) return route.fulfill({ status: 503, json: { error: { code: "UNAVAILABLE", message: "Metadados temporariamente indisponíveis." } }, headers: privateHeaders });
+  let failMetadataNext = false;
+  transport.onMetadata = async route => {
+    if (failMetadataNext) {
+      failMetadataNext = false;
+      return route.fulfill({ status: 503, json: { error: { code: "UNAVAILABLE", message: "Metadados temporariamente indisponíveis." } }, headers: privateHeaders });
+    }
     return route.fulfill({ json: transport.dto, headers: privateHeaders });
   };
   transport.onContent = async (route, _url, count) => {
@@ -613,6 +653,9 @@ test("UI fake metadata failure and byte retry remain distinct while the persiste
   await page.goto(coverArea);
   await expect(panel(page).getByText("Capa indisponível.", { exact: true })).toBeVisible();
   expect(transport.content).toHaveLength(1);
+  // Arm a deliberate reload failure only AFTER hydration/initial read. React
+  // Strict Mode may issue multiple initial effect requests in the dev server.
+  failMetadataNext = true;
   await reloadButton(page).click();
   await expect(panel(page).getByRole("alert")).toHaveText("Não foi possível recarregar a capa.");
   expect(transport.content).toHaveLength(1);
