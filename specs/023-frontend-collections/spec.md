@@ -63,7 +63,7 @@ Coleta confirmada imutável e contexto autorizado. Tentativa de criação volát
 
 ## Assumptions
 
-A fonte visual apoia composição, não governa domínio. Aceite humano e validação científica são separados. A candidata ainda não comprovou estes critérios em E2E/produção.
+A fonte visual apoia composição, não governa domínio. Aceite humano e validação científica são separados. O runtime oficial da candidata6fd8066 executou179 E2E e15 gates sem falha; a perda das capturas e a corrida H4 observada na branch empilhada exigem nova validação. Produção, aceite humano e validação científica não são inferidos desses testes.
 ## Autoridade e escopo
 
 DECISAO_CONFIRMADA: pedido do usuário “agora execute o prompt”, em20/10/2026, executa o handoff das fases6/7 e seus complementos R1–R4. Isso autoriza implementação, testes e publicação das branches/PRs, mas não remove restrições da integração nem autoriza merge, push direto em main/development, deploy, banco real, provedores reais ou ciência nova. O PRD Code-First continua EM_REVISAO. Código é EVIDENCIA_IMPLEMENTACAO no alcance efetivamente verificado, não intenção científica.

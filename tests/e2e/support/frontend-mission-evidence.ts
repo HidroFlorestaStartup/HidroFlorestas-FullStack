@@ -1,9 +1,15 @@
-import { writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { copyFile, mkdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { expect, test, type Locator, type Page, type TestInfo } from '@playwright/test';
 
 export async function captureMissionViewport(page: Page, info: TestInfo, name: string, textScale?: number) {
-  if (!/^frontend-(collections|environmental)-[a-z0-9-]+$/.test(name)) throw new Error('UNSAFE_EVIDENCE_NAME');
-  await page.screenshot({ path: info.outputPath(`${name}.png`), fullPage: false,
+  const match = /^frontend-(collections|environmental)-[a-z0-9-]+$/.exec(name);
+  if (!match) throw new Error('UNSAFE_EVIDENCE_NAME');
+  const screenshotPath = info.outputPath(`${name}.png`);
+  const metadataPath = info.outputPath(`${name}-viewport.json`);
+  const scenarioId = createHash('sha256').update(`${info.project.name}:${info.testId}`).digest('hex').slice(0, 12);
+  await page.screenshot({ path: screenshotPath, fullPage: false,
     animations: 'disabled', mask: [page.locator('input,select,textarea')] });
   // Read after screenshot has finished finite transitions, matching its pixels.
   const geometry = await page.evaluate(() => ({
@@ -12,13 +18,23 @@ export async function captureMissionViewport(page: Page, info: TestInfo, name: s
     activeTag: document.activeElement?.tagName ?? null,
     rootFontSizePx: parseFloat(getComputedStyle(document.documentElement).fontSize),
   }));
-  await writeFile(info.outputPath(`${name}-viewport.json`), JSON.stringify({
+  await writeFile(metadataPath, JSON.stringify({
     ...geometry, textScale: textScale ?? geometry.rootFontSizePx / 16 * 100,
     textScaleSource: textScale === undefined ? 'measured-root-font-relative-to-16px-fixture-baseline' : 'scenario',
     physicalDevice: false, fullPage: false,
     head: process.env.GITHUB_SHA ?? 'local-working-tree',
+    scenarioId,
+    evidenceKind: info.file.endsWith('frontend-mission-evidence.spec.ts') ? 'synthetic-helper-counterproof' : 'application-viewport',
     note: 'Chromium emulation; form controls masked; not manual accessibility acceptance.',
   }, null, 2));
+  // Later Deletion/Ihfr Playwright invocations clear the shared outputDir.
+  // Keep a durable, masked copy, isolating tests and repetitions without titles
+  // or absolute paths in the filename. Synthetic negative probes stay distinct.
+  const archive = join(process.cwd(), '.accounts-validation', `frontend-${match[1]}`);
+  const prefix = `${scenarioId}-r${info.retry}-n${info.repeatEachIndex}`;
+  await mkdir(archive, { recursive: true });
+  await copyFile(screenshotPath, join(archive, `${prefix}-${name}.png`));
+  await copyFile(metadataPath, join(archive, `${prefix}-${name}-viewport.json`));
 }
 
 export async function readControlGeometry(control: Locator) {
@@ -99,10 +115,28 @@ export async function readControlGeometry(control: Locator) {
 }
 
 export async function expectControlUnobstructed(control: Locator, page: Page) {
-  // After the caller observes review-heading focus, the shell's focus handler
-  // still has one revealFocus rAF queued. Let that causal callback finish before
-  // our one scroll operation, so it cannot undo the viewport being measured.
-  await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => resolve())));
+  // Text scaling starts finite CSS transitions. Each resize can queue the shell's
+  // focus reveal, even after the first frame or an animation was replaced. Wait
+  // for that causal work before our one scroll; never blur, cancel animations or
+  // keep scrolling until a transient measurement happens to pass.
+  await page.evaluate(async () => {
+    const activeFiniteAnimations = () => document.getAnimations().filter(animation =>
+      // Pending play is already running. Pending pause must not be awaited:
+      // its finished promise need not ever resolve while it remains paused.
+      animation.playState === 'running' &&
+      Number.isFinite(animation.effect?.getComputedTiming().endTime));
+    while (true) {
+      const animations = activeFiniteAnimations();
+      if (animations.length) {
+        await Promise.allSettled(animations.map(animation => animation.finished));
+        continue;
+      }
+      // The last resize is delivered after rAF; the shell reveals focus in the
+      // following rAF. Drain that render cycle before measuring/scrolling.
+      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+      if (activeFiniteAnimations().length === 0) break;
+    }
+  });
   await control.evaluate(node => node.scrollIntoView({ block: 'center', inline: 'nearest' }));
   await expect(control).toBeVisible();
   try {

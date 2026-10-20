@@ -1,5 +1,32 @@
 # Evidências da continuidade R3 — 20/10/2026
 
+## Primeira candidata publicada: runtime verde, capturas ausentes
+
+HEAD `6fd80667f4270ce43536963762444f6893f0c347`, [run 39460675003](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39460675003), tentativa 1, job `118759009196`: **15/15 gates PASS**, todos exit0; E2E **179 PASS / 0 FAIL / 0 SKIP / 0 NOT_RUN**. Unit353+17, Integration229, Migration37, Contract6, R1 17, Https2, Deletion3 e Ihfr6 passaram. O reporter `dot` não imprime títulos aprovados; a atribuição dos cenários críticos deriva da seleção integral de179 testes, sem filtros ou skips, conferida no código do SHA executado. Inclui conta, POST real com resposta perdida e coleta A → B → A com uma única persistência.
+
+- Fingerprint único dos15 gates: `a9e5ee3e5f13df55548388eba36f032eda36a2cc720ff4634ddd4163d8fe97c9`. Reproduzido exatamente dos556 arquivos funcionais usando filtros de checkout Git `core.autocrlf=true`; a diferença do snapshot Linux foi explicada por conversão de finais de linha.
+- Artifact `12283368091`, SHA-256 verificado `0339585f8fdcdc85173276c1465bc9ab3232f9d628cb3869fe5a5ad9911e4c66`,413 entradas. **Nenhum PNG/JSON de coleta sobreviveu.** Deletion/Ihfr iniciam outras execuções Playwright, que limpam o mesmo `test-results`; o upload só acontece depois.
+- [Codex concluído nesse SHA](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#issuecomment-6296267275), sem findings ou pendências materiais. Isso não aprova um commit posterior.
+- [Recibo sanitizado completo](evidence/r3/first-candidate-receipt.json). Classificação: `RUNTIME_PASS_VISUAL_EVIDENCE_INCOMPLETE`; não é aceite visual.
+
+A fase7 herdou o mesmo helper no HEAD `5ca520500298a2066f2072290998754a4a62d42e`. No [run 39461576673](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39461576673), o botão Revisar coleta em320×900/texto200 ficou em y1726..1860, fora do viewport:9/9 probes sem hit, INPUT ainda focado. A transição global de300ms aciona ResizeObserver/revealFocus depois da barreira de um frame. O foco retorna ao campo e desfaz a rolagem do teste. Essa nova evidência mantém o achado H4 aberto até sua correção, embora a primeira candidata fase6 tenha passado; não se classifica como flakiness.
+
+A continuação preserva PNGs mascarados e JSONs em `.accounts-validation/frontend-collections`, com namespace por teste/retry/repetição e tipo de evidência. O detalhe passa a ter quadros separados antes da rolagem e depois da asserção completa. A sincronização complementar abaixo conclui transições finitas e callbacks de foco sem repetição de scroll, blur, aumento de timeout ou alteração do shell. A nova candidata exige novo CI e Codex no próprio HEAD.
+
+## Correção complementar H4 e preservação de capturas
+
+A reprodução auxiliar de B usa cliente React real (`ApplicationShell`, `useContentScroll`, `CollectionForm`), CSS Modules, Tailwind e `globals.css`; Next/router/autenticação são adaptados, Arial é fallback e não há backend ou banco. Em24 ensaios, um frame, dois frames sem aguardar animações e uma única rodada de `animations.finished` falharam6/6 cada. Aguardar todas as gerações finitas passou6/6, mas a fixture mínima permanente revelou que ainda faltava drenar a última entrega de ResizeObserver: sem rechecagem pós-frame, a versão com um frame adicional teve2FAIL/1PASS; com dois frames causais teve3PASS.
+
+A versão integrada aguarda somente animações `running` com término finito, repete a enumeração após cancelamento/substituição, conclui o ciclo de render em dois `requestAnimationFrame` e reavalia antes da **única** rolagem. Não desativa animações, não remove foco e não eleva timeout. A contraprova independente de `pending pause` evita aguardar uma promise `finished` que não terminaria; `pending play` já é `running`. O núcleo geométrico permanece byte a byte igual ao de6fd8066, com9 probes e bounds estritos.
+
+- Helper final: SHA-256 `c1b80896798fbab2ec42eed9bb76978606a071b88b970e826e7b5c0db330ade1`; B executou a nova fixture3/3 PASS, sem instrumentação entre barreira e scroll. INPUT focado, exatamente1scroll,9hits e animação infinita preservados.
+- D executou **21/21 PASS**, zero fail/skip/flaky, incluindo obstrução real em bordas/centro/canto, clipping, overflow, foco e a matriz de seis viewports. [Revisão independente](evidence/r3/transition-focus-independent-review.json) e [contraprova de pausa](evidence/r3/animation-pause-counterproof.json).
+- [Resumo das contraprovas](evidence/r3/transition-focus-summary.json), [antes](evidence/r3/transition-focus-before.png) e [depois](evidence/r3/transition-focus-after.png) da sincronização no cliente React auxiliar; ambos fullPage:false, valores mascarados. Estes pixels não são capturas do runner oficial.
+- C importou o helper integrado e executou duas invocações Playwright: **2PASS +1PASS**. A segunda removeu4 arquivos temporários, mas preservou os4 duráveis byte a byte, com nomes de teste distintos e classificação de jornada/negativo. Os globs do workflow encontram ambos os pares. [Recibo](evidence/r3/capture-preservation.json).
+- O trecho de captura exercitado permaneceu idêntico após a última mudança de sincronização: SHA-256 `b014a7de2dd82ee1ef89437640e735fcea3e77264c0ceaa606652c9997bb2d98`. A cópia não prova o upload oficial; isso será conferido no próximo artifact.
+
+A suíte focal passa a conter21 testes; a seleção oficial esperada é180 na fase6 e188 na fase7. Expectativa de contagem não é resultado. O novo HEAD ainda exige15 gates, inspeção das capturas duráveis e revisão Codex exata. O PASS de179/179 do candidato anterior não é transportado.
+
 ## Checkpoint original efetivamente inspecionado
 
 PR [#18](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18), branch `feat/frontend-collections`, HEAD `9a5254a8e6bb060c7767231a38370c073b2bdb78`.

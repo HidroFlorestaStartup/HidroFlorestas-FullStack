@@ -1,0 +1,1516 @@
+{
+  "sourceHead": "5ca520500298a2066f2072290998754a4a62d42e",
+  "runtime": {
+    "browser": "153.0.8010.0",
+    "playwright": "1.55.1"
+  },
+  "scope": "Client React ApplicationShell/useContentScroll/CollectionForm; real CSS Modules, global transition .3s and Tailwind; Next/router/auth adapters; Arial fallback; no backend, database or official E2E.",
+  "results": [
+    {
+      "variant": "one-frame",
+      "trial": 0,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 44.96875,
+          "y": 1274.109375,
+          "width": 230.0625,
+          "height": 117.40625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2020.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "one-frame",
+      "trial": 1,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 39.609375,
+          "y": 881.40625,
+          "width": 240.78125,
+          "height": 65.59375
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2183.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "one-frame",
+      "trial": 2,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 39.125,
+          "y": 863.921875,
+          "width": 241.75,
+          "height": 64.21875
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2184.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "one-frame",
+      "trial": 3,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 33.390625,
+          "y": 782.359375,
+          "width": 253.21875,
+          "height": 48.125
+        },
+        "points9": [
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2182.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "one-frame",
+      "trial": 4,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 38.359375,
+          "y": 1028.5,
+          "width": 243.28125,
+          "height": 62.078125
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2183.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "one-frame",
+      "trial": 5,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 37.15625,
+          "y": 837.28125,
+          "width": 245.6875,
+          "height": 58.734375
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2184.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 0,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 40.421875,
+          "y": 943.796875,
+          "width": 239.15625,
+          "height": 67.875
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2184.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 1,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 42.734375,
+          "y": 1138.34375,
+          "width": 234.53125,
+          "height": 108.1875
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2065.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 2,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 40.96875,
+          "y": 1192.453125,
+          "width": 238.0625,
+          "height": 69.40625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2183.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 3,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 38.3125,
+          "y": 897.015625,
+          "width": 243.375,
+          "height": 61.953125
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2184.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 4,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 35.78125,
+          "y": 873.125,
+          "width": 248.4375,
+          "height": 54.8125
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2184.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "two-frames",
+      "trial": 5,
+      "finiteWaitRounds": 0,
+      "finiteAnimationsAwaited": 0,
+      "before": {
+        "rect": {
+          "x": 36.375,
+          "y": 1108.140625,
+          "width": 247.25,
+          "height": 56.484375
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2182.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 0,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 164,
+      "before": {
+        "rect": {
+          "x": 47.40625,
+          "y": 1503.09375,
+          "width": 225.1875,
+          "height": 127.40625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 1739.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 1,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 162,
+      "before": {
+        "rect": {
+          "x": 40.96875,
+          "y": 962.453125,
+          "width": 238.0625,
+          "height": 69.40625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2170.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 2,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 162,
+      "before": {
+        "rect": {
+          "x": 44.71875,
+          "y": 1220.15625,
+          "width": 230.5625,
+          "height": 116.34375
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 1986.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 3,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 162,
+      "before": {
+        "rect": {
+          "x": 41.265625,
+          "y": 974.671875,
+          "width": 237.46875,
+          "height": 70.28125
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 2194.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 4,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 164,
+      "before": {
+        "rect": {
+          "x": 48.671875,
+          "y": 1604.015625,
+          "width": 222.65625,
+          "height": 132.65625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 1635.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-once",
+      "trial": 5,
+      "finiteWaitRounds": 1,
+      "finiteAnimationsAwaited": 164,
+      "before": {
+        "rect": {
+          "x": 46.234375,
+          "y": 1323.6875,
+          "width": 227.53125,
+          "height": 122.625
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 1834.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "fullyInside": false
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 0,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 294,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 1,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 294,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 2,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 294,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 3,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 294,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 4,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 296,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    },
+    {
+      "variant": "animations-settled",
+      "trial": 5,
+      "finiteWaitRounds": 2,
+      "finiteAnimationsAwaited": 296,
+      "before": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "after": {
+        "rect": {
+          "x": 49,
+          "y": 610.15625,
+          "width": 222,
+          "height": 134
+        },
+        "points9": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "fullyInside": true
+      },
+      "focusPreserved": true,
+      "focusedTag": "INPUT",
+      "controlScrollCalls": 1
+    }
+  ],
+  "causalWitness": [
+    {
+      "variant": "animations-once",
+      "events": [
+        {
+          "kind": "scroll-after",
+          "millisecondsAfterScale": 456.7,
+          "scrollTargetTag": "INPUT",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 911,
+          "contentHeight": 2925,
+          "buttonY": 1907.703125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 457.2,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 911,
+          "contentHeight": 2925,
+          "buttonY": 1907.703125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "helper-before-single-scroll",
+          "millisecondsAfterScale": 458.2,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 911,
+          "contentHeight": 2925,
+          "buttonY": 1907.703125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "scroll-before",
+          "millisecondsAfterScale": 463.9,
+          "scrollTargetTag": "BUTTON",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 911,
+          "contentHeight": 2925,
+          "buttonY": 1907.703125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "scroll-after",
+          "millisecondsAfterScale": 464.2,
+          "scrollTargetTag": "BUTTON",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 2196,
+          "contentHeight": 2925,
+          "buttonY": 622.703125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "scroll-before",
+          "millisecondsAfterScale": 478.7,
+          "scrollTargetTag": "INPUT",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 2196,
+          "contentHeight": 3147,
+          "buttonY": 843.09375,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "scroll-after",
+          "millisecondsAfterScale": 479.0,
+          "scrollTargetTag": "INPUT",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3147,
+          "buttonY": 1503.09375,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 479.4,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3147,
+          "buttonY": 1503.09375,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 490.0,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3189,
+          "buttonY": 1542.96875,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 510.3,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3222,
+          "buttonY": 1574.6875,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 522.7,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3288,
+          "buttonY": 1640.28125,
+          "activeAnimations": 132
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 542.3,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1536,
+          "contentHeight": 3356,
+          "buttonY": 1707.640625,
+          "activeAnimations": 132
+        }
+      ]
+    },
+    {
+      "variant": "animations-settled",
+      "events": [
+        {
+          "kind": "animations-awaited",
+          "millisecondsAfterScale": 620.9,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1092,
+          "contentHeight": 3389,
+          "buttonY": 2183.15625,
+          "activeAnimations": 0
+        },
+        {
+          "kind": "resize-observer",
+          "millisecondsAfterScale": 622.0,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1092,
+          "contentHeight": 3389,
+          "buttonY": 2183.15625,
+          "activeAnimations": 0
+        },
+        {
+          "kind": "helper-before-single-scroll",
+          "millisecondsAfterScale": 635.7,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1092,
+          "contentHeight": 3389,
+          "buttonY": 2183.15625,
+          "activeAnimations": 0
+        },
+        {
+          "kind": "scroll-before",
+          "millisecondsAfterScale": 640.7,
+          "scrollTargetTag": "BUTTON",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 1092,
+          "contentHeight": 3389,
+          "buttonY": 2183.15625,
+          "activeAnimations": 0
+        },
+        {
+          "kind": "scroll-after",
+          "millisecondsAfterScale": 640.9,
+          "scrollTargetTag": "BUTTON",
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 2665,
+          "contentHeight": 3389,
+          "buttonY": 610.15625,
+          "activeAnimations": 0
+        },
+        {
+          "kind": "animations-awaited",
+          "millisecondsAfterScale": 646.9,
+          "scrollTargetTag": null,
+          "focusedTag": "INPUT",
+          "rootFontSize": "32px",
+          "scrollTop": 2665,
+          "contentHeight": 3389,
+          "buttonY": 610.15625,
+          "activeAnimations": 0
+        }
+      ]
+    }
+  ],
+  "instrumentationLimit": "The 24 React trials instrument ResizeObserver, geometry and scroll calls, and perform additional browser evaluations between readiness and the single target scroll. Their finite-loop plus one-frame successes do not prove that one frame is sufficient without those calls. The permanent fixture below tests the helper directly without geometry instrumentation or browser calls inserted between readiness and target scroll.",
+  "permanentFixtureValidation": {
+    "fixture": "320x900 at 200% root font; real collections CSS; global .3s transition; ResizeObserver schedules next-rAF active input reveal; infinite decorative animation; no backend or network.",
+    "instrumentation": "Only the target scrollIntoView method is wrapped to count calls; no geometry instrumentation or extra browser call occurs between helper readiness and its single scroll.",
+    "testName": "text scale transitions finish before the single scroll while input focus remains protected",
+    "source": "animation-readiness-test-candidate.ts",
+    "variants": [
+      {
+        "variant": "baseline",
+        "description": "Original helper: one rAF only; no finite-animation wait.",
+        "helperSha256": "33ab5e5fc8cefacc1c7ac4f504422c27dd555ba85bcbd32606d1f7a6fb0ae334",
+        "pass": 0,
+        "fail": 3,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "failed",
+            "durationMs": 227,
+            "retry": 0
+          },
+          {
+            "status": "failed",
+            "durationMs": 216,
+            "retry": 0
+          },
+          {
+            "status": "failed",
+            "durationMs": 221,
+            "retry": 0
+          }
+        ],
+        "report": "animation-helper-test/report-baseline.json"
+      },
+      {
+        "variant": "settled-one-frame",
+        "description": "Finite-animation loop, then one rAF, with NO post-frame animation recheck. This is not the root intermediate helper that also rechecked animations after the frame.",
+        "helperSha256": "869d28e24cd8c0927fb571aff912fa3529546f53d54d93b6279b15fcb691cd9d",
+        "pass": 1,
+        "fail": 2,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "failed",
+            "durationMs": 5776,
+            "retry": 0
+          },
+          {
+            "status": "failed",
+            "durationMs": 5761,
+            "retry": 0
+          },
+          {
+            "status": "passed",
+            "durationMs": 846,
+            "retry": 0
+          }
+        ],
+        "report": "animation-helper-test/report-settled-one-frame.json"
+      },
+      {
+        "variant": "settled",
+        "description": "Finite-animation loop, then two nested rAF callbacks; no post-frame recheck. Auxiliary proposed variant.",
+        "helperSha256": "ca0dba3d624c9a7bdd47a60c0bb00fcc201fe1b46a92a95ac3c2b80a4ebcea46",
+        "pass": 3,
+        "fail": 0,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "passed",
+            "durationMs": 807,
+            "retry": 0
+          },
+          {
+            "status": "passed",
+            "durationMs": 801,
+            "retry": 0
+          },
+          {
+            "status": "passed",
+            "durationMs": 821,
+            "retry": 0
+          }
+        ],
+        "report": "animation-helper-test/report-settled.json"
+      },
+      {
+        "variant": "root-final",
+        "description": "Exact integrated helper: running finite animations only; Promise.allSettled(finished) loop; two nested rAF callbacks; recheck animations and repeat if restarted.",
+        "helperSha256": "c1b80896798fbab2ec42eed9bb76978606a071b88b970e826e7b5c0db330ade1",
+        "pass": 3,
+        "fail": 0,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "passed",
+            "durationMs": 843,
+            "retry": 0
+          },
+          {
+            "status": "passed",
+            "durationMs": 850,
+            "retry": 0
+          },
+          {
+            "status": "passed",
+            "durationMs": 846,
+            "retry": 0
+          }
+        ],
+        "report": "animation-helper-test/report-root-final.json"
+      }
+    ],
+    "finalAssertions": [
+      "The input retains focus.",
+      "The target receives exactly one scrollIntoView call.",
+      "All nine hit points and the full target rectangle remain unobstructed after two further animation frames.",
+      "The unrelated infinite animation remains running."
+    ],
+    "limits": "Auxiliary deterministic fixture with Chromium 153.0.8010.0 and Playwright 1.55.1; this does not replace the official Windows CI journey or prove arbitrary future asynchronous layout work is complete."
+  }
+}
