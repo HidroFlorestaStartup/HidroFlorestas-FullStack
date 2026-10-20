@@ -1,6 +1,36 @@
 # Evidências da continuidade R3 — 20/10/2026
 
-## Incorporação complementar e candidata seguinte
+## Terceira candidata: correções de revisão herdadas da fase6
+
+Esta candidata preserva `85e397bd4271ab07a197ea88db652227e6e392ce` como primeiro parent e incorpora `5f5d8719e25856b59e84c053cb13d2516dbeac49` como segundo parent. O merge-tree automático `97743377d688512f261111d5d011518ae04b3393` não teve conflitos; os14 arquivos herdados conferem por blob com a árvore automática e a fase6 publicada. [Recibo da incorporação](evidence/r3/third-candidate-incorporation.json). A base da PR permanece `feat/frontend-collections`, sem merge de PR, rebase ou force-push.
+
+A revisão Codex da segunda candidata ambiental `85e397bd4271ab07a197ea88db652227e6e392ce` terminou [sem novos achados](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6296990762). Isso não elimina os dois achados encontrados na revisão da fase6 sobre o helper herdado: P1 de resolução prematura de callbacks e P2 de screenshot que concluía transições antes da espera. A nova incorporação contém as correções e duas regressões permanentes, com **23/23 PASS auxiliares independentes**. [Triagem, limites e contraprovas compartilhadas](../023-frontend-collections/implementation-evidence.md).
+
+A função real aguarda uma tarefa após os callbacks do segundo frame, conserva foco e uma única rolagem, e reavalia animações finitas. A captura antes da rolagem ocorre após readiness, com animações permitidas. Os9 hit tests, bounds, matriz de viewports, texto200, navegação e timeouts foram preservados. O produto e os cenários ambientais/handlers permanecem byte a byte iguais aos da segunda candidata; nesta terceira incorporação não há nova mudança em `src`.
+
+A contagem esperada da próxima seleção integral é190 E2E, incluindo23 testes do helper. Não é resultado observado. O novo HEAD exige seu próprio CI15/15, artifact, inspeção de pixels e Codex; o PASS de um parent ou de um SHA anterior não é transportado.
+
+## Resultado observado da segunda candidata — falha IHFR preservada
+
+HEAD `85e397bd4271ab07a197ea88db652227e6e392ce`, [run39465856665](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465856665), tentativa1, job `118776943818`: **12 gates PASS; Ihfr FAIL; Bootstrap e SchemaAudit NOT_RUN**. Unit407, Integration231, Migration37, Contract6, R1 17, E2E188, Https2 e Deletion3 passaram integralmente. E2E teve188/188 PASS, sem FAIL, SKIP ou NOT_RUN. Não há aprovação global desta candidata. [Recibo completo](evidence/r3/second-candidate-receipt.json).
+
+O primeiro desvio é HTTP404 na navegação de criação de coleta, antes de procurar o campo de fuso. As seis navegações IHFR retornam404 e os seis testes falham. O gate iniciou um servidor Next próprio em porta aleatória e registrou schema pertencente à execução. O artifact não contém screenshot/contexto de erro desse gate. A causa permanece **INCONCLUSIVA**; não foi atribuída a H4, geometria, flakiness ou cálculo científico. A rota de criação, autorização, fixtures e harness não diferem entre a fase6 v2 aprovada e esta fase7 v2; esse fato restringe a investigação, mas não demonstra equivalência de estado em runtime.
+
+Artifact `12287280647`, SHA256 do ZIP `c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e`, conferido com o digest remoto. Fingerprint `20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c`, reproduzido sobre564 arquivos funcionais com filtros Windows, idêntico nos13 registros executados. Os ZIPs e logs da falha foram preservados.
+
+A [inspeção visual independente](evidence/r3/second-candidate-visual-review.md) conferiu54 pares duráveis:53 capturas de aplicativo e1 contraprova sintética separada. As matrizes cobrem48/48 quadros e42/42 quadros finais têm o alvo inteiro. Foram vistos27 ambientais e6 de coleta; os outros20 de coleta e o sintético têm pixels SHA256 idênticos aos já examinados na fase6 v2. Os metadados de todos os54 pares conferem HEAD, dimensões e escala. Limites reais permanecem: máscaras/indicador Next sobre parte da navegação, navegação elevada e espaço branco em alguns formulários móveis, label parcialmente acima do header em paisagem, e ausência de aceite humano. Esses pixels antecedem a correção P1/P2 do helper e não substituem a captura da próxima candidata.
+
+## Investigação focal do gate IHFR404
+
+EVIDENCIA_IMPLEMENTACAO: a segunda candidata passou12 gates, mas falhou nos6 testes IHFR por navegações404; E2E188/188 foi integralmente aprovado. Rotas presentes no build, fixtures e código de autorização iguais aos da fase6 aprovada não revelam a causa em runtime. Causa **INCONCLUSIVA**; o histórico não é classificado como flakiness.
+
+RECOMENDACAO executada no escopo de diagnóstico: somente após um teste já falhar e registrar404, observar GETs existentes de autenticação, laboratórios e área. `ihfr-route-probe.ts` exige origem loopback igual à navegação, schema sintético válido e caminho reconhecido. Cada GET recebe uma cópia em memória do cookie em contextoAPI descartável distinto; assim401 de `/me` não apaga o cookie do teste nem altera os demais probes. A saída contém apenas status, classe JSON/HTML/outro, códigos enumerados e booleans de presença. Não salva corpos, headers, cookies, nomes ou exceções. Não segue redirects nem repete requests; os5s limitam apenas cada observação posterior à falha, sem ampliar timeout de testes ou readiness.
+
+A leitura independente confirmou isolamento e ausência de saída privada. O contexto observado é o da última navegação404, com cookies correntes após a falha. Booleano false significa apenas não observado naquela resposta, não prova de ausência real. O ensaio auxiliar de cache permaneceu [inconclusivo](evidence/r3/ihfr404-cache-assessment.json): a conclusão inicialmente excessiva sobre cache foi corrigida após constatar somente CURRENT/seq0 sem dados persistidos; o complemento abortou antes de B.
+
+Três testes focais sintéticos passaram; typecheck passou e lint manteve somente os3 warnings preexistentes. [Recibo e hashes](evidence/r3/ihfr-route-probe-local-validation.json). Não foi alterado produto, gate, fixture, cálculo científico ou asserção. A candidata incorpora as correções P1/P2 já revisadas e acrescenta observabilidade para a falha ainda inconclusiva. O novo run integral é necessário tanto à regressão das correções herdadas quanto à observação da falha, caso ela se repita. Nenhum resultado anterior é reaproveitado como aprovação do novo HEAD.
+
+## Histórico da segunda candidata: incorporação complementar
 
 A segunda candidata preserva como primeiro parent `5ca520500298a2066f2072290998754a4a62d42e` e incorpora como segundo parent a fase6 `2a047d10360803517ff6bf64b38754cd0f07f5ba`. O merge-tree encontrou uma única sobreposição textual em `.github/workflows/rc-review.yml`: os dois lados acrescentavam capturas no mesmo trecho. A resolução preserva a união dos caminhos sanitizados de coleta/ambiental e todas as allowlists da branch ambiental. Os demais arquivos herdados conferem byte a byte com o merge-tree automático. [Registro da incorporação](evidence/r3/second-candidate-incorporation.json). Não houve rebase, force-push ou merge de PR.
 

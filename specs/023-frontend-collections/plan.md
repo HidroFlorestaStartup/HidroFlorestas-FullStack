@@ -58,3 +58,7 @@ Inspecionar capturas de viewport reais e sanitizadas, fullPage:false, 320/375/76
 ## Continuação após a primeira candidata R3
 
 O run39460675003/HEAD6fd8066 passou15 gates/179E2E, porém perdeu as capturas quando Deletion/Ihfr limparam `test-results`. O run39461576673/HEAD5ca5205 da fase7 isolou a corrida restante da coleta a200%. A continuação agrupa sincronização finita/ResizeObserver, contraprova permanente e captura durável, preservando os dois resultados históricos. Uma nova candidata por branch será validada integralmente; fase7 incorpora o SHA novo da fase6 com parents explícitos e sem alterar a base dos PRs.
+
+## Tratamento dos achados da segunda candidata
+
+A revisão Codex de2a047d1 encontrou P1 de resolução prematura do ciclo de render e P2 de captura que concluía transições antes da espera. Preservar seu run e artifact; publicar juntos a barreira por tarefa, captura observacional depois da espera, as duas contraprovas permanentes e os recibos. A suite auxiliar integrada teve23/23PASS. Renovar CI e Codex em ambas as branches, com incorporação não destrutiva e parents explícitos na fase7. Não transportar o GREEN de um SHA antigo, nem classificar a ausência de reprodução no helper de dois comandos como reprodução positiva.

@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "status": "AUXILIARY_PASS_NEW_COMMIT_OFFICIAL_VALIDATION_PENDING",
+  "scope": "One complete independent execution of exact copied frontend-mission-evidence.spec.ts; synthetic browser-only fixtures and real collection CSS; no application server, DB, account or external operation",
+  "source_head": "unpublished-frozen-working-tree",
+  "source_sha256": {
+    "tests/e2e/frontend-mission-evidence.spec.ts": "6eb67271131140d93ac3aea01f6d1c7b1f8c36bef130fd540a0686d020902725",
+    "tests/e2e/support/frontend-mission-evidence.ts": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+    "src/components/collections/collections.module.css": "ec41675f1c61ecf331188324eeb273a0fd954710316f8a25975a6fc035f74f7f"
+  },
+  "source_hashes_unchanged_after_execution": {
+    "tests/e2e/frontend-mission-evidence.spec.ts": true,
+    "tests/e2e/support/frontend-mission-evidence.ts": true,
+    "src/components/collections/collections.module.css": true
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.0",
+    "platform": "Linux",
+    "browser_origin": "Isolated auxiliary Chromium binary; not the official CI browser installation."
+  },
+  "execution": {
+    "full_suite_runs": 1,
+    "workers": 1,
+    "retries": 0,
+    "selected": 23,
+    "pass": 23,
+    "fail": 0,
+    "skip": 0,
+    "not_run": 0,
+    "flaky": 0,
+    "stats": {
+      "startTime": "2026-10-20T17:41:15.984Z",
+      "duration": 10984.183,
+      "expected": 23,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "tests": [
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 999px",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 180
+        }
+      ]
+    },
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 60% 15% / 40% 10%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 139
+        }
+      ]
+    },
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 250px 0 130px 20px / 70px 0 200px 15px",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 113
+        }
+      ]
+    },
+    {
+      "name": "a control descendant remains a valid hit target",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 143
+        }
+      ]
+    },
+    {
+      "name": "a real top obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 151
+        }
+      ]
+    },
+    {
+      "name": "a real right obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 137
+        }
+      ]
+    },
+    {
+      "name": "a real bottom obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 153
+        }
+      ]
+    },
+    {
+      "name": "a real left obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 189
+        }
+      ]
+    },
+    {
+      "name": "a real center obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 5211
+        }
+      ]
+    },
+    {
+      "name": "a real corner obstruction is rejected even at text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 145
+        }
+      ]
+    },
+    {
+      "name": "a partially off-viewport fixed control remains rejected",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 106
+        }
+      ]
+    },
+    {
+      "name": "a parent clipping the control is not accepted as a related hit target",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 89
+        }
+      ]
+    },
+    {
+      "name": "horizontal overflow still fails the public assertion",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 111
+        }
+      ]
+    },
+    {
+      "name": "pending focus reveal finishes before the single control scroll",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 170
+        }
+      ]
+    },
+    {
+      "name": "text scale transitions finish before the single scroll while input focus remains protected",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 772
+        }
+      ]
+    },
+    {
+      "name": "render readiness drains focus queued by a late ResizeObserver before one scroll",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 468
+        }
+      ]
+    },
+    {
+      "name": "the before-scroll capture observes natural transition completion without scrolling",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 526
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 320x900, text 100%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 281
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 375x900, text 100%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 174
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 768x900, text 100%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 175
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 1440x900, text 100%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 141
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 320x900, text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 143
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 844x390, text 200%",
+      "result": "PASS",
+      "runs": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "duration_ms": 175
+        }
+      ]
+    }
+  ],
+  "critical_results": {
+    "late_resize_observer": {
+      "result": "PASS",
+      "pendingAtReadiness": false,
+      "controlScrollCount": 1,
+      "points": 9,
+      "all_points_inside": true,
+      "activeTag": "INPUT",
+      "real_exported_function_tested_in_one_renderer_continuation": true
+    },
+    "capture_order": {
+      "result": "PASS",
+      "transition_active_at_readiness_entry": 1,
+      "transition_end_count": 1,
+      "natural_elapsed_ms": 300,
+      "finished_at_or_after_deadline": true,
+      "capture_calls": 1,
+      "scroll_calls_at_capture_entry": 0,
+      "scroll_top_at_capture_entry": 0,
+      "scroll_calls_after_helper": 1,
+      "points": 9,
+      "metadata_animations": "allow",
+      "metadata_evidence_kind": "synthetic-helper-counterproof"
+    }
+  },
+  "static_review": {
+    "geometry_body_byte_identical_to_published_v2": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "geometry_body_sha256": "54735d725786e89d811c4eff7520168019d8f4158b9165a3bd04c590d03ff85b",
+    "one_control_scroll": true,
+    "original_hit_testing_and_viewport_assertions_preserved": true,
+    "finite_running_animation_filter_preserved": true,
+    "pending_pause_excluded": true,
+    "message_channel_ports_closed": true,
+    "after_task_animation_recheck_preserved": true,
+    "screenshot_finishes_or_cancels_animations": false,
+    "capture_occurs_after_readiness_and_before_control_scroll": true
+  },
+  "related_counterproofs": {
+    "late_observer": "late-resize-observer-counterproof.json",
+    "pending_pause": "animation-pause-counterproof.json",
+    "capture_order": "natural-capture-order-counterproof.json"
+  },
+  "qualifications": [
+    "Published v2 SHA 2a047d1 remains a different artifact with Codex P1/P2 findings. Its CI cannot approve these new source bytes.",
+    "For Codex P1, the previous exact two-command Playwright helper passed 3/3; the demonstrated defect was premature internal readiness in a same-renderer continuation. This new regression exercises that readiness contract explicitly.",
+    "No full application E2E, Windows CI, database tests, physical device or manual accessibility acceptance was performed in this auxiliary execution.",
+    "Visual inspection and persistence through subsequent official Playwright gates remain separate checks.",
+    "No repository write, publish, comment, rerun, cancellation, merge or deploy was performed by this observer."
+  ]
+}

@@ -1,5 +1,26 @@
 # Evidências da continuidade R3 — 20/10/2026
 
+## Terceira candidata: tratamento dos achados Codex da segunda
+
+A revisão externa do HEAD `2a047d10360803517ff6bf64b38754cd0f07f5ba` terminou com dois achados materiais: [P1 — callback de ResizeObserver ainda pendente](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054767) e [P2 — screenshot anterior à espera concluía transições](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054781). O [recibo histórico com triagem](evidence/r3/second-candidate-codex-findings.json) preserva o estado externo `completed_with_findings`; correção local não equivale a fechamento da revisão.
+
+| Contraprova focal | Resultado observado | Correção preparada |
+|---|---|---|
+| P1: continuar no mesmo turno do renderer após dois frames | 3/3 RED: a espera resolvia com foco pendente; a rolagem do botão era desfeita de y591 para y1696. O helper publicado com dois comandos Playwright separados permaneceu GREEN em 3/3: o segundo roundtrip chegou depois do callback. Não se atribui a ele um FAIL que não foi observado. | A função real `waitForMissionRender` resolve em uma tarefa de `MessageChannel` após os callbacks do segundo frame; ambas as portas são fechadas. Remover apenas essa tarefa da função real produziu 3/3 RED; a função corrigida teve 3/3 GREEN. |
+| P2: captura antes da espera com `animations: disabled` | O screenshot concluiu a transição 266,7ms antes do término natural, e a espera entrou sem animação ativa. | A captura antes da rolagem acontece depois da espera; todas as capturas usam `animations: allow`. A transição real de300ms estava ativa na entrada, terminou naturalmente antes da captura, e houve zero rolagens antes/uma depois. Helper real 1PASS; inversão isolada da ordem 1FAIL esperado. |
+
+As contraprovas completas estão em [ResizeObserver tardio](evidence/r3/late-resize-observer-counterproof.json) e [ordem de captura natural](evidence/r3/natural-capture-order-counterproof.json). A suíte permanente chama a função de navegador real, sem copiar seu algoritmo. A fixture de captura inicia a transição na primeira consulta nativa de animações, no mesmo turno, para não depender da velocidade de roundtrips. Nenhum teste amplia timeout, usa sleep, desfoca o input ou repete a rolagem do controle.
+
+D executou a suíte final independente: **23/23 PASS**, zero fail/skip/flaky, Playwright1.55.1/Chromium153 no Linux, sem Next ou banco. O helper tem SHA-256 `1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f`. O núcleo geométrico, com9 pontos e bounds estritos, permanece inalterado. `npm run typecheck` passou; lint exit0, com os mesmos três warnings anteriores fora do delta. [Recibo independente](evidence/r3/third-candidate-independent-review.json).
+
+O bloco de cópia durável não mudou desde a prova de duas invocações; o digest antigo da função completa de captura é histórico, pois sua política de animação mudou. O novo trecho tem2324bytes, SHA-256 `310a3c38e0401bf58b8fa196c67ea28116b94b282f05305bb359ba420c6f9e80`. As matrizes do aplicativo permanecem iguais; a nova suíte acrescenta um par PNG/JSON classificado como contraprova sintética. A seleção esperada passa a182 E2E na fase6 e190 na fase7; essas contagens só serão resultado após o runner oficial.
+
+A segunda candidata `2a047d10360803517ff6bf64b38754cd0f07f5ba` terminou o [run39465489762](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465489762), tentativa1/job118775663664, com **15/15 PASS e180/180 E2E**, zero fail/skip/not_run/flaky. Unit353+17, Integration229, Migration37, Contract6, R1 17, Https2, Deletion3 e Ihfr6 passaram. Fingerprint `3c6ce0de33c449bd47ebae526af8be011a08f46b8e5f5b4a9213ad268393618c`, reproduzido dos556 inputs do checkout Windows. Artifact12285318854:19.259.628bytes,467 entradas; ZIP SHA-256 `9f03b69123144f461f36a42a1aaf13680f6fd314b322aac26aa57bdab2b56e43` e CRC conferidos.
+
+Os27 pares PNG/JSON sobreviveram a Deletion/Ihfr:26 do aplicativo (24 da matriz,2 de fluxos) e1 negativo sintético. Todos os metadados conferem HEAD, viewport, escala e fullPage:false. [Recibo oficial](evidence/r3/second-candidate-receipt.json) e [inventário com hashes](evidence/r3/second-candidate-capture-inventory.json). O coordenador inspecionou o botão em320×900/texto200 e o detalhe antes/depois da rolagem em844×390/texto200: os controles finais estavam livres; a inspeção completa dos pixels é registrada separadamente. Os quadros antes/depois mostram posições de rolagem no mesmo código, não uma comparação anterior/posterior à correção de CSS.
+
+Classificação: `RUNTIME_PASS_CODE_REVIEW_FINDINGS`, pois os P1/P2 acima pertencem a esse SHA. Os novos commits exigem novamente15 gates, inspeção de capturas e Codex no SHA exato. Resultados das candidatas anteriores não aprovam o novo HEAD; aceite humano permanece pendente.
+
 ## Primeira candidata publicada: runtime verde, capturas ausentes
 
 HEAD `6fd80667f4270ce43536963762444f6893f0c347`, [run 39460675003](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39460675003), tentativa 1, job `118759009196`: **15/15 gates PASS**, todos exit0; E2E **179 PASS / 0 FAIL / 0 SKIP / 0 NOT_RUN**. Unit353+17, Integration229, Migration37, Contract6, R1 17, Https2, Deletion3 e Ihfr6 passaram. O reporter `dot` não imprime títulos aprovados; a atribuição dos cenários críticos deriva da seleção integral de179 testes, sem filtros ou skips, conferida no código do SHA executado. Inclui conta, POST real com resposta perdida e coleta A → B → A com uma única persistência.
@@ -13,7 +34,7 @@ A fase7 herdou o mesmo helper no HEAD `5ca520500298a2066f2072290998754a4a62d42e`
 
 A continuação preserva PNGs mascarados e JSONs em `.accounts-validation/frontend-collections`, com namespace por teste/retry/repetição e tipo de evidência. O detalhe passa a ter quadros separados antes da rolagem e depois da asserção completa. A sincronização complementar abaixo conclui transições finitas e callbacks de foco sem repetição de scroll, blur, aumento de timeout ou alteração do shell. A nova candidata exige novo CI e Codex no próprio HEAD.
 
-## Correção complementar H4 e preservação de capturas
+## Histórico da segunda candidata: correção H4 e preservação de capturas
 
 A reprodução auxiliar de B usa cliente React real (`ApplicationShell`, `useContentScroll`, `CollectionForm`), CSS Modules, Tailwind e `globals.css`; Next/router/autenticação são adaptados, Arial é fallback e não há backend ou banco. Em24 ensaios, um frame, dois frames sem aguardar animações e uma única rodada de `animations.finished` falharam6/6 cada. Aguardar todas as gerações finitas passou6/6, mas a fixture mínima permanente revelou que ainda faltava drenar a última entrega de ResizeObserver: sem rechecagem pós-frame, a versão com um frame adicional teve2FAIL/1PASS; com dois frames causais teve3PASS.
 

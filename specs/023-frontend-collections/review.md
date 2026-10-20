@@ -1,5 +1,13 @@
 # Revisão da continuidade R3 — 20/10/2026
 
+## Revisão vigente antes da terceira publicação
+
+Codex concluiu a revisão de `2a047d10360803517ff6bf64b38754cd0f07f5ba` com P1/P2. B reproduziu a resolução prematura da espera dentro do renderer e registrou também o resultado GREEN do helper publicado com dois roundtrips, evitando exagerar a causalidade. C comprovou que a captura anterior adiantava a transição e revisou a nova captura observacional. A integrou os dois testes permanentes; D executou o arquivo integrado completo, **23/23 PASS**, sem fail/skip/flaky. Recibos, hashes e limites estão em implementation-evidence.md.
+
+A correção aguarda uma tarefa após o segundo frame, preserva input focado, uma rolagem e os9 pontos. A captura ocorre depois da espera e permite animações naturais. O núcleo de geometria e o código de produto não mudam nesta terceira candidata. Typecheck e lint locais passaram, com três warnings preexistentes. Nenhum resultado auxiliar fecha a revisão externa: é obrigatória nova revisão Codex e15 gates no HEAD que contém estas mudanças.
+
+## Histórico das revisões auxiliares anteriores
+
 Atualização complementar: D revisou o helper final de transições/ResizeObserver e executou21/21 contraprovas. Detectou e eliminou a espera indevida de animação pausada pendente antes da publicação. B comprovou a fixture mínima3/3 e C comprovou a persistência de capturas em duas invocações Playwright2PASS+1PASS. Os recibos e limites estão em implementation-evidence.md. O candidato6fd8066 teve15 gates/179 E2E e Codex sem achados, mas perdeu as capturas; a falha H4 posterior na branch empilhada justifica novo HEAD/CI e não foi descartada como intermitência.
 
 Houve delegação real: B investigou geometria; C investigou foco ambiental e integridade de drafts; D investigou a jornada de conta e revisou independentemente o helper e o contrato de recuperação da coleta; A integrou os diffs e manteve a publicação centralizada.

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
-import { expectControlUnobstructed, readControlGeometry } from './support/frontend-mission-evidence';
+import { captureMissionViewport, expectControlUnobstructed, readControlGeometry, waitForMissionRender } from './support/frontend-mission-evidence';
 
 // This exercises the real browser hit test without authenticated data or a DB.
 test.use({ hasTouch: true, trace: 'off', video: 'off', screenshot: 'off' });
@@ -174,6 +174,196 @@ test('text scale transitions finish before the single scroll while input focus r
   expect(geometry.unobstructed).toBe(true);
   expect(await page.evaluate(() => document.getAnimations().some(animation =>
     animation.playState === 'running' && animation.effect?.getComputedTiming().endTime === Infinity))).toBe(true);
+});
+
+test('render readiness drains focus queued by a late ResizeObserver before one scroll', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.setContent(`<style>
+    * { box-sizing: border-box; transition: .3s; }
+    html { font-size: 200%; font-family: Arial, sans-serif; }
+    body { margin: 0; }
+    .content { height: 700px; overflow: auto; }
+    .surface { padding: 16px; }
+    input { display: block; width: 200px; height: 3rem; }
+    .spacer { height: 50rem; }
+    ${collectionsCss}
+  </style><div class="content"><main class="surface">
+    <label for="field">Campo</label><input id="field">
+    <div class="spacer" aria-hidden="true"></div><button class="primary">Revisar</button>
+  </main></div>`);
+  await page.getByLabel('Campo').fill('synthetic');
+  // Install the real compiled browser function, avoiding an implementation copy.
+  await page.addScriptTag({ content: `window.waitForMissionRender = ${waitForMissionRender.toString()};` });
+  await page.evaluate(() => {
+    const state = window as unknown as {
+      pendingFocus: boolean;
+      pendingAtReadiness: boolean;
+      controlScrollCount: number;
+      scheduleLateResize: () => void;
+      waitForMissionRender: () => Promise<void>;
+    };
+    const content = document.querySelector<HTMLElement>('.content')!;
+    const surface = content.firstElementChild!;
+    const target = document.querySelector('button')!;
+    state.pendingFocus = false;
+    state.controlScrollCount = 0;
+    let frame = 0;
+    const observer = new ResizeObserver(() => {
+      state.pendingFocus = true;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const active = document.activeElement;
+        if (active instanceof HTMLElement && content.contains(active)) {
+          const box = active.getBoundingClientRect();
+          const region = content.getBoundingClientRect();
+          if (box.top < region.top + 8 || box.bottom > region.bottom - 8) {
+            active.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+          }
+        }
+        state.pendingFocus = false;
+      });
+    });
+    observer.observe(content);
+    observer.observe(surface);
+    const scroll = target.scrollIntoView.bind(target);
+    target.scrollIntoView = options => {
+      state.controlScrollCount++;
+      scroll(options);
+    };
+    state.scheduleLateResize = () => {
+      const getAnimations = document.getAnimations.bind(document);
+      let scheduled = false;
+      document.getAnimations = () => {
+        const animations = getAnimations();
+        if (!scheduled && !animations.some(animation => animation.playState === 'running' && Number.isFinite(animation.effect?.getComputedTiming().endTime))) {
+          scheduled = true;
+          requestAnimationFrame(() => {
+            // Intrinsic height changes after this frame's rAF callbacks. The
+            // real observer queues its reveal behind readiness's second rAF.
+            const addition = document.createElement('div');
+            addition.style.height = '1px';
+            surface.append(addition);
+          });
+        }
+        return animations;
+      };
+    };
+  });
+  await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+  const ordering = await page.evaluate(async () => {
+    const state = window as unknown as {
+      pendingFocus: boolean;
+      pendingAtReadiness: boolean;
+      controlScrollCount: number;
+      scheduleLateResize: () => void;
+      waitForMissionRender: () => Promise<void>;
+    };
+    state.scheduleLateResize();
+    await state.waitForMissionRender();
+    const pendingAtReadiness = state.pendingFocus;
+    document.querySelector('button')!.scrollIntoView({ block: 'center', inline: 'nearest' });
+    await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+    return { pendingAtReadiness, controlScrollCount: state.controlScrollCount };
+  });
+  await expect(page.getByLabel('Campo')).toBeFocused();
+  const geometry = await readControlGeometry(page.getByRole('button', { name: 'Revisar', exact: true }));
+  console.log(JSON.stringify({ ...ordering, unobstructed: geometry.unobstructed, points9: geometry.points.map(point => point.inside), rect: geometry.rect, activeTag: geometry.activeTag }));
+  expect(ordering.pendingAtReadiness).toBe(false);
+  expect(ordering.controlScrollCount).toBe(1);
+  expect(geometry.points).toHaveLength(9);
+  expect(geometry.unobstructed).toBe(true);
+});
+
+type MissionCaptureOrderProbe = {
+  activeAtEntry: number;
+  armedAt: number | null;
+  deadline: number | null;
+  finishedAt: number | null;
+  transitionEndCount: number;
+  elapsedMs: number | null;
+  scrollCalls: number;
+};
+
+test('the before-scroll capture observes natural transition completion without scrolling', async ({ page }, info) => {
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page.setContent(`<style>
+    html { font-size: 16px; font-family: Arial, sans-serif; }
+    body { margin: 8px; }
+    #content { height: 320px; overflow: auto; border: 1px solid #888; }
+    #changing { height: 20px; transition: height .3s linear; }
+    #spacer { height: 500px; }
+    #target { width: 240px; height: 60px; border: 0; border-radius: 20px; }
+  </style><main id="content"><div id="changing"></div><div id="spacer"></div>
+    <button id="target">Synthetic final control</button></main>`);
+  await page.evaluate(() => {
+    const state: MissionCaptureOrderProbe = {
+      activeAtEntry: 0, armedAt: null, deadline: null, finishedAt: null,
+      transitionEndCount: 0, elapsedMs: null, scrollCalls: 0,
+    };
+    (window as unknown as { missionCaptureOrder: MissionCaptureOrderProbe }).missionCaptureOrder = state;
+    const changing = document.getElementById('changing')!;
+    const target = document.getElementById('target')!;
+    changing.addEventListener('transitionend', event => {
+      if (event.propertyName !== 'height') return;
+      state.transitionEndCount++;
+      state.finishedAt = Number(document.timeline.currentTime);
+      state.elapsedMs = event.elapsedTime * 1000;
+    });
+    const scroll = target.scrollIntoView.bind(target);
+    target.scrollIntoView = options => {
+      state.scrollCalls++;
+      scroll(options);
+    };
+    const nativeGetAnimations = document.getAnimations.bind(document);
+    document.getAnimations = () => {
+      if (state.armedAt === null) {
+        // Start at readiness's first native observation, in the same browser
+        // turn. Protocol delays cannot let the transition finish before entry.
+        changing.getBoundingClientRect();
+        state.armedAt = Number(document.timeline.currentTime);
+        state.deadline = state.armedAt + 300;
+        changing.style.height = '120px';
+        const animations = nativeGetAnimations();
+        state.activeAtEntry = animations.filter(animation =>
+          animation.playState === 'running' &&
+          (animation.effect as KeyframeEffect | null)?.target === changing).length;
+        return animations;
+      }
+      return nativeGetAnimations();
+    };
+  });
+  const target = page.getByRole('button', { name: 'Synthetic final control', exact: true });
+  let captures = 0;
+  await expectControlUnobstructed(target, page, async () => {
+    captures++;
+    const before = await page.evaluate(() => ({
+      ...(window as unknown as { missionCaptureOrder: MissionCaptureOrderProbe }).missionCaptureOrder,
+      scrollTop: document.getElementById('content')!.scrollTop,
+    }));
+    expect(before.activeAtEntry).toBe(1);
+    expect(before.transitionEndCount).toBe(1);
+    expect(before.deadline).not.toBeNull();
+    expect(before.finishedAt).not.toBeNull();
+    expect(before.finishedAt!).toBeGreaterThanOrEqual(before.deadline!);
+    expect(before.elapsedMs).toBe(300);
+    expect(before.scrollCalls).toBe(0);
+    expect(before.scrollTop).toBe(0);
+    await captureMissionViewport(page, info, 'frontend-collections-capture-order-before', 100);
+  });
+  expect(captures).toBe(1);
+  const after = await page.evaluate(() => ({
+    ...(window as unknown as { missionCaptureOrder: MissionCaptureOrderProbe }).missionCaptureOrder,
+    scrollTop: document.getElementById('content')!.scrollTop,
+  }));
+  expect(after.scrollCalls).toBe(1);
+  expect(after.scrollTop).toBeGreaterThan(0);
+  const geometry = await readControlGeometry(target);
+  expect(geometry.points).toHaveLength(9);
+  expect(geometry.points.every(point => point.inside)).toBe(true);
+  expect(geometry.unobstructed).toBe(true);
+  const metadata = JSON.parse(readFileSync(info.outputPath('frontend-collections-capture-order-before-viewport.json'), 'utf8'));
+  expect(metadata.animations).toBe('allow');
+  expect(metadata.evidenceKind).toBe('synthetic-helper-counterproof');
 });
 
 for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [844, 390, 200]]) {

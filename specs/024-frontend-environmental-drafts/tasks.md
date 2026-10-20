@@ -30,6 +30,11 @@
 
 - [x] T022 [US3] Incorporar sincronização finita/ResizeObserver e preservar capturas duráveis de coleta e ambiental; contraprovas compartilhadas21/21 e2PASS+1PASS.
 
+- [x] T023 [US3] Incorporar5f5d87 com correções dos P1/P2 da revisão compartilhada e23/23 contraprovas; conferir14 blobs contra merge-tree sem conflitos. Validação oficial/revisão do novo HEAD continuam em T018.
+
+- [x] T024 Preservar os12 gates PASS, IHFR6FAIL/404 e2NOT_RUN de85e397 e a inspeção dos54 pares PNG/JSON, sem declarar aprovação global.
+- [x] T025 Acrescentar diagnóstico pós-falha404 com GETs existentes e contextosAPI isolados;3/3 unitários de privacidade/isolamento/redirect/guards, typecheck e lint aprovados. Causa histórica permanece inconclusiva.
+
 ## Dependências vigentes
 
 Um único escritor por arquivo/branch. A análise da fase7 pode avançar independentemente, mas sua integração depende da fase6 verificada. Falha material bloqueia apenas o recorte dependente. Não esperar merge humano para trabalhar no que for independente; não publicar candidata como pronta sem gates.

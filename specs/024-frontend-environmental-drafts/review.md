@@ -1,5 +1,13 @@
 # Revisão da continuidade R3 — 20/10/2026
 
+## Revisão vigente antes da terceira publicação
+
+O Codex de85e397 terminou sem novos achados, mas a revisão da fase6 identificou P1/P2 no helper compartilhado. A candidata seguinte incorpora5f5d87 com os dois tratamentos,23/23 contraprovas independentes e todos os arquivos herdados conferidos contra merge-tree sem conflitos. Produto, E2E ambiental e handlers permanecem inalterados; a nova revisão deverá conferir também o helper herdado. A revisão sem achados de um SHA anterior não aprova esse novo HEAD.
+
+A validação de85e397 terminou com12 gates PASS, IHFR6FAIL por404 e dois gates NOT_RUN. Capturas visuais e falhas estão preservadas. A candidata acrescenta observação pós-falha de3 APIs existentes em cookie jars independentes, saída permitida por lista e guards de origem/schema;3/3 unitários focais e typecheck/lint passaram. Isso não é correção causal nem classificação de flakiness; a revisão externa deve conferir também esse diagnóstico.
+
+## Histórico das revisões anteriores
+
 Atualização complementar: a candidata5ca5205 teve9 gates PASS, E2E185PASS/1FAIL/1NOT_RUN e Codex sem achados. Os três P1 ambientais passaram; a falha e interrupção pertencem à coleta herdada. C inspecionou24quadros ambientais e registrou limites sem atribuir aceite humano. D revisou a sincronização final compartilhada (21/21 PASS) e C a preservação em duas invocações Playwright(2PASS+1PASS). O próximo HEAD incorpora2a047d1 com parents explícitos; o workflow reúne os caminhos de captura de ambas as fases. Resultados completos e limitações estão em implementation-evidence.md.
 
 C investigou o foco/rolagem e fez revisão focada de integridade ambiental. D revisou de forma independente os testes compartilhados e apontou a lacuna de GET/DELETE. A integrou as frentes e exigiu também a variante de POST persistido com resposta perdida e troca A → B → A. A publicação e as referências Git têm um único escritor.

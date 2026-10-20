@@ -10,8 +10,9 @@ export async function captureMissionViewport(page: Page, info: TestInfo, name: s
   const metadataPath = info.outputPath(`${name}-viewport.json`);
   const scenarioId = createHash('sha256').update(`${info.project.name}:${info.testId}`).digest('hex').slice(0, 12);
   await page.screenshot({ path: screenshotPath, fullPage: false,
-    animations: 'disabled', mask: [page.locator('input,select,textarea')] });
-  // Read after screenshot has finished finite transitions, matching its pixels.
+    animations: 'allow', mask: [page.locator('input,select,textarea')] });
+  // Observe without finishing/canceling animations. Successful control captures
+  // follow readiness; diagnostic metadata is sampled immediately after capture.
   const geometry = await page.evaluate(() => ({
     width: innerWidth, height: innerHeight, scrollX, scrollY,
     documentWidth: document.documentElement.scrollWidth,
@@ -21,7 +22,7 @@ export async function captureMissionViewport(page: Page, info: TestInfo, name: s
   await writeFile(metadataPath, JSON.stringify({
     ...geometry, textScale: textScale ?? geometry.rootFontSizePx / 16 * 100,
     textScaleSource: textScale === undefined ? 'measured-root-font-relative-to-16px-fixture-baseline' : 'scenario',
-    physicalDevice: false, fullPage: false,
+    physicalDevice: false, fullPage: false, animations: 'allow',
     head: process.env.GITHUB_SHA ?? 'local-working-tree',
     scenarioId,
     evidenceKind: info.file.endsWith('frontend-mission-evidence.spec.ts') ? 'synthetic-helper-counterproof' : 'application-viewport',
@@ -114,29 +115,45 @@ export async function readControlGeometry(control: Locator) {
   });
 }
 
-export async function expectControlUnobstructed(control: Locator, page: Page) {
+// Self-contained browser callback, also exercised with its continuation inside
+// one renderer task so protocol roundtrips cannot hide premature readiness.
+export async function waitForMissionRender() {
   // Text scaling starts finite CSS transitions. Each resize can queue the shell's
   // focus reveal, even after the first frame or an animation was replaced. Wait
   // for that causal work before our one scroll; never blur, cancel animations or
   // keep scrolling until a transient measurement happens to pass.
-  await page.evaluate(async () => {
-    const activeFiniteAnimations = () => document.getAnimations().filter(animation =>
-      // Pending play is already running. Pending pause must not be awaited:
-      // its finished promise need not ever resolve while it remains paused.
-      animation.playState === 'running' &&
-      Number.isFinite(animation.effect?.getComputedTiming().endTime));
-    while (true) {
-      const animations = activeFiniteAnimations();
-      if (animations.length) {
-        await Promise.allSettled(animations.map(animation => animation.finished));
-        continue;
-      }
-      // The last resize is delivered after rAF; the shell reveals focus in the
-      // following rAF. Drain that render cycle before measuring/scrolling.
-      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
-      if (activeFiniteAnimations().length === 0) break;
+  const activeFiniteAnimations = () => document.getAnimations().filter(animation =>
+    // Pending play is already running. Pending pause must not be awaited:
+    // its finished promise need not ever resolve while it remains paused.
+    animation.playState === 'running' &&
+    Number.isFinite(animation.effect?.getComputedTiming().endTime));
+  while (true) {
+    const animations = activeFiniteAnimations();
+    if (animations.length) {
+      await Promise.allSettled(animations.map(animation => animation.finished));
+      continue;
     }
-  });
+    // ResizeObserver runs after rAF and queues focus work for the next frame.
+    // Resolve in a later task, after every callback in that frame, rather than
+    // in the microtask checkpoint between our rAF and the shell's revealFocus.
+    await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => {
+      const channel = new MessageChannel();
+      channel.port1.onmessage = () => {
+        channel.port1.close();
+        channel.port2.close();
+        resolve();
+      };
+      channel.port2.postMessage(null);
+    })));
+    if (activeFiniteAnimations().length === 0) break;
+  }
+}
+
+export async function expectControlUnobstructed(control: Locator, page: Page, beforeScroll?: () => Promise<void>) {
+  await page.evaluate(waitForMissionRender);
+  // Observational captures belong after readiness, so they cannot advance the
+  // transitions the helper must handle. The callback must not scroll or focus.
+  await beforeScroll?.();
   await control.evaluate(node => node.scrollIntoView({ block: 'center', inline: 'nearest' }));
   await expect(control).toBeVisible();
   try {

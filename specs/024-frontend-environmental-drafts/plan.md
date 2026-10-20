@@ -13,6 +13,14 @@ Plano executável: (1) analisar artefatos da falha e reproduzir foco/scroll; (2)
 
 Um agente é escritor do teste ambiental, outro revisa geometria compartilhada na fase 6, e QA revisa conta/segurança. O coordenador é o único integrador/publicador. Specs existentes reutilizadas pelos scripts Spec Kit; não há hooks. O checklist histórico de runtime e aceite não impede o trabalho já autorizado; aceite humano permanece externo. Registros anteriores abaixo são históricos e não prevalecem sobre este estado ou os novos recibos por HEAD.
 
+## Investigação focal do gate IHFR404
+
+EVIDENCIA_IMPLEMENTACAO: a segunda candidata passou12 gates, mas falhou nos6 testes IHFR por navegações404; E2E188/188 foi integralmente aprovado. Rotas presentes no build, fixtures e código de autorização iguais aos da fase6 aprovada não revelam a causa em runtime. Causa **INCONCLUSIVA**; o histórico não é classificado como flakiness.
+
+RECOMENDACAO executada no escopo de diagnóstico: somente após um teste já falhar e registrar404, observar GETs existentes de autenticação, laboratórios e área. `ihfr-route-probe.ts` exige origem loopback igual à navegação, schema sintético válido e caminho reconhecido. Cada GET recebe uma cópia em memória do cookie em contextoAPI descartável distinto; assim401 de `/me` não apaga o cookie do teste nem altera os demais probes. A saída contém apenas status, classe JSON/HTML/outro, códigos enumerados e booleans de presença. Não salva corpos, headers, cookies, nomes ou exceções. Não segue redirects nem repete requests; os5s limitam apenas cada observação posterior à falha, sem ampliar timeout de testes ou readiness.
+
+Três testes focais sintéticos passaram; typecheck passou e lint manteve somente os3 warnings preexistentes. [Recibo e hashes](evidence/r3/ihfr-route-probe-local-validation.json). Não foi alterado produto, gate, fixture, cálculo científico ou asserção. A candidata incorpora as correções P1/P2 já revisadas e acrescenta observabilidade para a falha ainda inconclusiva. O novo run integral é necessário tanto à regressão das correções herdadas quanto à observação da falha, caso ela se repita. Nenhum resultado anterior é reaproveitado como aprovação do novo HEAD.
+
 ## Summary
 
 Incorporar apresentação do starter cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f aos controladores reais. Base funcional: `24be57fa0ddeb9d3da72ae80606850d428e29fbb`. Manter domínio/serviços, separar correções funcionais e apresentação em patches revisáveis. A fase7 só pode ser considerada concluída sobre uma fase6 tecnicamente verificada; preparar e publicar um PR Draft provisoriamente empilhado não antecipa o aceite nem dispensa reconciliação posterior.
@@ -56,3 +64,7 @@ Inspecionar capturas de viewport reais e sanitizadas, fullPage:false, 320/375/76
 ## Incorporação complementar R3
 
 Parents confirmados da candidata seguinte:5ca520500298a2066f2072290998754a4a62d42e e2a047d10360803517ff6bf64b38754cd0f07f5ba. Uma sobreposição textual no workflow foi resolvida preservando os dois conjuntos de capturas sanitizadas; demais arquivos herdados conferidos com merge-tree. H4 e perda de evidência possuem RED/GREEN auxiliar e recibos independentes. A próxima publicação agrupa a correção compartilhada e a evidência desta Spec, para um único CI coeso.15 gates/Codex/capturas do próprio HEAD continuam condições de conclusão.
+
+## Terceira incorporação R3
+
+Incorporar5f5d8719e25856b59e84c053cb13d2516dbeac49 sobre85e397bd4271ab07a197ea88db652227e6e392ce com parents ordenados e merge-tree sem conflito. Os dois achados Codex da fase6 afetam o helper compartilhado mesmo com revisão85e397 sem novos achados. Preservar run/artifact85e397 antes do push; exigir novo CI e Codex no próprio SHA. Testes do helper passam de21 para23; seleção esperada190, sem reduzir matriz ou alterar produto.

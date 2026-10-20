@@ -1,0 +1,64 @@
+{
+  "scope": "Read-only security and diagnostic-value review of failure-only IHFR HTTP probes; no tests executed by this reviewer.",
+  "reviewedFiles": [
+    {
+      "path": "tests/e2e/support/ihfr-route-probe.ts",
+      "sha256": "dc45a8b662657d8015269c208799a26c177354dda4d0103c8a06cc28182ede74"
+    },
+    {
+      "path": "tests/e2e/support/ihfr-diagnostics.ts",
+      "sha256": "3d6051219de10590276c2dde3d247c7d96c3562d7248be6289dcf678572d7e0e"
+    },
+    {
+      "path": "tests/unit/imp006-route-probe.test.ts",
+      "sha256": "a2b79c4ba210d893c388cdf6633d97da5e89566cd8a61c8c62d5418a2934f4ea"
+    }
+  ],
+  "decision": "No material security issue identified in the final reviewed implementation; documented observation limits apply.",
+  "verifiedSafeguards": [
+    "Entry requires unexpected test outcome and the last observed main-frame navigation with status 404. The failed URL stays in memory, is not serialized by the new probe, and is validated against the configured origin and recognized path before use.",
+    "Configured base origin must be loopback HTTP(S), without userinfo, non-root path, query or fragment; navigation origin must match and a recognized collections route must supply the laboratory and area identifiers.",
+    "Owned schema name must match imp006_test_ plus 32 hexadecimal characters.",
+    "Caller snapshots cookies applicable to the configured origin; probe further filters to auth_token and does not copy local storage.",
+    "Each of three fixed GET targets receives a separate APIRequestContext with independent cookie storage; Set-Cookie from authentication cannot mutate browser or other probe contexts.",
+    "Requests use timeout 5000 ms, maxRedirects 0, maxRetries 0 and failOnStatusCode false.",
+    "Output is restricted to fixed probe names, status, representation, allowlisted error-code values and booleans; raw JSON, names, cookies, headers and exception text are never returned.",
+    "Top-level authentication error code and nested laboratory/area error code are both supported; area success does not require a success property.",
+    "Context disposal is attempted in finally and exceptions are reduced to unavailable true.",
+    "The existing test assertions, readiness, action sequence and gate requirements remain unchanged by the diagnostics extension.",
+    "Output explicitly labels sessionObservation CURRENT_COOKIES_AFTER_FAILURE and documents false as not observed, avoiding a claim of request-time reconstruction or resource absence."
+  ],
+  "qualifications": [
+    {
+      "classification": "documented enum contract",
+      "observation": "OTHER is the accepted fixed sanitized label for an unrecognized string error code; missing code remains omitted. No raw unknown code is emitted."
+    },
+    {
+      "classification": "interpretation",
+      "observation": "False booleans mean expected identifier not observed in this response. Status and representation remain necessary to interpret HTML, redirects, errors or invalid JSON; false does not prove absence."
+    }
+  ],
+  "diagnosticLimits": [
+    "Authentication status 200 with success true shows an authenticated response; the public user contract does not expose an identifier, so it does not establish that the signed-in user is a particular fixture actor.",
+    "Area NOT_FOUND may reflect absent resource or restricted visibility/membership and cannot alone establish the root cause of the page 404.",
+    "The cookie snapshot and API responses are observed after the original failure, potentially after a long assertion wait. They do not reconstruct the state of the first navigation.",
+    "Standalone API contexts bypass page.route interception, browser cache and service workers; a successful GET does not prove that the page route or its server-rendering authorization/context branch was correct.",
+    "The three GETs are read-only at the inspected handlers but may initialize dev route modules, caches or database connections and affect later timing. The failed test outcome and original diagnostics remain the primary evidence.",
+    "Loopback restriction intentionally skips LAN mode; skipped probes are not a diagnosis.",
+    "Owned schema-name validation proves a permitted test-environment label, not that the server is actually connected to that schema; existing official fingerprint/schema gates supply that evidence.",
+    "No database behavior or browser-cookie mutation was independently executed in this review. Root owns the focused validation run."
+  ],
+  "recommendedMinimalFollowup": [],
+  "resolvedReviewNotes": [
+    "The call now uses lastNotFoundNavigation rather than the final page URL, removing the earlier context-attribution ambiguity.",
+    "Root explicitly accepted OTHER as the documented fallback enum.",
+    "Post-failure timing is now visible in a fixed sessionObservation enum and false boolean semantics are documented in source."
+  ],
+  "validationReportedByIntegrator": {
+    "focusedTests": 3,
+    "result": "PASS",
+    "typecheck": "PASS",
+    "reviewerRepeatedTests": false,
+    "source": "Root reported rerunning the final implementation; this reviewer inspected source changes and hashes only."
+  }
+}

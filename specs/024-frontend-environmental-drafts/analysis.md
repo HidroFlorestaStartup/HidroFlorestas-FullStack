@@ -1,5 +1,9 @@
 # Análise de consistência — continuidade R3 (20/10/2026)
 
+A terceira candidata incorpora as correções P1/P2 do helper compartilhado em5f5d87, com23/23 contraprovas independentes e14 arquivos herdados iguais ao merge-tree sem conflitos. Produto e testes ambientais permanecem inalterados; CI e Codex no novo SHA continuam obrigatórios.
+
+A segunda candidata teve12 gates PASS, IHFR0/6 por navegações404 e dois gates NOT_RUN. O novo diagnóstico pós-falha distingue status de auth/API/rota sem corpos, sem mudar resultado ou enfraquecer assertions. Causa histórica INCONCLUSIVA; ver implementation-evidence.md.
+
 Estado vigente: PR Draft #19 empilhada sobre #18. O checkout integral partiu de `3d8038294e3d5383b0b3536b8ded275f2f85e884`; Node 24.19.0, lockfile e Prisma preservados. Scripts Spec Kit de setup-plan/setup-tasks/pré-requisitos executados na Spec existente, sem hooks adicionais. Limitações antigas de publicação no histórico abaixo não são o estado desta execução.
 
 | Requisito / risco | Evidência R3 e decisão | Pendência |
