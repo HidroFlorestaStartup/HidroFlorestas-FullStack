@@ -1,0 +1,779 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "date": "2026-10-20",
+  "timezone": "America/Fortaleza",
+  "authorization": {
+    "classification": "DECISAO_CONFIRMADA",
+    "source": "Pedido anexado de Pedro: Integração dos PRs 13–16 e handoff das fases 6 e 7, sessão de 20/10/2026",
+    "futureExecutor": "Implementar ambas as fases6/7, validar, commits, push, abrir/atualizar dois PRs; futuros merges e aceite humano com mantenedor"
+  },
+  "repository": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "authenticatedLogin": "PedroVitor237",
+  "upstreamLegacyUsed": false,
+  "initial": {
+    "development": "c33bf50b510dd7af7ad59cde039839f56519c87e",
+    "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "trackedChanges": [],
+    "untrackedFiles": [],
+    "preservedLocalBranches": {
+      "docs/handoff-frontend-fases-2-3": "58407b34d4f00c087b920607e79dcb21ce27956b",
+      "docs/handoff-frontend-fases-4-5": "4144e12bf240091ebd0a133670e5a1726d2eab78",
+      "docs/preparacao-frontend-20261018": "95463d5b0a29d75e916d2115765792444438db44",
+      "feat/frontend-login": "550308247d712c920dede8d96b5f1e6140767d10",
+      "review/cri-rc-validation-20261012": "a01857b3d1a44fc0668054d03096d743ba0aede0"
+    },
+    "preservedWorktrees": [
+      "checkout principal",
+      "worktree rc-review limpa em a01857b",
+      "registros ausentes /tmp/hidro-handoff-frontend-fases-2-3, /tmp/hidro-handoff-frontend-fases-4-5, /tmp/hidro-preparacao-frontend-20261018; não removidos"
+    ],
+    "origin": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack.git"
+  },
+  "merges": [
+    {
+      "number": 13,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13",
+      "headBranch": "docs/handoff-frontend-fases-4-5",
+      "head": "4144e12bf240091ebd0a133670e5a1726d2eab78",
+      "baseBeforeRetarget": "development",
+      "effectiveMergeBase": "development",
+      "effectiveBaseHeadBeforeMerge": "c33bf50b510dd7af7ad59cde039839f56519c87e",
+      "mergedAt": "2026-10-20T07:14:27Z",
+      "commit": "28d4459c02668f461d5b03b5bbf40a39050e5e0d",
+      "parents": [
+        "c33bf50b510dd7af7ad59cde039839f56519c87e",
+        "4144e12bf240091ebd0a133670e5a1726d2eab78"
+      ],
+      "tree": "0483233309efcf4dfa19bf16376fad5c7094784f",
+      "mergeMethod": "merge",
+      "differentPathsFromOwnBase": 9,
+      "reviews": [],
+      "unresolvedReviewThreads": 0,
+      "allDiscussionPagesChecked": true,
+      "headChecks": {
+        "state": "SUCCESS",
+        "contexts": {
+          "pageInfo": {
+            "hasNextPage": false
+          },
+          "nodes": [
+            {
+              "context": "Vercel",
+              "state": "SUCCESS",
+              "targetUrl": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/42GznVqEmJwZXPKjvppQ7KmEgT4p",
+              "description": "Deployment has completed"
+            },
+            {
+              "name": "Vercel Preview Comments",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://vercel.com/github",
+              "checkSuite": {
+                "workflowRun": null
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "number": 14,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14",
+      "headBranch": "feat/frontend-laboratory-dashboard",
+      "head": "c076ec17f668ee7cf632a6bff0c71df4e7cd2564",
+      "baseBeforeRetarget": "development",
+      "effectiveMergeBase": "development",
+      "effectiveBaseHeadBeforeMerge": "28d4459c02668f461d5b03b5bbf40a39050e5e0d",
+      "mergedAt": "2026-10-20T07:17:25Z",
+      "commit": "16aa4437d3834ff4010f4b659fc314f8f64eac79",
+      "parents": [
+        "28d4459c02668f461d5b03b5bbf40a39050e5e0d",
+        "c076ec17f668ee7cf632a6bff0c71df4e7cd2564"
+      ],
+      "tree": "b61f83c393906f476b99a3a3b1edb5a1e117af47",
+      "mergeMethod": "merge",
+      "differentPathsFromOwnBase": 621,
+      "reviews": [
+        {
+          "databaseId": 5581872118,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/14#pullrequestreview-5581872118",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "state": "APPROVED",
+          "body": "Revisão técnica assistida registrada por Codex com autorização expressa de Pedro no pedido de 20/10/2026, usando a conta autenticada PedroVitor237. Head c076ec17f668ee7cf632a6bff0c71df4e7cd2564. Inventário local completo: 621 caminhos (18 de produto/testes/configuração; 603 de Specs/evidências). Examinados shell/scroll/foco, respostas tardias, DTOs/cursor/contexto, expectedRole e exclusão confirmada. Captura selecionada de paisagem/texto200/safe-area emulada inspecionada. Development após #13 acrescenta somente nove caminhos documentais sem sobreposição. CI do head exato: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39295724999/job/118207595454 SUCCESS; log oficial baixado e journal verificado: 15 gates únicos na ordem oficial, todos PASS/exit0, fingerprint dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91. Parecer favorável à integração técnica por merge commit, após conferência final. O parecer auxiliar fornecido no pedido conserva seu alcance. Sem nova suíte funcional local, dispositivo físico, leitor de tela ou aceite visual/manual humano nesta integração; nenhuma revisão atribuída a terceiros. Falhas históricas de integração/IHFR e incidente de duas chamadas permanecem inconclusivos: novo PASS não demonstra causa retrospectiva. Ciência IHFR continua experimental e pendente de validação.",
+          "commit": {
+            "oid": "c076ec17f668ee7cf632a6bff0c71df4e7cd2564"
+          },
+          "submittedAt": "2026-10-20T07:17:03Z"
+        }
+      ],
+      "unresolvedReviewThreads": 0,
+      "allDiscussionPagesChecked": true,
+      "headChecks": {
+        "state": "SUCCESS",
+        "contexts": {
+          "pageInfo": {
+            "hasNextPage": false
+          },
+          "nodes": [
+            {
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39295724999/job/118207595454",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39295724999,
+                  "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39295724999"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "ci": {
+        "id": 39295724999,
+        "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39295724999",
+        "head_sha": "c076ec17f668ee7cf632a6bff0c71df4e7cd2564",
+        "head_branch": "feat/frontend-laboratory-dashboard",
+        "event": "push",
+        "run_attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "jobId": 118207595454,
+        "gates": [
+          {
+            "gate": "RegressionSetup",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:39:24.903Z",
+            "endedUtc": "2026-10-19T17:39:32.519Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Unit",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:39:32.812Z",
+            "endedUtc": "2026-10-19T17:39:58.671Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Integration",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:39:58.981Z",
+            "endedUtc": "2026-10-19T17:41:49.864Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Migration",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:41:50.148Z",
+            "endedUtc": "2026-10-19T17:42:06.686Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Contract",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:42:06.970Z",
+            "endedUtc": "2026-10-19T17:42:10.515Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "R1",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:42:10.804Z",
+            "endedUtc": "2026-10-19T17:42:21.500Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Build",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:42:21.779Z",
+            "endedUtc": "2026-10-19T17:42:48.606Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Typecheck",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:42:48.913Z",
+            "endedUtc": "2026-10-19T17:42:58.576Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Lint",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:42:58.851Z",
+            "endedUtc": "2026-10-19T17:43:17.707Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "E2E",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:43:18.005Z",
+            "endedUtc": "2026-10-19T17:51:42.908Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Https",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:51:43.228Z",
+            "endedUtc": "2026-10-19T17:52:24.320Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Deletion",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:52:24.619Z",
+            "endedUtc": "2026-10-19T17:52:37.805Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Ihfr",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:52:38.094Z",
+            "endedUtc": "2026-10-19T17:53:30.221Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Bootstrap",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:53:30.500Z",
+            "endedUtc": "2026-10-19T17:53:37.068Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "SchemaAudit",
+            "snapshot": "dfd7eadfbbfead8edd0e95db2ba6425c69a1842aa1a40dd86f783e760d382d91",
+            "startedUtc": "2026-10-19T17:53:37.367Z",
+            "endedUtc": "2026-10-19T17:53:38.160Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          }
+        ],
+        "jobLogSha256": "d5fa1b95c2e1e3e7fc7b9c06dc887123753938af18999f1d8064384f4da724a0"
+      }
+    },
+    {
+      "number": 15,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/15",
+      "headBranch": "feat/frontend-areas-cover",
+      "head": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "baseBeforeRetarget": "feat/frontend-laboratory-dashboard",
+      "effectiveMergeBase": "development",
+      "effectiveBaseHeadBeforeMerge": "16aa4437d3834ff4010f4b659fc314f8f64eac79",
+      "mergedAt": "2026-10-20T07:18:56Z",
+      "commit": "1491d827921f3e13400af4f4f0d9b31ec2299b98",
+      "parents": [
+        "16aa4437d3834ff4010f4b659fc314f8f64eac79",
+        "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2"
+      ],
+      "tree": "2c9f50f83fe97bbd373d7d738d241f9f085a43e1",
+      "mergeMethod": "merge",
+      "differentPathsFromOwnBase": 344,
+      "reviews": [
+        {
+          "databaseId": 5581887397,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/15#pullrequestreview-5581887397",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "state": "APPROVED",
+          "body": "Revisão técnica assistida registrada por Codex com autorização expressa de Pedro no pedido de 20/10/2026, usando a conta autenticada PedroVitor237. Head 3f1eba566a1f4f01e469f75a6c174fd2e602a9d2. Inventário local completo: 344 caminhos próprios (9 de produto/testes/configuração; 335 de Specs/evidências), sem limite de 300 da API. Revisão focal de apresentação e protocolo de capa: flag/permissão/revisão independentes, chave/corpo estáveis na incerteza, bytes e eventos de preview da tentativa atual. Head14 é ancestral do head15; base redirecionada para development após integração14, diff próprio e candidata reconferidos. CI do head exato: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357/job/118232460151 SUCCESS; log oficial baixado e journal verificado: 15 gates únicos na ordem oficial, todos PASS/exit0, fingerprint 2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d. Parecer favorável à integração técnica por merge commit, após conferência final. O parecer auxiliar fornecido no pedido conserva seu alcance. Sem nova suíte funcional local, dispositivo físico, leitor de tela ou aceite visual/manual humano nesta integração; nenhuma revisão atribuída a terceiros. Falhas históricas de integração/IHFR e incidente de duas chamadas permanecem inconclusivos: novo PASS não demonstra causa retrospectiva. Ciência IHFR continua experimental e pendente de validação.",
+          "commit": {
+            "oid": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2"
+          },
+          "submittedAt": "2026-10-20T07:18:50Z"
+        }
+      ],
+      "unresolvedReviewThreads": 0,
+      "allDiscussionPagesChecked": true,
+      "headChecks": {
+        "state": "SUCCESS",
+        "contexts": {
+          "pageInfo": {
+            "hasNextPage": false
+          },
+          "nodes": [
+            {
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357/job/118232460151",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39300023357,
+                  "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "ci": {
+        "id": 39300023357,
+        "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357",
+        "head_sha": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+        "head_branch": "feat/frontend-areas-cover",
+        "event": "push",
+        "run_attempt": 2,
+        "status": "completed",
+        "conclusion": "success",
+        "jobId": 118232460151,
+        "gates": [
+          {
+            "gate": "RegressionSetup",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:31:05.572Z",
+            "endedUtc": "2026-10-19T18:31:13.456Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Unit",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:31:13.737Z",
+            "endedUtc": "2026-10-19T18:31:39.155Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Integration",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:31:39.467Z",
+            "endedUtc": "2026-10-19T18:33:34.295Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Migration",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:33:34.585Z",
+            "endedUtc": "2026-10-19T18:33:50.301Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Contract",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:33:50.573Z",
+            "endedUtc": "2026-10-19T18:33:54.196Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "R1",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:33:54.481Z",
+            "endedUtc": "2026-10-19T18:34:05.146Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Build",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:34:05.432Z",
+            "endedUtc": "2026-10-19T18:34:34.412Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Typecheck",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:34:34.707Z",
+            "endedUtc": "2026-10-19T18:34:44.944Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Lint",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:34:45.225Z",
+            "endedUtc": "2026-10-19T18:35:06.404Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "E2E",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:35:06.674Z",
+            "endedUtc": "2026-10-19T18:45:01.305Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Https",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:45:01.637Z",
+            "endedUtc": "2026-10-19T18:45:46.038Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Deletion",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:45:46.311Z",
+            "endedUtc": "2026-10-19T18:46:00.769Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Ihfr",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:46:01.036Z",
+            "endedUtc": "2026-10-19T18:46:55.361Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Bootstrap",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:46:55.655Z",
+            "endedUtc": "2026-10-19T18:47:03.013Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "SchemaAudit",
+            "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+            "startedUtc": "2026-10-19T18:47:03.358Z",
+            "endedUtc": "2026-10-19T18:47:04.357Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          }
+        ],
+        "jobLogSha256": "5389d55fc14226e836a672de9ab3daf479a1b4ae223b7cd69685d0de76ff54f3"
+      }
+    },
+    {
+      "number": 16,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16",
+      "headBranch": "022-fix-concurrency-ihfr",
+      "head": "b85edd8482fb5a72dbc70f9978332164c190d861",
+      "baseBeforeRetarget": "feat/frontend-areas-cover",
+      "effectiveMergeBase": "development",
+      "effectiveBaseHeadBeforeMerge": "1491d827921f3e13400af4f4f0d9b31ec2299b98",
+      "mergedAt": "2026-10-20T07:20:24Z",
+      "commit": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+      "parents": [
+        "1491d827921f3e13400af4f4f0d9b31ec2299b98",
+        "b85edd8482fb5a72dbc70f9978332164c190d861"
+      ],
+      "tree": "422d4d4a0376d34e9007e622c0b26b77387d2e7a",
+      "mergeMethod": "merge",
+      "differentPathsFromOwnBase": 39,
+      "reviews": [
+        {
+          "databaseId": 5581901183,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/16#pullrequestreview-5581901183",
+          "author": {
+            "login": "PedroVitor237"
+          },
+          "state": "APPROVED",
+          "body": "Revisão técnica assistida registrada por Codex com autorização expressa de Pedro no pedido de 20/10/2026, usando a conta autenticada PedroVitor237. Head b85edd8482fb5a72dbc70f9978332164c190d861. Inventário local completo: 39 caminhos próprios. Consulta excepcional após três conflitos apenas em initiate, sem quarta escrita ou retry adicional; revalida elegibilidade/replay/autorização/flag/revisão/quota/preset. Diagnósticos e C01/C02 preservam metadados, sanitizam campos e descartam cauda de linha longa. Asserções e seis testes oficiais IHFR preservados. Head15 é ancestral do head16; base redirecionada e candidata reconferidas. Recibo atual #issuecomment-6280516630; head antigo6ad9098 não substitui b85edd8. CI do head exato: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39343103206/job/118369149836 SUCCESS; log oficial baixado e journal verificado: 15 gates únicos na ordem oficial, todos PASS/exit0, fingerprint b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41. Parecer favorável à integração técnica por merge commit, após conferência final. O parecer auxiliar fornecido no pedido conserva seu alcance. Sem nova suíte funcional local, dispositivo físico, leitor de tela ou aceite visual/manual humano nesta integração; nenhuma revisão atribuída a terceiros. Falhas históricas de integração/IHFR e incidente de duas chamadas permanecem inconclusivos: novo PASS não demonstra causa retrospectiva. Ciência IHFR continua experimental e pendente de validação.",
+          "commit": {
+            "oid": "b85edd8482fb5a72dbc70f9978332164c190d861"
+          },
+          "submittedAt": "2026-10-20T07:20:17Z"
+        }
+      ],
+      "unresolvedReviewThreads": 0,
+      "allDiscussionPagesChecked": true,
+      "headChecks": {
+        "state": "SUCCESS",
+        "contexts": {
+          "pageInfo": {
+            "hasNextPage": false
+          },
+          "nodes": [
+            {
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39343103206/job/118369149836",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39343103206,
+                  "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39343103206"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "ci": {
+        "id": 39343103206,
+        "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39343103206",
+        "head_sha": "b85edd8482fb5a72dbc70f9978332164c190d861",
+        "head_branch": "022-fix-concurrency-ihfr",
+        "event": "push",
+        "run_attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "jobId": 118369149836,
+        "gates": [
+          {
+            "gate": "RegressionSetup",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:43:09.403Z",
+            "endedUtc": "2026-10-19T23:43:17.366Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Unit",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:43:17.639Z",
+            "endedUtc": "2026-10-19T23:43:43.957Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Integration",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:43:44.280Z",
+            "endedUtc": "2026-10-19T23:45:53.879Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Migration",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:45:54.154Z",
+            "endedUtc": "2026-10-19T23:46:10.058Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Contract",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:46:10.312Z",
+            "endedUtc": "2026-10-19T23:46:13.748Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "R1",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:46:14.022Z",
+            "endedUtc": "2026-10-19T23:46:25.517Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Build",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:46:25.771Z",
+            "endedUtc": "2026-10-19T23:46:51.616Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Typecheck",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:46:51.903Z",
+            "endedUtc": "2026-10-19T23:47:01.642Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Lint",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:47:01.906Z",
+            "endedUtc": "2026-10-19T23:47:33.790Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "E2E",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:47:34.069Z",
+            "endedUtc": "2026-10-19T23:57:25.940Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Https",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:57:26.255Z",
+            "endedUtc": "2026-10-19T23:58:10.377Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Deletion",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:58:10.629Z",
+            "endedUtc": "2026-10-19T23:58:23.791Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Ihfr",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:58:24.058Z",
+            "endedUtc": "2026-10-19T23:59:16.748Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "Bootstrap",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:59:17.030Z",
+            "endedUtc": "2026-10-19T23:59:24.014Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          },
+          {
+            "gate": "SchemaAudit",
+            "snapshot": "b930e28f520c4df47b84b3538ed711eca575705fa9daa160645f36cfdc80af41",
+            "startedUtc": "2026-10-19T23:59:24.287Z",
+            "endedUtc": "2026-10-19T23:59:25.077Z",
+            "exitCode": 0,
+            "result": "PASS",
+            "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+          }
+        ],
+        "jobLogSha256": "bcda96fd24e7269e82b1e54ec49721faa49c9ad413d2bc47b6730efddb85f1fc"
+      }
+    }
+  ],
+  "equivalence": {
+    "comparisonHead": "b85edd8482fb5a72dbc70f9978332164c190d861",
+    "integratedCommit": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+    "integratedTree": "422d4d4a0376d34e9007e622c0b26b77387d2e7a",
+    "allDifferentPaths": [
+      "PROJECT_CONTEXT.md",
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/integracao-contas-workspace-e-handoff-fases-4-5.json",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-4-5.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md",
+      "docs/plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md"
+    ],
+    "allDeltasFromPR13": true,
+    "productTestsDependenciesConfigurationIdentical": true,
+    "newFunctionalDelta": false,
+    "method": "Git local, inventário completo sem limite300, árvores candidatas merge-tree e árvores reais/pais GitHub/Git conferidos"
+  },
+  "finalBranches": {
+    "developmentLocal": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+    "developmentRemote": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+    "mainLocal": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "mainRemote": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "synchronization": "FF seguro após cada merge; outras branches locais alinhadas aos próprios upstreams e preservadas",
+    "sourceBranchesPreserved": true,
+    "newWorktree": "/tmp/hidro-integration-20261020/review"
+  },
+  "historicalFailures": [
+    "Tentativa anterior da integração GitHub recusou merge13 com403 Resource not accessible by integration (relato no pedido; nenhuma escrita atribuída àquela conexão)",
+    "Falhas históricas de navegação12 e IHFR não explicadas por PASS posterior",
+    "Quota concorrente de duas chamadas continua inconclusiva; reprodução022 de quatro operações/três ondas não prova causa retrospectiva",
+    "Harness local legado022 teve falhas de ambiente/guard; não é PASS"
+  ],
+  "sessionFailures": [
+    "gh pr list: rede no sandbox; repetição com escalonamento funcionou",
+    "gh pr view: baseRefOid não suportado pelo CLI; substituído por REST/GraphQL",
+    "git merge-tree: escrita de objeto bloqueada no sandbox; repetição escalonada funcionou",
+    "Primeira consulta14 após merge13: mergeabilidadeUNKNOWN; aguardada recomputaçãoMERGEABLE/CLEAN antes de review/merge"
+  ],
+  "reviewLimits": [
+    "Parecer auxiliar fornecido pelo usuário preservado com seu alcance",
+    "Inventário completo de caminhos e revisão focal estática de produto/configuração/contratos/testes; não auditoria universal dos bytes de artefatos",
+    "Duas capturas selecionadas inspecionadas nesta sessão: paisagem texto200/safe-area Spec020 e erro neutro de metadados Spec021",
+    "Sem nova suíte local Next/build/E2E/PostgreSQL, dispositivo físico, outros navegadores, leitor de tela ou aceite humano visual/manual",
+    "Teste focal logging30/30 transformado em .mjs: evidência auxiliar relatada pelo pedido, não nova execução desta integração",
+    "Logs oficiais baixados/conferidos; ZIPs/digests de artefatos da revisão anterior não foram baixados novamente",
+    "CIs são dos heads das features; nenhuma alegação de15gates nos commits de merge",
+    "Sem deploy solicitado, migrations reais, promoção para main ou operação externa de provedor; automações já conectadas não são homologação"
+  ],
+  "ihfrQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "documentationValidation": {
+    "status": "PASS",
+    "files": 9,
+    "jsonFiles": 1,
+    "localLinks": 118,
+    "anchors": 2,
+    "priorDocumentsPreservedByteForByte": 6,
+    "newReferenceErrors": [],
+    "preexistingReferenceErrors": [],
+    "sensitivePatternScan": "PASS (recognized formats only)",
+    "scope": "PASS",
+    "gitDiffCheck": "PASS",
+    "mergeParentsTreesHeadsChecksAndEquivalence": "PASS",
+    "promptOperationalAcceptanceItems": 31,
+    "notRun": "No new functional suite: documentation-only preparation, no functional integration delta"
+  },
+  "publication": {
+    "branch": "docs/handoff-frontend-fases-6-7",
+    "base": "development",
+    "startingCommit": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+    "status": "PENDENTE",
+    "pullRequest": null,
+    "promptUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/docs/handoff-frontend-fases-6-7/docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md"
+  }
+}

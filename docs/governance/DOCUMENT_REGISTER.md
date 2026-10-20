@@ -297,3 +297,26 @@ exigisse editar TECH_DECISIONS.md/PENDING_DECISIONS.md. docs/raw/** intacto.
 
 Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
 branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.
+
+## Integração13–16 e handoff6/7 — 2026-10-20
+
+Origem: pedido anexado de Pedro “Integração dos PRs13–16 e handoff das fases 6 e 7”,
+de 20/10/2026. `DECISAO_CONFIRMADA`: execução futura de ambas autorizada com
+validação/commits/push/PRs; merge futuro e aceite humano com mantenedor.
+
+| Artefato | Estado e alcance |
+|---|---|
+|[Prompt 6/7](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md)|Handoff autossuficiente para Coletas e Dados ambientais/drafts; implementação futura|
+|[Plano da continuação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-6-7.md)|Preparação transversal conforme PLANS.md; sem duplicar spec funcional|
+|[Recibo JSON](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json)|Merges13–16, pais/árvores, bases/heads, reviews reais, checks/journals/equivalência e limites|
+|[Plano global](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md), [acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md), [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md)|Estado vigente6/7 por adendo; histórico preservado|
+|[Prompt 4/5](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md)|Execução entregue; novo destino acrescentado sem apagar instrução móvel/falhas|
+|PROJECT_CONTEXT.md|Apontador à execução 6/7 e corte integrado; estados antigos históricos|
+
+`EVIDENCIA_IMPLEMENTACAO`: development 24be57f, produto/testes/configuração iguais
+a b85edd8 com nove deltas documentais13; main beba96f preservada. Reviews técnicos
+assistidos de Pedro 5581872118/5581887397/5581901183 nos heads exatos; CI 15 PASS dos
+heads14/15/16, sem alegar CI de merge. Sem nova suíte funcional local ou aceite
+visual/manual. Falhas históricas e qualificadores IHFR preservados. docs/raw/**,
+TECH_DECISIONS.md e PENDING_DECISIONS.md intactos: nenhuma decisão material nova
+nesses registros. Publicação/validação final serão acrescidas em adendo.

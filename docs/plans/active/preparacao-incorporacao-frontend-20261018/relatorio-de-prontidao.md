@@ -538,3 +538,62 @@ Vercel/PENDING na primeira consulta. São observações automáticas, separadas 
 15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
 O workflow RC não inclui a branch documental. Resultado final do head de
 encerramento será reconferido na entrega; pending isolado não é falha comprovada.
+
+## Adendo de 20/10/2026 — integração 4/5/022 e prontidão6/7
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “Integração dos PRs 13–16 e
+handoff das fases 6 e 7”, de 20/10/2026, autorizou esta integração/publicação e o
+executor a implementar **ambas as fases 6/7 completas**, validar, fazer commits,
+push e abrir/atualizar os dois PRs sem confirmação adicional de rotina. Futuros
+merges e aceite humano continuam com o mantenedor. Fases8–10 seguem fora do recorte.
+
+`EVIDENCIA_IMPLEMENTACAO`: #13/28d4459, #14/16aa443, #15/1491d82 e #16/24be57f
+integrados nessa ordem, por merge commits, em **development `24be57fa0ddeb9d3da72ae80606850d428e29fbb`**.
+#15/#16 redirecionados para development após integrar as dependências; branches
+preservadas. Reviews APPROVED técnicos assistidos de PedroVitor237:
+5581872118/5581887397/5581901183, nos heads exatos c076ec1/3f1eba5/b85edd8;
+nenhuma autoaprovação13 ou review atribuída a terceiro.
+
+CI dos heads14/15/16:15 gates únicos PASS/exit0 por journal oficial conferido;
+runs39295724999(tentativa1)/39300023357(tentativa2)/39343103206(tentativa1),
+E2E136/154/154, HTTPS2/IHFR6. Não é CI dos merges. Produto/testes/dependências/
+configuração final idênticos ao head b85edd8; somente nove diferenças documentais
+do13. Main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054` e trabalhos preexistentes preservados;
+development local/remota alinhadas por FF seguro.
+
+Sem nova suíte funcional local, dispositivo físico, leitor de tela, aceite visual
+humano ou homologação real. Capturas selecionadas não são auditoria visual
+integral; transporte fake de capa não prova provedor real. Falhas históricas
+IHFR/duas chamadas permanecem inconclusivas; reprodução022 de quatro operações/
+três ondas não prova causa retrospectiva. C01/C02 e os qualificadores
+CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
+NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO preservados. Sem deploy solicitado,
+operação externa, banco real ou promoção para main.
+
+### Conferência e limites desta rodada
+
+Inventários locais completos: #13 nove documentos; #14 621 caminhos; #15 344
+caminhos próprios; #16 39 caminhos próprios. Sem truncamento de300 arquivos da
+API. Ancestralidadec076ec1 → 3f1eba5 → b85edd8 comprovada; diff próprio após retarget
+preservado. Nove caminhos do13 não se sobrepõem aos caminhos próprios14–16.
+Árvores calculadas por merge-tree iguais às reais; nenhuma resolução de conflito
+ou alteração funcional adicional. Descrição16 harmonizada com head b85edd8 e
+recibo 6280516630, mantendo integralmente o corpo histórico 6ad9098.
+
+Revisão focal estática de shell/scroll/DTOs/contexto/expectedRole, capa e consulta
+de elegibilidade/sanitização, complementando o parecer auxiliar fornecido pelo
+usuário. Duas capturas selecionadas inspecionadas nesta sessão; não auditoria
+universal de bytes/bitmaps. ZIPs/digests anteriores não foram baixados novamente;
+logs oficiais dos três jobs foram baixados e journals 15 PASS reconferidos.
+Teste auxiliar30/30 de logging foi relatado no pedido e não reexecutado aqui.
+
+`INFERENCIA`: **PRONTO PARA EXECUTAR AS FASES6 E7 NO RECORTE AUTORIZADO**, conforme
+[prompt 6/7](prompt-de-execucao-fases-6-7.md). Isso não afirma implementação 6/7,
+aceite humano ou validação científica. Contratos de004/005/015 e consumidores
+atuais devem ser preservados, com CI/evidências novos por head de cada entrega.
+Homologações externas conservam seus gates próprios e não bloqueiam apresentação
+sem dependência material. Sem decisão técnica global nova ou pendência
+administrativa fabricada: TECH_DECISIONS.md/PENDING_DECISIONS.md intactos.
+
+[Recibo com SHAs completos, pais/árvores, reviews, gates e limitações](integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
+Publicação documental e validação final serão registradas em adendo.

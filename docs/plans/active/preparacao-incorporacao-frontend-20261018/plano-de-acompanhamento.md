@@ -366,3 +366,53 @@ Vercel/PENDING na primeira consulta. São observações automáticas, separadas 
 15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
 O workflow RC não inclui a branch documental. Resultado final do head de
 encerramento será reconferido na entrega; pending isolado não é falha comprovada.
+
+## Continuação de 20/10/2026 — integração13–16 e handoff6/7
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “Integração dos PRs 13–16 e
+handoff das fases 6 e 7”, de 20/10/2026, autorizou esta integração/publicação e o
+executor a implementar **ambas as fases 6/7 completas**, validar, fazer commits,
+push e abrir/atualizar os dois PRs sem confirmação adicional de rotina. Futuros
+merges e aceite humano continuam com o mantenedor. Fases8–10 seguem fora do recorte.
+
+`EVIDENCIA_IMPLEMENTACAO`: #13/28d4459, #14/16aa443, #15/1491d82 e #16/24be57f
+integrados nessa ordem, por merge commits, em **development `24be57fa0ddeb9d3da72ae80606850d428e29fbb`**.
+#15/#16 redirecionados para development após integrar as dependências; branches
+preservadas. Reviews APPROVED técnicos assistidos de PedroVitor237:
+5581872118/5581887397/5581901183, nos heads exatos c076ec1/3f1eba5/b85edd8;
+nenhuma autoaprovação13 ou review atribuída a terceiro.
+
+CI dos heads14/15/16:15 gates únicos PASS/exit0 por journal oficial conferido;
+runs39295724999(tentativa1)/39300023357(tentativa2)/39343103206(tentativa1),
+E2E136/154/154, HTTPS2/IHFR6. Não é CI dos merges. Produto/testes/dependências/
+configuração final idênticos ao head b85edd8; somente nove diferenças documentais
+do13. Main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054` e trabalhos preexistentes preservados;
+development local/remota alinhadas por FF seguro.
+
+Sem nova suíte funcional local, dispositivo físico, leitor de tela, aceite visual
+humano ou homologação real. Capturas selecionadas não são auditoria visual
+integral; transporte fake de capa não prova provedor real. Falhas históricas
+IHFR/duas chamadas permanecem inconclusivas; reprodução022 de quatro operações/
+três ondas não prova causa retrospectiva. C01/C02 e os qualificadores
+CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
+NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO preservados. Sem deploy solicitado,
+operação externa, banco real ou promoção para main.
+
+Inventário inicial: principal development c33bf50 limpa inclusive não rastreados;
+origin oficial correto, conta PedroVitor237, upstream antigo não usado. Worktree
+rc-review limpa a01857b e três registros de worktrees ausentes preservados.
+Branches locais anteriores alinhadas aos próprios upstreams, sem reset/force/
+stash automático ou exclusão. Revisão/branch documental em worktree isolada
+/tmp/hidro-integration-20261020/review. Nenhum conflito resolvido nem código
+alterado pela integração; candidatas e árvores reais/pais coincidem.
+
+Recusa403 do conector anterior permanece como relato no pedido. Escrita pela
+autenticação local funcionou sem contorno de regras. Rede e escrita de objetos
+restritas no sandbox tiveram repetição escalonada segura; baseRefOid indisponível
+no CLI foi substituído por REST/GraphQL. Mergeabilidade14 temporariamente UNKNOWN
+foi aguardada até MERGEABLE/CLEAN. Nenhum desses estados foi apresentado como PASS.
+
+[Plano desta preparação](plano-de-continuacao-fases-6-7.md) conforme PLANS.md;
+[recibo JSON](integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json) e
+[prompt autossuficiente](prompt-de-execucao-fases-6-7.md). Estado documental em
+publicação; validações/PR e encerramento serão acrescentados sem apagar histórico.
