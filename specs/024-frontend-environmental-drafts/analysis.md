@@ -1,3 +1,20 @@
+# Análise vigente — continuidade R3 concluída na candidata funcional
+
+EVIDENCIA_IMPLEMENTACAO: ec4b06e concluiu15/15 gates,190/190 E2E,231/231 Integration e Codex sem findings no SHA exato. Os resultados e a galeria estão em implementation-evidence.md. O HEAD documental seguinte continua sujeito à validação externa própria.
+
+| Requisito / risco | Evidência observada em ec4b06e | Limite / decisão |
+|---|---|---|
+| US3: foco/rolagem e transições |23 contraprovas compartilhadas incluídas no E2E integral; uma rolagem,9 hit tests, foco e animações preservados | P1/P2 do helper corrigidos; não reduzir bounds ou matriz |
+| US3: ações e campo final |48 quadros de matriz;42 alvos finais inteiros, seis configurações incluindo200% e paisagem | Máscaras, indicador Next, navegação elevada e label parcial qualificados; aceite humano pendente |
+| US1/US2: continuidade de principal |3P1 ambientais por seleção integral190/190;2handlers nominais em Integration; mutantes detectados | PUT/GET/DELETE e dois POSTs preservam identidade/chave/corpo/revisão e persistência única |
+| R2/R3/R5, OCC e transações |231 Integration PASS, com OCC/consumo/rollback/replay nomeados; E2E190 inclui hidratação, foco e precisão | Leitura confirmada tem R2/API/reload e desktop/mobile, não uma matriz de seis capturas |
+| Dependência de fase6 |5f5d871 incorporado em ec4b06e; reconciliação documental final com parents/blobs explícitos | Ambos os HEADs documentais precisam dos15 gates e Codex próprios |
+| IHFR404 histórico | Ihfr6/6 na execução atual; falha85e397 e ensaios preservados | Causa INCONCLUSIVA; probes não acionados, sem inferência de auth/cache/ciência |
+
+O único diff de produto R3 desde o checkpoint é CSS local de coleta e ambiental. HMAC, CSRF, autorização, OCC, schema e ciência IHFR não foram alterados nesta continuidade. Nenhuma nova Spec foi criada. O método Spec Kit e as fontes foram conferidos; registros antigos abaixo conservam seus limites temporais.
+
+## Histórico preservado — análises anteriores
+
 # Análise de consistência — continuidade R3 (20/10/2026)
 
 A terceira candidata incorpora as correções P1/P2 do helper compartilhado em5f5d87, com23/23 contraprovas independentes e14 arquivos herdados iguais ao merge-tree sem conflitos. Produto e testes ambientais permanecem inalterados; CI e Codex no novo SHA continuam obrigatórios.

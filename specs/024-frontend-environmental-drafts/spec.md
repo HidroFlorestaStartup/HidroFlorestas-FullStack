@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/frontend-environmental-drafts` (PR Draft #19 publicada)
 **Created**:2026-10-20
-**Status**: EM_VALIDACAO_R3; E2E e gates finais pendentes no início da continuidade. Histórico e escopo preservados em plan.md.
+**Status**: candidata funcional ec4b06e validada com15/15 gates e Codex; HEAD documental sujeito ao gate externo por SHA em tasks.md. Aceite humano pendente. Histórico e escopo preservados em plan.md.
 **Input**: handoff autorizado e pedido de execução no chat.
 
 ## User Scenarios & Testing
@@ -64,7 +64,7 @@ Coleta confirmada imutável e contexto autorizado. Conjunto ambiental confirmado
 
 ## Assumptions
 
-A fonte visual apoia composição, não governa domínio. Aceite humano e validação científica são separados. A candidata5ca5205 comprovou os cenários ambientais no runtime oficial, incluindo os três P1 A → B → A e24 capturas. A falha herdada de coleta e cinco gates NOT_RUN exigem nova validação integral. Produção, aceite humano e validação científica não são inferidos desses testes.
+A fonte visual apoia composição, não governa domínio. Aceite humano e validação científica são separados. Historicamente, a candidata5ca5205 comprovou os cenários ambientais, incluindo os três P1 A → B → A e24 capturas; a falha herdada de coleta e cinco gates NOT_RUN exigiram nova validação integral. A candidata funcional ec4b06e concluiu essa regressão com15/15 gates e190/190 E2E; o HEAD documental posterior mantém seu gate externo próprio. Produção, aceite humano e validação científica não são inferidos desses testes.
 ## Autoridade e escopo
 
 DECISAO_CONFIRMADA: pedido do usuário “agora execute o prompt”, em20/10/2026, executa o handoff das fases6/7 e seus complementos R1–R4. Isso autoriza implementação, testes e publicação das branches/PRs, mas não remove restrições da integração nem autoriza merge, push direto em main/development, deploy, banco real, provedores reais ou ciência nova. O PRD Code-First continua EM_REVISAO. Código é EVIDENCIA_IMPLEMENTACAO no alcance efetivamente verificado, não intenção científica.

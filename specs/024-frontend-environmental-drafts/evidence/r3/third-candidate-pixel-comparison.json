@@ -1,0 +1,647 @@
+{
+  "scope": "Exact SHA-256 comparison against PNGs covered by completed prior visual reviews. Different images require direct viewing.",
+  "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "images": [
+    {
+      "capture": "frontend-collections-control-obstructed",
+      "filename": "0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+      "phase": "collections",
+      "kind": "synthetic-helper-counterproof",
+      "imageSha256": "9b608e4c5674ea028d12c08294fccaab49b88860d95e6b45f80b8b7dd170722e",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-capture-order-before",
+      "filename": "395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+      "phase": "collections",
+      "kind": "synthetic-helper-counterproof",
+      "imageSha256": "5753536067bf2616307a1aec66f919c44a885988a4f64529c59def62e6b53bb1",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-1440-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "f8b5bb06877e432892055511ece1e5bdfaf199f62c43a57b3bc9c1c4d15d09cf",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-320-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "650a9e9698c51abbe876d345971bb66f30dce8689b99562349db0bdab6546c02",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "c0f719e122d6e1ab75eac6a50b92a600960fa2f65d09ce2f1c1e62ba7ea3d4bc",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-375-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "5dc4c9c81d1f926f2f6ce3e1fb9d23d94a8941348a0ae9eee39a984876a6e52e",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-768-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "9ff068ebb6d950ccfc0278285f129d99b5ee6610d2acb1522bb7c5a292a44b6d",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "1c08bef513eb006d5259dac677d5d2f2efe54d8960f5a71ad5665b11c8bdcd31",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-1440-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "62c73ed4a13c2f66f2ee82f0994c9ffbd2194903121715d8abe08a2886a31e57",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-320-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "9a3bd25a41e4932b008135ba1366972e7f2f295a995e89eacb23937db2df7827",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "776b4518644ea2d902ac52953038a76ca03e85f92227111539c2c993187751e2",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-375-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "c055b9a1e835fe7dc3401bff51ac06be4eda60c1466ed1fdd279b15287280406",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-768-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "af3d26881eb53b5b79a7ce0f91d82537328c0c407f960a97cd282db68cf41a62",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-detail-before-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "c54545313af83444084d31f666e1965a7500485662f4f2fd612d29bc60299bef",
+      "previouslyReviewedPixelSources": [
+        "phase6-v3"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-1440-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "43a243a76b7a69e1653175f405d56c5f86d8929c6f617a50f67713a724d6c40d",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-320-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "b5e5aae9ea2d6e384648519561c354aaf68719fe67094139759ac50dfbaa6a4f",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "41452bade621d0e3862ebf19be99d4f7e4308ad9bd66a1bd2bc282903efe75f7",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-375-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "75d47289236cc6e07f6af68b1d41dcd70a57dd4de9770e071e4019b1206e3375",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-768-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "8b86bf385cef15187b8820430b97e85157d5dfb1cb63432a29f49b2058524166",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-form-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "ba301ea784c2c8e8eca2dd91a5b566653b49d3e2e50255fcf8000f0f0c48bd17",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-1440-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "0b28ff91d6bcb2a1c3e999bf210f1519722e1e1ffc3c89f7217c357aab85d771",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-320-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "88ffd8c803503ccf4901afa35e6cf990127f06b266a604f4b3e3a241264ae396",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "0f6441f944b2cbd7d35947767d199f8235b81a6157faeb6021feb770a95c2ee8",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-375-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "79bec9425c35d747e1e2ae84a998d778d1f9653398544e225f10275e5afefde3",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-768-900-100",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "bde7cb723bc5714c638d582950f69355656c45cd3e1ce59ba9a368b2a7b28ce9",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-review-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "b6ed32dc96a227d1d8f03ee76f4e085ed6be817efdfba575fa7769350584aaa2",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-collections-initial-form",
+      "filename": "6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "fdfbe57cbd8d44fde1fc1f49c53f0053482375557d1d8d1f965e118214667ef1",
+      "previouslyReviewedPixelSources": [],
+      "requiresDirectInspection": true
+    },
+    {
+      "capture": "frontend-collections-uncertain-result",
+      "filename": "6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+      "phase": "collections",
+      "kind": "application-viewport",
+      "imageSha256": "633b2ad6a015b7b638847e19348920c03aa9de6f4a1a67385470b5418305d5ac",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2",
+        "phase6-v3",
+        "phase6-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-1440-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "f1f5b24bcfa930d406283893f245c247aa9d6efdd08e6c3c389ea884b4e33ead",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-320-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "1725ced260049bb50345c5f7b5504d570666e2dbe26780b2a42b965cdce137fe",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "53a0fc967b3432083e36fa218ab0b806683f5f7f5c14a401879eb95d2f340694",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-375-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "1aa95dd57d28a5478a5ece8fcbb400870b336ce6df684bd4825872d3e4431131",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-768-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "5c7b742881c0700b84c7fe456245d24f25f7f33878a8d792849d43a1ec431773",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-draft-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "04d7f564e9f3f118ebfb001a2a57d893e7d9a1d9b2b4452635d4e30f1d4360dc",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-1440-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-320-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "a951ea6c998af2b3e98ede6230b6480109145774a5bac828a047c00e3fbaf57a",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "ec0eb49b34421b2f27aea24b434e00236865d8812d495f9eeedd9fb63861dc43",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-375-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "8cf66f273a6ec7d92a59efae065c1de6c9f268c9f443311de704592253ac31f3",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-768-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-form-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "95f773e286b2eab119baa12e7c6a962fdc25af280ba48764efb9fd5253a50298",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-1440-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "66c977564f5feb944900ee2edbb5d388b244dff5772fe880385ae43769aed02a",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "81019c5ff0ce0a795d5398ff2532b74d5665ed2084c0d102dabaa21a9de17f35",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-375-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "629b2a019e1bf619e42879ea9caa5248258ebf446b2844cb0a1099d0ad3317f2",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-768-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-last-field-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "bde9d67c75fe38420a461e94809938678dd9fac578690dae6acf8f139743144f",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-1440-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "ac1434194c6fbeee8d9c514b96d565521ac347aea07129764f1593920df4a14a",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-320-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "cd009ca87aed63ee074f95c241aa16b2d59ded7844f6845ea6cb237ef4636768",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "933d78799e1a20db2a10d849cc505b154b0242919ecb65701cd7d540a31107f4",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-375-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "1e901867e8e0ddc33ca6506b248c3df5b74a854e864596a582660243a9d2bfd6",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-768-900-100",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "e64844d6696ab37e84fdfcbb2a67ca7adf069c543d5e4a7dd45170aef1239d38",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "f803400f7f31b1779d428a1c5cd95819934c151fdb8646134769a6c24eb95aee",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-confirmed",
+      "filename": "3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "f8a0baf5ad547ca69c830a1345addf0c1b7671f13a30ce492c2c0b58d2014bbd",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-review",
+      "filename": "3da452d49d7d-r0-n0-frontend-environmental-review.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "b0f965de26d9d72a8a90f361f2cac6f0b78626f6c4fd7968bd4fd15b78cf379e",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    },
+    {
+      "capture": "frontend-environmental-invalid-expanded",
+      "filename": "44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+      "phase": "environmental",
+      "kind": "application-viewport",
+      "imageSha256": "7cf26660f771d83e45e5567e58e6c4101f7f74506947bd8166946ed8fb4cd497",
+      "previouslyReviewedPixelSources": [
+        "phase7-v2"
+      ],
+      "requiresDirectInspection": false
+    }
+  ]
+}

@@ -1,8 +1,61 @@
 # Evidências da continuidade R3 — 20/10/2026
 
+## Fechamento da candidata funcional e gate do HEAD publicado
+
+EVIDENCIA_IMPLEMENTACAO: a candidata `ec4b06e4b27059b1077904e0b67fde498c28b053` concluiu **15/15 gates PASS,190/190 E2E PASS e Codex sem findings no mesmo SHA**. O P1 de continuidade de identidade foi respondido com a evidência oficial e resolvido. A PR #19 permanece Draft, empilhada sobre `feat/frontend-collections`; nenhum merge ou deploy foi executado.
+
+| Proveniência | Valor |
+|---|---|
+| Run / tentativa / job | [39472759694](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39472759694) /1 /118800800378 |
+| Artifact |12288662735;20.691.926 bytes;523 entradas; digest e CRC conferidos |
+| SHA256 do ZIP | `fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f` |
+| Fingerprint | `18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1`;566 inputs funcionais; reprodução com filtros Windows correspondente |
+| Codex efetivo | [6297927596](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6297927596), completed, sem findings |
+| P1 resolvido | [Resposta4328737531](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#discussion_r4328737531); [recibo](evidence/r3/third-candidate-review-resolution.json) |
+
+| Gate | Resultado / contagem |
+|---|---|
+| RegressionSetup | PASS |
+| Unit | PASS,393+17=410 |
+| Integration | PASS,231 |
+| Migration | PASS,37 |
+| Contract | PASS,6 |
+| R1 | PASS,17 |
+| Build | PASS |
+| Typecheck | PASS |
+| Lint | PASS;3 warnings preexistentes |
+| E2E | PASS,190/190;0 FAIL/SKIP/NOT_RUN/flaky |
+| Https | PASS,2/2 |
+| Deletion | PASS,3/3 |
+| Ihfr | PASS,6/6 |
+| Bootstrap | PASS |
+| SchemaAudit | PASS |
+
+[Recibo completo](evidence/r3/third-candidate-receipt.json), [inventário](evidence/r3/third-candidate-capture-inventory.json), [galeria dos53 pares de aplicativo](evidence/r3/official-v3/README.md) e [manifesto de cópias byte a byte](evidence/r3/third-candidate-versioned-captures.json). Os2 pares sintéticos são separados da aceitação do aplicativo. PNG/JSON sobreviveram aos gates Deletion/Ihfr.
+
+A inspeção independente cobriu48 quadros de matriz e5 de fluxos;42 quadros finais têm o controle principal inteiro. Cinco imagens de aplicativo foram abertas nesta rodada;48 têm SHA256 idêntico a pixels já examinados. Os27 ambientais são idênticos à fase7 v2;25 quadros de aplicativo de coleta e2 sintéticos são idênticos à fase6 v3. O coordenador abriu também formulário320×900/texto200, Declividade e revisão844×390/texto200. [Parecer visual e limites](evidence/r3/third-candidate-visual-review.md). Permanecem máscaras/indicador Next sobre partes da navegação, navegação elevada/espaço branco em alguns quadros móveis e label de Declividade parcialmente fora em paisagem; isso não equivale a aceite físico ou assistivo.
+
+A matriz de seis configurações cobre formulário, Salvar/rascunho, Declividade e revisão. Leitura confirmada é exercitada separadamente por R2, API/reload e suíte desktop/mobile; não há seis capturas de leitura confirmada. Precisão, false/zero/null/ausência/textos parciais e persistência não são inferidos apenas dos pixels.
+
+O log Integration nomeia os casos de OCC save/discard, consumo atômico com rollback/replay, exclusão de drafts com rollback e concorrência save-versus-confirm, além dos dois testes de handlers com continuidade de principal. Os três P1 ambientais A → B → A estão incluídos na seleção integral190/190; o reporter de pontos não enumera cada PASS, e essa inferência está explicitada no recibo. O POST cobre tanto resposta perdida antes da persistência quanto depois, com retorno ao mesmo ID/chave/corpo e uma única persistência. PUT/GET/DELETE preservam a revisão e o isolamento pessoal. Testes de handlers com mocks permanecem distintos dos casos PostgreSQL oficiais.
+
+O resultado atual de Ihfr6/6 não determina a causa dos seis404 históricos de85e397. O diagnóstico pós-falha não foi acionado neste run verde; não há routeContext nem respostas auth/API observadas a inferir. A causa histórica e a hipótese de cache permanecem **INCONCLUSIVAS**, com logs e ensaios preservados abaixo. A causa histórica da falha de conta também permanece inconclusiva.
+
+O diff de produto R3 desde3d803829 contém somente os dois CSS Modules locais (coleta herdada e ambiental). Não houve alteração R3 em schema, serviços, autorização, provas HMAC, contratos ou cálculo IHFR. Permanecem CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
+
+A reconciliação documental final conserva ec4b06e como primeiro parent e a fase6 corrigida como segundo; a referência exata, merge-tree e igualdade dos blobs estão no [recibo de incorporação](evidence/r3/final-documentary-incorporation.json). A validação funcional de um parent não substitui o gate do novo HEAD. A consolidação foi conferida em [parecer independente](evidence/r3/documentation-consolidation-review.md) e [auditoria dos arquivos congelados](evidence/r3/documentation-consolidation-review.json); os hashes excluem o próprio recibo.
+
+### Regra de encerramento por SHA
+
+Este commit consolida documentação e evidências da candidata funcional nomeada, com incorporação não destrutiva da documentação final da fase6; não muda inputs funcionais. **A entrega técnica do HEAD documental exige seus próprios15/15 gates PASS e Codex concluído sem achado material no SHA exato**, além da dependência final da fase6 verificada. O resultado posterior será registrado em recibo externo na [PR #19](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19), com SHA/parents, run/tentativa/job, contagens, artifact/digest/fingerprint, inspeção visual e Codex efetivo. Somente o recibo que confirma os critérios encerra o gate, sem outro commit. Qualquer commit posterior exige nova conferência. Até a confirmação, o HEAD documental está **AGUARDANDO_VALIDAÇÃO_EXATA**. Os checkboxes aplicam-se ao SHA e alcance que nomeiam; aceite humano e homologação científica permanecem pendentes.
+
+## Histórico — preparação e validação das candidatas anteriores
+
+# Evidências da continuidade R3 — 20/10/2026
+
 ## Terceira candidata: correções de revisão herdadas da fase6
 
-Esta candidata preserva `85e397bd4271ab07a197ea88db652227e6e392ce` como primeiro parent e incorpora `5f5d8719e25856b59e84c053cb13d2516dbeac49` como segundo parent. O merge-tree automático `97743377d688512f261111d5d011518ae04b3393` não teve conflitos; os14 arquivos herdados conferem por blob com a árvore automática e a fase6 publicada. [Recibo da incorporação](evidence/r3/third-candidate-incorporation.json). A base da PR permanece `feat/frontend-collections`, sem merge de PR, rebase ou force-push.
+Esta candidata preserva `85e397bd4271ab07a197ea88db652227e6e392ce` como primeiro parent e incorpora `5f5d8719e25856b59e84c053cb13d2516dbeac49` como segundo parent. O merge-tree automático `97743377d688512f261111d5d011518ae04b3393` não teve conflitos; os14 arquivos herdados conferem por blob com a árvore automática e a fase6 publicada. [Recibo da incorporação](evidence/r3/third-candidate-incorporation.json). A igualdade de blobs refere-se aos14 arquivos herdados; ec4b06e também acrescentou o diagnóstico pós-falha404 e seus três testes unitários. A frase de escopo do recibo foi esclarecida nesta consolidação, com o texto original preservado no próprio registro e no histórico Git. A base da PR permanece `feat/frontend-collections`, sem merge de PR, rebase ou force-push.
 
 A revisão Codex da segunda candidata ambiental `85e397bd4271ab07a197ea88db652227e6e392ce` terminou [sem novos achados](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6296990762). Isso não elimina os dois achados encontrados na revisão da fase6 sobre o helper herdado: P1 de resolução prematura de callbacks e P2 de screenshot que concluía transições antes da espera. A nova incorporação contém as correções e duas regressões permanentes, com **23/23 PASS auxiliares independentes**. [Triagem, limites e contraprovas compartilhadas](../023-frontend-collections/implementation-evidence.md).
 

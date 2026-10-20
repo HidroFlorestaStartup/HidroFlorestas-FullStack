@@ -90,7 +90,7 @@
       "matches_phase6": true
     }
   ],
-  "scope": "Every inherited file matches the conflict-free merge-tree and the exact published phase6 blob; additional phase7 changes are Spec024 evidence only.",
+  "scope": "All fourteen inherited files match the conflict-free merge-tree and the exact published phase6 blobs. Additional phase7 changes comprise Spec024 evidence/status plus the failure-only IHFR404 diagnostics and three focused unit tests listed below; no production src changes were added in this incorporation.",
   "parent_phase6_verified": {
     "head": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
     "run_id": 39469650449,
@@ -105,5 +105,10 @@
   "additional_changes_not_in_parent": [
     "Spec024 evidence and status updates",
     "Failure-only existing GET probes for the unexplained phase7 v2 IHFR404, with three focused unit tests"
-  ]
+  ],
+  "documentation_clarification": {
+    "original_commit": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "original_scope": "Every inherited file matches the conflict-free merge-tree and the exact published phase6 blob; additional phase7 changes are Spec024 evidence only.",
+    "reason": "The earlier scope sentence omitted the diagnostic/test changes already listed in additional_changes_not_in_parent. This clarification changes documentation only; original receipt remains in Git history."
+  }
 }

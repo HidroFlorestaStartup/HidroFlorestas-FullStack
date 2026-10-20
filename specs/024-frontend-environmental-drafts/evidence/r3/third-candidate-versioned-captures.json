@@ -1,0 +1,510 @@
+{
+  "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "run_id": 39472759694,
+  "attempt": 1,
+  "job_id": 118800800378,
+  "artifact_id": 12288662735,
+  "zip_sha256": "fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+  "source_directories": [
+    ".accounts-validation/frontend-collections",
+    ".accounts-validation/frontend-environmental"
+  ],
+  "copy_method": "Byte-identical copies; no image or metadata edits. Synthetic evidence is stored separately and excluded from application acceptance.",
+  "files": [
+    {
+      "kind": "synthetic-helper-counterproof",
+      "artifact_png": ".accounts-validation/frontend-collections/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+      "png": "official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+      "metadata": "official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+      "png_sha256": "9b608e4c5674ea028d12c08294fccaab49b88860d95e6b45f80b8b7dd170722e",
+      "metadata_sha256": "1b2aed34e9c661103d298fbe38913d442f811f2c679d540ba1d1b94f6bb0e1f7"
+    },
+    {
+      "kind": "synthetic-helper-counterproof",
+      "artifact_png": ".accounts-validation/frontend-collections/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+      "png": "official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+      "metadata": "official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+      "png_sha256": "5753536067bf2616307a1aec66f919c44a885988a4f64529c59def62e6b53bb1",
+      "metadata_sha256": "1d4b0fa93513fea6c4303b92941eb2de6465bbe7a64ba32f7545c9e655c9f70a"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+      "png_sha256": "f8b5bb06877e432892055511ece1e5bdfaf199f62c43a57b3bc9c1c4d15d09cf",
+      "metadata_sha256": "8c7be4d6f6e0268edfb3e6fa0a057c5e62a26cb5d495833285f14132e0a49a33"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+      "png_sha256": "650a9e9698c51abbe876d345971bb66f30dce8689b99562349db0bdab6546c02",
+      "metadata_sha256": "eefaf975cee4bf401519fe0f11545f32328804635c87b587fa53dedbb41cd6f2"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+      "png_sha256": "c0f719e122d6e1ab75eac6a50b92a600960fa2f65d09ce2f1c1e62ba7ea3d4bc",
+      "metadata_sha256": "0aa71271a34539e96ba7a69ed6bf734c12f4e7be6d3182164ef905117b7fe870"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+      "png_sha256": "5dc4c9c81d1f926f2f6ce3e1fb9d23d94a8941348a0ae9eee39a984876a6e52e",
+      "metadata_sha256": "d6bd4895b31140257d0670488c7e25e642811a37032905fda14343403b2da2c6"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+      "png_sha256": "9ff068ebb6d950ccfc0278285f129d99b5ee6610d2acb1522bb7c5a292a44b6d",
+      "metadata_sha256": "63a442d6130283af9010b1e62ad1205919165c09fd51bc66d899f9e804d71690"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+      "png_sha256": "1c08bef513eb006d5259dac677d5d2f2efe54d8960f5a71ad5665b11c8bdcd31",
+      "metadata_sha256": "f951e90e5489894c1b9eb56119655d4d375d4d836bd74d54a77fac7134ed182c"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+      "png_sha256": "62c73ed4a13c2f66f2ee82f0994c9ffbd2194903121715d8abe08a2886a31e57",
+      "metadata_sha256": "6cf7d6957e1e0aa36f2d26b4fd56f48024511af54ed5da7adde295091ff26958"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+      "png_sha256": "9a3bd25a41e4932b008135ba1366972e7f2f295a995e89eacb23937db2df7827",
+      "metadata_sha256": "eefaf975cee4bf401519fe0f11545f32328804635c87b587fa53dedbb41cd6f2"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+      "png_sha256": "776b4518644ea2d902ac52953038a76ca03e85f92227111539c2c993187751e2",
+      "metadata_sha256": "0aa71271a34539e96ba7a69ed6bf734c12f4e7be6d3182164ef905117b7fe870"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+      "png_sha256": "c055b9a1e835fe7dc3401bff51ac06be4eda60c1466ed1fdd279b15287280406",
+      "metadata_sha256": "d6bd4895b31140257d0670488c7e25e642811a37032905fda14343403b2da2c6"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+      "png_sha256": "af3d26881eb53b5b79a7ce0f91d82537328c0c407f960a97cd282db68cf41a62",
+      "metadata_sha256": "7ebb268c47c77c5eb2367451a380b81ae7b8e88c8e055b5590482eb86898343b"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+      "png_sha256": "c54545313af83444084d31f666e1965a7500485662f4f2fd612d29bc60299bef",
+      "metadata_sha256": "b4edb0b12a362109dcced695501e4d67cd32f30e1c78cde0cb85f16f93655da8"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+      "png_sha256": "43a243a76b7a69e1653175f405d56c5f86d8929c6f617a50f67713a724d6c40d",
+      "metadata_sha256": "5be5a38e188c4bea0e88286dc64591ba36d478129dd6e7b65bc2e42844c2eb8d"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+      "png_sha256": "b5e5aae9ea2d6e384648519561c354aaf68719fe67094139759ac50dfbaa6a4f",
+      "metadata_sha256": "02a269d71158988450718a51c294622269454d5cc54021b93ca5e5b287ce23b4"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+      "png_sha256": "41452bade621d0e3862ebf19be99d4f7e4308ad9bd66a1bd2bc282903efe75f7",
+      "metadata_sha256": "f752997cccb95337e539d827277f075efdb9ea18fad90f1274dcdb15df05dcde"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+      "png_sha256": "75d47289236cc6e07f6af68b1d41dcd70a57dd4de9770e071e4019b1206e3375",
+      "metadata_sha256": "e26129b8df1ea54145bd10776f9ac7ba004cbc77a622e8b7be87fe7ad400d084"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+      "png_sha256": "8b86bf385cef15187b8820430b97e85157d5dfb1cb63432a29f49b2058524166",
+      "metadata_sha256": "6db106f6f87a569c6dba117dd6f155cd00a1ddd3fcd4f3eca579385ea354ffac"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+      "png_sha256": "ba301ea784c2c8e8eca2dd91a5b566653b49d3e2e50255fcf8000f0f0c48bd17",
+      "metadata_sha256": "08f6365a4e414ac749798eb2070d92cac07bfac307e84dc7df8b18ef1b1bab5c"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+      "png_sha256": "0b28ff91d6bcb2a1c3e999bf210f1519722e1e1ffc3c89f7217c357aab85d771",
+      "metadata_sha256": "b63b98920b6fa7aa640b92a2f07e05df7a66789a8e2d8e45abeb11458ec3f010"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+      "png_sha256": "88ffd8c803503ccf4901afa35e6cf990127f06b266a604f4b3e3a241264ae396",
+      "metadata_sha256": "59c53d0d997361c24c6220cc348e3da3f17a9713b2996cf8db81c3faf786f296"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+      "png_sha256": "0f6441f944b2cbd7d35947767d199f8235b81a6157faeb6021feb770a95c2ee8",
+      "metadata_sha256": "4c89f4ed8a8e29192e47a8b21fd1cf93ce749fec239d167fa89392d221455da7"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+      "png_sha256": "79bec9425c35d747e1e2ae84a998d778d1f9653398544e225f10275e5afefde3",
+      "metadata_sha256": "d9860f702c237aa95f4c6ad24ee8c7b8b0f5c1132fa0197366f86cec6f1b1766"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+      "png_sha256": "bde7cb723bc5714c638d582950f69355656c45cd3e1ce59ba9a368b2a7b28ce9",
+      "metadata_sha256": "dc4fd679e5d8f43c8893c2299ddf2ca231cf96b8bf9a560af42f1703b137aad2"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+      "png": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+      "metadata": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+      "png_sha256": "b6ed32dc96a227d1d8f03ee76f4e085ed6be817efdfba575fa7769350584aaa2",
+      "metadata_sha256": "4c8d586b17772ef20368172c3b146c9c25e2d2a5f2d7f52038d8111ce14f8f00"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+      "png": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+      "metadata": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+      "png_sha256": "fdfbe57cbd8d44fde1fc1f49c53f0053482375557d1d8d1f965e118214667ef1",
+      "metadata_sha256": "834dfae56f74891536fe4519d25858cbc73d40cc3199f49e1eea92ee1467b9e3"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+      "artifact_metadata": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+      "png": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+      "metadata": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+      "png_sha256": "633b2ad6a015b7b638847e19348920c03aa9de6f4a1a67385470b5418305d5ac",
+      "metadata_sha256": "039cb7a9744b273fdcc0e97ee8f0cd3fc9f7d28fcd5d01ff42a0dca6948ba2e6"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100-viewport.json",
+      "png_sha256": "f1f5b24bcfa930d406283893f245c247aa9d6efdd08e6c3c389ea884b4e33ead",
+      "metadata_sha256": "a01c9075b4a2980ade596f384955bb24203308bb2f28a4d9410216f721e49f5b"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100-viewport.json",
+      "png_sha256": "1725ced260049bb50345c5f7b5504d570666e2dbe26780b2a42b965cdce137fe",
+      "metadata_sha256": "e89a8382094b06cc249d92ac001f313b3b1ddcae4a05ff554d0bfc0e7d423da9"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200-viewport.json",
+      "png_sha256": "53a0fc967b3432083e36fa218ab0b806683f5f7f5c14a401879eb95d2f340694",
+      "metadata_sha256": "7e7cb726188d24a5defb857d6b35c1a7d32301d9cd90adfff5fe61dc5dd72618"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100-viewport.json",
+      "png_sha256": "1aa95dd57d28a5478a5ece8fcbb400870b336ce6df684bd4825872d3e4431131",
+      "metadata_sha256": "9059f9720608db4955852e107a8ff536cb71f39dc486941f14234dd9750d6822"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100-viewport.json",
+      "png_sha256": "5c7b742881c0700b84c7fe456245d24f25f7f33878a8d792849d43a1ec431773",
+      "metadata_sha256": "606bd4c640d79dc5e7503ba53254e349b6ff2f05d11226f70e48ec5c95519c98"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200-viewport.json",
+      "png_sha256": "04d7f564e9f3f118ebfb001a2a57d893e7d9a1d9b2b4452635d4e30f1d4360dc",
+      "metadata_sha256": "e898727fafdebf68282d5518e5882c4f8d0d7cf8921d359028f8ccb60bce1695"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100-viewport.json",
+      "png_sha256": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+      "metadata_sha256": "20099893ff1f5f12d40b8a9e3a3df97303ef2604931c794a64777b2c261e50f7"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-100-viewport.json",
+      "png_sha256": "a951ea6c998af2b3e98ede6230b6480109145774a5bac828a047c00e3fbaf57a",
+      "metadata_sha256": "4853d5fec6782b6f856790c838407ba4ea0123bf29648d2c1ac4444baed0b416"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+      "png_sha256": "ec0eb49b34421b2f27aea24b434e00236865d8812d495f9eeedd9fb63861dc43",
+      "metadata_sha256": "61d81becaf7267e3df059a30d488524cda1abfd42c21bb0bff994b8157a1086f"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-375-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-375-900-100-viewport.json",
+      "png_sha256": "8cf66f273a6ec7d92a59efae065c1de6c9f268c9f443311de704592253ac31f3",
+      "metadata_sha256": "af8e85b5f9420ecd591860e8c4aef1c04003738a968091210fd465fd59bf2979"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-768-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-768-900-100-viewport.json",
+      "png_sha256": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+      "metadata_sha256": "86edd838ca7ac9ab7949244139e3ff5c487366db605beb2cd43bc0c9cc035867"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-844-390-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-844-390-200-viewport.json",
+      "png_sha256": "95f773e286b2eab119baa12e7c6a962fdc25af280ba48764efb9fd5253a50298",
+      "metadata_sha256": "f5c55da50995ea4ce566edae46cba1aefd21e25aa0d1a6c8e9ba9cd1117535e2"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100-viewport.json",
+      "png_sha256": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+      "metadata_sha256": "20099893ff1f5f12d40b8a9e3a3df97303ef2604931c794a64777b2c261e50f7"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100-viewport.json",
+      "png_sha256": "66c977564f5feb944900ee2edbb5d388b244dff5772fe880385ae43769aed02a",
+      "metadata_sha256": "f1d6addc3478e6318b46f885c427c2d1e691b4508e2d9ff12860e68cfd4d3769"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+      "png_sha256": "81019c5ff0ce0a795d5398ff2532b74d5665ed2084c0d102dabaa21a9de17f35",
+      "metadata_sha256": "7e7cb726188d24a5defb857d6b35c1a7d32301d9cd90adfff5fe61dc5dd72618"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100-viewport.json",
+      "png_sha256": "629b2a019e1bf619e42879ea9caa5248258ebf446b2844cb0a1099d0ad3317f2",
+      "metadata_sha256": "07515253e2b20001baecd9a97d7952714f7fc51203c963cac417604bb6686911"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100-viewport.json",
+      "png_sha256": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+      "metadata_sha256": "86edd838ca7ac9ab7949244139e3ff5c487366db605beb2cd43bc0c9cc035867"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+      "png_sha256": "bde9d67c75fe38420a461e94809938678dd9fac578690dae6acf8f139743144f",
+      "metadata_sha256": "15d229b337bedc9b56acf43c4d583e5cd4570c5bbf2a93dab590d266e3511a76"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100-viewport.json",
+      "png_sha256": "ac1434194c6fbeee8d9c514b96d565521ac347aea07129764f1593920df4a14a",
+      "metadata_sha256": "bba192133edc13886e43d14615b58ce48b5214f66540ccc08daddc81499029cb"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-100-viewport.json",
+      "png_sha256": "cd009ca87aed63ee074f95c241aa16b2d59ded7844f6845ea6cb237ef4636768",
+      "metadata_sha256": "3c750c985891929ed9913668a6204a885c0982e800f4086040e9f7833da5d8a7"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-200-viewport.json",
+      "png_sha256": "933d78799e1a20db2a10d849cc505b154b0242919ecb65701cd7d540a31107f4",
+      "metadata_sha256": "e40b64a157344be9f6276ea4bda814c74af1356fb76eeb99544e38b92c70286d"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-375-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-375-900-100-viewport.json",
+      "png_sha256": "1e901867e8e0ddc33ca6506b248c3df5b74a854e864596a582660243a9d2bfd6",
+      "metadata_sha256": "17764742aa0ca6e9bbcdde6e3f1096ab5f4cec6e41956f0a76f125a8466e807a"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-768-900-100-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-768-900-100-viewport.json",
+      "png_sha256": "e64844d6696ab37e84fdfcbb2a67ca7adf069c543d5e4a7dd45170aef1239d38",
+      "metadata_sha256": "2c8d50772a8306dbb5f33fb599399f81195415d84061ba30946ecf80827bf124"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+      "png": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+      "metadata": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+      "png_sha256": "f803400f7f31b1779d428a1c5cd95819934c151fdb8646134769a6c24eb95aee",
+      "metadata_sha256": "48bbd1393e0af6ee625214f5648c9c8b416f2db1d5e47cc151481af736bc4434"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-confirmed-viewport.json",
+      "png": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+      "metadata": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-confirmed-viewport.json",
+      "png_sha256": "f8a0baf5ad547ca69c830a1345addf0c1b7671f13a30ce492c2c0b58d2014bbd",
+      "metadata_sha256": "ce42f3b48dcad1e39c3f58188c0460e971708d90f08dc7081a8ec0cd02d6aa22"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-review.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-review-viewport.json",
+      "png": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-review.png",
+      "metadata": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-review-viewport.json",
+      "png_sha256": "b0f965de26d9d72a8a90f361f2cac6f0b78626f6c4fd7968bd4fd15b78cf379e",
+      "metadata_sha256": "9c0993b06e287a9c41b690a97054f9a0085d506cc57b3858d9e896046f24bfe3"
+    },
+    {
+      "kind": "application-viewport",
+      "artifact_png": ".accounts-validation/frontend-environmental/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+      "artifact_metadata": ".accounts-validation/frontend-environmental/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded-viewport.json",
+      "png": "official-v3/application/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+      "metadata": "official-v3/application/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded-viewport.json",
+      "png_sha256": "7cf26660f771d83e45e5567e58e6c4101f7f74506947bd8166946ed8fb4cd497",
+      "metadata_sha256": "faf44757027892a614937e0854edc5a94babfd46e4417f7394d351e8956ff2ac"
+    }
+  ]
+}

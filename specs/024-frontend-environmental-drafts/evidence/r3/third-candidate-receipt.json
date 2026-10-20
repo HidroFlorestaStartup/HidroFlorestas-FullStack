@@ -1,0 +1,518 @@
+{
+  "run_id": 39472759694,
+  "attempt": 1,
+  "job_id": 118800800378,
+  "head_sha": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "status": "completed",
+  "conclusion": "success",
+  "event": "push",
+  "run_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39472759694",
+  "job_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39472759694/job/118800800378",
+  "completed_at": "2026-10-20T18:29:50Z",
+  "observed_at": "2026-10-20T18:30:46.746Z",
+  "artifact": {
+    "id": 12288662735,
+    "name": "rc-validation-ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12288662735",
+    "size_bytes": 20691926,
+    "digest": "sha256:fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+    "created_at": "2026-10-20T18:29:43Z",
+    "local_zip_sha256": "fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+    "digest_verified": true,
+    "archive_entries": 523
+  },
+  "parents": [
+    "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "5f5d8719e25856b59e84c053cb13d2516dbeac49"
+  ],
+  "tree_sha": "6074d0f466e79d2f6845888ddbc20e09f5269ecf",
+  "Codex": {
+    "request_id": 6297854794,
+    "reviewed_sha": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "status": "completed",
+    "has_any_findings": false,
+    "has_unresolved_findings": false,
+    "receipt_id": 6297927596,
+    "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6297927596",
+    "receipt_created_at": "2026-10-20T18:16:31Z",
+    "summary_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6294810916",
+    "summary_updated_at": "2026-10-20T18:16:33Z",
+    "author": "chatgpt-codex-connector[bot]",
+    "observed_at": "2026-10-20T18:17:11.829Z"
+  },
+  "fingerprint": {
+    "value": "18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1",
+    "same_in_all_recorded_gates": true,
+    "recorded_gate_count": 15,
+    "expected_windows_checkout": "18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1",
+    "matches_expected": true,
+    "functional_files": 566,
+    "expected_method": "Pinned committed inputs filtered by git core.autocrlf=true; per-file SHA256 then sorted compact JSON manifest SHA256.",
+    "preflight_source": "work/qa-account/phase7-r3-v3-preflight.json",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+  },
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:14:22.663Z",
+      "ended_utc": "2026-10-20T18:14:29.462Z",
+      "source": ".accounts-validation/regressionsetup-1792520062662.log"
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:14:29.674Z",
+      "ended_utc": "2026-10-20T18:14:51.672Z",
+      "source": ".accounts-validation/unit-1792520069674.log",
+      "counts": {
+        "total": 410,
+        "pass": 410,
+        "fail": 0,
+        "skip": 0,
+        "cancelled": 0,
+        "todo": 0
+      }
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:14:51.903Z",
+      "ended_utc": "2026-10-20T18:16:59.883Z",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "counts": {
+        "total": 231,
+        "pass": 231,
+        "fail": 0,
+        "skip": 0,
+        "cancelled": 0,
+        "todo": 0
+      }
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:00.101Z",
+      "ended_utc": "2026-10-20T18:17:16.323Z",
+      "source": ".accounts-validation/migration-1792520220101.log",
+      "counts": {
+        "total": 37,
+        "pass": 37,
+        "fail": 0,
+        "skip": 0,
+        "cancelled": 0,
+        "todo": 0
+      }
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:16.541Z",
+      "ended_utc": "2026-10-20T18:17:19.379Z",
+      "source": ".accounts-validation/contract-1792520236541.log",
+      "counts": {
+        "total": 6,
+        "pass": 6,
+        "fail": 0,
+        "skip": 0,
+        "cancelled": 0,
+        "todo": 0
+      }
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:19.598Z",
+      "ended_utc": "2026-10-20T18:17:29.416Z",
+      "source": ".accounts-validation/r1-1792520239598.log",
+      "counts": {
+        "total": 17,
+        "pass": 17,
+        "fail": 0,
+        "skip": 0,
+        "cancelled": 0,
+        "todo": 0
+      }
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:29.610Z",
+      "ended_utc": "2026-10-20T18:17:50.277Z",
+      "source": ".accounts-validation/build-1792520249610.log"
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:50.489Z",
+      "ended_utc": "2026-10-20T18:17:57.922Z",
+      "source": ".accounts-validation/typecheck-1792520270489.log"
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:17:58.131Z",
+      "ended_utc": "2026-10-20T18:18:28.625Z",
+      "source": ".accounts-validation/lint-1792520278131.log"
+    },
+    {
+      "gate": "E2E",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:18:28.833Z",
+      "ended_utc": "2026-10-20T18:27:58.505Z",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "counts": {
+        "total": 190,
+        "pass": 190,
+        "fail": 0,
+        "skip": 0,
+        "flaky": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Https",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:27:58.750Z",
+      "ended_utc": "2026-10-20T18:28:37.621Z",
+      "source": ".accounts-validation/https-1792520878750.log",
+      "counts": {
+        "total": 2,
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "flaky": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Deletion",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:28:37.838Z",
+      "ended_utc": "2026-10-20T18:28:49.196Z",
+      "source": ".accounts-validation/deletion-1792520917838.log",
+      "counts": {
+        "total": 3,
+        "pass": 3,
+        "fail": 0,
+        "skip": 0,
+        "flaky": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Ihfr",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:28:49.406Z",
+      "ended_utc": "2026-10-20T18:29:32.833Z",
+      "source": ".accounts-validation/ihfr-1792520929406.log",
+      "counts": {
+        "total": 6,
+        "pass": 6,
+        "fail": 0,
+        "skip": 0,
+        "flaky": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:29:33.065Z",
+      "ended_utc": "2026-10-20T18:29:40.285Z",
+      "source": ".accounts-validation/bootstrap-1792520973064.log"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "PASS",
+      "exitCode": 0,
+      "started_utc": "2026-10-20T18:29:40.535Z",
+      "ended_utc": "2026-10-20T18:29:41.203Z",
+      "source": ".accounts-validation/schemaaudit-1792520980535.log"
+    }
+  ],
+  "gate_summary": {
+    "pass": 15,
+    "fail": 0,
+    "not_run": 0
+  },
+  "e2e": {
+    "total": 190,
+    "pass": 190,
+    "fail": 0,
+    "skip": 0,
+    "flaky": 0,
+    "not_run": 0,
+    "retries": 0,
+    "expected_total": 190,
+    "matches_expected": true,
+    "expected_composition": {
+      "original": 166,
+      "geometry_and_render_readiness": 23,
+      "environmental_persisted_post_p1": 1
+    },
+    "source": ".accounts-validation/e2e-1792520308833.log",
+    "retry_policy_source": "playwright.config.ts at published SHA"
+  },
+  "unit": {
+    "total": 410,
+    "pass": 410,
+    "fail": 0,
+    "skip": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "batches": [
+      393,
+      17
+    ],
+    "added_failure_probe_tests": [
+      "✔ IHFR failure probes isolate cookie expiry and emit only allowed observations (77.3372ms)",
+      "✔ IHFR failure probes preserve HTML and redirect statuses without following redirects (17.9684ms)",
+      "✔ IHFR failure probes refuse unowned origins or schemas before making any request (0.4314ms)"
+    ],
+    "source": ".accounts-validation/unit-1792520069674.log"
+  },
+  "critical_tests": [
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "viewport, text200, touch, focus and last controls remain usable",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "P1: a lost response must not replay under a different logged-in member",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "environmental form, draft actions and review remain usable at each viewport",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: retry de rascunho nao pode persistir o preenchimento de A como rascunho de B",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B apos persistencia e resposta perdida",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "name": "text scale transitions finish before the single scroll while input focus remains protected",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "name": "render readiness drains focus queued by a late ResizeObserver before one scroll",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    },
+    {
+      "file": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "name": "the before-scroll capture observes natural transition completion without scrolling",
+      "result": "PASS",
+      "basis": "INFERENCE_FROM_COMPLETE_SELECTED_SUITE",
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "evidence": "These cases belong to the unfiltered default E2E selection. The official dot reporter records 190/190 passed, with zero failed/skipped/not-run; individual passing names are not printed."
+    }
+  ],
+  "integration_named_tests": [
+    {
+      "file": "tests/integration/environmental-data-concurrency.test.ts",
+      "name": "PostgreSQL races and contextual authorization preserve a single immutable set",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ PostgreSQL races and contextual authorization preserve a single immutable set (805.4451ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-drafts.test.ts",
+      "name": "draft isolation, replay, two laboratories, removed membership and inactive/blocked identities",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ draft isolation, replay, two laboratories, removed membership and inactive/blocked identities (789.2803ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-drafts.test.ts",
+      "name": "draft concurrent save has one winner and delayed discard cannot delete a recreated draft",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ draft concurrent save has one winner and delayed discard cannot delete a recreated draft (686.7264ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-drafts.test.ts",
+      "name": "confirmation consumes only current personal draft atomically, preserves rollback and replay",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ confirmation consumes only current personal draft atomically, preserves rollback and replay (577.4016ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-drafts.test.ts",
+      "name": "allowed account deletion removes only personal drafts and rolls back them on failure",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ allowed account deletion removes only personal drafts and rolls back them on failure (558.3066ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-drafts.test.ts",
+      "name": "confirmation requires current personal draft reference and save versus confirm has a consistent winner",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ confirmation requires current personal draft reference and save versus confirm has a consistent winner (424.5725ms)",
+      "uses_postgresql_fixture": true
+    },
+    {
+      "file": "tests/integration/environmental-draft-http.test.ts",
+      "name": "draft GET, PUT and DELETE reject a changed principal before service access and allow the original principal again",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ draft GET, PUT and DELETE reject a changed principal before service access and allow the original principal again (2.7024ms)",
+      "uses_postgresql_fixture": false
+    },
+    {
+      "file": "tests/integration/environmental-draft-http.test.ts",
+      "name": "environmental POST rejects a changed principal before persistence and retains the original key and body on return",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ environmental POST rejects a changed principal before persistence and retains the original key and body on return (1.2235ms)",
+      "uses_postgresql_fixture": false
+    },
+    {
+      "file": "tests/integration/ihfr-environmental-boundary.test.ts",
+      "name": "IMP-005 confirmed payload flows through IHFR eligibility, CREATE, CURRENT, REPLACE and REVOKE",
+      "result": "PASS",
+      "basis": "DIRECT_NAMED_PASS_IN_OFFICIAL_LOG",
+      "source": ".accounts-validation/integration-1792520091902.log",
+      "official_line": "✔ IMP-005 confirmed payload flows through IHFR eligibility, CREATE, CURRENT, REPLACE and REVOKE (1529.5083ms)",
+      "uses_postgresql_fixture": true
+    }
+  ],
+  "ihfr_observations": {
+    "protected_page_status_counts": {
+      "200": 15
+    },
+    "protected_page_404_count": 0,
+    "failure_route_context_recorded": false,
+    "failure_browser_diagnostic_count": 0,
+    "operation_lookup_404_count": 2,
+    "note": "The two operation-lookup API 404s are distinct from protected-page navigation. All six IHFR tests passed. Failure-only route probes did not run; their API statuses cannot be inferred from absence.",
+    "source": ".accounts-validation/ihfr-1792520929406.log"
+  },
+  "historical_failure": {
+    "run_id": 39465856665,
+    "head_sha": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "ihfr_navigation_404_tests": 6,
+    "causal_status": "UNDETERMINED",
+    "current_success_does_not_prove_historical_cause_fixed": true,
+    "diagnosis_source": "work/ux-collections/phase7-v2-404-cache-diagnosis.md",
+    "cache_assessment": "INCONCLUSIVE_NOT_CONFIRMED_NOT_REFUTED"
+  },
+  "captures": {
+    "metadata_count": 55,
+    "all_head_sha_match": true,
+    "all_have_png": true,
+    "all_animations_allow": true,
+    "by_phase": {
+      "frontend-collections": 28,
+      "frontend-environmental": 27
+    },
+    "by_kind": {
+      "synthetic-helper-counterproof": 2,
+      "application-viewport": 53
+    },
+    "visual_review": {
+      "owner": "ux_environmental",
+      "status": "PIXELS_REVIEWED_WITH_QUALIFICATIONS_RUNTIME_PASSED",
+      "source": "work/ux-environmental/phase7-v3-official-visual-summary.json",
+      "application_images_covered": 53,
+      "directly_inspected_this_round": 5,
+      "other_images_by_exact_sha256": 48,
+      "final_target_frames_complete": 42,
+      "qualifications": [
+        "The successful current run does not identify the cause of historical IHFR404. Historical failure evidence and the inconclusive assessment remain preserved.",
+        "Failure-only API probes did not run in this successful IHFR execution; no authentication/context observation is inferred.",
+        "All current metadata record animations allow. Static pixels do not alone establish natural-finish/readiness ordering; source-linked official tests and counterproofs provide temporal evidence.",
+        "Pink screenshot masks cross navigation in narrow draft views and parts of the header in other views. They do not prove real field overlap or fully unobstructed navigation pixels.",
+        "Some narrow environmental form and last-field frames have the header outside the viewport and navigation displaced above blank space; document scroll is recorded without normalizing it away.",
+        "The landscape final Declivity input is whole but its label is partly above the sticky header boundary.",
+        "The development indicator overlaps part of the first mobile navigation label in some frames.",
+        "The invalid-expanded flow shows the focused required field and inline error. The review flow distinguishes No from Not informed. The confirmed flow shows the top context only, so that screenshot does not display the complete confirmed dataset.",
+        "Visible zero and No states do not prove all false/zero/null/absent/partial or precision round trips. Those contracts depend on the separately recorded assertions and HTTP/PostgreSQL results.",
+        "The six-configuration environmental matrix covers form, draft action, final input and review. Confirmed reading is exercised separately by R2/reload/API and desktop/mobile read tests; it is not a six-configuration confirmed-reading capture matrix.",
+        "Collection before/after images represent the same revision and run before/after one target positioning. Final collection controls remain complete; narrow navigation has the previously documented mask/development-indicator limits.",
+        "Fifty-four PNGs match previously reviewed pixels exactly; one changed collection flow PNG was viewed directly, along with four reopened environmental representatives. This is explicit byte-identity reuse, not a claim that every unchanged file was reopened.",
+        "Physical-device keyboard, assistive technology, other unexercised browsers and manual accessibility acceptance are not established by these emulated static captures.",
+        "This functional SHA review does not approve the future documentary HEAD; its own exact-SHA fifteen-gate and Codex external receipt remains required."
+      ]
+    }
+  },
+  "bootstrap": {
+    "migrations_completed": 14,
+    "failed": 0,
+    "synthetic_transaction_rolled_back": true,
+    "owned_database_disposed": true,
+    "source": ".accounts-validation/bootstrap-1792520973064.log"
+  },
+  "schema_audit": {
+    "managed_test_candidate_schemas": 0,
+    "source": ".accounts-validation/schemaaudit-1792520980535.log"
+  },
+  "local_evidence_directory": "evidence/phase7-r3-v3-candidate",
+  "verification_scope": "Read-only official artifact reconciliation. No rerun, cancellation, publication or additional tests performed."
+}

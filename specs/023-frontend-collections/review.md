@@ -1,6 +1,10 @@
 # Revisão da continuidade R3 — 20/10/2026
 
-## Revisão vigente antes da terceira publicação
+## Revisão encerrada da candidata funcional5f5d871
+
+D reconciliou15 gates,182 E2E, fingerprint/digest e Codex efetivo; C conferiu26 quadros de aplicativo,18 alvos finais inteiros e2 sintéticos separados. Os3 threads materiais foram respondidos e resolvidos com o run39469650449 e o receipt6297489682. Não há achado material pendente nessa candidata. O commit documental exige sua própria CI/revisão exatas antes da entrega, registradas externamente na PR conforme tasks.md. Aceite humano permanece pendente.
+
+## Histórico — revisão antes da terceira publicação
 
 Codex concluiu a revisão de `2a047d10360803517ff6bf64b38754cd0f07f5ba` com P1/P2. B reproduziu a resolução prematura da espera dentro do renderer e registrou também o resultado GREEN do helper publicado com dois roundtrips, evitando exagerar a causalidade. C comprovou que a captura anterior adiantava a transição e revisou a nova captura observacional. A integrou os dois testes permanentes; D executou o arquivo integrado completo, **23/23 PASS**, sem fail/skip/flaky. Recibos, hashes e limites estão em implementation-evidence.md.
 

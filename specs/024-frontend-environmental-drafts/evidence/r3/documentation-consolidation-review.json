@@ -1,0 +1,2096 @@
+{
+  "reviewed_at_utc": "2026-10-20T18:47:07.776623+00:00",
+  "scope": "Read-only documentary reconciliation after integrator freeze. Raw local SHA-256 generated for exactly nine frozen proposed documents. No application test, CI action, repository edit, or self-referential receipt hash.",
+  "functional_head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "capture_copies": {
+    "pairs": 55,
+    "by_kind": {
+      "synthetic-helper-counterproof": 2,
+      "application-viewport": 53
+    },
+    "files": 110,
+    "unique_paths": 110,
+    "all_exist": true,
+    "all_recorded_hashes_match": true,
+    "all_byte_identical": true,
+    "unmanifested_files": [],
+    "manifest_files_missing": [],
+    "metadata_issue_count": 0,
+    "metadata_issues": [],
+    "checks": [
+      {
+        "copy": "official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+        "source": ".accounts-validation/frontend-collections/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "9b608e4c5674ea028d12c08294fccaab49b88860d95e6b45f80b8b7dd170722e",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+        "source": ".accounts-validation/frontend-collections/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1b2aed34e9c661103d298fbe38913d442f811f2c679d540ba1d1b94f6bb0e1f7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+        "source": ".accounts-validation/frontend-collections/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "5753536067bf2616307a1aec66f919c44a885988a4f64529c59def62e6b53bb1",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+        "source": ".accounts-validation/frontend-collections/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1d4b0fa93513fea6c4303b92941eb2de6465bbe7a64ba32f7545c9e655c9f70a",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f8b5bb06877e432892055511ece1e5bdfaf199f62c43a57b3bc9c1c4d15d09cf",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "8c7be4d6f6e0268edfb3e6fa0a057c5e62a26cb5d495833285f14132e0a49a33",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "650a9e9698c51abbe876d345971bb66f30dce8689b99562349db0bdab6546c02",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "eefaf975cee4bf401519fe0f11545f32328804635c87b587fa53dedbb41cd6f2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "c0f719e122d6e1ab75eac6a50b92a600960fa2f65d09ce2f1c1e62ba7ea3d4bc",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "0aa71271a34539e96ba7a69ed6bf734c12f4e7be6d3182164ef905117b7fe870",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "5dc4c9c81d1f926f2f6ce3e1fb9d23d94a8941348a0ae9eee39a984876a6e52e",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "d6bd4895b31140257d0670488c7e25e642811a37032905fda14343403b2da2c6",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "9ff068ebb6d950ccfc0278285f129d99b5ee6610d2acb1522bb7c5a292a44b6d",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "63a442d6130283af9010b1e62ad1205919165c09fd51bc66d899f9e804d71690",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1c08bef513eb006d5259dac677d5d2f2efe54d8960f5a71ad5665b11c8bdcd31",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f951e90e5489894c1b9eb56119655d4d375d4d836bd74d54a77fac7134ed182c",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "62c73ed4a13c2f66f2ee82f0994c9ffbd2194903121715d8abe08a2886a31e57",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "6cf7d6957e1e0aa36f2d26b4fd56f48024511af54ed5da7adde295091ff26958",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "9a3bd25a41e4932b008135ba1366972e7f2f295a995e89eacb23937db2df7827",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "eefaf975cee4bf401519fe0f11545f32328804635c87b587fa53dedbb41cd6f2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "776b4518644ea2d902ac52953038a76ca03e85f92227111539c2c993187751e2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "0aa71271a34539e96ba7a69ed6bf734c12f4e7be6d3182164ef905117b7fe870",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "c055b9a1e835fe7dc3401bff51ac06be4eda60c1466ed1fdd279b15287280406",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "d6bd4895b31140257d0670488c7e25e642811a37032905fda14343403b2da2c6",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "af3d26881eb53b5b79a7ce0f91d82537328c0c407f960a97cd282db68cf41a62",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "7ebb268c47c77c5eb2367451a380b81ae7b8e88c8e055b5590482eb86898343b",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "c54545313af83444084d31f666e1965a7500485662f4f2fd612d29bc60299bef",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "b4edb0b12a362109dcced695501e4d67cd32f30e1c78cde0cb85f16f93655da8",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "43a243a76b7a69e1653175f405d56c5f86d8929c6f617a50f67713a724d6c40d",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "5be5a38e188c4bea0e88286dc64591ba36d478129dd6e7b65bc2e42844c2eb8d",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "b5e5aae9ea2d6e384648519561c354aaf68719fe67094139759ac50dfbaa6a4f",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "02a269d71158988450718a51c294622269454d5cc54021b93ca5e5b287ce23b4",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "41452bade621d0e3862ebf19be99d4f7e4308ad9bd66a1bd2bc282903efe75f7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f752997cccb95337e539d827277f075efdb9ea18fad90f1274dcdb15df05dcde",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "75d47289236cc6e07f6af68b1d41dcd70a57dd4de9770e071e4019b1206e3375",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "e26129b8df1ea54145bd10776f9ac7ba004cbc77a622e8b7be87fe7ad400d084",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "8b86bf385cef15187b8820430b97e85157d5dfb1cb63432a29f49b2058524166",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "6db106f6f87a569c6dba117dd6f155cd00a1ddd3fcd4f3eca579385ea354ffac",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "ba301ea784c2c8e8eca2dd91a5b566653b49d3e2e50255fcf8000f0f0c48bd17",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "08f6365a4e414ac749798eb2070d92cac07bfac307e84dc7df8b18ef1b1bab5c",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "0b28ff91d6bcb2a1c3e999bf210f1519722e1e1ffc3c89f7217c357aab85d771",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "b63b98920b6fa7aa640b92a2f07e05df7a66789a8e2d8e45abeb11458ec3f010",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "88ffd8c803503ccf4901afa35e6cf990127f06b266a604f4b3e3a241264ae396",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "59c53d0d997361c24c6220cc348e3da3f17a9713b2996cf8db81c3faf786f296",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "0f6441f944b2cbd7d35947767d199f8235b81a6157faeb6021feb770a95c2ee8",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "4c89f4ed8a8e29192e47a8b21fd1cf93ce749fec239d167fa89392d221455da7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "79bec9425c35d747e1e2ae84a998d778d1f9653398544e225f10275e5afefde3",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "d9860f702c237aa95f4c6ad24ee8c7b8b0f5c1132fa0197366f86cec6f1b1766",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "bde7cb723bc5714c638d582950f69355656c45cd3e1ce59ba9a368b2a7b28ce9",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "dc4fd679e5d8f43c8893c2299ddf2ca231cf96b8bf9a560af42f1703b137aad2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "b6ed32dc96a227d1d8f03ee76f4e085ed6be817efdfba575fa7769350584aaa2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-collections/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "4c8d586b17772ef20368172c3b146c9c25e2d2a5f2d7f52038d8111ce14f8f00",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+        "source": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "fdfbe57cbd8d44fde1fc1f49c53f0053482375557d1d8d1f965e118214667ef1",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+        "source": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "834dfae56f74891536fe4519d25858cbc73d40cc3199f49e1eea92ee1467b9e3",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+        "source": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "633b2ad6a015b7b638847e19348920c03aa9de6f4a1a67385470b5418305d5ac",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+        "source": ".accounts-validation/frontend-collections/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "039cb7a9744b273fdcc0e97ee8f0cd3fc9f7d28fcd5d01ff42a0dca6948ba2e6",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f1f5b24bcfa930d406283893f245c247aa9d6efdd08e6c3c389ea884b4e33ead",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "a01c9075b4a2980ade596f384955bb24203308bb2f28a4d9410216f721e49f5b",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1725ced260049bb50345c5f7b5504d570666e2dbe26780b2a42b965cdce137fe",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "e89a8382094b06cc249d92ac001f313b3b1ddcae4a05ff554d0bfc0e7d423da9",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "53a0fc967b3432083e36fa218ab0b806683f5f7f5c14a401879eb95d2f340694",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "7e7cb726188d24a5defb857d6b35c1a7d32301d9cd90adfff5fe61dc5dd72618",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1aa95dd57d28a5478a5ece8fcbb400870b336ce6df684bd4825872d3e4431131",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "9059f9720608db4955852e107a8ff536cb71f39dc486941f14234dd9750d6822",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "5c7b742881c0700b84c7fe456245d24f25f7f33878a8d792849d43a1ec431773",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "606bd4c640d79dc5e7503ba53254e349b6ff2f05d11226f70e48ec5c95519c98",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "04d7f564e9f3f118ebfb001a2a57d893e7d9a1d9b2b4452635d4e30f1d4360dc",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-draft-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "e898727fafdebf68282d5518e5882c4f8d0d7cf8921d359028f8ccb60bce1695",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "20099893ff1f5f12d40b8a9e3a3df97303ef2604931c794a64777b2c261e50f7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "a951ea6c998af2b3e98ede6230b6480109145774a5bac828a047c00e3fbaf57a",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "4853d5fec6782b6f856790c838407ba4ea0123bf29648d2c1ac4444baed0b416",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "ec0eb49b34421b2f27aea24b434e00236865d8812d495f9eeedd9fb63861dc43",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "61d81becaf7267e3df059a30d488524cda1abfd42c21bb0bff994b8157a1086f",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "8cf66f273a6ec7d92a59efae065c1de6c9f268c9f443311de704592253ac31f3",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "af8e85b5f9420ecd591860e8c4aef1c04003738a968091210fd465fd59bf2979",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "86edd838ca7ac9ab7949244139e3ff5c487366db605beb2cd43bc0c9cc035867",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "95f773e286b2eab119baa12e7c6a962fdc25af280ba48764efb9fd5253a50298",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-form-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-form-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f5c55da50995ea4ce566edae46cba1aefd21e25aa0d1a6c8e9ba9cd1117535e2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "2dc2f35bec22bb3556ca966eef655de5954dc8822708ad62bf63e5d03d0fc2e5",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "20099893ff1f5f12d40b8a9e3a3df97303ef2604931c794a64777b2c261e50f7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "66c977564f5feb944900ee2edbb5d388b244dff5772fe880385ae43769aed02a",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f1d6addc3478e6318b46f885c427c2d1e691b4508e2d9ff12860e68cfd4d3769",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "81019c5ff0ce0a795d5398ff2532b74d5665ed2084c0d102dabaa21a9de17f35",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "7e7cb726188d24a5defb857d6b35c1a7d32301d9cd90adfff5fe61dc5dd72618",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "629b2a019e1bf619e42879ea9caa5248258ebf446b2844cb0a1099d0ad3317f2",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "07515253e2b20001baecd9a97d7952714f7fc51203c963cac417604bb6686911",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "80d80453ef8e247c8bbd53453a9330494f400fe3ac1399a008265f9ccf9da0cf",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "86edd838ca7ac9ab7949244139e3ff5c487366db605beb2cd43bc0c9cc035867",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "bde9d67c75fe38420a461e94809938678dd9fac578690dae6acf8f139743144f",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "15d229b337bedc9b56acf43c4d583e5cd4570c5bbf2a93dab590d266e3511a76",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "ac1434194c6fbeee8d9c514b96d565521ac347aea07129764f1593920df4a14a",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-1440-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "bba192133edc13886e43d14615b58ce48b5214f66540ccc08daddc81499029cb",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "cd009ca87aed63ee074f95c241aa16b2d59ded7844f6845ea6cb237ef4636768",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "3c750c985891929ed9913668a6204a885c0982e800f4086040e9f7833da5d8a7",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "933d78799e1a20db2a10d849cc505b154b0242919ecb65701cd7d540a31107f4",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-320-900-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-320-900-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "e40b64a157344be9f6276ea4bda814c74af1356fb76eeb99544e38b92c70286d",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "1e901867e8e0ddc33ca6506b248c3df5b74a854e864596a582660243a9d2bfd6",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-375-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-375-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "17764742aa0ca6e9bbcdde6e3f1096ab5f4cec6e41956f0a76f125a8466e807a",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "e64844d6696ab37e84fdfcbb2a67ca7adf069c543d5e4a7dd45170aef1239d38",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-768-900-100-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-768-900-100-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "2c8d50772a8306dbb5f33fb599399f81195415d84061ba30946ecf80827bf124",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f803400f7f31b1779d428a1c5cd95819934c151fdb8646134769a6c24eb95aee",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "48bbd1393e0af6ee625214f5648c9c8b416f2db1d5e47cc151481af736bc4434",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+        "source": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "f8a0baf5ad547ca69c830a1345addf0c1b7671f13a30ce492c2c0b58d2014bbd",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-confirmed-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-confirmed-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "ce42f3b48dcad1e39c3f58188c0460e971708d90f08dc7081a8ec0cd02d6aa22",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-review.png",
+        "source": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-review.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "b0f965de26d9d72a8a90f361f2cac6f0b78626f6c4fd7968bd4fd15b78cf379e",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/3da452d49d7d-r0-n0-frontend-environmental-review-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/3da452d49d7d-r0-n0-frontend-environmental-review-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "9c0993b06e287a9c41b690a97054f9a0085d506cc57b3858d9e896046f24bfe3",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+        "source": ".accounts-validation/frontend-environmental/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+        "kind": "png",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "7cf26660f771d83e45e5567e58e6c4101f7f74506947bd8166946ed8fb4cd497",
+        "source_hash_matches": true
+      },
+      {
+        "copy": "official-v3/application/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded-viewport.json",
+        "source": ".accounts-validation/frontend-environmental/44adbbd15533-r0-n0-frontend-environmental-invalid-expanded-viewport.json",
+        "kind": "metadata",
+        "exists": true,
+        "matches_recorded_hash": true,
+        "byte_identical_to_artifact": true,
+        "hash": "faf44757027892a614937e0854edc5a94babfd46e4417f7394d351e8956ff2ac",
+        "source_hash_matches": true
+      }
+    ]
+  },
+  "receipt_copies": [
+    {
+      "copy": "third-candidate-receipt.json",
+      "source": "work/ux-collections/phase7-v3-monitor/phase7-r3-v3-receipt.json",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-capture-inventory.json",
+      "source": "work/ux-collections/phase7-v3-monitor/capture-metadata-audit.json",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-download-integrity.json",
+      "source": "work/ux-collections/phase7-v3-monitor/zip-verification.json",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-visual-summary.json",
+      "source": "work/ux-environmental/phase7-v3-official-visual-summary.json",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-visual-review.md",
+      "source": "work/ux-environmental/phase7-v3-official-visual-review.md",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-visual-metadata.json",
+      "source": "work/ux-environmental/phase7-v3-viewport-metadata-audit.json",
+      "exists": true,
+      "byte_identical": true
+    },
+    {
+      "copy": "third-candidate-pixel-comparison.json",
+      "source": "work/ux-environmental/phase7-v3-reviewed-pixel-comparison.json",
+      "exists": true,
+      "byte_identical": true
+    }
+  ],
+  "links": {
+    "relative_count": 145,
+    "remote_count_not_refetched": 16,
+    "missing": [
+      {
+        "document": "implementation-evidence.md",
+        "line": 46,
+        "target": "evidence/r3/documentation-consolidation-review.md",
+        "exists": false,
+        "pending_review_copy": true
+      },
+      {
+        "document": "implementation-evidence.md",
+        "line": 46,
+        "target": "evidence/r3/documentation-consolidation-review.json",
+        "exists": false,
+        "pending_review_copy": true
+      }
+    ],
+    "unexpected_missing_count": 0,
+    "gallery_file_links": 110,
+    "all_110_copy_paths_linked": true
+  },
+  "runtime_reconciliation": {
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "run_id": 39472759694,
+    "attempt": 1,
+    "job_id": 118800800378,
+    "artifact_id": 12288662735,
+    "zip_sha256": "fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+    "gate_count": 15,
+    "all_15_pass_exit0": true,
+    "e2e": {
+      "total": 190,
+      "pass": 190,
+      "fail": 0,
+      "skip": 0,
+      "flaky": 0,
+      "not_run": 0,
+      "retries": 0,
+      "expected_total": 190,
+      "matches_expected": true,
+      "expected_composition": {
+        "original": 166,
+        "geometry_and_render_readiness": 23,
+        "environmental_persisted_post_p1": 1
+      },
+      "source": ".accounts-validation/e2e-1792520308833.log",
+      "retry_policy_source": "playwright.config.ts at published SHA"
+    },
+    "unit": {
+      "total": 410,
+      "pass": 410,
+      "fail": 0,
+      "skip": 0,
+      "cancelled": 0,
+      "todo": 0,
+      "batches": [
+        393,
+        17
+      ],
+      "added_failure_probe_tests": [
+        "✔ IHFR failure probes isolate cookie expiry and emit only allowed observations (77.3372ms)",
+        "✔ IHFR failure probes preserve HTML and redirect statuses without following redirects (17.9684ms)",
+        "✔ IHFR failure probes refuse unowned origins or schemas before making any request (0.4314ms)"
+      ],
+      "source": ".accounts-validation/unit-1792520069674.log"
+    },
+    "integration": {
+      "total": 231,
+      "pass": 231,
+      "fail": 0,
+      "skip": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "fingerprint": {
+      "value": "18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1",
+      "same_in_all_recorded_gates": true,
+      "recorded_gate_count": 15,
+      "expected_windows_checkout": "18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1",
+      "matches_expected": true,
+      "functional_files": 566,
+      "expected_method": "Pinned committed inputs filtered by git core.autocrlf=true; per-file SHA256 then sorted compact JSON manifest SHA256.",
+      "preflight_source": "work/qa-account/phase7-r3-v3-preflight.json",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    "codex": {
+      "request_id": 6297854794,
+      "reviewed_sha": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+      "status": "completed",
+      "has_any_findings": false,
+      "has_unresolved_findings": false,
+      "receipt_id": 6297927596,
+      "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6297927596",
+      "receipt_created_at": "2026-10-20T18:16:31Z",
+      "summary_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6294810916",
+      "summary_updated_at": "2026-10-20T18:16:33Z",
+      "author": "chatgpt-codex-connector[bot]",
+      "observed_at": "2026-10-20T18:17:11.829Z"
+    },
+    "critical_test_inference_explicit": true,
+    "resolution_matches_head_run_codex": true
+  },
+  "visual_reconciliation": {
+    "inventory": {
+      "pngJsonPairs": 55,
+      "applicationPairs": 53,
+      "collectionApplicationPairs": 26,
+      "environmentalApplicationPairs": 27,
+      "applicationMatrixPairs": 48,
+      "applicationFlowPairs": 5,
+      "syntheticPairs": 2,
+      "allDurable": true,
+      "survivedLaterDeletionAndIhfrInvocations": true,
+      "allHeadsMatch": true,
+      "allPngDimensionsMatchMetadata": true,
+      "allMatrixFilenamesMatchScaleAndViewport": true,
+      "allRootFontSizesMatchScales": true,
+      "allPhysicalDeviceFalse": true,
+      "allFullPageFalse": true,
+      "horizontalOverflowObserved": false,
+      "metadataIssueCount": 0,
+      "bothMatricesComplete": true,
+      "allCaptureAnimationsAllow": true
+    },
+    "pixel_review": {
+      "applicationImagesCovered": 53,
+      "applicationImagesDirectlyInspectedThisRound": 5,
+      "collectionNewImagesDirectlyInspected": 1,
+      "environmentalRepresentativeImagesReopened": 4,
+      "otherApplicationImagesCoveredByExactSha256": 48,
+      "environmentalImagesByteIdenticalToInspectedPhase7V2": 27,
+      "collectionApplicationImagesByteIdenticalToInspectedPhase6V3": 25,
+      "syntheticImagesByteIdenticalToInspectedPhase6V3AndExcluded": 2,
+      "finalControlFramesCovered": 42,
+      "finalControlFramesWithCompleteTargetVisible": 42,
+      "beforeFrameMeaning": "Same run after rendering readiness but before target positioning; not pre-fix evidence.",
+      "collectionBeforeFramesShowingLoading": [],
+      "newImageInspected": "frontend-collections-initial-form",
+      "directlyReopenedEnvironmentalImages": [
+        "frontend-environmental-last-field-320-900-200",
+        "frontend-environmental-review-844-390-200",
+        "frontend-environmental-form-320-900-200",
+        "frontend-environmental-last-field-844-390-200"
+      ]
+    },
+    "qualification_count": 14,
+    "same_head_run_artifact": true
+  },
+  "intentional_pending": [
+    "Integrator copies this review and audit into their already-linked destinations",
+    "Own exact-SHA fifteen gates and Codex receipts for both documentary HEADs; phase6 status is recorded at preparation, not inferred from functional parents"
+  ],
+  "document_hashes_generated": true,
+  "final_documentary_incorporation": {
+    "receipt_present": true,
+    "first_parent": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "second_parent": "64332e0feedeabdf78bbce7d402367c266bef838",
+    "automatic_merge_tree": "bc6adcff38dee74a16bbea18bde3d260f69761cf",
+    "reference_values_match": true,
+    "conflicts_recorded": [],
+    "inherited_file_count": 75,
+    "unique_inherited_paths": 75,
+    "all_75_match": true,
+    "automatic_delta_equals_manifest_paths": true,
+    "all_inherited_paths_are_spec023": true,
+    "phase6_documentary_status_at_preparation": {
+      "head": "64332e0feedeabdf78bbce7d402367c266bef838",
+      "only_change_from_4e": "specs/023-frontend-collections/evidence/r3/documentation-consolidation-review.json",
+      "corrected_document_hashes": 3,
+      "all_document_hashes_verified": 7,
+      "run_id": 39477040095,
+      "attempt": 1,
+      "job_id": 118815571617,
+      "codex_request_id": 6298458574,
+      "status_at_preparation": "AWAITING_EXACT_HEAD_VALIDATION",
+      "later_external_receipt_required": true
+    },
+    "checks": [
+      {
+        "path": "specs/023-frontend-collections/analysis.md",
+        "recorded_blob": "059a511804aa7b789eb844ad140e1cebf67dc0b8",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/documentation-consolidation-review.json",
+        "recorded_blob": "83c7850e70fcd3f70d30fc35e6b6d0324b8cc3a1",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/README.md",
+        "recorded_blob": "4467f1a7aecd8feb2d808dbdf85744e5f21d8550",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+        "recorded_blob": "8928c8141df0bba89dbffa1d8ace8743c145edce",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+        "recorded_blob": "dc0ff4aceff2e69e5b8cde26145e3ee3edf90640",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+        "recorded_blob": "174c9834cb5bcb8d28d5d7fb467413722818e30e",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+        "recorded_blob": "9a2bf88e60d0f7fe71049fb3064ce1ddd2a50cd2",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+        "recorded_blob": "749fd7a061b8a8f82550ad311eea6f0704727244",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+        "recorded_blob": "30133107c5638e45812ce3e9d3374adf5a9d2dbe",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+        "recorded_blob": "6acc590c36a06e2c6a3b78e14dbb3b7522ebf685",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+        "recorded_blob": "da9b2f81c1d7c99e3be1f2194735ef74c22ffe1a",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+        "recorded_blob": "62787240f443a63055b16ebdb121080de1287faa",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+        "recorded_blob": "61afa64199351b591a5931f6dc7fc29d092fa752",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+        "recorded_blob": "708f781bbc729bf90d504a48f4130d2b1f1080df",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+        "recorded_blob": "8544ed6704ec2035275faf67f3f7acc7c586d3bc",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+        "recorded_blob": "8a27c683c3e8e035969e4fb9ee976c27be21d1b1",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+        "recorded_blob": "c7d15408e96d78319733dab3b7e47fa1e396d416",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+        "recorded_blob": "174c9834cb5bcb8d28d5d7fb467413722818e30e",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+        "recorded_blob": "850f4c64bda5e839bda095d2fe7e0683667830b0",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+        "recorded_blob": "749fd7a061b8a8f82550ad311eea6f0704727244",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+        "recorded_blob": "81abe40c97f4669f202b4e17b23ca645ec3c1d99",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+        "recorded_blob": "6acc590c36a06e2c6a3b78e14dbb3b7522ebf685",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+        "recorded_blob": "6ebcac685db347f823ea3e9ad8bbb7c1fa1c667f",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+        "recorded_blob": "463e1553be7468a3f031574efbbfca1b6626db16",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+        "recorded_blob": "f054ff16e3c67efe500fa737f341c7193f05258e",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+        "recorded_blob": "0d3b234f1db27cd04774f1ed90888444607d5c83",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+        "recorded_blob": "48e5c7b17409f7a8a96ddf99993f467c1bb16e28",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+        "recorded_blob": "adabd0e970a90b30a966b20df0ced9ed06d54fd1",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+        "recorded_blob": "70fc175617722b43ee0afd844a30326849beb877",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+        "recorded_blob": "ea7c9736d59739b4a05184d1846dfd90c53de9f1",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+        "recorded_blob": "62312b08dbd270ef89f5f56ff1787faa1079bf73",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+        "recorded_blob": "3e997048d61d30c1cf3fef7a115e26d404137ecb",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+        "recorded_blob": "2ff04c06c8739caabebb7b9f560a3e1f0046dca8",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+        "recorded_blob": "29cd84469a8249bd1ec66196181985cc29e7d3dc",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+        "recorded_blob": "3014afadfbe93299aa954e1180c7665838ead297",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+        "recorded_blob": "4e69e78804429b46ea4253db09ceafc1d3343d46",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+        "recorded_blob": "6bc5e5d240a8fba88c8d9e26329c868cf2fe1bb0",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+        "recorded_blob": "1dc3d228de6ba7d00f3c6a5989cfe160cac977a3",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+        "recorded_blob": "7259aef3cad42d3655319e9a2604667c7c3e1021",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+        "recorded_blob": "fa6dc39870dcd178a3258f4f05446befb1224460",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+        "recorded_blob": "045f3e7c77a779855a5fd11ffea0d675ab2b3287",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+        "recorded_blob": "365547fdb3fa41ce3e4d9df8f5ba92e894499e32",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+        "recorded_blob": "d09c750b0e7fe40dfde3298279b2e6b1fc2b3865",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+        "recorded_blob": "8632c7a53d6fd8c5d737d8b42011c631e7d767a8",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+        "recorded_blob": "f9f632b70b05db777a414691f698851b31c42fa0",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+        "recorded_blob": "98845d4043f24257adc50d6a3c7320a4fa140500",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+        "recorded_blob": "9de2cc149c21ba030026f78d912a313c642174c1",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+        "recorded_blob": "bf473ebbea13d7cca609dbde7e1fcf102b452d5e",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+        "recorded_blob": "5dd9a32a735c7fe39acc0fb4ba5486b1fe2f57f2",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+        "recorded_blob": "a44a4f8c0336a775ed17f57ebd2315620007112d",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+        "recorded_blob": "995726397213ed22a15c954bae5fe5879d5e43f4",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+        "recorded_blob": "eaf55b8b110ccc359103080c8ed6f6d80e830639",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+        "recorded_blob": "e6d0a29ac3e1ee3126e39864d18eee555ba38453",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+        "recorded_blob": "b59d4acb405830de6410d08d5e46cf4e8eebe44f",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+        "recorded_blob": "3b21370230e06f6cd8687e11753eda5dd44b261e",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+        "recorded_blob": "741ba15bdc22302394dd43e56db0a8c2a8cf1644",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+        "recorded_blob": "838149069e678cb67ae9b09b443d84c1de42a4ed",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+        "recorded_blob": "ad429105633ae97370b0e596155ce0102f8a82b6",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+        "recorded_blob": "f94587d86a320825f56b3c9cc309bc4b0bbb80fa",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/second-candidate-receipt.json",
+        "recorded_blob": "c47906118bee6758ba201b89e49cf48f5a422308",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-metadata.json",
+        "recorded_blob": "13fc36bea34df6842939f2b7509ae556f1888276",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-review.md",
+        "recorded_blob": "d3c117e50904327bd40afeef1726dd4b7c7acb7c",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-summary.json",
+        "recorded_blob": "68ada84bbaa22fd61b565156700f02bff6978fd9",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-capture-inventory.json",
+        "recorded_blob": "639f2fb3aca3082f928d648623efe38acc8d728b",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-pixel-comparison.json",
+        "recorded_blob": "ccbf3b1cd43e0ee5df3b8fb9080bb2dda06344a4",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-receipt.json",
+        "recorded_blob": "c78e018ffb85a8c369586820a0cdbe575caddf3b",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-review-resolution.json",
+        "recorded_blob": "09b6e68c0268be30346ec3c0750ff8ed16757b7a",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-versioned-captures.json",
+        "recorded_blob": "6885f7a990dee68b7ceae2b3233b754b0001dbfd",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-metadata.json",
+        "recorded_blob": "c4297045525300020d666bfd8bdc538a16a36315",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-review.md",
+        "recorded_blob": "feb06e171ddfdf94a777160c03271b0fbf689537",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-summary.json",
+        "recorded_blob": "aaecbb0c5b06ba85d5341d50aa36afb26fe8d673",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/implementation-evidence.md",
+        "recorded_blob": "859984af825ecd665402eb0d9242190d87981710",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/plan.md",
+        "recorded_blob": "58946eeb094f5d571257060a85ac2c18c203b02b",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/review.md",
+        "recorded_blob": "6f9952a70e1dae32578a3c07f9ec2b594fade1dd",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      },
+      {
+        "path": "specs/023-frontend-collections/tasks.md",
+        "recorded_blob": "c21bebdb9fc515e58470f70ac079123699b858e3",
+        "phase6_blob_matches": true,
+        "automatic_tree_blob_matches": true,
+        "local_raw_blob_matches": true,
+        "local_bytes_equal_phase6_blob": true,
+        "same_regular_file_mode": true
+      }
+    ]
+  },
+  "proposed_change_scope": {
+    "base_head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "phase6_source_head": "64332e0feedeabdf78bbce7d402367c266bef838",
+    "changed_or_untracked_paths_before_copying_this_review": 203,
+    "spec023_paths": 75,
+    "spec024_paths": 128,
+    "outside_specs023_024": [],
+    "functional_inputs_changed": false,
+    "no_proposed_commit_sha_assumed": true
+  },
+  "document_hash_source": {
+    "kind": "FROZEN_LOCAL_PROPOSAL_RAW_BYTES",
+    "base_head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "phase6_source_head": "64332e0feedeabdf78bbce7d402367c266bef838",
+    "method": "SHA-256 of Path.read_bytes() for the nine frozen proposed local files. No LF/CRLF normalization, text decoding, Git filters or Windows fingerprint conversion. Integrator must compare these values against staged blob bytes after copying this review.",
+    "excluded_self_receipts": [
+      "specs/024-frontend-environmental-drafts/evidence/r3/documentation-consolidation-review.md",
+      "specs/024-frontend-environmental-drafts/evidence/r3/documentation-consolidation-review.json"
+    ],
+    "self_receipts_excluded": true,
+    "publication_or_final_head_validation_claimed": false
+  },
+  "document_hashes": {
+    "specs/024-frontend-environmental-drafts/tasks.md": "a936e95b67d2b501b77f2ac939f980f7b3dad6222ecf0bd699765eb1f322bfef",
+    "specs/024-frontend-environmental-drafts/analysis.md": "e93cd2322d4bfb304175d9d99f6ce1e240460cdcc7a3e5d562663bce59a237fe",
+    "specs/024-frontend-environmental-drafts/review.md": "e4ef6416aee2d39a99e70b6d4a960153ad8d0ff5c98302084cd387ba3b3cdbf3",
+    "specs/024-frontend-environmental-drafts/implementation-evidence.md": "29690bc5e1f7f440fbe407fce909867175f50bbe48a2791b46c6571717cf191c",
+    "specs/024-frontend-environmental-drafts/plan.md": "c86674c2663fdc224988662520d6b7d6e1ffe7ec13c8f258d689a0f43e5c74df",
+    "specs/024-frontend-environmental-drafts/spec.md": "95308f2eb7ae219a08d02042e62fd72a87d2e85ddf787edb4753112a78d7e270",
+    "specs/024-frontend-environmental-drafts/evidence/r3/official-v3/README.md": "702513e8b38dcd0954c1618d74f51d6f740c45ab445aa6204f92f188d185fd36",
+    "specs/024-frontend-environmental-drafts/evidence/r3/third-candidate-incorporation.json": "05e859bf7775b959f1c434282674053f865f033ff101e7de6b12e5c5be853347",
+    "specs/024-frontend-environmental-drafts/evidence/r3/final-documentary-incorporation.json": "208e732e0485259cdb168bc1e06671a5d004f4bb909eec99281fcfb2e8aa8bcb"
+  },
+  "document_byte_lengths": {
+    "specs/024-frontend-environmental-drafts/tasks.md": 6226,
+    "specs/024-frontend-environmental-drafts/analysis.md": 6963,
+    "specs/024-frontend-environmental-drafts/review.md": 6362,
+    "specs/024-frontend-environmental-drafts/implementation-evidence.md": 26208,
+    "specs/024-frontend-environmental-drafts/plan.md": 12710,
+    "specs/024-frontend-environmental-drafts/spec.md": 6248,
+    "specs/024-frontend-environmental-drafts/evidence/r3/official-v3/README.md": 13023,
+    "specs/024-frontend-environmental-drafts/evidence/r3/third-candidate-incorporation.json": 4818,
+    "specs/024-frontend-environmental-drafts/evidence/r3/final-documentary-incorporation.json": 22886
+  },
+  "errors": [],
+  "status": "DOCUMENTARY_REVIEW_CONSISTENT_EXACT_HEAD_RUNTIME_GATE_PENDING",
+  "document_hashes_unchanged_at_handoff": true,
+  "markdown_hash_table_matches_audit": true,
+  "review_copy_destinations": {
+    "markdown": "specs/024-frontend-environmental-drafts/evidence/r3/documentation-consolidation-review.md",
+    "audit": "specs/024-frontend-environmental-drafts/evidence/r3/documentation-consolidation-review.json"
+  },
+  "coordinator_reported_external_update": {
+    "source": "Message from root; not independently fetched during this documentary audit",
+    "phase6_head": "64332e0feedeabdf78bbce7d402367c266bef838",
+    "codex_receipt_id": 6298505889,
+    "codex_status_reported": "completed_without_findings_exact_head",
+    "ci_status_reported": "in_progress",
+    "frozen_documents_changed": false,
+    "exact_head_joint_gate_closed": false
+  },
+  "coordinator_post_copy_verification": {
+    "checked_at_utc": "2026-10-20T18:49:50.791508+00:00",
+    "method": "All nine reviewer hashes compared with raw staged Git blob bytes and frozen worktree bytes; the two audit outputs were copied before rechecking links. Referenced documents remained unchanged.",
+    "document_hashes_checked": 9,
+    "all_match_raw_staged_blobs": true,
+    "relative_links_checked": 145,
+    "missing_relative_links": [],
+    "pending_audit_output_copies_resolved": true,
+    "self_hashes_excluded": true,
+    "new_runtime_or_codex_approval_claimed": false
+  }
+}

@@ -1,3 +1,17 @@
+# Plano vigente — fechamento R3 das fases6 e7
+
+**Estado**: candidata funcional ec4b06e validada; consolidação documental e dependência final sujeitas a15/15 gates e Codex por SHA. Aceite humano pendente.
+
+DECISAO_CONFIRMADA: a missão autorizada foi executada nas branches funcionais, sem merge, deploy, alteração de main/development, banco/provedor real ou ciência IHFR. O coordenador mantém a escrita/publicação única; as frentes independentes de UX/QA/CI fornecem evidência revisada.
+
+EVIDENCIA_IMPLEMENTACAO: Node24.19.0, dependências travadas, Prisma, Chromium e PostgreSQL sintético isolado no Windows Actions. O run39472759694 de ec4b06e concluiu15/15 gates,190/190 E2E e231/231 Integration; Codex6297927596 sem findings. A galeria conserva53 pares de aplicativo e2 sintéticos, com inspeção e limites explícitos. Os guias locais instalados de Next/Playwright foram lidos durante a investigação; limitações antigas de clone/runtime abaixo são históricas.
+
+Executado: diagnóstico dos artifacts originais; RED/GREEN e contraprovas de geometria/sincronização; correções CSS locais; regressão de conta e A → B → A; preservação durável de capturas; incorporação não destrutiva de fase6; CI e revisão da candidata funcional; inspeção independente e fechamento documental. Os achados de revisão foram tratados, sem enfraquecer testes.
+
+Próximo gate obrigatório: publicar a consolidação com parents conferidos e validar o SHA resultante de cada PR, preservando o fingerprint funcional. Somente os recibos externos que comprovem15/15 e Codex exatos encerram a entrega técnica; nenhum resultado de parent é transportado. A causa histórica de conta/IHFR404 continua inconclusiva e os probes pós-falha não executaram no run verde. Entrega técnica não equivale a aceite humano ou homologação científica.
+
+## Histórico preservado — plano, investigação e preparação anteriores
+
 # Implementation Plan: Dados ambientais e drafts: apresentação sem perda
 
 **Branch**: `feat/frontend-environmental-drafts` | **Date**:2026-10-20 | **Spec**:[spec.md](spec.md)

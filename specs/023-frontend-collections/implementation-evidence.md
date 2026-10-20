@@ -1,6 +1,46 @@
 # Evidências da continuidade R3 — 20/10/2026
 
-## Terceira candidata: tratamento dos achados Codex da segunda
+## Fechamento da candidata funcional e gate do HEAD publicado
+
+A candidata funcional `5f5d8719e25856b59e84c053cb13d2516dbeac49` terminou com **15/15 gates PASS, 182/182 E2E PASS e Codex concluído sem findings no mesmo SHA**. Os três threads materiais da PR foram respondidos com evidência e resolvidos, preservando os comentários originais. A PR permanece Draft, com base `development`; nenhum merge ou deploy foi executado.
+
+| Proveniência | Valor |
+|---|---|
+| Run / tentativa / job | [39469650449](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39469650449) /1 /118790047117 |
+| Artifact |12286659078;19.261.404 bytes;469 entradas; digest e CRC conferidos |
+| SHA256 do ZIP | `57748ae803485ddff742b5f43dcaaf6a8ec76f12b1788e2788cef39d0587956e` |
+| Fingerprint | `232054c356319f3b990ae6dc2bef6f0ab61be1e792d55471d606519b0429504a`;556 inputs funcionais; reprodução Windows correspondente |
+| Codex efetivo | [6297489682](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#issuecomment-6297489682), completed, sem findings |
+
+| Gate | Resultado / contagem |
+|---|---|
+| RegressionSetup | PASS |
+| Unit | PASS,353+17 |
+| Integration | PASS,229 |
+| Migration | PASS,37 |
+| Contract | PASS,6 |
+| R1 | PASS,17 |
+| Build | PASS |
+| Typecheck | PASS |
+| Lint | PASS;3 warnings preexistentes |
+| E2E | PASS,182/182;0 FAIL/SKIP/NOT_RUN/flaky |
+| Https | PASS,2/2 |
+| Deletion | PASS,3/3 |
+| Ihfr | PASS,6/6 |
+| Bootstrap | PASS |
+| SchemaAudit | PASS |
+
+[Recibo completo](evidence/r3/third-candidate-receipt.json), [inventário](evidence/r3/third-candidate-capture-inventory.json), [galeria de todos os26 quadros de aplicativo](evidence/r3/official-v3/README.md) e [manifesto de cópias byte a byte](evidence/r3/third-candidate-versioned-captures.json). Os2 pares sintéticos estão separados e não contam como pixels do app. As capturas sobreviveram aos gates Deletion/Ihfr.
+
+A inspeção independente cobre26 quadros de aplicação:7 vistos nesta rodada e19 com SHA256 idêntico aos pixels v2 já examinados. Os18 quadros finais têm o controle principal inteiro; os6 quadros anteriores ao posicionamento têm contexto carregado. O coordenador também examinou diretamente os quadros320×900/texto200 e detalhe antes/depois em844×390/texto200. [Parecer visual e limitações](evidence/r3/third-candidate-visual-review.md). Máscaras sobre navegação, indicador Next, ação secundária parcialmente fora em paisagem e ausência de aceite físico/assistivo continuam explícitos.
+
+O cenário A → B → A e a jornada de conta estão incluídos na suíte integral aprovada. O reporter de pontos não enumera nominalmente cada PASS; essa inferência é declarada no recibo. A causa histórica da conta permanece inconclusiva. O sucesso da fase6 não determina a causa do404 do gate IHFR observado na fase7 v2.
+
+### Regra de encerramento por SHA
+
+Este commit consolida documentação e evidência da candidata funcional nomeada; não muda inputs funcionais. **A entrega técnica do HEAD publicado, inclusive este commit documental, exige novamente15/15 gates e Codex concluído sem achado material no SHA exato.** O resultado será registrado após a execução em recibo externo na [PR #18](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18), com SHA/parent, run/tentativa/job, contagens, artifact/digest/fingerprint e recibo efetivo do Codex. Publicar o recibo que confirma esses critérios encerra o gate sem alterar o commit validado. Qualquer novo commit exige nova conferência; até o recibo confirmar os critérios acima, o HEAD de consolidação está **AGUARDANDO_VALIDAÇÃO_EXATA**. Checkboxes desta Spec aplicam-se somente ao SHA que nomeiam.
+
+## Histórico — preparação da terceira candidata: tratamento dos achados Codex da segunda
 
 A revisão externa do HEAD `2a047d10360803517ff6bf64b38754cd0f07f5ba` terminou com dois achados materiais: [P1 — callback de ResizeObserver ainda pendente](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054767) e [P2 — screenshot anterior à espera concluía transições](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054781). O [recibo histórico com triagem](evidence/r3/second-candidate-codex-findings.json) preserva o estado externo `completed_with_findings`; correção local não equivale a fechamento da revisão.
 
@@ -17,7 +57,7 @@ O bloco de cópia durável não mudou desde a prova de duas invocações; o dige
 
 A segunda candidata `2a047d10360803517ff6bf64b38754cd0f07f5ba` terminou o [run39465489762](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465489762), tentativa1/job118775663664, com **15/15 PASS e180/180 E2E**, zero fail/skip/not_run/flaky. Unit353+17, Integration229, Migration37, Contract6, R1 17, Https2, Deletion3 e Ihfr6 passaram. Fingerprint `3c6ce0de33c449bd47ebae526af8be011a08f46b8e5f5b4a9213ad268393618c`, reproduzido dos556 inputs do checkout Windows. Artifact12285318854:19.259.628bytes,467 entradas; ZIP SHA-256 `9f03b69123144f461f36a42a1aaf13680f6fd314b322aac26aa57bdab2b56e43` e CRC conferidos.
 
-Os27 pares PNG/JSON sobreviveram a Deletion/Ihfr:26 do aplicativo (24 da matriz,2 de fluxos) e1 negativo sintético. Todos os metadados conferem HEAD, viewport, escala e fullPage:false. [Recibo oficial](evidence/r3/second-candidate-receipt.json) e [inventário com hashes](evidence/r3/second-candidate-capture-inventory.json). O coordenador inspecionou o botão em320×900/texto200 e o detalhe antes/depois da rolagem em844×390/texto200: os controles finais estavam livres; a inspeção completa dos pixels é registrada separadamente. Os quadros antes/depois mostram posições de rolagem no mesmo código, não uma comparação anterior/posterior à correção de CSS.
+Os27 pares PNG/JSON sobreviveram a Deletion/Ihfr:26 do aplicativo (24 da matriz,2 de fluxos) e1 negativo sintético. Todos os metadados conferem HEAD, viewport, escala e fullPage:false. [Recibo oficial](evidence/r3/second-candidate-receipt.json) e [inventário com hashes](evidence/r3/second-candidate-capture-inventory.json). O coordenador inspecionou o botão em320×900/texto200 e o detalhe antes/depois da rolagem em844×390/texto200. C inspecionou todos os26 PNGs de aplicativo:18/18 quadros finais mostram os alvos inteiros. [Parecer visual completo](evidence/r3/second-candidate-visual-review.md), [resumo](evidence/r3/second-candidate-visual-summary.json) e [metadata/hashes](evidence/r3/second-candidate-visual-metadata.json) registram também máscaras sobre navegação, indicador de desenvolvimento e ação secundária parcialmente fora do enquadramento em paisagem. Os quadros antes/depois mostram posições de rolagem no mesmo código, não uma comparação anterior/posterior à correção de CSS.
 
 Classificação: `RUNTIME_PASS_CODE_REVIEW_FINDINGS`, pois os P1/P2 acima pertencem a esse SHA. Os novos commits exigem novamente15 gates, inspeção de capturas e Codex no SHA exato. Resultados das candidatas anteriores não aprovam o novo HEAD; aceite humano permanece pendente.
 

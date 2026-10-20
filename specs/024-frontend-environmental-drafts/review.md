@@ -1,3 +1,17 @@
+# Revisão vigente — candidata funcional ec4b06e
+
+A candidata `ec4b06e4b27059b1077904e0b67fde498c28b053` tem15/15 gates PASS,190/190 E2E,231/231 Integration e [Codex concluído sem findings](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6297927596). O P1 ambiental foi respondido com a regressão A → B → A e resolvido; as correções P1/P2 do helper compartilhado já integram esse SHA.
+
+B reconciliou run/artifact/fingerprint e casos nominais; C inspecionou metadados e pixels; D revisou independentemente as23 contraprovas compartilhadas. C também revisou o diagnóstico pós-falha404 quanto a privacidade, contexto e isolamento de cookies. O coordenador conferiu o diff e abriu os quadros ambientais prioritários. Os recibos não substituem uns aos outros nem concedem aceite humano.
+
+A galeria preserva53 pares de aplicativo e2 sintéticos separados. Os42 alvos finais estão inteiros; permanecem limites de máscaras/indicador Next, navegação elevada em alguns quadros móveis e label parcialmente fora em paisagem. A matriz de seis configurações não abrange leitura confirmada em todas elas; essa leitura é validada separadamente por R2/API/reload e suíte desktop/mobile.
+
+A execução atual Ihfr6/6 não explica o404 anterior; o probe não foi acionado e a causa histórica continua inconclusiva. Nenhum resultado é chamado de flakiness. O diagnóstico não é apresentado como correção causal ou validação científica.
+
+A consolidação documental e a incorporação final da fase6 exigem15/15 gates e Codex no próprio HEAD. O recibo externo da PR #19 só encerra o gate quando esses critérios e a dependência final da PR #18 estiverem confirmados; até então, AGUARDANDO_VALIDAÇÃO_EXATA. A PR permanece Draft, sem merge/deploy. Aceite humano e homologação científica permanecem pendentes.
+
+## Histórico preservado — revisões anteriores
+
 # Revisão da continuidade R3 — 20/10/2026
 
 ## Revisão vigente antes da terceira publicação

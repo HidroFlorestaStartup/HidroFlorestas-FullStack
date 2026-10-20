@@ -1,4 +1,20 @@
-# Análise de consistência — continuidade R3 (20/10/2026)
+# Análise de consistência — fechamento técnico da candidata funcional
+
+EVIDENCIA_IMPLEMENTACAO:5f5d8719e25856b59e84c053cb13d2516dbeac49 passou15/15 gates,182/182 E2E e Codex sem findings. A inspeção visual independente cobriu26 quadros de aplicativo e separou2 sintéticos. O commit de consolidação é documental e requer seu próprio recibo exato na PR, conforme a regra de tasks.md; não herda aprovação do parent.
+
+| Requisito / risco | Evidência observada | Limite remanescente |
+|---|---|---|
+| US3: contorno e obstrução |23/23 contraprovas;9 pontos e bounds preservados;182 E2E aprovados | Nenhuma alegação de todos os elementos possíveis;demais controles fora do alvo testado permanecem qualificados |
+| US3: paisagem/texto200 | Margem simétrica local e18/18 quadros finais com controle inteiro | Ação secundária parcialmente fora em paisagem; máscaras/indicador dev impedem concluir pixels de toda a navegação |
+| US3: foco/resize/captura | P1/P2 corrigidos e revisados; esperas causais, uma rolagem e animations allow | Pixels estáticos não provam ordenação; esta é sustentada por testes/contraprovas |
+| Conta | Jornada integral aprovada; respostaHTTP observada, URLassert preservado | Causa do incidente histórico INCONCLUSIVA |
+| US1: A → B → A | Mesma chave/corpo/proof, B403 sem nova linha, A recupera ID; incluído no182/182 | PASS nominal inferido da seleção integral, pois reporter usa pontos |
+| Domínio e ciência |15 gates completos, sem mudança de schema/algoritmo/cálculo nesta correção | Contrato científico continua experimental, sem homologação científica |
+| Publicação | Draft e base development preservados; incorporação não destrutiva na fase7 | Novo HEAD documental exige15 gates e Codex próprios; aceite humano permanece externo |
+
+Fontes, checkout integral, skills/Spec Kit, preflight e históricos estão preservados em plan.md e implementation-evidence.md. A Spec existente continua adequada; não há novo requisito funcional ou desvio de escopo.
+
+## Histórico — análise anterior à consolidação
 
 Estado vigente: candidata em validação na PR Draft #18; as limitações de conectividade/publicação do histórico abaixo não descrevem esta execução. O checkout integral foi obtido do GitHub no HEAD `9a5254a8e6bb060c7767231a38370c073b2bdb78`, com Node 24.19.0 e dependências do lockfile. Os scripts Spec Kit `setup-plan`, `setup-tasks` e `check-prerequisites --require-spec --require-tasks --include-tasks` foram executados preservando a Spec existente; não há hooks adicionais configurados.
 

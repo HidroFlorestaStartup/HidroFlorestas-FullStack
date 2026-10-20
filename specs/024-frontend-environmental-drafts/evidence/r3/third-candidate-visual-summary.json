@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only official phase 7 v3 PNG/JSON review. One changed collection image and four representative unchanged environmental images were viewed directly this round. All other pixels are SHA-256 identical to previously inspected phase 7 v2 or phase 6 v3 evidence. No repository edits or additional browser tests.",
+  "status": "PIXELS_REVIEWED_WITH_QUALIFICATIONS_RUNTIME_PASSED",
+  "provenance": {
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "runId": 39472759694,
+    "attempt": 1,
+    "jobId": 118800800378,
+    "artifactId": 12288662735,
+    "zipSha256": "fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+    "zipBytes": 20691926,
+    "zipEntries": 523,
+    "integrityVerificationOwner": "ux_collections"
+  },
+  "runtimeReceipt": {
+    "reviewed": true,
+    "runConclusion": "success",
+    "gateCounts": {
+      "pass": 15,
+      "fail": 0,
+      "notRun": 0
+    },
+    "e2e": {
+      "pass": 190,
+      "fail": 0,
+      "skip": 0,
+      "notRun": 0
+    },
+    "ihfr": {
+      "pass": 6,
+      "fail": 0
+    },
+    "notRunGates": [],
+    "codexReviewedExactShaWithoutFindings": true,
+    "codexReceiptId": 6297927596,
+    "overallHumanOrScientificApprovalAsserted": false,
+    "finalDocumentaryHeadApprovalAsserted": false,
+    "sources": [
+      "Downloaded results.jsonl: fifteen records, all gates exit 0; independent monitor confirms all PASS.",
+      "e2e-1792520308833.log: 190 passed (9.5m).",
+      "ihfr-1792520929406.log: 6 passed (28.7s), no failure browser diagnostic.",
+      "Exact-SHA Codex receipt captured by ux_collections."
+    ]
+  },
+  "inventory": {
+    "pngJsonPairs": 55,
+    "applicationPairs": 53,
+    "collectionApplicationPairs": 26,
+    "environmentalApplicationPairs": 27,
+    "applicationMatrixPairs": 48,
+    "applicationFlowPairs": 5,
+    "syntheticPairs": 2,
+    "allDurable": true,
+    "survivedLaterDeletionAndIhfrInvocations": true,
+    "allHeadsMatch": true,
+    "allPngDimensionsMatchMetadata": true,
+    "allMatrixFilenamesMatchScaleAndViewport": true,
+    "allRootFontSizesMatchScales": true,
+    "allPhysicalDeviceFalse": true,
+    "allFullPageFalse": true,
+    "horizontalOverflowObserved": false,
+    "metadataIssueCount": 0,
+    "bothMatricesComplete": true,
+    "allCaptureAnimationsAllow": true
+  },
+  "pixelReview": {
+    "applicationImagesCovered": 53,
+    "applicationImagesDirectlyInspectedThisRound": 5,
+    "collectionNewImagesDirectlyInspected": 1,
+    "environmentalRepresentativeImagesReopened": 4,
+    "otherApplicationImagesCoveredByExactSha256": 48,
+    "environmentalImagesByteIdenticalToInspectedPhase7V2": 27,
+    "collectionApplicationImagesByteIdenticalToInspectedPhase6V3": 25,
+    "syntheticImagesByteIdenticalToInspectedPhase6V3AndExcluded": 2,
+    "finalControlFramesCovered": 42,
+    "finalControlFramesWithCompleteTargetVisible": 42,
+    "beforeFrameMeaning": "Same run after rendering readiness but before target positioning; not pre-fix evidence.",
+    "collectionBeforeFramesShowingLoading": [],
+    "newImageInspected": "frontend-collections-initial-form",
+    "directlyReopenedEnvironmentalImages": [
+      "frontend-environmental-last-field-320-900-200",
+      "frontend-environmental-review-844-390-200",
+      "frontend-environmental-form-320-900-200",
+      "frontend-environmental-last-field-844-390-200"
+    ]
+  },
+  "environmentalMatrix": [
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "Save, final Declivity input, review and confirmation targets are complete. Draft screenshot masks cross bottom navigation. Form and last-field views have document scroll, moving navigation above blank space and the header outside the viewport."
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete. Draft masks cross bottom navigation; form and last-field document scroll leave navigation above blank space. Review retains the normal header and navigation framing."
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete with header and side navigation visible. Last-field and form screenshots are byte-identical because the same viewport contains both targets; masks cross part of the top header."
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete with header and side navigation visible. Last-field and form screenshots are byte-identical. Review visibly distinguishes zero values from not-informed fields."
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 200,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete. Declivity label and input are above bottom navigation. The form screenshot has document scroll 217px, no visible header and navigation shifted upward above blank space. Confirmation remains fully visible with normal navigation framing."
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "textScale": 200,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four target controls are complete below the header. The Declivity input is fully visible but its label is partly clipped above the header boundary; confirmation is complete. Screenshot masks can intersect the header."
+    }
+  ],
+  "environmentalMobileDocumentScroll": [
+    {
+      "capture": "frontend-environmental-form-320-900-100",
+      "scrollY": 287
+    },
+    {
+      "capture": "frontend-environmental-form-320-900-200",
+      "scrollY": 217
+    },
+    {
+      "capture": "frontend-environmental-form-375-900-100",
+      "scrollY": 287
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-100",
+      "scrollY": 106
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-200",
+      "scrollY": 0
+    },
+    {
+      "capture": "frontend-environmental-last-field-375-900-100",
+      "scrollY": 122
+    }
+  ],
+  "qualifications": [
+    "The successful current run does not identify the cause of historical IHFR404. Historical failure evidence and the inconclusive assessment remain preserved.",
+    "Failure-only API probes did not run in this successful IHFR execution; no authentication/context observation is inferred.",
+    "All current metadata record animations allow. Static pixels do not alone establish natural-finish/readiness ordering; source-linked official tests and counterproofs provide temporal evidence.",
+    "Pink screenshot masks cross navigation in narrow draft views and parts of the header in other views. They do not prove real field overlap or fully unobstructed navigation pixels.",
+    "Some narrow environmental form and last-field frames have the header outside the viewport and navigation displaced above blank space; document scroll is recorded without normalizing it away.",
+    "The landscape final Declivity input is whole but its label is partly above the sticky header boundary.",
+    "The development indicator overlaps part of the first mobile navigation label in some frames.",
+    "The invalid-expanded flow shows the focused required field and inline error. The review flow distinguishes No from Not informed. The confirmed flow shows the top context only, so that screenshot does not display the complete confirmed dataset.",
+    "Visible zero and No states do not prove all false/zero/null/absent/partial or precision round trips. Those contracts depend on the separately recorded assertions and HTTP/PostgreSQL results.",
+    "The six-configuration environmental matrix covers form, draft action, final input and review. Confirmed reading is exercised separately by R2/reload/API and desktop/mobile read tests; it is not a six-configuration confirmed-reading capture matrix.",
+    "Collection before/after images represent the same revision and run before/after one target positioning. Final collection controls remain complete; narrow navigation has the previously documented mask/development-indicator limits.",
+    "Fifty-four PNGs match previously reviewed pixels exactly; one changed collection flow PNG was viewed directly, along with four reopened environmental representatives. This is explicit byte-identity reuse, not a claim that every unchanged file was reopened.",
+    "Physical-device keyboard, assistive technology, other unexercised browsers and manual accessibility acceptance are not established by these emulated static captures.",
+    "This functional SHA review does not approve the future documentary HEAD; its own exact-SHA fifteen-gate and Codex external receipt remains required."
+  ],
+  "representativeFrameSuggestions": [
+    {
+      "rank": 1,
+      "capture": "frontend-environmental-last-field-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+      "imageSha256": "81019c5ff0ce0a795d5398ff2532b74d5665ed2084c0d102dabaa21a9de17f35",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+      "metadataSha256": "7e7cb726188d24a5defb857d6b35c1a7d32301d9cd90adfff5fe61dc5dd72618",
+      "reason": "Primary narrow-screen final-field evidence: complete Declivity label and masked input above bottom navigation.",
+      "copyRecommendation": "Suitable for versioning as official functional-v3 representative pixels with this exact SHA/run/artifact and the stated visual limits. Integrator owns repository copies."
+    },
+    {
+      "rank": 2,
+      "capture": "frontend-environmental-review-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+      "imageSha256": "f803400f7f31b1779d428a1c5cd95819934c151fdb8646134769a6c24eb95aee",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+      "metadataSha256": "48bbd1393e0af6ee625214f5648c9c8b416f2db1d5e47cc151481af736bc4434",
+      "reason": "Primary landscape confirmation evidence: complete final confirmation control below the account header.",
+      "copyRecommendation": "Suitable for versioning as official functional-v3 representative pixels with this exact SHA/run/artifact and the stated visual limits. Integrator owns repository copies."
+    },
+    {
+      "rank": 3,
+      "capture": "frontend-environmental-form-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+      "imageSha256": "ec0eb49b34421b2f27aea24b434e00236865d8812d495f9eeedd9fb63861dc43",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+      "metadataSha256": "61d81becaf7267e3df059a30d488524cda1abfd42c21bb0bff994b8157a1086f",
+      "reason": "Optional limitation evidence: complete review control together with the observed upward displacement of navigation and blank space below.",
+      "copyRecommendation": "Suitable for versioning as official functional-v3 representative pixels with this exact SHA/run/artifact and the stated visual limits. Integrator owns repository copies."
+    },
+    {
+      "rank": 4,
+      "capture": "frontend-environmental-last-field-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+      "imageSha256": "bde9d67c75fe38420a461e94809938678dd9fac578690dae6acf8f139743144f",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+      "metadataSha256": "15d229b337bedc9b56acf43c4d583e5cd4570c5bbf2a93dab590d266e3511a76",
+      "reason": "Optional landscape qualification: complete final input but partly clipped label; prevents overstating all-label visibility.",
+      "copyRecommendation": "Suitable for versioning as official functional-v3 representative pixels with this exact SHA/run/artifact and the stated visual limits. Integrator owns repository copies."
+    }
+  ],
+  "metadataAudit": "phase7-v3-viewport-metadata-audit.json",
+  "historicalFirstFailure": {
+    "log": "ihfr-1792518732781.log",
+    "gate": "Ihfr",
+    "testFile": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "testDeclarationLine": 51,
+    "observedBeforeAssertion": "HTTP 404 on initial collection creation page navigation",
+    "routeTemplate": "/dashboard/laboratories/{laboratory}/areas/{area}/collections/new",
+    "laterSymptom": "Waiting for the collection timezone control timed out after 120000ms.",
+    "allSixNavigationsReturned404": true,
+    "browserDiagnostic": {
+      "ready": "complete",
+      "login": false,
+      "occurrence": false,
+      "regions": []
+    },
+    "ihfrPngPresent": false,
+    "ihfrErrorContextPresent": false,
+    "rootCauseEstablishedByThisReview": false,
+    "geometryOrH4CauseAsserted": false,
+    "head": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "runId": 39465856665,
+    "cause": "INCONCLUSIVE",
+    "supersededByNewRun": false,
+    "newRunInterpretation": "The six IHFR tests passed on the current SHA/run. This does not identify or retroactively resolve the cause of historical navigation 404 responses."
+  },
+  "failureOnlyProbeObservation": {
+    "browserDiagnosticPresentInCurrentIhfrLog": false,
+    "routeContextObservationAvailable": false,
+    "interpretation": "Failure-only probes were not triggered by this successful IHFR run. No authentication/context API status may be inferred from their absence."
+  },
+  "pixelHashComparison": "phase7-v3-reviewed-pixel-comparison.json"
+}
