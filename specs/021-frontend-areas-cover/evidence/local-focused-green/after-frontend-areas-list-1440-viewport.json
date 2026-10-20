@@ -1,0 +1,43 @@
+{
+  "name": "list-1440",
+  "screenshot": {
+    "filename": "after-frontend-areas-list-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 21
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 847,
+      "extent": 847
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": -21,
+    "width": 1440,
+    "height": 900
+  },
+  "target": {
+    "x": 225,
+    "y": 573.609375,
+    "width": 173.421875,
+    "height": 25
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

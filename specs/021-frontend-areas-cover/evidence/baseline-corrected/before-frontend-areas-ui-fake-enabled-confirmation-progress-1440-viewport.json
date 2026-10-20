@@ -1,0 +1,43 @@
+{
+  "name": "ui-fake-enabled-confirmation-progress-1440",
+  "screenshot": {
+    "filename": "before-frontend-areas-ui-fake-enabled-confirmation-progress-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 490
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 1753,
+      "extent": 1753
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": -490,
+    "width": 1440,
+    "height": 900
+  },
+  "target": {
+    "x": 221,
+    "y": 441.625,
+    "width": 1158,
+    "height": 16
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

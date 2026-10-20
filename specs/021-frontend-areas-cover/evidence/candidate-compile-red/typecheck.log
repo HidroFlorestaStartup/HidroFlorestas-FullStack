@@ -1,0 +1,3 @@
+npm notice run hidro-florestas-fullstack@0.1.0 typecheck
+npm notice run tsc --noEmit
+src/components/areas/area-list.tsx(151,2): error TS1005: ')' expected.

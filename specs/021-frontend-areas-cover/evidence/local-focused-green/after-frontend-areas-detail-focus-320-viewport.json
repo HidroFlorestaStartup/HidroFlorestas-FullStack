@@ -1,0 +1,38 @@
+{
+  "name": "detail-focus-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-detail-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 724,
+      "extent": 3414
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 16,
+    "y": 711,
+    "width": 246.109375,
+    "height": 64
+  },
+  "target": null,
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

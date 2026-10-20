@@ -6,6 +6,7 @@ import { areasService } from "@/app/api/server/services/areas.service";
 import { AreaAccessError } from "@/app/api/server/areas/area.authorization";
 import { AreaMap } from "@/components/areas/area-map";
 import { AreaCoverEditor } from "@/components/areas/area-cover";
+import styles from "@/components/areas/areas.module.css";
 export default async function AreaDetail({
   params,
 }: {
@@ -28,81 +29,84 @@ export default async function AreaDetail({
     ["Descrição", area.description],
   ].filter(([, value]) => value);
   return (
-    <article className="space-y-6">
-      <div className="flex items-start gap-3">
+    <article className={styles.detail}>
+      <div className={styles.heading}>
         <Link
           aria-label="Voltar às áreas"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-700 text-white hover:bg-amber-800"
+          className={styles.back}
           href={`/dashboard/laboratories/${laboratoryId}/areas`}
         >
-          <ArrowLeft size={22} />
+          <ArrowLeft aria-hidden="true" size={20} />
+          <span>Voltar às áreas</span>
         </Link>
-        <div className="min-w-0">
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-green-700">
+        <div className={styles.heading}>
+          <p className={styles.eyebrow}>
             Diagnóstico hidroambiental
           </p>
-          <h1 className="break-words text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h1 className={styles.title}>
             {area.name}
           </h1>
-          <p className="mt-2 break-all text-xs text-slate-400">
+          <p className={styles.identifier}>
             Identificador: {area.id}
           </p>
         </div>
       </div>
       {area.readOnly && (
-        <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 font-medium text-amber-900">
+        <p className={styles.notice}>
           Laboratório inativo — somente leitura.
         </p>
       )}
       {!area.readOnly && (
         <Link
-          className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-green-700 px-5 py-3 font-bold text-white hover:bg-green-800"
+          className={styles.button}
           href={`/dashboard/laboratories/${laboratoryId}/areas/${areaId}/collections/new`}
         >
-          <ClipboardPlus size={20} /> Registrar coleta
+          <ClipboardPlus aria-hidden="true" size={20} /> Registrar coleta
         </Link>
       )}
       <AreaCoverEditor laboratoryId={laboratoryId} areaId={areaId} name={area.name}/>
-      <div className="grid gap-6 lg:grid-cols-[1.35fr_.65fr]">
-        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="border-b border-slate-200 p-5 sm:p-6">
-            <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+      <div className={styles.detailGrid}>
+        <section className={styles.card}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.mapTitle}>
               <MapPin className="text-green-600" /> Localização monitorada
             </h2>
-            <p className="mt-2 text-sm font-medium text-slate-500">
+            <p className={styles.coordinates}>
               Latitude: {area.latitude} · Longitude: {area.longitude}
             </p>
           </div>
-          <div className="p-4 sm:p-6">
+          <div className={styles.cardBody}>
             <AreaMap latitude={area.latitude} longitude={area.longitude} />
           </div>
         </section>
-        <aside className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-          <h2 className="text-lg font-bold text-slate-900">
-            Informações da área
-          </h2>
-          <dl className="mt-5 space-y-4">
-            {optional.map(([label, value]) => (
-              <div key={label} className="border-b border-slate-100 pb-3">
-                <dt className="text-xs font-bold uppercase tracking-wide text-slate-400">
-                  {label}
+        <aside className={styles.card}>
+          <div className={styles.cardBody}>
+            <h2 className={styles.mapTitle}>
+              Informações da área
+            </h2>
+            <dl className={styles.data}>
+              {optional.map(([label, value]) => (
+                <div key={label} className={styles.dataRow}>
+                  <dt className={styles.dataLabel}>
+                    {label}
+                  </dt>
+                  <dd className={styles.dataValue}>
+                    {value}
+                  </dd>
+                </div>
+              ))}
+              <div>
+                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  <CalendarDays size={15} /> Cadastrada em
                 </dt>
-                <dd className="mt-3 break-words font-semibold text-slate-700">
-                  {value}
+                <dd className={styles.dataValue}>
+                  {new Date(area.createdAt).toLocaleString("pt-BR", {
+                    timeZone: "America/Fortaleza",
+                  })}
                 </dd>
               </div>
-            ))}
-            <div>
-              <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400">
-                <CalendarDays size={15} /> Cadastrada em
-              </dt>
-              <dd className="mt-3 font-semibold text-slate-700">
-                {new Date(area.createdAt).toLocaleString("pt-BR", {
-                  timeZone: "America/Fortaleza",
-                })}
-              </dd>
-            </div>
-          </dl>
+            </dl>
+          </div>
         </aside>
       </div>
     </article>

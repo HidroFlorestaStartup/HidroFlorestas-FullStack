@@ -12,6 +12,7 @@ on:
       - feat/frontend-account
       - feat/frontend-workspace-shell
       - feat/frontend-laboratory-dashboard
+      - feat/frontend-areas-cover
   workflow_dispatch:
 
 permissions:
@@ -32,7 +33,8 @@ jobs:
       github.ref_name == 'feat/frontend-login' ||
       github.ref_name == 'feat/frontend-account' ||
       github.ref_name == 'feat/frontend-workspace-shell' ||
-      github.ref_name == 'feat/frontend-laboratory-dashboard'
+      github.ref_name == 'feat/frontend-laboratory-dashboard' ||
+      github.ref_name == 'feat/frontend-areas-cover'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -75,6 +77,8 @@ jobs:
             .accounts-validation/frontend-mobile-navigation/*-geometry.json
             .accounts-validation/frontend-dashboard/*.png
             .accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
+            .accounts-validation/frontend-areas/*.png
+            .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true

@@ -1,0 +1,62 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:migration
+npm notice run node --import=tsx scripts/imp006-test-runner.ts migration
+IMP-006 read-only preflight passed: target 879442b8b64c, schema public, duration_ms=64. Tests may write to isolated schemas.
+[2026-10-19T15:11:03.981Z] START phase=migration attempt=1 target=879442b8b64c schema=public
+✔ deletion migration preserves all rate bounds, supports deletion limits and restricts mail ownership (277.7046ms)
+✔ deletion migration backfills only provable challenge ownership without changing stored content (228.6723ms)
+✔ accounts migration preserves factual identity and credentials, snapshots only existing compatibility cohort (170.8359ms)
+✔ accounts canonical collisions fail before modifying legacy accounts or adding columns (171.2326ms)
+✔ accounts expression identity uniqueness also protects internal writers with nullable canonical field (174.1805ms)
+✔ accounts additive limits accept all eight actions and preserve mail bounds (292.7788ms)
+✔ accounts request commitments, revisions, scope and referential ownership are constrained (193.1171ms)
+✔ accounts password notification is available without a live consumed challenge (176.3203ms)
+✔ cover migration is additive, enforces complete pointers and preserves area assets when uploader is removed (249.1388ms)
+✔ backfills points and ownership; deferred invariant preserves administrative deletion (186.4147ms)
+✔ invalid legacy coordinates abort without dropping legacy data (131.1435ms)
+✔ recovers a missing creator membership without granting ADMIN (169.8177ms)
+✔ refuses a creator backfill that would exceed five memberships (138.9445ms)
+✔ refuses orphan coordinates before structural changes (127.1575ms)
+▶ IMP-004 collection registration migration
+  ✔ adds the complete nullable legacy tuple and tenant-safe constraints (175.618ms)
+  ✔ backfills only the laboratory and preserves legacy scientific children (173.5889ms)
+  ✔ enforces complete tuples, offsets, contextual FK, author-scoped key and immutability (164.6276ms)
+  ✔ aborts transactionally when a laboratory cannot be derived (146.9377ms)
+✔ IMP-004 collection registration migration (661.8618ms)
+✔ environmental migration preserves parent and legacy, enforces unique/FKs/immutability and rolls back (209.3082ms)
+✔ draft migration is additive and enforces personal uniqueness, positive revision and restricted ownership (235.7959ms)
+IMP-006 schema owned by this run: imp006_test_8d208dcd1e5e4fb9a24a95bcc6372ad8
+✔ IMP-006 rejects cross-record operation, CURRENT and lifecycle references (860.6412ms)
+IMP-006 schema owned by this run: imp006_test_5c9dbf4652f4484da58a3e62b48426b0
+✔ IMP-006 reference migration preserves valid existing lifecycle rows (485.0132ms)
+IMP-006 schema owned by this run: imp006_test_e26cbb1e56494d0bbe204bbe04728e40
+✔ IMP-006 reference migration aborts without backfill on invalid existing events (320.164ms)
+IMP-006 schema owned by this run: imp006_test_d192eb4b818549cf94a02453fb463cb8
+✔ IHFR supplement, diagnosis, operation and event reject UPDATE and DELETE with triggers enabled (569.1336ms)
+IMP-006 schema owned by this run: imp006_test_2a56f112bc024f9392f7a630bf3d9c5b
+✔ IMP-006 migration applies on empty integrated baseline (410.8515ms)
+IMP-006 schema owned by this run: imp006_test_3f7ce1fc4f6d46078ae0f36025de42cd
+✔ IMP-006 migration preserves legacy rows and performs zero backfill (312.0684ms)
+IMP-006 schema owned by this run: imp006_test_8503a98bde404b4ba374972d4254d39d
+✔ IMP-006 score constraint accepts finite domain values and rejects non-finite or out-of-domain values (298.0506ms)
+✔ IMP-006 migration keeps its published slot before the additive account chain (1.6755ms)
+✔ legacy, IMP-005 and additive IMP-006 models coexist (2.6851ms)
+✔ migration is additive, immutable and contains no backfill (0.4111ms)
+✔ all explicit IMP-006 database identifiers are ASCII, unique and PostgreSQL-safe (0.6061ms)
+✔ PostgreSQL text arrays normalize independently of driver representation (0.3848ms)
+IMP-006 schema owned by this run: imp006_test_c7ca176d78b8440c87c14c58a376b863
+✔ applied IMP-006 schema has the expected constraints, indexes, triggers and zero backfill (399.047ms)
+IMP-006 schema owned by this run: imp006_test_826e67dc2faa487d8a48b4febf465142
+✔ a failed transactional migration leaves no IMP-006 objects and can be retried in the same owned schema (415.7892ms)
+✔ mail additive migration preserves legacy identity/status/role/password; nullable fields and constraints (201.8976ms)
+✔ IMP-009 creates revisioned immutable audit storage and removes legacy authority (203.3891ms)
+✔ IMP-009 preflight rolls back cleanly on contradictory legacy authority (163.6869ms)
+ℹ tests 37
+ℹ suites 1
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12390.4484
+[2026-10-19T15:11:16.441Z] END phase=migration attempt=1 target=879442b8b64c schema=public exit=0 duration_ms=12461
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-9g05Bg\migration-attempt-1.log

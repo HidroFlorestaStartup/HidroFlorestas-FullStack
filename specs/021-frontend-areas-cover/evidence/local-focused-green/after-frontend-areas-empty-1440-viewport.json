@@ -1,0 +1,43 @@
+{
+  "name": "empty-1440",
+  "screenshot": {
+    "filename": "after-frontend-areas-empty-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 657,
+      "extent": 657
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 900
+  },
+  "target": {
+    "x": 659.75,
+    "y": 535.609375,
+    "width": 280.5,
+    "height": 28
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}
