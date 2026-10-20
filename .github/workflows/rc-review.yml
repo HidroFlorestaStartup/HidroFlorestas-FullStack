@@ -83,6 +83,8 @@ jobs:
             .accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
             .accounts-validation/frontend-areas/*.png
             .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            test-results/**/frontend-collections-*.png
+            test-results/**/frontend-collections-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true
