@@ -268,3 +268,32 @@ ou PENDING_DECISIONS.md. Registros antigos permanecem como cortes históricos.
 
 Publicação deste adendo: [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
 branch docs/handoff-frontend-fases-2-3; sem merge nesta preparação.
+
+## Contas/workspace integrados e handoff das fases 4/5 — 2026-10-19
+
+Origem: pedido anexado de Pedro nesta sessão em19/10/2026, “Revisão e continuação
+— PRs #10/#11/#12 e fases 4/5”. `DECISAO_CONFIRMADA`: integrações/retarget/reviews
+cabíveis e publicação documental autorizados; executor autorizado a concluir as
+duas fases seguintes com validação/commits/push/PRs sem nova confirmação normal.
+Merge futuro e aceite humano do mantenedor; nenhuma implementação4/5 nesta preparação.
+
+| Artefato | Estado e alcance deste adendo |
+|---|---|
+| [Prompt fases4/5](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md) | Handoff autossuficiente; laboratório/dashboard/histórico/membros e áreas/capa; execução de ambas autorizada |
+| [Evidência da integração](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-contas-workspace-e-handoff-fases-4-5.json) | SHAs/pais/árvores/reviews/CI15 gates por head, equivalência cumulativa e limites; JSONs anteriores intactos |
+| [Plano desta continuação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-4-5.md) | Execução e preservação conforme PLANS.md, sem duplicar spec funcional |
+| [Plano global](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md), [acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md) e [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md) | Adendos com integração2/3, autorização4/5 e alcance de validação |
+| [Prompt fases2/3](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md) | Execução entregue; apontador ao novo prompt; texto original preservado |
+| PROJECT_CONTEXT.md | Adendo navegacional; cortes anteriores preservados |
+
+`EVIDENCIA_IMPLEMENTACAO`: #10 merge1956a3e, #11 mergef0333fd e #12 mergec33bf50
+em development; retarget12 para development antes de integrar. Reviews assistidas
+de Pedro5566561057/5566567231 nos heads exatos; sem autoaprovação10. CI15/15 PASS
+por head8cacfc9/d555f9e e E2E100/120; oito diferenças documentais entre o head12
+validado e a integração final, produto/testes/configuração idênticos. Main e
+branches preservadas. Sem nova suíte local, aceite visual manual ou causa provada
+dos FAILs históricos. Não surgiu decisão técnica global ou reclassificação que
+exigisse editar TECH_DECISIONS.md/PENDING_DECISIONS.md. docs/raw/** intacto.
+
+Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
+branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.

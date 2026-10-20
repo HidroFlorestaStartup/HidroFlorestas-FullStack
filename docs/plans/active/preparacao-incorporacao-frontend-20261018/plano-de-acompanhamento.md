@@ -303,3 +303,66 @@ development118a3a8, revisão local alinhada a a01857b; starter original conserva
 branch e package-lock.json não rastreado. Main local de cada repositório está
 alinhada à sua própria remota. Verificações não realizadas e alcance dos CI
 reaproveitados estão explicitados no relatório e no JSON.
+
+## Continuação de 19/10/2026 — integração2/3 e handoff4/5
+
+Estado: `EM_ANDAMENTO` para publicação documental; integração10/11/12 `CONCLUIDO`.
+[Plano desta continuação](plano-de-continuacao-fases-4-5.md) registra mandato,
+estado inicial, preservação, etapas, paradas e validações conforme PLANS.md.
+Origem: pedido anexado por Pedro “Revisão e continuação — PRs #10/#11/#12 e fases
+4/5”, autorizando sincronização/reviews/retarget/merges e commit/push/PR documental.
+
+Inventário: FullStack limpo em developmentafef5db; mainbeba96f alinhada, worktree
+revisão limpaa01857b, refs de temporários ausentes preservadas. Starter oficial
+fetch realizado, maincbb954a alinhada; branch de trabalho e package-lock.json não
+rastreado conservados. Desenvolvimento original e branch documental isolada
+avançados por FF seguro até c33bf50b510dd7af7ad59cde039839f56519c87e; sem reset,
+rebase, stash ou force. Upstream antigo não usado; sem promoção para main.
+
+Integração conferida por Git/API:10→11→retarget12→12, merge commits
+1956a3e6d57a43ab13367b86fc0b4f2e7ac3b447,
+f0333fd9458d154dd6fa345c48ce0595942bf5fb e
+c33bf50b510dd7af7ad59cde039839f56519c87e. Reviews APPROVED assistidas de Pedro
+5566561057/5566567231 nos heads exatos; sem autoaprovação10/evento de Luciano.
+Branches de origem preservadas. Regras/checks reconferidos sem bypass;15 gates
+PASS no CI dos heads11/12, E2E100/120. Após retarget12,165 caminhos próprios
+iguais entre API/Git. Árvores de merge calculadas antes; produto/testes/configuração
+final idênticos ao head12, com oito diferenças só documentais do10.
+
+Handoff autoriza fases4/5 completas, commits/push/PRs sem confirmação normal,
+próximos diretórios Spec Kit livres, duas branches/PRs com empilhamento quando
+necessário e15 gates por SHA. Não implementa as telas nesta preparação nem
+transfere gestão/revisão já concluída. Merge futuro/aceite humano do mantenedor.
+
+Validação desta execução: revisão focal estática/logs oficiais e Git/API;
+nenhuma nova suíte funcional local, nova captura ou aceite visual manual.
+FAIL de navegação12 e IHFR histórico preservados sem causa provada; provedor
+real/ciência mantêm gates próprios. Pendências de preparação: conferir docs,
+commitar, publicar e abrir PR documental para revisão. Sem bloqueio técnico novo.
+
+Verificação documental antes da publicação: nove arquivos dentro do recorte;
+seis documentos anteriores preservados integralmente por adendo;94 links locais,
+JSON, campos obrigatórios, whitespace/diff e padrões sensíveis reconhecíveis PASS.
+Sem alteração em docs/raw, produto, backend, specs, dependências ou configuração.
+Vercel/SUCCESS reconfirmado nos três merges, separado do CI funcional dos heads.
+Main/development remotas reconferidas sem avanço; publicação documental a seguir.
+
+### Publicação e encerramento desta preparação
+
+Branch docs/handoff-frontend-fases-4-5 publicada, tracking da própria remota;
+primeiro commit519ba69dac8fac8cf3c6088b124456a3e5718552.
+[PR13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) **OPEN** para development, nove arquivos exclusivamente
+documentais, mergeable=true e auto_merge=null na consulta. Nenhum merge do13.
+Este registro acompanha commit posterior de encerramento; seu SHA final será
+informado na entrega, sem autorreferência dentro do próprio commit.
+
+Estado preparatório: `CONCLUIDO`; PR/documentação `AGUARDANDO_REVISAO` do
+mantenedor. Sem bloqueio técnico novo. Prompt autossuficiente acessível na branch
+publicada; fases4/5 serão implementadas pelo professor, com futuros merges do
+mantenedor. Homologações externas e validação científica mantêm gates separados.
+
+Checks do primeiro head documental: Vercel Preview Comments/SUCCESS;
+Vercel/PENDING na primeira consulta. São observações automáticas, separadas dos
+15 gates dos heads11/12; nenhum CI funcional novo ou deploy manual solicitado.
+O workflow RC não inclui a branch documental. Resultado final do head de
+encerramento será reconferido na entrega; pending isolado não é falha comprovada.

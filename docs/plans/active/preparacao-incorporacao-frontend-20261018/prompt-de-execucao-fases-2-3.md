@@ -1,3 +1,11 @@
+> **Adendo de 19/10/2026 — EXECUCAO_ENTREGUE.** Fases2/3 integradas por
+> PR11/f0333fd e PR12/c33bf50, com PR10/1956a3e preservado antes; development
+> c33bf50b510dd7af7ad59cde039839f56519c87e. Não executar novamente este prompt.
+> Instrução operacional atual: [fases4/5](prompt-de-execucao-fases-4-5.md), ambas
+> autorizadas por Pedro no pedido anexado desta data. O texto abaixo é o registro
+> histórico integral do handoff2/3; seus limites temporais não revogam o novo mandato.
+> [Evidências/reviews/CI](integracao-contas-workspace-e-handoff-fases-4-5.json).
+
 # Execução autorizada — fases 2 e 3 do frontend
 
 Execute **as duas fases completas** no clone oficial do FullStack: **fase 2 —
