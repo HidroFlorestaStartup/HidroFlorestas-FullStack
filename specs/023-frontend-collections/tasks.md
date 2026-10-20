@@ -29,6 +29,9 @@
 - [x] T020 [US3] Preservar PNG/JSON mascarados fora do outputDir limpo pelos gates seguintes e separar os quadros antes/depois do detalhe.
 - [x] T021 [US3] Concluir a sincronização de transições finitas/ResizeObserver com RED/GREEN e contraprovas de obstrução preservadas.
 
+- [x] T022 [US3] Tratar o P1 Codex de2a047d1 com tarefa após os callbacks, contraprova causal e teste permanente da função real; preservar o resultado3/3 GREEN do helper publicado com dois comandos.
+- [x] T023 [US3] Tratar o P2 Codex de2a047d1 com captura observacional após readiness e teste de término natural; suíte independente integrada23/23PASS. A revisão externa do novo HEAD permanece em T017.
+
 ## Dependências vigentes
 
 Um único escritor por arquivo/branch. A análise da fase7 pode avançar independentemente, mas sua integração depende da fase6 verificada. Falha material bloqueia apenas o recorte dependente. Não esperar merge humano para trabalhar no que for independente; não publicar candidata como pronta sem gates.

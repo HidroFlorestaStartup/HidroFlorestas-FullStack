@@ -6,10 +6,12 @@ Estado vigente: candidata em validação na PR Draft #18; as limitações de con
 |---|---|---|
 | US3: toque/reflow sem obstrução | Helper considera o contorno CSS, mantém os quatro cantos/centro, acrescenta eixos e rejeita obstruções reais; 20/20 contraprovas independentes | Matriz do aplicativo em Windows/Chromium |
 | US3: paisagem com texto200 | Margem assimétrica da coleta reproduziu obstrução real pelo header; margem simétrica local libera9/9 pontos, sem alterar shell | Matriz oficial herdada pela fase7 |
-| US3: foco e rolagem | Transições finitas/ResizeObserver reproduzidos; aguardar todas as gerações e drenar dois frames causais antes da única rolagem;21/21 contraprovas independentes | Nova regressão oficial de coleta e ambiental |
+| US3: foco e rolagem | Transições finitas/ResizeObserver reproduzidos; aguardar todas as gerações e concluir os callbacks de renderização antes da única rolagem;23/23 contraprovas independentes, incluindo P1/P2 da revisão2a047d1 | Nova regressão oficial de coleta e ambiental |
 | Conta: primeiro desvio em /login | Resposta do sign-in observada, URL preservada; jornada passou no run39460675003, causa histórica permanece inconclusiva | Regressão no novo HEAD |
 | US1: continuidade A → B → A | HMAC/snapshot/idempotência preservados; cenário antes NOT_RUN passou na suíte179/179 do HEAD6fd8066 | Regressão no novo HEAD |
 | Domínio e ciência | Sem mudanças de schema, serviços, parsers, autorização, HMAC ou IHFR nesta correção | Gates existentes permanecem obrigatórios |
+
+A revisão Codex de2a047d1 identificou P1 de ordenação de callbacks e P2 de captura que adiantava transições. Ambos receberam triagem causal, correção e testes permanentes, com recibos em implementation-evidence.md. A candidata seguinte ainda depende de nova revisão externa e CI exatos.
 
 O primeiro candidato passou15 gates, mas suas capturas foram removidas por execuções Playwright posteriores. A cópia durável e seus namespaces tiveram contraprova2PASS+1PASS; o próximo artifact deverá conter a matriz completa.
 

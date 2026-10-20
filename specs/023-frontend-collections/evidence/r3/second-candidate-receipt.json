@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-20 17:49:49 UTC",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "pr_number": 18,
+  "pr_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18",
+  "pr_head_at_observation": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+  "pr_base_sha": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
+  "pr_draft": true,
+  "merged": false,
+  "run_id": 39465489762,
+  "attempt": 1,
+  "run_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465489762",
+  "workflow": "RC review checks",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "job_id": 118775663664,
+  "job_name": "validate",
+  "job_status": "completed",
+  "job_conclusion": "success",
+  "runner_labels": [
+    "windows-latest"
+  ],
+  "started_at": "2026-10-20T17:31:00Z",
+  "completed_at": "2026-10-20T17:46:34Z",
+  "head_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+  "checkout": {
+    "sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "tree_sha": "f03961b9ca5e8d974160bdf5451d0e2c0caaa31b",
+    "parent_sha": "6fd80667f4270ce43536963762444f6893f0c347",
+    "confirmed_by": "GitHub commit tree/parent, attempt-specific jobs payload, and pinned SHA in job checkout log"
+  },
+  "artifact": {
+    "id": 12285318854,
+    "name": "rc-validation-2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12285318854",
+    "archive_url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12285318854/zip",
+    "digest": "sha256:9f03b69123144f461f36a42a1aaf13680f6fd314b322aac26aa57bdab2b56e43",
+    "size_in_bytes": 19259628,
+    "zip_sha256": "9f03b69123144f461f36a42a1aaf13680f6fd314b322aac26aa57bdab2b56e43",
+    "digest_verified": true,
+    "zip_crc_verified": true,
+    "entries": 467
+  },
+  "fingerprint_reproduction": {
+    "head_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "functional_files": 556,
+    "windows_checkout_snapshot": "3c6ce0de33c449bd47ebae526af8be011a08f46b8e5f5b4a9213ad268393618c",
+    "method": "Read 556 committed functional inputs through git -c core.autocrlf=true cat-file --filters; SHA256 each byte sequence and the same sorted compact JSON manifest.",
+    "matches_official": true
+  },
+  "critical_tests": [
+    {
+      "file": "tests/e2e/account-verification-recovery.spec.ts",
+      "name": "registers, verifies from received mail, logs out, resumes, and revokes another browser after reset",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/account-verification-recovery.spec.ts",
+      "name": "an ACTIVE unverified account can reset and then returns to verification",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "R1 real commit with lost response recovers the original record, key and body",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "a later access rejection cannot unlock a previously uncertain confirmation",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "slow hydration does not expose an editable device-time form before handlers",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "viewport, text200, touch, focus and last controls remain usable",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "P1: a lost response must not replay under a different logged-in member",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    },
+    {
+      "file": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "name": "text scale transitions finish before the single scroll while input focus remains protected",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_COMPLETE_SUITE",
+      "source_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 180 selected and 180 passed, zero fail/skip/not_run/flaky. Names come from declarations included by that config at the pinned SHA. Dot reporter omits individual passing E2E names."
+    }
+  ],
+  "account_login_observations": [
+    {
+      "status": 200,
+      "elapsedMs": 279
+    },
+    {
+      "status": 200,
+      "elapsedMs": 132
+    },
+    {
+      "status": 401,
+      "elapsedMs": 118
+    },
+    {
+      "status": 200,
+      "elapsedMs": 128
+    },
+    {
+      "status": 200,
+      "elapsedMs": 134
+    }
+  ],
+  "codex": {
+    "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#pullrequestreview-5588939857",
+    "summary_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#issuecomment-6294122910",
+    "reviewed_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "status": "completed",
+    "result": "FINDINGS",
+    "has_any_findings": true,
+    "has_unresolved_findings": true,
+    "receipt_created_at": "2026-10-20T17:25:02Z",
+    "summary_updated_at": "2026-10-20T17:25:05Z",
+    "security_review_status": "not_recorded_separately",
+    "findings": [
+      {
+        "severity": "P1",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054767",
+        "path": "tests/e2e/support/frontend-mission-evidence.ts",
+        "start_line": 134,
+        "line": 136,
+        "title": "Drain the callback queued by ResizeObserver",
+        "independent_triage": "PARTIAL_COUNTERPROOF: readiness resolves before the queued focus callback in same-renderer-command probe (3/3 red); exact current two-command Playwright helper passed 3/3. Post-render MessageChannel task removes the incidental protocol-drain dependency; task barrier probe passed 3/3. No failure of the exact current helper was demonstrated by this probe.",
+        "counterproof": "late-resize-observer-counterproof.json"
+      },
+      {
+        "severity": "P2",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054781",
+        "path": "tests/e2e/frontend-collections.spec.ts",
+        "line": 122,
+        "title": "Preserve transitions before validating the helper",
+        "independent_triage": "CONFIRMED_SOURCE_ORDER: detail-before screenshot with animations disabled precedes helper after addStyleTag"
+      }
+    ]
+  },
+  "visual_evidence": {
+    "status": "DURABLE_INVENTORY_PASS_PIXEL_REVIEW_PENDING",
+    "archive_roots": [
+      ".accounts-validation"
+    ],
+    "directory": ".accounts-validation/frontend-collections",
+    "png_count": 27,
+    "viewport_json_count": 27,
+    "application_pairs": 26,
+    "synthetic_counterproof_pairs": 1,
+    "matrix_pairs": 24,
+    "flow_pairs": 2,
+    "viewports": [
+      [
+        320,
+        900,
+        100
+      ],
+      [
+        375,
+        900,
+        100
+      ],
+      [
+        768,
+        900,
+        100
+      ],
+      [
+        1440,
+        900,
+        100
+      ],
+      [
+        320,
+        900,
+        200
+      ],
+      [
+        844,
+        390,
+        200
+      ]
+    ],
+    "matrix_states": [
+      "form",
+      "review",
+      "detail-before",
+      "detail"
+    ],
+    "all_metadata_head_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+    "metadata_viewports_font_scales_valid": true,
+    "inventory_file": "second-candidate-capture-inventory.json",
+    "durability_evidence": "All 27 PNG/JSON pairs are in the durable .accounts-validation path after successful E2E, Deletion and Ihfr. Original ZIP has no test-results root.",
+    "pixel_review_owner": "ux_environmental",
+    "qualification": "The detail-before captures use animations disabled on this SHA, which is the subject of unresolved Codex P2. Inventory and runtime success do not resolve this finding."
+  },
+  "overall_evidence_status": "RUNTIME_PASS_CODE_REVIEW_FINDINGS",
+  "limitations": [
+    "Codex P1 and P2 are recorded on this exact SHA. No overall approval is asserted.",
+    "For P1, the exact two-command Playwright helper passed the auxiliary probe; premature internal readiness was demonstrated in one renderer continuation. The review receipt preserves this distinction.",
+    "The separate new 23-test auxiliary review concerns different unpublished bytes and cannot be approved by this run.",
+    "Historical account incident remains causally inconclusive despite this successful run.",
+    "Automated Chromium emulation does not imply physical-device or manual accessibility acceptance.",
+    "No repository write, remote comment, rerun, cancellation, merge or deploy was performed by this observer."
+  ],
+  "fingerprint": "3c6ce0de33c449bd47ebae526af8be011a08f46b8e5f5b4a9213ad268393618c",
+  "fingerprint_values": [
+    "3c6ce0de33c449bd47ebae526af8be011a08f46b8e5f5b4a9213ad268393618c"
+  ],
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:32:30.972Z",
+      "endedUtc": "2026-10-20T17:32:37.462Z",
+      "log": ".accounts-validation/regressionsetup-1792517550972.log"
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:32:37.693Z",
+      "endedUtc": "2026-10-20T17:32:59.575Z",
+      "log": ".accounts-validation/unit-1792517557692.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 353,
+            "suites": 30,
+            "pass": 353,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 17207.4692
+          },
+          {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 4051.0353
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:32:59.835Z",
+      "endedUtc": "2026-10-20T17:34:38.682Z",
+      "log": ".accounts-validation/integration-1792517579835.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 229,
+            "suites": 15,
+            "pass": 229,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 98142.233
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:34:38.982Z",
+      "endedUtc": "2026-10-20T17:34:52.218Z",
+      "log": ".accounts-validation/migration-1792517678982.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 37,
+            "suites": 1,
+            "pass": 37,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 12658.7832
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:34:52.438Z",
+      "endedUtc": "2026-10-20T17:34:55.340Z",
+      "log": ".accounts-validation/contract-1792517692437.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 2324.519
+          }
+        ]
+      }
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:34:55.561Z",
+      "endedUtc": "2026-10-20T17:35:04.749Z",
+      "log": ".accounts-validation/r1-1792517695561.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 8866.3305
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:35:04.971Z",
+      "endedUtc": "2026-10-20T17:35:26.315Z",
+      "log": ".accounts-validation/build-1792517704970.log"
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:35:26.544Z",
+      "endedUtc": "2026-10-20T17:35:34.285Z",
+      "log": ".accounts-validation/typecheck-1792517726544.log"
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:35:34.513Z",
+      "endedUtc": "2026-10-20T17:35:52.313Z",
+      "log": ".accounts-validation/lint-1792517734513.log"
+    },
+    {
+      "gate": "E2E",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:35:52.557Z",
+      "endedUtc": "2026-10-20T17:44:47.056Z",
+      "log": ".accounts-validation/e2e-1792517752556.log",
+      "counts": {
+        "playwright": {
+          "pass": 180,
+          "fail": 0,
+          "skip": 0,
+          "not_run": 0,
+          "flaky": 0,
+          "selected": 180,
+          "counts_reconcile": true
+        }
+      }
+    },
+    {
+      "gate": "Https",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:44:47.327Z",
+      "endedUtc": "2026-10-20T17:45:24.667Z",
+      "log": ".accounts-validation/https-1792518287327.log",
+      "counts": {
+        "playwright": {
+          "pass": 2,
+          "fail": 0,
+          "skip": 0,
+          "not_run": 0,
+          "flaky": 0,
+          "selected": 2,
+          "counts_reconcile": true
+        }
+      }
+    },
+    {
+      "gate": "Deletion",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:45:24.894Z",
+      "endedUtc": "2026-10-20T17:45:35.902Z",
+      "log": ".accounts-validation/deletion-1792518324893.log",
+      "counts": {
+        "playwright": {
+          "pass": 3,
+          "fail": 0,
+          "skip": 0,
+          "not_run": 0,
+          "flaky": 0,
+          "selected": 3,
+          "counts_reconcile": true
+        }
+      }
+    },
+    {
+      "gate": "Ihfr",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:45:36.119Z",
+      "endedUtc": "2026-10-20T17:46:20.443Z",
+      "log": ".accounts-validation/ihfr-1792518336118.log",
+      "counts": {
+        "playwright": {
+          "pass": 6,
+          "fail": 0,
+          "skip": 0,
+          "not_run": 0,
+          "flaky": 0,
+          "selected": 6,
+          "counts_reconcile": true
+        }
+      }
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:46:20.679Z",
+      "endedUtc": "2026-10-20T17:46:25.700Z",
+      "log": ".accounts-validation/bootstrap-1792518380679.log"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T17:46:25.936Z",
+      "endedUtc": "2026-10-20T17:46:26.584Z",
+      "log": ".accounts-validation/schemaaudit-1792518385936.log"
+    }
+  ],
+  "gate_integrity": {
+    "expected_count": 15,
+    "recorded_count": 15,
+    "duplicate_gates": [],
+    "unexpected_gates": [],
+    "same_fingerprint": true,
+    "all_fifteen_pass": true
+  },
+  "e2e": {
+    "pass": 180,
+    "fail": 0,
+    "skip": 0,
+    "not_run": 0,
+    "flaky": 0,
+    "selected": 180,
+    "counts_reconcile": true
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "scope": "P2 screenshot ordering; synthetic browser counterproof, not application E2E or official CI",
+  "source": {
+    "path": "tests/e2e/support/frontend-mission-evidence.ts",
+    "state": "local working tree after P1/P2 changes",
+    "sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+    "unchangedDuringFinalPositiveRun": true,
+    "captureFunctionSha256": "310a3c38e0401bf58b8fa196c67ea28116b94b282f05305bb359ba420c6f9e80",
+    "captureFunctionBytes": 2324
+  },
+  "runtime": {
+    "playwright": "1.55.1",
+    "browser": "Chromium 153.0.8010.0",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "database": false,
+    "networkRequired": false
+  },
+  "tests": {
+    "exactFinalHelper": {
+      "pass": 1,
+      "fail": 0,
+      "activeTransitionAtReadinessEntry": 1,
+      "armedAtMs": 44.132,
+      "naturalDeadlineMs": 344.132,
+      "transitionEndAtMs": 360.8,
+      "transitionElapsedMs": 300,
+      "transitionEndCount": 1,
+      "scrollCallsAtBeforeCallback": 0,
+      "scrollTopAtBeforeCallback": 0,
+      "captureCount": 1,
+      "scrollCallsAfterHelper": 1,
+      "scrollTopAfterHelper": 360,
+      "hitPoints": 9,
+      "hitPointsInside": 9,
+      "unobstructed": true,
+      "metadataAnimations": "allow",
+      "metadataEvidenceKind": "synthetic-helper-counterproof"
+    },
+    "isolatedOrderMutation": {
+      "mutation": "Move optional capture callback before waitForMissionRender; all other helper behavior retained",
+      "pass": 0,
+      "fail": 1,
+      "expectedActiveAtEntry": 1,
+      "receivedActiveAtEntry": 0,
+      "repositoryMutated": false
+    },
+    "preservedHistoricalCounterproof": {
+      "behavior": "Screenshot with animations disabled before readiness",
+      "naturalDeadlineMs": 349.2,
+      "transitionEndAtMs": 82.5,
+      "prematureFinishMs": 266.7,
+      "activeAtHelperEntry": 0,
+      "naturalFinishBeforeCapture": false,
+      "preserved": true
+    }
+  },
+  "preservation": {
+    "durableArchiveCopyBlockMatchesEarlierTwoInvocationProof": true,
+    "durableArchiveCopyBlockSha256": "cd236f0622310671a090a4cd22f271bfef33982952d391f44b15dc4d0ed7bf45",
+    "twoInvocationProofNotRepeated": true,
+    "previousWholeCaptureDigestIsHistoricalBecauseAnimationPolicyChanged": true
+  },
+  "permanentTest": {
+    "candidate": "p2-natural-capture-test-candidate.ts",
+    "requiresImport": "captureMissionViewport",
+    "additionalSyntheticCapturePairs": 1,
+    "applicationCaptureMatrixChanged": false,
+    "sleepsAdded": false,
+    "timeoutsIncreased": false,
+    "readinessAlgorithmDuplicated": false
+  },
+  "limits": [
+    "HTML fixture without Next shell or database; production journeys still require official CI.",
+    "Fixture starts a real CSS transition in the first native animation query so its active state cannot expire during a protocol roundtrip.",
+    "CSS transition completion is checked through transitionend and the browser timeline, not a Node wall-clock delay.",
+    "Earlier official CI candidates predate these local helper changes."
+  ]
+}
