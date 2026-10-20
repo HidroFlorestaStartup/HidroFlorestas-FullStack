@@ -9,6 +9,7 @@ import { GROUPS, VALUE_LABELS } from "./environmental-data-detail";
 import { EnvironmentalReview } from "./environmental-data-review";
 import { draftFieldsToForm, formToDraftFields, type EnvironmentalDraftDto } from "@/types/environmental-draft";
 import { useEnvironmentalDraft } from "./environmental-draft-actions";
+import { keepEnvironmentalUncertainty } from "./environmental-outcome";
 const subscribeToReadiness=()=>()=>{};
 const clientReady=()=>true;
 const serverReady=()=>false;
@@ -38,7 +39,7 @@ export function EnvironmentalForm({apiPath,basePath,initialDraft=null}:{apiPath:
  async function confirm(){if(!review||submitting.current)return;submitting.current=true;setBusy(true);setMessage('');try{
   const response=await fetch(apiPath,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':review.key,...(draftState.draft?{'Draft-Id':draftState.draft.id,'Draft-Revision':String(draftState.draft.revision)}:{})},body:review.canonical});
   const body=await response.json();
-  if(!response.ok){setUncertain(response.status>=500);setMessage(body.error?.message??'Não foi possível confirmar. Tente novamente.');toast.error('Não foi possível confirmar os dados.');return;}
+  if(!response.ok){setUncertain(wasUnknown=>keepEnvironmentalUncertainty(wasUnknown,response.status));setMessage(body.error?.message??'Não foi possível confirmar. Tente novamente.');toast.error('Não foi possível confirmar os dados.');return;}
   if(!body.environmentalData?.id)throw Error('Invalid response');
   leaveAllowed.current=true;toast.success('Dados ambientais confirmados.');router.push(basePath);router.refresh();
  }catch{setUncertain(true);setMessage('Não foi possível verificar a confirmação. Tente novamente com os mesmos dados ou consulte o registro.');toast.error('Falha de conexão. Seus dados continuam nesta página.');}finally{submitting.current=false;setBusy(false);}}

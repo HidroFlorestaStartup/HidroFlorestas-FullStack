@@ -3,6 +3,7 @@ import { useRef, useState, type RefObject } from "react";
 import { createClientUuid } from "@/lib/client-uuid";
 import { DRAFT_VERSION, type DraftFields, type EnvironmentalDraftDto } from "@/types/environmental-draft";
 import { ENVIRONMENTAL_FIELDS } from "@/types/environmental-data.validation";
+import { keepEnvironmentalUncertainty } from "./environmental-outcome";
 import { VALUE_LABELS } from "./environmental-data-detail";
 
 export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:string;initialDraft:EnvironmentalDraftDto|null;lock?:RefObject<boolean>}) {
@@ -10,7 +11,7 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
   const [draft,setDraft]=useState(initialDraft);const [busy,setBusy]=useState(false);
   const [message,setMessage]=useState(initialDraft?"Rascunho pessoal retomado.":"");
   const [uncertain,setUncertain]=useState(false);
-  const pending=useRef<{canonical:string;body:string}|null>(null);
+  const pending=useRef<{canonical:string;body:string;uncertain:boolean}|null>(null);
   async function execute<T>(run:()=>Promise<T>):Promise<T|null> {
     if(gate.current)return null;gate.current=true;setBusy(true);
     try{return await run();}catch{setMessage("Falha de conexão. Seu preenchimento continua nesta página.");return null;}
@@ -19,15 +20,20 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
   async function save(fields:DraftFields) {
     return execute(async()=>{
       const canonical=JSON.stringify(fields);
-      if(!pending.current || pending.current.canonical!==canonical) pending.current={canonical,body:JSON.stringify({draftId:draft?.id??null,expectedRevision:draft?.revision??0,saveKey:createClientUuid(),formVersion:DRAFT_VERSION,fields})};
+      if(pending.current?.uncertain && pending.current.canonical!==canonical){
+        setMessage("Há um salvamento com resultado desconhecido. Repita os mesmos campos ou recarregue o rascunho antes de alterá-los.");
+        return null;
+      }
+      if(!pending.current || pending.current.canonical!==canonical) pending.current={canonical,uncertain:false,body:JSON.stringify({draftId:draft?.id??null,expectedRevision:draft?.revision??0,saveKey:createClientUuid(),formVersion:DRAFT_VERSION,fields})};
+      const operation=pending.current;
       setMessage("Salvando rascunho…");
       try {
-        const response=await fetch(`${apiPath}/draft`,{method:"PUT",headers:{"Content-Type":"application/json"},body:pending.current.body});
+        const response=await fetch(`${apiPath}/draft`,{method:"PUT",headers:{"Content-Type":"application/json"},body:operation.body});
         const result=await response.json();
-        if(!response.ok){setUncertain(response.status>=500);if(response.status<500)pending.current=null;setMessage(result.error?.message??"Não foi possível salvar.");return null;}
+        if(!response.ok){const unresolved=keepEnvironmentalUncertainty(operation.uncertain,response.status);operation.uncertain=unresolved;setUncertain(unresolved);if(!unresolved)pending.current=null;setMessage(result.error?.message??"Não foi possível salvar.");return null;}
         if(!result.draft?.id)throw Error();
         setDraft(result.draft);pending.current=null;setUncertain(false);setMessage("Rascunho salvo.");return result.draft as EnvironmentalDraftDto;
-      }catch{setUncertain(true);setMessage("Não foi possível verificar o salvamento. Repita com os mesmos campos ou recarregue o rascunho.");return null;}
+      }catch{if(pending.current)pending.current.uncertain=true;setUncertain(true);setMessage("Não foi possível verificar o salvamento. Repita com os mesmos campos ou recarregue o rascunho.");return null;}
     });
   }
   async function reload() {
