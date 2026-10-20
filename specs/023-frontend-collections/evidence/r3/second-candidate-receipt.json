@@ -170,7 +170,7 @@
     ]
   },
   "visual_evidence": {
-    "status": "DURABLE_INVENTORY_PASS_PIXEL_REVIEW_PENDING",
+    "status": "PIXELS_REVIEWED_WITH_QUALIFICATIONS",
     "archive_roots": [
       ".accounts-validation"
     ],
@@ -224,7 +224,8 @@
     "inventory_file": "second-candidate-capture-inventory.json",
     "durability_evidence": "All 27 PNG/JSON pairs are in the durable .accounts-validation path after successful E2E, Deletion and Ihfr. Original ZIP has no test-results root.",
     "pixel_review_owner": "ux_environmental",
-    "qualification": "The detail-before captures use animations disabled on this SHA, which is the subject of unresolved Codex P2. Inventory and runtime success do not resolve this finding."
+    "qualification": "The detail-before captures use animations disabled on this SHA, which is the subject of unresolved Codex P2. Inventory and runtime success do not resolve this finding.",
+    "pixel_review": "second-candidate-visual-summary.json"
   },
   "overall_evidence_status": "RUNTIME_PASS_CODE_REVIEW_FINDINGS",
   "limitations": [

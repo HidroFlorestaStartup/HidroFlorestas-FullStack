@@ -1,0 +1,24 @@
+{
+  "checked_out_head": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+  "scope": "Read-only documentation/copy checks, no tests executed",
+  "copied_files": 56,
+  "copied_by_folder_and_type": {
+    "application.json": 26,
+    "application.png": 26,
+    "synthetic.json": 2,
+    "synthetic.png": 2
+  },
+  "relative_links_checked": 56,
+  "errors": [],
+  "non_spec023_changes": [],
+  "document_hashes": {
+    "specs/023-frontend-collections/tasks.md": "535d2d1838b6b8c5a1fbdc78e727102ba032ac4a86d670b4d6440d6820bfe62e",
+    "specs/023-frontend-collections/analysis.md": "07d9f5e4fab8876f2ea8ef8b97f2e86ff682d07d291dece065febe0acb947c93",
+    "specs/023-frontend-collections/review.md": "49eb1e0ed3fbeb1640825aaa0eaf0101c7b6e26efe83ba484c5ccf2c2ed62b29",
+    "specs/023-frontend-collections/implementation-evidence.md": "c81545a0d8145db68d0476cfd3021bf41b9078e16e6f495df7d5b07ed71b9506",
+    "specs/023-frontend-collections/plan.md": "3b048ab6d77d5ada5b48ceb40cd70d5a1298cf4ab62b662a92b2a26dd6e42d25",
+    "specs/023-frontend-collections/spec.md": "f9b841ad167f2056447f65b73a0f0c0aebd6ed837113f31df3313f58ae26ef97",
+    "specs/023-frontend-collections/evidence/r3/official-v3/README.md": "a04b7369ec9268df7e4176ac3e5ccefdb0ce0f8fef412bc1b0afc4b23cf500d1"
+  },
+  "coordinator_followup": "Applied all three wording clarifications: only a receipt meeting all exact-SHA criteria closes the gate; emulated safe-area coverage named; controls outside tested target clearly qualified. No new runtime or test result inferred."
+}

@@ -3,6 +3,10 @@
 **Branch**: `feat/frontend-collections` | **Date**:2026-10-20 | **Spec**:[spec.md](spec.md)
 **Estado**: EM_ANDAMENTO; PR Draft #18 publicada; continuidade R3 para corrigir E2E e validar o HEAD final.
 
+## Consolidação da candidata funcional
+
+A candidata5f5d871 terminou15/15 gates,182/182 E2E, Codex sem findings e inspeção de26 quadros reais com2 sintéticos separados. Consolidar os recibos, galeria e tarefas; publicar somente documentação/evidência; executar novamente15 gates e Codex no novo SHA; registrar a conclusão externa na PR sem novo commit. Qualquer falha mantém o gate aberto. Aceite humano e PR Draft permanecem preservados.
+
 ## Continuidade R3 — 20/10/2026
 
 DECISAO_CONFIRMADA: missão R3 anexada e comando `execute` do usuário autorizam correções, testes, commits nas duas branches existentes, atualização de Drafts e `@codex review`; não autorizam merge, deploy, banco/provedor real ou mudança científica.
