@@ -1,4 +1,5 @@
 import { formatCollectionOccurrence } from "@/lib/collection-date-time";
+import { collectionEditingLocked } from "./collection-form-state";
 import type { CollectionAttempt } from "@/types/collection.type";
 
 export function CollectionReview({
@@ -10,7 +11,7 @@ export function CollectionReview({
   onEdit: () => void;
   onConfirm: () => void;
 }) {
-  const submitting = attempt.phase === "submitting";
+  const submitting = attempt.phase === "submitting" || attempt.phase === "confirmed";
   return (
     <section aria-labelledby="collection-review-title" className="space-y-4 rounded-2xl border border-green-200 bg-green-50 p-5">
       <h2 id="collection-review-title" className="text-xl font-bold">Revisão</h2>
@@ -22,8 +23,9 @@ export function CollectionReview({
       <p className="font-semibold">Será registrada por você</p>
       <p className="text-sm text-slate-600">O identificador e a confirmação serão gerados somente após sua confirmação.</p>
       {attempt.error && <p role="alert" className="font-semibold text-red-700">{attempt.error}</p>}
+      {attempt.recoveryPending && <p>O resultado continua desconhecido. Preserve esta página e repita a tentativa original sem alterar seus dados.</p>}
       <div className="flex flex-wrap gap-3">
-        <button type="button" disabled={submitting} onClick={onEdit} className="rounded-xl border border-green-700 px-5 py-3 font-bold text-green-800 disabled:opacity-50">
+        <button type="button" disabled={collectionEditingLocked(attempt)} onClick={onEdit} className="rounded-xl border border-green-700 px-5 py-3 font-bold text-green-800 disabled:opacity-50">
           Voltar e corrigir
         </button>
         <button type="button" disabled={submitting} onClick={onConfirm} className="rounded-xl bg-green-700 px-5 py-3 font-bold text-white disabled:opacity-50">

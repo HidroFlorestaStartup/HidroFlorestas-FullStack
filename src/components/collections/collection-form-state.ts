@@ -1,4 +1,4 @@
-import type { CollectionAttempt, CollectionContext } from "@/types/collection.type";
+import type { CollectionAttempt, CollectionContext, CollectionFailureKind } from "@/types/collection.type";
 import { deviceLocalDateTime, deviceUtcOffset, deviceOffsetForLocal, localOccurrenceToRfc3339 } from "@/lib/collection-date-time";
 import { createClientUuid } from "@/lib/client-uuid";
 import {
@@ -35,6 +35,7 @@ export function updateCollectionOccurrence(
   attempt: CollectionAttempt,
   occurredAt: string,
 ): CollectionAttempt {
+  if (collectionEditingLocked(attempt)) return attempt;
   const parts = /^(.*?)(Z|[+-]\d{2}:\d{2})$/.exec(occurredAt);
   return { ...attempt, occurredAt, localOccurredAt: parts?.[1] ?? occurredAt,
     occurrenceOffset: parts?.[2] ?? attempt.occurrenceOffset, useDeviceTimeZone: false,
@@ -47,6 +48,7 @@ export function updateCollectionLocalOccurrence(
   occurrenceOffset = attempt.occurrenceOffset,
   useDeviceTimeZone = attempt.useDeviceTimeZone,
 ): CollectionAttempt {
+  if (collectionEditingLocked(attempt)) return attempt;
   if (useDeviceTimeZone && localOccurredAt) {
     try { occurrenceOffset = deviceOffsetForLocal(localOccurredAt); } catch { /* Validate at review; preserve editable input. */ }
   }
@@ -58,6 +60,7 @@ export function reviewCollectionAttempt(
   attempt: CollectionAttempt,
   clock: Clock = () => new Date(),
 ): CollectionAttempt {
+  if (collectionEditingLocked(attempt)) return attempt;
   try {
     const offset = attempt.useDeviceTimeZone && attempt.localOccurredAt
       ? deviceOffsetForLocal(attempt.localOccurredAt) : attempt.occurrenceOffset;
@@ -78,26 +81,50 @@ export function reviewCollectionAttempt(
   }
 }
 
+export function collectionEditingLocked(attempt: CollectionAttempt): boolean {
+  return attempt.phase === "submitting" || attempt.phase === "confirmed" || Boolean(attempt.recoveryPending);
+}
+
 export function editCollectionAttempt(attempt: CollectionAttempt): CollectionAttempt {
+  if (collectionEditingLocked(attempt)) return attempt;
   return { ...attempt, phase: "editing", error: null };
 }
 
 export function beginCollectionSubmission(attempt: CollectionAttempt): CollectionAttempt {
   if (attempt.phase === "submitting") return attempt;
   if (attempt.phase !== "reviewing") throw new Error("REVIEW_REQUIRED");
-  return { ...attempt, phase: "submitting", error: null };
+  const submission = attempt.submission ?? Object.freeze({
+    apiPath: `/api/laboratories/${attempt.context.laboratory.id}/areas/${attempt.context.area.id}/collections`,
+    idempotencyKey: attempt.idempotencyKey,
+    body: JSON.stringify({ occurredAt: attempt.occurredAt }),
+  });
+  return { ...attempt, submission, phase: "submitting", error: null, failureKind: undefined };
 }
 
 export function failCollectionSubmission(
   attempt: CollectionAttempt,
   message: string,
+  kind: CollectionFailureKind = "unknown",
 ): CollectionAttempt {
-  return { ...attempt, phase: "reviewing", error: message };
+  // A later rejection cannot prove that an earlier unknown request did not commit.
+  const recoveryPending = Boolean(attempt.recoveryPending) || kind === "unknown" || kind === "conflict";
+  return {
+    ...attempt, phase: "reviewing", error: message, failureKind: kind, recoveryPending,
+    submission: recoveryPending ? attempt.submission : undefined,
+  };
+}
+
+export function completeCollectionSubmission(attempt: CollectionAttempt): CollectionAttempt {
+  if (attempt.phase !== "submitting") throw new Error("SUBMISSION_REQUIRED");
+  return { ...attempt, phase: "confirmed", recoveryPending: false, failureKind: undefined, error: null };
 }
 
 export function startNewCollectionAttempt(
   attempt: CollectionAttempt,
   createKey: () => string = createClientUuid,
 ): CollectionAttempt {
+  if (attempt.phase === "submitting" || attempt.recoveryPending) {
+    throw new Error("CONFIRMATION_UNRESOLVED");
+  }
   return createCollectionAttempt(attempt.context, createKey);
 }

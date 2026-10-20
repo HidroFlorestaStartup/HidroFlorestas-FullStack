@@ -17,15 +17,27 @@ export type CollectionAttemptError =
   | "OCCURRENCE_FORMAT"
   | "OCCURRENCE_FUTURE";
 
+/** Volatile snapshot of the exact operation sent; never persisted or exposed in the UI. */
+export type CollectionSubmissionSnapshot = Readonly<{
+  apiPath: string;
+  idempotencyKey: string;
+  body: string;
+}>;
+
+export type CollectionFailureKind = "unknown" | "invalid" | "access" | "read-only" | "conflict";
+
 export type CollectionAttempt = {
   context: CollectionContext;
   occurredAt: string;
   localOccurredAt: string;
   occurrenceOffset: string;
   useDeviceTimeZone: boolean;
-  phase: "editing" | "reviewing" | "submitting";
+  phase: "editing" | "reviewing" | "submitting" | "confirmed";
   idempotencyKey: string;
   error: string | null;
+  submission?: CollectionSubmissionSnapshot;
+  recoveryPending?: boolean;
+  failureKind?: CollectionFailureKind;
 };
 
 export type CollectionDetailDto = {
