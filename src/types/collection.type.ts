@@ -22,6 +22,8 @@ export type CollectionSubmissionSnapshot = Readonly<{
   apiPath: string;
   idempotencyKey: string;
   body: string;
+  /** Proof of the originally authenticated principal; not an authorization token. */
+  initiatorProof?: string;
 }>;
 
 export type CollectionFailureKind = "unknown" | "invalid" | "access" | "read-only" | "conflict";

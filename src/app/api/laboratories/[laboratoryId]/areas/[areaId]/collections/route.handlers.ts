@@ -7,6 +7,7 @@ import {
   parseIdempotencyKey,
 } from "@/app/api/server/collections/collection.contracts";
 import { AuthBoundaryError, requireAuth } from "@/app/api/server/middlewares/auth.middleware";
+import { matchesCollectionInitiatorProof } from "@/app/api/server/collections/collection-initiation";
 import {
   CollectionServiceError,
   collectionsService,
@@ -61,6 +62,12 @@ export function createCollectionHandlers(dependencies: {
     POST: async (request: Request, context: Context) => {
       try {
         const principal = await dependencies.requireAuth();
+        // Optional for legacy API clients. Browser-originated retries must remain
+        // bound to the principal that originally rendered the collection form.
+        const initiatorProof = request.headers.get("X-Collection-Initiator-Proof");
+        if (initiatorProof !== null && !matchesCollectionInitiatorProof(initiatorProof, principal.id)) {
+          return json(collectionError("FORBIDDEN"), 403);
+        }
         const { laboratoryId, areaId } = await context.params;
         const confirmationKey = parseIdempotencyKey(request.headers.get("Idempotency-Key"));
         let body: unknown;

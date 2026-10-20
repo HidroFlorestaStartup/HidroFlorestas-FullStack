@@ -122,3 +122,38 @@ test('viewport, text200, touch, focus and last controls remain usable',async({pa
     await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
   }
 });
+
+test('P1: a lost response must not replay under a different logged-in member', async ({page,context},info) => {
+  await login(context,info);
+  const before=(await countCollectionFixtures(process.env)).collections;
+  let firstId='';
+  const attempts: Array<{key:string|undefined;body:string|null;proof:string|undefined}>=[];
+  await page.route(`**/api/laboratories/${F.laboratoryIds[0]}/areas/${F.areaIds[0]}/collections`,async route=>{
+    if(route.request().method()!=='POST'){await route.continue();return;}
+    attempts.push({key:route.request().headers()['idempotency-key'],body:route.request().postData(),proof:route.request().headers()['x-collection-initiator-proof']});
+    if(attempts.length===1){const committed=await route.fetch();expect(committed.status()).toBe(201);firstId=(await committed.json()).collection.id;await route.abort('failed');}
+    else await route.continue();
+  });
+  await page.goto(`${area}/collections/new`);
+  await fillCollectionOccurrence(page,'2026-09-15T09:00:00.123-03:00');
+  await page.getByRole('button',{name:'Revisar coleta',exact:true}).click();
+  await page.getByRole('button',{name:'Confirmar coleta',exact:true}).click();
+  await expect(page.getByRole('region',{name:'Revisão'}).getByRole('alert')).toBeVisible();
+  expect((await countCollectionFixtures(process.env)).collections).toBe(before+1);
+  // User B is an ADMIN of this same active lab; the server must refuse A's
+  // frozen browser retry even though B may create a separate collection.
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[1]),url:String(info.project.use.baseURL)}]);
+  const rejected=page.waitForResponse(res=>res.request().method()==='POST'&&res.url().endsWith('/collections'));
+  await page.getByRole('button',{name:'Tentar novamente',exact:true}).click();
+  expect((await rejected).status()).toBe(403);
+  await expect(page.getByRole('button',{name:'Voltar e corrigir',exact:true})).toBeDisabled();
+  expect((await countCollectionFixtures(process.env)).collections).toBe(before+1);
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[0]),url:String(info.project.use.baseURL)}]);
+  await page.getByRole('button',{name:'Tentar novamente',exact:true}).click();
+  await expect(page).toHaveURL(`${area}/collections/${firstId}`);
+  expect(attempts).toHaveLength(3);
+  expect(new Set(attempts.map(a=>a.key)).size).toBe(1);
+  expect(new Set(attempts.map(a=>a.body)).size).toBe(1);
+  expect(new Set(attempts.map(a=>a.proof)).size).toBe(1);
+  expect((await countCollectionFixtures(process.env)).collections).toBe(before+1);
+});

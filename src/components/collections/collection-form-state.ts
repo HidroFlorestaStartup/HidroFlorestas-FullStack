@@ -90,13 +90,14 @@ export function editCollectionAttempt(attempt: CollectionAttempt): CollectionAtt
   return { ...attempt, phase: "editing", error: null };
 }
 
-export function beginCollectionSubmission(attempt: CollectionAttempt): CollectionAttempt {
+export function beginCollectionSubmission(attempt: CollectionAttempt, initiatorProof?: string): CollectionAttempt {
   if (attempt.phase === "submitting") return attempt;
   if (attempt.phase !== "reviewing") throw new Error("REVIEW_REQUIRED");
   const submission = attempt.submission ?? Object.freeze({
     apiPath: `/api/laboratories/${attempt.context.laboratory.id}/areas/${attempt.context.area.id}/collections`,
     idempotencyKey: attempt.idempotencyKey,
     body: JSON.stringify({ occurredAt: attempt.occurredAt }),
+    initiatorProof,
   });
   return { ...attempt, submission, phase: "submitting", error: null, failureKind: undefined };
 }

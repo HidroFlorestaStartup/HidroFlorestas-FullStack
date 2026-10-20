@@ -19,12 +19,12 @@ const subscribeToHydration = () => () => {};
 const clientSnapshot = () => true;
 const serverSnapshot = () => false;
 
-export function CollectionForm({ context }: { context: CollectionContext }) {
+export function CollectionForm({ context, initiatorProof }: { context: CollectionContext; initiatorProof: string }) {
   const hydrated = useSyncExternalStore(subscribeToHydration, clientSnapshot, serverSnapshot);
-  return hydrated ? <DeviceCollectionForm context={context} /> : <p role="status">Preparando formulário de coleta…</p>;
+  return hydrated ? <DeviceCollectionForm context={context} initiatorProof={initiatorProof} /> : <p role="status">Preparando formulário de coleta…</p>;
 }
 
-function DeviceCollectionForm({ context }: { context: CollectionContext }) {
+function DeviceCollectionForm({ context, initiatorProof }: { context: CollectionContext; initiatorProof: string }) {
   const router = useRouter();
   const [attempt, setAttempt] = useState(() => createCollectionAttempt(context));
   const inFlight = useRef(false);
@@ -32,7 +32,7 @@ function DeviceCollectionForm({ context }: { context: CollectionContext }) {
   const confirm = async () => {
     if (inFlight.current || attempt.phase !== "reviewing" || context.readOnly) return;
     inFlight.current = true;
-    const next = beginCollectionSubmission(attempt);
+    const next = beginCollectionSubmission(attempt, initiatorProof);
     setAttempt(next);
     let id: string;
     try {
@@ -40,7 +40,8 @@ function DeviceCollectionForm({ context }: { context: CollectionContext }) {
       if (!snapshot) throw new Error("SUBMISSION_REQUIRED");
       const response = await fetch(snapshot.apiPath, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.idempotencyKey },
+        headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.idempotencyKey,
+          "X-Collection-Initiator-Proof": snapshot.initiatorProof ?? "" },
         body: snapshot.body,
       });
       id = await readCollectionConfirmation(response, snapshot.apiPath);
