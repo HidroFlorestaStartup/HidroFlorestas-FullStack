@@ -6,7 +6,12 @@ import { AccountError } from "../accounts/contracts";
 import { DraftError } from "@/types/environmental-draft";
 import type { EnvironmentalDraftService } from "./draft.service";
 import type { EnvironmentalContext } from "@/types/environmental-data.type";
+import { matchesEnvironmentalInitiatorProof } from "./environmental-initiation";
 type Context={params:Promise<EnvironmentalContext>};
+function assertInitialPrincipal(request:Request,userId:string){
+ const proof=request.headers.get("X-Environmental-Initiator-Proof");
+ if(proof!==null&&!matchesEnvironmentalInitiatorProof(proof,userId))throw new DraftError("FORBIDDEN");
+}
 const json=(value:unknown,status=200)=>Response.json(value,{status,headers:{"Cache-Control":"private, no-store"}});
 async function body(request:Request):Promise<unknown> {
   if(request.headers.get("content-type")?.split(";")[0].trim().toLowerCase()!=="application/json") throw new DraftError("INVALID_REQUEST");
@@ -28,8 +33,8 @@ function failure(error:unknown) {
 }
 export function createDraftHandlers(deps:{requireAuth:typeof requireAuth;service:Pick<EnvironmentalDraftService,"detail"|"save"|"discard">;environment?:Record<string,string|undefined>}) {
   return {
-    GET:async(_request:Request,context:Context)=>{try{const actor=await deps.requireAuth();return json({draft:await deps.service.detail(actor.id,await context.params)});}catch(error){return failure(error);}},
-    PUT:async(request:Request,context:Context)=>{try{checkAccountCsrf(request,deps.environment);const actor=await deps.requireAuth();return json({draft:await deps.service.save(actor.id,await context.params,await body(request))});}catch(error){return failure(error);}},
-    DELETE:async(request:Request,context:Context)=>{try{checkAccountCsrf(request,deps.environment);const actor=await deps.requireAuth();await deps.service.discard(actor.id,await context.params,await body(request));return new Response(null,{status:204,headers:{"Cache-Control":"private, no-store"}});}catch(error){return failure(error);}},
+    GET:async(request:Request,context:Context)=>{try{const actor=await deps.requireAuth();assertInitialPrincipal(request,actor.id);return json({draft:await deps.service.detail(actor.id,await context.params)});}catch(error){return failure(error);}},
+    PUT:async(request:Request,context:Context)=>{try{checkAccountCsrf(request,deps.environment);const actor=await deps.requireAuth();assertInitialPrincipal(request,actor.id);return json({draft:await deps.service.save(actor.id,await context.params,await body(request))});}catch(error){return failure(error);}},
+    DELETE:async(request:Request,context:Context)=>{try{checkAccountCsrf(request,deps.environment);const actor=await deps.requireAuth();assertInitialPrincipal(request,actor.id);await deps.service.discard(actor.id,await context.params,await body(request));return new Response(null,{status:204,headers:{"Cache-Control":"private, no-store"}});}catch(error){return failure(error);}},
   };
 }

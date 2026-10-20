@@ -15,6 +15,7 @@ import { EnvironmentalDetail } from "./environmental-data-detail";
 import { EnvironmentalForm } from "./environmental-data-form";
 import { environmentalDraftService } from "@/app/api/server/environmental-data/draft.service";
 import { EnvironmentalDraftActions } from "./environmental-draft-actions";
+import { makeEnvironmentalInitiatorProof } from "@/app/api/server/environmental-data/environmental-initiation";
 
 export async function EnvironmentalDataPage({
   params,
@@ -27,9 +28,11 @@ export async function EnvironmentalDataPage({
   let collection;
   let data;
   let draft;
+  let principalId = "";
 
   try {
     const principal = await requireAuth();
+    principalId = principal.id;
     collection = (
       await collectionsService.detail(
         principal.id,
@@ -53,6 +56,7 @@ export async function EnvironmentalDataPage({
     throw new Error("Não foi possível carregar os dados ambientais.");
   }
 
+  const initiatorProof = makeEnvironmentalInitiatorProof(principalId);
   const collectionPath = `/dashboard/laboratories/${ids.laboratoryId}/areas/${ids.areaId}/collections/${ids.collectionId}`;
   const basePath = `${collectionPath}/environmental-data`;
 
@@ -124,6 +128,7 @@ export async function EnvironmentalDataPage({
           apiPath={basePath.replace("/dashboard/", "/api/")}
           basePath={basePath}
           initialDraft={draft}
+          initiatorProof={initiatorProof}
         />
       ) : (
         <EnvironmentalDetail
@@ -132,7 +137,7 @@ export async function EnvironmentalDataPage({
           basePath={basePath}
         />
       )}
-      {draft && (!registration || data || collection.readOnly) && <EnvironmentalDraftActions apiPath={basePath.replace("/dashboard/", "/api/")} initialDraft={draft} readOnly={collection.readOnly} />}
+      {draft && (!registration || data || collection.readOnly) && <EnvironmentalDraftActions apiPath={basePath.replace("/dashboard/", "/api/")} initialDraft={draft} readOnly={collection.readOnly} initiatorProof={initiatorProof} />}
     </article>
   );
 }

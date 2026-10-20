@@ -16,12 +16,14 @@ import styles from "./environmental.module.css";
 const subscribeToReadiness=()=>()=>{};
 const clientReady=()=>true;
 const serverReady=()=>false;
-export function EnvironmentalForm({apiPath,basePath,initialDraft=null}:{apiPath:string;basePath:string;initialDraft?:EnvironmentalDraftDto|null}) {
+export function EnvironmentalForm({apiPath,basePath,initialDraft=null,initiatorProof}:{apiPath:string;basePath:string;initialDraft?:EnvironmentalDraftDto|null;initiatorProof:string}) {
  // SSR and the first hydration render stay inert; handlers are attached before
  // React switches to the client snapshot. Never accept an edit only in the DOM.
  const hydrated=useSyncExternalStore(subscribeToReadiness,clientReady,serverReady);
+ // Freeze the server-rendered principal for this form lifetime, even across RSC refresh.
+ const proof=useRef(initiatorProof).current;
  const router=useRouter();const [form,setForm]=useState(()=>initialDraft?draftFieldsToForm(initialDraft.fields):emptyEnvironmentalForm());const [errors,setErrors]=useState<Record<string,string>>({});const [review,setReview]=useState<Submission|null>(null);const previous=useRef<Submission|null>(null);const submitting=useRef(false);const [busy,setBusy]=useState(false);const [message,setMessage]=useState('');const [uncertain,setUncertain]=useState(false);
- const draftState=useEnvironmentalDraft({apiPath,initialDraft,lock:submitting});
+ const draftState=useEnvironmentalDraft({apiPath,initialDraft,lock:submitting,initiatorProof:proof});
  const [savedForm,setSavedForm]=useState(()=>JSON.stringify(initialDraft?draftFieldsToForm(initialDraft.fields):emptyEnvironmentalForm()));
  const dirty=JSON.stringify(form)!==savedForm;const leaveAllowed=useRef(false);
  const [touched,setTouched]=useState<Set<string>>(()=>new Set());
@@ -40,7 +42,7 @@ export function EnvironmentalForm({apiPath,basePath,initialDraft=null}:{apiPath:
  const focus=(id:string)=>requestAnimationFrame(()=>focusEnvironmentalTarget(id));
  function reviewForm(event:React.FormEvent){event.preventDefault();setMessage('');try{const payload=formToPayload(form);const next=prepareSubmission(payload,previous.current);previous.current=next;setReview(next);setErrors({});focus('review-title');}catch(error){if(error instanceof EnvironmentalValidationError){setErrors(error.fields);focus(Object.keys(error.fields)[0]);}}}
  async function confirm(){if(!review||submitting.current)return;submitting.current=true;setBusy(true);setMessage('');try{
-  const response=await fetch(apiPath,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':review.key,...(draftState.draft?{'Draft-Id':draftState.draft.id,'Draft-Revision':String(draftState.draft.revision)}:{})},body:review.canonical});
+  const response=await fetch(apiPath,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':review.key,'X-Environmental-Initiator-Proof':proof,...(draftState.draft?{'Draft-Id':draftState.draft.id,'Draft-Revision':String(draftState.draft.revision)}:{})},body:review.canonical});
   const body=await response.json();
   if(!response.ok){setUncertain(wasUnknown=>keepEnvironmentalUncertainty(wasUnknown,response.status));setMessage(body.error?.message??'Não foi possível confirmar. Tente novamente.');toast.error('Não foi possível confirmar os dados.');return;}
   if(!body.environmentalData?.id)throw Error('Invalid response');

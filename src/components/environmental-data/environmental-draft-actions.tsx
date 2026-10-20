@@ -10,8 +10,10 @@ const subscribeToDraftReadiness = () => () => {};
 const draftClientReady = () => true;
 const draftServerReady = () => false;
 
-export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:string;initialDraft:EnvironmentalDraftDto|null;lock?:RefObject<boolean>}) {
+export function useEnvironmentalDraft({apiPath,initialDraft,lock,initiatorProof}:{apiPath:string;initialDraft:EnvironmentalDraftDto|null;lock?:RefObject<boolean>;initiatorProof:string}) {
   const ownLock=useRef(false);const gate=lock??ownLock;
+  // A submitted draft can never switch users because a different tab changes the cookie.
+  const proof=useRef(initiatorProof).current;
   const [draft,setDraft]=useState(initialDraft);const [busy,setBusy]=useState(false);
   const [message,setMessage]=useState(initialDraft?"Rascunho pessoal retomado.":"");
   const [uncertain,setUncertain]=useState(false);
@@ -32,7 +34,7 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
       const operation=pending.current;
       setMessage("Salvando rascunho…");
       try {
-        const response=await fetch(`${apiPath}/draft`,{method:"PUT",headers:{"Content-Type":"application/json"},body:operation.body});
+        const response=await fetch(`${apiPath}/draft`,{method:"PUT",headers:{"Content-Type":"application/json","X-Environmental-Initiator-Proof":proof},body:operation.body});
         const result=await response.json();
         if(!response.ok){const unresolved=keepEnvironmentalUncertainty(operation.uncertain,response.status);operation.uncertain=unresolved;setUncertain(unresolved);if(!unresolved)pending.current=null;setMessage(result.error?.message??"Não foi possível salvar.");return null;}
         if(!result.draft?.id)throw Error();
@@ -42,7 +44,7 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
   }
   async function reload() {
     return execute(async()=>{
-      const response=await fetch(`${apiPath}/draft`,{cache:"no-store"});const result=await response.json();
+      const response=await fetch(`${apiPath}/draft`,{cache:"no-store",headers:{"X-Environmental-Initiator-Proof":proof}});const result=await response.json();
       if(!response.ok){setMessage(result.error?.message??"Não foi possível retomar.");return null;}
       setDraft(result.draft);pending.current=null;setUncertain(false);setMessage(result.draft?"Rascunho pessoal recarregado.":"Não há rascunho salvo.");return result as {draft:EnvironmentalDraftDto|null};
     });
@@ -50,7 +52,7 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
   async function discard() {
     if(!draft)return false;
     return execute(async()=>{
-      const response=await fetch(`${apiPath}/draft`,{method:"DELETE",headers:{"Content-Type":"application/json"},body:JSON.stringify({draftId:draft.id,expectedRevision:draft.revision})});
+      const response=await fetch(`${apiPath}/draft`,{method:"DELETE",headers:{"Content-Type":"application/json","X-Environmental-Initiator-Proof":proof},body:JSON.stringify({draftId:draft.id,expectedRevision:draft.revision})});
       if(!response.ok){const result=await response.json();setMessage(result.error?.message??"Não foi possível descartar.");return false;}
       setDraft(null);pending.current=null;setUncertain(false);setMessage("Rascunho descartado definitivamente.");return true;
     });
@@ -58,9 +60,9 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
   return {draft,busy,message,uncertain,save,reload,discard};
 }
 
-export function EnvironmentalDraftActions({apiPath,initialDraft,readOnly}:{apiPath:string;initialDraft:EnvironmentalDraftDto;readOnly:boolean}) {
+export function EnvironmentalDraftActions({apiPath,initialDraft,readOnly,initiatorProof}:{apiPath:string;initialDraft:EnvironmentalDraftDto;readOnly:boolean;initiatorProof:string}) {
   const hydrated=useSyncExternalStore(subscribeToDraftReadiness,draftClientReady,draftServerReady);
-  const state=useEnvironmentalDraft({apiPath,initialDraft});
+  const state=useEnvironmentalDraft({apiPath,initialDraft,initiatorProof});
   const labels=Object.fromEntries(Object.entries(ENVIRONMENTAL_FIELDS).flatMap(([g,fields])=>Object.entries(fields).map(([k,r])=>[`${g}.${k}`,r.label])));
   return <section aria-label="Seu rascunho pessoal" className={styles.draft}>
     <h2 className="font-bold">Seu rascunho pessoal</h2>
