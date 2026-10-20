@@ -1,10 +1,14 @@
 "use client";
-import { useRef, useState, type RefObject } from "react";
+import { useRef, useState, useSyncExternalStore, type RefObject } from "react";
 import { createClientUuid } from "@/lib/client-uuid";
 import { DRAFT_VERSION, type DraftFields, type EnvironmentalDraftDto } from "@/types/environmental-draft";
 import { ENVIRONMENTAL_FIELDS } from "@/types/environmental-data.validation";
-import { keepEnvironmentalUncertainty } from "./environmental-outcome";
 import { VALUE_LABELS } from "./environmental-data-detail";
+import { keepEnvironmentalUncertainty } from "./environmental-outcome";
+import styles from "./environmental.module.css";
+const subscribeToDraftReadiness = () => () => {};
+const draftClientReady = () => true;
+const draftServerReady = () => false;
 
 export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:string;initialDraft:EnvironmentalDraftDto|null;lock?:RefObject<boolean>}) {
   const ownLock=useRef(false);const gate=lock??ownLock;
@@ -55,14 +59,15 @@ export function useEnvironmentalDraft({apiPath,initialDraft,lock}:{apiPath:strin
 }
 
 export function EnvironmentalDraftActions({apiPath,initialDraft,readOnly}:{apiPath:string;initialDraft:EnvironmentalDraftDto;readOnly:boolean}) {
+  const hydrated=useSyncExternalStore(subscribeToDraftReadiness,draftClientReady,draftServerReady);
   const state=useEnvironmentalDraft({apiPath,initialDraft});
   const labels=Object.fromEntries(Object.entries(ENVIRONMENTAL_FIELDS).flatMap(([g,fields])=>Object.entries(fields).map(([k,r])=>[`${g}.${k}`,r.label])));
-  return <section aria-label="Seu rascunho pessoal" className="space-y-3 rounded-xl border border-amber-200 bg-amber-50 p-5">
+  return <section aria-label="Seu rascunho pessoal" className={styles.draft}>
     <h2 className="font-bold">Seu rascunho pessoal</h2>
     <p>As medições confirmadas serão preservadas. Você pode consultar ou descartar seu preenchimento parcial salvo.</p>
     {state.draft && <dl className="grid gap-2 text-sm sm:grid-cols-2">{Object.entries(state.draft.fields).map(([key,cell])=><div key={key}><dt>{labels[key]}</dt><dd className="break-words">{cell.kind==="editing"?(cell.raw==="false"?"Não":cell.raw==="true"?"Sim":VALUE_LABELS[cell.raw]??cell.raw)||"Não informado":cell.kind==="value"?typeof cell.value==="boolean"?(cell.value?"Sim":"Não"):VALUE_LABELS[String(cell.value)]??String(cell.value):"Não informado"}</dd></div>)}</dl>}
     <p role="status" aria-live="polite">{state.message}</p>
-    <button type="button" disabled={state.busy} onClick={()=>state.reload()} className="rounded-lg border px-4 py-2">Recarregar rascunho</button>{" "}
-    <button type="button" disabled={readOnly||state.busy||!state.draft} onClick={()=>{if(window.confirm("Descartar definitivamente seu rascunho pessoal? As medições confirmadas serão preservadas."))void state.discard();}} className="rounded-lg border border-red-300 px-4 py-2 text-red-800">Descartar rascunho</button>
+    <button type="button" disabled={!hydrated||state.busy} onClick={()=>state.reload()} className={styles.secondary}>Recarregar rascunho</button>{" "}
+    <button type="button" disabled={!hydrated||readOnly||state.busy||!state.draft||state.uncertain} onClick={()=>{if(window.confirm("Descartar definitivamente seu rascunho pessoal? As medições confirmadas serão preservadas."))void state.discard();}} className={styles.danger}>Descartar rascunho</button>
   </section>;
 }
