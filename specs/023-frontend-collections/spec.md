@@ -1,8 +1,8 @@
 # Feature Specification: Coletas: apresentação e recuperação segura
 
-**Feature Branch**: `feat/frontend-collections` (proposta, não publicada)
+**Feature Branch**: `feat/frontend-collections` (PR Draft #18 publicada)
 **Created**:2026-10-20
-**Status**: CANDIDATA_LOCAL; validação oficial e publicação pendentes.
+**Status**: EM_VALIDACAO_R3; E2E e gates finais pendentes no início da continuidade. Histórico e escopo preservados em plan.md.
 **Input**: handoff autorizado e pedido de execução no chat.
 
 ## User Scenarios & Testing

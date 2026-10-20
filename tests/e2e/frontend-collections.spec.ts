@@ -2,7 +2,7 @@ import { expect, test, type BrowserContext, type TestInfo } from '@playwright/te
 import { signSessionToken } from '../../src/app/api/server/auth/session';
 import { COLLECTION_FIXTURES as F, setupCollectionFixtures, cleanupCollectionFixtures, countCollectionFixtures } from '../fixtures/collections';
 import { fillCollectionOccurrence } from './support/collection-occurrence';
-import { captureMissionViewport, expectControlUnobstructed } from './support/frontend-mission-evidence';
+import { captureMissionViewport, expectControlUnobstructed, readControlGeometry } from './support/frontend-mission-evidence';
 
 test.describe.configure({ mode: 'serial' });
 test.setTimeout(90_000);
@@ -121,14 +121,7 @@ test('viewport, text200, touch, focus and last controls remain usable',async({pa
     // Capture the actual, potentially failing viewport BEFORE validating geometry.
     // Never replace expectControlUnobstructed with a weaker assertion.
     await read.evaluate(node=>node.scrollIntoView({block:'center',inline:'nearest'}));
-    const geometry=await read.evaluate(node=>{
-      const box=node.getBoundingClientRect(),pad=Math.min(4,box.width/4,box.height/4);
-      const points=[[box.left+pad,box.top+pad],[box.right-pad,box.top+pad],[box.left+pad,box.bottom-pad],[box.right-pad,box.bottom-pad],[box.left+box.width/2,box.top+box.height/2]];
-      return {viewport:{width:innerWidth,height:innerHeight},rect:{left:box.left,top:box.top,right:box.right,bottom:box.bottom,width:box.width,height:box.height},points:points.map(([x,y])=>{
-        const hit=document.elementFromPoint(x,y);
-        return {x,y,tag:hit?.tagName??null,cls:typeof hit?.className==='string'?hit.className.slice(0,100):null,inside:hit!==null&&(hit===node||node.contains(hit))};
-      })};
-    });
+    const geometry=await readControlGeometry(read);
     console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,geometry}));
     await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
     await expectControlUnobstructed(read,page);

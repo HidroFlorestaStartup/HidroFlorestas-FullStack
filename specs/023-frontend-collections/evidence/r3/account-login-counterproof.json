@@ -1,0 +1,48 @@
+{
+  "scope": "Auxiliary synthetic browser harness, extracted exact before/after login helper. Does not run the application or establish the historical failure cause.",
+  "node": "v24.19.0",
+  "playwright": "1.55.1",
+  "chromium": "153.0.8010.0",
+  "results": [
+    {
+      "name": "baseline rejects valid delayed HTTP before completion",
+      "observed": "EXPECTED_FAIL",
+      "status": 200,
+      "responseDelayMs": 5600,
+      "elapsedMs": 6229,
+      "requestCount": 1
+    },
+    {
+      "name": "synchronized helper accepts the same valid delayed response",
+      "observed": "PASS",
+      "status": 200,
+      "responseDelayMs": 5600,
+      "elapsedMs": 6218,
+      "requestCount": 1
+    },
+    {
+      "name": "synchronized helper still rejects HTTP 401 when success was expected",
+      "observed": "EXPECTED_FAIL",
+      "status": 401,
+      "responseDelayMs": 0,
+      "elapsedMs": 598,
+      "requestCount": 1
+    },
+    {
+      "name": "synchronized helper still rejects success without required navigation",
+      "observed": "EXPECTED_FAIL",
+      "status": 200,
+      "responseDelayMs": 0,
+      "elapsedMs": 5615,
+      "requestCount": 1
+    },
+    {
+      "name": "explicit invalid-password branch still requires HTTP 401",
+      "observed": "PASS",
+      "status": 401,
+      "responseDelayMs": 0,
+      "elapsedMs": 596,
+      "requestCount": 1
+    }
+  ]
+}

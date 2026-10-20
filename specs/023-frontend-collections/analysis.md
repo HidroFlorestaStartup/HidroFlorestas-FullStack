@@ -1,3 +1,22 @@
+# Análise de consistência — continuidade R3 (20/10/2026)
+
+Estado vigente: candidata em validação na PR Draft #18; as limitações de conectividade/publicação do histórico abaixo não descrevem esta execução. O checkout integral foi obtido do GitHub no HEAD `9a5254a8e6bb060c7767231a38370c073b2bdb78`, com Node 24.19.0 e dependências do lockfile. Os scripts Spec Kit `setup-plan`, `setup-tasks` e `check-prerequisites --require-spec --require-tasks --include-tasks` foram executados preservando a Spec existente; não há hooks adicionais configurados.
+
+| Requisito / risco | Alteração R3 e evidência | Pendência oficial |
+|---|---|---|
+| US3: toque/reflow sem obstrução | Helper considera o contorno CSS, mantém os quatro cantos/centro, acrescenta eixos e rejeita obstruções reais; 20/20 contraprovas independentes | Matriz do aplicativo em Windows/Chromium |
+| US3: paisagem com texto200 | Margem assimétrica da coleta reproduziu obstrução real pelo header; margem simétrica local libera9/9 pontos, sem alterar shell | Matriz oficial herdada pela fase7 |
+| US3: foco e rolagem | Um frame causal antes da única rolagem, após foco da revisão; nenhuma espera arbitrária | Regressão de coleta e ambiental |
+| Conta: primeiro desvio em /login | Teste aguarda e valida a resposta do sign-in; mantém a asserção de URL e registra somente status/duração | Jornada real sintética no CI |
+| US1: continuidade A → B → A | HMAC, snapshot, autorização e idempotência por autor preservados; revisão independente sem novo bloqueante | E2E antes NOT_RUN precisa executar |
+| Domínio e ciência | Sem mudanças de schema, serviços, parsers, autorização, HMAC ou IHFR nesta correção | Gates existentes permanecem obrigatórios |
+
+Não há desvio de escopo ou novo requisito funcional que justifique outra Spec. A análise e as contraprovas locais não equivalem a aceite humano nem aos 15 gates. Os resultados por HEAD serão consolidados em `implementation-evidence.md` e na PR, sem transportar aprovação de um SHA anterior.
+
+---
+
+## Histórico preservado — preparação anterior à continuidade R3
+
 # Análise de consistência
 
 Revisão própria de documentos e código candidato, sem agente independente. Histórias priorizam integridade; requisitos mapeiam a recuperação, precisão, contexto e acessibilidade. Contratos de domínio/ciência permanecem inalterados. R1 e R5 têm reproduções auxiliares de alcance explícito; R2/R3 são proteções da adaptação. Publicação e comprovação end-to-end seguem bloqueadas/pendentes.
