@@ -10,7 +10,7 @@ import { matchesEnvironmentalInitiatorProof } from "./environmental-initiation";
 type Context={params:Promise<EnvironmentalContext>};
 function assertInitialPrincipal(request:Request,userId:string){
  const proof=request.headers.get("X-Environmental-Initiator-Proof");
- if(proof!==null&&!matchesEnvironmentalInitiatorProof(proof,userId))throw new DraftError("FORBIDDEN");
+ if(proof!==null&&!matchesEnvironmentalInitiatorProof(proof,userId))throw new AreaAccessError("FORBIDDEN");
 }
 const json=(value:unknown,status=200)=>Response.json(value,{status,headers:{"Cache-Control":"private, no-store"}});
 async function body(request:Request):Promise<unknown> {
