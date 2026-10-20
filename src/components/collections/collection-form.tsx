@@ -1,22 +1,20 @@
 "use client";
 
 import { useRef, useState, useSyncExternalStore } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { ArrowLeft, CalendarDays } from "lucide-react";
 import {
-  beginCollectionSubmission,
-  completeCollectionSubmission,
-  createCollectionAttempt,
-  editCollectionAttempt,
-  failCollectionSubmission,
-  reviewCollectionAttempt,
+  beginCollectionSubmission, completeCollectionSubmission, createCollectionAttempt,
+  editCollectionAttempt, failCollectionSubmission, reviewCollectionAttempt,
   updateCollectionLocalOccurrence,
 } from "./collection-form-state";
 import { collectionSubmissionFailure, readCollectionConfirmation } from "./collection-submission";
 import { CollectionReview } from "./collection-review";
 import type { CollectionContext } from "@/types/collection.type";
+import styles from "./collections.module.css";
 
-// Server rendering must not initialize device-local time with the server zone.
+// The server must not initialize device-local time using its own zone.
 const subscribeToHydration = () => () => {};
 const clientSnapshot = () => true;
 const serverSnapshot = () => false;
@@ -57,69 +55,68 @@ function DeviceCollectionForm({ context }: { context: CollectionContext }) {
     router.push(`${areaPath}/collections/${id}`);
   };
 
-  if (context.readOnly) {
-    return (
-      <section aria-labelledby="collection-title" className="space-y-4">
-        <h1 id="collection-title" className="text-3xl font-bold">Registrar coleta</h1>
-        <p className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-amber-900">
-          Laboratório inativo — somente leitura. Não é possível registrar uma coleta.
-        </p>
-      </section>
-    );
-  }
   return (
-    <section aria-labelledby="collection-title" className="mx-auto max-w-2xl space-y-6">
-      <div>
-        <h1 id="collection-title" className="text-3xl font-bold text-slate-900">Registrar coleta</h1>
-        <p className="mt-2 text-slate-600">Revise os metadados antes da primeira persistência.</p>
-      </div>
-      <dl className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:grid-cols-2">
-        <div><dt className="text-xs font-bold uppercase text-slate-500">Laboratório</dt><dd className="mt-1 font-semibold">{context.laboratory.name}</dd></div>
-        <div><dt className="text-xs font-bold uppercase text-slate-500">Área</dt><dd className="mt-1 font-semibold">{context.area.name}</dd></div>
-      </dl>
-      {attempt.phase === "editing" ? (
-        <form
-          className="space-y-4"
-          onSubmit={(event) => {
+    <section aria-labelledby="collection-title" className={styles.page}>
+      <header className={styles.header}>
+        {!attempt.recoveryPending && attempt.phase === "editing" && (
+          <Link href={areaPath} className={styles.back}><ArrowLeft size={18} aria-hidden="true" />Voltar à área</Link>
+        )}
+        <h1 id="collection-title" className={styles.title}>Registrar coleta</h1>
+        <p className={styles.subtitle}>Confira a ocorrência em campo. As medições ambientais são registradas separadamente.</p>
+      </header>
+      {context.readOnly ? (
+        <p className={styles.notice}>Laboratório inativo — somente leitura. Não é possível registrar uma coleta.</p>
+      ) : <>
+        <dl className={`${styles.card} ${styles.context}`}>
+          <div><dt>Laboratório</dt><dd>{context.laboratory.name}</dd></div>
+          <div><dt>Área</dt><dd>{context.area.name}</dd></div>
+        </dl>
+        {attempt.phase === "editing" ? (
+          <form className={styles.card} onSubmit={(event) => {
             event.preventDefault();
             setAttempt((current) => reviewCollectionAttempt(current));
-          }}
-        >
-          <label className="block font-semibold" htmlFor="occurredAt">Data e hora da coleta</label>
-          <input
-            id="occurredAt"
-            type="datetime-local"
-            step="0.001"
-            required
-            aria-describedby="occurredAt-help occurredAt-error"
-            aria-invalid={attempt.error ? true : undefined}
-            className="w-full rounded-xl border border-slate-300 p-3"
-            value={attempt.localOccurredAt}
-            onChange={(event) => setAttempt((current) => updateCollectionLocalOccurrence(current, event.target.value))}
-          />
-          <label htmlFor="collection-time-zone" className="block font-semibold">Fuso da coleta</label>
-          <select id="collection-time-zone" value={attempt.useDeviceTimeZone ? "device" : "manual"}
-            className="w-full rounded-xl border border-slate-300 p-3"
-            onChange={(event) => setAttempt(current => updateCollectionLocalOccurrence(current, current.localOccurredAt, current.occurrenceOffset, event.target.value === "device"))}>
-            <option value="device">Fuso do dispositivo</option>
-            <option value="manual">Fuso UTC manual</option>
-          </select>
-          <label htmlFor="collection-offset" className="block font-semibold">Offset UTC</label>
-          <input id="collection-offset" value={attempt.occurrenceOffset} readOnly={attempt.useDeviceTimeZone}
-            required aria-describedby="occurredAt-help" placeholder="-03:00" pattern="[+-][0-9]{2}:[0-9]{2}"
-            className="w-full rounded-xl border border-slate-300 p-3 read-only:bg-slate-50"
-            onChange={(event) => setAttempt(current => updateCollectionLocalOccurrence(current, current.localOccurredAt, event.target.value, false))} />
-          <p id="occurredAt-help" className="text-sm text-slate-600">
-            Sugestão inicial: agora no dispositivo. Você pode editar a data e hora. O offset UTC acompanha a data escolhida no fuso do dispositivo; para uma coleta em outro fuso ou em horário repetido, selecione Fuso UTC manual (ex.: -03:00). Confira o horário e o fuso na revisão.
-          </p>
-          {attempt.error && (
-            <p id="occurredAt-error" role="alert" className="text-sm font-semibold text-red-700">
-              {attempt.error}
+          }}>
+            <h2 className={styles.sectionTitle}><CalendarDays size={20} aria-hidden="true" />Ocorrência em campo</h2>
+            <p className={styles.help}>A autoria é registrada pelo sistema. A revisão ainda não salva a coleta.</p>
+            <div className={styles.field}>
+              <label htmlFor="occurredAt">Data e hora da coleta</label>
+              <input id="occurredAt" type="datetime-local" step="0.001" required
+                aria-describedby={`occurredAt-help${attempt.error ? " occurredAt-error" : ""}`}
+                aria-invalid={attempt.error ? true : undefined} className={styles.control}
+                value={attempt.localOccurredAt}
+                onChange={(event) => setAttempt((current) => updateCollectionLocalOccurrence(current, event.target.value))} />
+            </div>
+            <div className={styles.fields}>
+              <div className={styles.field}>
+                <label htmlFor="collection-time-zone">Fuso da coleta</label>
+                <select id="collection-time-zone" className={styles.control}
+                  value={attempt.useDeviceTimeZone ? "device" : "manual"}
+                  onChange={(event) => setAttempt((current) => updateCollectionLocalOccurrence(current, current.localOccurredAt, current.occurrenceOffset, event.target.value === "device"))}>
+                  <option value="device">Fuso do dispositivo</option>
+                  <option value="manual">Fuso UTC manual</option>
+                </select>
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="collection-offset">Offset UTC</label>
+                <input id="collection-offset" className={styles.control} value={attempt.occurrenceOffset}
+                  readOnly={attempt.useDeviceTimeZone} required aria-describedby="occurredAt-help"
+                  placeholder="-03:00" pattern="[+-][0-9]{2}:[0-9]{2}"
+                  onChange={(event) => setAttempt((current) => updateCollectionLocalOccurrence(current, current.localOccurredAt, event.target.value, false))} />
+              </div>
+            </div>
+            <p id="occurredAt-help" className={styles.help}>
+              Sugestão inicial: agora no dispositivo. Segundos e milissegundos são preservados.
+              O offset acompanha a data no fuso do dispositivo. Para outro fuso ou horário repetido,
+              selecione Fuso UTC manual (ex.: -03:00). Confira o horário e o fuso na revisão.
             </p>
-          )}
-          <button className="rounded-xl bg-green-700 px-5 py-3 font-bold text-white" type="submit">Revisar coleta</button>
-        </form>
-      ) : <CollectionReview attempt={attempt} onEdit={() => setAttempt((current) => editCollectionAttempt(current))} onConfirm={confirm} />}
+            {attempt.error && <p id="occurredAt-error" role="alert" className={styles.error}>{attempt.error}</p>}
+            <div className={styles.actions}><button type="submit" className={styles.primary}>Revisar coleta</button></div>
+          </form>
+        ) : <CollectionReview attempt={attempt} onEdit={() => {
+          setAttempt((current) => editCollectionAttempt(current));
+          requestAnimationFrame(() => document.getElementById("occurredAt")?.focus());
+        }} onConfirm={confirm} />}
+      </>}
     </section>
   );
 }
