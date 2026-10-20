@@ -118,8 +118,20 @@ test('viewport, text200, touch, focus and last controls remain usable',async({pa
     await page.goto(`${area}/collections/${F.collectionIds[0]}`);
     if(scale===200)await page.addStyleTag({content:'html{font-size:200%!important}'});
     const read=page.getByRole('link',{name:'Ver dados ambientais',exact:true});
-    await expectControlUnobstructed(read,page);
+    // Capture the actual, potentially failing viewport BEFORE validating geometry.
+    // Never replace expectControlUnobstructed with a weaker assertion.
+    await read.evaluate(node=>node.scrollIntoView({block:'center',inline:'nearest'}));
+    const geometry=await read.evaluate(node=>{
+      const box=node.getBoundingClientRect(),pad=Math.min(4,box.width/4,box.height/4);
+      const points=[[box.left+pad,box.top+pad],[box.right-pad,box.top+pad],[box.left+pad,box.bottom-pad],[box.right-pad,box.bottom-pad],[box.left+box.width/2,box.top+box.height/2]];
+      return {viewport:{width:innerWidth,height:innerHeight},rect:{left:box.left,top:box.top,right:box.right,bottom:box.bottom,width:box.width,height:box.height},points:points.map(([x,y])=>{
+        const hit=document.elementFromPoint(x,y);
+        return {x,y,tag:hit?.tagName??null,cls:typeof hit?.className==='string'?hit.className.slice(0,100):null,inside:hit!==null&&(hit===node||node.contains(hit))};
+      })};
+    });
+    console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,geometry}));
     await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
+    await expectControlUnobstructed(read,page);
   }
 });
 
