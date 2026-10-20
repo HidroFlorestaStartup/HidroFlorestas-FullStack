@@ -1,0 +1,38 @@
+{
+  "name": "history-focus-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-history-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1970,
+      "height": 724,
+      "extent": 9586
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "button",
+    "x": 32,
+    "y": 425.296875,
+    "width": 44,
+    "height": 44
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

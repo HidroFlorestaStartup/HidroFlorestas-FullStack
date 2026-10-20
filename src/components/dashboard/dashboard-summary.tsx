@@ -1,15 +1,95 @@
 "use client";
+
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowRight, MapPinned, RefreshCw } from "lucide-react";
+import { ArrowRight, ClipboardCheck, MapPinned, RefreshCw } from "lucide-react";
 import type { DashboardSummary as Summary } from "@/types/dashboard.type";
+import styles from "./dashboard.module.css";
 
 export function DashboardSummary({ laboratoryId }: { laboratoryId: string }) {
-  const [data, setData] = useState<Summary | null>(null), [error, setError] = useState<string | null>(null), [attempt, setAttempt] = useState(0);
-  const load = useCallback(async (signal: AbortSignal) => { setData(null); setError(null); try { const response = await fetch(`/api/laboratories/${laboratoryId}/dashboard/summary`, { cache: "no-store", signal }); const body = await response.json(); if (!response.ok) throw new Error(body?.error?.message ?? "Não foi possível carregar o resumo."); setData(body); } catch (cause) { if (!signal.aborted) setError(cause instanceof Error ? cause.message : "Não foi possível carregar o resumo."); } }, [laboratoryId]);
-  useEffect(() => { const controller = new AbortController(); void load(controller.signal); return () => controller.abort(); }, [load, attempt]);
-  if (error) return <section aria-labelledby="summary-title" className="rounded-2xl border border-red-200 bg-white p-6"><h2 id="summary-title" className="text-xl font-bold">Resumo indisponível</h2><p role="alert" className="mt-2 text-red-700">{error}</p><button onClick={() => setAttempt((value) => value + 1)} className="mt-4 min-h-11 rounded-xl bg-red-700 px-4 font-bold text-white focus-visible:ring-2">Tentar novamente</button></section>;
-  if (!data) return <section role="status" aria-label="Carregando resumo" className="rounded-2xl border border-slate-200 bg-white p-8 text-slate-600"><RefreshCw className="mr-2 inline animate-spin" aria-hidden="true" /> Carregando resumo…</section>;
-  return <section aria-labelledby="summary-title" className="space-y-4"><div><p className="text-xs font-bold uppercase tracking-[.16em] text-green-700">Visão geral</p><h1 id="summary-title" className="mt-1 text-2xl font-bold text-slate-900">{data.context.name}</h1>{data.context.readOnly && <p className="mt-2 rounded-xl border border-amber-200 bg-amber-50 p-3 font-medium text-amber-900">Laboratório inativo — somente leitura.</p>}</div><div className="grid gap-4 sm:grid-cols-2"><Link href={data.links.areas} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm focus-visible:ring-2 focus-visible:ring-green-600"><MapPinned className="text-green-700" aria-hidden="true"/><span className="mt-4 block text-3xl font-bold">{data.totals.areas}</span><span className="text-slate-600">Áreas autorizadas</span><span className="mt-4 flex items-center gap-2 font-bold text-green-700">Ver áreas <ArrowRight size={18}/></span></Link><div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><span className="block text-sm font-semibold text-slate-600">Coletas confirmadas</span><span className="mt-5 block text-3xl font-bold">{data.totals.confirmedCollections}</span><p className="mt-4 text-sm text-slate-500">Registros confirmados nas áreas deste laboratório.</p></div></div></section>;
-}
+  const [data, setData] = useState<Summary | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
+  const load = useCallback(async (signal: AbortSignal) => {
+    setData(null);
+    setError(null);
+    try {
+      const response = await fetch("/api/laboratories/" + laboratoryId + "/dashboard/summary", {
+        cache: "no-store",
+        signal,
+      });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body?.error?.message ?? "Não foi possível carregar o resumo.");
+      if (!signal.aborted) setData(body);
+    } catch (cause) {
+      if (!signal.aborted) {
+        setError(cause instanceof Error ? cause.message : "Não foi possível carregar o resumo.");
+      }
+    }
+  }, [laboratoryId]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void load(controller.signal);
+    return () => controller.abort();
+  }, [load, attempt]);
+
+  if (error) {
+    return (
+      <section aria-labelledby="summary-title" className={styles.errorState}>
+        <h2 id="summary-title" className={styles.sectionTitle}>Resumo indisponível</h2>
+        <p role="alert">{error}</p>
+        <button onClick={() => setAttempt(value => value + 1)} className={styles.outline}>
+          Tentar novamente
+        </button>
+      </section>
+    );
+  }
+
+  if (!data) {
+    return (
+      <section role="status" aria-label="Carregando resumo" className={styles.loading}>
+        <span className={styles.spinner} aria-hidden="true"><RefreshCw size={20} /></span>
+        Carregando resumo…
+      </section>
+    );
+  }
+
+  return (
+    <section aria-labelledby="summary-title" className={styles.summary}>
+      <div className={styles.heading}>
+        <p className={styles.eyebrow}>Visão geral</p>
+        <h1 id="summary-title" className={styles.title}>{data.context.name}</h1>
+        <p className={styles.description}>Áreas e coletas confirmadas do laboratório selecionado.</p>
+      </div>
+      {data.context.readOnly && (
+        <p className={styles.notice}>Laboratório inativo — somente leitura.</p>
+      )}
+      <div className={styles.stats}>
+        <Link href={data.links.areas} className={styles.statCard + " " + styles.statLink}>
+          <span className={styles.statContent}>
+            <MapPinned className={styles.statIcon} aria-hidden="true" />
+            <span className={styles.statText}>
+              <span className={styles.statValue}>{data.totals.areas}</span>
+              <span className={styles.statLabel}>Áreas autorizadas</span>
+            </span>
+          </span>
+          <span className={styles.statAction}>Ver áreas <ArrowRight size={18} aria-hidden="true" /></span>
+          <span className={styles.statBar} aria-hidden="true" />
+        </Link>
+        <div className={styles.statCard + " " + styles.statBlue}>
+          <div className={styles.statContent}>
+            <ClipboardCheck className={styles.statIcon} aria-hidden="true" />
+            <div className={styles.statText}>
+              <span className={styles.statValue}>{data.totals.confirmedCollections}</span>
+              <span className={styles.statLabel}>Coletas confirmadas</span>
+            </div>
+          </div>
+          <p className={styles.statDescription}>Registros confirmados nas áreas deste laboratório.</p>
+          <span className={styles.statBar} aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+  );
+}

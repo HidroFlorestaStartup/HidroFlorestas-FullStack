@@ -1,0 +1,38 @@
+{
+  "name": "members-focus-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-members-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1398,
+      "height": 724,
+      "extent": 2425
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "button",
+    "x": 32,
+    "y": 393.953125,
+    "width": 256,
+    "height": 106
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

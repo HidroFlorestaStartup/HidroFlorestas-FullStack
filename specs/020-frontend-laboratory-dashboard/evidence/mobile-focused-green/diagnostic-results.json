@@ -1,0 +1,57 @@
+[
+  {
+    "gate": "MobileDiagnostic",
+    "command": "owned official Regression Run; playwright frontend-mobile-navigation 375px text100 only",
+    "snapshot": "60d1ce324e4de1f5a4e0919ef80d8fc1d3cb9cad5e70fd3d28b95ee8285ca21e",
+    "startedUtc": "2026-10-19T13:31:26.463Z",
+    "endedUtc": "2026-10-19T13:31:44.382Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "scope": "ONE CASE; not the full E2E gate",
+    "log": ".accounts-validation/scroll-diagnostics/mobile-1792416686539.log"
+  },
+  {
+    "gate": "MobileDiagnostic",
+    "command": "owned official Regression Run; playwright frontend-mobile-navigation 375px text100 only",
+    "snapshot": "05ffb3242ab352faacccb7d9a2cd9c3850ba699fee9475b5a71eedd5f83173fa",
+    "startedUtc": "2026-10-19T13:35:28.058Z",
+    "endedUtc": "2026-10-19T13:35:46.883Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "scope": "ONE CASE; not the full E2E gate",
+    "log": ".accounts-validation/scroll-diagnostics/mobile-1792416928131.log"
+  },
+  {
+    "gate": "MobileDiagnostic",
+    "command": "owned official Regression Run; playwright frontend-mobile-navigation all four mobile cases only",
+    "snapshot": "6bdf36ce60b4db0441ee8effe395a013e8580e87111ca3bd00514f5ab0b7ab7e",
+    "startedUtc": "2026-10-19T13:38:23.115Z",
+    "endedUtc": "2026-10-19T13:39:30.757Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "scope": "FOUR MOBILE CASES; not the full E2E gate",
+    "log": ".accounts-validation/scroll-diagnostics/mobile-1792417103188.log"
+  },
+  {
+    "gate": "MobileDiagnostic",
+    "command": "owned official Regression Run; playwright frontend-mobile-navigation all four mobile cases only",
+    "snapshot": "3949ee8dede1a3714070ccea7081adb9df5ed0e31fa2db1f76778d9c8e17ccde",
+    "startedUtc": "2026-10-19T13:41:44.557Z",
+    "endedUtc": "2026-10-19T13:42:48.589Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "scope": "FOUR MOBILE CASES; not the full E2E gate",
+    "log": ".accounts-validation/scroll-diagnostics/mobile-1792417304629.log"
+  },
+  {
+    "gate": "MobileDiagnostic",
+    "command": "owned official Regression Run; playwright frontend-mobile-navigation all four mobile cases only",
+    "snapshot": "e801a73a8f9e541f9bcdaa040be5ff3595a7073f9fd4652c18ef02a154566339",
+    "startedUtc": "2026-10-19T13:44:43.743Z",
+    "endedUtc": "2026-10-19T13:45:57.751Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "scope": "FOUR MOBILE CASES; not the full E2E gate",
+    "log": ".accounts-validation/scroll-diagnostics/mobile-1792417483824.log"
+  }
+]

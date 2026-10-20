@@ -1,0 +1,444 @@
+[
+  {
+    "name": "375-text200-empty-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-empty-create-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1719,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-middle",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1308,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-end",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-focused-control",
+    "label": "Criar laboratório",
+    "top": 416.140625,
+    "bottom": 484.140625,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-focused-control",
+    "label": "ACESSAR LABORATÓRIO",
+    "top": 397.53125,
+    "bottom": 501.53125,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-focused-control",
+    "label": "ACESSAR LABORATÓRIO",
+    "top": 397.921875,
+    "bottom": 501.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-focused-control",
+    "label": "Configurações",
+    "top": 417.53125,
+    "bottom": 482.53125,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-focused-control",
+    "label": "Configurações",
+    "top": 433.921875,
+    "bottom": 498.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-actual-last-control",
+    "label": "Configurações",
+    "top": 433.921875,
+    "bottom": 498.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-actual-last-control",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-last-control-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-landscape",
+    "width": 667,
+    "height": 375,
+    "text": "32px",
+    "scrollY": 1769,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 281.609375,
+      "bottom": 375,
+      "height": 93.390625
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-three-links-landscape-safe-area34-control",
+    "top": 189.953125,
+    "bottom": 299.953125,
+    "header": 85,
+    "footer": 247.609375,
+    "visible": false,
+    "hit": true
+  },
+  {
+    "name": "375-text200-three-links-landscape-safe-area34",
+    "width": 667,
+    "height": 375,
+    "text": "32px",
+    "scrollY": 1769,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 247.609375,
+      "bottom": 375,
+      "height": 127.390625
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-start",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-middle",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 1308,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-end",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-focused-control",
+    "label": "Criar laboratório",
+    "top": 416.140625,
+    "bottom": 484.140625,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-focused-control",
+    "label": "ACESSAR LABORATÓRIO",
+    "top": 397.53125,
+    "bottom": 501.53125,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-focused-control",
+    "label": "ACESSAR LABORATÓRIO",
+    "top": 397.921875,
+    "bottom": 501.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-focused-control",
+    "label": "Configurações",
+    "top": 417.53125,
+    "bottom": 482.53125,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-focused-control",
+    "label": "Configurações",
+    "top": 433.921875,
+    "bottom": 498.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-actual-last-control",
+    "label": "Configurações",
+    "top": 433.921875,
+    "bottom": 498.921875,
+    "header": 85,
+    "footer": 735.625,
+    "visible": true,
+    "hit": true
+  },
+  {
+    "name": "375-text200-four-links-actual-last-control",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-last-control-focus",
+    "width": 375,
+    "height": 900,
+    "text": "32px",
+    "scrollY": 2616,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 735.625,
+      "bottom": 900,
+      "height": 164.375
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-landscape",
+    "width": 667,
+    "height": 375,
+    "text": "32px",
+    "scrollY": 1759,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 249.21875,
+      "bottom": 375,
+      "height": 125.78125
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text200-four-links-landscape-safe-area34-control",
+    "top": 199.953125,
+    "bottom": 309.953125,
+    "header": 85,
+    "footer": 215.21875,
+    "visible": false,
+    "hit": false
+  },
+  {
+    "name": "375-text200-four-links-landscape-safe-area34",
+    "width": 667,
+    "height": 375,
+    "text": "32px",
+    "scrollY": 1759,
+    "header": {
+      "top": 0,
+      "bottom": 85,
+      "height": 85
+    },
+    "navigation": {
+      "top": 215.21875,
+      "bottom": 375,
+      "height": 159.78125
+    },
+    "safeAreaMethod": "Chromium; labelled safe-area34 frames use CDP, no physical device",
+    "screenshot": "viewport/fullPage:false"
+  }
+]

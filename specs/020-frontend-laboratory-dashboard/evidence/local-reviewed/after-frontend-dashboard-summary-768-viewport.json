@@ -1,0 +1,38 @@
+{
+  "name": "summary-768",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-summary-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 54
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 3074,
+      "extent": 3074
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "a",
+    "x": 184,
+    "y": 356.203125,
+    "width": 270,
+    "height": 187.375
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

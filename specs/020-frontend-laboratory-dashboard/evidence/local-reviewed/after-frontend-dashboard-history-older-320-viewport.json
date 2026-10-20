@@ -1,0 +1,38 @@
+{
+  "name": "history-older-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-history-older-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 3323,
+      "height": 724,
+      "extent": 4047
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "button",
+    "x": 32,
+    "y": 557.046875,
+    "width": 246.5,
+    "height": 64
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

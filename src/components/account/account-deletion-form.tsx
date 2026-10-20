@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useAuth } from "@/contexts/auth.context";
+import { clearContentScrollCache } from "@/components/shell/use-content-scroll";
 import { DELETION_MESSAGES, parseAccountDeletionState, type AccountDeletionState } from "@/app/api/server/accounts/deletion.contracts";
 import { AccountShell, accountDangerButtonClass } from "./account-shell";
 import { PasswordField } from "./password-field";
@@ -39,7 +40,7 @@ export function AccountDeletionForm() {
     try {
       const response = await fetch("/api/auth/account-deletion", { method: "DELETE", credentials: "include", cache: "no-store", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ currentPassword: password, confirmDeletion: true }) });
       const value = await readAccountJson(response);
-      if (response.ok && value && typeof value === "object" && "success" in value && value.success === true && Object.keys(value).length === 1) { clearAuthenticatedUser(); setDeleted(true); }
+      if (response.ok && value && typeof value === "object" && "success" in value && value.success === true && Object.keys(value).length === 1) { clearAuthenticatedUser(); clearContentScrollCache(); setDeleted(true); }
       else {
         const code = value && typeof value === "object" && "code" in value && typeof value.code === "string" ? value.code : "INTERNAL_ERROR";
         setError(Object.hasOwn(DELETION_MESSAGES, code) ? DELETION_MESSAGES[code as keyof typeof DELETION_MESSAGES] : DELETION_MESSAGES.INTERNAL_ERROR);
