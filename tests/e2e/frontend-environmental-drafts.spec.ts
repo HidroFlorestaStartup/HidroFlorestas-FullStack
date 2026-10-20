@@ -137,3 +137,62 @@ test('environmental form, draft actions and review remain usable at each viewpor
     await expect(page.getByRole('heading',{name:'Informar dados ambientais',exact:true})).toBeFocused();
   }
 });
+
+test('P1: retry de rascunho nao pode persistir o preenchimento de A como rascunho de B',async({page,context},info)=>{
+  await login(context,info);
+  await page.goto(base+'/new');
+  await page.getByLabel('Elevação').fill('12.');
+  const requests:Array<{body:string|null;proof:string|undefined}>=[];
+  let originalId='';let originalRevision=0;
+  await page.route('**/environmental-data/draft',async route=>{
+    if(route.request().method()!=='PUT'){await route.continue();return;}
+    requests.push({body:route.request().postData(),proof:route.request().headers()['x-environmental-initiator-proof']});
+    if(requests.length===1){
+      const committed=await route.fetch();expect(committed.status()).toBe(200);
+      const saved=(await committed.json()).draft;originalId=saved.id;originalRevision=saved.revision;
+      await route.abort('failed');
+    }else await route.continue();
+  });
+  await page.getByRole('button',{name:'Salvar rascunho',exact:true}).click();
+  await expect(page.getByRole('status')).toContainText('Não foi possível verificar o salvamento.');
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[1]),url:String(info.project.use.baseURL)}]);
+  const forbidden=page.waitForResponse(r=>r.request().method()==='PUT'&&r.url().endsWith('/draft'));
+  await page.getByRole('button',{name:'Repetir salvamento',exact:true}).click();
+  expect((await forbidden).status()).toBe(403);
+  expect((await (await context.request.get(api+'/draft')).json()).draft).toBeNull();
+  await expect(page.getByLabel('Elevação')).toBeDisabled();
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);
+  const recovered=page.waitForResponse(r=>r.request().method()==='PUT'&&r.url().endsWith('/draft'));
+  await page.getByRole('button',{name:'Repetir salvamento',exact:true}).click();
+  expect((await recovered).status()).toBe(200);
+  const result=(await (await context.request.get(api+'/draft')).json()).draft;
+  expect(result.id).toBe(originalId);expect(result.revision).toBe(originalRevision);
+  expect(requests).toHaveLength(3);expect(requests[1]).toEqual(requests[0]);expect(requests[2]).toEqual(requests[0]);
+});
+
+test('P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B',async({page,context},info)=>{
+  await login(context,info);
+  await page.goto(base+'/new');await fillValid(page);
+  let calls=0;const requests:Array<{body:string|null;key:string|undefined;proof:string|undefined}>=[];
+  await page.route('**'+api,async route=>{
+    if(route.request().method()!=='POST'){await route.continue();return;}
+    calls++;requests.push({body:route.request().postData(),key:route.request().headers()['idempotency-key'],proof:route.request().headers()['x-environmental-initiator-proof']});
+    if(calls===1)await route.abort('failed');else await route.continue();
+  });
+  await page.getByRole('button',{name:'Revisar dados',exact:true}).click();
+  await page.getByRole('button',{name:'Confirmar dados ambientais',exact:true}).click();
+  await expect(page.getByRole('article',{name:'Registrar dados ambientais'}).getByRole('alert')).toBeVisible();
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[1]),url:String(info.project.use.baseURL)}]);
+  const forbidden=page.waitForResponse(r=>r.request().method()==='POST'&&r.url().endsWith(api));
+  await page.getByRole('button',{name:'Confirmar dados ambientais',exact:true}).click();
+  expect((await forbidden).status()).toBe(403);
+  await expect(page.getByRole('button',{name:'Voltar ao formulário',exact:true})).toBeDisabled();
+  expect((await (await context.request.get(api)).json()).environmentalData).toBeNull();
+  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);
+  const confirmed=page.waitForResponse(r=>r.request().method()==='POST'&&r.url().endsWith(api));
+  await page.getByRole('button',{name:'Confirmar dados ambientais',exact:true}).click();
+  expect((await confirmed).status()).toBe(201);
+  await expect(page).toHaveURL(base);
+  expect(requests).toHaveLength(3);expect(requests[1]).toEqual(requests[0]);expect(requests[2]).toEqual(requests[0]);
+  expect((await (await context.request.get(api)).json()).environmentalData.id).toBeTruthy();
+});
