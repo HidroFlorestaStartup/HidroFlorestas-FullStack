@@ -2,7 +2,7 @@ import { expect, test, type BrowserContext, type TestInfo } from '@playwright/te
 import { signSessionToken } from '../../src/app/api/server/auth/session';
 import { COLLECTION_FIXTURES as F, setupCollectionFixtures, cleanupCollectionFixtures, countCollectionFixtures } from '../fixtures/collections';
 import { fillCollectionOccurrence } from './support/collection-occurrence';
-import { captureMissionViewport, expectControlUnobstructed } from './support/frontend-mission-evidence';
+import { captureMissionViewport, expectControlUnobstructed, readControlGeometry } from './support/frontend-mission-evidence';
 
 test.describe.configure({ mode: 'serial' });
 test.setTimeout(90_000);
@@ -118,8 +118,13 @@ test('viewport, text200, touch, focus and last controls remain usable',async({pa
     await page.goto(`${area}/collections/${F.collectionIds[0]}`);
     if(scale===200)await page.addStyleTag({content:'html{font-size:200%!important}'});
     const read=page.getByRole('link',{name:'Ver dados ambientais',exact:true});
-    await expectControlUnobstructed(read,page);
+    // Capture the actual, potentially failing viewport BEFORE validating geometry.
+    // Never replace expectControlUnobstructed with a weaker assertion.
+    await read.evaluate(node=>node.scrollIntoView({block:'center',inline:'nearest'}));
+    const geometry=await readControlGeometry(read);
+    console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,geometry}));
     await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
+    await expectControlUnobstructed(read,page);
   }
 });
 

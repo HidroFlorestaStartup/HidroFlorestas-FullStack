@@ -1,8 +1,8 @@
 # Feature Specification: Dados ambientais e drafts: apresentação sem perda
 
-**Feature Branch**: `feat/frontend-environmental-drafts` (proposta, não publicada)
+**Feature Branch**: `feat/frontend-environmental-drafts` (PR Draft #19 publicada)
 **Created**:2026-10-20
-**Status**: CANDIDATA_LOCAL; validação oficial e publicação pendentes.
+**Status**: EM_VALIDACAO_R3; E2E e gates finais pendentes no início da continuidade. Histórico e escopo preservados em plan.md.
 **Input**: handoff autorizado e pedido de execução no chat.
 
 ## User Scenarios & Testing

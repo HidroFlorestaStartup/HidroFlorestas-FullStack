@@ -1,7 +1,17 @@
 # Implementation Plan: Dados ambientais e drafts: apresentação sem perda
 
 **Branch**: `feat/frontend-environmental-drafts` | **Date**:2026-10-20 | **Spec**:[spec.md](spec.md)
-**Estado**: EM_ANDAMENTO; planejamento publicado em branch provisória empilhada sobre fase6; CI da fase7 ainda NOT_RUN; a conclusão depende da validação integral da fase6.
+**Estado**: EM_ANDAMENTO; PR Draft #19 publicada e empilhada; continuidade R3 para corrigir E2E e validar o HEAD final.
+
+## Continuidade R3 — 20/10/2026
+
+DECISAO_CONFIRMADA: missão R3 anexada e comando `execute` autorizam continuidade das duas fases, publicação nas branches existentes e revisão Codex, sem merge, deploy, banco/provedor real ou mudança científica.
+
+EVIDENCIA_IMPLEMENTACAO: preflight remoto confirmou `feat/frontend-environmental-drafts@3d8038294e3d5383b0b3536b8ded275f2f85e884`, PR Draft #19 e merge-base com fase 6 em `e12ade232e3bad2fd60dbd53da2dcbc254a9e6a1`. A PR #18 avançou somente no diagnóstico do teste de coletas desde essa base. Run 39452650036, tentativa 1, job 118731460561: nove gates PASS, E2E 161 PASS / 2 FAIL / 3 NOT_RUN; cinco gates posteriores NOT_RUN. A revisão Codex do HEAD `3d803829` concluiu sem novos achados materiais, mas não substitui a revisão do futuro candidato.
+
+Plano executável: (1) analisar artefatos da falha e reproduzir foco/scroll; (2) sincronizar a jornada com o foco realmente programado, preservando a validação de obstrução e ampliando a prova do último campo; (3) incorporar a correção da fase 6 por commit com ancestralidade preservada e referência exata, sem rebase ou merge de PR; (4) validar drafts, precisão, grupos, sessão A → B → A e todo o runner oficial; (5) revisar e entregar os dois Drafts com evidências por SHA.
+
+Um agente é escritor do teste ambiental, outro revisa geometria compartilhada na fase 6, e QA revisa conta/segurança. O coordenador é o único integrador/publicador. Specs existentes reutilizadas pelos scripts Spec Kit; não há hooks. O checklist histórico de runtime e aceite não impede o trabalho já autorizado; aceite humano permanece externo. Registros anteriores abaixo são históricos e não prevalecem sobre este estado ou os novos recibos por HEAD.
 
 ## Summary
 
@@ -24,7 +34,7 @@ Produto: src/components/collections e src/types/collection.type.ts na fase6; src
 ## Execution order
 
 Preflight/PLAN → testes auxiliares RED → correção focal → GREEN auxiliar → candidata visual → checagens estáticas → revisão própria → pacote. As etapas seguintes exigem clone/runtime completo e autorização efetiva da integração: E2E/PostgreSQL e capturas reais, revisão independente, commits/push, CI do SHA exato e PR. Não marcar como concluídas etapas que só foram preparadas.
-## Estado e limites da execução
+## Histórico — estado e limites da preparação inicial
 
 A publicação foi retomada após selecionar explicitamente a conexão GitHub `HidroFlorestaStartup`, autorizada pelo usuário. A branch provisória foi criada sobre `feat/frontend-collections@e12ade232e3bad2fd60dbd53da2dcbc254a9e6a1`; a fase6 permanece em CI e a validação final/aceite continua pendente. O histórico do erro 403 está documentado no handoff de origem; esta entrada substitui aquele status de publicação.
 

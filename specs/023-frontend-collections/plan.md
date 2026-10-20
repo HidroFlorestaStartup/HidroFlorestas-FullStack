@@ -1,7 +1,19 @@
 # Implementation Plan: Coletas: apresentação e recuperação segura
 
 **Branch**: `feat/frontend-collections` | **Date**:2026-10-20 | **Spec**:[spec.md](spec.md)
-**Estado**: EM_ANDAMENTO; código candidato local; gates/publicação BLOCKED ou NOT_RUN.
+**Estado**: EM_ANDAMENTO; PR Draft #18 publicada; continuidade R3 para corrigir E2E e validar o HEAD final.
+
+## Continuidade R3 — 20/10/2026
+
+DECISAO_CONFIRMADA: missão R3 anexada e comando `execute` do usuário autorizam correções, testes, commits nas duas branches existentes, atualização de Drafts e `@codex review`; não autorizam merge, deploy, banco/provedor real ou mudança científica.
+
+EVIDENCIA_IMPLEMENTACAO: preflight remoto confirmou `feat/frontend-collections@9a5254a8e6bb060c7767231a38370c073b2bdb78`, base `development@24be57fa0ddeb9d3da72ae80606850d428e29fbb`, conta `HidroFlorestaStartup` e PR Draft aberta. Run 39453181573, tentativa 1, job 118733100849: nove gates PASS, E2E 155 PASS / 2 FAIL / 2 NOT_RUN; cinco gates posteriores NOT_RUN. A revisão Codex anterior cobre `854b18d`, não o futuro HEAD.
+
+Plano executável: (1) preservar artefatos e reproduzir hit test em contornos arredondados a 200%; (2) corrigir a amostragem sem perder detecção de sobreposição real, com contraprovas de borda/centro/viewport; (3) investigar a falha de login separadamente e sincronizar/observar a resposta real sem mudar autenticação ou ampliar timeouts; (4) revisar foco e scroll na matriz completa; (5) publicar candidata estável, conferir os 15 gates e obter revisão do SHA exato; (6) registrar recibos no PR e nesta Spec conforme efetivamente observados.
+
+Coordenação real com três agentes: UX coletas (helper e regressão geométrica), UX ambiental (arquivo da fase 7), QA (jornada de conta e revisão de segurança). Um escritor por arquivo; coordenador integra e publica exclusivamente via conexão `HidroFlorestaStartup`. Clone isolado integral e worktree da fase 7 foram criados; o pacote anexado e checkouts do operador foram preservados. `setup-plan`, `setup-tasks` e `check-prerequisites` usam a Spec existente; não há hooks instalados.
+
+O checklist histórico contém pendências de runtime e aceite humano que são justamente objeto desta continuidade ou limites externos; a autorização vigente permite executar as correções. Nenhuma checkbox de aceite humano será marcada pelo agente. O estado histórico abaixo fica preservado e é substituído, para a execução corrente, por este registro e pelos recibos de CI por HEAD.
 
 ## Summary
 
@@ -24,7 +36,7 @@ Produto: src/components/collections e src/types/collection.type.ts na fase6; src
 ## Execution order
 
 Preflight/PLAN → testes auxiliares RED → correção focal → GREEN auxiliar → candidata visual → checagens estáticas → revisão própria → pacote. As etapas seguintes exigem clone/runtime completo e autorização efetiva da integração: E2E/PostgreSQL e capturas reais, revisão independente, commits/push, CI do SHA exato e PR. Não marcar como concluídas etapas que só foram preparadas.
-## Estado e limites da execução
+## Histórico — estado e limites da preparação inicial
 
 Candidata local no sandbox do chat, sem commit ou branch publicados. A criação da árvore Git pela integração retornou HTTP 403, `Resource not accessible by integration`. Nenhuma escrita remota foi confirmada. Não se tentou contornar a restrição por outro endpoint ou identidade. A causa específica da permissão não foi determinada.
 

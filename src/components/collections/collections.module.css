@@ -35,6 +35,6 @@
 .badge { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:999px; background:#efefef; color:#3e3e3e; font-size:.75rem; font-weight:600; }
 .identifier { color:#626262; font-size:.75rem; overflow-wrap:anywhere; }
 .page :is(a,button,input,select,h2):focus-visible { outline:3px solid #126399; outline-offset:3px; }
-.page :is(a,button,input,select,h2) { scroll-margin-block:1rem 8rem; }
+.page :is(a,button,input,select,h2) { scroll-margin-block:1rem; }
 @media(max-width:40rem) { .context,.fields,.values>div { grid-template-columns:minmax(0,1fr); } .actions>* { flex:1 1 12rem; } }
 @media(prefers-reduced-motion:reduce) { .page *, .page *::before, .page *::after { transition:none; animation:none; } }

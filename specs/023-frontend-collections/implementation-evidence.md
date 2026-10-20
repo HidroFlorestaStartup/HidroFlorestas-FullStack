@@ -1,3 +1,45 @@
+# Evidências da continuidade R3 — 20/10/2026
+
+## Checkpoint original efetivamente inspecionado
+
+PR [#18](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18), branch `feat/frontend-collections`, HEAD `9a5254a8e6bb060c7767231a38370c073b2bdb78`.
+
+- [Run 39453181573](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39453181573), tentativa 1, job `118733100849`.
+- Artifact `12280945790`; SHA-256 do ZIP conferido: `96ccebf4719a441e4eaba07d102c4cf388cc150c27c9e5a7d66d29bffdf2d1bc`.
+- Fingerprint: `75cfc33722df43ecc4085976dd64a1796dc7d2d8867861a81a9733aec010277e`.
+- 9 gates PASS; E2E **155 PASS / 2 FAIL / 2 NOT_RUN**; Https, Deletion, Ihfr, Bootstrap e SchemaAudit não executados nesse HEAD.
+- Primeira falha de geometria após os quatro viewports a 100%: botão da coleta em 320×900/texto200. A falha de conta ocorreu na URL após login, antes da leitura do e-mail sintético. O artifact não contém os traces/error-context citados; não se inventou evidência ausente.
+
+## RED → GREEN auxiliar e alcance
+
+Todos os ensaios abaixo usam dados sintéticos. Browser auxiliar: Chromium 153.0.8010.0, Playwright 1.55.1 do lockfile, Node 24.19.0. Não representam o gate oficial Windows/PostgreSQL.
+
+| Ensaio | RED / contraprova negativa | GREEN / contraprova positiva |
+|---|---|---|
+| Contorno arredondado | Helper anterior: 4 PASS / 2 FAIL; quatro probes fora do raio de 20px a texto200 atingiam MAIN, centro atingia BUTTON | Helper corrigido: 20/20 PASS; execução independente D também 20/20, retries0 |
+| Obstrução real | Cobertura das quatro bordas, centro/canto, clipping, controle fora do viewport e overflow são rejeitados | Descendente legítimo, raios elípticos/percentuais/sobrepostos e seis viewports preservados |
+| Margem de rolagem da coleta (H1 real) | SSR dos componentes reais ApplicationShell + CollectionDetail + painel IHFR, CSS/Tailwind/logo reais: em 844×390/texto200, link em y37,45..129,45 sob header até82;3/9 probes interceptados | Margem local simétrica1rem: y149,45..241,45 e9/9 livres;320/375×900/texto200 e844×390/texto100 continuam PASS; sem alteração do shell |
+| Foco da revisão ambiental | Sem barreira: 12/12 reproduções falham; callback tardio desfaz a rolagem até Confirmar | Foco observado + frame causal: 12/12 PASS; um único scroll, sem elevar timeout |
+| Resposta de login | Helper antigo falha com HTTP200 em 5,6s; novo rejeita401 inesperado e200 sem navegação | Novo aguarda a mesma resposta e passa;401 explícito para senha antiga passa;1POST/caso |
+
+O ensaio H1 usa SSR estático com hooks/Link/Image adaptados e Arial de fallback, sem servidor Next ou DB. Demonstra a obstrução com a estrutura fonte, mas não substitui as capturas oficiais. A única mudança de produto nesta R3 é `scroll-margin-block:1rem 8rem` → `1rem` no CSS Module local de coleta; a navegação permanece intacta.
+
+A causa histórica do incidente de conta continua **INCONCLUSIVA**. O ensaio prova a lacuna de sincronização do teste, não que a latência foi a causa daquele run. Teste, autenticação e componentes relevantes eram iguais ao baseline integrado examinado; isso não autoriza chamar a falha de flakiness.
+
+`npm run typecheck`: PASS local integral. `npm run lint`: exit0, três warnings preexistentes fora do delta (page, user-profile, white-box). Esses comandos auxiliares não substituem os gates oficiais por HEAD. `git diff --check`: PASS.
+
+Recibos sanitizados persistidos: [geometria SSR](evidence/r3/collection-landscape.json), [antes](evidence/r3/collection-landscape-original.png), [depois](evidence/r3/collection-landscape-symmetric.png) e [contraprova de login](evidence/r3/account-login-counterproof.json).
+
+## Proteções e evidência futura
+
+O helper preserva bounds, `elementFromPoint`, navegação móvel, todos os cenários e texto200. Só probes que caíam fora do contorno real são deslocados até dentro dele; quatro pontos de eixo ampliam a detecção. Em falha, registra geometria/scroll/viewport/header/nav e captura mascarada `fullPage:false`, com HEAD e escala. Os negativos sintéticos da suíte `frontend-mission-evidence.spec.ts` geram capturas de obstrução esperada em diretório próprio; não são falhas do aplicativo.
+
+A candidata deve executar os 15 gates e os dois cenários antes NOT_RUN (conta ativa não verificada após reset e recuperação da coleta sob outro membro). Resultados finais, URLs, fingerprint e revisão Codex precisam corresponder ao HEAD final, e não apenas ao checkpoint acima.
+
+---
+
+## Histórico preservado — preparação anterior à continuidade R3
+
 > **Atualização de publicação, 20/10/2026:** O texto histórico abaixo descreve a preparação anterior à publicação. A fase 6 foi publicada na branch `feat/frontend-collections`; RED oficial no run [39444967220](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39444967220): RegressionSetup PASS, Unit FAIL esperado no teste de estado R1. GREEN integral e homologação ainda pendentes desta atualização. O registro final de CI por HEAD deve constar no PR.
 
 # Evidências de implementação candidata
