@@ -6,10 +6,12 @@ Estado vigente: candidata em validação na PR Draft #18; as limitações de con
 |---|---|---|
 | US3: toque/reflow sem obstrução | Helper considera o contorno CSS, mantém os quatro cantos/centro, acrescenta eixos e rejeita obstruções reais; 20/20 contraprovas independentes | Matriz do aplicativo em Windows/Chromium |
 | US3: paisagem com texto200 | Margem assimétrica da coleta reproduziu obstrução real pelo header; margem simétrica local libera9/9 pontos, sem alterar shell | Matriz oficial herdada pela fase7 |
-| US3: foco e rolagem | Um frame causal antes da única rolagem, após foco da revisão; nenhuma espera arbitrária | Regressão de coleta e ambiental |
-| Conta: primeiro desvio em /login | Teste aguarda e valida a resposta do sign-in; mantém a asserção de URL e registra somente status/duração | Jornada real sintética no CI |
-| US1: continuidade A → B → A | HMAC, snapshot, autorização e idempotência por autor preservados; revisão independente sem novo bloqueante | E2E antes NOT_RUN precisa executar |
+| US3: foco e rolagem | Transições finitas/ResizeObserver reproduzidos; aguardar todas as gerações e drenar dois frames causais antes da única rolagem;21/21 contraprovas independentes | Nova regressão oficial de coleta e ambiental |
+| Conta: primeiro desvio em /login | Resposta do sign-in observada, URL preservada; jornada passou no run39460675003, causa histórica permanece inconclusiva | Regressão no novo HEAD |
+| US1: continuidade A → B → A | HMAC/snapshot/idempotência preservados; cenário antes NOT_RUN passou na suíte179/179 do HEAD6fd8066 | Regressão no novo HEAD |
 | Domínio e ciência | Sem mudanças de schema, serviços, parsers, autorização, HMAC ou IHFR nesta correção | Gates existentes permanecem obrigatórios |
+
+O primeiro candidato passou15 gates, mas suas capturas foram removidas por execuções Playwright posteriores. A cópia durável e seus namespaces tiveram contraprova2PASS+1PASS; o próximo artifact deverá conter a matriz completa.
 
 Não há desvio de escopo ou novo requisito funcional que justifique outra Spec. A análise e as contraprovas locais não equivalem a aceite humano nem aos 15 gates. Os resultados por HEAD serão consolidados em `implementation-evidence.md` e na PR, sem transportar aprovação de um SHA anterior.
 

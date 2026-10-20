@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "result": "PASS",
+  "purpose": "Preserve masked mission screenshots and viewport metadata across successive Playwright invocations without cross-test collisions.",
+  "scope": {
+    "module": "tests/e2e/support/frontend-mission-evidence.ts",
+    "function": "captureMissionViewport",
+    "source": "Direct import of the integrated helper; no copied or modified implementation.",
+    "fixture": "Local static HTML",
+    "applicationServerUsed": false,
+    "databaseUsed": false,
+    "externalBrowserRequestsAllowed": false
+  },
+  "runtime": {
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.0"
+  },
+  "executions": [
+    {
+      "sequence": 1,
+      "passed": 2,
+      "failed": 0,
+      "purpose": "Two independent tests invoke the exact helper with the same capture name."
+    },
+    {
+      "sequence": 2,
+      "passed": 1,
+      "failed": 0,
+      "purpose": "A later Playwright invocation clears temporary output and verifies both durable pairs."
+    }
+  ],
+  "checks": {
+    "distinctDurablePngFiles": 2,
+    "distinctDurableViewportJsonFiles": 2,
+    "sameCaptureNameAcrossTests": true,
+    "testNamespacesDistinct": true,
+    "expectedEvidenceKinds": [
+      "application-viewport",
+      "synthetic-helper-counterproof"
+    ],
+    "evidenceKindsCorrect": true,
+    "metadataHeadMatchesInjectedSyntheticValue": true,
+    "fullPageFalse": true,
+    "physicalDeviceFalse": true,
+    "viewportWidth": 320,
+    "viewportHeight": 300,
+    "textScale": 100,
+    "originalTemporaryFilesRemovedByLaterInvocation": 4,
+    "durableFilesRetainedByteForByteAfterLaterInvocation": 4,
+    "workflowGlobsMatchBothPairs": true,
+    "previousReproductionAndBaselinesPreserved": true
+  },
+  "fingerprints": {
+    "exercisedHelperSha256": "4a904e71d16a20b132b7095ad951ee77df68b45632d52027f8f33fe98409efae",
+    "captureMissionViewportSha256": "b014a7de2dd82ee1ef89437640e735fcea3e77264c0ceaa606652c9997bb2d98",
+    "captureFunctionUtf8Bytes": 2224,
+    "captureHashDefinition": "UTF-8 source beginning at export async function captureMissionViewport and ending after its closing brace, excluding the blank line before readControlGeometry."
+  },
+  "postProofComparison": {
+    "captureFunctionByteIdenticalToPreservedExercisedBaseline": true,
+    "allSourceBeforeExpectControlUnobstructedByteIdentical": true,
+    "subsequentChange": "Only expectControlUnobstructed synchronization changed: finite running transitions and two animation frames.",
+    "additionalPlaywrightExecutionsAfterSynchronizationChange": 0
+  },
+  "limitations": [
+    "The injected HEAD is synthetic; this is not an official CI artifact.",
+    "The proof covers capture persistence and classification, not the subsequent synchronization change.",
+    "The proof does not exercise GitHub artifact upload, the full application or PostgreSQL.",
+    "The next official CI must confirm retained real screenshots and metadata for its own HEAD."
+  ]
+}

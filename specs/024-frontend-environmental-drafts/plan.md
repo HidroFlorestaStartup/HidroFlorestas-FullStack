@@ -52,3 +52,7 @@ Executar no clone completo, com Node24.19.0 e lockfile: instalação travada, Pr
 No HEAD final de cada PR verificar individualmente: RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck, Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit. Não reduzir asserts, guards, readiness, permissões, runners, pins ou timeouts para obter verde. Preservar falhas históricas e novos FAILs. Falhas antigas de IHFR/navegação/duas chamadas continuam inconclusivas; novo verde não demonstra causa retrospectiva.
 
 Inspecionar capturas de viewport reais e sanitizadas, fullPage:false, 320/375/768/1440 px, texto200, paisagem, safe-area emulada, teclado/foco/toque, controles finais, conteúdo longo, erro/retry e Back/Forward/reload. Os testes novos cobrem parte dessa matriz; o restante e os testes existentes de contexto, conta, shell, áreas/capas, drafts/OCC/rollback e seis IHFR precisam ser executados. Emulação não prova dispositivo físico ou conformidade WCAG integral.
+
+## Incorporação complementar R3
+
+Parents confirmados da candidata seguinte:5ca520500298a2066f2072290998754a4a62d42e e2a047d10360803517ff6bf64b38754cd0f07f5ba. Uma sobreposição textual no workflow foi resolvida preservando os dois conjuntos de capturas sanitizadas; demais arquivos herdados conferidos com merge-tree. H4 e perda de evidência possuem RED/GREEN auxiliar e recibos independentes. A próxima publicação agrupa a correção compartilhada e a evidência desta Spec, para um único CI coeso.15 gates/Codex/capturas do próprio HEAD continuam condições de conclusão.

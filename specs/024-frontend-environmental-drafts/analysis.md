@@ -4,11 +4,11 @@ Estado vigente: PR Draft #19 empilhada sobre #18. O checkout integral partiu de 
 
 | Requisito / risco | Evidência R3 e decisão | Pendência |
 |---|---|---|
-| US3: foco de revisão | Corrida entre foco e revealFocus reproduzida 12/12; observar título focado e concluir frame causal antes do único scroll libera 12/12 | Matriz E2E integrada |
+| US3: foco de revisão | Título focado preservado; H4 restante exige aguardar transições finitas e ciclo ResizeObserver/foco antes da única rolagem;21/21 contraprovas | Nova matriz E2E integrada |
 | US3: ações/campo final em paisagem | Margem assimétrica coloca Salvar e Declividade sob header a 200%; margem simétrica local libera 9/9 pontos | Capturas oficiais em seis cenários |
-| US1/US2: continuidade de principal | GET/PUT/DELETE/POST handlers recusam B antes do serviço; guard mutants detectados; E2E amplia GET/DELETE e POST persistido | PostgreSQL e E2E oficiais A → B → A |
+| US1/US2: continuidade de principal | Três P1 ambientais e dois novos testes de handlers passaram no HEAD5ca5205; guard mutants detectados | Regressão oficial no novo HEAD |
 | R2/R3/R5: precisão e estados | `false`,0,ausência/null,texto parcial, valores pequenos, foco de grupos e incerteza não foram alterados | Suites existentes preservadas |
-| Dependência | Merge-tree sem conflito entre os dois parents candidatos; apenas branches funcionais podem avançar | Fase6 e fase7 precisam de15 gates no HEAD final |
+| Dependência | Primeira incorporação sem conflito; segunda sobreposição apenas no workflow resolvida pela união dos caminhos sanitizados, com parents exatos | Fase6 e fase7 precisam de15 gates no HEAD final |
 
 HMAC, CSRF, autorização, OCC, consumo/rollback, schema e ciência IHFR continuam fora do diff de produto R3. Não há incremento funcional que justifique nova Spec. Uma limitação adicional do helper em cantos recortados de `summary` foi registrada: não há uso atual da asserção nesse alvo; os cinco controles exercitados na reprodução são discriminados, sem declarar toda a matriz auxiliar verde.
 

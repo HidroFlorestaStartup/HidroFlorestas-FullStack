@@ -118,13 +118,12 @@ test('viewport, text200, touch, focus and last controls remain usable',async({pa
     await page.goto(`${area}/collections/${F.collectionIds[0]}`);
     if(scale===200)await page.addStyleTag({content:'html{font-size:200%!important}'});
     const read=page.getByRole('link',{name:'Ver dados ambientais',exact:true});
-    // Capture the actual, potentially failing viewport BEFORE validating geometry.
-    // Never replace expectControlUnobstructed with a weaker assertion.
-    await read.evaluate(node=>node.scrollIntoView({block:'center',inline:'nearest'}));
-    const geometry=await readControlGeometry(read);
-    console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,geometry}));
-    await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
+    // Preserve the unscrolled viewport separately from the validated result.
+    await captureMissionViewport(page,info,`frontend-collections-detail-before-${width}-${height}-${scale}`,scale);
+    console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,stage:'before',geometry:await readControlGeometry(read)}));
     await expectControlUnobstructed(read,page);
+    console.log('COLLECTION_DETAIL_VISIBILITY',JSON.stringify({width,height,scale,stage:'after',geometry:await readControlGeometry(read)}));
+    await captureMissionViewport(page,info,`frontend-collections-detail-${width}-${height}-${scale}`,scale);
   }
 });
 

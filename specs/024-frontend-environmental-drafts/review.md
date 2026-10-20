@@ -1,5 +1,7 @@
 # Revisão da continuidade R3 — 20/10/2026
 
+Atualização complementar: a candidata5ca5205 teve9 gates PASS, E2E185PASS/1FAIL/1NOT_RUN e Codex sem achados. Os três P1 ambientais passaram; a falha e interrupção pertencem à coleta herdada. C inspecionou24quadros ambientais e registrou limites sem atribuir aceite humano. D revisou a sincronização final compartilhada (21/21 PASS) e C a preservação em duas invocações Playwright(2PASS+1PASS). O próximo HEAD incorpora2a047d1 com parents explícitos; o workflow reúne os caminhos de captura de ambas as fases. Resultados completos e limitações estão em implementation-evidence.md.
+
 C investigou o foco/rolagem e fez revisão focada de integridade ambiental. D revisou de forma independente os testes compartilhados e apontou a lacuna de GET/DELETE. A integrou as frentes e exigiu também a variante de POST persistido com resposta perdida e troca A → B → A. A publicação e as referências Git têm um único escritor.
 
 Os novos testes de handlers exercitam guardas reais com serviços mockados:4/4 PASS. Remover somente o guard de draft ou somente o de POST em cópias auxiliares produz3 PASS / 1 FAIL em cada variante (`200 !== 403`). Nenhuma mutação entrou no código publicado, nenhuma rede ou consulta de banco foi usada nesses ensaios. E2E mantém a necessidade de validar persistência, revisão e idempotência no PostgreSQL sintético oficial.

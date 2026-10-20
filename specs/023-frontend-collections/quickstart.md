@@ -1,6 +1,6 @@
 # Validação e retomada
 
-Aplicar os patches próprios somente após conferir manifesto/preimages no clone completo e seguir o handoff de validação do pacote. Nenhum script deste pacote faz push, merge, instalação ou operação em banco automaticamente.
+A implementação está publicada na branch `feat/frontend-collections`, PR Draft #18. Conferir HEAD remoto, worktree e diff antes de continuar. Os pacotes de patches e bloqueios de publicação descritos no histórico não são o estado vigente. A validação da candidata6fd8066 passou15 gates, mas perdeu as capturas; consultar `implementation-evidence.md` antes de atribuir aceite à próxima candidata.
 
 ## Validação obrigatória antes da conclusão
 

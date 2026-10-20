@@ -1,6 +1,6 @@
 # Validação e retomada
 
-Aplicar os patches próprios somente após conferir manifesto/preimages no clone completo e seguir o handoff de validação do pacote. Nenhum script deste pacote faz push, merge, instalação ou operação em banco automaticamente.
+A implementação está publicada na branch `feat/frontend-environmental-drafts`, PR Draft #19 empilhada sobre #18. Conferir HEAD remoto, worktree, merge-base e parents antes de incorporar a próxima correção de coleta. O candidato5ca5205 executou os P1 ambientais e24 capturas, mas falhou na geometria herdada da coleta; consultar `implementation-evidence.md`. Os antigos pacotes de patches não são a fonte vigente de publicação.
 
 ## Validação obrigatória antes da conclusão
 

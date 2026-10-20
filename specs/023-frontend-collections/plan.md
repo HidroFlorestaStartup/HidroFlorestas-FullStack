@@ -54,3 +54,7 @@ Executar no clone completo, com Node24.19.0 e lockfile: instalação travada, Pr
 No HEAD final de cada PR verificar individualmente: RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck, Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit. Não reduzir asserts, guards, readiness, permissões, runners, pins ou timeouts para obter verde. Preservar falhas históricas e novos FAILs. Falhas antigas de IHFR/navegação/duas chamadas continuam inconclusivas; novo verde não demonstra causa retrospectiva.
 
 Inspecionar capturas de viewport reais e sanitizadas, fullPage:false, 320/375/768/1440 px, texto200, paisagem, safe-area emulada, teclado/foco/toque, controles finais, conteúdo longo, erro/retry e Back/Forward/reload. Os testes novos cobrem parte dessa matriz; o restante e os testes existentes de contexto, conta, shell, áreas/capas, drafts/OCC/rollback e seis IHFR precisam ser executados. Emulação não prova dispositivo físico ou conformidade WCAG integral.
+
+## Continuação após a primeira candidata R3
+
+O run39460675003/HEAD6fd8066 passou15 gates/179E2E, porém perdeu as capturas quando Deletion/Ihfr limparam `test-results`. O run39461576673/HEAD5ca5205 da fase7 isolou a corrida restante da coleta a200%. A continuação agrupa sincronização finita/ResizeObserver, contraprova permanente e captura durável, preservando os dois resultados históricos. Uma nova candidata por branch será validada integralmente; fase7 incorpora o SHA novo da fase6 com parents explícitos e sem alterar a base dos PRs.

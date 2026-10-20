@@ -1,0 +1,9 @@
+{
+  "first_parent": "5ca520500298a2066f2072290998754a4a62d42e",
+  "second_parent": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+  "automatic_merge_tree": "1b890c01c9d928e6a563676d93daf1eea9f4efd6",
+  "conflicts": [
+    ".github/workflows/rc-review.yml"
+  ],
+  "resolution": "Union of collection and environmental sanitized artifact paths; existing environmental branch push/job allowlists preserved; every other inherited file byte-identical to automatic merge tree."
+}

@@ -118,6 +118,64 @@ test('pending focus reveal finishes before the single control scroll', async ({ 
   expect((await readControlGeometry(target)).unobstructed).toBe(true);
 });
 
+test('text scale transitions finish before the single scroll while input focus remains protected', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.setContent(`<style>
+    * { box-sizing: border-box; transition: .3s; }
+    html { font-size: 100%; font-family: Arial, sans-serif; }
+    body { margin: 0; }
+    .content { height: 700px; overflow: auto; }
+    .surface { padding: 16px; }
+    input { display: block; width: 200px; height: 3rem; }
+    .spacer { height: 50rem; }
+    .busy { position: fixed; left: 0; top: 0; width: 2px; height: 2px; animation: turn 1s linear infinite; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+    ${collectionsCss}
+  </style><div class="busy" aria-hidden="true"></div><div class="content"><main class="surface">
+    <label for="occurrence">Data e hora da coleta</label><input id="occurrence">
+    <div class="spacer" aria-hidden="true"></div><button class="primary">Revisar coleta</button>
+  </main></div>`);
+  await page.evaluate(() => {
+    const content = document.querySelector<HTMLElement>('.content')!;
+    // The shell protects active focus after a size change, in its next rAF.
+    let frame = 0;
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const active = document.activeElement;
+        if (!(active instanceof HTMLElement) || !content.contains(active)) return;
+        const box = active.getBoundingClientRect();
+        const region = content.getBoundingClientRect();
+        if (box.top < region.top + 8 || box.bottom > region.bottom - 8) {
+          active.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+        }
+      });
+    });
+    observer.observe(content);
+    observer.observe(content.firstElementChild!);
+  });
+  const input = page.getByLabel('Data e hora da coleta');
+  const target = page.getByRole('button', { name: 'Revisar coleta', exact: true });
+  await target.evaluate(node => {
+    const scroll = node.scrollIntoView.bind(node);
+    node.scrollIntoView = options => {
+      node.setAttribute('data-scroll-count', String(Number(node.getAttribute('data-scroll-count') ?? 0) + 1));
+      scroll(options);
+    };
+  });
+  await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
+  await input.fill('valor sintético');
+  await expectControlUnobstructed(target, page);
+  await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+  await expect(input).toBeFocused();
+  await expect(target).toHaveAttribute('data-scroll-count', '1');
+  const geometry = await readControlGeometry(target);
+  expect(geometry.points).toHaveLength(9);
+  expect(geometry.unobstructed).toBe(true);
+  expect(await page.evaluate(() => document.getAnimations().some(animation =>
+    animation.playState === 'running' && animation.effect?.getComputedTiming().endTime === Infinity))).toBe(true);
+});
+
 for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [844, 390, 200]]) {
   test(`rounded collection control is usable at ${width}x${height}, text ${scale}%`, async ({ page }) => {
     await page.setViewportSize({ width, height });

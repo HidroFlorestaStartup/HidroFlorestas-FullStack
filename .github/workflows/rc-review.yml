@@ -87,8 +87,12 @@ jobs:
             .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
             test-results/**/frontend-collections-*.png
             test-results/**/frontend-collections-*-viewport.json
+            .accounts-validation/frontend-collections/*-frontend-collections-*.png
+            .accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
             test-results/**/frontend-environmental-*.png
             test-results/**/frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true

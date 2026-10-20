@@ -1,5 +1,27 @@
 # Evidências da continuidade R3 — 20/10/2026
 
+## Incorporação complementar e candidata seguinte
+
+A segunda candidata preserva como primeiro parent `5ca520500298a2066f2072290998754a4a62d42e` e incorpora como segundo parent a fase6 `2a047d10360803517ff6bf64b38754cd0f07f5ba`. O merge-tree encontrou uma única sobreposição textual em `.github/workflows/rc-review.yml`: os dois lados acrescentavam capturas no mesmo trecho. A resolução preserva a união dos caminhos sanitizados de coleta/ambiental e todas as allowlists da branch ambiental. Os demais arquivos herdados conferem byte a byte com o merge-tree automático. [Registro da incorporação](evidence/r3/second-candidate-incorporation.json). Não houve rebase, force-push ou merge de PR.
+
+A sincronização agora aguarda todas as gerações de transições finitas, conclui o ciclo ResizeObserver/foco em dois frames e reavalia antes da única rolagem. O helper final passou21/21 contraprovas independentes e3/3 reproduções focais, preservando foco,9hit tests e animação infinita. A pausa pendente foi excluída porque sua promise `finished` pode não resolver. [Evidência compartilhada da fase6](../023-frontend-collections/implementation-evidence.md).
+
+O workflow preserva PNG/JSON mascarados de ambas as fases em diretórios duráveis. C comprovou2PASS+1PASS em duas execuções Playwright com o helper de captura exato; o bloco de captura continuou idêntico após a correção de sincronização. A suíte oficial esperada passa a188 testes, mas essa expectativa não é resultado. A candidata seguinte exige seu próprio run completo, fingerprint, inspeção dos artifacts e revisão Codex.
+
+## Primeira candidata R3 publicada e resultado oficial
+
+HEAD `5ca520500298a2066f2072290998754a4a62d42e`, [run 39461576673](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39461576673), tentativa1, job `118762102005`: **9 gates PASS; E2E185 PASS / 1 FAIL / 0 SKIP / 1 NOT_RUN; cinco gates posteriores NOT_RUN**. Unit390+17 e Integration231 passaram, incluindo resultados nominais dos dois novos testes de handlers. O fingerprint `bc1b4a11b6aacf578512d946cbe96e5e0d2c06ed3096bf34cfe7514e9782c625` foi reproduzido exatamente sobre564 arquivos funcionais com filtros de checkout CRLF.
+
+O commit tem parents ordenados `3d8038294e3d5383b0b3536b8ded275f2f85e884` e `6fd80667f4270ce43536963762444f6893f0c347`: incorporação não destrutiva da fase6, sem rebase ou merge de PR. A árvore local conferida foi `987bdddd50c64b5ef2d41eacc3d2443a63b7a79f`.
+
+- Artifact `12283507803`, SHA-256 verificado `a7eeae056a0bd2225a2044c2e11e06b23c4310abfa0c28595af927477c6dd11e`.
+- Única falha: coleta herdada, botão Revisar coleta em320×900/texto200, y1726..1860,9/9 hits ausentes, INPUT focado. O P1 de coleta seguinte ficou NOT_RUN pelo modo serial; isso não apaga o PASS dele no run anterior da fase6, mas tampouco aprova este HEAD.
+- Os três P1 ambientais passaram: PUT/GET/DELETE do draft, POST antes de persistir e POST já persistido com resposta perdida, sempre A → B → A. A inferência individual está explicitada no [recibo](evidence/r3/first-candidate-receipt.json):187 selecionados,185 aprovados, somente a falha e a interrupção de coleta acima, sem filtros/skips.
+- [Codex concluído no mesmo HEAD](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6296404441), sem achados materiais. A revisão será renovada após o próximo commit.
+- [Inspeção dos24 pares PNG/JSON ambientais](evidence/r3/first-candidate-visual-review.md): Salvar,Declividade,Revisar eConfirmar visíveis em todas as seis combinações; HEAD/escala/dimensões consistentes. Limites documentados incluem máscaras sobre pixels da navegação, rolagem do documento em alguns quadros, rótulo de Declividade parcialmente fora em paisagem e indicador Next de desenvolvimento. Não se declara aceite humano ou navegação sempre ancorada.
+
+A causa restante H4 foi reproduzida com React/CSS reais: transições globais acionam ResizeObserver e revelam novamente o input focado após a rolagem do teste. A correção compartilhada deverá aguardar transições finitas e concluir o ciclo de resize/foco antes de uma única rolagem, mantendo as contraprovas de obstrução. PNG/JSON da coleta e do ambiental serão preservados fora do outputDir que os gates posteriores limpam. O novo HEAD requer seus próprios15 gates, captura durável e Codex.
+
 ## Checkpoint original e dependência
 
 PR [#19](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19), branch `feat/frontend-environmental-drafts`, HEAD `3d8038294e3d5383b0b3536b8ded275f2f85e884`, base `feat/frontend-collections`.
