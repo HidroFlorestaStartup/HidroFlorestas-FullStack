@@ -722,7 +722,13 @@
     "mainRemote": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
     "synchronization": "FF seguro após cada merge; outras branches locais alinhadas aos próprios upstreams e preservadas",
     "sourceBranchesPreserved": true,
-    "newWorktree": "/tmp/hidro-integration-20261020/review"
+    "newWorktree": "/tmp/hidro-integration-20261020/review",
+    "sourceRefsVerifiedAfterMerge": {
+      "docs/handoff-frontend-fases-4-5": "4144e12bf240091ebd0a133670e5a1726d2eab78",
+      "feat/frontend-laboratory-dashboard": "c076ec17f668ee7cf632a6bff0c71df4e7cd2564",
+      "feat/frontend-areas-cover": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "022-fix-concurrency-ihfr": "b85edd8482fb5a72dbc70f9978332164c190d861"
+    }
   },
   "historicalFailures": [
     "Tentativa anterior da integração GitHub recusou merge13 com403 Resource not accessible by integration (relato no pedido; nenhuma escrita atribuída àquela conexão)",
@@ -772,8 +778,19 @@
     "branch": "docs/handoff-frontend-fases-6-7",
     "base": "development",
     "startingCommit": "24be57fa0ddeb9d3da72ae80606850d428e29fbb",
-    "status": "PENDENTE",
-    "pullRequest": null,
-    "promptUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/docs/handoff-frontend-fases-6-7/docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md"
+    "status": "PUBLICADO_AGUARDANDO_REVISAO",
+    "pullRequest": {
+      "number": 17,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17",
+      "state": "OPEN",
+      "author": "PedroVitor237",
+      "base": "development",
+      "autoMerge": false,
+      "selfApproval": false
+    },
+    "promptUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/docs/handoff-frontend-fases-6-7/docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md",
+    "firstCommit": "f33e1254090aacf9f9f679dd45da3846465cb0cd",
+    "firstCommitUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/commit/f33e1254090aacf9f9f679dd45da3846465cb0cd",
+    "commitPolicy": "Commit final de encerramento informado na entrega e pelo head do PR; sem SHA autorreferente neste JSON"
   }
 }

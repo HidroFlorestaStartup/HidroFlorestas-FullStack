@@ -597,3 +597,20 @@ administrativa fabricada: TECH_DECISIONS.md/PENDING_DECISIONS.md intactos.
 
 [Recibo com SHAs completos, pais/árvores, reviews, gates e limitações](integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
 Publicação documental e validação final serão registradas em adendo.
+
+## Publicação e encerramento da preparação — 20/10/2026
+
+Branch `docs/handoff-frontend-fases-6-7` publicada com upstream próprio; primeiro
+commit `f33e1254090aacf9f9f679dd45da3846465cb0cd`. [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17)
+**OPEN** para development, sem autoaprovação ou auto-merge. Prompt diretamente
+acessível na branch antes do merge documental. Integração13–16 e preparação do
+handoff `CONCLUIDO`; documentação `AGUARDANDO_REVISAO` do mantenedor. As fases6/7
+ainda serão implementadas pelo outro desenvolvedor conforme a autorização.
+
+Validação: nove arquivos documentais, JSON,118 links locais/2âncoras, seis
+documentos anteriores preservados byte a byte, campos/SHAs/pais/árvores e
+equivalência, escopo/whitespace/padrões sensíveis reconhecíveis PASS. Nenhum erro
+de referência anterior ou novo localizado. Sem nova bateria funcional, pois
+não houve delta funcional de integração; CI dos heads e limites separados no
+recibo. Main/trabalhos preexistentes preservados; sem bloqueio técnico novo.
+Revisão humana documental e futuros merges6/7 continuam com o mantenedor.

@@ -320,3 +320,7 @@ heads14/15/16, sem alegar CI de merge. Sem nova suíte funcional local ou aceite
 visual/manual. Falhas históricas e qualificadores IHFR preservados. docs/raw/**,
 TECH_DECISIONS.md e PENDING_DECISIONS.md intactos: nenhuma decisão material nova
 nesses registros. Publicação/validação final serão acrescidas em adendo.
+
+Publicação deste handoff: [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17) aberto para development,
+branch docs/handoff-frontend-fases-6-7, sem autoaprovação ou auto-merge.
+Preparação concluída; documentação aguarda revisão do mantenedor.

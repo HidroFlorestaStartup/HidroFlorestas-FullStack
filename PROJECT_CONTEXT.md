@@ -236,3 +236,7 @@ Coletas e Dados ambientais/drafts. Branch docs/handoff-frontend-fases-6-7, criad
 da development final; pode ser lida antes do merge documental. Uma spec/branch/PR
 por fase; fase7 pode ser empilhada na6 validada sem aguardar merge do mantenedor.
 Não implementar fase8 pelo painel IHFR existente no detalhe. [Recibo completo](docs/plans/active/preparacao-incorporacao-frontend-20261018/integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
+
+Publicação deste handoff: [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17) aberto para development,
+branch docs/handoff-frontend-fases-6-7, sem autoaprovação ou auto-merge.
+Preparação concluída; documentação aguarda revisão do mantenedor.

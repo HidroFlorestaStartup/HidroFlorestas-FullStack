@@ -1,6 +1,6 @@
 # Plano de continuação das fases 6 e 7
 
-Identificador: HF-FRONTEND-6-7-20261020. Estado: `EM_ANDAMENTO`.
+Identificador: HF-FRONTEND-6-7-20261020. Estado: `AGUARDANDO_REVISAO`; execução preparatória `CONCLUIDO`.
 
 ## Objetivo, autorização e resultado
 
@@ -47,7 +47,7 @@ Revisão isolada em /tmp/hidro-integration-20261020/review, detached no head022.
 | Integrar #13–16 em ordem | Codex autorizado por Pedro | CONCLUIDO | Head exato, base conferida, merge commits, pais/árvore registrados |
 | Equivalência e sincronização | Codex autorizado por Pedro | CONCLUIDO | Produto/testes/configuração iguais ao head022; deltas documentais identificados |
 | Prompt e registros de handoff | Codex autorizado por Pedro | CONCLUIDO | Autorização de ambas as fases, contratos, evidências e publicação completas |
-| Validar, commitar, push e PR aberto | Codex autorizado por Pedro | EM_ANDAMENTO | Links/JSON/diff revisados; PR documental aberto para mantenedor |
+| Validar, commitar, push e PR aberto | Codex autorizado por Pedro | CONCLUIDO | Links/JSON/diff revisados; PR documental aberto para mantenedor |
 
 ## Riscos, dependências e paradas
 
@@ -88,3 +88,25 @@ mudança; delta funcional exige runner oficial e validação pertinente.
   funcional de integração; limitações e históricos constam no recibo.
 - Sem decisão material que exija TECH_DECISIONS.md/PENDING_DECISIONS.md.
   Próximo passo: commit/push/PR documental aberto; revisão humana pendente.
+
+## Publicação e encerramento da preparação — 20/10/2026
+
+Branch `docs/handoff-frontend-fases-6-7` publicada com upstream próprio; primeiro
+commit `f33e1254090aacf9f9f679dd45da3846465cb0cd`. [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17)
+**OPEN** para development, sem autoaprovação ou auto-merge. Prompt diretamente
+acessível na branch antes do merge documental. Integração13–16 e preparação do
+handoff `CONCLUIDO`; documentação `AGUARDANDO_REVISAO` do mantenedor. As fases6/7
+ainda serão implementadas pelo outro desenvolvedor conforme a autorização.
+
+Validação: nove arquivos documentais, JSON,118 links locais/2âncoras, seis
+documentos anteriores preservados byte a byte, campos/SHAs/pais/árvores e
+equivalência, escopo/whitespace/padrões sensíveis reconhecíveis PASS. Nenhum erro
+de referência anterior ou novo localizado. Sem nova bateria funcional, pois
+não houve delta funcional de integração; CI dos heads e limites separados no
+recibo. Main/trabalhos preexistentes preservados; sem bloqueio técnico novo.
+Revisão humana documental e futuros merges6/7 continuam com o mantenedor.
+
+Sem arquivamento: manter o plano no pacote ativo autorizado até a revisão humana
+prevista. Nenhuma decisão científica/global nova, homologação externa ou
+implementação6/7 alegada. Resultado preparatório entregue; não resta operação
+autorizada de merge neste PR documental.
