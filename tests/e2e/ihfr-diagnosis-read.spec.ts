@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./support/ihfr-diagnostics";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 import { IHFR_CONTEXTS } from "../fixtures/ihfr-diagnosis-contexts";
 import { IHFR_DOMAIN } from "../fixtures/ihfr-diagnosis-domain";

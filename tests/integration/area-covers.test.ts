@@ -82,6 +82,79 @@ test("CRI-REV-002 concurrent hourly quota is checked again after preset",()=>fix
  assert.equal(results.filter(x=>x.status==="fulfilled").length,1);assert.deepEqual(results.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"],JSON.stringify({transactionErrors:diagnostics}));assert.equal(await db.coverUploadAttempt.count(),10);assert.equal(await db.coverCleanupJob.count(),40);
 }));
 
+test("FIX-022 committed winner is visible after a real Serializable commit conflict",()=>fixture(async(db,s,p,advance)=>{
+ for(let n=0;n<9;n++){await s.initiate(A.owner,context,command());advance(4*60000);}advance(11*60000);
+ const ready=barrier(2),leftCommit=barrier(),rightCommit=barrier();const events:unknown[]=[];
+ const traced=(label:string,commit:ReturnType<typeof barrier>)=>{
+  let phase=0;
+  return new Proxy(db,{get:(target,key)=>key==="$transaction"?async(run:(tx:Prisma.TransactionClient)=>Promise<unknown>,options:{isolationLevel:"Serializable";maxWait:number;timeout:number})=>{
+   const current=++phase;events.push({label,phase:current,event:"begin"});
+   try{const result=await db.$transaction(async tx=>{
+    const value=await run(tx);
+    events.push({label,phase:current,event:"body-complete"});
+    if(current===2){await ready.wait();await commit.wait();}
+    return value;
+   },options);events.push({label,phase:current,event:"commit"});return result;
+   }catch(error){events.push({label,phase:current,event:"error",error:transactionDiagnostic(error)});throw error;}
+  }:Reflect.get(target,key,target)});
+ };
+ const clock=()=>new Date("2026-10-10T12:47:00Z");
+ const left=new AreaCoverService(traced("left",leftCommit),()=>p,clock,()=>true,async()=>{});
+ const right=new AreaCoverService(traced("right",rightCommit),()=>p,clock,()=>true,async()=>{});
+ const preset=barrier(2);p.onPreset=preset.wait;
+ const leftResult=left.initiate(A.owner,context,command()),rightResult=right.initiate(A.owner,context,command());
+ const outcomes=Promise.allSettled([leftResult,rightResult]);
+ try{
+  await Promise.race([preset.entered,leftResult.then(()=>{throw new Error("left completed before the preset barrier");}),rightResult.then(()=>{throw new Error("right completed before the preset barrier");})]);
+  preset.release();
+  await Promise.race([ready.entered,leftResult.then(()=>{throw new Error("left completed before the commit barrier");}),rightResult.then(()=>{throw new Error("right completed before the commit barrier");})]);
+  ready.release();leftCommit.release();await leftResult;
+ }
+ finally{preset.release();ready.release();leftCommit.release();rightCommit.release();await outcomes;}
+ const results=await outcomes;
+ const counts={attempts:await db.coverUploadAttempt.count(),jobs:await db.coverCleanupJob.count()};
+ const diagnostic=JSON.stringify({events,counts});console.log(`FIX-022 schedule ${diagnostic}`);
+ assert.deepEqual(counts,{attempts:10,jobs:40},diagnostic);
+ assert.equal(results.filter(x=>x.status==="fulfilled").length,1,diagnostic);
+ assert.deepEqual(results.filter(x=>x.status==="rejected").map(x=>x.reason.code),["RATE_LIMITED"],diagnostic);
+ assert.ok(events.some(e=>JSON.stringify(e).includes("40001")),diagnostic);
+}));
+
+for(const mode of ["eligible","read-error","revoked","disabled","stale","replay","preset-changed","arbitrary"] as const)
+test(`FIX-022 final eligibility read preserves ${mode} after bounded contention`,()=>fixture(async(db,base,p)=>{
+ const actor=A.contextualAdmin;
+ const input=command(),waits:number[]=[];let calls=0,writes=0,enabled=true;
+ let original:Awaited<ReturnType<AreaCoverService["initiate"]>>|undefined;
+ const beforeRead=async()=>{
+  if(mode==="revoked")await db.researchersLinked.update({where:{userId_laboratoryRoomId:{userId:actor,laboratoryRoomId:L.active}},data:{role:"MEMBER"}});
+  if(mode==="disabled")enabled=false;
+  if(mode==="stale")await db.areaCover.upsert({where:{areaId:context.areaId},create:{areaId:context.areaId,revision:1},update:{revision:1}});
+  if(mode==="replay"||mode==="preset-changed"){
+   if(mode==="preset-changed")p.hash="b".repeat(64);
+   original=await base.initiate(actor,context,input);
+   p.hash="a".repeat(64);
+  }
+ };
+ const traced=new Proxy(db,{get:(target,key)=>key==="$transaction"?async(run:(tx:Prisma.TransactionClient)=>Promise<unknown>,options:{isolationLevel:"Serializable";maxWait:number;timeout:number})=>{
+  const current=++calls;
+  if(current>=2&&current<=4){
+   writes++;
+   try{return await db.$transaction(async tx=>{await run(tx);throw Object.assign(new Error("synthetic write conflict"),{code:mode==="arbitrary"?"08006":"P2034"});},options);}
+   catch(error){if(current===4)await beforeRead();throw error;}
+  }
+  if(current===5&&mode==="read-error")throw Object.assign(new Error("private technical error"),{code:"P2034"});
+  return db.$transaction(run,options);
+ }:Reflect.get(target,key,target)});
+ const service=new AreaCoverService(traced,()=>p,()=>new Date("2026-10-10T12:00:00Z"),()=>enabled,async retry=>{waits.push(retry);});
+ if(mode==="replay")assert.deepEqual(await service.initiate(actor,context,input),original);
+ else await assert.rejects(service.initiate(actor,context,input),{code:{eligible:"INTERNAL_ERROR","read-error":"INTERNAL_ERROR",revoked:"FORBIDDEN",disabled:"UNAVAILABLE",stale:"STALE_REVISION","preset-changed":"UNAVAILABLE",arbitrary:"INTERNAL_ERROR"}[mode]});
+ assert.equal(calls,mode==="arbitrary"?2:5);assert.equal(writes,mode==="arbitrary"?1:3);
+ assert.deepEqual(waits,mode==="arbitrary"?[]:[1,2]);
+ const replay=mode==="replay"||mode==="preset-changed";
+ assert.equal(p.presetCalls,replay?2:1);assert.equal(p.ticketCalls,mode==="replay"?2:mode==="preset-changed"?1:0);
+ assert.equal(await db.coverUploadAttempt.count(),replay?1:0);assert.equal(await db.coverCleanupJob.count(),replay?4:0);
+}));
+
 test("CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota",()=>fixture(async(db,s,p)=>{
  const input=command(),ticket=await s.initiate(A.owner,context,input);await p.store(ticket.upload.params.public_id,ticket.attemptId,"staging",await coverBytes());await s.confirm(A.owner,context,ticket.attemptId);
  for(let n=0;n<3;n++)await s.initiate(A.owner,context,{...command(),expectedRevision:1});const before=p.presetCalls;

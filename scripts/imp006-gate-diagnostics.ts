@@ -12,13 +12,20 @@ const secretNames = [
 export function redactImp006Diagnostics(value: string, env: Record<string, string | undefined>): string {
   let safe = value;
   const secrets = secretNames.map((name) => env[name]).filter((secret): secret is string => Boolean(secret));
-  for (const secret of [...new Set(secrets)].sort((left, right) => right.length - left.length)) {
+  // Console errors may already contain JSON-escaped values, not the raw env value.
+  const variants = secrets.flatMap(secret => [secret, JSON.stringify(secret).slice(1, -1)]);
+  for (const secret of [...new Set(variants)].sort((left, right) => right.length - left.length)) {
     safe = safe.replaceAll(secret, "<REDACTED>");
   }
   return safe
+    // Remove bearer values before parsing unquoted structured fields.
+    .replace(/\bBearer\s+[^\s"'<>]+/gi, "Bearer <REDACTED>")
+    // Structured diagnostic scalars must be removed before generic line patterns.
+    // Deliberately keep non-sensitive metadata such as tokenCount, code and SQLSTATE.
+    .replace(/((?:["']?\b(?:password|currentPassword|newPassword|confirmPassword|token|auth_token|verification_token|access_token|refresh_token|secret|authorization|cookie|set-cookie|x-api-key|api[_-]?key)\b["']?)\s*:\s*)(?:"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[^\s,}\]]+)/gi, '$1"<REDACTED>"')
+    .replace(/\b(auth_token|verification_token|access_token|refresh_token)=[^;\s"'<>]+/gi, "$1=<REDACTED>")
     .replace(/postgres(?:ql)?:\/\/[^\s"'<>]+/gi, "<REDACTED_DATABASE_URL>")
     .replace(/\b(Authorization|Cookie|Set-Cookie|X-Api-Key):[^\r\n]*/gi, "$1: <REDACTED>")
-    .replace(/\bBearer\s+[^\s"'<>]+/gi, "Bearer <REDACTED>")
     .replace(/\bauth_token=[^;\s"'<>]+/gi, "auth_token=<REDACTED>")
     .replace(/\b(password|token|secret)=([^\s;&"'<>]+)/gi, "$1=<REDACTED>")
     .replace(/\beyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b/g, "<REDACTED_JWT>");
@@ -40,6 +47,29 @@ export function describeImp006Error(error: unknown, env: Record<string, string |
   };
   visit(error);
   return redactImp006Diagnostics(parts.join(" <- caused by: "), env);
+}
+
+/** Preserve owned Next output in the surrounding gate log, redacting complete lines. */
+export function forwardImp006Diagnostics(stream: NodeJS.ReadableStream | null, env: Record<string, string | undefined>, label: string, destination: Pick<NodeJS.WriteStream, "write"> = process.stdout) {
+  if (!stream) return;
+  let pending = "";
+  let discarding = false;
+  stream.setEncoding("utf8");
+  const write = (line: string) => destination.write(`${label}: ${redactImp006Diagnostics(line, env)}\n`);
+  stream.on("data", (chunk: string) => {
+    if (discarding) {
+      const boundary = chunk.indexOf("\n");
+      if (boundary < 0) return;
+      chunk = chunk.slice(boundary + 1);
+      discarding = false;
+    }
+    pending += chunk;
+    const lines = pending.split("\n");
+    pending = lines.pop() ?? "";
+    for (const line of lines) write(line.length <= 1_048_576 ? line : "OUTPUT_LINE_LIMIT_EXCEEDED");
+    if (pending.length > 1_048_576) { pending = ""; discarding = true; write("OUTPUT_LINE_LIMIT_EXCEEDED"); }
+  });
+  stream.on("end", () => { if (pending) write(pending); });
 }
 
 export interface Imp006GateResult {
@@ -86,8 +116,16 @@ export async function runImp006Gate(
   const attach = (stream: NodeJS.ReadableStream | null, destination: NodeJS.WriteStream, label: string) => {
     if (!stream) return;
     let pending = "";
+    let discarding = false;
     stream.setEncoding("utf8");
     stream.on("data", (chunk: string) => {
+      // kill is asynchronous; queued output must not reveal an oversized line's tail.
+      if (discarding) {
+        const boundary = chunk.indexOf("\n");
+        if (boundary < 0) return;
+        chunk = chunk.slice(boundary + 1);
+        discarding = false;
+      }
       pending += chunk;
       const complete = pending.split("\n");
       pending = complete.pop() ?? "";
@@ -103,6 +141,7 @@ export async function runImp006Gate(
       }
       if (pending.length > 1_048_576) {
         pending = "";
+        discarding = true;
         append(`${label}: OUTPUT_LINE_LIMIT_EXCEEDED\n`);
         child?.kill();
       }

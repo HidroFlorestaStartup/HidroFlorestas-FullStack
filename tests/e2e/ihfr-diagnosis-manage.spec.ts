@@ -1,5 +1,6 @@
 import { fillCollectionOccurrence } from "./support/collection-occurrence";
-import { expect, test, type Page } from "@playwright/test";
+import type { Page } from "@playwright/test";
+import { expect, test } from "./support/ihfr-diagnostics";
 import { Client } from "pg";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 

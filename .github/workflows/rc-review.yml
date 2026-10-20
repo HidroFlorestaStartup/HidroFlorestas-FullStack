@@ -13,6 +13,7 @@ on:
       - feat/frontend-workspace-shell
       - feat/frontend-laboratory-dashboard
       - feat/frontend-areas-cover
+      - 022-fix-concurrency-ihfr
   workflow_dispatch:
 
 permissions:
@@ -34,7 +35,8 @@ jobs:
       github.ref_name == 'feat/frontend-account' ||
       github.ref_name == 'feat/frontend-workspace-shell' ||
       github.ref_name == 'feat/frontend-laboratory-dashboard' ||
-      github.ref_name == 'feat/frontend-areas-cover'
+      github.ref_name == 'feat/frontend-areas-cover' ||
+      github.ref_name == '022-fix-concurrency-ihfr'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
