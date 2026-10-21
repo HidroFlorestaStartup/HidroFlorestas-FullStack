@@ -1,11 +1,13 @@
 import { test as base, expect } from "@playwright/test";
 import { redactImp006Diagnostics } from "../../../scripts/imp006-gate-diagnostics";
+import { probeIHFRRouteContext } from "./ihfr-route-probe";
 
 // Observe the existing tests without changing readiness, actions or assertions.
 // Headers, cookies, response bodies and traces are deliberately never recorded.
 export const test = base.extend<{ ihfrDiagnostics: void }>({
   ihfrDiagnostics: [async ({ page }, use, info) => {
     const navigation: Array<{ path: string; status: number }> = [];
+    let lastNotFoundNavigation: string | undefined;
     const errors: string[] = [];
     const assets: Array<{ path: string; status?: number; failure?: string }> = [];
     const path = (value: string) => { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.pathname : "<non-http>"; };
@@ -13,6 +15,7 @@ export const test = base.extend<{ ihfrDiagnostics: void }>({
     page.on("response", response => {
       if (response.request().isNavigationRequest() && response.frame() === page.mainFrame()) {
         if (navigation.length < 100) navigation.push({ path: path(response.url()), status: response.status() });
+        if (response.status() === 404) lastNotFoundNavigation = response.url();
       }
       if (response.request().resourceType() === "script" && response.status() >= 400 && assets.length < 100) assets.push({ path: path(response.url()), status: response.status() });
     });
@@ -33,7 +36,12 @@ export const test = base.extend<{ ihfrDiagnostics: void }>({
         return { name: node.getAttribute("aria-label") ?? node.getAttribute("aria-labelledby")?.split(/\s+/).map(id => document.getElementById(id)?.textContent).join(" "), hiddenAncestor: node.closest('[hidden], [aria-hidden="true"], [inert]')?.id ?? null, display: style.display, visibility: style.visibility, width: rect.width, height: rect.height };
       }),
     })).catch(() => ({ unavailable: true }));
-    const safe = redactImp006Diagnostics(JSON.stringify({ test: info.title, status: info.status, navigation, assets, errors, state }), process.env);
+    const routeContext = lastNotFoundNavigation
+      ? await (async () => probeIHFRRouteContext({ baseURL: String(info.project.use.baseURL), navigationURL: lastNotFoundNavigation!,
+        cookies: await page.context().cookies(String(info.project.use.baseURL)), ownedSchema: process.env.IMP006_TEST_SCHEMA }))()
+        .catch(() => ({ outcome: "UNAVAILABLE" }))
+      : undefined;
+    const safe = redactImp006Diagnostics(JSON.stringify({ test: info.title, status: info.status, navigation, assets, errors, state, routeContext }), process.env);
     console.log(`IMP-006 browser diagnostic: ${safe}`);
     await info.attach("ihfr-navigation", { body: safe, contentType: "application/json" });
   }, { auto: true }],

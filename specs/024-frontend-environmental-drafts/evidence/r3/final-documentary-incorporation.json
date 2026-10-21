@@ -1,0 +1,491 @@
+{
+  "operation": "Non-destructive two-parent documentary incorporation; no PR merge, rebase or force-push",
+  "first_parent": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "second_parent": "64332e0feedeabdf78bbce7d402367c266bef838",
+  "automatic_merge_tree": "bc6adcff38dee74a16bbea18bde3d260f69761cf",
+  "conflicts": [],
+  "inherited_files": [
+    {
+      "path": "specs/023-frontend-collections/analysis.md",
+      "blob_sha": "059a511804aa7b789eb844ad140e1cebf67dc0b8",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/documentation-consolidation-review.json",
+      "blob_sha": "83c7850e70fcd3f70d30fc35e6b6d0324b8cc3a1",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/README.md",
+      "blob_sha": "4467f1a7aecd8feb2d808dbdf85744e5f21d8550",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+      "blob_sha": "8928c8141df0bba89dbffa1d8ace8743c145edce",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+      "blob_sha": "dc0ff4aceff2e69e5b8cde26145e3ee3edf90640",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+      "blob_sha": "174c9834cb5bcb8d28d5d7fb467413722818e30e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+      "blob_sha": "9a2bf88e60d0f7fe71049fb3064ce1ddd2a50cd2",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+      "blob_sha": "749fd7a061b8a8f82550ad311eea6f0704727244",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+      "blob_sha": "30133107c5638e45812ce3e9d3374adf5a9d2dbe",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+      "blob_sha": "6acc590c36a06e2c6a3b78e14dbb3b7522ebf685",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+      "blob_sha": "da9b2f81c1d7c99e3be1f2194735ef74c22ffe1a",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+      "blob_sha": "62787240f443a63055b16ebdb121080de1287faa",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+      "blob_sha": "61afa64199351b591a5931f6dc7fc29d092fa752",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+      "blob_sha": "708f781bbc729bf90d504a48f4130d2b1f1080df",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+      "blob_sha": "8544ed6704ec2035275faf67f3f7acc7c586d3bc",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+      "blob_sha": "8a27c683c3e8e035969e4fb9ee976c27be21d1b1",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+      "blob_sha": "c7d15408e96d78319733dab3b7e47fa1e396d416",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+      "blob_sha": "174c9834cb5bcb8d28d5d7fb467413722818e30e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+      "blob_sha": "850f4c64bda5e839bda095d2fe7e0683667830b0",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+      "blob_sha": "749fd7a061b8a8f82550ad311eea6f0704727244",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+      "blob_sha": "81abe40c97f4669f202b4e17b23ca645ec3c1d99",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+      "blob_sha": "6acc590c36a06e2c6a3b78e14dbb3b7522ebf685",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+      "blob_sha": "6ebcac685db347f823ea3e9ad8bbb7c1fa1c667f",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+      "blob_sha": "463e1553be7468a3f031574efbbfca1b6626db16",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+      "blob_sha": "f054ff16e3c67efe500fa737f341c7193f05258e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+      "blob_sha": "0d3b234f1db27cd04774f1ed90888444607d5c83",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+      "blob_sha": "48e5c7b17409f7a8a96ddf99993f467c1bb16e28",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+      "blob_sha": "adabd0e970a90b30a966b20df0ced9ed06d54fd1",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+      "blob_sha": "70fc175617722b43ee0afd844a30326849beb877",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+      "blob_sha": "ea7c9736d59739b4a05184d1846dfd90c53de9f1",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+      "blob_sha": "62312b08dbd270ef89f5f56ff1787faa1079bf73",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+      "blob_sha": "3e997048d61d30c1cf3fef7a115e26d404137ecb",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+      "blob_sha": "2ff04c06c8739caabebb7b9f560a3e1f0046dca8",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+      "blob_sha": "29cd84469a8249bd1ec66196181985cc29e7d3dc",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+      "blob_sha": "3014afadfbe93299aa954e1180c7665838ead297",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+      "blob_sha": "4e69e78804429b46ea4253db09ceafc1d3343d46",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+      "blob_sha": "6bc5e5d240a8fba88c8d9e26329c868cf2fe1bb0",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+      "blob_sha": "1dc3d228de6ba7d00f3c6a5989cfe160cac977a3",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+      "blob_sha": "7259aef3cad42d3655319e9a2604667c7c3e1021",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+      "blob_sha": "fa6dc39870dcd178a3258f4f05446befb1224460",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+      "blob_sha": "045f3e7c77a779855a5fd11ffea0d675ab2b3287",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+      "blob_sha": "365547fdb3fa41ce3e4d9df8f5ba92e894499e32",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+      "blob_sha": "d09c750b0e7fe40dfde3298279b2e6b1fc2b3865",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+      "blob_sha": "8632c7a53d6fd8c5d737d8b42011c631e7d767a8",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+      "blob_sha": "f9f632b70b05db777a414691f698851b31c42fa0",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+      "blob_sha": "98845d4043f24257adc50d6a3c7320a4fa140500",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+      "blob_sha": "9de2cc149c21ba030026f78d912a313c642174c1",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+      "blob_sha": "bf473ebbea13d7cca609dbde7e1fcf102b452d5e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+      "blob_sha": "5dd9a32a735c7fe39acc0fb4ba5486b1fe2f57f2",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+      "blob_sha": "a44a4f8c0336a775ed17f57ebd2315620007112d",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+      "blob_sha": "995726397213ed22a15c954bae5fe5879d5e43f4",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+      "blob_sha": "eaf55b8b110ccc359103080c8ed6f6d80e830639",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+      "blob_sha": "e6d0a29ac3e1ee3126e39864d18eee555ba38453",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+      "blob_sha": "b59d4acb405830de6410d08d5e46cf4e8eebe44f",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/application/6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+      "blob_sha": "3b21370230e06f6cd8687e11753eda5dd44b261e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+      "blob_sha": "741ba15bdc22302394dd43e56db0a8c2a8cf1644",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+      "blob_sha": "838149069e678cb67ae9b09b443d84c1de42a4ed",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+      "blob_sha": "ad429105633ae97370b0e596155ce0102f8a82b6",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/official-v3/synthetic/395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+      "blob_sha": "f94587d86a320825f56b3c9cc309bc4b0bbb80fa",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-receipt.json",
+      "blob_sha": "c47906118bee6758ba201b89e49cf48f5a422308",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-metadata.json",
+      "blob_sha": "13fc36bea34df6842939f2b7509ae556f1888276",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-review.md",
+      "blob_sha": "d3c117e50904327bd40afeef1726dd4b7c7acb7c",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-visual-summary.json",
+      "blob_sha": "68ada84bbaa22fd61b565156700f02bff6978fd9",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-capture-inventory.json",
+      "blob_sha": "639f2fb3aca3082f928d648623efe38acc8d728b",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-pixel-comparison.json",
+      "blob_sha": "ccbf3b1cd43e0ee5df3b8fb9080bb2dda06344a4",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-receipt.json",
+      "blob_sha": "c78e018ffb85a8c369586820a0cdbe575caddf3b",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-review-resolution.json",
+      "blob_sha": "09b6e68c0268be30346ec3c0750ff8ed16757b7a",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-versioned-captures.json",
+      "blob_sha": "6885f7a990dee68b7ceae2b3233b754b0001dbfd",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-metadata.json",
+      "blob_sha": "c4297045525300020d666bfd8bdc538a16a36315",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-review.md",
+      "blob_sha": "feb06e171ddfdf94a777160c03271b0fbf689537",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-visual-summary.json",
+      "blob_sha": "aaecbb0c5b06ba85d5341d50aa36afb26fe8d673",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/implementation-evidence.md",
+      "blob_sha": "859984af825ecd665402eb0d9242190d87981710",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/plan.md",
+      "blob_sha": "58946eeb094f5d571257060a85ac2c18c203b02b",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/review.md",
+      "blob_sha": "6f9952a70e1dae32578a3c07f9ec2b594fade1dd",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/tasks.md",
+      "blob_sha": "c21bebdb9fc515e58470f70ac079123699b858e3",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    }
+  ],
+  "scope": "All 75 inherited paths are Spec023 documentation or original evidence. Every inherited blob matches the automatic merge-tree and exact published phase6 parent. Additional worktree changes are Spec024 documentation/evidence only. Functional inputs are unchanged from the verified first parent ec4b06e.",
+  "phase6_functional_reference": {
+    "head": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+    "run_id": 39469650449,
+    "gates_pass": 15,
+    "e2e_pass": 182,
+    "codex_receipt_id": 6297489682,
+    "review_status": "completed_without_findings"
+  },
+  "phase6_documentary_parent": {
+    "head": "64332e0feedeabdf78bbce7d402367c266bef838",
+    "only_change_from_4e": "specs/023-frontend-collections/evidence/r3/documentation-consolidation-review.json",
+    "corrected_document_hashes": 3,
+    "all_document_hashes_verified": 7,
+    "run_id": 39477040095,
+    "attempt": 1,
+    "job_id": 118815571617,
+    "codex_request_id": 6298458574,
+    "status_at_preparation": "AWAITING_EXACT_HEAD_VALIDATION",
+    "later_external_receipt_required": true
+  },
+  "phase7_functional_reference": {
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "run_id": 39472759694,
+    "attempt": 1,
+    "job_id": 118800800378,
+    "gates_pass": 15,
+    "e2e_pass": 190,
+    "integration_pass": 231,
+    "codex_receipt_id": 6297927596
+  },
+  "final_delivery_rule": "Both published documentary HEADs require their own complete fifteen-gate PASS and completed Codex review without material findings. Parent results do not approve a new SHA; external PR receipts close the exact-HEAD gate without another commit."
+}

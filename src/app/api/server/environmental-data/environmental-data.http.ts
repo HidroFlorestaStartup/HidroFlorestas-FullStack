@@ -5,6 +5,7 @@ import { EnvironmentalServiceError, type EnvironmentalDataService } from "../ser
 import { EnvironmentalValidationError, parseEnvironmentalInput } from "./environmental-data.contracts";
 import type { EnvironmentalContext } from "@/types/environmental-data.type";
 import { parseDraftReference } from "@/types/environmental-draft";
+import { matchesEnvironmentalInitiatorProof } from "./environmental-initiation";
 type Context={params:Promise<EnvironmentalContext>};
 const messages={INVALID_REQUEST:'Verifique os campos indicados.',UNAUTHENTICATED:'Autenticação necessária.',FORBIDDEN:'Conta sem permissão para esta operação.',NOT_FOUND:'Recurso não encontrado.',READ_ONLY:'O laboratório está em modo somente leitura.',CONFLICT:'Já existe um conjunto confirmado ou a chave foi usada com outros dados.',INTERNAL_ERROR:'Não foi possível concluir a operação.'};
 function json(body:unknown,status:number,headers:Record<string,string>={}){return Response.json(body,{status,headers:{'Cache-Control':'no-store',...headers}});}
@@ -21,7 +22,10 @@ function failure(error:unknown){
 export function createEnvironmentalHandlers(dependencies:{requireAuth:typeof requireAuth;service:Pick<EnvironmentalDataService,'create'|'detail'>}){
  return {
   POST:async(request:Request,context:Context)=>{try{
-   const principal=await dependencies.requireAuth();const ids=await context.params;
+   const principal=await dependencies.requireAuth();
+   const proof=request.headers.get("X-Environmental-Initiator-Proof");
+   if(proof!==null&&!matchesEnvironmentalInitiatorProof(proof,principal.id))throw new AreaAccessError("FORBIDDEN");
+   const ids=await context.params;
    const confirmationKey=parseIdempotencyKey(request.headers.get('Idempotency-Key'));
    if(request.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase()!=='application/json')throw new EnvironmentalValidationError({form:'Envie JSON.'});
    let body:unknown;try{body=await request.json();}catch{throw new EnvironmentalValidationError({form:'JSON inválido.'});}

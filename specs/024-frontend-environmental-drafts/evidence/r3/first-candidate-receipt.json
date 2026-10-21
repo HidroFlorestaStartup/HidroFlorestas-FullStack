@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-20 17:16:16 UTC",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "pr_number": 19,
+  "pr_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19",
+  "pr_head_at_observation": "5ca520500298a2066f2072290998754a4a62d42e",
+  "pr_draft": true,
+  "merged": false,
+  "run_id": 39461576673,
+  "attempt": 1,
+  "run_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39461576673",
+  "workflow": "RC review checks",
+  "run_status": "completed",
+  "run_conclusion": "failure",
+  "job_id": 118762102005,
+  "job_name": "validate",
+  "job_status": "completed",
+  "job_conclusion": "failure",
+  "runner_labels": [
+    "windows-latest"
+  ],
+  "started_at": "2026-10-20T16:54:52Z",
+  "completed_at": "2026-10-20T17:07:50Z",
+  "head_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+  "checkout": {
+    "sha": "5ca520500298a2066f2072290998754a4a62d42e",
+    "confirmed_by": "GitHub attempt-specific jobs payload and pinned SHA in checkout step of job log"
+  },
+  "artifact": {
+    "id": 12283507803,
+    "name": "rc-validation-5ca520500298a2066f2072290998754a4a62d42e",
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12283507803",
+    "archive_url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12283507803/zip",
+    "digest": "sha256:a7eeae056a0bd2225a2044c2e11e06b23c4310abfa0c28595af927477c6dd11e",
+    "size_in_bytes": 27285027,
+    "zip_sha256": "a7eeae056a0bd2225a2044c2e11e06b23c4310abfa0c28595af927477c6dd11e",
+    "digest_verified": true,
+    "entries": 595,
+    "download_performed_by_this_observer": false
+  },
+  "fingerprint_reproduction": {
+    "head_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+    "functional_files": 564,
+    "windows_checkout_snapshot": "bc1b4a11b6aacf578512d946cbe96e5e0d2c06ed3096bf34cfe7514e9782c625",
+    "method": "Read 564 committed functional inputs through git -c core.autocrlf=true cat-file --filters; SHA256 each byte sequence and the sorted JSON manifest.",
+    "matches_official": true
+  },
+  "codex": {
+    "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6296404441",
+    "summary_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6294810916",
+    "reviewed_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+    "status": "completed",
+    "has_any_findings": false,
+    "has_unresolved_findings": false,
+    "receipt_created_at": "2026-10-20T16:58:20Z",
+    "summary_updated_at": "2026-10-20T16:58:25Z",
+    "security_review_status": "not_recorded_separately"
+  },
+  "overall_evidence_status": "RUNTIME_FAIL_VALIDATION_INCOMPLETE",
+  "limitations": [
+    "The failed collection viewport test prevents acceptance of the collection viewport matrix and its next serial P1 test on this SHA.",
+    "Https, Deletion, Ihfr, Bootstrap and SchemaAudit were not run after E2E failed.",
+    "Dot reporter omits individual passing E2E names; inferred results are explicitly identified.",
+    "Automated Chromium emulation and code review do not imply physical-device or manual accessibility acceptance.",
+    "Historical account incident remains causally inconclusive despite this successful account run.",
+    "No new artifact download, repository write, remote comment, rerun, cancellation, merge or deploy was performed during this observation."
+  ],
+  "critical_tests": [
+    {
+      "file": "tests/e2e/account-verification-recovery.spec.ts",
+      "name": "registers, verifies from received mail, logs out, resumes, and revokes another browser after reset",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_RECONCILED_SUITE",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 187 selected = 185 passed + one collection viewport failure + its one next serial collection P1 not run. No skipped or flaky tests. Dot reporter omits individual passing names."
+    },
+    {
+      "file": "tests/e2e/account-verification-recovery.spec.ts",
+      "name": "an ACTIVE unverified account can reset and then returns to verification",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_RECONCILED_SUITE",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 187 selected = 185 passed + one collection viewport failure + its one next serial collection P1 not run. No skipped or flaky tests. Dot reporter omits individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: retry de rascunho nao pode persistir o preenchimento de A como rascunho de B",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_RECONCILED_SUITE",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 187 selected = 185 passed + one collection viewport failure + its one next serial collection P1 not run. No skipped or flaky tests. Dot reporter omits individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_RECONCILED_SUITE",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 187 selected = 185 passed + one collection viewport failure + its one next serial collection P1 not run. No skipped or flaky tests. Dot reporter omits individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B apos persistencia e resposta perdida",
+      "result": "PASS",
+      "evidence_kind": "INFERENCE_FROM_RECONCILED_SUITE",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "Full npm run test:e2e used the committed config without grep/file filters; 187 selected = 185 passed + one collection viewport failure + its one next serial collection P1 not run. No skipped or flaky tests. Dot reporter omits individual passing names."
+    },
+    {
+      "file": "tests/integration/environmental-draft-http.test.ts",
+      "name": "draft GET, PUT and DELETE reject a changed principal before service access and allow the original principal again",
+      "result": "PASS",
+      "evidence_kind": "EXPLICIT_NAMED_LOG_RESULT",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "log": ".accounts-validation/integration-1792515394897.log"
+    },
+    {
+      "file": "tests/integration/environmental-draft-http.test.ts",
+      "name": "environmental POST rejects a changed principal before persistence and retains the original key and body on return",
+      "result": "PASS",
+      "evidence_kind": "EXPLICIT_NAMED_LOG_RESULT",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "log": ".accounts-validation/integration-1792515394897.log"
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "line": 100,
+      "name": "viewport, text200, touch, focus and last controls remain usable",
+      "result": "FAIL",
+      "evidence_kind": "EXPLICIT_NAMED_LOG_RESULT",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "log": ".accounts-validation/e2e-1792515555194.log",
+      "failure": {
+        "assertion": "readControlGeometry(control).unobstructed is true",
+        "expected": true,
+        "received": false,
+        "timeout_ms": 5000,
+        "call_line": 108,
+        "viewport": {
+          "width": 320,
+          "height": 900,
+          "textScale": 200
+        },
+        "capture": "test-results/frontend-collections-viewp-65861-last-controls-remain-usable-chromium/frontend-collections-control-obstructed-viewport.json"
+      }
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "line": 131,
+      "name": "P1: a lost response must not replay under a different logged-in member",
+      "result": "NOT_RUN",
+      "evidence_kind": "INFERENCE_FROM_SERIAL_ORDER_AND_EXACT_COUNT",
+      "source_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "basis": "The file is serial; this is its only test after the failing viewport test. The official report records exactly one did not run and no other failures."
+    }
+  ],
+  "account_login_observations": [
+    {
+      "status": 200,
+      "elapsedMs": 253
+    },
+    {
+      "status": 200,
+      "elapsedMs": 138
+    },
+    {
+      "status": 401,
+      "elapsedMs": 114
+    },
+    {
+      "status": 200,
+      "elapsedMs": 114
+    },
+    {
+      "status": 200,
+      "elapsedMs": 125
+    }
+  ],
+  "visual_evidence": {
+    "status": "PRESENT_PARTIAL_COLLECTION_MATRIX",
+    "archive_roots": [
+      ".accounts-validation",
+      "test-results"
+    ],
+    "environmental": {
+      "png_count": 27,
+      "viewport_json_count": 27,
+      "matrix_png_count": 24,
+      "matrix_viewport_json_count": 24,
+      "all_metadata_head_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "viewports": [
+        [
+          320,
+          900,
+          100
+        ],
+        [
+          375,
+          900,
+          100
+        ],
+        [
+          768,
+          900,
+          100
+        ],
+        [
+          1440,
+          900,
+          100
+        ],
+        [
+          320,
+          900,
+          200
+        ],
+        [
+          844,
+          390,
+          200
+        ]
+      ],
+      "states": [
+        "form",
+        "draft",
+        "last-field",
+        "review"
+      ],
+      "visual_review": "Independent human-readable inspection is owned by the environmental QA agent; this receipt confirms inventory and metadata only."
+    },
+    "collections": {
+      "png_count_including_expected_negative": 16,
+      "viewport_json_count_including_expected_negative": 16,
+      "matrix_complete_viewports": 4,
+      "matrix_png_count": 12,
+      "matrix_viewport_json_count": 12,
+      "failed_viewport": {
+        "width": 320,
+        "height": 900,
+        "textScale": 200
+      },
+      "last_viewport_not_reached": {
+        "width": 844,
+        "height": 390,
+        "textScale": 200
+      },
+      "diagnostic_png_count": 2,
+      "diagnostic_includes_expected_negative_fixture": true,
+      "additional_flow_png_count": 2,
+      "all_metadata_head_sha": "5ca520500298a2066f2072290998754a4a62d42e",
+      "acceptance": "INCOMPLETE"
+    },
+    "durability": "This failed run stopped before later Playwright gates, so default test-results captures survived. It does not demonstrate persistence through Deletion and Ihfr."
+  },
+  "fingerprint": "bc1b4a11b6aacf578512d946cbe96e5e0d2c06ed3096bf34cfe7514e9782c625",
+  "fingerprint_values": [
+    "bc1b4a11b6aacf578512d946cbe96e5e0d2c06ed3096bf34cfe7514e9782c625"
+  ],
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:56:07.747Z",
+      "endedUtc": "2026-10-20T16:56:13.841Z",
+      "log": ".accounts-validation/regressionsetup-1792515367746.log"
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:56:14.053Z",
+      "endedUtc": "2026-10-20T16:56:34.659Z",
+      "log": ".accounts-validation/unit-1792515374053.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 390,
+            "suites": 35,
+            "pass": 390,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 15978.5915
+          },
+          {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 4040.1185
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:56:34.897Z",
+      "endedUtc": "2026-10-20T16:58:12.759Z",
+      "log": ".accounts-validation/integration-1792515394897.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 231,
+            "suites": 15,
+            "pass": 231,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 97190.9259
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:58:12.954Z",
+      "endedUtc": "2026-10-20T16:58:24.204Z",
+      "log": ".accounts-validation/migration-1792515492954.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 37,
+            "suites": 1,
+            "pass": 37,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 10769.3446
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:58:24.398Z",
+      "endedUtc": "2026-10-20T16:58:26.696Z",
+      "log": ".accounts-validation/contract-1792515504398.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 6,
+            "suites": 0,
+            "pass": 6,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 1825.9884
+          }
+        ]
+      }
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:58:26.887Z",
+      "endedUtc": "2026-10-20T16:58:35.356Z",
+      "log": ".accounts-validation/r1-1792515506887.log",
+      "counts": {
+        "node_test_batches": [
+          {
+            "tests": 17,
+            "suites": 0,
+            "pass": 17,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "duration_ms": 8196.1057
+          }
+        ]
+      }
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:58:35.536Z",
+      "endedUtc": "2026-10-20T16:58:53.807Z",
+      "log": ".accounts-validation/build-1792515515536.log"
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:58:54.006Z",
+      "endedUtc": "2026-10-20T16:59:00.564Z",
+      "log": ".accounts-validation/typecheck-1792515534005.log"
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-20T16:59:00.790Z",
+      "endedUtc": "2026-10-20T16:59:14.997Z",
+      "log": ".accounts-validation/lint-1792515540790.log"
+    },
+    {
+      "gate": "E2E",
+      "result": "FAIL",
+      "exitCode": 1,
+      "startedUtc": "2026-10-20T16:59:15.194Z",
+      "endedUtc": "2026-10-20T17:07:42.820Z",
+      "log": ".accounts-validation/e2e-1792515555194.log",
+      "counts": {
+        "playwright": {
+          "pass": 185,
+          "fail": 1,
+          "skip": 0,
+          "not_run": 1,
+          "flaky": 0,
+          "selected": 187,
+          "counts_reconcile": true
+        }
+      }
+    },
+    {
+      "gate": "Https",
+      "result": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "gate": "Deletion",
+      "result": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "gate": "Ihfr",
+      "result": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "NOT_RUN",
+      "exitCode": null
+    }
+  ],
+  "gate_integrity": {
+    "expected_count": 15,
+    "recorded_count": 10,
+    "duplicate_gates": [],
+    "unexpected_gates": [],
+    "same_fingerprint": true,
+    "all_fifteen_pass": false
+  },
+  "e2e": {
+    "pass": 185,
+    "fail": 1,
+    "skip": 0,
+    "not_run": 1,
+    "flaky": 0,
+    "selected": 187,
+    "counts_reconcile": true
+  }
+}

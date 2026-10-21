@@ -1,0 +1,18 @@
+{
+  "width": 768,
+  "height": 900,
+  "scrollX": 0,
+  "scrollY": 168,
+  "documentWidth": 768,
+  "activeTag": "H2",
+  "rootFontSizePx": 16,
+  "textScale": 100,
+  "textScaleSource": "scenario",
+  "physicalDevice": false,
+  "fullPage": false,
+  "animations": "allow",
+  "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "scenarioId": "5533cd23518e",
+  "evidenceKind": "application-viewport",
+  "note": "Chromium emulation; form controls masked; not manual accessibility acceptance."
+}

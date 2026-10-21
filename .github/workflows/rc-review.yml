@@ -15,6 +15,7 @@ on:
       - feat/frontend-areas-cover
       - 022-fix-concurrency-ihfr
       - feat/frontend-collections
+      - feat/frontend-environmental-drafts
   workflow_dispatch:
 
 permissions:
@@ -38,7 +39,8 @@ jobs:
       github.ref_name == 'feat/frontend-laboratory-dashboard' ||
       github.ref_name == 'feat/frontend-areas-cover' ||
       github.ref_name == '022-fix-concurrency-ihfr' ||
-      github.ref_name == 'feat/frontend-collections'
+      github.ref_name == 'feat/frontend-collections' ||
+      github.ref_name == 'feat/frontend-environmental-drafts'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -87,6 +89,10 @@ jobs:
             test-results/**/frontend-collections-*-viewport.json
             .accounts-validation/frontend-collections/*-frontend-collections-*.png
             .accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
+            test-results/**/frontend-environmental-*.png
+            test-results/**/frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true
