@@ -46,6 +46,7 @@
 - [ ] T017 Inspecionar PNGs/JSON reais, obter revisão externa efetiva do HEAD e tratar achados materiais antes de fechar a PR técnica — coordenador, recibo externo vinculado ao HEAD.
 - [x] T018 Corrigir a precedência dos alvos de zoom após o FAIL do run `39578551717`, preservando 44 px/assertions/timeouts, e registrar causa, digest e verificações locais em `specs/026-frontend-territorial-map/validation.md`. Reexecução oficial e inspeção visual permanecem em T016/T017.
 - [x] T019 Ligar Enter/Espaço à seleção do marcador e acrescentar checagem de Espaço em marcador distinto no cenário existente; registrar o FAIL do run `39581586760`, fontes efetivas e limites de execução em `specs/026-frontend-territorial-map/validation.md`. T016/T017 permanecem abertas.
+- [x] T020 Corrigir o escopo das assertions de alerta de transporte após o FAIL do run `39589899058`, distinguindo o erro da aplicação do anunciador global do Next; preservar unicidade, texto exato e ausência após recuperação. Registrar evidências e limites em `specs/026-frontend-territorial-map/validation.md`; T016/T017 permanecem abertas.
 
 ## Dependências e paralelismo
 
