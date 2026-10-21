@@ -1,0 +1,76 @@
+name: Read archived RC failure evidence
+
+on:
+  push:
+    branches:
+      - review/frontend-rc-artifact-triage-20261021
+
+permissions:
+  actions: read
+
+jobs:
+  read-recorded-artifacts:
+    if: github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' && github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify archived digests and print redacted failure excerpts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, io, json, os, re, urllib.parse, urllib.request, zipfile
+          repo = "HidroFlorestaStartup/HidroFlorestas-FullStack"
+          assert os.environ["GITHUB_REPOSITORY"] == repo
+          artifacts = [{"id":12337845919,"run":39580505165,"head":"c014442cd6fbfcda47ff4366a5c7acd24bf0b007","sha256":"d5e683a1d97038fc20f225862cf9d778ba02044ad7235606e3600420d4aa5be6"},{"id":12338417029,"run":39581586760,"head":"f472d5910322837ad9cf9a942a99581a7ffff3f1","sha256":"853a0100eb7574a14635153eecd40c19cb87109cfaedb4b89e5eb90310d6b1b3"},{"id":12337396304,"run":39579990722,"head":"6a5e80804f46b49658dad3c1a804cf5033d2cfc3","sha256":"f2927af6e6acb27776f459b1b7c29fbb40508efb69cc8612383471c4cd42a1a0"}]
+          api = "https://api.github.com/repos/" + repo
+          headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer " + os.environ["GH_TOKEN"], "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "hf-rc-read-only-artifact-triage"}
+          class SafeRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, response_headers, newurl):
+                  parsed = urllib.parse.urlparse(newurl)
+                  host = parsed.hostname or ""
+                  if parsed.scheme != "https" or not (host == "api.github.com" or host.endswith(".blob.core.windows.net") or host.endswith(".githubusercontent.com")):
+                      raise RuntimeError("Artifact redirect outside approved GitHub storage")
+                  redirected = super().redirect_request(req, fp, code, msg, response_headers, newurl)
+                  if redirected is not None:
+                      redirected.remove_header("Authorization")
+                  return redirected
+          opener = urllib.request.build_opener(SafeRedirect())
+          def read(path):
+              request = urllib.request.Request(api + path, headers=headers)
+              with opener.open(request, timeout=60) as response:
+                  return response.read()
+          ansi = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
+          sensitive = re.compile(r"(authorization\s*:|bearer\s+|set-cookie\s*:|^cookie\s*:|(?:DATABASE_URL|ACCOUNT_PROOF_KEYS|JWT_SECRET)\s*=)", re.I)
+          for expected in artifacts:
+              metadata = json.loads(read("/actions/artifacts/" + str(expected["id"])))
+              assert metadata["id"] == expected["id"] and not metadata["expired"]
+              assert metadata["workflow_run"]["id"] == expected["run"]
+              assert metadata["workflow_run"]["head_sha"] == expected["head"]
+              assert metadata["digest"] == "sha256:" + expected["sha256"]
+              raw = read("/actions/artifacts/" + str(expected["id"]) + "/zip")
+              assert len(raw) == metadata["size_in_bytes"]
+              actual_digest = hashlib.sha256(raw).hexdigest()
+              assert actual_digest == expected["sha256"]
+              with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+                  assert len(archive.infolist()) <= 5000
+                  assert sum(item.file_size for item in archive.infolist()) <= 512 * 1024 * 1024
+                  assert archive.testzip() is None
+                  names = archive.namelist()
+                  print(json.dumps({"record": "verified-artifact", "artifact": expected["id"], "run": expected["run"], "source_head": expected["head"], "sha256": actual_digest, "bytes": len(raw), "entries": len(names), "crc": "PASS", "note": "Read-only evidence extraction; not a regression run"}))
+                  for name in names:
+                      normalized = name.replace("\\", "/")
+                      if normalized.endswith(".accounts-validation/results.jsonl") or normalized == "results.jsonl":
+                          print(json.dumps({"record": "validation-records", "artifact": expected["id"], "member": name, "content": archive.read(name).decode("utf-8-sig")}))
+                      if re.search(r"(^|/)(?:\.accounts-validation/)?e2e-\d+\.log$", normalized):
+                          lines = ansi.sub("", archive.read(name).decode("utf-8-sig", errors="replace")).splitlines()
+                          first = max(0, len(lines) - 450)
+                          for number in range(first, len(lines)):
+                              text = lines[number]
+                              if sensitive.search(text):
+                                  text = "[redacted sensitive log line]"
+                              print(json.dumps({"record": "e2e-log-line", "artifact": expected["id"], "member": name, "line": number + 1, "text": text}, ensure_ascii=True))
+                  families = ["frontend-user-administration", "frontend-territorial-map", "frontend-ihfr", "frontend-landing"]
+                  print(json.dumps({"record": "image-inventory", "artifact": expected["id"], "pngs": {family: sum(name.endswith(".png") and family in name for name in names) for family in families}}))
+          PY
