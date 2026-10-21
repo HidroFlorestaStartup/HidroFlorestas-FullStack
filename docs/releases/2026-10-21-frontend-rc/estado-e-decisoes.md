@@ -2,6 +2,10 @@
 
 Registro de execução de 2026-10-21. Não substitui o handoff de Pedro, os documentos históricos nem o aceite humano. Resultados de CI/revisão posteriores a este commit serão vinculados por recibos nas PRs, sem atribuir a um novo SHA a validação de um ancestral.
 
+## Autorização vigente
+
+`DECISAO_CONFIRMADA`: nesta conversa de 21/10/2026, o usuário incluiu “C3 — Pro multagente: integração autorizada” e “C4 — Pro multagente: homologação operacional, publicação autorizada e entrega aos usuários do piloto” e pediu “Execute tudo isso ai”. O executor pode preparar e executar essas etapas, respeitando gates, proteção do repositório, identificação do destino e acesso disponível. Restrições de autorização de rodadas históricas não reabrem essa decisão. A autorização não é evidência de teste humano, homologação de serviço ou aprovação emitida por Pedro/Luciano.
+
 ## Fontes verificadas
 
 | Fonte | Identificação | Tratamento |
@@ -26,9 +30,9 @@ Registro de execução de 2026-10-21. Não substitui o handoff de Pedro, os docu
 | C1: mapa | `feat/frontend-territorial-map` | 026 | Agente real territorial; mesmo DTO/Leaflet/lista/autorização |
 | C1: administração | `feat/frontend-user-administration` | 027 | Agente real de administração; frontend, revisão/conflito e auditoria |
 | C2: landing | `feat/frontend-landing-consolidation` | 028 | Coordenador; página pública, conteúdo e CSS local |
-| C3: composição | `release/frontend-rc-20261021` | Recibo agregado | Coordenador; candidata isolada e regressão, sem presumir merge humano |
+| C3: composição | `release/frontend-rc-20261021` | [Recibo agregado](regressao-agregada.md) / PR #25 | Coordenador; composição, regressão e integração autorizadas, com guarda de deploy Git |
 
-O coordenador é o único escritor de workflow/Preview. A seed precede as referências remotas C1; esta feature acrescenta proteção explícita de landing/agregada e caminhos restritos de evidência. YAML e JSON foram interpretados e os allowlists comparados. A restrição no repositório não demonstra estado externo da Vercel.
+O coordenador é o único escritor de workflow/Preview. A seed precede as referências remotas C1; landing/agregada e caminhos restritos de evidência foram acrescentados depois. A auditoria sobre `499e669` constatou que development não estava coberta pela restrição Git; o presente delta acrescenta somente `development:false`, antes de sua integração autorizada, mantendo main e as demais regras. [Motivo, evidência e sequência segura](homologacao-e-entrega.md#integração-autorizada-com-contenção-do-deploy-git). A restrição no repositório não demonstra estado externo da Vercel nem contém hooks/CLI.
 
 ## Revisão da copy pública
 
@@ -56,6 +60,6 @@ O coordenador é o único escritor de workflow/Preview. A seed precede as refer�
 
 `EVIDENCIA_IMPLEMENTACAO`: consulta somente leitura à Vercel retornou **403** para `hidrofloresta-8598`, equipe `team_YqedIK09zOGFeZ8M84kra0oM`. Estado: `VERCEL_NOT_VERIFIED`. Nenhum outro projeto é criado como contorno. Não afirmar ausência de deployments.
 
-`PENDENCIA_DE_DECISAO`: merges em development/main, revisão institucional, aceite humano/operacional e GO da publicação são dos responsáveis definidos no plano. A candidata e a evidência devem estar concretas antes dessa decisão. Nenhum parecer é emitido em nome de Pedro ou Luciano.
+`DECISAO_CONFIRMADA`: integração e publicação C3/C4 estão autorizadas pelo pedido atual. `PENDENCIA_DE_DECISAO`/verificação: recorte/copy e aceites humanos ainda sem registro, destino/recursos e responsáveis operacionais não identificados, acesso Vercel não verificado. O plano concreto separa integração protegida de development da operação no ambiente real; main não é alterada por este delta. Gates e configuração efetiva precisam de prova, sem nova confirmação genérica da autorização e sem parecer emitido em nome de Pedro ou Luciano.
 
 Não foi necessário acionar o Codex local L1: implementação e validações seguem no chat e no CI. Dependências, schemas, contratos e cálculo científico não são ampliados pela fase visual.

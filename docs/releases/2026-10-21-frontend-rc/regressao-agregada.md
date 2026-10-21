@@ -1,6 +1,6 @@
 # Regressão da candidata agregada — 21 de outubro de 2026
 
-Registro cumulativo. Os recibos iniciais abaixo preservam o histórico; a seção final descreve a atualização preparada sobre 9deff com o reparo do mapa e a prontidão atômica de R2.
+Registro cumulativo. Os recibos iniciais abaixo preservam o histórico; a seção final registra a CI efetiva de 499e669 e a preparação da composição C4, cujo novo SHA ainda exige validação própria.
 
 ## Evidência inicial
 
@@ -103,7 +103,7 @@ Primeiro parent: `9deff63ad45ab627661d480c882d20a769ac4405`. Parent adicional no
 
 O mapa acrescenta somente teste/Spec: o alerta da aplicação é verificado dentro de application-content, com count 1 antes do texto exato e count 0 após recuperação. O anunciador global Next permanece intacto. Os 73 caminhos das quatro frentes conservam blobs/modos iguais aos HEADs incorporados; R2 e este recibo continuam os dois arquivos próprios de integração. O compare desta atualização contém cinco caminhos: três do mapa e dois de integração. Nenhum workflow diagnóstico integra a candidata.
 
-### Estado e validação ainda necessária
+### Estado observado antes da publicação de 499e669 (histórico)
 
 - Administração 21988: 15/15 gates PASS e 19 PNGs originais/metadatas inspecionados; Codex concluído sem findings.
 - Mapa 9a2b: [CI próprio 39593274910](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39593274910), job `119199269511`, concluiu 15/15 gates PASS; E2E 198 casos aprovados. Snapshot `c82ce10a050243f3ea258fc593c8fafeb2c8c205e2087f406bf19d50b6fea99b`. Codex concluído sem findings. A inspeção das 23 capturas do HEAD atual está em andamento; as 19 do parent não a substituem.
@@ -113,3 +113,75 @@ O mapa acrescenta somente teste/Spec: o alerta da aplicação é verificado dent
 - Reparo atômico R2: revisão estática e aplicação do patch conferidas. Runtime local/CI do novo delta: NOT_RUN antes da publicação. Esta candidata requer seus próprios 15 gates, resposta Codex efetiva e inspeção das capturas do SHA final.
 
 Nenhuma autorização é reaberta por este reparo técnico. Homologação operacional, identificação do destino e acesso Vercel ainda exigem evidência própria; esta atualização não declara esses resultados concluídos.
+
+## Recibo de 499e669 e preparação da composição C4
+
+Este registro atualiza os estados observados depois da publicação de `499e669d4afe0d79a0fd0fdc73f687917c7d3f6d`, árvore `0207c7d79d792986a23115c5f0da8646b8351e3d`. Os FAILs e os limites documentados nas seções anteriores permanecem no histórico.
+
+### Delta efetivamente executado de 9deff para 499e669
+
+O [compare dos SHAs](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/compare/9deff63ad45ab627661d480c882d20a769ac4405...499e669d4afe0d79a0fd0fdc73f687917c7d3f6d) contém cinco caminhos: teste e dois documentos da Spec026, teste ambiental R2 e este recibo. O primeiro parent é `9deff63ad45ab627661d480c882d20a769ac4405`; o parent adicional é o mapa `9a2b7d451f3523e8efe3130da28c8b12c94f2cce`.
+
+O reparo de mapa distingue o alerta da aplicação do anunciador Next, preservando unicidade, texto exato e ausência após recuperação. O R2 exige count global, visibilidade e valor exato em uma única amostra dentro dos mesmos 5000 ms. Payload, HTTP 201, persistência de `0.0000004`, `false`, zero e exclusão do rascunho continuam verificados. Não houve mudança de componente, domínio, banco, fórmula, timeout ou workflow nessa atualização. Os quatro HEADs funcionais e a união de blobs descritos acima são a composição de 499e669; workflows de diagnóstico continuam fora dela.
+
+### CI oficial de 499e669
+
+O [run 39596248875](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39596248875), job `119209168491`, concluiu **15/15 gates PASS**, todos com exit 0 e na ordem oficial. O journal local tem exatamente 15 gates e um único snapshot `b834c0597881ca7d61e55cc7f75dbf8b0944bc8c4b3bf5671794e517c0f6e8bc`. O E2E registrou **220 casos aprovados**.
+
+Artefato `12345316833`: **26.858.666 bytes**, **735 membros**, SHA-256 `09269b87e8acad367e7c5ac1a57851d6ad00604cadbb9a39fe2de2573ee535a3`. O arquivo baixado corresponde ao tamanho e digest oficiais; CRC integral, caminhos e ausência de symlinks foram conferidos.
+
+A inspeção visual agregada concluída pelo coordenador tem o seguinte recorte:
+
+| Frente | Capturas de 499e669 | Verificação |
+|---|---:|---|
+| Landing | 21 PNGs | Todos byte-idênticos aos 21 originais já inspecionados de 61bc; comparação por hash. |
+| Administração | 19 PNGs | 11 byte-idênticos e oito novos originais abertos. |
+| Mapa | 23 PNGs | 19 byte-idênticos e quatro novos originais abertos; 21 controles com alvos >=44 px, geometria no viewport e nove hit points internos aprovados. |
+| IHFR | 43 PNGs | Inspeção pelo agente responsável em curso; não antecipar o resultado. |
+
+HEAD 499e669, dimensões, `fullPage:false`, largura documental e fontes foram conferidos nos metadados das três frentes concluídas. Não foi identificado novo P1/P2 visual nos frames examinados. A comparação de hashes permite reutilizar a inspeção dos mesmos bytes; não é uma alegação de abrir novamente imagens idênticas.
+
+O resultado restante e a revisão efetiva do SHA devem constar nos recibos próprios da PR. Esse recorte não substitui aceite humano, homologação operacional ou o resultado de qualquer SHA posterior.
+
+### Navegação: três sondas sem reprodução do bloqueio
+
+As sondas não demonstraram a causa do timeout herdado em `settleTransitions`, cenário 375 px/texto 200%. Na [terceira sonda, run 39596425174](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39596425174), job `119209751896`, workflow `fb228c20db5396400e8f3384a3fddac08e6936d3`, o produto continuou em 9deff. Os nove gates prévios passaram; o E2E completo observado selecionou 220 casos, com 218 PASS, o FAIL conhecido do alerta do mapa e um caso não executado. Navegação e R2 passaram nessa sonda.
+
+O artefato `12344982217` tem 5.049.204 bytes, 108 entradas e SHA-256 `74e3c22453ad7d2c316e19e80404249e8af17bdead6b9409a68bdc4bac07fee9`; integridade e extração foram verificadas. A análise registrou 984 eventos de navegação, 100 esperas concluídas, nenhum heartbeat de 1 s e máximo de 560 ms. No ponto antes bloqueado, a espera terminou em 0,3 ms sem animações.
+
+Esses resultados são diagnósticos, não 15 gates da sonda nem prova de correção da navegação. O PASS oficial posterior de 499e669 também não reconstitui a causa dos FAILs anteriores. A classificação causal permanece **INDETERMINADA**, com guards e timeouts preservados.
+
+### Revalidação controlada das frentes, com o mesmo HEAD
+
+O critério de fechamento em [estado e decisões](estado-e-decisoes.md#critérios-de-fechamento) exige 15 gates no HEAD final de cada PR. Depois das três sondas e do PASS agregado, foi iniciada **uma revalidação completa por frente** dos gates pendentes, sem mudança de HEAD ou parents:
+
+| Frente | HEAD preservado | Run / tentativa | Estado confirmado por API |
+|---|---|---|---|
+| IHFR / PR #23 | `dfd78f695d855c4d0f0e8e4a68e9e92467cd11f4` | [39587983294](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39587983294), tentativa 2 | Em execução desde 21/10/2026 às 12:27:40 UTC |
+| Landing / PR #24 | `61bc4ff6e2d0dfc0fa830b89346fa2f5f79bbc15` | [39588484339](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39588484339), tentativa 2 | Em execução desde 21/10/2026 às 12:27:44 UTC |
+
+Houve uma invocação de reexecução dos jobs falhos por run; o único job `validate` contém os 15 gates. As tentativas 1 FAIL permanecem preservadas. A execução controlada não é um reparo de produto nem uma sequência de reruns até obter verde. Seus resultados serão registrados nas PRs sem reescrever este checkpoint ou atribuir PASS antes da conclusão. A causa de navegação continua indeterminada.
+
+### Deltas C4 explícitos da próxima composição
+
+Os cinco caminhos abaixo são alterações deliberadas de integração sobre 499e669. Eles não devem ser apresentados como parte da união exata dos blobs funcionais anteriores:
+
+| Caminho | Alteração e finalidade |
+|---|---|
+| `vercel.json` | Somente `git.deploymentEnabled.development=false`; preservar main e as 22 regras existentes para conter o acionamento Git durante a integração autorizada. |
+| `docs/releases/2026-10-21-frontend-rc/homologacao-e-entrega.md` | Reconciliar a autorização vigente C3/C4, explicitar destino/acesso ainda não verificados, sequência de integração e operação, migrations e material concreto de entrega. |
+| `docs/releases/2026-10-21-frontend-rc/triagem-historicos.md` | Inventariar runs/artefatos históricos, preservação durável e evidências atuais sem inferir causas ou aceites. |
+| `docs/releases/2026-10-21-frontend-rc/estado-e-decisoes.md` | Registrar autorização vigente, guarda de development e limites de autoridade/acesso, preservando o handoff técnico e os critérios de fechamento. |
+| `docs/releases/2026-10-21-frontend-rc/guia-do-piloto.md` | Novo guia autocontido, com rótulos/rotas reais e campos internos pendentes para versão, URL, participantes, suporte, capas e aceites. |
+
+Este recibo é o sexto caminho documental da composição. Nenhum desses deltas altera produto, banco, contratos ou matemática; a configuração Git altera a política de acionamento e exige a validação da nova candidata. A guarda não cobre hooks, CLI, integrações externas ou configuração fora do root inspecionado.
+
+O pacote histórico preservado e seus limites estão descritos na [triagem](triagem-historicos.md#pacote-histórico-preservado). Ele não é evidência de aprovação da nova candidata.
+
+**CI do próximo SHA com esses seis caminhos: NOT_RUN.** O resultado de 499e669 não será herdado. O novo SHA requer seus próprios 15 gates, revisão efetiva e conferência da composição; os resultados finais devem ficar nos recibos vinculados à identidade executada.
+
+### Limites operacionais mantidos
+
+A consulta ao mesmo projeto e escopo Vercel foi repetida pelo coordenador em 21/10/2026 às 12:28:53 UTC e retornou 403, com `grant_team_access`. Estado: **VERCEL_NOT_VERIFIED**. A CLI Vercel não estava instalada e nenhum fallback foi executado. Não se inferiu ausência de deployments nem se criou outro projeto.
+
+A autorização do usuário para integração e publicação permanece vigente. Identificação do destino, prontidão, serviços reais, aceites e entrega aos participantes ainda exigem evidência própria. Nenhuma publicação ou mensagem aos participantes decorre deste recibo.
