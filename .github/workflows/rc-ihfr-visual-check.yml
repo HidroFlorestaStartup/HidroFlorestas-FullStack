@@ -1,0 +1,84 @@
+name: Inspect current IHFR viewport evidence
+
+on:
+  push:
+    branches:
+      - review/frontend-rc-artifact-triage-20261021
+    paths:
+      - .github/workflows/rc-ihfr-visual-check.yml
+      - docs/plans/active/verificacao-visual-ihfr-20261021.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rc-ihfr-focal-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    if: github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Read exact unchanged IHFR candidate
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: dfd78f695d855c4d0f0e8e4a68e9e92467cd11f4
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+      - name: Verify product identity and record separate workflow identity
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $ihfrProductHead = (& git rev-parse HEAD).Trim()
+          $ihfrProductTree = (& git rev-parse 'HEAD^{tree}').Trim()
+          if ($ihfrProductHead -ne 'dfd78f695d855c4d0f0e8e4a68e9e92467cd11f4' -or $ihfrProductTree -ne '5f3b15b53b4405322b6f495d456da628b6291667') { throw 'Unexpected IHFR product identity.' }
+          if ((& git rev-parse HEAD:scripts/rc-review-validation.ps1).Trim() -ne '86d2720fd6359a0971fe28f142a7a8b7ed758142') { throw 'Unexpected official runner.' }
+          & git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Product checkout was modified.' }
+          New-Item -ItemType Directory -Path '.accounts-validation' -Force | Out-Null
+          $ihfrReceipt = @{
+            kind='FOCAL_IHFR_VALIDATION'; fullReleaseValidation=$false
+            workflowHead=$env:GITHUB_SHA; productHead=$ihfrProductHead; productTree=$ihfrProductTree
+            trackedCheckoutUnmodified=$true; gates=@('RegressionSetup','Ihfr')
+            metadataHeadSource='GITHUB_SHA identifies the diagnostic workflow; productHead above identifies the checked-out code.'
+          }
+          $ihfrReceipt | ConvertTo-Json -Depth 4 | Set-Content -Encoding utf8 '.accounts-validation/ihfr-focal-source.json'
+      - name: Install locked runtime
+        run: |
+          node --version
+          npm --version
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE -ne 0) { throw 'Locked installation failed.' }
+          npx prisma generate
+          if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed.' }
+      - name: Run only the existing setup and dedicated IHFR gates
+        run: ./scripts/rc-review-validation.ps1 -InitializeCiCluster -Gates @('RegressionSetup','Ihfr')
+      - name: Confirm tracked product remains unchanged
+        if: always()
+        run: |
+          & git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Tracked IHFR product changed during focal validation.' }
+      - name: Preserve focal logs and original viewport captures
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: ihfr-focal-dfd78f6-${{ github.sha }}
+          path: |
+            .accounts-validation/*.log
+            .accounts-validation/results.jsonl
+            .accounts-validation/ihfr-focal-source.json
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+          if-no-files-found: warn
+          retention-days: 14
+          include-hidden-files: true
