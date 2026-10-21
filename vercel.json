@@ -2,6 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
+      "development": false,
       "feat/account-verification-recovery": false,
       "feat/account-deletion": false,
       "review/cri-reconciliation-20261010": false,
@@ -18,7 +19,12 @@
       "feat/frontend-areas-cover": false,
       "022-fix-concurrency-ihfr": false,
       "feat/frontend-collections": false,
-      "feat/frontend-environmental-drafts": false
+      "feat/frontend-environmental-drafts": false,
+      "feat/frontend-ihfr": false,
+      "feat/frontend-territorial-map": false,
+      "feat/frontend-user-administration": false,
+      "feat/frontend-landing-consolidation": false,
+      "release/frontend-rc-20261021": false
     }
   }
 }

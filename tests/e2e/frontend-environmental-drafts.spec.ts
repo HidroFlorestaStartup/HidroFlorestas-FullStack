@@ -65,7 +65,23 @@ test('R2 tiny measurement, false, zero and partial draft survive real save, relo
   expect(data.environmentalData.water.hasSpring).toBe(false);
   expect(data.environmentalData.vegetation.vegetationCoverPercent).toBe(0);
   expect((await (await context.request.get(api+'/draft')).json()).draft).toBeNull();
-  await page.reload();await expect(page.locator('[data-environmental-value="soil.infiltrationRateMmPerHour"]')).toHaveText('0.0000004 mm/h');
+  await page.reload();
+  const confirmedInfiltrationValue = page.locator('[data-environmental-value="soil.infiltrationRateMmPerHour"]');
+  // A streamed hidden segment can coexist briefly with the live detail after load.
+  // Observe every global match atomically: a hidden or duplicate copy cannot pass.
+  await expect.poll(() => confirmedInfiltrationValue.evaluateAll(nodes => ({
+    count: nodes.length,
+    entries: nodes.map(node => {
+      const box = node.getBoundingClientRect();
+      return {
+        visible: node.checkVisibility({ checkVisibilityCSS: true }) && box.width > 0 && box.height > 0,
+        textMatchesExpected: node.textContent === '0.0000004 mm/h',
+      };
+    }),
+  })), { timeout: 5000 }).toEqual({
+    count: 1,
+    entries: [{ visible: true, textMatchesExpected: true }],
+  });
   await captureMissionViewport(page,info,'frontend-environmental-confirmed');
 });
 
