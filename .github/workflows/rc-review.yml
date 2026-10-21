@@ -16,6 +16,9 @@ on:
       - 022-fix-concurrency-ihfr
       - feat/frontend-collections
       - feat/frontend-environmental-drafts
+      - feat/frontend-ihfr
+      - feat/frontend-territorial-map
+      - feat/frontend-user-administration
   workflow_dispatch:
 
 permissions:
@@ -40,7 +43,10 @@ jobs:
       github.ref_name == 'feat/frontend-areas-cover' ||
       github.ref_name == '022-fix-concurrency-ihfr' ||
       github.ref_name == 'feat/frontend-collections' ||
-      github.ref_name == 'feat/frontend-environmental-drafts'
+      github.ref_name == 'feat/frontend-environmental-drafts' ||
+      github.ref_name == 'feat/frontend-ihfr' ||
+      github.ref_name == 'feat/frontend-territorial-map' ||
+      github.ref_name == 'feat/frontend-user-administration'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -93,6 +99,12 @@ jobs:
             test-results/**/frontend-environmental-*-viewport.json
             .accounts-validation/frontend-environmental/*-frontend-environmental-*.png
             .accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*.png
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true
