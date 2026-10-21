@@ -1,7 +1,7 @@
 import { fillCollectionOccurrence } from "./support/collection-occurrence";
 import type { Locator, Page, TestInfo } from "@playwright/test";
 import { expect, test } from "./support/ihfr-diagnostics";
-import { captureIHFRViewport, expectIHFRControl, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
+import { captureIHFRViewport, expectIHFRControl, expectIHFRScientificWords, expectIHFRUnfragmentedWords, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
 import { Client } from "pg";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 
@@ -58,6 +58,12 @@ async function inspectManagementViewports(page: Page, info: TestInfo, management
   for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [667, 375, 200]]) {
     const scenario = `frontend-ihfr-management-${width}-${height}-${scale}`;
     await settleIHFRViewport(page, width, height, scale);
+    if (scale === 200) {
+      await expectIHFRUnfragmentedWords(management.getByRole("heading", { name: "Gerenciar diagnóstico IHFR experimental", exact: true }));
+      await expectIHFRScientificWords(management);
+      await expectIHFRUnfragmentedWords(management.getByRole("button", { name: "Verificar elegibilidade", exact: true }));
+      await expectIHFRUnfragmentedWords(create);
+    }
     await management.getByLabel("Data e hora da observação").focus();
     await expectIHFRControl(management.getByLabel("Data e hora da observação"), page, info, scenario);
     await captureIHFRViewport(page, info, `${scenario}-observation`);
@@ -68,6 +74,11 @@ async function inspectManagementViewports(page: Page, info: TestInfo, management
     const dialog = page.getByRole("dialog");
     await expect(dialog.getByRole("button", { name: "Cancelar" })).toBeFocused();
     await expectIHFRControl(dialog.getByRole("button", { name: "Confirmar" }), page, info, scenario);
+    if (scale === 200) {
+      await expectIHFRUnfragmentedWords(dialog.getByRole("heading"));
+      await expectIHFRUnfragmentedWords(dialog.getByRole("button", { name: "Cancelar", exact: true }));
+      await expectIHFRUnfragmentedWords(dialog.getByRole("button", { name: "Confirmar", exact: true }));
+    }
     await captureIHFRViewport(page, info, `${scenario}-confirmation`);
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
@@ -218,6 +229,13 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
       await settleIHFRViewport(page, 375, 900);
       await expectIHFRControl(management.getByRole("button", { name: "Repetir com a mesma chave" }), page, info, "frontend-ihfr-unknown-375");
       await captureIHFRViewport(page, info, "frontend-ihfr-unknown-375");
+      await settleIHFRViewport(page, 320, 900, 200);
+      for (const name of ["Verificar elegibilidade", "Substituir diagnóstico", "Revogar diagnóstico", "Recuperar resultado", "Repetir com a mesma chave"]) {
+        await expectIHFRUnfragmentedWords(management.getByRole("button", { name, exact: true }));
+      }
+      await expectIHFRControl(management.getByRole("button", { name: "Repetir com a mesma chave" }), page, info, "frontend-ihfr-unknown-320-text200");
+      await captureIHFRViewport(page, info, "frontend-ihfr-unknown-320-text200");
+      await settleIHFRViewport(page, 375, 900);
     }
     await management.getByRole("button", { name: "Recuperar resultado" }).click();
     await expect(management.getByRole("alert")).toContainText("mesma chave");

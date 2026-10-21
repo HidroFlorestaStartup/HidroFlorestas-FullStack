@@ -1,6 +1,8 @@
 # Recibo local — C1 / Fase 8 / Spec 025
 
-**Data**: 2026-10-21. **Branch**: `feat/frontend-ihfr`. **Estado**: candidato local implementado; CI, review externo e inspeção visual pendentes.
+**Data**: 2026-10-21. **Branch**: `feat/frontend-ihfr`. **Estado inicial deste recibo**: candidato local implementado; CI, review externo e inspeção visual pendentes.
+
+**Atualização após publicação:** o HEAD `a724bf7` passou nos 15 gates e recebeu revisão Codex sem findings; as 40 imagens foram abertas e reprovaram visualmente por fragmentação de palavras em 320/200%. Identidade completa, digest, contagens, achado e reparo estão em [ci-review-2026-10-21.md](ci-review-2026-10-21.md). O reparo tem unitários/typecheck/lint locais PASS, fechamento local interrompido por indisponibilidade do executor e contingência autorizada por API. Aguarda nova rodada oficial. As tabelas abaixo preservam o estado da preparação local inicial.
 
 ## Identidade e propriedade
 

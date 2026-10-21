@@ -28,8 +28,10 @@
 
 - [x] T011 Executar testes unitários focais, typecheck, lint e auditoria do diff; registrar em `specs/025-frontend-ihfr/evidence.md`.
 - [x] T012 Atualizar `traceability.md`, análise final e tarefas; realizar revisão local e commit PT-BR para o coordenador.
-- [ ] T013 Executar os 15 gates oficiais no HEAD publicado e revisão Codex externa — responsabilidade do coordenador, NOT_RUN nesta worktree.
-- [ ] T014 Abrir e inspecionar as capturas reais do CI; registrar aceite ou correção causal — pendente externo, não simular homologação.
+- [x] T013 Executar primeira rodada dos 15 gates e revisão Codex no HEAD `a724bf7`: 15/15 PASS, Codex sem findings; recibo em `ci-review-2026-10-21.md`.
+- [x] T014 Abrir 40 PNG e conferir 40 metadados da primeira rodada; registrar FAIL visual P2 de fragmentação a 320/200% em `ci-review-2026-10-21.md`.
+- [x] T015 Corrigir padding/reflow focal e acrescentar Range por palavra para qualificações e ações, sem mudar handlers/ciência; unitários/typecheck/lint locais PASS; fechamento local indisponível, contingência autorizada por API.
+- [ ] T016 Revalidar CI, Codex e imagens no novo HEAD publicado do reparo; nenhum resultado da primeira candidata vale automaticamente para este HEAD.
 
 ## Dependencies & Execution Order
 

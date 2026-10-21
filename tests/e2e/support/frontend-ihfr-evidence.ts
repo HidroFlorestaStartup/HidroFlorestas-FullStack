@@ -4,6 +4,34 @@ import { join } from "node:path";
 import { expect, type Locator, type Page, type TestInfo } from "@playwright/test";
 import { readControlGeometry, waitForMissionRender } from "./frontend-mission-evidence";
 
+export const IHFR_SCIENTIFIC_QUALIFICATIONS = [
+  "Contrato experimental", "Validação científica pendente", "Sujeito a recalibração", "Não aprovado como contrato científico definitivo",
+] as const;
+
+export async function expectIHFRUnfragmentedWords(locator: Locator) {
+  await expect(locator).toBeVisible();
+  const fragmented = await locator.evaluate(node => {
+    const words: string[] = [];
+    const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+    for (let text = walker.nextNode(); text; text = walker.nextNode()) {
+      for (const word of (text.textContent ?? "").matchAll(/\S+/g)) {
+        const range = document.createRange();
+        range.setStart(text, word.index);
+        range.setEnd(text, word.index + word[0].length);
+        if (Array.from(range.getClientRects()).filter(rect => rect.width > 0 && rect.height > 0).length > 1) words.push(word[0]);
+      }
+    }
+    return words;
+  });
+  expect(fragmented, "IHFR human-readable text retains complete words at the current text scale").toEqual([]);
+}
+
+export async function expectIHFRScientificWords(region: Locator) {
+  for (const text of ["Limites do diagnóstico experimental", ...IHFR_SCIENTIFIC_QUALIFICATIONS]) {
+    await expectIHFRUnfragmentedWords(region.getByText(text, { exact: true }));
+  }
+}
+
 export async function settleIHFRViewport(page: Page, width: number, height: number, textScale = 100) {
   await page.setViewportSize({ width, height });
   await page.evaluate(scale => document.documentElement.style.setProperty("font-size", `${scale}%`, "important"), textScale);

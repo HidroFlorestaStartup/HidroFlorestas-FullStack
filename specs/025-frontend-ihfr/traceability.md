@@ -2,6 +2,8 @@
 
 Fonte funcional: Spec 006, ADR-0001 e aplicação vigente em D/S. A composição visual deriva de `IhfrPanel.tsx` no starter em `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f`. Nenhum score, mock, contrato ou camada de dados do starter é transportado.
 
+**Atualização de evidência:** a matriz abaixo descreve a preparação local inicial. A primeira rodada externa em `a724bf7` tem 15/15 gates PASS e 40 imagens abertas, com FAIL visual em FR-009. O reparo acrescenta Range por palavra humana e capturas finais de qualificadores/recuperação. Identidade, contagens, indisponibilidade do executor e limitação das máscaras estão em [ci-review-2026-10-21.md](ci-review-2026-10-21.md); o novo HEAD aguarda T016.
+
 | Requisito | Implementação | Prova | Estado local / externo |
 |---|---|---|---|
 | FR-001 regiões/teclado | Resumo, ausência e gestão mantêm IDs/títulos; diálogo mantém refs/handlers | Unitário de acessibilidade existente; E2E read/manage, Shift-Tab adicional | Unitário PASS; E2E NOT_RUN |

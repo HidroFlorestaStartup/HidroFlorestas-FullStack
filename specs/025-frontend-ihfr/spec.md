@@ -73,7 +73,7 @@ Como usuário em campo, quero ler o diagnóstico e alcançar as ações em celul
 - **FR-006**: Preservar elegibilidade, contexto, permissões, estados contratuais, endpoints, payloads, ID esperado, chave de idempotência e recuperação da tentativa incerta.
 - **FR-007**: Preservar confirmação explícita, ciclo de foco, feedback de sucesso/erro e ações reais de criação, substituição e revogação.
 - **FR-008**: Adaptar o painel visual de referência aos componentes existentes, usando dependências e estilos locais; nenhum mock, camada de dados do starter, dependência adicional ou alteração global.
-- **FR-009**: Demonstrar reflow em 320/375/768/1440 px, texto 200% e paisagem, com captura `fullPage:false` e metadados sanitizados sob `.accounts-validation/frontend-ihfr/`.
+- **FR-009**: Demonstrar reflow em 320/375/768/1440 px, texto 200% e paisagem, com captura `fullPage:false` e metadados sanitizados sob `.accounts-validation/frontend-ihfr/`. Em texto 200%, rótulos humanos de ação, títulos e quatro qualificações devem manter palavras inteiras; códigos, hashes e identificadores extensos podem quebrar. Refinamento causal autorizado pelo coordenador após inspeção dos PNG da primeira candidata em 2026-10-21.
 - **FR-010**: Preservar os seis cenários E2E dedicados e acrescentar evidência sem enfraquecer suas assertions; distinguir PASS, FAIL e NOT_RUN por SHA.
 
 ### Key Entities *(include if feature involves data)*
