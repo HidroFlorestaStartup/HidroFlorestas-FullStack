@@ -13,7 +13,7 @@ Base `development`: `1ea3cc2552c244e1004f4f733f838e0f9ea62993`. Parent planejado
 - Helper próprio de captura, reutilizando as funções de geometria/readiness existentes sem alterar o helper compartilhado.
 - Nenhuma mudança em DTO, API, backend, schema, rota servidor, algoritmo cartográfico, testes territoriais herdados, CSS global, shell, dependências, CI ou proteção de Preview.
 
-## Execuções locais reais
+## Execuções locais da implementação inicial
 
 | Verificação | Resultado | Observação |
 |---|---|---|
@@ -31,6 +31,71 @@ Base `development`: `1ea3cc2552c244e1004f4f733f838e0f9ea62993`. Parent planejado
 | Codex review independente do HEAD | NOT_RUN nesta frente | Responsabilidade do coordenador após publicar candidata |
 
 O aviso de configuração `http-proxy` do npm foi observado sem impedir geração, typecheck ou lint. Nenhum valor de ambiente, token ou dado real foi registrado.
+
+## Falha do CI publicado e correção focal — 2026-10-21
+
+A tabela anterior preserva o recibo da implementação inicial. O coordenador publicou a mesma árvore `846f4887e83557318f85753caae7bc9e23ced1f2` no HEAD `39cbf99f588022ac35926a135387133b6f10516c`, PR [#22](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22).
+
+- [Run 39578551717](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39578551717), tentativa 1, evento `push`, job `119150115017`: `FAIL` em E2E.
+- Artefato `12336228091`, `rc-validation-39cbf99f588022ac35926a135387133b6f10516c`, 30.741.731 bytes. SHA-256: `12c71465152867b1c7b42ce61810820ea55e3d7230c8cb99c8a610b22cc847f8`.
+- Download conferido contra o digest oficial, CRC válido e 729 entradas sem caminhos inseguros ou links simbólicos. Recibo e extração preservados em `ci-artifacts/map-39578551717/` no workspace do coordenador, fora do repositório versionado.
+
+| Gate | Resultado observado |
+|---|---|
+| RegressionSetup | PASS |
+| Unit | PASS |
+| Integration | PASS |
+| Migration | PASS |
+| Contract | PASS |
+| R1 | PASS |
+| Build | PASS |
+| Typecheck | PASS |
+| Lint | PASS; zero erros e três avisos preexistentes |
+| E2E | FAIL; 190 testes passaram, um falhou e sete não executaram |
+| Https | NOT_RUN após interrupção no E2E |
+| Deletion | NOT_RUN após interrupção no E2E |
+| Ihfr | NOT_RUN após interrupção no E2E |
+| Bootstrap | NOT_RUN após interrupção no E2E |
+| SchemaAudit | NOT_RUN após interrupção no E2E |
+
+**Falha observada**: o primeiro cenário novo, `320x760-text100`, mediu largura de 30 px no zoom, contra a assertion de pelo menos 44 px em `tests/e2e/frontend-territorial-map.spec.ts`. A falha ocorreu antes da primeira captura; o ZIP não contém PNGs/JSONs territoriais. Os sete cenários restantes da suíte serial não executaram. Esses estados não são promovidos a PASS nem a inspeção visual concluída.
+
+**Diagnóstico e reparo**: `leaflet/dist/leaflet.css` contém `.leaflet-touch .leaflet-bar a` com largura, altura e line-height de 30 px. A regra local `.mapFrame :global(.leaflet-control-zoom a)` tinha a mesma especificidade `(0,2,1)`. **INFERENCIA** sustentada pelo valor observado e pelas regras: a ordem de carregamento permitiu à regra externa vencer o empate. A correção acrescenta o ancestral local `.mapCanvas`, elevando a especificidade para `(0,3,1)` e tornando os 44 px independentes dessa ordem. `territorial-map.client.tsx` aplica `.mapCanvas` ao `MapContainer`, filho direto de `.mapFrame`; o seletor mantém correspondência com a estrutura real. Nenhum `!important`, CSS global, handler, teste, assertion ou timeout foi alterado.
+
+**Validação desta correção**: `npm run typecheck` passou. `npm run lint` passou com zero erros e os mesmos três avisos preexistentes em arquivos fora da frente. E2E/browser, novos 15 gates e capturas da correção permanecem **NOT_RUN**, aguardando a publicação do novo SHA pelo coordenador. T016/T017 continuam abertas.
+
+O Codex concluiu a revisão de código do HEAD anterior `39cbf99f588022ac35926a135387133b6f10516c` sem findings, com [recibo efetivo](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6312911243). Esse recibo não constitui aprovação humana nem revisão do próximo SHA corrigido.
+
+## Falha de seleção pelo teclado e reparo — 2026-10-21
+
+O segundo CI executou o HEAD `f472d5910322837ad9cf9a942a99581a7ffff3f1`, árvore `01ef3e9828f7c382443c283a52970efedfc6eaa8`, com a correção dos alvos de zoom.
+
+- [Run 39581586760](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39581586760), tentativa 1, job `119160229579`: `FAIL` em E2E.
+- Os registros do job confirmam PASS em RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck e Lint. E2E: 190 testes passaram, um falhou e sete não executaram. Https, Deletion, Ihfr, Bootstrap e SchemaAudit permanecem NOT_RUN após a interrupção.
+- Artefato `12338417029`, `rc-validation-f472d5910322837ad9cf9a942a99581a7ffff3f1`, 30.769.960 bytes. SHA-256: `853a0100eb7574a14635153eecd40c19cb87109cfaedb4b89e5eb90310d6b1b3`. O coordenador recuperou o log completo e conferiu SHA/CRC do ZIP pelo [diagnóstico 39585137600](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39585137600), job `119172054218`.
+- A falha exata é `frontend-territorial-map.spec.ts:105:56`, na assertion `expect(page.locator("#selected-area-title")).toHaveText(firstArea.name)` após foco e Enter: esperado `IMP-007 E2E area 0`, recebido `<element(s) not found>`, timeout de 5000 ms.
+- O único PNG do mapa nesse run é `ca7865c511da-r0-n0-after-frontend-territorial-map-map-320x760-text100-viewport.png`, gerado após as assertions de 44 px. O coordenador abriu a imagem pelo [leitor 39586266847](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39586266847), job `119175821627`, e observou controles ampliados, foco no zoom `+`, ponto central e navegação inferior dentro do viewport. SHA-256 do PNG: `c4a2867bb53ac0922dc95535ebdcf356e28c2958a171de8105ec9362f24f7e7f`. A imagem não comprova seleção nem os cenários posteriores.
+
+### Lacuna demonstrável na implementação
+
+O [lockfile do SHA executado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/f472d5910322837ad9cf9a942a99581a7ffff3f1/package-lock.json) fixa Leaflet `1.9.4`, React Leaflet `5.0.0` e `@react-leaflet/core` `3.0.0`. A leitura dos fontes oficiais dessas versões mostrou:
+
+- [DivIcon](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/marker/DivIcon.js) cria um `div`; [Marker](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/marker/Marker.js) aplica `tabIndex` e `role="button"` quando `keyboard` está ativo e registra o alvo interativo.
+- [Map](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/map/Map.js) encaminha `keydown`, `keypress` e `keyup` com seu tipo original. [Map.Keyboard](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/map/handler/Map.Keyboard.js) trata deslocamento, zoom e Escape, sem converter Enter/Espaço em clique.
+- [Popup](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/Popup.js) liga seu tratamento de Enter ao registro feito por `bindPopup`. O marcador territorial não tem popup.
+- O [adaptador de eventos do React Leaflet](https://github.com/PaulLeCam/react-leaflet/blob/v5.0.0/packages/core/src/events.ts) registra os handlers fornecidos na instância Leaflet. O componente territorial fornecia somente `click`, sem handler de ativação pelo teclado.
+
+A ausência de ligação entre o evento de teclado e `onSelect` é demonstrável nos fontes e é consistente com a ausência do painel observada no diagnóstico do CI. O comportamento corrigido ainda precisa ser validado no novo SHA.
+
+### Reparo preparado e limites
+
+Foi acrescentado `keydown` ao mesmo `Marker`, chamando `onSelect(area.id)` para Enter ou Espaço e prevenindo a ação padrão dessas teclas. O clique mantém o mesmo handler; não há ref, mudança de motor, DTO, coordenadas ou cálculo.
+
+O cenário de teclado existente agora também ativa um segundo marcador com Espaço, confirma seu título e `aria-pressed=true` e confirma `aria-pressed=false` no primeiro. As assertions de Enter e de 44 px continuam preservadas. Não foram criados cenários, capturas, esperas arbitrárias ou overrides de timeout.
+
+Este reparo foi preparado contra parent `f472d5910322837ad9cf9a942a99581a7ffff3f1`, sem atualizar referências por esta frente. Typecheck, lint, unitários, build e E2E locais deste novo código: **NOT_RUN**, pois o serviço de execução estava indisponível durante a preparação. A comparação de conteúdo/blobs por API deve constar do recibo externo; ela não substitui esses testes. T016/T017 permanecem abertas.
+
+O [recibo do Codex](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6313351413) concluiu sem findings a revisão do HEAD anterior `f472d5910322837ad9cf9a942a99581a7ffff3f1`. A candidata de teclado requer nova CI e revisão do próprio SHA antes do fechamento técnico.
 
 ## Evidências esperadas no CI
 

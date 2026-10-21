@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
 import { AlertTriangle, ArrowLeft, CheckCircle2, ChevronLeft, ChevronRight, History, RefreshCw, Search, ShieldCheck, UserCog, Users } from "lucide-react";
 import type { AdminUserDto, AdminUserRole, AdminUserStatus, AuditEventDto } from "@/app/api/server/user-administration/user-administration.contracts";
 import { adminUserQuery, mergeUniquePage } from "./user-list-state";
@@ -19,7 +19,7 @@ const tones: Record<AdminUserStatus, string> = {
   ACTIVE: "border-emerald-200 bg-emerald-50 text-emerald-800", PENDING: "border-amber-200 bg-amber-50 text-amber-900",
   INACTIVE: "border-slate-200 bg-slate-100 text-slate-700", BLOCKED: "border-rose-200 bg-rose-50 text-rose-800",
 };
-const secondaryButton = "inline-flex min-h-11 min-w-0 max-w-full [overflow-wrap:anywhere] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-emerald-600 hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+const secondaryButton = "inline-flex min-h-11 min-w-0 max-w-full [overflow-wrap:normal] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-[12px] py-2 sm:px-3 text-sm font-semibold text-slate-700 hover:border-emerald-600 hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
 const inputStyle = "min-h-11 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100 disabled:opacity-60";
 
 export function UserAdministrationPage() {
@@ -311,7 +311,7 @@ export function UserAdministrationPage() {
           {page && <nav aria-label="Paginação de usuários" className="flex flex-wrap items-center justify-between gap-3 pt-2"><button disabled={loading || cursorIndex === 0 || busy} onClick={() => { const previous = cursorIndex - 1; setCursorIndex(previous); void load(cursorStack[previous]); }} className={secondaryButton}><ChevronLeft size={17} aria-hidden="true" /> Página anterior</button><button disabled={loading || !page.nextCursor || busy} onClick={() => { if (!page.nextCursor) return; const next = page.nextCursor; setCursorStack(current => [...current.slice(0, cursorIndex + 1), next]); setCursorIndex(current => current + 1); void load(next); }} className={secondaryButton}>Carregar próxima página <ChevronRight size={17} aria-hidden="true" /></button></nav>}
         </section>
 
-        <aside aria-label="Detalhe da conta" className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+        <aside aria-label="Detalhe da conta" className="min-w-0 rounded-2xl border border-slate-200 bg-white p-[12px] shadow-sm sm:p-5">
           {!selected ? <State icon={<UserCog size={28} aria-hidden="true" />} text="Selecione uma conta para ver detalhes e ações seguras." bare /> : <>
             <header className="border-b border-slate-100 pb-5"><p className="text-xs font-bold uppercase tracking-wider text-emerald-800">Conta selecionada</p><h2 ref={detailHeadingRef} tabIndex={-1} className="mt-2 break-words rounded-lg text-xl font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-700">{selected.firstName} {selected.lastName}</h2><p className="mt-1 break-all text-sm text-slate-600">{selected.email}</p><p className="mt-3 text-xs text-slate-500">Revisão {selected.revision}</p></header>
             {detailLoading && <p role="status" className="mt-4 text-sm text-slate-600">Atualizando dados da conta…</p>}
@@ -348,7 +348,8 @@ export function UserAdministrationPage() {
 }
 
 function Filter({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void }) {
-  return <label className="min-w-0"><span className="mb-2 block text-sm font-semibold text-slate-700">Filtrar por {label.toLowerCase()}</span><select value={value} onChange={event => onChange(event.target.value)} className={inputStyle}><option value="">Todos — {label}</option>{options.map(item => <option key={item} value={item}>{labels[item as keyof typeof labels]}</option>)}</select></label>;
+  const id = useId();
+  return <div className="min-w-0"><label htmlFor={id} className="mb-2 block text-sm font-semibold text-slate-700">Filtrar por {label.toLowerCase()}</label><select id={id} value={value} onChange={event => onChange(event.target.value)} className={inputStyle}><option value="">Todos — {label}</option>{options.map(item => <option key={item} value={item}>{labels[item as keyof typeof labels]}</option>)}</select></div>;
 }
 function State({ text, icon, bare }: { text: string; icon?: ReactNode; bare?: boolean }) {
   return <div role="status" className={`flex min-h-40 flex-col items-center justify-center gap-3 p-5 text-center text-sm leading-6 text-slate-600 ${bare ? "" : "rounded-2xl border border-dashed border-slate-300 bg-white"}`}>{icon}{text}</div>;

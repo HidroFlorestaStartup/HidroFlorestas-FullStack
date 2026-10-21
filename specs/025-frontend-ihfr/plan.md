@@ -68,3 +68,7 @@ Nenhuma violação. Nenhuma camada de estado, persistência, rota, serviço ou b
 ## Sequência e reversibilidade
 
 SPECIFY → PLAN → TASKS → ANALYZE → IMPLEMENT → verificações locais → REVIEW/CONVERGE externo no HEAD final. Os scripts reais `setup-plan.sh`, `setup-tasks.sh` e `check-prerequisites.sh` resolvem a Spec pelo locator local `.specify/feature.json`, que não faz parte do diff compartilhado. Reversão é por commit exclusivo desta frente; o seed S permanece responsabilidade do coordenador.
+
+## Retorno visual da primeira candidata
+
+O CI completo de `a724bf7` passou, porém as imagens demonstraram fragmentação de palavras em 320/200%. O reparo autorizado mantém fonte ampliada e protocolo, reduz apenas o crescimento de padding estreito e permite reflow de títulos com ícones. A prova adicional usa Range por palavra humana, com códigos/hash excluídos, e novas capturas de qualificadores finais e recuperação. T015/T016 separam correção local de revalidação oficial; o fechamento local interrompido por indisponibilidade do executor foi substituído por contingência via API autorizada, sem escrita de ref por este agente. Detalhes em `ci-review-2026-10-21.md`.

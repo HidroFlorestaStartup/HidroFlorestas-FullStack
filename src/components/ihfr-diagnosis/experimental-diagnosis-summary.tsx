@@ -18,10 +18,10 @@ function Detail({ label, value, wide = false }: { label: string; value: string |
 
 export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicDiagnosis }) {
   return <section aria-labelledby="ihfr-diagnosis-heading" className="min-w-0 overflow-hidden rounded-[1.25rem] border border-emerald-900/10 bg-white text-slate-900 shadow-sm">
-    <div className="border-b border-slate-100 p-4 sm:p-6">
-      <div className="flex items-start gap-3">
+    <div className="border-b border-slate-100 p-[16px] sm:p-6">
+      <div className="flex flex-wrap items-start gap-3">
         <span className="rounded-xl bg-amber-100 p-2.5 text-amber-800"><FlaskConical aria-hidden="true" className="size-5" /></span>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1 basis-48">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-800">Leitura da coleta</p>
           <h2 id="ihfr-diagnosis-heading" className="mt-1 text-lg font-semibold leading-snug sm:text-xl">Diagnóstico IHFR experimental</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">Resultado registrado e sua proveniência, conforme o contrato experimental indicado abaixo.</p>
@@ -58,7 +58,7 @@ export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicD
       <p className="mt-4 break-all text-xs text-slate-600">Estado científico: {diagnosis.scientificState}</p>
       <div className="mt-4"><ScientificNotice labels={diagnosis.scientificLabels} /></div>
     </div>
-    <div className="bg-slate-50/60 p-4 sm:p-6">
+    <div className="bg-slate-50/60 p-[16px] sm:p-6">
       <h3 className="flex items-center gap-2 text-sm font-semibold"><FileCheck2 aria-hidden="true" className="size-4 shrink-0 text-emerald-800" />Proveniência e contrato</h3>
       <p className="mt-2 text-xs leading-relaxed text-slate-600">Identificadores e versões preservados para rastrear este resultado.</p>
       <dl className="mt-4 grid gap-x-6 gap-y-4 sm:grid-cols-2">

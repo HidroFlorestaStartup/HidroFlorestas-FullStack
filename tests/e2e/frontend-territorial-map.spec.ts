@@ -105,6 +105,16 @@ for (const viewport of viewports) {
     await expect(page.locator("#selected-area-title")).toHaveText(firstArea.name);
     await expect(areaButtons(page).first()).toHaveAttribute("aria-pressed", "true");
 
+    // Space activates another marker and updates the same selection.
+    const secondArea = body.areas[1];
+    const secondMarker = page.locator(".leaflet-marker-icon")
+      .and(page.getByTitle(`Selecionar ${secondArea.name}, área ${secondArea.id}`, { exact: true }));
+    await secondMarker.focus();
+    await secondMarker.press("Space");
+    await expect(page.locator("#selected-area-title")).toHaveText(secondArea.name);
+    await expect(areaButtons(page).nth(1)).toHaveAttribute("aria-pressed", "true");
+    await expect(areaButtons(page).first()).toHaveAttribute("aria-pressed", "false");
+
     // Tab through the actual complete list, then reach both final destinations.
     await areaButtons(page).first().focus();
     for (let index = 1; index < body.areas.length; index += 1) await page.keyboard.press("Tab");

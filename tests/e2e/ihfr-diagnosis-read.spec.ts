@@ -3,7 +3,7 @@ import { signSessionToken } from "../../src/app/api/server/auth/session";
 import { IHFR_CONTEXTS } from "../fixtures/ihfr-diagnosis-contexts";
 import { IHFR_DOMAIN } from "../fixtures/ihfr-diagnosis-domain";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
-import { captureIHFRViewport, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
+import { captureIHFRViewport, expectIHFRScientificWords, expectIHFRUnfragmentedWords, IHFR_SCIENTIFIC_QUALIFICATIONS, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
 
 const required = (name: string) => {
   const value = process.env[name];
@@ -36,8 +36,16 @@ test("member reads the current experimental DTO with labels, keyboard access and
   }
   for (const [width, height] of [[320, 900], [667, 375]]) {
     await settleIHFRViewport(page, width, height, 200);
+    await expectIHFRUnfragmentedWords(diagnosis.getByRole("heading", { name: "Diagnóstico IHFR experimental", exact: true }));
+    await expectIHFRScientificWords(diagnosis);
     await diagnosis.getByText("Limites do diagnóstico experimental", { exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
     await captureIHFRViewport(page, info, `frontend-ihfr-qualifiers-${width}-${height}-text200`);
+    for (const qualification of IHFR_SCIENTIFIC_QUALIFICATIONS) {
+      const label = diagnosis.getByText(qualification, { exact: true });
+      await label.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
+      await expect(label).toBeInViewport({ ratio: 1 });
+    }
+    await captureIHFRViewport(page, info, `frontend-ihfr-qualifiers-end-${width}-${height}-text200`);
     await diagnosis.getByText("Hash do contrato", { exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
     await captureIHFRViewport(page, info, `frontend-ihfr-provenance-${width}-${height}-text200`);
   }

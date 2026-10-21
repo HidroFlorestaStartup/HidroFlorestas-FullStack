@@ -64,6 +64,12 @@ for (const viewport of viewports) {
       expect(box?.width).toBeGreaterThanOrEqual(44);
     }
     const science = page.getByRole("region", { name: "IHFR experimental: informação com limites claros." });
+    if (viewport.textScale === 200) {
+      const heading = science.getByRole("heading", { level: 2 });
+      await heading.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
+      await expect(heading).toBeInViewport({ ratio: 1 });
+      await capture(page, info, `${name}-ihfr-heading`);
+    }
     const qualifications = ["Contrato experimental", "Validação científica pendente", "Sujeito a recalibração", "Não aprovado como contrato científico definitivo"];
     for (const [index, text] of qualifications.entries()) {
       const qualification = science.getByText(text, { exact: true });
@@ -75,6 +81,29 @@ for (const viewport of viewports) {
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByText("Fabio Mesquita de Souza", { exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "fabio.souza@ifma.edu.br", exact: true })).toHaveAttribute("href", "mailto:fabio.souza@ifma.edu.br");
+    if (viewport.textScale === 200) {
+      const fragmentedWords = await page.locator("header, main, footer").evaluateAll(roots => {
+        const fragmented: string[] = [];
+        for (const root of roots) {
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+          for (let text = walker.nextNode(); text; text = walker.nextNode()) {
+            if (text.parentElement?.closest('a[href^="mailto:"]')) continue;
+            for (const word of (text.textContent ?? "").matchAll(/[\p{L}\p{M}\p{N}]+/gu)) {
+              const range = document.createRange();
+              range.setStart(text, word.index);
+              range.setEnd(text, word.index + word[0].length);
+              if (Array.from(range.getClientRects()).filter(rect => rect.width > 0 && rect.height > 0).length > 1) fragmented.push(word[0]);
+            }
+          }
+        }
+        return fragmented;
+      });
+      expect(fragmentedWords, "Headings, navigation and prose retain complete words at 200% text").toEqual([]);
+      const teamHeading = page.getByRole("heading", { name: "Equipe multidisciplinar", exact: true });
+      await teamHeading.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
+      await expect(teamHeading).toBeInViewport({ ratio: 1 });
+      await capture(page, info, `${name}-team`);
+    }
   });
 }
 

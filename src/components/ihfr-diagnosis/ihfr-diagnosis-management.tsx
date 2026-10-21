@@ -17,7 +17,7 @@ type Attempt = { key: string; endpoint: string; body: object; kind: "DIAGNOSE" |
 type Feedback = { text: string; kind: "status" | "alert" };
 const landUseTypes = Object.keys(LAND_USE_LABELS) as IHFRLandUseType[];
 const controlClass = "mt-2 min-h-11 w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none focus-visible:border-emerald-700 focus-visible:ring-2 focus-visible:ring-emerald-700/30 disabled:bg-slate-100 disabled:text-slate-600";
-const buttonClass = "min-h-11 max-w-full rounded-xl px-4 py-2.5 text-sm font-semibold leading-relaxed transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-not-allowed disabled:opacity-50";
+const buttonClass = "min-h-11 max-w-full rounded-xl px-[16px] py-2.5 text-sm font-semibold leading-relaxed transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-not-allowed disabled:opacity-50";
 
 export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context: IHFRRouteContext; initialDiagnosis: PublicDiagnosis | null }) {
   const [diagnosis, setDiagnosis] = useState(initialDiagnosis);
@@ -150,10 +150,10 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
 
   return <div className="mx-auto min-w-0 max-w-4xl space-y-6">
     {diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />}
-    <section aria-labelledby="ihfr-management-heading" aria-busy={busy} className="min-w-0 rounded-[1.25rem] border border-emerald-900/10 bg-white p-4 text-slate-900 shadow-sm sm:p-6">
-      <div className="flex items-start gap-3">
+    <section aria-labelledby="ihfr-management-heading" aria-busy={busy} className="min-w-0 rounded-[1.25rem] border border-emerald-900/10 bg-white p-[16px] text-slate-900 shadow-sm sm:p-6">
+      <div className="flex flex-wrap items-start gap-3">
         <span className="rounded-xl bg-emerald-50 p-2.5 text-emerald-800"><Settings2 aria-hidden="true" className="size-5" /></span>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1 basis-48">
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-800">Ações autorizadas</p>
           <h2 id="ihfr-management-heading" className="mt-1 text-lg font-semibold leading-snug sm:text-xl">Gerenciar diagnóstico IHFR experimental</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">Informe o contexto da observação, confira a elegibilidade e revise a ação antes de confirmar.</p>
@@ -190,8 +190,8 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         <p className="mt-2 break-all text-xs">{eligibility.outcome} · Vigente: {eligibility.hasCurrentDiagnosis ? "sim" : "não"}</p>
         {eligibility.reasons.length > 0 && <ul className="mt-3 space-y-2">{eligibility.reasons.map((item, index) => <li key={`${item}-${index}`} className="min-w-0 leading-relaxed">{ihfrLabel("reason", item)}<span className="block break-all text-xs">{item}</span></li>)}</ul>}
       </div>}
-      {diagnosis && <div className="mt-6 min-w-0 rounded-2xl border border-amber-200 bg-amber-50/40 p-4">
-        <h3 className="flex items-center gap-2 text-sm font-semibold text-amber-950"><ShieldAlert aria-hidden="true" className="size-4 shrink-0" />Revogação do diagnóstico vigente</h3>
+      {diagnosis && <div className="mt-6 min-w-0 rounded-2xl border border-amber-200 bg-amber-50/40 p-[12px] sm:p-4">
+        <h3 className="flex flex-wrap items-center gap-2 text-sm font-semibold text-amber-950"><ShieldAlert aria-hidden="true" className="size-4 shrink-0" /><span className="min-w-0 flex-1 basis-40">Revogação do diagnóstico vigente</span></h3>
         <p id="ihfr-revocation-help" className="mt-2 text-xs leading-relaxed text-slate-600">A revogação preserva o registro e sua proveniência. Descreva o motivo em até 500 caracteres.</p>
         <label className="mt-4 block min-w-0 text-sm font-medium">Motivo da revogação
           <textarea value={reason} onChange={(event) => setReason(event.target.value)} disabled={busy || Boolean(attempt)} aria-describedby="ihfr-revocation-help" maxLength={500} rows={3} className={`${controlClass} resize-y`} />
@@ -199,8 +199,8 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         <button type="button" disabled={busy || Boolean(attempt)} onClick={() => prepare("REVOKE")} className={`${buttonClass} mt-3 border border-amber-800/30 bg-white text-amber-900 hover:bg-amber-100`}>Revogar diagnóstico</button>
       </div>}
       {feedback && <p ref={feedbackRef} tabIndex={-1} role={feedback.kind} aria-live={feedback.kind === "alert" ? "assertive" : "polite"} className={`mt-5 break-words rounded-2xl border p-4 text-sm leading-relaxed outline-offset-4 focus:outline-2 focus:outline-emerald-800 ${feedback.kind === "alert" ? "border-amber-300 bg-amber-50 text-amber-950" : "border-emerald-200 bg-emerald-50 text-emerald-950"}`}>{feedback.text}</p>}
-      {attempt && unknown && <div className="mt-4 min-w-0 rounded-2xl border border-amber-300 bg-amber-50 p-4">
-        <h3 className="flex items-start gap-2 text-sm font-semibold text-amber-950"><RotateCcw aria-hidden="true" className="mt-0.5 size-4 shrink-0" />Resultado ainda não confirmado</h3>
+      {attempt && unknown && <div className="mt-4 min-w-0 rounded-2xl border border-amber-300 bg-amber-50 p-[12px] sm:p-4">
+        <h3 className="flex flex-wrap items-start gap-2 text-sm font-semibold text-amber-950"><RotateCcw aria-hidden="true" className="mt-0.5 size-4 shrink-0" /><span className="min-w-0 flex-1 basis-40">Resultado ainda não confirmado</span></h3>
         <p className="mt-2 text-sm leading-relaxed text-slate-700">A tentativa foi preservada. Recupere o resultado ou repita a mesma operação antes de iniciar outra.</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <button type="button" disabled={busy} onClick={() => void recover()} className={`${buttonClass} bg-emerald-800 text-white hover:bg-emerald-900`}>Recuperar resultado</button>
@@ -208,8 +208,8 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         </div>
       </div>}
     </section>
-    {confirmation && <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-3 sm:p-4">
-      <div role="dialog" aria-modal="true" aria-labelledby="ihfr-confirm-title" aria-describedby="ihfr-confirm-description" onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); closeConfirmation(); } else if (event.key === "Tab" && event.shiftKey && document.activeElement === dialogButton.current) { event.preventDefault(); confirmButton.current?.focus(); } else if (event.key === "Tab" && !event.shiftKey && document.activeElement === confirmButton.current) { event.preventDefault(); dialogButton.current?.focus(); } }} className="max-h-[calc(100dvh-2rem)] w-full min-w-0 max-w-md overflow-y-auto overscroll-contain rounded-[1.25rem] bg-white p-5 text-slate-900 shadow-xl sm:p-6">
+    {confirmation && <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-[12px] sm:p-[16px]">
+      <div role="dialog" aria-modal="true" aria-labelledby="ihfr-confirm-title" aria-describedby="ihfr-confirm-description" onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); closeConfirmation(); } else if (event.key === "Tab" && event.shiftKey && document.activeElement === dialogButton.current) { event.preventDefault(); confirmButton.current?.focus(); } else if (event.key === "Tab" && !event.shiftKey && document.activeElement === confirmButton.current) { event.preventDefault(); dialogButton.current?.focus(); } }} className="max-h-[calc(100dvh-24px)] w-full min-w-0 max-w-md overflow-y-auto overscroll-contain rounded-[1.25rem] bg-white p-[20px] text-slate-900 shadow-xl sm:p-[24px]">
         <h2 id="ihfr-confirm-title" className="text-lg font-semibold">Confirmar {confirmation === "REVOKE" ? "revogação" : diagnosis ? "substituição" : "criação"}</h2>
         <div id="ihfr-confirm-description" className="mt-3 space-y-3 text-sm leading-relaxed text-slate-600">
           <p>Esta ação registrará uma operação IHFR experimental imutável.</p>

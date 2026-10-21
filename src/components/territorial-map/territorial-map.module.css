@@ -16,7 +16,7 @@
 .mapContent { display: grid; min-width: 0; gap: 12px; }
 .mapFrame { position: relative; z-index: 0; width: 100%; height: 320px; min-width: 0; overflow: hidden; border: 1px solid #dce6df; border-radius: 12px; background: #efefef; }
 .mapCanvas { width: 100%; height: 100%; }
-.mapFrame :global(.leaflet-control-zoom a) { width: 44px; height: 44px; color: #3e3e3e; line-height: 44px; }
+.mapFrame .mapCanvas :global(.leaflet-control-zoom a) { width: 44px; height: 44px; color: #3e3e3e; line-height: 44px; }
 .mapFrame :global(.leaflet-control-attribution) { max-width: 100%; padding: 3px 8px; background: #ffffffed; color: #3e3e3e; font-size: .6875rem; line-height: 1.5; overflow-wrap: anywhere; }
 .mapFrame :global(.leaflet-control-attribution a) { color: #245f83; text-decoration: underline; text-underline-offset: 2px; }
 .mapFrame :global(.leaflet-bottom) { max-width: 100%; }
