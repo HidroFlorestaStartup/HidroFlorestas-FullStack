@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - review/frontend-rc-artifact-triage-20261021
+    paths:
+      - .github/workflows/rc-artifact-triage.yml
 
 permissions:
   actions: read

@@ -1,0 +1,74 @@
+name: Read archived RC viewport images
+
+on:
+  push:
+    branches:
+      - review/frontend-rc-artifact-triage-20261021
+    paths:
+      - .github/workflows/rc-artifact-images.yml
+
+permissions:
+  actions: read
+
+jobs:
+  read-recorded-images:
+    if: github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' && github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read original masked viewport PNGs from verified artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, io, json, os, re, urllib.parse, urllib.request, zipfile
+          repo = "HidroFlorestaStartup/HidroFlorestas-FullStack"
+          assert os.environ["GITHUB_REPOSITORY"] == repo
+          artifacts = [{"id":12337845919,"run":39580505165,"head":"c014442cd6fbfcda47ff4366a5c7acd24bf0b007","sha256":"d5e683a1d97038fc20f225862cf9d778ba02044ad7235606e3600420d4aa5be6"},{"id":12338417029,"run":39581586760,"head":"f472d5910322837ad9cf9a942a99581a7ffff3f1","sha256":"853a0100eb7574a14635153eecd40c19cb87109cfaedb4b89e5eb90310d6b1b3"},{"id":12337396304,"run":39579990722,"head":"6a5e80804f46b49658dad3c1a804cf5033d2cfc3","sha256":"f2927af6e6acb27776f459b1b7c29fbb40508efb69cc8612383471c4cd42a1a0"}]
+          api = "https://api.github.com/repos/" + repo
+          headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer " + os.environ["GH_TOKEN"], "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "hf-rc-read-only-artifact-triage"}
+          class SafeRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, response_headers, newurl):
+                  parsed = urllib.parse.urlparse(newurl)
+                  host = parsed.hostname or ""
+                  if parsed.scheme != "https" or not (host == "api.github.com" or host.endswith(".blob.core.windows.net") or host.endswith(".githubusercontent.com")):
+                      raise RuntimeError("Artifact redirect outside approved GitHub storage")
+                  redirected = super().redirect_request(req, fp, code, msg, response_headers, newurl)
+                  if redirected is not None:
+                      redirected.remove_header("Authorization")
+                  return redirected
+          opener = urllib.request.build_opener(SafeRedirect())
+          def read(path):
+              request = urllib.request.Request(api + path, headers=headers)
+              with opener.open(request, timeout=60) as response:
+                  return response.read()
+          ansi = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
+          sensitive = re.compile(r"(authorization\s*:|bearer\s+|set-cookie\s*:|^cookie\s*:|(?:DATABASE_URL|ACCOUNT_PROOF_KEYS|JWT_SECRET)\s*=)", re.I)
+          artifacts = [artifacts[2]]
+          expected = artifacts[0]
+          metadata = json.loads(read("/actions/artifacts/" + str(expected["id"])))
+          assert metadata["workflow_run"]["id"] == expected["run"]
+          assert metadata["workflow_run"]["head_sha"] == expected["head"]
+          assert metadata["digest"] == "sha256:" + expected["sha256"]
+          raw = read("/actions/artifacts/" + str(expected["id"]) + "/zip")
+          assert hashlib.sha256(raw).hexdigest() == expected["sha256"]
+          assert len(raw) == metadata["size_in_bytes"]
+          import base64, struct
+          with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+              assert archive.testzip() is None
+              names = sorted(name for name in archive.namelist() if name.startswith(".accounts-validation/frontend-user-administration/") and name.endswith(".png") and "200" in name)
+              assert 1 <= len(names) <= 8, "Unexpected image family size"
+              for name in names:
+                  png = archive.read(name)
+                  assert png[:8] == b"\x89PNG\r\n\x1a\n"
+                  width, height = struct.unpack(">II", png[16:24])
+                  encoded = base64.b64encode(png).decode("ascii")
+                  chunks = [encoded[index:index+12288] for index in range(0, len(encoded), 12288)]
+                  metadata_name = name[:-4] + "-viewport.json"
+                  viewport = json.loads(archive.read(metadata_name)) if metadata_name in archive.namelist() else None
+                  print(json.dumps({"record": "png-start", "artifact": expected["id"], "run": expected["run"], "head": expected["head"], "member": name, "sha256": hashlib.sha256(png).hexdigest(), "bytes": len(png), "width": width, "height": height, "chunks": len(chunks), "viewport": viewport}))
+                  for index, chunk in enumerate(chunks):
+                      print(json.dumps({"record": "png-chunk", "member": name, "part": index, "value": chunk}))
+                  print(json.dumps({"record": "png-end", "member": name, "chunks": len(chunks)}))
+          PY
