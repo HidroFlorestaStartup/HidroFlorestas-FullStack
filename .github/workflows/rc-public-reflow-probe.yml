@@ -1,0 +1,90 @@
+name: Diagnose public landing reflow
+
+on:
+  push:
+    branches:
+      - review/frontend-rc-artifact-triage-20261021
+    paths:
+      - .github/workflows/rc-public-reflow-probe.yml
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose-public-reflow:
+    if: github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' && github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: 9af8adf414318e09d672b7530fe068cac87c2812
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+      - name: Install locked dependencies and browser for isolated public probe
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          npx prisma generate
+      - name: Measure original public page without database or application credentials
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+          EXPECTED_PRODUCT_HEAD: 9af8adf414318e09d672b7530fe068cac87c2812
+        run: |
+          node --input-type=module <<'JS'
+          import { chromium } from '@playwright/test';
+          import { spawn, execFileSync } from 'node:child_process';
+          import { setTimeout as delay } from 'node:timers/promises';
+          const head = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+          if (head !== process.env.EXPECTED_PRODUCT_HEAD) throw new Error('Unexpected product source');
+          const url = 'http://127.0.0.1:3012';
+          const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'dev', '--hostname', '127.0.0.1', '--port', '3012'], { stdio: ['ignore', 'ignore', 'ignore'], env: { ...process.env, NODE_ENV: 'development' } });
+          let browser;
+          try {
+            let ready = false;
+            const until = Date.now() + 120000;
+            while (Date.now() < until && !ready) {
+              if (server.exitCode !== null) throw new Error('Isolated public server exited');
+              try { ready = (await fetch(url, { signal: AbortSignal.timeout(10000) })).status === 200; } catch {}
+              if (!ready) await delay(500);
+            }
+            if (!ready) throw new Error('Public page was not ready');
+            browser = await chromium.launch();
+            const page = await browser.newPage({ viewport: { width: 320, height: 812 } });
+            const response = await page.goto(url, { waitUntil: 'load' });
+            if (response.status() !== 200) throw new Error('Public page response not 200');
+            await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
+            await page.evaluate(async () => { await document.fonts.ready; await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))); });
+            const measurement = await page.evaluate(() => {
+              const nodes = Array.from(document.querySelectorAll('header *, main *, footer *'));
+              const overflow = nodes.flatMap(node => {
+                const rect = node.getBoundingClientRect(), style = getComputedStyle(node);
+                if (style.display === 'none' || !rect.width || !rect.height || (rect.right <= innerWidth + 0.5 && rect.left >= -0.5)) return [];
+                return [{ tag: node.tagName, id: node.id, className: typeof node.className === 'string' ? node.className : '', text: node.textContent?.trim().slice(0, 160), left: rect.left, right: rect.right, width: rect.width, clientWidth: node.clientWidth, scrollWidth: node.scrollWidth, fontSize: style.fontSize, fontWeight: style.fontWeight, letterSpacing: style.letterSpacing, padding: style.padding, wrap: style.overflowWrap }];
+              });
+              const words = [];
+              for (const root of document.querySelectorAll('header,main,footer')) {
+                const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+                for (let text = walker.nextNode(); text; text = walker.nextNode()) {
+                  for (const match of (text.textContent ?? '').matchAll(/[\p{L}\p{M}\p{N}]+/gu)) {
+                    const range = document.createRange();
+                    range.setStart(text, match.index); range.setEnd(text, match.index + match[0].length);
+                    const rects = Array.from(range.getClientRects()).filter(rect => rect.width && rect.height);
+                    if (rects.some(rect => rect.right > innerWidth + 0.5 || rect.left < -0.5)) {
+                      const parent = text.parentElement, style = getComputedStyle(parent);
+                      words.push({ word: match[0], tag: parent.tagName, className: parent.className, fontSize: style.fontSize, fontWeight: style.fontWeight, letterSpacing: style.letterSpacing, rects: rects.map(rect => ({ x: rect.x, y: rect.y, width: rect.width, height: rect.height })) });
+                    }
+                  }
+                }
+              }
+              return { width: innerWidth, height: innerHeight, documentWidth: document.documentElement.scrollWidth, rootFontSizePx: parseFloat(getComputedStyle(document.documentElement).fontSize), fontsStatus: document.fonts.status, overflow, words };
+            });
+            console.log(JSON.stringify({ record: 'public-reflow-measurement', head, browser: browser.version(), ...measurement }));
+          } finally {
+            if (browser) await browser.close();
+            server.kill('SIGTERM');
+          }
+          JS
