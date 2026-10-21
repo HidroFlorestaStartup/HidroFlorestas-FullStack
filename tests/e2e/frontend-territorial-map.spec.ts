@@ -167,7 +167,9 @@ test("transient transport shows loading and error then retries the real endpoint
     await page.evaluate(waitForMissionRender);
     await captureTerritorialViewport(page, info, "transport-loading-375");
     release();
-    await expect(page.getByRole("alert")).toHaveText("Não foi possível carregar a visão territorial.");
+    const applicationAlerts = page.locator("#application-content").getByRole("alert");
+    await expect(applicationAlerts).toHaveCount(1);
+    await expect(applicationAlerts).toHaveText("Não foi possível carregar a visão territorial.");
     const retry = page.getByRole("button", { name: "Tentar novamente", exact: true });
     await retry.focus();
     await expectTerritorialControl(retry, page, info, "retry-375");
@@ -177,7 +179,7 @@ test("transient transport shows loading and error then retries the real endpoint
     await page.keyboard.press("Enter");
     const real: TerritorialMapResponse = await (await resumed).json();
     await expect(areaButtons(page)).toHaveCount(real.areas.length);
-    await expect(page.getByRole("alert")).toHaveCount(0);
+    await expect(applicationAlerts).toHaveCount(0);
     await expect(page.locator('button[aria-controls="selected-area-panel"][aria-pressed="true"]')).toHaveCount(0);
     await expect(page.locator("#selected-area-panel")).toHaveCount(0);
     await expectTerritorialReflow(page);

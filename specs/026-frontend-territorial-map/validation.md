@@ -97,6 +97,35 @@ Este reparo foi preparado contra parent `f472d5910322837ad9cf9a942a99581a7ffff3f
 
 O [recibo do Codex](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6313351413) concluiu sem findings a revisão do HEAD anterior `f472d5910322837ad9cf9a942a99581a7ffff3f1`. A candidata de teclado requer nova CI e revisão do próprio SHA antes do fechamento técnico.
 
+## Colisão do alerta de transporte com o anunciador de rotas — 2026-10-21
+
+O [run 39589899058](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39589899058), tentativa 1, job `119187960234`, executou o HEAD `19c85d43334b362a3bda540aff45da2f88682abe`, árvore `3ae307be6fba35113328ef5b9c16ede406786484`.
+
+- PASS em RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck e Lint. E2E: **FAIL**, com 196 testes aprovados, um reprovado e um não executado. Https, Deletion, Ihfr, Bootstrap e SchemaAudit ficaram NOT_RUN.
+- Os seis cenários da matriz territorial passaram: 320×760, 375×900, 768×900, 1440×900, 320×760 com texto a 200% e 844×390. Incluem Enter no primeiro marcador, Espaço em outro marcador localizado, estado da seleção na lista, navegação por Tab e acesso à coleta real. O único FAIL ocorreu no cenário seguinte de transporte; o último cenário de contextos vazio/inativo e reset ficou NOT_RUN.
+- Artefato `12342307910`, `rc-validation-19c85d43334b362a3bda540aff45da2f88682abe`, 31.646.199 bytes; SHA-256 `6521c47721a0bd3e4c4d581bc863c4030fc22acb701a912028d1feee7ab8c533`. O download foi conferido contra o digest oficial, com CRC válido, 767 entradas, caminhos seguros e nenhum link simbólico.
+- O log completo `e2e-1792581351902.log`, linhas 179–197, registra `strict mode violation` em `frontend-territorial-map.spec.ts:170:43`. `page.getByRole("alert")` resolveu dois elementos: o `p` com a mensagem correta `Não foi possível carregar a visão territorial.` e o `div` vazio `#__next-route-announcer__`, também com `role="alert"`. O timeout existente de 5000 ms permaneceu inalterado.
+
+### Causa e reparo focal do teste
+
+A cadeia de componentes no SHA executado confirma que `DashboardLayout` fornece suas páginas como children de `ApplicationShell`, e o shell as coloca dentro de `#application-content`. A página do mapa renderiza `TerritorialMapView` nesse conteúdo; o parágrafo de erro pertence a essa árvore.
+
+O lockfile fixa Next `16.3.8`. Seu [AppRouterAnnouncer oficial](https://github.com/vercel/next.js/blob/v16.3.8/packages/next/src/client/components/app-router-announcer.tsx), blob `d2d5415aa332889220baad787d2d02c4541c292e`, cria o anunciador em shadow root de `next-route-announcer` e anexa esse host diretamente a `document.body`. Ele fica fora de `#application-content`, e seu ID corresponde ao segundo elemento do log. A colisão é entre o seletor global do teste e a infraestrutura de anúncio de rotas; a mensagem de erro do produto foi renderizada corretamente.
+
+As duas assertions do cenário passam a usar `page.locator("#application-content").getByRole("alert")`. Antes da comparação do texto exato, exige-se explicitamente `toHaveCount(1)`; após a resposta real bem-sucedida, mantém-se `toHaveCount(0)`. Não há seleção da primeira ocorrência, filtro pelo próprio texto esperado, aumento de timeout ou alteração do produto. As assertions de Enter/Espaço, alvos de 44 px, retry, seleção vazia e resposta real permanecem preservadas.
+
+### Capturas inspecionadas e limites
+
+Foram produzidos e abertos os 19 PNG originais: três frames por cenário da matriz (18), mais o carregamento de transporte a 375 px. Os 19 JSON correspondem ao HEAD executado, às dimensões reais dos PNG e a `fullPage:false`. Não registram rolagem horizontal; os 18 controles capturados têm foco visível, alvo mínimo de 44 px, geometria inteiramente no viewport e nove pontos sem obstrução.
+
+A inspeção visual não identificou achados P1/P2 do mapa nesses frames: zoom, seleção, nomes longos, painel e ação final permanecem legíveis nos enquadramentos pertinentes. O identificador sintético longo quebra em linhas sem truncamento. Recortes nas bordas do viewport acompanham o scroll da captura. Texto a 200% foi obtido com `root-font-size:32px`, conforme os metadados; não representa zoom nativo nem teste em dispositivo físico.
+
+As capturas de erro e recuperação de transporte não foram alcançadas. As de contexto vazio/inativo também não foram produzidas, pois o último cenário ficou NOT_RUN. A evidência parcial não fecha a frente nem substitui homologação humana.
+
+O [recibo efetivo do Codex](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6314518379) revisou `19c85d43334b362a3bda540aff45da2f88682abe` sem findings; foram confirmadas ausência de reviews formais e de threads inline.
+
+O reparo do seletor foi preparado contra esse HEAD. Seus novos testes locais e sua nova CI permanecem **NOT_RUN** até execução do próximo SHA. T016/T017 continuam abertas para os 15 gates, as capturas restantes e a revisão efetiva da nova candidata.
+
 ## Evidências esperadas no CI
 
 `.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.png` e `*-viewport.json`, também anexados ao resultado do Playwright. Nomes incluem identificador de cenário/repetição para não sobrescrever tentativas. Capturas `fullPage:false`, animações observadas, campos de formulário mascarados, sem trace/vídeo, geometria sem texto/URLs/valores.
