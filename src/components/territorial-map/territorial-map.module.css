@@ -1,0 +1,70 @@
+.page { display: grid; min-width: 0; gap: 24px; align-content: start; color: #3e3e3e; }
+.heading { display: grid; min-width: 0; gap: 8px; justify-items: start; }
+.eyebrow { color: #236548; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.title { max-width: 100%; overflow-wrap: anywhere; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.3; }
+.sectionTitle { min-width: 0; overflow-wrap: anywhere; font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+.description, .context { color: #626262; font-size: .875rem; line-height: 1.6; overflow-wrap: anywhere; }
+.context { display: flex; align-items: flex-start; gap: 8px; }
+.context svg { flex-shrink: 0; margin-top: 3px; color: #236548; }
+.grid { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 24px; }
+.card { min-width: 0; border: 1px solid #dce6df; border-radius: 20px; background: #fff; box-shadow: 0 4px 18px -3px #00000026; }
+.cardHeader { display: grid; min-width: 0; gap: 8px; padding: 24px; border-bottom: 1px solid #e5e7e5; }
+.cardHeader .sectionTitle { display: flex; align-items: flex-start; gap: 8px; }
+.cardHeader .sectionTitle svg { flex-shrink: 0; margin-top: 3px; color: #236548; }
+.cardBody, .panelBody { min-width: 0; padding: 24px; }
+.mapBody { min-width: 0; padding: 16px; }
+.mapContent { display: grid; min-width: 0; gap: 12px; }
+.mapFrame { position: relative; z-index: 0; width: 100%; height: 320px; min-width: 0; overflow: hidden; border: 1px solid #dce6df; border-radius: 12px; background: #efefef; }
+.mapCanvas { width: 100%; height: 100%; }
+.mapFrame :global(.leaflet-control-zoom a) { width: 44px; height: 44px; color: #3e3e3e; line-height: 44px; }
+.mapFrame :global(.leaflet-control-attribution) { max-width: 100%; padding: 3px 8px; background: #ffffffed; color: #3e3e3e; font-size: .6875rem; line-height: 1.5; overflow-wrap: anywhere; }
+.mapFrame :global(.leaflet-control-attribution a) { color: #245f83; text-decoration: underline; text-underline-offset: 2px; }
+.mapFrame :global(.leaflet-bottom) { max-width: 100%; }
+.caption { padding: 0 24px 24px; overflow-wrap: anywhere; color: #626262; font-size: .75rem; line-height: 1.6; }
+.areaList, .collectionList { display: grid; min-width: 0; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.areaList > li { min-width: 0; }
+.areaButton { display: grid; width: 100%; min-width: 0; min-height: 44px; gap: 4px; padding: 12px; border: 1px solid #dce6df; border-radius: 10px; background: #fff; color: #3e3e3e; text-align: left; cursor: pointer; }
+.areaButton:hover { border-color: #8bad96; background: #f3f7f4; }
+.areaButton[aria-pressed="true"] { border-color: #236548; background: #edf5ef; }
+.areaLabel { display: flex; min-width: 0; align-items: flex-start; gap: 8px; }
+.areaLabel svg { flex-shrink: 0; margin-top: 3px; color: #236548; }
+.areaName { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: .875rem; font-weight: 600; line-height: 1.6; }
+.areaMeta { min-width: 0; overflow-wrap: anywhere; color: #626262; font-size: .75rem; line-height: 1.6; }
+.unlocated { display: grid; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e5e7e5; }
+.subheading { display: flex; min-width: 0; align-items: flex-start; gap: 8px; overflow-wrap: anywhere; font-size: 1rem; font-weight: 600; line-height: 1.5; }
+.subheading svg { flex-shrink: 0; margin-top: 3px; }
+.panelBody { display: grid; justify-items: start; gap: 24px; }
+.collections { display: grid; width: 100%; min-width: 0; gap: 12px; }
+.collection { min-width: 0; padding: 16px; border: 1px solid #dce6df; border-radius: 10px; background: #f9fafb; }
+.collection .description + .description { margin-top: 4px; }
+.button, .back, .textLink { display: inline-flex; min-width: 0; min-height: 44px; max-width: 100%; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; border-radius: 10px; padding: 10px 16px; font-size: .875rem; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; text-decoration: none; cursor: pointer; }
+.button svg, .back svg, .textLink svg { flex-shrink: 0; }
+.button { color: #fff; background: #236548; }
+.button:hover { background: #194c35; }
+.back, .textLink { justify-content: flex-start; padding-inline: 0; color: #245f83; text-align: left; }
+.back { margin-bottom: 4px; }
+.textLink { margin-top: 8px; text-decoration: underline; text-underline-offset: 4px; }
+.back:hover, .textLink:hover { text-decoration: underline; text-underline-offset: 4px; }
+.page :is(a, button, [tabindex]):focus-visible { outline: 3px solid #245f83; outline-offset: 3px; }
+.loading, .empty { min-width: 0; padding: 32px 24px; border: 1px solid #dce6df; border-radius: 20px; background: #fff; box-shadow: 0 4px 18px -3px #00000026; color: #626262; font-size: .875rem; line-height: 1.6; }
+.loading { display: flex; min-height: 160px; align-items: center; justify-content: center; gap: 12px; }
+.empty { display: grid; justify-items: center; gap: 16px; padding-block: 48px; border-style: dashed; text-align: center; }
+.empty > svg { color: #858585; }
+.empty .sectionTitle { color: #3e3e3e; }
+.error, .notice { min-width: 0; padding: 16px; border: 1px solid; border-radius: 12px; font-size: .875rem; line-height: 1.6; overflow-wrap: anywhere; }
+.error { display: grid; justify-items: start; gap: 16px; color: #992525; border-color: #e9bdbd; background: #fff0f0; }
+.notice { color: #795015; border-color: #ead5af; background: #fff7e7; }
+.mapLoading { display: flex; min-height: 320px; align-items: center; justify-content: center; padding: 16px; border: 1px solid #dce6df; border-radius: 12px; background: #efefef; color: #626262; font-size: .875rem; line-height: 1.6; }
+.spinner { display: inline-flex; flex-shrink: 0; color: #245f83; animation: territorial-spin 1s linear infinite; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@keyframes territorial-spin { to { transform: rotate(360deg); } }
+@media (min-width: 640px) { .mapFrame { height: 448px; } .mapLoading { min-height: 448px; } }
+@media (min-width: 1100px) { .grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); } }
+@media (max-width: 399px) {
+  .cardHeader, .cardBody, .panelBody { padding: 16px; }
+  .mapBody { padding: 12px; }
+  .caption { padding: 0 16px 16px; }
+  .loading, .empty { padding-inline: 16px; }
+  .button { padding-inline: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }

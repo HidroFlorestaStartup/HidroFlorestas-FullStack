@@ -1,11 +1,13 @@
 "use client";
+
 import { formatCollectionOccurrence } from "@/lib/collection-date-time";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { MapPinned, RefreshCw } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, List, MapPin, MapPinOff, MapPinned, RefreshCw } from "lucide-react";
 import type { TerritorialArea, TerritorialMapResponse } from "@/types/territorial-map.type";
 import { TerritorialMap } from "./territorial-map";
 import { formatCoordinate, selectedArea } from "./territorial-map-state";
+import styles from "./territorial-map.module.css";
 
 function isResponse(value: unknown): value is TerritorialMapResponse {
   if (!value || typeof value !== "object") return false;
@@ -25,9 +27,14 @@ export function TerritorialMapView({ laboratoryId }: { laboratoryId: string }) {
     activeController.current?.abort();
     const controller = new AbortController();
     activeController.current = controller;
-    setLoading(true); setError(null); setData(null); setSelectedId(null);
+    setLoading(true);
+    setError(null);
+    setData(null);
+    setSelectedId(null);
     try {
-      const response = await fetch(`/api/laboratories/${laboratoryId}/territorial-map`, { credentials: "include", cache: "no-store", signal: controller.signal });
+      const response = await fetch(`/api/laboratories/${laboratoryId}/territorial-map`, {
+        credentials: "include", cache: "no-store", signal: controller.signal,
+      });
       const body: unknown = await response.json();
       if (current !== generation.current) return;
       if (!response.ok || !isResponse(body)) throw new Error("INVALID_RESPONSE");
@@ -41,30 +48,146 @@ export function TerritorialMapView({ laboratoryId }: { laboratoryId: string }) {
   }, [laboratoryId]);
   useEffect(() => {
     void load();
-    return () => { generation.current += 1; activeController.current?.abort(); };
+    return () => {
+      generation.current += 1;
+      activeController.current?.abort();
+    };
   }, [load]);
 
-  if (loading) return <section className="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm"><RefreshCw className="mx-auto animate-spin text-green-700" aria-hidden="true"/><p role="status" className="mt-3 text-slate-700">Carregando visão territorial…</p></section>;
-  if (error || !data) return <section className="rounded-3xl border border-red-200 bg-white p-8 text-center shadow-sm"><p role="alert" className="font-semibold text-red-800">{error ?? "Resposta territorial inválida."}</p><button type="button" onClick={() => void load()} className="mt-5 rounded-xl bg-red-700 px-5 py-3 font-bold text-white focus-visible:ring-2">Tentar novamente</button></section>;
-  if (data.areas.length === 0) return <section className="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-sm"><MapPinned className="mx-auto text-slate-400" aria-hidden="true"/><h1 className="mt-3 text-2xl font-bold text-slate-900">Nenhuma área cadastrada</h1><p className="mt-2 text-slate-600">{data.context.readOnly ? "Este laboratório está inativo e disponível somente para leitura." : "A visão territorial aparecerá quando este laboratório possuir áreas."}</p>{!data.context.readOnly && <Link className="mt-5 inline-flex rounded-xl bg-green-700 px-5 py-3 font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-900" href={`/dashboard/laboratories/${laboratoryId}/areas`}>Ir para áreas</Link>}</section>;
-  const selected = selectedArea(data.areas, selectedId);
-  const available = data.areas.filter((area) => area.location);
-  const unavailable = data.areas.filter((area) => !area.location);
-  return <div className="min-w-0 space-y-6">
-    <header className="rounded-3xl bg-linear-to-r from-green-700 to-blue-700 p-6 text-white shadow-sm"><p className="text-sm font-bold uppercase tracking-widest">Visão territorial</p><h1 className="mt-2 text-3xl font-bold">Áreas de {data.context.name}</h1><p className="mt-2 text-green-50">{data.areas.length} {data.areas.length === 1 ? "área" : "áreas"} · {data.context.readOnly ? "Laboratório inativo, somente leitura" : "Laboratório ativo"}</p></header>
-    <div className="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(20rem,1fr)]">
-      <TerritorialMap areas={data.areas} selectedAreaId={selectedId} onSelect={setSelectedId}/>
-      <section className="min-w-0 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm" aria-labelledby="area-list-title"><h2 id="area-list-title" className="text-xl font-bold text-slate-900">Lista de áreas</h2><AreaList areas={available} selectedId={selectedId} onSelect={setSelectedId}/>{unavailable.length > 0 && <div className="mt-6 border-t border-slate-200 pt-5"><h3 className="font-bold text-slate-900">Localização indisponível</h3><AreaList areas={unavailable} selectedId={selectedId} onSelect={setSelectedId}/></div>}</section>
+  const selected = selectedArea(data?.areas ?? [], selectedId);
+  const available = data?.areas.filter((area) => area.location) ?? [];
+  const unavailable = data?.areas.filter((area) => !area.location) ?? [];
+
+  return (
+    <div className={styles.page}>
+      <header className={styles.heading}>
+        <Link className={styles.back} href={`/dashboard/laboratories/${laboratoryId}`}>
+          <ArrowLeft size={18} aria-hidden="true" />Voltar ao resumo
+        </Link>
+        <p className={styles.eyebrow}>Visão territorial</p>
+        <h1 className={styles.title}>{data ? `Áreas de ${data.context.name}` : "Mapa territorial"}</h1>
+        <p className={styles.description}>Consulte os pontos das áreas e acesse suas coletas confirmadas.</p>
+        {data && (
+          <p className={styles.context}>
+            <MapPinned size={18} aria-hidden="true" />
+            <span>{data.areas.length} {data.areas.length === 1 ? "área" : "áreas"} · {data.context.readOnly ? "Laboratório inativo, somente leitura" : "Laboratório ativo"}</span>
+          </p>
+        )}
+      </header>
+
+      {loading ? (
+        <section className={styles.loading}>
+          <span className={styles.spinner}><RefreshCw size={24} aria-hidden="true" /></span>
+          <p role="status">Carregando visão territorial…</p>
+        </section>
+      ) : error || !data ? (
+        <section className={styles.error}>
+          <p role="alert">{error ?? "Resposta territorial inválida."}</p>
+          <button type="button" onClick={() => void load()} className={styles.button}>
+            <RefreshCw size={18} aria-hidden="true" />Tentar novamente
+          </button>
+        </section>
+      ) : data.areas.length === 0 ? (
+        <section className={styles.empty}>
+          <MapPinned size={36} aria-hidden="true" />
+          <h2 className={styles.sectionTitle}>Nenhuma área cadastrada</h2>
+          <p className={styles.description}>{data.context.readOnly
+            ? "Este laboratório está inativo e disponível somente para leitura."
+            : "A visão territorial aparecerá quando este laboratório possuir áreas."}</p>
+          {!data.context.readOnly && (
+            <Link className={styles.button} href={`/dashboard/laboratories/${laboratoryId}/areas`}>Ir para áreas</Link>
+          )}
+        </section>
+      ) : (
+        <>
+          <div className={styles.grid}>
+            <figure className={styles.card} aria-labelledby="territorial-map-title">
+              <div className={styles.cardHeader}>
+                <h2 id="territorial-map-title" className={styles.sectionTitle}><MapPin size={22} aria-hidden="true" />Pontos das áreas</h2>
+              </div>
+              <div className={styles.mapBody}><TerritorialMap areas={data.areas} selectedAreaId={selectedId} onSelect={setSelectedId} /></div>
+              <figcaption className={styles.caption}>Cada ponto representa uma área. Você também pode selecionar uma área pela lista abaixo ou ao lado do mapa.</figcaption>
+            </figure>
+            <section className={styles.card} aria-labelledby="area-list-title">
+              <div className={styles.cardHeader}>
+                <h2 id="area-list-title" className={styles.sectionTitle}><List size={22} aria-hidden="true" />Lista de áreas</h2>
+                <p className={styles.description}>Selecione uma área para consultar seus detalhes e coletas. A lista permanece disponível sem a base cartográfica.</p>
+              </div>
+              <div className={styles.cardBody}>
+                <AreaList areas={available} selectedId={selectedId} onSelect={setSelectedId} />
+                {unavailable.length > 0 && (
+                  <div className={styles.unlocated}>
+                    <h3 className={styles.subheading}><MapPinOff size={18} aria-hidden="true" />Localização indisponível</h3>
+                    <AreaList areas={unavailable} selectedId={selectedId} onSelect={setSelectedId} />
+                  </div>
+                )}
+              </div>
+            </section>
+          </div>
+          <p className={styles.srOnly} role="status" aria-live="polite">{selected ? `Área selecionada: ${selected.name}` : "Nenhuma área selecionada"}</p>
+          {selected && <AreaPanel laboratoryId={laboratoryId} area={selected} />}
+        </>
+      )}
     </div>
-    <p className="sr-only" role="status" aria-live="polite">{selected ? `Área selecionada: ${selected.name}` : "Nenhuma área selecionada"}</p>
-    {selected && <AreaPanel laboratoryId={laboratoryId} area={selected}/>}
-  </div>;
+  );
 }
 
-function AreaList({ areas, selectedId, onSelect }: { areas: TerritorialArea[]; selectedId: string | null; onSelect: (id: string) => void }) {
-  return <ul className="mt-4 space-y-3">{areas.map((area) => <li key={area.id}><button type="button" onClick={() => onSelect(area.id)} aria-pressed={selectedId === area.id} aria-controls="selected-area-panel" className="min-h-11 w-full rounded-2xl border border-slate-200 p-4 text-left hover:border-green-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 aria-pressed:border-blue-600 aria-pressed:bg-blue-50"><span className="block wrap-break-word font-bold text-slate-900">{area.name}</span><span className="mt-1 block text-sm text-slate-600">{area.location ? `${formatCoordinate(area.location.latitude)}, ${formatCoordinate(area.location.longitude)}` : "Localização indisponível"}</span><span className="mt-1 block text-sm text-slate-600">{area.confirmedCollections.length} {area.confirmedCollections.length === 1 ? "coleta confirmada" : "coletas confirmadas"}</span></button></li>)}</ul>;
+function AreaList({ areas, selectedId, onSelect }: {
+  areas: TerritorialArea[]; selectedId: string | null; onSelect: (id: string) => void;
+}) {
+  return (
+    <ul className={styles.areaList}>
+      {areas.map((area) => (
+        <li key={area.id}>
+          <button type="button" onClick={() => onSelect(area.id)} aria-pressed={selectedId === area.id} aria-controls="selected-area-panel" className={styles.areaButton}>
+            <span className={styles.areaLabel}>
+              <span className={styles.areaName}>{area.name}</span>
+              {selectedId === area.id && <Check size={18} aria-hidden="true" />}
+            </span>
+            <span className={styles.areaMeta}>{area.location
+              ? `${formatCoordinate(area.location.latitude)}, ${formatCoordinate(area.location.longitude)}`
+              : "Localização indisponível"}</span>
+            <span className={styles.areaMeta}>{area.confirmedCollections.length} {area.confirmedCollections.length === 1 ? "coleta confirmada" : "coletas confirmadas"}</span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function AreaPanel({ laboratoryId, area }: { laboratoryId: string; area: TerritorialArea }) {
-  return <section id="selected-area-panel" className="min-w-0 rounded-3xl border border-blue-200 bg-white p-5 shadow-sm" aria-labelledby="selected-area-title"><h2 id="selected-area-title" className="wrap-break-word text-2xl font-bold text-slate-900">{area.name}</h2>{area.location && <p className="mt-2 text-slate-600">Coordenadas: {formatCoordinate(area.location.latitude)}, {formatCoordinate(area.location.longitude)}</p>}<Link className="mt-4 inline-flex min-h-11 items-center rounded-xl bg-green-700 px-4 py-2 font-bold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-900" href={`/dashboard/laboratories/${laboratoryId}/areas/${area.id}`}>Abrir detalhe da área</Link><h3 className="mt-6 font-bold text-slate-900">Coletas confirmadas ({area.confirmedCollections.length})</h3>{area.confirmedCollections.length === 0 ? <p className="mt-2 text-slate-600">Nenhuma coleta confirmada nesta área.</p> : <ul className="mt-3 space-y-2">{area.confirmedCollections.map((collection) => <li key={collection.id} className="rounded-xl border border-slate-200 p-3"><p className="text-sm text-slate-700">Ocorrência: {formatCollectionOccurrence(collection.occurredAt)}</p><p className="text-sm text-slate-600">Confirmação: {new Date(collection.confirmedAt).toLocaleString("pt-BR")}</p><Link className="mt-2 inline-flex min-h-11 items-center font-bold text-blue-700 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2" href={`/dashboard/laboratories/${laboratoryId}/areas/${area.id}/collections/${collection.id}`}>Abrir coleta</Link></li>)}</ul>}</section>;
+  return (
+    <section id="selected-area-panel" className={styles.card} aria-labelledby="selected-area-title">
+      <div className={styles.cardHeader}>
+        <p className={styles.eyebrow}>Área selecionada</p>
+        <h2 id="selected-area-title" className={styles.sectionTitle}>{area.name}</h2>
+        <p className={styles.description}>{area.location
+          ? `Coordenadas: ${formatCoordinate(area.location.latitude)}, ${formatCoordinate(area.location.longitude)}`
+          : "Localização indisponível"}</p>
+      </div>
+      <div className={styles.panelBody}>
+        <Link className={styles.button} href={`/dashboard/laboratories/${laboratoryId}/areas/${area.id}`}>
+          Abrir detalhe da área<ArrowUpRight size={18} aria-hidden="true" />
+        </Link>
+        <div className={styles.collections}>
+          <h3 className={styles.subheading}>Coletas confirmadas ({area.confirmedCollections.length})</h3>
+          {area.confirmedCollections.length === 0 ? (
+            <p className={styles.description}>Nenhuma coleta confirmada nesta área.</p>
+          ) : (
+            <ul className={styles.collectionList}>
+              {area.confirmedCollections.map((collection) => (
+                <li key={collection.id} className={styles.collection}>
+                  <p className={styles.description}>Ocorrência: <time dateTime={collection.occurredAt}>{formatCollectionOccurrence(collection.occurredAt)}</time></p>
+                  <p className={styles.description}>Confirmação: <time dateTime={collection.confirmedAt}>{new Date(collection.confirmedAt).toLocaleString("pt-BR")}</time></p>
+                  <Link className={styles.textLink} href={`/dashboard/laboratories/${laboratoryId}/areas/${area.id}/collections/${collection.id}`}>
+                    Abrir coleta<ArrowUpRight size={18} aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 }
