@@ -25,7 +25,7 @@ jobs:
           import hashlib, io, json, os, re, urllib.parse, urllib.request, zipfile
           repo = "HidroFlorestaStartup/HidroFlorestas-FullStack"
           assert os.environ["GITHUB_REPOSITORY"] == repo
-          artifacts = [{"id":12337845919,"run":39580505165,"head":"c014442cd6fbfcda47ff4366a5c7acd24bf0b007","sha256":"d5e683a1d97038fc20f225862cf9d778ba02044ad7235606e3600420d4aa5be6"},{"id":12338417029,"run":39581586760,"head":"f472d5910322837ad9cf9a942a99581a7ffff3f1","sha256":"853a0100eb7574a14635153eecd40c19cb87109cfaedb4b89e5eb90310d6b1b3"},{"id":12337396304,"run":39579990722,"head":"6a5e80804f46b49658dad3c1a804cf5033d2cfc3","sha256":"f2927af6e6acb27776f459b1b7c29fbb40508efb69cc8612383471c4cd42a1a0"}]
+          artifacts = [{"id":12340640073,"run":39584192189,"head":"9af8adf414318e09d672b7530fe068cac87c2812","sha256":"34b3350eadcfe369d9d9fa5daf746f7bf70f7f95add27d23e7fb7201d4d2f864"}]
           api = "https://api.github.com/repos/" + repo
           headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer " + os.environ["GH_TOKEN"], "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "hf-rc-read-only-artifact-triage"}
           class SafeRedirect(urllib.request.HTTPRedirectHandler):
@@ -45,7 +45,6 @@ jobs:
                   return response.read()
           ansi = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
           sensitive = re.compile(r"(authorization\s*:|bearer\s+|set-cookie\s*:|^cookie\s*:|(?:DATABASE_URL|ACCOUNT_PROOF_KEYS|JWT_SECRET)\s*=)", re.I)
-          artifacts = [artifacts[1], artifacts[2]]
           for expected in artifacts:
               metadata = json.loads(read("/actions/artifacts/" + str(expected["id"])))
               assert metadata["workflow_run"]["id"] == expected["run"]
@@ -57,9 +56,9 @@ jobs:
               import base64, struct
               with zipfile.ZipFile(io.BytesIO(raw)) as archive:
                   assert archive.testzip() is None
-                  family = "frontend-territorial-map" if expected["id"] == 12338417029 else "frontend-user-administration"
-                  names = sorted(name for name in archive.namelist() if name.startswith(".accounts-validation/" + family + "/") and name.endswith(".png") and (family != "frontend-user-administration" or "200" not in name))
-                  assert 1 <= len(names) <= 18, "Unexpected image family size"
+                  family = "frontend-landing"
+                  names = sorted(name for name in archive.namelist() if name.startswith(".accounts-validation/" + family + "/") and name.endswith(".png"))
+                  assert 1 <= len(names) <= 24, "Unexpected image family size"
                   for name in names:
                       png = archive.read(name)
                       assert png[:8] == b"\x89PNG\r\n\x1a\n"
