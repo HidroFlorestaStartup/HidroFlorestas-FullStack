@@ -21,10 +21,12 @@ async function main() {
   if (!/^[0-9a-f]{40}$/.test(sourceHead)) throw new Error("Invalid checkout commit.");
   const args = [
     "node_modules/@playwright/test/cli.js", "test",
+    "tests/e2e/frontend-environmental-drafts.spec.ts",
     "tests/e2e/frontend-mobile-navigation.spec.ts",
-    "--grep", "mobile viewport reading area 375px text200$",
+    "--grep", "R2 tiny measurement, false, zero and partial draft survive real save, reload and confirmation$|mobile viewport reading area (375|320)px text(100|200)$",
     "--reporter=line",
   ];
+  process.stdout.write("DIAGNOSTIC SCOPE: one R2 reload case followed by all four mobile navigation cases in source order; 90000ms per case.\n");
   const env = { ...process.env };
   const child = spawn(process.execPath, args, { env, windowsHide: true, stdio: ["ignore", "pipe", "pipe"] });
   for (const stream of [child.stdout, child.stderr]) {
@@ -42,23 +44,30 @@ async function main() {
     });
     stream.on("end", () => { if (pending) output.write(redactMailValidation(pending, env)); });
   }
-  const exitCode = await new Promise<number>((resolve, reject) => {
+  const testExitCode = await new Promise<number>((resolve, reject) => {
     child.once("error", reject);
     child.once("close", code => resolve(code ?? 1));
   });
   await new Promise<void>(resolve => output.end(resolve));
+  const log = await readFile(outputFile, "utf8");
+  const selections = [...log.matchAll(/Running (\d+) tests? using (\d+) workers?/g)];
+  const selectedTests = selections.length === 1 ? Number(selections[0][1]) : null;
+  const selectedWorkers = selections.length === 1 ? Number(selections[0][2]) : null;
+  const selectionVerified = selectedTests === 5 && selectedWorkers === 1;
+  const exitCode = testExitCode !== 0 ? testExitCode : selectionVerified ? 0 : 1;
   const record = {
     kind: "DIAGNOSTIC_PROBE", officialGate: false, allReleaseGates: false,
     command: "node " + args.join(" "), sourceHead, snapshot,
     startedUtc, endedUtc: new Date().toISOString(),
-    exitCode, result: exitCode === 0 ? "PASS" : "FAIL",
+    expectedTests: 5, expectedWorkers: 1, selectedTests, selectedWorkers, selectionVerified,
+    testExitCode, exitCode, result: exitCode === 0 ? "PASS" : "FAIL",
     environment: "Windows/Node24.19/owned-loopback-PostgreSQL17",
     log: outputFile,
-    note: "One unchanged 90000ms mobile navigation scenario with observational instrumentation; not an E2E gate or 15-gate release validation.",
+    note: "One unchanged R2 reload scenario and all four unchanged 90000ms mobile navigation scenarios, in source order, with observational instrumentation; not an E2E gate or 15-gate release validation.",
   };
   await writeFile(join(outputRoot, "navigation-animation-probe-result.json"), JSON.stringify(record, null, 2) + "\n");
   process.stdout.write(JSON.stringify(record) + "\n");
-  const lines = (await readFile(outputFile, "utf8")).trimEnd().split(/\r?\n/);
+  const lines = log.trimEnd().split(/\r?\n/);
   process.stdout.write(lines.slice(-18).join("\n") + "\n");
   process.exitCode = exitCode;
 }

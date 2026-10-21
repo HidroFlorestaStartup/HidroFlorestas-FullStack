@@ -1,0 +1,110 @@
+--- a/tests/e2e/frontend-environmental-drafts.spec.ts
++++ b/tests/e2e/frontend-environmental-drafts.spec.ts
+@@ -10,6 +10,80 @@
+ test.afterEach(async()=>{await cleanupEnvironmentalFixtures(process.env);expect(Object.values(await countEnvironmentalFixtures(process.env)).every(n=>n===0)).toBe(true);});
+ const base=`/dashboard/laboratories/${F.laboratoryIds[0]}/areas/${F.areaIds[0]}/collections/${F.collectionIds[0]}/environmental-data`;
+ const api=base.replace('/dashboard/','/api/');
++// Temporary observation only: preserves the R2 assertions and their time budget.
++async function installEnvironmentalReloadObservation(page: Page) {
++  await page.addInitScript(() => {
++    const selector = '[data-environmental-value="soil.infiltrationRateMmPerHour"]';
++    const records: unknown[] = [];
++    const identities = new WeakMap<Element, number>();
++    const errors = { hydrationRelated: 0, other: 0 };
++    let nextIdentity = 0;
++    let droppedRecords = 0;
++    let previousState = '';
++    const describe = (node: Element) => {
++      const style = getComputedStyle(node);
++      const box = node.getBoundingClientRect();
++      const idKind = node.id === 'application-content' ? 'application-content'
++        : /^S:/.test(node.id) ? 'react-segment-shaped'
++        : /^B:/.test(node.id) ? 'react-boundary-shaped'
++        : node.id ? 'other-id-present' : 'no-id';
++      return { tag: node.tagName, idKind,
++        hidden: node.hasAttribute('hidden'), inert: node.hasAttribute('inert'),
++        ariaHidden: node.getAttribute('aria-hidden') === 'true',
++        display: style.display, visibility: style.visibility,
++        contentVisibility: style.contentVisibility,
++        width: Math.round(box.width * 100) / 100,
++        height: Math.round(box.height * 100) / 100,
++        closedDetails: node.tagName === 'DETAILS' && !node.hasAttribute('open') };
++    };
++    const sample = (reason: string, force = false) => {
++      const targets = Array.from(document.querySelectorAll(selector)).map(node => {
++        if (!identities.has(node)) identities.set(node, ++nextIdentity);
++        const ancestry = [];
++        for (let ancestor: Element | null = node; ancestor; ancestor = ancestor.parentElement) {
++          ancestry.push(describe(ancestor));
++        }
++        return { identity: identities.get(node), connected: node.isConnected,
++          inApplicationContent: node.closest('#application-content') !== null,
++          textMatchesExpected: node.textContent === '0.0000004 mm/h',
++          rectCount: node.getClientRects().length,
++          browserVisible: node.checkVisibility({ checkVisibilityCSS: true }),
++          ancestry };
++      });
++      const state = { readyState: document.readyState,
++        shellCount: document.querySelectorAll('#application-content').length,
++        totalMatches: targets.length, targets };
++      const fingerprint = JSON.stringify(state);
++      if (!force && fingerprint === previousState) return;
++      previousState = fingerprint;
++      // Keep the initial eight states and the most recent forty, with explicit loss.
++      if (records.length === 48) { records.splice(8, 1); droppedRecords++; }
++      records.push({ atMs: Math.round(performance.now()), reason, ...state });
++    };
++    const observer = new MutationObserver(() => sample('mutation'));
++    const onDomReady = () => sample('domcontentloaded', true);
++    const onLoad = () => sample('load', true);
++    const onError = (event: ErrorEvent) => {
++      if (/hydration|hydrating|server rendered HTML|text content does not match/i.test(event.message)) errors.hydrationRelated++;
++      else errors.other++;
++    };
++    observer.observe(document, { subtree: true, childList: true, characterData: true,
++      attributes: true, attributeFilter: ['hidden', 'inert', 'aria-hidden', 'style', 'class', 'open'] });
++    document.addEventListener('DOMContentLoaded', onDomReady, { once: true });
++    window.addEventListener('load', onLoad, { once: true });
++    window.addEventListener('error', onError);
++    sample('init', true);
++    (window as Window & { __environmentalR2Observation?: () => unknown }).__environmentalR2Observation = () => {
++      sample('assertions-final', true);
++      observer.disconnect();
++      document.removeEventListener('DOMContentLoaded', onDomReady);
++      window.removeEventListener('load', onLoad);
++      window.removeEventListener('error', onError);
++      return { recorded: true, droppedRecords, errors, records };
++    };
++  });
++}
++
+ async function login(context:BrowserContext,info:TestInfo){await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);}
+ async function fillValid(page:Page){
+   const selects=[['Fonte de água','RIVER_STREAM'],['Há nascente','false'],['Disponibilidade hídrica','PERMANENT'],['Textura do solo','SANDY'],['Compactação','LOW'],['Sinais de erosão','NONE'],['Fragmentação','LOW'],['Degradação da paisagem','LOW']];
+@@ -65,12 +139,22 @@
+   expect(data.environmentalData.water.hasSpring).toBe(false);
+   expect(data.environmentalData.vegetation.vegetationCoverPercent).toBe(0);
+   expect((await (await context.request.get(api+'/draft')).json()).draft).toBeNull();
++  await installEnvironmentalReloadObservation(page);
+   await page.reload();
+   const confirmedInfiltrationValue = page.locator('[data-environmental-value="soil.infiltrationRateMmPerHour"]');
+-  await expect(confirmedInfiltrationValue).toHaveCount(1);
+-  await expect(confirmedInfiltrationValue).toBeVisible();
+-  await expect(confirmedInfiltrationValue).toHaveText('0.0000004 mm/h');
+-  await captureMissionViewport(page,info,'frontend-environmental-confirmed');
++  try {
++    await expect(confirmedInfiltrationValue).toHaveCount(1);
++    await expect(confirmedInfiltrationValue).toBeVisible();
++    await expect(confirmedInfiltrationValue).toHaveText('0.0000004 mm/h');
++    await captureMissionViewport(page,info,'frontend-environmental-confirmed');
++  } finally {
++    // The diagnostic runs after the unchanged assertions, including on failure.
++    const observation = await page.evaluate(() => {
++      const read = (window as Window & { __environmentalR2Observation?: () => unknown }).__environmentalR2Observation;
++      return read ? read() : { recorded: false };
++    }).catch(() => ({ recorded: false, unavailable: true }));
++    console.info('ENVIRONMENTAL_R2_RELOAD_OBSERVATION', JSON.stringify(observation));
++  }
+ });
+ 
+ test('R5 lost draft-save response and later rejection keep original key, body and revision',async({page,context},info)=>{

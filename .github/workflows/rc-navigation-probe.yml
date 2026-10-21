@@ -51,6 +51,7 @@ jobs:
           if ((& git rev-parse HEAD).Trim() -ne '9deff63ad45ab627661d480c882d20a769ac4405') { throw 'Unexpected product HEAD.' }
           if ((& git rev-parse HEAD:tests/e2e/frontend-mobile-navigation.spec.ts).Trim() -ne '0b906b163fe876b06643373d98a167ea7ad10682') { throw 'Unexpected navigation base blob.' }
           if ((& git rev-parse HEAD:scripts/rc-review-validation.ps1).Trim() -ne '86d2720fd6359a0971fe28f142a7a8b7ed758142') { throw 'Unexpected owned runner base blob.' }
+          if ((& git rev-parse HEAD:tests/e2e/frontend-environmental-drafts.spec.ts).Trim() -ne 'af3656fba33fa1de2f33fbf030594d494e1a746e') { throw 'Unexpected R2 base blob.' }
           & git diff --exit-code
           if ($LASTEXITCODE -ne 0) { throw 'Product checkout was already modified.' }
           $probeAssets = Join-Path $env:GITHUB_WORKSPACE 'probe/.github/diagnostics/navigation-animation'
@@ -63,17 +64,24 @@ jobs:
           $probePatch = Join-Path $probeAssets 'navigation-animation-probe.patch'
           Assert-ProbeHash $probePatch '837ca559bd6084777f6bd248ff174a29c0e706aa680881532b4f05d3ff267154'
           Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') '58ae4525254dd346eff5c1abd46c452e4b63721254975127dde6eca2c82673b3'
-          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') '4e3b6d589bbfac37a01c41a5022bef014dc333f6e7f9b675bc6cf00271a6f085'
+          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') 'dfb3c5f2021ad993e784ea50e8c0b5977dffea5e4df23a6a8248bc89180043cc'
           & git apply --check $probePatch
           if ($LASTEXITCODE -ne 0) { throw 'Observation patch does not apply exactly.' }
           & git apply $probePatch
           if ($LASTEXITCODE -ne 0) { throw 'Observation patch application failed.' }
           Assert-ProbeHash 'tests/e2e/frontend-mobile-navigation.spec.ts' '8d1240cecd09e89fbd712b185afc50e65ddc85d55212464ffcf3fd14bca449e1'
-          $probeChanged = @(& git diff --name-only)
-          if ($probeChanged.Count -ne 1 -or $probeChanged[0] -ne 'tests/e2e/frontend-mobile-navigation.spec.ts') { throw 'Unexpected product mutation.' }
+          $r2Patch = Join-Path $probeAssets 'r2-reload-observation.patch'
+          Assert-ProbeHash $r2Patch '364410daab53641c55456ae668a7601bb07a1f554ade1d908cc8ad7008351311'
+          & git apply --check $r2Patch
+          if ($LASTEXITCODE -ne 0) { throw 'R2 observation patch does not apply exactly.' }
+          & git apply $r2Patch
+          if ($LASTEXITCODE -ne 0) { throw 'R2 observation patch application failed.' }
+          Assert-ProbeHash 'tests/e2e/frontend-environmental-drafts.spec.ts' '3396945e16dcaaa48f5f5be7e75dceecdafe86a4ba96526dcda5f22f11cb00f3'
+          $probeChanged = @(& git diff --name-only | Sort-Object)
+          if ($probeChanged.Count -ne 2 -or $probeChanged[0] -ne 'tests/e2e/frontend-environmental-drafts.spec.ts' -or $probeChanged[1] -ne 'tests/e2e/frontend-mobile-navigation.spec.ts') { throw 'Unexpected product mutation.' }
           Copy-Item (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') 'scripts/navigation-animation-probe-envelope.local.ps1'
           Copy-Item (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') 'scripts/navigation-animation-probe-collector.local.ts'
-          Write-Output 'Verified exact source, unchanged owned runner, and observation-only navigation patch.'
+          Write-Output 'Verified exact source, unchanged owned runner, and observation-only R2/navigation patches.'
       - name: Install the locked runtime
         run: |
           node --version
@@ -84,7 +92,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed.' }
           npx playwright install chromium
           if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed.' }
-      - name: Observe one real navigation case with existing guards
+      - name: Observe one R2 reload and all four navigation cases with existing guards
         run: ./scripts/navigation-animation-probe-envelope.local.ps1 -InitializeCiCluster -Gates @('RegressionSetup','Typecheck','Lint','E2E')
       - name: Preserve diagnostic evidence
         if: always()

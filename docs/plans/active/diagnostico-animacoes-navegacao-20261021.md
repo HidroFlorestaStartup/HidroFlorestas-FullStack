@@ -26,13 +26,13 @@ Este diagnóstico não é correção, gate E2E completo, regressão de 15 gates,
 
 A branch isolada `review/frontend-rc-artifact-triage-20261021` já possui `git.deploymentEnabled=false`. Somente ela recebe workflow, assets de observação e este plano. Esses arquivos não integram as branches funcionais nem a candidata agregada.
 
-O workflow lê a candidata 9deff em checkout efêmero `product/` e os assets em `probe/`, com credenciais de checkout não persistidas. Confere SHA do produto, blobs-base, hashes dos assets, aplicação exata e hash final. O único arquivo rastreado alterado no checkout efêmero é o teste instrumentado. Nenhuma ref de produto é atualizada.
+O workflow lê a candidata 9deff em checkout efêmero `product/` e os assets em `probe/`, com credenciais de checkout não persistidas. Confere SHA do produto, blobs-base, hashes dos assets, aplicação exata e hash final. Na primeira sonda, o único arquivo rastreado alterado no checkout efêmero é o teste instrumentado. Nenhuma ref de produto é atualizada.
 
 A sonda mantém literalmente o loop, predicado e `await Promise.allSettled(finite.map(animation => animation.finished))`. Não acrescenta acesso a `.finished`, não cancela/pausa/finaliza animações, não altera CSS, foco, screenshots, máscaras, fixtures, assertions ou timeout. Heartbeat de 1 segundo é observação, sem condição de saída. Limites de 256 registros só limitam telemetria e indicam itens omitidos; o guard continua observando todos os handles.
 
-A telemetria permite nomes CSS validados, caminho tag/nth-child/shadow-host, estado e timing. Não lê conteúdo textual, valores de formulário, atributos livres, cookies, requests/responses, keyframes ou ambiente. O redator existente é aplicado ao log.
+A telemetria de navegação permite nomes CSS validados, caminho tag/nth-child/shadow-host, estado e timing. Não lê conteúdo textual, valores de formulário, atributos livres, cookies, requests/responses, keyframes ou ambiente. O redator existente é aplicado ao log.
 
-## Execução e arquivos afetados
+## Primeira sonda: execução e arquivos afetados (histórico)
 
 1. Publicar os cinco arquivos desta sonda somente na branch isolada e conferir compare/conteúdos.
 2. Executar Windows Actions, Node 24.19.0, dependências e Chromium travados pelo lockfile.
@@ -43,7 +43,7 @@ A telemetria permite nomes CSS validados, caminho tag/nth-child/shadow-host, est
 
 Arquivos: `.github/workflows/rc-navigation-probe.yml`; três assets em `.github/diagnostics/navigation-animation/`; este plano.
 
-## Identidade dos assets
+## Primeira sonda: identidade dos assets (histórico)
 
 Hashes SHA-256 sobre UTF-8 com LF normalizado para conferir checkouts Windows:
 
@@ -65,3 +65,61 @@ Mudanças de produto/ciência, operação produtiva e aceite humano ficam fora d
 Validações já feitas: invariantes textuais e whitespace do patch; comparação do envelope fora do loop; revisão independente do coletor; correção do seletor de teste. Runtime/Typecheck/Lint Windows: NOT_RUN antes da publicação. Resultado e encerramento serão acrescentados por recibo vinculado ao run, sem atribuir PASS aos 15 gates.
 
 Histórico: 2026-10-21 — EM_ANDAMENTO, diagnóstico preparado após repetição observada em dois HEADs distintos.
+
+## Recibo da primeira sonda — 2026-10-21
+
+EVIDENCIA_IMPLEMENTACAO: [run 39592158371](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39592158371), job `119195535862`, HEAD do diagnóstico `0d9bdab52b7405b52a3b1a59f56a60ed71679a5b`, produto `9deff63ad45ab627661d480c882d20a769ac4405`. RegressionSetup, Typecheck e Lint PASS no checkout instrumentado; Lint com zero erros e duas advertências preexistentes. O Playwright selecionou exatamente um teste, com um worker: `375px text200`, PASS em 26,9 segundos. Esse resultado pertence à sonda e não registra E2E oficial.
+
+Artefato `12341912990`: SHA-256 `316ea2d7c1a90f326dfef72120a7deec0c340244b5760a5270aedfd2f2a48b4b`, 1.331.659 bytes, 30 entradas. Digest oficial, CRC e extração segura verificados. Snapshot `54296ba66990d91cf0b142622f385d99dee0af63f71ba27a3a48617e9aea61cc`. Existem 23 PNGs de navegação e uma geometria; a contagem não significa inspeção visual de todos eles.
+
+Foram decodificados 247 registros de telemetria, sem erro de parse nem truncamento. Os 25 waits concluíram; maior espera 462,6 ms, maior lote 310,4 ms. Na primeira espera depois de `three-links-end`, correspondente ao ponto anteriormente bloqueado, havia zero animações e a espera durou 0,6 ms. Não houve heartbeat de um segundo. A amostra apresentou somente CSSTransition, sem handle selecionado pausado, desconectado ou com playbackRate zero.
+
+**Resultado diagnóstico: INDETERMINADO quanto à causa.** A falha não foi reproduzida no caso isolado. O PASS não demonstra flake, culpa do IHFR ou eliminação do problema. A instrumentação pode alterar o timing, e o caso isolado não executou o histórico anterior do arquivo/suíte. Os 15 gates completos e a validação visual IHFR continuam NOT_RUN nesta sonda.
+
+EVIDENCIA_IMPLEMENTACAO adicional: o [run agregado 39590338264](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39590338264), job `119189416977`, HEAD `9deff63ad45ab627661d480c882d20a769ac4405`, também relaciona `mobile viewport reading area 375px text200` entre as três falhas E2E, com 210 aprovados e sete não executados. As outras falhas são R2 e o alert do mapa. A execução individual do mapa `39589899058` falhou no alert, não constitui a terceira ocorrência de navegação.
+
+## Segunda sonda: R2 seguido da sequência completa de navegação
+
+- Estado: EM_ANDAMENTO; execução preparada e revista, runtime desta revisão ainda NOT_RUN antes da publicação.
+- Origem: coordenação autorizou executar o arquivo inteiro após a sonda isolada inconclusiva e observar a duplicação do R2, preservando assertions, instrumentação e guards.
+- Classificação: RECOMENDACAO para a nova execução; EVIDENCIA_IMPLEMENTACAO para a contagem obtida diretamente da fonte.
+- Fonte: `tests/e2e/frontend-mobile-navigation.spec.ts`, blob `0b906b163fe876b06643373d98a167ea7ad10682`. O loop `for (const width of [375, 320]) for (const percent of [100, 200])` declara quatro casos. `test.setTimeout(90_000)` permanece idêntico.
+
+| Ordem original | Viewport | Texto |
+| --- | --- | --- |
+| 1 | 375 px | 100% |
+| 2 | 375 px | 200% |
+| 3 | 320 px | 100% |
+| 4 | 320 px | 200% |
+
+1. A coordenação publica somente os deltas de coletor, workflow, plano e um novo patch de observação R2 na branch diagnóstica. Produto e bases continuam os mesmos.
+2. O workflow conserva o checkout efêmero do produto, hashes do patch/teste/envelope, ACL, marker, ambiente sintético, instalação travada, cluster owned, teardown e restauração de ambiente. Nenhuma ref de produto é alterada.
+3. RegressionSetup, Typecheck e Lint oficiais precedem o diagnóstico. O comando passa os caminhos exatos `tests/e2e/frontend-environmental-drafts.spec.ts` e `tests/e2e/frontend-mobile-navigation.spec.ts`, com grep que seleciona o título completo do R2 e os quatro títulos da matriz de navegação. Não há override de timeout, retries, workers ou fixtures.
+4. O coletor preserva saída sanitizada, snapshot, handlers de processo e guards. Acrescenta ao recibo a contagem anunciada pelo Playwright: exige exatamente uma declaração de seleção, cinco testes e um worker. Uma seleção ausente, ambígua ou diferente torna a sonda FAIL mesmo se o processo retornar zero; `testExitCode` continua registrado separadamente.
+5. Registrar o resultado R2, os quatro resultados de navegação e as telemetrias separadas, sobretudo o caso 375/200 após 375/100. Esse recorte reproduz a ordem do arquivo, mas ainda não o histórico da suíte inteira. Não atribuir causalidade a sucesso ou falha sem examinar os handles e checkpoints.
+6. Anexar recibo do novo run e preservar os resultados anteriores. Um eventual reparo de produto exigirá regressão oficial e revisão no respectivo SHA.
+
+O patch observacional de navegação, seu teste resultante e o envelope são byte a byte idênticos aos da primeira sonda. O banner herdado do envelope ainda diz `one mobile navigation case`; é uma descrição histórica conservada, sem função de seleção. O coletor agora anuncia explicitamente um R2 e quatro casos de navegação, e comando, recibo e contagem do Playwright definem o escopo efetivo. Não há cancelamento/pausa/finalização de animações, supressão de overlay, relaxamento de assertions ou aumento de timeout.
+
+| Asset da segunda sonda | SHA-256 (UTF-8/LF) |
+| --- | --- |
+| Coletor da sequência completa | `dfb3c5f2021ad993e784ea50e8c0b5977dffea5e4df23a6a8248bc89180043cc` |
+| Patch observacional preservado | `837ca559bd6084777f6bd248ff174a29c0e706aa680881532b4f05d3ff267154` |
+| Teste resultante preservado | `8d1240cecd09e89fbd712b185afc50e65ddc85d55212464ffcf3fd14bca449e1` |
+| Envelope preservado | `58ae4525254dd346eff5c1abd46c452e4b63721254975127dde6eca2c82673b3` |
+| Patch de observação R2 | `364410daab53641c55456ae668a7601bb07a1f554ade1d908cc8ad7008351311` |
+| Teste R2 instrumentado | `3396945e16dcaaa48f5f5be7e75dceecdafe86a4ba96526dcda5f22f11cb00f3` |
+
+Validação local da proposta: comparação contra os três blobs publicados, ocorrência única dos trechos substituídos, diff completo e invariantes de escopo. Runtime Windows, Typecheck/Lint e cinco casos desta revisão: NOT_RUN antes da publicação; dependências do projeto indisponíveis no executor local. O PASS de Typecheck/Lint da primeira sonda não é transferido ao novo coletor. A coordenação integrou a observação R2 na mesma sonda, com seleção explícita de cinco casos e telemetrias distintas. A execução é diagnóstica e não fecha gates de release.
+
+Histórico: 2026-10-21 — primeira sonda PASS, causa INDETERMINADA; proposta da sequência de quatro casos preparada para revisão, sem alteração remota pelo investigador.
+
+### Observação R2 integrada
+
+O teste base R2 pertence ao produto `9deff63ad45ab627661d480c882d20a769ac4405`, blob `af3656fba33fa1de2f33fbf030594d494e1a746e`. No CI completo, a cardinalidade 1 passou num estágio oculto e a assertion seguinte encontrou dois DDs. O log não contém ancestrais suficientes para atribuir a duplicação; streaming/hidratação permanece hipótese.
+
+O patch instala um observador antes do último reload. Conserva literalmente as assertions globais de cardinalidade 1, visibilidade e texto exato, a captura original e todos os checks anteriores de HTTP 201, persistência, draft nulo e valores 0.0000004/false/0. O bloco try/finally emite `ENVIRONMENTAL_R2_RELOAD_OBSERVATION` após a tentativa, inclusive no FAIL, sem mudar seu resultado.
+
+A linha do tempo registra todos os matches globais, identidades locais WeakMap, pertencimento a application-content, tipo estrutural de IDs, hidden/inert/aria-hidden, display/visibility/content-visibility, dimensões e contagem de retângulos. Conteúdo textual aparece apenas como igualdade booleana ao valor sintético esperado. Não são emitidos HTML, texto livre, URLs, formulário, cookies, ambiente nem dados pessoais. O buffer conserva oito estados iniciais e quarenta recentes, com droppedRecords explícito; ausência de observação também é declarada. A leitura de estilo pode alterar timing, limitação inerente que impede inferir causalidade de um PASS isolado.
+
+O runner verifica os dois blobs de origem e hashes de patches/testes, e exige exatamente os dois caminhos instrumentados no diff efêmero. Ordem selecionada: R2 e, a seguir, 375/100,375/200,320/100,320/200, com um worker e 90.000 ms por caso, conforme fontes originais. Nenhum componente, API, fixture, configuração ou branch de produto muda. O patch novo não reduz o escopo do seletor nem esconde duplicados.
