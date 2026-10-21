@@ -46,7 +46,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           <Link href="/workspace" className="flex min-h-11 min-w-0 items-center gap-2 rounded-xl border border-slate-200 px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"><ArrowLeft size={17} className="shrink-0" aria-hidden="true" /><span>Ambiente principal</span></Link>
           <Link href="/logout" className="flex min-h-11 items-center gap-2 rounded-xl border border-slate-200 px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"><LogOut size={17} className="shrink-0" aria-hidden="true" /> Sair</Link>
         </nav>
-        <main id="admin-content" tabIndex={-1} className="mx-auto min-w-0 max-w-7xl scroll-mt-28 p-4 focus:outline-none sm:p-6 lg:p-8">{children}</main>
+        <main id="admin-content" tabIndex={-1} className="mx-auto min-w-0 max-w-7xl scroll-mt-28 p-[12px] focus:outline-none sm:p-6 lg:p-8">{children}</main>
       </div>
     </div>
   );

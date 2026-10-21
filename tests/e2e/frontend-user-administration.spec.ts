@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { administrationFixtureId, createAdministrationClient } from "../fixtures/user-administration";
 import { authenticateAs, setupUsers } from "./user-administration.helper";
-import { captureAdministrationViewport } from "./frontend-user-administration.helper";
+import { captureAdministrationViewport, expectAdministrationWordsWhole } from "./frontend-user-administration.helper";
 import { expectControlUnobstructed } from "./support/frontend-mission-evidence";
 
 const target = administrationFixtureId(8);
@@ -23,6 +23,8 @@ async function selectAccount(page: Page, index = 8) {
 
 test("admin list keeps opaque cursor navigation and resets filters", async ({ page }) => {
   await page.goto("/admin/users");
+  await expect(page.getByLabel("Filtrar por papel", { exact: true })).toHaveAccessibleName("Filtrar por papel");
+  await expect(page.getByLabel("Filtrar por estado", { exact: true })).toHaveAccessibleName("Filtrar por estado");
   await page.getByPlaceholder("Pesquisar nome ou email").fill("Fixture");
   const list = page.getByRole("region", { name: "Lista de usuários" });
   await expect(list.getByRole("status")).toContainText("Página 1 · 25 conta(s)");
@@ -235,14 +237,31 @@ for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 90
   test(`admin overview, details and modal reflow: ${width}x${height}, text ${scale}%`, async ({ page }, info) => {
     await page.setViewportSize({ width, height });
     await page.goto("/admin");
-    if (scale === 200) await page.addStyleTag({ content: "html{font-size:200%!important}" });
+    if (scale === 200) {
+      await page.addStyleTag({ content: "html{font-size:200%!important}" });
+      await expect.poll(() => page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(32);
+    }
     const overview = page.getByRole("link", { name: "Gerenciar usuários", exact: true });
+    const traceableHeading = page.getByRole("heading", { name: "Alterações rastreáveis", exact: true });
+    await expectAdministrationWordsWhole(traceableHeading);
+    await expectAdministrationWordsWhole(overview);
     await expectControlUnobstructed(overview, page);
     await captureAdministrationViewport(page, info, `frontend-user-administration-overview-${width}-${height}-${scale}`, scale);
+    if (width === 320 && scale === 200) {
+      await traceableHeading.scrollIntoViewIfNeeded();
+      await expect(traceableHeading).toBeInViewport({ ratio: 1 });
+      await captureAdministrationViewport(page, info, `frontend-user-administration-overview-copy-${width}-${height}-${scale}`, scale);
+    }
     await page.goto("/admin/users");
-    if (scale === 200) await page.addStyleTag({ content: "html{font-size:200%!important}" });
+    if (scale === 200) {
+      await page.addStyleTag({ content: "html{font-size:200%!important}" });
+      await expect.poll(() => page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(32);
+    }
     await selectAccount(page);
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    for (const name of ["Pendente", "Inativa", "Bloqueada", "Administrador", "Desenvolvedor", "Moderador"]) {
+      await expectAdministrationWordsWhole(page.getByRole("button", { name, exact: true }));
+    }
     const trigger = page.getByRole("button", { name: "Bloqueada", exact: true });
     await expectControlUnobstructed(trigger, page);
     await captureAdministrationViewport(page, info, `frontend-user-administration-detail-${width}-${height}-${scale}`, scale);
@@ -250,6 +269,8 @@ for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 90
     const dialog = page.getByRole("dialog");
     await dialog.getByRole("textbox", { name: "Justificativa" }).fill("Spec027 revisão sintética de viewport");
     const confirm = dialog.getByRole("button", { name: "Confirmar alteração" });
+    await expectAdministrationWordsWhole(confirm);
+    await expectAdministrationWordsWhole(dialog.getByRole("button", { name: "Cancelar" }));
     await expectControlUnobstructed(confirm, page);
     await captureAdministrationViewport(page, info, `frontend-user-administration-dialog-${width}-${height}-${scale}`, scale);
     await expectControlUnobstructed(dialog.getByRole("button", { name: "Cancelar" }), page);
