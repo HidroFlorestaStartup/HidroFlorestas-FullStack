@@ -39,6 +39,8 @@
 - [x] T012 Executar testes focais/typecheck/lint, revisar diff e registrar resultados em `specs/027-frontend-user-administration/implementation-evidence.md`.
 - [ ] T013 Executar E2E real e inspecionar screenshots em `.accounts-validation/frontend-user-administration/`; registrar recibos de execução e inspeção na PR do mesmo SHA, sem commit apenas de recibo.
 - [ ] T014 Conferir 15 gates oficiais e review Codex no SHA final publicado; registrar recibo pela coordenação, sem transportar PASS de ancestral.
+- [x] T015 [US2] Corrigir retorno de foco quando o botão original desaparece após refresh409 e preparar a contraprova real em `tests/e2e/frontend-user-administration.spec.ts`.
+- [x] T016 [US1] Manter alerta sanitizado fora da seleção para401/403/404 de detalhe/auditoria, retirar dados indisponíveis e preparar três contraprovas reais de acesso/conta.
 
 ## Dependências e paralelismo
 

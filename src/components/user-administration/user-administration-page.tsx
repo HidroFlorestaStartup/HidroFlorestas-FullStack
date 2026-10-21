@@ -39,6 +39,7 @@ export function UserAdministrationPage() {
   const [loading, setLoading] = useState(true);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState("");
+  const [selectionError, setSelectionError] = useState("");
   const [dialog, setDialog] = useState<AdministrationChange | null>(null);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
@@ -53,6 +54,7 @@ export function UserAdministrationPage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  const selectionErrorRef = useRef<HTMLDivElement>(null);
   const conflictRef = useRef<HTMLDivElement>(null);
   const detailHeadingRef = useRef<HTMLHeadingElement>(null);
   const reviewHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -62,10 +64,27 @@ export function UserAdministrationPage() {
     detailReads.cancel();
     auditReads.cancel();
     setSelected(null);
+    setDetailLoading(false);
+    setDetailError("");
     setAudit([]);
     setAuditNext(null);
+    setAuditState("idle");
     setDialog(null);
   }, [detailReads, auditReads]);
+
+  function unavailableAccount(userId: string, responseStatus: number) {
+    clearSelection();
+    listReads.cancel();
+    setLoading(false);
+    if (responseStatus === 404) {
+      setPage(current => current ? { ...current, items: current.items.filter(user => user.id !== userId) } : null);
+      setSelectionError("Esta conta não está mais disponível. Atualize a lista para continuar.");
+    } else {
+      setPage(null);
+      setSelectionError("Seu acesso à administração não está mais disponível. Atualize a página para continuar.");
+    }
+    requestAnimationFrame(() => selectionErrorRef.current?.focus());
+  }
 
   const load = useCallback(async (cursor?: string) => {
     const query = adminUserQuery({ search, role, status, cursor });
@@ -127,7 +146,10 @@ export function UserAdministrationPage() {
       const body = await response.json();
       if (!detailReads.isCurrent(ticket) || selectedId.current !== userId) return null;
       if (!response.ok) {
-        if (response.status === 401 || response.status === 403 || response.status === 404) clearSelection();
+        if (response.status === 401 || response.status === 403 || response.status === 404) {
+          unavailableAccount(userId, response.status);
+          return null;
+        }
         throw new Error(body.error?.message ?? "Não foi possível atualizar os dados da conta.");
       }
       setSelected(body);
@@ -151,7 +173,10 @@ export function UserAdministrationPage() {
       const body = await response.json();
       if (!auditReads.isCurrent(ticket) || selectedId.current !== userId) return;
       if (!response.ok) {
-        if (response.status === 401 || response.status === 403) clearSelection();
+        if (response.status === 401 || response.status === 403 || response.status === 404) {
+          unavailableAccount(userId, response.status);
+          return;
+        }
         throw new Error("AUDIT_UNAVAILABLE");
       }
       setAudit(current => cursor ? mergeUniquePage(current, body.items) : body.items);
@@ -166,6 +191,7 @@ export function UserAdministrationPage() {
     selectedId.current = user.id;
     setSelected(user);
     setMessage("");
+    setSelectionError("");
     setAudit([]);
     setAuditNext(null);
     void loadDetail(user.id);
@@ -188,7 +214,10 @@ export function UserAdministrationPage() {
     if (busyRef.current || refreshing) return;
     setDialog(null);
     setConflict(undefined);
-    requestAnimationFrame(() => triggerRef.current?.focus());
+    requestAnimationFrame(() => {
+      const target = triggerRef.current?.isConnected ? triggerRef.current : detailHeadingRef.current;
+      target?.focus();
+    });
   }
 
   async function refreshTarget() {
@@ -201,7 +230,7 @@ export function UserAdministrationPage() {
       void loadAudit(updated.id);
       void load(cursorStack[cursorIndex]);
       requestAnimationFrame(() => reviewHeadingRef.current?.focus());
-    } else {
+    } else if (selectedId.current === selected.id) {
       setConflict({ message: "Não foi possível atualizar a conta. Tente novamente.", recovery: "REFRESH_TARGET" });
       requestAnimationFrame(() => conflictRef.current?.focus());
     }
@@ -269,6 +298,7 @@ export function UserAdministrationPage() {
       </section>
 
       <div ref={resultRef} tabIndex={-1} role="status" aria-live="polite" className="rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700">{message && <p className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"><CheckCircle2 className="shrink-0" size={19} aria-hidden="true" />{message}</p>}</div>
+      {selectionError && <div ref={selectionErrorRef} tabIndex={-1} role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-700">{selectionError}</div>}
       <div className="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <section aria-label="Lista de usuários" aria-busy={loading} className="min-w-0 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="flex items-center gap-2 text-lg font-bold text-slate-900"><Users size={19} aria-hidden="true" /> Contas encontradas</h2>{!loading && page && <p role="status" className="text-xs text-slate-600">Página {cursorIndex + 1} · {page.items.length} conta(s) nesta página</p>}</div>

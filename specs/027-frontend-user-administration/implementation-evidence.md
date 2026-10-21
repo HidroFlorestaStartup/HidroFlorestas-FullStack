@@ -29,7 +29,7 @@ O primeiro typecheck encontrou ausência de `src/generated/prisma` no checkout e
 
 ## Provas de navegador preparadas — execução pendente
 
-`tests/e2e/frontend-user-administration.spec.ts` contém 11 casos: cursor/filtros; cancelamento e foco; conflito real com revisão recuperada; resposta de auditoria atrasada A→B; bloqueio de gravação em andamento; seis combinações de viewport/texto. Os casos usam autenticação e fixtures sintéticas existentes, APIs reais e barreiras de rede para concorrência; não há substituição dos endpoints por sucesso fictício.
+`tests/e2e/frontend-user-administration.spec.ts` contém 15 casos após a revisão: cursor/filtros; cancelamento e foco; conflito real com revisão recuperada; resposta de auditoria atrasada A→B; bloqueio de gravação em andamento; recuperação quando o valor já foi aplicado; conta removida com GET404; acesso perdido com GET401/403; seis combinações de viewport/texto. Os casos usam autenticação e fixtures sintéticas existentes, APIs reais e barreiras de rede para concorrência; não há substituição dos endpoints por sucesso fictício.
 
 Viewports: 320×900, 375×900, 768×900 e 1440×900 a 100%; 320×900 e 844×390 a 200%. Cada cenário prepara captura de overview, detalhe e diálogo: 18 imagens e respectivos metadados, arquivados em `.accounts-validation/frontend-user-administration/` com prefixo por cenário/repetição. Ampliação de texto e viewport são emuladas, sem alegação de dispositivo físico ou aceite humano de acessibilidade.
 
@@ -42,3 +42,13 @@ Viewports: 320×900, 375×900, 768×900 e 1440×900 a 100%; 320×900 e 844×390 
 | Aceite humano operacional/teclado/leitor de tela | PENDENTE quando exigido pelo plano mestre |
 
 Nenhum push, merge, deploy ou remoção de ambiente foi executado nesta frente. A coordenação publica a árvore idêntica, inicia CI/revisão e registra recibos no SHA efetivamente testado.
+
+## Correções após revisão independente — 2026-10-21
+
+A primeira árvore foi publicada pela coordenação como `cf1d8df64e56e17db1beacc373d0641c15c71a65` na PR21. O Codex concluiu revisão desse HEAD com um achado P2, comentário `4335281956`/review `5597773747`: o botão original pode ser removido quando a recuperação do conflito descobre que outro administrador já aplicou o valor solicitado. Cancelar ou usar Escape tentava focar o elemento desconectado. A revisão independente interna identificou o mesmo caso e também a perda silenciosa do erro401/403/404 após limpar a seleção.
+
+- `close()` verifica `isConnected` e retorna o foco ao título do detalhe quando o acionador desapareceu. E2E preparado: conflito409 real → GET atual com o valor já aplicado → cancelar → foco no título da conta.
+- Falhas401/403/404 de detalhe ou auditoria invalidam as leituras pendentes, limpam seleção/histórico/diálogo e mostram alerta sanitizado fora do ramo da conta selecionada. A primeira resposta de erro entre os dois GETs mantém o aviso. GET404 retira a linha indisponível; perda de autoridade/sessão retira a lista antiga.
+- E2E404 remove somente a conta sintética54 da fixture protegida após obter a lista, retém o transporte da auditoria e observa o404 real do GET de detalhe. Outros dois casos usam sessão ausente e papel global sem autoridade, recebendo401/403 reais. Nenhum desses testes foi executado localmente.
+
+Os resultados da revisão e do run inicial pertencem ao HEAD publicado inicial. Este ajuste exige novo HEAD, CI e revisão; nenhum resultado anterior é apresentado como aceite da correção. Após as correções, ESLint focal, typecheck, os13 arquivos unitários focais (zero falhas/skips) e `git diff --check` passaram novamente. E2E/CI das correções continuam pendentes, e os recibos remotos seguintes permanecem na PR.
