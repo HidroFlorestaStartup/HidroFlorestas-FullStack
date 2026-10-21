@@ -13,7 +13,7 @@ permissions:
 jobs:
   diagnose-public-reflow:
     if: github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' && github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
