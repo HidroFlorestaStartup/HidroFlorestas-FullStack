@@ -59,12 +59,12 @@ try {
   & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Start
   $rcStarted=$true
   foreach ($rcGate in $Gates) {
-    if ($rcGate -in @('RegressionSetup','Typecheck','Lint')) {
+    if ($rcGate -in @('RegressionSetup','Unit','Integration','Migration','Contract','R1','Build','Typecheck','Lint')) {
       & (Join-Path $PSScriptRoot 'accounts-validation.ps1') -Gate $rcGate
     } elseif ($rcGate -eq 'E2E') {
-      Write-Output 'DIAGNOSTIC PROBE ONLY: one mobile navigation case; not the release E2E gate.'
+      Write-Output 'DIAGNOSTIC PROBE ONLY: complete E2E selection after nine official preceding gates; not the release E2E gate.'
       & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('--import=tsx','scripts/navigation-animation-probe-collector.local.ts')
-    } else { throw 'Navigation diagnostic accepts only RegressionSetup, Typecheck, Lint and its single E2E probe.' }
+    } else { throw 'Navigation diagnostic accepts only the nine official preceding gates and its observed E2E execution.' }
     if ($LASTEXITCODE -ne 0) { throw "Navigation diagnostic step $rcGate failed; no release-gate PASS inferred." }
   }
 } finally {

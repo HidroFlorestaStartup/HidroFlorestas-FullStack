@@ -78,7 +78,7 @@ Foram decodificados 247 registros de telemetria, sem erro de parse nem truncamen
 
 EVIDENCIA_IMPLEMENTACAO adicional: o [run agregado 39590338264](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39590338264), job `119189416977`, HEAD `9deff63ad45ab627661d480c882d20a769ac4405`, também relaciona `mobile viewport reading area 375px text200` entre as três falhas E2E, com 210 aprovados e sete não executados. As outras falhas são R2 e o alert do mapa. A execução individual do mapa `39589899058` falhou no alert, não constitui a terceira ocorrência de navegação.
 
-## Segunda sonda: R2 seguido da sequência completa de navegação
+## Segunda sonda: R2 seguido da sequência completa de navegação (histórico)
 
 - Estado: EM_ANDAMENTO; execução preparada e revista, runtime desta revisão ainda NOT_RUN antes da publicação.
 - Origem: coordenação autorizou executar o arquivo inteiro após a sonda isolada inconclusiva e observar a duplicação do R2, preservando assertions, instrumentação e guards.
@@ -123,3 +123,57 @@ O patch instala um observador antes do último reload. Conserva literalmente as 
 A linha do tempo registra todos os matches globais, identidades locais WeakMap, pertencimento a application-content, tipo estrutural de IDs, hidden/inert/aria-hidden, display/visibility/content-visibility, dimensões e contagem de retângulos. Conteúdo textual aparece apenas como igualdade booleana ao valor sintético esperado. Não são emitidos HTML, texto livre, URLs, formulário, cookies, ambiente nem dados pessoais. O buffer conserva oito estados iniciais e quarenta recentes, com droppedRecords explícito; ausência de observação também é declarada. A leitura de estilo pode alterar timing, limitação inerente que impede inferir causalidade de um PASS isolado.
 
 O runner verifica os dois blobs de origem e hashes de patches/testes, e exige exatamente os dois caminhos instrumentados no diff efêmero. Ordem selecionada: R2 e, a seguir, 375/100,375/200,320/100,320/200, com um worker e 90.000 ms por caso, conforme fontes originais. Nenhum componente, API, fixture, configuração ou branch de produto muda. O patch novo não reduz o escopo do seletor nem esconde duplicados.
+
+## Recibo da segunda sonda — 2026-10-21
+
+EVIDENCIA_IMPLEMENTACAO: [run 39594318571](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39594318571), job `119202739795`, HEAD do diagnóstico `51d80fc53344dae1fe2be90393bfa2e32b3feab9`, produto `9deff63ad45ab627661d480c882d20a769ac4405`. RegressionSetup, Typecheck e Lint PASS; Lint sem erros e com duas advertências preexistentes. Seleção real de cinco testes e um worker, `selectionVerified:true`, cinco PASS em 1,6 minuto. Ordem efetiva: R2, 375/100, 375/200, 320/100 e 320/200.
+
+Artefato único `12342817947`: SHA-256 `715f2566942be14872bf5022f032711885b74eed6ad5e28e17038fab3cdd8710`, 5.002.118 bytes, 102 entradas; digest oficial, CRC e extração segura PASS. Snapshot `c97964e98bd2915399bd3ae1d5f8d3938d68cc4566cb624fd3527f4ac2c0b25d`. Materialização compartilhada entre os investigadores de navegação e R2. Inventário de 92 PNGs de navegação e quatro geometrias, sem reivindicar inspeção visual de todos os quadros.
+
+A navegação produziu 976 registros válidos, sem truncamento. Todos os 100 waits concluíram, 25 por caso, sem heartbeat de um segundo. Maiores esperas: 379,8 ms em 375/100; 353,1 ms em 375/200; 383,5 ms em 320/100; 575,4 ms em 320/200. Após `375-text200-three-links-end`, zero animações e espera de 0,6 ms, log nas linhas 530/534/538. Somente CSSTransition nas amostras, documento visível e fontes carregadas; nenhum handle selecionado pausado, desconectado ou com velocidade zero enquanto aguardava.
+
+**Causa da espera de navegação: INDETERMINADA.** O cenário passou após R2 e após seu predecessor 375/100, mas o histórico completo do CI foi omitido. A telemetria R2 é analisada separadamente; o PASS desta execução não elimina uma duplicação transitória nem transfere conclusões entre os dois problemas. Regressão oficial de 15 gates e validação visual IHFR: NOT_RUN nesta sonda.
+
+## Terceira sonda: nove gates prévios e E2E completo observado
+
+- Estado da proposta: AGUARDANDO_REVISAO; investigação permanece EM_ANDAMENTO.
+- Origem: a coordenação autorizou reproduzir a sequência do CI completo de 9deff e adaptar somente o despacho do envelope diagnóstico para admitir os nove gates anteriores.
+- Produto fixo: `9deff63ad45ab627661d480c882d20a769ac4405`; base diagnóstica efetiva: `81215d0fa43e59ba36cba5d122993e293810a2ca`, árvore `19ff814189527761e08f8c2f5f16cf6a088286e3`. Os quatro blobs-base são idênticos aos da proposta em `51d80fc53344dae1fe2be90393bfa2e32b3feab9`; a nova base preserva as duas adições da focal IHFR, sem sobreposição de caminhos.
+- Classificação: EVIDENCIA_IMPLEMENTACAO para fontes, diferenças observadas e recibos; INFERENCIA para hipóteses de sequência, histórico, cache e carga; RECOMENDACAO para a execução proposta.
+
+### Diferença concreta e hipóteses
+
+O runner oficial `scripts/rc-review-validation.ps1`, blob `86d2720fd6359a0971fe28f142a7a8b7ed758142`, ordena RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck e Lint antes do E2E. As duas sondas anteriores executaram somente RegressionSetup, Typecheck e Lint. Portanto omitiram seis gates, incluindo Build, além dos demais testes E2E anteriores à navegação.
+
+EVIDENCIA_IMPLEMENTACAO: no produto fixado, `package.json` define Build como `npx prisma generate && next build` e E2E como `playwright test`; o runner oficial chama cada gate pelo `accounts-validation.ps1`, que conserva o DatabaseMode adequado. O workflow oficial `rc-review.yml` dispõe de 35 minutos por job. A contagem esperada de 220 casos vem do run agregado `39590338264`: 210 aprovados, três falhas e sete não executados.
+
+INFERENCIA: a execução anterior de Build, o histórico dos demais gates/testes, o estado de caches/artefatos gerados ou diferenças de carga/timing podem influenciar a reprodução. Nenhuma dessas possibilidades é causa demonstrada. Esta sonda acrescenta simultaneamente a sequência omitida e a seleção E2E completa; eventual reprodução identifica um contexto útil, mas não isola por si só qual diferença foi determinante. A observação também pode alterar timing. Não há limpeza extraordinária de cache, aquecimento adicional, retry ou repetição automática.
+
+### Montagem e ordem
+
+1. A coordenação publica somente quatro deltas diagnósticos: coletor, envelope, workflow e plano. Os dois patches observacionais existentes permanecem idênticos; o produto não incorpora correções posteriores.
+2. O workflow conserva checkout isolado, credenciais não persistidas, bases/hashes dos dois testes, aplicação exata e diff restrito aos dois arquivos instrumentados.
+3. O mesmo envelope instala e inicia uma vez o cluster owned e executa, em ordem: RegressionSetup → Unit → Integration → Migration → Contract → R1 → Build → Typecheck → Lint → E2E observado. Os primeiros nove gates usam exatamente o comando oficial `accounts-validation.ps1 -Gate $rcGate`, com seus modos de banco existentes.
+4. Não há reinício do cluster nem recriação das chaves entre Build e E2E. Instalação, ACL, marker, variáveis sintéticas, ausência de SMTP/destinatários reais e todo o try/finally do envelope são preservados literalmente fora do despacho.
+5. O coletor chama `node node_modules/@playwright/test/cli.js test --reporter=line`, sem filtro de arquivos nem grep. Mantém a configuração original, um worker e zero retries; exige exatamente uma seleção anunciada de 220 testes e um worker. O código do processo e a verificação da seleção continuam separados no recibo.
+6. Somente o limite do job passa de 15 para 35 minutos, igual ao CI oficial. Nenhum timeout de teste muda; R2 e os quatro cenários de navegação conservam 90.000 ms. Todas as assertions, fixtures, screenshots, máscaras e o guard original de animações permanecem idênticos.
+7. Se qualquer gate anterior falhar, interromper a sequência e registrar E2E como não executado. Se E2E falhar, preservar o resultado e as telemetrias; não rerodar automaticamente. A base 9deff contém as falhas históricas já conhecidas, inclusive a do mapa; este diagnóstico não valida os reparos de produto em outras refs.
+
+O dispatcher diagnóstico anterior aceitava apenas três gates prévios. A adaptação autorizada amplia exclusivamente essa lista para nove e atualiza duas mensagens do próprio bloco. Prefixo e sufixo fora do foreach devem comparar byte a byte com o envelope anterior e com o runner oficial. O arquivo oficial do produto não é editado.
+
+O recibo permanece `DIAGNOSTIC_PROBE`, `officialGate:false` e `allReleaseGates:false`; não é registrado PASS oficial de E2E nem fechamento dos 15 gates. Https, Deletion, Ihfr, Bootstrap e SchemaAudit ficam fora desta execução diagnóstica.
+
+### Identidade da terceira sonda
+
+| Asset | SHA-256 (UTF-8/LF) |
+| --- | --- |
+| Coletor completo | `6ccb3488e9a2e923a52b17ce43309ea6390103ae86615d1b6bc18dace1ab1d01` |
+| Envelope com despacho ampliado | `6a2eb22641ee17c60e38bf6b064e0e28e3d323b96c75b187516d20958d2fb4af` |
+| Patch observacional navegação preservado | `837ca559bd6084777f6bd248ff174a29c0e706aa680881532b4f05d3ff267154` |
+| Teste navegação resultante preservado | `8d1240cecd09e89fbd712b185afc50e65ddc85d55212464ffcf3fd14bca449e1` |
+| Patch observacional R2 preservado | `364410daab53641c55456ae668a7601bb07a1f554ade1d908cc8ad7008351311` |
+| Teste R2 resultante preservado | `3396945e16dcaaa48f5f5be7e75dceecdafe86a4ba96526dcda5f22f11cb00f3` |
+
+Validações previstas antes da publicação: bases e reconstrução determinística dos quatro deltas, diff completo, YAML e sintaxe TS, igualdade do envelope fora do despacho, ordem dos nove comandos, ausência de filtros/overrides e preservação dos hashes observacionais. Runtime Windows, PowerShell, Typecheck/Lint desta revisão e E2E completo observado: NOT_RUN antes da publicação. Resultados anteriores não são transferidos ao novo coletor/envelope.
+
+Histórico: 2026-10-21 — segunda sonda com cinco PASS e causa da navegação INDETERMINADA; terceira proposta preparada para reproduzir nove gates anteriores e 220 casos E2E, preservando o ciclo único do cluster e as evidências históricas.

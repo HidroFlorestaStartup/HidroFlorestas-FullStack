@@ -21,7 +21,7 @@ jobs:
   diagnose:
     if: github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: 35
     defaults:
       run:
         shell: pwsh
@@ -63,8 +63,8 @@ jobs:
           }
           $probePatch = Join-Path $probeAssets 'navigation-animation-probe.patch'
           Assert-ProbeHash $probePatch '837ca559bd6084777f6bd248ff174a29c0e706aa680881532b4f05d3ff267154'
-          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') '58ae4525254dd346eff5c1abd46c452e4b63721254975127dde6eca2c82673b3'
-          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') 'dfb3c5f2021ad993e784ea50e8c0b5977dffea5e4df23a6a8248bc89180043cc'
+          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') '6a2eb22641ee17c60e38bf6b064e0e28e3d323b96c75b187516d20958d2fb4af'
+          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') '6ccb3488e9a2e923a52b17ce43309ea6390103ae86615d1b6bc18dace1ab1d01'
           & git apply --check $probePatch
           if ($LASTEXITCODE -ne 0) { throw 'Observation patch does not apply exactly.' }
           & git apply $probePatch
@@ -92,8 +92,8 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed.' }
           npx playwright install chromium
           if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed.' }
-      - name: Observe one R2 reload and all four navigation cases with existing guards
-        run: ./scripts/navigation-animation-probe-envelope.local.ps1 -InitializeCiCluster -Gates @('RegressionSetup','Typecheck','Lint','E2E')
+      - name: Run nine official preceding gates then observe the complete E2E selection
+        run: ./scripts/navigation-animation-probe-envelope.local.ps1 -InitializeCiCluster -Gates @('RegressionSetup','Unit','Integration','Migration','Contract','R1','Build','Typecheck','Lint','E2E')
       - name: Preserve diagnostic evidence
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
