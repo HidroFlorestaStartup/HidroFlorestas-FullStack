@@ -1,0 +1,102 @@
+name: Diagnose navigation animation wait
+
+on:
+  push:
+    branches:
+      - review/frontend-rc-artifact-triage-20261021
+    paths:
+      - .github/workflows/rc-navigation-probe.yml
+      - .github/diagnostics/navigation-animation/**
+      - docs/plans/active/diagnostico-animacoes-navegacao-20261021.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rc-navigation-diagnostic-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  diagnose:
+    if: github.ref_name == 'review/frontend-rc-artifact-triage-20261021'
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: product
+    steps:
+      - name: Read diagnostic assets
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: probe
+          persist-credentials: false
+          sparse-checkout: |
+            .github/diagnostics/navigation-animation
+      - name: Read exact product candidate
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: 9deff63ad45ab627661d480c882d20a769ac4405
+          path: product
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: product/package-lock.json
+      - name: Verify bases and apply observation only in ephemeral checkout
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ((& git rev-parse HEAD).Trim() -ne '9deff63ad45ab627661d480c882d20a769ac4405') { throw 'Unexpected product HEAD.' }
+          if ((& git rev-parse HEAD:tests/e2e/frontend-mobile-navigation.spec.ts).Trim() -ne '0b906b163fe876b06643373d98a167ea7ad10682') { throw 'Unexpected navigation base blob.' }
+          if ((& git rev-parse HEAD:scripts/rc-review-validation.ps1).Trim() -ne '86d2720fd6359a0971fe28f142a7a8b7ed758142') { throw 'Unexpected owned runner base blob.' }
+          & git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Product checkout was already modified.' }
+          $probeAssets = Join-Path $env:GITHUB_WORKSPACE 'probe/.github/diagnostics/navigation-animation'
+          function Assert-ProbeHash([string]$Path, [string]$Expected) {
+            $probeText = [IO.File]::ReadAllText($Path).Replace("`r`n", "`n")
+            $probeBytes = [Text.Encoding]::UTF8.GetBytes($probeText)
+            $probeHash = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($probeBytes)).ToLowerInvariant()
+            if ($probeHash -ne $Expected) { throw 'Diagnostic content hash mismatch.' }
+          }
+          $probePatch = Join-Path $probeAssets 'navigation-animation-probe.patch'
+          Assert-ProbeHash $probePatch '837ca559bd6084777f6bd248ff174a29c0e706aa680881532b4f05d3ff267154'
+          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') '58ae4525254dd346eff5c1abd46c452e4b63721254975127dde6eca2c82673b3'
+          Assert-ProbeHash (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') '4e3b6d589bbfac37a01c41a5022bef014dc333f6e7f9b675bc6cf00271a6f085'
+          & git apply --check $probePatch
+          if ($LASTEXITCODE -ne 0) { throw 'Observation patch does not apply exactly.' }
+          & git apply $probePatch
+          if ($LASTEXITCODE -ne 0) { throw 'Observation patch application failed.' }
+          Assert-ProbeHash 'tests/e2e/frontend-mobile-navigation.spec.ts' '8d1240cecd09e89fbd712b185afc50e65ddc85d55212464ffcf3fd14bca449e1'
+          $probeChanged = @(& git diff --name-only)
+          if ($probeChanged.Count -ne 1 -or $probeChanged[0] -ne 'tests/e2e/frontend-mobile-navigation.spec.ts') { throw 'Unexpected product mutation.' }
+          Copy-Item (Join-Path $probeAssets 'navigation-animation-probe-envelope.local.ps1') 'scripts/navigation-animation-probe-envelope.local.ps1'
+          Copy-Item (Join-Path $probeAssets 'navigation-animation-probe-collector.local.ts') 'scripts/navigation-animation-probe-collector.local.ts'
+          Write-Output 'Verified exact source, unchanged owned runner, and observation-only navigation patch.'
+      - name: Install the locked runtime
+        run: |
+          node --version
+          npm --version
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE -ne 0) { throw 'Locked installation failed.' }
+          npx prisma generate
+          if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed.' }
+      - name: Observe one real navigation case with existing guards
+        run: ./scripts/navigation-animation-probe-envelope.local.ps1 -InitializeCiCluster -Gates @('RegressionSetup','Typecheck','Lint','E2E')
+      - name: Preserve diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: navigation-animation-diagnostic-${{ github.sha }}
+          path: |
+            product/.accounts-validation/*.log
+            product/.accounts-validation/results.jsonl
+            product/.accounts-validation/navigation-animation-probe-result.json
+            product/.accounts-validation/frontend-mobile-navigation/*.png
+            product/.accounts-validation/frontend-mobile-navigation/*-geometry.json
+          if-no-files-found: warn
+          retention-days: 14
+          include-hidden-files: true

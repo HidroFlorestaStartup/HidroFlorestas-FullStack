@@ -1,0 +1,228 @@
+--- a/tests/e2e/frontend-mobile-navigation.spec.ts
++++ b/tests/e2e/frontend-mobile-navigation.spec.ts
+@@ -25,6 +25,184 @@
+ async function login(context: BrowserContext, info: TestInfo, id: string) {
+   await context.addCookies([{ name: "auth_token", value: signSessionToken(id), url: String(info.project.use.baseURL) }]);
+ }
++type NavigationAnimationDiagnostic = {
++  checkpoint: (phase: string, label?: string) => void;
++  startWait: () => number;
++  beforeBatch: (id: number, animations: Animation[]) => void;
++  afterBatch: (id: number) => void;
++  stopWait: (id: number) => void;
++};
++type NavigationDiagnosticWindow = Window & {
++  __hfNavigationAnimationDiagnostic?: NavigationAnimationDiagnostic;
++};
++
++// Temporary observational probe. It never reads form values, text, requests,
++// cookies, keyframes, or arbitrary attributes, and never changes an animation.
++test.beforeEach(async ({ page }) => {
++  page.on("console", message => {
++    const line = message.text();
++    if (line.startsWith("[navigation-animation-diagnostic] ")) process.stdout.write(line + "\n");
++  });
++  await page.addInitScript(() => {
++    const prefix = "[navigation-animation-diagnostic] ";
++    const animationIds = new WeakMap<Animation, number>();
++    let nextAnimationId = 0;
++    let nextWaitId = 0;
++    let nextCheckpointId = 0;
++    type Wait = {
++      id: number;
++      started: number;
++      batchStarted: number;
++      iterations: number;
++      completedBatches: number;
++      waiting: boolean;
++      selected: Animation[];
++      lastBatchLog: number;
++      timer: ReturnType<typeof setInterval> | undefined;
++    };
++    const waits = new Map<number, Wait>();
++    const number = (value: unknown) => typeof value === "number"
++      ? Number.isFinite(value) ? Math.round(value * 1000) / 1000 : String(value)
++      : value === null || value === undefined ? null : value === "auto" ? "auto" : "non-numeric";
++    const cssName = (value: string | null | undefined) =>
++      value && /^[A-Za-z0-9_:-]{1,160}$/.test(value) ? value : value ? "unlisted-name" : null;
++    const targetPath = (target: Element | null) => {
++      if (!target) return null;
++      const parts: string[] = [];
++      let element: Element | null = target;
++      for (let depth = 0; element && depth < 12; depth++) {
++        const parent: Element | null = element.parentElement;
++        const ordinal = parent ? Array.from(parent.children).indexOf(element) + 1 : 1;
++        parts.unshift(element.localName + ":nth-child(" + ordinal + ")");
++        if (parent) element = parent;
++        else {
++          const root = element.getRootNode();
++          if (root instanceof ShadowRoot) {
++            parts.unshift("::shadow");
++            element = root.host;
++          } else element = null;
++        }
++      }
++      return parts.join(">");
++    };
++    const describe = (animation: Animation) => {
++      let id = animationIds.get(animation);
++      if (!id) { id = ++nextAnimationId; animationIds.set(animation, id); }
++      const effect = animation.effect;
++      const keyframes = effect instanceof KeyframeEffect ? effect : null;
++      const target = keyframes?.target instanceof Element ? keyframes.target : null;
++      const timing = effect?.getComputedTiming();
++      const kind = animation instanceof CSSTransition ? "CSSTransition"
++        : animation instanceof CSSAnimation ? "CSSAnimation" : "Animation";
++      const root = target?.getRootNode();
++      return {
++        id, kind,
++        transitionProperty: animation instanceof CSSTransition ? cssName(animation.transitionProperty) : null,
++        animationName: animation instanceof CSSAnimation ? cssName(animation.animationName) : null,
++        target: targetPath(target),
++        shadowHost: root instanceof ShadowRoot ? root.host.localName : null,
++        pseudoElement: cssName(keyframes?.pseudoElement),
++        connected: target?.isConnected ?? false,
++        playState: animation.playState,
++        pending: animation.pending,
++        replaceState: animation.replaceState,
++        currentTime: number(animation.currentTime),
++        startTime: number(animation.startTime),
++        playbackRate: number(animation.playbackRate),
++        timelineType: animation.timeline instanceof DocumentTimeline ? "DocumentTimeline"
++          : animation.timeline ? "OtherTimeline" : null,
++        timelineTime: number(animation.timeline?.currentTime),
++        duration: number(timing?.duration),
++        delay: number(timing?.delay),
++        endDelay: number(timing?.endDelay),
++        iterations: number(timing?.iterations),
++        endTime: number(timing?.endTime),
++        localTime: number(timing?.localTime),
++        progress: number(timing?.progress),
++        currentIteration: number(timing?.currentIteration),
++      };
++    };
++    const emit = (phase: string, label?: string, wait?: Wait) => {
++      const current = document.getAnimations();
++      const runningFinite = current.filter(animation =>
++        animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
++      const selected = wait?.selected ?? [];
++      const now = performance.now();
++      // Limits apply only to telemetry volume; the original wait sees every animation.
++      console.info(prefix + JSON.stringify({
++        version: 1, phase, label: label ?? null,
++        checkpointId: ++nextCheckpointId,
++        page: location.pathname === "/workspace" ? "workspace" : "other-route",
++        timeOrigin: number(performance.timeOrigin),
++        now: number(now),
++        visibility: document.visibilityState,
++        fontStatus: document.fonts.status,
++        documentTimelineTime: number(document.timeline.currentTime),
++        activeTarget: document.activeElement instanceof Element ? targetPath(document.activeElement) : null,
++        wait: wait ? {
++          id: wait.id,
++          elapsedMs: number(now - wait.started),
++          batchElapsedMs: number(now - wait.batchStarted),
++          iterations: wait.iterations,
++          completedBatches: wait.completedBatches,
++          waiting: wait.waiting,
++          selectedCount: selected.length,
++          selectedOmitted: Math.max(0, selected.length - 256),
++          selected: selected.slice(0, 256).map(describe),
++        } : null,
++        currentCount: current.length,
++        runningFiniteCount: runningFinite.length,
++        currentOmitted: Math.max(0, current.length - 256),
++        current: current.slice(0, 256).map(describe),
++      }));
++    };
++    (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic = {
++      checkpoint: (phase, label) => emit(phase, label),
++      startWait: () => {
++        const id = ++nextWaitId;
++        const now = performance.now();
++        const wait: Wait = {
++          id, started: now, batchStarted: now, iterations: 0,
++          completedBatches: 0, waiting: false, selected: [], lastBatchLog: -Infinity, timer: undefined,
++        };
++        waits.set(id, wait);
++        emit("wait-enter", undefined, wait);
++        wait.timer = setInterval(() => emit("wait-heartbeat", undefined, wait), 1000);
++        return id;
++      },
++      beforeBatch: (id, animations) => {
++        const wait = waits.get(id);
++        if (!wait) return;
++        wait.selected = animations;
++        wait.batchStarted = performance.now();
++        wait.iterations++;
++        wait.waiting = animations.length > 0;
++        if (wait.iterations <= 3 || performance.now() - wait.lastBatchLog >= 1000) {
++          emit("batch-before-await", undefined, wait);
++          wait.lastBatchLog = performance.now();
++        }
++      },
++      afterBatch: id => {
++        const wait = waits.get(id);
++        if (!wait) return;
++        wait.waiting = false;
++        wait.completedBatches++;
++        if (wait.iterations <= 3 || performance.now() - wait.lastBatchLog >= 1000) {
++          emit("batch-after-await", undefined, wait);
++          wait.lastBatchLog = performance.now();
++        }
++      },
++      stopWait: id => {
++        const wait = waits.get(id);
++        if (!wait) return;
++        clearInterval(wait.timer);
++        emit("wait-exit", undefined, wait);
++        waits.delete(id);
++      },
++    };
++  });
++});
++
+ const archive = join(process.cwd(), ".accounts-validation", "frontend-mobile-navigation");
+ const prefix = process.env.FRONTEND_MOBILE_CAPTURE_PREFIX === "before" ? "before" : "after";
+ async function capture(page: Page, info: TestInfo, name: string, records: unknown[]) {
+@@ -35,7 +213,9 @@
+   for (const input of await page.locator("input").all()) {
+     if (await input.evaluate(node => (node as HTMLInputElement).value.length > 0)) mask.push(input);
+   }
++  await page.evaluate(label => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("capture-before", label), name);
+   await page.screenshot({ path, fullPage: false, animations: "disabled", mask });
++  await page.evaluate(label => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("capture-after", label), name);
+   await copyFile(path, join(archive, filename + ".png"));
+   const geometry = await page.evaluate(() => {
+     const box = (id: string) => { const node = document.getElementById(id); const r = node?.getBoundingClientRect(); return r && node ? { top: r.top, bottom: r.bottom, height: r.height, scrollTop: node.scrollTop, scrollHeight: node.scrollHeight, clientHeight: node.clientHeight } : null; };
+@@ -66,18 +246,30 @@
+   // Await the existing global .3s transitions naturally. New transitions can
+   // replace an inherited font-size transition while the root text scale changes.
+   await page.evaluate(async () => {
++    const diagnostic = (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic;
++    const waitId = diagnostic?.startWait() ?? 0;
++    try {
+     for (;;) {
+       const finite = document.getAnimations().filter(animation =>
+         animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
++      diagnostic?.beforeBatch(waitId, finite);
+       if (!finite.length) return;
+       await Promise.allSettled(finite.map(animation => animation.finished));
++      diagnostic?.afterBatch(waitId);
+     }
++    } finally {
++      diagnostic?.stopWait(waitId);
++    }
+   });
+ }
+ async function focusAndExpose(target: Locator) {
++  await target.page().evaluate(() => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("focus-before-wait"));
+   await settleTransitions(target.page());
++  await target.page().evaluate(() => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("focus-after-wait"));
+   await target.focus();
++  await target.page().evaluate(() => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("focus-after-focus"));
+   await expect.poll(async () => (await visibleWithinReadingArea(target)).visible).toBe(true);
++  await target.page().evaluate(() => (window as NavigationDiagnosticWindow).__hfNavigationAnimationDiagnostic?.checkpoint("focus-after-expose"));
+ }
+ async function visibleWithinReadingArea(target: Locator) {
+   return target.evaluate(node => {
