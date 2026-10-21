@@ -66,6 +66,37 @@ A tabela anterior preserva o recibo da implementação inicial. O coordenador pu
 
 O Codex concluiu a revisão de código do HEAD anterior `39cbf99f588022ac35926a135387133b6f10516c` sem findings, com [recibo efetivo](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6312911243). Esse recibo não constitui aprovação humana nem revisão do próximo SHA corrigido.
 
+## Falha de seleção pelo teclado e reparo — 2026-10-21
+
+O segundo CI executou o HEAD `f472d5910322837ad9cf9a942a99581a7ffff3f1`, árvore `01ef3e9828f7c382443c283a52970efedfc6eaa8`, com a correção dos alvos de zoom.
+
+- [Run 39581586760](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39581586760), tentativa 1, job `119160229579`: `FAIL` em E2E.
+- Os registros do job confirmam PASS em RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck e Lint. E2E: 190 testes passaram, um falhou e sete não executaram. Https, Deletion, Ihfr, Bootstrap e SchemaAudit permanecem NOT_RUN após a interrupção.
+- Artefato `12338417029`, `rc-validation-f472d5910322837ad9cf9a942a99581a7ffff3f1`, 30.769.960 bytes. SHA-256: `853a0100eb7574a14635153eecd40c19cb87109cfaedb4b89e5eb90310d6b1b3`. O coordenador recuperou o log completo e conferiu SHA/CRC do ZIP pelo [diagnóstico 39585137600](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39585137600), job `119172054218`.
+- A falha exata é `frontend-territorial-map.spec.ts:105:56`, na assertion `expect(page.locator("#selected-area-title")).toHaveText(firstArea.name)` após foco e Enter: esperado `IMP-007 E2E area 0`, recebido `<element(s) not found>`, timeout de 5000 ms.
+- O único PNG do mapa nesse run é `ca7865c511da-r0-n0-after-frontend-territorial-map-map-320x760-text100-viewport.png`, gerado após as assertions de 44 px. O coordenador abriu a imagem pelo [leitor 39586266847](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39586266847), job `119175821627`, e observou controles ampliados, foco no zoom `+`, ponto central e navegação inferior dentro do viewport. SHA-256 do PNG: `c4a2867bb53ac0922dc95535ebdcf356e28c2958a171de8105ec9362f24f7e7f`. A imagem não comprova seleção nem os cenários posteriores.
+
+### Lacuna demonstrável na implementação
+
+O [lockfile do SHA executado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/f472d5910322837ad9cf9a942a99581a7ffff3f1/package-lock.json) fixa Leaflet `1.9.4`, React Leaflet `5.0.0` e `@react-leaflet/core` `3.0.0`. A leitura dos fontes oficiais dessas versões mostrou:
+
+- [DivIcon](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/marker/DivIcon.js) cria um `div`; [Marker](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/marker/Marker.js) aplica `tabIndex` e `role="button"` quando `keyboard` está ativo e registra o alvo interativo.
+- [Map](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/map/Map.js) encaminha `keydown`, `keypress` e `keyup` com seu tipo original. [Map.Keyboard](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/map/handler/Map.Keyboard.js) trata deslocamento, zoom e Escape, sem converter Enter/Espaço em clique.
+- [Popup](https://github.com/Leaflet/Leaflet/blob/v1.9.4/src/layer/Popup.js) liga seu tratamento de Enter ao registro feito por `bindPopup`. O marcador territorial não tem popup.
+- O [adaptador de eventos do React Leaflet](https://github.com/PaulLeCam/react-leaflet/blob/v5.0.0/packages/core/src/events.ts) registra os handlers fornecidos na instância Leaflet. O componente territorial fornecia somente `click`, sem handler de ativação pelo teclado.
+
+A ausência de ligação entre o evento de teclado e `onSelect` é demonstrável nos fontes e é consistente com a ausência do painel observada no diagnóstico do CI. O comportamento corrigido ainda precisa ser validado no novo SHA.
+
+### Reparo preparado e limites
+
+Foi acrescentado `keydown` ao mesmo `Marker`, chamando `onSelect(area.id)` para Enter ou Espaço e prevenindo a ação padrão dessas teclas. O clique mantém o mesmo handler; não há ref, mudança de motor, DTO, coordenadas ou cálculo.
+
+O cenário de teclado existente agora também ativa um segundo marcador com Espaço, confirma seu título e `aria-pressed=true` e confirma `aria-pressed=false` no primeiro. As assertions de Enter e de 44 px continuam preservadas. Não foram criados cenários, capturas, esperas arbitrárias ou overrides de timeout.
+
+Este reparo foi preparado contra parent `f472d5910322837ad9cf9a942a99581a7ffff3f1`, sem atualizar referências por esta frente. Typecheck, lint, unitários, build e E2E locais deste novo código: **NOT_RUN**, pois o serviço de execução estava indisponível durante a preparação. A comparação de conteúdo/blobs por API deve constar do recibo externo; ela não substitui esses testes. T016/T017 permanecem abertas.
+
+O [recibo do Codex](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6313351413) concluiu sem findings a revisão do HEAD anterior `f472d5910322837ad9cf9a942a99581a7ffff3f1`. A candidata de teclado requer nova CI e revisão do próprio SHA antes do fechamento técnico.
+
 ## Evidências esperadas no CI
 
 `.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.png` e `*-viewport.json`, também anexados ao resultado do Playwright. Nomes incluem identificador de cenário/repetição para não sobrescrever tentativas. Capturas `fullPage:false`, animações observadas, campos de formulário mascarados, sem trace/vídeo, geometria sem texto/URLs/valores.
