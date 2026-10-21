@@ -1,0 +1,36 @@
+# Validação da Spec028
+
+## Análise prévia de consistência — 2026-10-21
+
+Scripts reais `setup-plan.sh`, `setup-tasks.sh` e `check-prerequisites.sh --require-spec --require-tasks --include-tasks` executados com sucesso para esta feature. Checklist de requisitos completo. Sem hooks configurados em `.specify/extensions.yml`.
+
+| Cobertura | Requisitos | Tarefas |
+|---|---|---|
+| Acesso, conteúdo e navegação | FR-001/002/003 | T004/005 |
+| Ciência e contexto institucional | FR-004/005 | T006/007 |
+| Isolamento e reflow | FR-006/007 | T008/009/012 |
+| CI/Preview e entrega | FR-008 | T010/013/014/015 |
+| Históricos | FR-009 | T011 |
+
+Nenhuma contradição crítica encontrada entre spec/plano/tarefas. Aceites e verificações externas estão explicitamente pendentes, não embutidos em critérios de preparação já cumpridos.
+
+## Resultados de execução
+
+Em andamento. Resultados serão registrados somente após execução; este arquivo não constitui aprovação científica, humana ou operacional.
+
+### Baseline observado antes da alteração
+
+GET real a `/` em Next local (sem banco), HTTP 200: `mainCount: 0`, âncoras ausentes `projeto` e `solucao`. A consulta ocorreu antes de substituir a página. O teste E2E foi escrito antes da implementação, mas a execução em Chromium local ficou indisponível: os downloads oficiais dos pacotes completo e headless fixados falharam (ZIP vazio/HTTP 503). Não declarar RED/GREEN Playwright a partir dessa checagem HTTP; as capturas e os cenários de navegador dependem de CI.
+
+### Verificações locais concluídas
+
+- Geração do Prisma Client7.4.2: PASS; somente geração de arquivos ignorados, sem conexão ou operação de banco.
+- Typecheck global: PASS após corrigir uso do callback `page.evaluate(waitForMissionRender)` no novo teste. A primeira execução detectou esse erro de chamada; não foi alterado o helper.
+- ESLint da página e do novo E2E: PASS.
+- `git diff --check`: PASS.
+- YAML/JSON interpretados: ambas as branches novas estão nos dois allowlists do CI e com Preview explicitamente falso; upload permanece restrito às famílias PNG/JSON das frentes.
+- GET real da aplicação depois da alteração: HTTP200, exatamente um main, zero âncoras sem destino, quatro qualificações presentes e links `/login`/`/register`. Não equivale a E2E de navegador.
+- Revisão estática independente por agente: sem outro P1/P2 de produto identificado. Lacuna de enquadramento das qualificações corrigida: teste agora rola cada item, exige viewport completa e captura início/fim do quadro.
+- Checklist React aplicado: Server Component sem novo estado/fetch público, imports estáticos, imagens locais, CSS isolado, links nomeados e sem nova biblioteca.
+
+CI oficial, capturas/inspeção, revisão Codex externa, aceite institucional/manual e homologação operacional permanecem pendentes no momento deste commit. Resultados posteriores serão recibos na PR do SHA publicado, sem transplantar verde de um ancestral.

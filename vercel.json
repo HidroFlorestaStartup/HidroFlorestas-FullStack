@@ -21,7 +21,9 @@
       "feat/frontend-environmental-drafts": false,
       "feat/frontend-ihfr": false,
       "feat/frontend-territorial-map": false,
-      "feat/frontend-user-administration": false
+      "feat/frontend-user-administration": false,
+      "feat/frontend-landing-consolidation": false,
+      "release/frontend-rc-20261021": false
     }
   }
 }

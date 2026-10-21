@@ -19,6 +19,8 @@ on:
       - feat/frontend-ihfr
       - feat/frontend-territorial-map
       - feat/frontend-user-administration
+      - feat/frontend-landing-consolidation
+      - release/frontend-rc-20261021
   workflow_dispatch:
 
 permissions:
@@ -46,7 +48,9 @@ jobs:
       github.ref_name == 'feat/frontend-environmental-drafts' ||
       github.ref_name == 'feat/frontend-ihfr' ||
       github.ref_name == 'feat/frontend-territorial-map' ||
-      github.ref_name == 'feat/frontend-user-administration'
+      github.ref_name == 'feat/frontend-user-administration' ||
+      github.ref_name == 'feat/frontend-landing-consolidation' ||
+      github.ref_name == 'release/frontend-rc-20261021'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -105,6 +109,8 @@ jobs:
             .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
             .accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
             .accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
+            .accounts-validation/frontend-landing/*-frontend-landing-*.png
+            .accounts-validation/frontend-landing/*-frontend-landing-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true
