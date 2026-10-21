@@ -44,6 +44,7 @@
 - [x] T015 Entregar candidato coeso em commit local PT-BR e informar SHA/diff/limites ao coordenador; registrar instruções em `specs/026-frontend-territorial-map/validation.md`.
 - [ ] T016 Executar E2E novo/herdado e os 15 gates oficiais no HEAD final, arquivando recibo externo e artefatos `.accounts-validation/frontend-territorial-map/` — coordenador.
 - [ ] T017 Inspecionar PNGs/JSON reais, obter revisão externa efetiva do HEAD e tratar achados materiais antes de fechar a PR técnica — coordenador, recibo externo vinculado ao HEAD.
+- [x] T018 Corrigir a precedência dos alvos de zoom após o FAIL do run `39578551717`, preservando 44 px/assertions/timeouts, e registrar causa, digest e verificações locais em `specs/026-frontend-territorial-map/validation.md`. Reexecução oficial e inspeção visual permanecem em T016/T017.
 
 ## Dependências e paralelismo
 

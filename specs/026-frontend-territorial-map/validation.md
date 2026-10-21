@@ -13,7 +13,7 @@ Base `development`: `1ea3cc2552c244e1004f4f733f838e0f9ea62993`. Parent planejado
 - Helper próprio de captura, reutilizando as funções de geometria/readiness existentes sem alterar o helper compartilhado.
 - Nenhuma mudança em DTO, API, backend, schema, rota servidor, algoritmo cartográfico, testes territoriais herdados, CSS global, shell, dependências, CI ou proteção de Preview.
 
-## Execuções locais reais
+## Execuções locais da implementação inicial
 
 | Verificação | Resultado | Observação |
 |---|---|---|
@@ -31,6 +31,40 @@ Base `development`: `1ea3cc2552c244e1004f4f733f838e0f9ea62993`. Parent planejado
 | Codex review independente do HEAD | NOT_RUN nesta frente | Responsabilidade do coordenador após publicar candidata |
 
 O aviso de configuração `http-proxy` do npm foi observado sem impedir geração, typecheck ou lint. Nenhum valor de ambiente, token ou dado real foi registrado.
+
+## Falha do CI publicado e correção focal — 2026-10-21
+
+A tabela anterior preserva o recibo da implementação inicial. O coordenador publicou a mesma árvore `846f4887e83557318f85753caae7bc9e23ced1f2` no HEAD `39cbf99f588022ac35926a135387133b6f10516c`, PR [#22](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22).
+
+- [Run 39578551717](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39578551717), tentativa 1, evento `push`, job `119150115017`: `FAIL` em E2E.
+- Artefato `12336228091`, `rc-validation-39cbf99f588022ac35926a135387133b6f10516c`, 30.741.731 bytes. SHA-256: `12c71465152867b1c7b42ce61810820ea55e3d7230c8cb99c8a610b22cc847f8`.
+- Download conferido contra o digest oficial, CRC válido e 729 entradas sem caminhos inseguros ou links simbólicos. Recibo e extração preservados em `ci-artifacts/map-39578551717/` no workspace do coordenador, fora do repositório versionado.
+
+| Gate | Resultado observado |
+|---|---|
+| RegressionSetup | PASS |
+| Unit | PASS |
+| Integration | PASS |
+| Migration | PASS |
+| Contract | PASS |
+| R1 | PASS |
+| Build | PASS |
+| Typecheck | PASS |
+| Lint | PASS; zero erros e três avisos preexistentes |
+| E2E | FAIL; 190 testes passaram, um falhou e sete não executaram |
+| Https | NOT_RUN após interrupção no E2E |
+| Deletion | NOT_RUN após interrupção no E2E |
+| Ihfr | NOT_RUN após interrupção no E2E |
+| Bootstrap | NOT_RUN após interrupção no E2E |
+| SchemaAudit | NOT_RUN após interrupção no E2E |
+
+**Falha observada**: o primeiro cenário novo, `320x760-text100`, mediu largura de 30 px no zoom, contra a assertion de pelo menos 44 px em `tests/e2e/frontend-territorial-map.spec.ts`. A falha ocorreu antes da primeira captura; o ZIP não contém PNGs/JSONs territoriais. Os sete cenários restantes da suíte serial não executaram. Esses estados não são promovidos a PASS nem a inspeção visual concluída.
+
+**Diagnóstico e reparo**: `leaflet/dist/leaflet.css` contém `.leaflet-touch .leaflet-bar a` com largura, altura e line-height de 30 px. A regra local `.mapFrame :global(.leaflet-control-zoom a)` tinha a mesma especificidade `(0,2,1)`. **INFERENCIA** sustentada pelo valor observado e pelas regras: a ordem de carregamento permitiu à regra externa vencer o empate. A correção acrescenta o ancestral local `.mapCanvas`, elevando a especificidade para `(0,3,1)` e tornando os 44 px independentes dessa ordem. `territorial-map.client.tsx` aplica `.mapCanvas` ao `MapContainer`, filho direto de `.mapFrame`; o seletor mantém correspondência com a estrutura real. Nenhum `!important`, CSS global, handler, teste, assertion ou timeout foi alterado.
+
+**Validação desta correção**: `npm run typecheck` passou. `npm run lint` passou com zero erros e os mesmos três avisos preexistentes em arquivos fora da frente. E2E/browser, novos 15 gates e capturas da correção permanecem **NOT_RUN**, aguardando a publicação do novo SHA pelo coordenador. T016/T017 continuam abertas.
+
+O Codex concluiu a revisão de código do HEAD anterior `39cbf99f588022ac35926a135387133b6f10516c` sem findings, com [recibo efetivo](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/22#issuecomment-6312911243). Esse recibo não constitui aprovação humana nem revisão do próximo SHA corrigido.
 
 ## Evidências esperadas no CI
 
