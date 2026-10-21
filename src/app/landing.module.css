@@ -7,7 +7,7 @@
   color: var(--ink);
   background: #f8f9f5;
   line-height: 1.65;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
 }
 
 .container { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
@@ -89,6 +89,7 @@
 .footer h2 { margin-bottom: .9rem; color: #f3f5ef; font-size: .85rem; font-weight: 600; letter-spacing: 0; }
 .footer p, .footer a { color: #d2ddce; font-size: .75rem; line-height: 1.9; }
 .footer a { display: inline-block; padding-block: .5rem; text-decoration: underline; text-underline-offset: 4px; }
+.footer a[href^="mailto:"] { max-width: 100%; overflow-wrap: anywhere; }
 .footer .footerBrand { margin-bottom: .8rem; color: #fff; font-weight: 650; font-size: 1.15rem; }
 .copyright { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid #4b6551; color: #c5d2c1; font-size: .7rem; }
 
@@ -111,16 +112,20 @@
   .navigation { font-size: .8rem; gap: .2rem .4rem; }
   .navigation a { padding-inline: .2rem; }
   .hero h1 { font-size: 1.65rem; }
+  .science h2 { font-size: 1.125rem; }
+  .eyebrow { letter-spacing: .04em; }
   .hero { padding-block: 2.3rem 1.4rem; }
   .lead { font-size: .95rem; }
   .actions { flex-direction: column; align-items: stretch; }
   .section { padding-block: 1.8rem; }
+  .step { padding: 16px; }
   .science { padding: 12px; }
   .qualifications { padding: 12px; }
   .qualifications ul { padding-left: 18px; }
   .qualifications li { padding-left: 0; }
   .projectScope { padding-left: 1rem; }
   .team, .footerGrid { grid-template-columns: minmax(0, 1fr); }
+  .team h3 { font-size: 1rem; }
   .footer { margin-top: 1rem; }
 }
 
