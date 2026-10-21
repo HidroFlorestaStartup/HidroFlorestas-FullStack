@@ -14,6 +14,7 @@ on:
       - feat/frontend-laboratory-dashboard
       - feat/frontend-areas-cover
       - 022-fix-concurrency-ihfr
+      - feat/frontend-collections
   workflow_dispatch:
 
 permissions:
@@ -36,7 +37,8 @@ jobs:
       github.ref_name == 'feat/frontend-workspace-shell' ||
       github.ref_name == 'feat/frontend-laboratory-dashboard' ||
       github.ref_name == 'feat/frontend-areas-cover' ||
-      github.ref_name == '022-fix-concurrency-ihfr'
+      github.ref_name == '022-fix-concurrency-ihfr' ||
+      github.ref_name == 'feat/frontend-collections'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
@@ -81,6 +83,10 @@ jobs:
             .accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
             .accounts-validation/frontend-areas/*.png
             .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            test-results/**/frontend-collections-*.png
+            test-results/**/frontend-collections-*-viewport.json
+            .accounts-validation/frontend-collections/*-frontend-collections-*.png
+            .accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
           if-no-files-found: warn
           retention-days: 14
           include-hidden-files: true

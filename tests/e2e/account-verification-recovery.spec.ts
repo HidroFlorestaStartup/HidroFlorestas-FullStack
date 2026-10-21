@@ -132,12 +132,22 @@ test.describe("browser account journeys with a deterministic outbox transport", 
     return found;
   }
 
-  async function login(page: Page, email: string, value: string) {
+  async function login(page: Page, email: string, value: string, expectedStatus = 200) {
     await page.goto("/login");
     await page.waitForLoadState("networkidle");
     await page.getByLabel("E-mail", { exact: true }).fill(email);
     await page.getByLabel("Senha", { exact: true }).fill(value);
+    // Synchronize with the submitted operation before checking its navigation.
+    // A successful click alone does not mean the HTTP response has arrived.
+    const started = performance.now();
+    const completed = page.waitForResponse(response =>
+      response.url().endsWith("/api/auth/sign-in") && response.request().method() === "POST");
     await page.getByRole("button", { name: "ENTRAR", exact: true }).click();
+    const response = await completed;
+    console.info("ACCOUNT_LOGIN_RESPONSE", JSON.stringify({
+      status: response.status(), elapsedMs: Math.round(performance.now() - started),
+    }));
+    expect(response.status()).toBe(expectedStatus);
   }
 
   async function register(page: Page) {
@@ -217,7 +227,7 @@ test.describe("browser account journeys with a deterministic outbox transport", 
       const fragment = await openReset(recovery, email);
       await submitPassword(recovery, newPassword);
       expect((await page.request.get("/api/auth/me")).status()).toBe(401);
-      await login(page, email, password);
+      await login(page, email, password, 401);
       await expect(page.locator('p[role="alert"]')).toContainText("inválidos");
       await login(page, email, newPassword);
       await expect(page).toHaveURL(/\/workspace$/);

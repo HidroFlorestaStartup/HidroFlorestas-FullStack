@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "role": "Independent read-only QA",
+  "status": "AUXILIARY_H4_VERIFICATION_PASS_OFFICIAL_CI_PENDING",
+  "runtime": {
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.0"
+  },
+  "scope": "Synthetic browser-only tests with exact copied helper and spec; no app server, database, real account, external request or repository write",
+  "source": {
+    "helper": "tests/e2e/support/frontend-mission-evidence.ts",
+    "helper_sha256": "c1b80896798fbab2ec42eed9bb76978606a071b88b970e826e7b5c0db330ade1",
+    "assertion_function_sha256": "2f718e919781eae440ef9dc7562b2e2476fecbb96b0f14df3ed466a2eac2b808",
+    "spec": "tests/e2e/frontend-mission-evidence.spec.ts",
+    "spec_sha256": "d89e9b912e38a533638a6cbb9f6bf5ebca13a3e72a4257ddb3eb0bef69974e7c",
+    "geometry_byte_identical_to_sha": "6fd80667f4270ce43536963762444f6893f0c347",
+    "geometry_sha256": "6165e7815621cb46a3d8e113c3934e44a5acf2c58ad6fa53677466fa10f0681c"
+  },
+  "stats": {
+    "startTime": "2026-10-20T17:18:25.497Z",
+    "duration": 9935.438,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 999px",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 158
+        }
+      ]
+    },
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 60% 15% / 40% 10%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 154
+        }
+      ]
+    },
+    {
+      "name": "rounded hit testing respects CSS overlap reduction: 250px 0 130px 20px / 70px 0 200px 15px",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 130
+        }
+      ]
+    },
+    {
+      "name": "a control descendant remains a valid hit target",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 143
+        }
+      ]
+    },
+    {
+      "name": "a real top obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 141
+        }
+      ]
+    },
+    {
+      "name": "a real right obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 126
+        }
+      ]
+    },
+    {
+      "name": "a real bottom obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 125
+        }
+      ]
+    },
+    {
+      "name": "a real left obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 155
+        }
+      ]
+    },
+    {
+      "name": "a real center obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 5204
+        }
+      ]
+    },
+    {
+      "name": "a real corner obstruction is rejected even at text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 115
+        }
+      ]
+    },
+    {
+      "name": "a partially off-viewport fixed control remains rejected",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 88
+        }
+      ]
+    },
+    {
+      "name": "a parent clipping the control is not accepted as a related hit target",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 79
+        }
+      ]
+    },
+    {
+      "name": "horizontal overflow still fails the public assertion",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 120
+        }
+      ]
+    },
+    {
+      "name": "pending focus reveal finishes before the single control scroll",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 156
+        }
+      ]
+    },
+    {
+      "name": "text scale transitions finish before the single scroll while input focus remains protected",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 802
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 320x900, text 100%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 178
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 375x900, text 100%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 174
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 768x900, text 100%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 174
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 1440x900, text 100%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 185
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 320x900, text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 186
+        }
+      ]
+    },
+    {
+      "name": "rounded collection control is usable at 844x390, text 200%",
+      "pass": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration_ms": 182
+        }
+      ]
+    }
+  ],
+  "review_findings": [
+    {
+      "issue": "Waiting pending-pause animations on finished may never settle",
+      "counterproof": "animation-pause-counterproof.json",
+      "resolution": "Final filter selects playState running and finite endTime; pending play remains running; pending pause is excluded",
+      "status": "RESOLVED"
+    }
+  ],
+  "controls_verified": {
+    "single_scroll": true,
+    "points": 9,
+    "focus_retained": true,
+    "full_viewport_required": true,
+    "descendant_hits_only": true,
+    "horizontal_overflow_rejected": true,
+    "infinite_animation_still_running": true,
+    "no_blur_cancel_or_finish": true,
+    "negative_center_throws_after_original_assertion_timeout_ms": 5000
+  },
+  "reviewed_evidence": [
+    {
+      "file": "resize-focus-results.json",
+      "scope": "Actual React ApplicationShell/useContentScroll/CollectionForm, global CSS and CSS Modules; synthetic adapters for Next/router/auth, Arial fallback",
+      "one_frame": "0/6 PASS",
+      "two_frames_without_animation_settling": "0/6 PASS",
+      "one_animation_batch": "0/6 PASS",
+      "repeat_batches_until_settled_then_one_frame": "6/6 PASS",
+      "limitation": "One-frame result is supplemented by the stronger independent ResizeObserver fixture below; not sufficient alone"
+    },
+    {
+      "file": "report-baseline.json",
+      "result": "0/3 PASS"
+    },
+    {
+      "file": "report-settled-one-frame.json",
+      "result": "1/3 PASS; two failures retained"
+    },
+    {
+      "file": "report-settled.json",
+      "result": "3/3 PASS; two frames after animation settling"
+    }
+  ],
+  "causal_assessment": "Global finite .3s transitions continue resizing observed shell content; ResizeObserver schedules revealFocus in the following rAF and can scroll the active input after the target scroll. Waiting all finite running animation generations, then draining two rAF callbacks and rechecking, places the existing single target scroll after that work. No assertion or product focus behavior is changed.",
+  "limitations": [
+    "Auxiliary Linux Chromium execution does not replace official Windows/PostgreSQL gates for a new commit.",
+    "This review verifies helper timing and continued rejection of obstructions; evidence durability and full application viewport inspection are separately owned by the environmental QA agent."
+  ],
+  "primary_references": [
+    "https://www.w3.org/TR/web-animations-1/#the-play-state-of-an-animation",
+    "https://www.w3.org/TR/web-animations-1/#dom-animation-pending",
+    "https://www.w3.org/TR/resize-observer-1/#html-event-loop",
+    "https://github.com/w3c/csswg-drafts/blob/main/resize-observer-1/explainer.md"
+  ]
+}

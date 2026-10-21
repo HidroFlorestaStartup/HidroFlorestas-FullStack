@@ -1,0 +1,33 @@
+{
+  "head_sha": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+  "status": "completed_with_findings",
+  "has_any_findings": true,
+  "has_unresolved_findings": true,
+  "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#pullrequestreview-5588939857",
+  "summary_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#issuecomment-6294122910",
+  "findings": [
+    {
+      "severity": "P1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054767",
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "start_line": 134,
+      "line": 136,
+      "title": "Drain the callback queued by ResizeObserver",
+      "independent_triage": "CONFIRMED_EARLY_RENDERER_READINESS: same-renderer continuation failed 3/3; exact published two-command helper stayed green 3/3. Removing the final task from the actual corrected function failed 3/3; corrected actual function passed 3/3.",
+      "local_correction": "MessageChannel task after the second rAF drains later callbacks in the same rendering update; both ports close before resolving. Permanent regression calls the actual self-contained browser function.",
+      "counterproof": "late-resize-observer-counterproof.json"
+    },
+    {
+      "severity": "P2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054781",
+      "path": "tests/e2e/frontend-collections.spec.ts",
+      "line": 122,
+      "title": "Preserve transitions before validating the helper",
+      "independent_triage": "CONFIRMED_SOURCE_ORDER: detail-before screenshot with animations disabled precedes helper after addStyleTag",
+      "local_correction": "Readiness precedes the optional unscrolled capture; screenshot animations are allowed and never fast-forwarded. A real 300ms transition must end naturally before capture and the single scroll.",
+      "counterproof": "natural-capture-order-counterproof.json"
+    }
+  ],
+  "scope": "External Codex code review of the second R3 candidate; runtime receipt is recorded separately.",
+  "resolution_scope": "Local fixes and causal counterproofs prepared for a later commit. The published reviewed SHA remains completed_with_findings; only a new exact-SHA review can close external review status."
+}

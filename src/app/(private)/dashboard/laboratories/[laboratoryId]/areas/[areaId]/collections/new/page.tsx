@@ -4,6 +4,7 @@ import { AreaAccessError } from "@/app/api/server/areas/area.authorization";
 import { requireAuth } from "@/app/api/server/middlewares/auth.middleware";
 import { areasService } from "@/app/api/server/services/areas.service";
 import { CollectionForm } from "@/components/collections/collection-form";
+import { makeCollectionInitiatorProof } from "@/app/api/server/collections/collection-initiation";
 
 export default async function NewCollectionPage({
   params,
@@ -20,6 +21,7 @@ export default async function NewCollectionPage({
     });
   return (
     <CollectionForm
+      initiatorProof={makeCollectionInitiatorProof(principal.id)}
       context={{
         laboratory: area.laboratory,
         area: { id: area.id, name: area.name },

@@ -27,7 +27,8 @@ function App() {
   if (path === "/workspace") return <><AuthSessionRestorer /><WorkspaceLayout><SessionStatus /><h1>Workspace teste</h1></WorkspaceLayout></>;
   if (path === "/admin") return <><AuthSessionRestorer /><AdminShell><SessionStatus /><h1>Administração teste</h1></AdminShell></>;
   if (path === "/diagnosis") return <IHFRDiagnosisManagement context={{ laboratoryId, areaId, collectionId }} initialDiagnosis={null} />;
-  if (path === "/collection") return <CollectionForm context={context} />;
+  // Synthetic placeholder for the UI-only harness; real collection pages bind a server-signed proof.
+  if (path === "/collection") return <CollectionForm context={context} initiatorProof={"0".repeat(64)} />;
   if (path.endsWith(`/collections/${collectionId}`)) {
     // Only a stubbed API projection is supplied by the test, no real DB access.
     const value = sessionStorage.getItem("test-occurredAt") ?? "";

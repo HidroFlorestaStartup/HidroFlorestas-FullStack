@@ -1,0 +1,913 @@
+{
+  "reviewedHead": "2a047d10360803517ff6bf64b38754cd0f07f5ba",
+  "reviewFinding": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328054767",
+  "runtime": {
+    "playwright": "1.55.1",
+    "browser": "153.0.8010.0"
+  },
+  "exactHelperSha256": "c1b80896798fbab2ec42eed9bb76978606a071b88b970e826e7b5c0db330ade1",
+  "exactHelperMatchesPublishedCommit": true,
+  "setup": "320x900, root font200%, real collections CSS plus global .3s transition. Natural input.fill focus is preserved. An actual intrinsic size change is deliberately scheduled in the first readiness rAF; a real ResizeObserver then schedules the shell-equivalent focus reveal for the second frame. No additional focus call, blur, repeated target scroll, network or database.",
+  "cases": [
+    {
+      "variant": "same-command-two-frames",
+      "repeat": 0,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 54,
+          "buttonY": 1696,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": false
+    },
+    {
+      "variant": "same-command-task",
+      "repeat": 0,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "exact-two-commands",
+      "repeat": 0,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "task-two-commands",
+      "repeat": 0,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "same-command-two-frames",
+      "repeat": 1,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 54,
+          "buttonY": 1696,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": false
+    },
+    {
+      "variant": "same-command-task",
+      "repeat": 1,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "exact-two-commands",
+      "repeat": 1,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "task-two-commands",
+      "repeat": 1,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "same-command-two-frames",
+      "repeat": 2,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 54,
+          "buttonY": 1696,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": false
+    },
+    {
+      "variant": "same-command-task",
+      "repeat": 2,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "readiness-resolved",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "exact-two-commands",
+      "repeat": 2,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    },
+    {
+      "variant": "task-two-commands",
+      "repeat": 2,
+      "events": [
+        {
+          "event": "late-layout-mutation",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "resize-observer",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-start",
+          "pendingFocus": true,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "focus-callback-end",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-start",
+          "pendingFocus": false,
+          "scrollTop": 0,
+          "buttonY": 1750,
+          "focusedTag": "INPUT"
+        },
+        {
+          "event": "control-scroll-end",
+          "pendingFocus": false,
+          "scrollTop": 1159,
+          "buttonY": 591,
+          "focusedTag": "INPUT"
+        }
+      ],
+      "pendingFocus": false,
+      "controlScrollCount": 1,
+      "activeTag": "INPUT",
+      "unobstructed": true
+    }
+  ],
+  "conclusions": {
+    "sameCommandTwoFrames": "3/3 reproduce early readiness resolution with pendingFocus=true; target y591 becomes1696 after the queued focus callback. This is a renderer-level causal counterproof, not the exact two-command helper execution.",
+    "sameCommandMessageTask": "3/3 keep focus work before readiness resolution; target remains y591 and unobstructed.",
+    "exactTwoCommands": "3/3 remain unobstructed with the published helper. The second Playwright/CDP command arrived after the focus callback in these trials; no exact-helper failure was observed.",
+    "taskTwoCommands": "3/3 remain unobstructed with the MessageChannel task and existing finite-animation recheck.",
+    "recommendation": "Make readiness itself drain the pending render callback by posting a MessageChannel task after the second rAF, closing both ports when delivered, then rechecking finite running animations. This removes dependence on the incidental protocol roundtrip order."
+  },
+  "limits": [
+    "Controlled late intrinsic resize fixture, not the full React application or Windows official CI.",
+    "The late layout event is deliberately scheduled to exercise the reviewer ordering; no claim it occurred in the latest official run.",
+    "Tests assert the expected RED state for the same-command baseline, so the runner reports12passed while geometry is deliberately obstructed in3cases."
+  ],
+  "permanentExportVerification": {
+    "test": "render readiness drains focus queued by a late ResizeObserver before one scroll",
+    "source": "late-ro-permanent-test-candidate.ts",
+    "method": "Import the real exported browser callback, inject its compiled toString() source and await it plus the one scroll in one renderer evaluation. No copy of the readiness algorithm is present in the test. Real ResizeObserver and shell-equivalent focus reveal; initial input.fill focus only.",
+    "mutation": "Only the MessageChannel task is replaced with resolve() in the second rAF callback; finite-animation loop and post-frame recheck remain identical.",
+    "variants": [
+      {
+        "variant": "root-no-task",
+        "helperSha256": "64b593e9698f94ced751e8490a9548fe66d36642a501a5da56c6b4cd3048526b",
+        "pass": 0,
+        "fail": 3,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "failed",
+            "durationMs": 513,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": true,
+              "controlScrollCount": 1,
+              "unobstructed": false,
+              "points9": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "rect": {
+                "x": 16,
+                "y": 1696,
+                "width": 191.375,
+                "height": 92,
+                "top": 1696,
+                "right": 207.375,
+                "bottom": 1788,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          },
+          {
+            "status": "failed",
+            "durationMs": 507,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": true,
+              "controlScrollCount": 1,
+              "unobstructed": false,
+              "points9": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "rect": {
+                "x": 16,
+                "y": 1696,
+                "width": 191.375,
+                "height": 92,
+                "top": 1696,
+                "right": 207.375,
+                "bottom": 1788,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          },
+          {
+            "status": "failed",
+            "durationMs": 502,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": true,
+              "controlScrollCount": 1,
+              "unobstructed": false,
+              "points9": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "rect": {
+                "x": 16,
+                "y": 1696,
+                "width": 191.375,
+                "height": 92,
+                "top": 1696,
+                "right": 207.375,
+                "bottom": 1788,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          }
+        ],
+        "report": "permanent-report-root-no-task.json"
+      },
+      {
+        "variant": "root-final",
+        "helperSha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+        "pass": 3,
+        "fail": 0,
+        "skip": 0,
+        "trials": [
+          {
+            "status": "passed",
+            "durationMs": 491,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": false,
+              "controlScrollCount": 1,
+              "unobstructed": true,
+              "points9": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              "rect": {
+                "x": 16,
+                "y": 591,
+                "width": 191.375,
+                "height": 92,
+                "top": 591,
+                "right": 207.375,
+                "bottom": 683,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          },
+          {
+            "status": "passed",
+            "durationMs": 516,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": false,
+              "controlScrollCount": 1,
+              "unobstructed": true,
+              "points9": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              "rect": {
+                "x": 16,
+                "y": 591,
+                "width": 191.375,
+                "height": 92,
+                "top": 591,
+                "right": 207.375,
+                "bottom": 683,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          },
+          {
+            "status": "passed",
+            "durationMs": 508,
+            "retry": 0,
+            "observed": {
+              "pendingAtReadiness": false,
+              "controlScrollCount": 1,
+              "unobstructed": true,
+              "points9": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+              ],
+              "rect": {
+                "x": 16,
+                "y": 591,
+                "width": 191.375,
+                "height": 92,
+                "top": 591,
+                "right": 207.375,
+                "bottom": 683,
+                "left": 16
+              },
+              "activeTag": "INPUT"
+            }
+          }
+        ],
+        "report": "permanent-report-root-final.json"
+      }
+    ],
+    "conclusion": "The readiness contract fails3/3 without the task and passes3/3 with the exact final function. Both variants retain INPUT focus and exactly one target scroll. The task variant yields9/9hits at y591; the microtask mutant yields0/9hits at y1696.",
+    "limits": "This is a direct browser readiness contract test. It does not claim a failure was observed in the published two-command helper, whose three separate trials passed."
+  }
+}
