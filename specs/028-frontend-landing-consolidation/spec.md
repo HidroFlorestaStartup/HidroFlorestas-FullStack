@@ -1,8 +1,11 @@
 # Especificação: landing e consolidação visual
 
-**Branch**: `feat/frontend-landing-consolidation`  
-**Criada**: 2026-10-21  
-**Estado**: implementação candidata; aceite institucional e publicação pendentes  
+**Branch**: `feat/frontend-landing-consolidation`
+
+**Criada**: 2026-10-21
+
+**Estado**: implementação candidata; aceite institucional e publicação pendentes
+
 **Entrada**: executar C2 do plano mestre conciliado v2, preservando as fontes técnicas de Pedro e a separação entre implementação, ciência e homologação.
 
 ## Fontes e autoridade

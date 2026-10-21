@@ -27,7 +27,7 @@ GET real a `/` em Next local (sem banco), HTTP 200: `mainCount: 0`, âncoras aus
 - Geração do Prisma Client7.4.2: PASS; somente geração de arquivos ignorados, sem conexão ou operação de banco.
 - Typecheck global: PASS após corrigir uso do callback `page.evaluate(waitForMissionRender)` no novo teste. A primeira execução detectou esse erro de chamada; não foi alterado o helper.
 - ESLint da página e do novo E2E: PASS.
-- `git diff --check`: PASS.
+- Checagem de whitespace: a declaração inicial `git diff --check: PASS` não cobria a árvore completa publicada. A revisão Codex do HEAD `aac59e6e6b2c60ad7b2ff7b4ca4fb5200698507e` encontrou três linhas com espaços finais em `spec.md` ao comparar com `development@1ea3cc2`. As linhas foram corrigidas; o comando completo `git diff --check 1ea3cc2552c244e1004f4f733f838e0f9ea62993` passou na árvore corrigida, sem alterar configuração ou ignorar arquivos. A comparação base–HEAD é repetida após o commit; seu recibo será publicado na PR.
 - YAML/JSON interpretados: ambas as branches novas estão nos dois allowlists do CI e com Preview explicitamente falso; upload permanece restrito às famílias PNG/JSON das frentes.
 - GET real da aplicação depois da alteração: HTTP200, exatamente um main, zero âncoras sem destino, quatro qualificações presentes e links `/login`/`/register`. Não equivale a E2E de navegador.
 - Revisão estática independente por agente: sem outro P1/P2 de produto identificado. Lacuna de enquadramento das qualificações corrigida: teste agora rola cada item, exige viewport completa e captura início/fim do quadro.
