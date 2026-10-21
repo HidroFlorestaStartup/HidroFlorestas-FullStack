@@ -61,6 +61,7 @@
 .science h2 { margin-block: .65rem 1.2rem; }
 .science p + p { margin-top: .8rem; }
 .science p { font-size: .9rem; }
+.science .eyebrow { font-size: .78rem; }
 .qualifications { align-self: center; padding: 1.25rem; border: 1px solid #c9d6c7; border-radius: 10px; background: #f9fbf7; }
 .qualifications h3 { font-size: 1rem; }
 .qualifications ul { margin-block: 1rem; padding-left: 1.15rem; list-style: disc; }
