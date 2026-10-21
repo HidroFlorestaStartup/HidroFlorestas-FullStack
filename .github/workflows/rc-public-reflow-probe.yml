@@ -34,8 +34,9 @@ jobs:
           NEXT_TELEMETRY_DISABLED: "1"
           EXPECTED_PRODUCT_HEAD: 9af8adf414318e09d672b7530fe068cac87c2812
         run: |
-          node --input-type=module <<'JS'
-          import { chromium } from '@playwright/test';
+          node --import=tsx --input-type=module <<'JS'
+          import { chromium, expect } from '@playwright/test';
+          import { waitForMissionRender } from './tests/e2e/support/frontend-mission-evidence.ts';
           import { spawn, execFileSync } from 'node:child_process';
           import { setTimeout as delay } from 'node:timers/promises';
           const head = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
@@ -57,7 +58,9 @@ jobs:
             const response = await page.goto(url, { waitUntil: 'load' });
             if (response.status() !== 200) throw new Error('Public page response not 200');
             await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
-            await page.evaluate(async () => { await document.fonts.ready; await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))); });
+            await page.evaluate(async () => { await document.fonts.ready; });
+            await page.evaluate(waitForMissionRender);
+            await expect.poll(() => page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(32);
             const measurement = await page.evaluate(() => {
               const nodes = Array.from(document.querySelectorAll('header *, main *, footer *'));
               const overflow = nodes.flatMap(node => {
