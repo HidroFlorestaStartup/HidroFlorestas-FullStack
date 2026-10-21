@@ -1,0 +1,111 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "date": "2026-10-21",
+  "timezone": "America/Fortaleza",
+  "authority": {
+    "classification": "DECISAO_CONFIRMADA",
+    "source": "Pedido de Pedro nesta conversa em21/10/2026",
+    "scope": "Integrar anteriores, reservar ultimo merge funcional19 ao clique de Pedro, preparar8/9 e investigar historicos apos10/consolidacao"
+  },
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "mainRemote": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "developmentRemote": "b7401f1051435fd912592a65723a2e328c0bb313",
+  "localStateVerified": false,
+  "prs": [
+    {
+      "number": 17,
+      "head": "03af44aeba6f092d0c082c1ac3159ba83baf495c",
+      "state": "MERGED",
+      "merge": "afde5b0b7cc0c101c399030e3bcee66227d191b1",
+      "selfApproval": false
+    },
+    {
+      "number": 18,
+      "head": "64332e0feedeabdf78bbce7d402367c266bef838",
+      "state": "MERGED",
+      "merge": "b7401f1051435fd912592a65723a2e328c0bb313",
+      "review": 5595140337,
+      "reviewer": "PedroVitor237",
+      "reviewKind": "TECHNICAL_CODEX_ASSISTED",
+      "run": 39477040095,
+      "attempt": 1,
+      "job": 118815571617,
+      "gates": 15,
+      "e2e": 182,
+      "integration": 229,
+      "https": 2,
+      "ihfr": 6,
+      "fingerprint": "232054c356319f3b990ae6dc2bef6f0ab61be1e792d55471d606519b0429504a"
+    },
+    {
+      "number": 19,
+      "head": "9e11eca367321f19ccc6ad7aa7ccc5e43555dbe8",
+      "state": "READY_OPEN_AWAITING_PEDRO_MERGE",
+      "base": "development",
+      "draft": false,
+      "merge": null,
+      "autoMerge": false,
+      "mergeable": true,
+      "mergeableState": "clean",
+      "review": 5595147901,
+      "reviewer": "PedroVitor237",
+      "reviewKind": "TECHNICAL_CODEX_ASSISTED",
+      "run": 39478339091,
+      "attempt": 1,
+      "job": 118820056540,
+      "gates": 15,
+      "e2e": 190,
+      "integration": 231,
+      "https": 2,
+      "ihfr": 6,
+      "fingerprint": "18b1bbb56ff663c8cf1915e3ce582dfbaba4edb832e2b618c06e3fa06152b5c1",
+      "ownChangedFiles": 177,
+      "mergeBase": "64332e0feedeabdf78bbce7d402367c266bef838"
+    }
+  ],
+  "localFocalTest": {
+    "tests": 25,
+    "pass": 25,
+    "fail": 0,
+    "node": "24.19.0",
+    "platform": "Linux",
+    "method": "Original presentation unit tests/modules transformed with node:module/stripTypeScriptTypes into temporary .mjs copies; import extensions only adjusted",
+    "fullApplicationSuite": false
+  },
+  "validation": {
+    "officialLogsRead": true,
+    "uniqueGatesPerHead": true,
+    "allGateExitCodesZero": true,
+    "selectedVersionedImagesInspected": true,
+    "allArtifactPixelsAuditedByThisSession": false,
+    "newLocalFullSuite": false,
+    "humanVisualAcceptance": false,
+    "physicalDevice": false
+  },
+  "equivalence": {
+    "merge18VsHead18": "9 exclusively documentary paths inherited from17; no functional difference",
+    "phase7Merged": false
+  },
+  "handoff": {
+    "branch": "docs/handoff-frontend-fases-8-9",
+    "base": "b7401f1051435fd912592a65723a2e328c0bb313",
+    "phases": [
+      8,
+      9
+    ],
+    "phase8Prerequisite": "Manual merge19 verified on GitHub",
+    "recuts": [
+      "IHFR",
+      "territorial map",
+      "user administration"
+    ],
+    "publishReceiptLocation": "Handoff PR description",
+    "autoMerge": false
+  },
+  "investigations": {
+    "status": "SCHEDULED_AFTER_PHASE10_AND_VISUAL_CONSOLIDATION",
+    "register": "investigacoes-pos-consolidacao-visual.md",
+    "historicalCausesRemainInconclusive": true,
+    "currentMaterialRegressionsDeferred": false
+  }
+}

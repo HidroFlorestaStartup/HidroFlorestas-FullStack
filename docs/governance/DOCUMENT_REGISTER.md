@@ -324,3 +324,18 @@ nesses registros. Publicação/validação final serão acrescidas em adendo.
 Publicação deste handoff: [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17) aberto para development,
 branch docs/handoff-frontend-fases-6-7, sem autoaprovação ou auto-merge.
 Preparação concluída; documentação aguarda revisão do mantenedor.
+
+
+## Adendo vigente — fase6 integrada, fase7 pronta e handoff8/9 — 21/10/2026
+
+DECISAO_CONFIRMADA: Pedro, no pedido desta continuação em21/10/2026, autorizou revisão/integração, reservando o último merge funcional ao seu clique; autorizou próximas duas fases e investigação dos históricos após fase10/consolidação visual.
+
+EVIDENCIA_IMPLEMENTACAO: #17 mergeafde5b0; #18 fase6/Spec023 mergeb7401f1, review técnico assistido5595140337 porPedro. **#19 fase7/Spec024 permanece aberto, Ready, base development, head9e11eca, review técnico assistido5595147901 e estado clean; merge não executado.** Development remota b7401f1; main remota beba96f. Estado local não verificado.
+
+CI dos heads18/19:15gates PASS por head, runs39477040095/39478339091 (tentativa1), E2E182/190, Integration229/231, HTTPS2 e IHFR6. Logs conferidos;25testes focais de apresentação/foco/incerteza passaram com transformação temporária TypeScript→.mjs. Sem nova suíte local completa, aceite humano de produto/acessibilidade, dispositivo físico ou validação científica. Merge18 difere do head18 validado só nos nove documentos herdados de17.
+
+Prompt autoriza executar **fase8 IHFR e fase9 mapa/administração**, validar/commitar/push/abrir todos os PRs sem confirmação de rotina; futuros merges ficam com o mantenedor. O início da8 depende da confirmação do merge manual19. Handoff pode ser lido na branch docs/handoff-frontend-fases-8-9 antes do merge documental. Não tratar7 como integrada nem executar10 nesta rodada.
+
+Históricos inconclusivos ficam **agendados após fase10 e consolidação visual**, com evidências preservadas; regressão material atual não é adiada. Sem declaração de causa/resolução definitiva, deploy, operação real de banco/provedores ou promoção para main.
+
+Referências: [prompt8/9](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-8-9.md), [plano](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-8-9.md), [investigações](../plans/active/preparacao-incorporacao-frontend-20261018/investigacoes-pos-consolidacao-visual.md) e [recibo](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-fase-6-e-prontidao-fase-7-handoff-fases-8-9.json).
