@@ -45,30 +45,31 @@ jobs:
                   return response.read()
           ansi = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
           sensitive = re.compile(r"(authorization\s*:|bearer\s+|set-cookie\s*:|^cookie\s*:|(?:DATABASE_URL|ACCOUNT_PROOF_KEYS|JWT_SECRET)\s*=)", re.I)
-          artifacts = [artifacts[2]]
-          expected = artifacts[0]
-          metadata = json.loads(read("/actions/artifacts/" + str(expected["id"])))
-          assert metadata["workflow_run"]["id"] == expected["run"]
-          assert metadata["workflow_run"]["head_sha"] == expected["head"]
-          assert metadata["digest"] == "sha256:" + expected["sha256"]
-          raw = read("/actions/artifacts/" + str(expected["id"]) + "/zip")
-          assert hashlib.sha256(raw).hexdigest() == expected["sha256"]
-          assert len(raw) == metadata["size_in_bytes"]
-          import base64, struct
-          with zipfile.ZipFile(io.BytesIO(raw)) as archive:
-              assert archive.testzip() is None
-              names = sorted(name for name in archive.namelist() if name.startswith(".accounts-validation/frontend-user-administration/") and name.endswith(".png") and "200" in name)
-              assert 1 <= len(names) <= 8, "Unexpected image family size"
-              for name in names:
-                  png = archive.read(name)
-                  assert png[:8] == b"\x89PNG\r\n\x1a\n"
-                  width, height = struct.unpack(">II", png[16:24])
-                  encoded = base64.b64encode(png).decode("ascii")
-                  chunks = [encoded[index:index+12288] for index in range(0, len(encoded), 12288)]
-                  metadata_name = name[:-4] + "-viewport.json"
-                  viewport = json.loads(archive.read(metadata_name)) if metadata_name in archive.namelist() else None
-                  print(json.dumps({"record": "png-start", "artifact": expected["id"], "run": expected["run"], "head": expected["head"], "member": name, "sha256": hashlib.sha256(png).hexdigest(), "bytes": len(png), "width": width, "height": height, "chunks": len(chunks), "viewport": viewport}))
-                  for index, chunk in enumerate(chunks):
-                      print(json.dumps({"record": "png-chunk", "member": name, "part": index, "value": chunk}))
-                  print(json.dumps({"record": "png-end", "member": name, "chunks": len(chunks)}))
+          artifacts = [artifacts[1], artifacts[2]]
+          for expected in artifacts:
+              metadata = json.loads(read("/actions/artifacts/" + str(expected["id"])))
+              assert metadata["workflow_run"]["id"] == expected["run"]
+              assert metadata["workflow_run"]["head_sha"] == expected["head"]
+              assert metadata["digest"] == "sha256:" + expected["sha256"]
+              raw = read("/actions/artifacts/" + str(expected["id"]) + "/zip")
+              assert hashlib.sha256(raw).hexdigest() == expected["sha256"]
+              assert len(raw) == metadata["size_in_bytes"]
+              import base64, struct
+              with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+                  assert archive.testzip() is None
+                  family = "frontend-territorial-map" if expected["id"] == 12338417029 else "frontend-user-administration"
+                  names = sorted(name for name in archive.namelist() if name.startswith(".accounts-validation/" + family + "/") and name.endswith(".png") and (family != "frontend-user-administration" or "200" not in name))
+                  assert 1 <= len(names) <= 18, "Unexpected image family size"
+                  for name in names:
+                      png = archive.read(name)
+                      assert png[:8] == b"\x89PNG\r\n\x1a\n"
+                      width, height = struct.unpack(">II", png[16:24])
+                      encoded = base64.b64encode(png).decode("ascii")
+                      chunks = [encoded[index:index+12288] for index in range(0, len(encoded), 12288)]
+                      metadata_name = name[:-4] + "-viewport.json"
+                      viewport = json.loads(archive.read(metadata_name)) if metadata_name in archive.namelist() else None
+                      print(json.dumps({"record": "png-start", "artifact": expected["id"], "run": expected["run"], "head": expected["head"], "member": name, "sha256": hashlib.sha256(png).hexdigest(), "bytes": len(png), "width": width, "height": height, "chunks": len(chunks), "viewport": viewport}))
+                      for index, chunk in enumerate(chunks):
+                          print(json.dumps({"record": "png-chunk", "member": name, "part": index, "value": chunk}))
+                      print(json.dumps({"record": "png-end", "member": name, "chunks": len(chunks)}))
           PY
