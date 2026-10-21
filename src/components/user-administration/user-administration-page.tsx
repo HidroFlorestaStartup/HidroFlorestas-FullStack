@@ -1,38 +1,361 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { AlertTriangle, ChevronRight, History, RefreshCw, Search, ShieldCheck, UserCog, Users } from "lucide-react";
+
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
+import { AlertTriangle, ArrowLeft, CheckCircle2, ChevronLeft, ChevronRight, History, RefreshCw, Search, ShieldCheck, UserCog, Users } from "lucide-react";
 import type { AdminUserDto, AdminUserRole, AdminUserStatus, AuditEventDto } from "@/app/api/server/user-administration/user-administration.contracts";
-import { adminUserQuery } from "./user-list-state";
+import { adminUserQuery, mergeUniquePage } from "./user-list-state";
+import { administrationChangeBody, createAdministrationReadScope, type AdministrationChange } from "./user-administration-presentation";
 
-type Page={items:AdminUserDto[];nextCursor:string|null};
-type ErrorBody={error?:{code?:string;message?:string;recovery?:string}};
-const roles:AdminUserRole[]=["USER","ADMIN","DEVELOPER","MODERATOR"];
-const statuses:AdminUserStatus[]=["ACTIVE","PENDING","INACTIVE","BLOCKED"];
-const labels:Record<AdminUserRole|AdminUserStatus,string>={USER:"Usuário",ADMIN:"Administrador",DEVELOPER:"Desenvolvedor",MODERATOR:"Moderador",ACTIVE:"Ativa",PENDING:"Pendente",INACTIVE:"Inativa",BLOCKED:"Bloqueada"};
-const tones:Record<AdminUserStatus,string>={ACTIVE:"bg-emerald-50 text-emerald-800 ring-emerald-200",PENDING:"bg-amber-50 text-amber-800 ring-amber-200",INACTIVE:"bg-slate-100 text-slate-700 ring-slate-200",BLOCKED:"bg-rose-50 text-rose-800 ring-rose-200"};
+type UserPage = { items: AdminUserDto[]; nextCursor: string | null };
+type AdministrationError = { code?: string; message?: string; recovery?: string };
+const roles: AdminUserRole[] = ["USER", "ADMIN", "DEVELOPER", "MODERATOR"];
+const statuses: AdminUserStatus[] = ["ACTIVE", "PENDING", "INACTIVE", "BLOCKED"];
+const labels: Record<AdminUserRole | AdminUserStatus, string> = {
+  USER: "Usuário", ADMIN: "Administrador", DEVELOPER: "Desenvolvedor", MODERATOR: "Moderador",
+  ACTIVE: "Ativa", PENDING: "Pendente", INACTIVE: "Inativa", BLOCKED: "Bloqueada",
+};
+const tones: Record<AdminUserStatus, string> = {
+  ACTIVE: "border-emerald-200 bg-emerald-50 text-emerald-800", PENDING: "border-amber-200 bg-amber-50 text-amber-900",
+  INACTIVE: "border-slate-200 bg-slate-100 text-slate-700", BLOCKED: "border-rose-200 bg-rose-50 text-rose-800",
+};
+const secondaryButton = "inline-flex min-h-11 min-w-0 max-w-full [overflow-wrap:anywhere] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-emerald-600 hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50";
+const inputStyle = "min-h-11 w-full min-w-0 rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100 disabled:opacity-60";
 
-export function UserAdministrationPage(){
- const [page,setPage]=useState<Page|null>(null),[selected,setSelected]=useState<AdminUserDto|null>(null),[audit,setAudit]=useState<AuditEventDto[]>([]),[auditNext,setAuditNext]=useState<string|null>(null),[auditState,setAuditState]=useState<"idle"|"loading"|"error">("idle");
- const [search,setSearch]=useState(""),[role,setRole]=useState(""),[status,setStatus]=useState(""),[message,setMessage]=useState(""),[loading,setLoading]=useState(true);
- const [dialog,setDialog]=useState<{kind:"role"|"status";value:string}|null>(null);const [reason,setReason]=useState(""),[busy,setBusy]=useState(false);const [conflict,setConflict]=useState<ErrorBody["error"]>();
- const dialogRef=useRef<HTMLDivElement>(null),triggerRef=useRef<HTMLElement|null>(null),resultRef=useRef<HTMLDivElement>(null),conflictRef=useRef<HTMLDivElement>(null);
- const load=useCallback(async(cursor?:string)=>{setLoading(true);setMessage("");try{const params=adminUserQuery({search,role,status,cursor});const response=await fetch(`/api/admin/users?${params}`,{cache:"no-store"});const body=await response.json();if(!response.ok)throw new Error(body.error?.message??"Não foi possível carregar os usuários.");setPage(body);}catch(error){setPage(null);setMessage(error instanceof Error?error.message:"Não foi possível carregar os usuários.");}finally{setLoading(false);}},[role,search,status]);
- useEffect(()=>{const timer=setTimeout(()=>void load(),250);return()=>clearTimeout(timer);},[load]);
- async function loadAudit(userId:string,cursor?:string){setAuditState("loading");try{const query=cursor?`?cursor=${encodeURIComponent(cursor)}`:"";const response=await fetch(`/api/admin/users/${userId}/audit${query}`,{cache:"no-store"});const body=await response.json();if(!response.ok)throw new Error();setAudit(current=>cursor?[...current,...body.items]:body.items);setAuditNext(body.nextCursor);setAuditState("idle");}catch{if(!cursor)setAudit([]);setAuditState("error");}}
- function choose(user:AdminUserDto){setSelected(user);void loadAudit(user.id);}
- function open(kind:"role"|"status",value:string,event:React.MouseEvent<HTMLButtonElement>){triggerRef.current=event.currentTarget;setReason("");setConflict(undefined);setDialog({kind,value});setTimeout(()=>dialogRef.current?.querySelector<HTMLElement>("textarea")?.focus(),0);}
- function close(){if(busy)return;setDialog(null);setConflict(undefined);setTimeout(()=>triggerRef.current?.focus(),0);}
- async function submit(){if(!selected||!dialog||!reason.trim())return;setBusy(true);setConflict(undefined);try{const kind=dialog.kind;const body=kind==="status"?{expectedStatus:selected.status,expectedRevision:selected.revision,status:dialog.value,reason}:{expectedRole:selected.role,expectedRevision:selected.revision,role:dialog.value,reason};const response=await fetch(`/api/admin/users/${selected.id}/${kind}`,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});const result=await response.json();if(!response.ok){setConflict(result.error);setTimeout(()=>conflictRef.current?.focus(),0);return;}setSelected(result);setDialog(null);await load();await loadAudit(result.id);setMessage(`${kind==="status"?"Estado":"Papel"} de ${result.firstName} atualizado com segurança.`);setTimeout(()=>resultRef.current?.focus(),0);}catch{setConflict({code:"INTERNAL_ERROR",message:"Não foi possível conectar. Tente novamente."});setTimeout(()=>conflictRef.current?.focus(),0);}finally{setBusy(false);}}
- function onDialogKey(event:React.KeyboardEvent){if(event.key==="Escape"&&!busy){event.preventDefault();close();}if(event.key==="Tab"&&dialogRef.current){const nodes=[...dialogRef.current.querySelectorAll<HTMLElement>('button:not([disabled]),textarea:not([disabled])')];if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}}
- return <main className="mx-auto max-w-7xl space-y-6 pb-12">
-  <header className="overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-900 via-green-800 to-emerald-700 p-6 text-white shadow-lg md:p-8"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><div className="mb-3 flex items-center gap-2 text-sm font-medium text-emerald-100"><ShieldCheck size={18}/> Administração global</div><h1 className="text-3xl font-bold tracking-tight md:text-4xl">Contas e acessos</h1><p className="mt-2 max-w-2xl text-emerald-50">Consulte usuários e altere estados ou papéis com confirmação, concorrência segura e histórico auditável.</p></div><div className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 backdrop-blur"><Users/><span className="text-sm"><strong className="block text-xl">{page?.items.length??0}</strong> nesta página</span></div></div></header>
-  <section aria-label="Filtros de usuários" className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:grid-cols-[1fr_220px_220px_auto]"><label className="relative"><span className="sr-only">Pesquisar por nome ou email</span><Search className="absolute left-3 top-3 text-slate-400" size={20}/><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Pesquisar nome ou email" className="w-full rounded-xl border border-slate-300 py-2.5 pl-10 pr-3 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-200"/></label><Filter label="Papel" value={role} options={roles} onChange={setRole}/><Filter label="Estado" value={status} options={statuses} onChange={setStatus}/><button onClick={()=>void load()} className="flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-2.5 font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-600"><RefreshCw size={18}/>Atualizar</button></section>
-  <div ref={resultRef} tabIndex={-1} role="status" aria-live="polite" className="outline-none">{message&&<p className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-emerald-900">{message}</p>}</div>
-  <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]"><section aria-label="Lista de usuários" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">{loading?<State text="Carregando usuários…"/>:!page?<State text="Lista indisponível. Ajuste os filtros ou tente novamente."/>:page.items.length===0?<State text="Nenhum usuário corresponde aos filtros."/>:<ul className="divide-y divide-slate-100">{page.items.map(user=><li key={user.id}><button onClick={()=>choose(user)} className={`group flex w-full items-center gap-4 p-4 text-left hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-600 ${selected?.id===user.id?"bg-emerald-50":""}`}><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-bold text-emerald-800">{user.firstName[0]}{user.lastName[0]}</span><span className="min-w-0 flex-1"><strong className="block truncate text-slate-900">{user.firstName} {user.lastName}</strong><span className="block truncate text-sm text-slate-500">{user.email}</span></span><span className="hidden text-sm font-medium text-slate-600 sm:block">{labels[user.role]}</span><span className={`rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${tones[user.status]}`}>{labels[user.status]}</span><ChevronRight className="text-slate-400 group-hover:text-emerald-700" size={20}/></button></li>)}</ul>}{page?.nextCursor&&<div className="border-t p-3"><button onClick={()=>void load(page.nextCursor!)} className="w-full rounded-xl px-4 py-2 font-medium text-emerald-800 hover:bg-emerald-50">Carregar próxima página</button></div>}</section>
-  <aside className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-4 lg:self-start">{!selected?<State icon={<UserCog size={28}/>} text="Selecione uma conta para ver detalhes e ações seguras."/>:<><div className="mb-5 border-b border-slate-100 pb-5"><p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Conta selecionada</p><h2 className="mt-1 text-2xl font-bold text-slate-900">{selected.firstName} {selected.lastName}</h2><p className="break-all text-sm text-slate-500">{selected.email}</p></div><Detail label="Estado" value={labels[selected.status]}/><div className="mt-2 grid grid-cols-2 gap-2">{statuses.filter(item=>item!==selected.status).map(item=><button key={item} onClick={event=>open("status",item,event)} className="rounded-lg border border-slate-300 px-2 py-2 text-sm font-medium hover:border-emerald-600 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-600">{labels[item]}</button>)}</div><Detail label="Papel global" value={labels[selected.role]}/><div className="mt-2 grid grid-cols-2 gap-2">{roles.filter(item=>item!==selected.role).map(item=><button key={item} onClick={event=>open("role",item,event)} className="rounded-lg border border-slate-300 px-2 py-2 text-sm font-medium hover:border-emerald-600 hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-600">{labels[item]}</button>)}</div><div className="mt-6 border-t border-slate-100 pt-5"><h3 className="flex items-center gap-2 font-semibold text-slate-900"><History size={18}/> Histórico recente</h3>{auditState==="loading"&&audit.length===0?<p role="status" className="mt-3 text-sm text-slate-500">Carregando histórico…</p>:auditState==="error"&&audit.length===0?<div role="alert" className="mt-3 text-sm text-rose-800">Não foi possível carregar o histórico. <button className="font-semibold underline" onClick={()=>void loadAudit(selected.id)}>Tentar novamente</button></div>:audit.length===0?<p className="mt-3 text-sm text-slate-500">Nenhuma alteração administrativa registrada.</p>:<><ol className="mt-3 space-y-3">{audit.map(item=><li key={item.id} className="rounded-xl bg-slate-50 p-3 text-sm"><strong>{item.action==="ACCOUNT_STATUS_CHANGED"?"Estado":"Papel"}</strong><p className="text-slate-600">{labels[item.beforeValue]} → {labels[item.afterValue]}</p><p className="mt-1 text-xs text-slate-500">{new Date(item.createdAt).toLocaleString("pt-BR")}</p></li>)}</ol>{auditNext&&<button disabled={auditState==="loading"} onClick={()=>void loadAudit(selected.id,auditNext)} className="mt-3 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">{auditState==="loading"?"Carregando…":"Carregar mais eventos"}</button>}</>}</div></>}</aside></div>
-  {dialog&&selected&&<div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4" role="presentation"><div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="admin-dialog-title" aria-describedby="admin-dialog-description" onKeyDown={onDialogKey} className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl"><div className="flex gap-3"><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-800"><AlertTriangle/></span><div><h2 id="admin-dialog-title" className="text-xl font-bold text-slate-900">Confirmar alteração de {dialog.kind==="status"?"estado":"papel"}</h2><p id="admin-dialog-description" className="mt-1 text-sm text-slate-600">{selected.firstName} passará de <strong>{labels[dialog.kind==="status"?selected.status:selected.role]}</strong> para <strong>{labels[dialog.value as keyof typeof labels]}</strong>. Esta ação será auditada.</p></div></div><label className="mt-5 block text-sm font-semibold text-slate-800">Justificativa<textarea value={reason} onChange={e=>setReason(e.target.value)} maxLength={500} rows={4} className="mt-2 w-full rounded-xl border border-slate-300 p-3 font-normal focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-200" placeholder="Explique por que esta alteração é necessária"/></label>{conflict&&<div ref={conflictRef} role="alert" tabIndex={-1} className="mt-4 rounded-xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-900"><strong>{conflict.message??"Não foi possível concluir."}</strong>{conflict.recovery==="REFRESH_TARGET"&&<button onClick={()=>{void load();if(selected)void loadAudit(selected.id);}} className="mt-2 block font-semibold underline">Atualizar dados</button>}{conflict.recovery==="ENSURE_ANOTHER_ACTIVE_ADMIN"&&<p className="mt-2">Ative ou promova outro administrador antes de repetir.</p>}</div>}<p role="status" aria-live="polite" className="mt-3 text-sm text-slate-600">{busy?"Processando…":""}</p><div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end"><button disabled={busy} onClick={close} className="rounded-xl border border-slate-300 px-4 py-2.5 font-semibold text-slate-700 disabled:opacity-50">Cancelar</button><button disabled={busy||!reason.trim()} onClick={()=>void submit()} className="rounded-xl bg-emerald-700 px-4 py-2.5 font-semibold text-white hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-50">Confirmar alteração</button></div></div></div>}
- </main>;
+export function UserAdministrationPage() {
+  const [page, setPage] = useState<UserPage | null>(null);
+  const [selected, setSelected] = useState<AdminUserDto | null>(null);
+  const [audit, setAudit] = useState<AuditEventDto[]>([]);
+  const [auditNext, setAuditNext] = useState<string | null>(null);
+  const [auditState, setAuditState] = useState<"idle" | "loading" | "error">("idle");
+  const [auditRetryCursor, setAuditRetryCursor] = useState<string>();
+  const [search, setSearch] = useState("");
+  const [role, setRole] = useState("");
+  const [status, setStatus] = useState("");
+  const [cursorStack, setCursorStack] = useState<Array<string | undefined>>([undefined]);
+  const [cursorIndex, setCursorIndex] = useState(0);
+  const [message, setMessage] = useState("");
+  const [listError, setListError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [detailLoading, setDetailLoading] = useState(false);
+  const [detailError, setDetailError] = useState("");
+  const [selectionError, setSelectionError] = useState("");
+  const [dialog, setDialog] = useState<AdministrationChange | null>(null);
+  const [reason, setReason] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const [conflict, setConflict] = useState<AdministrationError>();
+  const [reviewMessage, setReviewMessage] = useState("");
+  const [listReads] = useState(createAdministrationReadScope);
+  const [detailReads] = useState(createAdministrationReadScope);
+  const [auditReads] = useState(createAdministrationReadScope);
+  const selectedId = useRef<string | null>(null);
+  const busyRef = useRef(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+  const selectionErrorRef = useRef<HTMLDivElement>(null);
+  const conflictRef = useRef<HTMLDivElement>(null);
+  const detailHeadingRef = useRef<HTMLHeadingElement>(null);
+  const reviewHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  const clearSelection = useCallback(() => {
+    selectedId.current = null;
+    detailReads.cancel();
+    auditReads.cancel();
+    setSelected(null);
+    setDetailLoading(false);
+    setDetailError("");
+    setAudit([]);
+    setAuditNext(null);
+    setAuditState("idle");
+    setDialog(null);
+  }, [detailReads, auditReads]);
+
+  function unavailableAccount(userId: string, responseStatus: number) {
+    clearSelection();
+    listReads.cancel();
+    setLoading(false);
+    if (responseStatus === 404) {
+      setPage(current => current ? { ...current, items: current.items.filter(user => user.id !== userId) } : null);
+      setSelectionError("Esta conta não está mais disponível. Atualize a lista para continuar.");
+    } else {
+      setPage(null);
+      setSelectionError("Seu acesso à administração não está mais disponível. Atualize a página para continuar.");
+    }
+    requestAnimationFrame(() => selectionErrorRef.current?.focus());
+  }
+
+  const load = useCallback(async (cursor?: string) => {
+    const query = adminUserQuery({ search, role, status, cursor });
+    const ticket = listReads.begin(query.toString());
+    setLoading(true);
+    setListError("");
+    try {
+      const response = await fetch(`/api/admin/users?${query}`, { cache: "no-store", signal: ticket.signal });
+      const body = await response.json();
+      if (!listReads.isCurrent(ticket)) return;
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403) clearSelection();
+        throw new Error(body.error?.message ?? "Não foi possível carregar os usuários.");
+      }
+      setPage(body);
+    } catch (error) {
+      if (!listReads.isCurrent(ticket)) return;
+      setPage(null);
+      setListError(error instanceof Error ? error.message : "Não foi possível carregar os usuários.");
+    } finally {
+      if (listReads.isCurrent(ticket)) setLoading(false);
+    }
+  }, [role, search, status, listReads, clearSelection]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => void load(), 250);
+    return () => { clearTimeout(timer); listReads.cancel(); };
+  }, [load, listReads]);
+
+  useEffect(() => () => {
+    listReads.cancel(); detailReads.cancel(); auditReads.cancel();
+  }, [listReads, detailReads, auditReads]);
+
+  useEffect(() => {
+    const modal = dialogRef.current;
+    if (!dialog || !modal) return;
+    if (!modal.open) modal.showModal();
+    modal.querySelector<HTMLTextAreaElement>("textarea")?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [dialog]);
+
+  function changeFilter(setter: (value: string) => void, value: string) {
+    listReads.cancel();
+    setPage(null);
+    setLoading(true);
+    setCursorStack([undefined]);
+    setCursorIndex(0);
+    setter(value);
+  }
+
+  async function loadDetail(userId: string) {
+    const ticket = detailReads.begin(userId);
+    setDetailLoading(true);
+    setDetailError("");
+    try {
+      const response = await fetch(`/api/admin/users/${userId}`, { cache: "no-store", signal: ticket.signal });
+      const body = await response.json();
+      if (!detailReads.isCurrent(ticket) || selectedId.current !== userId) return null;
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403 || response.status === 404) {
+          unavailableAccount(userId, response.status);
+          return null;
+        }
+        throw new Error(body.error?.message ?? "Não foi possível atualizar os dados da conta.");
+      }
+      setSelected(body);
+      return body as AdminUserDto;
+    } catch (error) {
+      if (detailReads.isCurrent(ticket)) setDetailError(error instanceof Error ? error.message : "Não foi possível carregar a conta.");
+      return null;
+    } finally {
+      if (detailReads.isCurrent(ticket)) setDetailLoading(false);
+    }
+  }
+
+  async function loadAudit(userId: string, cursor?: string) {
+    const ticket = auditReads.begin(userId);
+    setAuditState("loading");
+    setAuditRetryCursor(cursor);
+    if (!cursor) { setAudit([]); setAuditNext(null); }
+    try {
+      const query = cursor ? `?cursor=${encodeURIComponent(cursor)}` : "";
+      const response = await fetch(`/api/admin/users/${userId}/audit${query}`, { cache: "no-store", signal: ticket.signal });
+      const body = await response.json();
+      if (!auditReads.isCurrent(ticket) || selectedId.current !== userId) return;
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403 || response.status === 404) {
+          unavailableAccount(userId, response.status);
+          return;
+        }
+        throw new Error("AUDIT_UNAVAILABLE");
+      }
+      setAudit(current => cursor ? mergeUniquePage(current, body.items) : body.items);
+      setAuditNext(body.nextCursor);
+      setAuditState("idle");
+    } catch {
+      if (auditReads.isCurrent(ticket) && selectedId.current === userId) setAuditState("error");
+    }
+  }
+
+  function choose(user: AdminUserDto) {
+    selectedId.current = user.id;
+    setSelected(user);
+    setMessage("");
+    setSelectionError("");
+    setAudit([]);
+    setAuditNext(null);
+    void loadDetail(user.id);
+    void loadAudit(user.id);
+    requestAnimationFrame(() => {
+      detailHeadingRef.current?.focus();
+      detailHeadingRef.current?.scrollIntoView({ block: "nearest" });
+    });
+  }
+
+  function open(change: AdministrationChange, event: MouseEvent<HTMLButtonElement>) {
+    triggerRef.current = event.currentTarget;
+    setReason("");
+    setConflict(undefined);
+    setReviewMessage("");
+    setDialog(change);
+  }
+
+  function close() {
+    if (busyRef.current || refreshing) return;
+    setDialog(null);
+    setConflict(undefined);
+    requestAnimationFrame(() => {
+      const target = triggerRef.current?.isConnected ? triggerRef.current : detailHeadingRef.current;
+      target?.focus();
+    });
+  }
+
+  async function refreshTarget() {
+    if (!selected || refreshing || busyRef.current) return;
+    setRefreshing(true);
+    const updated = await loadDetail(selected.id);
+    if (updated) {
+      setConflict(undefined);
+      setReviewMessage("Dados atualizados. Confira o valor atual antes de confirmar novamente.");
+      void loadAudit(updated.id);
+      void load(cursorStack[cursorIndex]);
+      requestAnimationFrame(() => reviewHeadingRef.current?.focus());
+    } else if (selectedId.current === selected.id) {
+      setConflict({ message: "Não foi possível atualizar a conta. Tente novamente.", recovery: "REFRESH_TARGET" });
+      requestAnimationFrame(() => conflictRef.current?.focus());
+    }
+    setRefreshing(false);
+  }
+
+  async function submit() {
+    if (!selected || !dialog || busyRef.current || refreshing || detailLoading || detailError || conflict?.recovery || !reason.trim()) return;
+    if (selected[dialog.kind] === dialog.value) return;
+    busyRef.current = true;
+    setBusy(true);
+    setConflict(undefined);
+    try {
+      const kind = dialog.kind;
+      const body = administrationChangeBody(selected, dialog, reason);
+      const response = await fetch(`/api/admin/users/${selected.id}/${kind}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        setConflict(result.error ?? { message: "Não foi possível concluir a alteração." });
+        requestAnimationFrame(() => conflictRef.current?.focus());
+        return;
+      }
+      setSelected(result);
+      setDialog(null);
+      await Promise.all([load(cursorStack[cursorIndex]), loadAudit(result.id)]);
+      setMessage(`${kind === "status" ? "Estado" : "Papel"} de ${result.firstName} atualizado com segurança.`);
+      requestAnimationFrame(() => resultRef.current?.focus());
+    } catch {
+      setConflict({ message: "Não foi possível verificar o resultado. Atualize os dados da conta antes de tentar novamente.", recovery: "REFRESH_TARGET" });
+      requestAnimationFrame(() => conflictRef.current?.focus());
+    } finally {
+      busyRef.current = false;
+      setBusy(false);
+    }
+  }
+
+  function onDialogKey(event: KeyboardEvent<HTMLDialogElement>) {
+    if (event.key === "Escape") { event.preventDefault(); close(); }
+    if (event.key === "Tab" && dialogRef.current) {
+      const nodes = [...dialogRef.current.querySelectorAll<HTMLElement>("button:not([disabled]),textarea:not([disabled])")];
+      const first = nodes[0], last = nodes[nodes.length - 1];
+      if (!first || !last) { event.preventDefault(); return; }
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+  }
+
+  return (
+    <div className="min-w-0 space-y-6 pb-6">
+      <header className="space-y-3">
+        <Link href="/admin" className="inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-semibold text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"><ArrowLeft size={17} aria-hidden="true" /> Voltar à administração</Link>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="min-w-0"><p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800"><ShieldCheck size={16} aria-hidden="true" /> Administração global</p><h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Contas e acessos</h1><p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">Selecione uma conta para consultar detalhes e revisar alterações de papel ou estado.</p></div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-semibold text-emerald-800"><History size={15} aria-hidden="true" /> Alterações auditadas</span>
+        </div>
+      </header>
+
+      <section aria-label="Filtros de usuários" className="grid min-w-0 gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)_auto]">
+        <label className="min-w-0"><span className="mb-2 block text-sm font-semibold text-slate-700">Pesquisar por nome ou email</span><span className="relative block"><Search className="pointer-events-none absolute left-3 top-3 text-slate-400" size={19} aria-hidden="true" /><input value={search} onChange={event => changeFilter(setSearch, event.target.value)} maxLength={120} placeholder="Pesquisar nome ou email" className={`${inputStyle} pl-10`} /></span></label>
+        <Filter label="Papel" value={role} options={roles} onChange={value => changeFilter(setRole, value)} />
+        <Filter label="Estado" value={status} options={statuses} onChange={value => changeFilter(setStatus, value)} />
+        <button disabled={busy} onClick={() => void load(cursorStack[cursorIndex])} className={`${secondaryButton} self-end`}><RefreshCw size={17} aria-hidden="true" /> Atualizar</button>
+      </section>
+
+      <div ref={resultRef} tabIndex={-1} role="status" aria-live="polite" className="rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700">{message && <p className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"><CheckCircle2 className="shrink-0" size={19} aria-hidden="true" />{message}</p>}</div>
+      {selectionError && <div ref={selectionErrorRef} tabIndex={-1} role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-700">{selectionError}</div>}
+      <div className="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+        <section aria-label="Lista de usuários" aria-busy={loading} className="min-w-0 space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="flex items-center gap-2 text-lg font-bold text-slate-900"><Users size={19} aria-hidden="true" /> Contas encontradas</h2>{!loading && page && <p role="status" className="text-xs text-slate-600">Página {cursorIndex + 1} · {page.items.length} conta(s) nesta página</p>}</div>
+          {loading ? <State text="Carregando usuários…" /> : listError ? <div role="alert" className="rounded-2xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-900"><p>{listError}</p><button onClick={() => void load(cursorStack[cursorIndex])} className={`${secondaryButton} mt-3`}>Tentar novamente</button></div> : !page || page.items.length === 0 ? <State text="Nenhum usuário corresponde aos filtros." /> : <ul className="space-y-3">{page.items.map(user => (
+            <li key={user.id}><button disabled={busy} onClick={() => choose(user)} aria-pressed={selected?.id === user.id} aria-label={`Ver conta de ${user.firstName} ${user.lastName}`} className={`grid w-full min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-2xl border p-4 text-left shadow-sm transition hover:border-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 disabled:opacity-60 ${selected?.id === user.id ? "border-emerald-500 bg-emerald-50" : "border-slate-200 bg-white"}`}>
+              <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-sm font-bold text-emerald-800">{user.firstName[0]}{user.lastName[0]}</span>
+              <span className="min-w-0"><strong className="block break-words text-slate-900">{user.firstName} {user.lastName}</strong><span className="mt-1 block break-all text-sm text-slate-600">{user.email}</span><span className="mt-3 flex flex-wrap items-center gap-2"><span className="rounded-lg bg-slate-100 px-2 py-1 text-xs text-slate-700">{labels[user.role]} · papel global</span><StatusBadge status={user.status} /></span></span>
+            </button></li>
+          ))}</ul>}
+          {page && <nav aria-label="Paginação de usuários" className="flex flex-wrap items-center justify-between gap-3 pt-2"><button disabled={loading || cursorIndex === 0 || busy} onClick={() => { const previous = cursorIndex - 1; setCursorIndex(previous); void load(cursorStack[previous]); }} className={secondaryButton}><ChevronLeft size={17} aria-hidden="true" /> Página anterior</button><button disabled={loading || !page.nextCursor || busy} onClick={() => { if (!page.nextCursor) return; const next = page.nextCursor; setCursorStack(current => [...current.slice(0, cursorIndex + 1), next]); setCursorIndex(current => current + 1); void load(next); }} className={secondaryButton}>Carregar próxima página <ChevronRight size={17} aria-hidden="true" /></button></nav>}
+        </section>
+
+        <aside aria-label="Detalhe da conta" className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+          {!selected ? <State icon={<UserCog size={28} aria-hidden="true" />} text="Selecione uma conta para ver detalhes e ações seguras." bare /> : <>
+            <header className="border-b border-slate-100 pb-5"><p className="text-xs font-bold uppercase tracking-wider text-emerald-800">Conta selecionada</p><h2 ref={detailHeadingRef} tabIndex={-1} className="mt-2 break-words rounded-lg text-xl font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-700">{selected.firstName} {selected.lastName}</h2><p className="mt-1 break-all text-sm text-slate-600">{selected.email}</p><p className="mt-3 text-xs text-slate-500">Revisão {selected.revision}</p></header>
+            {detailLoading && <p role="status" className="mt-4 text-sm text-slate-600">Atualizando dados da conta…</p>}
+            {detailError && <div role="alert" className="mt-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-900">{detailError}<button onClick={() => void loadDetail(selected.id)} className={`${secondaryButton} mt-2`}>Atualizar dados da conta</button></div>}
+            <Detail label="Estado" value={<StatusBadge status={selected.status} />} />
+            <div className="mt-3 grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 9rem), 1fr))" }}>{statuses.filter(item => item !== selected.status).map(item => <button key={item} disabled={busy || detailLoading || Boolean(detailError)} onClick={event => open({ kind: "status", value: item }, event)} className={secondaryButton}>{labels[item]}</button>)}</div>
+            <Detail label="Papel global" value={labels[selected.role]} />
+            <div className="mt-3 grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 9rem), 1fr))" }}>{roles.filter(item => item !== selected.role).map(item => <button key={item} disabled={busy || detailLoading || Boolean(detailError)} onClick={event => open({ kind: "role", value: item }, event)} className={secondaryButton}>{labels[item]}</button>)}</div>
+            <p className="mt-4 text-xs leading-5 text-slate-500">Papéis globais e vínculos de laboratório têm permissões distintas.</p>
+            <section aria-labelledby="account-audit-title" className="mt-6 border-t border-slate-100 pt-5"><h3 id="account-audit-title" className="flex items-center gap-2 font-bold text-slate-900"><History size={18} aria-hidden="true" /> Histórico recente</h3>
+              {auditState === "loading" && <p role="status" className="mt-3 text-sm text-slate-600">Carregando histórico…</p>}
+              {auditState === "error" && <div role="alert" className="mt-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-900"><p>Não foi possível carregar o histórico.</p><button className={`${secondaryButton} mt-2`} onClick={() => void loadAudit(selected.id, auditRetryCursor)}>Tentar novamente</button></div>}
+              {auditState === "idle" && audit.length === 0 && <p className="mt-3 text-sm text-slate-500">Nenhuma alteração administrativa registrada.</p>}
+              {audit.length > 0 && <ol className="mt-4 space-y-3">{audit.map(item => <li key={item.id} className="rounded-xl border border-slate-100 bg-slate-50 p-3 text-sm"><strong className="text-slate-900">{item.action === "ACCOUNT_STATUS_CHANGED" ? "Estado" : "Papel"}</strong><p className="mt-1 break-words text-slate-700">{labels[item.beforeValue]} → {labels[item.afterValue]}</p><p className="mt-2 whitespace-pre-wrap break-words text-slate-600">Justificativa: {item.reason}</p><time dateTime={item.createdAt} className="mt-2 block text-xs text-slate-500">{new Date(item.createdAt).toLocaleString("pt-BR")} · revisão {item.targetRevision}</time></li>)}</ol>}
+              {auditNext && <button disabled={auditState === "loading" || busy} onClick={() => void loadAudit(selected.id, auditNext)} className={`${secondaryButton} mt-4 w-full`}>{auditState === "loading" ? "Carregando…" : "Carregar mais eventos"}</button>}
+            </section>
+          </>}
+        </aside>
+      </div>
+
+      {dialog && selected && <dialog ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="admin-dialog-title" aria-describedby="admin-dialog-description" onCancel={event => { event.preventDefault(); close(); }} onKeyDown={onDialogKey} className="fixed inset-0 m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-lg overflow-y-auto overscroll-contain rounded-2xl border border-slate-200 bg-white p-4 text-slate-900 shadow-2xl backdrop:bg-slate-950/60 sm:p-6">
+        <div className="flex flex-col items-start gap-3 sm:flex-row"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-800"><AlertTriangle size={21} aria-hidden="true" /></span><div className="min-w-0"><h2 ref={reviewHeadingRef} tabIndex={-1} id="admin-dialog-title" className="break-words rounded-lg text-xl font-bold focus:outline-none focus:ring-2 focus:ring-emerald-700">Confirmar alteração de {dialog.kind === "status" ? "estado" : "papel"}</h2><p id="admin-dialog-description" className="mt-2 break-words text-sm leading-6 text-slate-600">{selected.firstName} {selected.lastName} passará de <strong>{labels[selected[dialog.kind]]}</strong> para <strong>{labels[dialog.value]}</strong>. Esta ação será auditada.</p></div></div>
+        <p className="mt-4 rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">Revisão consultada: {selected.revision}</p>
+        {reviewMessage && <p role="status" className="mt-3 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-900">{reviewMessage}</p>}
+        {selected[dialog.kind] === dialog.value && <p role="status" className="mt-3 text-sm text-slate-700">A conta já possui esse valor. Nenhuma nova alteração é necessária.</p>}
+        <label className="mt-5 block text-sm font-semibold text-slate-800">Justificativa<textarea value={reason} onChange={event => setReason(event.target.value)} disabled={busy || refreshing} maxLength={500} rows={4} className={`${inputStyle} mt-2 resize-y font-normal`} placeholder="Explique por que esta alteração é necessária" /></label>
+        <p className="mt-1 text-xs text-slate-500">Até 500 caracteres. Evite incluir dados pessoais desnecessários.</p>
+        {conflict && <div ref={conflictRef} role="alert" tabIndex={-1} className="mt-4 rounded-xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-700"><strong>{conflict.message ?? "Não foi possível concluir."}</strong>{conflict.recovery === "REFRESH_TARGET" && <button disabled={refreshing || busy} onClick={() => void refreshTarget()} className={`${secondaryButton} mt-3`}>{refreshing ? "Atualizando…" : "Atualizar dados"}</button>}{conflict.recovery === "ENSURE_ANOTHER_ACTIVE_ADMIN" && <p className="mt-2">Ative ou promova outro administrador antes de repetir.</p>}</div>}
+        <p role="status" aria-live="polite" className="mt-3 text-sm text-slate-600">{busy ? "Processando…" : refreshing ? "Atualizando os dados da conta…" : ""}</p>
+        <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end"><button disabled={busy || refreshing} onClick={close} className={secondaryButton}>Cancelar</button><button disabled={busy || refreshing || detailLoading || Boolean(detailError) || Boolean(conflict?.recovery) || !reason.trim() || selected[dialog.kind] === dialog.value} onClick={() => void submit()} className="inline-flex min-h-11 items-center justify-center rounded-xl bg-emerald-800 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">Confirmar alteração</button></div>
+      </dialog>}
+    </div>
+  );
 }
-function Filter({label,value,options,onChange}:{label:string;value:string;options:readonly string[];onChange:(value:string)=>void}){return <label><span className="sr-only">Filtrar por {label.toLowerCase()}</span><select value={value} onChange={e=>onChange(e.target.value)} className="w-full rounded-xl border border-slate-300 px-3 py-2.5 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-200"><option value="">Todos — {label}</option>{options.map(item=><option key={item} value={item}>{labels[item as keyof typeof labels]}</option>)}</select></label>}
-function State({text,icon}:{text:string;icon?:React.ReactNode}){return <div className="flex min-h-48 flex-col items-center justify-center gap-3 p-8 text-center text-slate-500">{icon}{text}</div>}
-function Detail({label,value}:{label:string;value:string}){return <div className="mt-5 flex items-center justify-between gap-4"><span className="text-sm text-slate-500">{label}</span><strong className="text-sm text-slate-900">{value}</strong></div>}
+
+function Filter({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void }) {
+  return <label className="min-w-0"><span className="mb-2 block text-sm font-semibold text-slate-700">Filtrar por {label.toLowerCase()}</span><select value={value} onChange={event => onChange(event.target.value)} className={inputStyle}><option value="">Todos — {label}</option>{options.map(item => <option key={item} value={item}>{labels[item as keyof typeof labels]}</option>)}</select></label>;
+}
+function State({ text, icon, bare }: { text: string; icon?: ReactNode; bare?: boolean }) {
+  return <div role="status" className={`flex min-h-40 flex-col items-center justify-center gap-3 p-5 text-center text-sm leading-6 text-slate-600 ${bare ? "" : "rounded-2xl border border-dashed border-slate-300 bg-white"}`}>{icon}{text}</div>;
+}
+function StatusBadge({ status }: { status: AdminUserStatus }) {
+  return <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold ${tones[status]}`}><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-current" />{labels[status]}</span>;
+}
+function Detail({ label, value }: { label: string; value: ReactNode }) {
+  return <div className="mt-5 flex flex-wrap items-center justify-between gap-2"><span className="text-sm text-slate-600">{label}</span><strong className="text-sm text-slate-900">{value}</strong></div>;
+}

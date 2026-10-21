@@ -1,6 +1,7 @@
 import { fillCollectionOccurrence } from "./support/collection-occurrence";
-import type { Page } from "@playwright/test";
+import type { Locator, Page, TestInfo } from "@playwright/test";
 import { expect, test } from "./support/ihfr-diagnostics";
+import { captureIHFRViewport, expectIHFRControl, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
 import { Client } from "pg";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 
@@ -37,6 +38,10 @@ async function confirmByKeyboard(page: Page, trigger: ReturnType<Page["getByRole
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("button", { name: "Cancelar" })).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(dialog.getByRole("button", { name: "Confirmar" })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(dialog.getByRole("button", { name: "Cancelar" })).toBeFocused();
   for (let index = 0; index < 4; index++) {
     await page.keyboard.press("Tab");
     await expect(dialog.locator(":focus")).toHaveCount(1);
@@ -46,6 +51,39 @@ async function confirmByKeyboard(page: Page, trigger: ReturnType<Page["getByRole
   await expect(trigger).toBeFocused();
   await trigger.press("Enter");
   await dialog.getByRole("button", { name: "Confirmar" }).click();
+}
+
+async function inspectManagementViewports(page: Page, info: TestInfo, management: Locator) {
+  const create = management.getByRole("button", { name: "Criar diagnóstico", exact: true });
+  for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [667, 375, 200]]) {
+    const scenario = `frontend-ihfr-management-${width}-${height}-${scale}`;
+    await settleIHFRViewport(page, width, height, scale);
+    await management.getByLabel("Data e hora da observação").focus();
+    await expectIHFRControl(management.getByLabel("Data e hora da observação"), page, info, scenario);
+    await captureIHFRViewport(page, info, `${scenario}-observation`);
+    await create.focus();
+    await expectIHFRControl(create, page, info, scenario);
+    await captureIHFRViewport(page, info, `${scenario}-actions`);
+    await create.press("Enter");
+    const dialog = page.getByRole("dialog");
+    await expect(dialog.getByRole("button", { name: "Cancelar" })).toBeFocused();
+    await expectIHFRControl(dialog.getByRole("button", { name: "Confirmar" }), page, info, scenario);
+    await captureIHFRViewport(page, info, `${scenario}-confirmation`);
+    await page.keyboard.press("Escape");
+    await expect(dialog).toBeHidden();
+    await expect(create).toBeFocused();
+  }
+  const cdp = await page.context().newCDPSession(page);
+  try {
+    await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 34, bottomMax: 34 } });
+    await expect.poll(() => page.locator("#application-navigation").evaluate(node => parseFloat(getComputedStyle(node).paddingBottom))).toBe(42);
+    await expectIHFRControl(create, page, info, "frontend-ihfr-landscape-text200-safearea34");
+    await captureIHFRViewport(page, info, "frontend-ihfr-landscape-text200-safearea34", 34);
+  } finally {
+    await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 0, bottomMax: 0 } });
+    await cdp.detach();
+  }
+  await settleIHFRViewport(page, 1280, 900);
 }
 
 test("collection, environmental confirmation and IHFR creation work without browser randomUUID", async ({ page }, info) => {
@@ -123,6 +161,7 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await management.getByLabel("Uso predominante da terra").selectOption("FOREST");
     await management.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+    if (actor === actors[0]) await inspectManagementViewports(page, info, management);
     await management.getByRole("button", { name: "Verificar elegibilidade" }).click();
     await expect(management.getByRole("status").first()).toContainText("ELIGIBLE");
 
@@ -161,13 +200,25 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(management.getByRole("status").first()).toContainText("Vigente: sim");
 
     let timedOutKey = "";
+    let timedOutBody: unknown;
+    let timedOutPath = "";
     await page.route("**/ihfr-diagnosis/diagnoses", (route) => {
       timedOutKey = route.request().headers()["idempotency-key"];
+      timedOutBody = route.request().postDataJSON();
+      timedOutPath = new URL(route.request().url()).pathname;
       void route.abort("timedout");
     }, { times: 1 });
     await management.getByRole("button", { name: "Substituir diagnóstico" }).click();
     await page.getByRole("dialog").getByRole("button", { name: "Confirmar" }).click();
     await expect(management.getByRole("button", { name: "Recuperar resultado" })).toBeVisible();
+    await expect(management.getByLabel("Uso predominante da terra")).toBeDisabled();
+    await expect(management.getByLabel("Data e hora da observação")).toBeDisabled();
+    await expect(management.getByRole("button", { name: "Substituir diagnóstico" })).toBeDisabled();
+    if (actor === actors[0]) {
+      await settleIHFRViewport(page, 375, 900);
+      await expectIHFRControl(management.getByRole("button", { name: "Repetir com a mesma chave" }), page, info, "frontend-ihfr-unknown-375");
+      await captureIHFRViewport(page, info, "frontend-ihfr-unknown-375");
+    }
     await management.getByRole("button", { name: "Recuperar resultado" }).click();
     await expect(management.getByRole("alert")).toContainText("mesma chave");
     await expect(management.getByRole("alert")).toBeFocused();
@@ -176,6 +227,8 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     const replacement = await repeated;
     expect(replacement.status()).toBe(201);
     expect(replacement.request().headers()["idempotency-key"]).toBe(timedOutKey);
+    expect(replacement.request().postDataJSON()).toEqual(timedOutBody);
+    expect(new URL(replacement.request().url()).pathname).toBe(timedOutPath);
     await expect(management.getByRole("status").last()).toContainText("registrado");
     await expect(management.getByRole("status").last()).toBeFocused();
     await expect(management.getByRole("status").first()).toContainText("Vigente: sim");
@@ -189,6 +242,7 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(management.getByRole("status").first()).toContainText("Vigente: não");
     await page.setViewportSize({ width: 320, height: 844 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    if (actor === actors[0]) await captureIHFRViewport(page, info, "frontend-ihfr-revoked-320");
     await page.setViewportSize({ width: 1280, height: 900 });
   }
 });
@@ -229,6 +283,7 @@ test("well-formed incompatible version reaches the real API and shows a recovera
   await expect(page.locator('section[aria-labelledby="ihfr-management-heading"] [role="alert"]')).toContainText("Versão incompatível");
   await expect(page.locator('section[aria-labelledby="ihfr-management-heading"] [role="alert"]')).toBeFocused();
   await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+  await captureIHFRViewport(page, info, "frontend-ihfr-incompatible-version");
   const key = response.request().headers()["idempotency-key"];
   const endpoint = response.url();
   expect(await operationRows(collectionUrl)).toBe(1);
