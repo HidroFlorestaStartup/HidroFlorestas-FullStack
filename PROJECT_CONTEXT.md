@@ -199,3 +199,44 @@ Homologações reais e qualificadores experimentais do IHFR permanecem separados
 
 Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
 branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.
+
+## Fases4/5 e correção 022 integradas; fases 6/7 autorizadas — 2026-10-20
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “Integração dos PRs 13–16 e
+handoff das fases 6 e 7”, de 20/10/2026, autorizou esta integração/publicação e o
+executor a implementar **ambas as fases 6/7 completas**, validar, fazer commits,
+push e abrir/atualizar os dois PRs sem confirmação adicional de rotina. Futuros
+merges e aceite humano continuam com o mantenedor. Fases8–10 seguem fora do recorte.
+
+`EVIDENCIA_IMPLEMENTACAO`: #13/28d4459, #14/16aa443, #15/1491d82 e #16/24be57f
+integrados nessa ordem, por merge commits, em **development `24be57fa0ddeb9d3da72ae80606850d428e29fbb`**.
+#15/#16 redirecionados para development após integrar as dependências; branches
+preservadas. Reviews APPROVED técnicos assistidos de PedroVitor237:
+5581872118/5581887397/5581901183, nos heads exatos c076ec1/3f1eba5/b85edd8;
+nenhuma autoaprovação13 ou review atribuída a terceiro.
+
+CI dos heads14/15/16:15 gates únicos PASS/exit0 por journal oficial conferido;
+runs39295724999(tentativa1)/39300023357(tentativa2)/39343103206(tentativa1),
+E2E136/154/154, HTTPS2/IHFR6. Não é CI dos merges. Produto/testes/dependências/
+configuração final idênticos ao head b85edd8; somente nove diferenças documentais
+do13. Main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054` e trabalhos preexistentes preservados;
+development local/remota alinhadas por FF seguro.
+
+Sem nova suíte funcional local, dispositivo físico, leitor de tela, aceite visual
+humano ou homologação real. Capturas selecionadas não são auditoria visual
+integral; transporte fake de capa não prova provedor real. Falhas históricas
+IHFR/duas chamadas permanecem inconclusivas; reprodução022 de quatro operações/
+três ondas não prova causa retrospectiva. C01/C02 e os qualificadores
+CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
+NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO preservados. Sem deploy solicitado,
+operação externa, banco real ou promoção para main.
+
+Próxima execução: **[prompt autossuficiente6/7](docs/plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md)**,
+Coletas e Dados ambientais/drafts. Branch docs/handoff-frontend-fases-6-7, criada
+da development final; pode ser lida antes do merge documental. Uma spec/branch/PR
+por fase; fase7 pode ser empilhada na6 validada sem aguardar merge do mantenedor.
+Não implementar fase8 pelo painel IHFR existente no detalhe. [Recibo completo](docs/plans/active/preparacao-incorporacao-frontend-20261018/integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
+
+Publicação deste handoff: [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17) aberto para development,
+branch docs/handoff-frontend-fases-6-7, sem autoaprovação ou auto-merge.
+Preparação concluída; documentação aguarda revisão do mantenedor.

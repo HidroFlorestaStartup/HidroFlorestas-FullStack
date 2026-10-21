@@ -1,3 +1,58 @@
+## Estado vigente — integração 4/5/022 concluída; execução 6/7 autorizada em 20/10/2026
+
+Estado global: `EM_ANDAMENTO`. Preparação das fases 6 e 7: `CONCLUIDO`;
+documentação: `AGUARDANDO_REVISAO` no PR17; implementação: `NAO_INICIADO`
+nesta rodada. Este bloco e o adendo de 20/10 ao final prevalecem
+sobre estados históricos anteriores, preservados integralmente abaixo.
+
+`DECISAO_CONFIRMADA`: Pedro, no pedido anexado “Integração dos PRs 13–16 e
+handoff das fases 6 e 7”, de 20/10/2026, autorizou esta integração/publicação e o
+executor a implementar **ambas as fases 6/7 completas**, validar, fazer commits,
+push e abrir/atualizar os dois PRs sem confirmação adicional de rotina. Futuros
+merges e aceite humano continuam com o mantenedor. Fases8–10 seguem fora do recorte.
+
+`EVIDENCIA_IMPLEMENTACAO`: #13/28d4459, #14/16aa443, #15/1491d82 e #16/24be57f
+integrados nessa ordem, por merge commits, em **development `24be57fa0ddeb9d3da72ae80606850d428e29fbb`**.
+#15/#16 redirecionados para development após integrar as dependências; branches
+preservadas. Reviews APPROVED técnicos assistidos de PedroVitor237:
+5581872118/5581887397/5581901183, nos heads exatos c076ec1/3f1eba5/b85edd8;
+nenhuma autoaprovação13 ou review atribuída a terceiro.
+
+CI dos heads14/15/16:15 gates únicos PASS/exit0 por journal oficial conferido;
+runs39295724999(tentativa1)/39300023357(tentativa2)/39343103206(tentativa1),
+E2E136/154/154, HTTPS2/IHFR6. Não é CI dos merges. Produto/testes/dependências/
+configuração final idênticos ao head b85edd8; somente nove diferenças documentais
+do13. Main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054` e trabalhos preexistentes preservados;
+development local/remota alinhadas por FF seguro.
+
+Sem nova suíte funcional local, dispositivo físico, leitor de tela, aceite visual
+humano ou homologação real. Capturas selecionadas não são auditoria visual
+integral; transporte fake de capa não prova provedor real. Falhas históricas
+IHFR/duas chamadas permanecem inconclusivas; reprodução022 de quatro operações/
+três ondas não prova causa retrospectiva. C01/C02 e os qualificadores
+CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
+NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO preservados. Sem deploy solicitado,
+operação externa, banco real ou promoção para main.
+
+| Fase | Estado vigente | Próxima ação |
+|---|---|---|
+|1–3|CONCLUIDO no recorte integrado|Preservar Specs017–019 e histórico|
+|4 — laboratório/dashboard/histórico/membros|CONCLUIDO tecnicamente, integrado #14|Spec020 inclui correção móvel e palavra Configurações; aceite humano não presumido|
+|5 — áreas/capa|CONCLUIDO tecnicamente, integrado #15|Spec021 conserva tentativa incerta e feedback por bytes atuais|
+|Correção022|CONCLUIDO tecnicamente, integrado #16|Consulta excepcional de replay/inelegibilidade e sanitização; históricos inconclusivos|
+|6 — Coletas|EXECUCAO_AUTORIZADA, ainda não implementada por esta preparação|Criação/revisão/confirmação/detalhe, precisão temporal e idempotência reais|
+|7 — Dados ambientais e drafts|EXECUCAO_AUTORIZADA, após fase6 verificada|Formulário/revisão/leitura/draft pessoal, hidratação/OCC/estado sem perda|
+|8–10|PROPOSTA, fora desta execução|Manter integração IHFR/mapa/administração existentes|
+
+Instrução principal: **[prompt fases 6/7](prompt-de-execucao-fases-6-7.md)**,
+autossuficiente e disponível na branch documental antes do merge. Fase7 pode
+ser empilhada sobre a6 validada enquanto seu PR estiver aberto, com destino
+final development; não aguardar o merge para começar a segunda entrega.
+Uma branch/spec/PR por fase; próximos números livres pelo Spec Kit instalado.
+Os prompts anteriores são históricos de execuções já entregues.
+
+## Histórico anterior — estados válidos nos respectivos cortes
+
 # Plano de incorporação do frontend
 
 ## Estado vigente — login integrado; fases 2 e 3 autorizadas em 18/10/2026
@@ -357,3 +412,28 @@ corte headd555f9e/integraçãoc33bf50 examinado antes deste apontamento. São hi
 de integração, sem aceite desta ocorrência visual ou comprovação de correção.
 Nenhum backend/contrato/guarda/código alterado, localhost preparado ou bateria
 funcional executada nesta atualização. [Acompanhamento desta continuação](plano-de-continuacao-fases-4-5.md#continuação-documental--apontamento-visual-móvel-19102026).
+
+## Adendo de 20/10/2026 — destino operacional atual
+
+As fases 6/7 agora estão autorizadas pelo pedido identificado no início deste
+documento. Estados antigos “somente login”, “fases 4/5 autorizadas” e “fases6+
+propostas” conservam o histórico e não limitam o mandato atual.
+[Prompt 6/7](prompt-de-execucao-fases-6-7.md), [plano da preparação](plano-de-continuacao-fases-6-7.md)
+e [recibo completo](integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
+
+## Publicação e encerramento da preparação — 20/10/2026
+
+Branch `docs/handoff-frontend-fases-6-7` publicada com upstream próprio; primeiro
+commit `f33e1254090aacf9f9f679dd45da3846465cb0cd`. [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17)
+**OPEN** para development, sem autoaprovação ou auto-merge. Prompt diretamente
+acessível na branch antes do merge documental. Integração13–16 e preparação do
+handoff `CONCLUIDO`; documentação `AGUARDANDO_REVISAO` do mantenedor. As fases6/7
+ainda serão implementadas pelo outro desenvolvedor conforme a autorização.
+
+Validação: nove arquivos documentais, JSON,118 links locais/2âncoras, seis
+documentos anteriores preservados byte a byte, campos/SHAs/pais/árvores e
+equivalência, escopo/whitespace/padrões sensíveis reconhecíveis PASS. Nenhum erro
+de referência anterior ou novo localizado. Sem nova bateria funcional, pois
+não houve delta funcional de integração; CI dos heads e limites separados no
+recibo. Main/trabalhos preexistentes preservados; sem bloqueio técnico novo.
+Revisão humana documental e futuros merges6/7 continuam com o mantenedor.

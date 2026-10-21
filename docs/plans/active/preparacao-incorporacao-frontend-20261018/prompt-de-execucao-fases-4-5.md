@@ -389,3 +389,14 @@ pertence ao mantenedor, sem reset/force. Nenhum rollback de banco está previsto
 Referências opcionais: [plano global](plano-de-incorporacao.md),
 [relatório](relatorio-de-prontidao.md), [acompanhamento](plano-de-acompanhamento.md)
 e [evidência desta integração](integracao-contas-workspace-e-handoff-fases-4-5.json).
+
+## Execução entregue e novo destino — 20/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: fases 4/5 entregues nas Specs020/021 e integradas pelos
+PRs14/15, com correção/diagnósticos 022 integrada em16, após o documental13.
+Development verificada `24be57fa0ddeb9d3da72ae80606850d428e29fbb`. O apontamento móvel deste
+prompt foi reproduzido/corrigido e recebeu evidências viewport na020; aceite
+visual/manual humano não presumido. Texto e falhas anteriores ficam intactos.
+Próxima execução autorizada: **[prompt autossuficiente das fases 6 e 7](prompt-de-execucao-fases-6-7.md)**.
+Autorização e recibos atuais constam no [plano vigente](plano-de-incorporacao.md)
+e [JSON de integração](integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json).
