@@ -115,8 +115,10 @@
   .lead { font-size: .95rem; }
   .actions { flex-direction: column; align-items: stretch; }
   .section { padding-block: 1.8rem; }
-  .science { padding: 1rem; }
-  .qualifications { padding: .9rem; }
+  .science { padding: 12px; }
+  .qualifications { padding: 12px; }
+  .qualifications ul { padding-left: 18px; }
+  .qualifications li { padding-left: 0; }
   .projectScope { padding-left: 1rem; }
   .team, .footerGrid { grid-template-columns: minmax(0, 1fr); }
   .footer { margin-top: 1rem; }

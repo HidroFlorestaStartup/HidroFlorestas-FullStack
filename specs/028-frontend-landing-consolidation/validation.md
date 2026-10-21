@@ -34,3 +34,9 @@ GET real a `/` em Next local (sem banco), HTTP 200: `mainCount: 0`, âncoras aus
 - Checklist React aplicado: Server Component sem novo estado/fetch público, imports estáticos, imagens locais, CSS isolado, links nomeados e sem nova biblioteca.
 
 CI oficial, capturas/inspeção, revisão Codex externa, aceite institucional/manual e homologação operacional permanecem pendentes no momento deste commit. Resultados posteriores serão recibos na PR do SHA publicado, sem transplantar verde de um ancestral.
+
+### Inspeção da primeira execução publicada e ajuste de reflow
+
+O run `39578752552`, attempt1, HEAD `aac59e6e6b2c60ad7b2ff7b4ca4fb5200698507e`, foi cancelado pela publicação da correção documental. Seu artefato `12335938075` foi preservado e verificado (SHA256 `44d48edfbbf38488c72dc563a531338230b28253830b5b4515dfc2d0b9c92f83`, CRC válido). O `results.jsonl` contém nove gates PASS até Lint; a interrupção não produz PASS E2E nem dos cinco gates seguintes. As 19 capturas públicas de landing pertencem a esse HEAD anterior.
+
+A inspeção de `frontend-landing-320x812-text200-ihfr-start.png` e `...-ihfr-end.png` mostrou fragmentação excessiva das palavras dos qualificadores, embora estivessem dentro da viewport. Os paddings aninhados e o recuo da lista, definidos em rem, também duplicavam com o texto e consumiam a largura útil. A correção limita esses espaçamentos a pixels na faixa estreita, preservando integralmente o texto ampliado. O E2E passa a verificar, por Range de cada palavra, que os quatro qualificadores a200% não se fragmentam entre linhas; as verificações existentes de viewport, overflow e geometria permanecem. A prova visual corrigida e o resultado do novo HEAD dependem da nova CI.

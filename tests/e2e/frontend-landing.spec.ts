@@ -70,6 +70,22 @@ for (const viewport of viewports) {
       await qualification.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
       await page.evaluate(waitForMissionRender);
       await expect(qualification).toBeInViewport({ ratio: 1 });
+      if (viewport.textScale === 200) {
+        const fragmentedWords = await qualification.evaluate(node => {
+          const fragmented: string[] = [];
+          const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+          for (let text = walker.nextNode(); text; text = walker.nextNode()) {
+            for (const word of (text.textContent ?? "").matchAll(/\S+/g)) {
+              const range = document.createRange();
+              range.setStart(text, word.index);
+              range.setEnd(text, word.index + word[0].length);
+              if (Array.from(range.getClientRects()).filter(rect => rect.width > 0 && rect.height > 0).length > 1) fragmented.push(word[0]);
+            }
+          }
+          return fragmented;
+        });
+        expect(fragmentedWords, "Scientific qualifications retain complete words at 200% text").toEqual([]);
+      }
       if (index === 0 || index === qualifications.length - 1) await capture(page, info, `${name}-ihfr-${index === 0 ? "start" : "end"}`);
     }
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
