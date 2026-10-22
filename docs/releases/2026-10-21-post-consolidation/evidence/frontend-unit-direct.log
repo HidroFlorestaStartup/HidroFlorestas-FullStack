@@ -1,0 +1,201 @@
+tests/unit/frontend-collections-recovery.test.ts
+▶ phase 6: unresolved collection confirmation
+  ✔ keeps editing available before the first submission (1.495877ms)
+  ✔ does not reopen editing after an unknown result (0.295987ms)
+  ✔ does not replace the original occurrence after an unknown result (0.174093ms)
+  ✔ does not replace the original device/manual civil time after an unknown result (0.222185ms)
+  ✔ does not rotate the key of an unresolved intentional attempt (0.374525ms)
+  ✔ does not mutate metadata while the request is in flight (0.196417ms)
+  ✔ keeps occurrence and key on a direct retry (0.136986ms)
+✔ phase 6: unresolved collection confirmation (3.969279ms)
+ℹ tests 7
+ℹ suites 1
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11.582404
+
+tests/unit/frontend-collections-submission.test.ts
+▶ phase 6: submitted snapshot and result classification
+  ✔ freezes the exact original body, key and contextual endpoint (2.04127ms)
+  ✔ keeps an earlier uncertain result locked after a later invalid response (0.506474ms)
+  ✔ keeps an earlier uncertain result locked after a later access response (0.146581ms)
+  ✔ keeps an earlier uncertain result locked after a later read-only response (0.109195ms)
+  ✔ keeps an earlier uncertain result locked after a later conflict response (0.165369ms)
+  ✔ allows correction after a definitive first invalid request, without previous uncertainty (0.235886ms)
+  ✔ locks a confirmed record while navigation completes (0.195515ms)
+  ✔ preserves declared time through edit/review/retry: 2026-09-15T00:00:00.001+14:00 (0.229997ms)
+  ✔ preserves declared time through edit/review/retry: 2026-09-15T23:59:59.999-14:00 (0.161063ms)
+  ✔ preserves declared time through edit/review/retry: 2026-09-15T09:00:00.123+05:45 (0.224318ms)
+  ✔ preserves declared time through edit/review/retry: 2026-09-15T12:00:00.123Z (0.109756ms)
+  ✔ accepts a valid 200 response and exact Location (18.638249ms)
+  ✔ accepts a valid 201 response and exact Location (0.36433ms)
+  ✔ classifies 400/INVALID_REQUEST without reflecting server text (0.494676ms)
+  ✔ classifies 401/UNAUTHENTICATED without reflecting server text (0.26539ms)
+  ✔ classifies 403/FORBIDDEN without reflecting server text (0.221534ms)
+  ✔ classifies 404/NOT_FOUND without reflecting server text (0.18528ms)
+  ✔ classifies 409/READ_ONLY without reflecting server text (0.178729ms)
+  ✔ classifies 409/CONFLICT without reflecting server text (0.18514ms)
+  ✔ classifies 500/INTERNAL_ERROR without reflecting server text (0.241935ms)
+  ✔ classifies 502/INVALID_REQUEST without reflecting server text (0.313143ms)
+  ✔ classifies 400/unrecognized without reflecting server text (0.167052ms)
+  ✔ treats malformed success, invalid ID and mismatched Location as unknown (0.811574ms)
+  ✔ sanitizes unexpected network exceptions (0.103596ms)
+✔ phase 6: submitted snapshot and result classification (28.153514ms)
+ℹ tests 24
+ℹ suites 1
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 36.402509
+
+tests/unit/frontend-environmental-presentation.test.ts
+▶ phase 7: numeric presentation without silent rounding
+  ✔ renders 0 exactly (0.786776ms)
+  ✔ renders 0 exactly (0.101583ms)
+  ✔ renders 4e-7 exactly (0.072419ms)
+  ✔ renders -4e-7 exactly (0.798034ms)
+  ✔ renders 12.123456789 exactly (0.262086ms)
+  ✔ renders 100 exactly (0.07945ms)
+  ✔ renders -25.5 exactly (0.093692ms)
+  ✔ renders 1e+21 exactly (0.067652ms)
+  ✔ round-trips very small and very large finite values without false zero (0.30479ms)
+  ✔ round-trips a deterministic range of exponents (0.777362ms)
+  ✔ refuses nonfinite values rather than showing a plausible measurement (0.387655ms)
+✔ phase 7: numeric presentation without silent rounding (4.901705ms)
+▶ phase 7: expand before focus (DOM protocol unit test, not browser evidence)
+  ✔ opens all enclosing details before focus and scroll (1.172379ms)
+  ✔ falls back to the form heading for a form-level error (0.163536ms)
+  ✔ returns false if there is no target (0.078058ms)
+✔ phase 7: expand before focus (DOM protocol unit test, not browser evidence) (1.539322ms)
+▶ phase 7: a later failed response does not resolve previous uncertainty
+  ✔ keeps an earlier unknown outcome after 400 (0.206ms)
+  ✔ keeps an earlier unknown outcome after 401 (0.051538ms)
+  ✔ keeps an earlier unknown outcome after 403 (0.029474ms)
+  ✔ keeps an earlier unknown outcome after 404 (0.025698ms)
+  ✔ keeps an earlier unknown outcome after 409 (0.025628ms)
+  ✔ keeps an earlier unknown outcome after 422 (0.061182ms)
+  ✔ keeps an earlier unknown outcome after 429 (0.047281ms)
+  ✔ keeps an earlier unknown outcome after 500 (0.0332ms)
+  ✔ keeps an earlier unknown outcome after 503 (0.05319ms)
+  ✔ preserves a definitive first rejection (0.057446ms)
+  ✔ keeps a first server failure unknown (0.041332ms)
+✔ phase 7: a later failed response does not resolve previous uncertainty (1.011035ms)
+ℹ tests 25
+ℹ suites 3
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16.600594
+
+tests/unit/frontend-environmental-preservation.test.ts
+▶ phase 7: unchanged parser and draft conversions
+  ✔ keeps zero and false distinct from optional null (1.684602ms)
+  ✔ preserves absent, explicit empty, boolean and numeric cells without touching them (1.160791ms)
+  ✔ keeps first-save raw strings and omits untouched missing cells (0.299982ms)
+  ✔ distinguishes an explicitly cleared field from an absent one (0.242907ms)
+  ✔ does not introduce null into a typed value draft cell (0.264028ms)
+  ✔ retains a partial number in the draft and parses it only for confirmation (0.296207ms)
+  ✔ does not silently discard an inapplicable well depth (0.193502ms)
+  ✔ keeps canonical confirmation and key stable for an unchanged payload (0.229777ms)
+  ✔ preserves a tiny accepted number from input through canonical JSON and presentation (0.369978ms)
+  ✔ continues to reject non-finite, malformed and out-of-range values (0.475808ms)
+✔ phase 7: unchanged parser and draft conversions (6.556101ms)
+ℹ tests 10
+ℹ suites 1
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15.20521
+
+tests/unit/frontend-ihfr-presentation.test.tsx
+✔ frontend IHFR presents persisted values without rounding or deriving a class (12.591496ms)
+✔ frontend IHFR keeps unknown qualifiers and metadata visible with honest fallbacks (3.518478ms)
+✔ frontend IHFR absence explains the experimental boundary without fabricating a score (1.513874ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29.6333
+
+tests/unit/frontend-user-administration.test.ts
+▶ admin presentation preserves the existing optimistic concurrency contract
+  ✔ sends only role, expected role, observed revision and reason (1.054751ms)
+  ✔ uses the refreshed revision and status, not an earlier account snapshot (0.257629ms)
+  ✔ does not silently send blank or oversized justification (0.396638ms)
+✔ admin presentation preserves the existing optimistic concurrency contract (2.627884ms)
+▶ administrative read scope excludes superseded account responses
+  ✔ cancels A when B starts and rejects a late A response (0.235765ms)
+  ✔ also excludes an earlier read for the same account (0.118088ms)
+  ✔ invalidates pending responses after unmount or selection reset (0.160863ms)
+✔ administrative read scope excludes superseded account responses (0.744714ms)
+ℹ tests 6
+ℹ suites 2
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12.44155
+
+tests/unit/territorial-map-contracts.test.ts
+✔ accepts inclusive coordinate limits and caps serialized precision (1.354363ms)
+✔ turns absent, non-finite and out-of-range coordinate pairs into null (0.171548ms)
+✔ reconstructs occurrence offset and exposes only the territorial allowlist (0.734838ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11.413289
+
+tests/unit/territorial-map-openapi-contract.test.ts
+✔ publishes one protected, closed and no-store territorial operation (17.512551ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25.136603
+
+tests/unit/territorial-map-service.test.ts
+✔ authorizes before one scoped, closed, non-N+1 query (2.14161ms)
+✔ keeps inactive laboratories readable (0.253392ms)
+✔ queries no territorial data for revoked links or ineligible accounts (0.381476ms)
+✔ keeps a proportional projection in one query (0.631583ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19.458105
+
+tests/unit/territorial-map-state.test.ts
+✔ derives map and selection from stable area ids (1.341494ms)
+✔ formats coordinates without fabricated trailing precision (0.140853ms)
+✔ classifies independent tile cycles (0.118719ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8.482938

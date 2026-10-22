@@ -1,0 +1,47 @@
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-commit","snapshot":[{"tx":"758","snapshot":"758:758:","pid":8471}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-commit","snapshot":[{"tx":"760","snapshot":"760:760:","pid":8471}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-commit","snapshot":[{"tx":"762","snapshot":"762:762:","pid":8471}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable commit conflicts resolve the resulting hourly quota (564.990329ms)
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-write","snapshot":[{"tx":"789","snapshot":"789:789:","pid":8474}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-write","snapshot":[{"tx":"791","snapshot":"791:791:","pid":8474}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-write","snapshot":[{"tx":"793","snapshot":"793:793:","pid":8474}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable write conflicts resolve the resulting hourly quota (384.748867ms)
+✔ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (424.245289ms)
+✔ CRI-REV-002 hourly quota independently rejects without provider I/O (332.509955ms)
+✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (223.665427ms)
+✔ CRI-REV-002 revalidates role during preset without an open transaction (229.663605ms)
+✔ CRI-REV-002 revalidates membership during preset without an open transaction (208.699527ms)
+✔ CRI-REV-002 revalidates laboratory during preset without an open transaction (218.581918ms)
+✔ CRI-REV-002 revalidates account during preset without an open transaction (220.425069ms)
+✔ CRI-REV-002 revalidates revision during preset without an open transaction (208.734321ms)
+✔ CRI-REV-002 simultaneous eligible requests respect per-user active quota (395.02992ms)
+✔ CRI-REV-002 simultaneous same-key requests converge and changed preset preserves jobs (380.871478ms)
+✔ CRI-REV-002 concurrent hourly quota is checked again after preset (478.981442ms)
+FIX-022 schedule {"events":[{"label":"left","phase":1,"event":"begin"},{"label":"right","phase":1,"event":"begin"},{"label":"left","phase":1,"event":"body-complete"},{"label":"left","phase":1,"event":"commit"},{"label":"right","phase":1,"event":"body-complete"},{"label":"right","phase":1,"event":"commit"},{"label":"left","phase":2,"event":"begin"},{"label":"right","phase":2,"event":"begin"},{"label":"left","phase":2,"event":"body-complete"},{"label":"right","phase":2,"event":"body-complete"},{"label":"left","phase":2,"event":"commit"},{"label":"right","phase":2,"event":"error","error":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}},{"label":"right","phase":3,"event":"begin"},{"label":"right","phase":3,"event":"error","error":{"name":"Error","code":"RATE_LIMITED"}}],"counts":{"attempts":10,"jobs":40}}
+✔ FIX-022 committed winner is visible after a real Serializable commit conflict (299.688735ms)
+✔ FIX-022 final eligibility read preserves eligible after bounded contention (203.418006ms)
+✔ FIX-022 final eligibility read preserves read-error after bounded contention (200.78737ms)
+✔ FIX-022 final eligibility read preserves revoked after bounded contention (228.860087ms)
+✔ FIX-022 final eligibility read preserves disabled after bounded contention (194.299796ms)
+✔ FIX-022 final eligibility read preserves stale after bounded contention (220.933049ms)
+✔ FIX-022 final eligibility read preserves replay after bounded contention (204.790425ms)
+✔ FIX-022 final eligibility read preserves preset-changed after bounded contention (217.226595ms)
+✔ FIX-022 final eligibility read preserves arbitrary after bounded contention (215.784931ms)
+✔ CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota (243.073497ms)
+✔ CRI-REV-002 retries P2034 in transaction 1 without duplicate jobs or repeated I/O (313.977266ms)
+✔ CRI-REV-002 retries P2002 in transaction 1 without duplicate jobs or repeated I/O (318.726744ms)
+✔ CRI-REV-002 retries P2034 in transaction 2 without duplicate jobs or repeated I/O (341.650842ms)
+✔ CRI-REV-002 retries P2002 in transaction 2 without duplicate jobs or repeated I/O (379.119314ms)
+✔ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (263.916069ms)
+✔ CRI-REV-001 real service HTTP contract has safe availability and preserves disabled content refusal (181.126126ms)
+✔ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (238.409403ms)
+✔ cover authorization uses current laboratory role, validates context, strips EXIF and revokes read (281.321554ms)
+✔ cover replacement preserves old, retries ambiguous upload, conflicts concurrent revisions and ABA removal (337.845324ms)
+✔ cleanup proves ownership, preserves referenced assets, retries and revisits late resources including raw (408.229376ms)
+✔ contextual ADMIN edits, global ADMIN has no bypass and live revocation/downgrade blocks finalization (280.520394ms)
+✔ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (293.468992ms)
+✔ permitted uploader account deletion rolls back safely then preserves team reading and owned cleanup (312.598818ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11738.52212

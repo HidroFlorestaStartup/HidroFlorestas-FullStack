@@ -1,0 +1,109 @@
+{
+  "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "captured_utc": "2026-10-22T00:09:38.665512+00:00",
+  "environment": {
+    "os": "Ubuntu24.04",
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "postgresql": "16.15",
+    "prisma": "7.4.2",
+    "next": "16.3.8",
+    "playwright": "1.55.1",
+    "chromium": "140.0.7339.186",
+    "cluster": "owned synthetic loopback55426"
+  },
+  "not_official_windows_ci": true,
+  "tests": [
+    {
+      "name": "unit",
+      "command": "npm run test:unit",
+      "exit_code": 0,
+      "raw_log_sha256": "51e7d79138a3486a2aa755b6e131ffa8b9cfee47dded1d93aaa4e34c95d9ba87",
+      "counts": {
+        "pass": [
+          402,
+          17
+        ],
+        "fail": [
+          0,
+          0
+        ]
+      },
+      "published_projection": "backend-unit-results.txt"
+    },
+    {
+      "name": "covers",
+      "command": "node --conditions=react-server --import=tsx --test --test-concurrency=1 tests/integration/area-covers.test.ts tests/integration/area-covers-contention.test.ts",
+      "exit_code": 0,
+      "raw_log_sha256": "ae8e9f9fc28e095bcbacd34d58de2baa13b3492fd9910015fbfaccf90fc35ac6",
+      "counts": {
+        "pass": [
+          36
+        ],
+        "fail": [
+          0
+        ]
+      },
+      "published_projection": "backend-covers-results.txt"
+    },
+    {
+      "name": "migration",
+      "command": "npm run test:migration",
+      "exit_code": 0,
+      "raw_log_sha256": "f349d3d2b4bccb8b33d3a83eed19f994d59497dd3b5f2889f8f52c28f4ca895f",
+      "counts": {
+        "pass": [
+          37
+        ],
+        "fail": [
+          0
+        ]
+      },
+      "published_projection": "backend-migration-results.txt"
+    },
+    {
+      "name": "ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "exit_code": 0,
+      "raw_log_sha256": "7542f458b35c0a2162116d6b4184728afbb12e0e4ce6d72d2681965327735871",
+      "counts": {
+        "pass": [],
+        "fail": []
+      },
+      "published_projection": "backend-ihfr-results.txt",
+      "cases_passed": 6,
+      "retries": 0,
+      "workers": 1,
+      "page_http200_lines": 15,
+      "page_http404_lines": 0,
+      "api_http404_lines": 2
+    },
+    {
+      "name": "frontend_mobile_navigation_extension",
+      "command": "node node_modules/@playwright/test/cli.js test tests/e2e/frontend-mobile-navigation.spec.ts --reporter=list",
+      "exit_code": 1,
+      "raw_log_sha256": "c5d193b7dbc2f8207cbb42fcd98ae63717da96693121da0a9d2c71f1fcc2d4f5",
+      "raw_log_bytes": 76730,
+      "started_log_utc": "2026-10-22T00:07:14.987072995Z",
+      "ended_log_utc": "2026-10-22T00:08:50.433608Z",
+      "time_source": "filesystem birth and final mtime of log",
+      "counts": {
+        "pass": [
+          0
+        ],
+        "fail": [
+          4
+        ]
+      },
+      "workers": 1,
+      "retries": 0,
+      "failure": "Expected final /login URL; actual /logout persisted through original 5000ms assertion",
+      "product_cause": "NOT_ESTABLISHED",
+      "artifacts": {
+        "png": 92,
+        "geometry_json": 4
+      },
+      "independent_triage": "frontend agent; no rerun performed"
+    }
+  ]
+}

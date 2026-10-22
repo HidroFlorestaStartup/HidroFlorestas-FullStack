@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "sourceTest": "tests/e2e/frontend-mobile-navigation.spec.ts",
+  "sourceTestSha256": "b6043ec00f1a51c3a199cee4ab3eaadcd0ba1bd6959b77bd25a9f272dd39cd41",
+  "originalSuiteOutcome": "FAIL: 0 PASS, 4 FAIL, no retry",
+  "originalCaptureSet": {
+    "files": 92,
+    "bytes": 4563253,
+    "uniqueHashes": 68,
+    "byteDuplicateFiles": 24,
+    "uniqueImagesActuallyOpenedAndInspected": 68,
+    "selectedOriginalImagesRetained": 8,
+    "fullPage": false,
+    "animations": "disabled by the original test",
+    "data": "synthetic fixtures only",
+    "scope": "Full set hashed in the producing worktree; eight representative originals copied byte-for-byte into this evidence directory. The other captures are not versioned."
+  },
+  "focusedReproduction": {
+    "additionalImages": 1,
+    "fullPage": false,
+    "cookieOrAccountUsed": false,
+    "browserScreenshotInspected": true,
+    "suiteRerun": false
+  },
+  "captures": [
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-empty-create-focus.png",
+      "bytes": 50877,
+      "sha256": "94137ecd6d72051d6eccbff0163d5867082f93553f8282570fe636b24b031ba3",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-empty-create-focus.png",
+      "retainedFile": "frontend-mobile-navigation-after-320-text100-empty-create-focus.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-empty-start.png",
+      "bytes": 53979,
+      "sha256": "a1a09d1b844bcc08b6f7c6992e03f744e0a728db4f7dbe087a9f8432fe830dd7",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-empty-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-actual-last-control.png",
+      "bytes": 51430,
+      "sha256": "452b0e79af241b429ae46976badf7e5455fdfdd034f2f27f5c0962314f6cc15a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-back-workspace-initial.png",
+      "bytes": 50361,
+      "sha256": "7318e236dd13efb75651489d22aa519a980632f258eacf66326218b4febe201f",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-back-workspace.png",
+      "bytes": 50361,
+      "sha256": "7318e236dd13efb75651489d22aa519a980632f258eacf66326218b4febe201f",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-destination-summary-native.png",
+      "bytes": 46389,
+      "sha256": "4574f0290e3cf251ed9b31cb1f52a5bd0b074766dbc1e69bf1545a48064f6552",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-end.png",
+      "bytes": 50361,
+      "sha256": "992905da0613e564c2369d948d8c6f7a8a945c73b9e3db1fb1bf28b2023b6862",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-landscape-safe-area34.png",
+      "bytes": 30610,
+      "sha256": "2d9f798988d34a531066734ab3ddbd39826158c858ba0a3d1e67875945a580d9",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-landscape.png",
+      "bytes": 30753,
+      "sha256": "e9ff432eee6128273808e20153d354711f5422a0863577d34b30381ffaaf6986",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-last-control-focus.png",
+      "bytes": 51430,
+      "sha256": "452b0e79af241b429ae46976badf7e5455fdfdd034f2f27f5c0962314f6cc15a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-middle.png",
+      "bytes": 50669,
+      "sha256": "11d7fc9e778bd00315a9c89170d23cf734c3ef41417313100a334faff9f83be2",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-four-links-start.png",
+      "bytes": 55976,
+      "sha256": "e465f64b47d895edffa8c07167d168132e3ba7dd16bcb41c3c3a056e646e1279",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-start.png",
+      "retainedFile": "frontend-mobile-navigation-after-320-text100-four-links-start.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-actual-last-control.png",
+      "bytes": 49919,
+      "sha256": "2e6848c88b1c3838f2dae1c26ce10c86bf62a6ed655c2f1f7ac4d1ef45be4c15",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-back-after-forward-reload.png",
+      "bytes": 48859,
+      "sha256": "a0362b8946be130af51d4f1aceb3e9878cdfcae58c4b778579ff11dac82c47f9",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-back-workspace-initial.png",
+      "bytes": 48842,
+      "sha256": "eb82d25f538dacdf75c1082aaab15a85d846f161279e25aa267ede4af336a24d",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-back-workspace.png",
+      "bytes": 48842,
+      "sha256": "eb82d25f538dacdf75c1082aaab15a85d846f161279e25aa267ede4af336a24d",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-destination-summary-native.png",
+      "bytes": 45036,
+      "sha256": "630cdedc72c03c2ae4cb351521f6f3fbc83f0ddd7819e6b83e7a8102b0ca445c",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-end.png",
+      "bytes": 48839,
+      "sha256": "bec28e842dc61b4dc354b2c6c4c2822ffb1eaf81e2c95c03f9af8c0ed23e17b4",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-landscape-safe-area34.png",
+      "bytes": 28977,
+      "sha256": "2b39bcf39990c8316f3024816badeb4b3cb471b56380150d2a64979219bf4f29",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-landscape.png",
+      "bytes": 28970,
+      "sha256": "2cd1792d7f142299522de7884a0900d58096d05c54a651acac611d14fadbb6b1",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-last-control-focus.png",
+      "bytes": 49919,
+      "sha256": "2e6848c88b1c3838f2dae1c26ce10c86bf62a6ed655c2f1f7ac4d1ef45be4c15",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-middle.png",
+      "bytes": 49143,
+      "sha256": "fa878fc2c027efc6650000cd4b8b421311124287bfd4f6afad531a40bd9e061d",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text100-three-links-start.png",
+      "bytes": 54450,
+      "sha256": "5301681374073781b08794961f8769eb1c9ec79c8f5d365953b16b57984d861d",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-empty-create-focus.png",
+      "bytes": 55900,
+      "sha256": "3745630fddaccef1fff5332b0e3a138593fc2e4d26390693eb73b5cca8986325",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-empty-create-focus.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-empty-start.png",
+      "bytes": 60815,
+      "sha256": "d27c41c021923da1d1f03b2c8bf65b95fee87f2081be2e2eebaab58a69a6f297",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-empty-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-actual-last-control.png",
+      "bytes": 53650,
+      "sha256": "f44abde1039e84f2afb03355f02fe8adf09eda133b15db965b6a33ef61e5ef90",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-back-workspace-initial.png",
+      "bytes": 52596,
+      "sha256": "7f254b02044460e53c0d8f44ce186e928bfefce8f74566ce86dfe5f67088b716",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-back-workspace.png",
+      "bytes": 52596,
+      "sha256": "7f254b02044460e53c0d8f44ce186e928bfefce8f74566ce86dfe5f67088b716",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-destination-summary-native.png",
+      "bytes": 51259,
+      "sha256": "c261ff536de98a5d1cdbbcc166bb99babef00dab3bcc0233431252218502e740",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-end.png",
+      "bytes": 52553,
+      "sha256": "47d7faf08e58a58d81dc7e8e7bc1ba060152b196524121928537c80b4c375736",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+      "bytes": 31980,
+      "sha256": "476b45f150c2b4ce3b259fad1b8a3b46f766283bf0ba3d9462f14521007dc9e8",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+      "retainedFile": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-landscape.png",
+      "bytes": 32452,
+      "sha256": "212ab66701b490d9df99622798e75ce2d2bab32211c08233feb599b16618f399",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-last-control-focus.png",
+      "bytes": 53650,
+      "sha256": "f44abde1039e84f2afb03355f02fe8adf09eda133b15db965b6a33ef61e5ef90",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-middle.png",
+      "bytes": 53767,
+      "sha256": "2350918e8e7ce36d643ba2b03f2cc6e8588c4d0f30a44f556881f5baf6da1f7b",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-four-links-start.png",
+      "bytes": 60852,
+      "sha256": "dffcf19ad9a9a29934ecb9e164b5c6c26545babd8387c13f4fe0adc2ee2541d8",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+      "bytes": 55761,
+      "sha256": "83806137ff585922416d45e4e0dda8cd59eab31415e4abd17454b45902ccfdbb",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+      "retainedFile": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-back-after-forward-reload.png",
+      "bytes": 54670,
+      "sha256": "6f19ef5bd19c0659e327dfbf5360a24b404ee0341ff7c08e504b63a96b354383",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-back-workspace-initial.png",
+      "bytes": 54670,
+      "sha256": "6f19ef5bd19c0659e327dfbf5360a24b404ee0341ff7c08e504b63a96b354383",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-back-workspace.png",
+      "bytes": 54670,
+      "sha256": "6f19ef5bd19c0659e327dfbf5360a24b404ee0341ff7c08e504b63a96b354383",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-destination-summary-native.png",
+      "bytes": 51158,
+      "sha256": "098ba21b14a3ced864004f13f996c392843dc875a41b891306af25a4c46e4e5b",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-end.png",
+      "bytes": 52347,
+      "sha256": "7f82bb96e6e4e62d35a971d9c86e7ad1462e00c391613060e3dc6b8124a950ac",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-landscape-safe-area34.png",
+      "bytes": 29244,
+      "sha256": "58744649bea8922a85a7a9fa2228c5d29168767e62c172e3e70d68c322ff92a4",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-landscape.png",
+      "bytes": 29522,
+      "sha256": "eabdf6c2854bf78476f1a8f8e72f31de98270590017e6d1dd66d09459f098a63",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-last-control-focus.png",
+      "bytes": 55761,
+      "sha256": "83806137ff585922416d45e4e0dda8cd59eab31415e4abd17454b45902ccfdbb",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-middle.png",
+      "bytes": 54288,
+      "sha256": "dc104947abd1b25c1ce4e9073dda8149e6456ee458807840b047a6a2ddf3b3cb",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-320-text200-three-links-start.png",
+      "bytes": 60171,
+      "sha256": "404c7749c3e73b61dea301efe50281b9d906c96fc5028e4a100402ab503f0878",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-empty-create-focus.png",
+      "bytes": 52194,
+      "sha256": "269f4f45df9168d44b37eaab899049dec2966d55333bde2c382c56b6c09d9788",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-empty-create-focus.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-empty-start.png",
+      "bytes": 55414,
+      "sha256": "57c1e26695be228531e68399285c4724bce2e907a3220ffafebb2c0d4a5171b4",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-empty-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-actual-last-control.png",
+      "bytes": 52122,
+      "sha256": "8cf3b77a8325ae64d31628bfb56a266f264d98ddbe13033097de20298f725254",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-back-workspace-initial.png",
+      "bytes": 51038,
+      "sha256": "c73cfc07c854b39fd720cee460a6ca5620ae9f380fe089954f22307ff6e3f3d7",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-back-workspace.png",
+      "bytes": 51038,
+      "sha256": "c73cfc07c854b39fd720cee460a6ca5620ae9f380fe089954f22307ff6e3f3d7",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-destination-summary-native.png",
+      "bytes": 46994,
+      "sha256": "3e36712c340e60cc0dfc4aeef7c63a73e5136edc191cc4ba71e0f10fc41f50c7",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-end.png",
+      "bytes": 51025,
+      "sha256": "5b4f9134276f1d7fe159e8bced72f835b6c5d493bba70b32da25350365664a67",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-landscape-safe-area34.png",
+      "bytes": 30610,
+      "sha256": "2d9f798988d34a531066734ab3ddbd39826158c858ba0a3d1e67875945a580d9",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-four-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-landscape.png",
+      "bytes": 30721,
+      "sha256": "cad916ff2e3740630f704d64a7351c334f96714552487fb61c9c43edd714ad89",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-last-control-focus.png",
+      "bytes": 52122,
+      "sha256": "8cf3b77a8325ae64d31628bfb56a266f264d98ddbe13033097de20298f725254",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-middle.png",
+      "bytes": 51486,
+      "sha256": "8542c8c2d4afa7df5e41736af8f6ed8721663f398275b5d6b9bcac867dbb5983",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-four-links-start.png",
+      "bytes": 55555,
+      "sha256": "dd91864d1d977823a051cfe1faf3fada5ca22291b0555c40b3d3fd3c45aa3810",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-four-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-actual-last-control.png",
+      "bytes": 50666,
+      "sha256": "8b638a833eb042b9476bccb13b3552a6767f845f19a0c32d5d74b8865cd58d9c",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+      "bytes": 49596,
+      "sha256": "a57cceba8496116b34ff2d1e1d2652af9d086384a11fffa6418cc82f5403aaf0",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+      "retainedFile": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-back-workspace-initial.png",
+      "bytes": 49596,
+      "sha256": "a57cceba8496116b34ff2d1e1d2652af9d086384a11fffa6418cc82f5403aaf0",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-back-workspace.png",
+      "bytes": 49596,
+      "sha256": "a57cceba8496116b34ff2d1e1d2652af9d086384a11fffa6418cc82f5403aaf0",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-destination-summary-native.png",
+      "bytes": 45621,
+      "sha256": "df416bc0120563642f0b913e000fa8f2c438478402fb60c28e6e5046e8dc013d",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-end.png",
+      "bytes": 49578,
+      "sha256": "278b70c2047d4a0b1be6d81729f0353a718763de10faef49b0bcd9ac58695c4a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-landscape-safe-area34.png",
+      "bytes": 28977,
+      "sha256": "2b39bcf39990c8316f3024816badeb4b3cb471b56380150d2a64979219bf4f29",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-landscape.png",
+      "bytes": 28970,
+      "sha256": "2cd1792d7f142299522de7884a0900d58096d05c54a651acac611d14fadbb6b1",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text100-three-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-last-control-focus.png",
+      "bytes": 50666,
+      "sha256": "8b638a833eb042b9476bccb13b3552a6767f845f19a0c32d5d74b8865cd58d9c",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-middle.png",
+      "bytes": 50044,
+      "sha256": "d02bd6a3b7450eb800dea60602dc1325531e46f108e23c3fa8d67d70a0c6fae5",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text100-three-links-start.png",
+      "bytes": 54159,
+      "sha256": "d1af4c7909fcc83adc4e9a1e4c4f1213665b0172f8fc86a6806b201c1e6ccaf5",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text100-three-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-empty-create-focus.png",
+      "bytes": 57776,
+      "sha256": "f3a714250a9d57dd3d087493331a55b02fcbb4817396a9b4554e3812a34cf6f5",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-empty-create-focus.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-empty-start.png",
+      "bytes": 66776,
+      "sha256": "a65e642bb645751b12c2b9b8a766c54aac554016c02ebab1bc09d9d705c4b5b3",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-empty-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-actual-last-control.png",
+      "bytes": 59315,
+      "sha256": "7e07b4cc4d2a72e199be5ed307b53d57e7a9653acb2cc2dfffdd7c4615c9b80b",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-back-workspace-initial.png",
+      "bytes": 58262,
+      "sha256": "046fec35fd3ebc3870c645fa3e6f332c2ca1b8f408b87deec5c5556d785492dc",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-back-workspace.png",
+      "bytes": 58262,
+      "sha256": "046fec35fd3ebc3870c645fa3e6f332c2ca1b8f408b87deec5c5556d785492dc",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-back-workspace-initial.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png",
+      "bytes": 54870,
+      "sha256": "b53cb006079138b98afe5b48504fe79c3e4162f3724934e3b8136b7ac5a105ae",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png",
+      "retainedFile": "frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-end.png",
+      "bytes": 58026,
+      "sha256": "5757aa3fd4a37c07f6f40364ad00f7b8dc59209b25c762074145c33fc2c99d2f",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png",
+      "bytes": 31980,
+      "sha256": "476b45f150c2b4ce3b259fad1b8a3b46f766283bf0ba3d9462f14521007dc9e8",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+      "retainedFile": "frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-landscape.png",
+      "bytes": 32485,
+      "sha256": "c9099eca7e01f7e223d2ea9ee9067438512500f189fd5440bc746c109e0b318f",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-last-control-focus.png",
+      "bytes": 59315,
+      "sha256": "7e07b4cc4d2a72e199be5ed307b53d57e7a9653acb2cc2dfffdd7c4615c9b80b",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-middle.png",
+      "bytes": 57615,
+      "sha256": "a86cc345fb70e74b374485db7825086f2ced99a724f1ca9ee77d4a3d6d3a5f0b",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-four-links-start.png",
+      "bytes": 63828,
+      "sha256": "5c94c65fda88b16b7ef55efcb0a2cff22947243080f92194d6a0b3d49f6e3e55",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-four-links-start.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-actual-last-control.png",
+      "bytes": 57128,
+      "sha256": "35639e895adb9c80c3c82ebb584093780a37a26d4ade645a284a19f5e20e785e",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+      "bytes": 56107,
+      "sha256": "a8aa2579c02c470a8250c5afb79147658ece7166ecd5f4f97ce8fa946d2a440a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png"
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-back-workspace-initial.png",
+      "bytes": 56107,
+      "sha256": "a8aa2579c02c470a8250c5afb79147658ece7166ecd5f4f97ce8fa946d2a440a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-back-workspace.png",
+      "bytes": 56107,
+      "sha256": "a8aa2579c02c470a8250c5afb79147658ece7166ecd5f4f97ce8fa946d2a440a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-destination-summary-native.png",
+      "bytes": 57433,
+      "sha256": "afe0027d73328e1751bf900dedd5222a3b5a4fd65608622cde0522cfaa7ac8c1",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-destination-summary-native.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-end.png",
+      "bytes": 56060,
+      "sha256": "737b4e8bab3a6c7fac3a8dae04045fa880b82def31e5bd30cd6c93357614bba7",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-end.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-landscape-safe-area34.png",
+      "bytes": 29244,
+      "sha256": "58744649bea8922a85a7a9fa2228c5d29168767e62c172e3e70d68c322ff92a4",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-320-text200-three-links-landscape-safe-area34.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-landscape.png",
+      "bytes": 29555,
+      "sha256": "3ea71dedcb905ed810becd3dcaeceb9d2e4796afda75bf1fd96c0c0864a49980",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-landscape.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-last-control-focus.png",
+      "bytes": 57128,
+      "sha256": "35639e895adb9c80c3c82ebb584093780a37a26d4ade645a284a19f5e20e785e",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-actual-last-control.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-middle.png",
+      "bytes": 59111,
+      "sha256": "6dc4433db29f8ea40f04808129a804b8525cf05909c118b8b40fabf064466f39",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-middle.png",
+      "retainedFile": null
+    },
+    {
+      "sourceFile": ".accounts-validation/frontend-mobile-navigation/frontend-mobile-navigation-after-375-text200-three-links-start.png",
+      "bytes": 63651,
+      "sha256": "4301b9d63fc1266d9ff9da24bfb382dfd7769d9838802858289d4414a403f25a",
+      "inspectedRepresentative": "frontend-mobile-navigation-after-375-text200-three-links-start.png",
+      "retainedFile": null
+    }
+  ],
+  "files": [
+    {
+      "path": "browser-probe.cjs.txt",
+      "bytes": 2495,
+      "sha256": "1c9f9b5d2cfbd978efaeb3867fc7a8a7f0d8d354a3dd58e31e262bc17795435d"
+    },
+    {
+      "path": "error-context-320-text100.md",
+      "bytes": 727,
+      "sha256": "5f1f1229ff3899bc4760a3a1351efed0da8e8d3a1785b6b4cedd9f646e914b04"
+    },
+    {
+      "path": "error-context-320-text200.md",
+      "bytes": 727,
+      "sha256": "5f1f1229ff3899bc4760a3a1351efed0da8e8d3a1785b6b4cedd9f646e914b04"
+    },
+    {
+      "path": "error-context-375-text100.md",
+      "bytes": 727,
+      "sha256": "5f1f1229ff3899bc4760a3a1351efed0da8e8d3a1785b6b4cedd9f646e914b04"
+    },
+    {
+      "path": "error-context-375-text200.md",
+      "bytes": 727,
+      "sha256": "5f1f1229ff3899bc4760a3a1351efed0da8e8d3a1785b6b4cedd9f646e914b04"
+    },
+    {
+      "path": "first-failure-redacted.log",
+      "bytes": 1522,
+      "sha256": "bcbc9d0c146caa109bbccc3773abc497c4491f9ce4095b1e65af2954906b2fb3"
+    },
+    {
+      "path": "frontend-logout-browser-probe.json",
+      "bytes": 858,
+      "sha256": "fa8dee6a0ae06506ae3c57957d120846ea92eebc9ad68d2a82ac833196c9550c"
+    },
+    {
+      "path": "frontend-logout-browser-probe.png",
+      "bytes": 34004,
+      "sha256": "0406e620073e8a3446fa988f61b7f9734c66d9de72b8dde4d1c85509feb81245"
+    },
+    {
+      "path": "frontend-logout-http-probe.json",
+      "bytes": 734,
+      "sha256": "5fdca323094f349d7c7d4cb6380974747743b082d7f11b32d07a939ac4ccae7a"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-empty-create-focus.png",
+      "bytes": 50877,
+      "sha256": "94137ecd6d72051d6eccbff0163d5867082f93553f8282570fe636b24b031ba3"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-four-links-start.png",
+      "bytes": 55976,
+      "sha256": "e465f64b47d895edffa8c07167d168132e3ba7dd16bcb41c3c3a056e646e1279"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-geometry.json",
+      "bytes": 24625,
+      "sha256": "3be956b65067d8b956bb4f2a843ae27e7cc43562575650810df67e07825ca856"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+      "bytes": 31980,
+      "sha256": "476b45f150c2b4ce3b259fad1b8a3b46f766283bf0ba3d9462f14521007dc9e8"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-geometry.json",
+      "bytes": 24604,
+      "sha256": "e40a7590b437857439f2c924a67ce2775f21525916997872474ece897e2e9241"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+      "bytes": 55761,
+      "sha256": "83806137ff585922416d45e4e0dda8cd59eab31415e4abd17454b45902ccfdbb"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-geometry.json",
+      "bytes": 24706,
+      "sha256": "461f36c68bcf5887863463ffe1eae52aa11bfa339ca6ee69346d273622ec2102"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+      "bytes": 49596,
+      "sha256": "a57cceba8496116b34ff2d1e1d2652af9d086384a11fffa6418cc82f5403aaf0"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png",
+      "bytes": 54870,
+      "sha256": "b53cb006079138b98afe5b48504fe79c3e4162f3724934e3b8136b7ac5a105ae"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png",
+      "bytes": 31980,
+      "sha256": "476b45f150c2b4ce3b259fad1b8a3b46f766283bf0ba3d9462f14521007dc9e8"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-geometry.json",
+      "bytes": 24587,
+      "sha256": "5aceae3f2433d7a4fe7a31e5500ec3b6cca84877b877574f0bffdc82e50c0477"
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+      "bytes": 56107,
+      "sha256": "a8aa2579c02c470a8250c5afb79147658ece7166ecd5f4f97ce8fa946d2a440a"
+    },
+    {
+      "path": "nav4-result.json",
+      "bytes": 4967,
+      "sha256": "353521d8831cff0dfcb1668d65d8f5261415f82b65df0b96f84d9fd6dc0ae2fc"
+    }
+  ],
+  "redaction": "Result and diagnostic receipts use closed projections. Raw process environment, request/response headers, cookies, console bodies, and original raw Playwright reports are excluded."
+}

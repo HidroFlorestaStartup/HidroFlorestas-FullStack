@@ -24,7 +24,8 @@
       "feat/frontend-territorial-map": false,
       "feat/frontend-user-administration": false,
       "feat/frontend-landing-consolidation": false,
-      "release/frontend-rc-20261021": false
+      "release/frontend-rc-20261021": false,
+      "docs/pilot-readiness-20261021": false
     }
   }
 }

@@ -1,0 +1,7 @@
+  ✓  1 tests/e2e/ihfr-diagnosis-manage.spec.ts:100:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID (11.7s)
+  ✓  2 tests/e2e/ihfr-diagnosis-manage.spec.ts:160:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key (21.5s)
+  ✓  3 tests/e2e/ihfr-diagnosis-manage.spec.ts:268:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM (1.5s)
+  ✓  4 tests/e2e/ihfr-diagnosis-manage.spec.ts:282:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal (1.8s)
+  ✓  5 tests/e2e/ihfr-diagnosis-read.spec.ts:18:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout (6.7s)
+  ✓  6 tests/e2e/ihfr-diagnosis-read.spec.ts:60:5 › member sees honest absence and inactive laboratory stays read only (1.8s)
+  6 passed (46.1s)
