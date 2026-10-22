@@ -118,3 +118,30 @@ Foram abertas independentemente duas capturas: o alerta de logout a 375 × 900 e
 A travessia dos JSONs não encontrou objetos de ambiente, headers, cookies, stdout/stderr ou anexos arbitrários. A comparação em memória de valores sensíveis conhecidos com os textos retornou zero correspondências; valores não foram impressos. O hash do teste original corresponde ao informado no recibo.
 
 **Parecer do adendo: PASS documental.** A triagem de RV-002 avançou de hipótese para mecanismo reproduzido no contexto local. A aprovação da navegação completa continua pendente: **0 PASS/4 FAIL originais**, runner oficial NOT_RUN neste momento, INV-003/`settleTransitions` inconclusivos e G3–G5 sem liberação. Nenhuma nova bateria funcional foi executada pelo revisor.
+
+## Adendo de fechamento — 2026-10-22 00:55:57 UTC
+
+**PASS para o snapshot documental examinado; CI e revisão externa confirmados exclusivamente para o candidato `131ade347258c7820c7a89989ab851769197b486`.** Foram lidos `final-report.md` (SHA-256 `f88002cec52919424610c56e859103742bee8821adfefe6c7008f393a57a6cd0`) e `evidence/publication-receipt.json` (SHA-256 `832c1f13e55f453e0f371122f4f0510e4e36cda6f4ff12adbe9e779fc890889c`) na integração, ainda antes do commit documental de fechamento. Os links relativos dessa versão resolvem. Estes hashes identificam o snapshot efetivamente revisado, não conteúdo posterior ainda não examinado.
+
+### CI e Codex conferidos por este revisor
+
+- As consultas conectadas ao [run 39699435699](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39699435699), seus jobs da tentativa 1 e artifacts confirmam o head acima, conclusão `success` e job `119564787181`, de `2026-10-22T00:23:54Z` a `2026-10-22T00:45:58Z`.
+- O ZIP local foi confrontado com o artifact oficial `12392364807`: **26.854.109 bytes**, SHA-256 `b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e`, **735 entradas**, CRC íntegro, sem caminho inseguro ou symlink. São 451 PNGs e 268 JSONs; isso não significa inspeção visual de todos os arquivos.
+- As **15 entradas** do `results.jsonl` dentro do ZIP coincidem exatamente, nos campos publicados, com o recibo da coordenação: nomes únicos, PASS, exit 0 e snapshot `47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5`. Os resumos dos logs confirmam Unit 402 + 17, Integration 231, Migration 37, Contract 6, R1 17, E2E 220, Https 2, Deletion 3 e Ihfr 6. Não houve nova execução de suítes pelo revisor.
+- Foram lidos diretamente o [recibo Codex 6329641230](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329641230) e o [summary 6329614420](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420). O estado estruturado identifica o SHA completo, `status:completed`, `has_any_findings:false` e `has_unresolved_findings:false`, concluído em `2026-10-22T00:26:15.726939Z`. É revisão de código; o campo de revisão de segurança não declara execução.
+
+A síntese conserva as quatro falhas NAV4 locais, a contraprova de ingresso, as oito diferenças textuais de CHECKs, os históricos inconclusivos e os bloqueios G3–G5. O sucesso do candidato não foi usado para reescrever esses fatos.
+
+### Amostra visual e limite de escopo
+
+Este revisor abriu **dez PNGs originais do CI**: quatro de administração e seis de IHFR, com seus dez metadados. Todos correspondem ao candidato, `fullPage:false`, `physicalDevice:false`, fonte raiz 32 px/texto 200%, largura documental igual ao viewport e `scrollX:0`. A lista exata foi encaminhada à frente frontend para seu recibo de inspeção oficial. Não foi demonstrado achado material nessa amostra; **isso não é declaração de ausência geral de problemas visuais**. Os recortes longos e rolados não mostram necessariamente toda uma região ao mesmo tempo e não constituem aceite humano.
+
+A observação de quebra da CTA de drafts pertence à inspeção da frente frontend, fora dessas dez capturas. Deve conservar sua evidência e classificação próprias; este parecer não importa automaticamente requisitos de quebra de palavras de outra spec nem omite a observação por existir CI PASS.
+
+### Política aplicável ao próximo head documental
+
+A leitura de G2 da missão, `AGENTS.md`, `PLANS.md` e princípio V da constituição sustenta validação proporcional de um delta **exclusivamente documental**. O plano deve vincular os quinze gates ao candidato executado e registrar no futuro head documental a sua validação própria de escopo, links, JSON, histórico, hashes, árvore remota e checks efetivos. Qualquer alteração de produto, testes, dependências, scripts, workflow ou guarda está fora desta conclusão.
+
+O marcador `[skip ci]` é admissível nesse recorte sem atribuir PASS funcional ao novo SHA. Segundo a [documentação do GitHub](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs), checks de workflow ignorado podem permanecer Pending; uma exigência obrigatória não é dispensada e pode bloquear merge. Não há autorização para alterar proteções ou fabricar status.
+
+**Neste adendo, checks e nova resposta Codex do head documental futuro são NOT_RUN.** O coordenador deve verificá-los após a publicação e registrar os recibos do SHA efetivo. Este parecer não antecipa essa revisão, envio de e-mail, aceite humano ou merge. Nenhuma consulta Vercel foi repetida nesta etapa.

@@ -1,6 +1,9 @@
 # HF-POS-20261021-01 — execução pós-consolidação
 
-Estado: `EM_ANDAMENTO`. Data de início: 2026-10-21, America/Sao_Paulo.
+Estado: `AGUARDANDO_REVISAO` do mantenedor para integração. Data de início:
+2026-10-21, America/Sao_Paulo. Os recortes técnicos executáveis foram concluídos;
+as frentes A/B permanecem PARCIAL e os gates operacionais bloqueados estão
+registrados no [relatório final](../../releases/2026-10-21-post-consolidation/final-report.md).
 
 ## Objetivo, autoridade e escopo
 
@@ -52,6 +55,10 @@ em três tarefas reais e coordenação, sem personagens ou delegações simulada
 Saídas ficam em `docs/releases/2026-10-21-post-consolidation/`. Cada agente tem
 um único conjunto de arquivos de escrita. O coordenador é o único escritor de
 workflow/vercel.json e integra commits locais examinados; agentes não fazem push.
+Para integrar os recibos posteriores, a mesma worktree do coordenador passou à
+branch local `review/hf-pos-final-receipts-20261021`, criada sobre o candidato
+remoto. O destino publicado continua `docs/pilot-readiness-20261021`; a branch
+local de integração anterior foi preservada.
 
 ## Etapas e critérios de encerramento
 
@@ -61,12 +68,15 @@ workflow/vercel.json e integra commits locais examinados; agentes não fazem pus
    dos logs originais, dump/restore próprio e comparação de configuração exigida
    com metadados reais. Navegação móvel adicional FAIL 4/4, com contraprova focal
    de origem preservada. Banco hospedado/produção permanecem fora da execução.
-3. **REVIEW — independente local concluída; externa pendente:** diffs, evidência,
-   privacidade e limites confrontados por agentes distintos. Publicar branch/PR
-   para development, solicitar `@codex review` e registrar a resposta efetiva.
-4. **EVIDENCE — pendente:** executar os quinze gates oficiais no SHA publicado,
-   coletar run/attempt/job/journal/digest e inspecionar capturas pertinentes.
-5. **EMAIL — pendente:** consultar SENT pelo identificador desta missão e pelos
+3. **REVIEW — concluída no candidato:** diffs, evidência, privacidade e limites
+   confrontados por agentes distintos. PR #27 publicada para development;
+   Codex concluiu o SHA `131ade3` sem findings. O fechamento documental recebe
+   nova solicitação/revisão do SHA próprio, com recibo posterior na PR.
+4. **EVIDENCE — concluída:** quinze gates oficiais PASS no SHA publicado,
+   run `39699435699`, attempt 1, job `119564787181`; artifact/digest e quinze
+   registros de journal conferidos. Cinquenta e quatro PNGs originais foram
+   inspecionados, preservando os limites e as observações visuais da amostra.
+5. **EMAIL — etapa final posterior a este commit:** consultar SENT pelo identificador desta missão e pelos
    dois destinatários; enviar exatamente uma vez ou recuperar recibo existente.
    Publicar recibo redigido no GitHub, sem corpo privado nem lista de testadores.
 
@@ -78,6 +88,23 @@ asserção, timeout, versão de Action, permissão ou runner é relaxado.
 Verificações: diff/escopo, JSON/YAML e links locais; snapshot do código igual à
 base quando não houver correção; comparação da política de deploy; CI própria;
 revisão independente; referências remotas e estado Vercel reconsultados no fim.
+
+### Fechamento documental e proporcionalidade de G2
+
+Depois do candidato executado, o delta de encerramento contém somente relatórios,
+recibos e capturas selecionadas. O G2 explícito da missão permite para docs-only
+escopo, links, JSON, histórico e checks do SHA próprio. AGENTS.md exige validação
+proporcional; PLANS.md exige justificar verificações não realizadas. Portanto,
+o commit de fechamento usa `[skip ci]`, recebe validação documental própria e
+nova revisão Codex. Seus quinze gates funcionais são NOT_RUN; o PASS de `131ade3`
+permanece atribuído somente ao candidato. Checks obrigatórios eventualmente
+pendentes não são dispensados nem convertidos em PASS. Nenhuma proteção ou
+condição do workflow é alterada para esse fechamento e não há merge automático.
+
+A criação do SHA remoto, os checks/revisão efetivos e o resultado de envio do
+Gmail necessariamente ocorrem depois deste texto. Seus recibos finais são
+registrados na conversa da PR #27, com referências exatas. A coordenação conclui
+essas ações antes de responder ao usuário; não deixa tarefa assíncrona agendada.
 
 ## Dependências e bloqueios observados
 
@@ -108,3 +135,24 @@ autorizou o e-mail final: esse envio não aguarda confirmação adicional.
   oito CHECKs reexpressos. Navegação móvel 4 FAIL preservada; contraprova focal
   de origem registrada pelo agente frontend. Nenhum patch de produto proposto.
   Publicação, CI oficial, Codex e e-mail ainda têm recibos posteriores próprios.
+- 2026-10-21, America/Sao_Paulo, fechamento técnico: PR #27 publicada com candidato
+  `131ade347258c7820c7a89989ab851769197b486` e árvore igual à integração local.
+  CI oficial concluída às 21:45:58, quinze PASS na tentativa 1. Codex sem findings;
+  artifact de 26.854.109 bytes com digest igual à API e journal reconciliado.
+  Revisão independente conferiu também os recibos. Observações visuais P3 e
+  falhas anteriores preservadas; G1/G3/G4/G5 continuam BLOCKED. Estado do plano
+  passa a `AGUARDANDO_REVISAO` do mantenedor, sem declarar homologação do piloto.
+  Fechamento docs-only e comunicação final seguem recibos posteriores na PR,
+  sem repetir suítes funcionais nem antecipar o sucesso de ações futuras.
+- 2026-10-22, America/Sao_Paulo: o usuário pediu continuidade depois de uma pausa.
+  A retomada detectou reinicialização do ambiente temporário, com perda das
+  worktrees locais anteriores. A branch remota permaneceu em `131ade3`, aberta
+  na PR #27, com CI/artifact preservados; o e-mail não havia sido enviado.
+  Novo clone `hidro-recovery-repo` e quatro worktrees isoladas foram criados sobre
+  esse candidato. As branches locais agora usam `review/hf-pos-recovered-*-20261022`;
+  os nomes anteriores acima são histórico, não alegação de persistência local.
+  Agentes reais recuperam os originais e reconstroem recibos, comparando hashes
+  previamente registrados e identificando documentos regenerados. Consultas
+  remotas atuais possuem recibo temporal separado. Sem repetir suítes funcionais,
+  a coordenação valida/publica o fechamento docs-only, aguarda Codex do novo SHA
+  e conclui o envio único autorizado com busca de idempotência em SENT.

@@ -1,0 +1,255 @@
+{
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSizePx": 16,
+    "percentRelativeTo16px": 100,
+    "method": "root-font-size; not browser zoom"
+  },
+  "document": {
+    "width": 768,
+    "scrollX": 0,
+    "scrollY": 184
+  },
+  "content": {
+    "scrollTop": 0,
+    "clientHeight": 2718,
+    "scrollHeight": 2718
+  },
+  "focus": {
+    "tag": "A",
+    "outlineStyle": "solid",
+    "outlineWidth": "3px",
+    "outlineColor": "rgb(36, 95, 131)"
+  },
+  "control": {
+    "fullyInViewport": true,
+    "unobstructed": true,
+    "rect": {
+      "x": 214,
+      "y": 427.59375,
+      "width": 44,
+      "height": 44,
+      "top": 427.59375,
+      "right": 258,
+      "bottom": 471.59375,
+      "left": 214
+    },
+    "radii": [
+      {
+        "x": 2,
+        "y": 2
+      },
+      {
+        "x": 2,
+        "y": 2
+      },
+      {
+        "x": 0,
+        "y": 0
+      },
+      {
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "points": [
+      {
+        "x": 218,
+        "y": 431.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 254,
+        "y": 431.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 218,
+        "y": 467.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 254,
+        "y": 467.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 236,
+        "y": 449.59375,
+        "tag": "SPAN",
+        "className": "",
+        "inside": true
+      },
+      {
+        "x": 236,
+        "y": 431.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 254,
+        "y": 449.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 236,
+        "y": 467.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      },
+      {
+        "x": 218,
+        "y": 449.59375,
+        "tag": "A",
+        "className": "leaflet-control-zoom-in",
+        "inside": true
+      }
+    ],
+    "scrollContainers": [
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 202,
+          "y": 415.59375,
+          "width": 524,
+          "height": 446,
+          "top": 415.59375,
+          "right": 726,
+          "bottom": 861.59375,
+          "left": 202
+        },
+        "scrollTop": 0,
+        "scrollHeight": 697,
+        "clientHeight": 446,
+        "overflow": "hidden",
+        "position": "relative",
+        "zIndex": "auto",
+        "padding": "0px",
+        "scrollPadding": "auto"
+      },
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 201,
+          "y": 414.59375,
+          "width": 526,
+          "height": 448,
+          "top": 414.59375,
+          "right": 727,
+          "bottom": 862.59375,
+          "left": 201
+        },
+        "scrollTop": 0,
+        "scrollHeight": 446,
+        "clientHeight": 446,
+        "overflow": "hidden",
+        "position": "relative",
+        "zIndex": "0",
+        "padding": "0px",
+        "scrollPadding": "auto"
+      }
+    ],
+    "viewport": {
+      "width": 768,
+      "height": 900,
+      "scrollX": 0,
+      "scrollY": 184,
+      "visualViewport": {
+        "width": 768,
+        "height": 900,
+        "offsetLeft": 0,
+        "offsetTop": 0,
+        "scale": 1
+      }
+    },
+    "activeTag": "A",
+    "control": {
+      "tag": "A",
+      "rect": {
+        "x": 214,
+        "y": 427.59375,
+        "width": 44,
+        "height": 44,
+        "top": 427.59375,
+        "right": 258,
+        "bottom": 471.59375,
+        "left": 214
+      },
+      "scrollTop": 0,
+      "scrollHeight": 45,
+      "clientHeight": 43,
+      "overflow": "visible",
+      "position": "static",
+      "zIndex": "auto",
+      "padding": "0px",
+      "scrollPadding": "auto"
+    },
+    "header": {
+      "tag": "HEADER",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 73.625,
+        "top": 0,
+        "right": 768,
+        "bottom": 73.625,
+        "left": 0
+      },
+      "scrollTop": 0,
+      "scrollHeight": 73,
+      "clientHeight": 73,
+      "overflow": "visible",
+      "position": "sticky",
+      "zIndex": "30",
+      "padding": "12px 24px",
+      "scrollPadding": "auto"
+    },
+    "navigation": {
+      "tag": "NAV",
+      "rect": {
+        "x": 16,
+        "y": 110,
+        "width": 144,
+        "height": 170.375,
+        "top": 110,
+        "right": 160,
+        "bottom": 280.375,
+        "left": 16
+      },
+      "scrollTop": 0,
+      "scrollHeight": 168,
+      "clientHeight": 168,
+      "overflow": "visible",
+      "position": "sticky",
+      "zIndex": "20",
+      "padding": "12px",
+      "scrollPadding": "auto"
+    }
+  },
+  "screenshot": {
+    "filename": "e62a70e0523c-r0-n0-after-frontend-territorial-map-map-768x900-text100-viewport.png",
+    "fullPage": false,
+    "animations": "allow",
+    "browser": "chromium"
+  },
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "evidenceKind": "application-viewport",
+  "physicalDevice": false,
+  "note": "Official synthetic fixture; form fields masked; no manual accessibility acceptance."
+}

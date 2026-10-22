@@ -2,6 +2,18 @@
 
 **Resultado operacional: PARCIAL. O piloto não está homologado para Production.**
 
+**Fechamento posterior:** o [relatório final](final-report.md) consolida a
+[CI oficial](backend-ci.md) do candidato `131ade347258c7820c7a89989ab851769197b486`:
+quinze gates PASS na primeira tentativa, artifact verificado e Codex concluído
+sem findings. O [recibo de publicação](evidence/publication-receipt.json) vincula
+SHA, árvore, run/attempt/job e revisão. A matriz abaixo preserva o checkpoint
+anterior à primeira publicação; o estado final consta do relatório e da
+[PR #27](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27).
+O fechamento documental posterior possui checks/revisão próprios; nele os gates
+funcionais são NOT_RUN, sem herança de PASS.
+A [inspeção visual oficial](frontend-ci-inspection.md) registra 54 PNGs abertos,
+161 metadatas conferidas e observações P3, com aceites humanos ainda pendentes.
+
 | Frente autorizada | Estado | Resultado atingido |
 |---|---|---|
 | A — investigação e defeitos | PARCIAL | Históricos recuperados, reproduções reais e contraprova local; causas antigas ainda inconclusivas, sem correção especulativa |

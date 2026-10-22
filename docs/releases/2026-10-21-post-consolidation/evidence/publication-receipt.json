@@ -1,0 +1,255 @@
+{
+  "mission": "HF-POS-20261021-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "pullRequest": 27,
+  "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+  "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "publishedCandidate": {
+    "head": "131ade347258c7820c7a89989ab851769197b486",
+    "tree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+    "createdUtc": "2026-10-22T00:23:45Z",
+    "localIntegratedHead": "10f083eb9f48f52bda95d5e349daf06e00d6ea78",
+    "localIntegratedTree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+    "treeEquality": true,
+    "transport": "GitHub connector Git Data API",
+    "changedFiles": 91,
+    "documentaryPaths": 89,
+    "configurationPaths": [
+      ".github/workflows/rc-review.yml",
+      "vercel.json"
+    ],
+    "productTestsScriptsSchemaDependenciesRawDelta": []
+  },
+  "localValidation": {
+    "diffCheck": "PASS",
+    "jsonParsed": 40,
+    "relativeMarkdownLinks": "PASS",
+    "workflowSemanticDelta": "Only branch inclusion in push filter and job condition",
+    "previousVercelRulesPreserved": 23,
+    "newBranchDeploymentEnabled": false,
+    "manifests": [
+      {
+        "path": "frontend-public/manifest.json",
+        "filesVerified": 44
+      },
+      {
+        "path": "frontend-nav4/manifest.json",
+        "filesVerified": 22
+      }
+    ],
+    "scope": "Before first publication of candidate 131ade3; later documentary delta validated separately in final PR receipt."
+  },
+  "codex": {
+    "head": "131ade347258c7820c7a89989ab851769197b486",
+    "status": "completed",
+    "has_any_findings": false,
+    "has_unresolved_findings": false,
+    "summaryComment": 6329614420,
+    "receiptComment": 6329641230,
+    "completedUtc": "2026-10-22T00:26:15.726939Z",
+    "requestComment": 6329611767,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329641230"
+  },
+  "ci": {
+    "run": 39699435699,
+    "attempt": 1,
+    "job": 119564787181,
+    "head": "131ade347258c7820c7a89989ab851769197b486",
+    "result": "PASS",
+    "gateCount": 15,
+    "allGateExitCodes": 0,
+    "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+    "startedUtc": "2026-10-22T00:23:54Z",
+    "completedUtc": "2026-10-22T00:45:58Z",
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39699435699",
+    "gates": [
+      {
+        "gate": "RegressionSetup",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:25:33.030Z",
+        "endedUtc": "2026-10-22T00:25:41.048Z"
+      },
+      {
+        "gate": "Unit",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:25:41.339Z",
+        "endedUtc": "2026-10-22T00:26:10.389Z"
+      },
+      {
+        "gate": "Integration",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:26:10.700Z",
+        "endedUtc": "2026-10-22T00:28:20.694Z"
+      },
+      {
+        "gate": "Migration",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:20.997Z",
+        "endedUtc": "2026-10-22T00:28:38.168Z"
+      },
+      {
+        "gate": "Contract",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:38.448Z",
+        "endedUtc": "2026-10-22T00:28:42.105Z"
+      },
+      {
+        "gate": "R1",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:42.417Z",
+        "endedUtc": "2026-10-22T00:28:53.199Z"
+      },
+      {
+        "gate": "Build",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:53.485Z",
+        "endedUtc": "2026-10-22T00:29:21.977Z"
+      },
+      {
+        "gate": "Typecheck",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:22.270Z",
+        "endedUtc": "2026-10-22T00:29:32.948Z"
+      },
+      {
+        "gate": "Lint",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:33.229Z",
+        "endedUtc": "2026-10-22T00:29:55.239Z"
+      },
+      {
+        "gate": "E2E",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:55.525Z",
+        "endedUtc": "2026-10-22T00:43:02.879Z"
+      },
+      {
+        "gate": "Https",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:43:03.247Z",
+        "endedUtc": "2026-10-22T00:44:02.986Z"
+      },
+      {
+        "gate": "Deletion",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:44:03.292Z",
+        "endedUtc": "2026-10-22T00:44:19.164Z"
+      },
+      {
+        "gate": "Ihfr",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:44:19.491Z",
+        "endedUtc": "2026-10-22T00:45:40.871Z"
+      },
+      {
+        "gate": "Bootstrap",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:45:41.192Z",
+        "endedUtc": "2026-10-22T00:45:46.655Z"
+      },
+      {
+        "gate": "SchemaAudit",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:45:46.989Z",
+        "endedUtc": "2026-10-22T00:45:47.901Z"
+      }
+    ],
+    "journalSource": "Root independently parsed 15 entries from downloaded job logs; artifact journal and digest are separately verified in the backend CI receipt.",
+    "artifact": {
+      "id": 12392364807,
+      "name": "rc-validation-131ade347258c7820c7a89989ab851769197b486",
+      "bytes": 26854109,
+      "sha256": "b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e",
+      "apiDigestEqualsLocal": true,
+      "files": 735,
+      "pngFiles": 451,
+      "jsonFiles": 268,
+      "logFiles": 15,
+      "journalFiles": 1,
+      "crc": "PASS",
+      "pathsAndSymlinks": "PASS",
+      "expiresUtc": "2026-11-05T00:45:48Z",
+      "receipt": "backend-ci-131ade3.json"
+    },
+    "visualInspection": {
+      "openedOriginalPngFiles": 54,
+      "applicationScreens": 52,
+      "helperCounterproofScreens": 2,
+      "frontendReviewerPngs": 44,
+      "independentReviewerPngs": 10,
+      "metadataFilesReviewed": 161,
+      "originalMetadataJsonFilesSelected": 50,
+      "receipt": "frontend-ci/ci-receipt.json",
+      "manifest": "frontend-ci/manifest.json",
+      "humanAcceptance": "NOT_RUN",
+      "allArtifactPngsInspected": false,
+      "p3Observations": [
+        "draft reload label word fragmentation at 320px/text200, documented in prior Spec024 review",
+        "environmental CTA word fragmentation at 320px/text200",
+        "laboratory sidebar label word fragmentation at 844px/text200"
+      ],
+      "distinctPngHashes": 53,
+      "metadataViewportFamilies": 6,
+      "separateNav4GeometryFiles": 4
+    }
+  },
+  "pr26Comments": [
+    6329298055,
+    6329624288
+  ],
+  "finalReceiptPolicy": "Later documentary follow-up has its own head/checks. This candidate receipt does not claim that tests ran on a future SHA.",
+  "email": {
+    "status": "NOT_RUN",
+    "finalResultLocation": "Final PR conversation receipt after authorized Gmail send and idempotency check.",
+    "scope": "State at documentary commit; actual send is a later single authorized action recorded in PR conversation."
+  },
+  "closingDocumentaryPolicy": {
+    "delta": "documentation and receipts only",
+    "functionalCi": "NOT_RUN on later documentary head; not inherited from candidate",
+    "commitMarker": "[skip ci]",
+    "requiredChecksNotWaived": true,
+    "newCodexReviewRequired": true,
+    "validation": [
+      "scope",
+      "relative links",
+      "JSON",
+      "history",
+      "file hashes",
+      "remote tree equality",
+      "actual checks on final head"
+    ],
+    "source": "G2 of explicitly authorized mission; AGENTS proportional validation; PLANS checks not executed must be justified",
+    "githubDocumentation": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs"
+  }
+}
