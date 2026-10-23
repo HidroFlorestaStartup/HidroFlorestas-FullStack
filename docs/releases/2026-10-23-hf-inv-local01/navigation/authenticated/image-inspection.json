@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "recordedUtc": "2026-10-23T21:13:55.136Z",
+  "inspectedBy": "agent-c-navigation",
+  "tool": "view_image",
+  "actualImagesOpened": 6,
+  "mapImagesOpened": 4,
+  "collectionImagesOpened": 2,
+  "otherMapPngNotOpened": 19,
+  "images": [
+    {
+      "path": "map-375.png",
+      "sha256": "5374e3d062f29b8a2be27bb795a0871e3faa0811241629fd39b28660e46f222c"
+    },
+    {
+      "path": "map-final-action-320-text200.png",
+      "sha256": "fab5146805ad267288c9e597909a71de36dc1a6c54b49d1a3929c033dbcdcc9f"
+    },
+    {
+      "path": "map-transport-recovered-375.png",
+      "sha256": "805b97278f7e0e801b81d5f5b401fa9ce801f11654005ead6aeadb64242d630f"
+    },
+    {
+      "path": "map-final-action-landscape.png",
+      "sha256": "ba55aa0e972f5ee44ef2cb2c5464e0052873a5494ae7976a66623fd41ffe8815"
+    },
+    {
+      "path": "collection-caret-initial.png",
+      "sha256": "49330a4dbe095a89284bd043b99fa124b2a2168637971eac9a3a7f953ff9046b"
+    },
+    {
+      "path": "collection-caret-helper.png",
+      "sha256": "ba76b962449ed745143d87974ccf77e0e09262d151390aa538a07527340e8d16"
+    }
+  ],
+  "findings": [
+    "Focused collection action is visible above the lower navigation in the selected 320px/text200 and landscape map frames.",
+    "The development Next indicator is retained; hidden pixels are not approved.",
+    "The initial-caret collection control capture occurred during text/font transition before helper readiness. Its mask leaves part of a synthetic date/time visible. It is not a geometry-matched A/B control, and no real personal data or secret is present.",
+    "The original helper capture is stable at its measured geometry. No causal claim about the historical hydration warning follows from these images."
+  ]
+}

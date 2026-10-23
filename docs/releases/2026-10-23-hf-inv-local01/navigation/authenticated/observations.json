@@ -1,0 +1,89 @@
+[
+  {
+    "experiment": "OBS-001/collection/C-AUTH-1",
+    "documentStatus": 200,
+    "identityStatus": 200,
+    "viewport": {
+      "width": 375,
+      "height": 900
+    },
+    "textScale": 200,
+    "control": [
+      {
+        "phase": "before",
+        "inlineCaret": "absent",
+        "stylePresent": false,
+        "enabled": true
+      },
+      {
+        "phase": "after",
+        "inlineCaret": "absent",
+        "stylePresent": false,
+        "enabled": true
+      }
+    ],
+    "helper": [
+      {
+        "phase": "before",
+        "inlineCaret": "absent",
+        "stylePresent": false,
+        "enabled": true
+      },
+      {
+        "phase": "mutation",
+        "inlineCaret": "transparent",
+        "stylePresent": true,
+        "enabled": true
+      },
+      {
+        "phase": "mutation",
+        "inlineCaret": "absent",
+        "stylePresent": true,
+        "enabled": true
+      },
+      {
+        "phase": "after",
+        "inlineCaret": "absent",
+        "stylePresent": true,
+        "enabled": true
+      }
+    ],
+    "warningCountBeforeHelper": 0,
+    "warnings": [],
+    "inputAfter": {
+      "enabled": true,
+      "focused": true
+    },
+    "hydratedFormOnly": true,
+    "historicalHydrationCause": "INCONCLUSIVO"
+  },
+  {
+    "experiment": "INV-005/C-AUTH-1",
+    "separateCookieJars": true,
+    "probesReadOnly": true,
+    "statuses": [
+      {
+        "phase": "journey",
+        "kind": "document-navigation",
+        "status": 200
+      },
+      {
+        "phase": "journey",
+        "kind": "api-lookup-expected-missing",
+        "status": 404
+      },
+      {
+        "phase": "independent-read-only-probe",
+        "kind": "document-navigation",
+        "status": 200
+      },
+      {
+        "phase": "independent-read-only-probe",
+        "kind": "api-lookup-expected-missing",
+        "status": 404
+      }
+    ],
+    "originalSixDocument404PathsRecovered": false,
+    "historicalCause": "INCONCLUSIVO"
+  }
+]
