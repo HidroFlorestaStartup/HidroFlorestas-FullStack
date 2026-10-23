@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "missionId": "HF-INV-20261023-01",
+  "preparedOn": "2026-10-23",
+  "timezone": "America/Fortaleza",
+  "scope": "documentary handoff for investigation and correction of demonstrated intermittent failures",
+  "authority": {
+    "classification": "DECISAO_CONFIRMADA",
+    "source": "Pedro, current conversation, 2026-10-23",
+    "authorized": [
+      "investigate",
+      "correct demonstrated defects",
+      "validate",
+      "commit",
+      "push",
+      "open or update PRs to development"
+    ],
+    "merges": "maintainer",
+    "pilotReleaseAuthorized": false
+  },
+  "base": {
+    "development": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+    "previousDevelopment": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+    "mainObserved": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "localCheckoutSynchronized": false
+  },
+  "integrated": {
+    "pr": 26,
+    "head": "f85077a6f0c229ea08fd4ce85c80a92c67c48093",
+    "merge": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+    "selfApproval": false
+  },
+  "pending": {
+    "pr": 27,
+    "head": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+    "finalReviewObserved": "running",
+    "findingsObserved": null,
+    "functionalCi": "NOT_RUN",
+    "reviewReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420",
+    "mergedByThisPreparation": false
+  },
+  "priorCandidate": {
+    "sha": "131ade347258c7820c7a89989ab851769197b486",
+    "run": 39699435699,
+    "attempt": 1,
+    "gatesPass": 15,
+    "resultAttribution": "prior candidate only"
+  },
+  "incidents": [
+    "INV-001",
+    "INV-002",
+    "INV-003",
+    "INV-004",
+    "INV-005",
+    "NAV4-LOCAL",
+    "NAV-SETTLE",
+    "OBS-001",
+    "OBS-002"
+  ],
+  "investigationExecution": "NAO_INICIADO",
+  "assignee": "a designar",
+  "decisionScope": "Integrate reports after applicable final review, with investigations open and pilot blocked; no causal closure or operational risk acceptance implied.",
+  "excluded": [
+    "production deployment",
+    "hosted env or provider mutations",
+    "hosted database operations",
+    "scientific approval",
+    "human acceptance",
+    "email or other external communications"
+  ],
+  "newFunctionalTestsRun": false,
+  "historicalFailuresPreserved": true,
+  "validationReceipt": "Documentary checks and publication identity are recorded in PR body/conversation after actual validation.",
+  "filesPlanned": 8
+}

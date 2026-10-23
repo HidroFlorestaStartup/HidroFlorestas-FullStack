@@ -270,3 +270,14 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](docs/releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](docs/releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+
+## Etapa vigente — investigação das intermitências — 23/10/2026
+
+`DECISAO_CONFIRMADA`: Pedro concordou nesta conversa com integrar os relatórios mantendo as investigações abertas e o piloto bloqueado e solicitou uma etapa dedicada para outro desenvolvedor. Investigar, corrigir defeitos demonstrados, validar, commitar, fazer push e abrir/atualizar PRs para development estão autorizados sem confirmação adicional de rotina. Merges e aceites continuam com o mantenedor.
+
+`EVIDENCIA_IMPLEMENTACAO`: #26 integrado sem autoaprovação em `c4adfb379e5dc78f27f31b91edbd13f43228d9f9`. #27 permanece aberto em `223839c9`, revisão final ainda running na consulta desta preparação; não foi integrado. Quinze gates PASS pertencem ao candidato131ade3/run39699435699/tentativa1; CI funcional do fechamento documental é NOT_RUN. Main observada beba96f preservada; máquina local de Pedro não sincronizada.
+
+Próximo executor: [prompt autossuficiente de investigação](docs/plans/active/investigacoes-intermitentes-20261023/prompt-de-execucao.md), [plano](docs/plans/active/investigacoes-intermitentes-20261023/plano-de-execucao.md) e [recibo](docs/plans/active/investigacoes-intermitentes-20261023/preparacao-evidencias.json). Etapa posterior às dez fases visuais integradas; não é fase visual11. Cobrir INV-001–005, NAV4 local, settleTransitions e observações auxiliares pertinentes. Preservar inconclusivos e resultados negativos; evidência da missão anterior pode ser lida por links imutáveis enquanto #27 aguarda revisão.
+
+A decisão permite incorporar os registros nesse alcance, sem declarar causas encerradas nem aceitar riscos operacionais de banco/contas. G3–G5 e a liberação do piloto continuam pendentes; não há deploy, operação hospedada, aceite humano/científico ou nova investigação executada nesta preparação.

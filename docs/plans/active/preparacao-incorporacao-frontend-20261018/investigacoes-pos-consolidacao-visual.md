@@ -43,3 +43,12 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](../../../releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](../../../releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+
+## Continuação autorizada — etapa HF-INV-20261023-01 — 23/10/2026
+
+`DECISAO_CONFIRMADA`: Pedro solicitou nesta conversa uma etapa dedicada para outro desenvolvedor investigar e resolver defeitos demonstrados. O gatilho anterior de adiamento após a fase10 foi sucedido por esta autorização técnica; aceite humano da consolidação continua separado. Investigações permanecem abertas; o novo executor ainda não foi designado. Estado da execução desta etapa: NAO_INICIADO.
+
+Usar o [novo prompt](../investigacoes-intermitentes-20261023/prompt-de-execucao.md) e [plano](../investigacoes-intermitentes-20261023/plano-de-execucao.md). Além de INV-001–005, registrar NAV4-LOCAL (quatro FAILs de logout da missão HF-POS-20261021-01) e NAV-SETTLE (375 px/texto200%/settleTransitions), sem confundi-los com causalidade histórica comprovada. OBS-001/002 recebem contraprovas pertinentes. A incompatibilidade de ingresso nas sondas NAV4 não substitui a jornada autenticada nem altera os quatro resultados originais.
+
+`EVIDENCIA_IMPLEMENTACAO`: #26 integrado em c4adfb3; #27/223839c9 ainda aberto com revisão final running na consulta desta preparação. Os [recibos imutáveis da missão](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/223839c9ae91591ded8de387144d8c1ee84b5c20/docs/releases/2026-10-21-post-consolidation/final-report.md) podem ser usados antes desse merge. Nenhuma falha foi marcada resolvida nesta preparação. Critérios por item: causa/correção comprovadas, causa de ambiente/harness comprovada, NAO_REPRODUZIDO, INCONCLUSIVO ou BLOQUEADO, sempre com provas e limites. Novo PASS não encerra causa antiga. Piloto continua bloqueado e não há operação hospedada autorizada por esta etapa.

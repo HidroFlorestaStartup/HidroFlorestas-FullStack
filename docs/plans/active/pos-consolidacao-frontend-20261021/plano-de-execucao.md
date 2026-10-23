@@ -28,3 +28,10 @@ O mantenedor decide futuros merges, risco residual, aceites e operadores. Se uma
 ## Verificações e encerramento
 
 Checagem breve por API/logs e equivalência de árvores; nenhuma nova suíte local ou nova auditoria completa do produto. Não se atribuem os15gates da RC ao commit documental ou ao merge20. Validar os bytes preparados/publicados e referências novas. Estado da máquina local não verificado. Finalizar com SHA/PR, limites e dependências concretas; publicação confirmada no PR.
+
+
+## Histórico e continuação — 23/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: o handoff deste plano foi publicado no #26/f85077a e integrado sem autoaprovação por c4adfb379e5dc78f27f31b91edbd13f43228d9f9. As etapas documentais1–4 acima estão concluídas nesse alcance. O #27/223839c9 registra execução posterior parcial, com revisão final ainda running na consulta desta preparação; não foi integrado aqui.
+
+`DECISAO_CONFIRMADA`: Pedro solicitou nesta conversa uma etapa dedicada de investigação/correção das intermitências. Continuação no [plano HF-INV-20261023-01](../investigacoes-intermitentes-20261023/plano-de-execucao.md) e [prompt autorizado](../investigacoes-intermitentes-20261023/prompt-de-execucao.md), preservando este texto histórico. Nenhuma conclusão causal, execução funcional nova ou homologação operacional é antecipada por esse encaminhamento.
