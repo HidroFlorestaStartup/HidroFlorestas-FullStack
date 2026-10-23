@@ -1,0 +1,63 @@
+{
+  "protocolVersion": 1,
+  "capturedUtc": "2026-10-23T21:03:19.154Z",
+  "artifacts": [
+    {
+      "artifactId": 12212173104,
+      "runId": 39300023357,
+      "attempt": 1,
+      "headSha": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "source": "preserved local original ZIP; identity matches GitHub artifact digest confirmed in current connected API",
+      "zipSha256": "9f13f31eb53c7aae476e3e77246c988c142f742c4b20aa671b601350f0154fde",
+      "zipBytes": 17714543,
+      "members": 411,
+      "uncompressedBytes": 18647669,
+      "safePathsVerified": true,
+      "allMemberCrcVerified": true,
+      "originalLog": "ihfr-1792434156233.log",
+      "originalLogBytes": 11116,
+      "originalLogSha256": "dae9b02fb69e9909b9b15334c8710c52208a5b1669acf06fc76dc765f2ccde97",
+      "projection": "historical-12212173104.log",
+      "projectionSha256": "331f09f495fe0b72504104c14d618337799895cc015db6539a6ff2ceb8b3ca39",
+      "errorContextMembers": []
+    },
+    {
+      "artifactId": 12213157147,
+      "runId": 39300023357,
+      "attempt": 2,
+      "headSha": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "source": "preserved local original ZIP; identity matches GitHub artifact digest confirmed in current connected API",
+      "zipSha256": "aace111409eabf2e11352d2aaed8801edee40d602c8a53efe215a8f55214d008",
+      "zipBytes": 17712513,
+      "members": 413,
+      "uncompressedBytes": 18642978,
+      "safePathsVerified": true,
+      "allMemberCrcVerified": true,
+      "originalLog": "ihfr-1792435561035.log",
+      "originalLogBytes": 1082,
+      "originalLogSha256": "4eb7aa0d75c70081df60b7e4bc476481c352118c0cd94ba3a0a22d53ccee41c2",
+      "projection": "historical-12213157147.log",
+      "projectionSha256": "f71fc9f5275adfe7a1df198ee99d2a7dd8301ad5f0d6cf04e5ff3c567d880480",
+      "errorContextMembers": []
+    },
+    {
+      "artifactId": 12192554979,
+      "runId": 39267705060,
+      "attempt": 1,
+      "headSha": "7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d",
+      "source": "preserved local original ZIP; identity matches GitHub artifact digest confirmed in current connected API",
+      "zipSha256": "18f1bec27a42ae84c049d69ee634c402a61b53d041f706acfbf60c7fbe886566",
+      "zipBytes": 23977,
+      "members": 4,
+      "uncompressedBytes": 71186,
+      "safePathsVerified": true,
+      "allMemberCrcVerified": true,
+      "originalLog": "integration-1792419611023.log",
+      "originalLogBytes": 32672,
+      "originalLogSha256": "15633f883328fd3f5f48246dcd4787e254b4805839f93cc932c3ff5bd1554712",
+      "projection": "historical-12192554979.log",
+      "projectionSha256": "fb003270a89af1da783aaf9091671358f8767096c8f274b8ef4c75c26c479714",
+      "errorContextMembers": []
+    }
+  ]
+}

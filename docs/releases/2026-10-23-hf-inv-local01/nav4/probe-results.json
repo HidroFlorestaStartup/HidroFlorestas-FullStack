@@ -1,0 +1,603 @@
+{
+  "protocolVersion": 3,
+  "records": [
+    {
+      "atUtc": "2026-10-23T20:53:23.706Z",
+      "phase": "identity",
+      "kind": "provenance",
+      "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+      "trackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sources": [
+        {
+          "path": "scripts/hf-inv-nav4-probe.ts",
+          "bytes": 13175,
+          "sha256": "048a36c25a6c34dcff9566761feb47ae8db2e3dca9ff39fe428b94d20fe45e72"
+        },
+        {
+          "path": "scripts/hf-inv-nav4-local.ps1",
+          "bytes": 4493,
+          "sha256": "7cf27f86566f6b50467363b762069925f67cc50157b1ed8baf7ef111132f51d1"
+        },
+        {
+          "path": "docs/releases/2026-10-23-hf-inv-local01/nav4/protocol.md",
+          "bytes": 8943,
+          "sha256": "f233a1e81906ed253c42000e7e72a2f401279c43c0ecdc074732e85fade7c47c"
+        }
+      ],
+      "node": "v24.19.0",
+      "platform": "win32",
+      "osRelease": "10.0.26200",
+      "next": "16.3.8",
+      "playwright": "1.55.1",
+      "postgres": "17.10",
+      "applicationDelta": "none",
+      "cluster": "mission-owned-accounts"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:33.380Z",
+      "phase": "same_server",
+      "kind": "readiness",
+      "result": "PASS",
+      "trustedIngress": "fallback",
+      "applicationPort": 64075,
+      "durationMs": 68338
+    },
+    {
+      "atUtc": "2026-10-23T20:54:49.863Z",
+      "phase": "A1",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:50.912Z",
+      "phase": "A1",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:52.835Z",
+      "phase": "A1",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 375,
+      "textPercent": 100,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:53.507Z",
+      "phase": "A1",
+      "width": 375,
+      "textPercent": 100,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A1_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:55.910Z",
+      "phase": "A1",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:55.949Z",
+      "phase": "A1",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:56.573Z",
+      "phase": "A1",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 375,
+      "textPercent": 200,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:56.924Z",
+      "phase": "A1",
+      "width": 375,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A1_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:58.678Z",
+      "phase": "A1",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:58.700Z",
+      "phase": "A1",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:54:59.191Z",
+      "phase": "A1",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 320,
+      "textPercent": 100,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:54:59.446Z",
+      "phase": "A1",
+      "width": 320,
+      "textPercent": 100,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A1_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:01.683Z",
+      "phase": "A1",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:01.706Z",
+      "phase": "A1",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:02.361Z",
+      "phase": "A1",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 320,
+      "textPercent": 200,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:02.618Z",
+      "phase": "A1",
+      "width": 320,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A1_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:05.532Z",
+      "phase": "INV004_1",
+      "kind": "browser_login",
+      "result": "PASS",
+      "status": 200,
+      "pathname": "/workspace",
+      "latencyMs": 0,
+      "durationMs": 700,
+      "responseToDestinationMs": 368,
+      "responseBeforeDestination": true,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:08.054Z",
+      "phase": "INV004_2",
+      "kind": "browser_login",
+      "result": "PASS",
+      "status": 200,
+      "pathname": "/workspace",
+      "latencyMs": 0,
+      "durationMs": 575,
+      "responseToDestinationMs": 189,
+      "responseBeforeDestination": true,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:11.332Z",
+      "phase": "INV004_3",
+      "kind": "browser_login",
+      "result": "PASS",
+      "status": 200,
+      "pathname": "/workspace",
+      "latencyMs": 500,
+      "durationMs": 1456,
+      "responseToDestinationMs": 195,
+      "responseBeforeDestination": true,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:13.431Z",
+      "phase": "B",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:13.453Z",
+      "phase": "B",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:14.217Z",
+      "phase": "B",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 200,
+      "width": 375,
+      "textPercent": 100,
+      "browserHostname": "localhost"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:19.785Z",
+      "phase": "B",
+      "width": 375,
+      "textPercent": 100,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "B_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:22.751Z",
+      "phase": "B",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:22.773Z",
+      "phase": "B",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:23.474Z",
+      "phase": "B",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 200,
+      "width": 375,
+      "textPercent": 200,
+      "browserHostname": "localhost"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:29.071Z",
+      "phase": "B",
+      "width": 375,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "B_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:31.265Z",
+      "phase": "B",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:31.288Z",
+      "phase": "B",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:32.271Z",
+      "phase": "B",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 200,
+      "width": 320,
+      "textPercent": 100,
+      "browserHostname": "localhost"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:33.840Z",
+      "phase": "B",
+      "kind": "browser_logout",
+      "result": "PASS",
+      "expectedJourney": "logout_succeeds",
+      "width": 320,
+      "textPercent": 100,
+      "method": "POST",
+      "status": 200,
+      "pathname": "/login",
+      "cookiePresent": false
+    },
+    {
+      "atUtc": "2026-10-23T20:55:36.537Z",
+      "phase": "B",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:36.558Z",
+      "phase": "B",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:37.309Z",
+      "phase": "B",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 200,
+      "width": 320,
+      "textPercent": 200,
+      "browserHostname": "localhost"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:42.856Z",
+      "phase": "B",
+      "width": 320,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "B_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:43.871Z",
+      "phase": "A2",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:43.889Z",
+      "phase": "A2",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:44.264Z",
+      "phase": "A2",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 375,
+      "textPercent": 100,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:44.945Z",
+      "phase": "A2",
+      "width": 375,
+      "textPercent": 100,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A2_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:46.954Z",
+      "phase": "A2",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 375,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:46.982Z",
+      "phase": "A2",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:47.388Z",
+      "phase": "A2",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 375,
+      "textPercent": 200,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:47.581Z",
+      "phase": "A2",
+      "width": 375,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A2_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:48.846Z",
+      "phase": "A2",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 100,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:48.864Z",
+      "phase": "A2",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:49.233Z",
+      "phase": "A2",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 320,
+      "textPercent": 100,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:49.408Z",
+      "phase": "A2",
+      "width": 320,
+      "textPercent": 100,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A2_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:51.298Z",
+      "phase": "A2",
+      "kind": "authenticated_baseline",
+      "result": "PASS",
+      "width": 320,
+      "textPercent": 200,
+      "pathname": "/workspace",
+      "documentStatus": 200,
+      "sessionStatus": 200,
+      "authenticatedHeading": true,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:51.321Z",
+      "phase": "A2",
+      "kind": "negative_origin",
+      "result": "PASS",
+      "method": "POST",
+      "pathname": "/api/auth/logout",
+      "status": 403,
+      "cookiePresent": true
+    },
+    {
+      "atUtc": "2026-10-23T20:55:51.723Z",
+      "phase": "A2",
+      "kind": "logout_response",
+      "method": "POST",
+      "status": 403,
+      "width": 320,
+      "textPercent": 200,
+      "browserHostname": "127.0.0.1"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:51.937Z",
+      "phase": "A2",
+      "width": 320,
+      "textPercent": 200,
+      "kind": "probe_failure",
+      "result": "FAIL",
+      "failedStage": "A2_logout"
+    },
+    {
+      "atUtc": "2026-10-23T20:55:52.790Z",
+      "phase": "teardown",
+      "kind": "owned_schema",
+      "result": "PASS"
+    }
+  ]
+}
