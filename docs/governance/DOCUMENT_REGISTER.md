@@ -354,3 +354,16 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](../releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](../releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+
+## Handoff — investigação das falhas intermitentes — 23/10/2026
+
+`DECISAO_CONFIRMADA`: solicitação de Pedro nesta conversa para investigação e correções por outro desenvolvedor, com commits/push/PR autorizados e merges com o mantenedor. Integração dos relatórios pode prosseguir após a revisão aplicável, preservando investigações abertas e piloto bloqueado.
+
+| Documento | Função e estado |
+|---|---|
+| [Plano de investigação](../plans/active/investigacoes-intermitentes-20261023/plano-de-execucao.md) | HF-INV-20261023-01, execução NAO_INICIADO; protocolo e critérios por incidente, limites e revisão. |
+| [Prompt autorizado](../plans/active/investigacoes-intermitentes-20261023/prompt-de-execucao.md) | Handoff executável para o próximo desenvolvedor; correções demonstradas e PRs para development. |
+| [Recibo de preparação](../plans/active/investigacoes-intermitentes-20261023/preparacao-evidencias.json) | Base, autorização, merge26 e pendência27; resultados novos não antecipados. |
+
+`EVIDENCIA_IMPLEMENTACAO`: #26/f85077a integrado por c4adfb379e5dc78f27f31b91edbd13f43228d9f9 sem autoaprovação. #27/223839c9 permanece aberto, revisão final running e CI funcional NOT_RUN; os quinze gates anteriores pertencem a131ade3. Main beba96f preservada. Adendos no contexto, registro INV/OBS e handoff anterior apontam para esta continuação sem substituir seus textos históricos. Preparação documental; sem execução funcional ou liberação operacional nesta rodada.

@@ -63,3 +63,10 @@ Entregar commits/push e PRs para development, evidências por item, correções 
 IHFR permanece CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO. Preservar falhas/histórico e separar FATO_DOCUMENTADO, EVIDENCIA_IMPLEMENTACAO, INFERENCIA e RECOMENDACAO.
 
 O prompt pode ser usado na branch docs/handoff-pos-consolidacao-20261021 antes do merge documental. [Recibo desta preparação](verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+
+## Continuação vigente para o próximo executor — 23/10/2026
+
+O texto acima preserva o handoff de21/10. A missão HF-POS-20261021-01 produziu relatórios no #27, sem patch funcional e sem homologação operacional. #26 foi integrado por c4adfb379e5dc78f27f31b91edbd13f43228d9f9; #27/223839c9 continua aguardando revisão final na consulta desta preparação.
+
+`DECISAO_CONFIRMADA`: Pedro pediu uma etapa focal de investigação e resolução das intermitências por outro desenvolvedor, mantendo as investigações abertas e o piloto bloqueado durante a integração dos registros. Para iniciar trabalho novo nessa frente, usar o [prompt HF-INV-20261023-01](../../plans/active/investigacoes-intermitentes-20261023/prompt-de-execucao.md) e seu [plano](../../plans/active/investigacoes-intermitentes-20261023/plano-de-execucao.md). A autorização de investigar/implementar/validar/commitar/push/PR permanece sem confirmação adicional de rotina; merges e aceites com o mantenedor. Não repetir toda a missão anterior nem transformar o recorte de investigação em liberação operacional do piloto.
