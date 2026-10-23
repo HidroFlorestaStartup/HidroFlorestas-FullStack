@@ -1,0 +1,64 @@
+param([Parameter(Mandatory=$true)][ValidateSet('Prepare','Probe','Back','Navigation','Audit','Stop')][string]$Phase)
+$ErrorActionPreference='Stop'
+$taskRepository=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+if ([IO.Path]::GetFullPath((Get-Location).Path) -ne $taskRepository) { throw 'Run from the isolated NAV4 worktree root.' }
+$taskRuntime=[IO.Path]::GetFullPath((Join-Path $taskRepository '../hf-inv-local01-runtime/a'))
+$taskWorkspaceParent=[IO.Path]::GetFullPath((Join-Path $taskRepository '..'))
+if (-not $taskRuntime.StartsWith($taskWorkspaceParent+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)) { throw 'Runtime path must remain inside the task workspace.' }
+if (-not (Test-Path -LiteralPath $taskRuntime -PathType Container)) { throw 'Create the exclusive NAV4 runtime during preflight first.' }
+if ((Get-Item -LiteralPath $taskRuntime).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Runtime redirection refused.' }
+foreach ($taskDotenv in @('.env','.env.local','.env.development','.env.development.local','.env.test','.env.test.local','.env.production','.env.production.local')) {
+  if(Test-Path -LiteralPath (Join-Path $taskRepository $taskDotenv)){ throw 'Preexisting dotenv refused without reading its contents.' }
+}
+$taskMarkerFile=Join-Path $taskRuntime 'mission-owner.json'
+if (-not (Test-Path -LiteralPath $taskMarkerFile -PathType Leaf)) { throw 'Mission ownership marker required.' }
+$taskMarker=Get-Content -LiteralPath $taskMarkerFile -Raw | ConvertFrom-Json
+if ($taskMarker.mission -ne 'HF-INV-20261023-01-LOCAL01' -or $taskMarker.owner -ne 'agent-a-nav4-accounts' -or $taskMarker.root -ne $taskRuntime) { throw 'Mission ownership marker mismatch.' }
+$taskBrowserCache=Join-Path $env:LOCALAPPDATA 'ms-playwright'
+$taskAllowed=@('PATH','SystemRoot','WINDIR','COMSPEC','PATHEXT','TEMP','TMP','USERPROFILE','APPDATA','OS','PROCESSOR_ARCHITECTURE','NUMBER_OF_PROCESSORS','PSModulePath','SystemDrive','ProgramData','ProgramFiles','ProgramFiles(x86)','USERNAME','USERDOMAIN','HOMEDRIVE','HOMEPATH')
+foreach($taskName in @(Get-ChildItem Env: | Select-Object -ExpandProperty Name)){if($taskAllowed -notcontains $taskName){Remove-Item -LiteralPath ('Env:'+$taskName)}}
+$env:LOCALAPPDATA=Join-Path $taskRuntime 'localappdata'
+$env:PLAYWRIGHT_BROWSERS_PATH=$taskBrowserCache
+$env:HF_INV_PRIVATE_ROOT=$taskRuntime
+$env:NEXT_TELEMETRY_DISABLED='1'
+$env:npm_config_cache=Join-Path $taskRuntime 'npm-cache'
+$env:GIT_CONFIG_COUNT='1'
+$env:GIT_CONFIG_KEY_0='safe.directory'
+$env:GIT_CONFIG_VALUE_0=$taskRepository.Replace('\','/')
+function New-TaskKey {
+  $taskBytes=New-Object byte[] 32; $taskRandom=[Security.Cryptography.RandomNumberGenerator]::Create()
+  try {$taskRandom.GetBytes($taskBytes); [Convert]::ToBase64String($taskBytes)}
+  finally {$taskRandom.Dispose(); [Array]::Clear($taskBytes,0,$taskBytes.Length)}
+}
+$env:ACCOUNT_POLICY_ENABLED='1'
+$env:ACCOUNT_PROOF_ACTIVE_KEY_ID='synthetic'
+$env:ACCOUNT_PROOF_KEYS=(@{synthetic=(New-TaskKey)} | ConvertTo-Json -Compress)
+$env:ACCOUNT_REQUEST_KEY=New-TaskKey
+$env:MAIL_PAYLOAD_ACTIVE_KEY_ID='synthetic'
+$env:MAIL_PAYLOAD_ENCRYPTION_KEYS=(@{synthetic=(New-TaskKey)} | ConvertTo-Json -Compress)
+$env:MAIL_IDEMPOTENCY_KEY=New-TaskKey
+$env:MAIL_WORKER_SECRET=New-TaskKey
+$env:JWT_SECRET=New-TaskKey
+$env:APP_PUBLIC_URL='https://synthetic.example.invalid'
+$env:ACCOUNT_TRUSTED_INGRESS='local'
+switch($Phase){
+  'Prepare' {
+    & node node_modules/prisma/build/index.js generate
+    if($LASTEXITCODE -ne 0){throw 'Isolated Prisma generation failed.'}
+    & (Join-Path $PSScriptRoot 'accounts-validation.ps1') -Gate RegressionSetup
+  }
+  'Probe' {
+    $env:E2E_USER_PASSWORD=New-TaskKey
+    & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Run -Executable node -CommandArguments @('--import=tsx','scripts/hf-inv-nav4-probe.ts')
+  }
+  'Back' {
+    $env:HF_INV_NAV4_BACK_ONLY='1'
+    & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('--import=tsx','scripts/hf-inv-nav4-probe.ts')
+  }
+  'Navigation' {
+    & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('node_modules/@playwright/test/cli.js','test','tests/e2e/frontend-mobile-navigation.spec.ts','--reporter=list,./tests/investigations/nav4/closed-reporter.ts','--output=.accounts-validation/nav4-original-results')
+  }
+  'Audit' { & (Join-Path $PSScriptRoot 'accounts-validation.ps1') -Gate SchemaAudit }
+  'Stop' { & (Join-Path $PSScriptRoot 'accounts-local-postgresql.ps1') -Action Stop }
+}
+if($LASTEXITCODE -ne 0){throw 'NAV4 phase failed; inspect private evidence before any repeat.'}

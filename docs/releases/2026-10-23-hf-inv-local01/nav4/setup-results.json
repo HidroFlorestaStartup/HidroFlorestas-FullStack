@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "scope": "local execution; not official GitHub Actions CI",
+  "installation": {
+    "node": "24.19.0",
+    "npm": "12.0.2",
+    "npmCiExitCode": 0,
+    "packagesAdded": 553,
+    "lockfileChanged": false,
+    "isolatedGeneratedPrisma": "7.4.2",
+    "npmLifecycleScriptsBlocked": [
+      "@prisma/engines",
+      "bcrypt",
+      "better-sqlite3",
+      "esbuild",
+      "prisma",
+      "unrs-resolver"
+    ],
+    "explicitPrismaGenerateExitCode": 0,
+    "bcryptAndEsbuildImport": "PASS",
+    "nativePackage": "@embedded-postgres/windows-x64@17.10.0-beta.17",
+    "postgres": "17.10",
+    "postgresExeSha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+    "reviewedHydrateScriptSha256": "3596fdda55321a3672bd77bcaecf00d46462914409346ccfa1932a19c5977e11",
+    "hydrateExitCode": 0,
+    "globalSettingsChanged": false
+  },
+  "preparationFailuresPreserved": [
+    {
+      "attempt": 1,
+      "result": "BLOCKED",
+      "reason": "fixed port occupied; own cluster did not start; no preexisting database accessed"
+    },
+    {
+      "attempt": 2,
+      "result": "BLOCKED",
+      "reason": "Git collector rejected worktree ownership across process identities after own cluster started; no functional test ran"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "0c73d4a3eedce0a67788da7e4fa625ff064caafde058bf3f7186b56282e82a40",
+      "startedUtc": "2026-10-23T20:52:14.922Z",
+      "endedUtc": "2026-10-23T20:52:34.334Z",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "eb749513db5da4dd4558187b62e6740922271bab4e2ca43ced652da3885678eb",
+      "startedUtc": "2026-10-23T21:04:28.499Z",
+      "endedUtc": "2026-10-23T21:04:29.647Z",
+      "exitCode": 0,
+      "result": "PASS"
+    }
+  ],
+  "regressionFormalMigrations": 14,
+  "managedSchemasAfterAudit": 0,
+  "cleanup": {
+    "cluster": "agent-a-owned",
+    "stopExitCode": 0,
+    "dataFilesPreserved": true,
+    "applicationProcessesStopped": true,
+    "releasedForOtherMissionOwner": true
+  },
+  "checks": {
+    "typecheck": "PASS",
+    "focusedEslint": "PASS",
+    "powerShellSyntax": "PASS"
+  },
+  "productPatch": false,
+  "scientificContractChanged": false
+}
