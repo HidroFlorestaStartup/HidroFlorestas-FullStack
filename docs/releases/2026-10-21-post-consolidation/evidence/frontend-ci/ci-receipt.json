@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 2,
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "recovery": {
+    "recoveredAtUtc": "2026-10-22T14:22:05.258248Z",
+    "reason": "Executor scratch was lost during a pause before the closing files were published.",
+    "source": "Same official CI artifact, preserved inspection records and coordinator expected-files inventory.",
+    "preResetFrontendHead": "9eadc2e98ecc07bd792330643e2f6b4296d71f75",
+    "preResetIntegratedLocalHead": "585e2c3e9c0775ed049f8bfccc4c706de3ec16c4",
+    "regeneratedDocument": true,
+    "byteIdentityWithPreviousGeneratedDocumentClaimed": false,
+    "originalFilesRecoveredExactly": 104,
+    "newSuiteExecution": false,
+    "newVisualInspection": false
+  },
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "pullRequest": 27,
+  "run": 39699435699,
+  "attempt": 1,
+  "job": 119564787181,
+  "artifact": {
+    "id": 12392364807,
+    "bytes": 26854109,
+    "files": 735,
+    "sha256": "b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e",
+    "zipCrcAndSafePathsVerifiedBy": "/root/backend_historicos",
+    "symlinks": 0
+  },
+  "runtimeDescription": {
+    "runnerOs": "Windows",
+    "node": "24.19.0",
+    "postgresqlMajor": 17,
+    "databaseContext": "owned loopback synthetic fixture"
+  },
+  "journal": {
+    "artifactPath": ".accounts-validation/results.jsonl",
+    "bytes": 6244,
+    "sha256": "dbadeb88ea55e4995388cf104904f76fbeefaba02258990e70a1ba046aa5b5b5"
+  },
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:25:33.030Z",
+      "endedUtc": "2026-10-22T00:25:41.048Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:25:41.339Z",
+      "endedUtc": "2026-10-22T00:26:10.389Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:26:10.700Z",
+      "endedUtc": "2026-10-22T00:28:20.694Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:28:20.997Z",
+      "endedUtc": "2026-10-22T00:28:38.168Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:28:38.448Z",
+      "endedUtc": "2026-10-22T00:28:42.105Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:28:42.417Z",
+      "endedUtc": "2026-10-22T00:28:53.199Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:28:53.485Z",
+      "endedUtc": "2026-10-22T00:29:21.977Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:29:22.270Z",
+      "endedUtc": "2026-10-22T00:29:32.948Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:29:33.229Z",
+      "endedUtc": "2026-10-22T00:29:55.239Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "E2E",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:29:55.525Z",
+      "endedUtc": "2026-10-22T00:43:02.879Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Https",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:43:03.247Z",
+      "endedUtc": "2026-10-22T00:44:02.986Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Deletion",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:44:03.292Z",
+      "endedUtc": "2026-10-22T00:44:19.164Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Ihfr",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:44:19.491Z",
+      "endedUtc": "2026-10-22T00:45:40.871Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:45:41.192Z",
+      "endedUtc": "2026-10-22T00:45:46.655Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-22T00:45:46.989Z",
+      "endedUtc": "2026-10-22T00:45:47.901Z",
+      "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    }
+  ],
+  "gatesPass": 15,
+  "functionalSnapshot": {
+    "value": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+    "isGitCommitSha": false
+  },
+  "e2e": {
+    "source": {
+      "artifactPath": ".accounts-validation/e2e-1792628995525.log",
+      "bytes": 44577,
+      "sha256": "5daf5d0288a8b90e09a03fe69c1f9331150dafc7d477d5cb1e90eb9bbd7d4e19"
+    },
+    "started": {
+      "line": 6,
+      "text": "Running 220 tests using 1 worker"
+    },
+    "finished": {
+      "line": 179,
+      "text": "220 passed (13.1m)"
+    },
+    "executed": 220,
+    "passed": 220,
+    "workers": 1
+  },
+  "ihfr": {
+    "source": {
+      "artifactPath": ".accounts-validation/ihfr-1792629859490.log",
+      "bytes": 18002,
+      "sha256": "7d2a46826c79e6fe444384858a78f3c2eb8d80fd0fc8b97f9f870dfadad1fe21"
+    },
+    "started": {
+      "line": 12,
+      "text": "Running 6 tests using 1 worker"
+    },
+    "finished": {
+      "line": 103,
+      "text": "6 passed (1.1m)"
+    },
+    "executed": 6,
+    "passed": 6
+  },
+  "nav4": {
+    "nominalCaseReceiptAvailable": false,
+    "classification": "INFERENCIA",
+    "inclusionEvidence": [
+      {
+        "repositoryPath": "playwright.config.ts",
+        "bytes": 4283,
+        "sha256": "515ac5b9b7b10d775df21f0a3a84ae448385fc75cde48213f46310455b2ddd51"
+      },
+      {
+        "repositoryPath": "scripts/rc-review-validation.ps1",
+        "bytes": 5408,
+        "sha256": "0aeaf6fd71ff486ba9a3e1e2b2137938b53833b22cce37063597d152a1a215bb"
+      },
+      {
+        "repositoryPath": "tests/e2e/frontend-mobile-navigation.spec.ts",
+        "bytes": 17304,
+        "sha256": "b6043ec00f1a51c3a199cee4ab3eaadcd0ba1bd6959b77bd25a9f272dd39cd41"
+      }
+    ],
+    "geometryFiles": 4,
+    "geometryRecords": 172,
+    "screenshotsInArtifact": 92,
+    "conclusion": "Configuration includes the original four NAV4 scenarios; complete geometries and captures plus aggregate 220/220 support completion in the official context.",
+    "limits": "Not a standalone nominal NAV4 4-PASS receipt, logout HTTP trace or final-URL screenshot. Local 0-PASS/4-FAIL remains preserved."
+  },
+  "redaction": "Closed allowlist projection only; raw commands, environment, config, stdout, stderr, attachments, request bodies and private paths are excluded.",
+  "limits": [
+    "CI results apply only to head 131ade347258c7820c7a89989ab851769197b486.",
+    "No functional suite was run at the recovery documentation commit.",
+    "No historical cause, scientific validation or human acceptance is inferred from a green aggregate."
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "viewport": {
+    "width": 320,
+    "height": 760
+  },
+  "text": {
+    "rootFontSizePx": 32,
+    "percentRelativeTo16px": 200,
+    "method": "root-font-size; not browser zoom"
+  },
+  "document": {
+    "width": 320,
+    "scrollX": 0,
+    "scrollY": 12
+  },
+  "content": {
+    "scrollTop": 7392,
+    "clientHeight": 584,
+    "scrollHeight": 7976
+  },
+  "focus": {
+    "tag": "A",
+    "outlineStyle": "solid",
+    "outlineWidth": "3px",
+    "outlineColor": "rgb(36, 95, 131)"
+  },
+  "control": {
+    "fullyInViewport": true,
+    "unobstructed": true,
+    "rect": {
+      "x": 50,
+      "y": 462.5625,
+      "width": 193.734375,
+      "height": 64,
+      "top": 462.5625,
+      "right": 243.734375,
+      "bottom": 526.5625,
+      "left": 50
+    },
+    "radii": [
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      }
+    ],
+    "points": [
+      {
+        "x": 54,
+        "y": 466.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 239.734375,
+        "y": 466.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 54,
+        "y": 522.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 239.734375,
+        "y": 522.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 146.8671875,
+        "y": 494.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 146.8671875,
+        "y": 466.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 239.734375,
+        "y": 494.5625,
+        "tag": "svg",
+        "className": null,
+        "inside": true
+      },
+      {
+        "x": 146.8671875,
+        "y": 522.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      },
+      {
+        "x": 54,
+        "y": 494.5625,
+        "tag": "A",
+        "className": "territorial-map-module__lPZwdG__textLink",
+        "inside": true
+      }
+    ],
+    "scrollContainers": [
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 0,
+          "y": 73,
+          "width": 320,
+          "height": 584.3125,
+          "top": 73,
+          "right": 320,
+          "bottom": 657.3125,
+          "left": 0
+        },
+        "scrollTop": 7392,
+        "scrollHeight": 7976,
+        "clientHeight": 584,
+        "overflow": "auto",
+        "position": "static",
+        "zIndex": "auto",
+        "padding": "24px 16px 32px",
+        "scrollPadding": "8px auto"
+      },
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 0,
+          "y": -12,
+          "width": 320,
+          "height": 760,
+          "top": -12,
+          "right": 320,
+          "bottom": 748,
+          "left": 0
+        },
+        "scrollTop": 0,
+        "scrollHeight": 760,
+        "clientHeight": 760,
+        "overflow": "hidden",
+        "position": "static",
+        "zIndex": "auto",
+        "padding": "0px",
+        "scrollPadding": "auto"
+      }
+    ],
+    "viewport": {
+      "width": 320,
+      "height": 760,
+      "scrollX": 0,
+      "scrollY": 12,
+      "visualViewport": {
+        "width": 320,
+        "height": 760,
+        "offsetLeft": 0,
+        "offsetTop": 0,
+        "scale": 1
+      }
+    },
+    "activeTag": "A",
+    "control": {
+      "tag": "A",
+      "rect": {
+        "x": 50,
+        "y": 462.5625,
+        "width": 193.734375,
+        "height": 64,
+        "top": 462.5625,
+        "right": 243.734375,
+        "bottom": 526.5625,
+        "left": 50
+      },
+      "scrollTop": 0,
+      "scrollHeight": 62,
+      "clientHeight": 62,
+      "overflow": "visible",
+      "position": "static",
+      "zIndex": "auto",
+      "padding": "10px 0px",
+      "scrollPadding": "auto"
+    },
+    "header": {
+      "tag": "HEADER",
+      "rect": {
+        "x": 0,
+        "y": -12,
+        "width": 320,
+        "height": 85,
+        "top": -12,
+        "right": 320,
+        "bottom": 73,
+        "left": 0
+      },
+      "scrollTop": 0,
+      "scrollHeight": 84,
+      "clientHeight": 84,
+      "overflow": "visible",
+      "position": "relative",
+      "zIndex": "30",
+      "padding": "12px 16px",
+      "scrollPadding": "auto"
+    },
+    "navigation": {
+      "tag": "NAV",
+      "rect": {
+        "x": 0,
+        "y": 657.3125,
+        "width": 320,
+        "height": 90.6875,
+        "top": 657.3125,
+        "right": 320,
+        "bottom": 748,
+        "left": 0
+      },
+      "scrollTop": 0,
+      "scrollHeight": 90,
+      "clientHeight": 90,
+      "overflow": "visible",
+      "position": "relative",
+      "zIndex": "20",
+      "padding": "8px 4px",
+      "scrollPadding": "auto"
+    }
+  },
+  "screenshot": {
+    "filename": "df289a519daa-r0-n0-after-frontend-territorial-map-final-action-focus-320x760-text200-viewport.png",
+    "fullPage": false,
+    "animations": "allow",
+    "browser": "chromium"
+  },
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "evidenceKind": "application-viewport",
+  "physicalDevice": false,
+  "note": "Official synthetic fixture; form fields masked; no manual accessibility acceptance."
+}

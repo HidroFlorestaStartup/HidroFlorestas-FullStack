@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-22T00:18:15.050Z",
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "kind": "focused reproduction after NAV4 failure; new browser context, no account or cookies",
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "fullPage": false,
+  "screenshot": "frontend-logout-browser-probe.png",
+  "route": "/logout",
+  "response": {
+    "method": "POST",
+    "path": "/api/auth/logout",
+    "status": 403,
+    "success": false,
+    "code": "FORBIDDEN"
+  },
+  "errorMessage": "Não foi possível concluir a solicitação.",
+  "consoleCounts": {
+    "info": 1,
+    "log": 1,
+    "error": 1
+  },
+  "pageErrorCount": 0,
+  "cookiesPresentAfter": 0,
+  "redaction": "Only fixed result fields and counts are retained; no response/request headers, cookies, console bodies, environment, or credentials."
+}

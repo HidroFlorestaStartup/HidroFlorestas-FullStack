@@ -1,0 +1,38 @@
+{
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSizePx": 16,
+    "percentRelativeTo16px": 100,
+    "method": "root-font-size; not browser zoom"
+  },
+  "document": {
+    "width": 375,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  "content": {
+    "scrollTop": 0,
+    "clientHeight": 755,
+    "scrollHeight": 2685
+  },
+  "focus": {
+    "tag": "BODY",
+    "outlineStyle": "none",
+    "outlineWidth": "0px",
+    "outlineColor": "rgb(0, 0, 0)"
+  },
+  "control": null,
+  "screenshot": {
+    "filename": "03bc3985b039-r0-n0-after-frontend-territorial-map-transport-recovered-375-viewport.png",
+    "fullPage": false,
+    "animations": "allow",
+    "browser": "chromium"
+  },
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "evidenceKind": "application-viewport",
+  "physicalDevice": false,
+  "note": "Official synthetic fixture; form fields masked; no manual accessibility acceptance."
+}

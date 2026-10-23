@@ -1,0 +1,10 @@
+{
+  "file": "HidroFloresta-v1.0.zip",
+  "bytes": 18015942,
+  "sha256": "0017dfdd150641344665c3b49abea9d5fbd5bc28f30935bd9e62cda40550db40",
+  "entries": 779,
+  "legacy_head_ref": "refs/heads/007-ihfr-evolution",
+  "legacy_head_sha": "97d95583fa62ed1f3dc88f7a7c69e150afddb968",
+  "migration_count": 7,
+  "usage": "read-only provenance; never executed or used as current baseline"
+}
