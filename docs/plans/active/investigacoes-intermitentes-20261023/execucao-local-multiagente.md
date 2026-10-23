@@ -131,3 +131,13 @@ não executar provedores para encerrar investigação. Nenhuma proteção altera
   próprias criadas, três agentes nativos reais ativos, protocolos em preparação.
   Próximo ato: NAV4 autenticado e experimentos independentes; nenhum PASS novo
   do produto antecipado. Encerramento e inventário de processos ainda pendentes.
+- 23/10/2026 20:50 UTC: instalação da candidata/Prisma e contenção verificadas;
+  push dry-run autenticado PASS, comentário de início na #28 publicado. Configuração
+  local verificada: gpt-6.1-sol/ultra; sem mudar configuração global ou afirmar
+  metadados de runtime não expostos. Unit402 e Mail17 PASS após diagnosticar
+  falhas de contexto local; negativos preservados como resultados distintos.
+  O usuário autorizou explicitamente encerrar processos ocupando portas: o
+  PostgreSQL preexistente da55427 foi parado ordenadamente, exit0, dados preservados.
+  A retoma accounts original; B retoma55426 próprio, com baseline duas chamadas
+  PASS e dois espelhos determinísticos PASS. Alternativa IMP006 do NAV4 ficou
+  preparada, não executada. Ver [preflight](../../../releases/2026-10-23-hf-inv-local01/preflight.json).
