@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "hashAlgorithm": "SHA-256",
+  "byteRepresentation": "UTF-8 LF, matching committed Git blob bytes; Git may materialize CRLF on checkout",
+  "selfHashExcluded": true,
+  "files": [
+    {
+      "path": "historical-12192554979.log",
+      "bytes": 878,
+      "sha256": "fb003270a89af1da783aaf9091671358f8767096c8f274b8ef4c75c26c479714"
+    },
+    {
+      "path": "historical-12212173104.log",
+      "bytes": 3783,
+      "sha256": "331f09f495fe0b72504104c14d618337799895cc015db6539a6ff2ceb8b3ca39"
+    },
+    {
+      "path": "historical-12213157147.log",
+      "bytes": 1079,
+      "sha256": "f71fc9f5275adfe7a1df198ee99d2a7dd8301ad5f0d6cf04e5ff3c567d880480"
+    },
+    {
+      "path": "historical-integrity.json",
+      "bytes": 2710,
+      "sha256": "e12b62d223c2d4b85330629c477e5fb130900666a7b2aa37b4020cd50d5c2b3c"
+    },
+    {
+      "path": "infrastructure.md",
+      "bytes": 3864,
+      "sha256": "8d124b814e57bdcfe27e92294ed8bdc64b4a87967d82ed202c51756469760cbe"
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 8596,
+      "sha256": "fc10ee37714a4ba06321f24b5e6edcfd50241a0c324967d5cc7833b2a69e3c52"
+    },
+    {
+      "path": "results.md",
+      "bytes": 9538,
+      "sha256": "b380ee9849d95f874340a98451b207c533db5ecdfd2124bb96ce04f2e7810ca1"
+    },
+    {
+      "path": "run-evidence.json",
+      "bytes": 52244,
+      "sha256": "de9ca85080297781717f9fb26db359848e27cfb236e880efcbbf786f5697788c"
+    }
+  ],
+  "executableSource": {
+    "path": "tests/investigations/ihfr/two-request-quota.test.ts",
+    "sha256": "10ef7654697102e917ff410a31f290c80ef9e72617ba8e9f3d1635c456c31081",
+    "commit": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac"
+  },
+  "validation": {
+    "markdownLocalLinksChecked": 10,
+    "jsonFilesParsed": 2,
+    "historicalProjectionHashesChecked": 3,
+    "forbiddenPayloadKeys": 0,
+    "sensitivePatternMatches": 0
+  }
+}

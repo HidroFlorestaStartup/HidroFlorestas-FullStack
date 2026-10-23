@@ -1,0 +1,13 @@
+✖ CRI-REV-002 concurrent hourly quota is checked again after preset (946.1776ms)
+ℹ tests 218
+ℹ pass 217
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+✖ CRI-REV-002 concurrent hourly quota is checked again after preset (946.1776ms)
+  AssertionError [ERR_ASSERTION]: {"transactionErrors":[{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}},{"name":"PrismaClientKnownRequestError","code":"P2034","meta":{"driverAdapterError":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}},{"name":"PrismaClientKnownRequestError","code":"P2034","meta":{"driverAdapterError":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}}]}
+  +   'INTERNAL_ERROR'
+  -   'RATE_LIMITED'
+    actual: [ 'INTERNAL_ERROR' ],
+    expected: [ 'RATE_LIMITED' ],
