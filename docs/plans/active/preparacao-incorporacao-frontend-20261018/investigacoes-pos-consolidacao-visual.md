@@ -43,3 +43,25 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](../../../releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](../../../releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+## Adendo — investigação local HF-INV — 2026-10-23
+
+`EVIDENCIA_IMPLEMENTACAO`: execução HF-INV-20261023-01-LOCAL01 sobre
+developmentc4adfb3, usando o handoff #28 emf56f73f sem modificar a branch de
+Pedro. [Plano único](../investigacoes-intermitentes-20261023/execucao-local-multiagente.md),
+[matriz dos nove IDs](../../../releases/2026-10-23-hf-inv-local01/incident-matrix.md)
+e [recibos por frente](../../../releases/2026-10-23-hf-inv-local01/readme.md).
+
+NAV4 original local4/4PASS com sessão real/ingresso correto e controles de recusa.
+O contraste de origem comprova mecanismo no contexto atual, preservando os
+quatro FAILs Linux e os códigos das sondas como fatos distintos. INV-001/002/003/
+004/005 e NAV-SETTLE não reproduziram a assinatura histórica nos protocolos
+atuais; suas causas antigas permanecem INCONCLUSIVO. OBS-001/002 mantêm limites
+de captura, máscaras e aceite humano. O artifact original INV-005 foi recuperado
+com integridade, distinguindo seis404 de documento de lookupAPI esperado.
+
+Negativos de preparação/instrumentação e controles deliberados continuam nos
+recibos. Nenhum patch de produto, fórmula, schema ou contrato oficial foi
+inventado. Quinze gates e Codex da candidata final são registrados por SHA/run
+na conversa da nova PR, sem transferir resultados de #27. Merge/aceites e
+G3–G5 permanecem separados; nenhum deploy ou banco/provedor hospedado foi operado.

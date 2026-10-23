@@ -82,3 +82,22 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](prompt-pos-consolidacao.md) e [recibo da conferência](verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+## Adendo factual — HF-INV local — 2026-10-23
+
+`EVIDENCIA_IMPLEMENTACAO`: a [matriz investigativa atual](../2026-10-23-hf-inv-local01/incident-matrix.md)
+registra experimentos dos nove IDs sobre c4adfb3, controles negativos, fontes
+executadas e limites. NAV4 tem jornada autenticada e4/4PASS no ingresso local;
+isso não apaga quatro FAILs anteriores. Duas rodadas IHFR6/6, dois schedules
+de duas chamadas, regressão45/45 e13casos autenticados de mapa/coleta distinguem
+prova atual de causalidade histórica. Não somar repetições/subconjuntos.
+
+A [recuperação INV-005](../2026-10-23-hf-inv-local01/review/inv005-historical.json)
+confirma seis404 originais de documento em duas famílias de rota; não são os
+404 esperados de lookupAPI. As contraprovas atuais abrangem esses seis cenários,
+sem demonstrar sua causa antiga. OBS/hidratação e pixels ocultos conservam os
+limites descritos na matriz; nenhum aceite humano ou científico foi concedido.
+
+O [relatório estático da candidata](../2026-10-23-hf-inv-local01/final-report.md)
+e o recibo posterior da PR separam testes locais, CI/review por SHA e decisão
+do mantenedor. Nenhum texto histórico acima foi apagado ou promovido a PASS.

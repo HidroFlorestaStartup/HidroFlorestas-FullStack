@@ -1,6 +1,6 @@
 # Execução local multiagente das investigações
 
-Identificador: `HF-INV-20261023-01-LOCAL01`. Estado: `EM_ANDAMENTO`.
+Identificador: `HF-INV-20261023-01-LOCAL01`. Estado: `AGUARDANDO_REVISAO`.
 Início registrado: 2026-10-23 20:24:34 UTC / 17:24:34 America/Fortaleza.
 Coordenador: agente raiz; revisão/integração humana: mantenedor, sem aceite delegado.
 
@@ -60,8 +60,9 @@ alterar configuração global. Candidata:
 
 ## Recursos e quadro de execução
 
-Três subagentes nativos reais foram iniciados pela ferramenta de colaboração
-com `reasoning_effort=ultra`, aceito na criação. Limite efetivo: quatro agentes
+Quatro subagentes nativos reais foram iniciados pela ferramenta de colaboração
+com `reasoning_effort=ultra`, aceito na criação. D iniciou depois de B encerrar;
+o máximo simultâneo foi três subagentes. Limite efetivo: quatro agentes
 incluindo raiz. Modelo/esforço da raiz não é exposto por ferramenta verificável;
 não se afirma reconfiguração. CLI instalado: 0.162.0-alpha.17.2. Node24.19.0,
 npm12.0.2, Git2.55.0.windows.4, PowerShell5.1. WSL e gh indisponíveis.
@@ -72,7 +73,7 @@ npm12.0.2, Git2.55.0.windows.4, PowerShell5.1. WSL e gh indisponíveis.
 | agent-a-nav4-accounts | inv-local01/nav4 / A | accounts55427, HTTP3001; LOCALAPPDATA sintético próprio | testes/scripts NAV4, evidência nav4, spec por causa |
 | agent-b-ihfr-concurrency | inv-local01/ihfr / B | IMP00655426, HTTP3000, schema próprio | testes IHFR/duas chamadas, evidência ihfr, spec por causa |
 | agent-c-navigation | inv-local01/navigation / C | HTTP3200 público, browser próprio; contas só após liberação A | navegação/settle/OBS, evidência navigation, spec por causa |
-| revisor independente | agente reutilizado após terminar autoria | worktree de leitura isolada | parecer, sem autoria do patch revisado |
+| agent-d-independent-review | detached / D, criado após B encerrar | worktree de leitura isolada, sem runtime | parecer, sem autoria do código ou das provas revisadas |
 
 Não publicar branches dos agentes. Integração por commits verificados na
 candidata. Diretórios de evidência por owner em
@@ -141,3 +142,22 @@ não executar provedores para encerrar investigação. Nenhuma proteção altera
   A retoma accounts original; B retoma55426 próprio, com baseline duas chamadas
   PASS e dois espelhos determinísticos PASS. Alternativa IMP006 do NAV4 ficou
   preparada, não executada. Ver [preflight](../../../releases/2026-10-23-hf-inv-local01/preflight.json).
+- 23/10/2026 21:09 UTC: B integrado em `32f1225`/`3321535`; duas rodadas IHFR6/6,
+  controles negativos distintos, baseline1/1, espelhos2/2 e regressão45/45.
+  A concluiu originalNAV4 4/4, contraprova de origem A/B/A3/3 e Back12/12,
+  mantendo os FAILs diagnósticos anteriores e seu alcance. C concluiu público3/3,
+  animações sintéticas2/2 e recortes autenticados exit0. Clusters próprios A/B/C
+  auditados/parados. A/C finalizam commits; D revisa independentemente a composição.
+  Nenhum patch de produto/contrato oficial demonstrado; Spec Kit de correção
+  fica não aplicável, sem fabricar funcionalidade para hipóteses inconclusivas.
+  Próximo ato: integrar A/C, validar composição estática, publicar candidata e
+  obter quinze gates e revisão Codex do HEAD final; não há PASS remoto antecipado.
+- 23/10/2026 21:29 UTC: A/B/C integrados; D não encontrou P0–P2 na composição
+  examinada. Fonte original INV-005 recuperada com digest/CRC/caminhos conferidos;
+  seis documentos404 em duas famílias, causa antiga ainda inconclusiva.
+  Typecheck final PASS (21:24:59–21:25:03 UTC), lint final PASS
+  (21:24:59–21:25:16 UTC). Recursos próprios parados. Pacote estático e parecer
+  independente seguem para fechamento/push; quinze gates e Codex remoto ainda
+  NOT_RUN neste checkpoint. Recibos posteriores na PR identificam o HEAD real.
+  `AGUARDANDO_REVISAO` registra o destino da candidata ao mantenedor, sem
+  antecipar conclusão técnica dos gates remotos ou aceite humano.
