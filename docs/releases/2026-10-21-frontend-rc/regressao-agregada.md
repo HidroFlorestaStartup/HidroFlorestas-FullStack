@@ -185,3 +185,18 @@ O pacote histórico preservado e seus limites estão descritos na [triagem](tria
 A consulta ao mesmo projeto e escopo Vercel foi repetida pelo coordenador em 21/10/2026 às 12:28:53 UTC e retornou 403, com `grant_team_access`. Estado: **VERCEL_NOT_VERIFIED**. A CLI Vercel não estava instalada e nenhum fallback foi executado. Não se inferiu ausência de deployments nem se criou outro projeto.
 
 A autorização do usuário para integração e publicação permanece vigente. Identificação do destino, prontidão, serviços reais, aceites e entrega aos participantes ainda exigem evidência própria. Nenhuma publicação ou mensagem aos participantes decorre deste recibo.
+
+
+## Atualização vigente — integração verificada e continuação pós-consolidação — 21/10/2026
+
+DECISAO_CONFIRMADA: pedido atual de Pedro nesta conversa autoriza integrar20, conferir brevemente os merges recentes e preparar próximas duas etapas, incluindo correções necessárias.
+
+EVIDENCIA_IMPLEMENTACAO: #20 integrado em b1f83cfa8e52dd25c6246c584a576553c5e9e131, sem autoaprovação. #19 e frentes21–24 já constam integradas; a RC25 e44711d foi incorporada por5f6266b com árvore idêntica à candidata validada. Os heads21–24 são ancestrais da RC. Após20, apenas dez diferenças documentais; produto/testes/configuração equivalentes à RC. Development remotab1f83cf, mainremotabeba96f; máquina local não verificada.
+
+Logs do run39600889091/tentativa1/job119224780858 conferidos:15gates únicos PASS/exit0, E2E220, Integration231, HTTPS2 e IHFR6; resposta Codex do head sem achados. Checagem breve de integração, sem nova suíte local, nova auditoria completa ou aceite humano/científico. Não foi encontrado bloqueio técnico novo nesse escopo.
+
+RECOMENDACAO materializada no novo prompt: A—investigação/correções de defeitos demonstrados; B—homologação/preparação da entrega. As dez fases visuais têm implementação integrada; não há novas fases visuais11/12. Históricos inconclusivos continuam sem encerramento causal. O relatório25 registra403Vercel e aceites humanos/operacionais pendentes; o provedor não foi reconsultado nesta preparação. A autorização operacional relatada na RC deve ter origem/escopo comprovados no contexto que a executar, sem reabrir consentimento de rotina já comprovado nem fabricar autoridade.
+
+O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
+
+Próxima execução: [prompt pós-consolidação](prompt-pos-consolidacao.md) e [recibo da conferência](verificacao-integracao-e-handoff-pos-consolidacao.json).
