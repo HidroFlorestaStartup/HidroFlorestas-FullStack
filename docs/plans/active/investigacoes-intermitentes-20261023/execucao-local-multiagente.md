@@ -161,3 +161,10 @@ não executar provedores para encerrar investigação. Nenhuma proteção altera
   NOT_RUN neste checkpoint. Recibos posteriores na PR identificam o HEAD real.
   `AGUARDANDO_REVISAO` registra o destino da candidata ao mantenedor, sem
   antecipar conclusão técnica dos gates remotos ou aceite humano.
+- 23/10/2026, após revisão CLI: candidata52cdf6e publicada na PR29; Codex remoto
+  concluiu sem findings às21:35:44UTC, mas a CLI local apontou P2 procedente:
+  GETs de rota Next atuais B podem ser RSC, sem prova de15documentos. Errata e
+  sínteses corrigidas preservam os recibos originais; seis404 históricos têm
+  listener de navegação principal comprovado por fonte imutável. A candidata
+  corrigida terá novo SHA, quinze gates e reviews próprios; CI/review anteriores
+  não serão herdados. PR permanece Draft durante o tratamento.

@@ -24,8 +24,9 @@ Limites P3 identificados pela revisão, sem aceite de risco pelo mantenedor:
 - B preserva SHA/fonte executável e hashes verificáveis, mas não capturou todos
   os campos de árvore exata/diff do estado inicial não commitado. Não se cria
   hash retroativo nem se atribui execução a uma worktree limpa fictícia.
-- Contadores HTTP de B têm filtros distintos:15documentos/dashboard200 excluem
-  /login; `httpTotalLogged` não é a extensão do array de projeção fechado.
+- Contadores HTTP de B têm filtros distintos:15GETs de rota/dashboard200 excluem
+  /login; `httpTotalLogged` não é a extensão do array de projeção fechado. A CLI
+  identificou ainda o P2 de classificação documento/RSC, tratado na errata abaixo.
 - As fontes das duas primeiras tentativas BLOCKED de C não foram preservadas.
   As fontes do FAIL de browser/PASS e o protocolo executado são verificáveis;
   os bloqueios de setup não são prova de defeito do produto.
@@ -46,6 +47,16 @@ produzida por D e é excluída de sua própria alegação de independência. Os 
 casos já têm contraprovas atuais nas duas rodadas B; não se repetiram testes
 verdes apenas para preencher metadados. C descreve o checkpoint anterior à
 recuperação, não um bloqueio atual de acesso ao artifact.
+
+`CLI-D-P2-002`, procedente: a revisão CLI de52cdf6e demonstrou que os GETs de
+rota no servidor não distinguem documentos de RSC. A [errata vinculada aos
+recibos originais](review/http-classification-errata.md) restringe a prova atual B
+a seis casos UI PASS/rodada e GETs de rota200, sem afirmar15documentos capturados.
+Os dois documentos200 de C têm observação de browser própria. Os seis404
+históricos têm listener de navegação principal comprovado na fonte imutável.
+O recibo JSON e a primeira projeção D foram preservados byte a byte; suas
+interpretações precisam ser lidas com a errata. O Codex remoto sem findings
+de52cdf6e não substitui o tratamento deste finding nem revisa o novo HEAD.
 
 Nenhuma destas revisões concede merge, aceite científico/visual ou homologação
 do piloto. Findings materiais do Codex final, se houver, exigem tratamento e

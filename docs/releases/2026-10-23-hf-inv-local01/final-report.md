@@ -14,6 +14,13 @@ defeito novo de produto; causas históricas permanecem limitadas na
 [matriz dos nove IDs](incident-matrix.md). Não se declara “todas as intermitências
 resolvidas”. A investigação não homologa o piloto.
 
+A revisão CLI identificou e motivou a [correção documental P2 da classificação
+HTTP](review/http-classification-errata.md): os15GETs de rota200 de B não são
+15documentos capturados, pois podem incluir RSC. Os recibos originais permanecem
+verificáveis; a prova atual B é6casos UI PASS/rodada, enquanto C observou dois
+documentos200 separadamente. O novo HEAD tem validação/revisão próprias nos
+recibos da PR, sem herdar o parecer sem findings do HEAD52cdf6e anterior.
+
 ## Conteúdo e proveniência
 
 - [Plano único](../../plans/active/investigacoes-intermitentes-20261023/execucao-local-multiagente.md),

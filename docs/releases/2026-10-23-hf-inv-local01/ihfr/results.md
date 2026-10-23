@@ -14,6 +14,10 @@ Os experimentos não concedem homologação do piloto, aceite humano ou científ
 
 [Protocolo v1](protocol.md), registrado antes dos testes; [históricos e sua
 integridade](historical-integrity.json); [recibos dos experimentos](run-evidence.json).
+Aplicar a [errata de classificação HTTP](../review/http-classification-errata.md)
+ao recibo original preservado: o campo `document` da projeção de logs Next
+não distingue documento de RSC. Os hashes anteriores continuam verificáveis
+no HEAD52cdf6e; o manifesto atual identifica os bytes desta síntese corrigida.
 Os três ZIPs originais preservados localmente foram lidos sem executar seu código.
 Os digests foram conferidos com a API GitHub atual; todos os 411, 413 e 4 membros,
 respectivamente, passaram por validação de caminhos, tamanho e CRC antes da
@@ -94,9 +98,12 @@ três conflitos históricos permanece insuficiente para atribuição causal.
 
 ## INV-001: inicialização, sessão e navegação
 
-Cada rodada atual registrou quinze respostas 200 de documentos `/dashboard/...`,
-zero 404 de página e dois 404 esperados de lookup da API. O recibo preserva os
-404 de API e a ordem das respostas, com URLs em templates sem query. Os seis
+Cada rodada atual registrou quinze GETs de rota200 `/dashboard/...` no log do
+Next, sem distinguir documento de RSC, e dois404 esperados de lookup da API.
+Não há GET404 dessas rotas na projeção; isso não certifica quinze navegações
+principais de documento. A prova UI são os seis cenários PASS por rodada.
+O recibo preserva os404 de API e a ordem projetada das respostas, com URLs
+em templates sem query. Os seis
 cenários abrangem criação, leitura, replace/revoke, recuperação, versão
 incompatível, papéis, laboratório inativo, reload e navegação no servidor aquecido.
 

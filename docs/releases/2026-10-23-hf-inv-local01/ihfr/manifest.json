@@ -36,8 +36,8 @@
     },
     {
       "path": "results.md",
-      "bytes": 9538,
-      "sha256": "b380ee9849d95f874340a98451b207c533db5ecdfd2124bb96ce04f2e7810ca1"
+      "bytes": 10041,
+      "sha256": "1f7e523a1641c7afc8653499bcda2a9db18d2ba054b57440d995184aea9407a8"
     },
     {
       "path": "run-evidence.json",
@@ -56,5 +56,14 @@
     "historicalProjectionHashesChecked": 3,
     "forbiddenPayloadKeys": 0,
     "sensitivePatternMatches": 0
+  },
+  "documentationCorrection": {
+    "finding": "CLI-D-P2-002",
+    "errata": "../review/http-classification-errata.json",
+    "originalManifestHead": "52cdf6ed28b12dfc0428cdf07f042c63f698da5c",
+    "updatedEntries": [
+      "results.md"
+    ],
+    "reason": "Actual changed synthesis bytes; original runtime receipt and all other evidence entries unchanged"
   }
 }

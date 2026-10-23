@@ -13,7 +13,7 @@ manter outro plano paralelo. O plano único permanece em
 | Agentes reais/commits | [agent-ledger.json](agent-ledger.json) |
 | Evidências por frente | [nav4](nav4/readme.md), [ihfr](ihfr/results.md), [navigation](navigation/report.md) |
 | Gates e testes | [validation.md](validation.md) |
-| Revisão e findings | [review.md](review.md), [INV-005 recuperado](review/inv005-historical.json) |
+| Revisão e findings | [review.md](review.md), [INV-005 recuperado](review/inv005-historical.json), [errata HTTP obrigatória dos recibos](review/http-classification-errata.md) |
 | Comunicação preparada | [operational-handoff.md](operational-handoff.md) |
 
 Os resultados remotos só existem depois do commit: sua identidade e conclusão
