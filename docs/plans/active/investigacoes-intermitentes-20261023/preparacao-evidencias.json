@@ -37,7 +37,8 @@
     "findingsObserved": null,
     "functionalCi": "NOT_RUN",
     "reviewReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420",
-    "mergedByThisPreparation": false
+    "mergedByThisPreparation": false,
+    "observationScope": "Original preparation snapshot; see finalReviewUpdate for the subsequent conclusion."
   },
   "priorCandidate": {
     "sha": "131ade347258c7820c7a89989ab851769197b486",
@@ -71,5 +72,25 @@
   "newFunctionalTestsRun": false,
   "historicalFailuresPreserved": true,
   "validationReceipt": "Documentary checks and publication identity are recorded in PR body/conversation after actual validation.",
-  "filesPlanned": 8
+  "filesPlanned": 8,
+  "finalReviewUpdate": {
+    "observedOn": "2026-10-23",
+    "requestComment": 6359591138,
+    "requestedAtUtc": "2026-10-23T07:13:43Z",
+    "reviewReceiptComment": 6359630181,
+    "summaryComment": 6329614420,
+    "commit": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+    "completedAtUtc": "2026-10-23T07:16:20.400826Z",
+    "timezone": "America/Fortaleza",
+    "completedAtLocal": "2026-10-23T04:16:20.400826-03:00",
+    "status": "completed",
+    "hasAnyFindings": false,
+    "hasUnresolvedFindings": false,
+    "previousExecutionCancellation": "NOT_CONFIRMED",
+    "maintainerOwnsPr27Acceptance": true,
+    "nextDeveloperMustRepeatPr27Review": false,
+    "pilotReleaseAuthorized": false,
+    "functionalCiForReviewedHead": "NOT_RUN",
+    "newFunctionalTestsRun": false
+  }
 }

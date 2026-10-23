@@ -49,3 +49,14 @@ O [checklist operacional da missão](https://github.com/HidroFlorestaStartup/Hid
 Preserve CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO. Não altere ciência ou contratos por inferência.
 
 Este prompt pode ser usado na branch documental antes de seu merge. Comece pela base real atual e preserve as provas da missão anterior, sem repetir trabalho já concluído apenas para produzir outro recibo.
+
+
+## Atualização vigente — revisão do #27 concluída — 23/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: a [nova solicitação manual](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6359591138) foi publicada em23/10/2026 07:13:43UTC (04:13:43 America/Fortaleza), para o mesmo head223839c9ae91591ded8de387144d8c1ee84b5c20. O bot publicou [recibo conclusivo sem achados](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6359630181) às07:16:18UTC; o [resumo oficial](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420) registra completed às07:16:20UTC (04:16:20 America/Fortaleza), has_any_findings:false e has_unresolved_findings:false. A pendência de conclusão dessa revisão final está encerrada; isso não é merge nem aprovação humana ou homologação do piloto.
+
+O histórico anterior de running permanece válido para a hora em que foi observado. Não há recibo de cancelamento ou término individual da execução anterior; a nova solicitação e a atualização do resumo não comprovam seu cancelamento automático. Uma revisão analisa um SHA e entrega seu parecer; não deve ser mantida aguardando o merge como condição de conclusão. Não criar outra solicitação para este mesmo head apenas por haver registros antigos de running.
+
+**Responsabilidades nesta etapa:** a decisão de aceite/integração do #27 e a gestão de sua revisão pertencem ao mantenedor. O próximo desenvolvedor executa as investigações e correções deste prompt e providencia revisão das novas entregas que produzir; não precisa retomar, cancelar ou repetir a revisão concluída do #27. Se encontrar defeito concreto nessa entrega, registra o achado e segue o fluxo de correção autorizado. Confira referências remotas atuais antes de iniciar, sem bloquear experimentos independentes por um estado histórico do bot.
+
+O PASS dos15gates continua exclusivo de131ade3/run39699435699/tentativa1; CI funcional de223839c9 permanece NOT_RUN. Investigações históricas, aceites humanos e G3–G5 continuam com seus estados próprios. Nenhum novo teste funcional, merge, deploy ou mudança operacional foi realizado para este esclarecimento documental.
