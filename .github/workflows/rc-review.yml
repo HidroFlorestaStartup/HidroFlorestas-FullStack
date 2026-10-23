@@ -21,6 +21,7 @@ on:
       - feat/frontend-user-administration
       - feat/frontend-landing-consolidation
       - release/frontend-rc-20261021
+      - fix/investigacoes-intermitentes-20261023-local01
   workflow_dispatch:
 
 permissions:
@@ -50,7 +51,8 @@ jobs:
       github.ref_name == 'feat/frontend-territorial-map' ||
       github.ref_name == 'feat/frontend-user-administration' ||
       github.ref_name == 'feat/frontend-landing-consolidation' ||
-      github.ref_name == 'release/frontend-rc-20261021'
+      github.ref_name == 'release/frontend-rc-20261021' ||
+      github.ref_name == 'fix/investigacoes-intermitentes-20261023-local01'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
