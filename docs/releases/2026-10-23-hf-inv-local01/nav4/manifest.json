@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mission": "HF-INV-20261023-01-LOCAL01",
-  "generatedUtc": "2026-10-23T21:13:44.605Z",
+  "generatedUtc": "2026-10-23T21:15:24.835Z",
   "hashAlgorithm": "sha256",
   "selfHashIncluded": false,
   "validation": {
@@ -104,13 +104,13 @@
     },
     {
       "path": "readme.md",
-      "bytes": 8475,
-      "sha256": "16272225a1939ae916bd03e325fe5f8e36757ea4ae46e224314ea37384ccf630"
+      "bytes": 8589,
+      "sha256": "aa0ad8b0821f5a87b01545742323ccfd36baf2d2b2f534688ca603eae2211ec5"
     },
     {
       "path": "setup-results.json",
-      "bytes": 2422,
-      "sha256": "12568b817bcfc5a50638d3dd2b6fc51496e07f1d9d1c5d1f434efb2627a8ba76"
+      "bytes": 2500,
+      "sha256": "a4a0741bb73b7c815ded331b239fdf9216dca1dd3b7344a85a26a3e4c962287f"
     }
   ]
 }

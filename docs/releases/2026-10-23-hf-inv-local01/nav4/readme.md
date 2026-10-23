@@ -94,8 +94,10 @@ ajustes seguintes; v3 foi recuperada por inversão das mudanças e conferida con
 os três hashes capturados emruntime; v5 foi preservada contra os mesmos campos.
 Todos os nove snapshots correspondem byte a byte aos hashes dos recibos.
 Atributos locais deste diretório desativam a conversão de EOL para preservar
-esses bytes em checkouts Windows. O verificador estático atualiza apenas o
-manifesto; não regenera recibos nem atribui estes resultados a outro HEAD.
+esses bytes em checkouts Windows. O verificador estático confere os hashes sem
+modificar arquivos; `--write-manifest` atualiza somente o manifesto quando uma
+alteração documental é deliberada. Ele não regenera recibos nem atribui estes
+resultados a outro HEAD.
 
 Errata preservada: `readiness.trustedIngress` emv4 diz fallback por erro fixo do
 reporter; a fonte executada configura local. O recibo não foi editado. O protocolo

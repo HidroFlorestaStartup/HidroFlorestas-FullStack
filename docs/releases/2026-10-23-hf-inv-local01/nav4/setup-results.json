@@ -70,7 +70,9 @@
   "checks": {
     "typecheck": "PASS",
     "focusedEslint": "PASS",
-    "powerShellSyntax": "PASS"
+    "powerShellSyntax": "PASS",
+    "manifestMismatchNegative": "PASS",
+    "manifestVerifyReadOnly": "PASS"
   },
   "productPatch": false,
   "scientificContractChanged": false

@@ -37,10 +37,15 @@ async function inspect(path) {
 }
 await inspect(directory);
 files.sort((a, b) => a.path.localeCompare(b.path));
-await writeFile(join(directory, 'manifest.json'), JSON.stringify({ schemaVersion: 1, mission: 'HF-INV-20261023-01-LOCAL01',
-  generatedUtc: new Date().toISOString(), hashAlgorithm: 'sha256', selfHashIncluded: false,
-  validation: { jsonParse: 'PASS', localMarkdownReferences: 'PASS', executedSourceHashes: 'PASS',
-    closedEvidencePathAndSessionScan: 'PASS', rawEnvironmentOrReporterJsonPublished: false }, files,
-}, null, 2) + '\n');
+if (process.argv.includes('--write-manifest')) {
+  await writeFile(join(directory, 'manifest.json'), JSON.stringify({ schemaVersion: 1, mission: 'HF-INV-20261023-01-LOCAL01',
+    generatedUtc: new Date().toISOString(), hashAlgorithm: 'sha256', selfHashIncluded: false,
+    validation: { jsonParse: 'PASS', localMarkdownReferences: 'PASS', executedSourceHashes: 'PASS',
+      closedEvidencePathAndSessionScan: 'PASS', rawEnvironmentOrReporterJsonPublished: false }, files,
+  }, null, 2) + '\n');
+} else {
+  const manifest = await json(join(directory, 'manifest.json'));
+  if (JSON.stringify(manifest.files) !== JSON.stringify(files)) throw new Error('EVIDENCE_MANIFEST_MISMATCH');
+}
 await access(join(directory, 'manifest.json'));
 console.log(JSON.stringify({ evidenceFilesVerified: files.length, json: 'PASS', links: 'PASS', executedSources: 9, pathAndSessionScan: 'PASS' }));
