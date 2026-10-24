@@ -31,8 +31,8 @@ backlog criaria risco real de duplicar trabalho e reabrir contratos estabilizado
 | Relação | 12 commits à frente, zero atrás; merge-base igual à base |
 | Delta | 91 arquivos, 15.251 inserções e 2 exclusões |
 | Produto/schema/dependências | nenhum arquivo alterado nesses grupos |
-| Worktree da revisão | `docs/revisao-thales-20261024`, derivada da candidata |
-| Branch local da revisão | `docs/revisao-thales-20261024` |
+| Worktree da revisão | isolada da candidata |
+| Branch local da revisão | `docs/revisao-20261024` |
 
 `git merge-tree --write-tree` produziu a própria árvore candidata ao simular
 `development + #29`, sem conflito textual. A revisão integral do delta confirmou

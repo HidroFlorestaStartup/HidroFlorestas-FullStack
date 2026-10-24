@@ -50,7 +50,7 @@ preservam época e autoridade. Serão usadas as classificações
 
 - checkout principal: `main@beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`;
 - alteração preexistente preservada no checkout principal: `package-lock.json`;
-- worktree isolada: `docs/revisao-thales-20261024`;
+- branch da worktree isolada: `docs/revisao-20261024`;
 - base: `00477e961e36416d8d602d36f7e0ee195c487148`;
 - árvore base: `c980346ef3044e0da79d36c42f3cd0da0a4839c2`;
 - upstream temporário: `origin/fix/investigacoes-intermitentes-20261023-local01`;
