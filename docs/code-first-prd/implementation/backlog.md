@@ -1,5 +1,16 @@
 # Backlog mínimo de implementação
 
+## Adendo de estado —24/10/2026, C1
+
+As tabelas abaixo preservam seus cortes históricos. O [estado conciliado C1](estado-conciliado-20261024.md)
+confrontou C0, o handoff LOCAL real e fontes em c4adfb379e5dc78f27f31b91edbd13f43228d9f9.
+São 30 subcapacidades de IMP-002–009 e10 fronteiras, com oito eixos independentes.
+Implementação estática presente não equivale a homologação, aceite ou ciência;
+C02 é parcial no avatar do popup, ingresso não localizado e Plotly futuro.
+Este adendo compõe a proposta CHAT revisada; incorporação posterior permanece separada;
+não declara merge da #29 nem publicação em development. Não selecionar
+reimplementação pela leitura isolada dos estados antigos de mock/ausência de API.
+
 ## Estado corrente do recorte CRI — 2026-10-10
 
 EVIDENCIA_IMPLEMENTACAO: as funcionalidades aprovadas 014/015/016 têm evidências locais em runtime. O baseline anterior abaixo permanece histórico e não descreve sua implementação atual. Consulte a [matriz corrente](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Aceites remotos e humanos permanecem pendentes.

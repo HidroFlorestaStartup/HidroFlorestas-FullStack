@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024-CHAT01",
+  "mode": "PARALELO",
+  "stage": "C0",
+  "status": "PROPOSTA_EM_CONCILIACAO",
+  "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "examinedCandidateSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+  "studentReviewSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+  "localHandoffConsumed": false,
+  "codeDefinitions": {
+    "I0": "RELATO_DOCUMENTAL_CONFRONTO_LOCAL_PENDENTE",
+    "L0": "VALIDACAO_LOCAL_HISTORICA_CONSULTADA_VINCULO_POR_IMP_PENDENTE",
+    "C0-CI": "CI29_CONSULTADA_COBERTURA_POR_IMP_PENDENTE",
+    "R0": "ALUNOS_CONSULTADOS_LOCAL_PENDENTE_CHAT_PARECER_SEPARADO",
+    "H0": "HOMOLOGACAO_PENDENTE",
+    "A0": "SEM_NOVO_ACEITE_HUMANO",
+    "S0": "VALIDACAO_CIENTIFICA_NAO_AVALIADA_NESTA_MISSAO",
+    "S1": "VALIDACAO_CIENTIFICA_PENDENTE",
+    "N0": "REGISTRO_INTEGRACAO_CONSULTADO_CONFRONTO_LOCAL_PENDENTE"
+  },
+  "rows": [
+    {
+      "id": "IMP-002",
+      "module": "Laboratórios e workspace",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/002-criar-laboratorio/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/002-criar-laboratorio/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/019-frontend-workspace-shell/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/019-frontend-workspace-shell/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-003",
+      "module": "Áreas e capas",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/003-area-registration-and-viewing/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/003-area-registration-and-viewing/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/016-area-covers/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/016-area-covers/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/021-frontend-areas-cover/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/021-frontend-areas-cover/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-004",
+      "module": "Coletas",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/004-environmental-collection-registration/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/004-environmental-collection-registration/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/023-frontend-collections/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/023-frontend-collections/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-005",
+      "module": "Dados ambientais e drafts",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/005-environmental-collection-data/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/015-environmental-drafts/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/015-environmental-drafts/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/024-frontend-environmental-drafts/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/024-frontend-environmental-drafts/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S1",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-006",
+      "module": "Diagnóstico IHFR",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/006-ihfr-diagnosis/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/006-ihfr-diagnosis/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/025-frontend-ihfr/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/025-frontend-ihfr/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S1",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-007",
+      "module": "Dashboard e histórico",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/007-dashboard-history/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/007-dashboard-history/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/020-frontend-laboratory-dashboard/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/020-frontend-laboratory-dashboard/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-008",
+      "module": "Mapa territorial",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/008-territorial-map/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/008-territorial-map/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/026-frontend-territorial-map/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/026-frontend-territorial-map/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    },
+    {
+      "id": "IMP-009",
+      "module": "Administração",
+      "evidenceClassification": "FATO_DOCUMENTADO",
+      "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "specIndex": [
+        {
+          "path": "specs/009-user-administration/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/009-user-administration/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        },
+        {
+          "path": "specs/027-frontend-user-administration/spec.md",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/027-frontend-user-administration/spec.md",
+          "proofLimit": "PATH_EXISTS_NOT_IMPLEMENTATION_PROOF"
+        }
+      ],
+      "axes": {
+        "implementacao": "I0",
+        "validacao_local": "L0",
+        "validacao_ci": "C0-CI",
+        "revisao_tecnica": "R0",
+        "homologacao": "H0",
+        "aceite_humano": "A0",
+        "validacao_cientifica": "S0",
+        "integracao": "N0"
+      },
+      "directTechnicalClassification": "AGUARDANDO_HANDOFF_LOCAL",
+      "pathsForRoutesServicesUiTestsMigrations": null,
+      "runtimeByChat": "NOT_RUN"
+    }
+  ],
+  "functionalCiChat": "NOT_RUN",
+  "scientificQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "limits": [
+    "C0 is a documentary index, not the detailed technical matrix required for C1.",
+    "No result is transferred between commits or environments.",
+    "No LOCAL ownership was assumed."
+  ]
+}
