@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "protocol": "C-1",
+  "sourceProtocolSnapshot": {
+    "path": "public-protocol-executed.snapshot.md",
+    "sha256": "305a5e98c481a377515e7e21a3617595715ebf7c431d502d853adc47aec516f9",
+    "reconstructedFromUnchangedPrefixAndHashVerified": true
+  },
+  "preflight": {
+    "gitIdentityFailure": "Read-only metadata stopped before server; per-command safe.directory fixed without global changes.",
+    "installationAttempts": [
+      "default-network EACCES",
+      "escalated-network ECONNRESET",
+      "shared verified cache offline exit0"
+    ],
+    "prismaGenerate": "isolated/no database URL, exit0",
+    "earlySourceLimitation": "Exact run-public source bytes of the two readiness-BLOCKED receipts were not preserved before edits. Their recorded hashes do not match the final source, and no source reconstruction is claimed. These are invalid setup attempts, not product evidence. Browser FAIL/PASS source is available and verifiable.",
+    "accidentalOutput": "One file created by a malformed Windows inline diagnostic command; exact owned file removed, no recursive cleanup."
+  },
+  "runs": [
+    {
+      "id": "2026-10-23T20-45-41-274Z",
+      "receipt": "2026-10-23T20-45-41-274Z/results.json",
+      "bytes": 19101,
+      "sha256": "c817dac8fe60daee895fcd2a71b02392b6f949abfd60853b3e55fd75f41a47d9",
+      "status": "BLOCKED",
+      "blocker": "SERVER_READINESS_TIMEOUT",
+      "browserAttempts": 0,
+      "outcomes": [],
+      "syntheticControls": [],
+      "cleanup": {
+        "method": "owned-child-tree-only",
+        "stopExitCode": 0,
+        "portReleased": true
+      },
+      "limitation": "No browser executed; Node Response.status was incorrectly called as a method. Readiness TypeError rows are instrumentation failures, not established transport failures. First run additionally lacked generated Prisma Client."
+    },
+    {
+      "id": "2026-10-23T20-49-36-815Z",
+      "receipt": "2026-10-23T20-49-36-815Z/results.json",
+      "bytes": 42991,
+      "sha256": "46a611c51f907aac3fd908a33b4c562e75800d251db49d7d5a06dd48ff5a88cd",
+      "status": "BLOCKED",
+      "blocker": "SERVER_READINESS_TIMEOUT",
+      "browserAttempts": 0,
+      "outcomes": [],
+      "syntheticControls": [],
+      "cleanup": {
+        "method": "owned-child-tree-only",
+        "stopExitCode": 0,
+        "portReleased": true
+      },
+      "limitation": "No browser executed; Node Response.status was incorrectly called as a method. Readiness TypeError rows are instrumentation failures, not established transport failures. First run additionally lacked generated Prisma Client."
+    },
+    {
+      "id": "2026-10-23T20-53-17-567Z",
+      "receipt": "2026-10-23T20-53-17-567Z/results.json",
+      "bytes": 36832,
+      "sha256": "ca88b29f5b7f44cf888cfc2f05491cdd62037afa9484a7ae0e94c8477eb8a741",
+      "status": "FAIL",
+      "browserAttempts": 3,
+      "outcomes": [
+        {
+          "id": "C-PUBLIC-1",
+          "status": "FAIL",
+          "failure": "RELOAD_DOCUMENT_NOT_200"
+        },
+        {
+          "id": "C-PUBLIC-2",
+          "status": "FAIL",
+          "failure": "RELOAD_DOCUMENT_NOT_200"
+        },
+        {
+          "id": "C-PUBLIC-3",
+          "status": "FAIL",
+          "failure": "RELOAD_DOCUMENT_NOT_200"
+        }
+      ],
+      "syntheticControls": [
+        {
+          "id": "C-ANIMATION-finite-with-infinite",
+          "explicitlySynthetic": true,
+          "waitedForFinite": true,
+          "resolvedAfterBarrier": true,
+          "ignoredInfinite": true,
+          "status": "PASS"
+        },
+        {
+          "id": "C-ANIMATION-finite-cancelled",
+          "explicitlySynthetic": true,
+          "waitedForFinite": true,
+          "resolvedAfterBarrier": true,
+          "ignoredInfinite": null,
+          "status": "PASS"
+        }
+      ],
+      "cleanup": {
+        "method": "owned-child-tree-only",
+        "stopExitCode": 0,
+        "portReleased": true
+      },
+      "limitation": "Register500 caused by an accidental investigator-created filename with malformed glob extension. This is a contaminated setup, not historical/product evidence."
+    },
+    {
+      "id": "2026-10-23T20-56-58-846Z",
+      "receipt": "2026-10-23T20-56-58-846Z/results.json",
+      "bytes": 11974,
+      "sha256": "d6cabc79532144f1002d7ece83117ab1c061c9819a9ed0863503e98350cdab28",
+      "status": "PASS",
+      "browserAttempts": 3,
+      "outcomes": [
+        {
+          "id": "C-PUBLIC-1",
+          "status": "PASS"
+        },
+        {
+          "id": "C-PUBLIC-2",
+          "status": "PASS"
+        },
+        {
+          "id": "C-PUBLIC-3",
+          "status": "PASS"
+        }
+      ],
+      "syntheticControls": [
+        {
+          "id": "C-ANIMATION-finite-with-infinite",
+          "explicitlySynthetic": true,
+          "waitedForFinite": true,
+          "resolvedAfterBarrier": true,
+          "ignoredInfinite": true,
+          "status": "PASS"
+        },
+        {
+          "id": "C-ANIMATION-finite-cancelled",
+          "explicitlySynthetic": true,
+          "waitedForFinite": true,
+          "resolvedAfterBarrier": true,
+          "ignoredInfinite": null,
+          "status": "PASS"
+        }
+      ],
+      "cleanup": {
+        "method": "owned-child-tree-only",
+        "stopExitCode": 0,
+        "portReleased": true
+      },
+      "limitation": "Fresh contexts after readiness; public login/register only. Does not replace authenticated collection or map evidence."
+    }
+  ],
+  "images": [
+    {
+      "path": "2026-10-23T20-53-17-567Z/public-caret-initial.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "openedWithViewImage": true,
+      "inspectionReusedFrom": null,
+      "note": "viewport screenshot, form controls masked; hidden pixels not approved"
+    },
+    {
+      "path": "2026-10-23T20-53-17-567Z/public-caret-hide.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "openedWithViewImage": true,
+      "inspectionReusedFrom": "2026-10-23T20-53-17-567Z/public-caret-initial.png",
+      "note": "viewport screenshot, form controls masked; hidden pixels not approved"
+    },
+    {
+      "path": "2026-10-23T20-56-58-846Z/public-caret-initial.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "openedWithViewImage": false,
+      "inspectionReusedFrom": "2026-10-23T20-53-17-567Z/public-caret-initial.png",
+      "note": "viewport screenshot, form controls masked; hidden pixels not approved"
+    },
+    {
+      "path": "2026-10-23T20-56-58-846Z/public-caret-hide.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "openedWithViewImage": false,
+      "inspectionReusedFrom": "2026-10-23T20-53-17-567Z/public-caret-initial.png",
+      "note": "viewport screenshot, form controls masked; hidden pixels not approved"
+    }
+  ],
+  "actualImagesOpened": 2,
+  "historicalClaims": {
+    "INV003": "INCONCLUSIVO",
+    "NAV_SETTLE": "Public narrow protocol not reproduced; authenticated original remains separate.",
+    "OBS001": "Public caret mutation demonstrated; historical hydration cause remains INCONCLUSIVO.",
+    "OBS002": "Two original public images opened; no claim for masked pixels or all controls."
+  }
+}

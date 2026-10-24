@@ -1,0 +1,2053 @@
+{
+  "schemaVersion": 1,
+  "protocol": "C-1",
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "startedUtc": "2026-10-23T20:49:36.820Z",
+  "timezone": "America/Fortaleza",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+  "dirtyTrackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "untrackedInvestigation": true,
+  "node": "v24.19.0",
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "applicationDelta": "none",
+  "database": "none",
+  "session": "none",
+  "environment": "system-allowlist-no-app-config",
+  "attempts": [],
+  "syntheticControls": [],
+  "files": [],
+  "status": "BLOCKED",
+  "executedSources": [
+    {
+      "path": "tests/investigations/navigation/run-public.mjs",
+      "bytes": 16889,
+      "sha256": "42e61ec8528620830e6f3f4bfeefabacf26fe8a500cba0f5b22cf58d3b346df0"
+    },
+    {
+      "path": "tests/e2e/frontend-mobile-navigation.spec.ts",
+      "bytes": 17556,
+      "sha256": "481a7afb46beb868196f0325707a70a33c4576239e573f1bf2c300cf9d682dc5"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/navigation/protocol.md",
+      "bytes": 6783,
+      "sha256": "305a5e98c481a377515e7e21a3617595715ebf7c431d502d853adc47aec516f9"
+    }
+  ],
+  "readiness": [
+    {
+      "t": 1792788577114,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788577378,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788577638,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788583579,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788583909,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788584233,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788584541,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788584838,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788585146,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788585471,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788585780,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788586093,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788586413,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788586739,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788587061,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788587374,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788587688,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788587990,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788588287,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788588596,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788588896,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788589183,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788589486,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788589796,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788590087,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788590405,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788590724,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788591022,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788591320,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788591625,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788591918,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788592217,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788592532,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788592831,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788593140,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788593461,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788593771,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788594082,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788594390,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788594703,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788595017,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788595315,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788595625,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788595938,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788596268,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788596569,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788596869,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788597181,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788597482,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788597793,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788598112,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788598412,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788598739,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788599057,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788599380,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788599688,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788600008,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788600319,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788600610,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788600895,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788601180,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788601480,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788601789,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788602108,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788602402,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788602712,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788603011,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788603309,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788603606,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788603933,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788604258,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788604565,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788604863,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788605172,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788605473,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788605789,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788606111,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788606415,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788606731,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788607041,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788607335,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788607633,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788607959,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788608275,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788608596,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788608938,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788609280,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788609628,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788609952,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788610265,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788610587,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788610901,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788611209,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788611523,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788611827,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788612132,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788612421,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788612716,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788613023,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788613322,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788613636,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788613943,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788614287,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788614601,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788614916,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788615227,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788615535,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788615841,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788616167,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788616484,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788616799,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788617117,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788617454,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788617777,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788618100,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788618430,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788618761,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788619075,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788619392,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788619700,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788620022,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788620350,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788620674,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788621005,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788621336,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788621688,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788622035,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788622335,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788622670,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788622980,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788623298,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788623621,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788623946,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788624266,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788624569,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788624881,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788625221,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788625550,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788625894,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788626223,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788626546,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788626879,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788627219,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788627555,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788627911,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788628246,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788628566,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788628866,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788629179,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788629496,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788629798,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788630097,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788630413,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788630747,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788631187,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788631881,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788632262,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788633296,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788633759,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788634364,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788634785,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788635557,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788636061,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788636415,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788637172,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788637627,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788638339,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788638996,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788639492,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788640057,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788640545,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788640947,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788641421,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788641929,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788642695,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788643224,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788643562,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788643915,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788644265,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788644934,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788645308,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788645636,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788645945,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788646254,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788646577,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788646904,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788647211,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788647528,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788647865,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788648171,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788648508,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788648848,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788649191,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788649526,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788649860,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788650178,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788650493,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788650843,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788651186,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788651511,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788651836,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788652158,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788652475,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788652809,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788653146,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788653490,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788653816,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788654167,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788654523,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788654871,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788655187,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788655544,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788655924,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788656272,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788656621,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788656966,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788657298,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788657613,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788657942,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788658269,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788658580,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788658914,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788659231,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788659544,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788659861,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788660181,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788660517,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788660866,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788661205,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788661561,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788661939,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788662278,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788662606,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788662959,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788663344,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788663688,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788664028,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788664367,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788664695,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788665025,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788665362,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788665692,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788666034,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788666360,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788666731,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788667057,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788667380,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788667700,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788668022,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788668344,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788668659,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788668976,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788669279,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788669591,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788669913,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788670240,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788670574,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788670917,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788671233,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788671539,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788671857,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788672175,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788672483,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788672806,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788673126,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788673452,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788673780,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788674101,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788674409,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788674742,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788675063,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788675385,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788675717,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788676084,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788676433,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788676773,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788677108,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788677461,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788677820,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788678207,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788678585,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788678927,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788679276,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788679611,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788679952,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788680423,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788680792,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788681149,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788681500,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788681835,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788682173,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788682515,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788682907,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788683299,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788683631,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788684001,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788684328,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788684662,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788685087,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788685455,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788685809,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788686202,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788686556,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788686903,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788687250,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788687603,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788687942,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788688323,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788688667,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788688979,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788689337,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788689698,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788690038,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788690364,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788690678,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788691026,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788691349,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788691649,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788691978,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788692291,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788692662,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788692994,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788693317,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788693650,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788694011,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788694349,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788694682,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788695054,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788695407,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788695748,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788696092,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788696404,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788696730,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    },
+    {
+      "t": 1792788697051,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": null
+    }
+  ],
+  "blocker": "SERVER_READINESS_TIMEOUT",
+  "serverCleanup": {
+    "method": "owned-child-tree-only",
+    "stopExitCode": 0,
+    "portReleased": true
+  },
+  "endedUtc": "2026-10-23T20:51:37.816Z"
+}
