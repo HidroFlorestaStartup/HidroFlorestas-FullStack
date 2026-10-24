@@ -377,3 +377,19 @@ fechamento estático; os recibos posteriores serão vinculados por SHA na PR,
 sem herdar PASS histórico. Não há nova decisão científica/técnica de produto
 ou novo owner humano: TECH_DECISIONS e PENDING_DECISIONS não são alterados.
 `docs/raw/**` permanece imutável; piloto/G3–G5 sem homologação por esta entrega.
+
+## Revisão técnica e handoff para Thales — 24/10/2026
+
+| Documento | Papel e limite |
+|---|---|
+| [Relatório](../reviews/20261024-revisao-thales/relatorio-de-revisao.md) | Parecer sobre #29, achados priorizados, jornada do código, PRs #27–#29 e validação; não é aprovação humana |
+| [Próximos passos](../reviews/20261024-revisao-thales/proximos-passos.md) | Ordem segura de continuidade, começando por reconciliação Code-First; não autoriza operação externa |
+| [Evidências](../reviews/20261024-revisao-thales/evidencias.json) | SHAs, CI consultada, gates locais, simulações de integração, findings e não alegações |
+| [Plano](../plans/active/revisao-thales-20261024.md) | Execução transversal e limites desta revisão |
+
+`RECOMENDACAO`: PR #29 tecnicamente apta com ressalvas para decisão humana no
+HEAD `00477e9`; integrar antes de reconciliar #27/#28. `PENDENCIA_DE_DECISAO`:
+não há review submission humano nas três PRs consultadas. A CI do HEAD #29 e os
+gates locais passaram, mas não homologam piloto, operação ou ciência. O estado
+Code-First desatualizado foi registrado como achado preexistente P2; documentos
+históricos e `docs/raw/**` permanecem intactos.

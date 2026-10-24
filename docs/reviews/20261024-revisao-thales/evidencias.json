@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "REVISAO-THALES-20261024",
+  "recordedAt": "2026-10-24T09:02:32-03:00",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "scope": {
+    "base": {
+      "ref": "origin/development",
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "tree": "24baec02321084fc1abedddd6355896a0b81eaa1"
+    },
+    "candidate": {
+      "ref": "origin/fix/investigacoes-intermitentes-20261023-local01",
+      "sha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "tree": "c980346ef3044e0da79d36c42f3cd0da0a4839c2",
+      "ahead": 12,
+      "behind": 0,
+      "changedFiles": 91,
+      "insertions": 15251,
+      "deletions": 2
+    },
+    "reviewBranch": "docs/revisao-thales-20261024",
+    "productFilesChangedByCandidate": false,
+    "schemaOrMigrationChangedByCandidate": false,
+    "dependenciesChangedByCandidate": false
+  },
+  "pullRequestsConsulted": [
+    {
+      "number": 27,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+      "state": "open",
+      "draft": false,
+      "mergeableAtConsultation": true,
+      "headSha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "baseShaAtCreation": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+      "formalReviewSubmissions": 0,
+      "note": "Functional CI for final head is NOT_RUN; G1-G5 remain decision or operational gates."
+    },
+    {
+      "number": 28,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/28",
+      "state": "open",
+      "draft": false,
+      "mergeableAtConsultation": true,
+      "headSha": "f56f73fda1d7bd459a1415bf02df25edc9120674",
+      "baseShaAtCreation": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "formalReviewSubmissions": 0,
+      "note": "Documentary preparation later executed by PR 29."
+    },
+    {
+      "number": 29,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29",
+      "state": "open",
+      "draft": false,
+      "mergeableAtConsultation": true,
+      "headSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "baseShaAtCreation": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "formalReviewSubmissions": 0,
+      "codexReview": {
+        "status": "completed",
+        "hasAnyFindings": false,
+        "hasUnresolvedFindings": false,
+        "reviewThreads": 0,
+        "receiptCommentId": 6375564800
+      }
+    }
+  ],
+  "consultedCi": {
+    "classification": "CONSULTED_IN_CI_NOT_EXECUTED_LOCALLY",
+    "candidateSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+    "runId": 40030207450,
+    "attempt": 1,
+    "jobId": 120676307853,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/40030207450/job/120676307853",
+    "conclusion": "success",
+    "uniqueGateRecords": 15,
+    "allExitCodesZero": true,
+    "gates": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint",
+      "E2E",
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "environment": {
+      "os": "windows-latest",
+      "node": "24.19.0",
+      "postgresql": "17 synthetic owned cluster"
+    }
+  },
+  "localValidation": [
+    {
+      "command": "npm ci --no-audit --no-fund --foreground-scripts",
+      "result": "PASS",
+      "details": "562 packages installed with lockfile and caches redirected to /tmp."
+    },
+    {
+      "command": "npx prisma generate",
+      "result": "PASS",
+      "details": "Prisma Client 7.4.2 generated."
+    },
+    {
+      "command": "npm run test:unit",
+      "result": "PASS",
+      "details": "402/402 primary tests and 17/17 mail tests passed after Prisma bootstrap; required permission for subprocesses and loopback."
+    },
+    {
+      "command": "npm run typecheck",
+      "result": "PASS",
+      "details": "Passed before and after build."
+    },
+    {
+      "command": "npm run lint",
+      "result": "PASS_WITH_WARNINGS",
+      "details": "0 errors and 2 pre-existing unused-variable warnings."
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "details": "Next 16.3.8 compiled; TypeScript passed; 32 static pages generated."
+    }
+  ],
+  "mergeSimulations": [
+    {
+      "order": "development + PR29",
+      "result": "CLEAN",
+      "resultTree": "c980346ef3044e0da79d36c42f3cd0da0a4839c2"
+    },
+    {
+      "order": "PR29 + PR28",
+      "result": "TEXTUAL_CONFLICTS",
+      "paths": [
+        "PROJECT_CONTEXT.md",
+        "docs/governance/DOCUMENT_REGISTER.md",
+        "docs/plans/active/preparacao-incorporacao-frontend-20261018/investigacoes-pos-consolidacao-visual.md"
+      ]
+    },
+    {
+      "order": "PR29 + PR27",
+      "result": "TEXTUAL_CONFLICTS",
+      "paths": [
+        ".github/workflows/rc-review.yml",
+        "vercel.json"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "RTH-P2-001",
+      "severity": "P2",
+      "origin": "pre-existing",
+      "title": "Code-First implementation state is materially stale",
+      "status": "OPEN_RECOMMENDATION"
+    },
+    {
+      "id": "RTH-P2-002",
+      "severity": "P2",
+      "origin": "integration-topology",
+      "title": "PR27 and PR28 conflict or overlap semantically after PR29",
+      "status": "HUMAN_DECISION_REQUIRED"
+    },
+    {
+      "id": "RTH-P3-001",
+      "severity": "P3",
+      "origin": "candidate",
+      "title": "Investigation tests are not collected by normal package scripts",
+      "status": "FOLLOW_UP_DECISION"
+    },
+    {
+      "id": "RTH-P3-002",
+      "severity": "P3",
+      "origin": "candidate",
+      "title": "Branch-specific workflow and Vercel entries become stale after closure",
+      "status": "FOLLOW_UP_AFTER_LAST_RERUN"
+    }
+  ],
+  "recommendation": {
+    "pr29": "TECHNICALLY_FIT_WITH_CAVEATS_FOR_HUMAN_INTEGRATION_DECISION",
+    "order": [
+      "human review and decision for PR29",
+      "integrate PR29 if approved",
+      "reconcile Code-First current state",
+      "treat PR28 as superseded unless unique content is extracted",
+      "evaluate PR27 independently with G1-G5 and conflict resolution"
+    ],
+    "firstStepForThales": "Create a fresh branch from updated development and produce a documentation-only Code-First current-state matrix before implementing another feature."
+  },
+  "scientificBoundary": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "notPerformed": [
+    "push",
+    "pull request mutation",
+    "merge",
+    "deploy",
+    "hosted database operation",
+    "provider configuration change",
+    "human acceptance",
+    "scientific validation"
+  ]
+}

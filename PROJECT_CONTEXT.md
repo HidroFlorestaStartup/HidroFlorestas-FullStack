@@ -296,3 +296,20 @@ G3–G5 e homologação do piloto dependem de provas/decisões próprias.
 
 IHFR: `CONTRATO_EXPERIMENTAL`, `VALIDACAO_CIENTIFICA_PENDENTE`,
 `SUJEITO_A_RECALIBRACAO`, `NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO`.
+
+## Adendo de revisão para continuidade por Thales — 24/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: a revisão independente da candidata HF-INV no HEAD
+`00477e961e36416d8d602d36f7e0ee195c487148` reconfirmou 12 commits sobre
+`development@c4adfb3`, merge textual limpo, CI consultada com15/15 gates e
+validação local proporcional aprovada. A recomendação é integrar a PR #29
+primeiro, somente após decisão/review humano; #28 é preparação já executada e
+#27 exige decisão separada sobre riscos e reconciliação de configuração.
+
+Foi identificada divergência preexistente entre o estado Code-First e a
+implementação atual: o backlog ainda descreve módulos entregues como mock ou sem
+API. O primeiro passo proposto para Thales é um adendo documental de estado
+atual, não uma nova feature. [Relatório](docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md),
+[próximos passos](docs/reviews/20261024-revisao-thales/proximos-passos.md) e
+[evidências](docs/reviews/20261024-revisao-thales/evidencias.json). Sem push,
+merge, deploy, banco/provedor hospedado ou homologação nesta revisão.
