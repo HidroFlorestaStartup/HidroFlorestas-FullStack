@@ -1,0 +1,1739 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "owner": "agent-b-ihfr-concurrency",
+  "protocol": "protocol.md",
+  "capturedUtc": "2026-10-23T21:01:40.331Z",
+  "runs": [
+    {
+      "name": "two-request-baseline-supported-runtime",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:45:39.456Z",
+      "endedUtc": "2026-10-23T20:46:25.972Z",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "--test-name-pattern=concurrent hourly quota is checked again after preset",
+        "tests/integration/area-covers.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "sourceAttribution": "Original tracked test unchanged from base. Investigation-only files were present and committed while this run was in progress.",
+      "rawLogSha256": "77d9b88b83a497a5e5c082ecd19f51cdcc4ec1a050c425f4759295d471022afd",
+      "rawLogBytes": 319,
+      "counts": {
+        "passed": 1,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": true,
+      "httpTotalLogged": 0
+    },
+    {
+      "name": "two-request-mirrors",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:50:00.695Z",
+      "endedUtc": "2026-10-23T20:50:06.669Z",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/investigations/ihfr/two-request-quota.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "976179a2af493b01d7f3ea33ecec55082cb04a1f2953a5ca92fa4e27771b8f2b",
+      "rawLogBytes": 2577,
+      "counts": {
+        "passed": 2,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": true,
+      "schedules": [
+        {
+          "experiment": "INV-002/two-calls/v1",
+          "winner": "A",
+          "newCalls": 2,
+          "before": {
+            "attempts": 9,
+            "jobs": 36
+          },
+          "after": {
+            "attempts": 10,
+            "jobs": 40
+          },
+          "outcomes": [
+            {
+              "operation": "A",
+              "status": "fulfilled"
+            },
+            {
+              "operation": "B",
+              "status": "rejected",
+              "code": "RATE_LIMITED"
+            }
+          ],
+          "events": [
+            {
+              "operation": "A",
+              "phase": 1,
+              "event": "begin"
+            },
+            {
+              "operation": "B",
+              "phase": 1,
+              "event": "begin"
+            },
+            {
+              "operation": "A",
+              "phase": 1,
+              "event": "commit"
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "begin"
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "before-insert",
+              "snapshot": {
+                "tx": "794",
+                "snapshot": "794:794:"
+              }
+            },
+            {
+              "operation": "B",
+              "phase": 1,
+              "event": "commit"
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "begin"
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "before-insert",
+              "snapshot": {
+                "tx": "795",
+                "snapshot": "794:794:"
+              }
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "commit"
+            },
+            {
+              "operation": "A",
+              "event": "winner-observed-committed"
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "error",
+              "name": "PrismaClientKnownRequestError",
+              "code": "P2034",
+              "sqlstate": "40001"
+            },
+            {
+              "operation": "B",
+              "phase": 3,
+              "event": "begin"
+            },
+            {
+              "operation": "B",
+              "phase": 3,
+              "event": "error",
+              "name": "Error",
+              "code": "RATE_LIMITED"
+            }
+          ]
+        },
+        {
+          "experiment": "INV-002/two-calls/v1",
+          "winner": "B",
+          "newCalls": 2,
+          "before": {
+            "attempts": 9,
+            "jobs": 36
+          },
+          "after": {
+            "attempts": 10,
+            "jobs": 40
+          },
+          "outcomes": [
+            {
+              "operation": "A",
+              "status": "rejected",
+              "code": "RATE_LIMITED"
+            },
+            {
+              "operation": "B",
+              "status": "fulfilled"
+            }
+          ],
+          "events": [
+            {
+              "operation": "A",
+              "phase": 1,
+              "event": "begin"
+            },
+            {
+              "operation": "B",
+              "phase": 1,
+              "event": "begin"
+            },
+            {
+              "operation": "A",
+              "phase": 1,
+              "event": "commit"
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "begin"
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "before-insert",
+              "snapshot": {
+                "tx": "823",
+                "snapshot": "823:823:"
+              }
+            },
+            {
+              "operation": "B",
+              "phase": 1,
+              "event": "commit"
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "begin"
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "before-insert",
+              "snapshot": {
+                "tx": "824",
+                "snapshot": "823:823:"
+              }
+            },
+            {
+              "operation": "B",
+              "phase": 2,
+              "event": "commit"
+            },
+            {
+              "operation": "B",
+              "event": "winner-observed-committed"
+            },
+            {
+              "operation": "A",
+              "phase": 2,
+              "event": "error",
+              "name": "PrismaClientKnownRequestError",
+              "code": "P2034",
+              "sqlstate": "40001"
+            },
+            {
+              "operation": "A",
+              "phase": 3,
+              "event": "begin"
+            },
+            {
+              "operation": "A",
+              "phase": 3,
+              "event": "error",
+              "name": "Error",
+              "code": "RATE_LIMITED"
+            }
+          ]
+        }
+      ],
+      "httpTotalLogged": 0
+    },
+    {
+      "name": "ihfr-cold-1",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:50:15.875Z",
+      "endedUtc": "2026-10-23T20:53:26.240Z",
+      "command": [
+        "node",
+        "--import=tsx",
+        "scripts/imp006-local-e2e.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "9230338a47421aaedce46aefe64168637a4fdc5c8cbc5308525e292bd1989848",
+      "rawLogBytes": 18103,
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "index": 1,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:100:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID",
+          "duration": "30.8s"
+        },
+        {
+          "index": 2,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:160:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key",
+          "duration": "32.2s"
+        },
+        {
+          "index": 3,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:268:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM",
+          "duration": "3.1s"
+        },
+        {
+          "index": 4,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:282:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal",
+          "duration": "3.7s"
+        },
+        {
+          "index": 5,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-read.spec.ts:18:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout",
+          "duration": "10.0s"
+        },
+        {
+          "index": 6,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-read.spec.ts:60:5 › member sees honest absence and inactive laboratory stays read only",
+          "duration": "3.5s"
+        }
+      ],
+      "http": [
+        {
+          "sequence": 1,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 2,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 3,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/new",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 4,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 5,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 7,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 8,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data/new",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 9,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 10,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 12,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 13,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 14,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 15,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 16,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 21,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 22,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 23,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 30,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 409,
+          "kind": "api"
+        },
+        {
+          "sequence": 33,
+          "method": "GET",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/operations/{synthetic-id}",
+          "status": 404,
+          "kind": "api"
+        },
+        {
+          "sequence": 40,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 41,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 42,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 49,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 409,
+          "kind": "api"
+        },
+        {
+          "sequence": 52,
+          "method": "GET",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/operations/{synthetic-id}",
+          "status": 404,
+          "kind": "api"
+        },
+        {
+          "sequence": 59,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 60,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 61,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 62,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 63,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 64,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 65,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 66,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 67,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 68,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 422,
+          "kind": "api"
+        },
+        {
+          "sequence": 71,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 422,
+          "kind": "api"
+        },
+        {
+          "sequence": 73,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 74,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 75,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 76,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 77,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 78,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 79,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 80,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 81,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 82,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 83,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 84,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        }
+      ],
+      "document200": 15,
+      "document404": 0,
+      "api404": 2,
+      "ownedSchemaLogged": true,
+      "httpTotalLogged": 84
+    },
+    {
+      "name": "ihfr-cold-2",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:53:33.000Z",
+      "endedUtc": "2026-10-23T20:55:15.822Z",
+      "command": [
+        "node",
+        "--import=tsx",
+        "scripts/imp006-local-e2e.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "5b52b9299a90acceec03ee3af4d500db6b1460be3cb0180afe093717ddb53ee0",
+      "rawLogBytes": 18117,
+      "counts": {
+        "passed": 6,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "index": 1,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:100:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID",
+          "duration": "21.8s"
+        },
+        {
+          "index": 2,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:160:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key",
+          "duration": "35.7s"
+        },
+        {
+          "index": 3,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:268:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM",
+          "duration": "4.5s"
+        },
+        {
+          "index": 4,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-manage.spec.ts:282:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal",
+          "duration": "3.9s"
+        },
+        {
+          "index": 5,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-read.spec.ts:18:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout",
+          "duration": "11.8s"
+        },
+        {
+          "index": 6,
+          "result": "PASS",
+          "case": "tests/e2e/ihfr-diagnosis-read.spec.ts:60:5 › member sees honest absence and inactive laboratory stays read only",
+          "duration": "3.8s"
+        }
+      ],
+      "http": [
+        {
+          "sequence": 1,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 2,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 3,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/new",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 4,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 5,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 7,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 8,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data/new",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 9,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 10,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 12,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 13,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/environmental-data",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 14,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 15,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 16,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 21,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 22,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 23,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 30,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 409,
+          "kind": "api"
+        },
+        {
+          "sequence": 33,
+          "method": "GET",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/operations/{synthetic-id}",
+          "status": 404,
+          "kind": "api"
+        },
+        {
+          "sequence": 40,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 41,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 42,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 49,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 409,
+          "kind": "api"
+        },
+        {
+          "sequence": 52,
+          "method": "GET",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/operations/{synthetic-id}",
+          "status": 404,
+          "kind": "api"
+        },
+        {
+          "sequence": 59,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 60,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 61,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 62,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 63,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 64,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 65,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 66,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 67,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 68,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 422,
+          "kind": "api"
+        },
+        {
+          "sequence": 71,
+          "method": "POST",
+          "path": "/api/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}/ihfr-diagnosis/diagnoses",
+          "status": 422,
+          "kind": "api"
+        },
+        {
+          "sequence": 73,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 74,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 75,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 76,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 77,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 78,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 79,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 80,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 81,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 82,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 83,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        },
+        {
+          "sequence": 84,
+          "method": "GET",
+          "path": "/api/auth/me",
+          "status": 200,
+          "kind": "api"
+        }
+      ],
+      "document200": 15,
+      "document404": 0,
+      "api404": 2,
+      "ownedSchemaLogged": true,
+      "httpTotalLogged": 84
+    },
+    {
+      "name": "ihfr-controls",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:55:54.408Z",
+      "endedUtc": "2026-10-23T20:56:37.874Z",
+      "command": [
+        "node",
+        "--import=tsx",
+        "scripts/imp006-local-e2e.ts",
+        "--initialization-controls"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "6581979ad1772262393a404720b7ad2d6dda0bb2017dbd3849b27e831a9e938e",
+      "rawLogBytes": 14785,
+      "counts": {
+        "passed": 2,
+        "failed": 2,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "index": 1,
+          "result": "FAIL",
+          "case": "tests/experiments/ihfr-initialization-controls.spec.ts:27:7 › IHFR without JavaScript › IHFR control distinguishes missing hydration from missing server-rendered diagnosis",
+          "duration": "8.2s"
+        },
+        {
+          "index": 2,
+          "result": "FAIL",
+          "case": "tests/experiments/ihfr-initialization-controls.spec.ts:34:7 › IHFR without JavaScript › IHFR no-JavaScript collection control reproduces the missing occurrence selector",
+          "duration": "6.7s"
+        },
+        {
+          "index": 3,
+          "result": "PASS",
+          "case": "tests/experiments/ihfr-initialization-controls.spec.ts:44:5 › IHFR JavaScript-enabled control exposes the server-rendered diagnosis",
+          "duration": "2.0s"
+        },
+        {
+          "index": 4,
+          "result": "PASS",
+          "case": "tests/experiments/ihfr-initialization-controls.spec.ts:52:5 › IHFR control records login redirect for invalid session and absent actor",
+          "duration": "1.5s"
+        }
+      ],
+      "http": [
+        {
+          "sequence": 1,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 2,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 3,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/new",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 4,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 5,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 307,
+          "kind": "document"
+        },
+        {
+          "sequence": 6,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        },
+        {
+          "sequence": 7,
+          "method": "GET",
+          "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+          "status": 307,
+          "kind": "document"
+        },
+        {
+          "sequence": 8,
+          "method": "GET",
+          "path": "/login",
+          "status": 200,
+          "kind": "document"
+        }
+      ],
+      "document200": 3,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": true,
+      "controls": [
+        {
+          "kind": "no-JavaScript projection",
+          "projection": [
+            {
+              "heading": "ihfr-diagnosis-heading",
+              "ancestors": [
+                {
+                  "tag": "SECTION",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "S:1",
+                  "hidden": true,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "none",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "BODY",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                },
+                {
+                  "tag": "HTML",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                }
+              ]
+            },
+            {
+              "heading": "ihfr-management-heading",
+              "ancestors": [
+                {
+                  "tag": "SECTION",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "DIV",
+                  "id": "S:1",
+                  "hidden": true,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "none",
+                  "visibility": "visible",
+                  "width": 0,
+                  "height": 0
+                },
+                {
+                  "tag": "BODY",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                },
+                {
+                  "tag": "HTML",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "no-JavaScript occurrence",
+          "projection": {
+            "occurrence": 0,
+            "preparing": 1
+          }
+        },
+        {
+          "kind": "JavaScript-enabled projection",
+          "projection": [
+            {
+              "heading": "ihfr-diagnosis-heading",
+              "ancestors": [
+                {
+                  "tag": "SECTION",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 896,
+                  "height": 1250.5
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 896,
+                  "height": 2218.25
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 2903.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 3144.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 3144.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "application-content",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1120,
+                  "height": 3216.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "flex",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 3216.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 3290.140625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                },
+                {
+                  "tag": "BODY",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                }
+              ]
+            },
+            {
+              "heading": "ihfr-management-heading",
+              "ancestors": [
+                {
+                  "tag": "SECTION",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 896,
+                  "height": 943.75
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 896,
+                  "height": 2218.25
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 2903.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 3144.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1072,
+                  "height": 3144.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "application-content",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1120,
+                  "height": 3216.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "flex",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 3216.515625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 3290.140625
+                },
+                {
+                  "tag": "DIV",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                },
+                {
+                  "tag": "BODY",
+                  "id": "",
+                  "hidden": false,
+                  "ariaHidden": null,
+                  "inert": false,
+                  "display": "block",
+                  "visibility": "visible",
+                  "width": 1280,
+                  "height": 720
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "invalidSessionAndAbsentActorRedirectLogged": true,
+      "expectedNegativeFailures": 2,
+      "protocolInterpretation": "Expected two RED controls and two positive controls observed; the test process correctly exits nonzero.",
+      "httpTotalLogged": 8
+    },
+    {
+      "name": "backend-regression",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:57:26.359Z",
+      "endedUtc": "2026-10-23T20:58:47.444Z",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import=tsx",
+        "--test",
+        "--test-concurrency=1",
+        "tests/integration/area-covers.test.ts",
+        "tests/integration/ihfr-diagnosis-concurrency.test.ts",
+        "tests/integration/ihfr-diagnosis-idempotency.test.ts"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "564c78991f785ca600abc21ab657df042f516bdc8704858f118fe0457ea8a91a",
+      "rawLogBytes": 8771,
+      "counts": {
+        "passed": 45,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": true,
+      "httpTotalLogged": 0
+    },
+    {
+      "name": "schema-audit",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:59:07.460Z",
+      "endedUtc": "2026-10-23T20:59:08.888Z",
+      "command": [
+        "node",
+        "--import=tsx",
+        "scripts/imp006-audit-schemas.ts",
+        "assert-zero"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "9ad4de7863b8b0da0dacfba75bc7f6e635fb80e0814f7753e656e67a4205a0eb",
+      "rawLogBytes": 119,
+      "counts": {
+        "passed": 0,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": false,
+      "schemaAuditOutput": [
+        "IMP-006 read-only audit target 5cb6eff47a0f: 0 managed test candidate schemas."
+      ],
+      "httpTotalLogged": 0
+    },
+    {
+      "name": "stop-owned",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:46:48.885Z",
+      "endedUtc": "2026-10-23T20:46:51.284Z",
+      "command": [
+        "powershell",
+        "scripts/imp006-local-postgresql.ps1",
+        "-Action",
+        "Stop"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "b96a0ab547abe059bd131e467732b2e700ab98f922065b114fd86d32c2d965c4",
+      "rawLogBytes": 115,
+      "counts": {
+        "passed": 0,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": false,
+      "ownedClusterStopped": true,
+      "httpTotalLogged": 0
+    },
+    {
+      "name": "stop-final",
+      "protocolVersion": 1,
+      "startedUtc": "2026-10-23T20:59:09.017Z",
+      "endedUtc": "2026-10-23T20:59:14.083Z",
+      "command": [
+        "powershell",
+        "scripts/imp006-local-postgresql.ps1",
+        "-Action",
+        "Stop"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "environment": "Windows; explicit OS environment allowlist; synthetic owned IMP006 loopback context",
+      "sourceHead": "6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac",
+      "sourceAttribution": "Executable investigation commit; additional uncommitted historical documentation only.",
+      "rawLogSha256": "403c1e74f289fdd3cf2827b172ff8784534b8fbfcf27e018e9e5b9a9771ccc3f",
+      "rawLogBytes": 118,
+      "counts": {
+        "passed": 0,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "cases": [],
+      "http": [],
+      "document200": 0,
+      "document404": 0,
+      "api404": 0,
+      "ownedSchemaLogged": false,
+      "httpTotalLogged": 0,
+      "ownedClusterStopped": true
+    }
+  ],
+  "redaction": {
+    "excluded": [
+      "environment values",
+      "headers",
+      "cookies",
+      "raw stdout/stderr",
+      "raw stacks",
+      "absolute local paths",
+      "query strings"
+    ],
+    "syntheticIds": "HTTP routes use a template placeholder; schedules retain only transaction counters and whitelisted error codes"
+  }
+}

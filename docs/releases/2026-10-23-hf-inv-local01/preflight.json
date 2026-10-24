@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "missionId": "HF-INV-20261023-01-LOCAL01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "checkpointAtUtc": "2026-10-23T20:50:55Z",
+  "checkpointAtFortaleza": "2026-10-23T17:50:55-03:00",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "mainObserved": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "candidateBranch": "fix/investigacoes-intermitentes-20261023-local01",
+  "initialCandidateCommit": "45fb89fc97049184419324703855544fb2fdcee9",
+  "initialCandidateTree": "51292fd1d88754120f22bdb921c3fe0c5dd54683",
+  "originalCheckout": {
+    "branch": "release/cri-rc-20261010",
+    "head": "0f669b79a5e73a329832593229c2557d8b12bbce",
+    "trackedChanges": 0,
+    "untrackedTopLevelStatusEntries": 8,
+    "preserved": true,
+    "originalGitMetadataWritten": false
+  },
+  "sources": {
+    "pr26": { "merged": true, "merge": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9" },
+    "pr27": {
+      "head": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "state": "open",
+      "codeReview": "completed",
+      "completedAtUtc": "2026-10-23T07:16:20.400826Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "summaryComment": 6329614420,
+      "functionalCi": "NOT_RUN",
+      "reviewRequestedAgain": false
+    },
+    "pr28": {
+      "head": "f56f73fda1d7bd459a1415bf02df25edc9120674",
+      "state": "open",
+      "promptPlanAndReceiptReadInFull": true,
+      "authorBranchModified": false,
+      "executionComment": 6374225844
+    },
+    "priorFunctionalCi": {
+      "head": "131ade347258c7820c7a89989ab851769197b486",
+      "run": 39699435699,
+      "attempt": 1,
+      "gates": 15,
+      "scope": "historical result only; not transferred to this candidate"
+    },
+    "successorPrSearch": { "query": "repo:HidroFlorestaStartup/HidroFlorestas-FullStack HF-INV", "observedPrs": [28, 27, 26] },
+    "existing022": { "localHead": "6ad909806736e768f3acc432e1e621eb75508e8d", "preserved": true, "wholeBranchImported": false }
+  },
+  "tooling": {
+    "codexCli": "0.162.0-alpha.17.2",
+    "configuredLocalModel": "gpt-6.1-sol",
+    "configuredLocalReasoningEffort": "ultra",
+    "configurationChanged": false,
+    "rootEffectiveRuntimeMetadata": "NOT_EXPOSED",
+    "nativeSubagents": [
+      { "id": "agent-a-nav4-accounts", "responsibility": "NAV4-LOCAL and INV-004", "requestedReasoningEffort": "ultra", "spawnAccepted": true },
+      { "id": "agent-b-ihfr-concurrency", "responsibility": "INV-001 and INV-002", "requestedReasoningEffort": "ultra", "spawnAccepted": true },
+      { "id": "agent-c-navigation", "responsibility": "INV-003, INV-005, NAV-SETTLE, OBS-001, OBS-002", "requestedReasoningEffort": "ultra", "spawnAccepted": true }
+    ],
+    "effectiveConcurrencySlotsIncludingCoordinator": 4,
+    "git": "2.55.0.windows.4",
+    "node": "24.19.0",
+    "npm": "12.0.2",
+    "powershell": "5.1.26100.9711",
+    "next": "16.3.8",
+    "prisma": "7.4.2",
+    "wslInstalled": false,
+    "ghInstalled": false
+  },
+  "coordinatorSetup": {
+    "npmCiOfflineEmptyCache": "FAIL",
+    "npmCiNetworkAuthorized": { "result": "PASS", "packages": 553, "lockfileChanged": false, "globalLifecycleApproval": false },
+    "prismaGenerateInitialNetworkAttempt": "CANCELLED_WITHOUT_RESULT",
+    "prismaGenerateWithVerifiedPinnedLocalEngine": { "result": "PASS", "clientVersion": "7.4.2", "databaseConnected": false, "generatedClientShared": false },
+    "containmentCheck": { "result": "PASS", "previousVercelRulesPreserved": 23, "developmentDeploymentEnabled": false, "workflowDelta": "candidate branch push filter and job if only" },
+    "gitFetch": "PASS",
+    "gitPushDryRunNonInteractive": "PASS",
+    "gitPushPerformedAtCheckpoint": false,
+    "githubWriteComment": "PASS",
+    "rulesetsRead": "PASS_EMPTY_COLLECTION_DOES_NOT_PROVE_ALL_ADMINISTRATIVE_POLICY"
+  },
+  "osContextCounterproof": [
+    { "context": "sandbox", "environment": "os allowlist", "userInfo": "FAIL", "code": "ERR_SYSTEM_ERROR", "syscall": "uv_os_get_passwd" },
+    { "context": "sandbox", "environment": "same plus OS identity variable names", "userInfo": "FAIL", "code": "ERR_SYSTEM_ERROR", "syscall": "uv_os_get_passwd" },
+    { "context": "authorized executor", "environment": "os allowlist", "userInfo": "PASS" },
+    { "context": "authorized executor", "environment": "same plus OS identity variable names", "userInfo": "PASS" }
+  ],
+  "coordinatorChecks": [
+    { "check": "Unit", "attempt": 1, "result": "FAIL", "category": "sandbox OS identity lookup before tests", "caseCounts": null, "rawOutputPreserved": false },
+    { "check": "Mail", "attempt": 1, "result": "FAIL", "category": "sandbox OS identity lookup before tests", "caseCounts": null, "rawOutputPreserved": false },
+    { "check": "Unit", "attempt": 2, "result": "FAIL", "tests": 402, "pass": 401, "fail": 1, "category": "Git dubious ownership in snapshot manifest check", "privateRawOutputPreserved": true },
+    { "check": "Mail", "attempt": 2, "result": "PASS", "tests": 17, "pass": 17, "fail": 0, "privateRawOutputPreserved": true },
+    { "check": "Unit", "attempt": 3, "result": "PASS", "tests": 402, "pass": 402, "fail": 0, "skipped": 0, "startedAtUtc": "2026-10-23T20:50:30.429Z", "finishedAtUtc": "2026-10-23T20:50:47.143Z", "scope": "initial candidate 45fb89f with ignored generated client; scoped process Git trust", "privateRawOutputPreserved": true }
+  ],
+  "port55427": {
+    "initialGuardResult": "BLOCKED",
+    "cause": "preexisting local PostgreSQL listener",
+    "userAuthorizedProcessShutdown": true,
+    "authority": "explicit follow-up user message in this session allowing processes occupying required ports to be stopped",
+    "action": "pg_ctl stop -m fast -w -t 30 against verified local listener data directory",
+    "exitCode": 0,
+    "portReleased": true,
+    "dataFilesPreserved": true,
+    "hostedDatabaseTouched": false
+  },
+  "redaction": { "method": "closed allowlist", "environmentValues": false, "osIdentities": false, "absoluteInternalPaths": false, "credentials": false, "cookies": false, "rawLogsPublished": false },
+  "limitations": [
+    "This is a dated preflight checkpoint, not final candidate CI or review.",
+    "The first sandbox loader failures remain recorded; their raw logs were overwritten before archival. No integrity claim is made for absent bytes.",
+    "An initial interactive Git dry-run was cancelled; the subsequent non-interactive dry-run completed successfully without publishing a ref.",
+    "The local configured model and accepted subagent effort do not expose the root runtime's effective model metadata."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "kind": "real native delegation and integration ledger before final remote receipts",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "candidateBranch": "fix/investigacoes-intermitentes-20261023-local01",
+  "configuredLocalModel": "gpt-6.1-sol",
+  "configuredLocalReasoningEffort": "ultra",
+  "rootRuntimeMetadata": "NOT_EXPOSED",
+  "nativeAgentsStarted": 4,
+  "maxSimultaneousSubagents": 3,
+  "effectiveSlotsIncludingCoordinator": 4,
+  "agents": [
+    {
+      "id": "agent-a-nav4-accounts",
+      "nativeTaskName": "agent_a_nav4_accounts",
+      "requestedReasoningEffort": "ultra",
+      "spawnAccepted": true,
+      "scope": ["NAV4-LOCAL", "INV-004"],
+      "worktree": "A",
+      "authorBranch": "inv-local01/nav4",
+      "authorCommitsLocalOnly": ["3f9622c184dc7b6790e730a32abe206cbde03230", "b4a9fd78f54e97f91f9976e1c00f887cc75f771a"],
+      "authorTree": "1d0d7b9f4439bbd08c95f00619932a0f652d4e27",
+      "candidateIntegrationCommits": ["4e489c06800a5609975fa572b48acf70aa6b2f97", "728d829d6bc46be936466880dcf66405e03ba554"],
+      "handoff": "completed; Git clean; own cluster stopped; zero managed schemas",
+      "runtime": {"postgresPort": 55427, "officialHttpPort": 3001, "clusterShared": false, "prismaClientShared": false},
+      "evidence": "nav4/readme.md",
+      "peerReview": "agent-c-navigation before execution; agent-d-independent-review after integration"
+    },
+    {
+      "id": "agent-b-ihfr-concurrency",
+      "nativeTaskName": "agent_b_ihfr_concurrency",
+      "requestedReasoningEffort": "ultra",
+      "spawnAccepted": true,
+      "scope": ["INV-001", "INV-002"],
+      "worktree": "B",
+      "authorBranch": "inv-local01/ihfr",
+      "authorCommitsLocalOnly": ["6ddb1e416fd4c14d5c1f6c788571e94c91fb21ac", "1af7c46a792bce595d352a311b4a99d1cb48225c"],
+      "authorTree": "dc884c11ba137061fb26e73d5ffe72d9f7932d31",
+      "candidateIntegrationCommits": ["32f122547c9921d061aa5becf75018e70ee4c58c", "33215353b05fad109735eaa8481f4179e9609442"],
+      "handoff": "completed; Git clean; own cluster stopped; zero managed schemas",
+      "runtime": {"postgresPort": 55426, "httpPort": "owned ephemeral", "clusterShared": false, "prismaClientShared": false},
+      "evidence": "ihfr/results.md",
+      "peerReview": "agent-c-navigation static protocol; agent-d-independent-review after integration"
+    },
+    {
+      "id": "agent-c-navigation",
+      "nativeTaskName": "agent_c_navigation",
+      "requestedReasoningEffort": "ultra",
+      "spawnAccepted": true,
+      "scope": ["INV-003", "INV-005", "NAV-SETTLE", "OBS-001", "OBS-002"],
+      "worktree": "C",
+      "authorBranch": "inv-local01/navigation",
+      "authorCommitsLocalOnly": ["97782fb3ad1795c8951873f92494dc278f769107"],
+      "authorTree": "faac61245e6559c1ab8936863bdcd00eaded2f62",
+      "candidateIntegrationCommits": ["95a3a04c5fc6dac383e8bd94e4b91068854b88fe"],
+      "handoff": "completed; Git clean; own cluster stopped; zero managed schemas",
+      "runtime": {"postgresPort": 55427, "publicHttpPort": 3200, "authenticatedHttpPort": 3001, "fixedResourcesSerializedAfterA": true, "clusterShared": false, "prismaClientShared": false},
+      "evidence": "navigation/report.md",
+      "peerReview": "agent-a-nav4-accounts before execution; agent-d-independent-review after integration"
+    },
+    {
+      "id": "agent-d-independent-review",
+      "nativeTaskName": "agent_d_independent_review",
+      "requestedReasoningEffort": "ultra",
+      "spawnAccepted": true,
+      "startedAfter": "agent-b-ihfr-concurrency completed",
+      "scope": ["independent protocols, source, evidence, privacy and aggregate review"],
+      "worktree": "D, detached immutable candidates",
+      "stateAtLedgerSnapshot": "reviewing final composition; final examined SHA and CLI receipt recorded in review and PR conversation",
+      "runtime": {"servicesStarted": false, "databaseStarted": false},
+      "evidence": "review/independent-review.md",
+      "independenceLimit": "D authored the recovered INV-005 projection; coordinator independently checked API size/digest and projection meaning. D does not claim independent review of that own projection. Final remote review examines the whole candidate."
+    }
+  ],
+  "coordinator": {
+    "exclusiveWrites": ["CI", "vercel.json", "canonical registers", "aggregate plan", "aggregate documents"],
+    "integration": "normal cherry-picks into own candidate; no merge or force push into development/main",
+    "agentBranchesPublished": false,
+    "scopeOfPrivateReuse": "verified package cache and pinned native binaries only; no real environment, sessions, data or generated Prisma client"
+  },
+  "finalSessionState": "Final remote receipt records all agents ended and actual jobs; this pre-publication ledger does not assert future completion."
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "kind": "installed-framework-constructor-control",
+  "next": "16.3.8",
+  "inputOrigin": "http://127.0.0.1:3001",
+  "requestUrlOrigin": "http://localhost:3001",
+  "preservedHostHeader": "127.0.0.1:3001",
+  "preservedOriginHeader": "http://127.0.0.1:3001",
+  "source": {
+    "path": "node_modules/next/dist/server/web/next-url.js",
+    "bytes": 7464,
+    "sha256": "c1ae75a3ef41496af0e735514598da7abf23b7d1f2b46242bd3d884a625355cd"
+  },
+  "serverRequestClaim": false
+}

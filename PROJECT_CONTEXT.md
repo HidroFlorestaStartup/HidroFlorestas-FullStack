@@ -281,3 +281,29 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](docs/releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](docs/releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+## Adendo vigente — investigação local HF-INV — 23/10/2026
+
+`DECISAO_CONFIRMADA`: o pedido explícito do usuário nesta sessão autorizou a
+missão `HF-INV-20261023-01-LOCAL01`, incluindo experimentos, commits/push, PR e
+CI/review. Merge, deploy, provedores e banco hospedado continuam fora do escopo.
+
+`EVIDENCIA_IMPLEMENTACAO`: execução local sobre development
+`c4adfb379e5dc78f27f31b91edbd13f43228d9f9`, na branch própria
+`fix/investigacoes-intermitentes-20261023-local01`; #27/223839c9 e #28/f56f73f
+reconciliadas por fonte imutável, sem importar suas branches ou fazer merge.
+Quatro subagentes nativos reais, worktrees e recursos isolados; NAV4 autenticado
+e protocolos dos nove IDs executados. Há causa de ingresso demonstrada no NAV4
+atual; causas históricas e limitações permanecem individualizadas, sem patch
+especulativo de produto ou encerramento causal por PASS posterior.
+
+Estado: `AGUARDANDO_REVISAO`. [Plano da execução](docs/plans/active/investigacoes-intermitentes-20261023/execucao-local-multiagente.md)
+e [índice do pacote](docs/releases/2026-10-23-hf-inv-local01/readme.md) substituem
+o apontador operacional anterior para esta investigação. No fechamento estático,
+quinze gates oficiais e Codex remoto do HEAD final estão NOT_RUN; seus recibos
+posteriores identificados por SHA pertencem à conversa da PR nova. A revisão
+independente não equivale a aceite humano. Main e trabalho preexistente preservados;
+G3–G5 e homologação do piloto dependem de provas/decisões próprias.
+
+IHFR: `CONTRATO_EXPERIMENTAL`, `VALIDACAO_CIENTIFICA_PENDENTE`,
+`SUJEITO_A_RECALIBRACAO`, `NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO`.

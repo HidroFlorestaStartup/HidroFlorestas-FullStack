@@ -63,3 +63,33 @@ CI não fecha GateB012, aceite humano013, Cloudinary real, operadores, backup/en
 nem validação científica. IHFR continua CONTRATO_EXPERIMENTAL,
 VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e
 NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.
+
+## Adendo — reprodução NAV4 e branch HF-INV — 2026-10-23
+
+`EVIDENCIA_IMPLEMENTACAO`: a candidata
+`fix/investigacoes-intermitentes-20261023-local01` acrescenta somente seu nome
+ao push/if do workflow e uma regra de deployment Git false. As23regras Vercel
+anteriores, development:false e quinze gates/guards permanecem. O texto anterior
+registra a configuração histórica; não é uma lista exaustiva dos filtros atuais.
+
+NAV4 deve usar o contexto de contas existente: PostgreSQL próprio55427,
+HTTP127.0.0.1:3001 e ingresso local explícito preparado pelo wrapper oficial
+`rc-review-validation.ps1`. O fallback de um Next em outro contexto pode
+normalizar a origem para localhost; a sonda autenticada demonstrou403 em127 e
+200 emlocalhost, no mesmo servidor. Não ampliar CSRF para acomodar esse setup.
+Os quatro cenários originais passaram no contexto oficial, sem alterar90s/5s,
+assertions ou retries0. A conclusão atual não reatribui códigos aos FAILs Linux.
+
+Os [comandos e pré-requisitos reais da investigação](../releases/2026-10-23-hf-inv-local01/nav4/readme.md)
+e o [wrapper focal](../../scripts/hf-inv-nav4-local.ps1) preservam marker, raiz
+privada e allowlist de processo. Esse wrapper exige `-Phase` e um runtime de
+missão já preparado; não é autorização para reutilizar banco, env ou credencial
+preexistente. Portas ocupadas exigem identificar owner e coordenar encerramento;
+nesta execução o usuário autorizou explicitamente parar o PostgreSQL local
+anterior, que foi encerrado ordenadamente, com arquivos preservados.
+
+Os [limites de ambiente/protocolos](../releases/2026-10-23-hf-inv-local01/environment-and-protocols.md)
+distinguem Windows atual de Linux histórico, os erros de token OS/Git do produto,
+e os recursos serializados. `-InitializeCiCluster` segue exclusivo de Actions;
+nenhum guard foi alterado. O estado oficial do HEAD final é o recibo posterior
+da PR, sem herdar os quinze PASS da missão anterior.

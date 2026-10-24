@@ -366,3 +366,26 @@ RECOMENDACAO materializada no novo prompt: A—investigação/correções de def
 O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
 
 Próxima execução: [prompt pós-consolidação](../releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](../releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+## Adendo vigente — pacote investigativo local HF-INV — 23/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: missão `HF-INV-20261023-01-LOCAL01`, base
+`c4adfb379e5dc78f27f31b91edbd13f43228d9f9`, branch própria
+`fix/investigacoes-intermitentes-20261023-local01`, estado `AGUARDANDO_REVISAO`.
+Os textos anteriores permanecem como histórico. Origem da autorização: pedido
+explícito do usuário para esta missão na sessão de23/10/2026.
+
+| Documento/recorte novo | Papel e limite |
+|---|---|
+| [Plano único](../plans/active/investigacoes-intermitentes-20261023/execucao-local-multiagente.md) | Coordenação transversal PLAN/EXECUTE/REVIEW; sem spec fictícia para defeito não demonstrado |
+| [Índice do pacote](../releases/2026-10-23-hf-inv-local01/readme.md) e [relatório](../releases/2026-10-23-hf-inv-local01/final-report.md) | Entrada navegável, proveniência e critério de conclusão técnica |
+| [Matriz dos incidentes](../releases/2026-10-23-hf-inv-local01/incident-matrix.md) | Nove IDs, contraste entre histórico e reprodução atual, estados causais separados |
+| [Ambiente/protocolos](../releases/2026-10-23-hf-inv-local01/environment-and-protocols.md) e [ledger](../releases/2026-10-23-hf-inv-local01/agent-ledger.json) | Isolamento e delegação nativa real; metadados de runtime não expostos permanecem assim classificados |
+| [NAV4](../releases/2026-10-23-hf-inv-local01/nav4/readme.md), [IHFR/concorrência](../releases/2026-10-23-hf-inv-local01/ihfr/results.md) e [navegação/OBS](../releases/2026-10-23-hf-inv-local01/navigation/report.md) | Fontes executadas, recibos, controles negativos e manifestos estreitos |
+| [Validação](../releases/2026-10-23-hf-inv-local01/validation.md), [revisões](../releases/2026-10-23-hf-inv-local01/review.md) e [handoff](../releases/2026-10-23-hf-inv-local01/operational-handoff.md) | Alcance dos testes/pareceres e pendências operacionais sem envio de e-mail |
+
+Os quinze gates oficiais e Codex remoto do HEAD final são NOT_RUN neste
+fechamento estático; os recibos posteriores serão vinculados por SHA na PR,
+sem herdar PASS histórico. Não há nova decisão científica/técnica de produto
+ou novo owner humano: TECH_DECISIONS e PENDING_DECISIONS não são alterados.
+`docs/raw/**` permanece imutável; piloto/G3–G5 sem homologação por esta entrega.

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+  "scope": "post-run verification: original tracked sources unchanged from executed base",
+  "command": "node node_modules/@playwright/test/cli.js test tests/e2e/frontend-mobile-navigation.spec.ts --reporter=list,closed-reporter --output=private",
+  "environment": "Windows/accounts-owned-PostgreSQL17.10/127.0.0.1:3001/trusted-local-ingress",
+  "workers": 1,
+  "retries": 0,
+  "testTimeoutMs": 90000,
+  "assertionTimeoutMs": 5000,
+  "sources": [
+    {
+      "path": "playwright.config.ts",
+      "bytes": 4362,
+      "sha256": "fc5ecc34955bbedf9d0b14f0ca0d7b6d3ac13dbe162f27963751e217d6c16376"
+    },
+    {
+      "path": "scripts/accounts-local-postgresql.ps1",
+      "bytes": 13796,
+      "sha256": "ef31c6588d9246d58ecb8175f4b86b4a2fdbbf9f3065de5455241274606e1392"
+    },
+    {
+      "path": "tests/e2e/frontend-mobile-navigation.spec.ts",
+      "bytes": 17556,
+      "sha256": "481a7afb46beb868196f0325707a70a33c4576239e573f1bf2c300cf9d682dc5"
+    },
+    {
+      "path": "src/app/api/server/accounts/http.ts",
+      "bytes": 11448,
+      "sha256": "875090ff9e14f766102aa48d6376fb62bf84a621f6f9d9729add6894f0d83444"
+    },
+    {
+      "path": "src/app/api/auth/logout/route.handlers.ts",
+      "bytes": 1701,
+      "sha256": "56ce69aacff4e28332b465c89ec7b1fdfdb95b73dbba3aa2e9300ee153ca9f75"
+    },
+    {
+      "path": "src/contexts/auth.context.tsx",
+      "bytes": 8403,
+      "sha256": "119eeb527d02d3f11234cd7ce131d42eb4b0526b6d1d9b80aba14e871fd7f542"
+    }
+  ]
+}
