@@ -1,0 +1,23 @@
+// Evidence snapshot: absolute paths normalized; no environment values.
+const { defineConfig } = require('<CHECKOUT>/node_modules/@playwright/test');
+const env = { ...process.env, NEXT_TELEMETRY_DISABLED: '1' };
+for (const key of Object.keys(env)) if (/DATABASE|JWT_SECRET|ROOT_PASSWORD|SMTP|MAIL_|ACCOUNT_|CLOUDINARY/.test(key)) delete env[key];
+module.exports = defineConfig({
+  testDir: '<CHECKOUT>/tests/e2e',
+  testMatch: 'frontend-landing.spec.ts',
+  workers: 1,
+  retries: 0,
+  timeout: 30000,
+  outputDir: '<SCRATCH>/frontend-public-results',
+  reporter: [['line'], ['json', { outputFile: '<SCRATCH>/frontend-public-results.json' }]],
+  use: { browserName: 'chromium', headless: true, baseURL: 'http://127.0.0.1:3107', trace: 'off', screenshot: 'off', video: 'off' },
+  projects: [{ name: 'chromium' }],
+  webServer: {
+    command: 'npm run dev -- --hostname 127.0.0.1 --port 3107',
+    cwd: '<CHECKOUT>',
+    env,
+    url: 'http://127.0.0.1:3107',
+    reuseExistingServer: false,
+    timeout: 120000,
+  },
+});

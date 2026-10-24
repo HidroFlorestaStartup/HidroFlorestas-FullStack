@@ -1,0 +1,852 @@
+{
+  "schemaVersion": 2,
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "prepared_by": "/root/backend_historicos",
+  "prepared_at_utc": "2026-10-22T14:22:00.105113+00:00",
+  "recovery": {
+    "status": "RECONSTRUCTED_FROM_REACQUIRED_PRIMARY_EVIDENCE",
+    "reason": "The previous temporary workspace was lost after a session restart; the user authorized continuation.",
+    "artifact_reacquired_at_utc": "2026-10-22T14:17:40.846386+00:00",
+    "run_or_suite_reexecuted": false,
+    "database_or_application_started": false,
+    "source_tools": [
+      "GitHub workflow artifact download",
+      "GitHub workflow run/job GET",
+      "GitHub decoded job logs",
+      "GitHub Git Data blob GET",
+      "local Git object reads and Python standard-library integrity checks"
+    ],
+    "original_json": {
+      "git_blob": "b7f9cb2151591771911a24e710ed0f77c1ddd649",
+      "bytes": 23088,
+      "sha256": "a27a383aee202f135c7d111ebb20df2faa3f2b921fc1ce0076c0c7bce6054ff3",
+      "git_data_lookup_result": "NOT_FOUND",
+      "original_bytes_recovered": false,
+      "byte_identity_claimed": false,
+      "note": "This JSON is a new, dated closed reconstruction; its serialization and hash are not represented as those of the unavailable original."
+    },
+    "original_markdown": {
+      "git_blob": "78171a5447ac446e68ae73e38870eb455e52cf96",
+      "bytes": 9052,
+      "sha256": "43613145e0cb711df7adb6f5a202e5182dd85246776099f973b5fa1eb6967dc4",
+      "original_bytes_recovered": true
+    },
+    "markdown_changes_after_recovery": [
+      "Record the reconstruction explicitly.",
+      "Use the exact observed image label windows-2025-vs2026 instead of the abbreviated family label."
+    ],
+    "prior_session_fingerprint_check_reexecuted": false
+  },
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "pull_request": 27,
+  "tested_head": "131ade347258c7820c7a89989ab851769197b486",
+  "tested_tree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+  "run": {
+    "id": 39699435699,
+    "head_sha": "131ade347258c7820c7a89989ab851769197b486",
+    "head_branch": "docs/pilot-readiness-20261021",
+    "run_attempt": 1,
+    "run_number": 114,
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-22T00:23:51Z",
+    "updated_at": "2026-10-22T00:45:59Z",
+    "run_started_at": "2026-10-22T00:23:51Z",
+    "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39699435699",
+    "path": ".github/workflows/rc-review.yml"
+  },
+  "job": {
+    "id": 119564787181,
+    "name": "validate",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "131ade347258c7820c7a89989ab851769197b486",
+    "run_attempt": 1,
+    "runner_name": "GitHub Actions 1000000134",
+    "runner_group_name": "GitHub Actions",
+    "labels": [
+      "windows-latest"
+    ],
+    "started_at": "2026-10-22T00:23:54Z",
+    "completed_at": "2026-10-22T00:45:58Z",
+    "html_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39699435699/job/119564787181",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-22T00:23:55Z",
+        "completed_at": "2026-10-22T00:23:56Z"
+      },
+      {
+        "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-22T00:23:56Z",
+        "completed_at": "2026-10-22T00:24:06Z"
+      },
+      {
+        "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-22T00:24:06Z",
+        "completed_at": "2026-10-22T00:24:15Z"
+      },
+      {
+        "name": "Install locked dependencies and Chromium",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-22T00:24:15Z",
+        "completed_at": "2026-10-22T00:25:12Z"
+      },
+      {
+        "name": "Validate with owned synthetic PostgreSQL and current guards",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-22T00:25:12Z",
+        "completed_at": "2026-10-22T00:45:48Z"
+      },
+      {
+        "name": "Preserve redacted validation logs",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-22T00:45:48Z",
+        "completed_at": "2026-10-22T00:45:51Z"
+      },
+      {
+        "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 11,
+        "started_at": "2026-10-22T00:45:51Z",
+        "completed_at": "2026-10-22T00:45:54Z"
+      },
+      {
+        "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 12,
+        "started_at": "2026-10-22T00:45:54Z",
+        "completed_at": "2026-10-22T00:45:57Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 13,
+        "started_at": "2026-10-22T00:45:57Z",
+        "completed_at": "2026-10-22T00:45:57Z"
+      }
+    ]
+  },
+  "workflow": {
+    "path": ".github/workflows/rc-review.yml",
+    "ref": "131ade347258c7820c7a89989ab851769197b486",
+    "git_blob": "65e6555d084268bd434cf737aad99aa3e74ffe50",
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/131ade347258c7820c7a89989ab851769197b486/.github/workflows/rc-review.yml"
+  },
+  "versioned_sources": [
+    {
+      "path": ".github/workflows/rc-review.yml",
+      "bytes": 5399,
+      "sha256": "5c5d918dbc330cebf54fc8cb1ba8e92216baa62b6f016faaa3989b15b9fddb71",
+      "git_blob": "65e6555d084268bd434cf737aad99aa3e74ffe50"
+    },
+    {
+      "path": "scripts/rc-review-validation.ps1",
+      "bytes": 5408,
+      "sha256": "0aeaf6fd71ff486ba9a3e1e2b2137938b53833b22cce37063597d152a1a215bb",
+      "git_blob": "86d2720fd6359a0971fe28f142a7a8b7ed758142"
+    },
+    {
+      "path": "scripts/accounts-local-postgresql.ps1",
+      "bytes": 13566,
+      "sha256": "8997d2e4d7917e4f1554df042a19bc96ec44f08d767168422cc4ae86e6152c61",
+      "git_blob": "6e10c0294d3608b1ada96c5ae82d591e6c849f08"
+    },
+    {
+      "path": "scripts/mail-validation-diagnostics.ts",
+      "bytes": 2647,
+      "sha256": "e034dcf7c0ea4cfb6daa987778534b32056c00de9ffd4d3be52cc55b39394914",
+      "git_blob": "f7d53d485b8cf4ff45e075009ac8da38909caf12"
+    }
+  ],
+  "artifact": {
+    "id": 12392364807,
+    "name": "rc-validation-131ade347258c7820c7a89989ab851769197b486",
+    "size_in_bytes": 26854109,
+    "expired": false,
+    "created_at": "2026-10-22T00:45:51Z",
+    "expires_at": "2026-11-05T00:45:48Z",
+    "updated_at": "2026-10-22T00:45:51Z",
+    "digest": "sha256:b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e",
+    "workflow_run": {
+      "id": 39699435699,
+      "repository_id": 1409854835,
+      "head_repository_id": 1409854835,
+      "head_branch": "docs/pilot-readiness-20261021",
+      "head_sha": "131ade347258c7820c7a89989ab851769197b486"
+    }
+  },
+  "artifact_integrity": {
+    "bytes": 26854109,
+    "sha256": "b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e",
+    "member_count": 735,
+    "file_count": 735,
+    "crc_verified": true,
+    "paths_verified": true,
+    "symlinks_absent": true,
+    "api_digest_matches": true,
+    "api_size_matches": true,
+    "extensions": {
+      ".log": 15,
+      ".png": 451,
+      ".json": 268,
+      ".jsonl": 1
+    },
+    "same_zip_digest_as_prior_session": true,
+    "raw_archive_published": false
+  },
+  "journal": {
+    "path": ".accounts-validation/results.jsonl",
+    "bytes": 6244,
+    "sha256": "dbadeb88ea55e4995388cf104904f76fbeefaba02258990e70a1ba046aa5b5b5",
+    "primary_source": true,
+    "required_gate_order": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint",
+      "E2E",
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "observed_gate_order": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint",
+      "E2E",
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "unique_gates": 15,
+    "all_pass": true,
+    "all_exit_codes_zero": true,
+    "snapshot_values": [
+      "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5"
+    ],
+    "all_15_entries_exactly_equal_to_job_log_records": true,
+    "same_digest_as_prior_session": true
+  },
+  "decoded_job_log": {
+    "bytes_utf8": 65925,
+    "sha256_utf8": "b5e9371b11cef9d3250cdb6a3049bd880c03a04d15847111425a1e98cf63fae8",
+    "same_digest_as_prior_session": true,
+    "scope": "Digest of the decoded text returned by the connector; not a digest of the raw job log ZIP.",
+    "raw_text_published": false
+  },
+  "gate_receipts": [
+    {
+      "journal_entry": {
+        "gate": "RegressionSetup",
+        "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:25:33.030Z",
+        "endedUtc": "2026-10-22T00:25:41.048Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1792628733029.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/regressionsetup-1792628733029.log",
+        "bytes": 7234,
+        "sha256": "bc994a3311aa8c98a4d004064cbb839dcc69bbb0c86371e196d41e8255eb828c"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Unit",
+        "command": "npm run test:unit",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:25:41.339Z",
+        "endedUtc": "2026-10-22T00:26:10.389Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1792628741338.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/unit-1792628741338.log",
+        "bytes": 38877,
+        "sha256": "4b3028e7e8476d96f8c9471c3fef942dc53b93414b38de39f30d1fb69801b15d"
+      },
+      "node_reporter_summaries": [
+        {
+          "summary_start_line": 502,
+          "tests": 402,
+          "suites": 37,
+          "pass": 402,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 23861.6867,
+          "group": "central"
+        },
+        {
+          "summary_start_line": 531,
+          "tests": 17,
+          "suites": 0,
+          "pass": 17,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 4361.2679,
+          "group": "mail-unit"
+        }
+      ],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Integration",
+        "command": "npm run test:integration",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:26:10.700Z",
+        "endedUtc": "2026-10-22T00:28:20.694Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1792628770699.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/integration-1792628770699.log",
+        "bytes": 36601,
+        "sha256": "8a1941fe76a1057cd2888ee3c927d09f57cd1d538260daef837ad5ce2a367fa5"
+      },
+      "node_reporter_summaries": [
+        {
+          "summary_start_line": 401,
+          "tests": 231,
+          "suites": 15,
+          "pass": 231,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 129124.1476
+        }
+      ],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Migration",
+        "command": "npm run test:migration",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:20.997Z",
+        "endedUtc": "2026-10-22T00:28:38.168Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1792628900997.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/migration-1792628900997.log",
+        "bytes": 5104,
+        "sha256": "c208852c2fe74036f44bb34267837640228959666dc97631bbc9ade196c0ebc9"
+      },
+      "node_reporter_summaries": [
+        {
+          "summary_start_line": 55,
+          "tests": 37,
+          "suites": 1,
+          "pass": 37,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 16287.5534
+        }
+      ],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Contract",
+        "command": "npm run test:contract",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:38.448Z",
+        "endedUtc": "2026-10-22T00:28:42.105Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1792628918447.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/contract-1792628918447.log",
+        "bytes": 1389,
+        "sha256": "c0ab13da7e2a49f1006ba6f9b4accabdc82d7111704056004bf652f0a3b7733c"
+      },
+      "node_reporter_summaries": [
+        {
+          "summary_start_line": 14,
+          "tests": 6,
+          "suites": 0,
+          "pass": 6,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 2900.2629
+        }
+      ],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "R1",
+        "command": "npm run test:mail:r1",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:42.417Z",
+        "endedUtc": "2026-10-22T00:28:53.199Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1792628922416.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/r1-1792628922416.log",
+        "bytes": 3123,
+        "sha256": "1ec40432fa57df9511fade1ab5aba4b9992899a0529eaa5e84001b56c9e47687"
+      },
+      "node_reporter_summaries": [
+        {
+          "summary_start_line": 36,
+          "tests": 17,
+          "suites": 0,
+          "pass": 17,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "duration_ms": 10367.0302
+        }
+      ],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Build",
+        "command": "npm run build",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:28:53.485Z",
+        "endedUtc": "2026-10-22T00:29:21.977Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1792628933485.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/build-1792628933485.log",
+        "bytes": 4862,
+        "sha256": "832ad027063d2af0bc32bb4be031e93df68956e43f13bddc366b731b337b18e6"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Typecheck",
+        "command": "npm run typecheck",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:22.270Z",
+        "endedUtc": "2026-10-22T00:29:32.948Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1792628962269.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/typecheck-1792628962269.log",
+        "bytes": 61,
+        "sha256": "c50ddbdb9782ccd017dc7a1c2e5357727ec4bd0a9f7fb902e05c643aa2c08187"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "Lint",
+        "command": "npm run lint",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:33.229Z",
+        "endedUtc": "2026-10-22T00:29:55.239Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1792628973228.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/lint-1792628973228.log",
+        "bytes": 453,
+        "sha256": "44aa1c039bf1e02ae493fee6b9210d3b5e9c0b1f3c9f1b1bb9265b20661b33f5"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "E2E",
+        "command": "npm run test:e2e",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:29:55.525Z",
+        "endedUtc": "2026-10-22T00:43:02.879Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1792628995525.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/e2e-1792628995525.log",
+        "bytes": 44577,
+        "sha256": "5daf5d0288a8b90e09a03fe69c1f9331150dafc7d477d5cb1e90eb9bbd7d4e19"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [
+        {
+          "passed": 220,
+          "duration_reported": "13.1m",
+          "summary_line": 179
+        }
+      ],
+      "playwright_running_lines": [
+        {
+          "tests": 220,
+          "workers": 1,
+          "line": 6
+        }
+      ]
+    },
+    {
+      "journal_entry": {
+        "gate": "Https",
+        "command": "npm run test:e2e:https",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:43:03.247Z",
+        "endedUtc": "2026-10-22T00:44:02.986Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\https-1792629783246.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/https-1792629783246.log",
+        "bytes": 4975,
+        "sha256": "1f74730c1ce473480027bf0c589397291863d8ecf02bb5c4761c1076ed6c6c88"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [
+        {
+          "passed": 2,
+          "duration_reported": "11.5s",
+          "summary_line": 122
+        }
+      ],
+      "playwright_running_lines": [
+        {
+          "tests": 2,
+          "workers": 1,
+          "line": 120
+        }
+      ]
+    },
+    {
+      "journal_entry": {
+        "gate": "Deletion",
+        "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:44:03.292Z",
+        "endedUtc": "2026-10-22T00:44:19.164Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\deletion-1792629843292.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/deletion-1792629843292.log",
+        "bytes": 614,
+        "sha256": "17d8f3b61649eb9e4a37b8003c1869d0d631e53d8448c7866f045b72246c7537"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [
+        {
+          "passed": 3,
+          "duration_reported": "8.6s",
+          "summary_line": 9
+        }
+      ],
+      "playwright_running_lines": [
+        {
+          "tests": 3,
+          "workers": 1,
+          "line": 3
+        }
+      ]
+    },
+    {
+      "journal_entry": {
+        "gate": "Ihfr",
+        "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:44:19.491Z",
+        "endedUtc": "2026-10-22T00:45:40.871Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\ihfr-1792629859490.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/ihfr-1792629859490.log",
+        "bytes": 18002,
+        "sha256": "7d2a46826c79e6fe444384858a78f3c2eb8d80fd0fc8b97f9f870dfadad1fe21"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [
+        {
+          "passed": 6,
+          "duration_reported": "1.1m",
+          "summary_line": 103
+        }
+      ],
+      "playwright_running_lines": [
+        {
+          "tests": 6,
+          "workers": 1,
+          "line": 12
+        }
+      ]
+    },
+    {
+      "journal_entry": {
+        "gate": "Bootstrap",
+        "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:45:41.192Z",
+        "endedUtc": "2026-10-22T00:45:46.655Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\bootstrap-1792629941191.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/bootstrap-1792629941191.log",
+        "bytes": 3729,
+        "sha256": "fa137082cfb57379248d064ff87642d61bc4df99624d7dd68ee3896ac608b970"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    },
+    {
+      "journal_entry": {
+        "gate": "SchemaAudit",
+        "command": "npm run test:ihfr:audit:assert-zero",
+        "snapshot": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+        "startedUtc": "2026-10-22T00:45:46.989Z",
+        "endedUtc": "2026-10-22T00:45:47.901Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\schemaaudit-1792629946988.log"
+      },
+      "log_source": {
+        "path": ".accounts-validation/schemaaudit-1792629946988.log",
+        "bytes": 207,
+        "sha256": "668b224b4e85a9f0d8d273a68b578f9ae5d498dade8c9170d8d14e94cb705652"
+      },
+      "node_reporter_summaries": [],
+      "playwright_reporter_summaries": [],
+      "playwright_running_lines": []
+    }
+  ],
+  "counting_policy": "Counts remain per gate and reporter group. Unit 402 and mail-unit 17 are distinct groups. No sum is asserted to represent unique tests, and E2E visual subsets are not added again to E2E 220.",
+  "lint": {
+    "errors": 0,
+    "warnings": 2,
+    "findings": [
+      {
+        "path": "src/components/user-profile/index.tsx",
+        "line": 1,
+        "column": 10,
+        "symbol": "useAuth",
+        "rule": "@typescript-eslint/no-unused-vars",
+        "source_log_line": 7
+      },
+      {
+        "path": "src/components/white-box/index.tsx",
+        "line": 12,
+        "column": 3,
+        "symbol": "className",
+        "rule": "@typescript-eslint/no-unused-vars",
+        "source_log_line": 10
+      }
+    ]
+  },
+  "schema_audit": {
+    "managed_test_candidate_schemas": 0,
+    "source_log_line": 5,
+    "scope": "The CI disposable cluster only."
+  },
+  "ihfr_http_status_scope": {
+    "dashboard_page_200_count": 15,
+    "dashboard_page_200_lines": [
+      14,
+      18,
+      19,
+      23,
+      24,
+      25,
+      33,
+      52,
+      72,
+      75,
+      79,
+      88,
+      91,
+      95,
+      98
+    ],
+    "dashboard_page_404_count": 0,
+    "dashboard_page_404_lines": [],
+    "api_404_count": 2,
+    "api_404_lines": [
+      45,
+      64
+    ],
+    "limit": "Current non-reproduction does not explain the six historical page 404 responses in INV-005."
+  },
+  "runtime": {
+    "source": "decoded job log; line numbers are one-based",
+    "node": {
+      "value": "24.19.0",
+      "line": 178
+    },
+    "npm": {
+      "value": "11.17.0",
+      "line": 179
+    },
+    "runner_version": {
+      "value": "2.338.0",
+      "line": 1
+    },
+    "os": {
+      "value": "Microsoft Windows Server 2025",
+      "line": 12
+    },
+    "os_build": {
+      "value": "10.0.26100",
+      "line": 13
+    },
+    "image": {
+      "value": "windows-2025-vs2026",
+      "line": 17
+    },
+    "image_version": {
+      "value": "20261018.275.1",
+      "line": 18
+    },
+    "runner_name": "GitHub Actions 1000000134",
+    "labels": [
+      "windows-latest"
+    ],
+    "postgresql": {
+      "major": 17,
+      "evidence": "Journal plus the exact versioned harness invoked with -InitializeCiCluster, dedicated fresh directory and ownership/ACL guards.",
+      "pinned_package": "@embedded-postgres/windows-x64@17.10.0-beta.17",
+      "loopback_port": 55427,
+      "role": "accounts_owner",
+      "direct_server_version_query_observed": false,
+      "full_server_patch_version": null,
+      "scope": "Owned disposable CI cluster; does not prove hosted database readiness or the Linux PostgreSQL 16.15 experiment.",
+      "stop_observed": true,
+      "stop_line": 534
+    }
+  },
+  "fingerprint": {
+    "primary_value": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+    "primary_records": 15,
+    "primary_reconfirmed_during_recovery": true,
+    "independent_reproduction": {
+      "status": "PREVIOUS_SESSION_RESULT_PRESERVED_NOT_REEXECUTED_DURING_RECOVERY",
+      "documented_source_git_blob": "78171a5447ac446e68ae73e38870eb455e52cf96",
+      "method": "git ls-files --cached --others --exclude-standard; filter isMailSnapshotPath; unique paths sorted by JavaScript UTF-16 order; SHA-256 of file bytes; SHA-256 of compact JSON array of path/sha256 objects.",
+      "input_files": 579,
+      "linux_lf_fingerprint": "c996ed6f09b06329a3d50f4b8591bdf5e66ec8e0a958110e799c91076a177480",
+      "git_eol_conversion": "Separate temporary Git index, read-tree of the same commit, and git -c core.autocrlf=true checkout-index for the selected paths; no source execution or integration index mutation.",
+      "files_differing_only_lf_to_crlf": 553,
+      "converted_fingerprint": "47acca4bbc5b2f71368e8b2dfe1d66a5d12e6ff9ca13720e954d3fa0a876aee5",
+      "matches_journal": true,
+      "runner_core_autocrlf_config_directly_queried": false,
+      "limit": "The independently generated temporary checkout was lost with the earlier workspace. Its completed result is preserved by the recovered original Markdown and session record; this recovery does not claim a new checkout reproduction."
+    }
+  },
+  "limitations": [
+    "PASS applies to tested head 131ade347258c7820c7a89989ab851769197b486; a later documentary commit is not claimed to have run these gates.",
+    "No rerun, suite, database, application, deployment, hosted migration or runtime was started for this recovery.",
+    "Local mobile navigation 0 PASS / 4 FAIL and historical causal limits remain preserved.",
+    "G3-G5, hosted database identity/isolation/backup, real email delivery, operational scheduler, Cloudinary acceptance, physical-device/human acceptance and scientific validation are not established by synthetic CI.",
+    "The original unavailable JSON is not claimed to have been recovered byte for byte."
+  ],
+  "redaction": {
+    "projection": "Closed fields only: identity, timings, commands from the journal, counts, hashes, source locations and explicit limits.",
+    "excluded": [
+      "temporary download URLs",
+      "inherited environment",
+      "full runner or Playwright config",
+      "credentials",
+      "cookies",
+      "headers",
+      "raw logs",
+      "artifact ZIP",
+      "private response bodies"
+    ]
+  }
+}

@@ -25,7 +25,8 @@
       "feat/frontend-user-administration": false,
       "feat/frontend-landing-consolidation": false,
       "release/frontend-rc-20261021": false,
-      "fix/investigacoes-intermitentes-20261023-local01": false
+      "fix/investigacoes-intermitentes-20261023-local01": false,
+      "docs/hf-int-doc27-20261024": false
     }
   }
 }

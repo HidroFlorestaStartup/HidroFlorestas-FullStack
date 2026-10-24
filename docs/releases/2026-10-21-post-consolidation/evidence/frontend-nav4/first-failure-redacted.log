@@ -1,0 +1,37 @@
+NAV4 — extrato redigido do primeiro resultado (não é o log integral)
+Produto executado: b1f83cfa8e52dd25c6246c584a576553c5e9e131
+Arquivo original: tests/e2e/frontend-mobile-navigation.spec.ts
+Workers: 1; retries: 0; exit: 1; PASS: 0; FAIL: 4
+
+FAIL mobile viewport reading area 375px text100
+Error: expect(page).toHaveURL(expected) failed
+Expected pattern: /\/login$/
+Received string: "http://127.0.0.1:3000/logout"
+Timeout: 5000ms
+tests/e2e/frontend-mobile-navigation.spec.ts:245:26
+
+FAIL mobile viewport reading area 375px text200
+Error: expect(page).toHaveURL(expected) failed
+Expected pattern: /\/login$/
+Received string: "http://127.0.0.1:3000/logout"
+Timeout: 5000ms
+tests/e2e/frontend-mobile-navigation.spec.ts:245:26
+
+FAIL mobile viewport reading area 320px text100
+Error: expect(page).toHaveURL(expected) failed
+Expected pattern: /\/login$/
+Received string: "http://127.0.0.1:3000/logout"
+Timeout: 5000ms
+tests/e2e/frontend-mobile-navigation.spec.ts:245:26
+
+FAIL mobile viewport reading area 320px text200
+Error: expect(page).toHaveURL(expected) failed
+Expected pattern: /\/login$/
+Received string: "http://127.0.0.1:3000/logout"
+Timeout: 5000ms
+tests/e2e/frontend-mobile-navigation.spec.ts:245:26
+
+As quatro falhas acima são as únicas falhas listadas no reporter original.
+Reprodução focal posterior preservada separadamente; este FAIL não foi substituído.
+O log original não possui status HTTP de logout nem captura de headers/cookies.
+Metadados e hash SHA256 do original constam em nav4-result.json.

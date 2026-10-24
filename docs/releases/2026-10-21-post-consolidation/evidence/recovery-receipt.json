@@ -1,0 +1,225 @@
+{
+  "mission": "HF-POS-20261021-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "resumedAtUtc": "2026-10-22T14:12:19Z",
+  "resumedAtSaoPaulo": "2026-10-22T11:12:19-03:00",
+  "authorization": "Original mission and user instruction to continue; no new confirmation required.",
+  "interruption": {
+    "observation": "At resumption, prior worktree directories and local artifacts were absent. Only the reattached historical ZIP was initially present.",
+    "classification": "INFERENCIA",
+    "explanation": "Temporary execution environment reinitialized during the pause; exact reset time and platform cause were not observed.",
+    "priorLocalClosingHead": "585e2c3e9c0775ed049f8bfccc4c706de3ec16c4",
+    "priorLocalClosingTree": "9e2aa35d73e3ec657d0262e1d05df55119c0f513",
+    "priorLocalHeadPublished": false,
+    "priorClosingFiles": 118,
+    "priorSuccessfulBlobUploads": [
+      {
+        "path": "docs/plans/active/pos-consolidacao-execucao-20261021.md",
+        "sha": "76bfa866f97728d2cfb66b645caac63785af660b"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/backend-ci.md",
+        "sha": "78171a5447ac446e68ae73e38870eb455e52cf96"
+      }
+    ],
+    "emailSentBeforeResumption": false
+  },
+  "remotePreserved": {
+    "pullRequest": 27,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+    "head": "131ade347258c7820c7a89989ab851769197b486",
+    "tree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+    "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+    "state": "open",
+    "merged": false,
+    "ciRun": 39699435699,
+    "ciAttempt": 1,
+    "ciJob": 119564787181,
+    "ciResult": "PASS",
+    "artifactId": 12392364807,
+    "artifactBytes": 26854109,
+    "artifactSha256": "b4fe1d31a3f59d3c4c329d6099dfc95d887c9c09a8c4349119d86bd1e2c0225e",
+    "artifactExpired": false
+  },
+  "freshWorkspace": {
+    "clone": "hidro-recovery-repo",
+    "base": "131ade347258c7820c7a89989ab851769197b486",
+    "worktrees": [
+      "wt-integration",
+      "wt-backend",
+      "wt-frontend",
+      "wt-operations"
+    ],
+    "branchPrefix": "review/hf-pos-recovered-",
+    "remoteDestinationUnchanged": "docs/pilot-readiness-20261021"
+  },
+  "coordinatorFilesRecoveredExactlyBeforeResumptionAddenda": [
+    {
+      "path": "docs/plans/active/pos-consolidacao-execucao-20261021.md",
+      "bytes": 9855,
+      "sha256": "03da0c92254aa05220bd6b37a119d39294822a64903e4694bd0c2273759556ba",
+      "sha": "76bfa866f97728d2cfb66b645caac63785af660b"
+    },
+    {
+      "path": "docs/releases/2026-10-21-post-consolidation/final-report.md",
+      "bytes": 16412,
+      "sha256": "d1db78c785c0ee0e62a1ebda9109041adf56a060dc21b2f44ecd8ef2133474af",
+      "sha": "78e63fc27eeca0d2a7450e7c68f213a14e2e9a70"
+    },
+    {
+      "path": "docs/releases/2026-10-21-post-consolidation/evidence/publication-receipt.json",
+      "bytes": 9360,
+      "sha256": "4f3e553a58eeaed58f1c3ca7a951dcac8dc2ac56ded989524043c9979ccd14fa",
+      "sha": "1072136e5fdfada1b12ab9e4b70ccbf24af0d164"
+    },
+    {
+      "path": "docs/releases/2026-10-21-post-consolidation/readme.md",
+      "bytes": 13450,
+      "sha256": "c8b7effa760e6f65b2f747f3605edd4f2854b13bf565dd7639a511604a6a5ec1",
+      "sha": "941a35d59a28375bd593675910ec4bb033cec493"
+    }
+  ],
+  "originalEvidenceRecovery": {
+    "pngFiles": 54,
+    "jsonFiles": 50,
+    "equality": "Original artifact bytes, previous size, SHA-256 and Git blob all match.",
+    "selectionChanged": false,
+    "newVisualInspectionClaimed": false,
+    "priorVisualInspectionAttribution": "44 PNGs frontend agent and 10 PNGs operations reviewer; 52 application screens and 2 helper counterproofs."
+  },
+  "regeneratedDocuments": {
+    "policy": "Generated receipts/projections have new recovery provenance and are not represented as old byte-identical documents.",
+    "originalHashesSource": "Preserved expected path/size/SHA-256/Git-blob inventory from the first unpublished closing tree.",
+    "resultingHashesLocation": "Their new Git tree and final PR validation receipt."
+  },
+  "functionalSuitesRepeatedDuringRecovery": false,
+  "operationalMutationsDuringRecovery": false,
+  "ownClosingChecksAndCodex": "Recorded after publication on the new head in PR conversation.",
+  "finalEmail": "Single authorized send after idempotency search; actual message/thread result recorded in PR conversation.",
+  "operationalResumption": {
+    "receipt": "operations-resumption-verification.json",
+    "observedStartUtc": "2026-10-22T14:16:30Z",
+    "observedEndUtc": "2026-10-22T14:16:33Z",
+    "remoteRefsPreserved": true,
+    "rcAndProductionUnchanged": true,
+    "ssoPreserved": true,
+    "branchDeployments": 0,
+    "envEntries": 11,
+    "envNames": 5,
+    "absentMaterialEnvNames": 18,
+    "valuesRead": false,
+    "g3": "BLOCKED",
+    "g4": "BLOCKED",
+    "g5": "BLOCKED"
+  },
+  "comparisonToPreviouslyRecordedInventory": {
+    "previousPaths": 118,
+    "matchedExactly": 108,
+    "differentGeneratedOrUpdatedDocuments": [
+      {
+        "path": "docs/plans/active/pos-consolidacao-execucao-20261021.md",
+        "previousBytes": 9855,
+        "previousGitBlob": "76bfa866f97728d2cfb66b645caac63785af660b",
+        "currentBytes": 10823,
+        "currentGitBlob": "2a7c71efd8d4518591f5b3d162a8326d7febddf5",
+        "currentSha256": "79d472165fa7453d0c7b8f5e6fc37269d95eb8bd89c3c05c96e252debd264ea5"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/backend-ci.md",
+        "previousBytes": 9052,
+        "previousGitBlob": "78171a5447ac446e68ae73e38870eb455e52cf96",
+        "currentBytes": 10453,
+        "currentGitBlob": "3d56af4a2cb96a372e1a7f75af322c3ee196e78f",
+        "currentSha256": "9333e1a2fbf7a3ec56d003ba313b37fed2252e457ae0640ff6186336897fe9fe"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-ci-131ade3.json",
+        "previousBytes": 23088,
+        "previousGitBlob": "b7f9cb2151591771911a24e710ed0f77c1ddd649",
+        "currentBytes": 30074,
+        "currentGitBlob": "e0604b7f7caca2287137a5269e55a5d76fcf9ff9",
+        "currentSha256": "69524fbc25417273324f254ad891795d6321c833db6dc0cbbfe4291ce544845f"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/ci-receipt.json",
+        "previousBytes": 6908,
+        "previousGitBlob": "5732ce35941c8b7c8a12405382a291b6d2514e3f",
+        "currentBytes": 7957,
+        "currentGitBlob": "df0b20c9df36d0c722b65a301d1698b4f17c5979",
+        "currentSha256": "9138ac5a0bc85b526cc34487fcd33caeee27ba375a6bae67e4fc885685e9009c"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/collection-control-geometry.json",
+        "previousBytes": 8744,
+        "previousGitBlob": "65301df5791ecae59efd350c869e7ccf7419c715",
+        "currentBytes": 21153,
+        "currentGitBlob": "095bf5782183a0277f882ec6d6ab2bc0091f949f",
+        "currentSha256": "fd8eee6af10257af2031da04bb44506cc94d8c01c71ef4012efcf86c3f43720e"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/independent-inspection.json",
+        "previousBytes": 7669,
+        "previousGitBlob": "abd552129fcf69113301d4e242bd3e1cca00cb3e",
+        "currentBytes": 14833,
+        "currentGitBlob": "0333843a750505119ba1b9dbcec6523cbbcb9a88",
+        "currentSha256": "5350aa5b8987b5424344f3c190d58890968151cc35724b21ffe5a82d3374b0c7"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/manifest.json",
+        "previousBytes": 165973,
+        "previousGitBlob": "d2024592b1f408491119bab5652c2eec9a0ffd74",
+        "currentBytes": 255969,
+        "currentGitBlob": "ae40a34f976294837513340f7dfd280e02a68015",
+        "currentSha256": "889ab421cdfd84ca992540ccc128f2bfcf671cbaadf237eaded3acb24479dbb3"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/metadata-review.json",
+        "previousBytes": 86472,
+        "previousGitBlob": "b10fd771b0e4e75b01ea46b766e01733c2e86548",
+        "currentBytes": 205357,
+        "currentGitBlob": "887612f42e531451b7aab68494efcea27d9983f9",
+        "currentSha256": "3f570be62bc1888317109dd64e9d3612d4ebfe0735327734622751597b73abef"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/final-report.md",
+        "previousBytes": 16412,
+        "previousGitBlob": "78e63fc27eeca0d2a7450e7c68f213a14e2e9a70",
+        "currentBytes": 17790,
+        "currentGitBlob": "2a01499301d61464e372512bd1f296bcd5046ad0",
+        "currentSha256": "2e0628de2642078d62681ee9cc454b4ea86aac3ae3760e46d12bf19c9ae96b8f"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/frontend-ci-inspection.md",
+        "previousBytes": 17349,
+        "previousGitBlob": "4afadb5478858903d0badab3c2d0ed9307293393",
+        "currentBytes": 20736,
+        "currentGitBlob": "58e50f4fec80b262970cce8d270ba154bbae7c3e",
+        "currentSha256": "30a44277c1ffa7914b21f6df04d084a03682956a1fd5dfda60bef222f771d6f5"
+      }
+    ],
+    "missingPaths": [],
+    "comparisonIncludesAllOriginalSelectedPngAndJson": true
+  },
+  "historicalAttachmentRevalidated": {
+    "filename": "HidroFloresta-v1.0.zip",
+    "sha256": "0017dfdd150641344665c3b49abea9d5fbd5bc28f30935bd9e62cda40550db40",
+    "equalsOriginalMissionDigest": true,
+    "role": "Historical context only, not implementation base"
+  },
+  "independentRecoveryReview": {
+    "reviewer": "/root/operacao_vercel",
+    "result": "PASS",
+    "backendLocalCommit": "13326b0ef54fdcc6ed85549da25676a69166d882",
+    "frontendLocalCommit": "2544b7e25b1c08dff35c38156592ec4b33fadc9b",
+    "manifestEntries": 108,
+    "originalFilesByteEqual": 104,
+    "viewportProjections": 161,
+    "scopeImageFiles": 253,
+    "scopeImageHashesDistinct": 227,
+    "gateJournalEntries": 15,
+    "logDigests": 15,
+    "newVisualInspection": false,
+    "functionalSuitesRepeated": false,
+    "blockingFindings": []
+  }
+}
