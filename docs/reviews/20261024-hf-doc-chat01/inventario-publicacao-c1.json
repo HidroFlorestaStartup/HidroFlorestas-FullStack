@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024-CHAT02",
+  "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "scope": "DOCUMENTS_ONLY",
+  "expectedDocumentCount": 28,
+  "paths": [
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "actionVsBase": "MODIFY_ADDITIVE_POINTER",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": "847bf027e60c7f72cef836979e477e09a02dd8e0"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "actionVsBase": "MODIFY_ADDITIVE_POINTER",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": "cb6739097110a57f0ea203f14d53598ad943e3e4"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/estado-conciliado-20261024.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/code-first-prd/implementation/implementation-plan.md",
+      "actionVsBase": "MODIFY_ADDITIVE_POINTER",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": "f2a12c6571db0221800e71df674817dfdda41604"
+    },
+    {
+      "path": "docs/governance/DOCUMENT_REGISTER.md",
+      "actionVsBase": "MODIFY_ADDITIVE_POINTER",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": "04ec372bdad83e0164da4e17d956bfd4fe591a10"
+    },
+    {
+      "path": "docs/plans/active/hf-doc-20261024/chat/plano.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/conciliacao-local-chat.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/consumo-local-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/decisoes-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/decisoes-e-recomendacoes.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/diagnostico-rth-p2-001.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/evidencias-autoridade.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/fontes-confrontadas-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/fontes-operacao.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/gate-publicacao.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/handoff-final.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/instrumentos-sob-demanda.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/inventario-prs-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/inventario-publicacao-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/mapa-fontes-autoridade.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c0.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/matriz-prontidao-g3-g5.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/readme.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "UPDATE_CURRENT_STATE",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/revisao-independente-c1.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/revisao-independente.md",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/validacao-documental-c1.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "ADD_C1_RECORD",
+      "baseBlob": null
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/validacao-documental.json",
+      "actionVsBase": "ADD_DOCUMENT",
+      "actionVsC0": "PRESERVE_BYTES",
+      "baseBlob": null
+    }
+  ],
+  "preimages": [
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "sourceSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "sourceBlob": "847bf027e60c7f72cef836979e477e09a02dd8e0",
+      "preimageBytes": 22100,
+      "preimageSha256": "13787513dd44d6f7d9f2a7d3e412039c24a24a7a9b91563c874c3242dc7dd9a7",
+      "proposedBytes": 22820,
+      "headingAndEntireSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "sourceSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "sourceBlob": "cb6739097110a57f0ea203f14d53598ad943e3e4",
+      "preimageBytes": 9858,
+      "preimageSha256": "770c35978669b28c1cf01017fb1a0f1b9b77ac83782a612d32605922734846be",
+      "proposedBytes": 10597,
+      "headingAndEntireSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/implementation-plan.md",
+      "sourceSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "sourceBlob": "f2a12c6571db0221800e71df674817dfdda41604",
+      "preimageBytes": 8335,
+      "preimageSha256": "54dd01a53faf40b0bedad6b30fc2852d5f5555c16721079b0d1b1e89f7d99e79",
+      "proposedBytes": 9074,
+      "headingAndEntireSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/governance/DOCUMENT_REGISTER.md",
+      "sourceSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "sourceBlob": "04ec372bdad83e0164da4e17d956bfd4fe591a10",
+      "preimageBytes": 61524,
+      "preimageSha256": "20ab6ba9a0ec0360804b81180e7b578e606743f8376d0d3507a37dd52993da6c",
+      "proposedBytes": 62293,
+      "headingAndEntireSuffixPreserved": true,
+      "result": "PASS"
+    }
+  ],
+  "preservedC0Paths": [
+    "docs/reviews/20261024-hf-doc-chat01/evidencias-autoridade.json",
+    "docs/reviews/20261024-hf-doc-chat01/fontes-operacao.json",
+    "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c0.json",
+    "docs/reviews/20261024-hf-doc-chat01/matriz-prontidao-g3-g5.md",
+    "docs/reviews/20261024-hf-doc-chat01/revisao-independente.md",
+    "docs/reviews/20261024-hf-doc-chat01/validacao-documental.json"
+  ],
+  "deltaC0ToC1Paths": [
+    "PROJECT_CONTEXT.md",
+    "docs/code-first-prd/implementation/backlog.md",
+    "docs/code-first-prd/implementation/estado-conciliado-20261024.md",
+    "docs/code-first-prd/implementation/implementation-plan.md",
+    "docs/governance/DOCUMENT_REGISTER.md",
+    "docs/plans/active/hf-doc-20261024/chat/plano.md",
+    "docs/reviews/20261024-hf-doc-chat01/conciliacao-local-chat.md",
+    "docs/reviews/20261024-hf-doc-chat01/consumo-local-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/decisoes-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/decisoes-e-recomendacoes.md",
+    "docs/reviews/20261024-hf-doc-chat01/diagnostico-rth-p2-001.md",
+    "docs/reviews/20261024-hf-doc-chat01/fontes-confrontadas-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/gate-publicacao.md",
+    "docs/reviews/20261024-hf-doc-chat01/handoff-final.md",
+    "docs/reviews/20261024-hf-doc-chat01/instrumentos-sob-demanda.md",
+    "docs/reviews/20261024-hf-doc-chat01/inventario-prs-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/inventario-publicacao-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/mapa-fontes-autoridade.md",
+    "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c1.json",
+    "docs/reviews/20261024-hf-doc-chat01/readme.md",
+    "docs/reviews/20261024-hf-doc-chat01/revisao-independente-c1.md",
+    "docs/reviews/20261024-hf-doc-chat01/validacao-documental-c1.json"
+  ],
+  "hashAuthority": "Manifesto externo do pacote vincula os bytes de todos os documentos, incluindo este inventário, revisão e validação; sem hash de si próprio.",
+  "publication": "BLOCKED_PENDING_SCOPED_AUTHORIZATION",
+  "forbiddenPathsChanged": [],
+  "localOwnershipPathsChanged": [],
+  "configurationChanged": false,
+  "safeApplicationRule": "Aplicar delta-base-c1.patch somente aos quatro preimages exatos; se houver deriva, conciliar os adendos e preservar alterações legítimas de terceiros. delta-c0-c1.patch parte dos20 arquivos do C0 preservado. Nenhuma aplicação remota nesta missão."
+}
