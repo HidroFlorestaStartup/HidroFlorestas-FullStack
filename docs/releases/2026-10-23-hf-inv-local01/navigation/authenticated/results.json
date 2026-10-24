@@ -1,0 +1,145 @@
+{
+  "protocol": "C-AUTH-1",
+  "status": "passed",
+  "startedUtc": "2026-10-23T21:06:55.617Z",
+  "durationMs": 96886.913,
+  "provenance": {
+    "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+    "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+    "trackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources": [
+      {
+        "path": "tests/investigations/navigation/authenticated.config.ts",
+        "bytes": 769,
+        "sha256": "7cab02451e180bfce5c141edce75ef0393f7a5e26e0f2055ae7b4d2a8579ae12"
+      },
+      {
+        "path": "tests/investigations/navigation/authenticated.spec.ts",
+        "bytes": 5927,
+        "sha256": "33d9d7e5952f67c5de8a08480a69663f313792097909d2d059849892239cfcf7"
+      },
+      {
+        "path": "tests/investigations/navigation/closed-reporter.ts",
+        "bytes": 2279,
+        "sha256": "dcdcad7b18346c05410ec55d252112d4eddc31f68c06c15bec36cd79c4638c0e"
+      },
+      {
+        "path": "tests/investigations/navigation/run-authenticated.ps1",
+        "bytes": 4769,
+        "sha256": "71b1538705e906fdd6f49bd0ba07c61d8c01337513c1ae2b2c89cf4e4d4a6016"
+      },
+      {
+        "path": "tests/e2e/frontend-territorial-map.spec.ts",
+        "bytes": 12855,
+        "sha256": "db10adc6d739705de28451ccf04465ac81c7ca83b782fcb3ab89aaa7c0586602"
+      },
+      {
+        "path": "tests/e2e/territorial-map.spec.ts",
+        "bytes": 5028,
+        "sha256": "37828ced80d50de66290dcf68fb687074bf9871975859e48522a9804987b1e30"
+      },
+      {
+        "path": "tests/e2e/support/frontend-mission-evidence.ts",
+        "bytes": 10401,
+        "sha256": "abb042dcb11896f8e465a3e80033aebad72faad6cd8d8694082499eeec0dcebd"
+      }
+    ],
+    "applicationDelta": "none",
+    "untrackedInvestigationFiles": true
+  },
+  "tests": [
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 320x760-text100",
+      "status": "passed",
+      "durationMs": 21535,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 375x900-text100",
+      "status": "passed",
+      "durationMs": 5052,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 768x900-text100",
+      "status": "passed",
+      "durationMs": 4674,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 1440x900-text100",
+      "status": "passed",
+      "durationMs": 4431,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 320x760-text200",
+      "status": "passed",
+      "durationMs": 4562,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "real map and textual alternative remain usable with keyboard at 844x390-text100",
+      "status": "passed",
+      "durationMs": 3989,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "transient transport shows loading and error then retries the real endpoint",
+      "status": "passed",
+      "durationMs": 1710,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/frontend-territorial-map.spec.ts",
+      "title": "empty and inactive contexts keep their real capabilities and selection resets on navigation",
+      "status": "passed",
+      "durationMs": 6061,
+      "retry": 0
+    },
+    {
+      "file": "tests/investigations/navigation/authenticated.spec.ts",
+      "title": "OBS-001 same real collection form before during and after the existing capture helper",
+      "status": "passed",
+      "durationMs": 3675,
+      "retry": 0
+    },
+    {
+      "file": "tests/investigations/navigation/authenticated.spec.ts",
+      "title": "INV-005 preserves real API lookup404 separately from document200 and isolated read-only probes",
+      "status": "passed",
+      "durationMs": 2724,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/territorial-map.spec.ts",
+      "title": "shows one authorized textual item and marker per area and excludes partial collections",
+      "status": "passed",
+      "durationMs": 2202,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/territorial-map.spec.ts",
+      "title": "keeps inactive laboratories readable and inaccessible contexts indistinguishable",
+      "status": "passed",
+      "durationMs": 1597,
+      "retry": 0
+    },
+    {
+      "file": "tests/e2e/territorial-map.spec.ts",
+      "title": "preserves the complete textual interface without horizontal overflow",
+      "status": "passed",
+      "durationMs": 3665,
+      "retry": 0
+    }
+  ],
+  "rawErrorsPublished": false,
+  "configEnvironmentPublished": false
+}
