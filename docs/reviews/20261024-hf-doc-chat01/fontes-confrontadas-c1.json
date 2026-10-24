@@ -1,0 +1,4457 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024-CHAT02",
+  "recordedAtUtc": "2026-10-24 17:10:43 UTC",
+  "recordedAtAmericaFortaleza": "2026-10-24 14:10:43 -03:00 America/Fortaleza",
+  "primarySnapshotCount": 247,
+  "materializedBytes": 1728488,
+  "status": "HASH_IDENTITIES_VERIFIED",
+  "records": [
+    {
+      "sha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "path": "docs/releases/2026-10-23-hf-inv-local01/environment-and-protocols.md",
+      "bytes": 3479,
+      "gitBlob": "29581298af3c45c82f3c148d64402db123874dd7",
+      "sha256": "5ffd5c13412e2004899d0388f784693dc248382a0cc03f3cce39fcb356fd5154",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/docs/releases/2026-10-23-hf-inv-local01/environment-and-protocols.md",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "path": "tests/investigations/ihfr/two-request-quota.test.ts",
+      "bytes": 6514,
+      "gitBlob": "d8bdf3777a6269010c6df36c42e0b46a4b6a24ce",
+      "sha256": "10ef7654697102e917ff410a31f290c80ef9e72617ba8e9f3d1635c456c31081",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/tests/investigations/ihfr/two-request-quota.test.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; o sujeito é AreaCoverService/FakeCoverProvider, não recuperação IHFR"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "path": "vercel.json",
+      "bytes": 1180,
+      "gitBlob": "aed2f92d0cc65f544a8d762601c2ab6b0fe0c430",
+      "sha256": "b616c666e64490a92436fc14eabbc155a155de72668859e58889ea2c1bc1eb0d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/vercel.json",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "path": "docs/releases/2026-10-21-post-consolidation/backend-database.md",
+      "bytes": 15776,
+      "gitBlob": "82e7f3d18261ade267d71dde9512dd0c42fbea6b",
+      "sha256": "d06968506f4c5032d27168102619f172aecb59c1c6b4c826d449cac58f58e0bf",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/223839c9ae91591ded8de387144d8c1ee84b5c20/docs/releases/2026-10-21-post-consolidation/backend-database.md",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "path": "docs/releases/2026-10-21-post-consolidation/readme.md",
+      "bytes": 13450,
+      "gitBlob": "941a35d59a28375bd593675910ec4bb033cec493",
+      "sha256": "c8b7effa760e6f65b2f747f3605edd4f2854b13bf565dd7639a511604a6a5ec1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/223839c9ae91591ded8de387144d8c1ee84b5c20/docs/releases/2026-10-21-post-consolidation/readme.md",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "path": "vercel.json",
+      "bytes": 1161,
+      "gitBlob": "c26dde819930bac09c4e2ac90dad6e2842d801cb",
+      "sha256": "eaf52b4182a2fd2f97cf7d605c8e3547bf4e358487ed911847b07e711c2ac981",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/223839c9ae91591ded8de387144d8c1ee84b5c20/vercel.json",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "TECH_DECISIONS.md",
+      "bytes": 24258,
+      "gitBlob": "4f5d344091d214f749ec0f8e3b49d1f7d5e39589",
+      "sha256": "9e568f07fe7d31f35e2e851e6e4be72ac86850acf4e77cd3b9fc81d0f1911212",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/TECH_DECISIONS.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "docs/code-first-prd/analysis/gaps-and-open-questions.md",
+      "bytes": 31642,
+      "gitBlob": "c7940e6632aa36145fc6da57e019bf24e2e25637",
+      "sha256": "35f51d1326159cc58d5484279b8c263a7a74336aa40c89fa3e696f9d18a654c5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/docs/code-first-prd/analysis/gaps-and-open-questions.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "bytes": 9858,
+      "gitBlob": "cb6739097110a57f0ea203f14d53598ad943e3e4",
+      "sha256": "770c35978669b28c1cf01017fb1a0f1b9b77ac83782a612d32605922734846be",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/docs/code-first-prd/implementation/backlog.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md",
+      "bytes": 49946,
+      "gitBlob": "f4cc532d17ff6b1d6cd35871d6d31c4aab70867c",
+      "sha256": "5f3138fe93fea8ae3c9633ddde5b12e005b2f86a8afdd758d85c03cccf5ec38e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "docs/operations/area-covers-runbook.md",
+      "bytes": 10352,
+      "gitBlob": "ac862affcb1aeff5b9072594290614d2139a3fa5",
+      "sha256": "5f8787fea94cfbc0db90cd630fe99fe8b6b186e0354c3ba28f8759a86430d46a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/docs/operations/area-covers-runbook.md",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; limites de rollout, homologação, cleanup, custo e owner não designado"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md",
+      "bytes": 16239,
+      "gitBlob": "77efba0d4d6377bf67f6ef789199438c868c9ca9",
+      "sha256": "28f1abb9650207d462b3f11c9c3a71751f507e234f521e0e038868969c5d1b30",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "package.json",
+      "bytes": 3712,
+      "gitBlob": "2ae662addbd1adf18e401f71c75f37654b3a2cfd",
+      "sha256": "d6990c5d5ebdc0f1ccc3478f5dbda719216c4727417dc9d1203e7de13715529e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/package.json",
+      "roles": [
+        "C-COORD",
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "playwright.account-deletion.config.ts",
+      "bytes": 511,
+      "gitBlob": "8621c9672a8c49b70cbce2b48e7d92317a76e996",
+      "sha256": "e0c68362a6ea626cc7448a1f90764ef29884bdeee646aae61404a5b040a2bd93",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/playwright.account-deletion.config.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; runner dedicado e guards"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "playwright.config.ts",
+      "bytes": 4283,
+      "gitBlob": "7e386b95868ec7309921965b4cd77b51cf0b1e06",
+      "sha256": "515ac5b9b7b10d775df21f0a3a84ae448385fc75cde48213f46310455b2ddd51",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/playwright.config.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida: suite exclusão fora runner padrão"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260907120000_unique_laboratory_access_code/migration.sql",
+      "bytes": 87,
+      "gitBlob": "424442ec84bb30b1d7ad22346ba8e1cb7a6adf72",
+      "sha256": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260907120000_unique_laboratory_access_code/migration.sql",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260914000100_area_registration_and_membership_roles/migration.sql",
+      "bytes": 4622,
+      "gitBlob": "1256d2dc5444828acdddc49c553836bbcaa79ba5",
+      "sha256": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260914000100_area_registration_and_membership_roles/migration.sql",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260915000100_collection_registration_metadata/migration.sql",
+      "bytes": 3461,
+      "gitBlob": "428e64780904d5aeeca6e159a95184b4fb76ab18",
+      "sha256": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260915000100_collection_registration_metadata/migration.sql",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260917000100_environmental_measurement_set/migration.sql",
+      "bytes": 1523,
+      "gitBlob": "69981ceb5bbd5f9fc1e6231eba0f57859babe8b1",
+      "sha256": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260917000100_environmental_measurement_set/migration.sql",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260919000100_user_administration/migration.sql",
+      "bytes": 2744,
+      "gitBlob": "43b1016d91e516a22db15aaf0c894746d2a3f6be",
+      "sha256": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260919000100_user_administration/migration.sql",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql",
+      "bytes": 13885,
+      "gitBlob": "e9c6b4a32ed22b9ee5ea3d75ccca9159752bb0b6",
+      "sha256": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260920000100_remove_legacy_is_admin/migration.sql",
+      "bytes": 508,
+      "gitBlob": "3dbfee0ad39f3609940150d1781437b588a21465",
+      "sha256": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260920000100_remove_legacy_is_admin/migration.sql",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20260926000100_ihfr_lifecycle_reference_integrity/migration.sql",
+      "bytes": 4399,
+      "gitBlob": "557f416e03bd03f118226780ce44aaddf3ff6b8d",
+      "sha256": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20260926000100_ihfr_lifecycle_reference_integrity/migration.sql",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/migrations/20261010000100_environmental_drafts/migration.sql",
+      "bytes": 1319,
+      "gitBlob": "b5707b523667ce88e0239c2b01019934a73da4e2",
+      "sha256": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/migrations/20261010000100_environmental_drafts/migration.sql",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "prisma/schema.prisma",
+      "bytes": 22317,
+      "gitBlob": "47be09072b12fd65500076e6a9f28e9adaff4889",
+      "sha256": "466a2a5d18c609024b83813a90a2f397179bd4ce17b80300a2fc7c0454aab3d8",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/prisma/schema.prisma",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Models LaboratoryRoom, ResearchersLinked, CollectionArea, CollectionData, EnvironmentalDraft, EnvironmentalMeasurementSet e enum LaboratoryMembershipRole; linhas 184–248, 261–310, 483–500."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "scripts/imp006-test-runner.ts",
+      "bytes": 1420,
+      "gitBlob": "bfddf745d9c004a0c99213330091532ea98dc57e",
+      "sha256": "864d806df831e3eb5d3907574cc6cbdc0879f6e08183536e421238178d3f3f90",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/scripts/imp006-test-runner.ts",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/001-authenticated-access/quickstart.md",
+      "bytes": 12871,
+      "gitBlob": "8c9cdc461f863e3ea421e2f2911ec9541af9e0c2",
+      "sha256": "47cb17646b33873ca9f53eb1e65fbb72c3d8f0b08f7b11b4854d860f9f7c6bd1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/001-authenticated-access/quickstart.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/001-authenticated-access/spec.md",
+      "bytes": 16902,
+      "gitBlob": "629143bdedb0ad654e046efaa7559c7bf5728b0d",
+      "sha256": "c2b1eaf3e5bff5cd9717fbd76d27f3a3cdbcc826614843873b91e1dbe24579d8",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/001-authenticated-access/spec.md",
+      "roles": [
+        "C-COORD",
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Requisitos FR/SC por extração; SC-006/SC-007 e Estado das validações humanas lidos com contexto nas linhas 205–224."
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/002-criar-laboratorio/contracts/laboratories-api.openapi.yaml",
+      "bytes": 7226,
+      "gitBlob": "3f0ba58390509a329f557d38f6de046a5cdb43ca",
+      "sha256": "f1ce29f290fb9fe11531f88a1a658657d63827d43073c7a94d2640712824142e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/002-criar-laboratorio/contracts/laboratories-api.openapi.yaml",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/002-criar-laboratorio/spec.md",
+      "bytes": 21241,
+      "gitBlob": "9317bfce598003de7ef695ca577b9c531235de3b",
+      "sha256": "64e793f566e30f73ac78ffb1fac204e7009a6581ec405fc14e514144c950d9bc",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/002-criar-laboratorio/spec.md",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "FR-015, SC-005/006/010, amendment de 7 setembro; requisitos e supersessão dirigida"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/003-area-registration-and-viewing/contracts/area-registration-api.openapi.yaml",
+      "bytes": 17811,
+      "gitBlob": "fea29264a8965049f772a07d66ba09626777fa62",
+      "sha256": "2cea20fedc95effd273c69e0f0ae65642e1fe1d0870287b61ed53dc83ce8e7e2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/003-area-registration-and-viewing/contracts/area-registration-api.openapi.yaml",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/003-area-registration-and-viewing/implementation-evidence.md",
+      "bytes": 17581,
+      "gitBlob": "c54b2bcee470f925e781e706efc1ba0db8a1966a",
+      "sha256": "843e5d9bc3f834dbe0a2423e508f5dc0746061cab21b8672c64e754349e6314f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/003-area-registration-and-viewing/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Leitura integral das linhas 97–171; títulos/resultados dirigidos nas linhas anteriores. Falha de setup e seu encerramento preservados."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/003-area-registration-and-viewing/spec.md",
+      "bytes": 33777,
+      "gitBlob": "0d447a1571982a5ec4ab142a01af127f0428771a",
+      "sha256": "344536df4777ed36177fb9646c76b3a13eaccdf80882a70b224cb17f4ec20273",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/003-area-registration-and-viewing/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Todos FR-001–FR-038 e SC-001–SC-011, com estados humanos; linhas 134–180 e 235–250."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/004-environmental-collection-registration/contracts/collection-registration-api.openapi.yaml",
+      "bytes": 13640,
+      "gitBlob": "c06026c04f410a16b734899592134a543063a3cd",
+      "sha256": "3791bbbe7d4dafdaf62d5686f40f2c5927c36eced6b77acc9e5b1101139980f7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/004-environmental-collection-registration/contracts/collection-registration-api.openapi.yaml",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/004-environmental-collection-registration/implementation-evidence.md",
+      "bytes": 40062,
+      "gitBlob": "e3d52a309889134e8ab49e67f13bb8691c80c561",
+      "sha256": "0fa6fe785b47d1f751d87ebed477f1ad8787f9e5f42cf87ce694bf1bb4d32bfa",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/004-environmental-collection-registration/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Leitura integral das linhas 302–355; títulos, SC, decisões de gate e resultados localizados nas seções anteriores. Não leitura integral das 355 linhas."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/004-environmental-collection-registration/spec.md",
+      "bytes": 26987,
+      "gitBlob": "13c1f970014287438f40cb86c58efecac819dd52",
+      "sha256": "feedafbfb5db14737da463a7d8c12393fd6b65df8ef16247815f675a52f611f3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/004-environmental-collection-registration/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/005-environmental-collection-data/contracts/environmental-data-boundary.md",
+      "bytes": 3873,
+      "gitBlob": "7867c45358ed0745e242bde7faee4336814af5f4",
+      "sha256": "b74ee3b8df39de7e86a77f4a004648e6ab3955160dad8c498fcdffe9b6c0f064",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/contracts/environmental-data-boundary.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/005-environmental-collection-data/contracts/math-contract-v1.md",
+      "bytes": 3479,
+      "gitBlob": "3a7c4e94b114cf1ac4d14eb074ca5d4a6069b53e",
+      "sha256": "da89930bbd0ac0dca7e4832093f3fec3fc399986f113cb2a323c453b43e12380",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/contracts/math-contract-v1.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/005-environmental-collection-data/contracts/measurement-contract-v1.md",
+      "bytes": 3969,
+      "gitBlob": "9d3c9fa91f1dd25edc7029651238790096db3565",
+      "sha256": "c59f45fcc0189bb82689a1921e39f408ff3566a02ee2f66fe57d039699d3dc88",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/contracts/measurement-contract-v1.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/005-environmental-collection-data/implementation-evidence.md",
+      "bytes": 13376,
+      "gitBlob": "05770ea91491ca0db3fcd63cd52ecdb6a5675793",
+      "sha256": "866ed916772e747ce54849f36c7fc9da02c6242a7c49c65732351d6a61defe57",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/005-environmental-collection-data/spec.md",
+      "bytes": 16986,
+      "gitBlob": "59f38681cd13dcdf654bf20e0172d9de7d484caf",
+      "sha256": "a08e2822a7170f731fc269640a36d86e63840fd4fbeb56b2c2c750ed176bce90",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/005-environmental-collection-data/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml",
+      "bytes": 22322,
+      "gitBlob": "4b4c7dae095f621c12d110f655b21b2716fdaac7",
+      "sha256": "f65a24473ce423872df4a9b7a26178ac749b4e078225e762d077c7b44321c21d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/006-ihfr-diagnosis/contracts/ihfr-math-experimental-v0.1.1.json",
+      "bytes": 13036,
+      "gitBlob": "1fb65bc244ff75ef9a14f978e8c68718c7111f25",
+      "sha256": "3a2efa7550160978a92af590ba53c58d458d2c3f086250c9d6bf872ea534d065",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/006-ihfr-diagnosis/contracts/ihfr-math-experimental-v0.1.1.json",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/006-ihfr-diagnosis/spec.md",
+      "bytes": 43337,
+      "gitBlob": "9c75f940ad929cc2a86520fd409c05e658c99f86",
+      "sha256": "97857f3cd3eec0389392a14055439c4c20518d15f95a32ce8b2bf42075c44098",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/006-ihfr-diagnosis/spec.md",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida de autoridade, versão e quatro qualificadores científicos"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/007-dashboard-history/contracts/dashboard-api.openapi.yaml",
+      "bytes": 12127,
+      "gitBlob": "b1f9e71b8992419622f7a6f4c729ca16188a0bcf",
+      "sha256": "968eaae2777e1e9412d41f79997b9f7b3eefe4bf3c9b471044e6c619886b0641",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/007-dashboard-history/contracts/dashboard-api.openapi.yaml",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/007-dashboard-history/spec.md",
+      "bytes": 22138,
+      "gitBlob": "eff4aecd208e9f0bf4b33147c5efb1e05fa05e75",
+      "sha256": "d9c1fa80d74eee447cc1a966f2a8973a78333777e4414cba80f096edf217b26b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/007-dashboard-history/spec.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/007-dashboard-history/tasks.md",
+      "bytes": 36453,
+      "gitBlob": "72110cfb03766bafe227cac7c9f96c83522f049d",
+      "sha256": "e8f1c7a9afc9c54fdb5caac7c481cabba67f8e79b40736de82756dd1176ae46b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/007-dashboard-history/tasks.md",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida de SC008/009, T065, resultados e histórico de execução"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/008-territorial-map/contracts/territorial-map-api.openapi.yaml",
+      "bytes": 7485,
+      "gitBlob": "5c730fc8bbfa6fb63a7c875fa0ec087364c3c6cc",
+      "sha256": "6993c439b08b23d98c179675e2c44d4d1b502e300c91ac531930ece294bedb36",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/008-territorial-map/contracts/territorial-map-api.openapi.yaml",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/008-territorial-map/implementation-evidence.md",
+      "bytes": 6022,
+      "gitBlob": "2cdbfe53e2d827806219e77ce9a5598f8d3122c5",
+      "sha256": "a0d9f8b90bbcea55f50a7040ede73a33716dc73df78930485b35977ae2a5472f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/008-territorial-map/implementation-evidence.md",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; fatos históricos e p95/EXPLAIN/assistiva/humano pendentes"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/008-territorial-map/spec.md",
+      "bytes": 33773,
+      "gitBlob": "0902080d181eda10a9a128f1e22e4718a77806e6",
+      "sha256": "81b9033be5fc15ce68128d75db05cef8362920140727af15d71e5d00afe1fb4c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/008-territorial-map/spec.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/008-territorial-map/tasks.md",
+      "bytes": 31782,
+      "gitBlob": "d2c20228a540965074d86b57eda11d2f7d3946ab",
+      "sha256": "98027bd0b035a254190af4e93fe77dcf36d94bbe3be9d59fb881c10226f87b8c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/008-territorial-map/tasks.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/009-user-administration/contracts/admin-users.openapi.yaml",
+      "bytes": 9042,
+      "gitBlob": "0d23d27ea286b59217ad058339263479cf21ab55",
+      "sha256": "3ded7d32bdc67136068d71ae56a96872ee673f3854898af45196c9f0a26e2865",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/009-user-administration/contracts/admin-users.openapi.yaml",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/009-user-administration/implementation-evidence.md",
+      "bytes": 7627,
+      "gitBlob": "55dba0917c998ec902523079eb3e4f96a6dff114",
+      "sha256": "8571450899f827f9fdd10e167254eb9b5803df68fd1db8bc0986f88d8cc27598",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/009-user-administration/implementation-evidence.md",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; PENDING, humano e gates históricos distintos"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/009-user-administration/spec.md",
+      "bytes": 21983,
+      "gitBlob": "fc47e19fc6ab1bde5a6038c8bce3c6f599cc1546",
+      "sha256": "3fb9aeef57888d3ace2bfcab9ad69e97bb796f868ec30d7769a36960a796c671",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/009-user-administration/spec.md",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida FRs, SCs e pendência de política PENDING"
+        },
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/009-user-administration/tasks.md",
+      "bytes": 15469,
+      "gitBlob": "0576855f136e100b8479162ebbee776eafc164f0",
+      "sha256": "9af4ed03335272172be8f2bea3b8a0b78c20245a365597948e4750e23bad18a3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/009-user-administration/tasks.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/012-account-verification-recovery/spec.md",
+      "bytes": 11848,
+      "gitBlob": "3b47eba09bba6ce319b8682e4cb97bb84c1d8e35",
+      "sha256": "8350e0f5d02276f971c99c13823cf41141dab296fe11797e2ce9acc5360a30f5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/012-account-verification-recovery/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/015-environmental-drafts/contracts/drafts.md",
+      "bytes": 1692,
+      "gitBlob": "d076797405aa7c21fcda6ef60fee8d4f1e96da48",
+      "sha256": "94ec56b17b275da268cc638d0246851faeaa628cad1b4db54dd05e8ecfce2cdf",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/015-environmental-drafts/contracts/drafts.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/015-environmental-drafts/implementation-evidence.md",
+      "bytes": 5055,
+      "gitBlob": "3c71009e2927558baa9da76a30c4f39ed12ed8e5",
+      "sha256": "f56042545871f38ded56799da83183360037738a4cc03d77dfac18960eb1f699",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/015-environmental-drafts/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/015-environmental-drafts/spec.md",
+      "bytes": 7622,
+      "gitBlob": "6809e5c7468982a3a984e3ec78913514ed2df183",
+      "sha256": "8378f458a9bb5772fee72cb46321363723cc1f2c6597680372c0fd46b8bf8a47",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/015-environmental-drafts/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Status, FR-001–FR-009, SC-001–SC-004 e fronteiras técnicas/científicas; linhas 5, 54–74, 79–99."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/019-frontend-workspace-shell/implementation-evidence.md",
+      "bytes": 16816,
+      "gitBlob": "9730e9f0fa6bb060def5bdf35a57c2fd4e4592ef",
+      "sha256": "9167cd0a8c989d94025e94013e1c3d763e696b9b3b5b585531797652c562b917",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/019-frontend-workspace-shell/implementation-evidence.md",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida do âmbito da revisão histórica e seu limite"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/019-frontend-workspace-shell/spec.md",
+      "bytes": 6577,
+      "gitBlob": "16b0e14f76276c3c9366da30103616f46ba0df91",
+      "sha256": "242bc2055020f1d0ed0591931dd18e7bd34063ad2de80c81162e56da0f41981c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/019-frontend-workspace-shell/spec.md",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "FR-002 e vínculo de preservação funcional"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/020-frontend-laboratory-dashboard/implementation-evidence.md",
+      "bytes": 21097,
+      "gitBlob": "5d098af8d39f0b9aea00048cd598c6920556ffa5",
+      "sha256": "09fabdf708469db5558b637629c970ed73d75ad25863ccf2b06d733a1382f089",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/020-frontend-laboratory-dashboard/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Busca dirigida por headings, PASS/FAIL/NOT_RUN e SC; inclui resultado exato do run39292821274 e seu SHA. Não leitura integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/020-frontend-laboratory-dashboard/spec.md",
+      "bytes": 5833,
+      "gitBlob": "f56401ed3b4cd2fd5d80c32c544cdac5e5b8cda2",
+      "sha256": "359afe61028ac6725ee4a7fb6c82d94ea2746472f74ecbdc136995890c5919ca",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/020-frontend-laboratory-dashboard/spec.md",
+      "roles": [
+        "C-COORD",
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Busca dirigida a contexto/papéis e metadados; não leitura integral."
+        },
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/021-frontend-areas-cover/implementation-evidence.md",
+      "bytes": 17044,
+      "gitBlob": "c38da30cdf3c2384d2b7ddf4f78d273e16462799",
+      "sha256": "f6a7171973fd767f5abf0d7aeea6cc40a1dd576a9433519c9b2da6e533e4a5b6",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/021-frontend-areas-cover/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/021-frontend-areas-cover/spec.md",
+      "bytes": 9295,
+      "gitBlob": "d0668287d688abb07a4a97f2e24aa1611bbfb72e",
+      "sha256": "2cafc77d92df93d9aa7f2969d949e50d86112bdfdba1ad1e1bb1a0691568a6e5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/021-frontend-areas-cover/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/023-frontend-collections/implementation-evidence.md",
+      "bytes": 22927,
+      "gitBlob": "859984af825ecd665402eb0d9242190d87981710",
+      "sha256": "e052d812bf5da4d9b2c9c0660d01013adc43a0ce59d6f2a528d4286a50197e20",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/023-frontend-collections/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/023-frontend-collections/spec.md",
+      "bytes": 5656,
+      "gitBlob": "136d8791a92ccccef1bc5a611d6e98e353c87162",
+      "sha256": "f9b841ad167f2056447f65b73a0f0c0aebd6ed837113f31df3313f58ae26ef97",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/023-frontend-collections/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Status, FR-001–FR-010, SC-001–SC-004 e limites/autoridade; linhas 5, 42–76."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/024-frontend-environmental-drafts/implementation-evidence.md",
+      "bytes": 26208,
+      "gitBlob": "2f387859c1dafd9b4e62e7f20a618de1c1337774",
+      "sha256": "29690bc5e1f7f440fbe407fce909867175f50bbe48a2791b46c6571717cf191c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/024-frontend-environmental-drafts/implementation-evidence.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/024-frontend-environmental-drafts/spec.md",
+      "bytes": 6248,
+      "gitBlob": "4cd23fb397058af27350156144a7f16504ebd601",
+      "sha256": "95308f2eb7ae219a08d02042e62fd72a87d2e85ddf787edb4753112a78d7e270",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/024-frontend-environmental-drafts/spec.md",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Status, FR-001–FR-011, SC-001–SC-004 e limites/autoridade; linhas 5, 42–77."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/026-frontend-territorial-map/spec.md",
+      "bytes": 12544,
+      "gitBlob": "147e95887626e285d644dc9f93d391890abeea8d",
+      "sha256": "0889e1f52061ea12be2d685dab4a02447b779d0e2f1987b7902d21193f417fe4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/026-frontend-territorial-map/spec.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "specs/027-frontend-user-administration/spec.md",
+      "bytes": 7339,
+      "gitBlob": "a81f8984a0dadb7480877081aa5d161e11d0a9d3",
+      "sha256": "9662970c564069b71b7d1b5e693413da61baeb0391e6d95b9af1fe16ed4b4ae0",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/specs/027-frontend-user-administration/spec.md",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+      "bytes": 2405,
+      "gitBlob": "fc6a22de5010bb6581fb0bf50dadd8949335bb87",
+      "sha256": "cdaa2a68f10c1765d2900e91f680f8de85e7843ab5551fc3697823154d24f6f8",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+      "roles": [
+        "C-COORD",
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/new/page.tsx",
+      "bytes": 1144,
+      "gitBlob": "3d94e2b19375e9b4dbea6b6e25829597b282d050",
+      "sha256": "e23581d6cc090190f2a3845873ee6d0ecbd6102b6486651b3bd626ca9c454fc2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/new/page.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx",
+      "bytes": 4174,
+      "gitBlob": "d10cc49c6791a4d7caa3bcea19cc8d98aa5f7f66",
+      "sha256": "34fc7f969f7f3cdac872c7982365b24f8d16e96cb6aab52acaa293c8d9d43ba6",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/layout.tsx",
+      "bytes": 997,
+      "gitBlob": "39ea5aa93a6267918380897c1c1ab84cc8556463",
+      "sha256": "1f7d691da379636061d064bc9ffaa400d9ffa223b0934fcdf73c04e970aeeed4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/layout.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/map/page.tsx",
+      "bytes": 480,
+      "gitBlob": "dfab24b4d53fcd7ca759df8a3f5159ac60a36d33",
+      "sha256": "674ae51f992f4c346899eb2718f54b115f28a399c30de9f419c455b0a0bf49c1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/map/page.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/page.tsx",
+      "bytes": 645,
+      "gitBlob": "9f3179fd00f6bab70039921373d904a24f30b6b9",
+      "sha256": "674417d238892aff540471677c0c8817f47e4c5223e1df03c4e06765070d1e01",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/dashboard/laboratories/[laboratoryId]/page.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/layout.tsx",
+      "bytes": 522,
+      "gitBlob": "74dff61f6a15c43a2327a0a28ab3d2d8845a0cd3",
+      "sha256": "fe299ad887f6240e6a77e559fc36574d6849b30b54b62c64fe1602735945bcd6",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/layout.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/(private)/workspace/page.tsx",
+      "bytes": 991,
+      "gitBlob": "3c9ba93f5faf05bf57b406ed3f47d92277e6d50b",
+      "sha256": "21aa4aa1059a706137ea1a63949fb1e972ff7ab1e8487fd7b788e24ca8dbf940",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/(private)/workspace/page.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/admin/users/[userId]/audit/route.handlers.ts",
+      "bytes": 1274,
+      "gitBlob": "ec68083f85d7e7242d90d2a7f3601374c93e5c0b",
+      "sha256": "ec2ff7f7ccf35ea9e65faabb9a1ac84b9eed783be6bffb71854db5496e0196cb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/admin/users/[userId]/audit/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/admin/users/[userId]/role/route.handlers.ts",
+      "bytes": 1167,
+      "gitBlob": "b90c04a7f0279b2371eb37ee45d556bf8f4a508b",
+      "sha256": "fb7136de471bacb389b6c49eaf32245733db45b232088ea043ba50199580a84e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/admin/users/[userId]/role/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/admin/users/[userId]/route.handlers.ts",
+      "bytes": 857,
+      "gitBlob": "5e12abbf0adb751941d805f8a18b7315949efa04",
+      "sha256": "7cb1c46e52d107ada9d877856967c8c40804a7899f636e2ce72574ef60a7e29a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/admin/users/[userId]/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/admin/users/[userId]/status/route.handlers.ts",
+      "bytes": 1179,
+      "gitBlob": "4d96f9c6472a664f2f401ecf5f1aec84d66e3568",
+      "sha256": "04faf05901637ba7338f663cfae85e157def73f341f3e3a448c1ab9499c49e83",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/admin/users/[userId]/status/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/admin/users/route.handlers.ts",
+      "bytes": 868,
+      "gitBlob": "efe1061f1e4735d9f3f0315a87740d86c6aa6aea",
+      "sha256": "318e6e4d016666dc095f12295b03989e056b1b32e9db9438dac82af10dda3f61",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/admin/users/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/auth/account-deletion/route.ts",
+      "bytes": 193,
+      "gitBlob": "68e0327007c17b7844abd4b3a9c46f96b71f3db2",
+      "sha256": "1df727d83d695072e3ed7b05b061667cc736e7a5be5c42b05a4033a6f003c845",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/auth/account-deletion/route.ts",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/auth/me/route.ts",
+      "bytes": 40,
+      "gitBlob": "57daadca49d19d4fbd67acb86dd35dffa0517862",
+      "sha256": "38640ddfd6350083feee86adc8aaefbd0dbea5822607cb564b7fd022ba7647b3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/auth/me/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/auth/sign-up/route.ts",
+      "bytes": 101,
+      "gitBlob": "9e19f1ae7ebcdb137a89e8fb5873ff1827ba31d4",
+      "sha256": "95bd9e97bfa6d1e0244ad43aa22933f1f72be69644115847ece45ab01640761c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/auth/sign-up/route.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; rota delega ao handler 012"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/internal/mail/process/route.ts",
+      "bytes": 322,
+      "gitBlob": "3452b29efe5143b24d8a3a1d137f836c1b8718d7",
+      "sha256": "802550d4e0f2da7a231a587ffd58061242824c02b19f86387e58b467e458f6f7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/internal/mail/process/route.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; GET/POST delegação worker"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/draft/route.ts",
+      "bytes": 441,
+      "gitBlob": "a634de51af24fa68863dc6fd456e8d7ec3166ad4",
+      "sha256": "a8ecd995739b9f6c3afa483e462e5c9afd4d9cfc21020a6d7c673615776b6a08",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/draft/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/route.ts",
+      "bytes": 436,
+      "gitBlob": "3af90e8179749de3d07c47a3946946a363a2a3b4",
+      "sha256": "7b82100b1eadd8a4cc86150918e9e6ece7a61aaded5741835f5d55dea67d5a39",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/current/route.ts",
+      "bytes": 364,
+      "gitBlob": "5a27c451847c559b4df5bd756de23fb6b9e99365",
+      "sha256": "1717a7cbaa175d7c308e0c8f69c86433a7a87a5d0fd39456504d4d916c36dd52",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/current/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/revocations/route.ts",
+      "bytes": 376,
+      "gitBlob": "f96ac924aab72b137b0d651b28095e0a7c1bed2e",
+      "sha256": "573e24a1f77f2f248a5eb73c678d06ef2be4b6d19d7dfaa9cdd1194f8b1941e1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/revocations/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/route.ts",
+      "bytes": 362,
+      "gitBlob": "d51bd100ea93557127ff6d3cb05701bd2b23b323",
+      "sha256": "7d9439aded2d6d4ec7fb7e6a3fda7e5983f3e9d76a5117432fdc6ba8cc3fee16",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/route.ts",
+      "bytes": 361,
+      "gitBlob": "c191910c5ec49918ba75b12657df15cb298eb8bd",
+      "sha256": "34606dcc5ebcbad2c6fae0ffc81735167a5d20059a6e539807b77cf9278d2401",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/eligibility/route.ts",
+      "bytes": 378,
+      "gitBlob": "556560aaf7aceab7b64d0fd8ea240ba84e6a0fca",
+      "sha256": "ce57dbd9e581c02ed961ca9854f1c9115c2106fddcde5787b9a499a33f9fd212",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/eligibility/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/operations/[idempotencyKey]/route.ts",
+      "bytes": 371,
+      "gitBlob": "51b0f72d3ef57cef10fb0bf870ae5770337e3408",
+      "sha256": "2c4f01ad7b7ed21f7d1be8710f4617a5e486e8cfda13413c54e3f4115d40a7b1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/operations/[idempotencyKey]/route.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.handlers.ts",
+      "bytes": 2048,
+      "gitBlob": "29ef19e16a0d01d856e8a7e214f76a0e967d0e7c",
+      "sha256": "e4e190e5597bf25b26f7dad5bc46aa9e15b64d8328a71c3db48dda983c9ae904",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.ts",
+      "bytes": 40,
+      "gitBlob": "57daadca49d19d4fbd67acb86dd35dffa0517862",
+      "sha256": "38640ddfd6350083feee86adc8aaefbd0dbea5822607cb564b7fd022ba7647b3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/route.handlers.ts",
+      "bytes": 3801,
+      "gitBlob": "c8fd4f60a43a23698b75267d4fb1f3237231b2e3",
+      "sha256": "8be6d6e051b2db1da45628554133e023b59ef4b0000348d981059b006789904e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/route.handlers.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida do initiator proof opcional validado quando presente"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/route.handlers.ts",
+      "bytes": 743,
+      "gitBlob": "ee1be66af45370a6aa43825b4aecd2245b859cd3",
+      "sha256": "62a8da649e65f1914f2b1c2b46b971b6cccdab83eead17c4f1df829f4c2b8f35",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/[areaId]/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/route.handlers.ts",
+      "bytes": 1418,
+      "gitBlob": "dd5c0920d32548235ab76fc79e4e299d687d5852",
+      "sha256": "c89ce6a9a2437f6d83e1216ed9cc6d616042fa428a574956cffbc4cc0bc0b416",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/areas/route.ts",
+      "bytes": 46,
+      "gitBlob": "96c459a1057b823ff185d7b56c4ddd061fbd30e8",
+      "sha256": "282ffd38c4385df086f608575125070a75b7f609af9420c58eb31173e8e96aa4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/areas/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/dashboard/history/route.handlers.ts",
+      "bytes": 927,
+      "gitBlob": "ac48b37833a282b71abed75ad4c0843e2078e8a1",
+      "sha256": "fe3328f0dfcedba68940c8c430e8589a445393fd807513370cecc2fa9e99431e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/dashboard/history/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/dashboard/summary/route.handlers.ts",
+      "bytes": 843,
+      "gitBlob": "67a10a08512c521642e7cfdbd8a1431b96150b30",
+      "sha256": "c2361e6bb8b1ef6e5183ccf4fc2c99ba5e071f8821e306cf170f4972d8da4d15",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/dashboard/summary/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/memberships/[membershipId]/route.handlers.ts",
+      "bytes": 1269,
+      "gitBlob": "ae2cb84105f7f0a99fe6d20582c9c5eb550a210f",
+      "sha256": "422b631b85cc6b7b7f80fc3bcfb355332b427429c6863260f7c1a22b60fa8dbb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/memberships/[membershipId]/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/memberships/route.handlers.ts",
+      "bytes": 887,
+      "gitBlob": "d88e636bea352f31a4b2deb74a230bfce363f8c8",
+      "sha256": "0c4d884aeee9fb44e96ef230f98c84e6e1ba1ce201d76ceda42bcce34550c618",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/memberships/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/route.handlers.ts",
+      "bytes": 4285,
+      "gitBlob": "a3f94ca8a9dcf8ace3df8d029f53f605cd6a938a",
+      "sha256": "1fc6615b66f62710538443355648a71cfc9698f25244d4a27b3445d2173f741f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/route.ts",
+      "bytes": 55,
+      "gitBlob": "0bd39259898f140ca50b71d876fcd88eb7f296c5",
+      "sha256": "f0fca3771f2eb56f33c921dec85bc485bec7de6a30d847f1b5eb16ece73a358f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/[laboratoryId]/territorial-map/route.handlers.ts",
+      "bytes": 920,
+      "gitBlob": "011a6d1e7c928708aa9366140b6dd8366a2e0fd1",
+      "sha256": "1bc468055645e665e2022b1ed0f25cb44c53b0890750483e75271fde5cb694ac",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/[laboratoryId]/territorial-map/route.handlers.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/route.handlers.ts",
+      "bytes": 2967,
+      "gitBlob": "ead621aadb2a7c680d9facfe5d9257bd5a5ef0a6",
+      "sha256": "a144dc3dc289431c6e27cd05ac385aea0ac6a4102e731096c04bc5aebdd6957b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/route.handlers.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/laboratories/route.ts",
+      "bytes": 46,
+      "gitBlob": "96c459a1057b823ff185d7b56c4ddd061fbd30e8",
+      "sha256": "282ffd38c4385df086f608575125070a75b7f609af9420c58eb31173e8e96aa4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/laboratories/route.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/accounts/deletion.http.ts",
+      "bytes": 2472,
+      "gitBlob": "02b81e8b482d2d6e355032c4f632001ec74200dc",
+      "sha256": "a6a5bc31d837ff8ce7eed9b699ce45c4d885ad1ca654635678e3011d185f3fa0",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/accounts/deletion.http.ts",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/accounts/service.ts",
+      "bytes": 32513,
+      "gitBlob": "8302d4c5332aba3e721c11c0a7fd8946e076404a",
+      "sha256": "280e9dcd2d2979dffd6e4c3b18d6127b3f3217e57d17cacb61c05295da23f715",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/accounts/service.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida integral signup 113–140 e exclusão 318–405, estado e prova de verificação"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/areas/area.authorization.ts",
+      "bytes": 2442,
+      "gitBlob": "68abe6bbeccb78381ec4588c43a78dfb210a98e6",
+      "sha256": "5344b812037e8561da6096b503684a8fb5f37dd9050512377a776c3d89b894b4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/areas/area.authorization.ts",
+      "roles": [
+        "C-COORD",
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; autorização contextual e distinção global"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/areas/area.contracts.ts",
+      "bytes": 2323,
+      "gitBlob": "a3a4cd859206731c160e9eb8cd87fa3ed91b1dc3",
+      "sha256": "78e94ce1cd888d90d0da687d0177182444ca43356cc91ceac77bdf920de375f0",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/areas/area.contracts.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/auth/auth.core.ts",
+      "bytes": 4283,
+      "gitBlob": "3291cc4ab1d002dbaba7b7df30e681330443c1d6",
+      "sha256": "b5198e2782b0492387ea8e890fd56da38c7eb43f1a14900760f39b73ce0951ab",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/auth/auth.core.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; sessão, ACTIVE, credentialVersion, verificação e propósito"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/auth/session.ts",
+      "bytes": 3692,
+      "gitBlob": "6d773d8f88d9abad709a603b1cccf8dd73c9dcca",
+      "sha256": "255acfc128d6132dfee1c1238e1e779ea1e695d1c37400c85533bc7f74d807f5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/auth/session.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/collections/collection-initiation.ts",
+      "bytes": 1007,
+      "gitBlob": "e7bca01a2fb2df4ee8d5560533f4eb37b7af09d7",
+      "sha256": "22129a9b9b7cb43177fb22787f2e78e09c6e2f98d9c26a7e52f6018c72597113",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/collections/collection-initiation.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/collections/collection.contracts.ts",
+      "bytes": 4681,
+      "gitBlob": "d73cbab2f68895ed2f69d02d07ac82ef5e15ec29",
+      "sha256": "6b9e9e631cded0c9ce71672eb977b1c745fe35e94b228e710de057a127b8642c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/collections/collection.contracts.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/dashboard/dashboard.contracts.ts",
+      "bytes": 2072,
+      "gitBlob": "edf182b8041f6cfe6ff2d46c1eaea87c241650a3",
+      "sha256": "b9d38835638eeff23d5720e891cf2596f5369d3bb364645f7906cc8075ff00af",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/dashboard/dashboard.contracts.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/environmental-data/draft.http.ts",
+      "bytes": 3880,
+      "gitBlob": "d6677a336120ebfecbbc86e7a55c7773ce028807",
+      "sha256": "0d5d70b15dbb232fe59a9558f8f066e8004c5d31bc0a3c628ed80087b7892ba4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/environmental-data/draft.http.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/environmental-data/draft.service.ts",
+      "bytes": 4916,
+      "gitBlob": "7732fd76c5c7da27a4ba99aaca3d429798a5af96",
+      "sha256": "02f12c8373ae9992b3195123acbd49e2169c32748369d57641335842ac1453fe",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/environmental-data/draft.service.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; draft pessoal, OCC e replay, save/discard explícitos"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/environmental-data/environmental-data.contracts.ts",
+      "bytes": 576,
+      "gitBlob": "52983ed522411a86a7a4c7f00923df1b15c03282",
+      "sha256": "fa6e9c9d84489848193bb813aa91fcf43a0a0e9fdfe3a1f087a24f4634d9c1a4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/environmental-data/environmental-data.contracts.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/environmental-data/environmental-data.http.ts",
+      "bytes": 4120,
+      "gitBlob": "d7c95afc797848601d999dc5b5a1f0e092133b6a",
+      "sha256": "509694f692e40644813795fa7ab4da816c2ad17ee8e049edae9a76c309e13f07",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/environmental-data/environmental-data.http.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/environmental-data/environmental-initiation.ts",
+      "bytes": 1044,
+      "gitBlob": "0c1eb5fde82da213c28fadca0b0ff7ee80416167",
+      "sha256": "22657f691680601f3d8978e03072cf80d8b62fcaa0b190d41101e9e20d8e5fac",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/environmental-data/environmental-initiation.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/evaluator.ts",
+      "bytes": 11753,
+      "gitBlob": "22e1a6f335c4841c7f861430919bb71e1e3c4279",
+      "sha256": "1259e75f838f6ed8bf0427681ac45448039a23a6647da34c6b01ea932f0b3c80",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/evaluator.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-eligibility.handler.ts",
+      "bytes": 1678,
+      "gitBlob": "1cc0fdfd94a65b6410525cbd3d6bf722aea945f7",
+      "sha256": "154173d302a4008054f0d9ce7274698254df0929232e56fd3dd00708b442b4aa",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-eligibility.handler.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; GET 200 outcome e query inválida"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-operation.handler.ts",
+      "bytes": 1106,
+      "gitBlob": "a214cfc3b0d71b329e9d00b9a2df80e099d8de31",
+      "sha256": "5018ebb536a4250f647b7ea26043d1dd290617eb646e630ca14cf273959dd404",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-operation.handler.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; recuperação pelo contexto/chave"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-revocation.handler.ts",
+      "bytes": 2391,
+      "gitBlob": "c0eed1b0a3b95e48b49d6ab27a265444047f06d9",
+      "sha256": "4ad4d96907851e680d75789bd4878cca4b1c73d4c7c8fc9b7f5025552d27390f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-revocation.handler.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-write.handler.ts",
+      "bytes": 2309,
+      "gitBlob": "3d9f8c0796606252fb3608700bd0d9dc2e26294a",
+      "sha256": "977d4c6b763ff9a18414b47905c07a5997d19cd5936a715079ae149c3fe9059a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-write.handler.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; POST 422 terminal versus 400 estrutural e 201/200 sucesso"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants.ts",
+      "bytes": 661,
+      "gitBlob": "811a5e3253ef7bca5ab71a3bb349d8c8522ac907",
+      "sha256": "61fc743842178672ad243b7a4b52048e080c35cbe17fec3aa1f33b014821dd1d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.contracts.ts",
+      "bytes": 10747,
+      "gitBlob": "c69162ec71441b4d572861cf249fb8fe676cfc40",
+      "sha256": "a29c7452b84bb5484551de5d4fd53a40739c2e818567e4a8b5c8dd99026087c5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.contracts.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.http.ts",
+      "bytes": 2766,
+      "gitBlob": "1b935461d303402a7f2c289dcb2f292b99a1b338",
+      "sha256": "de3257f5a953dc91c7f4b880e181603200c707bc3e58d57f194f51cebf63d79e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.http.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; mapeamento de status"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/ihfr-diagnosis/manifest-loader.ts",
+      "bytes": 2335,
+      "gitBlob": "ad598456bc61f5ccc432db408d6b05253c65f4d3",
+      "sha256": "d15110b1cefcd5762f35a0dd72f6167896683dd7249d4cb175b48c522ceb53c9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/ihfr-diagnosis/manifest-loader.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; verificação hash e manifestos ativo/histórico"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/images/provider.ts",
+      "bytes": 769,
+      "gitBlob": "884861385f1a87054411e6f90b1bb2db9690cd72",
+      "sha256": "a78777954ec8a501090bb7fa588866c9b6d5474492c2b343338f5d7cdb4ab6ca",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/images/provider.ts",
+      "roles": [
+        "C-D"
+      ],
+      "reading": {
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/images/service.ts",
+      "bytes": 16260,
+      "gitBlob": "c2fee8661db4186ad7a20d312881f2fc40de4f6f",
+      "sha256": "2b6e765707fa6e9da2f2a63fded52d27b0fae31cdfad3fe8f8ebacd596ae9639",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/images/service.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida: autorização, OCC, quota 3/10, finalização, referência e cleanup com RECONCILE/BLOCKED"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/images/settings.ts",
+      "bytes": 1074,
+      "gitBlob": "26b77c2e85e9a20ea8b34882b13d13cb0617e93a",
+      "sha256": "096231e473a4bffda3d05ee622da4035c8f806e303ddd814a82c51addbce8067",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/images/settings.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; readiness lógica não prova flag ativa em ambiente"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/laboratories/laboratory-membership.contracts.ts",
+      "bytes": 1149,
+      "gitBlob": "674832694dd452aee4034844c832e1826d86ccb9",
+      "sha256": "27a3a89cab4442a361e5c77d76e7b8f95863cd152465efd0f5542231fe8e8a9f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/laboratories/laboratory-membership.contracts.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "RECUPERADO_HASH_VERIFICADO_SEM_LEITURA_SEMANTICA_INTEGRAL",
+          "scope": "Metadados/blob recuperados para confronto; não usar contagem de fetch como cobertura semântica."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/laboratories/laboratory.contracts.ts",
+      "bytes": 2825,
+      "gitBlob": "0c1f2b26cf3d716c155ac439d0fe11ef2af910c3",
+      "sha256": "75d729d7ba597c2891530900e0659cd82ee51dadcdd66dda0a9f8b8a98007434",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/laboratories/laboratory.contracts.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; payload e DTO laboratório"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/mail/transport.ts",
+      "bytes": 6402,
+      "gitBlob": "f36bf0149d77be49df52290c2d180c67f480a618",
+      "sha256": "aa4b18b03d70bc1eb4500eab4a71c561abd38c2d4d1fd7e05cadb603fd26f46d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/mail/transport.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida aceitação SMTP distinta de entrega"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/mail/trigger.ts",
+      "bytes": 1443,
+      "gitBlob": "0eab96c4147b369efcc743982d9e4b0b8721bf8f",
+      "sha256": "c104d276b030a17df456d92a88011a652425c0050a6b67f58fbab7fc780e01a2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/mail/trigger.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; Bearer, configuração, GET/POST e resposta sanitizada"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/mail/worker.ts",
+      "bytes": 11959,
+      "gitBlob": "b21efdda91b9731121ccbbaaf90bb541d933f033",
+      "sha256": "32d18b0fc04360d556b35d203b7edbe429d4bb4e071d25947a3ff9d40a6710fb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/mail/worker.ts",
+      "roles": [
+        "C-D",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida fencing, lease e transição SENT"
+        },
+        "C-D": {
+          "status": "LEITURA_INTEGRAL_NO_RECORTE_DECLARADO",
+          "scope": "Corpo primário lido; nenhuma execução própria."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/middlewares/admin.middleware.ts",
+      "bytes": 251,
+      "gitBlob": "6603e8fd3c6e932fbacad7525a421c16d2f05c88",
+      "sha256": "5b8d79e48a739fb797e9d838383207eb190e4bbaf4c9f530a6c8fb0f038eb937",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/middlewares/admin.middleware.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/middlewares/auth.middleware.ts",
+      "bytes": 1483,
+      "gitBlob": "505ad5f2c396eb041ff7bc12a5552d0be1696b6a",
+      "sha256": "b960c7242cd35e8efa0c75a7638a98ff14271538c0bd95ca4e30dbc210d61381",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/middlewares/auth.middleware.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/areas.service.ts",
+      "bytes": 2137,
+      "gitBlob": "cb530eb77e54785b4d67a367a2dbfd25ae9e20bb",
+      "sha256": "a1f97beec895be7b4eadf3b70c061aa4b397ede4668f8f27b5011b2544abfdb1",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/areas.service.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/collections.service.ts",
+      "bytes": 9250,
+      "gitBlob": "6000b9deb1664486de24da08f81a5f1ae391c4a6",
+      "sha256": "d87995a17ba6fac29b6d96ba9af038cb558b9f5c47fc112899f7ec4ff1f068d9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/collections.service.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; chave por autor, tuple, confirmação e contexto"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/dashboard.service.ts",
+      "bytes": 3861,
+      "gitBlob": "fe42e6d25cf2d2e9a7092980bff1c5ff490b1afb",
+      "sha256": "bbb6e5115b0e71c42645d456f585c1e3b71f1416f72d8125b211e2038fed8369",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/dashboard.service.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; totals e histórico derivado de 20 itens"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/environmental-data.service.ts",
+      "bytes": 7331,
+      "gitBlob": "5565a84746305b4d1af692dd8538426f365c6e9e",
+      "sha256": "c231d5ca372e41043570077691cf509260b50ebf96c182fb8ead52084121a34b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/environmental-data.service.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; confirmação, conflito, consumo draft atômico, ausência null"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/ihfr-diagnosis.service.ts",
+      "bytes": 28225,
+      "gitBlob": "0de76d312f14b7c0c93663afa727fc9d2b5bb5b3",
+      "sha256": "8458fe398e0e0002db0e194170a330faea9ebabe1bafd327691f4a1a33ff5626",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/ihfr-diagnosis.service.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida: readCurrent/readDetail, eligibility, create/replace, reuse supplement, revoke, operação, lock/retry e ledger"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/laboratories.service.ts",
+      "bytes": 8205,
+      "gitBlob": "69cafd4972bf8ff5a9cc3a6e7fdf10494f440c00",
+      "sha256": "8b1170e5d5570ae0717640c84ec0f08b65fab8336071fd6f94180af908d18317",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/laboratories.service.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Leitura dirigida de autorização, transação, limites, detalhes e ações de risco"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/laboratory-memberships.service.ts",
+      "bytes": 2054,
+      "gitBlob": "f1972458d0f316b1eff011678bc259f775f6d4ab",
+      "sha256": "11896322db4b269f429bf969ac57afd65ba873970effef9c4017a96a5a83b6eb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/laboratory-memberships.service.ts",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; somente OWNER na gestão, OCC, dono imutável"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/territorial-map.service.ts",
+      "bytes": 1902,
+      "gitBlob": "2d4eebcbc38dd3f66d879f0937b596531dc5f041",
+      "sha256": "f811e4a6ab3497ccca8bed74eea230b1279fca7049720a0791813eb5dc1b77a7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/territorial-map.service.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; pontos e coletas confirmadas, exclusão ciência"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/services/user-administration.service.ts",
+      "bytes": 6260,
+      "gitBlob": "72612453829c625d61076485caa5323fb237ba61",
+      "sha256": "479b2fe7c3d9164ba138b83cb940cbcaec7fa72dfc233ed0f434f34b162a9d94",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/services/user-administration.service.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; ADMIN+ACTIVE, OCC, auditoria e último ADMIN"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/territorial-map/territorial-map.contracts.ts",
+      "bytes": 1966,
+      "gitBlob": "34051c266538cc10b3d44a467b28f379d84db14b",
+      "sha256": "f5dbb4103d6b70a954c4317e761efe2cfc86344eb87b786cc1a856d51a00c696",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/territorial-map/territorial-map.contracts.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/user-administration/global-authority.ts",
+      "bytes": 444,
+      "gitBlob": "386d485c0cbdadd4f05435c567f46403b840c1c8",
+      "sha256": "3975aa8609ac63c8eb984afbcf3aaa014ba375bcdf7cfcbb908f16f0079985b7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/user-administration/global-authority.ts",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; papel global"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/app/api/server/user-administration/user-administration.contracts.ts",
+      "bytes": 6584,
+      "gitBlob": "3835753f00979f4607c1af28246a5aef0f62ebbb",
+      "sha256": "f9c6822ae91d2f35adc6f3444ad7c17b8644a0d2dd23cc7143190b1c180741e3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/app/api/server/user-administration/user-administration.contracts.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/areas/area-form-state.ts",
+      "bytes": 696,
+      "gitBlob": "2abdcb808002a2fe43fa9e90925ff55e4d665586",
+      "sha256": "14e0c9cf15b38df350176169f7fa55c89770df5b3fba49d2564c4c34c5875fbf",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/areas/area-form-state.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/areas/area-form.tsx",
+      "bytes": 9016,
+      "gitBlob": "f69d6a770c4b7edf78eb588099ffc675b31ab2c6",
+      "sha256": "51eccac08cce0f88dc4b6cd6bcdd7498e183a6d03f5cac137b20c471bd39e6ae",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/areas/area-form.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/areas/area-list.tsx",
+      "bytes": 6139,
+      "gitBlob": "8fec0e83660c306004a4adbf4888a62379982486",
+      "sha256": "da1d38d960a20cea0bf6bc0c195ff3e57acf0aca0888e3e0c2e75545bda5e7be",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/areas/area-list.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/areas/area-map.client.tsx",
+      "bytes": 1773,
+      "gitBlob": "4551f712abafc4041f55d0dedfb41ca6836c65fb",
+      "sha256": "9cde45856849579ac31dcaeb9bf6b148de66ea4b5600beb4d343ae6edf4705c9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/areas/area-map.client.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/collections/collection-detail.tsx",
+      "bytes": 2252,
+      "gitBlob": "d80a920bf8123bfd341a44cdeb44571796b95f9a",
+      "sha256": "6ed285b629c1ff9e79ddee6ccfeac777fc37bf77bcfb54b727707ae70f54adb5",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/collections/collection-detail.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/collections/collection-form-state.ts",
+      "bytes": 5478,
+      "gitBlob": "d31d49c2c71bb95d456410d257f467916bcea8d6",
+      "sha256": "25b10c4c65538340a9ed420c244ec60fc9058740033fa19d731f52e0b3dd3e57",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/collections/collection-form-state.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/collections/collection-form.tsx",
+      "bytes": 6988,
+      "gitBlob": "b74ae9501530eb896f67d8d39e7fd3bbf205e2b6",
+      "sha256": "799b7128266c88d680fea1244fe21f98a00c0443caf2ca6f756988d55a91f1b3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/collections/collection-form.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/collections/collection-review.tsx",
+      "bytes": 2628,
+      "gitBlob": "def4688d13720b9c144e72fe591f167f953691f0",
+      "sha256": "24746e9409ff9f11b8c9985ecd5add731c5faa0e8484c558af81a216cced98ac",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/collections/collection-review.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/collections/collection-submission.ts",
+      "bytes": 2774,
+      "gitBlob": "41c64ee2f02d5f034d6d0a9484bee01c1a3cc227",
+      "sha256": "ceb55516f9afeb1cd72093a9ed02964c4a7b1e989bf1a5faffb369a7b3705383",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/collections/collection-submission.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/dashboard/dashboard-history.tsx",
+      "bytes": 5318,
+      "gitBlob": "4fba5b19883c22103ebaf332c0c1c77c68bd567e",
+      "sha256": "4c0fd68cc85b27fd428a0e1f4f09093416484390853aa9dd5825b8e35d56d591",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/dashboard/dashboard-history.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/dashboard/dashboard-summary.tsx",
+      "bytes": 3841,
+      "gitBlob": "747b0535b1e603be6636433da4f36bbe84af1151",
+      "sha256": "9580625d4e6ceefdb80f83de893cbb63e580cb2c291515073e2df24c0807f708",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/dashboard/dashboard-summary.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-data-detail.tsx",
+      "bytes": 3504,
+      "gitBlob": "e5d9d691d9e42dc7bae7d88306119df78a7ccdb3",
+      "sha256": "2d27b8d1388992384044b66213afa7767291c9cf436b06056f12c1b22d3444dc",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-data-detail.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-data-form-state.ts",
+      "bytes": 1420,
+      "gitBlob": "c2d19eda220a8f27945fc12d42c62db6aecd328d",
+      "sha256": "cc614b167adb4f0aea8dec93f8495d7ac8c0e9563927ff167b2049112c3e40a7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-data-form-state.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-data-form.tsx",
+      "bytes": 10878,
+      "gitBlob": "297eb21ac902baf73518b4e0cf8aabaaa424ed1b",
+      "sha256": "19a258f44cbf9e8fa00e3558c14f45f9e31f1b856177fbff7f597ae227225052",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-data-form.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-data-page.tsx",
+      "bytes": 4951,
+      "gitBlob": "9cde8277121659efe65bbc2161c5cb7e4bf84f46",
+      "sha256": "138f33ac2a0d639a1d1290e2cb6f59e18d2529d82c10681ce3cc3716d2b45a90",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-data-page.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-data-review.tsx",
+      "bytes": 1042,
+      "gitBlob": "19389b616b988086573421d38e6ebbe5511fd4ff",
+      "sha256": "2643b54858e93521ed0215db069c98591d60b1ce56a775e5bed03742ded99ae9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-data-review.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-draft-actions.tsx",
+      "bytes": 6238,
+      "gitBlob": "4b4f166e11f00ef15deb98ed0abae601c2f9ed7c",
+      "sha256": "b874b61e61bb7a06d35ab0e6fde621aeab71ca5532fe907b727ab85f4ab8910b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-draft-actions.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-outcome.ts",
+      "bytes": 307,
+      "gitBlob": "c9a031435adfcf65480e5a99983498430a6f3522",
+      "sha256": "e1a359970498613e64c179b524d2bf63b81036b9479f1d60243e417ecee70b7b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-outcome.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/environmental-data/environmental-presentation.ts",
+      "bytes": 1587,
+      "gitBlob": "fc1148a88fbffad1f421a82fe9d197dd71c98a48",
+      "sha256": "03477d950bffb7bf5e496bd6f8bc027e81b6e947add1093ede35fde6965ac920",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/environmental-data/environmental-presentation.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx",
+      "bytes": 6026,
+      "gitBlob": "77d3bf24c2665b05764a043c200aa7e6ca795c5e",
+      "sha256": "bafa8e321e1673a615d7d88f6e1815ba29738bcb9232e8014f721e9645008766",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "bytes": 18926,
+      "gitBlob": "f96601ba50afd428b590d60f93c0c0cd1edab3c5",
+      "sha256": "eb11ec21c89a7c8f46a6278d33410a004c11d6646d2354f09654053b113e6568",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/ihfr-diagnosis/scientific-notice.tsx",
+      "bytes": 1008,
+      "gitBlob": "1b7d6c280f567b9322efd875f6b9c7562371b55e",
+      "sha256": "ddcebdb98ffe78e643b7be8229eb333b74e7cc206c9a6ab2d74da7d4e8de4542",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/ihfr-diagnosis/scientific-notice.tsx",
+      "roles": [
+        "C-COORD",
+        "C-R"
+      ],
+      "reading": {
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; aviso e rótulos de ciência"
+        },
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/laboratories/laboratory-memberships.tsx",
+      "bytes": 6100,
+      "gitBlob": "7b37c0e5b3737f8c0313bfd3db8c275fb72ef3cb",
+      "sha256": "e4dd44f61c3684c236b1cf2b375e3a8a09969e7f2169f54cb7b43ab366bbf027",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/laboratories/laboratory-memberships.tsx",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; componente distinto com avatar e ações de papéis contextuais"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/shell/laboratory-navigation.tsx",
+      "bytes": 1056,
+      "gitBlob": "0604ae5e5dce975b5e95ffe1371ce08a5f91c235",
+      "sha256": "a584c49a0c4e97d31d09b17dc657cfa64b18c0e3761dbad3e3676d5b76095ac9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/shell/laboratory-navigation.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/territorial-map/territorial-map-state.ts",
+      "bytes": 726,
+      "gitBlob": "954f05ad686e531d612de03619b42c9e506fb48a",
+      "sha256": "a0b193301d8fcaa02f17faed223103f4d7c7978576ff587fa4d9bd41c41b9c27",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/territorial-map/territorial-map-state.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/territorial-map/territorial-map-view.tsx",
+      "bytes": 9919,
+      "gitBlob": "6212d8080651a55b3dbcb0714d6dbe9409cc6335",
+      "sha256": "4735583f9dcc82a5349d1b76fff2d655a17d50b7584150655a8d98ecd3e9321a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/territorial-map/territorial-map-view.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/territorial-map/territorial-map.client.tsx",
+      "bytes": 3491,
+      "gitBlob": "17eff80707609a858a8321a92032156ac1122862",
+      "sha256": "fd7845c84ebaaff422e4f302fdc0c4fc5aa79445b985d34acf30f3762f447d9d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/territorial-map/territorial-map.client.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/territorial-map/territorial-map.module.css",
+      "bytes": 6535,
+      "gitBlob": "331d470e18bddccc81e35f75fa769914abc96665",
+      "sha256": "353c2fb9758248d12468f399f539ed4ba3d05caac2a0fbb705beffcb55d86cd6",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/territorial-map/territorial-map.module.css",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/territorial-map/territorial-map.tsx",
+      "bytes": 1013,
+      "gitBlob": "889fe5b2216b82e01e5d481aa0264670b234597b",
+      "sha256": "45dfc2545b2ff5a5ca6555d97a0de3d89a7c0c425f195907314ca68bcc87bd44",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/territorial-map/territorial-map.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/user-administration/user-administration-page.tsx",
+      "bytes": 28464,
+      "gitBlob": "8947bb26b644f911f153c065c75d36aa180ee3e6",
+      "sha256": "f7ce8fa8398d3fcf38438dc7988c4d02b84351fd767962595238dc2e47303aed",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/user-administration/user-administration-page.tsx",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/workspace/laboratory-context.tsx",
+      "bytes": 928,
+      "gitBlob": "c5ea1fc30f0917f712d60dfd0e30cdc8de784ea9",
+      "sha256": "b07de2467a42372846bfde0a918a7f5655df4ab6ea640209db2d1c476d46c9dc",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/workspace/laboratory-context.tsx",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/workspace/laboratory-workspace.tsx",
+      "bytes": 12864,
+      "gitBlob": "24f24992753882d0a75fa48da6bf2a29383ba46c",
+      "sha256": "de9cfd67f224118ce609dcb82fc5be06c9afab141947597167c8e817fe918ad3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/workspace/laboratory-workspace.tsx",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; popup, ingresso futuro, listagem/criação, renderização de nomes sem iniciais"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/components/workspace/workspace.module.css",
+      "bytes": 5528,
+      "gitBlob": "dcaefb4c29c6b1a6e570ba5e3ee0672bca079f30",
+      "sha256": "a83b3c4e82bce443448fe1128ed260790ba7a31dbb6e0dff7a985bcbac891bff",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/components/workspace/workspace.module.css",
+      "roles": [
+        "C-I",
+        "C-R"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        },
+        "C-R": {
+          "status": "LEITURA_INDEPENDENTE_DIRIGIDA",
+          "scope": "Integral; nenhum avatar/pseudo-elemento de iniciais no popup"
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/lib/collection-date-time.ts",
+      "bytes": 2700,
+      "gitBlob": "fb1ca8aefff5abd341da4a8a23628e60a781e6a2",
+      "sha256": "889a2ac78dfe24d163e408d70ede0d9540aa4e4dc814ac6b2c6674c00616bc06",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/lib/collection-date-time.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/types/environmental-data.type.ts",
+      "bytes": 1582,
+      "gitBlob": "673d4b4de157de7acf5bca3ec96c621113e428e8",
+      "sha256": "c9d889b05c79089b7d624fb516a01d3d0e4465b99ced775b7c1acef341f5815f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/types/environmental-data.type.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/types/environmental-data.validation.ts",
+      "bytes": 4378,
+      "gitBlob": "6937e4efbf82ca9c976f00686cb5579dd3d00d98",
+      "sha256": "ae3e1820532eba243a98072470402b980df60036a7822b66ec708ce31bc27e4d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/types/environmental-data.validation.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "src/types/environmental-draft.ts",
+      "bytes": 5021,
+      "gitBlob": "78ed12e3c8dd1aa79ae0069afcbf9635cd115078",
+      "sha256": "6ebb63f4f78165b4b8505fd7da0d5a410dc7cba2f43a2002df84c67ab7a4b4b3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/src/types/environmental-draft.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/contract/ihfr-diagnosis-api.test.ts",
+      "bytes": 13165,
+      "gitBlob": "063671a48815ad385c4188edb071fca92fbbdaa2",
+      "sha256": "6e4dc133dcc281021d5e57dafb634f457706db7313df5be26a8cd2a4e14cbc6f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/contract/ihfr-diagnosis-api.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/dashboard-history.spec.ts",
+      "bytes": 11340,
+      "gitBlob": "7a7f79e07e8b7628151b6c4fc06059634b43de5f",
+      "sha256": "7f461518f6137fe349934e42fc6c312aca27bd9336f79187e6405d30b5b70776",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/dashboard-history.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/frontend-dashboard.spec.ts",
+      "bytes": 35452,
+      "gitBlob": "a01b094d8720203ef0ec3b873287b20141828ab0",
+      "sha256": "bfc3c3609d56620f6cde72834c8a8f19f278d887a94a41d130b6c731c54e572e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/frontend-dashboard.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/frontend-territorial-map.spec.ts",
+      "bytes": 12627,
+      "gitBlob": "7001037c08eeeceb25ee68371dc73248a8d8e729",
+      "sha256": "32f43b7e5438c74437f6665ea11ad8a08edbfe5253c76c52f1633bd2691d0465",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/frontend-territorial-map.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/frontend-user-administration.spec.ts",
+      "bytes": 17989,
+      "gitBlob": "d6e1851ddb859e1e46e7260b6cf3cbd33a010441",
+      "sha256": "6068ca3a3ed6a97dfd46ee5d871a64084ccf7cf0b9063931fd319a6bd68e0b92",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/frontend-user-administration.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "bytes": 22486,
+      "gitBlob": "8e133c4fb4a840a138d165d71c2b919cc0337aac",
+      "sha256": "d4a104912ac9005f164d4d006ce3526b159e024933d802060519108313bc1d48",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/ihfr-diagnosis-read.spec.ts",
+      "bytes": 5725,
+      "gitBlob": "6e23485f7d54394d0b1671eccd0d975415a64c40",
+      "sha256": "a70ea9c21c24eea6fdad8e27ff4edf1f34435d9faa5f1a7e5f760a75257fd1b8",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/ihfr-diagnosis-read.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/territorial-map.spec.ts",
+      "bytes": 4943,
+      "gitBlob": "6fc75c97a163f7bc46ee16beb0f19354b2382e85",
+      "sha256": "ca7f8ad220f7571f473bc6060a70ec21bf0474689ed1cc73d5a10d4fc0539d7e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/territorial-map.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/user-administration-audit.spec.ts",
+      "bytes": 1063,
+      "gitBlob": "0ab98a6bb42aa014f8d292f8e7e7911988b7e4ad",
+      "sha256": "f73448277ce0b6c0144d739252ac326f86f5f23537a1dfd4a9506112de6811c7",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/user-administration-audit.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/user-administration-read.spec.ts",
+      "bytes": 1831,
+      "gitBlob": "6f2d3b982e0c5b80e2c19a4d00099f09cda76624",
+      "sha256": "6760540020e690a49bd2b80eb5f006d389e2c8f9616e35f34f13a1339e0eec22",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/user-administration-read.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/user-administration-role.spec.ts",
+      "bytes": 1252,
+      "gitBlob": "b030237a88f8b7e31b013947e0c3de80c621b207",
+      "sha256": "23ab5680fb1bb0c5f4a2959adc9260f6e0c7b967090c8cc27bb3a73513788657",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/user-administration-role.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/e2e/user-administration-status.spec.ts",
+      "bytes": 1056,
+      "gitBlob": "6728e5c8efb9ad6ef1838e009a56490e47c7d614",
+      "sha256": "5d612a498da6ee648c8653acb2a9915a52a063ea11678ab736c1310957b6268f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/e2e/user-administration-status.spec.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/dashboard-routes.test.ts",
+      "bytes": 4111,
+      "gitBlob": "7701bea1ddfe859a955958651881efa9d4192603",
+      "sha256": "312590d020de2e2b7cd0bf3628afcc7e3969976b9bc0516305d35ff95c08cd44",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/dashboard-routes.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/environmental-data-concurrency.test.ts",
+      "bytes": 4004,
+      "gitBlob": "f76f87f2c001904bdf21bff7c56ac0b675176a7f",
+      "sha256": "382f83ff5aabd0e7663f2bf9ab91947ffd70713cd8934854fd3383170aa29ae3",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/environmental-data-concurrency.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-concurrency.test.ts",
+      "bytes": 7559,
+      "gitBlob": "865199644c46bc7a0012318d045be2df0e012cff",
+      "sha256": "b68449a11c1f84a4b390a8d8e0562ab8bc89ac6028d49e64f9131be3b09509d9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-concurrency.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-current-route.test.ts",
+      "bytes": 1666,
+      "gitBlob": "cb1728c9200053ee9006ff97207eecdd758cd9b6",
+      "sha256": "1783a551588869ca13fb0ff91aae84515c2758b35b1bc73d6bea5dcff238233e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-current-route.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-detail-route.test.ts",
+      "bytes": 2330,
+      "gitBlob": "1fa702ea72e7e35d9d091cf51461e7eb49ca539c",
+      "sha256": "450d2c885df494d4a0ddb1a9a96d099f2741fb863957e05f934eee20f883bda9",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-detail-route.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-eligibility-route.test.ts",
+      "bytes": 7807,
+      "gitBlob": "eb78136946557d4619191cc2eac97174101a13b1",
+      "sha256": "0a2a1db2c9100a690b5446765a4f31365a24e09ad6fd52837390d85d3632dbde",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-eligibility-route.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-idempotency.test.ts",
+      "bytes": 5914,
+      "gitBlob": "e07368afcb0a1948f9abb37757b2bb23bd17406c",
+      "sha256": "37e53166be0d557db4beed4f56eaebfca97c1134c92f900397685ccc0b8eb31f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-idempotency.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "LEITURA_DIRIGIDA",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-persisted-insufficiency.test.ts",
+      "bytes": 3815,
+      "gitBlob": "a07d5932fdaa589e0b093a597af4511bd5dd82f7",
+      "sha256": "bf6f13b74a5e4f292cff72bf902041fc18b25835f5d54a84078db1da07cb0d5a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-persisted-insufficiency.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-read-authorization.test.ts",
+      "bytes": 532,
+      "gitBlob": "979dd2cdf57cbbc11e36b58c3b24eff1841d37fd",
+      "sha256": "daa6b6db9ec99419747fa2eb2a5ecf8f4da66e03438e6cc08042697fadc1006f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-read-authorization.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-revocation.test.ts",
+      "bytes": 7371,
+      "gitBlob": "ac0a0281b4dbb9bc1124fcb8272aba8bc027308f",
+      "sha256": "75c9ef7aac8e99a006b1a3322ab9887fee30953a9d96d427da382950a35aab25",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-revocation.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-service-lifecycle.test.ts",
+      "bytes": 6216,
+      "gitBlob": "922c2eed41119ca94d47b0d80f8102d9650bb20f",
+      "sha256": "94726cff03a8c5351de9f496e5e060e51ee71ad6b1b876e504c5a7c6b4d52503",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-service-lifecycle.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-supplement-cardinality.test.ts",
+      "bytes": 6673,
+      "gitBlob": "37162c76dc648081dca2916f817b4af459ce23ae",
+      "sha256": "bd9718d3f2e4a26027b32b2c022e6709493e1d9c87d53575223b557361035a7e",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-supplement-cardinality.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/ihfr-diagnosis-write-route.test.ts",
+      "bytes": 14397,
+      "gitBlob": "e8beba91ceda329fc080721c29eef63687fd4989",
+      "sha256": "c4f087659dbcbb5b23344a06f1e0d31d87f0e340cb8e7bd7f2969099318252df",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/ihfr-diagnosis-write-route.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/territorial-map-route.test.ts",
+      "bytes": 1863,
+      "gitBlob": "57c510848c6cc0f9e015d983ff7d4bbf7d5bb2b3",
+      "sha256": "f890793ac4939baffa6eff952d73e9bb8cde359975e9f2c36f257853ba43e6d4",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/territorial-map-route.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/user-administration-concurrency.test.ts",
+      "bytes": 1873,
+      "gitBlob": "cfaeb31f9f6265eb1b831974bb8a5bbcf7795836",
+      "sha256": "c3d540fcdb5b6d9dcc3373c4fe2f1e39b4efbac8ebbd3340ad1b79b6f339fbef",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/user-administration-concurrency.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/user-administration-last-admin.test.ts",
+      "bytes": 1175,
+      "gitBlob": "c3ffb8cdabfb5fa0ad8d216927436faf3ffabeff",
+      "sha256": "5c71516e3c2e8a8b8b74edbf29f6cd43c48ae910adac460f0c04c6fc85c0c783",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/user-administration-last-admin.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/integration/user-administration-routes.test.ts",
+      "bytes": 3486,
+      "gitBlob": "592041a8a1736e7ce2d7b819022ed40734155f02",
+      "sha256": "83f2bb22eac53c34c56037b46eb1166ca92f9de27bbfa7a17966b10665324e0f",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/integration/user-administration-routes.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/migration/ihfr-diagnosis-cross-record-integrity.test.ts",
+      "bytes": 12076,
+      "gitBlob": "951857960989f0ed02a20ad95e5ae9eb1daefbd6",
+      "sha256": "2da8a3fb6168084a5938dc37899094abd7fcbb4b2a2933cb0cbd1b90ea6cd13a",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/migration/ihfr-diagnosis-cross-record-integrity.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/migration/ihfr-diagnosis-immutability.test.ts",
+      "bytes": 1949,
+      "gitBlob": "6090309fc0ddc67c50fe2fec590a94928bf64ccc",
+      "sha256": "df69b987dd12b2d0787089cb09ef9493c34f864ebe042adebe07fb318c7ad96b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/migration/ihfr-diagnosis-immutability.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/migration/user-administration-migration.test.ts",
+      "bytes": 2735,
+      "gitBlob": "93db3ea7d613080521ed55fb5488a2864a95421d",
+      "sha256": "6942316453d6c9d8fda861b92349931f3d39a7205042bbba5b7c4bc394556b63",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/migration/user-administration-migration.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/area-authorization.test.ts",
+      "bytes": 2102,
+      "gitBlob": "da797ec6a6d557afd7edab352ebda7cdc7f725f0",
+      "sha256": "a34fed4a0a51a20b7482797795e074ad57ad54b658d5832ff2e5ab2e97fb7623",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/area-authorization.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/collection-contracts.test.ts",
+      "bytes": 2231,
+      "gitBlob": "ec7deda99bfeb1475de7de9b6bb6d63cb50aa810",
+      "sha256": "a44bacfcf7bbac3b62f359f7577fa6d159797cd7d861369bf8cbbb0b3e8a51a2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/collection-contracts.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/collections-service.test.ts",
+      "bytes": 10967,
+      "gitBlob": "3a9d7ff0a8e6d6ef4261855b56d908b09223db41",
+      "sha256": "736aa3659431981038a7a56764006da9f3d477f9f44ba8b09542355308fe71e2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/collections-service.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/dashboard-contracts.test.ts",
+      "bytes": 1980,
+      "gitBlob": "5566393969882d2e4ea1c76ac01a51c3c362c1e2",
+      "sha256": "05e6c819d02e155b7899e69d9aba3dc66b6f1265cc52f0e72b010513ef054521",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/dashboard-contracts.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/dashboard-service.test.ts",
+      "bytes": 4286,
+      "gitBlob": "709d8d63d587774380e5222bd8c0d7d358154a52",
+      "sha256": "67713563bac237a5e26dbcfa0b41dd32901275acaf19dbdfc4d46a6c5cb140ad",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/dashboard-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/environmental-data-contracts.test.ts",
+      "bytes": 1887,
+      "gitBlob": "27a828f4251959df045bd6d465d2c79ef9b77b9e",
+      "sha256": "a3458ec5e1abe1b28661daf5184856113c227e1fb7fa4dc31f071dc0276deee2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/environmental-data-contracts.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/environmental-draft-contracts.test.ts",
+      "bytes": 2581,
+      "gitBlob": "4e2232daf7d64a01234c147b5c90bc79c0c3d8c4",
+      "sha256": "c90f185ededef061bbfa36f5272c6e9574c9abd17433221b9aa5b592fc09848d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/environmental-draft-contracts.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/frontend-collections-recovery.test.ts",
+      "bytes": 2449,
+      "gitBlob": "60f716b9179524bc190f1bef6efebdafd8f6b4bb",
+      "sha256": "d54b1bcb5da172e144540df8b3766400f6298761c101c21fe7d3f62d65bf8963",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/frontend-collections-recovery.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/frontend-environmental-preservation.test.ts",
+      "bytes": 4780,
+      "gitBlob": "cf32c41faccc5da670b345087a821d1405fa8de4",
+      "sha256": "e7ca34085ad3c39d8bd6ed0f6c1b986d8cb9c362c8b8d46c1450b71790a6dfab",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/frontend-environmental-preservation.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/ihfr-diagnosis-evaluator.test.ts",
+      "bytes": 6871,
+      "gitBlob": "e5e6737cf0e846a9645fb1cd1ad1d9a5775301eb",
+      "sha256": "eaa7ab7a0bac8e267aa21cea0eebc9312eb74734ff9e8d2993e69f00e9a5a3bc",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/ihfr-diagnosis-evaluator.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/ihfr-diagnosis-input-policy.test.ts",
+      "bytes": 8172,
+      "gitBlob": "82b73efe6ac3e2a2bcb58a777ad8cb1deff45742",
+      "sha256": "a158090f9f0ac85f2a4b6d178f2f815e42bc250ce67c440821e8195fef4db8d0",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/ihfr-diagnosis-input-policy.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/ihfr-diagnosis-manifest-loader.test.ts",
+      "bytes": 1540,
+      "gitBlob": "ac2181941071ac20b1cbaaa90c402b2084275bc7",
+      "sha256": "80d26a880db91976077c7f470db2c118217ae1465d09330222a2827c745d97bc",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/ihfr-diagnosis-manifest-loader.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/ihfr-diagnosis-public-dto.test.ts",
+      "bytes": 3337,
+      "gitBlob": "6da650c412822f6ae04a232bf320cf27211cb77a",
+      "sha256": "4264e6f3bdd4869d116389c2c6b6c63d19003697c0f50ce6f63a0ffbf5cbd881",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/ihfr-diagnosis-public-dto.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/ihfr-diagnosis-write-response.test.ts",
+      "bytes": 2235,
+      "gitBlob": "8b9e8d3e576c0a3d2e5df45758e4ac3a0668708d",
+      "sha256": "d14dc68f2e145e58807032ee1cac63597edb8e0690bdca7184b4e856e4969a1c",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/ihfr-diagnosis-write-response.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/laboratories-service.test.ts",
+      "bytes": 4417,
+      "gitBlob": "d8909b7293f3a3b9f0aeacdaaec8e6f702a59b6d",
+      "sha256": "850832d457fb327c44de4ad1d4a11c93a748ea5b323bf88f5a445f87a70036ff",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/laboratories-service.test.ts",
+      "roles": [
+        "C-I"
+      ],
+      "reading": {
+        "C-I": {
+          "status": "LEITURA_INTEGRAL",
+          "scope": "Texto integral lido como fonte; nenhum código executado."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/territorial-map-contracts.test.ts",
+      "bytes": 1727,
+      "gitBlob": "a91ddce485473ad323fd198115965278afe08026",
+      "sha256": "9852236661fd3bc1dee2f041c54ea35e1f27eb9b2b74772d14d4d05b57b79661",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/territorial-map-contracts.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/territorial-map-service.test.ts",
+      "bytes": 3014,
+      "gitBlob": "dbc603b843737dc10e08390bc99a69878b833878",
+      "sha256": "f89cf0f4b08cbc1e428bfd47b97a98d854049759a111ad202872faf4c9ec86a8",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/territorial-map-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/territorial-map-state.test.ts",
+      "bytes": 1166,
+      "gitBlob": "d410d56572df3aa11c4aeff75bbb7df47ac8729c",
+      "sha256": "ef9ea55d86bb3ed454505d3c06185ee819f4ec16a7b884d74c4c319bb8b20c58",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/territorial-map-state.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/user-administration-audit-service.test.ts",
+      "bytes": 2058,
+      "gitBlob": "d6c1be0368ef6889aa494e8b47b15b53bc34be17",
+      "sha256": "b4d44d5aa364b42314b5e73a24aba5bbfe748335cefdc01c2a4f0a2f22cb41db",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/user-administration-audit-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/user-administration-read-service.test.ts",
+      "bytes": 2067,
+      "gitBlob": "ae14764701159c623bd17e3a0ee60b0e13eeff15",
+      "sha256": "e0935113d3bdb62d573175a52d7792e5d55817565aaa0b973dd9fa7e45584045",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/user-administration-read-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/user-administration-role-service.test.ts",
+      "bytes": 2774,
+      "gitBlob": "f191ef4293040acedc6349b980e70cbb82d5b9c8",
+      "sha256": "964c0fd339e6af928a752db6aec8c30f8abba6350413ef440f3a01f24af20a75",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/user-administration-role-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    },
+    {
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "path": "tests/unit/user-administration-status-service.test.ts",
+      "bytes": 3103,
+      "gitBlob": "3bd9bb5bc92d3a04e447fef9fd2cbde9798fc482",
+      "sha256": "29444f8ca13da4b50cc853d4767db1cc7e9460a8b5bb5b10a5f9ba0de892aeed",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/c4adfb379e5dc78f27f31b91edbd13f43228d9f9/tests/unit/user-administration-status-service.test.ts",
+      "roles": [
+        "C-COORD"
+      ],
+      "reading": {
+        "C-COORD": {
+          "status": "MATERIALIZADO_HASH_VERIFICADO",
+          "scope": "Símbolos e critérios dos16 registros006–010; demais bytes recuperados não equivalem a leitura semântica integral."
+        }
+      }
+    }
+  ],
+  "readingLimits": {
+    "C-COORD": "120 snapshots primários materializados/rehashados; leitura semântica dirigida por cadeia e critério, não auditoria integral de cada linha dos120 arquivos. Testes lidos são fontes, NOT_RUN.",
+    "C-I": "Leitura das cadeias de16 registros e seleção de testes/contratos;109 snapshots recuperados e verificados.",
+    "C-D": "23 fontes lidas integralmente no recorte declarado; quatro compares primários por SHA;197 artefatos de evidência #27 inventariados sem reabertura integral.",
+    "C-R": "Leitura dirigida independente, hashes e escopo definidos no parecer próprio.",
+    "global": "Contagem de materialização/rehash não equivale a auditoria integral de todos os arquivos. Os500 metadados LOCAL foram cotejados com árvores, não500 blobs novamente baixados."
+  }
+}

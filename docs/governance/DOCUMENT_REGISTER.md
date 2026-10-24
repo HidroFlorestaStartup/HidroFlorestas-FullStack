@@ -1,5 +1,17 @@
 # Registro documental
 
+## Registro HF-DOC —24/10/2026, continuidade C0→C1
+
+CONCILIACAO_C1_CONCLUIDA_COM_LIMITES: [adendo Code-First](../code-first-prd/implementation/estado-conciliado-20261024.md),
+[plano CHAT](../plans/active/hf-doc-20261024/chat/plano.md) e
+[pacote de conciliação](../reviews/20261024-hf-doc-chat01/readme.md), missão
+HF-DOC-20261024-CHAT02, base c4adfb379e5dc78f27f31b91edbd13f43228d9f9.
+Origem: pedido do usuário de 24/10/2026; coordenação CHAT e três subagentes reais.
+LOCAL consumido com integridade PASS; proveniência do commit local PARTIAL.
+O índice distingue matriz/revisão/validação C1 dos recibos C0 preservados.
+Não concede autoridade normativa, aceite, piloto ou integração remota.
+O inventário anterior permanece integralmente preservado.
+
 ## Escopo deste registro
 
 Este é o registro canônico para o inventário documental. Nesta versão constam os documentos canônicos de governança, planos operacionais, matriz de rastreabilidade, relatórios analíticos, a decisão e o manifesto experimentais da IMP-006, `docs/raw/` como conjunto agregado de evidências históricas imutáveis e o inventário individual dos 13 arquivos do baseline de 2026-08-24. A inclusão individual registra identidade, metadados, integridade e autoridade delimitada, sem promover evidência histórica a validação científica definitiva.

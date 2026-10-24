@@ -1,5 +1,16 @@
 # Contexto do projeto HidroFlorestas
 
+## Conciliação documental HF-DOC —24/10/2026, C1
+
+Estado documental: CONCILIACAO_C1_COM_LIMITES_EXPLICITOS, revisado no alcance documental.
+O [adendo Code-First](docs/code-first-prd/implementation/estado-conciliado-20261024.md)
+e o [parecer CHAT](docs/reviews/20261024-hf-doc-chat01/readme.md) conciliam C0 e
+os 16 documentos LOCAL verificados, com 40 registros e oito eixos independentes.
+Base: c4adfb379e5dc78f27f31b91edbd13f43228d9f9. A candidata #29 é fonte separada.
+C02 preserva a lacuna de iniciais no popup; ingresso/Plotly futuros e aceites
+continuam delimitados. Publicação Git, integração, homologação e ciência não
+são concedidas por este registro. Os cortes seguintes permanecem históricos.
+
 ## Entrega para revisão dos estudantes — 2026-10-10
 
 FATO_DOCUMENTADO: o usuário autorizou publicar a RC no GitHub, preservando os11
