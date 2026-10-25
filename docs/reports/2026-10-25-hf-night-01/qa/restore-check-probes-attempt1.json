@@ -1,0 +1,17 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "scope": "Finite exact-predicate SELECT probes in two owned synthetic databases; no INSERT/DDL or universal equivalence claim",
+  "startedUtc": "2026-10-25T06:08:21.308Z",
+  "result": "FAIL",
+  "roles": [],
+  "originalRestoreGate": "FAIL/CATALOG_CONSTRAINT_MISMATCH",
+  "constraintsAltered": false,
+  "newDumpOrRestore": false,
+  "protocolSha256": "e31beb00fe00d51098a5f6d138c6a7ef7d792ec63150bdf431575b464af3a6f6",
+  "restoreReceiptSha256": "d129fc583c9ab91b06aeadcdd61885a9fefcd09b863f1b89e5d05ef4be4286c2",
+  "metadataReceiptSha256": "6457bb46a75146bbfce41a372c068a3dd751652dbbe7b2fcd64e0c2905e23c58",
+  "safeErrorCode": "MUTATION_REFUSED",
+  "exitCode": 1,
+  "endedUtc": "2026-10-25T06:08:21.311Z",
+  "durationMs": 3.356099999999998
+}

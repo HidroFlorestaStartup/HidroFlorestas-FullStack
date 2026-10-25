@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-25T05:18:32.842Z",
+  "probes": [
+    {
+      "utility": "pg_dump",
+      "filePresent": false,
+      "spawnErrorCode": "ENOENT",
+      "status": null
+    },
+    {
+      "utility": "pg_restore",
+      "filePresent": false,
+      "spawnErrorCode": "ENOENT",
+      "status": null
+    }
+  ]
+}

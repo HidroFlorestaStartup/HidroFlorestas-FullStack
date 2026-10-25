@@ -1,0 +1,279 @@
+﻿{
+    "utc":  "2026-10-25T05:19:30.1883084Z",
+    "reason":  "peer P3: original report-folder logs were untracked, not Git-ignored; moved privately before publication",
+    "rawBytesPreserved":  true,
+    "entries":  [
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/01-npm-ci.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/01-npm-ci.log",
+                        "sha256":  "05604bc1760a6655f2648692bfd39df793e6ec1b10942076b437a0c4e541c743",
+                        "bytes":  2904,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/02-postgres-package.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/02-postgres-package.log",
+                        "sha256":  "3211418bfccb1a39ecc7d3fa433310389f81dff313491e194cb16a13294cf429",
+                        "bytes":  3562,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/03-prisma-generate.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/03-prisma-generate.log",
+                        "sha256":  "70ce16d63886268159509c5c715b43a7d397c49ba5ae64191ea6690cb58e2164",
+                        "bytes":  1258,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/04-prisma-generate-network-retry.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/04-prisma-generate-network-retry.log",
+                        "sha256":  "d940806639baa4e615ac8c10a156ec5670d51b6c33788a0535885e46f08b44b6",
+                        "bytes":  1372,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/05-postgres-package-network-retry.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/05-postgres-package-network-retry.log",
+                        "sha256":  "4cd9ab8c5cecd2bad044ec8bb918b6ae457c76cd7579a6b657bead95db006545",
+                        "bytes":  5658,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/06-typecheck.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/06-typecheck.log",
+                        "sha256":  "68eb11016c0474a47994655104786dcabd399f9e3bea30f6cd1d9672a3e049f9",
+                        "bytes":  826,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/09-postgres-fresh-runtime.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/09-postgres-fresh-runtime.log",
+                        "sha256":  "993cb97df3361be8873c24a0913ce490a9ade61a64b3e4a1aafd49c9a3bc929e",
+                        "bytes":  54,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/10-build-network-retry.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/10-build-network-retry.log",
+                        "sha256":  "5ba676ccaacffdb00a868fe6cfe5e78b511ec933fdcda019aff0e76403040d92",
+                        "bytes":  10698,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/11-local-postgresql-gates.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/11-local-postgresql-gates.log",
+                        "sha256":  "b9fc2eec0104b01f281a38f9e922861a4e35432cf25f14c02589f6df1c32de7c",
+                        "bytes":  21266,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/12-sandbox-tsx-diagnostic.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/12-sandbox-tsx-diagnostic.log",
+                        "sha256":  "645385272ce9dc65cadc41214f03e15029038681867dd972e5937cb313672ff6",
+                        "bytes":  2248,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/16-local-only-browser-gates.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/16-local-only-browser-gates.log",
+                        "sha256":  "feb3a9258ac33cae3cb1911443f416190ceff58f45191f9f60ad95c2080c8cd8",
+                        "bytes":  3924,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/19-owned-fixture-cleanup.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/19-owned-fixture-cleanup.log",
+                        "sha256":  "9395a0723b3fa498fd8f828dc34670ead612bdf7f670a887e868fbba997c9cee",
+                        "bytes":  86,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/20-admin-403-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/20-admin-403-stop.log",
+                        "sha256":  "d84e77d7fb8078f958d101a57234ee00a73f02d5a0e37fa87799854e6378f050",
+                        "bytes":  232,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/21-owned-fixture-cleanup.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/21-owned-fixture-cleanup.log",
+                        "sha256":  "e1fb05c27af7b45859436ce364636ad7fa42ab5ad0506eec802c216232b4cb95",
+                        "bytes":  230,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/22-admin-403-focal.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/22-admin-403-focal.log",
+                        "sha256":  "c76a5a471f81287a95c1044559c6c7d77de5ac2a4f26d81e2db3f9fc231c6ab9",
+                        "bytes":  368,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/22-admin-403-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/22-admin-403-stop.log",
+                        "sha256":  "d84e77d7fb8078f958d101a57234ee00a73f02d5a0e37fa87799854e6378f050",
+                        "bytes":  232,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/23-admin-403-repeat10.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/23-admin-403-repeat10.log",
+                        "sha256":  "4af07f9b077042a590d6f0bce2726ed02c3d966fe9f55fb2710e094285f7fd2d",
+                        "bytes":  3936,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/23-admin-403-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/23-admin-403-stop.log",
+                        "sha256":  "d84e77d7fb8078f958d101a57234ee00a73f02d5a0e37fa87799854e6378f050",
+                        "bytes":  232,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/25-e2e-third.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/25-e2e-third.log",
+                        "sha256":  "5cb754419c6371e28278051ae47f9c62134d77f68b613582d6fac4c7259ac15d",
+                        "bytes":  3668,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/26-remaining-baseline-gates.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/26-remaining-baseline-gates.log",
+                        "sha256":  "067245cd84e8caeb690b3c0f48da7718b04586b5a7eec1c701255ae037bd1b25",
+                        "bytes":  14534,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/27-audit-count.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/27-audit-count.log",
+                        "sha256":  "1939c8d44d0e4ff019bc7bc82dc291fdaa85403d2abfddcbfc5b1a4dc886c51f",
+                        "bytes":  311,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/29-fresh-v3-setup.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/29-fresh-v3-setup.log",
+                        "sha256":  "e6f292e29264f011404449fb8417c4f13310a8aaef4a47a5c7adf106a2f8d7da",
+                        "bytes":  3130,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/30-fresh-v3-proof.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/30-fresh-v3-proof.log",
+                        "sha256":  "3b90eb6d9b930908066e4833b83e64764f0c263f637cc0dedfdc8225256d071c",
+                        "bytes":  514,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/31-fresh-v3-e2e.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/31-fresh-v3-e2e.log",
+                        "sha256":  "99d9d4658167cad42b7fcac5e109f39b7fd68b6a2bee8557dfbcdce3e1165c44",
+                        "bytes":  4920,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/31-fresh-v3-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/31-fresh-v3-stop.log",
+                        "sha256":  "ca4b40a4cd0bf7fd031d8d64b75220420a796a16eca92432b299bc23bfa4250d",
+                        "bytes":  108,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/32-area-cover-two-request-quota.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/32-area-cover-two-request-quota.log",
+                        "sha256":  "276849c7c08b0d9d4a7d0fabd7ecf8550d72f6f5a1a60b8310995ab0659fba02",
+                        "bytes":  1513,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/33-quota-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/33-quota-stop.log",
+                        "sha256":  "d84e77d7fb8078f958d101a57234ee00a73f02d5a0e37fa87799854e6378f050",
+                        "bytes":  232,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/34-area-cover-two-request-quota-server.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/34-area-cover-two-request-quota-server.log",
+                        "sha256":  "1dcabf22a9142cf561b4be76e45eea659e3bfac2e56af0b75fe74fb1f1c80d56",
+                        "bytes":  2547,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/35-quota-schema-audit.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/35-quota-schema-audit.log",
+                        "sha256":  "204e95370490a3316600a9ac9d57bde3817552d0f7ee58262994dc3199ccc0dd",
+                        "bytes":  80,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/35-quota-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/35-quota-stop.log",
+                        "sha256":  "d84e77d7fb8078f958d101a57234ee00a73f02d5a0e37fa87799854e6378f050",
+                        "bytes":  232,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/36-synthetic-restore-stop.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/36-synthetic-restore-stop.log",
+                        "sha256":  "379dff0a9e276142aab2f9029caa91145c94e827cc76f19eb22f10f1b69825e0",
+                        "bytes":  238,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/7-lint.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/7-lint.log",
+                        "sha256":  "b28e83f24a2e6bd26cd00d0879deff3fa8543eb8db7fb7752bd823c9d7808946",
+                        "bytes":  1612,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/8-build.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/8-build.log",
+                        "sha256":  "778a70fc4fddc6b701d95e3e390c1ec3a2665e1c0e52875485f5ce8e4ff46db0",
+                        "bytes":  3838,
+                        "privateIgnored":  true,
+                        "published":  false
+                    },
+                    {
+                        "originalRelativePath":  "docs/reports/2026-10-25-hf-night-01/qa/unit-1792900974607.log",
+                        "privateRelativePath":  ".accounts-validation/hf-night-private-logs/unit-1792900974607.log",
+                        "sha256":  "cfcb5c8da70387a1c9281802123951c8d26c3071e1ab9fe7caa8f76e7fcf2e93",
+                        "bytes":  38922,
+                        "privateIgnored":  true,
+                        "published":  false
+                    }
+                ]
+}

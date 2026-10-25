@@ -1,0 +1,142 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "scope": "P2 coordination regression; controlled Node subprocess lifecycle, no real browser/database failure injection",
+  "reviewedHeadBeforeFix": "3e0066ab82a415e04342bd751254ee65cf533dfb",
+  "finding": {
+    "pullRequest": 39,
+    "thread": "PRRT_kwDOVAitc86v--4u",
+    "comment": 4369900482,
+    "priority": "P2",
+    "requirements": [
+      "FR-002",
+      "FR-005"
+    ]
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/local-readiness.ts",
+      "sha256": "42426e12ae292ab61625608b2ceda9858092ca95cac6a25cace9b417a83901d1"
+    },
+    {
+      "path": "scripts/local-readiness-navigation.ts",
+      "sha256": "b75ba080fdfd3eb88df9adc148ec6344137bf39983d5c0f663be3338bca30985"
+    },
+    {
+      "path": "tests/investigations/readiness/local-readiness-navigation.test.ts",
+      "sha256": "79809dd4b6cf610bd234c59fa52cc13a2c1e05c7ecc4eddc1d42e56c5483a8a8"
+    },
+    {
+      "path": "tests/investigations/readiness/fixtures/navigation-failure-child.ts",
+      "sha256": "98fa448cba97e3d1aef63530b63d758c5e417bd8924471ec08f22a3bf2269bbb"
+    }
+  ],
+  "red": {
+    "command": "node --unhandled-rejections=strict --import=tsx --test --test-concurrency=1 tests/investigations/readiness/local-readiness-navigation.test.ts",
+    "exitCode": 1,
+    "utc": "2026-10-25T06:44:54.6615283Z",
+    "phase": "RED equivalent extracted pre-fix coordination",
+    "rawLogPrivateIgnored": true,
+    "tests": 9,
+    "passed": 4,
+    "failed": 5,
+    "skipped": 0,
+    "nodeDurationMs": 2260.4049,
+    "implementation": "Equivalent extracted pre-fix start waiter, await navigation, await waiter; no global rejection listener",
+    "negativeControls": 2,
+    "observedConsequence": "Strict child exits1 with resource marker present and final receipt absent while asynchronous finally is pending"
+  },
+  "green": {
+    "command": "node --unhandled-rejections=strict --import=tsx --test --test-reporter=tap --test-concurrency=1 tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts",
+    "startedUtc": "2026-10-25T06:46:45.2148720Z",
+    "endedUtc": "2026-10-25T06:46:47.6210491Z",
+    "durationMs": 2402.8542,
+    "exitCode": 0,
+    "rawLogPrivateIgnored": true,
+    "tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "skipped": 0,
+    "nodeDurationMs": 2252.5039,
+    "policyTests": 9,
+    "navigationTests": 9,
+    "navigationCoverage": {
+      "legacyStrictNegativeControls": 2,
+      "protectedFailureCases": 6,
+      "successOrderAndValue": 1
+    },
+    "syntheticFailureReceipt": "All six protected failures preserve the expected causal error, remove their own marker and write a FAIL receipt before process exit0"
+  },
+  "checks": {
+    "focusedFinal": {
+      "command": "node --unhandled-rejections=strict --import=tsx --test --test-reporter=tap --test-concurrency=1 tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts",
+      "startedUtc": "2026-10-25T06:46:45.2148720Z",
+      "endedUtc": "2026-10-25T06:46:47.6210491Z",
+      "durationMs": 2402.8542,
+      "exitCode": 0,
+      "rawLogPrivateIgnored": true
+    },
+    "typecheckInitial": {
+      "command": "npx tsc --noEmit",
+      "startedUtc": "2026-10-25T06:46:15.9541260Z",
+      "endedUtc": "2026-10-25T06:46:20.1677839Z",
+      "durationMs": 4210.513800000001,
+      "exitCode": 2,
+      "rawLogPrivateIgnored": true
+    },
+    "typecheckFinal": {
+      "command": "npx tsc --noEmit",
+      "startedUtc": "2026-10-25T06:46:48.1419608Z",
+      "endedUtc": "2026-10-25T06:46:50.8509711Z",
+      "durationMs": 2703.4894,
+      "exitCode": 0,
+      "rawLogPrivateIgnored": true
+    },
+    "lintAll": {
+      "command": "npx eslint scripts/local-readiness.ts scripts/local-readiness-policy.ts scripts/local-readiness-navigation.ts tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts tests/investigations/readiness/fixtures/navigation-failure-child.ts",
+      "startedUtc": "2026-10-25T06:46:16.1064704Z",
+      "endedUtc": "2026-10-25T06:46:19.0775533Z",
+      "durationMs": 2968.0314000000003,
+      "exitCode": 0,
+      "rawLogPrivateIgnored": true
+    },
+    "lintChangedTestFinal": {
+      "command": "npx eslint tests/investigations/readiness/local-readiness-navigation.test.ts",
+      "startedUtc": "2026-10-25T06:47:56.8505715Z",
+      "endedUtc": "2026-10-25T06:47:59.1088047Z",
+      "durationMs": 2254.7771000000002,
+      "exitCode": 0,
+      "rawLogPrivateIgnored": true
+    }
+  },
+  "initialTypecheckFailure": {
+    "code": "TS2769",
+    "reason": "Next ProcessEnv requires NODE_ENV; minimal subprocess env now declares literal test without inheriting application secrets"
+  },
+  "fix": "Both callbacks are queued with Promise.resolve().then in waiter-navigation order; Promise.all handlers attach before either callback executes. First error propagates and the other branch stays observed during caller cleanup.",
+  "limitations": [
+    "Synthetic resource is a file marker; regression does not exercise PostgreSQL/Next/browser cleanup on a real navigation failure",
+    "Child exit0 means controlled finalization completed; its receipt remains FAIL with the causal error",
+    "No global unhandledRejection handler; strict negative controls remain expected child exit1",
+    "Previous happy receipt8313 and baselinee718 remain unchanged; post-fix real030 uses separate fingerprint46a9 and separate receipts"
+  ],
+  "rawLogsPrivateIgnored": true,
+  "independentReview": {
+    "reviewer": "/root/fr015",
+    "strictTests": 18,
+    "passed": 18,
+    "failed": 0,
+    "skipped": 0,
+    "nodeDurationMs": 2184.6925,
+    "sourceDelta": "PASS",
+    "realReceiptReview": "PASS documentary only; no second territorial workload",
+    "record": "independent-review.md"
+  },
+  "realHappyRun": {
+    "receipt": "territorial-readiness-p2.json",
+    "command": "territorial-readiness-p2-command.json",
+    "result": "PASS",
+    "functionalFingerprint": "46a9e540483c4e3748a8b185e7ea3e3fecf9ad5f2bbb8b7a748dec8c88aa2489",
+    "durationMs": 22307.9963,
+    "realNavigationFailureInjected": false
+  }
+}
