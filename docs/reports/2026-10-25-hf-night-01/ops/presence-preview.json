@@ -1,0 +1,85 @@
+{
+  "target": "preview",
+  "total": 18,
+  "presentCount": 0,
+  "missingCount": 18,
+  "entries": [
+    {
+      "key": "APP_PUBLIC_URL",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_TRUSTED_INGRESS",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_POLICY_ENABLED",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_TESTER_ALLOWLIST",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_PROOF_KEYS",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_PROOF_ACTIVE_KEY_ID",
+      "status": "MISSING"
+    },
+    {
+      "key": "ACCOUNT_REQUEST_KEY",
+      "status": "MISSING"
+    },
+    {
+      "key": "MAIL_PAYLOAD_ENCRYPTION_KEYS",
+      "status": "MISSING"
+    },
+    {
+      "key": "MAIL_PAYLOAD_ACTIVE_KEY_ID",
+      "status": "MISSING"
+    },
+    {
+      "key": "MAIL_IDEMPOTENCY_KEY",
+      "status": "MISSING"
+    },
+    {
+      "key": "MAIL_WORKER_SECRET",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_HOST",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_PORT",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_SECURE",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_REQUIRE_TLS",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_USER",
+      "status": "MISSING"
+    },
+    {
+      "key": "SMTP_APP_PASSWORD",
+      "status": "MISSING"
+    },
+    {
+      "key": "MAIL_FROM",
+      "status": "MISSING"
+    }
+  ],
+  "gates": {
+    "G3": "BLOCKED",
+    "G4": "BLOCKED",
+    "G5": "BLOCKED"
+  }
+}
