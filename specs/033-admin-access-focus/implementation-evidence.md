@@ -130,3 +130,22 @@ sem importar o patch em sua worktree ativa. Guardas:27false anteriores
 preservadas+guarda exata admin pelo coordenador; nenhuma limpeza configuracional.
 Sem commit/push/PR, deploy, main, merge, provider, SMTP ou banco hospedado.
 Ciência e regras de produto permanecem com suas autoridades próprias.
+
+## Replay E2E real posterior pelo agente QA
+
+`EVIDENCIA_IMPLEMENTACAO`: `/root/qa` executou o teste403 existente inalterado
+em `fb1523b4ef77c9dc96c8d1816335b40674aee972`, em runtime admin próprio e
+banco sintético fresco. [Recibo sanitizado](evidence/real-e2e.json):
+10/10PASS,0FAIL/skip/retries,33.753s,05:11:04.303→05:11:38.057UTC.
+Fingerprint antes/depois99988cbcc774faa898ef38289a9ca7a6b431d76866b2ca2e95b5d2744db771a4
+inalterado; antes do fixture14migrations e0Users/Labs/Areas/Coletas/Audit,
+0tabelas de referência. Node24.19/PG17.10 owned-loopback,accountPolicy1.
+Portas/cluster próprios foram encerrados; nenhum banco/SMTP/provedor hospedado.
+
+O runtime longo parcialmente copiado por MAX_PATH foi preservado; foi criado
+outro runtime curto fresco com binário conferido, sem relaxar guardas ou
+compartilhar credencial. Raw log permanece privado/ignorado, sem publicação.
+Essa execução é do agente QA, distinta do autor e do rerun UI do revisorA.
+O trecho anterior NOT_RUN por esta autoria descreve seu corte e permanece verdadeiro.
+O commit que acrescenta somente este recibo/prosa preserva o código testado;
+isso não transfere o resultado a alterações futuras nem concede aceite humano.

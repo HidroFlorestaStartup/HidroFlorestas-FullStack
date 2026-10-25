@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "hf-admin-real-e2e/v1",
+  "sourceSha": "fb1523b4ef77c9dc96c8d1816335b40674aee972",
+  "sourceFingerprintBefore": "99988cbcc774faa898ef38289a9ca7a6b431d76866b2ca2e95b5d2744db771a4",
+  "sourceFingerprintAfter": "99988cbcc774faa898ef38289a9ca7a6b431d76866b2ca2e95b5d2744db771a4",
+  "testPath": "tests/e2e/frontend-user-administration.spec.ts",
+  "testFileSha256": "6bb96c9db8a6e33755adb38fc34f747a0d241d671777116616db79d196808f6b",
+  "testUnchangedFromBase": true,
+  "command": "node node_modules/@playwright/test/cli.js test tests/e2e/frontend-user-administration.spec.ts --grep=403 --repeat-each=10 --reporter=list",
+  "startedUtc": "2026-10-25T05:11:04.303Z",
+  "endedUtc": "2026-10-25T05:11:38.057Z",
+  "durationMs": 33753.033299999996,
+  "exitCode": 0,
+  "result": "PASS",
+  "counts": {
+    "planned": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "retries": 0,
+  "workers": 1,
+  "assertionsChanged": false,
+  "environment": {
+    "platform": "win32",
+    "node": "v24.19.0",
+    "postgres": "17.10 pinned owned loopback",
+    "runtime": "fresh private admin runtime, distinct from QA",
+    "accountPolicyEnabled": true,
+    "externalSmtpOrProviderConfiguration": false
+  },
+  "freshDatabaseProof": {
+    "utc": "2026-10-25T05:11:03.856Z",
+    "sourceSha": "fb1523b4ef77c9dc96c8d1816335b40674aee972",
+    "functionalFingerprint": "99988cbcc774faa898ef38289a9ca7a6b431d76866b2ca2e95b5d2744db771a4",
+    "counts": {
+      "migrations": 14,
+      "users": 0,
+      "laboratories": 0,
+      "areas": 0,
+      "collections": 0,
+      "audit_events": 0
+    },
+    "referenceTables": 0,
+    "clusterIdentifierSha256": "64fb98e5953db27def0cfcb4c38eedef7eaed70c6358bba93bd7b162be13ec10",
+    "fresh": true
+  },
+  "bootstrap": {
+    "migrations": 14,
+    "binarySha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+    "credentialsShared": false,
+    "oldLongRuntimePreserved": true,
+    "initialCopyIssue": "PowerShell MAX_PATH; separate short fresh runtime copied successfully without guard changes"
+  },
+  "rawLog": {
+    "privateIgnored": true,
+    "relativePath": ".accounts-validation/a33/localappdata/HidroFlorestas/accounts-postgresql/validation/admin-real-e2e.log",
+    "published": false
+  },
+  "limitations": [
+    "Real HTTP and PostgreSQL flow for the existing 403 case only; no universal accessibility or product acceptance",
+    "No result is transferred to the QA baseline or scientific validation"
+  ]
+}
