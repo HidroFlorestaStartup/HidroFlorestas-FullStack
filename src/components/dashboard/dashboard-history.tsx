@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ClipboardCheck, MapPinned, RefreshCw } from "lucide-react";
 import type { DashboardHistoryPage } from "@/types/dashboard.type";
+import { focusReadRegion } from "@/components/async-read-focus";
 import styles from "./dashboard.module.css";
 
 const eventDate = new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short" });
 
 export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
+  const region = useRef<HTMLElement>(null);
   const [data, setData] = useState<DashboardHistoryPage | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [stack, setStack] = useState<(string | null)[]>([null]);
@@ -48,10 +50,10 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
 
   if (error) {
     return (
-      <section aria-labelledby="history-title" className={styles.errorState}>
+      <section ref={region} tabIndex={-1} aria-labelledby="history-title" className={styles.errorState}>
         <h2 id="history-title" className={styles.sectionTitle}>Histórico indisponível</h2>
         <p role="alert">{error}</p>
-        <button onClick={() => setAttempt(value => value + 1)} className={styles.outline}>
+        <button onClick={event => { focusReadRegion(event.currentTarget, region.current); setAttempt(value => value + 1); }} className={styles.outline}>
           Tentar novamente
         </button>
       </section>
@@ -60,7 +62,7 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
 
   if (!data) {
     return (
-      <section role="status" aria-label="Carregando histórico" className={styles.loading}>
+      <section ref={region} tabIndex={-1} role="status" aria-label="Carregando histórico" className={styles.loading}>
         <span className={styles.spinner} aria-hidden="true"><RefreshCw size={20} /></span>
         Carregando histórico…
       </section>
@@ -68,7 +70,7 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
   }
 
   return (
-    <section aria-labelledby="history-title" className={styles.history}>
+    <section ref={region} tabIndex={-1} aria-labelledby="history-title" className={styles.history}>
       <div className={styles.historyHeader}>
         <div className={styles.heading}>
           <p className={styles.eyebrow + " " + styles.water}>Registros reais</p>
@@ -76,7 +78,8 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
           <p className={styles.description}>Áreas criadas e coletas confirmadas, das mais recentes às mais antigas.</p>
         </div>
         <button
-          onClick={() => {
+          onClick={event => {
+            focusReadRegion(event.currentTarget, region.current);
             setStack([null]);
             setIndex(0);
             setAttempt(value => value + 1);
@@ -116,15 +119,16 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
       <nav aria-label="Paginação do histórico" className={styles.pagination}>
         <button
           disabled={index === 0}
-          onClick={() => setIndex(value => value - 1)}
+          onClick={event => { focusReadRegion(event.currentTarget, region.current); setIndex(value => value - 1); }}
           className={styles.outline}
         >
           <ChevronLeft size={18} aria-hidden="true" /><span>Mais recentes</span>
         </button>
         <button
           disabled={!data.page.nextCursor}
-          onClick={() => {
+          onClick={event => {
             if (!data.page.nextCursor) return;
+            focusReadRegion(event.currentTarget, region.current);
             setStack(current => [...current.slice(0, index + 1), data.page.nextCursor]);
             setIndex(value => value + 1);
           }}

@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ClipboardCheck, MapPinned, RefreshCw } from "lucide-react";
 import type { DashboardSummary as Summary } from "@/types/dashboard.type";
+import { focusReadRegion } from "@/components/async-read-focus";
 import styles from "./dashboard.module.css";
 
 export function DashboardSummary({ laboratoryId }: { laboratoryId: string }) {
+  const region = useRef<HTMLElement>(null);
   const [data, setData] = useState<Summary | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -37,10 +39,10 @@ export function DashboardSummary({ laboratoryId }: { laboratoryId: string }) {
 
   if (error) {
     return (
-      <section aria-labelledby="summary-title" className={styles.errorState}>
+      <section ref={region} tabIndex={-1} aria-labelledby="summary-title" className={styles.errorState}>
         <h2 id="summary-title" className={styles.sectionTitle}>Resumo indisponível</h2>
         <p role="alert">{error}</p>
-        <button onClick={() => setAttempt(value => value + 1)} className={styles.outline}>
+        <button onClick={event => { focusReadRegion(event.currentTarget, region.current); setAttempt(value => value + 1); }} className={styles.outline}>
           Tentar novamente
         </button>
       </section>
@@ -49,7 +51,7 @@ export function DashboardSummary({ laboratoryId }: { laboratoryId: string }) {
 
   if (!data) {
     return (
-      <section role="status" aria-label="Carregando resumo" className={styles.loading}>
+      <section ref={region} tabIndex={-1} role="status" aria-label="Carregando resumo" className={styles.loading}>
         <span className={styles.spinner} aria-hidden="true"><RefreshCw size={20} /></span>
         Carregando resumo…
       </section>
@@ -57,7 +59,7 @@ export function DashboardSummary({ laboratoryId }: { laboratoryId: string }) {
   }
 
   return (
-    <section aria-labelledby="summary-title" className={styles.summary}>
+    <section ref={region} tabIndex={-1} aria-labelledby="summary-title" className={styles.summary}>
       <div className={styles.heading}>
         <p className={styles.eyebrow}>Visão geral</p>
         <h1 id="summary-title" className={styles.title}>{data.context.name}</h1>
