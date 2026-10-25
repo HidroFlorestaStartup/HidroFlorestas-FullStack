@@ -43,6 +43,11 @@
     {
       "path": "evidence/immediate-response.json",
       "sha256": "f08dc07afe66daa0d33407188592342d4d6b25dc574f355c103d776f3792ebd6"
+    },
+    {
+      "path": "evidence/real-e2e.json",
+      "sha256": "1cb685d6d6a4c216c7e44493ca21f061ef3265a111b67bd10c559961ab57d45a",
+      "executor": "/root/qa"
     }
   ],
   "checks": {
@@ -136,18 +141,19 @@
         "specs/033-admin-access-focus/tasks.md",
         "specs/033-admin-access-focus/validation.json",
         "tests/ui/admin-access-focus.config.ts",
-        "tests/ui/admin-access-focus.spec.ts"
+        "tests/ui/admin-access-focus.spec.ts",
+        "specs/033-admin-access-focus/evidence/real-e2e.json"
       ],
       "unexpectedPaths": []
     },
     "relativeLinks": {
       "result": "PASS",
-      "count": 13,
+      "count": 14,
       "broken": []
     },
     "json": {
       "result": "PASS",
-      "filesParsed": 7
+      "filesParsed": 8
     },
     "trailingWhitespace": {
       "result": "PASS",
@@ -157,7 +163,19 @@
       "result": "PASS_NO_HIGH_CONFIDENCE_PATTERNS",
       "files": []
     },
-    "codeHashesUnchanged": true
+    "codeHashesUnchanged": true,
+    "externalQaRealE2e": {
+      "reviewedSourceSha": "fb1523b4ef77c9dc96c8d1816335b40674aee972",
+      "executor": "/root/qa",
+      "receipt": "evidence/real-e2e.json",
+      "result": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "existingTestUnchanged": true,
+      "ownFreshRuntime": true
+    }
   },
   "configuration": {
     "authorship": "preexisting coordinator edit; not modified by this author",
@@ -170,10 +188,10 @@
     "realQaReproduction": "reported by QA; 1 real full-run FAIL, 1/10 focal FAIL and isolated 1 PASS; not own execution",
     "causality": "Synthetic controls demonstrate two concrete timing weaknesses; do not universally establish historical or real environment causality.",
     "humanAcceptance": "NOT_PERFORMED",
-    "realBackendReplay": "NOT_PERFORMED_BY_THIS_AUTHOR",
+    "realBackendReplay": "External QA executor completed 10/10 for source fb1523b; separate receipt and fingerprint, not own author execution",
     "ci": "NOT_RUN_FOR_THIS_DELTA",
     "build": "NOT_RUN_FOCAL_CLIENT_PATCH",
-    "network": "No application/provider requests; browser routes and fake API restricted to synthetic origin.",
+    "network": "Own author/reviewer synthetic UI runs used fake APIs with egress blocked; external QA replay used owned loopback Next/PostgreSQL. No hosted providers, external SMTP or hosted database were used.",
     "notChanged": [
       "existing tests",
       "API",
@@ -185,5 +203,6 @@
       "docs/raw",
       "workflow"
     ]
-  }
+  },
+  "externalReplayAddedUtc": "2026-10-25T05:14:52.771Z"
 }
