@@ -1,0 +1,11 @@
+﻿{
+    "package":  "@embedded-postgres/windows-x64",
+    "packageVersion":  "17.10.0-beta.17",
+    "serverVersion":  "postgres (PostgreSQL) 17.10",
+    "postgresExeSha256":  "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+    "runtime":  "QA worktree/.accounts-validation/hf-night-runtime-v2",
+    "address":  "loopback only",
+    "port":  55427,
+    "freshDirectory":  true,
+    "secretsPublished":  false
+}

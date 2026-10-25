@@ -1,0 +1,853 @@
+{
+  "mission": "HF-CLOSE-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "executor": "native agent B / verificacao_b",
+  "scope": "Local targeted verification only; coordinator formed source composition; B performed no remote action",
+  "validatedCompositionHead": "3f176288114b0daf9d65f764d311b662b056d5c7",
+  "validatedCompositionTree": "dfc7bc7c9a089a5b59d1bbf368c7bb481fe18c9d",
+  "finalCandidateCommit": "Not included: final closure documents/configuration freeze is subsequent; executable fingerprint supports comparison",
+  "runtime": {
+    "node": "v24.19.0",
+    "npm": "12.0.2",
+    "platform": "win32",
+    "prisma": "7.4.2 own generated client",
+    "installScripts": "Original allowScripts protection preserved: 6 package scripts blocked, no approval/bypass"
+  },
+  "environment": {
+    "policy": "System-variable allowlist and synthetic loopback placeholder only; no real project env files or inherited SMTP/provider values",
+    "database": "No DB started or queried by these checks; generation/build placeholder points to unused loopback",
+    "network": "Existing UI synthetic route guards; scheduler own ephemeral loopback HTTP and fake queue only; build may fetch public assets; no universal packet capture claimed",
+    "serialization": "All artifact-producing checks sequential under own lock, typecheck repeated after build, no shared .next operations",
+    "teardown": "All child commands exited. Scheduler asserts server closed and awaits fake callbacks; readiness fixture removes only owned synthetic markers. No external data/worktree removed"
+  },
+  "fingerprints": {
+    "scope": "tracked src/scripts/tests/prisma and root execution/dependency configurations; excludes generated/ignored output",
+    "count": 598,
+    "beforeSha256": "54d71174ace84339f336431d642aef63d740fa167b7066c4d1dde0cfee4c9ce9",
+    "afterSha256": "54d71174ace84339f336431d642aef63d740fa167b7066c4d1dde0cfee4c9ce9",
+    "unchanged": true,
+    "changedPaths": [],
+    "hashScope": "git object IDs and physical SHA256 are distinct; physical bytes preserve checkout EOL",
+    "uiComparison": {
+      "reference": "456029f7cbbd5bdd22e35f59ee637b8b0c43a2e0",
+      "compared": [
+        {
+          "path": "src/components/workspace/laboratory-workspace.tsx",
+          "combinedBlob": "d6f87b626d94203aa43cdd324398f75f5f94b5ef",
+          "candidateBlob": "d6f87b626d94203aa43cdd324398f75f5f94b5ef",
+          "sourceManifestBlob": "d6f87b626d94203aa43cdd324398f75f5f94b5ef"
+        },
+        {
+          "path": "src/components/workspace/workspace.module.css",
+          "combinedBlob": "f2507f1aee048b948ed61a4ad8dd9e057a661eab",
+          "candidateBlob": "f2507f1aee048b948ed61a4ad8dd9e057a661eab",
+          "sourceManifestBlob": "f2507f1aee048b948ed61a4ad8dd9e057a661eab"
+        },
+        {
+          "path": "tests/ui/member-popup.config.ts",
+          "combinedBlob": "b6f8278956787706622de1343c4959eb486f0f06",
+          "candidateBlob": "b6f8278956787706622de1343c4959eb486f0f06",
+          "sourceManifestBlob": "b6f8278956787706622de1343c4959eb486f0f06"
+        },
+        {
+          "path": "tests/ui/member-popup.spec.ts",
+          "combinedBlob": "dd76483dc944f5041d31800b6db28a064c3cce45",
+          "candidateBlob": "dd76483dc944f5041d31800b6db28a064c3cce45",
+          "sourceManifestBlob": "dd76483dc944f5041d31800b6db28a064c3cce45"
+        },
+        {
+          "path": "src/components/async-read-focus.ts",
+          "combinedBlob": "76e92e9fd60cb60444036bb72169a477f7900931",
+          "candidateBlob": "76e92e9fd60cb60444036bb72169a477f7900931",
+          "sourceManifestBlob": "76e92e9fd60cb60444036bb72169a477f7900931"
+        },
+        {
+          "path": "src/components/dashboard/dashboard-history.tsx",
+          "combinedBlob": "d47997bf976423d7329c00dbdeeac3567006eac8",
+          "candidateBlob": "d47997bf976423d7329c00dbdeeac3567006eac8",
+          "sourceManifestBlob": "d47997bf976423d7329c00dbdeeac3567006eac8"
+        },
+        {
+          "path": "src/components/dashboard/dashboard-summary.tsx",
+          "combinedBlob": "0a8adb49e02f31d8fd5b5fceab6b19114a27114e",
+          "candidateBlob": "0a8adb49e02f31d8fd5b5fceab6b19114a27114e",
+          "sourceManifestBlob": "0a8adb49e02f31d8fd5b5fceab6b19114a27114e"
+        },
+        {
+          "path": "src/components/dashboard/dashboard.module.css",
+          "combinedBlob": "c8b825edb765b08f8ce47108471c5637ddbbc3a5",
+          "candidateBlob": "c8b825edb765b08f8ce47108471c5637ddbbc3a5",
+          "sourceManifestBlob": "c8b825edb765b08f8ce47108471c5637ddbbc3a5"
+        },
+        {
+          "path": "src/components/territorial-map/territorial-map-view.tsx",
+          "combinedBlob": "b071e25c639e2c63f803d50f0a489cab5c4c29a3",
+          "candidateBlob": "b071e25c639e2c63f803d50f0a489cab5c4c29a3",
+          "sourceManifestBlob": "b071e25c639e2c63f803d50f0a489cab5c4c29a3"
+        },
+        {
+          "path": "src/components/territorial-map/territorial-map.module.css",
+          "combinedBlob": "85c9d6761cf86741832e9f7f9816f8569bebbf64",
+          "candidateBlob": "85c9d6761cf86741832e9f7f9816f8569bebbf64",
+          "sourceManifestBlob": "85c9d6761cf86741832e9f7f9816f8569bebbf64"
+        },
+        {
+          "path": "tests/ui/async-read-focus.config.ts",
+          "combinedBlob": "5a94eb5332111f8070d8f75f4602dce387264449",
+          "candidateBlob": "5a94eb5332111f8070d8f75f4602dce387264449",
+          "sourceManifestBlob": "5a94eb5332111f8070d8f75f4602dce387264449"
+        },
+        {
+          "path": "tests/ui/async-read-focus.spec.ts",
+          "combinedBlob": "df4b319d48952236fa22f3a12a54400327f15596",
+          "candidateBlob": "df4b319d48952236fa22f3a12a54400327f15596",
+          "sourceManifestBlob": "df4b319d48952236fa22f3a12a54400327f15596"
+        },
+        {
+          "path": "src/components/user-administration/user-administration-page.tsx",
+          "combinedBlob": "e0bbaa7ba837f2bafa7893c93b628458e76e7e1b",
+          "candidateBlob": "e0bbaa7ba837f2bafa7893c93b628458e76e7e1b",
+          "sourceManifestBlob": "e0bbaa7ba837f2bafa7893c93b628458e76e7e1b"
+        },
+        {
+          "path": "tests/ui/admin-access-focus.config.ts",
+          "combinedBlob": "967b83ec394b5c4442ef0dc744d71599020637b2",
+          "candidateBlob": "967b83ec394b5c4442ef0dc744d71599020637b2",
+          "sourceManifestBlob": "967b83ec394b5c4442ef0dc744d71599020637b2"
+        },
+        {
+          "path": "tests/ui/admin-access-focus.spec.ts",
+          "combinedBlob": "ed7fa8cea3c241304bc88d90b7b1644a4c4396b4",
+          "candidateBlob": "ed7fa8cea3c241304bc88d90b7b1644a4c4396b4",
+          "sourceManifestBlob": "ed7fa8cea3c241304bc88d90b7b1644a4c4396b4"
+        }
+      ],
+      "equal": true
+    },
+    "scopeManifestSha256": "6b93c560b0ad0d30d6c5571a7d8239a10a77a271c752761c476621e7539cdcc8",
+    "scopeManifestDisposition": "598-path manifest retained as ignored local exportable evidence; scope differs from other manifests"
+  },
+  "installationAttempts": [
+    {
+      "command": "npm ci --offline --no-audit --no-fund",
+      "result": "SETUP_WRAPPER_FAIL",
+      "exitCode": null,
+      "npmExitCodeObserved": false,
+      "cause": "PowerShell ErrorActionPreference Stop converted npm deprecation stderr into NativeCommandError; no product assertion ran",
+      "repeatedBecause": "capture native stdout and stderr without PowerShell error conversion; same lock/dependencies/install protections",
+      "retainedLog": "npm-ci-attempt-1.log"
+    },
+    {
+      "command": "npm ci --offline --no-audit --no-fund",
+      "startedUtc": "2026-10-25T15:45:31.933Z",
+      "endedUtc": "2026-10-25T15:47:07.195Z",
+      "durationMs": 95260.25259999999,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "6852cc39c4316c5d40bb3c093b54941ee0439aabee82e69b2fd35401585b3426",
+      "environment": "system allowlist only; no application/provider variables; no project env files",
+      "result": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "id": "prisma-generate",
+      "command": "npx prisma generate",
+      "startedUtc": "2026-10-25T15:47:54.211Z",
+      "endedUtc": "2026-10-25T15:48:00.878Z",
+      "durationMs": 6666.1412,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "b3550bb1b98494863ce08168c6b02ea5c94c10da3c95bd755cda5e234f7b185b",
+      "logBytes": 331,
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "typecheck-before-build",
+      "command": "npm run typecheck",
+      "startedUtc": "2026-10-25T15:48:00.880Z",
+      "endedUtc": "2026-10-25T15:48:08.267Z",
+      "durationMs": 7387.715900000001,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "logBytes": 85,
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "startedUtc": "2026-10-25T15:48:08.269Z",
+      "endedUtc": "2026-10-25T15:48:22.136Z",
+      "durationMs": 13867.1875,
+      "exitCode": 1,
+      "signal": null,
+      "logSha256": "236d782c9b2c0ee0a7b4bf7f3c85304d1cd838fd51bd4ad80adc96a46f516733",
+      "logBytes": 1010,
+      "result": "FAIL",
+      "attempt": 1
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "startedUtc": "2026-10-25T15:48:22.137Z",
+      "endedUtc": "2026-10-25T15:48:45.255Z",
+      "durationMs": 23118.119599999998,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "11fa24e2112e86c6ef26374680b17f738182f03e655c342af4a82d13dfbd5db4",
+      "logBytes": 5518,
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "typecheck-after-build",
+      "command": "npm run typecheck",
+      "startedUtc": "2026-10-25T15:48:45.256Z",
+      "endedUtc": "2026-10-25T15:48:53.901Z",
+      "durationMs": 8644.321199999998,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "logBytes": 85,
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "ops-metadata",
+      "command": "node --test tests/operations/ops-metadata-presence.test.mjs",
+      "startedUtc": "2026-10-25T15:48:53.902Z",
+      "endedUtc": "2026-10-25T15:48:54.554Z",
+      "durationMs": 652.081299999998,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "b5ec8b2fb3a632c6bde2b41724e27c118569c9df180ec2f4710c2187540a0866",
+      "logBytes": 579,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": "not applicable"
+    },
+    {
+      "id": "local-scheduler",
+      "command": "node --experimental-strip-types --test tests/investigations/mail/local-scheduler.test.mjs",
+      "startedUtc": "2026-10-25T15:48:54.556Z",
+      "endedUtc": "2026-10-25T15:48:56.038Z",
+      "durationMs": 1482.051999999996,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "15e5837ab666c65056618afbd7b07eddc469e65c2ba89ecd67824373ced918a2",
+      "logBytes": 1198,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": "not applicable"
+    },
+    {
+      "id": "readiness-policy-navigation",
+      "command": "node --unhandled-rejections=strict --import=tsx --test --test-reporter=tap --test-concurrency=1 tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts",
+      "startedUtc": "2026-10-25T15:48:56.039Z",
+      "endedUtc": "2026-10-25T15:48:58.880Z",
+      "durationMs": 2840.8027999999977,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "c0c598444722f9612efd7c04e2837a5bd85517aee1b8b008df0787fd5f73ddfe",
+      "logBytes": 4225,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 18,
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": "not applicable"
+    },
+    {
+      "id": "member-popup",
+      "command": "npx playwright test --config=tests/ui/member-popup.config.ts",
+      "startedUtc": "2026-10-25T15:48:58.880Z",
+      "endedUtc": "2026-10-25T15:49:04.680Z",
+      "durationMs": 5799.745999999999,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "7a9380213b7078bcb0e994c635022ad927a05b59f93f9c4b0b76cc7607c7920a",
+      "logBytes": 186,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": 0
+    },
+    {
+      "id": "async-read-focus",
+      "command": "npx playwright test --config=tests/ui/async-read-focus.config.ts",
+      "startedUtc": "2026-10-25T15:49:04.681Z",
+      "endedUtc": "2026-10-25T15:49:29.298Z",
+      "durationMs": 24617.460099999997,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "dccd92278bcb9e74c4fa4041140931e61da0fa4f501acf38b3e54c56281bb296",
+      "logBytes": 235,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 27,
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": 0
+    },
+    {
+      "id": "admin-access-focus",
+      "command": "npx playwright test --config=tests/ui/admin-access-focus.config.ts",
+      "startedUtc": "2026-10-25T15:49:29.299Z",
+      "endedUtc": "2026-10-25T15:49:41.871Z",
+      "durationMs": 12571.737800000003,
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "828591413b787f67ae1763287344035a27705ccc9db3d86b1e30d223d5de7366",
+      "logBytes": 211,
+      "result": "PASS",
+      "attempt": 1,
+      "observedTestCount": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "retries": 0
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "startedUtc": "2026-10-25T15:51:12.190Z",
+      "endedUtc": "2026-10-25T15:51:23.007Z",
+      "durationMs": 10815.522700000001,
+      "exitCode": 0,
+      "signal": null,
+      "result": "PASS",
+      "attempt": 2,
+      "repeatedBecause": "First ESLint run included untracked local collector .cjs; moved that support file to non-collected .collector extension, without changing code or ESLint configuration",
+      "logSha256": "58f66108b5bf8263a4791cb699685501ad4c809c1f94795d20f94c23c2b68560",
+      "logBytes": 509
+    }
+  ],
+  "effectiveChecks": [
+    {
+      "id": "prisma-generate",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "typecheck-before-build",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "build",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "typecheck-after-build",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "ops-metadata",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "local-scheduler",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "readiness-policy-navigation",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "member-popup",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "async-read-focus",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "admin-access-focus",
+      "result": "PASS",
+      "attempt": 1
+    },
+    {
+      "id": "lint",
+      "result": "PASS",
+      "attempt": 2
+    }
+  ],
+  "result": "PASS",
+  "lint": {
+    "effectiveErrors": 0,
+    "effectiveWarnings": 2,
+    "preexistingWarnings": [
+      "src/components/user-profile/index.tsx: useAuth unused",
+      "src/components/white-box/index.tsx: className unused"
+    ],
+    "firstAttempt": "SETUP_FAIL: own untracked CJS collector was included by ESLint. Original FAIL retained; support filename moved outside collection; tracked code and configuration unchanged"
+  },
+  "specKit": {
+    "classification": "EVIDENCIA_IMPLEMENTACAO",
+    "method": "Installed skills read and applied by native agent B; real prerequisite scripts; semantic analysis and present-code convergence, no command/harness simulation",
+    "hooks": "No .specify/extensions.yml exists; no hooks applied",
+    "constitutionVersion": "1.0.0",
+    "constitutionPrinciplesChecked": 7,
+    "skillHashes": {
+      "analyze": "d3f755e5a23271f9b114a9504448dfbf80c1ec2695013040ee43f4791c6cd706",
+      "converge": "9784a70c06fdbddbad43aaddaaf2bf4747ff6a895459fba90aa1eaa04f89bc7b"
+    },
+    "records": [
+      {
+        "feature": "029-member-popup-initials",
+        "analyzedSourceHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/029-member-popup-initials",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "contracts/",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "FR-006",
+          "SC-001",
+          "SC-002",
+          "SC-003",
+          "SC-004"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 5,
+        "planDecisionsChecked": 5,
+        "tasksPhysicalSha256Before": "1dffdd5244791e04061e663b3675c011d67d2ea95df4a90ce25be4c0d309c141",
+        "tasksPhysicalSha256After": "1dffdd5244791e04061e663b3675c011d67d2ea95df4a90ce25be4c0d309c141",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      },
+      {
+        "feature": "030-local-readiness-instruments",
+        "analyzedSourceHead": "6b9ed579912ee9ca1590cff41779232ade40d966",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/030-local-readiness-instruments",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "FR-006",
+          "SC-001",
+          "SC-002",
+          "SC-003",
+          "SC-004",
+          "SC-005"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010",
+          "T011",
+          "T012",
+          "T013",
+          "T014",
+          "T015",
+          "T016"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 5,
+        "planDecisionsChecked": 6,
+        "tasksPhysicalSha256Before": "0a694e453743adfe29b6377f7cd53adc04f86a91f5940f3f071ed75d6e6c20a5",
+        "tasksPhysicalSha256After": "0a694e453743adfe29b6377f7cd53adc04f86a91f5940f3f071ed75d6e6c20a5",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      },
+      {
+        "feature": "031-ops-metadata-presence",
+        "analyzedSourceHead": "efd0bae2a3c4339373a3100717c5fe77345c4d02",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/031-ops-metadata-presence",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "contracts/",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "FR-006",
+          "SC-001",
+          "SC-002",
+          "SC-003"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 5,
+        "planDecisionsChecked": 4,
+        "tasksPhysicalSha256Before": "aff00b0150c757743dbb1d10ee488083de9557060a6cb5c10cd1b0856b1660f6",
+        "tasksPhysicalSha256After": "aff00b0150c757743dbb1d10ee488083de9557060a6cb5c10cd1b0856b1660f6",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      },
+      {
+        "feature": "032-async-read-focus",
+        "analyzedSourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/032-async-read-focus",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "contracts/",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "FR-006",
+          "FR-007",
+          "SC-001",
+          "SC-002",
+          "SC-003",
+          "SC-004"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010",
+          "T011"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 6,
+        "planDecisionsChecked": 4,
+        "tasksPhysicalSha256Before": "4f3277e9f075731455e7cef306d56b4f8d1f7282649340d94ebcecd6e0614009",
+        "tasksPhysicalSha256After": "4f3277e9f075731455e7cef306d56b4f8d1f7282649340d94ebcecd6e0614009",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      },
+      {
+        "feature": "033-admin-access-focus",
+        "analyzedSourceHead": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/033-admin-access-focus",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "contracts/",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "FR-006",
+          "SC-001",
+          "SC-002",
+          "SC-003"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009",
+          "T010"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 6,
+        "planDecisionsChecked": 4,
+        "tasksPhysicalSha256Before": "d25d32e2837d002943c24c5404894849774c2eb58e9a4fd2af1169721e8ffbb2",
+        "tasksPhysicalSha256After": "d25d32e2837d002943c24c5404894849774c2eb58e9a4fd2af1169721e8ffbb2",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      },
+      {
+        "feature": "034-local-mail-scheduler",
+        "analyzedSourceHead": "2341275eac6c60054be00ef81b0e1a84619225ca",
+        "prerequisite": {
+          "command": "bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+          "exitCode": 0,
+          "featureDirectory": "specs/034-local-mail-scheduler",
+          "availableDocs": [
+            "research.md",
+            "data-model.md",
+            "contracts/",
+            "quickstart.md",
+            "tasks.md"
+          ],
+          "context": "SPECIFY_FEATURE and SPECIFY_FEATURE_DIRECTORY set only in child process; feature.json local metadata only"
+        },
+        "requirements": [
+          "FR-001",
+          "FR-002",
+          "FR-003",
+          "FR-004",
+          "FR-005",
+          "SC-001",
+          "SC-002",
+          "SC-003"
+        ],
+        "tasks": [
+          "T001",
+          "T002",
+          "T003",
+          "T004",
+          "T005",
+          "T006",
+          "T007",
+          "T008",
+          "T009"
+        ],
+        "uncheckedTasks": [],
+        "acceptanceScenariosChecked": 6,
+        "planDecisionsChecked": 4,
+        "tasksPhysicalSha256Before": "afa21a3414d0ab4ae64fe1c8b21ad556dfa5abc41d7698d922b23a65e4f13914",
+        "tasksPhysicalSha256After": "afa21a3414d0ab4ae64fe1c8b21ad556dfa5abc41d7698d922b23a65e4f13914",
+        "tasksByteIdentical": true,
+        "analysis": {
+          "coveragePercent": 100,
+          "ambiguity": 0,
+          "duplication": 0,
+          "findings": [],
+          "constitutionIssues": [],
+          "unmappedTasks": [],
+          "setupAndPolish": "Mapped to plan obligations and constitution quality/evidence principles"
+        },
+        "convergence": {
+          "outcome": "converged",
+          "missing": 0,
+          "partial": 0,
+          "contradicts": 0,
+          "unrequested": 0,
+          "appendedTasks": 0,
+          "findings": []
+        }
+      }
+    ],
+    "requirementsAndBuildableSuccessCriteria": 58,
+    "acceptanceScenariosChecked": 33,
+    "planDecisionsChecked": 27,
+    "totalTasks": 66,
+    "coveragePercent": 100,
+    "tasksAdded": 0,
+    "artifactTasksAllByteIdentical": true,
+    "convergence": "converged; zero missing/partial/contradicts/unrequested, no source edits"
+  },
+  "validationBoundaries": {
+    "fullE2E": "Not repeated locally; final official CI is coordinator responsibility",
+    "historicalTests": "Prior hash-backed 419 unit/mail,47UI,220E2E not claimed as new or unique local tests",
+    "restore": "HISTORICAL_TEXTUAL_FAIL_PRESERVED_NOT_HOSTED_QUALIFICATION; CATALOG_CONSTRAINT_MISMATCH and 188 separate probes not rerun or reclassified",
+    "humanAssistiveAcceptance": "PENDING",
+    "G3": "BLOCKED",
+    "G4": "BLOCKED",
+    "G5": "BLOCKED",
+    "deployRequested": false,
+    "hostedMutations": false,
+    "emailSent": false,
+    "scientificQualifiers": [
+      "CONTRATO_EXPERIMENTAL",
+      "VALIDACAO_CIENTIFICA_PENDENTE",
+      "SUJEITO_A_RECALIBRACAO",
+      "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+    ]
+  },
+  "diffCheck": {
+    "exitCode": 0
+  },
+  "initialRepositoryState": "Clean status at base 08262dc57c1ad365244f9ec6902b1e4be39e2d7d; other existing worktrees preserved",
+  "repositoryStateBeforeReceipt": "",
+  "generatedUtc": "2026-10-25T15:54:14.011Z",
+  "logs": "Private ignored per-attempt logs retained with SHA256/byte sizes. No raw logs, environment values or personal absolute paths published"
+}

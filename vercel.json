@@ -28,7 +28,15 @@
       "fix/investigacoes-intermitentes-20261023-local01": false,
       "docs/hf-doc-local01-20261024": false,
       "docs/hf-doc-chat01-20261024": false,
-      "docs/hf-int-doc27-20261024": false
+      "docs/hf-int-doc27-20261024": false,
+      "docs/hf-night-students-20261025": false,
+      "fix/hf-night-fr015-20261025": false,
+      "fix/hf-night-async-focus-20261025": false,
+      "fix/hf-night-admin-focus-20261025": false,
+      "test/hf-night-local-scheduler-20261025": false,
+      "test/hf-night-baseline-20261025": false,
+      "feat/hf-night-01": false,
+      "release/hf-close-01-20261025": false
     }
   }
 }

@@ -1,0 +1,1 @@
+﻿{"command":"node --import=tsx -e \u003ctsx-init-diagnostic\u003e","scope":"setup diagnostic; no tests executed","startedUtc":"2026-10-25T04:09:57.5269040Z","endedUtc":"2026-10-25T04:09:57.7984681Z","durationSeconds":0.2612966,"exitCode":1,"sha":"08262dc57c1ad365244f9ec6902b1e4be39e2d7d","platform":"win32","log":"12-sandbox-tsx-diagnostic.log"}

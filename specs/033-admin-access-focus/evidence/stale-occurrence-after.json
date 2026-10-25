@@ -1,0 +1,34 @@
+{
+  "control": "single-render-step-before-new-selection",
+  "beforeAction": {
+    "alertFocused": false,
+    "retainedCallbacks": 1
+  },
+  "duringAction": [
+    {
+      "phase": "dom-mutation",
+      "alertPresent": true
+    },
+    {
+      "phase": "new-selection-action",
+      "alertPresent": true
+    },
+    {
+      "phase": "read:/api/admin/users/account-b",
+      "alertPresent": true
+    },
+    {
+      "phase": "read:/api/admin/users/account-b/audit",
+      "alertPresent": true
+    },
+    {
+      "phase": "dom-mutation",
+      "alertPresent": false
+    },
+    {
+      "phase": "native-raf",
+      "alertPresent": false
+    }
+  ],
+  "afterAction": []
+}

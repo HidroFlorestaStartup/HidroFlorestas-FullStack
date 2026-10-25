@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "key": "NEXT_PUBLIC_MAP_ATTRIBUTION",
+      "target": [
+        "production",
+        "preview",
+        "development"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "NEXT_PUBLIC_MAP_TILE_URL",
+      "target": [
+        "development",
+        "preview",
+        "production"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "target": [
+        "production"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "target": [
+        "preview"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "target": [
+        "development"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "target": [
+        "production"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "target": [
+        "preview"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "target": [
+        "development"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "target": [
+        "production"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "target": [
+        "preview"
+      ],
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "target": [
+        "development"
+      ],
+      "gitBranch": null
+    }
+  ]
+}

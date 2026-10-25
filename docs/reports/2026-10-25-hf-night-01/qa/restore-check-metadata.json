@@ -1,0 +1,601 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "scope": "catalog metadata only; no vectors executed; textual restore FAIL unchanged",
+  "startedUtc": "2026-10-25T06:04:08.621Z",
+  "result": "PASS",
+  "roles": [
+    {
+      "role": "source",
+      "rows": [
+        {
+          "checkName": "AccountEmailChallenge_bounds",
+          "tableName": "AccountEmailChallenge",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "(((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100)) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))",
+          "definition": "CHECK ((((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100)) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\")))",
+          "columns": [
+            {
+              "name": "expiresAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "attemptCount",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "maxAttempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "createdAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        },
+        {
+          "checkName": "AccountRequest_action_check",
+          "tableName": "AccountRequest",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((action)::text = ANY ((ARRAY['sign-up'::character varying, 'verification-resend'::character varying, 'password-reset'::character varying])::text[]))",
+          "definition": "CHECK (((action)::text = ANY ((ARRAY['sign-up'::character varying, 'verification-resend'::character varying, 'password-reset'::character varying])::text[])))",
+          "columns": [
+            {
+              "name": "action",
+              "type": "character varying(32)",
+              "typmod": 36,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_kind_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((kind)::text = ANY ((ARRAY['STAGING'::character varying, 'FINAL'::character varying])::text[]))",
+          "definition": "CHECK (((kind)::text = ANY ((ARRAY['STAGING'::character varying, 'FINAL'::character varying])::text[])))",
+          "columns": [
+            {
+              "name": "kind",
+              "type": "character varying(8)",
+              "typmod": 12,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_resourceType_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((\"resourceType\")::text = ANY ((ARRAY['image'::character varying, 'video'::character varying, 'raw'::character varying])::text[]))",
+          "definition": "CHECK (((\"resourceType\")::text = ANY ((ARRAY['image'::character varying, 'video'::character varying, 'raw'::character varying])::text[])))",
+          "columns": [
+            {
+              "name": "resourceType",
+              "type": "character varying(8)",
+              "typmod": 12,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_state_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((state)::text = ANY ((ARRAY['PENDING'::character varying, 'PROCESSING'::character varying, 'RECONCILE'::character varying, 'BLOCKED'::character varying])::text[]))",
+          "definition": "CHECK (((state)::text = ANY ((ARRAY['PENDING'::character varying, 'PROCESSING'::character varying, 'RECONCILE'::character varying, 'BLOCKED'::character varying])::text[])))",
+          "columns": [
+            {
+              "name": "state",
+              "type": "character varying(16)",
+              "typmod": 20,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverUploadAttempt_state_check",
+          "tableName": "CoverUploadAttempt",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((state)::text = ANY ((ARRAY['ISSUED'::character varying, 'PROCESSING'::character varying, 'CONFIRMED'::character varying, 'FAILED'::character varying])::text[]))",
+          "definition": "CHECK (((state)::text = ANY ((ARRAY['ISSUED'::character varying, 'PROCESSING'::character varying, 'CONFIRMED'::character varying, 'FAILED'::character varying])::text[])))",
+          "columns": [
+            {
+              "name": "state",
+              "type": "character varying(16)",
+              "typmod": 20,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "MailOutbox_bounds",
+          "tableName": "MailOutbox",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "(((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5)) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))",
+          "definition": "CHECK ((((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5)) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text)))",
+          "columns": [
+            {
+              "name": "contentMac",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "attempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "maxAttempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "expiresAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "createdAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        },
+        {
+          "checkName": "MailRateLimitBucket_bounds",
+          "tableName": "MailRateLimitBucket",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY ((ARRAY['email-verification'::character varying, 'password-reset'::character varying, 'sign-up'::character varying, 'sign-in'::character varying, 'verification-confirm'::character varying, 'reset-confirm'::character varying, 'change-password'::character varying, 'account-global'::character varying, 'delete-account'::character varying])::text[])))",
+          "definition": "CHECK (((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY ((ARRAY['email-verification'::character varying, 'password-reset'::character varying, 'sign-up'::character varying, 'sign-in'::character varying, 'verification-confirm'::character varying, 'reset-confirm'::character varying, 'change-password'::character varying, 'account-global'::character varying, 'delete-account'::character varying])::text[]))))",
+          "columns": [
+            {
+              "name": "subjectMac",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "action",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "windowStart",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "windowEnd",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "count",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        }
+      ],
+      "rollback": true,
+      "identity": {
+        "expectedDatabase": true,
+        "readOnly": true,
+        "serverVersionNum": "170010"
+      },
+      "markerVerified": true,
+      "expressionDrift": false,
+      "columnOccurrences": 19,
+      "serverVersion": "17.10"
+    },
+    {
+      "role": "target",
+      "rows": [
+        {
+          "checkName": "AccountEmailChallenge_bounds",
+          "tableName": "AccountEmailChallenge",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))",
+          "definition": "CHECK (((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\")))",
+          "columns": [
+            {
+              "name": "expiresAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "attemptCount",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "maxAttempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "createdAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        },
+        {
+          "checkName": "AccountRequest_action_check",
+          "tableName": "AccountRequest",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((action)::text = ANY (ARRAY[('sign-up'::character varying)::text, ('verification-resend'::character varying)::text, ('password-reset'::character varying)::text]))",
+          "definition": "CHECK (((action)::text = ANY (ARRAY[('sign-up'::character varying)::text, ('verification-resend'::character varying)::text, ('password-reset'::character varying)::text])))",
+          "columns": [
+            {
+              "name": "action",
+              "type": "character varying(32)",
+              "typmod": 36,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_kind_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((kind)::text = ANY (ARRAY[('STAGING'::character varying)::text, ('FINAL'::character varying)::text]))",
+          "definition": "CHECK (((kind)::text = ANY (ARRAY[('STAGING'::character varying)::text, ('FINAL'::character varying)::text])))",
+          "columns": [
+            {
+              "name": "kind",
+              "type": "character varying(8)",
+              "typmod": 12,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_resourceType_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((\"resourceType\")::text = ANY (ARRAY[('image'::character varying)::text, ('video'::character varying)::text, ('raw'::character varying)::text]))",
+          "definition": "CHECK (((\"resourceType\")::text = ANY (ARRAY[('image'::character varying)::text, ('video'::character varying)::text, ('raw'::character varying)::text])))",
+          "columns": [
+            {
+              "name": "resourceType",
+              "type": "character varying(8)",
+              "typmod": 12,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverCleanupJob_state_check",
+          "tableName": "CoverCleanupJob",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((state)::text = ANY (ARRAY[('PENDING'::character varying)::text, ('PROCESSING'::character varying)::text, ('RECONCILE'::character varying)::text, ('BLOCKED'::character varying)::text]))",
+          "definition": "CHECK (((state)::text = ANY (ARRAY[('PENDING'::character varying)::text, ('PROCESSING'::character varying)::text, ('RECONCILE'::character varying)::text, ('BLOCKED'::character varying)::text])))",
+          "columns": [
+            {
+              "name": "state",
+              "type": "character varying(16)",
+              "typmod": 20,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "CoverUploadAttempt_state_check",
+          "tableName": "CoverUploadAttempt",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((state)::text = ANY (ARRAY[('ISSUED'::character varying)::text, ('PROCESSING'::character varying)::text, ('CONFIRMED'::character varying)::text, ('FAILED'::character varying)::text]))",
+          "definition": "CHECK (((state)::text = ANY (ARRAY[('ISSUED'::character varying)::text, ('PROCESSING'::character varying)::text, ('CONFIRMED'::character varying)::text, ('FAILED'::character varying)::text])))",
+          "columns": [
+            {
+              "name": "state",
+              "type": "character varying(16)",
+              "typmod": 20,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            }
+          ]
+        },
+        {
+          "checkName": "MailOutbox_bounds",
+          "tableName": "MailOutbox",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))",
+          "definition": "CHECK (((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text)))",
+          "columns": [
+            {
+              "name": "contentMac",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "attempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "maxAttempts",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "expiresAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "createdAt",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        },
+        {
+          "checkName": "MailRateLimitBucket_bounds",
+          "tableName": "MailRateLimitBucket",
+          "present": true,
+          "isCheck": true,
+          "validated": true,
+          "deferrable": false,
+          "deferred": false,
+          "expression": "((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY (ARRAY[('email-verification'::character varying)::text, ('password-reset'::character varying)::text, ('sign-up'::character varying)::text, ('sign-in'::character varying)::text, ('verification-confirm'::character varying)::text, ('reset-confirm'::character varying)::text, ('change-password'::character varying)::text, ('account-global'::character varying)::text, ('delete-account'::character varying)::text])))",
+          "definition": "CHECK (((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY (ARRAY[('email-verification'::character varying)::text, ('password-reset'::character varying)::text, ('sign-up'::character varying)::text, ('sign-in'::character varying)::text, ('verification-confirm'::character varying)::text, ('reset-confirm'::character varying)::text, ('change-password'::character varying)::text, ('account-global'::character varying)::text, ('delete-account'::character varying)::text]))))",
+          "columns": [
+            {
+              "name": "subjectMac",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "action",
+              "type": "character varying(64)",
+              "typmod": 68,
+              "notNull": true,
+              "collation": "default",
+              "collationProvider": "d",
+              "collationDeterministic": true
+            },
+            {
+              "name": "windowStart",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "windowEnd",
+              "type": "timestamp(3) with time zone",
+              "typmod": 3,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            },
+            {
+              "name": "count",
+              "type": "integer",
+              "typmod": -1,
+              "notNull": true,
+              "collation": null,
+              "collationProvider": null,
+              "collationDeterministic": null
+            }
+          ]
+        }
+      ],
+      "rollback": true,
+      "identity": {
+        "expectedDatabase": true,
+        "readOnly": true,
+        "serverVersionNum": "170010"
+      },
+      "markerVerified": true,
+      "expressionDrift": false,
+      "columnOccurrences": 19,
+      "serverVersion": "17.10"
+    }
+  ],
+  "vectorsExecuted": 0,
+  "protocolSha256": "07cc1263fec5d7cf46ba6f3d139d88bdc7fd4878605c7a3d7bb94e8660216235",
+  "restoreReceiptSha256": "d129fc583c9ab91b06aeadcdd61885a9fefcd09b863f1b89e5d05ef4be4286c2",
+  "metadataMatchedSourceTarget": true,
+  "columnOccurrencesPerRole": 19,
+  "allNotNull": true,
+  "timestampTypes": [
+    "timestamp(3) with time zone"
+  ],
+  "exitCode": 0,
+  "originalRestoreGate": "FAIL/CATALOG_CONSTRAINT_MISMATCH",
+  "endedUtc": "2026-10-25T06:04:08.784Z",
+  "durationMs": 162.82850000000002
+}

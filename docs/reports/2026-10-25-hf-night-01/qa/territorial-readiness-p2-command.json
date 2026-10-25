@@ -1,0 +1,9 @@
+﻿{
+    "startedUtc":  "2026-10-25T06:54:25.0348981Z",
+    "endedUtc":  "2026-10-25T06:54:50.0888462Z",
+    "durationMs":  25050.1605,
+    "wrapperExitCode":  0,
+    "command":  "accounts-local-postgresql.ps1 -Action Run -DatabaseMode Schema -Executable node --unhandled-rejections=strict --conditions=react-server --import=tsx scripts/local-readiness.ts",
+    "rawLog":  ".accounts-validation/local-readiness-p2-real.log",
+    "privateIgnored":  true
+}

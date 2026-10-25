@@ -1,0 +1,22 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "baselineFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+  "instrumentFingerprint": "8313f11b969379019da1e6dc84240d49b52f2792e1ad6a65b13059485184a90e",
+  "added": [
+    {
+      "path": "scripts/local-readiness-policy.ts",
+      "sha256": "51990658f5db810067975271b31fe850d84352127d85246b519fa1b559668dfd"
+    },
+    {
+      "path": "scripts/local-readiness.ts",
+      "sha256": "97c7684c2e38a7fcb6451b7ef6c62e71ef3b415d785b4b3ef8c5d547fccce200"
+    },
+    {
+      "path": "tests/investigations/readiness/local-readiness-policy.test.ts",
+      "sha256": "ef0ecc26017b7154166fca3a0dff40debd504fdbfb2a8c424c19c3660e5d4376"
+    }
+  ],
+  "changed": [],
+  "removed": [],
+  "baselineResultsTransferToNewFingerprint": false
+}
