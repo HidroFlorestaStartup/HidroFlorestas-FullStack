@@ -34,7 +34,8 @@
       "fix/hf-night-async-focus-20261025": false,
       "fix/hf-night-admin-focus-20261025": false,
       "test/hf-night-local-scheduler-20261025": false,
-      "test/hf-night-baseline-20261025": false
+      "test/hf-night-baseline-20261025": false,
+      "feat/hf-night-01": false
     }
   }
 }
