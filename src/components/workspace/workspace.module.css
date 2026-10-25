@@ -52,7 +52,9 @@
 .details dt { color: #4b6557; font-size: .875rem; }
 .details dd { margin-top: 4px; font-weight: 600; }
 .members { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding: 0; list-style: none; }
-.members li { padding: 8px 12px; border-radius: 10px; background: #edf3ef; font-size: .875rem; }
+.members li { display: flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%; padding: 8px 12px; border-radius: 10px; background: #edf3ef; font-size: .875rem; }
+.memberAvatar { display: inline-flex; flex: 0 0 36px; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 50%; background: #e5e7eb; color: #374151; font-weight: 700; }
+.memberName { min-width: 0; overflow-wrap: anywhere; }
 .risk { display: grid; gap: 12px; padding: 16px; border: 1px solid #e9bdbd; border-radius: 12px; }
 .risk h3 { color: #992525; font-weight: 700; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
