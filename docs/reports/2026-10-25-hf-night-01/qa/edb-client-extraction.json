@@ -1,0 +1,166 @@
+﻿{
+    "utc":  "2026-10-25T05:39:22.7215043Z",
+    "sourceArchiveSha256":  "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f",
+    "extracted":  [
+                      {
+                          "path":  "pgsql/bin/icudt67.dll",
+                          "bytes":  28399104,
+                          "sha256":  "5ff9c8026344e886f280ddfa235a1e16e1bcd396e90f9ed600b6f71d9d881ae8"
+                      },
+                      {
+                          "path":  "pgsql/bin/icuin67.dll",
+                          "bytes":  2674176,
+                          "sha256":  "23d5914acf071f566df19aaf404373e5c73c9910c370e728976f6202c04cf6c3"
+                      },
+                      {
+                          "path":  "pgsql/bin/icuio67.dll",
+                          "bytes":  61440,
+                          "sha256":  "1ca5221753f930de19041d546ce0f24102455621c71033d4d5cb8151762c9694"
+                      },
+                      {
+                          "path":  "pgsql/bin/icutu67.dll",
+                          "bytes":  220672,
+                          "sha256":  "371c4784b5510b8e80a6b5896567b17bc70e231ea47ee8f614a7ebd3d510960f"
+                      },
+                      {
+                          "path":  "pgsql/bin/icuuc67.dll",
+                          "bytes":  1906688,
+                          "sha256":  "2fb4007a1f1089a0807cc1abde5443f5c3b0865ecfd80344b6ad165f1fe53ade"
+                      },
+                      {
+                          "path":  "pgsql/bin/libcrypto-3-x64.dll",
+                          "bytes":  5486592,
+                          "sha256":  "54c0a88da398559c3daec198d7af8f020ff6fbeead38dbacd97d21ae920c3a00"
+                      },
+                      {
+                          "path":  "pgsql/bin/libcurl.dll",
+                          "bytes":  750080,
+                          "sha256":  "7d756f341091924063baa4f9fd79b5a013125e0d5d876badc1e355310e0857f8"
+                      },
+                      {
+                          "path":  "pgsql/bin/libecpg_compat.dll",
+                          "bytes":  25088,
+                          "sha256":  "3d0d1d0d55abbe5094c36a3ab05bb0522043aaf3debf9bb2441ba3c3e33cdd57"
+                      },
+                      {
+                          "path":  "pgsql/bin/libecpg.dll",
+                          "bytes":  102400,
+                          "sha256":  "6355b48392c59d2b236686bd49e0e3db8164f9e3da4a856729240195a5dbad38"
+                      },
+                      {
+                          "path":  "pgsql/bin/libiconv-2.dll",
+                          "bytes":  1850401,
+                          "sha256":  "3ee9786ab3eb8dfd791bdbd17c7e791dbe025734befcded0ee4170e1089f79df"
+                      },
+                      {
+                          "path":  "pgsql/bin/libintl-9.dll",
+                          "bytes":  475769,
+                          "sha256":  "1125ac8dc0c4f5c3ed4712e0d8ad29474099fcb55bb0e563a352ce9d03ef1d78"
+                      },
+                      {
+                          "path":  "pgsql/bin/liblz4.dll",
+                          "bytes":  128000,
+                          "sha256":  "096af775241b3bd4b1c3d79c83b103bb8f02da54ec4cd76c5d49eef61a68ad01"
+                      },
+                      {
+                          "path":  "pgsql/bin/libpgtypes.dll",
+                          "bytes":  84992,
+                          "sha256":  "b2258bd7a8c9c1da07841cba1ff228c61d719dcca2b0e170cbc29fad9b903444"
+                      },
+                      {
+                          "path":  "pgsql/bin/libpq.dll",
+                          "bytes":  351232,
+                          "sha256":  "9ed093bb84a0b93603ceb11011442342a4f8789fb1af44d96f6e1923f75b4812"
+                      },
+                      {
+                          "path":  "pgsql/bin/libssl-3-x64.dll",
+                          "bytes":  1292800,
+                          "sha256":  "0ac3d836a2fa84dee83bd06a4abfaf8ab7ded689420edc76febc185500e2d6e1"
+                      },
+                      {
+                          "path":  "pgsql/bin/libwinpthread-1.dll",
+                          "bytes":  52736,
+                          "sha256":  "ffe2d56375bb4e8bdee9037df6befc5016ddd8871d0d85027314dd5792f8fdc9"
+                      },
+                      {
+                          "path":  "pgsql/bin/libxml2.dll",
+                          "bytes":  1213952,
+                          "sha256":  "1cb308eb9be9063eda714549bacda541cc711843c3ab45f91ae91d3ae046dba9"
+                      },
+                      {
+                          "path":  "pgsql/bin/libxslt.dll",
+                          "bytes":  414208,
+                          "sha256":  "8226fad0fc6e9b79b14203d4f5263ddec5764c0108aa7c17622dd77f311669a6"
+                      },
+                      {
+                          "path":  "pgsql/bin/libzstd.dll",
+                          "bytes":  727040,
+                          "sha256":  "287e7e474961e8886a3d961e2c07da647a7ac8d60d97023545f3a3ecf604daba"
+                      },
+                      {
+                          "path":  "pgsql/bin/pg_dump.exe",
+                          "bytes":  613888,
+                          "sha256":  "eaa2d00935e0dd55a6ad7aa2f106d013dcb4e793b7e7d2c6df64bf5b60fbdcd7"
+                      },
+                      {
+                          "path":  "pgsql/bin/pg_restore.exe",
+                          "bytes":  371200,
+                          "sha256":  "b91271bd574183dadd17b7dc996dd793805de3eab676e7f9991a067360edf4ce"
+                      },
+                      {
+                          "path":  "pgsql/bin/testplug.dll",
+                          "bytes":  10752,
+                          "sha256":  "d1b10395868a004f6ae4700159ba89992a65147efaca63218cd5fb084b32303a"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxbase3211u_net_vc_x64_custom.dll",
+                          "bytes":  257024,
+                          "sha256":  "f707ee1d13ed5d3264a6b95dbb6cc4cd79e5d663180a91dca80704b1d97783eb"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxbase3211u_vc_x64_custom.dll",
+                          "bytes":  2985472,
+                          "sha256":  "cc6b32bb8cbc1ecd798a8e08144671bb0542e75217ee5b0f9a76fab9146b88be"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxbase3211u_xml_vc_x64_custom.dll",
+                          "bytes":  193024,
+                          "sha256":  "4c716cb9407ed90331d677b55e82b3e31a16ff6f5adf9493321594d01fa200d3"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxmsw3211u_adv_vc_x64_custom.dll",
+                          "bytes":  11264,
+                          "sha256":  "e9b0906ec69d7656228f564596ae882a8d68f37b5021f490ebcf2aae289eb742"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxmsw3211u_aui_vc_x64_custom.dll",
+                          "bytes":  594944,
+                          "sha256":  "ded33cdf2455389eaef3e9c2bd6bca04d3edfbea9e7f53393ee6f8bab2ae124c"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxmsw3211u_core_vc_x64_custom.dll",
+                          "bytes":  8352768,
+                          "sha256":  "d658d50d6820d17ac4de22bd66b93799595d63c7469ca6a1d99f479a838b67b8"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxmsw3211u_html_vc_x64_custom.dll",
+                          "bytes":  708096,
+                          "sha256":  "74b2e9f9f4b690b554733f1be1e4412c27ea5e0b0a6cd67d05e3895eafb2946e"
+                      },
+                      {
+                          "path":  "pgsql/bin/wxmsw3211u_xrc_vc_x64_custom.dll",
+                          "bytes":  886784,
+                          "sha256":  "24bb563eaed37c5b87d238fab8183eac8f66dbf4c67b06c2b9fa54a1234e020f"
+                      },
+                      {
+                          "path":  "pgsql/bin/zlib1.dll",
+                          "bytes":  91648,
+                          "sha256":  "890afa7a17fb66308e0026631070409138b157ef2773c0a41d22a76943f7aedf"
+                      }
+                  ],
+    "pgDumpVersion":  "pg_dump (PostgreSQL) 17.11",
+    "pgRestoreVersion":  "pg_restore (PostgreSQL) 17.11",
+    "postgresServerExtracted":  false,
+    "installedSystemWide":  false,
+    "result":  "PASS"
+}

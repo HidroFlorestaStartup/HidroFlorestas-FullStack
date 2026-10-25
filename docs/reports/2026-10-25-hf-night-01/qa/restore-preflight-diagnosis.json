@@ -1,0 +1,15 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "utc": "2026-10-25T05:51:07.810Z",
+  "attempt": "synthetic-restore-attempt2.json",
+  "result": "HARNESS_HASH_SERIALIZATION_ERROR",
+  "stage": "preflight before DB stages",
+  "expectedPostgresExeSha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+  "actualPostgresExeSha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+  "actualVersion": "postgres (PostgreSQL) 17.10",
+  "cause": "Private helper hashed JSON.stringify(Buffer) instead of raw executable bytes. File hash independently verified with Get-FileHash.",
+  "correction": "Hash bytes directly; preserve JSON serialization only for catalog objects.",
+  "serverChanged": false,
+  "databaseStagesExecuted": 0,
+  "previousFailurePreserved": true
+}

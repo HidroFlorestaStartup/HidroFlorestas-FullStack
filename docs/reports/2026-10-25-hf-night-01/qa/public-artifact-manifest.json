@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "hf-night-public-artifacts/v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "frozenUtc": "2026-10-25T06:11:49.166Z",
+  "baseSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "branch": "test/hf-night-baseline-20261025",
+  "baselineFunctionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+  "instrumentFunctionalFingerprint": "8313f11b969379019da1e6dc84240d49b52f2792e1ad6a65b13059485184a90e",
+  "byteHashConvention": "SHA256 of exact captured filesystem bytes, not Git blob IDs; newline conversion may affect byte hashes on a different checkout",
+  "selfExcluded": true,
+  "coordinatorVercelGuardExcluded": true,
+  "privateRawLogsExcluded": true,
+  "sourceFilesAdded": 3,
+  "existingFunctionalFilesChanged": 0,
+  "reportAndFeatureFiles": 47,
+  "entries": [
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/13-baseline-fingerprint.json",
+      "bytes": 95629,
+      "sha256": "96fac655ed24fe20027ebf8a16107bc3d37480dfd4c424d4347f2629fe7bdc79"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/14-interrupted-e2e-process-chain.json",
+      "bytes": 1095,
+      "sha256": "8cfd1bed66926a9cd795a93ba7d92fab33803c70deb946ce7f413576eecca4d6"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/15-e2e-interruption.json",
+      "bytes": 357,
+      "sha256": "acaf84c86fde76c3b8bc1e75603cc2b6785f5f57d53e71b2b858c259b4597bc3"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/17-postgresql-runtime.json",
+      "bytes": 442,
+      "sha256": "4c3fcf57f1085b456c4f015f69be047e18499ec3797dae7bd47a2761c0d549fe"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/18-loopback-tile-config-proof.json",
+      "bytes": 327,
+      "sha256": "c3059aa43dffa68c699e65eeba0fc82a359c22440e2422835a538602f3655aac"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/24-e2e-third-preflight.json",
+      "bytes": 1426,
+      "sha256": "030165978bd9ad164ba11a662210de712b950bc3b0b7e809838d5e2754d30cd9"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/28-fresh-cohort-v3-preinstall.json",
+      "bytes": 574,
+      "sha256": "9786317df6ca3fbdd0be04c18b4c91f3b55693402f7926e1ce92dc0954fe3bc2"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/30-fresh-v3-empty-proof.json",
+      "bytes": 598,
+      "sha256": "6c49f9ef55eb77dc9f6e3b145551ede7a5875f279464c3b51c37db3a536bc26f"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/admin-audit-reuse-count.json",
+      "bytes": 338,
+      "sha256": "a888cd700b6bf9f85babca1bd0eafacaf93741a9b1426ab5fa5ed02172e9645d"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/admin-focus-reproduction.json",
+      "bytes": 1898,
+      "sha256": "a70109d6b0250ab7d0f53c43c618fb190042b95f0035e9e821b5a0e80f8480a1"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/baseline-results.jsonl",
+      "bytes": 3651,
+      "sha256": "689fccda6860bffd8598e073ae02d32965e894f03bd052fc4654beccfa88538d"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/baseline.json",
+      "bytes": 61540,
+      "sha256": "f31bb0372865729369dc6995764396b08ef0bb4e8fe03de4b7c57a352e3b3be6"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/edb-client-download.json",
+      "bytes": 791,
+      "sha256": "1870cff92a0bc79ae2a8a51c119e0dd82fdc9ba4fcadd4f7e16dc08583fbc6a0"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/edb-client-extraction.json",
+      "bytes": 8733,
+      "sha256": "f232738467a9facffde02ac328c84c812b2cb9eb415fb1a33aed4206a5dcbec1"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/functional-delta.json",
+      "bytes": 802,
+      "sha256": "d8baee39480fb99ea1e3c389e32558446f7ff60eb4f60ad427d9ea4579febe9c"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/independent-review.md",
+      "bytes": 11323,
+      "sha256": "a9aa0a1d85ef7c4704cd2e9a3b9a19a8481c13e1eaf581759f61d819bea9c32a"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/investigation-results.jsonl",
+      "bytes": 2670,
+      "sha256": "46a2222ad0889ba377686648827ee814bcd88fe80bbf0cde9f99997cc798a659"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/plano.md",
+      "bytes": 6075,
+      "sha256": "0c3468d2118f8edf40b0921bc95b4814eeafea0636013ec6878b6036ca2a58d6"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/private-log-index.json",
+      "bytes": 18040,
+      "sha256": "b001b8bebc2df7c2208d5dd57c496212aedd2a3b45f6f5df715e0a9aa20b3663"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/quota-investigation.json",
+      "bytes": 1772,
+      "sha256": "4a80625c2c3d97c18d31d5d27608dac4bc8aa441c9054c94357007eb827410cd"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/readiness-fixture-diagnosis.json",
+      "bytes": 999,
+      "sha256": "f4b78ff91ea1b0839c1fd994941395816e28745b5cca1c4d8ca005ae6e095a01"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/readme.md",
+      "bytes": 9837,
+      "sha256": "4633cb93d1bd75abe76e7615e7474727d9c7a61fa40420e28877d29a47b74d77"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-metadata.json",
+      "bytes": 24541,
+      "sha256": "6457bb46a75146bbfce41a372c068a3dd751652dbbe7b2fcd64e0c2905e23c58"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-probes-attempt1.json",
+      "bytes": 789,
+      "sha256": "7b7aaf572c1bef47411ee2e9b4d4051c5d466d94965b046c94cc472517e2f29b"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-probes.json",
+      "bytes": 82335,
+      "sha256": "7a7c983ea7e7292efe354d607c50080caf71bbc8dba26e76df9f620352b00ca7"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-preflight-diagnosis.json",
+      "bytes": 800,
+      "sha256": "43b664c71b09bc2bc064b0c4db8439808e310ecb48977ba4184ef9dd27273fbd"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-tool-preflight.json",
+      "bytes": 308,
+      "sha256": "a9f5b06cb4d21a1f2382589a06815532852cec9f443150e8ec5e87bb35c0af97"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/results.jsonl",
+      "bytes": 367,
+      "sha256": "1c131e2aa702320f85c5d701d4dfb6f915882bc9a326ac77afeee2642a6fac92"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/runbook.md",
+      "bytes": 14511,
+      "sha256": "60f318bf8d6c4f580827d9d893989d0fe96e6c0037fd347b2bd7df58648e7efd"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/sanitized-excerpts.md",
+      "bytes": 5338,
+      "sha256": "631d94725cb26f1ad6fdc36df54701df1ea007147fc5df5512561178a8a2003b"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/setup-diagnostics.jsonl",
+      "bytes": 350,
+      "sha256": "18fdeffb24e59e455ff38232afe91882e4b48967710fdcd4e4b2d0de3d0831da"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore-attempt1.json",
+      "bytes": 1148,
+      "sha256": "c5dfa7590e24df6d41b143b24a3960430e4a4456cd58c8e43699c2b25f42357d"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore-attempt2.json",
+      "bytes": 648,
+      "sha256": "68817ccd0a720b270db2f85ddb8f09b737aa56d98857009a930785196779cc64"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore.json",
+      "bytes": 16754,
+      "sha256": "d129fc583c9ab91b06aeadcdd61885a9fefcd09b863f1b89e5d05ef4be4286c2"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-attempt1.json",
+      "bytes": 1850,
+      "sha256": "5c0c717f009f0e415ceb902b4274e564f9415bd3e3b919b03f67766900299c46"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-command.json",
+      "bytes": 440,
+      "sha256": "49a579e1f28d8e4a2899c0db0c824e7a9f18bac8b04a68231751ba7f0f029f47"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-fingerprint.json",
+      "bytes": 95926,
+      "sha256": "ace4477cb7626100d158caa9650c44b5d64189a33b37a268f43656ce66759d34"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness.json",
+      "bytes": 11574,
+      "sha256": "969bd05501651a2c0c44084a8c9b5dd1f4ded2c37bdbb655208bf58e6264dc56"
+    },
+    {
+      "path": "scripts/local-readiness-policy.ts",
+      "bytes": 5015,
+      "sha256": "51990658f5db810067975271b31fe850d84352127d85246b519fa1b559668dfd"
+    },
+    {
+      "path": "scripts/local-readiness.ts",
+      "bytes": 26627,
+      "sha256": "97c7684c2e38a7fcb6451b7ef6c62e71ef3b415d785b4b3ef8c5d547fccce200"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/checklists/requirements.md",
+      "bytes": 1119,
+      "sha256": "e5479029525ba3f5e53ff3d923fbdac0dcec78ce4aa08c3315a3333c0b67598c"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/checklists/security.md",
+      "bytes": 2531,
+      "sha256": "6040f64e8fce7adb3382e35b827511d0be6179d004227dfa98d148b46fe0dbc1"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/data-model.md",
+      "bytes": 893,
+      "sha256": "cd8f6dae3dff86d59a1fc73acb03d3beb1a742c20d13aa29c28f45817babeb7f"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/implementation-evidence.md",
+      "bytes": 10340,
+      "sha256": "a1ffd650183ac241ffa453ae911c961eceb9893f4a67ffefa49dca0acf022fb9"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/plan.md",
+      "bytes": 4325,
+      "sha256": "75364cc3ac2366449b850bbb5088adb481107f6ff7224c36217ce647c41cd6b0"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/quickstart.md",
+      "bytes": 2171,
+      "sha256": "821067bddccc6349006ba4c6b41940279bcaa727b06b0eb503617aec20b93c06"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/research.md",
+      "bytes": 4689,
+      "sha256": "c8bbd7dd79c5e89a90a34fdd0118e6e27d3b9a7bc07c96dfecd23d684a9bf3a6"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/spec.md",
+      "bytes": 6106,
+      "sha256": "274e05f7bc96556f7188d26c307faccaa62021680c77cd1fa40b03e1cc454be7"
+    },
+    {
+      "path": "specs/030-local-readiness-instruments/tasks.md",
+      "bytes": 3362,
+      "sha256": "28d5d3255f9d273b1818e813f14db8e8b2f256eda7bcd68c37dbbcf5d290da53"
+    },
+    {
+      "path": "tests/investigations/readiness/local-readiness-policy.test.ts",
+      "bytes": 4948,
+      "sha256": "ef0ecc26017b7154166fca3a0dff40debd504fdbfb2a8c424c19c3660e5d4376"
+    }
+  ]
+}

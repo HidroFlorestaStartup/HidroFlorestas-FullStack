@@ -1,0 +1,16 @@
+﻿{
+    "classification":  "EVIDENCIA_IMPLEMENTACAO",
+    "sourceDownloadUrl":  "https://get.enterprisedb.com/postgresql/postgresql-17.11-5-windows-x64-binaries.zip",
+    "sourceSidecarUrl":  "https://get.enterprisedb.com/postgresql/postgresql-17.11-5-windows-x64-binaries.zip.sha256",
+    "startedUtc":  "2026-10-25T05:30:15.0542636Z",
+    "endedUtc":  "2026-10-25T05:33:28.6719123Z",
+    "durationSeconds":  193.6210741,
+    "expectedSha256":  "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f",
+    "sidecarMatched":  true,
+    "actualSha256":  "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f",
+    "bytes":  381531864,
+    "archivePrivateIgnored":  true,
+    "executed":  false,
+    "serverReplacement":  false,
+    "result":  "PASS"
+}
