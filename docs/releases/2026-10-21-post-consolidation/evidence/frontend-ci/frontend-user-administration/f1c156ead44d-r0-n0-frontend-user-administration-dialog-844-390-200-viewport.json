@@ -1,0 +1,17 @@
+{
+  "width": 844,
+  "height": 390,
+  "scrollX": 0,
+  "scrollY": 2623,
+  "documentWidth": 844,
+  "rootFontSizePx": 32,
+  "activeTag": "TEXTAREA",
+  "textScale": 200,
+  "physicalDevice": false,
+  "fullPage": false,
+  "animations": "allow",
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "scenarioId": "f1c156ead44d",
+  "evidenceKind": "application-viewport",
+  "note": "Chromium emulation; synthetic accounts only; input/textarea/select masking requested, but native-dialog controls may remain visible; not human accessibility acceptance."
+}

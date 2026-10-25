@@ -1,0 +1,39 @@
+const { chromium } = require('<CHECKOUT>/node_modules/@playwright/test');
+const fs = require('node:fs');
+(async () => {
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const context = await browser.newContext({ viewport: { width: 375, height: 900 } });
+    const page = await context.newPage();
+    const consoleCounts = {};
+    let pageErrorCount = 0;
+    page.on('console', message => { consoleCounts[message.type()] = (consoleCounts[message.type()] || 0) + 1; });
+    page.on('pageerror', () => { pageErrorCount++; });
+    const logoutResponsePromise = page.waitForResponse(response => new URL(response.url()).pathname === '/api/auth/logout' && response.request().method() === 'POST');
+    await page.goto('http://127.0.0.1:3000/logout');
+    const response = await logoutResponsePromise;
+    const payload = await response.json();
+    await page.getByRole('button', { name: 'Tentar novamente', exact: true }).waitFor({ state: 'visible' });
+    await page.evaluate(() => document.fonts.ready);
+    const filename = 'frontend-logout-browser-probe.png';
+    await page.screenshot({ path: '<SCRATCH>/' + filename, fullPage: false, animations: 'disabled' });
+    const result = {
+      schemaVersion: 1,
+      capturedAt: new Date().toISOString(),
+      productHead: 'b1f83cfa8e52dd25c6246c584a576553c5e9e131',
+      kind: 'focused reproduction after NAV4 failure; new browser context, no account or cookies',
+      viewport: page.viewportSize(),
+      fullPage: false,
+      screenshot: filename,
+      route: new URL(page.url()).pathname,
+      response: { method: response.request().method(), path: new URL(response.url()).pathname, status: response.status(), success: payload.success, code: payload.code },
+      errorMessage: await page.getByRole('alert').filter({ has: page.getByRole('button', { name: 'Tentar novamente', exact: true }) }).locator('p').textContent(),
+      consoleCounts,
+      pageErrorCount,
+      cookiesPresentAfter: (await context.cookies()).length,
+      redaction: 'Only fixed result fields and counts are retained; no response/request headers, cookies, console bodies, environment, or credentials.'
+    };
+    fs.writeFileSync('<SCRATCH>/frontend-logout-browser-probe.json', JSON.stringify(result, null, 2) + '\n');
+    process.stdout.write(JSON.stringify(result, null, 2) + '\n');
+  } finally { await browser.close(); }
+})().catch(error => { process.stderr.write(error.name + ': focused browser probe failed\n'); process.exitCode = 1; });

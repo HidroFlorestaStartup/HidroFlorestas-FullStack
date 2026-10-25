@@ -1,0 +1,745 @@
+{
+  "schemaVersion": 1,
+  "missionId": "HF-POS-20261021-01",
+  "agent": "/root/operacao_vercel",
+  "kind": "independent post-publication read-only verification",
+  "collectedUtc": "2026-10-22T00:26:01Z",
+  "result": "PASS_WITH_OPERATIONAL_BLOCKERS_PRESERVED",
+  "publication": {
+    "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+    "pullRequest": 27,
+    "head": "131ade347258c7820c7a89989ab851769197b486",
+    "tree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+    "parent": [
+      "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+    ],
+    "independentTreeFetch": {
+      "recursive": true,
+      "truncated": false,
+      "entries": 3094
+    },
+    "localIntegratedHead": "131ade347258c7820c7a89989ab851769197b486",
+    "localIntegratedTree": "646d6385669d85c28e78bdaee59cc8d815e9262e",
+    "remoteTreeEqualsLocal": true
+  },
+  "github": {
+    "refs": [
+      {
+        "ref": "refs/heads/main",
+        "sha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+      },
+      {
+        "ref": "refs/heads/development",
+        "sha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      },
+      {
+        "ref": "refs/heads/docs/handoff-pos-consolidacao-20261021",
+        "sha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093"
+      },
+      {
+        "ref": "refs/heads/docs/pilot-readiness-20261021",
+        "sha": "131ade347258c7820c7a89989ab851769197b486"
+      }
+    ],
+    "preserved": {
+      "main": true,
+      "development": true,
+      "pedroBranch": true
+    },
+    "pullRequests": [
+      {
+        "number": 26,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/26",
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "base": "development",
+        "baseSha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+        "head": "docs/handoff-pos-consolidacao-20261021",
+        "headSha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093"
+      },
+      {
+        "number": 27,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "base": "development",
+        "baseSha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+        "head": "docs/pilot-readiness-20261021",
+        "headSha": "131ade347258c7820c7a89989ab851769197b486"
+      }
+    ],
+    "diff": {
+      "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+      "head": "131ade347258c7820c7a89989ab851769197b486",
+      "status": "ahead",
+      "aheadBy": 1,
+      "behindBy": 0,
+      "changedFiles": 91,
+      "remotePathsMatchLocal": true,
+      "documentationFiles": 89,
+      "configurationFiles": [
+        ".github/workflows/rc-review.yml",
+        "vercel.json"
+      ],
+      "productTestScriptSchemaDependencyRawChanges": [],
+      "files": [
+        {
+          "path": ".github/workflows/rc-review.yml",
+          "status": "modified"
+        },
+        {
+          "path": "docs/plans/active/pos-consolidacao-execucao-20261021.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/backend-database.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-covers-results.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-execution.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-historical.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-ihfr-results.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-migration-results.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-migrations-source.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-review-operations.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-synthetic-recovery.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-unit-results.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/backend-upload-provenance.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/browser-probe.cjs.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/error-context-320-text100.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/error-context-320-text200.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/error-context-375-text100.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/error-context-375-text200.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/first-failure-redacted.log",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-logout-browser-probe.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-logout-browser-probe.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-logout-http-probe.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text100-empty-create-focus.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text100-four-links-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text100-geometry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text200-geometry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text100-geometry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text200-geometry.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/manifest.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/nav4-result.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/executed-config.cjs.txt",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-1440x1000-text100-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text100-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-heading-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-heading.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-team-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-320x812-text200-team.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-375x812-text100-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-768x1024-text100-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-hero-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-hero.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-ihfr-end-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-ihfr-end.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-ihfr-start-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-812x375-text100-ihfr-start.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-keyboard-skip-viewport.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/frontend-landing-keyboard-skip.png",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/manifest.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-public/playwright-results.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-unit-direct.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-unit-direct.log",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-unit-launcher.log",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/operations-vercel-metadata.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/evidence/preflight.json",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/frontend-ux.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/independent-review.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/operational-readiness.md",
+          "status": "added"
+        },
+        {
+          "path": "docs/releases/2026-10-21-post-consolidation/readme.md",
+          "status": "added"
+        },
+        {
+          "path": "vercel.json",
+          "status": "modified"
+        }
+      ]
+    },
+    "configuration": {
+      "gitDeploymentGuardOnlyNewBranchAdded": true,
+      "priorGuardRulesPreserved": 23,
+      "developmentGitDeploymentEnabled": false,
+      "deliveryBranchGitDeploymentEnabled": false,
+      "workflowScope": "Only delivery branch added to push filter and job condition; original runner and gates unchanged",
+      "workflowDiff": "diff --git a/.github/workflows/rc-review.yml b/.github/workflows/rc-review.yml\nindex 0c0e554..65e6555 100644\n--- a/.github/workflows/rc-review.yml\n+++ b/.github/workflows/rc-review.yml\n@@ -21,6 +21,7 @@ on:\n       - feat/frontend-user-administration\n       - feat/frontend-landing-consolidation\n       - release/frontend-rc-20261021\n+      - docs/pilot-readiness-20261021\n   workflow_dispatch:\n \n permissions:\n@@ -50,7 +51,8 @@ jobs:\n       github.ref_name == 'feat/frontend-territorial-map' ||\n       github.ref_name == 'feat/frontend-user-administration' ||\n       github.ref_name == 'feat/frontend-landing-consolidation' ||\n-      github.ref_name == 'release/frontend-rc-20261021'\n+      github.ref_name == 'release/frontend-rc-20261021' ||\n+      github.ref_name == 'docs/pilot-readiness-20261021'\n     runs-on: windows-latest\n     timeout-minutes: 35\n     defaults:\n"
+    }
+  },
+  "vercel": {
+    "project": {
+      "id": "prj_DiLVjku1AglHtTXv8ckxg8pBiZR3",
+      "name": "hidro-florestas-full-stack",
+      "teamId": "team_YqedIK09zOGFeZ8M84kra0oM",
+      "nodeVersion": "24.x",
+      "ssoProtection": {
+        "enabled": true,
+        "deploymentType": "all_except_custom_domains"
+      },
+      "passwordProtectionEnabled": false
+    },
+    "ssoMetadataUnchanged": true,
+    "branchQuery": {
+      "branch": "docs/pilot-readiness-20261021",
+      "count": 0,
+      "pagination": {
+        "count": 0
+      },
+      "deployments": []
+    },
+    "publishedShaQuery": {
+      "pagination": {
+        "count": 0
+      },
+      "deployments": []
+    },
+    "latestProjectDeployment": {
+      "id": "dpl_D6LnRpT5xEMJVDRmxYKx2R5EvVji",
+      "url": "hidro-florestas-full-stack-oiqm9fv8f-hidrofloresta-8598.vercel.app",
+      "name": "hidro-florestas-full-stack",
+      "state": "READY",
+      "target": null,
+      "created": 1792611062081,
+      "gitSha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093",
+      "gitRef": "docs/handoff-pos-consolidacao-20261021"
+    },
+    "rc": {
+      "id": "dpl_FZkyCyfvzLVQFG5W9sVCd34ipcdj",
+      "url": "hidro-florestas-full-stack-iuurq9rcv-hidrofloresta-8598.vercel.app",
+      "name": "hidro-florestas-full-stack",
+      "state": "READY",
+      "target": null,
+      "created": 1792590762616,
+      "gitSha": "5f6266b48d0f9d33571009c0c3981065630bd21e",
+      "gitRef": "development"
+    },
+    "production": {
+      "id": "dpl_FEPNkC3Rg52iaBk8hs1TtutPXJoA",
+      "url": "hidro-florestas-full-stack-34bh8nx2i-hidrofloresta-8598.vercel.app",
+      "name": "hidro-florestas-full-stack",
+      "state": "READY",
+      "target": "production",
+      "created": 1792559851666,
+      "gitSha": "1ea3cc2552c244e1004f4f733f838e0f9ea62993",
+      "gitRef": "development"
+    },
+    "latestProductionQuery": {
+      "pagination": {
+        "count": 1,
+        "next": 1792559851666,
+        "prev": 1792559851666
+      },
+      "deployments": [
+        {
+          "id": "dpl_FEPNkC3Rg52iaBk8hs1TtutPXJoA",
+          "state": "READY",
+          "target": "production",
+          "created": 1792559851666,
+          "gitSha": "1ea3cc2552c244e1004f4f733f838e0f9ea62993",
+          "gitRef": "development"
+        }
+      ]
+    },
+    "preserved": {
+      "rcIdAndSha": true,
+      "productionIdAndSha": true,
+      "noDeploymentForPublishedBranchOrSha": true
+    },
+    "environment": {
+      "decryptRequested": false,
+      "valuesReadOrPublished": false,
+      "entryCount": 11,
+      "uniqueNames": [
+        "DATABASE_URL",
+        "JWT_SECRET",
+        "NEXT_PUBLIC_MAP_ATTRIBUTION",
+        "NEXT_PUBLIC_MAP_TILE_URL",
+        "ROOT_PASSWORD"
+      ],
+      "metadataMatchesPriorReceipt": true,
+      "hiddenProductionEnvCount": 0,
+      "entries": [
+        {
+          "id": "Qop12cGHdoLWjj6M",
+          "key": "NEXT_PUBLIC_MAP_ATTRIBUTION",
+          "target": [
+            "production",
+            "preview",
+            "development"
+          ],
+          "type": "encrypted",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442348378,
+          "updatedAt": 1791442373464
+        },
+        {
+          "id": "iiMJG07MCHJOw39b",
+          "key": "NEXT_PUBLIC_MAP_TILE_URL",
+          "target": [
+            "development",
+            "preview",
+            "production"
+          ],
+          "type": "encrypted",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442310274,
+          "updatedAt": 1791442310274
+        },
+        {
+          "id": "PvNlvQBv117UHpzJ",
+          "key": "DATABASE_URL",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "e1U58cXtdsToarEG",
+          "key": "DATABASE_URL",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "IZjBKjDWrbtOAhkA",
+          "key": "DATABASE_URL",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "dKyOEJj53JDJbXkD",
+          "key": "JWT_SECRET",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "8K2NFeDyLcnGafIc",
+          "key": "JWT_SECRET",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "rGztL7wvjHv59OOL",
+          "key": "JWT_SECRET",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "vs8gNBodsr6M1BxB",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "skAH06yMFASxrOcK",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "YH6bUi9lC0Aev1Zi",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        }
+      ],
+      "coreOperationalNamesStillAbsent": [
+        "APP_PUBLIC_URL",
+        "SMTP_HOST",
+        "SMTP_PORT",
+        "SMTP_SECURE",
+        "SMTP_REQUIRE_TLS",
+        "SMTP_USER",
+        "SMTP_APP_PASSWORD",
+        "MAIL_FROM",
+        "MAIL_PAYLOAD_ENCRYPTION_KEYS",
+        "MAIL_PAYLOAD_ACTIVE_KEY_ID",
+        "MAIL_IDEMPOTENCY_KEY",
+        "MAIL_WORKER_SECRET",
+        "ACCOUNT_PROOF_KEYS",
+        "ACCOUNT_PROOF_ACTIVE_KEY_ID",
+        "ACCOUNT_REQUEST_KEY",
+        "ACCOUNT_POLICY_ENABLED",
+        "ACCOUNT_TRUSTED_INGRESS",
+        "ACCOUNT_TESTER_ALLOWLIST"
+      ],
+      "secretEqualityOrDatabaseIsolationVerified": false
+    }
+  },
+  "gates": {
+    "G3": "BLOCKED_ENV",
+    "G4": "BLOCKED_HOSTED_ACCEPTANCE",
+    "G5": "BLOCKED_OPERATIONAL_AND_HUMAN_ACCEPTANCE",
+    "ciAndCodex": "NOT_YET_REVIEWED_IN_THIS_RECEIPT"
+  },
+  "readOnly": {
+    "githubWrites": 0,
+    "vercelMutations": 0,
+    "deploymentsCreated": 0,
+    "environmentValuesDecrypted": 0,
+    "hostedDatabaseOperations": 0
+  },
+  "toolSources": [
+    "mcp__codex_apps__github_fetch",
+    "mcp__codex_apps__github_get_pr_info",
+    "mcp__codex_apps__github_compare_commits",
+    "mcp__codex_apps__vercel_get_project",
+    "mcp__codex_apps__vercel_get_deployment",
+    "mcp__codex_apps__vercel_list_deployments",
+    "mcp__codex_apps__vercel_filter_project_envs",
+    "git read-only comparison against integrated tree"
+  ],
+  "limits": [
+    "Deployment absence is an observation at collection time, not a guarantee about future external activity.",
+    "SSO protection was revalidated through project metadata; the prior HTTP smoke was not repeated.",
+    "Environment metadata does not establish equality or inequality of secret values or hosted database isolation.",
+    "CI and Codex completion require their own run/head and review receipts; neither result is inferred from this publication check."
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "collectedAt": "Wed, 21 Oct 2026 23:56:45 GMT",
+  "project": {
+    "id": "prj_DiLVjku1AglHtTXv8ckxg8pBiZR3",
+    "name": "hidro-florestas-full-stack",
+    "accountId": "team_YqedIK09zOGFeZ8M84kra0oM",
+    "nodeVersion": "24.x",
+    "ssoProtection": {
+      "enabled": true,
+      "deploymentType": "all_except_custom_domains"
+    },
+    "domains": [
+      "hidro-florestas-full-stack.vercel.app",
+      "hidro-florestas-full-stack-hidrofloresta-8598.vercel.app",
+      "hidro-florestas-full-stack-git-development-hidrofloresta-8598.vercel.app"
+    ]
+  },
+  "preview": {
+    "id": "dpl_FZkyCyfvzLVQFG5W9sVCd34ipcdj",
+    "url": "hidro-florestas-full-stack-iuurq9rcv-hidrofloresta-8598.vercel.app",
+    "sha": "5f6266b48d0f9d33571009c0c3981065630bd21e",
+    "state": "READY",
+    "target": null
+  },
+  "production": {
+    "id": "dpl_FEPNkC3Rg52iaBk8hs1TtutPXJoA",
+    "url": "hidro-florestas-full-stack-34bh8nx2i-hidrofloresta-8598.vercel.app",
+    "sha": "1ea3cc2552c244e1004f4f733f838e0f9ea62993",
+    "state": "READY",
+    "target": "production"
+  },
+  "envs": [
+    {
+      "key": "NEXT_PUBLIC_MAP_ATTRIBUTION",
+      "id": "Qop12cGHdoLWjj6M",
+      "target": [
+        "production",
+        "preview",
+        "development"
+      ],
+      "visibility": "config",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "NEXT_PUBLIC_MAP_TILE_URL",
+      "id": "iiMJG07MCHJOw39b",
+      "target": [
+        "development",
+        "preview",
+        "production"
+      ],
+      "visibility": "config",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "id": "PvNlvQBv117UHpzJ",
+      "target": [
+        "production"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "id": "e1U58cXtdsToarEG",
+      "target": [
+        "preview"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "DATABASE_URL",
+      "id": "IZjBKjDWrbtOAhkA",
+      "target": [
+        "development"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "id": "dKyOEJj53JDJbXkD",
+      "target": [
+        "production"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "id": "8K2NFeDyLcnGafIc",
+      "target": [
+        "preview"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "JWT_SECRET",
+      "id": "rGztL7wvjHv59OOL",
+      "target": [
+        "development"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "id": "vs8gNBodsr6M1BxB",
+      "target": [
+        "production"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "id": "skAH06yMFASxrOcK",
+      "target": [
+        "preview"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    },
+    {
+      "key": "ROOT_PASSWORD",
+      "id": "YH6bUi9lC0Aev1Zi",
+      "target": [
+        "development"
+      ],
+      "visibility": "secret",
+      "decrypted": false,
+      "gitBranch": null
+    }
+  ],
+  "connectors": {
+    "connectors": [],
+    "pagination": {
+      "next": null
+    }
+  },
+  "authenticatedSmoke": {
+    "path": "/",
+    "status": 200,
+    "title": "HidroFlorestas | Monitoramento ambiental por laboratório",
+    "htmlLength": 41949,
+    "qualifiers": [
+      {
+        "text": "Contrato experimental",
+        "present": true
+      },
+      {
+        "text": "Validação científica pendente",
+        "present": true
+      },
+      {
+        "text": "Sujeito a recalibração",
+        "present": true
+      },
+      {
+        "text": "Não aprovado como contrato científico definitivo",
+        "present": true
+      }
+    ],
+    "xVercelId": "gru1:iad1::7n2gg-1792627005721-cba18f18211f",
+    "note": "Vercel-authenticated GET; no application user session or mutation."
+  },
+  "missionId": "HF-POS-20261021-01",
+  "agent": "/root/operacao_vercel",
+  "toolSources": [
+    "mcp__codex_apps__vercel_get_project",
+    "mcp__codex_apps__vercel_get_deployment",
+    "mcp__codex_apps__vercel_list_deployments",
+    "mcp__codex_apps__vercel_filter_project_envs",
+    "mcp__codex_apps__vercel_list_project_connector_connections",
+    "mcp__codex_apps__vercel_web_fetch_vercel_url"
+  ],
+  "baseCommit": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "newerDocumentaryPreview": {
+    "id": "dpl_D6LnRpT5xEMJVDRmxYKx2R5EvVji",
+    "sha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093",
+    "branch": "docs/handoff-pos-consolidacao-20261021",
+    "state": "READY",
+    "target": null,
+    "url": "hidro-florestas-full-stack-oiqm9fv8f-hidrofloresta-8598.vercel.app"
+  },
+  "envComparison": {
+    "template": ".env.accounts.example",
+    "absentCoreOrOperationalPolicy": [
+      "APP_PUBLIC_URL",
+      "SMTP_HOST",
+      "SMTP_PORT",
+      "SMTP_SECURE",
+      "SMTP_REQUIRE_TLS",
+      "SMTP_USER",
+      "SMTP_APP_PASSWORD",
+      "MAIL_FROM",
+      "MAIL_PAYLOAD_ENCRYPTION_KEYS",
+      "MAIL_PAYLOAD_ACTIVE_KEY_ID",
+      "MAIL_IDEMPOTENCY_KEY",
+      "MAIL_WORKER_SECRET",
+      "ACCOUNT_PROOF_KEYS",
+      "ACCOUNT_PROOF_ACTIVE_KEY_ID",
+      "ACCOUNT_REQUEST_KEY",
+      "ACCOUNT_POLICY_ENABLED",
+      "ACCOUNT_TRUSTED_INGRESS",
+      "ACCOUNT_TESTER_ALLOWLIST"
+    ],
+    "absentOptionalWithCodeDefaults": [
+      "ACCOUNT_VERIFICATION_TTL_SECONDS",
+      "ACCOUNT_VERIFICATION_ATTEMPTS",
+      "ACCOUNT_RESEND_COOLDOWN_SECONDS",
+      "ACCOUNT_VERIFICATION_SENDS_PER_HOUR",
+      "ACCOUNT_RESET_TTL_SECONDS",
+      "ACCOUNT_RESET_REQUESTS_PER_HOUR",
+      "ACCOUNT_GLOBAL_REQUESTS_PER_HOUR"
+    ],
+    "valuesRead": false,
+    "decryptionRequested": false,
+    "secretEqualityOrDatabaseIsolationVerified": false
+  },
+  "authenticatedPageSmokes": [
+    {
+      "path": "/login",
+      "success": true,
+      "status": 200,
+      "date": "Wed, 21 Oct 2026 23:58:03 GMT",
+      "title": "Hidro Florestas",
+      "htmlLength": 12936,
+      "xVercelId": "gru1:iad1::iad1::f9rmp-1792627082292-90a566305574",
+      "containsPasswordInput": true,
+      "containsEmailInput": true,
+      "applicationFormVisible": true,
+      "error": false
+    },
+    {
+      "path": "/register",
+      "success": true,
+      "status": 200,
+      "date": "Wed, 21 Oct 2026 23:57:52 GMT",
+      "title": "Hidro Florestas",
+      "htmlLength": 15536,
+      "xVercelId": "gru1:iad1::tvjd8-1792627071978-511eb24415ab",
+      "containsPasswordInput": true,
+      "containsEmailInput": true,
+      "applicationFormVisible": true,
+      "error": false
+    },
+    {
+      "path": "/forgot-password",
+      "success": true,
+      "status": 200,
+      "date": "Wed, 21 Oct 2026 23:58:14 GMT",
+      "title": "Recuperar senha | HidroFlorestas",
+      "htmlLength": 13382,
+      "xVercelId": "gru1:iad1::h5lfw-1792627094508-f2a9a9240da8",
+      "containsPasswordInput": false,
+      "containsEmailInput": true,
+      "applicationFormVisible": true,
+      "error": false
+    }
+  ],
+  "unauthenticatedApplicationWorkerGuard": {
+    "path": "/api/internal/mail/process",
+    "method": "GET",
+    "applicationAuthorization": "none",
+    "status": 503,
+    "errorCode": "CONFIGURATION",
+    "date": "Wed, 21 Oct 2026 23:58:59 GMT",
+    "xVercelId": "gru1:iad1::iad1::wrnk8-1792627138706-be9eb2854419",
+    "note": "Unauthenticated guard probe only; handleMailTrigger returns before run() for missing/malformed worker secret or missing Bearer. No worker execution requested."
+  },
+  "limits": [
+    "Vercel authentication succeeded; application login, signup and inbox receipt NOT_RUN.",
+    "No mutation of application data or database; no deployment/configuration modification.",
+    "No proof of hosted database identity, isolation, backup or restore.",
+    "No operational Cloudinary upload or explicit new rollout approval; off follows missing configuration and code contract.",
+    "No scheduler configuration or history for FullStack was inspected; historical homologation job is a distinct target."
+  ]
+}
