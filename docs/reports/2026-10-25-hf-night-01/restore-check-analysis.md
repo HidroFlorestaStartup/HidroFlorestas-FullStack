@@ -5,7 +5,25 @@ análise documental e preparação de SELECTs; execução pertence ao QA após r
 do protocolo pelo coordenador e encerramento da janela030. O autor deste
 documento não executa PostgreSQL, browser, testes ou utilitários de restore.
 
-Estado neste corte de preparação: **RECOMENDACAO — METADATA_EXECUTADA, VETORES_NAO_EXECUTADOS**. O gate original
+## Errata documental posterior à execução
+
+O [protocolo executado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/bef9152a7e465f9e14fd106cbabb2d3efdbab40e/docs/reports/2026-10-25-hf-night-01/restore-check-analysis.md)
+está fixado no commit `bef9152a7e465f9e14fd106cbabb2d3efdbab40e`, blob Git
+`449404f06c416166bf41206afdba4f5833d36d2d`, 32263 bytes, SHA-256
+`e31beb00fe00d51098a5f6d138c6a7ef7d792ec63150bdf431575b464af3a6f6`.
+Esses bytes foram conferidos diretamente pelo objeto Git local; a publicação
+remota cabe ao coordenador. O campo `protocolSha256` dos recibos QA refere-se
+a esse blob histórico.
+
+Esta versão corrige somente a narrativa: os seis campos temporais pertinentes
+do Prisma já têm `@db.Timestamptz(3)`. A suspeita intermediária de conflito
+usou uma generalização de campos de outros models e não se sustenta neste
+recorte. A fonte exata e a correção estão no histórico abaixo. Nenhuma PD de
+schema é demonstrada por essa suspeita. SQL, fixtures e expressões permanecem
+byte a byte iguais aos dois blocos SQL do protocolo executado; não houve nova
+query. O resultado posterior está na [auditoria](qa-independent-audit.md).
+
+Estado no corte histórico de preparação da versão executada: **RECOMENDACAO — METADATA_EXECUTADA, VETORES_NAO_EXECUTADOS**. O gate original
 do restore permanece **FAIL / CATALOG_CONSTRAINT_MISMATCH**. A aprovação deste
 protocolo não muda esse resultado, G3/G4/G5, produto ou ciência.
 
@@ -94,8 +112,8 @@ atual separadamente é parte do protocolo. O catálogo observado nas duas bases
 confirmou seis ocorrências temporais timestamp(3) with time zone, typmod3.
 Portanto as fixtures usam TIMESTAMPTZ com offset+00, mantendo milissegundos
 representáveis. Exigir os mesmos tipos/typmods/NOT NULL e nenhuma diferença
-entre source/target antes dos vetores. Se houver drift, parar; não escolher
-Prisma ou migration por inferência nem ajustar o esperado automaticamente.
+entre source/target antes dos vetores. Se houver drift, parar e registrar os
+metadados em revisão própria; não ajustar o esperado automaticamente.
 
 O segundo bloco usa apenas VALUES/SELECT com literais sintéticos. VARCHAR
 sem typmod nos vetores evita que um cast para varchar(64) trunque silenciosamente
@@ -439,14 +457,25 @@ do coordenador: **NOT_RUN/PENDENTE** neste corte.
 ## Histórico de tipos e metadata observada
 
 - Versão cf885bc396f9483d15bf02559133a2e0490f964a31450ecdd26a2e5ff5f892fe: fixtures TIMESTAMPTZ com base nas migrations; vetores NOT_RUN.
-- Versão 07cc1263fec5d7cf46ba6f3d139d88bdc7fd4878605c7a3d7bb94e8660216235: proposta intermediária TIMESTAMP sem TZ e guard universal, baseada na leitura Prisma. O coordenador revogou essa exigência antes de qualquer vetor e liberou somente metadata com ROLLBACK. Nenhum vetor dessa versão foi executado.
+- Versão 07cc1263fec5d7cf46ba6f3d139d88bdc7fd4878605c7a3d7bb94e8660216235: proposta intermediária TIMESTAMP sem TZ e guard universal, baseada em generalização indevida de campos de outros models, sem conferir os seis campos pertinentes. O coordenador revogou essa exigência antes de qualquer vetor e liberou somente metadata com ROLLBACK. Nenhum vetor dessa versão foi executado.
 - `qa/restore-check-metadata.json`, SHA-256 6457bb46a75146bbfce41a372c068a3dd751652dbbe7b2fcd64e0c2905e23c58: B executou metadata em 06:04:08 UTC, 162,8285 ms, exit 0,READ ONLY/ROLLBACK nos dois lados;19 ocorrências NOT NULL compatíveis por base,8 expressões exatas de cada lado sem drift e zero vetores executados.
 - A leitura independente do JSON confirmou esses19 campos/8 expressões por lado. Todos os campos temporais observados são timestamp(3) with time zone. Isso fundamenta o retorno a TIMESTAMPTZ+00 neste protocolo, sem alterar qualquer coluna, migration ou expressão CHECK.
 
-A diferença estática entre Prisma DateTime sem anotação e as declarações
-TIMESTAMPTZ(3) das migrations de mail permanece uma observação de fontes.
-Este protocolo usa os tipos efetivamente observados para o ensaio; não decide
-qual contrato de schema deve prevalecer nem expande o escopo para corrigi-lo.
+`EVIDENCIA_IMPLEMENTACAO` — correção da suspeita anterior: no objeto
+`08262dc57c1ad365244f9ec6902b1e4be39e2d7d:prisma/schema.prisma`, os seis campos
+abaixo já possuem `@db.Timestamptz(3)`. SHA-256 desse blob de schema:
+`466a2a5d18c609024b83813a90a2f397179bd4ce17b80300a2fc7c0454aab3d8`.
+
+| Model | Campos exatos e linhas na fonte fixada |
+|---|---|
+| AccountEmailChallenge | [expiresAt, L83](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L83), [createdAt, L88](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L88) |
+| MailOutbox | [expiresAt, L121](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L121), [createdAt, L126](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L126) |
+| MailRateLimitBucket | [windowStart, L140](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L140), [windowEnd, L141](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/08262dc57c1ad365244f9ec6902b1e4be39e2d7d/prisma/schema.prisma#L141) |
+
+Portanto, neste recorte, Prisma, migrations de mail e tipos observados no
+catálogo são consistentes com TIMESTAMPTZ(3). A afirmação anterior de diferença
+estática foi imprecisa e está retirada. Nenhum schema, intenção de produto ou
+contrato científico foi alterado, e não se cria pendência de decisão por ela.
 
 IHFR permanece CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE,
 SUJEITO_A_RECALIBRACAO e

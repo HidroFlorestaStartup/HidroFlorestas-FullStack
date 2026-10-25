@@ -10,7 +10,7 @@ operação hospedada. Operadores e aceites humanos continuam `A_DESIGNAR`.
 FullStack `prj_DiLVjku1AglHtTXv8ckxg8pBiZR3`, equipe
 `team_YqedIK09zOGFeZ8M84kra0oM`, nesta sessão, antes de04:03:53UTC.
 Inventário:11 registros/5 nomes, nenhum dos18 operacionais históricos.
-Não foram lidos valores, consultado banco, aberto SMTP nem chamado worker.
+Nessa consulta não foram lidos valores, consultado banco, aberto SMTP nem chamado worker.
 O conector não expôs rootDirectory/Git settings; esses campos não foram inferidos.
 Frontend-starter identificado e excluído do recorte.
 
@@ -43,6 +43,23 @@ PostgreSQL, coleta gates e usa serviços sintéticos. Seguir
 A frente QA registra nesta missão seu ambiente novo, comandos, exit codes e
 contagens. Resultados não são transferidos a outro SHA nem ao destino hospedado.
 
+`EVIDENCIA_IMPLEMENTACAO`: no baseline funcional `e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59`,
+os recortes existentes abaixo foram exercitados pelos gates Integration e E2E
+do runner owned. O consolidado QA discrimina coortes e tentativas; não são
+novos testes nem uma soma adicional às contagens231/220.
+
+- [Verificação/recuperação de contas](../../../../tests/integration/account-verification-recovery.test.ts):
+  expiração, reenvio/cooldown, invalidade da prova anterior, consumo único,
+  revogação por versão e negativas/rollback no banco sintético.
+- [Jornadas de conta em browser](../../../../tests/e2e/account-verification-recovery.spec.ts):
+  confirmação por mensagem recebida no adaptador determinístico, logout/retomada
+  e reset revogando outro browser por requisição efetiva; sem caixa externa.
+- [Outbox](../../../../tests/integration/mail-outbox.test.ts) e
+  [SMTP loopback](../../../../tests/mail/mail-smtp.test.ts): leases/fencing,
+  concorrência/timeout/recuperação e transporte real local TLS/STARTTLS, distinguindo
+  verificação, accepted e inbox. O subtotal SMTP pertence ao Unit419, não ao
+  Integration231; a execução R1 é subconjunto e não acrescenta17 casos únicos.
+
 Contas/mail: [homologação](../../../operations/account-homologation-runbook.md),
 [mail](../../../operations/mail-runbook.md), fixtures
 [account-mail-harness](../../../../tests/fixtures/account-mail-harness.ts) e
@@ -50,6 +67,20 @@ Contas/mail: [homologação](../../../operations/account-homologation-runbook.md
 conexão, accepted, inbox e consumo. Somente localhost no ensaio sintético.
 O script `accounts-homologation-scheduler.ps1` tem contexto próprio histórico;
 não reutilizá-lo como scheduler do FullStack nem executá-lo remotamente.
+
+O [scheduler substituto desta missão](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/37)
+tem Spec Kit034 e comando focal próprios:
+
+```powershell
+node --experimental-strip-types --test tests/investigations/mail/local-scheduler.test.mjs
+```
+
+Executar somente na árvore da PR37. Em `2341275eac6c60054be00ef81b0e1a84619225ca`,
+4/4 testes do autor e4/4 do revisor independente passaram: autorização HTTP real
+em127.0.0.1, temporizador automático serial, pausa/retomada e fila/accepted falsos.
+Timeout é fail-stop; abortar HTTP não prova cancelamento do callback no servidor.
+Não executa SQL, `processMailBatch`, SMTP ou inbox. Esse ensaio e o verificador
+offline031 são complementares; nenhum substitui as provas hospedadas abaixo.
 
 ## Contrato para o futuro operador hospedado
 
