@@ -234,7 +234,15 @@ export function LaboratoryWorkspace() {
       {settingsLoading && <p role="status">{details ? "Processando…" : "Carregando informações…"}</p>}
       {details && <>
         <dl className={styles.details}><div><dt>Criado em</dt><dd>{new Intl.DateTimeFormat("pt-BR").format(new Date(details.createdAt))}</dd></div><div><dt>Status</dt><dd>{details.status === "ACTIVE" ? "Ativo" : "Inativo"}</dd></div></dl>
-        <div><h3 className={styles.sectionTitle}>Membros</h3><ul className={styles.members}>{details.members.map((member, index) => <li key={`${member.name}-${index}`}>{member.name}</li>)}</ul></div>
+        <div>
+          <h3 className={styles.sectionTitle}>Membros</h3>
+          <ul className={styles.members}>{details.members.map((member, index) => (
+            <li key={`${member.name}-${index}`}>
+              <span className={styles.memberAvatar} aria-hidden="true">{member.initials.trim() || "?"}</span>
+              <span className={styles.memberName}>{member.name.trim() || "Nome não informado"}</span>
+            </li>
+          ))}</ul>
+        </div>
         {details.isOwner ? <div className={styles.risk}>
           <h3>Zona de perigo</h3><p className={styles.muted}>Estas ações só podem ser realizadas pela pessoa responsável.</p>
           {!riskAction ? <div className={styles.actions}>
