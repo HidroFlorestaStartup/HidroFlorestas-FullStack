@@ -1,0 +1,31 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "hashScope": "source fingerprints are SHA256 of physical functional bytes; collector UTC boundary",
+  "gate": "E2E",
+  "command": "npm run test:e2e",
+  "snapshot": "1f11a53ef3a5510ad35033b9000d12b6ae10b4c7e6222c425880f3d5c7ff7eac",
+  "startedUtc": "2026-10-25T06:17:07.381Z",
+  "endedUtc": "2026-10-25T06:26:39.050Z",
+  "exitCode": 0,
+  "result": "PASS",
+  "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+  "log": ".accounts-validation/e2e-1792909027381.log",
+  "durationMs": 571669,
+  "passed": 220,
+  "failed": 0,
+  "skipped": 0,
+  "retries": 0,
+  "workers": 1,
+  "existing403TestUnchangedAndPassed": true,
+  "regressionSetup": {
+    "gate": "RegressionSetup",
+    "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+    "snapshot": "1f11a53ef3a5510ad35033b9000d12b6ae10b4c7e6222c425880f3d5c7ff7eac",
+    "startedUtc": "2026-10-25T06:16:53.070Z",
+    "endedUtc": "2026-10-25T06:16:59.300Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "log": ".accounts-validation/regressionsetup-1792909013069.log"
+  }
+}

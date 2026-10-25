@@ -1,0 +1,18 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "utc": "2026-10-25T06:17:06.114Z",
+  "stage": "after own migrations before any test fixtures",
+  "counts": {
+    "migrations": 14,
+    "users": 0,
+    "laboratories": 0,
+    "memberships": 0,
+    "areas": 0,
+    "collections": 0,
+    "audit_events": 0,
+    "referencePublicTables": 0
+  },
+  "result": "PASS",
+  "functionalFingerprint": "1f11a53ef3a5510ad35033b9000d12b6ae10b4c7e6222c425880f3d5c7ff7eac",
+  "sqlParametersPublished": false
+}

@@ -1,0 +1,180 @@
+{
+    "phase":  "speckit-analyze",
+    "readOnly":  true,
+    "hooks":  "extensions.yml absent",
+    "requirements":  30,
+    "tasks":  31,
+    "coveragePercent":  100,
+    "ambiguity":  0,
+    "duplication":  0,
+    "critical":  0,
+    "unmappedTasks":  0,
+    "findings":  [
+
+                 ],
+    "coverage":  [
+                     {
+                         "feature":  "029-member-popup-initials",
+                         "tasks":  10,
+                         "requirements":  {
+                                              "FR-001":  [
+                                                             "T004",
+                                                             "T005"
+                                                         ],
+                                              "FR-002":  [
+                                                             "T004",
+                                                             "T005"
+                                                         ],
+                                              "FR-003":  [
+                                                             "T007",
+                                                             "T008"
+                                                         ],
+                                              "FR-004":  [
+                                                             "T004",
+                                                             "T006"
+                                                         ],
+                                              "FR-005":  [
+                                                             "T007",
+                                                             "T008"
+                                                         ],
+                                              "FR-006":  [
+                                                             "T002",
+                                                             "T004"
+                                                         ],
+                                              "SC-001":  [
+                                                             "T004",
+                                                             "T005"
+                                                         ],
+                                              "SC-002":  [
+                                                             "T004",
+                                                             "T006"
+                                                         ],
+                                              "SC-003":  [
+                                                             "T007",
+                                                             "T008"
+                                                         ],
+                                              "SC-004":  [
+                                                             "T002",
+                                                             "T004"
+                                                         ]
+                                          }
+                     },
+                     {
+                         "feature":  "032-async-read-focus",
+                         "tasks":  11,
+                         "requirements":  {
+                                              "FR-001":  [
+                                                             "T003",
+                                                             "T004",
+                                                             "T005",
+                                                             "T006"
+                                                         ],
+                                              "FR-002":  [
+                                                             "T003",
+                                                             "T005",
+                                                             "T006",
+                                                             "T007"
+                                                         ],
+                                              "FR-003":  [
+                                                             "T004",
+                                                             "T008"
+                                                         ],
+                                              "FR-004":  [
+                                                             "T008"
+                                                         ],
+                                              "FR-005":  [
+                                                             "T007",
+                                                             "T008"
+                                                         ],
+                                              "FR-006":  [
+                                                             "T009"
+                                                         ],
+                                              "FR-007":  [
+                                                             "T002",
+                                                             "T010"
+                                                         ],
+                                              "SC-001":  [
+                                                             "T003",
+                                                             "T005",
+                                                             "T006",
+                                                             "T007"
+                                                         ],
+                                              "SC-002":  [
+                                                             "T008"
+                                                         ],
+                                              "SC-003":  [
+                                                             "T009"
+                                                         ],
+                                              "SC-004":  [
+                                                             "T007",
+                                                             "T008",
+                                                             "T009"
+                                                         ]
+                                          }
+                     },
+                     {
+                         "feature":  "033-admin-access-focus",
+                         "tasks":  10,
+                         "requirements":  {
+                                              "FR-001":  [
+                                                             "T004",
+                                                             "T005"
+                                                         ],
+                                              "FR-002":  [
+                                                             "T005",
+                                                             "T006"
+                                                         ],
+                                              "FR-003":  [
+                                                             "T006",
+                                                             "T007"
+                                                         ],
+                                              "FR-004":  [
+                                                             "T004",
+                                                             "T005"
+                                                         ],
+                                              "FR-005":  [
+                                                             "T006",
+                                                             "T007"
+                                                         ],
+                                              "FR-006":  [
+                                                             "T004",
+                                                             "T008"
+                                                         ],
+                                              "SC-001":  [
+                                                             "T004",
+                                                             "T008"
+                                                         ],
+                                              "SC-002":  [
+                                                             "T006",
+                                                             "T008"
+                                                         ],
+                                              "SC-003":  [
+                                                             "T004",
+                                                             "T008"
+                                                         ]
+                                          }
+                     }
+                 ],
+    "preconditionsCommand":  ".specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+    "contextSelection":  "Explicit SPECIFY_FEATURE_DIRECTORY/SPECIFY_FEATURE for each existing feature; check-prerequisites uses no-persist; no feature.json or artifact writes",
+    "constitutionPrinciplesChecked":  7,
+    "crossCuttingTaskMappings":  {
+                                     "029":  {
+                                                 "T001":  "Setup dependency for both stories",
+                                                 "T003":  "FR-006/SC-004 synthetic runner",
+                                                 "T009":  "FR-001..006/SC-001..004 validation",
+                                                 "T010":  "Constitution IV-VII and complete feature consistency"
+                                             },
+                                     "032":  {
+                                                 "T001":  "Setup dependency for both stories",
+                                                 "T011":  "Constitution IV-VII and complete feature consistency"
+                                             },
+                                     "033":  {
+                                                 "T001":  "Intent/source prerequisites for both stories",
+                                                 "T002":  "Design and tasks prerequisites for all FR/SC",
+                                                 "T003":  "Consistency/checklist gate for all FR/SC",
+                                                 "T009":  "FR-006 independent review",
+                                                 "T010":  "Constitution IV-VII and complete feature consistency"
+                                             }
+                                 }
+}

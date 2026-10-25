@@ -1,0 +1,91 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "hashScope": "SHA256 and bytes of original physical private log; no normalization or content publication",
+  "count": 12,
+  "logs": [
+    {
+      "path": ".accounts-validation/01-npm-ci.log",
+      "sha256": "f8984374393cfc45cf80ddefecf3c6af86b6b3081b568c7b5001a7af468663e9",
+      "bytes": 2934,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/02-prisma.log",
+      "sha256": "178143d63117a736c5910bd00f0c2517f8070636fe14f48617868912789000e2",
+      "bytes": 1412,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/03-typecheck.log",
+      "sha256": "5eadd945821ccdca7ff7abf19b8f045750fd54e3a0f22b6fd4d8ffa4e7934e9a",
+      "bytes": 906,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/04-lint.log",
+      "sha256": "6430652c2221aadabb768351c34ecc2bac0750518c7707da3bc96c9aa6a924ea",
+      "bytes": 1736,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/05-build.log",
+      "sha256": "bedd5a5c6b5d99ae01ed3207acab65b0994240eea33b0b049ccb0da8c3e11a91",
+      "bytes": 10748,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/06-unit.log",
+      "sha256": "7fd537d2919ea17ab07b9e8538cb0e52a26543d8ed55843c9a62abce30b5c0ed",
+      "bytes": 77566,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/07-ui-admin-access-focus.log",
+      "sha256": "d8bc2b3b7881fac16ef38f5b7ee26c566fedab3be7ae33428e1047cf7c59f890",
+      "bytes": 4688,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/07-ui-async-read-focus.log",
+      "sha256": "8f855f89e9a79f4b9dc2c6ca5d269def979544d99f5b1b854ab01179c9196764",
+      "bytes": 7940,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/07-ui-member-popup.log",
+      "sha256": "b2dbed1c8a8ab6bf14bb94221dfa09ecdd939cc21ca41fb8b595319894dc25bc",
+      "bytes": 2466,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/08-runtime-session.log",
+      "sha256": "477a8b592dacbaf95cd1c477f26d22d39138119cd76bdff859cbb8afbac105e9",
+      "bytes": 10076,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/e2e-1792909027381.log",
+      "sha256": "80c3f28f9f1e6d8a761d8b7745846b9f0a2c8723a0243777c01f76285f69e722",
+      "bytes": 78863,
+      "gitIgnored": true,
+      "published": false
+    },
+    {
+      "path": ".accounts-validation/regressionsetup-1792909013069.log",
+      "sha256": "858c749b234f853084d3d870e32f32663f764fac1abf289595a74082e2df7527",
+      "bytes": 7218,
+      "gitIgnored": true,
+      "published": false
+    }
+  ]
+}

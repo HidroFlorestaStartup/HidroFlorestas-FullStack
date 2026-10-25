@@ -1,0 +1,14 @@
+{
+    "classification":  "EVIDENCIA_IMPLEMENTACAO",
+    "utc":  "2026-10-25T06:14:48.2715402Z",
+    "newClusterAbsentBeforeCreation":  true,
+    "privateAclPrincipals":  2,
+    "copiedOnlyPublicPackage":  "@embedded-postgres/windows-x64@17.10.0-beta.17",
+    "postgresExeSha256":  "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+    "version":  "postgres (PostgreSQL) 17.10",
+    "dataCopied":  false,
+    "markerCopied":  false,
+    "credentialCopied":  false,
+    "runtimeRelative":  ".accounts-validation/r/l",
+    "result":  "PASS"
+}

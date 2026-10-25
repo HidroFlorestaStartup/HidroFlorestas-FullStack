@@ -1,0 +1,121 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "head": "840cd1b6e51d7adc2fd196d177870ff513d5ad87",
+  "scope": "completed combined checks; E2E result is recorded separately",
+  "setup": {
+    "step": "npm-ci",
+    "command": "npm ci --no-audit --no-fund",
+    "startedUtc": "2026-10-25T06:10:29.3347842Z",
+    "endedUtc": "2026-10-25T06:11:46.2930678Z",
+    "durationMs": 76958.8405,
+    "exitCode": 0,
+    "privateLog": ".accounts-validation/01-npm-ci.log"
+  },
+  "checks": [
+    {
+      "step": "02-prisma",
+      "command": "npx prisma generate",
+      "startedUtc": "2026-10-25T06:12:30.9665456Z",
+      "endedUtc": "2026-10-25T06:12:37.7926189Z",
+      "durationMs": 6824.581700000001,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/02-prisma.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "03-typecheck",
+      "command": "npm run typecheck",
+      "startedUtc": "2026-10-25T06:13:10.8349085Z",
+      "endedUtc": "2026-10-25T06:13:19.4255825Z",
+      "durationMs": 8588.190400000001,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/03-typecheck.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "04-lint",
+      "command": "npm run lint",
+      "startedUtc": "2026-10-25T06:13:19.4711201Z",
+      "endedUtc": "2026-10-25T06:13:34.5578867Z",
+      "durationMs": 15085.9478,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/04-lint.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "05-build",
+      "command": "npm run build",
+      "startedUtc": "2026-10-25T06:13:34.5644911Z",
+      "endedUtc": "2026-10-25T06:13:55.6723652Z",
+      "durationMs": 21109.506100000002,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/05-build.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "06-unit",
+      "command": "npm run test:unit",
+      "startedUtc": "2026-10-25T06:13:55.6786411Z",
+      "endedUtc": "2026-10-25T06:14:10.0349000Z",
+      "durationMs": 14355.3297,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/06-unit.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "07-ui-member-popup",
+      "command": "npx playwright test --config tests/ui/member-popup.config.ts",
+      "startedUtc": "2026-10-25T06:15:29.8457992Z",
+      "endedUtc": "2026-10-25T06:15:35.1244772Z",
+      "durationMs": 5275.7612,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/07-ui-member-popup.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "07-ui-async-read-focus",
+      "command": "npx playwright test --config tests/ui/async-read-focus.config.ts",
+      "startedUtc": "2026-10-25T06:15:35.1658731Z",
+      "endedUtc": "2026-10-25T06:15:59.8252034Z",
+      "durationMs": 24659.4421,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/07-ui-async-read-focus.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    },
+    {
+      "step": "07-ui-admin-access-focus",
+      "command": "npx playwright test --config tests/ui/admin-access-focus.config.ts",
+      "startedUtc": "2026-10-25T06:15:59.8313151Z",
+      "endedUtc": "2026-10-25T06:16:12.6787049Z",
+      "durationMs": 12847.3019,
+      "exitCode": 0,
+      "privateLog": ".accounts-validation/07-ui-admin-access-focus.log",
+      "result": "PASS",
+      "scope": "synthetic checks; no PostgreSQL or Next server started by wrapper"
+    }
+  ],
+  "counts": {
+    "unit": 402,
+    "mailUnit": 17,
+    "uiPopup": 6,
+    "uiReadFocus": 27,
+    "uiAdminFocus": 14,
+    "skip": 0,
+    "retry": 0
+  },
+  "notRepeated": [
+    "Integration",
+    "Migration",
+    "Contract",
+    "HTTPS"
+  ],
+  "note": "Logs private and ignored; unit real SMTP only loopback. Build may obtain public font assets; no hosted DB/provider/SMTP operation.",
+  "hashScope": "physical UTF8/LF report bytes; functional measurements unchanged"
+}

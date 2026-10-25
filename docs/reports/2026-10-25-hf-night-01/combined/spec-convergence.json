@@ -1,0 +1,84 @@
+{
+  "phase": "speckit-converge",
+  "outcome": "converged",
+  "findings": [],
+  "requirementsAndCriteria": 30,
+  "acceptanceScenarios": 17,
+  "planDecisions": 16,
+  "constitutionPrinciples": 7,
+  "tasksAppended": 0,
+  "featureChecks": [
+    {
+      "feature": "029-member-popup-initials",
+      "FR": 6,
+      "SC": 4,
+      "acceptance": 5,
+      "decisions": [
+        "existing DTO only",
+        "trim and deterministic fallbacks",
+        "neutral decorative 36px avatar",
+        "local wrapping CSS",
+        "preserve dialog focus",
+        "synthetic isolated harness"
+      ],
+      "tasksSha256": "1dffdd5244791e04061e663b3675c011d67d2ea95df4a90ce25be4c0d309c141",
+      "evidence": [
+        "src/components/workspace/laboratory-workspace.tsx",
+        "src/components/workspace/workspace.module.css",
+        "tests/ui/member-popup.spec.ts"
+      ],
+      "casesPassed": 6
+    },
+    {
+      "feature": "032-async-read-focus",
+      "FR": 7,
+      "SC": 4,
+      "acceptance": 6,
+      "decisions": [
+        "synchronous guarded action focus",
+        "persistent named region with visible focus",
+        "preserve clear/abort/cursor/context",
+        "no deferred response focus",
+        "real component/CSS synthetic harness"
+      ],
+      "tasksSha256": "4f3277e9f075731455e7cef306d56b4f8d1f7282649340d94ebcecd6e0614009",
+      "evidence": [
+        "src/components/async-read-focus.ts",
+        "src/components/dashboard/dashboard-summary.tsx",
+        "src/components/dashboard/dashboard-history.tsx",
+        "src/components/territorial-map/territorial-map-view.tsx",
+        "tests/ui/async-read-focus.spec.ts"
+      ],
+      "casesPassed": 27
+    },
+    {
+      "feature": "033-admin-access-focus",
+      "FR": 6,
+      "SC": 3,
+      "acceptance": 6,
+      "decisions": [
+        "focus accepted occurrence after commit",
+        "invalidate current occurrence synchronously",
+        "preserve cancellation and 404 distinction",
+        "native rAF with controlled synthetic scheduler",
+        "single component and unchanged existing tests"
+      ],
+      "tasksSha256": "d25d32e2837d002943c24c5404894849774c2eb58e9a4fd2af1169721e8ffbb2",
+      "evidence": [
+        "src/components/user-administration/user-administration-page.tsx",
+        "tests/ui/admin-access-focus.spec.ts"
+      ],
+      "casesPassed": 14
+    }
+  ],
+  "gapTypes": {
+    "missing": 0,
+    "partial": 0,
+    "contradicts": 0,
+    "unrequested": 0
+  },
+  "tasksByteIdentical": true,
+  "hooks": "extensions.yml absent",
+  "scope": "current code assessed against each feature spec/plan/tasks and constitution; no branch comparison is the intent source",
+  "next": "Independent review of combined receipts, followed by coordinator publication without a duplicate functional PR."
+}

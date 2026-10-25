@@ -1,0 +1,102 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "sourceCutoff": "840cd1b6e51d7adc2fd196d177870ff513d5ad87",
+  "hashScope": "physical UTF8 without BOM/LF; new reports only; 601 measured functional files untouched",
+  "excluded": [
+    "public-artifacts.json (self-reference)",
+    "independent-review.md (independent reviewer ownership, not yet written)"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/plans/active/hf-night-ui-combined-20261025.md",
+      "sha256": "f2ae23dcd618726a6812bbe86cf99c7994d5d303787a5da61a18dd64c8a66804",
+      "bytes": 5688,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "f2ae23dcd618726a6812bbe86cf99c7994d5d303787a5da61a18dd64c8a66804"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/check-results.json",
+      "sha256": "79732f0984bed2064f15fc64e18f5ea8e533b789e3dc3b2f05c015cc311c0d65",
+      "bytes": 4358,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "79732f0984bed2064f15fc64e18f5ea8e533b789e3dc3b2f05c015cc311c0d65"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/e2e-results.json",
+      "sha256": "24ba3a22d7ed502654c2eb99f4636bc4c1bf6c6160c9a5b6d24b655623c836c5",
+      "bytes": 1164,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "24ba3a22d7ed502654c2eb99f4636bc4c1bf6c6160c9a5b6d24b655623c836c5"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/fingerprint-after.json",
+      "sha256": "b7c3da15448037986f953a15bda9741f182105e794d536d6309a45595a02d54c",
+      "bytes": 96428,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "b7c3da15448037986f953a15bda9741f182105e794d536d6309a45595a02d54c"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/fingerprint-before.json",
+      "sha256": "7d21f743d2dd7746a92fc839de563332a7427ac1ced618eaf93a27625cfded05",
+      "bytes": 96428,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "7d21f743d2dd7746a92fc839de563332a7427ac1ced618eaf93a27625cfded05"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/fresh-empty-proof.json",
+      "sha256": "1426c6de7a34a9a00a361c2722481fd3d821c739663891c5ccac5f13860282a1",
+      "bytes": 491,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "1426c6de7a34a9a00a361c2722481fd3d821c739663891c5ccac5f13860282a1"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/private-log-index.json",
+      "sha256": "09f6b8d99cd554d0a2ba638cf424ad79066ae722c699c24c432e32bfe369115f",
+      "bytes": 2917,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "09f6b8d99cd554d0a2ba638cf424ad79066ae722c699c24c432e32bfe369115f"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/readme.md",
+      "sha256": "f59d7493fc0294d79c7c674969f2c505ad07e4f62e0da33330d35d92f46e70ce",
+      "bytes": 7132,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "f59d7493fc0294d79c7c674969f2c505ad07e4f62e0da33330d35d92f46e70ce"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/runtime-result.json",
+      "sha256": "fcb4926a8eea410d236903476a4d6e4e4f27a5bea1e8d6be6996e69ab2f7e1f6",
+      "bytes": 476,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "fcb4926a8eea410d236903476a4d6e4e4f27a5bea1e8d6be6996e69ab2f7e1f6"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/runtime-setup.json",
+      "sha256": "c233af1648c2042eaadef91624478942ef253cb70413373d10e5a375220d0eed",
+      "bytes": 558,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "c233af1648c2042eaadef91624478942ef253cb70413373d10e5a375220d0eed"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/source-manifest.json",
+      "sha256": "9d45cb90b1647c16e05c2f7c757e603e8718eb54d79bbd4f73233fa45d54bf2d",
+      "bytes": 6396,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "9d45cb90b1647c16e05c2f7c757e603e8718eb54d79bbd4f73233fa45d54bf2d"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/spec-analysis.json",
+      "sha256": "29f443de30566e95dac11ef2353174f314a37a78c028bf4221df920aed6801c1",
+      "bytes": 10756,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "29f443de30566e95dac11ef2353174f314a37a78c028bf4221df920aed6801c1"
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/combined/spec-convergence.json",
+      "sha256": "60ba2e74f6973be8dd9130125057a0a07c96b7cb4f92bfdbd50e68b99c22002d",
+      "bytes": 2777,
+      "hashScope": "physical UTF8 without BOM/LF bytes",
+      "gitNormalizedSha256": "60ba2e74f6973be8dd9130125057a0a07c96b7cb4f92bfdbd50e68b99c22002d"
+    }
+  ]
+}

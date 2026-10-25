@@ -1,0 +1,140 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "head": "840cd1b6e51d7adc2fd196d177870ff513d5ad87",
+  "branch": "test/hf-night-ui-combined-20261025",
+  "functionalPaths": [
+    {
+      "path": "src/components/workspace/laboratory-workspace.tsx",
+      "sourceHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "expectedGitBlob": "d6f87b626d94203aa43cdd324398f75f5f94b5ef",
+      "actualGitBlob": "d6f87b626d94203aa43cdd324398f75f5f94b5ef",
+      "sha256": "98251e6cbae5d8ac07abb86c6cb11e26e29d3250408b6fd028619900e5736942",
+      "equal": true
+    },
+    {
+      "path": "src/components/workspace/workspace.module.css",
+      "sourceHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "expectedGitBlob": "f2507f1aee048b948ed61a4ad8dd9e057a661eab",
+      "actualGitBlob": "f2507f1aee048b948ed61a4ad8dd9e057a661eab",
+      "sha256": "9e1e70f94d89fa4bd5ffabd5a8a26cc8595d18a38148cb4a1cde67cee6e11fc4",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/member-popup.config.ts",
+      "sourceHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "expectedGitBlob": "b6f8278956787706622de1343c4959eb486f0f06",
+      "actualGitBlob": "b6f8278956787706622de1343c4959eb486f0f06",
+      "sha256": "67afe92576d2bc4eff7a98f18477f90da9560e2f657d485b378fa39679c20ef3",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/member-popup.spec.ts",
+      "sourceHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "expectedGitBlob": "dd76483dc944f5041d31800b6db28a064c3cce45",
+      "actualGitBlob": "dd76483dc944f5041d31800b6db28a064c3cce45",
+      "sha256": "a61c896645b8cea8b9311015ba55bb24a1363cff70acde7d94fbb848ce99897e",
+      "equal": true
+    },
+    {
+      "path": "src/components/async-read-focus.ts",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "76e92e9fd60cb60444036bb72169a477f7900931",
+      "actualGitBlob": "76e92e9fd60cb60444036bb72169a477f7900931",
+      "sha256": "f96fc02fd78f188c0966837194b2fcf99f3e8e3a272732c70493043c09a5ae74",
+      "equal": true
+    },
+    {
+      "path": "src/components/dashboard/dashboard-history.tsx",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "d47997bf976423d7329c00dbdeeac3567006eac8",
+      "actualGitBlob": "d47997bf976423d7329c00dbdeeac3567006eac8",
+      "sha256": "835beb564102d776c9caf98e815c43dc57b3012bfa76904e144c6b0bab3ab867",
+      "equal": true
+    },
+    {
+      "path": "src/components/dashboard/dashboard-summary.tsx",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "0a8adb49e02f31d8fd5b5fceab6b19114a27114e",
+      "actualGitBlob": "0a8adb49e02f31d8fd5b5fceab6b19114a27114e",
+      "sha256": "05aaed213261b336524ea4ffdbb9b203939a9b4172ed586dba1aa7cc34601a51",
+      "equal": true
+    },
+    {
+      "path": "src/components/dashboard/dashboard.module.css",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "c8b825edb765b08f8ce47108471c5637ddbbc3a5",
+      "actualGitBlob": "c8b825edb765b08f8ce47108471c5637ddbbc3a5",
+      "sha256": "0c09fd20681088964b270cdb82dfb85970e4a6a4172a654a8fa13dd34e276aeb",
+      "equal": true
+    },
+    {
+      "path": "src/components/territorial-map/territorial-map-view.tsx",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "b071e25c639e2c63f803d50f0a489cab5c4c29a3",
+      "actualGitBlob": "b071e25c639e2c63f803d50f0a489cab5c4c29a3",
+      "sha256": "910ffded9ddba84f76ddb3f74197ddda0a9707cf9b2b4f6ad3e472caf19bc6c0",
+      "equal": true
+    },
+    {
+      "path": "src/components/territorial-map/territorial-map.module.css",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "85c9d6761cf86741832e9f7f9816f8569bebbf64",
+      "actualGitBlob": "85c9d6761cf86741832e9f7f9816f8569bebbf64",
+      "sha256": "c38d10b92fae66a707cac7bc2a3a598d5b5118fd7772abe555c8337ca49a7710",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/async-read-focus.config.ts",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "5a94eb5332111f8070d8f75f4602dce387264449",
+      "actualGitBlob": "5a94eb5332111f8070d8f75f4602dce387264449",
+      "sha256": "e6b9ff7ef4aa89f34c90e80b5649504e4ebfce87b4aadabfec421902620ea36e",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/async-read-focus.spec.ts",
+      "sourceHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "expectedGitBlob": "df4b319d48952236fa22f3a12a54400327f15596",
+      "actualGitBlob": "df4b319d48952236fa22f3a12a54400327f15596",
+      "sha256": "61aa6112867ee31cc6dbcbc7069d311407e9190f18c7aeb3fea80789296f7777",
+      "equal": true
+    },
+    {
+      "path": "src/components/user-administration/user-administration-page.tsx",
+      "sourceHead": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+      "expectedGitBlob": "e0bbaa7ba837f2bafa7893c93b628458e76e7e1b",
+      "actualGitBlob": "e0bbaa7ba837f2bafa7893c93b628458e76e7e1b",
+      "sha256": "974480ce31b6658fd9a5b0a45769ba497b2a0b01e172e656f3f9136990e2f984",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/admin-access-focus.config.ts",
+      "sourceHead": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+      "expectedGitBlob": "967b83ec394b5c4442ef0dc744d71599020637b2",
+      "actualGitBlob": "967b83ec394b5c4442ef0dc744d71599020637b2",
+      "sha256": "fdb1d94d2a212168f83d68790249ac01ecc083e4cb1c2a65bc0b334bf025ceff",
+      "equal": true
+    },
+    {
+      "path": "tests/ui/admin-access-focus.spec.ts",
+      "sourceHead": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+      "expectedGitBlob": "ed7fa8cea3c241304bc88d90b7b1644a4c4396b4",
+      "actualGitBlob": "ed7fa8cea3c241304bc88d90b7b1644a4c4396b4",
+      "sha256": "16ff2505e12413e53d42f8bb32786944b5fa843f0ff12f6634f0703dcd1ed391",
+      "equal": true
+    }
+  ],
+  "functionalBlobsIdentical": 15,
+  "guardBaseFalse": 27,
+  "guardFalse": 31,
+  "additionalGuardBranches": [
+    "fix/hf-night-fr015-20261025",
+    "fix/hf-night-async-focus-20261025",
+    "fix/hf-night-admin-focus-20261025",
+    "test/hf-night-ui-combined-20261025"
+  ],
+  "workflowBlob": "1c116152531dae7d3b4a28cf8fb4f6e8423158c7",
+  "guardNonDeploymentJsonIdenticalToBase": true,
+  "workflowIdenticalToBase": true,
+  "hashScope": "sha256 fields measure physical source bytes; GitBlob fields are Git object identifiers, not SHA256 content hashes"
+}

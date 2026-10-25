@@ -1,0 +1,14 @@
+{
+    "classification":  "EVIDENCIA_IMPLEMENTACAO",
+    "result":  "PASS",
+    "startedUtc":  "2026-10-25T06:16:40.6496526Z",
+    "endedUtc":  "2026-10-25T06:26:40.8310240Z",
+    "durationMs":  598892.5386,
+    "postgresStopVerified":  true,
+    "ownedPortsListenersRemaining":  0,
+    "noForeignProcessStopped":  true,
+    "retries":  0,
+    "cohort":  "combined-new-owned",
+    "tileMode":  "loopback unavailable; canonical attribution",
+    "remoteProvidersUsed":  false
+}
