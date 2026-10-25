@@ -1,6 +1,6 @@
 # HF-NIGHT-01 — verificação combinada de UI
 
-Estado: `AGUARDANDO_REVISAO`, 2026-10-25. Responsável pela execução: `/root/fr015`; revisão documental independente: `/root/students`; composição/publicação: `/root`.
+Estado: `CONCLUIDO`, 2026-10-25. Responsável pela execução: `/root/fr015`; revisão documental independente: `/root/students`; composição/publicação: `/root`.
 
 ## Objetivo e autoridade
 
@@ -35,3 +35,5 @@ Se houver falha, registrar e analisar antes de retry; defeito novo exige triagem
 - 06:10–06:16UTC: npm ci553/Prisma/typecheck/lint/build/unit402+17 e UI6+27+14 PASS. Lint conserva2warnings preexistentes,0erros. Analyze real das três features:30FR/SC,31tarefas,100% cobertura,0achados; tasks históricas intactas. Manifesto próprio confirma15/15blobs e31guardas false. Fingerprint601entradas `1f11a53ef3a5510ad35033b9000d12b6ae10b4c7e6222c425880f3d5c7ff7eac` antes de UI/runtime, sem alterações funcionais.
 - 06:17UTC: runtime novo próprio passou RegressionSetup e prova READ ONLY anterior às fixtures:14migrations,0usuários/labs/memberships/áreas/coletas/audit e0tabelas na referência. E2E220 em andamento,1worker/retries0. Nenhum resultado final antecipado.
 - 06:26–06:27UTC:220/220E2E PASS,0skip/retry,571,669s; teste403 existente passou. Runtime próprio parado,0listeners55427/3001,dados preservados. Fingerprint601entradas antes/depois idêntico. Converge real das três specs:30FR/SC+17AC+16decisões+7princípios,0lacunas/0tasks novas; hashes das três tasks intactos. Pacote público será congelado UTF8/LF com hashScope físico explícito; C revisará os recibos e root o delta/publicação. Não foi repetida carga de backend sem mudança material.
+- Encerramento: C concluiu revisão documental independente PASS, sem findings residuais; parecer físico inicial `168d2179b35e1b7a0f731263b91356e8050768db9d5c0e1dd89014aadd1d76a2`. Root preservou o freeze completo em `6005bcf5399fa8f7a850974db1f2774266acfb51` e autorizou este arquivamento active→completed. Apenas plano/readme/manifesto próprio mudam; source, recibos medidos e parecer C permanecem intactos. C revisará o pequeno delta documental e root fará publicação da branch de verificação, sem PR funcional duplicada.
+- Limites finais: execução local revisada, sem aceite humano, homologação hospedada ou validação científica. Instrumento030 não integra esta composição; sua reabertura P2 na QA não altera as601entradas funcionais nem os resultados desta coorte. Nenhum novo runtime, teste ou código foi criado para arquivar o plano.

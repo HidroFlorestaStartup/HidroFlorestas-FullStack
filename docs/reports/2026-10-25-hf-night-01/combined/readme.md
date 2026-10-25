@@ -1,6 +1,6 @@
 # HF-NIGHT-01 — verificação combinada de UI
 
-Estado: `AGUARDANDO_REVISAO`, 2026-10-25. Execução e teardown concluídos PASS; revisão independente/publicação pendentes. Executor `/root/fr015`; composição preparada pelo coordenador `/root`; revisão documental independente por `/root/students` em caminho reservado.
+Estado da verificação: `CONCLUIDO`, 2026-10-25. Execução, teardown e [revisão documental independente](independent-review.md) PASS, sem findings residuais. O pequeno delta de arquivamento ainda será revisto por C antes da publicação pelo coordenador. Executor `/root/fr015`; composição preparada por `/root`; revisor documental `/root/students`.
 
 ## Corte e finalidade
 
@@ -58,7 +58,9 @@ Os [logs privados](private-log-index.json) conservam SHA256/tamanho/localizaçã
 
 ## Spec Kit e limites
 
-Skills reais speckit-analyze/converge lidas da instalação local, sem extensão/hooks conhecidos. Reanálise não destrutiva das specs029/032/033, com check-prerequisites real por contexto explícito e sem persistir feature.json: [30obrigações FR/SC/31tarefas,100% cobertura,0achados](spec-analysis.json). Após os testes, o [converge](spec-convergence.json) avaliou30FR/SC,17cenários de aceite,16decisões de plano e7princípios;0missing/partial/contradicts/unrequested,0tarefas novas. As três tasks ficaram byte-idênticas. Os JSONs são recibos posteriores das skills, não comandos fictícios nem escrita delas nos artefatos históricos. O [plano desta verificação](../../../plans/active/hf-night-ui-combined-20261025.md) registra recorte e sequência, sem criar feature artificial.
+Skills reais speckit-analyze/converge lidas da instalação local, sem extensão/hooks conhecidos. Reanálise não destrutiva das specs029/032/033, com check-prerequisites real por contexto explícito e sem persistir feature.json: [30obrigações FR/SC/31tarefas,100% cobertura,0achados](spec-analysis.json). Após os testes, o [converge](spec-convergence.json) avaliou30FR/SC,17cenários de aceite,16decisões de plano e7princípios;0missing/partial/contradicts/unrequested,0tarefas novas. As três tasks ficaram byte-idênticas fisicamente antes/depois da coorte e do converge, sem normalizar o CRLF do checkout; os blobs Git mantêm LF. Os JSONs são recibos posteriores das skills, não comandos fictícios nem escrita delas nos artefatos históricos. O [plano concluído e arquivado](../../../plans/completed/hf-night-ui-combined-20261025.md) registra recorte, sequência e encerramento, sem criar feature artificial.
+
+O freeze anterior ao arquivamento está preservado no commit `6005bcf5399fa8f7a850974db1f2774266acfb51`, com índice público `b0af5b46186ceda0ee9b56a9d8d986f64893a6b1faf121b855b2004d97e73125` e parecer inicial de C `168d2179b35e1b7a0f731263b91356e8050768db9d5c0e1dd89014aadd1d76a2`. O manifesto próprio atual registra o delta limitado de plano/estado/links; nenhum recibo ou arquivo funcional medido foi alterado. O instrumento030 fica fora desta composição; sua correção P2 separada não recebe aceite por este pacote.
 
 Integration/Migration/Contract/HTTPS não foram repetidos: backend/schema permanecem iguais e não houve falha nova que justificasse ampliar o custo. Não se chama este recorte de15gates completos. Execução local de Next dev não é CI remota, homologação, benchmark de produção ou aceite assistivo humano. Reflow200% sintético não substitui zoom/dispositivo/tecnologia assistiva reais. Tiles bloqueados no recorte não provam egress universal nulo; build pode obter artefatos públicos de fonte, e não foi feita captura de rede universal.
 

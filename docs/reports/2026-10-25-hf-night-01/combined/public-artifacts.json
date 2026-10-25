@@ -4,15 +4,15 @@
   "hashScope": "physical UTF8 without BOM/LF; new reports only; 601 measured functional files untouched",
   "excluded": [
     "public-artifacts.json (self-reference)",
-    "independent-review.md (independent reviewer ownership, not yet written)"
+    "independent-review.md (independent reviewer ownership; separately hashed)"
   ],
   "artifacts": [
     {
-      "path": "docs/plans/active/hf-night-ui-combined-20261025.md",
-      "sha256": "f2ae23dcd618726a6812bbe86cf99c7994d5d303787a5da61a18dd64c8a66804",
-      "bytes": 5688,
+      "path": "docs/plans/completed/hf-night-ui-combined-20261025.md",
+      "sha256": "ac26565e73d33c225d77cb91d5ab796b28421af098e7b53ee00baabdf40d3922",
+      "bytes": 6542,
       "hashScope": "physical UTF8 without BOM/LF bytes",
-      "gitNormalizedSha256": "f2ae23dcd618726a6812bbe86cf99c7994d5d303787a5da61a18dd64c8a66804"
+      "gitNormalizedSha256": "ac26565e73d33c225d77cb91d5ab796b28421af098e7b53ee00baabdf40d3922"
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/combined/check-results.json",
@@ -58,10 +58,10 @@
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/combined/readme.md",
-      "sha256": "f59d7493fc0294d79c7c674969f2c505ad07e4f62e0da33330d35d92f46e70ce",
-      "bytes": 7132,
+      "sha256": "172d0e206991729867d68cebd3274f4e5686ed1175439d4105fc153f4ec10dbf",
+      "bytes": 7867,
       "hashScope": "physical UTF8 without BOM/LF bytes",
-      "gitNormalizedSha256": "f59d7493fc0294d79c7c674969f2c505ad07e4f62e0da33330d35d92f46e70ce"
+      "gitNormalizedSha256": "172d0e206991729867d68cebd3274f4e5686ed1175439d4105fc153f4ec10dbf"
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/combined/runtime-result.json",
@@ -98,5 +98,21 @@
       "hashScope": "physical UTF8 without BOM/LF bytes",
       "gitNormalizedSha256": "60ba2e74f6973be8dd9130125057a0a07c96b7cb4f92bfdbd50e68b99c22002d"
     }
-  ]
+  ],
+  "archive": {
+    "classification": "EVIDENCIA_IMPLEMENTACAO",
+    "freezeCommit": "6005bcf5399fa8f7a850974db1f2774266acfb51",
+    "freezeIndexSha256": "b0af5b46186ceda0ee9b56a9d8d986f64893a6b1faf121b855b2004d97e73125",
+    "initialIndependentReviewSha256": "168d2179b35e1b7a0f731263b91356e8050768db9d5c0e1dd89014aadd1d76a2",
+    "movedFrom": "docs/plans/active/hf-night-ui-combined-20261025.md",
+    "movedTo": "docs/plans/completed/hf-night-ui-combined-20261025.md",
+    "changedOwnArtifacts": [
+      "docs/plans/active/hf-night-ui-combined-20261025.md",
+      "docs/plans/completed/hf-night-ui-combined-20261025.md",
+      "docs/reports/2026-10-25-hf-night-01/combined/readme.md",
+      "docs/reports/2026-10-25-hf-night-01/combined/public-artifacts.json"
+    ],
+    "measuredReceiptsUnchanged": true,
+    "sourceUnchanged": true
+  }
 }

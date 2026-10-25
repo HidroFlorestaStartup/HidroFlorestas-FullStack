@@ -16,7 +16,7 @@ constitui nova revisão independente do próprio patch.
 Corte `840cd1b6e51d7adc2fd196d177870ff513d5ad87`, branch
 `test/hf-night-ui-combined-20261025`, base 08262dc. Instruções aplicáveis
 consultadas; governança/contexto iguais à base previamente lida. O
-[plano](../../../plans/active/hf-night-ui-combined-20261025.md) e
+[plano](../../../plans/completed/hf-night-ui-combined-20261025.md) e
 relatórios novos recebidos foram preservados; este é o único arquivo escrito
 pelo revisor na worktree.
 
@@ -72,7 +72,7 @@ sem path adicional/ausente. `sha256(JSON.stringify(manifest))` reproduziu
 `1f11a53ef3a5510ad35033b9000d12b6ae10b4c7e6222c425880f3d5c7ff7eac`,
 igual a RegressionSetup, prova fresca e E2E.
 
-O [índice público](public-artifacts.json), SHA-256
+O [índice público do freeze](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/6005bcf5399fa8f7a850974db1f2774266acfb51/docs/reports/2026-10-25-hf-night-01/combined/public-artifacts.json), SHA-256
 `b0af5b46186ceda0ee9b56a9d8d986f64893a6b1faf121b855b2004d97e73125`,
 tem 13 entradas conferidas: tamanho/hash corretos, UTF-8 sem BOM/LF e bytes
 preservados pelo clean do Git. São 11 JSONs e dois Markdown indexados, mais o
@@ -111,3 +111,23 @@ fontes públicas e SMTP unitário é apenas loopback sintético.
 IHFR conserva `CONTRATO_EXPERIMENTAL`, `VALIDACAO_CIENTIFICA_PENDENTE`,
 `SUJEITO_A_RECALIBRACAO` e
 `NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO`.
+
+## Adendo — arquivamento documental
+
+`RECOMENDACAO`: **PASS DO DELTA DE ARQUIVAMENTO, sem achado residual**.
+Referência imutável: commit `6005bcf5399fa8f7a850974db1f2774266acfb51`, que
+preserva o índice b0af… e este parecer inicial 168d…. O delta do autor limita-se
+ao plano active→completed, estado/histórico de encerramento, links/readme e
+manifesto próprio. No plano, somente o estado e duas linhas finais de histórico
+mudaram além do path. Os 11 demais artefatos indexados permanecem byte a byte
+iguais ao freeze; o corte-fonte 840cd1b e os recibos medidos não foram alterados.
+
+O [manifesto atual](public-artifacts.json), SHA-256
+`00024f669dd09e8e2926211a23fe0e95b1df029442292092b2b938616d3ea2ae`,
+mantém 13 entradas e registra o freeze anterior. Hashes/tamanhos do plano
+concluído e readme atualizados conferem com ele; nenhum path extra foi incluído.
+O plano ativo está ausente e o concluído existe. Os links atuais foram validados.
+
+Nesta etapa o revisor mudou somente o link do plano, o ponteiro ao índice
+histórico e este adendo. Não repetiu 601 hashes, testes ou runtime. Os resultados,
+limites e separação do instrumento 030 do parecer anterior permanecem válidos.
