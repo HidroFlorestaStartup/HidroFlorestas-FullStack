@@ -10,6 +10,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import type { Browser } from "@playwright/test";
 import type { TerritorialMapResponse } from "../src/types/territorial-map.type";
 import { assertExpectedCollections, assertLocalReadinessEnvironment, LocalReadinessError, nearestRank, publicExplainPlan } from "./local-readiness-policy";
+import { coordinateNavigationAndResponse } from "./local-readiness-navigation";
 
 const fail = (code: string): never => { throw new LocalReadinessError(code); };
 function requireThat(value: unknown, code: string): asserts value { if (!value) fail(code); }
@@ -281,12 +282,13 @@ async function main() {
           const page = await context.newPage();
           page.setDefaultTimeout(10_000);
           page.on("pageerror", () => { pageErrors++; });
-          const incoming = page.waitForResponse(response => new URL(response.url()).pathname === endpoint).then(async response => {
-            await response.finished();
-            return { response, ended: performance.now() };
-          });
-          await page.goto(origin + `/dashboard/laboratories/${target}/map`, { waitUntil: "domcontentloaded" });
-          const { response, ended: responseEnded } = await incoming;
+          const { response, ended: responseEnded } = await coordinateNavigationAndResponse(
+            () => page.waitForResponse(response => new URL(response.url()).pathname === endpoint).then(async response => {
+              await response.finished();
+              return { response, ended: performance.now() };
+            }),
+            () => page.goto(origin + `/dashboard/laboratories/${target}/map`, { waitUntil: "domcontentloaded" }),
+          );
           const body = await response.json() as TerritorialMapResponse;
           check(body);
           const buttons = page.locator('button[aria-controls="selected-area-panel"]');

@@ -77,3 +77,46 @@ Os hashes dos três arquivos funcionais foram reconferidos e correspondem ao cor
 | `readiness-fixture-diagnosis.json` | `f4b78ff91ea1b0839c1fd994941395816e28745b5cca1c4d8ca005ae6e095a01` |
 
 **PASS sem achado residual no corte examinado.** A conferência independente de fonte/aritmética/documentos e o rerun9/9 não são uma segunda execução de p95/EXPLAIN/browser/teardown. Restore local, baseline, homologação hospedada, aceite humano e ciência não recebem aprovação por este parecer.
+
+## Reabertura P2 — observação de rejeições durante navegação
+
+`EVIDENCIA_IMPLEMENTACAO`: após o corte acima, o Codex encontrou P2 material na PR39/HEAD `3e0066ab82a415e04342bd751254ee65cf533dfb`, thread `PRRT_kwDOVAitc86v--4u`, comentário4369900482. O waiter podia rejeitar sem handler enquanto um goto já falho levava o chamador ao finally, interrompendo cleanup/recibo. O PASS feliz anterior continua limitado ao seu fingerprint; aquela revisão não detectou este caminho. O adendo não transfere o resultado remoto do HEAD antigo ao novo delta.
+
+Estado deste adendo: **PASS da revisão de fonte/testes e do rerun independente18/18; novo ensaio real ainda pendente**. O autor reabriu030 por converge/analyze e acrescentou tarefasT013–T016 para FR-002/FR-005 existentes, sem nova funcionalidade de aplicação.
+
+Fonte congelada examinada, hashes SHA256 dos bytes físicos antes/depois do rerun:
+
+| Arquivo | SHA256 |
+| --- | --- |
+| `scripts/local-readiness.ts` | `42426e12ae292ab61625608b2ceda9858092ca95cac6a25cace9b417a83901d1` |
+| `scripts/local-readiness-navigation.ts` | `b75ba080fdfd3eb88df9adc148ec6344137bf39983d5c0f663be3338bca30985` |
+| `tests/investigations/readiness/local-readiness-navigation.test.ts` | `79809dd4b6cf610bd234c59fa52cc13a2c1e05c7ecc4eddc1d42e56c5483a8a8` |
+| `tests/investigations/readiness/fixtures/navigation-failure-child.ts` | `98fa448cba97e3d1aef63530b63d758c5e417bd8924471ec08f22a3bf2269bbb` |
+
+O helper agenda os callbacks resposta→navegação com Promise.resolve().then e anexa imediatamente Promise.all aos dois ramos. Ambos permanecem observados antes de executar, inclusive se houver throw síncrono ou rejeição de finished() no callback de resposta. A primeira falha propaga ao chamador; não existe listener global de rejeições nem espera de um waiter pendente para iniciar o finally. No runner, o timestamp continua imediatamente após response.finished(), dentro do ramo da resposta. Validações, orçamento, finally e lifecycle reais permanecem intactos.
+
+Comando próprio executado sob token Windows autorizado, sem browser/DB/rede:
+
+```powershell
+node --unhandled-rejections=strict --import=tsx --test --test-reporter=tap --test-concurrency=1 tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts
+```
+
+Resultado: **18/18PASS,0FAIL/skip/cancel,exit0**, duração Node2184,6925ms. São9política+9navegação: dois controles legacy strict encerram o subprocesso com exit1/recurso presente/recibo ausente; seis falhas do helper conservam erro causal e concluem remoção do marcador/escrita de recibo sintético FAIL; um sucesso comprova ordem, valor retornado e conclusão de ambos. Exit0 dos filhos protegidos significa que a finalização de controle terminou, não que a navegação simulada teve sucesso. Não foi injetada falha num browser, PostgreSQL ou Next real. O finally real foi revisado por leitura; seu novo caminho feliz será conferido somente nos recibos do autor, sem segunda carga do revisor.
+
+### Complemento documental pós-P2
+
+Estado final do adendo: **PASS**, sem achado residual no delta examinado. O revisor leu [territorial-readiness-p2.json](territorial-readiness-p2.json) e [territorial-readiness-p2-command.json](territorial-readiness-p2-command.json), sem executar segunda carga. O único ensaio real do autor usa Node strict com react-server e registra exit0, PASS,06:54:26.988Z–06:54:49.296Z,22307,9963ms. O wrapper abrange06:54:25.0348981Z–06:54:50.0888462Z e declara25050,1605ms; as fronteiras do wrapper incluem operações externas ao corpo da medição. Não são tempos do rerun sintético.
+
+O recibo identifica HEAD-base `3e0066ab82a415e04342bd751254ee65cf533dfb` mais o delta funcional ainda não commitado no instante do ensaio. Seu fingerprint próprio é `46a9e540483c4e3748a8b185e7ea3e3fecf9ad5f2bbb8b7a748dec8c88aa2489`, igual antes/depois; não se confunde com8313,baselinee718 ou composiçãoUI1f11. Os quatro hashes de fonte/testes acima foram reconferidos após o ensaio e permaneceram iguais. O recibo feliz anterior segue byte-idêntico ao SHA256969bd055… publicado nesta revisão.
+
+O revisor contou100amostras após10aquecimentos e recomputou o posto95:54,985499999998865ms, exatamente igual ao p95 informado, frente à meta500ms. Interação213,3963ms frente à meta2s; alvo100áreas/1000coletas, ruído10/100 e payload147036bytes. Dois EXPLAIN,100hrefs de área/1000de coleta e duas navegações de amostra;15requests externos bloqueados,0mutações e0pageerrors. Cleanup registra servidor STOPPED, browser CLOSED, schema REMOVED e0erros. Esses dados mostram o caminho feliz real da versão corrigida; a falha de navegação/cleanup sob Node strict permanece a prova sintética separada descrita acima.
+
+Hashes SHA256 dos bytes físicos dos recibos lidos:
+
+| Recibo | SHA256 |
+| --- | --- |
+| `territorial-readiness-p2.json` | `4563f646c24a6fbbe129165a530a6a60c4170b78d09d529a63475ffd24424147` |
+| `territorial-readiness-p2-command.json` | `5df58c47fe38dbf132dd59e0c839c457d0221f3c37f307c018f4d858847cee70` |
+| `navigation-rejection-regression.json` | `8f0f27a2a1373b1fd5ee4a41883b3bc5114e21669bfcfe3f5df46112cd89fea3` |
+
+Este adendo encerra a revisão local do delta P2. Revisão GitHub do novo HEAD, resolução do thread e publicação continuam com o coordenador, sem transferir o estado do bot em3e0066 ao commit futuro. Nenhum aplicativo, contrato de API, schema ou teste E2E foi alterado por este incremento do instrumento.

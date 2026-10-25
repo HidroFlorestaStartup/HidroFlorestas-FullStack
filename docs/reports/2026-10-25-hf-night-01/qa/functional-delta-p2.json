@@ -1,0 +1,60 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "previousInstrumentFingerprint": "8313f11b969379019da1e6dc84240d49b52f2792e1ad6a65b13059485184a90e",
+  "instrumentFingerprint": "46a9e540483c4e3748a8b185e7ea3e3fecf9ad5f2bbb8b7a748dec8c88aa2489",
+  "comparedWithPreviousInstrument": {
+    "added": [
+      {
+        "path": "scripts/local-readiness-navigation.ts",
+        "sha256": "b75ba080fdfd3eb88df9adc148ec6344137bf39983d5c0f663be3338bca30985"
+      },
+      {
+        "path": "tests/investigations/readiness/fixtures/navigation-failure-child.ts",
+        "sha256": "98fa448cba97e3d1aef63530b63d758c5e417bd8924471ec08f22a3bf2269bbb"
+      },
+      {
+        "path": "tests/investigations/readiness/local-readiness-navigation.test.ts",
+        "sha256": "79809dd4b6cf610bd234c59fa52cc13a2c1e05c7ecc4eddc1d42e56c5483a8a8"
+      }
+    ],
+    "changed": [
+      {
+        "path": "scripts/local-readiness.ts",
+        "sha256": "42426e12ae292ab61625608b2ceda9858092ca95cac6a25cace9b417a83901d1"
+      }
+    ],
+    "removed": []
+  },
+  "comparedWithFrozenBaseline": {
+    "fingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+    "added": [
+      {
+        "path": "scripts/local-readiness-navigation.ts",
+        "sha256": "b75ba080fdfd3eb88df9adc148ec6344137bf39983d5c0f663be3338bca30985"
+      },
+      {
+        "path": "scripts/local-readiness-policy.ts",
+        "sha256": "51990658f5db810067975271b31fe850d84352127d85246b519fa1b559668dfd"
+      },
+      {
+        "path": "scripts/local-readiness.ts",
+        "sha256": "42426e12ae292ab61625608b2ceda9858092ca95cac6a25cace9b417a83901d1"
+      },
+      {
+        "path": "tests/investigations/readiness/fixtures/navigation-failure-child.ts",
+        "sha256": "98fa448cba97e3d1aef63530b63d758c5e417bd8924471ec08f22a3bf2269bbb"
+      },
+      {
+        "path": "tests/investigations/readiness/local-readiness-navigation.test.ts",
+        "sha256": "79809dd4b6cf610bd234c59fa52cc13a2c1e05c7ecc4eddc1d42e56c5483a8a8"
+      },
+      {
+        "path": "tests/investigations/readiness/local-readiness-policy.test.ts",
+        "sha256": "ef0ecc26017b7154166fca3a0dff40debd504fdbfb2a8c424c19c3660e5d4376"
+      }
+    ],
+    "changed": [],
+    "removed": []
+  },
+  "baselineAndCombinedResultsTransferred": false
+}

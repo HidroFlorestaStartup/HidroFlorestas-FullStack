@@ -1,428 +1,506 @@
 {
   "schemaVersion": "hf-night-public-artifacts/v1",
   "classification": "EVIDENCIA_IMPLEMENTACAO",
-  "frozenUtc": "2026-10-25T06:11:49.166Z",
+  "currentRevisionId": "pr39-p2-navigation-settlement",
+  "revisionDescription": "Current post-P2 observation; immediate Promise settlement, strict subprocess regressions and one owned real030. Prior cut is preserved in Git, not treated as current entries.",
+  "frozenUtc": "2026-10-25T07:03:31.721Z",
   "baseSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "sourceHeadBeforeUncommittedFix": "3e0066ab82a415e04342bd751254ee65cf533dfb",
   "branch": "test/hf-night-baseline-20261025",
   "baselineFunctionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
-  "instrumentFunctionalFingerprint": "8313f11b969379019da1e6dc84240d49b52f2792e1ad6a65b13059485184a90e",
-  "byteHashConvention": "SHA256 of exact captured filesystem bytes, not Git blob IDs; newline conversion may affect byte hashes on a different checkout",
+  "instrumentFunctionalFingerprint": "46a9e540483c4e3748a8b185e7ea3e3fecf9ad5f2bbb8b7a748dec8c88aa2489",
+  "hashScope": "sha256 and bytes identify current captured filesystem bytes. Git content fields are null until coordinator commit; they never mean Git object IDs.",
+  "byteHashConvention": "SHA256 of exact filesystem bytes; Git clean filtering may normalize line endings. gitSha256 will hash raw Git blob CONTENT, gitBytes its length, gitObjectId the blob identity.",
+  "previousPublishedManifest": {
+    "commit": "3e0066ab82a415e04342bd751254ee65cf533dfb",
+    "path": "docs/reports/2026-10-25-hf-night-01/qa/public-artifact-manifest.json",
+    "sha256": "77e093e55a9ec9fcbd9714fefc604b4650e5164c1b38121a535335e95395872e",
+    "hashScope": "SHA256 of raw manifest blob content at the referenced commit"
+  },
   "selfExcluded": true,
   "coordinatorVercelGuardExcluded": true,
   "privateRawLogsExcluded": true,
-  "sourceFilesAdded": 3,
+  "functionalDeltaBasis": "Frozen baselinee718:594 functional entries. Post-P2:600. Existing baseline application/test/config inputs are unchanged.",
+  "sourceFilesAdded": 6,
   "existingFunctionalFilesChanged": 0,
-  "reportAndFeatureFiles": 47,
+  "deltaFromPreviousInstrument": {
+    "fingerprint": "8313f11b969379019da1e6dc84240d49b52f2792e1ad6a65b13059485184a90e",
+    "sourceFilesAdded": 3,
+    "sourceFilesChanged": 1,
+    "sourceFilesRemoved": 0
+  },
+  "reportAndFeatureFiles": 52,
   "entries": [
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/13-baseline-fingerprint.json",
       "bytes": 95629,
       "sha256": "96fac655ed24fe20027ebf8a16107bc3d37480dfd4c424d4347f2629fe7bdc79",
-      "gitSha256": "96fac655ed24fe20027ebf8a16107bc3d37480dfd4c424d4347f2629fe7bdc79",
-      "gitBytes": 95629,
-      "gitObjectId": "c9f1b386543ac2b57d81ac312d427f86a758291e"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/14-interrupted-e2e-process-chain.json",
       "bytes": 1095,
       "sha256": "8cfd1bed66926a9cd795a93ba7d92fab33803c70deb946ce7f413576eecca4d6",
-      "gitSha256": "2a59172eb4a7758660dea9eb4aa27d0a0d8345f4cc63e21de740a6d5d6cbcf8a",
-      "gitBytes": 1043,
-      "gitObjectId": "0007bc5a48e0261cdeb7875a14f448f831515c9b"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/15-e2e-interruption.json",
       "bytes": 357,
       "sha256": "acaf84c86fde76c3b8bc1e75603cc2b6785f5f57d53e71b2b858c259b4597bc3",
-      "gitSha256": "cf16fc71ca3793449f97553bdf25d2098368fc4e4ff5c563bfd4cb5ea8ea7cf4",
-      "gitBytes": 348,
-      "gitObjectId": "35ad9bb0ee00a0faf7793663d3c517dd3cccc146"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/17-postgresql-runtime.json",
       "bytes": 442,
       "sha256": "4c3fcf57f1085b456c4f015f69be047e18499ec3797dae7bd47a2761c0d549fe",
-      "gitSha256": "2d14cc17fe0a5c5fd945da6824a47a00d6bbff4df13362026808c80d63be97cc",
-      "gitBytes": 431,
-      "gitObjectId": "3abdc7acb843963f0f6513422089907f179e4fdf"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/18-loopback-tile-config-proof.json",
       "bytes": 327,
       "sha256": "c3059aa43dffa68c699e65eeba0fc82a359c22440e2422835a538602f3655aac",
-      "gitSha256": "d25d5a9babfe61ae0fc18593296838a7d1f2c84890a4a8de935705c5a0a5a743",
-      "gitBytes": 319,
-      "gitObjectId": "d28e9b4d9f828dd835d01ff7c8de193dac9b1442"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/24-e2e-third-preflight.json",
       "bytes": 1426,
       "sha256": "030165978bd9ad164ba11a662210de712b950bc3b0b7e809838d5e2754d30cd9",
-      "gitSha256": "b170178acf53022cc285bb9e4edb77ac8e6b6687ef3356b13c5d4e63c74adc90",
-      "gitBytes": 1397,
-      "gitObjectId": "fe08e8999ce56085cfdd93d115d66a28d5bc3dc7"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/28-fresh-cohort-v3-preinstall.json",
       "bytes": 574,
       "sha256": "9786317df6ca3fbdd0be04c18b4c91f3b55693402f7926e1ce92dc0954fe3bc2",
-      "gitSha256": "db2ccfe16ed337e07e502a7f82a813e03da7feac03ca2c8f40f3052d38f4e737",
-      "gitBytes": 560,
-      "gitObjectId": "578d3bef57952a31553c82b4174e518d4c2cbddc"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/30-fresh-v3-empty-proof.json",
       "bytes": 598,
       "sha256": "6c49f9ef55eb77dc9f6e3b145551ede7a5875f279464c3b51c37db3a536bc26f",
-      "gitSha256": "6c49f9ef55eb77dc9f6e3b145551ede7a5875f279464c3b51c37db3a536bc26f",
-      "gitBytes": 598,
-      "gitObjectId": "309c921c9329ac2bf0dc10639a0b2a1a0d6139c9"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/admin-audit-reuse-count.json",
       "bytes": 338,
       "sha256": "a888cd700b6bf9f85babca1bd0eafacaf93741a9b1426ab5fa5ed02172e9645d",
-      "gitSha256": "a888cd700b6bf9f85babca1bd0eafacaf93741a9b1426ab5fa5ed02172e9645d",
-      "gitBytes": 338,
-      "gitObjectId": "1505b5b40b5bb2069e42b7391abb3c25762ced9d"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/admin-focus-reproduction.json",
       "bytes": 1898,
       "sha256": "a70109d6b0250ab7d0f53c43c618fb190042b95f0035e9e821b5a0e80f8480a1",
-      "gitSha256": "7ed9bf5636f33667d683d35684a9d5ae0f7240a249958de79c705b96c27d5251",
-      "gitBytes": 1854,
-      "gitObjectId": "83d7e2d6cdebc60f2f82860a94247622aabf45fa"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/baseline-results.jsonl",
       "bytes": 3651,
       "sha256": "689fccda6860bffd8598e073ae02d32965e894f03bd052fc4654beccfa88538d",
-      "gitSha256": "9e5a9c5f30266278b7145abb950929beae04d2aa4afeb6b75d42597f50891e76",
-      "gitBytes": 3640,
-      "gitObjectId": "8ac5f573328486a67e7e12d0f7294aa7b2ccff8e"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/baseline.json",
       "bytes": 61540,
       "sha256": "f31bb0372865729369dc6995764396b08ef0bb4e8fe03de4b7c57a352e3b3be6",
-      "gitSha256": "d7efa6a2807bd755c1f8f394e321143e172946fddf8ffe2e1060cd4ad98da5c1",
-      "gitBytes": 60645,
-      "gitObjectId": "6ecd2db607315e8774bd0b5a0c1480256122dd95"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/edb-client-download.json",
       "bytes": 791,
       "sha256": "1870cff92a0bc79ae2a8a51c119e0dd82fdc9ba4fcadd4f7e16dc08583fbc6a0",
-      "gitSha256": "0c32d15b7975b922796a38fba3981bb862162cb39b7888ce92e2eb5cc75198f7",
-      "gitBytes": 775,
-      "gitObjectId": "5a6293b6c64890e6577747cf87ac90766a310c67"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/edb-client-extraction.json",
       "bytes": 8733,
       "sha256": "f232738467a9facffde02ac328c84c812b2cb9eb415fb1a33aed4206a5dcbec1",
-      "gitSha256": "72b98123b522e151d21b9f34fc36263677767859ce6c876d7eb430be7616ef61",
-      "gitBytes": 8567,
-      "gitObjectId": "c2566cabb175eced60bcb000b374f32ed45b3462"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/functional-delta-p2.json",
+      "bytes": 2290,
+      "sha256": "6a49bd0e05f297feda71f1d75f89998191b82b90401fada9325cd2d24541f5d2",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/functional-delta.json",
       "bytes": 802,
       "sha256": "d8baee39480fb99ea1e3c389e32558446f7ff60eb4f60ad427d9ea4579febe9c",
-      "gitSha256": "d8baee39480fb99ea1e3c389e32558446f7ff60eb4f60ad427d9ea4579febe9c",
-      "gitBytes": 802,
-      "gitObjectId": "ca4259eb4669d7f64cd71fc594646b0f068f2e05"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/independent-review.md",
-      "bytes": 11323,
-      "sha256": "a9aa0a1d85ef7c4704cd2e9a3b9a19a8481c13e1eaf581759f61d819bea9c32a",
-      "gitSha256": "a9aa0a1d85ef7c4704cd2e9a3b9a19a8481c13e1eaf581759f61d819bea9c32a",
-      "gitBytes": 11323,
-      "gitObjectId": "aa0a95a060e5720e26e3b6d4afb7070f82110f32"
+      "bytes": 16856,
+      "sha256": "d0d6da74025d5417a8abc2d2b68248901a4515c840a1da058ce6eaa05abd41c3",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/investigation-results.jsonl",
       "bytes": 2670,
       "sha256": "46a2222ad0889ba377686648827ee814bcd88fe80bbf0cde9f99997cc798a659",
-      "gitSha256": "7a48aa328c9e59cad2833a5e60b864a2c565b29110bf9e25f50e4ad2625c3a3f",
-      "gitBytes": 2665,
-      "gitObjectId": "287c9aa5ee6b671595c439621044fafb32c54574"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/navigation-rejection-regression.json",
+      "bytes": 6227,
+      "sha256": "cecfdfe8b6315e4b1679eb94e959a58e059ce474863f02b10fa769314c80c858",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/plano.md",
-      "bytes": 6075,
-      "sha256": "0c3468d2118f8edf40b0921bc95b4814eeafea0636013ec6878b6036ca2a58d6",
-      "gitSha256": "29f80f041c49759c646bb9ae72b191ac4eac3ea79f3da347cfcf77acdf9f9fde",
-      "gitBytes": 6072,
-      "gitObjectId": "beb4426645dad5074be5468e000ba762abcf179c"
+      "bytes": 7513,
+      "sha256": "4bedc308f89fc8b14059d7582c7c57defe98dd7d11eb85a3f34da32a1298f09a",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/private-log-index.json",
       "bytes": 18040,
       "sha256": "b001b8bebc2df7c2208d5dd57c496212aedd2a3b45f6f5df715e0a9aa20b3663",
-      "gitSha256": "40d73b327ce769d0b1675b74cc38f96f2b85af52e8a3e7e852e5c648a066cc86",
-      "gitBytes": 17761,
-      "gitObjectId": "8f8130a1f35a68d1c4698334673afd33c80feee7"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/quota-investigation.json",
       "bytes": 1772,
       "sha256": "4a80625c2c3d97c18d31d5d27608dac4bc8aa441c9054c94357007eb827410cd",
-      "gitSha256": "4a80625c2c3d97c18d31d5d27608dac4bc8aa441c9054c94357007eb827410cd",
-      "gitBytes": 1772,
-      "gitObjectId": "1a3ef17cd6625664fa5edb484799359c58c817b0"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/readiness-fixture-diagnosis.json",
       "bytes": 999,
       "sha256": "f4b78ff91ea1b0839c1fd994941395816e28745b5cca1c4d8ca005ae6e095a01",
-      "gitSha256": "f4b78ff91ea1b0839c1fd994941395816e28745b5cca1c4d8ca005ae6e095a01",
-      "gitBytes": 999,
-      "gitObjectId": "8c2a53fd172299b849dff3a2b4f72b6c8090b685"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/readme.md",
-      "bytes": 9837,
-      "sha256": "4633cb93d1bd75abe76e7615e7474727d9c7a61fa40420e28877d29a47b74d77",
-      "gitSha256": "4633cb93d1bd75abe76e7615e7474727d9c7a61fa40420e28877d29a47b74d77",
-      "gitBytes": 9837,
-      "gitObjectId": "d168e06a98f590bc04fe4a1104cce30d49bb86ac"
+      "bytes": 10822,
+      "sha256": "f0a649994ff04e271cc60a75fa0ed545fd2e64b2714e00aa565372c65540fb88",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-metadata.json",
       "bytes": 24541,
       "sha256": "6457bb46a75146bbfce41a372c068a3dd751652dbbe7b2fcd64e0c2905e23c58",
-      "gitSha256": "6457bb46a75146bbfce41a372c068a3dd751652dbbe7b2fcd64e0c2905e23c58",
-      "gitBytes": 24541,
-      "gitObjectId": "8e730a57a71d3db34260243a0a1c5594374a51c7"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-probes-attempt1.json",
       "bytes": 789,
       "sha256": "7b7aaf572c1bef47411ee2e9b4d4051c5d466d94965b046c94cc472517e2f29b",
-      "gitSha256": "7b7aaf572c1bef47411ee2e9b4d4051c5d466d94965b046c94cc472517e2f29b",
-      "gitBytes": 789,
-      "gitObjectId": "e82fea880a44902acff62a9b991941dfaff0f138"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-check-probes.json",
       "bytes": 82335,
       "sha256": "7a7c983ea7e7292efe354d607c50080caf71bbc8dba26e76df9f620352b00ca7",
-      "gitSha256": "7a7c983ea7e7292efe354d607c50080caf71bbc8dba26e76df9f620352b00ca7",
-      "gitBytes": 82335,
-      "gitObjectId": "00a427a4f82d3b2670bea177bb97ce3a4fe8daae"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-preflight-diagnosis.json",
       "bytes": 800,
       "sha256": "43b664c71b09bc2bc064b0c4db8439808e310ecb48977ba4184ef9dd27273fbd",
-      "gitSha256": "43b664c71b09bc2bc064b0c4db8439808e310ecb48977ba4184ef9dd27273fbd",
-      "gitBytes": 800,
-      "gitObjectId": "f02d65ea2af04595c2a512c71bfd050a58d4d427"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/restore-tool-preflight.json",
       "bytes": 308,
       "sha256": "a9f5b06cb4d21a1f2382589a06815532852cec9f443150e8ec5e87bb35c0af97",
-      "gitSha256": "a9f5b06cb4d21a1f2382589a06815532852cec9f443150e8ec5e87bb35c0af97",
-      "gitBytes": 308,
-      "gitObjectId": "81d69e06e52fcacf0eaa79118ad2b3533ad0afaf"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/results.jsonl",
       "bytes": 367,
       "sha256": "1c131e2aa702320f85c5d701d4dfb6f915882bc9a326ac77afeee2642a6fac92",
-      "gitSha256": "1c131e2aa702320f85c5d701d4dfb6f915882bc9a326ac77afeee2642a6fac92",
-      "gitBytes": 367,
-      "gitObjectId": "3f87ab1f4db787d01f343cc0ee874017f1de4d1f"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/runbook.md",
-      "bytes": 14511,
-      "sha256": "60f318bf8d6c4f580827d9d893989d0fe96e6c0037fd347b2bd7df58648e7efd",
-      "gitSha256": "6fe3641da81cceee1d30416330b2ef8efe0f58f60f015c603e8dd28b5686eddc",
-      "gitBytes": 14510,
-      "gitObjectId": "45f013e3c36b0f9b745538515d9ca483bc3b880b"
+      "bytes": 15514,
+      "sha256": "a74052fd1155bc206ded79d6c89e357b44970d0b6e44c639ac8295efe132cc78",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/sanitized-excerpts.md",
-      "bytes": 5338,
-      "sha256": "631d94725cb26f1ad6fdc36df54701df1ea007147fc5df5512561178a8a2003b",
-      "gitSha256": "04a193221de3c948740a8767eca9a1e854201723dccc1e1020827a76b12a63ec",
-      "gitBytes": 5337,
-      "gitObjectId": "8857e6d48125e3b283d60b083c3feb59c752279f"
+      "bytes": 6401,
+      "sha256": "c26ac9ae8f77df76c930c6fccbcf021f8d32a0284bd37bba2ece290b1e37b3c6",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/setup-diagnostics.jsonl",
       "bytes": 350,
       "sha256": "18fdeffb24e59e455ff38232afe91882e4b48967710fdcd4e4b2d0de3d0831da",
-      "gitSha256": "151f5b5b380e3fb3cdc4ca746ec264633285f6b09226e1f6fa2c2e8f079e4a9e",
-      "gitBytes": 349,
-      "gitObjectId": "466f4f7bace0a9908577eddafb6adcc84bab5048"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore-attempt1.json",
       "bytes": 1148,
       "sha256": "c5dfa7590e24df6d41b143b24a3960430e4a4456cd58c8e43699c2b25f42357d",
-      "gitSha256": "c5dfa7590e24df6d41b143b24a3960430e4a4456cd58c8e43699c2b25f42357d",
-      "gitBytes": 1148,
-      "gitObjectId": "a80d66a1d9ece501653878ed088c21f586ecb063"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore-attempt2.json",
       "bytes": 648,
       "sha256": "68817ccd0a720b270db2f85ddb8f09b737aa56d98857009a930785196779cc64",
-      "gitSha256": "68817ccd0a720b270db2f85ddb8f09b737aa56d98857009a930785196779cc64",
-      "gitBytes": 648,
-      "gitObjectId": "c779159fc162ed744a89f89e8eaa9e731c5b58c3"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/synthetic-restore.json",
       "bytes": 16754,
       "sha256": "d129fc583c9ab91b06aeadcdd61885a9fefcd09b863f1b89e5d05ef4be4286c2",
-      "gitSha256": "d129fc583c9ab91b06aeadcdd61885a9fefcd09b863f1b89e5d05ef4be4286c2",
-      "gitBytes": 16754,
-      "gitObjectId": "588e473940f2c81b302fad6fd7d5e7240110f8b8"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-attempt1.json",
       "bytes": 1850,
       "sha256": "5c0c717f009f0e415ceb902b4274e564f9415bd3e3b919b03f67766900299c46",
-      "gitSha256": "5c0c717f009f0e415ceb902b4274e564f9415bd3e3b919b03f67766900299c46",
-      "gitBytes": 1850,
-      "gitObjectId": "62425e5b54403f4896974acf3c1057ae2972ec9c"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-command.json",
       "bytes": 440,
       "sha256": "49a579e1f28d8e4a2899c0db0c824e7a9f18bac8b04a68231751ba7f0f029f47",
-      "gitSha256": "6b18eabbb283b2c34a176de70ffcf2a65e45dc76c9132899445c7c742c80352d",
-      "gitBytes": 431,
-      "gitObjectId": "892228a7f68dc3e06518ee061e33964af50fb06d"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-fingerprint.json",
       "bytes": 95926,
       "sha256": "ace4477cb7626100d158caa9650c44b5d64189a33b37a268f43656ce66759d34",
-      "gitSha256": "ace4477cb7626100d158caa9650c44b5d64189a33b37a268f43656ce66759d34",
-      "gitBytes": 95926,
-      "gitObjectId": "2d3a8fb5242ce6d6e45a31cf24f1d755ddd8ae0a"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-p2-command.json",
+      "bytes": 464,
+      "sha256": "5df58c47fe38dbf132dd59e0c839c457d0221f3c37f307c018f4d858847cee70",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-p2-fingerprint.json",
+      "bytes": 96437,
+      "sha256": "778125dd1616ce5980c5d79f2f6b82f04b4bb0e338815d4c535e27213dde3de8",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness-p2.json",
+      "bytes": 11560,
+      "sha256": "4563f646c24a6fbbe129165a530a6a60c4170b78d09d529a63475ffd24424147",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "docs/reports/2026-10-25-hf-night-01/qa/territorial-readiness.json",
       "bytes": 11574,
       "sha256": "969bd05501651a2c0c44084a8c9b5dd1f4ded2c37bdbb655208bf58e6264dc56",
-      "gitSha256": "969bd05501651a2c0c44084a8c9b5dd1f4ded2c37bdbb655208bf58e6264dc56",
-      "gitBytes": 11574,
-      "gitObjectId": "59eee0b45f60128adbd9c355671bce2fbef85f7e"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "scripts/local-readiness-navigation.ts",
+      "bytes": 606,
+      "sha256": "b75ba080fdfd3eb88df9adc148ec6344137bf39983d5c0f663be3338bca30985",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "scripts/local-readiness-policy.ts",
       "bytes": 5015,
       "sha256": "51990658f5db810067975271b31fe850d84352127d85246b519fa1b559668dfd",
-      "gitSha256": "51990658f5db810067975271b31fe850d84352127d85246b519fa1b559668dfd",
-      "gitBytes": 5015,
-      "gitObjectId": "649c157fe5fb647461388d558de39685ac24ee04"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "scripts/local-readiness.ts",
-      "bytes": 26627,
-      "sha256": "97c7684c2e38a7fcb6451b7ef6c62e71ef3b415d785b4b3ef8c5d547fccce200",
-      "gitSha256": "97c7684c2e38a7fcb6451b7ef6c62e71ef3b415d785b4b3ef8c5d547fccce200",
-      "gitBytes": 26627,
-      "gitObjectId": "3e59202de070b20aebca71373e3bbc18d80fc741"
+      "bytes": 26742,
+      "sha256": "42426e12ae292ab61625608b2ceda9858092ca95cac6a25cace9b417a83901d1",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/checklists/requirements.md",
       "bytes": 1119,
       "sha256": "e5479029525ba3f5e53ff3d923fbdac0dcec78ce4aa08c3315a3333c0b67598c",
-      "gitSha256": "e5479029525ba3f5e53ff3d923fbdac0dcec78ce4aa08c3315a3333c0b67598c",
-      "gitBytes": 1119,
-      "gitObjectId": "065908923fb82b2bfbd11be162f827b0d174ce93"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/checklists/security.md",
       "bytes": 2531,
       "sha256": "6040f64e8fce7adb3382e35b827511d0be6179d004227dfa98d148b46fe0dbc1",
-      "gitSha256": "6040f64e8fce7adb3382e35b827511d0be6179d004227dfa98d148b46fe0dbc1",
-      "gitBytes": 2531,
-      "gitObjectId": "19f997507b8ab6662014a79b9a53b6e404e5e180"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/data-model.md",
       "bytes": 893,
       "sha256": "cd8f6dae3dff86d59a1fc73acb03d3beb1a742c20d13aa29c28f45817babeb7f",
-      "gitSha256": "21187c575f2158f3c92f851ec5c348e6075b94dbd7b62a114877ad0f7ea33a8e",
-      "gitBytes": 892,
-      "gitObjectId": "4c9386d08be0fa4580ef238c11e87c01597fa6c2"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/implementation-evidence.md",
-      "bytes": 10340,
-      "sha256": "a1ffd650183ac241ffa453ae911c961eceb9893f4a67ffefa49dca0acf022fb9",
-      "gitSha256": "e3bbe857612bb9fc3238e745c83a0f2d4f8c26970c484918c30171e8f570db11",
-      "gitBytes": 10338,
-      "gitObjectId": "42be8372d71c2ee3f071a982f3bc499328bc754f"
+      "bytes": 17284,
+      "sha256": "ac505f152dd85bba4454e6912e7e40cfe4c9557442551d5b60fdb4ac6c48ece3",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/plan.md",
-      "bytes": 4325,
-      "sha256": "75364cc3ac2366449b850bbb5088adb481107f6ff7224c36217ce647c41cd6b0",
-      "gitSha256": "590f6f1b917887ae6ec20a4a2bfb721427cdb3d1ddca4810fed24b3eebbe42ad",
-      "gitBytes": 4324,
-      "gitObjectId": "4c76f30466bf81264a496811186fcb93a184932b"
+      "bytes": 6322,
+      "sha256": "52cdb9c753396c1bc9227cddaa62aabb3ae6742580b489606c8e033d4078b092",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/quickstart.md",
-      "bytes": 2171,
-      "sha256": "821067bddccc6349006ba4c6b41940279bcaa727b06b0eb503617aec20b93c06",
-      "gitSha256": "821067bddccc6349006ba4c6b41940279bcaa727b06b0eb503617aec20b93c06",
-      "gitBytes": 2171,
-      "gitObjectId": "89b6ea8e896aff05f999855d76d641efdcd37cbc"
+      "bytes": 2988,
+      "sha256": "542ec7825ad10cc387f0562f4629611b1a17461c6dc38aea6bc3942b39c7b8e4",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/research.md",
       "bytes": 4689,
       "sha256": "c8bbd7dd79c5e89a90a34fdd0118e6e27d3b9a7bc07c96dfecd23d684a9bf3a6",
-      "gitSha256": "b9ecafdb228fd7ecc6536530a48ff179c71e7d4437b67c5b04ca13fe6184155c",
-      "gitBytes": 4687,
-      "gitObjectId": "41ffb92dce39c6ed1879126e6561b845e5ae3a04"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/spec.md",
       "bytes": 6106,
       "sha256": "274e05f7bc96556f7188d26c307faccaa62021680c77cd1fa40b03e1cc454be7",
-      "gitSha256": "274e05f7bc96556f7188d26c307faccaa62021680c77cd1fa40b03e1cc454be7",
-      "gitBytes": 6106,
-      "gitObjectId": "2d339e65a7b664a6f7d5095144155f479d94ed33"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "specs/030-local-readiness-instruments/tasks.md",
-      "bytes": 3362,
-      "sha256": "28d5d3255f9d273b1818e813f14db8e8b2f256eda7bcd68c37dbbcf5d290da53",
-      "gitSha256": "28d5d3255f9d273b1818e813f14db8e8b2f256eda7bcd68c37dbbcf5d290da53",
-      "gitBytes": 3362,
-      "gitObjectId": "5ff68f7573d5393c24080e4a8578beaeb36b1ab1"
+      "bytes": 4989,
+      "sha256": "0de4d6c9b55d5735d1119d9913c057641f134da684df5a8e1cf3d7ea3bb68c5b",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "tests/investigations/readiness/fixtures/navigation-failure-child.ts",
+      "bytes": 3439,
+      "sha256": "98fa448cba97e3d1aef63530b63d758c5e417bd8924471ec08f22a3bf2269bbb",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
+    },
+    {
+      "path": "tests/investigations/readiness/local-readiness-navigation.test.ts",
+      "bytes": 3885,
+      "sha256": "79809dd4b6cf610bd234c59fa52cc13a2c1e05c7ecc4eddc1d42e56c5483a8a8",
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     },
     {
       "path": "tests/investigations/readiness/local-readiness-policy.test.ts",
       "bytes": 4948,
       "sha256": "ef0ecc26017b7154166fca3a0dff40debd504fdbfb2a8c424c19c3660e5d4376",
-      "gitSha256": "ef0ecc26017b7154166fca3a0dff40debd504fdbfb2a8c424c19c3660e5d4376",
-      "gitBytes": 4948,
-      "gitObjectId": "eda11d4009f8165fb508b44214dd419f34909fc8"
+      "gitSha256": null,
+      "gitBytes": null,
+      "gitObjectId": null
     }
   ],
   "gitPublication": {
-    "sourceCommit": "63c0fe0267f5bfb706e7ec2ecc0f4b08a44bd7bc",
-    "observedFilesystemManifestSha256": "8e53ec4a22935104d4fff349299024145f5a7d9c109ab7afecdc59e004abc9f4",
-    "observedFields": "sha256 and bytes preserve the original working-tree observation; frozenUtc is unchanged",
-    "gitFields": "gitSha256 is SHA-256 of raw Git blob CONTENT, not the Git object ID; gitBytes is its byte length; gitObjectId identifies the blob",
-    "normalization": "Git clean filtering normalized CRLF to LF in the affected new artifacts; no source or evidence content was rewritten",
-    "entriesWithDifferentLineEndingBytes": 22,
-    "sourceManifestAtCommit": "docs/reports/2026-10-25-hf-night-01/qa/public-artifact-manifest.json",
+    "status": "PENDING_COORDINATOR_COMMIT",
+    "sourceCommit": null,
+    "observedFields": "Current post-P2 sha256/bytes/frozenUtc observation; previousPublishedManifest preserves prior cut",
+    "gitFields": "gitSha256 is SHA256 of raw blob CONTENT; gitBytes its length; gitObjectId is separate. All current Git fields remain null pending coordinator publication.",
     "selfExcluded": true
   }
 }

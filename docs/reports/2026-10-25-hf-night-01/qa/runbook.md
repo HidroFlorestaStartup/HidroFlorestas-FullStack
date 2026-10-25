@@ -41,6 +41,14 @@ O script oficial cria marker/credencial e verifica ACL; não fabricar esses arqu
 
 ## Investigações manuais
 
+Regressão P2 da coordenação030, sem DB/browser/servidor:
+
+```powershell
+node --unhandled-rejections=strict --import=tsx --test --test-reporter=tap --test-concurrency=1 tests/investigations/readiness/local-readiness-policy.test.ts tests/investigations/readiness/local-readiness-navigation.test.ts
+```
+
+São18 testes, incluindo dois controles negativos em childstrict que esperam terminação antes de cleanup/recibo na sequência antiga. Os seis cenários do helper corrigido exigem finalização e recibo FAIL com erro causal, sem engolir o primeiro erro nem registrar handler global de unhandledRejection. Recursos de teste são arquivos próprios temporários, não processos ou schemas reais. Timeout5s por child, até oito subprocessos seriais; bateria observada2,253s. [RED/GREEN e limites](navigation-rejection-regression.json). O ensaio real030 posterior mantém recibo e fingerprint próprios; não repetir baseline ou E2E por essa correção do instrumento.
+
 Condição `react-server` é necessária para imports do servidor. Com a sessão de sistema/sintética preparada e o runtime próprio selecionado, executar serialmente:
 
 ```powershell
@@ -54,7 +62,7 @@ Custo quota: duas schedules de AreaCoverService/FakeCoverProvider, até90s por t
 ```powershell
 $env:HF_LOCAL_READINESS_CONFIRMATION = 'HIDROFLORESTAS_LOCAL_READINESS_20261025'
 try {
-  ./scripts/accounts-local-postgresql.ps1 -Action Run -DatabaseMode Schema -Executable node -CommandArguments @('--conditions=react-server','--import=tsx','scripts/local-readiness.ts')
+  ./scripts/accounts-local-postgresql.ps1 -Action Run -DatabaseMode Schema -Executable node -CommandArguments @('--unhandled-rejections=strict','--conditions=react-server','--import=tsx','scripts/local-readiness.ts')
 } finally { ./scripts/accounts-local-postgresql.ps1 -Action Stop }
 ```
 

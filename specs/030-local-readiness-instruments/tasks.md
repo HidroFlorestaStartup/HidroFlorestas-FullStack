@@ -41,3 +41,14 @@ T001→T002→T003→T004→T005; T006→T007→T008; T009 depende T004 e pode o
 ## Implementation Strategy
 
 MVP: guard/estatística e lifecycle primeiro; medição em incremento único; evidência de falhas preservada. Não publicar nem integrar antes da revisão independente final. Nenhum checkbox representa aceite humano de produto ou ciência.
+
+## Phase 6: Convergence
+
+Reabertura em2026-10-25 pelo finding P2 do Codex na PR39/HEAD3e0066: waiter de resposta pode rejeitar sem handler após falha de goto, interrompendo finally/recibo. O PASS feliz anterior permanece como evidência daquele fingerprint, sem provar esse caminho de erro. Escopo autorizado somente instrumento030.
+
+- [X] T013 Acrescentar regressão em `tests/investigations/readiness/local-readiness-navigation.test.ts` e fixture subprocesso `tests/investigations/readiness/fixtures/navigation-failure-child.ts`, com Node strict, contraprova da sequência antiga, rejeição tardia do waiter/finished, throws síncronos e preservação sintética de cleanup/recibo, por FR-002/FR-005 (partial, HIGH).
+- [X] T014 Extrair `scripts/local-readiness-navigation.ts` e integrar em `scripts/local-readiness.ts` a observação imediata de resposta e navegação, preservando ordem waiter→goto, erro causal e timestamp após finished, por FR-002/FR-005 (partial, HIGH).
+- [X] T015 Executar política+regressões/typecheck/lint, revisão independente do delta e um ensaio030 owned com novo fingerprint, sem repetir baseline/coorte E2E, por FR-002/FR-005/SC-004 (partial, MEDIUM).
+- [X] T016 Atualizar plano/runbook/evidências e manifesto aditivo com proveniência local/Git, preservando recibos/FAILs anteriores e executar analyze/converge final, por FR-005/FR-006/SC-005 (partial, LOW).
+
+Dependências da reabertura: T013→T014→T015→T016; análise proporcional antes do código, revisão de fonte antes do novo ensaio, commit/publicação pelo coordenador. Nenhuma task anterior é renumerada ou desmarcada.

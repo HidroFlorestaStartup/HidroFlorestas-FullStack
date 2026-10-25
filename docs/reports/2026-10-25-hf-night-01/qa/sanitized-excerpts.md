@@ -85,3 +85,19 @@ Cleanup: serverSTOPPED/browserCLOSED/schemaREMOVED,0errors.
 ```
 
 Nenhum trecho contém SQL com parâmetros, stack, URL de banco, credencial, cookie ou dados pessoais. Recibos conservam versões/fingerprints, tempos completos e fronteiras de cada ensaio. O restore integral não recebe PASS por igualdade de contagens, e o instrumento030 não recebe os15 gates da baseline.
+
+## PR39 P2 — waiter sem handler após falha de navegação
+
+```text
+Equivalent pre-fix sequence: create incoming; await navigation; await incoming.
+Strict legacy children: WAITER_FAILURE / FINISHED_FAILURE -> exit1.
+Synthetic resource marker remained; final receipt was absent.
+RED extracted helper:9tests,4PASS,5FAIL,exit1.
+Fixed helper+policy:18tests,18PASS,0FAIL/skip,exit0.
+Six protected failures: causal error retained; own marker removed; FAIL receipt written.
+Independent strict rerun:18/18PASS.
+Single real post-P2 run:PASS,p95=54.9855ms,list=213.3963ms.
+Cleanup:STOPPED/CLOSED/REMOVED,0errors;owned PostgreSQL stopped.
+```
+
+O processo strict foi deliberadamente isolado: a contraprova não usa browser/servidor/DB, não instala listener global de rejeições e não afirma cleanup SQL real em falha. O novo ensaio030 tem fingerprint46a9... próprio; o8313 e todos FAILs anteriores permanecem na trilha. A navegação e a resposta agora são observadas imediatamente antes de executar callbacks, incluindo throws síncronos e rejeição de finished().
