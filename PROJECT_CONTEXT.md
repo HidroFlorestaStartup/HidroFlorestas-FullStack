@@ -1,5 +1,14 @@
 # Contexto do projeto HidroFlorestas
 
+## Continuidade HF-NIGHT-01 — 25/10/2026, estudantes
+
+`EVIDENCIA_IMPLEMENTACAO`: os quatro originais da revisão destinada a Thales
+em d2168c8 foram preservados por bytes, com [síntese, checklist e proveniência](docs/reports/2026-10-25-hf-night-01/students/readme.md).
+C1 e seus apontadores já estão na base 08262dc; RTH-P2-001 resolvido
+documentalmente, sem encerrar FR-015, aceites, operação ou ciência. A composição
+focal #27/#28 tem limites explícitos; #27/#28 permanecem abertas no estado
+informado pelo coordenador. Originais e cortes anteriores conservados.
+
 ## Conciliação documental HF-DOC —24/10/2026, C1
 
 Estado documental: CONCILIACAO_C1_COM_LIMITES_EXPLICITOS, revisado no alcance documental.
