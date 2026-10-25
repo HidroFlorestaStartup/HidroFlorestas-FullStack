@@ -9,6 +9,7 @@ import { administrationChangeBody, createAdministrationReadScope, type Administr
 
 type UserPage = { items: AdminUserDto[]; nextCursor: string | null };
 type AdministrationError = { code?: string; message?: string; recovery?: string };
+type SelectionError = { message: string };
 const roles: AdminUserRole[] = ["USER", "ADMIN", "DEVELOPER", "MODERATOR"];
 const statuses: AdminUserStatus[] = ["ACTIVE", "PENDING", "INACTIVE", "BLOCKED"];
 const labels: Record<AdminUserRole | AdminUserStatus, string> = {
@@ -39,7 +40,8 @@ export function UserAdministrationPage() {
   const [loading, setLoading] = useState(true);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState("");
-  const [selectionError, setSelectionError] = useState("");
+  // An accepted occurrence remains distinct even when its public text repeats.
+  const [selectionError, setSelectionError] = useState<SelectionError | null>(null);
   const [dialog, setDialog] = useState<AdministrationChange | null>(null);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
@@ -55,11 +57,13 @@ export function UserAdministrationPage() {
   const triggerRef = useRef<HTMLElement | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const selectionErrorRef = useRef<HTMLDivElement>(null);
+  const currentSelectionError = useRef<SelectionError | null>(null);
   const conflictRef = useRef<HTMLDivElement>(null);
   const detailHeadingRef = useRef<HTMLHeadingElement>(null);
   const reviewHeadingRef = useRef<HTMLHeadingElement>(null);
 
   const clearSelection = useCallback(() => {
+    currentSelectionError.current = null;
     selectedId.current = null;
     detailReads.cancel();
     auditReads.cancel();
@@ -72,18 +76,25 @@ export function UserAdministrationPage() {
     setDialog(null);
   }, [detailReads, auditReads]);
 
+  useEffect(() => {
+    // The conditional alert must be committed before its ref can receive focus.
+    if (selectionError && currentSelectionError.current === selectionError) selectionErrorRef.current?.focus();
+  }, [selectionError]);
+
   function unavailableAccount(userId: string, responseStatus: number) {
     clearSelection();
     listReads.cancel();
     setLoading(false);
     if (responseStatus === 404) {
       setPage(current => current ? { ...current, items: current.items.filter(user => user.id !== userId) } : null);
-      setSelectionError("Esta conta não está mais disponível. Atualize a lista para continuar.");
     } else {
       setPage(null);
-      setSelectionError("Seu acesso à administração não está mais disponível. Atualize a página para continuar.");
     }
-    requestAnimationFrame(() => selectionErrorRef.current?.focus());
+    const occurrence = { message: responseStatus === 404
+      ? "Esta conta não está mais disponível. Atualize a lista para continuar."
+      : "Seu acesso à administração não está mais disponível. Atualize a página para continuar." };
+    currentSelectionError.current = occurrence;
+    setSelectionError(occurrence);
   }
 
   const load = useCallback(async (cursor?: string) => {
@@ -115,6 +126,7 @@ export function UserAdministrationPage() {
   }, [load, listReads]);
 
   useEffect(() => () => {
+    currentSelectionError.current = null;
     listReads.cancel(); detailReads.cancel(); auditReads.cancel();
   }, [listReads, detailReads, auditReads]);
 
@@ -188,10 +200,11 @@ export function UserAdministrationPage() {
   }
 
   function choose(user: AdminUserDto) {
+    currentSelectionError.current = null;
     selectedId.current = user.id;
     setSelected(user);
     setMessage("");
-    setSelectionError("");
+    setSelectionError(null);
     setAudit([]);
     setAuditNext(null);
     void loadDetail(user.id);
@@ -298,7 +311,7 @@ export function UserAdministrationPage() {
       </section>
 
       <div ref={resultRef} tabIndex={-1} role="status" aria-live="polite" className="rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-700">{message && <p className="flex items-start gap-2 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"><CheckCircle2 className="shrink-0" size={19} aria-hidden="true" />{message}</p>}</div>
-      {selectionError && <div ref={selectionErrorRef} tabIndex={-1} role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-700">{selectionError}</div>}
+      {selectionError && <div ref={selectionErrorRef} tabIndex={-1} role="alert" className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-700">{selectionError.message}</div>}
       <div className="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <section aria-label="Lista de usuários" aria-busy={loading} className="min-w-0 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="flex items-center gap-2 text-lg font-bold text-slate-900"><Users size={19} aria-hidden="true" /> Contas encontradas</h2>{!loading && page && <p role="status" className="text-xs text-slate-600">Página {cursorIndex + 1} · {page.items.length} conta(s) nesta página</p>}</div>
