@@ -8,6 +8,7 @@ import type { TerritorialArea, TerritorialMapResponse } from "@/types/territoria
 import { TerritorialMap } from "./territorial-map";
 import { formatCoordinate, selectedArea } from "./territorial-map-state";
 import styles from "./territorial-map.module.css";
+import { focusReadRegion } from "@/components/async-read-focus";
 
 function isResponse(value: unknown): value is TerritorialMapResponse {
   if (!value || typeof value !== "object") return false;
@@ -16,6 +17,7 @@ function isResponse(value: unknown): value is TerritorialMapResponse {
 }
 
 export function TerritorialMapView({ laboratoryId }: { laboratoryId: string }) {
+  const region = useRef<HTMLDivElement>(null);
   const [data, setData] = useState<TerritorialMapResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -59,13 +61,13 @@ export function TerritorialMapView({ laboratoryId }: { laboratoryId: string }) {
   const unavailable = data?.areas.filter((area) => !area.location) ?? [];
 
   return (
-    <div className={styles.page}>
+    <div ref={region} tabIndex={-1} role="region" aria-labelledby="territorial-view-title" className={styles.page}>
       <header className={styles.heading}>
         <Link className={styles.back} href={`/dashboard/laboratories/${laboratoryId}`}>
           <ArrowLeft size={18} aria-hidden="true" />Voltar ao resumo
         </Link>
         <p className={styles.eyebrow}>Visão territorial</p>
-        <h1 className={styles.title}>{data ? `Áreas de ${data.context.name}` : "Mapa territorial"}</h1>
+        <h1 id="territorial-view-title" className={styles.title}>{data ? `Áreas de ${data.context.name}` : "Mapa territorial"}</h1>
         <p className={styles.description}>Consulte os pontos das áreas e acesse suas coletas confirmadas.</p>
         {data && (
           <p className={styles.context}>
@@ -83,7 +85,7 @@ export function TerritorialMapView({ laboratoryId }: { laboratoryId: string }) {
       ) : error || !data ? (
         <section className={styles.error}>
           <p role="alert">{error ?? "Resposta territorial inválida."}</p>
-          <button type="button" onClick={() => void load()} className={styles.button}>
+          <button type="button" onClick={event => { focusReadRegion(event.currentTarget, region.current); void load(); }} className={styles.button}>
             <RefreshCw size={18} aria-hidden="true" />Tentar novamente
           </button>
         </section>
