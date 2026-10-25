@@ -31,7 +31,8 @@
       "docs/hf-int-doc27-20261024": false,
       "fix/hf-night-fr015-20261025": false,
       "fix/hf-night-async-focus-20261025": false,
-      "fix/hf-night-admin-focus-20261025": false
+      "fix/hf-night-admin-focus-20261025": false,
+      "test/hf-night-ui-combined-20261025": false
     }
   }
 }
