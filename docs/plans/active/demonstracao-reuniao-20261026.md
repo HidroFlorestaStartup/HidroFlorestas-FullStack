@@ -31,3 +31,8 @@ Aprovação específica necessária: inicializar somente esse banco vazio com o 
 DECISAO_CONFIRMADA: Pedro respondeu «Okay, autorizo» nesta conversa após a descrição das credenciais e do escopo: baseline/14migrations no banco novo, contas/dados sintéticos, configuração privada no sandbox e Preview, CAPAS_OFF, preservando Production/main/bancos anteriores. A aprovação anterior rejeitada fica no histórico; não foi contornada. Nova operação após autorização usa os mesmos destinos isolados.
 
 Branch própria demo/reuniao-20261026 terá guarda false antes da primeira ref pública; a publicação é manual no Preview, sem alterar35guardas anteriores. Banco exclusivo: polished-shape-31530954/br-aged-sun-b60nqmre/accounts_homologation, papelaccounts_owner. Código de aplicação herdado integralmente da árvore validadae74ac641564288df01c85226ddc1ed6a8d22b941. Verificações posteriores, URLs e resultados reais serão registrados no recibo da entrega, sem antecipar o próprio SHA ou resultados de testes.
+
+
+## Fechamento da demonstração
+
+PREVIEW DISPONÍVEL COM DADOS SINTÉTICOS. Banco inicializado, conta e jornada preparadas, deployment READY e leituras hospedadas verificadas. O resultado do roteiro histórico que falhou e a conferência independente que passou são distintos. Ver [recibo da demonstração](./recibo-demonstracao-reuniao-20261026.md) e [dados do recibo](./demonstracao-reuniao-20261026.json). Acesso privado e senha não são versionados. CI funcional do fechamento documental: NOT_RUN. Homologação do piloto permanece pendente.
