@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "laboratoryId": "5cfe650f-229a-49e3-bea9-947575be8a9b",
+  "areaId": "3ac6eeac-ba81-4887-bb4a-aa989e1fca93",
+  "collectionId": "f589c41f-69e6-4009-b4ae-4ba00b450a13",
+  "collectionPath": "/dashboard/laboratories/5cfe650f-229a-49e3-bea9-947575be8a9b/areas/3ac6eeac-ba81-4887-bb4a-aa989e1fca93/collections/f589c41f-69e6-4009-b4ae-4ba00b450a13",
+  "diagnosisId": "0373a3b4-0e3b-476d-97d7-8cd6627e705e",
+  "displayScore": 0.29,
+  "ihfrClass": "MODERATE",
+  "readbacks": [
+    {
+      "path": "/api/laboratories/5cfe650f-229a-49e3-bea9-947575be8a9b/dashboard/summary",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/5cfe650f-229a-49e3-bea9-947575be8a9b/dashboard/history",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/5cfe650f-229a-49e3-bea9-947575be8a9b/territorial-map",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/5cfe650f-229a-49e3-bea9-947575be8a9b/areas/3ac6eeac-ba81-4887-bb4a-aa989e1fca93/image",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "badResponses": [],
+  "desktop": 1440,
+  "mobile": 390,
+  "ihfrExperimental": true,
+  "recordedAt": "2026-10-26T19:59:16.434Z",
+  "deployedSha": "917593a9b59697a745e08ac5c5cf6b3ab1d4e51f",
+  "deploymentId": "dpl_8YHFKdJLY3N38FFVJKaDSsCrVVEJ",
+  "url": "https://hidroflorestas-demo-20261026.vercel.app",
+  "neonProjectId": "polished-shape-31530954",
+  "neonBranchId": "br-aged-sun-b60nqmre",
+  "checkpointBranchId": "br-proud-truth-b6e9u097",
+  "migrations": {
+    "applied": 14,
+    "failed": 0
+  },
+  "historicalHarness": {
+    "result": "FAIL",
+    "assertion": "0.29 · MODERATE contiguous",
+    "causeOfAssertionMismatch": "Current UI presents score and class separately",
+    "officialTestsChanged": false
+  },
+  "independentReadback": "PASS",
+  "mobileMap": {
+    "status": "PASS",
+    "overflow": false,
+    "badResponses": []
+  },
+  "scope": "controlled-synthetic-demo",
+  "pilotHomologated": false,
+  "productionPromoted": false,
+  "smtpHomologated": false,
+  "hostedRestoreCertified": false,
+  "documentationHeadFunctionalCI": "NOT_RUN"
+}

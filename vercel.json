@@ -36,7 +36,8 @@
       "test/hf-night-local-scheduler-20261025": false,
       "test/hf-night-baseline-20261025": false,
       "feat/hf-night-01": false,
-      "release/hf-close-01-20261025": false
+      "release/hf-close-01-20261025": false,
+      "demo/reuniao-20261026": false
     }
   }
 }
