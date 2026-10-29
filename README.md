@@ -1,95 +1,135 @@
-# 🌿 Hidro Florestas Fullstack
+# HidroFlorestas Fullstack
 
 ## Release Candidate para revisão dos estudantes — 2026-10-10
 
 Consulte o [pacote de entrega CRI](docs/releases/2026-10-10-cri-rc/readme.md) para
 PRs encadeados, release notes, configuração, atualização da aplicação existente,
-migrations/backup/recuperação e checklist. Estado: APTO COM RESSALVAS para revisão;
-homologação e produção pendentes. Para atualizar um banco hospedado existente,
-seguir o runbook da RC antes dos comandos genéricos de desenvolvimento abaixo.
+migrations, backup, recuperação e checklist. Estado: **APTO COM RESSALVAS** para
+revisão; homologação e produção permanecem pendentes. Para atualizar um banco
+hospedado existente, siga o runbook da RC antes dos comandos genéricos de
+desenvolvimento abaixo.
 
-Bem-vindo ao repositório do **Hidro Florestas**, uma aplicação fullstack desenvolvida com **Next.js** e **Prisma**. Este guia ajudará você a configurar o ambiente de desenvolvimento local do zero.
+O HidroFlorestas é uma aplicação web fullstack para cadastro de áreas, coletas,
+medições ambientais e acompanhamento de diagnósticos florestais. O projeto usa
+Next.js com TypeScript, React, Prisma e PostgreSQL, reunindo interface, API e
+persistência em um único repositório.
 
 ## IHFR experimental
 
-A primeira versão do IHFR é um contrato experimental, versionado e sujeito a recalibração. Os conflitos das fontes históricas estão preservados e a validação científica definitiva e os testes de campo permanecem futuros. Consulte o [registro canônico da decisão](docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md).
+A versão v0.1 do IHFR permanece um `CONTRATO_EXPERIMENTAL`, com
+`VALIDACAO_CIENTIFICA_PENDENTE`, `SUJEITO_A_RECALIBRACAO` e
+`NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO`. O setup local e as
+validações técnicas não alteram esse estado. Consulte o
+[ADR-0001](docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md).
 
----
+## Pré-requisitos
 
-## 🚀 Primeiros Passos
+- Git.
+- Node.js `24.19.0` ou outra versão `>=24.19.0 <25`, conforme
+  [`.node-version`](.node-version).
+- npm, distribuído com o Node.js. O repositório usa `package-lock.json` e
+  instalação reproduzível com `npm ci`.
+- Um PostgreSQL de desenvolvimento autorizado, local ou Neon, para usar as
+  funcionalidades persistentes e aplicar migrations.
+- Python 3 não é necessário no estado atual: não existe manifesto Python. O
+  setup detectará e preparará `.venv` automaticamente se um
+  `requirements.txt` passar a fazer parte do projeto.
 
-Siga a ordem abaixo para garantir que o projeto e o banco de dados estejam sincronizados corretamente.
+Serviços opcionais incluem SMTP/Gmail para e-mails, Cloudinary para imagens de
+capa e os navegadores do Playwright para testes E2E. O build também acessa o
+Google Fonts e a aplicação pode usar tiles externos de mapa.
 
-### 1. Instalação de Dependências
+## Instalação em um comando
 
-Use Node.js `24.19.0`, conforme `.node-version`, e npm. Após clonar o repositório, navegue até a pasta raiz e instale os pacotes necessários conforme o lockfile:
+Após clonar o repositório, entre na pasta do projeto e execute:
 
-**Bash**
-
-```
-npm ci
-```
-
-### 2. Configuração do Banco de Dados (Prisma)
-
-O Prisma é o ORM do projeto. Configure `DATABASE_URL` para o ambiente pretendido antes de executar os comandos abaixo. As migrations existentes em `prisma/migrations/` formam o histórico autoritativo; não crie uma nova migration `init` para instalar o projeto.
-
-#### **Gerar o Client do Prisma**
-
-Sempre que você clona o projeto pela primeira vez ou quando há mudanças no arquivo `schema.prisma` feitas por outros desenvolvedores, você deve rodar:
-
-**Bash**
-
-```
-npx prisma generate
-```
-
-> **Por que?** Este comando lê o arquivo de esquema e gera o código TypeScript/JavaScript necessário para que o seu editor (VS Code) entenda as tabelas do banco e ofereça o auto-complete (IntelliSense).
-
-#### **Aplicar as migrations existentes**
-
-Em um banco de desenvolvimento autorizado, após conferir `npx prisma migrate status`, aplique a cadeia existente com:
-
-**Bash**
-
-```
-npx prisma migrate dev
+```bash
+npm run setup
 ```
 
-Em um ambiente de implantação, a aplicação não deve gerar migrations interativamente. Após confirmar o destino, a cadeia existente é aplicada com `npx prisma migrate deploy`. A política de provisionamento e aprovação de cada ambiente ainda não está definida neste README; confirme-a antes de executar qualquer migration fora do banco de desenvolvimento autorizado.
+O comando detecta Windows, Linux ou macOS e executa, em ordem:
 
-Para um banco **totalmente vazio**, execute antes o [procedimento formal de baseline para instalação inicial](prisma/bootstrap/initial-database-bootstrap.md). A primeira migration pressupõe a tabela legada `LaboratoryRoom`; `migrate deploy` direto em um banco vazio falha. O baseline é exclusivo de bancos novos, com pré-condição vazia verificada.
+1. validação de Node.js, Git e gerenciador de pacotes;
+2. cópia idempotente de `.env.example` para `.env`;
+3. instalação das dependências com `npm ci`;
+4. preparação de Python somente se houver manifesto aplicável;
+5. geração do Prisma Client e tratamento protegido das migrations.
 
-`npx prisma generate` gera o Client a partir do schema local; não aplica SQL ao banco. Confira o estado real do banco antes de iniciar a aplicação, especialmente se houver migrations pendentes ou histórico divergente.
+Se a detecção automática precisar ser contornada, use um dos comandos
+equivalentes:
 
-O build atual usa Poppins por `next/font/google` em `src/app/layout.tsx` e requer acesso de saída aos endpoints de Google Fonts durante `npm run build`. Um build sem essa rede não é suportado por este checkout; a alternativa de fonte local depende de asset e licença aprovados.
-
----
-
-## 💻 Rodando o Projeto
-
-Com as dependências instaladas e o banco de dados configurado, inicie o servidor de desenvolvimento:
-
-**Bash**
-
+```bash
+npm run setup:windows
+npm run setup:linux
+npm run setup:mac
 ```
+
+O setup nunca sobrescreve um `.env` existente e não exibe valores sensíveis.
+Após a primeira execução, preencha no mínimo `DATABASE_URL` e `JWT_SECRET` no
+`.env`. Revise também `ROOT_PASSWORD`, `APP_PUBLIC_URL` e, conforme o fluxo que
+será usado, as configurações de contas, e-mail, mapa e imagens. O Cloudinary
+permanece desabilitado por padrão com `CLOUDINARY_IMAGE_ENABLED=0`.
+
+Para conferir o fluxo sem criar arquivos nem instalar pacotes:
+
+```bash
+npm run setup -- --dry-run --skip-migrations
+```
+
+## Banco de dados e Prisma
+
+`prisma generate` é local e não altera o banco. Já uma migration escreve no
+destino configurado: o setup só tenta aplicá-la após validar uma URL PostgreSQL
+e receber confirmação interativa. Em automação não interativa, a autorização
+precisa ser explícita:
+
+```bash
+npm run setup -- --migrate
+```
+
+Use essa opção somente em um banco de desenvolvimento revisado. Para apenas
+preparar o código sem consultar ou alterar o banco, use:
+
+```bash
+npm run setup -- --skip-migrations
+```
+
+Um banco **totalmente vazio** exige primeiro o
+[procedimento formal de baseline](prisma/bootstrap/initial-database-bootstrap.md).
+A primeira migration pressupõe a tabela legada `LaboratoryRoom`; portanto, não
+execute `prisma migrate deploy` diretamente em um banco vazio. Em bancos
+hospedados existentes, siga o runbook da Release Candidate e confirme destino,
+backup e histórico antes de qualquer escrita.
+
+## Desenvolvimento
+
+Com o ambiente preenchido e o banco preparado, inicie a aplicação:
+
+```bash
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visualizar a aplicação.
+Acesse [http://localhost:3000](http://localhost:3000). Os principais comandos
+de qualidade são:
 
----
+```bash
+npm run lint
+npm run typecheck
+npm run test:unit
+npm run test:e2e
+```
 
-## 🛠️ Tecnologias Utilizadas
+## Stack tecnológica
 
-* **Next.js** - Framework React para produção.
-* **Prisma** - ORM para interação com o banco de dados.
-* **Tailwind CSS** - Estilização moderna e responsiva.
-* **TypeScript** - Segurança de tipos para o código.
+- Next.js 16.3.8 com App Router, React 19.2.4 e TypeScript 5.
+- Prisma 7.4.2 com PostgreSQL, Neon e adapter `pg`.
+- Tailwind CSS 4, Leaflet/React Leaflet e Lucide React.
+- Cloudinary e Sharp para o fluxo opcional de imagens.
+- Nodemailer/SMTP, bcrypt e JSON Web Token para comunicação e autenticação.
+- ESLint, test runner do Node.js, `tsx` e Playwright para qualidade.
 
----
-
-## 📝 Notas Adicionais
-
-* Certifique-se de ter um arquivo `.env` na raiz com a sua `DATABASE_URL` configurada antes de rodar os comandos do Prisma.
-* Para visualizar os dados do banco de forma gráfica, você pode usar o comando `npx prisma studio`.
+Os exemplos especializados [`.env.accounts.example`](.env.accounts.example),
+[`.env.mail.example`](.env.mail.example) e
+[`.env.images.example`](.env.images.example) documentam cenários isolados. Para
+o setup geral, use [`.env.example`](.env.example) e mantenha todos os segredos
+somente em configuração privada.

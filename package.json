@@ -6,6 +6,10 @@
     "node": ">=24.19.0 <25"
   },
   "scripts": {
+    "setup": "node setup.js",
+    "setup:windows": "node setup.js --platform=windows",
+    "setup:linux": "node setup.js --platform=linux",
+    "setup:mac": "node setup.js --platform=mac",
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
