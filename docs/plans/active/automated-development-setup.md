@@ -72,7 +72,7 @@
 ## Pontos de parada para revisão humana
 
 - Nenhuma migration será aplicada sem URL e banco de desenvolvimento explicitamente autorizados.
-- A entrega ficará disponível para revisão antes de commit ou publicação.
+- Ajustes adicionais ficarão disponíveis para revisão antes de novo commit ou publicação.
 
 ## Histórico
 
@@ -80,6 +80,8 @@
 |---|---|---|
 | 2026-10-29 | `EM_ANDAMENTO` | Auditoria refeita sobre `origin/development`; implementação anterior da `main` considerada incompatível em cobertura e preservada como backup. |
 | 2026-10-29 | `AGUARDANDO_REVISAO` | Setup, ambiente, integração npm e README reconstruídos e validados sobre a `development`, sem migration, deploy ou publicação. |
+| 2026-10-29 | `EM_ANDAMENTO` | Ajuste solicitado para orientar a instalação do Node compatível por sistema operacional quando o preflight encontrar versão incompatível. |
+| 2026-10-29 | `AGUARDANDO_REVISAO` | Preflight atualizado com instruções verdes de `fnm` para Linux, macOS e Windows; documentação e validações específicas concluídas. |
 
 ## Validações e evidências finais
 
@@ -94,4 +96,6 @@
 - `npm run test:unit`: PASS fora da restrição de subprocessos do sandbox, com 402 testes gerais e 17 testes de e-mail aprovados. A primeira execução restrita teve cinco falhas ambientais em arquivos que criam subprocessos; a repetição autorizada eliminou todas.
 - Links locais do README, scripts obrigatórios do `package.json`, ausência de `.env`/`.venv`, whitespace e `git diff --check`: PASS.
 - Não executados: `npm ci` real, migrations, testes de integração/E2E e build. Justificativas: o runtime disponível é Node 22; migrations exigem banco explicitamente autorizado; o escopo não alterou os fluxos funcionais; o build ainda depende de rede para Google Fonts.
-- Nenhum commit, push, PR, merge, deploy ou escrita em banco foi realizado.
+- A primeira versão foi publicada no commit `1fb47aedea876022cf9a66f4a06c173fdefaade0`; o ajuste posterior de `fnm` permanece local e sem novo commit/push. Nenhum PR, merge, deploy ou escrita em banco foi realizado.
+- Validação adicional do preflight incompatível: Linux exibiu instalador oficial por `curl`, Windows exibiu `winget` e inicialização PowerShell, e macOS exibiu Homebrew; todos incluíram `fnm use --install-if-missing 24.19.0` e nova execução de `npm run setup`, encerrando com código 1 antes de alterar o ambiente.
+- `npm run lint -- setup.js`, links locais do README, whitespace e `git diff --check` após o ajuste de `fnm`: PASS.

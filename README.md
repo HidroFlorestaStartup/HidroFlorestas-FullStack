@@ -39,6 +39,46 @@ Serviços opcionais incluem SMTP/Gmail para e-mails, Cloudinary para imagens de
 capa e os navegadores do Playwright para testes E2E. O build também acessa o
 Google Fonts e a aplicação pode usar tiles externos de mapa.
 
+### Corrigindo a versão do Node.js
+
+Se o preflight encontrar uma versão incompatível, ele interromperá o setup e
+mostrará em verde os comandos adequados ao sistema operacional. O projeto usa o
+[`fnm`](https://github.com/Schniz/fnm) para instalar e selecionar a versão
+registrada em `.node-version`, sem substituir globalmente outros projetos.
+
+No Linux com Bash:
+
+```bash
+curl -fsSL https://fnm.vercel.app/install | bash
+source ~/.bashrc
+fnm use --install-if-missing 24.19.0
+npm run setup
+```
+
+Se o shell for Zsh, carregue `~/.zshrc` no lugar de `~/.bashrc`. No macOS com
+Zsh e Homebrew:
+
+```bash
+brew install fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+fnm use --install-if-missing 24.19.0
+npm run setup
+```
+
+No Windows, execute no PowerShell:
+
+```powershell
+winget install Schniz.fnm
+```
+
+Feche e abra o PowerShell após a instalação e execute:
+
+```powershell
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+fnm use --install-if-missing 24.19.0
+npm run setup
+```
+
 ## Instalação em um comando
 
 Após clonar o repositório, entre na pasta do projeto e execute:

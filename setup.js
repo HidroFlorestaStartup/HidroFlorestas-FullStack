@@ -48,6 +48,9 @@ const logger = {
   error(message) {
     log("✗", "red", message);
   },
+  command(message) {
+    process.stdout.write(`${paint("green", `  ${message}`)}${os.EOL}`);
+  },
 };
 
 function parseArguments(argv) {
@@ -178,7 +181,42 @@ function compareVersions(left, right) {
   return 0;
 }
 
-function verifyEnvironment(options) {
+function shellName() {
+  return path.basename(process.env.SHELL || "").toLowerCase();
+}
+
+function printNodeUpgradeInstructions(platform, expectedNode) {
+  logger.warning("Atualize o Node.js com os comandos abaixo e depois execute o setup novamente:");
+
+  if (platform === "windows") {
+    logger.info("Windows (PowerShell):");
+    logger.command("winget install Schniz.fnm");
+    logger.info("Feche e abra o PowerShell após a instalação do fnm. Em seguida:");
+    logger.command("fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression");
+    logger.command(`fnm use --install-if-missing ${expectedNode}`);
+    logger.command("npm run setup");
+    return;
+  }
+
+  if (platform === "mac") {
+    const shell = shellName() === "bash" ? "bash" : "zsh";
+    logger.info(`macOS (${shell}):`);
+    logger.command("brew install fnm");
+    logger.command(`eval \"$(fnm env --use-on-cd --shell ${shell})\"`);
+    logger.command(`fnm use --install-if-missing ${expectedNode}`);
+    logger.command("npm run setup");
+    return;
+  }
+
+  const shell = shellName() === "zsh" ? "zsh" : "bash";
+  logger.info(`Linux (${shell}):`);
+  logger.command("curl -fsSL https://fnm.vercel.app/install | bash");
+  logger.command(`source ~/.${shell}rc`);
+  logger.command(`fnm use --install-if-missing ${expectedNode}`);
+  logger.command("npm run setup");
+}
+
+function verifyEnvironment(options, platform) {
   logger.section("1. Verificação do ambiente básico");
 
   const expectedNode = fs.readFileSync(path.join(projectRoot, ".node-version"), "utf8").trim();
@@ -192,8 +230,12 @@ function verifyEnvironment(options) {
   if (!supported) {
     const nextMajor = Number(expectedNode.split(".")[0]) + 1;
     const message = `Node.js ${currentNode} detectado; o projeto exige >=${expectedNode} e <${nextMajor}.`;
-    if (!options.dryRun) throw new Error(message);
-    logger.warning(`${message} A simulação continuará sem executar comandos de instalação.`);
+    logger.error(message);
+    printNodeUpgradeInstructions(platform, expectedNode);
+    if (!options.dryRun) {
+      throw new Error("Node.js incompatível. Execute os comandos em verde acima antes de tentar novamente.");
+    }
+    logger.warning("A simulação continuará sem executar comandos de instalação.");
   } else {
     logger.success(`Node.js ${currentNode} compatível com .node-version.`);
   }
@@ -449,7 +491,7 @@ async function main() {
   if (options.dryRun) logger.warning("Modo de simulação ativo: nenhuma alteração será realizada.");
 
   try {
-    const nodeSupported = verifyEnvironment(options);
+    const nodeSupported = verifyEnvironment(options, platform);
     const packageManager = detectPackageManager();
     const environment = configureEnvironment(options);
     installNodeDependencies(packageManager, options, nodeSupported);
