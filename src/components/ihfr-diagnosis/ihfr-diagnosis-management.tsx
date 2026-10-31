@@ -80,7 +80,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         try {
           await reconcileCurrentAndEligibility();
           if (operation.outcome === "SUCCEEDED") announce(current.kind === "REVOKE" ? "Diagnóstico revogado." : "Diagnóstico experimental registrado.");
-          else if (operation.outcome === "INSUFFICIENT_DATA") announce(`Dados insuficientes: ${operation.insufficiencyReasons.join(", ")}.`);
+          else if (operation.outcome === "INSUFFICIENT_DATA") announce(`Dados insuficientes: ${operation.insufficiencyReasons.map(reason => ihfrLabel("reason", reason)).join(" ")}`);
           else announce("Versão incompatível com o contrato experimental ativo.", "alert");
         } catch { announce("Operação terminal registrada, mas não foi possível atualizar o diagnóstico e a elegibilidade.", "alert"); }
         return;
@@ -110,7 +110,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         setAttempt(null);
         try {
           await reconcileCurrentAndEligibility();
-          announce(operation.outcome === "SUCCEEDED" ? "Resultado recuperado." : operation.outcome === "INSUFFICIENT_DATA" ? `Dados insuficientes: ${operation.insufficiencyReasons.join(", ")}.` : "Versão incompatível com o contrato experimental ativo.", operation.outcome === "INCOMPATIBLE_VERSION" ? "alert" : "status");
+          announce(operation.outcome === "SUCCEEDED" ? "Resultado recuperado." : operation.outcome === "INSUFFICIENT_DATA" ? `Dados insuficientes: ${operation.insufficiencyReasons.map(reason => ihfrLabel("reason", reason)).join(" ")}` : "Versão incompatível com o contrato experimental ativo.", operation.outcome === "INCOMPATIBLE_VERSION" ? "alert" : "status");
         } catch { announce("Resultado recuperado, mas não foi possível atualizar o diagnóstico e a elegibilidade.", "alert"); }
       } else if (response.status === 404) announce("Não há operação terminal recuperável. Se tentar novamente, use a mesma chave.", "alert");
       else announce("Não foi possível recuperar a operação agora. A chave foi preservada.", "alert");
