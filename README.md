@@ -96,12 +96,32 @@ O comando detecta Windows, Linux ou macOS e executa, em ordem:
 5. geração local do Prisma Client somente com `--allow-scripts`; migrations
    permanecem desabilitadas sem autorização e verificação explícitas do destino.
 
-O padrão prepara os pacotes sem executar seus scripts de instalação. Isso **não
-significa que a aplicação já esteja pronta**: Prisma e dependências nativas podem
-precisar de scripts. Após revisar os riscos e em ambiente adequado, o opt-in é
-`npm run setup -- --allow-scripts --skip-migrations`. Esse consentimento permite
-código de terceiros e não constitui garantia de segurança. O setup nunca instala
-ferramentas globais, altera PATH/perfis ou solicita reinicialização.
+O modo padrão é intencionalmente seguro e **parcial**: extrai pacotes sem executar
+scripts de terceiros. Para preparar **todas as dependências locais**, incluindo
+binários nativos e Prisma Client, há um único comando de consentimento explícito:
+
+```bash
+npm run setup:full
+```
+
+Esse comando executa os lifecycle scripts das dependências, gera o Prisma Client
+e comprova operações reais de bcrypt, better-sqlite3 (SQLite em memória), Sharp
+e esbuild; se qualquer componente falhar, encerra com erro em vez de declarar a
+aplicação pronta. **Não aplica migrations**, não configura o PostgreSQL remoto,
+não cria segredos nem inicia a aplicação. Para essas etapas, revise o `.env` e
+siga os procedimentos de banco e serviços externos separadamente.
+
+**Segurança:** lifecycle scripts podem executar terceiros, baixar binários ou
+compilar com privilégios do usuário atual. Execute `setup:full` somente após
+revisar essa autorização, de preferência inicialmente em máquina descartável e
+nunca como administrador. O setup não instala ferramentas globais, altera
+PATH/perfis nem solicita reinicialização. Em caso de falha, preserve evidências
+e não tente rebuilds globais ou repetidos automaticamente.
+
+Para uma instalação já existente, a verificação isolada de runtime pode ser
+solicitada com `node setup.js --skip-install --skip-migrations --allow-scripts --verify-runtime`;
+essa operação ainda gera o Prisma Client, mas não reinstala nem conserta
+automaticamente binários ausentes.
 
 No Windows, o npm é executado pela CLI JavaScript da instalação do Node ativo,
 sem interpretar `npm.cmd` por um shell. Lockfiles de outros gerenciadores são
