@@ -1,5 +1,23 @@
 # Contexto do projeto HidroFlorestas
 
+## Handoff de ajustes após testes manuais — 30/10/2026
+
+DECISAO_CONFIRMADA: Pedro Vítor aprovou UI-01–UI-07 e respondeu às cinco decisões
+de navegação, IHFR anterior disponível, ordem por ocorrência em campo e endereço
+opcional município/UF/CEP nas três entradas de coordenadas. Origem e transcrição
+em [decisões e escopo](docs/plans/active/ajustes-interface-pos-testes-20261030/decisoes-e-escopo.md).
+Base de preparação observada: development 9b8595d; não é status de implementação
+dos novos ajustes. REV-01 landing, REV-02 Dados da observação e REV-03 auxílio a
+medições continuam futuros. Registros anteriores abaixo permanecem históricos.
+
+Execução posterior: [prompt autorizado](docs/plans/active/ajustes-interface-pos-testes-20261030/prompt-de-execucao.md),
+com implementação, validação, commits/push e todos os PRs para development sem
+confirmação adicional de rotina; merges e aceite humano ficam com o mantenedor.
+[Pacote e referências](docs/plans/active/ajustes-interface-pos-testes-20261030/readme.md)
+na branch docs/handoff-ajustes-interface-20261030, disponível antes do merge
+documental. Preparação não implementou código, não executou suíte funcional,
+não operou banco/provedor e não concedeu validação científica ou homologação.
+
 ## Continuidade HF-NIGHT-01 — 25/10/2026, estudantes
 
 `EVIDENCIA_IMPLEMENTACAO`: os quatro originais da revisão destinada a Thales
