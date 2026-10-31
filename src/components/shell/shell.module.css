@@ -50,7 +50,7 @@
 
 /* UI-035: one authorised context rail, not a second navigation above content. */
 .laboratoryLayout { min-width: 0; }
-.laboratoryPage { min-width: 0; padding-bottom: calc(10rem + env(safe-area-inset-bottom)); }
+.laboratoryPage { min-width: 0; padding-bottom: calc(160px + env(safe-area-inset-bottom)); }
 .contextNav {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
   display: flex; flex-wrap: wrap; align-items: stretch; gap: 2px;
@@ -89,7 +89,7 @@
 .accountDisclosure .accountMenu nav { display: grid; gap: 8px; }
 .accountActions .headerExit { min-height: 44px; gap: 6px; }
 @media (max-width: 767px) {
-  .content { scroll-padding-block-end: calc(10rem + env(safe-area-inset-bottom)); }
+  .content { scroll-padding-block-end: calc(140px + env(safe-area-inset-bottom)); }
   .context { margin-bottom: 14px; padding: 12px 16px; }
   .context h2 { margin-top: 3px; font-size: 1.0625rem; }
   .contextRole { margin-top: 4px; font-size: .8125rem; }

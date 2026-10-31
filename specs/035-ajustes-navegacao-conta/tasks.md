@@ -42,3 +42,7 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [ ] T014 [REVIEW] Conferir capturas e geométricas móveis reais do SHA A2, checkout/layout e foco em 320/text200 e paisagem 844×390/text200.
 - [ ] T015 [REVIEW] Executar comparação bilateral starter/FullStack runtime ou preservar T007 como NOT_RUN.
 - [ ] T016 Atualizar evidências e PR46 com SHA/attempt do resultado final e bloqueios, sem simular revisão independente.
+
+- [x] T017 [ANALYZE/PLAN] Reconciliar 5 falhas E2E A2 com artefato 13061886214 e retificar plano de foco, scrollport e timing.
+- [x] T018 [IMPLEMENT] Corrigir scroll-padding no shell, espera com limite por animação e seleção do último controle habilitado, preservando todas as contraprovas funcionais.
+- [ ] T019 [REVIEW] Validar no SHA A3 o mapa 320x760/text200, mobile 320/text200, último controle 320/375/390 e restantes suites de domínio com journal dos 15 gates.

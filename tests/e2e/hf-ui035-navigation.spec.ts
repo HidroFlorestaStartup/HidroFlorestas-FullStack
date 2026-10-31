@@ -89,8 +89,14 @@ for (const width of [320, 375, 390, 768, 1440]) {
     if (width < 768) {
       expect(geometry.navigation?.bottom).toBeGreaterThanOrEqual(898);
       expect(geometry.navigation?.top).toBeGreaterThan(geometry.header?.bottom ?? 0);
-      const last = page.locator("#application-content a:visible, #application-content button:visible, #application-content input:visible").last();
+      // The last DOM button can be the intentionally disabled "Mais antigos".
+      // It cannot receive focus or trigger the shell's keyboard reveal.
+      // Select the final genuinely operable control without dropping the
+      // real focus and obstruction assertions.
+      const last = page.locator('#application-content a[href]:visible, #application-content button:enabled:visible, #application-content input:enabled:visible').last();
+      await expect(last).toBeEnabled();
       await last.focus();
+      await expect(last).toBeFocused();
       try {
         await expect.poll(async () => last.evaluate(node => {
           const r = node.getBoundingClientRect();

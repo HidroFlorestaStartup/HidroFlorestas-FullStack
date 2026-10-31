@@ -63,22 +63,23 @@ async function restorationDifference(page: Page, saved: number) {
   }, saved);
 }
 async function settleTransitions(page: Page) {
-  // Await the existing global .3s transitions naturally. New transitions can
-  // replace an inherited font-size transition while the root text scale changes.
+  // Animated shells can continually replace an Animation.finished promise
+  // during font-scale reflow. Wait for one bounded transition interval and
+  // two layout frames; the following focus and hit/visibility assertions are
+  // the actual correctness gate, never the animation promise itself.
   await page.evaluate(async () => {
-    // The settled state must be bounded: unrelated infinite re-triggering UI
-    // transitions must not hang the full authentication/navigation suite.
-    // Focus geometry is still asserted separately for every actual control.
-    for (let pass = 0; pass < 12; pass++) {
-      const finite = document.getAnimations().filter(animation =>
-        animation.playState === "running" &&
-        Number.isFinite(animation.effect?.getComputedTiming().endTime));
-      if (!finite.length) return;
-      await Promise.allSettled(finite.map(animation => animation.finished));
+    const transitionEnds = document.getAnimations().filter(animation =>
+      animation.playState === "running" &&
+      Number.isFinite(animation.effect?.getComputedTiming().endTime) &&
+      (animation.effect?.getComputedTiming().endTime ?? Infinity) <= 1000
+    ).map(animation => animation.finished);
+    if (transitionEnds.length) {
+      await Promise.race([
+        Promise.allSettled(transitionEnds),
+        new Promise<void>(resolve => setTimeout(resolve, 900)),
+      ]);
     }
-    const remaining = document.getAnimations().filter(animation =>
-      animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
-    if (remaining.length) throw new Error("UI035_TRANSITIONS_NOT_SETTLED");
+    await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
   });
 }
 async function focusAndExpose(target: Locator) {

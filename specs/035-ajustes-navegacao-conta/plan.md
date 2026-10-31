@@ -92,3 +92,7 @@ A fonte de diagnóstico **é o ZIP real da Actions** `41232069860` tentativa1, S
 
 ### REVIEW gates e critérios de saída
 PASS somente quando o artefato final mostrar testes focais, segurança e todos os 15 gates PASS no mesmo SHA. Se houver FAIL, diagnosticar seu stack trace, não mascarar via `test.skip`, falso retorno ou timeout arbitrário. Se apenas 10 gates executarem, registrar os cinco restantes NOT_RUN. Comparação bilateral UI-06 segue independente da cobertura executável: **não dizer COMPLETO sem executar o starter**. Revalidar `GUARD_SHA`, development e ownership antes do push; manter PR #46 Draft sem merge/deploy. Se tempo/ambiente impossibilitar execução visual, registrar pendência factual.
+
+### Ciclo A3: diagnóstico incremental e plano de verificação
+
+O run A2 `41251125020` eliminou as 5 falhas anteriores de conta, dashboard e header em paisagem (e outras 2 de foco), mas deixou 5 falhas E2E e 3 cenários sem execução, conforme relatório real na implementação-evidence. Sem mudança de requisito, o plano incremental é: (1) corrigir scroll-padding escalado em `rem` exclusivamente no shell A e preservá-lo compatível com `env(safe-area-inset-bottom)`, (2) aguardar transições de modo limitado no auxiliar E2E sem enfraquecer as assertions de geometria, (3) selecionar controle *operável* no teste 035 e exigir foco real, (4) repetir o runner oficial no novo commit, ler PNGs/JSON e journal, (5) manter UI-06 bilateral como pendência se não for executada. O mapa e o dashboard de domínio não são modificados.
