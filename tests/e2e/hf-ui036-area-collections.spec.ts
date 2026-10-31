@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 import { createCollectionFixtureClient, validateCollectionFixtureEnvironment } from "../fixtures/collections";
 import { captureMissionViewport } from "./support/frontend-mission-evidence";
+import { expectIHFRUnfragmentedWords } from "./support/frontend-ihfr-evidence";
 
 test.describe.configure({ mode: "serial" });
 test.setTimeout(90_000);
@@ -85,6 +86,11 @@ test("UI036 real area read: field occurrence beats confirmation; responsive view
     await expect(page.getByRole("complementary", { name: "Último IHFR disponível da área" }))
       .toContainText("Nenhum diagnóstico IHFR vigente disponível");
     await expect(page.getByRole("link", { name: "Registrar coleta" })).toBeVisible();
+    if (textScale === 200) {
+      // A page can have zero horizontal overflow while a word fragments
+      // inside a narrow inline-flex action (observed on "ambientais").
+      await expectIHFRUnfragmentedWords(cards.first().getByRole("link", { name: "Dados ambientais" }));
+    }
     await list.scrollIntoViewIfNeeded();
     await captureMissionViewport(page, info, "frontend-collections-area-" + width + "-" + height + "-" + textScale, textScale);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

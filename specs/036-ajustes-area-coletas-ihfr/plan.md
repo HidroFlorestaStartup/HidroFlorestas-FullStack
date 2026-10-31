@@ -93,3 +93,9 @@ Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/so
 4. REVIEW: verificar diff exclusivo contra `07755822f5dc75fe2be1d924005d30ed99f64a0b`, acumulado contra development atual; confirmar nenhum arquivo de A/C/ci/provedor/ciência alterado; registrar revisão técnica sequencial (não independente por subagente) e pendências visuais/humanas.
 
 **Ambiente:** GitHub API/Actions; sem checkout atualizado neste executor por DNS externo indisponível. Skills `speckit-analyze`, `speckit-plan`, `speckit-implement` e constituição 1.0.0 foram conferidas no repositório, sem executar seus scripts Bash locais. Não existe `.specify/extensions.yml` ou checklist 036 no HEAD inicial.
+
+### REVIEW: achado adicional de texto 200% na UI-02
+
+- Inspeção da captura real da execução `41234289600`, `frontend-collections-area-320-900-200.png` (320px, 200% de texto, viewport `fullPage:false`, `documentWidth=320`) identificou divisão de `ambientais` em `ambientai` + `s` no link de ação da coleta, mesmo sem overflow horizontal. Achado distinto dos dois failures em `Ihfr` e dentro do owner B.
+- PLAN: usar CTA ambiental de largura integral apenas no mobile, ocultando ícone decorativo em telas estreitas, mantendo nome acessível e alinhamento/responsividade desktop. Adicionar asserção real de palavras inteiras no mesmo cenário E2E; conservar o teste de overflow. Não alterar shell A, CSS global, fontes ou harness compartilhado.
+- IMPLEMENT: `src/components/areas/area-collections.tsx` e `tests/e2e/hf-ui036-area-collections.spec.ts`. Teste reportado PASS somente depois da Action no SHA que contiver esse patch.

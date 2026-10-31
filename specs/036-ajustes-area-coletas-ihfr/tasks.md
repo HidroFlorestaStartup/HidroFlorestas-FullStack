@@ -48,3 +48,6 @@ Nenhuma tarefa de produto/teste foi marcada concluída por G0. Não paralelizar 
 - [ ] T017 [HANDOFF] Atualizar PR #47 e evidências no SHA final e documentar eventuais pendências de integração/aceite, sem merge/deploy.
 
 Os marcadores T013/T014 representam implementação versionada; os resultados de testes pertencem a T015. Validação científica, operação de provedores e aceitação humana continuam fora do recorte.
+
+- [x] T018 [REVIEW → IMPLEMENT] Corrigir divisão interna da palavra `ambientais` no CTA UI-02 vista no snapshot 320px/texto200, sem reduzir a escala ou duplicar controles.
+- [x] T019 [TEST] Acrescentar verificação real de palavras inteiras no E2E de área e preservar teste de overflow; exigir PASS no HEAD final antes de encerrar T015.
