@@ -1,0 +1,65 @@
+name: Setup operational regression
+
+on:
+  push:
+    branches:
+      - feature/automated-setup
+      - fix/setup-windows-process-recovery-20261030
+  pull_request:
+    paths:
+      - setup.js
+      - scripts/lib/setup-*
+      - tests/setup/**
+      - .github/workflows/setup-regression.yml
+      - package.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: setup-regression-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regression:
+    name: Setup / ${{ matrix.os }} / Node ${{ matrix.node }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        node: [24.19.0]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      HF_SETUP_EXPECT_NODE_VERSION: 24.19.0
+      HF_SETUP_EXPECT_NPM_VERSION: 11.17.0
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Record exact revision and runtime
+        run: |
+          git rev-parse HEAD
+          node --version
+      # Regression uses built-ins, mocks, and an offline empty npm fixture.
+      # Application integration below is restricted to disposable CI runners
+      # with third-party lifecycle hooks, Prisma and migrations disabled.
+      - name: Run isolated setup regression
+        run: node --test tests/setup/*.test.cjs
+      - name: Exercise PowerShell entry point
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          node tests/setup/npm-smoke.cjs
+          if ($LASTEXITCODE -ne 0) { throw 'Isolated npm smoke failed' }
+      - name: Exercise CMD entry point
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: node tests/setup/npm-smoke.cjs
+      - name: Run actual installer with lifecycle hooks blocked and verify recovery
+        run: node tests/setup/ci-integration.cjs

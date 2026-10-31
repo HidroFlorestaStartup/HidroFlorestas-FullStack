@@ -7,6 +7,7 @@
   },
   "scripts": {
     "setup": "node setup.js",
+    "test:setup": "node --test tests/setup/*.test.cjs",
     "setup:windows": "node setup.js --platform=windows",
     "setup:linux": "node setup.js --platform=linux",
     "setup:mac": "node setup.js --platform=mac",

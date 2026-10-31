@@ -32,8 +32,8 @@ validações técnicas não alteram esse estado. Consulte o
 - Um PostgreSQL de desenvolvimento autorizado, local ou Neon, para usar as
   funcionalidades persistentes e aplicar migrations.
 - Python 3 não é necessário no estado atual: não existe manifesto Python. O
-  setup detectará e preparará `.venv` automaticamente se um
-  `requirements.txt` passar a fazer parte do projeto.
+  setup só prepara `.venv` para um `requirements.txt` futuro com consentimento
+  explícito `--allow-scripts`; ambientes incompletos são preservados para revisão.
 
 Serviços opcionais incluem SMTP/Gmail para e-mails, Cloudinary para imagens de
 capa e os navegadores do Playwright para testes E2E. O build também acessa o
@@ -42,7 +42,7 @@ Google Fonts e a aplicação pode usar tiles externos de mapa.
 ### Corrigindo a versão do Node.js
 
 Se o preflight encontrar uma versão incompatível, ele interromperá o setup e
-mostrará em verde os comandos adequados ao sistema operacional. O projeto usa o
+orientará a atualização manual. Como opção, use o
 [`fnm`](https://github.com/Schniz/fnm) para instalar e selecionar a versão
 registrada em `.node-version`, sem substituir globalmente outros projetos.
 
@@ -91,12 +91,26 @@ O comando detecta Windows, Linux ou macOS e executa, em ordem:
 
 1. validação de Node.js, Git e gerenciador de pacotes;
 2. cópia idempotente de `.env.example` para `.env`;
-3. instalação das dependências com `npm ci`;
-4. preparação de Python somente se houver manifesto aplicável;
-5. geração do Prisma Client e tratamento protegido das migrations.
+3. instalação das dependências com `npm ci --ignore-scripts` por padrão;
+4. preparação de Python somente se houver manifesto aplicável e consentimento;
+5. geração local do Prisma Client somente com `--allow-scripts`; migrations
+   permanecem desabilitadas sem autorização e verificação explícitas do destino.
 
-Se a detecção automática precisar ser contornada, use um dos comandos
-equivalentes:
+O padrão prepara os pacotes sem executar seus scripts de instalação. Isso **não
+significa que a aplicação já esteja pronta**: Prisma e dependências nativas podem
+precisar de scripts. Após revisar os riscos e em ambiente adequado, o opt-in é
+`npm run setup -- --allow-scripts --skip-migrations`. Esse consentimento permite
+código de terceiros e não constitui garantia de segurança. O setup nunca instala
+ferramentas globais, altera PATH/perfis ou solicita reinicialização.
+
+No Windows, o npm é executado pela CLI JavaScript da instalação do Node ativo,
+sem interpretar `npm.cmd` por um shell. Lockfiles de outros gerenciadores são
+recusados com orientação explícita, em vez de executar wrappers não verificados.
+Consulte o [guia de recuperação Windows](docs/operations/setup-windows-recovery.md)
+antes de retomar uma instalação interrompida ou investigar uma reinicialização.
+
+Os comandos equivalentes abaixo verificam a plataforma real; uma seleção
+incompatível é aceita apenas para visualizar um plano com `--dry-run`:
 
 ```bash
 npm run setup:windows
@@ -110,25 +124,30 @@ Após a primeira execução, preencha no mínimo `DATABASE_URL` e `JWT_SECRET` n
 será usado, as configurações de contas, e-mail, mapa e imagens. O Cloudinary
 permanece desabilitado por padrão com `CLOUDINARY_IMAGE_ENABLED=0`.
 
-Para conferir o fluxo sem criar arquivos nem instalar pacotes:
+Para conferir o plano sem criar arquivos, executar subprocessos ou conectar ao banco:
 
 ```bash
-npm run setup -- --dry-run --skip-migrations
+node setup.js --dry-run --skip-migrations
 ```
 
 ## Banco de dados e Prisma
 
-`prisma generate` é local e não altera o banco. Já uma migration escreve no
-destino configurado: o setup só tenta aplicá-la após validar uma URL PostgreSQL
-e receber confirmação interativa. Em automação não interativa, a autorização
-precisa ser explícita:
+`prisma generate` executa código local e exige `--allow-scripts`; não aplica
+migrations. O setup não consulta o banco por padrão. Aplicar migrations existentes
+exige `--migrate` e confirmação explícita do destino por `--database-target`,
+além do consentimento para código local. O instalador aceita apenas PostgreSQL
+em loopback, sem parâmetros de URL que alterem o destino. Exemplo **somente para
+um banco local descartável, previamente revisado e autorizado**:
 
 ```bash
-npm run setup -- --migrate
+npm run setup -- --allow-scripts --migrate --database-target=localhost:5432/hidro_dev
 ```
 
-Use essa opção somente em um banco de desenvolvimento revisado. Para apenas
-preparar o código sem consultar ou alterar o banco, use:
+O valor deve corresponder à URL efetiva, inclusive ambiente herdado. Loopback não
+prova que um banco seja de desenvolvimento. O setup usa `migrate deploy` para
+migrations existentes e não oferece reset nem cria novas migrations. Bancos
+remotos seguem o runbook próprio; não são migrados por este instalador.
+Para preparar pacotes sem consultar ou alterar o banco, use:
 
 ```bash
 npm run setup -- --skip-migrations

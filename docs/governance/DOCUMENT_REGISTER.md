@@ -1,5 +1,18 @@
 # Registro documental
 
+## Incidente do instalador — 2026-10-30
+
+Origem: solicitação explícita `HF-SETUP-INCIDENT-20261030` nesta sessão.
+Documentos operacionais em `EM_REVISAO`, de autoridade limitada à investigação
+e à correção do instalador; não aprovam operação de banco, merge, deploy ou
+encerramento causal da reinicialização. O histórico abaixo permanece preservado.
+
+| Identificador | Documento | Caminho | Classificação e limite |
+|---|---|---|---|
+| `HF-SETUP-PLAN-20261030` | Plano de correção e investigação | [plano](../plans/active/setup-windows-incident-20261030.md) | Plano de execução autorizado; resultados discriminados por evidência. |
+| `HF-SETUP-INCIDENT-20261030` | Relatório de incidente | [relatório](../reports/2026-10-30-hf-setup-incident.md) | `FATO_DOCUMENTADO`, `EVIDENCIA_IMPLEMENTACAO` e hipóteses delimitadas; causalidade exige logs externos. |
+| `HF-SETUP-RECOVERY-20261030` | Recuperação Windows e coleta | [guia](../operations/setup-windows-recovery.md) | `RECOMENDACAO` operacional; coleta somente leitura, sem segredos ou autorização automática para retomar instalação. |
+
 ## Registro HF-DOC —24/10/2026, continuidade C0→C1
 
 CONCILIACAO_C1_CONCLUIDA_COM_LIMITES: [adendo Code-First](../code-first-prd/implementation/estado-conciliado-20261024.md),
