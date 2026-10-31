@@ -9,19 +9,21 @@ const { parseEnv } = require("node:util");
 const childProcess = require("node:child_process");
 
 function parseArguments(argv) {
-  const options = { dryRun: false, migrate: false, skipInstall: false, skipMigrations: false, allowScripts: false, platform: null, databaseTarget: null };
+  const options = { dryRun: false, migrate: false, skipInstall: false, skipMigrations: false, allowScripts: false, verifyRuntime: false, platform: null, databaseTarget: null };
   for (const argument of argv) {
     if (argument === "--dry-run") options.dryRun = true;
     else if (argument === "--migrate") options.migrate = true;
     else if (argument === "--skip-install") options.skipInstall = true;
     else if (argument === "--skip-migrations") options.skipMigrations = true;
     else if (argument === "--allow-scripts") options.allowScripts = true;
+    else if (argument === "--verify-runtime") options.verifyRuntime = true;
     else if (argument.startsWith("--platform=")) options.platform = argument.slice(11);
     else if (argument.startsWith("--database-target=")) options.databaseTarget = argument.slice(18);
     else if (argument === "--help" || argument === "-h") options.help = true;
     else throw new Error("Argumento desconhecido. Consulte node setup.js --help.");
   }
   if (options.migrate && options.skipMigrations) throw new Error("Use apenas --migrate ou --skip-migrations.");
+  if (options.verifyRuntime && !options.allowScripts) throw new Error("--verify-runtime requer --allow-scripts; dependências nativas não são qualificadas sem consentimento.");
   if (options.platform && !["windows", "linux", "mac"].includes(options.platform)) throw new Error("Plataforma inválida. Use windows, linux ou mac.");
   if (options.databaseTarget && !/^(localhost|127\.0\.0\.1|\[::1\]):\d{1,5}\/[A-Za-z0-9_-]+$/.test(options.databaseTarget)) throw new Error("Destino inválido: use host-loopback:porta/banco, sem credenciais.");
   if (options.migrate && !options.databaseTarget) throw new Error("--migrate exige --database-target=host:porta/banco após revisão do destino local.");
@@ -113,6 +115,7 @@ function printHelp(logger) {
   --dry-run                    Apenas plano: não executa processos nem escreve arquivos.
   --skip-install               Não instala dependências Node nem Python.
   --allow-scripts              Autoriza código de terceiros: lifecycle e Prisma local.
+  --verify-runtime             Exercita bcrypt, SQLite, Sharp e esbuild; exige --allow-scripts.
   --skip-migrations            Não consulta nem altera o banco.
   --migrate                    Autoriza apenas migrations existentes em PostgreSQL local.
   --database-target=host:porta/banco  Confirma destino loopback, sem credenciais.
@@ -296,6 +299,29 @@ function createSetup(config = {}) {
     runPrisma(["migrate", "deploy"], { env: { ...env, DATABASE_URL: databaseUrl } });
   }
 
+
+  // Execute real native operations; requiring the JavaScript wrapper alone is not sufficient.
+  // Probes run with the active Node, without a shell, database or external service.
+  function verifyRuntime(options) {
+    if (!options.verifyRuntime) return;
+    logger.section("Verificação de runtime local");
+    const checks = [
+      ["bcrypt", "const b=require('bcrypt');const hash=b.hashSync('hf-setup-smoke',4);if(!b.compareSync('hf-setup-smoke',hash))process.exit(3);"],
+      ["better-sqlite3", "const DB=require('better-sqlite3');const db=new DB(':memory:');try{const row=db.prepare('SELECT 1 AS ok').get();if(row.ok!==1)process.exitCode=3;}finally{db.close();}"],
+      ["sharp", "require('sharp')({create:{width:1,height:1,channels:3,background:'#000000'}}).png().toBuffer().then(b=>{if(!b.length)process.exitCode=3;}).catch(()=>{process.exitCode=3;});"],
+      ["esbuild", "const e=require('esbuild');const result=e.transformSync('const hf_setup_smoke = 1;', {loader:'js'});if(!result.code.includes('hf_setup_smoke'))process.exit(3);"],
+    ];
+    for (const [name, script] of checks) {
+      try {
+        run(execPath, ["-e", script], { dryRun: options.dryRun, label: `Runtime ${name}` });
+      } catch (error) {
+        const exitCode = Number.isInteger(error.exitCode) ? error.exitCode : 1;
+        throw Object.assign(new Error(`Runtime ${name} não operacional. Instalação completa não qualificada; revise o hook deste pacote e o log npm local. Não inicie a aplicação nem reinstale ferramentas globais automaticamente.`), { exitCode });
+      }
+      if (!options.dryRun) logger.success(`Runtime ${name}: OK.`);
+    }
+  }
+
   async function main(argv = process.argv.slice(2)) {
     try {
       const options = parseArguments(argv);
@@ -309,8 +335,10 @@ function createSetup(config = {}) {
       installNodeDependencies(manager, options, supported);
       installPythonDependencies(detected, options);
       await configureDatabase(manager, environment.environmentPath, options);
+      verifyRuntime(options);
       logger.section(options.dryRun ? "Plano exibido" : "Preparação concluída");
       if (!options.allowScripts) logger.warning("PREPARACAO_PARCIAL: lifecycle e Prisma não executados; isto não comprova aplicação pronta.");
+      else if (options.verifyRuntime) logger.success("SETUP_LOCAL_READY: dependências nativas e Prisma exercitados. Banco, credenciais e serviços externos ainda requerem configuração e testes próprios; nenhum serviço iniciado.");
       else logger.info("Revise a configuração privada antes de iniciar a aplicação. Nenhum serviço foi iniciado.");
       return 0;
     } catch (error) {
@@ -321,7 +349,7 @@ function createSetup(config = {}) {
       return Number.isInteger(error.exitCode) ? error.exitCode : 1;
     }
   }
-  return { main, run, detectPackageManager, configureEnvironment, installNodeDependencies, installPythonDependencies, configureDatabase, verifyEnvironment };
+  return { main, run, detectPackageManager, configureEnvironment, installNodeDependencies, installPythonDependencies, configureDatabase, verifyEnvironment, verifyRuntime };
 }
 
 module.exports = { createSetup, resolveNpmCli, findExecutable, parseArguments, validDevelopmentDatabaseUrl, databaseTarget, numericVersion, compareVersions };
