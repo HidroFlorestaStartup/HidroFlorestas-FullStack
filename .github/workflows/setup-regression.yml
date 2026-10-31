@@ -30,7 +30,7 @@ jobs:
         os: [windows-latest, ubuntu-latest]
         node: [24.19.0]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       HF_SETUP_EXPECT_NODE_VERSION: 24.19.0
       HF_SETUP_EXPECT_NPM_VERSION: 11.17.0
@@ -63,3 +63,7 @@ jobs:
         run: node tests/setup/npm-smoke.cjs
       - name: Run actual installer with lifecycle hooks blocked and verify recovery
         run: node tests/setup/ci-integration.cjs
+      - name: Full installer with explicit lifecycle authorization on disposable runner
+        run: npm run setup:full
+      - name: Verify completed local runtime without reinstalling or database access
+        run: node setup.js --skip-install --skip-migrations --allow-scripts --verify-runtime
