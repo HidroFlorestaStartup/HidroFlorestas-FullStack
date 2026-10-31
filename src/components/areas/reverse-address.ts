@@ -49,7 +49,7 @@ export function normalizeReverseAddress(payload: unknown): ReverseAddress {
       ?? text(address.municipality, 100) ?? text(address.village, 100),
     state: uf(root.state) ?? uf(address["ISO3166-2-lvl4"] && String(address["ISO3166-2-lvl4"]).split("-").at(-1))
       ?? uf(address.state),
-    cep: cep(root.cep) ?? cep(address.postcode),
+    cep: cep(root.cep) ?? cep(address.cep) ?? cep(address.postcode),
   };
 }
 export async function lookupReverseAddress(

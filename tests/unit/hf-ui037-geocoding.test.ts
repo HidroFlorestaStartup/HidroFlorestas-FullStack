@@ -50,6 +50,8 @@ it("accepts partial/empty provider data and normalizes only valid Brazilian UF a
   assert.deepEqual(normalizeReverseAddress({ address: { state: "Unknown", postcode: "garbage" } }),
     { municipality: null, state: null, cep: null });
   assert.deepEqual(normalizeReverseAddress(null), { municipality: null, state: null, cep: null });
+  assert.deepEqual(normalizeReverseAddress({ address: { municipality: "Viana", state: "Maranhão", cep: "65215-000" } }),
+    { municipality: "Viana", state: "MA", cep: "65215-000" });
 });
 it("client lookup makes an abortable same-origin request and never requires remote connectivity in tests", async () => {
   let url = "";

@@ -251,8 +251,8 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               sugestões anteriores são retiradas; dados digitados permanecem para revisão.
             </p>
             <p className={styles.mapHelp}>
-              O CEP é somente informativo nesta etapa: o contrato atual da API ainda não o
-              persiste. A evolução desse contrato está sendo coordenada na PR #45.
+              O CEP é apenas uma referência nesta versão e não será gravado no cadastro.
+              Município e UF informados são armazenados normalmente.
             </p>
             <label className={labelClass}>
               Descrição{" "}
