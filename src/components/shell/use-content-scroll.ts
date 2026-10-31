@@ -61,7 +61,7 @@ function remember(path: string, content: HTMLElement) {
   if (positions.size > 50) positions.delete(positions.keys().next().value!);
 }
 function revealFocus(target: HTMLElement, content: HTMLDivElement) {
-  if (document.activeElement !== target || target.closest("dialog[open]")) return;
+  if (document.activeElement !== target || target.closest("dialog[open]") || target.closest("#application-navigation")) return;
   const header = document.getElementById("application-header")?.getBoundingClientRect().bottom ?? 0;
   if (target === content) {
     if (ownScroll(content)) content.scrollTo({ top: 0, behavior: "instant" });

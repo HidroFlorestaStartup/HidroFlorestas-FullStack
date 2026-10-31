@@ -11,7 +11,7 @@ Aplicação Next.js/App Router e TypeScript existente; preservar dependências e
 
 ## Constitution Check
 
-Decisões atuais e recorte aprovados; spec/branch/PR próprios; documentação histórica imutável; auth e dados existentes preservados. Verificação de aderência em código pendente. Revisão atual do mesmo coordenador não é revisão independente.
+Decisões atuais e recorte aprovados; spec/branch/PR próprios; documentação histórica imutável; auth e dados existentes preservados. Verificação de ownership e diff por paths realizada; validação funcional e revisão independente ainda pendentes. Revisão atual do mesmo coordenador não é revisão independente.
 
 ## Project Structure and ownership
 
@@ -19,7 +19,7 @@ Documentos exclusivamente em `specs/035-ajustes-navegacao-conta/`. O executor de
 
 A é writer do shell/layout; B/C não editam esses arquivos em paralelo. Estilos globais, UI compartilhada, fixtures, configuração, dependências e autenticação exigem coordenação. Configurações de deploy e workflow são somente leitura. Nenhum novo schema previsto por este recorte.
 
-Testes próprios propostos: `tests/unit/hf-ui035-navigation.test.ts` e `tests/e2e/hf-ui035-navigation.spec.ts`, adaptando localização ao harness realmente existente sem duplicar runner. São nomes reservados/propostos, ainda sem arquivo executável criado.
+Testes próprios propostos: `tests/unit/hf-ui035-navigation.test.ts` e `tests/e2e/hf-ui035-navigation.spec.ts`, adaptando localização ao harness realmente existente sem duplicar runner. Os arquivos de testes foram criados na branch A após o G0 e submetidos à verificação do CI; não afirmar PASS antes da Actions.
 
 ## Sequência
 

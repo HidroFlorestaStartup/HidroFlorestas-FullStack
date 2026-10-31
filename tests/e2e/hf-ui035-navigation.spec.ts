@@ -42,7 +42,9 @@ async function capture(page: Page, info: TestInfo, state: string) {
       navigation: rect("application-navigation"), content: rect("application-content"),
       documentOverflow: document.documentElement.scrollWidth > innerWidth };
   });
-  await writeFile(join(archive, "hf-ui035-" + state + "-geometry.json"), JSON.stringify(geometry, null, 2) + "\n");
+  const geometryArchive = join(process.cwd(), ".accounts-validation", "frontend-mobile-navigation");
+  await mkdir(geometryArchive, { recursive: true });
+  await writeFile(join(geometryArchive, "hf-ui035-" + state + "-geometry.json"), JSON.stringify(geometry, null, 2) + "\n");
   await info.attach(state, { path: output, contentType: "image/png" });
   expect(geometry.documentOverflow).toBe(false);
   return geometry;

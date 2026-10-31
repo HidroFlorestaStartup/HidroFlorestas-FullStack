@@ -32,3 +32,9 @@ O SHA deste commit e o número do PR são registrados no recibo de publicação,
 **Ambiente/custódia:** leitura e autoria realizadas via GitHub API, sem checkout fiel do HEAD/sem Node 24 + docs `node_modules/next/dist/docs` locais. Worktrees/upstreams/sujeira da máquina do usuário não observáveis. Não foi executado runtime do frontend starter. `NATIVE_SUBAGENTS_NOT_AVAILABLE` (nenhuma ferramenta de delegação nativa exposta nesta sessão); não se afirma revisão independente. Pré-validação estática de path/ownership e base via GitHub; hashes de commit final serão informados na PR.
 
 **Diff pretendido:** exclusivo A contra `07755822f5dc75fe2be1d924005d30ed99f64a0b`; acumulado contra `development` observado em `9b8595d232842d401ce81bbc92c54dd543aa2829`. Reconciliar SHA atual antes da publicação. Dependência #45, sem merge.
+
+### Contraprova estática de referência, distinta de runtime
+
+`FATO_DOCUMENTADO`: inspecionado em `HidroFlorestaStartup/hidroflorestas-frontend-starter@cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f`, `src/components/hf/AppShell.tsx` e `src/styles.css`: estrutura de header sticky, navegação lateral desktop, mobile fixed, foco adaptado ao rodapé e rótulos Resumo/Áreas/Mapa/Membros condicionados ao contexto. O starter usa `@tanstack/react-router` e um adapter de dados, cuja implementação não foi transportada. FullStack continua usando Next 16.3.8/App Router com autorização própria. Essa leitura **não é** screenshot nem teste visual executado; UI-06 T007 permanece pendente.
+
+**Prova gerada pelo E2E novo:** PNG de viewport mascarada em `.accounts-validation/frontend-workspace/frontend-workspace-hf-ui035-*.png` e arquivo geométrico em `.accounts-validation/frontend-mobile-navigation/hf-ui035-*-geometry.json` (caminhos incluídos no upload dos artefatos do workflow). Evidência só é real após run concluído e arquivos observados, nunca por existência da instrução.

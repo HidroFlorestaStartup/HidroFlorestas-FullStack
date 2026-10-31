@@ -120,3 +120,11 @@
   .contextNav a { font-size: .625rem; gap: 2px; }
   .brand img { width: 124px; }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Preserve the user identity in the desktop header as in UI-01. */
+  .identity { display: flex; flex-direction: column; }
+  .headerInfo { gap: 10px; }
+  .header { gap: 12px; }
+  .identity { max-width: 180px; font-size: .8125rem; }
+}
