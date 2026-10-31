@@ -48,7 +48,7 @@ export function AreaCollections({
               <p className="mt-2 break-all text-xs text-slate-500">ID: {row.id}</p>
               <dl className="mt-3 space-y-2 text-sm">
                 <div><dt className="flex items-center gap-2 text-slate-600"><CalendarDays size={15} aria-hidden="true" />Ocorrência em campo</dt><dd className="mt-1 font-semibold text-slate-900"><time dateTime={row.occurredAt}>{formatCollectionOccurrence(row.occurredAt)}</time></dd></div>
-                <div><dt className="text-slate-600">Confirmação no sistema</dt><dd className="mt-1 text-slate-800"><time dateTime={row.confirmedAt}>{new Date(row.confirmedAt).toLocaleString("pt-BR", { timeZone: "America/Fortaleza" })}</time></dd></div>
+                <div><dt className="text-slate-600">Confirmação no sistema (UTC)</dt><dd className="mt-1 text-slate-800"><time dateTime={row.confirmedAt}>{new Date(row.confirmedAt).toLocaleString("pt-BR", { timeZone: "UTC", timeZoneName: "short" })}</time></dd></div>
               </dl>
               <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
                 <Link className="inline-flex min-h-11 items-center rounded-xl bg-emerald-800 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + row.id}>Abrir coleta</Link>

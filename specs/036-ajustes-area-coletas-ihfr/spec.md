@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/ajustes-area-coletas-ihfr`
 **Created**: 2026-10-31
-**Status**: Draft — preparação G0; produto NAO_IMPLEMENTADO nesta frente.
+**Status**: Implementação publicada na branch; execução dos testes no HEAD final e aceite ainda pendentes.
 **Input**: UI-02, UI-03, UI-04 e UI-06 em área/coleta, aprovadas no handoff de Pedro #44; divisão confirmada na missão HF-UI-044-G0.
 **Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b`, independente de A/C.
 
@@ -58,3 +58,14 @@ Entidades reutilizadas: área, coleta, ocorrência, dados ambientais confirmados
 ## Assumptions and limits
 
 API/leituras podem exigir adaptação focal, a demonstrar pelo executor. Qualquer DTO compartilhado com C passa pelo coordenador. Shell pertence a A; não copiar sua branch. UI-07, REV-01–REV-03, provedores, deploy e ciência fora de escopo. [Plano](plan.md), [tarefas](tasks.md), [evidências](implementation-evidence.md).
+
+
+## Registro de implementação — 2026-10-31
+
+**EVIDENCIA_CODIGO**: UI-02 implementada como consulta escopada às coletas confirmadas; usa instante UTC da ocorrência e mantém o offset informado, ordenação decrescente e desempate por UUID decrescente. A seleção do primeiro ponteiro de IHFR vigente nas coletas ordenadas é **INFERENCIA** do handoff, não aprovação científica ou novo requisito normativo. Diagnósticos substituídos/revogados não são inferidos do histórico e a ausência não vira score zero.
+
+**EVIDENCIA_CODIGO**: UI-03 reorganizada em colunas apenas em larguras desktop, mantendo rotas, confirmação imutável, ações ambientais e estados de leitura. Presença de dados ambientais é consulta de existência, independentemente de versão científica; rascunhos não passam por conjuntos confirmados.
+
+**EVIDENCIA_CODIGO**: UI-04 mantém qualificador curto visível e detalhes nativos expansíveis por Enter/Espaço (limites, quatro códigos e proveniência). Falta de medições confirmadas informa a ação adequada e sua natureza, em vez de expor somente o código interno.
+
+**Validação**: código e testes versionados em commits próprios; resultados de execução do HEAD final e comparação simultânea do starter com o FullStack ainda não confirmados. Consultar [evidências](implementation-evidence.md). Nenhuma mudança no contrato científico, persistência, schemas, shell A ou formulário C.
