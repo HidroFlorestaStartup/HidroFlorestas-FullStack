@@ -47,3 +47,76 @@
 }
 @media (min-width: 1024px) { .identity { display: flex; flex-direction: column; } }
 @media (max-width: 399px) { .header { padding-inline: 16px; gap: 8px; } .brand img { width: 130px; } .context { padding: 16px; } .contextNav a { flex-basis: 100%; } .rail { flex-wrap: wrap; } .railLink { flex-basis: auto; font-size: .6875rem; } }
+
+/* UI-035: one authorised context rail, not a second navigation above content. */
+.laboratoryLayout { min-width: 0; }
+.laboratoryPage { min-width: 0; padding-bottom: calc(144px + env(safe-area-inset-bottom)); }
+.contextNav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  display: flex; flex-wrap: nowrap; align-items: stretch; gap: 2px;
+  margin: 0; padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+  border-top: 1px solid #c9d9ce; background: #fff;
+  box-shadow: 0 -4px 16px #183c2c18;
+  overflow-x: auto; overflow-y: hidden;
+}
+.contextNav a {
+  display: flex; flex: 1 1 0; min-width: 44px; min-height: 56px;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; margin: 0; padding: 6px 2px;
+  border: 0; border-radius: 12px; font-size: .6875rem; line-height: 1.25;
+  white-space: nowrap; text-align: center; text-decoration: none;
+  overflow-wrap: normal; color: #285c43;
+}
+.contextNav a[aria-current="page"] { color: #fff; background: #236548; }
+.contextNav a:hover { background: #edf5ef; }
+.contextNav a[aria-current="page"]:hover { background: #236548; }
+.contextNav a:focus-visible { outline: 3px solid #9a6b10; outline-offset: -3px; }
+.contextNav .desktopLabel { display: none; }
+.contextNav .mobileLabel { display: inline; }
+.contextNav svg { width: 19px; height: 19px; }
+.accountActions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+.accountDisclosure { position: relative; }
+.accountDisclosure summary {
+  display: flex; min-width: 44px; min-height: 44px; gap: 6px;
+  align-items: center; justify-content: center; padding: 8px 12px;
+  border: 1px solid #d2ded5; border-radius: 10px; list-style: none;
+  color: #285c43; font-size: .8125rem; font-weight: 600; cursor: pointer;
+}
+.accountDisclosure summary::-webkit-details-marker { display: none; }
+.accountDisclosure[open] summary, .accountDisclosure summary:hover { background: #edf5ef; }
+.accountDisclosure summary:focus-visible, .headerExit:focus-visible { outline: 3px solid #9a6b10; outline-offset: 3px; }
+.accountDisclosure .accountMenu { z-index: 50; }
+.accountDisclosure .accountMenu nav { display: grid; gap: 8px; }
+.accountActions .headerExit { min-height: 44px; gap: 6px; }
+@media (max-width: 767px) {
+  .content { scroll-padding-block-end: calc(144px + env(safe-area-inset-bottom)); }
+  .context { margin-bottom: 14px; padding: 12px 16px; }
+  .context h2 { margin-top: 3px; font-size: 1.0625rem; }
+  .contextRole { margin-top: 4px; font-size: .8125rem; }
+  .header { padding: 8px 12px; gap: 8px; }
+  .headerInfo { gap: 8px; }
+  .headerExit .exitLabel { display: none; }
+  .accountActions .headerExit { width: 44px; justify-content: center; padding: 8px; }
+}
+@media (min-width: 768px) {
+  .laboratoryLayout { display: grid; grid-template-columns: 176px minmax(0, 1fr); gap: 24px; align-items: start; }
+  .laboratoryPage { padding-bottom: 0; }
+  .contextNav {
+    position: sticky; top: 110px; right: auto; bottom: auto; left: auto;
+    display: flex; flex-direction: column; gap: 6px;
+    width: 176px; overflow: visible; padding: 12px; margin: 0;
+    border: 1px solid #dce6df; border-radius: 20px; box-shadow: none;
+  }
+  .contextNav a {
+    flex: none; flex-direction: row; justify-content: flex-start;
+    width: 100%; min-height: 52px; gap: 8px; padding: 10px 8px;
+    font-size: .8125rem; white-space: normal; text-align: left;
+  }
+  .contextNav .desktopLabel { display: inline; }
+  .contextNav .mobileLabel { display: none; }
+  .contextNav .contextReturn { border-bottom: 1px solid #dce6df; border-radius: 8px; }
+}
+@media (max-width: 399px) {
+  .contextNav a { font-size: .625rem; gap: 2px; }
+  .brand img { width: 124px; }
+}
