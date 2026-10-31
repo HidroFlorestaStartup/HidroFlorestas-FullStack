@@ -87,3 +87,16 @@ Consulte [analysis-review.md](analysis-review.md), [research.md](research.md), [
 **Check anterior:** run 41232297194 (HEAD 53af107, tentativa 1) FAIL em E2E 320px/200% no teste de shell da Frente A; nove gates PASS e cinco NOT_RUN posteriores. Artefato GitHub ID 13055030510. Encaminhado para owner A, PR #46 comentário 6550340205. Não modificar A nem omitir o FAIL.
 
 **Evidência visual:** screenshots E2E UI-07 em `TestInfo.outputPath`/attachments para inclusão no glob CI já existente; capturas de referência #44 não substituem execução.
+
+## Matriz de implementação coordenada da continuidade corretiva
+
+| Contrato | Path/hunk | Teste | Writer |
+| --- | --- | --- | --- |
+| CEP opcional em POST | `src/app/api/server/areas/area.contracts.ts` | `tests/unit/area-contracts.test.ts`, `tests/contract/hf-ui037-address-optional.test.ts` | C, registrado na PR #45 |
+| CEP null/normalizado nos DTOs | `src/app/api/server/areas/area.contracts.ts`, `src/types/area.type.ts` | E2E de POST/GET e 8 combinações | C, hunks mínimos compartilhados |
+| Persistência sintética | Serviço `AreasService` EXISTENTE sem edição; schema `CollectionArea.cep String?` EXISTENTE | `tests/e2e/hf-ui037-location.spec.ts` com `createAreaFixtureClient` | C (testes somente), sem migration |
+| Revisão do contrato atual | `specs/037-localizacao-endereco-opcional/contracts/area-optional-address.openapi.yaml` | Unit/contract validates patterns e exclusão de chaves | C, spec própria |
+| Provas de UI | `src/components/areas/area-form.tsx` e `tests/e2e/hf-ui037-location.spec.ts` | sugestões, point/draft, screenshot no padrão CI | C |
+| CI/Preview e shell | Somente leitura; A e coordenador são writers | Run oficial e diagnóstico factual de #46 | C observa, não edita |
+
+**Critério de revisão:** nenhum PASS sem processo concluído, artefato visual existente e HEAD exato. Os previews falsos/guards herdados não foram alterados. A falha do cenário de navegação 320px texto 200% permanece em A e pode manter CI global FAIL mesmo com correção UI-07 local aprovada.

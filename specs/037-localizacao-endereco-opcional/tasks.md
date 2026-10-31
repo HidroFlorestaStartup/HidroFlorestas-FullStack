@@ -15,8 +15,8 @@ Lista inicial G0; fonte #44 fixada em `972f9b00189bf09117883913d8c4fa63e69f4d2f`
 
 ## US2 — optionalidade e falhas
 
-- [ ] T006 [US2] Criar `tests/contract/hf-ui037-address-optional.test.ts` e cenários em `tests/e2e/hf-ui037-location.spec.ts` para retorno parcial/vazio, ausência de CEP, timeout/limite/rede e cadastro com campos opcionais ausentes.
-- [ ] T007 [US2] Aplicar optionalidade mínima de ponta a ponta nos paths documentados; submeter deltas compartilhados e eventual schema/migration ao coordenador, testar somente em banco sintético.
+- [x] T006 [US2] Criar `tests/contract/hf-ui037-address-optional.test.ts` e cenários em `tests/e2e/hf-ui037-location.spec.ts` para retorno parcial/vazio, ausência de CEP, timeout/limite/rede e cadastro com campos opcionais ausentes.
+- [x] T007 [US2] Aplicar optionalidade mínima de ponta a ponta nos paths documentados; submeter deltas compartilhados e eventual schema/migration ao coordenador, testar somente em banco sintético.
 
 ## US3 — concorrência e edição
 
@@ -30,7 +30,7 @@ Lista inicial G0; fonte #44 fixada em `972f9b00189bf09117883913d8c4fa63e69f4d2f`
 
 G0 não concluiu tarefas de implementação/testes. A reserva 037 não autoriza editar os arquivos de A/B ou mudar providers/infraestrutura alheios ao recorte.
 
-## Reconciliação factual das tarefas (31/10/2026)
+## Reconciliação factual das tarefas — snapshot anterior ao replanejamento (31/10/2026)
 
 - T006 parcial: existem cenários UI/E2E para ausência de CEP, provedor indisponível e cadastro mínimo; `tests/contract/hf-ui037-address-optional.test.ts` segue pendente da alocação do contrato compartilhado. Há cobertura própria disponível, mas T006 **permanece aberta** até contrato de CEP end-to-end e evidência executada.
 - T007 **pendente** de writer: coluna CEP já é nullable, mas API/DTOs e testes históricos precisam de mudança aditiva e coordenada. Não é necessária migration.
@@ -39,9 +39,11 @@ G0 não concluiu tarefas de implementação/testes. A reserva 037 não autoriza 
 
 ## Continuidade corretiva Spec Kit — tarefas T012–T017 (2026-10-31)
 
-- [ ] T012 [US2] Implementar CEP normalizado `string|null` com allowlist em `src/app/api/server/areas/area.contracts.ts`, serialização POST/GET/list e DTO compatível em `src/types/area.type.ts`; sem migration.
-- [ ] T013 [US2] Reconciliar regressão antiga em `tests/unit/area-contracts.test.ts`, `tests/e2e/area-registration.spec.ts`, contrato aditivo 037 em `contracts/area-optional-address.openapi.yaml` e suíte `tests/contract/hf-ui037-address-optional.test.ts` mantendo proteção de chaves privilegiadas.
-- [ ] T014 [US2] Integrar CEP no `src/components/areas/area-form.tsx` e verificar armazenamento POST/GET/Prisma sintético nas oito combinações de opcionais em `tests/e2e/hf-ui037-location.spec.ts`.
-- [ ] T015 [US1] Corrigir persistência das capturas E2E para `TestInfo.outputPath` e `attach` em `tests/e2e/hf-ui037-location.spec.ts`; registrar viewport e máscara de valores da UI.
+- [x] T012 [US2] Implementar CEP normalizado `string|null` com allowlist em `src/app/api/server/areas/area.contracts.ts`, serialização POST/GET/list e DTO compatível em `src/types/area.type.ts`; sem migration.
+- [x] T013 [US2] Reconciliar regressão antiga em `tests/unit/area-contracts.test.ts`, `tests/e2e/area-registration.spec.ts`, contrato aditivo 037 em `contracts/area-optional-address.openapi.yaml` e suíte `tests/contract/hf-ui037-address-optional.test.ts` mantendo proteção de chaves privilegiadas.
+- [x] T014 [US2] Integrar CEP no `src/components/areas/area-form.tsx` e verificar armazenamento POST/GET/Prisma sintético nas oito combinações de opcionais em `tests/e2e/hf-ui037-location.spec.ts`.
+- [x] T015 [US1] Corrigir persistência das capturas E2E para `TestInfo.outputPath` e `attach` em `tests/e2e/hf-ui037-location.spec.ts`; registrar viewport e máscara de valores da UI.
 - [x] T016 Registrar em `specs/037-localizacao-endereco-opcional/analysis-review.md` a falha real E2E de shell A e encaminhá-la ao owner #46 com SHA, run e log; não editar A.
 - [ ] T017 Executar revisão do diff, teste e gates por HEAD final; atualizar `implementation-evidence.md`, `tasks.md`, `plan.md`, `spec.md` e PR #48, separando revisão própria de QA independente.
+
+**Nota após a correção:** T006/T007 e T012–T015 marcadas como código/testes implementados, não como CI verde. T010/T011/T017 continuam abertas até revisão do SHA final e atualização do PR. A ausência de provedor aprovado é gate operacional separado, não autorização para chamadas externas.

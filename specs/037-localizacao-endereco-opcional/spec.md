@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/localizacao-endereco-opcional`
 **Created**: 2026-10-31
-**Status**: IMPLEMENTACAO_PARCIAL — código UI-07 publicado; CEP end-to-end e provedor operacional pendentes de coordenação.
+**Status**: IMPLEMENTACAO_CORRETIVA_EM_CODIGO — CEP opcional no contrato e persistência sintética em validação no SHA seguinte; provedor real não ativado, revisão/aceite humano pendentes.
 **Input**: UI-07 aprovada por Pedro no handoff #44; organização confirmada pela missão HF-UI-044-G0.
 **Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b`, sem herdar A/B/setup.
 
@@ -62,7 +62,7 @@ Provedor atual e nulabilidade existente devem ser inspecionados; não há escolh
 - A mesma máquina de estados recebe: localização do dispositivo, clique no mapa e digitação válida de coordenadas; toda mudança incrementa a revisão do ponto. Debounce de 650 ms e requisição abortável de até 5 s não interferem na ação de cadastrar.
 - `municipality`, `state` e `cep` são campos individualmente opcionais e editáveis no navegador. Resposta de geocodificação é apenas sugestão; ausência de informação não gera endereço sintético. Mudança de coordenadas remove sugestões anteriores, preservando entradas humanas para revisão.
 - Respostas de revisão antiga são ignoradas; a revisão atual nunca substitui campo marcado como alterado manualmente. Falha, timeout ou retorno 429 não alteram a validade da localização, nem bloqueiam salvar com os campos que a API atual aceita.
-- **Limite exposto na interface**: o CEP é informativo e ainda NÃO é gravado pelo POST existente. `CollectionArea.cep` já existe e é nullable, mas a allowlist da API e DTOs o excluem por decisão histórica da spec 003. A decisão posterior UI-07 determina que volte como opcional; a integração exige writer coordenado e regressões de contrato. Ver [proposta de contrato](contracts/cep-api-extension.md). Não declarar SC-037-002 integralmente PASS enquanto esse contrato não for integrado.
+- **Histórico do HEAD 53af107 (corrigido neste ciclo)**: o CEP era informativo e ainda NÃO era gravado pelo POST existente. `CollectionArea.cep` já existe e é nullable, mas a allowlist da API e DTOs o excluem por decisão histórica da spec 003. A decisão posterior UI-07 determina que volte como opcional; a integração exige writer coordenado e regressões de contrato. Ver [proposta de contrato](contracts/cep-api-extension.md). SC-037-002 permanece dependente de testes reais no SHA de implementação, embora os hunks de contrato já tenham sido criados.
 - O endpoint de sugestões `/api/geocoding/reverse` exige sessão e usa provedor **desabilitado por padrão**. Sem seleção expressa de provedor, retorna 503 sanitizado e mantém o cadastro válido. Não houve contratação, chamadas reais, alteração de ambiente hospedado ou deploy.
 
 ## Casos adicionais de aceite executáveis
@@ -70,7 +70,7 @@ Provedor atual e nulabilidade existente devem ser inspecionados; não há escolh
 | Caso | Resultado pretendido | Prova planejada |
 | --- | --- | --- |
 | Três fontes de coordenadas | Formulário sugere município/UF/CEP quando há provedor simulado | `tests/unit/hf-ui037-geocoding.test.ts`, `tests/e2e/hf-ui037-location.spec.ts` |
-| Uma/duas/três sugestões, zero CEP ou nenhum endereço | Campos faltantes permanecem vazios, cadastro com coordenadas válidas possível | unit + E2E (API atual salva município/UF; CEP pendente) |
+| Uma/duas/três sugestões, zero CEP ou nenhum endereço | Campos faltantes permanecem vazios, cadastro com coordenadas válidas possível | unit/contract + E2E do CEP, com oito combinações e banco sintético (a executar no SHA final) |
 | Autenticação, coordenadas, ausência de configuração, 429 e timeout | Nenhuma chamada externa não autorizada e falha não bloqueante | `tests/integration/hf-ui037-reverse-route.test.ts` |
 | Resposta A após B, campo digitado depois do início de A | Nunca sobrescrever posição atual nem correção manual | reducer e E2E |
 | Revisão e acessibilidade | Status não bloqueante com aria-live, tabulação, viewports 390/1440 | E2E/screenshot quando efetivamente executado |
@@ -79,4 +79,14 @@ A evidência real por SHA e a distinção entre teste declarado e rodado estão 
 
 ## Contraprovas adicionais do contrato local
 
-O teste `tests/contract/hf-ui037-address-optional.test.ts` confirma que `municipality`/`state` podem ser independentes, ambos ausentes ou ambos presentes no parser atual, e que injeções privilegiadas continuam proibidas. Confirma também o estado **a corrigir**: `cep` é rejeitado pela allowlist (mesmo `null`), embora a coluna nullable exista. Esse teste não concede aprovação ao comportamento legado; é uma contraprova reproduzível para o writer compartilhado da extensão UI-07.
+O teste `tests/contract/hf-ui037-address-optional.test.ts` confirma as oito combinações de `municipality`/`state`/`cep`, CEP nulo ou válido normalizado, proteção de injeções privilegiadas e consistência da extensão OpenAPI em `contracts/area-optional-address.openapi.yaml`. A spec 003 histórica continua intacta e explicitamente não é o contrato atualizado. Teste e código existem; validar runtime por run/SHA antes de declarar aceite.
+
+## Estado da correção focal (Spec Kit analyze → plan → implement → review)
+
+**Funcionalidade implementada em código, pendente da qualificação do SHA remoto:**
+
+- `CEP` com 8 dígitos, com ou sem hífen, normalizado no servidor para `NNNNN-NNN`; vazio/nulo/ausente aceito e persistido como `null`. Valores malformados retornam 400. Município e UF continuam opcionais, sem criar exigência territorial.
+- O formulário agora envia CEP no POST, o parser mantém allowlist segura, o serviço `AreasService.create` continua reutilizado sem alterações e a serialização de áreas expõe `cep` mesmo quando `null`; o DTO TypeScript mantém `cep?` para compatibilidade de mocks antigos, enquanto o servidor devolve sempre o campo.
+- Oito combinações no contrato e no E2E (POST/GET/Prisma sintético), inclusive sem todos os campos, mais casos de CEP inválido. Capturas viewport em `TestInfo.outputPath` e attachments, com máscaras para entradas do formulário.
+- **Sem migrations**: `CollectionArea.cep String?` já integra schema. Nenhuma escrita em `main`, `development`, em A/B, ou em provedores hospedados. O fornecedor de geocodificação permanece **não configurado**, e não há validação de disponibilidade real.
+- O resultado global da CI continua **pendente** de run terminal por SHA. O incidente de timeout da navegação móvel pertence ao owner A e não autoriza reduzir assertions nem retirar o gate.

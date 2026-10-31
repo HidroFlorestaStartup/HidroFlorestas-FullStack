@@ -34,3 +34,7 @@
 3. Testes sintéticos cobrem todas as 8 combinações de município/UF/CEP preenchidos/vazios e invalid input.
 4. E2E registra prints de viewport com metadados reais no artefato se chegar ao trecho.
 5. Resultado do CI é atribuído somente ao SHA da branch e tentativa real; problema de navegação A é separado da verificação C.
+
+## Plano de remediação aplicado (após análise estritamente read-only)
+
+O pedido do mantenedor autorizou seguir para PLAN/IMPLEMENT. Testes primeiro no mapa de tasks: contrato fechado com oito combinações, rejeição de entradas malformadas e injeções; atualização mínima do parser/DTO/form; E2E sintético verifica POST/GET/Prisma; screenshot passa ao outputPath. Não editar shell A nem mascarar FAIL de CI. Uma rodada terminal de CI no HEAD publicado define o resultado de REVIEW; estado inicial desses testes é `NOT_RUN_NO_FINAL_HEAD`.

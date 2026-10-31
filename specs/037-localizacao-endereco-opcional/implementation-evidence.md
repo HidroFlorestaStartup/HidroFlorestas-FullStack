@@ -54,3 +54,11 @@ Os runs de commits intermediários foram cancelados por `concurrency.cancel-in-p
 - O teste de formulário C não aparece como falha do E2E; as capturas C não estavam no artefato (corrigir `TestInfo.outputPath`). Nenhuma prova visual C foi falsamente declarada.
 
 **Coordenação:** comentário de alocação de writer focal na #45 [6550339752](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6550339752). Sem novos provedores, banco hospedado, schema ou CI modificados. Esta entrada é evidência histórica do HEAD 53af107, não do futuro HEAD corrigido.
+
+## Continuidade corretiva — código preparado para publicação/CI (2026-10-31)
+
+Resultado de análise: [analysis-review.md](analysis-review.md); pesquisa [research.md](research.md); modelo [data-model.md](data-model.md); validação [quickstart.md](quickstart.md); contrato aditivo `contracts/area-optional-address.openapi.yaml`. A instância atual de `CollectionArea` já tinha `cep String?`; não foi editada.
+
+Changesets staged em commits descendentes do HEAD 53af107: extensão de CEP opcional normalizada no parser/DTO, submissão de CEP no formulário, manutenção do service sem migration, teste histórico de API atualizado no **código de teste corrente** (arquivo histórico da spec 003 não modificado), testes com 8 subconjuntos + persistência PostgreSQL sintética, snapshots de UI `TestInfo.outputPath` e contrato OpenAPI versionado. Os commits foram criados como objetos Git antes de mover a ref, preservando o HEAD observado; só a atualização fast-forward protegida da branch publica a composição.
+
+**EVIDÊNCIA NÃO DISPONÍVEL NESTE INSTANTE:** nenhum PASS dos testes corrigidos, screenshot gerado pelo código corrigido ou conclusão dos 15 gates pode ser declarado antes de run terminal do SHA final. Os PASS do run 41232297194 pertencem exclusivamente ao antigo HEAD 53af107. Provedor externo continua não configurado; revisão independente e aceite humano não foram realizados.
