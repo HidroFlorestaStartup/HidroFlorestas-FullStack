@@ -90,7 +90,7 @@ test("unavailable geocoder and all empty optional fields do not block area creat
     await route.fulfill({ status: 429, json: { error: "RATE_LIMIT" } });
   });
   await page.goto(root);
-  await page.getByLabel("Nome da área").fill("HF UI037 sem endereço");
+  await page.getByLabel("Nome da área").fill(`${AREA_FIXTURES.prefix} UI037 sem endereço`);
   await page.getByLabel("Latitude", { exact: true }).fill("-2.5");
   await page.getByLabel("Longitude", { exact: true }).fill("-44.1");
   await expect(page.getByText(/Serviço de endereço indisponível/)).toBeVisible();

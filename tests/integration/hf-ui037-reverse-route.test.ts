@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { it } from "node:test";
-import { createReverseGeocodingHandler } from "../../src/app/api/geocoding/reverse/route";
+import { createReverseGeocodingHandler } from "../../src/app/api/geocoding/reverse/route.handlers";
 const request = (lat = "-2.5", lon = "-44") =>
   new Request("https://example.test/api/geocoding/reverse?latitude=" + lat + "&longitude=" + lon);
 it("protects endpoint: no unauthenticated network and no provider assumed", async () => {
