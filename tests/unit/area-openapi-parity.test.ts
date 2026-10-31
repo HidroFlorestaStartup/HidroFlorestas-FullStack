@@ -31,9 +31,11 @@ function currentExample<T extends Record<string, unknown>>(original: T): T {
   const copy = structuredClone(original);
   // Historical published examples predate CEP. Adapt examples for validation
   // against the new current wire contract; do not mutate the old OpenAPI file.
-  const dto = copy as Record<string, any>;
+  const dto = copy as Record<string, unknown>;
   if (Array.isArray(dto.areas)) dto.areas = dto.areas.map((area: Record<string, unknown>) => ({ ...area, cep: null }));
-  if (dto.area) dto.area = { ...dto.area, cep: null };
+  if (dto.area && typeof dto.area === "object" && !Array.isArray(dto.area)) {
+    dto.area = { ...(dto.area as Record<string, unknown>), cep: null };
+  }
   return copy;
 }
 const ajv = new Ajv2020({ strict: false, allErrors: true });
