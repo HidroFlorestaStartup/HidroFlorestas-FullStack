@@ -7,7 +7,7 @@ import { ExperimentalDiagnosisSummary } from "@/components/ihfr-diagnosis/experi
 import { NoCurrentDiagnosis } from "@/components/ihfr-diagnosis/no-current-diagnosis";
 import { IHFRDiagnosisManagement } from "@/components/ihfr-diagnosis/ihfr-diagnosis-management";
 import { ihfrDiagnosisService } from "@/app/api/server/services/ihfr-diagnosis.service";
-import { environmentalDataService } from "@/app/api/server/services/environmental-data.service";
+import { readConfirmedEnvironmentalPresence } from "@/app/api/server/collections/collection-environmental-presence.read";
 import { authorizeLaboratoryAccess } from "@/app/api/server/areas/area.authorization";
 
 export default async function CollectionDetailPage({
@@ -26,8 +26,7 @@ export default async function CollectionDetailPage({
     diagnosisContext = { laboratoryId, areaId, collectionId };
     const result = await collectionsService.detail(principal.id, laboratoryId, areaId, collectionId);
     collection = result.collection;
-    const confirmedData = await environmentalDataService.detail(principal.id, { laboratoryId, areaId, collectionId });
-    environmentalConfirmed = confirmedData.environmentalData !== null;
+    environmentalConfirmed = await readConfirmedEnvironmentalPresence(principal.id, { laboratoryId, areaId, collectionId });
     diagnosis = await ihfrDiagnosisService.readCurrent(principal.id, { laboratoryId, areaId, collectionId });
     const access = await authorizeLaboratoryAccess({ id: principal.id }, laboratoryId, "READ_IHFR_DIAGNOSIS");
     canManage = access.status === "ACTIVE" && access.membershipRole !== "MEMBER";
