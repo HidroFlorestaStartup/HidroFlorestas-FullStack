@@ -1,7 +1,7 @@
 # Implementation Plan: navegação e conta — preparação A
 
 **Branch**: `feat/ajustes-navegacao-conta` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
-**Estado**: EM_ANDAMENTO; plano inicial G0 a detalhar antes de produto. Não se alega execução dos comandos Spec Kit.
+**Estado**: EM_ANDAMENTO — mapa concretizado e código/testes preparados na própria reserva. Scripts CLI do Spec Kit não executados neste ambiente API-only; estrutura specify → plan → tasks → implement reconciliada manualmente.
 
 ## Summary and technical context
 
@@ -38,3 +38,28 @@ Nenhuma necessidade de aguardar implementação de B/C. Mudança necessária em 
 ## Riscos e pontos de parada
 
 Sobreposição da barra mobile, foco perdido, rotas reais alteradas e concorrência em layout são riscos focais. Conflito não resolvível para somente o arquivo afetado. Sem merge/deploy/main/development/provedores, REV-01–REV-03 ou ciência. Testes/aceite final pendentes em [implementation-evidence.md](implementation-evidence.md).
+
+## Mapa concreto de paths, contratos e regressões — implementação A
+
+| Path sob ownership A | Mudança e contrato | Verificação |
+| --- | --- | --- |
+| `src/components/shell/navigation-state.ts` | Projeção de links; sem autorização client-side | `tests/unit/hf-ui035-navigation.test.ts` |
+| `src/components/sidebar/index.tsx` | Só destinos globais fora de laboratório; nenhuma Área sem contexto | E2E 035/workspace/mobile |
+| `src/components/shell/laboratory-navigation.tsx` | Navegação contextual única, rotas Next reais, Membros condicional ao `canManageMembers` SSR | E2E 035/workspace/dashboard |
+| `src/app/(private)/dashboard/laboratories/[laboratoryId]/layout.tsx` | `getLaboratoryContext` preservado; trilho como irmão do cabeçalho contextual | E2E 035/consumidores |
+| `src/components/top-bar/index.tsx` | Disclosure Conta para `/change-password` e `/delete-account`; Sair somente `/logout`, sem novos handlers | E2E 035/workspace/account/logout |
+| `src/components/shell/shell.module.css` | Sidebar desktop, rodapé fixo mobile com safe-area, contexto compacto | captura e geometria do E2E 035 |
+| `src/components/shell/use-content-scroll.ts` | Foco de controles considera o limite superior da barra fixa no mobile | E2E 035/mobile regression |
+| `tests/unit/hf-ui035-navigation.test.ts` | Ausência de destino global inválido, rotas, papel e active state | `npm run test:unit` |
+| `tests/e2e/hf-ui035-navigation.spec.ts` | owner/member, 320/375/390/768/1440, zoom, safe-area simulado, conta, histórico e último controle | `npm run test:e2e` |
+| `tests/e2e/frontend-mobile-navigation.spec.ts`, `frontend-workspace.spec.ts`, `frontend-dashboard.spec.ts` | Atualizar apenas as expectativas de apresentação incompatíveis com UX aprovada; manter assertions de domínio | E2E oficial completo |
+
+**Contratos inalterados:** `getLaboratoryContext` exige sessão/autorização e decide 404/redirect, não há escolha implícita de laboratório; `canManageMembers` não é expandido a ADMIN global. Sem edição em AuthContext, serviços, Prisma, API, conta, dados ou fixtures. Sem alteração no código de `logout`, troca de senha ou exclusão. Destinos visuais possuem `href` existentes. O layout protegido do laboratório continua fonte de nome/status/papel.
+
+**Ownership compartilhado:** nenhum arquivo global, `package.json`/lockfile, `tests/fixtures`, `vercel.json`, `.github/workflows/rc-review.yml` foi alterado. A entrega B/C deve consumir os links/navegação de A sem editar o shell. Qualquer delta compartilhado novo exige coordenador e teste correspondente.
+
+**Constituição/Spec Kit:** (I) escopo de Pedro 30/10 confirmado #44; PRD Code-First em revisão; (II) feature vertical; (III) única reserva 035; (IV) traces e estados separados; (V) autorização server-side; (VI) raw/histórico imutáveis; (VII) mesmo writer exclusivo. Não foi criado data-model porque não há entidade/campo novo. CLI Spec Kit não executado na sessão sem checkout íntegro/current Node 24; a análise/artefatos foram adaptados aos templates existentes, sem alegar uso da CLI.
+
+**Regressão exigida:** `npm run test:unit`, `npm run typecheck`, `npm run lint`, `npm run build`, `npm run test:e2e`, runner sintético oficial `scripts/rc-review-validation.ps1` com 15 gates no HEAD final. Só GitHub Actions com dados próprios; nunca usar banco/provedores hospedados. Se a falha IHFR no baseline G0 persistir, manter FAIL sem editar ciência.
+
+**Limitação visual:** starter `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f` é somente leitura; capturas atuais de FullStack podem surgir do E2E e são claramente identificadas pelo run, mas não comprovam a comparação bilateral sem runtime starter. Visuais antigos da #44 não são tratados como execução.

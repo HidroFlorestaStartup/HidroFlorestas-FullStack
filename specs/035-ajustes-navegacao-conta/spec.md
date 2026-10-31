@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/ajustes-navegacao-conta`
 **Created**: 2026-10-31
-**Status**: Draft — preparação G0; produto NAO_IMPLEMENTADO nesta frente.
+**Status**: Implementação publicada para validação; checks funcionais e aceite humano dependem da execução no SHA final. O estado G0 anterior permanece como histórico.
 **Input**: UI-01, UI-05 e UI-06 no shell/conta/navegação, aprovadas por Pedro no handoff #44; organização ratificada na missão HF-UI-044-G0.
 **Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b` (guards); não começar de setup, #44 ou de outra feature.
 
@@ -58,3 +58,11 @@ Entidades existentes reutilizadas: sessão, pessoa e contexto de laboratório. N
 ## Assumptions and limits
 
 Reutilizar a stack e APIs existentes; implementação e inspeção detalhada ainda pertencem ao executor A. Não implementar B/C, REV-01–REV-03, ciência, provedores ou deploy. Nenhum novo aceite humano é concedido. [Plano](plan.md), [tarefas](tasks.md), [evidências](implementation-evidence.md).
+
+## Registro de implementação — 31/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO` de código: o workspace não oferece Áreas sem contexto; no laboratório, uma única navegação contextual contém retorno à seleção, Resumo, Áreas, Mapa e Membros somente quando o layout servidor autorizado informa OWNER. Cabeçalho agrupa senha/exclusão em Conta; Sair utiliza a rota existente `/logout`. A navegação interna mobile é fixa ao rodapé com `env(safe-area-inset-bottom)`, enquanto o desktop usa trilho lateral. O shell protege visibilidade do foco perante a barra móvel. Esses enunciados dizem respeito aos arquivos de implementação, **não** a um PASS de E2E neste documento.
+
+**Rastreabilidade:** UI-01 → FR-035-001/004, US1; UI-05 → FR-035-002/004, US2; UI-06 → FR-035-003, US3 (comparação de runtime do starter pendente). Code-First (EM_REVISAO): CF-PRD-FR-003/004/011, CF-US-004/005/007/008 e CF-UC-004/006/016/017; contratos implementados das specs 018/019. Nenhuma regra nova de laboratório, permissão, conta ou sessão foi aprovada.
+
+**Limite objetivo:** UI-06 exige execução real de starter e FullStack no mesmo estado/viewport; screenshots originais da PR #44 são apenas referência. O gate visual completo permanece NOT_RUN até haver as duas execuções e comparação documentada. Resultados reais da Actions ficam na descrição da PR #46, sempre associados ao SHA/tentativa.
