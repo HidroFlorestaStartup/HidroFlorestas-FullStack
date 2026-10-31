@@ -75,3 +75,15 @@ Optionalidade somente visual mas ainda obrigatória no DTO, endereço antigo ass
 Os testes unitários exercitam o reducer e parsing/normalização, os de integração exercitam autenticação/contrato do endpoint com fetch simulado, e E2E usa fixtures sintéticas existentes e interceptação de rede (sem provedor público). Nenhum arquivo de execução de CI foi editado. Consultar `implementation-evidence.md` para resultados reais, run e tentativa específicos; status NÃO deve ser inferido de criação de teste ou do G0.
 
 Patch compartilhado proposto ao coordenador da #45 (comentário #6547701906): [contracts/cep-api-extension.md](contracts/cep-api-extension.md). Não existe writer delegado nesta execução, portanto não aplicar a atualização de DTO/API nesta branch sem alocação. Se alocado, os testes de contrato e E2E devem verificar CEP persistido em PostgreSQL sintético e todas as antigas assertivas conflitantes antes de encerrar UI-07.
+
+## Replanejamento Spec Kit — análise de 31/10/2026
+
+Consulte [analysis-review.md](analysis-review.md), [research.md](research.md), [data-model.md](data-model.md) e [quickstart.md](quickstart.md).
+
+**Writer focal coordenado:** consulta aos HEADs de A #46 (`d895119`) e B #47 (`6cfd15b`) não encontrou modificação de `area.contracts.ts`, `area.type.ts`, `tests/unit/area-contracts.test.ts`, `tests/e2e/area-registration.spec.ts`. Em atendimento à instrução atual de correções necessárias, C é writer único desses hunks **na branch C** e registra comunicação na #45 (comentário 6550339752); não altera schemas, runners ou testes da A/B. Revalidar antes do push.
+
+**Ajuste funcional prioritário:** parse/serialize CEP opcional e DTO de resposta; incluir provas para entradas 0/1/2/3 e invalidez em banco sintético. O modelo Prisma já tem coluna nullable; **nenhuma migration**. Contrato OpenAPI 037 aditivo, sem reescrever o 003 histórico. Evitar tornar `cep` obrigatório para consumidores TypeScript existentes; serialização efetiva deve incluir `cep:null` quando ausente.
+
+**Check anterior:** run 41232297194 (HEAD 53af107, tentativa 1) FAIL em E2E 320px/200% no teste de shell da Frente A; nove gates PASS e cinco NOT_RUN posteriores. Artefato GitHub ID 13055030510. Encaminhado para owner A, PR #46 comentário 6550340205. Não modificar A nem omitir o FAIL.
+
+**Evidência visual:** screenshots E2E UI-07 em `TestInfo.outputPath`/attachments para inclusão no glob CI já existente; capturas de referência #44 não substituem execução.

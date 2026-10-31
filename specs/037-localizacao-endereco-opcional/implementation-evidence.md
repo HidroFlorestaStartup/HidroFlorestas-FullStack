@@ -43,3 +43,14 @@ Não confundir screenshots geradas por execução de Playwright futura com image
 - `942a3b5c19d54b0d51771a102a91b55573ab664b`: teste de timeout com `AbortSignal` e timer sintético (5 ms), regressão de respostas obsoletas, teste de contrato que prova 0/1/2 campos opcionais já permitidos e prova explicitamente a recusa atual do CEP até writer coordenado.
 
 Os runs de commits intermediários foram cancelados por `concurrency.cancel-in-progress`, não são falhas funcionais ou validação terminal. O run correspondente ao commit de documentação final deverá ser identificado no recibo da PR (sem inventar SHA futuro). Os quince gates e provas visuais ainda não podem ser declarados PASS neste arquivo até evidência terminal vinculada ao commit executado.
+
+## Diagnóstico do run de implementação (pós-G0)
+
+**Run 41232297194, tentativa 1, HEAD `53af10765bc401b43e80749c6a763ff11ee3d33f`: `completed/failure`**. Artefato GitHub [13055030510](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41232297194/artifacts/13055030510), `.accounts-validation/results.jsonl` inspecionado por bytes via download conectado:
+
+- PASS: RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck, Lint (**9 gates**).
+- FAIL: E2E, `222 passed / 1 failed`; timeout 90000 ms dentro do `page.evaluate` de `settleTransitions`, `tests/e2e/frontend-mobile-navigation.spec.ts:68`, cenário 320px/texto 200% (linha 95); incidente de ownership A, registrado na PR #46 comentário [6550340205](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/46#issuecomment-6550340205).
+- NOT_RUN por fail-fast: Https, Deletion, Ihfr, Bootstrap, SchemaAudit (**5 gates**). O run não recebeu PASS global.
+- O teste de formulário C não aparece como falha do E2E; as capturas C não estavam no artefato (corrigir `TestInfo.outputPath`). Nenhuma prova visual C foi falsamente declarada.
+
+**Coordenação:** comentário de alocação de writer focal na #45 [6550339752](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6550339752). Sem novos provedores, banco hospedado, schema ou CI modificados. Esta entrada é evidência histórica do HEAD 53af107, não do futuro HEAD corrigido.
