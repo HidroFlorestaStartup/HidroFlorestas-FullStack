@@ -42,3 +42,36 @@ Se #45 integrar por squash/rebase, transportar somente os commits exclusivos ap�
 ## Riscos e parada focal
 
 Optionalidade somente visual mas ainda obrigatória no DTO, endereço antigo associado ao novo ponto, sobrescrita de edição manual e dependência síncrona de serviço externo são riscos focais. Decisão técnica pendente não autoriza contratar serviço. Bloquear somente o recorte dependente e avançar com contratos/testes independentes. Sem deploy, Neon, hosted migrations, SMTP, Cloudinary, REV-01–REV-03 ou ciência.
+
+## Projeto executado — recorte C e mapa concreto de paths
+
+**Git/ownership:** PR Draft #48, branch `feat/localizacao-endereco-opcional`, base imutável `07755822f5dc75fe2be1d924005d30ed99f64a0b`. G0 `e1ec632d60b22f2ddef93f1dbec0116d214d30f1`. Na inspeção inicial, A #46 e B #47 tinham apenas seus documentos, sem arquivos de contrato/área alterados. Revisar novamente antes da integração compartilhada. Arquivo `AGENTS.md` na raiz rege os paths observados; não havia `AGENTS.md` mais específico nos diretórios inspecionados.
+
+| Arquivo/camada | Writer/alocação | Implementação |
+| --- | --- | --- |
+| `src/components/areas/area-form.tsx` | C | Inputs controlados, busca assíncrona, revisão/falha/CEP informativo, submissão legada segura |
+| `src/components/areas/area-geocoding-state.ts` | C | Máquina pura de revisões, proteção manual, invalidação de sugestões |
+| `src/components/areas/reverse-address.ts` | C | Leitura robusta e normalização estrita de município/UF/CEP |
+| `src/app/api/geocoding/reverse/route.ts` | C | Proxy opt-in autenticado com URL HTTPS configurável e timeout |
+| `src/components/areas/area-form-state.ts` | C (leitura) | Reutilizado sem alterar semântica antiga de geolocalização |
+| `src/components/areas/area-map.client.tsx` | C (leitura) | Clique já fornece coordenadas; nenhuma edição requerida |
+| `src/app/api/server/areas/area.contracts.ts`, `src/types/area.type.ts` | **Compartilhados/coordenador** | Somente leitura; permitir CEP mínimo após atribuição de writer |
+| `src/app/api/server/services/areas.service.ts`, `prisma/schema.prisma` | **Compartilhados/coordenador** | Somente leitura: `cep String?` e `...parsed` já existentes; **sem migration** |
+| `tests/unit/hf-ui037-geocoding.test.ts`, `tests/integration/hf-ui037-reverse-route.test.ts`, `tests/e2e/hf-ui037-location.spec.ts` | C | Testes novos, sem editar fixtures, runners ou config |
+| `tests/unit/area-contracts.test.ts`, `tests/unit/area-openapi-contract.test.ts`, `tests/e2e/area-registration.spec.ts` | **Compartilhados/coordenador** | Assertivas da spec 003 precisam ser reconciliadas com decisão posterior UI-07 |
+
+**Autoridade:** DECISAO_CONFIRMADA UI-07 em #44 supera apenas a antiga exclusão de CEP do contrato mínimo da spec 003. Código/schema existentes continuam baseline, não aprovação de nova taxonomia ou ciência. Constituição/spec kit v1.0.0; nenhuma alteração histórica da 003 ou docs/raw.
+
+### Adaptação de geocodificação (RECOMENDACAO técnica, não seleção de fornecedor)
+
+`HF_REVERSE_GEOCODER_URL` é um endpoint HTTPS externo configurado **somente se o operador aprovar um fornecedor e seus termos**. O servidor faz GET com `lat`/`lon`, envia Accept JSON, não encaminha sessão/cookies, aborta após 5 segundos, retorna somente `{address:{municipality,state,cep}}` ou 503. Não armazena coordenadas no cache. As respostas podem incluir `address.city/town/municipality/village/state/postcode` ou campos normalizados, e só passam CEP brasileiro com 8 dígitos e UF reconhecida. API própria exige autenticação; não permite que o cliente defina a URL do fornecedor. Chaves de fornecedor não são introduzidas nem expostas.
+
+**O endpoint público Nominatim NÃO foi escolhido/ativado.** A política oficial acessada em 31/10/2026: https://operations.osmfoundation.org/policies/nominatim/ impõe máximo agregado de 1 requisição/s, User-Agent/Referer identificável, atribuição e regras ODbL, cache e capacidade de substituição; geocodificação automática/bulk é proibida em determinados contextos. Não existe neste recorte limitador global/distribuído ou cache operacional aprovado. Apontar o env para esse host sem aprovação, implementação desses controles e revisão de privacidade/termos **não é permitido por este plano**. Documentação de API reversa: https://nominatim.org/release-docs/latest/api/Reverse/. O retorno reverso pode ser do objeto próximo e não representar endereço exato; revisão humana permanece obrigatória.
+
+**Privacidade:** latitude/longitude descrevem pontos potencialmente sensíveis. Antes de ativar fornecedor externo, decidir retenção/logs, base legal/aviso, país, limites, atribuição e revogação de acesso; nenhum dado pessoal ou coordenada real foi enviado nesta execução. Sem provedor, os fluxos de cadastro existentes continuam funcionais.
+
+### Validação e integração
+
+Os testes unitários exercitam o reducer e parsing/normalização, os de integração exercitam autenticação/contrato do endpoint com fetch simulado, e E2E usa fixtures sintéticas existentes e interceptação de rede (sem provedor público). Nenhum arquivo de execução de CI foi editado. Consultar `implementation-evidence.md` para resultados reais, run e tentativa específicos; status NÃO deve ser inferido de criação de teste ou do G0.
+
+Patch compartilhado proposto ao coordenador da #45 (comentário #6547701906): [contracts/cep-api-extension.md](contracts/cep-api-extension.md). Não existe writer delegado nesta execução, portanto não aplicar a atualização de DTO/API nesta branch sem alocação. Se alocado, os testes de contrato e E2E devem verificar CEP persistido em PostgreSQL sintético e todas as antigas assertivas conflitantes antes de encerrar UI-07.
