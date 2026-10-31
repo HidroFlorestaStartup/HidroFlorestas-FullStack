@@ -63,3 +63,32 @@ Sobreposição da barra mobile, foco perdido, rotas reais alteradas e concorrên
 **Regressão exigida:** `npm run test:unit`, `npm run typecheck`, `npm run lint`, `npm run build`, `npm run test:e2e`, runner sintético oficial `scripts/rc-review-validation.ps1` com 15 gates no HEAD final. Só GitHub Actions com dados próprios; nunca usar banco/provedores hospedados. Se a falha IHFR no baseline G0 persistir, manter FAIL sem editar ciência.
 
 **Limitação visual:** starter `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f` é somente leitura; capturas atuais de FullStack podem surgir do E2E e são claramente identificadas pelo run, mas não comprovam a comparação bilateral sem runtime starter. Visuais antigos da #44 não são tratados como execução.
+
+## Ciclo Spec Kit ANALYZE → PLAN → IMPLEMENT → REVIEW — correção pós-CI #46 (31/10/2026)
+
+### ANALYZE (somente leitura, executado contra o HEAD d8951199)
+Reconciliados FR-035-001..005 (5), SC-035-001..004 (4) e T001..T009 (9). Sem requisitos órfãos, mas persistem lacunas de **evidência de aceite**: UI-06/T007 carece da comparação de dois runtimes; T008 não tinha suite PASS; T003/T005 estavam marcadas como escritas, não testadas; T002 não passou pela CLI Spec Kit. Constituição 1.0.0 mantida; nunca converter aprovação de UI em aprovação de código.
+
+A fonte de diagnóstico **é o ZIP real da Actions** `41232069860` tentativa1, SHA `d8951199baa88beddb930b2ce14e33b9848cbe18`, artefato `13054207847`, SHA-256 `9979305f73e4bde6a1480dfa5849d3a86171e2c30025e27434eaa4f9eac1ba05`. Foram 9 gates PASS; `E2E` FAIL com 213 PASS/10 FAIL; os cinco gates subsequentes não rodaram (HTTPS, Deletion, IHFR, Bootstrap, SchemaAudit). Achados reproduzíveis nos logs e PNGs do próprio SHA:
+
+| ID | Severidade | Sintoma comprovado | Origem/Risco |
+| --- | --- | --- | --- |
+| A-01 | HIGH | fluxo real de recuperação espera link Alterar senha no header; novo disclosure Conta não foi aberto | expectativa E2E stale; jornada ainda precisa autenticação real |
+| A-02 | HIGH | em 844×390, texto200, controles de coleta/ambientais estão por trás do header sticky (175px), `elementFromPoint` atinge `headerInfo` | identidade da UI-01 pode causar wrap; teste de geometria não pode ser enfraquecido |
+| A-03 | HIGH | no laboratório, três testes UI-035 falham ao focar último controle com barra fixa; PNG 320/text200 tem rótulos sobrepostos | foco e reflow inadequados |
+| A-04 | HIGH | duas regressões de dashboard com respostas reais retidas chegam a timeout durante troca de laboratório | helper de teste usava navegação dentro do segmento suspenso; preservar contraprova de dados stale |
+| A-05 | MEDIUM | suite mobile antiga aguarda animações continuamente no texto200 até timeout90s | proteger prontidão sem dispensar verificação de visibilidade/foco |
+| A-06 | HIGH | UI-06 bilateral runtime starter/FullStack não executada | T007 e SC-035-003 continuam pendentes |
+| A-07 | HIGH | 5 gates bloqueados por E2E FAIL | 15 gates precisam ser observados em HEAD final |
+
+### PLAN / ownership preservado
+- Corrigir a cadeia UX real em `TopBar` e sua regressão de conta; **nenhuma** mudança em login, sessão, POST de logout, senhas, exclusão ou mock de serviços.
+- Corrigir reflow do footer em alta escala por wrapping de links sem quebrar palavras, mantendo `aria-current`, role e nomes; reservar espaço real após o último conteúdo.
+- Conter altura visual do cabeçalho desktop entre 768–1023 mesmo com texto200: identidade truncada visualmente (nome completo acessível no disclosure), sem perder componente nem alterar auth.
+- Fazer `use-content-scroll` deslocar apenas o scrollport dono em um passo determinístico; preservar scroll cache e sem relaxar asserts de geometria.
+- No teste de dashboard com API intencionalmente bloqueada, iniciar retorno pelo link **persistente** do cabeçalho; o teste novo 035 permanece cobrindo retorno pela navegação contextual e autorização.
+- Animações: limitar repetições de espera apenas no auxiliar do shell; foco/visibilidade/teclado continuam assertions funcionais.
+- Executar suite preservada `rc-review-validation.ps1` no SHA final pela Actions oficial, inspecionar ZIP por gate e comparar falhas e screenshots; não tocar workflows, globais, dependências, B/C, fixtures ou ciência.
+
+### REVIEW gates e critérios de saída
+PASS somente quando o artefato final mostrar testes focais, segurança e todos os 15 gates PASS no mesmo SHA. Se houver FAIL, diagnosticar seu stack trace, não mascarar via `test.skip`, falso retorno ou timeout arbitrário. Se apenas 10 gates executarem, registrar os cinco restantes NOT_RUN. Comparação bilateral UI-06 segue independente da cobertura executável: **não dizer COMPLETO sem executar o starter**. Revalidar `GUARD_SHA`, development e ownership antes do push; manter PR #46 Draft sem merge/deploy. Se tempo/ambiente impossibilitar execução visual, registrar pendência factual.

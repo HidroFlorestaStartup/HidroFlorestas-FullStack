@@ -32,3 +32,13 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - T007: pendente comparação executada bilateral starter/FullStack nos mesmos estados; não substituir screenshot histórica por screenshot de teste.
 - T008: a execução G0 41216365650 teve FAIL IHFR, apesar de Build/Typecheck/Lint/E2E/HTTPS/Deletion PASS até aquela etapa. A execução final será examinada por run/SHA/tentativa.
 - T009: pacote próprio de código, testes, specs e PR preparada/publicação; concluir somente após commit e atualização na PR, sem atribuir aceite humano ou CI verde.
+
+## Ciclo de reparo pós-RED — execução da rodada A2
+
+- [x] T010 [ANALYZE] Inventariar 10 falhas reais do artefato `41232069860/13054207847`, por arquivo/linha/geometry, mantendo G0 e d8951199 separados.
+- [x] T011 [PLAN] Confrontar achados com FR-035, SC-035, constituição, Code-First e ownership; fixar reparos de conta, header, foco, footer e dashboard sem editar B/C.
+- [x] T012 [IMPLEMENT] Corrigir apenas shell/TopBar e suites consumidoras A, preservando verificações de autorização e asserts de geometria, com novo commit candidato.
+- [ ] T013 [REVIEW] Reexecutar o runner oficial de 15 gates no SHA da publicação A2 e qualificar PASS/FAIL por log/artefato.
+- [ ] T014 [REVIEW] Conferir capturas e geométricas móveis reais do SHA A2, checkout/layout e foco em 320/text200 e paisagem 844×390/text200.
+- [ ] T015 [REVIEW] Executar comparação bilateral starter/FullStack runtime ou preservar T007 como NOT_RUN.
+- [ ] T016 Atualizar evidências e PR46 com SHA/attempt do resultado final e bloqueios, sem simular revisão independente.
