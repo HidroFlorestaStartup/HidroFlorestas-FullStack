@@ -445,7 +445,7 @@ function responseBarrier() {
 }
 
 async function chooseEmptyLaboratoryThroughWorkspace(page: Page) {
-  await page.getByRole("navigation", { name: "Navegação principal", exact: true })
+  await page.getByRole("navigation", { name: "Laboratório", exact: true })
     .getByRole("link", { name: "Laboratórios", exact: true }).click();
   await expect(page).toHaveURL(/\/workspace$/);
   const laboratory = page.getByRole("listitem").filter({

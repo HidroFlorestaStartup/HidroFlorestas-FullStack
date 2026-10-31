@@ -205,7 +205,7 @@ test("contextual roles, inactive access, explicit change and history stay real",
   await login(context, info);
   await page.goto(`/dashboard/laboratories/${AREA_FIXTURES.laboratoryIds[1]}/areas`); await settled(page);
   await expect(page.getByText("OWNER · Inativo · Somente leitura", { exact: true })).toBeVisible();
-  await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Laboratórios", exact: true }).click();
+  await page.getByRole("navigation", { name: "Laboratório", exact: true }).getByRole("link", { name: "Laboratórios", exact: true }).click();
   await expect(page).toHaveURL(/\/workspace$/);
   await card(page).getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true }).click();
   await expect(page).toHaveURL(new RegExp(`${base}$`));
