@@ -68,11 +68,11 @@ async function settleTransitions(page: Page) {
   // two layout frames; the following focus and hit/visibility assertions are
   // the actual correctness gate, never the animation promise itself.
   await page.evaluate(async () => {
-    const transitionEnds = document.getAnimations().filter(animation =>
-      animation.playState === "running" &&
-      Number.isFinite(animation.effect?.getComputedTiming().endTime) &&
-      (animation.effect?.getComputedTiming().endTime ?? Infinity) <= 1000
-    ).map(animation => animation.finished);
+    const transitionEnds = document.getAnimations().filter(animation => {
+      const endTime = animation.effect?.getComputedTiming().endTime;
+      return animation.playState === "running" &&
+        typeof endTime === "number" && Number.isFinite(endTime) && endTime <= 1000;
+    }).map(animation => animation.finished);
     if (transitionEnds.length) {
       await Promise.race([
         Promise.allSettled(transitionEnds),

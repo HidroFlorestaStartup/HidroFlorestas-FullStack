@@ -57,3 +57,9 @@ Achados A3, diretamente reproduzidos de log/geometria do artefato:
 - `hf-ui035-navigation.spec.ts` 320/375/390: diagnóstico `focus:false`, `scrollTop=0` na tentativa de `last.focus()`. A seleção anterior incluía o último botão desabilitado `Mais antigos`; controles desabilitados não são foco operável. O teste agora verifica último link/botão/campo **habilitado**, exige `toBeFocused()` e mantém teste de cabeçalho/rodapé sem sobreposição. A condição disabled da página não foi alterada.
 
 Os reparos são autoria de código/testes, **não PASS**: é indispensável a Actions no novo HEAD com artefatos/geométricas. UI-06 bilateral starter x FullStack, revisão independente e aceite humano seguem NOT_RUN. Segurança, autorização, dados, fixtures, provedores, ciência e workflow não foram alterados.
+
+## Red A3 → correção A4 de tipagem
+
+**Prova real**: [Actions 41252699370](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41252699370), tentativa1, HEAD `8b9a60c3ff36f7ab80ef58eb8d035b71a2d60822`, status `completed/failure`. Journal: seis gates PASS (`RegressionSetup`, `Unit`, `Integration`, `Migration`, `Contract`, `R1`); `Build FAIL` após compilação Next bem-sucedida, na etapa TypeScript: `tests/e2e/frontend-mobile-navigation.spec.ts(74,7): TS2365 Operator '<=' cannot be applied to types CSSNumberish and number`. Oito gates posteriores NOT_RUN. ZIP Actions `13062425992` SHA256 `5d5c032f30e94259e91866463dcbc150b1fa015e7c87b853b0b86b1fca39a124`.
+
+**Reparo:** uso de variável `endTime` guardada por `typeof endTime === 'number'` antes de `Number.isFinite` e `<=1000` no teste de frontend mobile. Sem alterações em CSS, API, permissões, testes de domínio, fixtures ou CI. Este texto não comprova Build/E2E verdes da A4; requer novo run por SHA.
