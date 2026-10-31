@@ -169,12 +169,19 @@ test("collection, environmental confirmation and IHFR creation work without brow
   const areaUrl = collectionNewUrl.replace(/\/collections\/new$/, "");
   await page.goto(areaUrl);
   const entries = page.getByRole("list", { name: "Coletas ordenadas por ocorrência em campo" }).getByRole("listitem");
-  await expect(entries.first()).toContainText(laterId);
+  // The IMP-006 fixture legitimately contains other coletas (including records
+  // newer than our synthetic pair). Assert relative order of these two field
+  // occurrences, not an absolute first position in a shared, owned test area.
+  const displayed = await entries.allTextContents();
+  const laterIndex = displayed.findIndex(text => text.includes(laterId));
+  const originalIndex = displayed.findIndex(text => text.includes(collectionId));
+  expect(laterIndex).toBeGreaterThanOrEqual(0);
+  expect(originalIndex).toBeGreaterThan(laterIndex);
   const latest = page.getByRole("complementary", { name: "Último IHFR disponível da área" });
   await expect(latest).toContainText("Coleta de origem:");
   await expect(latest).toContainText(collectionId);
   await expect(latest).toContainText("validação científica pendente");
-  await entries.first().getByRole("link", { name: "IHFR", exact: true }).click();
+  await entries.filter({ hasText: laterId }).getByRole("link", { name: "IHFR", exact: true }).click();
   await expect(page).toHaveURL(areaUrl + "/collections/" + laterId);
   await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
 });
