@@ -48,6 +48,12 @@ it("keeps the historical IMP-003 contract intact and versioned 037 extension exp
   assert.ok(field in schemas.AreaSummary.properties);
   assert.ok(field in schemas.AreaDetail.properties);
  }
- assert.ok(schemas.CreateAreaInput.properties.cep.pattern);
+ const inputPattern=new RegExp(schemas.CreateAreaInput.properties.cep.pattern);
+ assert.equal(inputPattern.test("65000123"),true);
+ assert.equal(inputPattern.test("65000-123"),true);
+ assert.equal(inputPattern.test("6500-123"),false);
+ const responsePattern=new RegExp(schemas.Cep.pattern);
+ assert.equal(responsePattern.test("65000-123"),true);
+ assert.equal(responsePattern.test("65000123"),false);
  assert.equal("cep" in old.components.schemas.CreateAreaInput.properties,false);
 });

@@ -71,7 +71,7 @@ components:
   schemas:
     Cep:
       type: [string, 'null']
-      pattern: '^\\d{5}-\\d{3}$'
+      pattern: '^\d{5}-\d{3}$'
       description: CEP brasileiro com hífen após normalização; null quando não fornecido
     CreateAreaInput:
       type: object
@@ -85,7 +85,7 @@ components:
         state: {type: [string, 'null'], maxLength: 100}
         cep:
           type: [string, 'null']
-          pattern: '^\\d{5}-?\\d{3}$'
+          pattern: '^\d{5}-?\d{3}$'
           description: Aceita 8 dígitos com ou sem hífen; normalizado no servidor
         landType: {type: [string, 'null'], maxLength: 100}
         description: {type: [string, 'null'], maxLength: 2000}

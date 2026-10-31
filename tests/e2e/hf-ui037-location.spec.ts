@@ -69,6 +69,13 @@ test("three coordinate sources display partial address suggestions without requi
     await info.attach(name, { path: png, contentType: "image/png" });
     await info.attach(name + "-viewport", { path: meta, contentType: "application/json" });
   }
+  await page.getByLabel("Nome da área").fill(`${AREA_FIXTURES.prefix} UI037 automatic CEP`);
+  const savedResponse=page.waitForResponse(response=>response.url().endsWith(api)&&response.request().method()==="POST");
+  await page.getByRole("button", {name:"Confirmar ponto e cadastrar"}).click();
+  const saved=await savedResponse;
+  expect(saved.status()).toBe(201);
+  expect(saved.request().postDataJSON().cep).toBe("65000-000");
+  expect((await saved.json()).area.cep).toBe("65000-000");
 });
 
 test("manual corrections survive a late suggestion and changing point clears only inferred values", async ({ page, context }, info) => {
