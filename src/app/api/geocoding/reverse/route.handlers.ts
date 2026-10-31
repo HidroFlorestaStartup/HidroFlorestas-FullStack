@@ -4,6 +4,7 @@ type Deps = {
   authorize: () => Promise<unknown>;
   endpoint: () => string | undefined;
   fetcher: typeof fetch;
+  timeoutMs?: number; // injection for deterministic timeout test; production default remains 5 seconds
 };
 const noStore = { "Cache-Control": "no-store", "Content-Type": "application/json; charset=utf-8" };
 const json = (data: unknown, status: number) =>
@@ -38,7 +39,7 @@ export function createReverseGeocodingHandler(deps: Deps) {
     endpoint.searchParams.set("lat", String(latitude));
     endpoint.searchParams.set("lon", String(longitude));
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
+    const timeout = setTimeout(() => controller.abort(), deps.timeoutMs ?? 5000);
     try {
       const response = await deps.fetcher(endpoint.toString(), {
         method: "GET", headers: { Accept: "application/json" },

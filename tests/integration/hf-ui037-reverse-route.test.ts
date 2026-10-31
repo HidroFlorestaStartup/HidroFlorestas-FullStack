@@ -39,3 +39,24 @@ it("normalizes partial data; a provider failure/limit cannot block submission", 
   const offline = createReverseGeocodingHandler({ authorize: async () => ({}), endpoint: () => "https://approved.example/reverse", fetcher: async () => { throw new Error("offline"); } });
   assert.equal((await offline(request())).status, 503);
 });
+
+it("bounds pending upstream requests by a real abort timeout without changing area writes", async () => {
+  let observedAbort = false;
+  const fetcher: typeof fetch = async (_input, init) =>
+    new Promise((_resolve, reject) => {
+      const signal = init?.signal;
+      if (!signal) return reject(new Error("Missing abort signal"));
+      signal.addEventListener("abort", () => {
+        observedAbort = true;
+        reject(new DOMException("Aborted", "AbortError"));
+      }, { once: true });
+    });
+  const route = createReverseGeocodingHandler({
+    authorize: async () => ({}), endpoint: () => "https://approved.example/reverse",
+    fetcher, timeoutMs: 5,
+  });
+  const response = await route(request());
+  assert.equal(response.status, 503);
+  assert.equal(observedAbort, true);
+  assert.equal(response.headers.get("cache-control"), "no-store");
+});

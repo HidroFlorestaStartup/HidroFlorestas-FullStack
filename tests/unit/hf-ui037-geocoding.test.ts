@@ -66,3 +66,13 @@ it("client lookup makes an abortable same-origin request and never requires remo
   assert.equal(result.municipality, "Bacabeira");
   assert.equal(result.cep, null);
 });
+
+it("rejects stale failure or stale start after the user changes a point", () => {
+  const first = areaDraftReducer(initialAreaDraft(), { type: "point-edit", latitude: "-2", longitude: "-44" });
+  const next = areaDraftReducer(first, { type: "point-edit", latitude: "-3", longitude: "-45" });
+  const ready = areaDraftReducer(next, {
+    type: "lookup-success", revision: 2, address: { municipality: "Cidade atual", state: null, cep: null },
+  });
+  assert.equal(areaDraftReducer(ready, { type: "lookup-failed", revision: 1 }), ready);
+  assert.equal(areaDraftReducer(ready, { type: "lookup-start", revision: 1 }), ready);
+});
