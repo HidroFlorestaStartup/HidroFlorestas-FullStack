@@ -1,7 +1,7 @@
 import type { CollectionArea } from "@/generated/prisma";
 import type { LaboratoryContext } from "./area.authorization";
 import type { AreaDetailDto, AreaSummaryDto } from "@/types/area.type";
-export type CreateAreaInput = { name: string; latitude: number; longitude: number; municipality: string|null; state: string|null; cep: string|null; landType: string|null; description: string|null };
+export type CreateAreaInput = { name: string; latitude: number; longitude: number; municipality: string|null; state: string|null; cep?: string|null; landType: string|null; description: string|null };
 const keys=["name","latitude","longitude","municipality","state","cep","landType","description"];
 export function parseAreaInput(value: unknown): CreateAreaInput | null {
  if(typeof value!=="object"||value===null||Array.isArray(value))return null;
