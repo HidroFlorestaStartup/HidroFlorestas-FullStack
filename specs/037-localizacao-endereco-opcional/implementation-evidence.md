@@ -72,3 +72,7 @@ Changesets staged em commits descendentes do HEAD 53af107: extensão de CEP opci
 - Integration, Migration, Contract, R1, Build, Typecheck, Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit: **NOT_RUN**, runner fail-fast sem enfraquecimento.
 
 Correção T018 adicionada na mesma branch por commit derivado (contrato ativo em memória = IMP-003 + extensão 037), sem reescrever contrato histórico e mantendo assertions `additionalProperties:false`. Teste Unit corrigido **NÃO FOI EXECUTADO** neste snapshot; aguardar run final para declarar PASS.
+
+## Run de validação depois da correção de paridade
+
+[Run 41251491666](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251491666), tentativa 1, SHA `506cb57b38bd798bf37f369d1d153c6ccf662097`: `completed/failure`. **PASS:** RegressionSetup, Unit, Integration, Migration, Contract e R1. **FAIL:** Build, somente erros de tipagem TS2345 nas linhas 24/28 de `tests/unit/areas-service.test.ts`: fixture sem CEP passada a um `CreateAreaInput` que exigia CEP apesar de opcional no POST. **NOT_RUN:** Typecheck, Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit. A correção subsequente foi restringir `CreateAreaInput.cep` a propriedade TypeScript opcional; `parseAreaInput` continua devolvendo `cep:null` em ausência. O status do próximo SHA deve ser coletado separadamente.

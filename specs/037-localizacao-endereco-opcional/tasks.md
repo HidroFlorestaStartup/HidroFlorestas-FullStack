@@ -49,3 +49,5 @@ G0 não concluiu tarefas de implementação/testes. A reserva 037 não autoriza 
 **Nota após a correção:** T006/T007 e T012–T015 marcadas como código/testes implementados, não como CI verde. T010/T011/T017 continuam abertas até revisão do SHA final e atualização do PR. A ausência de provedor aprovado é gate operacional separado, não autorização para chamadas externas.
 
 - [x] T018 [US2] Corrigir paridade do serializer no arquivo de teste corrente `tests/unit/area-openapi-parity.test.ts` compondo schema IMP-003 + extensão 037 e mantendo asserções de contrato fechado; teste e revisão de runtime pendentes de novo SHA.
+
+- [x] T019 [US2] Preservar compatibilidade de consumidores `CreateAreaInput` em `src/app/api/server/areas/area.contracts.ts` com `cep?:string|null`, mantendo `parseAreaInput` normalizado; comprovação de Typecheck/Build depende de run posterior.

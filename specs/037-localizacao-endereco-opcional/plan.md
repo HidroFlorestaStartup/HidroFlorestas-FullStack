@@ -104,3 +104,7 @@ Consulte [analysis-review.md](analysis-review.md), [research.md](research.md), [
 ## Revisão de paridade após primeiro run de CEP
 
 A suíte Unit identificou validador vivo ainda vinculado ao contrato IMP-003 original. Contrato de operação atual deve ser a composição da base fechada IMP-003 **mais** o delta CEP autorizado 037: não remover regras de permissões, privacidade, campos fechados e cover. A atualização de `tests/unit/area-openapi-parity.test.ts` altera somente a fonte de validação do teste corrente, mantém exemplos de 003 inalterados e adiciona CEP nulo nos exemplos em memória. Resultado do run 41251238442 pertence exclusivamente ao SHA antigo 91565eb; corrigir depois validar novamente.
+
+## Compatibilidade TS de entrada de área
+
+Ao admitir campo novo opcional na API, o tipo `CreateAreaInput` não pode obrigar todos os consumidores internos legados a fornecer `cep:null`. O parser sempre retorna objeto com valor explícito normalizado, mas o parâmetro de serviço e fixtures TypeScript aceitam omissão via `cep?:string|null`. O runner mostrou essa incompatibilidade no Build de 506cb57 (TS2345), não na paridade Unit; a correção é estritamente de tipo e não exige migration ou mudança de permissões.
