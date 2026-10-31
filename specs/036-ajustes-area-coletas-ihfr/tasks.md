@@ -31,8 +31,8 @@ Nenhuma tarefa de produto/teste foi marcada concluída por G0. Não paralelizar 
 
 **T001–T007 [x]** significam produção do código, dos testes e da documentação técnica correspondentes, **não** aprovação dos testes. O E2E sintético de B ainda aguarda resultado terminal no HEAD implementado.
 
-**T008 [ ]**: as capturas viewport foram programadas no harness existente com \`fullPage:false\` e registros geométricos, mas a comparação real starter x FullStack no mesmo estado não foi realizada, nem se alegam provas visuais inexistentes.
+**T008 [ ]**: as capturas viewport foram programadas no harness existente com `fullPage:false` e registros geométricos, mas a comparação real starter x FullStack no mesmo estado não foi realizada, nem se alegam provas visuais inexistentes.
 
-**T009 [ ]**: havia run real G0 com 9 gates PASS, E2E FAIL e 5 gates posteriores NOT_RUN. Run do código B \`41231960336\` (SHA \`9a34e1a76d75b384a87bab2093ff138b3488094f\`) foi observado PENDING; o novo HEAD documental deverá ter sua própria execução verificada. Não confundir PASS de outro SHA.
+**T009 [ ]**: havia run real G0 com 9 gates PASS, E2E FAIL e 5 gates posteriores NOT_RUN. Run do código B `41231960336` (SHA `9a34e1a76d75b384a87bab2093ff138b3488094f`) foi observado PENDING; o novo HEAD documental deverá ter sua própria execução verificada. Não confundir PASS de outro SHA.
 
 **T010 [x]**: spec/plano/tarefas/evidências na reserva 036 e atualização da PR Draft #47 são parte da mesma publicação; dependências humanas não foram fechadas e seguem listadas como pendências. Nenhum merge/deploy.

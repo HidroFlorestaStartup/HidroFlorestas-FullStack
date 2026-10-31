@@ -48,30 +48,30 @@ Ordenação textual de datas, misturar último diagnóstico com última coleta, 
 
 ## Mapa real de imports, contratos e writer B
 
-Os caminhos abaixo foram confirmados por inspeção do HEAD G0 \`353a3fd00bc7d4155ab3fc2f17ad063e7108d68f\` e alterados exclusivamente pelo executor B; nenhuma alteração a arquivos compartilhados de A/C foi absorvida.
+Os caminhos abaixo foram confirmados por inspeção do HEAD G0 `353a3fd00bc7d4155ab3fc2f17ad063e7108d68f` e alterados exclusivamente pelo executor B; nenhuma alteração a arquivos compartilhados de A/C foi absorvida.
 
 | Camada | Arquivo exato | Contrato / limitação |
 | --- | --- | --- |
-| Rota área | \`src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx\` | \`requireAuth\`, \`areasService.detail\`; anexa o componente B, mantém mapa/capa/formulário existente |
-| Leitura B de coleções | \`src/app/api/server/collections/area-collections.read.ts\` | \`authorizeLaboratoryAccess\` (READ_AREAS + READ_IHFR_DIAGNOSIS), valida laboratório/área, consulta somente registros completos com ponteiro CURRENT |
-| Projeção pura B | \`src/components/areas/area-collections-presentation.ts\` | preservar offset RFC3339; instante UTC desc; desempate por UUID desc; primeira coleta com ponteiro vigente |
-| UI B de área | \`src/components/areas/area-collections.tsx\` | lista, origem do IHFR, links reais para coleta/ambiental/IHFR, ausência explícita; dados de score persistido |
-| Rota coleta | \`src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx\` | \`collectionsService.detail\`, \`ihfrDiagnosisService.readCurrent\`, leitura de existência de medições e \`READ_IHFR_DIAGNOSIS\`; desktop duas colunas |
-| Leitura presença ambiental B | \`src/app/api/server/collections/collection-environmental-presence.read.ts\` | \`READ_ENVIRONMENTAL_DATA\`, contexto completo, \`environmentalMeasurementSet\` sem parse do payload/versão, para não bloquear leitura de coleta legada |
-| Conteúdo coleta | \`src/components/collections/collection-detail.tsx\` | mensagem humana, CTA de registro quando ativo; metadados confirmados imutáveis e link ambiental |
-| Resultado | \`src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx\` | \`<details>/<summary>\` nativos, quatro qualificadores e proveniência preservados |
-| Gestão de diagnóstico | \`src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx\` | feedback humano traduz razões técnicas; sem mudança de transação/idempotência |
-| Unidade | \`tests/unit/hf-ui036-area-presentation.test.ts\`, \`tests/unit/frontend-ihfr-presentation.test.tsx\` | ordem/offset/corrente/ausência/teclado sem motor científico |
-| E2E | \`tests/e2e/hf-ui036-area-collections.spec.ts\`, \`tests/e2e/ihfr-diagnosis-read.spec.ts\` | fixtures isoladas PostgreSQL sintético, rota completa, viewports 320/375/390/768/1440 e 200%, máscara em capturas; testes pré-existentes com asserções adaptadas ao disclosure aprovado |
+| Rota área | `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx` | `requireAuth`, `areasService.detail`; anexa o componente B, mantém mapa/capa/formulário existente |
+| Leitura B de coleções | `src/app/api/server/collections/area-collections.read.ts` | `authorizeLaboratoryAccess` (READ_AREAS + READ_IHFR_DIAGNOSIS), valida laboratório/área, consulta somente registros completos com ponteiro CURRENT |
+| Projeção pura B | `src/components/areas/area-collections-presentation.ts` | preservar offset RFC3339; instante UTC desc; desempate por UUID desc; primeira coleta com ponteiro vigente |
+| UI B de área | `src/components/areas/area-collections.tsx` | lista, origem do IHFR, links reais para coleta/ambiental/IHFR, ausência explícita; dados de score persistido |
+| Rota coleta | `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx` | `collectionsService.detail`, `ihfrDiagnosisService.readCurrent`, leitura de existência de medições e `READ_IHFR_DIAGNOSIS`; desktop duas colunas |
+| Leitura presença ambiental B | `src/app/api/server/collections/collection-environmental-presence.read.ts` | `READ_ENVIRONMENTAL_DATA`, contexto completo, `environmentalMeasurementSet` sem parse do payload/versão, para não bloquear leitura de coleta legada |
+| Conteúdo coleta | `src/components/collections/collection-detail.tsx` | mensagem humana, CTA de registro quando ativo; metadados confirmados imutáveis e link ambiental |
+| Resultado | `src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx` | `<details>/<summary>` nativos, quatro qualificadores e proveniência preservados |
+| Gestão de diagnóstico | `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx` | feedback humano traduz razões técnicas; sem mudança de transação/idempotência |
+| Unidade | `tests/unit/hf-ui036-area-presentation.test.ts`, `tests/unit/frontend-ihfr-presentation.test.tsx` | ordem/offset/corrente/ausência/teclado sem motor científico |
+| E2E | `tests/e2e/hf-ui036-area-collections.spec.ts`, `tests/e2e/ihfr-diagnosis-read.spec.ts` | fixtures isoladas PostgreSQL sintético, rota completa, viewports 320/375/390/768/1440 e 200%, máscara em capturas; testes pré-existentes com asserções adaptadas ao disclosure aprovado |
 
-Dependências **somente leitura**: \`src/app/api/server/services/areas.service.ts\`, \`collections.service.ts\`, \`environmental-data.service.ts\`, \`ihfr-diagnosis.service.ts\`, \`src/app/api/server/areas/area.authorization.ts\`, \`src/lib/collection-date-time.ts\`, \`prisma/schema.prisma\`, \`src/types/*\`, \`src/components/areas/areas.module.css\`, \`src/components/collections/collections.module.css\`. Componentes compartilhados e DTOs pertencentes ao coordenador não sofreram escrita.
+Dependências **somente leitura**: `src/app/api/server/services/areas.service.ts`, `collections.service.ts`, `environmental-data.service.ts`, `ihfr-diagnosis.service.ts`, `src/app/api/server/areas/area.authorization.ts`, `src/lib/collection-date-time.ts`, `prisma/schema.prisma`, `src/types/*`, `src/components/areas/areas.module.css`, `src/components/collections/collections.module.css`. Componentes compartilhados e DTOs pertencentes ao coordenador não sofreram escrita.
 
-Fontes Code-First relacionadas: \`docs/code-first-prd/README.md\` e \`governance/source-policy.md\` (**EM_REVISAO**, não normativos); \`specs/021-frontend-areas-cover/\`, \`023-frontend-collections/\`, \`024-frontend-environmental-drafts/\`, \`025-frontend-ihfr/\`, \`docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md\` (v0.1 experimental). Fonte de decisão de UI: PR #44 no SHA congelado.
+Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/source-policy.md` (**EM_REVISAO**, não normativos); `specs/021-frontend-areas-cover/`, `023-frontend-collections/`, `024-frontend-environmental-drafts/`, `025-frontend-ihfr/`, `docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md` (v0.1 experimental). Fonte de decisão de UI: PR #44 no SHA congelado.
 
-\`AGENTS.md\` raiz e constituição Spec Kit lidos; não se localizaram \`AGENTS.md\` aninhados nos diretórios de escrita ou \`.specify/extensions.yml\`/checklist próprio de 036. \`scripts/rc-review-validation.ps1\` registra os 15 gates sem alterações. Execução foi via API GitHub, sem checkout atual com dependências Windows/Node 24; o ZIP local de setembro não é HEAD atual e não substitui evidência de runtime.
+`AGENTS.md` raiz e constituição Spec Kit lidos; não se localizaram `AGENTS.md` aninhados nos diretórios de escrita ou `.specify/extensions.yml`/checklist próprio de 036. `scripts/rc-review-validation.ps1` registra os 15 gates sem alterações. Execução foi via API GitHub, sem checkout atual com dependências Windows/Node 24; o ZIP local de setembro não é HEAD atual e não substitui evidência de runtime.
 
 ## Verificações de integração pendentes
 
 1. Comparar FullStack **e starter** com mesmos dados/viewport e registrar imagens reais; fixtures sintéticas da action não constituem tal comparação automaticamente.
 2. Ler conclusão dos 15 gates no SHA final, incluindo o E2E conhecido do shell com texto200, e só marcar PASS com logs. Guardar imagens e geometria criadas pelo harness E2E se o gate as produzir.
-3. A revisão por segundo executor e o aceite humano continuam pendentes; nenhuma ferramenta \`spawn_agent\` real estava disponível nesta sessão (\`NATIVE_SUBAGENTS_UNAVAILABLE\`).
+3. A revisão por segundo executor e o aceite humano continuam pendentes; nenhuma ferramenta `spawn_agent` real estava disponível nesta sessão (`NATIVE_SUBAGENTS_UNAVAILABLE`).
