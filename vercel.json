@@ -36,7 +36,12 @@
       "test/hf-night-local-scheduler-20261025": false,
       "test/hf-night-baseline-20261025": false,
       "feat/hf-night-01": false,
-      "release/hf-close-01-20261025": false
+      "release/hf-close-01-20261025": false,
+      "chore/hf-ui044-ci-preview-guards": false,
+      "feat/ajustes-navegacao-conta": false,
+      "feat/ajustes-area-coletas-ihfr": false,
+      "feat/localizacao-endereco-opcional": false,
+      "docs/handoff-ajustes-interface-20261030": false
     }
   }
 }

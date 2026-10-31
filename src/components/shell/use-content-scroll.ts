@@ -61,7 +61,7 @@ function remember(path: string, content: HTMLElement) {
   if (positions.size > 50) positions.delete(positions.keys().next().value!);
 }
 function revealFocus(target: HTMLElement, content: HTMLDivElement) {
-  if (document.activeElement !== target || target.closest("dialog[open]")) return;
+  if (document.activeElement !== target || target.closest("dialog[open]") || target.closest("#application-navigation")) return;
   const header = document.getElementById("application-header")?.getBoundingClientRect().bottom ?? 0;
   if (target === content) {
     if (ownScroll(content)) content.scrollTo({ top: 0, behavior: "instant" });
@@ -71,7 +71,16 @@ function revealFocus(target: HTMLElement, content: HTMLDivElement) {
   const box = target.getBoundingClientRect();
   if (ownScroll(content)) {
     const region = content.getBoundingClientRect();
-    if (box.top < region.top + 8 || box.bottom > region.bottom - 8) target.scrollIntoView({ block: "nearest", behavior: "instant" });
+    const rail = document.getElementById("application-navigation");
+    const bottom = rail && getComputedStyle(rail).position === "fixed"
+      ? Math.min(region.bottom, rail.getBoundingClientRect().top) : region.bottom;
+    if (box.top < region.top + 8 || box.bottom > bottom - 8) {
+      target.scrollIntoView({ block: "nearest", behavior: "instant" });
+      // scrollIntoView only knows the scrollport, not a fixed contextual rail.
+      const after = target.getBoundingClientRect();
+      if (after.bottom > bottom - 8) content.scrollBy({ top: after.bottom - bottom + 8, behavior: "instant" });
+      else if (after.top < region.top + 8) content.scrollBy({ top: after.top - region.top - 8, behavior: "instant" });
+    }
   } else if (box.top < header + 8 || box.bottom > innerHeight - 8) {
     target.scrollIntoView({ block: "center", behavior: "instant" });
   }
