@@ -38,3 +38,9 @@
 ## Plano de remediação aplicado (após análise estritamente read-only)
 
 O pedido do mantenedor autorizou seguir para PLAN/IMPLEMENT. Testes primeiro no mapa de tasks: contrato fechado com oito combinações, rejeição de entradas malformadas e injeções; atualização mínima do parser/DTO/form; E2E sintético verifica POST/GET/Prisma; screenshot passa ao outputPath. Não editar shell A nem mascarar FAIL de CI. Uma rodada terminal de CI no HEAD publicado define o resultado de REVIEW; estado inicial desses testes é `NOT_RUN_NO_FINAL_HEAD`.
+
+## Revisão pós-implementação — CONTRATO PARITY (HEAD 91565eb)
+
+[Run 41251238442](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251238442), tentativa 1, HEAD `91565eb9817ce341bbefe22708fa7ff1b8de3a1c`: **FAIL no gate Unit**, após PASS no RegressionSetup. Unit: **410 testes, 407 PASS, 3 FAIL**, todos em `tests/unit/area-openapi-parity.test.ts` (CRI-REV-005), porque o validador ainda aplicava o schema fechado da spec histórica 003 diretamente ao serializer atual, que agora devolve `cep`. Artefato `13061003416` e log `.accounts-validation/unit-1793488173436.log` foram lidos integralmente; os gates após Unit não rodaram.
+
+**Correção planejada/aplicada:** compor o schema ativo de área com o delta CEP da spec 037 em memória para validar o serializer, **sem alterar** o arquivo OpenAPI original 003; preservar `additionalProperties:false`, checar ausência de campos sensíveis e projetar exemplos históricos com `cep:null` apenas durante a validação do contrato novo. Ajustar fixture sintética para incluir CEP. Não falsear a autoridade histórica, não afrouxar o teste, não editar API/DTO de A/B. Submeter nova CI no SHA publicado.

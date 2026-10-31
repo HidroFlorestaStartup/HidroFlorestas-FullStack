@@ -62,3 +62,13 @@ Resultado de análise: [analysis-review.md](analysis-review.md); pesquisa [resea
 Changesets staged em commits descendentes do HEAD 53af107: extensão de CEP opcional normalizada no parser/DTO, submissão de CEP no formulário, manutenção do service sem migration, teste histórico de API atualizado no **código de teste corrente** (arquivo histórico da spec 003 não modificado), testes com 8 subconjuntos + persistência PostgreSQL sintética, snapshots de UI `TestInfo.outputPath` e contrato OpenAPI versionado. Os commits foram criados como objetos Git antes de mover a ref, preservando o HEAD observado; só a atualização fast-forward protegida da branch publica a composição.
 
 **EVIDÊNCIA NÃO DISPONÍVEL NESTE INSTANTE:** nenhum PASS dos testes corrigidos, screenshot gerado pelo código corrigido ou conclusão dos 15 gates pode ser declarado antes de run terminal do SHA final. Os PASS do run 41232297194 pertencem exclusivamente ao antigo HEAD 53af107. Provedor externo continua não configurado; revisão independente e aceite humano não foram realizados.
+
+## Run pós-CEP / falha de paridade atual versus histórica
+
+[Run #41251238442](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251238442), tentativa 1, SHA `91565eb9817ce341bbefe22708fa7ff1b8de3a1c`: `completed/failure`. Artifact [13061003416](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251238442/artifacts/13061003416) preserva o journal e `unit-1793488173436.log`.
+
+- RegressionSetup: **PASS**.
+- Unit: **FAIL** — 410 tests, 407 PASS, 3 FAIL, unicamente `tests/unit/area-openapi-parity.test.ts`; validador histórico rejeitou o novo `cep` serializado.
+- Integration, Migration, Contract, R1, Build, Typecheck, Lint, E2E, Https, Deletion, Ihfr, Bootstrap, SchemaAudit: **NOT_RUN**, runner fail-fast sem enfraquecimento.
+
+Correção T018 adicionada na mesma branch por commit derivado (contrato ativo em memória = IMP-003 + extensão 037), sem reescrever contrato histórico e mantendo assertions `additionalProperties:false`. Teste Unit corrigido **NÃO FOI EXECUTADO** neste snapshot; aguardar run final para declarar PASS.

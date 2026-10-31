@@ -100,3 +100,7 @@ Consulte [analysis-review.md](analysis-review.md), [research.md](research.md), [
 | CI/Preview e shell | Somente leitura; A e coordenador são writers | Run oficial e diagnóstico factual de #46 | C observa, não edita |
 
 **Critério de revisão:** nenhum PASS sem processo concluído, artefato visual existente e HEAD exato. Os previews falsos/guards herdados não foram alterados. A falha do cenário de navegação 320px texto 200% permanece em A e pode manter CI global FAIL mesmo com correção UI-07 local aprovada.
+
+## Revisão de paridade após primeiro run de CEP
+
+A suíte Unit identificou validador vivo ainda vinculado ao contrato IMP-003 original. Contrato de operação atual deve ser a composição da base fechada IMP-003 **mais** o delta CEP autorizado 037: não remover regras de permissões, privacidade, campos fechados e cover. A atualização de `tests/unit/area-openapi-parity.test.ts` altera somente a fonte de validação do teste corrente, mantém exemplos de 003 inalterados e adiciona CEP nulo nos exemplos em memória. Resultado do run 41251238442 pertence exclusivamente ao SHA antigo 91565eb; corrigir depois validar novamente.
