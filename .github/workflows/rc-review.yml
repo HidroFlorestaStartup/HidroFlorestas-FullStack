@@ -23,6 +23,9 @@ on:
       - release/frontend-rc-20261021
       - fix/investigacoes-intermitentes-20261023-local01
       - release/hf-close-01-20261025
+      - feat/ajustes-navegacao-conta
+      - feat/ajustes-area-coletas-ihfr
+      - feat/localizacao-endereco-opcional
   workflow_dispatch:
 
 permissions:
@@ -54,7 +57,10 @@ jobs:
       github.ref_name == 'feat/frontend-landing-consolidation' ||
       github.ref_name == 'release/frontend-rc-20261021' ||
       github.ref_name == 'fix/investigacoes-intermitentes-20261023-local01' ||
-      github.ref_name == 'release/hf-close-01-20261025'
+      github.ref_name == 'release/hf-close-01-20261025' ||
+      github.ref_name == 'feat/ajustes-navegacao-conta' ||
+      github.ref_name == 'feat/ajustes-area-coletas-ihfr' ||
+      github.ref_name == 'feat/localizacao-endereco-opcional'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:
