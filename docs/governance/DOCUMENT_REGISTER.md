@@ -1,5 +1,25 @@
 # Registro documental
 
+## Handoff de ajustes após testes manuais — 30/10/2026
+
+DECISAO_CONFIRMADA de Pedro Vítor nesta conversa: organização UI-01–UI-07, cinco
+esclarecimentos respondidos e confirmação “Okay, Concordo!”. Este registro é
+navegacional; implementação e aceite do resultado permanecem separados.
+
+| Documento/conjunto | Papel |
+| --- | --- |
+| [Índice](../plans/active/ajustes-interface-pos-testes-20261030/readme.md) e [plano](../plans/active/ajustes-interface-pos-testes-20261030/plano-de-execucao.md) | Entrada, estado inicial, sequência e limites |
+| [Decisões](../plans/active/ajustes-interface-pos-testes-20261030/decisoes-e-escopo.md) | Escopo confirmado, fonte e REV-01–REV-03 futuros |
+| [Prompt](../plans/active/ajustes-interface-pos-testes-20261030/prompt-de-execucao.md) | Implementação/validação/commits/push/PR autorizados; merge com mantenedor |
+| [Critérios](../plans/active/ajustes-interface-pos-testes-20261030/criterios-de-aceite.md) | Resultados funcionais e visuais a verificar pelo executor |
+| [Referências](../plans/active/ajustes-interface-pos-testes-20261030/referencias-visuais.md) e oito PNGs | Capturas fornecidas pelo usuário; sem atribuição a um head exato ou novo teste |
+| [Manifesto JSON](../plans/active/ajustes-interface-pos-testes-20261030/evidencias-de-preparacao.json) | Base, origem, bytes/hashes/dimensões dos anexos |
+
+Estado documental: pacote para revisão na branch docs/handoff-ajustes-interface-20261030.
+Preparação documental sem suíte funcional nova; base observada development9b8595d;
+starter de referência cbb954a. Guarda de deploy apenas para a branch documental.
+Históricos anteriores preservados; homologações e ciência sem nova aprovação.
+
 ## Registro HF-DOC —24/10/2026, continuidade C0→C1
 
 CONCILIACAO_C1_CONCLUIDA_COM_LIMITES: [adendo Code-First](../code-first-prd/implementation/estado-conciliado-20261024.md),
