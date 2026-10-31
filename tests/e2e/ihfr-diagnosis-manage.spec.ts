@@ -155,6 +155,28 @@ test("collection, environmental confirmation and IHFR creation work without brow
   expect(response.request().headers()["idempotency-key"]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
   await expect(page.getByRole("status").first()).toContainText("Vigente: sim");
   await expect(page.getByRole("status").last()).toBeFocused();
+
+  // UI036: a later field collection does not displace an older CURRENT diagnosis.
+  // Use the existing isolated IMP-006 fixture and the real create/diagnose endpoints.
+  await page.goto(collectionNewUrl);
+  await fillCollectionOccurrence(page, "2026-09-25T11:00:00-03:00");
+  await page.getByRole("button", { name: "Revisar coleta" }).click();
+  const laterPost = page.waitForResponse(response => response.url().endsWith("/collections") && response.request().method() === "POST");
+  await page.getByRole("button", { name: "Confirmar coleta" }).click();
+  const laterResponse = await laterPost;
+  expect(laterResponse.status()).toBe(201);
+  const laterId = (await laterResponse.json()).collection.id as string;
+  const areaUrl = collectionNewUrl.replace(/\/collections\/new$/, "");
+  await page.goto(areaUrl);
+  const entries = page.getByRole("list", { name: "Coletas ordenadas por ocorrência em campo" }).getByRole("listitem");
+  await expect(entries.first()).toContainText(laterId);
+  const latest = page.getByRole("complementary", { name: "Último IHFR disponível da área" });
+  await expect(latest).toContainText("Coleta de origem:");
+  await expect(latest).toContainText(collectionId);
+  await expect(latest).toContainText("validação científica pendente");
+  await entries.first().getByRole("link", { name: "IHFR", exact: true }).click();
+  await expect(page).toHaveURL(areaUrl + "/collections/" + laterId);
+  await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
 });
 
 test("OWNER and contextual ADMIN create, replace, revoke and recover with one stable key", async ({ page }, info) => {
