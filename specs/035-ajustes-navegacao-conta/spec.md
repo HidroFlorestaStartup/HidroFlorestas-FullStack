@@ -20,7 +20,7 @@ A pessoa autenticada identifica o contexto ativo e acessa as opções apropriada
 
 **Teste independente**: entrar no workspace sem laboratório selecionado; selecionar um laboratório; navegar e voltar; abrir a conta.
 
-**Aceite**: sem laboratório ativo, não exibir Áreas como destino sem contexto. Conta agrupa senha e exclusão. Dentro de laboratório, Sumário/Áreas/Mapa/Membros ficam na navegação lateral desktop, sem a antiga navegação horizontal duplicada. Cabeçalho preserva identidade, contexto e saída, sem mudar autorização ou rotas reais.
+**Aceite**: sem laboratório ativo, não exibir Áreas como destino sem contexto. Conta agrupa senha e exclusão. Dentro de laboratório, Resumo/Áreas/Mapa/Membros ficam na navegação lateral desktop, sem a antiga navegação horizontal duplicada. Cabeçalho preserva identidade, contexto e saída, sem mudar autorização ou rotas reais.
 
 ### US2 — Navegar em tela pequena sem conteúdo encoberto (P1)
 
