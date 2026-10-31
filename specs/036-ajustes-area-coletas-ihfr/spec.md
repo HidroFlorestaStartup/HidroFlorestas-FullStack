@@ -20,6 +20,8 @@ DECISAO_CONFIRMADA: os ajustes UI autorizados. As prioridades abaixo são RECOME
 
 **Aceite**: a área lista coletas pela ocorrência em campo, mais recente primeiro, e oferece acesso claro aos dados/detalhe. O último IHFR disponível aparece mesmo quando pertence a coleta anterior à mais recente, com origem e datas explícitas. Não mostrar resultado revogado como atual, não inventar resultado zero e não gerar diagnóstico automaticamente.
 
+**INFERENCIA operacional registrada em UI-02, não nova decisão aprovada**: percorrer as coletas pela ocorrência em campo decrescente e obter o primeiro diagnóstico disponível/vigente; empates usam critério estável explicitamente documentado sem modificar o instante original. O executor deve confirmar compatibilidade com os contratos atuais. Data de confirmação ou de cálculo não pode substituir silenciosamente esse critério. Preservar Registrar coleta, acesso ao diagnóstico individual e retorno ao contexto da área.
+
 ### US2 — Ler a coleta com composição clara (P1)
 
 **Teste independente**: abrir coleta confirmada e os estados sem dados, com draft e com resultado, em desktop/mobile.
