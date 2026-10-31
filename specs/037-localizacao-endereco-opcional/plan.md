@@ -52,12 +52,12 @@ Optionalidade somente visual mas ainda obrigatória no DTO, endereço antigo ass
 | `src/components/areas/area-form.tsx` | C | Inputs controlados, busca assíncrona, revisão/falha/CEP informativo, submissão legada segura |
 | `src/components/areas/area-geocoding-state.ts` | C | Máquina pura de revisões, proteção manual, invalidação de sugestões |
 | `src/components/areas/reverse-address.ts` | C | Leitura robusta e normalização estrita de município/UF/CEP |
-| `src/app/api/geocoding/reverse/route.ts` | C | Proxy opt-in autenticado com URL HTTPS configurável e timeout |
+| `src/app/api/geocoding/reverse/route.ts`, `src/app/api/geocoding/reverse/route.handlers.ts` | C | Integração de autenticação com route handler puro, proxy opt-in HTTPS e timeout sintético testável |
 | `src/components/areas/area-form-state.ts` | C (leitura) | Reutilizado sem alterar semântica antiga de geolocalização |
 | `src/components/areas/area-map.client.tsx` | C (leitura) | Clique já fornece coordenadas; nenhuma edição requerida |
 | `src/app/api/server/areas/area.contracts.ts`, `src/types/area.type.ts` | **Compartilhados/coordenador** | Somente leitura; permitir CEP mínimo após atribuição de writer |
 | `src/app/api/server/services/areas.service.ts`, `prisma/schema.prisma` | **Compartilhados/coordenador** | Somente leitura: `cep String?` e `...parsed` já existentes; **sem migration** |
-| `tests/unit/hf-ui037-geocoding.test.ts`, `tests/integration/hf-ui037-reverse-route.test.ts`, `tests/e2e/hf-ui037-location.spec.ts` | C | Testes novos, sem editar fixtures, runners ou config |
+| `tests/unit/hf-ui037-geocoding.test.ts`, `tests/integration/hf-ui037-reverse-route.test.ts`, `tests/contract/hf-ui037-address-optional.test.ts`, `tests/e2e/hf-ui037-location.spec.ts` | C | Testes novos, sem editar fixtures, runners ou config; contrato atual de CEP permanece explicitamente NÃO IMPLEMENTADO |
 | `tests/unit/area-contracts.test.ts`, `tests/unit/area-openapi-contract.test.ts`, `tests/e2e/area-registration.spec.ts` | **Compartilhados/coordenador** | Assertivas da spec 003 precisam ser reconciliadas com decisão posterior UI-07 |
 
 **Autoridade:** DECISAO_CONFIRMADA UI-07 em #44 supera apenas a antiga exclusão de CEP do contrato mínimo da spec 003. Código/schema existentes continuam baseline, não aprovação de nova taxonomia ou ciência. Constituição/spec kit v1.0.0; nenhuma alteração histórica da 003 ou docs/raw.

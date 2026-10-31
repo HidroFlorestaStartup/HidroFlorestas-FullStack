@@ -35,3 +35,11 @@ Commits próprios:
 | Aceite humano/revisão independente | NÃO REALIZADOS | Não simular agentes ou validação humana |
 
 Não confundir screenshots geradas por execução de Playwright futura com imagens de referência fornecidas pelo usuário; não alegar captura física ou comparação Lovable executada. A evidência final deve indicar run/tentativa/artefato real.
+
+## Checkpoint de revisão do harness e dos testes (31/10/2026)
+
+- `d65d55b02ae0b2ee47a03cd91b9d533d81513158`: nomes de screenshots adequados ao glob de artefatos existente, sem editar CI.
+- `0b94749376ddb843673638a3dc33220d27872f82`: separação `route.ts`/handler puro para teste Node; correção de limpeza de área E2E com prefixo reservado (`AREA_FIXTURES.prefix`).
+- `942a3b5c19d54b0d51771a102a91b55573ab664b`: teste de timeout com `AbortSignal` e timer sintético (5 ms), regressão de respostas obsoletas, teste de contrato que prova 0/1/2 campos opcionais já permitidos e prova explicitamente a recusa atual do CEP até writer coordenado.
+
+Os runs de commits intermediários foram cancelados por `concurrency.cancel-in-progress`, não são falhas funcionais ou validação terminal. O run correspondente ao commit de documentação final deverá ser identificado no recibo da PR (sem inventar SHA futuro). Os quince gates e provas visuais ainda não podem ser declarados PASS neste arquivo até evidência terminal vinculada ao commit executado.

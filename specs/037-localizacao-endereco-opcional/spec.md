@@ -71,8 +71,12 @@ Provedor atual e nulabilidade existente devem ser inspecionados; não há escolh
 | --- | --- | --- |
 | Três fontes de coordenadas | Formulário sugere município/UF/CEP quando há provedor simulado | `tests/unit/hf-ui037-geocoding.test.ts`, `tests/e2e/hf-ui037-location.spec.ts` |
 | Uma/duas/três sugestões, zero CEP ou nenhum endereço | Campos faltantes permanecem vazios, cadastro com coordenadas válidas possível | unit + E2E (API atual salva município/UF; CEP pendente) |
-| Autenticação, formato de coordenadas, ausência de configuração | Nenhuma chamada externa não autorizada | `tests/integration/hf-ui037-reverse-route.test.ts` |
+| Autenticação, coordenadas, ausência de configuração, 429 e timeout | Nenhuma chamada externa não autorizada e falha não bloqueante | `tests/integration/hf-ui037-reverse-route.test.ts` |
 | Resposta A após B, campo digitado depois do início de A | Nunca sobrescrever posição atual nem correção manual | reducer e E2E |
 | Revisão e acessibilidade | Status não bloqueante com aria-live, tabulação, viewports 390/1440 | E2E/screenshot quando efetivamente executado |
 
 A evidência real por SHA e a distinção entre teste declarado e rodado estão em [implementation-evidence.md](implementation-evidence.md).
+
+## Contraprovas adicionais do contrato local
+
+O teste `tests/contract/hf-ui037-address-optional.test.ts` confirma que `municipality`/`state` podem ser independentes, ambos ausentes ou ambos presentes no parser atual, e que injeções privilegiadas continuam proibidas. Confirma também o estado **a corrigir**: `cep` é rejeitado pela allowlist (mesmo `null`), embora a coluna nullable exista. Esse teste não concede aprovação ao comportamento legado; é uma contraprova reproduzível para o writer compartilhado da extensão UI-07.

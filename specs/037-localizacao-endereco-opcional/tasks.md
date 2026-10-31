@@ -15,7 +15,7 @@ Lista inicial G0; fonte #44 fixada em `972f9b00189bf09117883913d8c4fa63e69f4d2f`
 
 ## US2 — optionalidade e falhas
 
-- [x] T006 [US2] Criar `tests/contract/hf-ui037-address-optional.test.ts` e cenários em `tests/e2e/hf-ui037-location.spec.ts` para retorno parcial/vazio, ausência de CEP, timeout/limite/rede e cadastro com campos opcionais ausentes.
+- [ ] T006 [US2] Criar `tests/contract/hf-ui037-address-optional.test.ts` e cenários em `tests/e2e/hf-ui037-location.spec.ts` para retorno parcial/vazio, ausência de CEP, timeout/limite/rede e cadastro com campos opcionais ausentes.
 - [ ] T007 [US2] Aplicar optionalidade mínima de ponta a ponta nos paths documentados; submeter deltas compartilhados e eventual schema/migration ao coordenador, testar somente em banco sintético.
 
 ## US3 — concorrência e edição
@@ -32,7 +32,7 @@ G0 não concluiu tarefas de implementação/testes. A reserva 037 não autoriza 
 
 ## Reconciliação factual das tarefas (31/10/2026)
 
-- T006 parcial: existem cenários UI/E2E para ausência de CEP, provedor indisponível e cadastro mínimo; `tests/contract/hf-ui037-address-optional.test.ts` segue pendente da alocação do contrato compartilhado. Caixa marcada acima representa cobertura própria disponível, **não** conclusão integral do critério.
+- T006 parcial: existem cenários UI/E2E para ausência de CEP, provedor indisponível e cadastro mínimo; `tests/contract/hf-ui037-address-optional.test.ts` segue pendente da alocação do contrato compartilhado. Há cobertura própria disponível, mas T006 **permanece aberta** até contrato de CEP end-to-end e evidência executada.
 - T007 **pendente** de writer: coluna CEP já é nullable, mas API/DTOs e testes históricos precisam de mudança aditiva e coordenada. Não é necessária migration.
 - T010 **pendente da CI no SHA de implementação**: não herdar G0; registrar PASS/FAIL/NOT_RUN real no recibo.
 - T011 **em andamento**: documentos reconciliados; PR Draft atualizar no SHA final. Aceite humano/merge/deploy proibidos.
