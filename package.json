@@ -34,7 +34,8 @@
     "test:e2e:https": "node --import=tsx tests/e2e/run-auth-https.mjs",
     "test": "npm run test:unit && npm run test:integration",
     "typecheck": "tsc --noEmit",
-    "test:migration": "node --import=tsx scripts/imp006-test-runner.ts migration"
+    "test:migration": "node --import=tsx scripts/imp006-test-runner.ts migration",
+    "setup:full": "node setup.js --allow-scripts --verify-runtime --skip-migrations"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
