@@ -53,3 +53,13 @@ Recibo de publicação registra SHA e PR sem autorreferência. Acrescentar event
 - Verificar os quinze resultados no **SHA final**, imagens e metadados geométricos capturados. Até lá: `CI_FINAL_NOT_VERIFIED`.
 - Comparação visual starter/FullStack com mesmo estado e revisões independente/humana: `NOT_RUN` / `PENDENTE`.
 - Conciliar com shell A e guard #45 apenas em futura integração autorizada; não executar merge/deploy ou promover ciência.
+
+---
+
+## Novo ciclo de verificação — análise do run 41234289600 e patch corretivo
+
+- **Ambiente real:** Windows/Node 24.19.0, Chromium, PostgreSQL 17 loopback sintético; run `41234289600`, tentativa 1, HEAD `6cfd15b026055566dda529e2c6964a60ce1de372`, conclusão **FAIL**.
+- **Gates PASS (12):** RegressionSetup, Unit, Integration, Migration, Contract, R1, Build, Typecheck, Lint, E2E, Https, Deletion. O E2E principal terminou com sucesso; o gate `Ihfr` ficou `FAIL` (4 aprovações, 2 reprovações), `Bootstrap` e `SchemaAudit` permaneceram `NOT_RUN` por fail-fast.
+- **Evidência:** [run #41234289600](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41234289600), [artefato 13056115395](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41234289600/artifacts/13056115395), log `.accounts-validation/ihfr-1793476025118.log`. Causas: fixture CURRENT em coleta de ocorrência mais recente que o par criado; palavra `experimental` fragmentada em 320px/texto200.
+- **Plano implementado:** isolamento da área via API autenticada em schema descartável do próprio runner IMP-006, sem alterar as fixtures globais; redução de paddings locais e `break-normal` para o aviso científico, mantendo integralmente as qualificações e os testes responsivos.
+- **Limite:** correção de código publicada **não é PASS de gate**. A revisão subsequente anotará o SHA de implementação e run final. Não houve comparação de dois runtimes, revisão independente ou aceite humano.

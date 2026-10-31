@@ -69,3 +69,11 @@ API/leituras podem exigir adaptação focal, a demonstrar pelo executor. Qualque
 **EVIDENCIA_CODIGO**: UI-04 mantém qualificador curto visível e detalhes nativos expansíveis por Enter/Espaço (limites, quatro códigos e proveniência). Falta de medições confirmadas informa a ação adequada e sua natureza, em vez de expor somente o código interno.
 
 **Validação**: código e testes versionados em commits próprios; resultados de execução do HEAD final e comparação simultânea do starter com o FullStack ainda não confirmados. Consultar [evidências](implementation-evidence.md). Nenhuma mudança no contrato científico, persistência, schemas, shell A ou formulário C.
+
+## Critérios de regressão focal após CI 41234289600
+
+**INFERENCIA operacional UI-02 (inalterada):** o último IHFR disponível deve ser selecionado entre diagnósticos CURRENT efetivamente existentes, percorrendo coletas confirmadas ordenadas pelo instante de ocorrência em campo. O teste integrado usa área sintética própria sem diagnósticos preexistentes; a coexistência de outro CURRENT em outra área ou coleta de uma fixture global não autoriza substituir a origem exibida.
+
+**FR-036-003 / SC-036-002:** os quatro qualificadores experimentais completos permanecem legíveis quando os detalhes são abertos por teclado; a expressão humana “Limites do diagnóstico experimental” não pode fragmentar uma palavra na largura 320px com texto a 200%. Não é autorizado reduzir a ampliação, desativar a verificação ou mudar a ciência.
+
+**Estado:** requisito já aprovado e implementado; correções locais e regressões documentadas no plano e nas tarefas. Aceite humano e comparação executada com o starter permanecem independentes dos testes sintéticos de CI.

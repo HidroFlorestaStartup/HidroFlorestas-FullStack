@@ -75,3 +75,21 @@ Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/so
 1. Comparar FullStack **e starter** com mesmos dados/viewport e registrar imagens reais; fixtures sintéticas da action não constituem tal comparação automaticamente.
 2. Ler conclusão dos 15 gates no SHA final, incluindo o E2E conhecido do shell com texto200, e só marcar PASS com logs. Guardar imagens e geometria criadas pelo harness E2E se o gate as produzir.
 3. A revisão por segundo executor e o aceite humano continuam pendentes; nenhuma ferramenta `spawn_agent` real estava disponível nesta sessão (`NATIVE_SUBAGENTS_UNAVAILABLE`).
+
+## Ciclo corretivo Spec Kit — 2026-10-31 (ANALYZE → PLAN → IMPLEMENT → REVIEW)
+
+### ANALYZE (somente leitura)
+
+- Fonte de execução: run [41234289600](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41234289600), tentativa 1, commit `6cfd15b026055566dda529e2c6964a60ce1de372`. Os 12 primeiros gates passaram; `Ihfr` falhou (4 PASS, 2 FAIL) e `Bootstrap`/`SchemaAudit` não rodaram.
+- Achado UI036-R1: `tests/e2e/ihfr-diagnosis-manage.spec.ts` usava área da fixture IMP-006 com diagnóstico CURRENT preexistente em coleta de ocorrência `now()`, posterior às datas estáticas dos dois registros novos. A lista/seleção do produto estava coerente, mas a expectativa do teste confundia fonte da fixture com fonte criada pela prova.
+- Achado UI036-R2: a leitura em `tests/e2e/ihfr-diagnosis-read.spec.ts` detectou fragmentação de `experimental` pelo helper `expectIHFRScientificWords` em 320px/200%; há uma sequência de paddings em `ExperimentalDiagnosisSummary` e `ScientificNotice`. O reparo anterior de ícone empilhado não recuperou largura suficiente.
+- Checagem de consistência spec → plan → tasks: R1 afeta FR-036-001/SC-036-001; R2 afeta FR-036-003/SC-036-002; ambos cabem na branch B. Não há conflito com a constituição ou decisão científica. T008 (comparação real com starter) permanece pendente; análise de código/screenshot de uma só aplicação não equivale à comparação dos runtimes.
+
+### PLAN (plano focal)
+
+1. Em R1, criar uma nova área via `POST /api/laboratories/{laboratoryId}/areas` autenticado, **dentro do schema PostgreSQL descartável já alocado pelo runner IMP-006**. Realizar nela o fluxo real coleta → medições confirmadas → diagnóstico CURRENT → coleta de campo posterior sem diagnóstico. Comparar ambas as origens na área sem alterar, excluir ou recalibrar fixtures compartilhadas.
+2. Em R2, reduzir somente paddings internos do aviso IHFR no componente da própria B, preservando font-size 200%, texto integral, rótulos científicos, `<details>/<summary>` e os asserts existentes de palavras inteiras/scrollWidth. Nenhuma mudança de layout/shell global.
+3. Validar no HEAD publicado com os **15 gates originais**, banco sintético isolado e artefatos de viewport; classificação individual PASS/FAIL/NOT_RUN por SHA/tentativa. Não corrigir falhas apagando asserts, mudando timeouts ou removendo testes.
+4. REVIEW: verificar diff exclusivo contra `07755822f5dc75fe2be1d924005d30ed99f64a0b`, acumulado contra development atual; confirmar nenhum arquivo de A/C/ci/provedor/ciência alterado; registrar revisão técnica sequencial (não independente por subagente) e pendências visuais/humanas.
+
+**Ambiente:** GitHub API/Actions; sem checkout atualizado neste executor por DNS externo indisponível. Skills `speckit-analyze`, `speckit-plan`, `speckit-implement` e constituição 1.0.0 foram conferidas no repositório, sem executar seus scripts Bash locais. Não existe `.specify/extensions.yml` ou checklist 036 no HEAD inicial.

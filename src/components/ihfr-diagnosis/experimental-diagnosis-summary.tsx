@@ -57,8 +57,8 @@ export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicD
       {diagnosis.explanation && <p className="mt-4 break-words text-sm leading-relaxed text-slate-700">{diagnosis.explanation}</p>}
       <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold leading-relaxed text-amber-950">IHFR experimental — validação científica pendente.</p>
       <details className="group mt-4 min-w-0 rounded-xl border border-amber-200 bg-amber-50/50">
-        <summary className="min-h-11 cursor-pointer rounded-xl px-4 py-3 text-sm font-semibold text-amber-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">Ler mais: limites do diagnóstico experimental</summary>
-        <div className="px-3 pb-3 sm:px-4"><p className="mb-3 text-xs text-slate-700">Estado científico: {diagnosis.scientificState}</p><ScientificNotice labels={diagnosis.scientificLabels} /></div>
+        <summary className="min-h-11 cursor-pointer rounded-xl px-2 py-3 text-sm font-semibold text-amber-950 sm:px-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">Ler mais: limites do diagnóstico experimental</summary>
+        <div className="px-0 pb-3 sm:px-4"><p className="mb-3 px-2 text-xs text-slate-700 sm:px-0">Estado científico: {diagnosis.scientificState}</p><ScientificNotice labels={diagnosis.scientificLabels} /></div>
       </details>
     </div>
     <details className="group min-w-0 bg-slate-50/60 p-[16px] sm:p-6">
