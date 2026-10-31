@@ -58,9 +58,9 @@ test("three coordinate sources display partial address suggestions without requi
   await expect(page.getByLabel("Município")).toHaveValue("São Luís");
   expect(calls).toBeGreaterThanOrEqual(3);
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.screenshot({ path: "test-results/hf-ui037-location-mobile.png", fullPage: false });
+  await page.screenshot({ path: "test-results/frontend-areas-hf-ui037-location-mobile.png", fullPage: false });
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.screenshot({ path: "test-results/hf-ui037-location-desktop.png", fullPage: false });
+  await page.screenshot({ path: "test-results/frontend-areas-hf-ui037-location-desktop.png", fullPage: false });
 });
 
 test("manual corrections survive a late suggestion and changing point clears only inferred values", async ({ page, context }, info) => {
