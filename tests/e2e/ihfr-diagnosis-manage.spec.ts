@@ -199,7 +199,8 @@ test("collection, environmental confirmation and IHFR creation work without brow
   await expect(latest).not.toContainText(laterId);
   await expect(latest).toContainText("validação científica pendente");
   await entries.filter({ hasText: laterId }).getByRole("link", { name: "IHFR", exact: true }).click();
-  await expect(page).toHaveURL(areaUrl + "/collections/" + laterId);
+  // The IHFR link intentionally targets its heading, preserving contextual navigation.
+  await expect(page).toHaveURL(areaUrl + "/collections/" + laterId + "#ihfr-diagnosis-heading");
   await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
 });
 

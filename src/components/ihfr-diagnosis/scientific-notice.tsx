@@ -8,7 +8,7 @@ export function ScientificNotice({ labels = IHFR_CONTRACT.labels }: { labels?: r
       <FlaskConical aria-hidden="true" className="size-4 shrink-0 sm:mt-0.5" />
       <span className="block w-full min-w-0 break-normal [hyphens:none] sm:w-auto sm:flex-1 sm:basis-40">Limites do diagnóstico experimental</span>
     </p>
-    <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+    <ul className="mt-3 grid min-w-0 grid-cols-1 gap-3 lg:grid-cols-2">
       {labels.map((label) => <li key={label} className="min-w-0 text-sm">
         <span className="block break-normal leading-relaxed [hyphens:none]">{ihfrLabel("scientific", label)}</span>
         <span className="mt-1 block break-all text-xs leading-relaxed text-amber-900">{label}</span>

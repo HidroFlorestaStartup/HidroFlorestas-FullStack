@@ -51,3 +51,12 @@ Os marcadores T013/T014 representam implementação versionada; os resultados de
 
 - [x] T018 [REVIEW → IMPLEMENT] Corrigir divisão interna da palavra `ambientais` no CTA UI-02 vista no snapshot 320px/texto200, sem reduzir a escala ou duplicar controles.
 - [x] T019 [TEST] Acrescentar verificação real de palavras inteiras no E2E de área e preservar teste de overflow; exigir PASS no HEAD final antes de encerrar T015.
+
+## Iteração de convergência corretiva — run 41251345900
+
+- [x] T020 [ANALYZE/PLAN] Isolar os dois novos failures do IHFR do SHA `013264106ef990480ae5a3963926527ee04c5e7c`, sem confundir resultado dos 12 gates anteriores.
+- [x] T021 [IMPLEMENT] Preservar o fragmento intencional da URL em `tests/e2e/ihfr-diagnosis-manage.spec.ts` e testar a navegação contextual completa.
+- [x] T022 [IMPLEMENT] Ajustar a grade de qualificadores de `ScientificNotice` para uma coluna abaixo de `lg`, mantendo texto 200% e o assert de 100% da qualificação visível em paisagem 667x375.
+- [ ] T023 [REVIEW] Observar terminalmente todos os 15 gates no novo HEAD, atualizar PR própria e a classificação dos itens 015–017; a comparação executada do starter e a revisão humana continuam pendentes.
+
+Os itens T021/T022 apenas confirmam a publicação do patch, não validam o gate terminal por antecipação.
