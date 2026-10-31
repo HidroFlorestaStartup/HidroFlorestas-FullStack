@@ -402,3 +402,50 @@ test("missing or mismatched local Prisma cannot trigger package download", async
     assert.equal(h.calls.length, 0);
   }
 });
+
+test("runtime validation rejects partial mode without explicit lifecycle consent", () => {
+  assert.throws(() => parseArguments(["--verify-runtime"]), /--allow-scripts/);
+  assert.equal(parseArguments(["--allow-scripts", "--verify-runtime", "--skip-migrations"]).verifyRuntime, true);
+});
+
+test("native probes use the active Node, no shell and isolated local operations", (t) => {
+  const h = harness(t);
+  h.setup.verifyRuntime({ verifyRuntime: true });
+  assert.equal(h.calls.length, 4);
+  for (const call of h.calls) {
+    assert.equal(call.command, h.execPath);
+    assert.equal(call.args[0], "-e");
+    assert.equal(call.options.shell, false);
+    assert.equal(call.options.cwd, h.root);
+    assert.doesNotMatch(call.args[1], /shutdown|reboot|fetch\(|https?:\/\//i);
+  }
+  const programs = h.calls.map(({args}) => args[1]).join("\n");
+  for (const name of ["bcrypt", "better-sqlite3", "sharp", "esbuild"]) assert.ok(programs.includes(name));
+});
+
+test("missing native binary blocks full readiness without exposing child output", (t) => {
+  const h = harness(t, { spawnSync(_command, args) {
+    return { status: args[1]?.includes("better-sqlite3") ? 19 : 0, signal: null,
+      stdout: "synthetic-secret", stderr: "synthetic-secret" };
+  } });
+  assert.throws(() => h.setup.verifyRuntime({ verifyRuntime: true }), /better-sqlite3 não operacional/);
+  assert.equal(h.calls.length, 0); // Only the mocked launcher was used.
+  assert.doesNotMatch(h.messages.join("\n"), /synthetic-secret/);
+});
+
+test("full local path verifies native runtime after pinned Prisma generation without migrations", async (t) => {
+  const h = harness(t);
+  const cli = addPrismaFixture(h);
+  assert.equal(await h.setup.main(["--skip-install", "--allow-scripts", "--verify-runtime", "--skip-migrations"]), 0);
+  assert.deepEqual(h.calls[0].args, [cli, "generate"]);
+  assert.equal(h.calls.length, 5);
+  assert.equal(h.calls.some(({ args }) => args.includes("migrate")), false);
+  assert.ok(h.messages.some((message) => message.includes("SETUP_LOCAL_READY")));
+});
+
+test("runtime verification dry-run never executes native modules", (t) => {
+  const h = harness(t, { spawnSync() { assert.fail("dry-run must not execute probes"); } });
+  h.setup.verifyRuntime({ verifyRuntime: true, dryRun: true });
+  assert.equal(h.calls.length, 0);
+});
+
