@@ -66,12 +66,19 @@ async function settleTransitions(page: Page) {
   // Await the existing global .3s transitions naturally. New transitions can
   // replace an inherited font-size transition while the root text scale changes.
   await page.evaluate(async () => {
-    for (;;) {
+    // The settled state must be bounded: unrelated infinite re-triggering UI
+    // transitions must not hang the full authentication/navigation suite.
+    // Focus geometry is still asserted separately for every actual control.
+    for (let pass = 0; pass < 12; pass++) {
       const finite = document.getAnimations().filter(animation =>
-        animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
+        animation.playState === "running" &&
+        Number.isFinite(animation.effect?.getComputedTiming().endTime));
       if (!finite.length) return;
       await Promise.allSettled(finite.map(animation => animation.finished));
     }
+    const remaining = document.getAnimations().filter(animation =>
+      animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
+    if (remaining.length) throw new Error("UI035_TRANSITIONS_NOT_SETTLED");
   });
 }
 async function focusAndExpose(target: Locator) {

@@ -91,11 +91,25 @@ for (const width of [320, 375, 390, 768, 1440]) {
       expect(geometry.navigation?.top).toBeGreaterThan(geometry.header?.bottom ?? 0);
       const last = page.locator("#application-content a:visible, #application-content button:visible, #application-content input:visible").last();
       await last.focus();
-      await expect.poll(async () => last.evaluate(node => {
-        const r = node.getBoundingClientRect();
-        const rail = document.getElementById("application-navigation")!.getBoundingClientRect();
-        return r.top >= 0 && r.bottom <= rail.top - 2;
-      })).toBe(true);
+      try {
+        await expect.poll(async () => last.evaluate(node => {
+          const r = node.getBoundingClientRect();
+          const rail = document.getElementById("application-navigation")!.getBoundingClientRect();
+          const header = document.getElementById("application-header")!.getBoundingClientRect();
+          return r.top >= header.bottom && r.bottom <= rail.top - 2;
+        })).toBe(true);
+      } catch (error) {
+        const measurements = await last.evaluate(node => {
+          const r = node.getBoundingClientRect();
+          const scroller = document.getElementById("application-content")!;
+          const nav = document.getElementById("application-navigation")!.getBoundingClientRect();
+          return { tag: node.tagName, top: r.top, bottom: r.bottom, navTop: nav.top,
+            scrollTop: scroller.scrollTop, maxScroll: scroller.scrollHeight - scroller.clientHeight,
+            focus: node === document.activeElement };
+        });
+        console.error("UI035_LAST_CONTROL_GEOMETRY", JSON.stringify(measurements));
+        throw error;
+      }
       await capture(page, info, "laboratory-" + width + "-last-control");
     } else {
       expect(geometry.navigation?.top).toBeGreaterThanOrEqual(0);

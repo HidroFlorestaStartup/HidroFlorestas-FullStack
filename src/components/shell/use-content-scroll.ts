@@ -74,15 +74,23 @@ function revealFocus(target: HTMLElement, content: HTMLDivElement) {
     const rail = document.getElementById("application-navigation");
     const bottom = rail && getComputedStyle(rail).position === "fixed"
       ? Math.min(region.bottom, rail.getBoundingClientRect().top) : region.bottom;
-    if (box.top < region.top + 8 || box.bottom > bottom - 8) {
-      target.scrollIntoView({ block: "nearest", behavior: "instant" });
-      // scrollIntoView only knows the scrollport, not a fixed contextual rail.
-      const after = target.getBoundingClientRect();
-      if (after.bottom > bottom - 8) content.scrollBy({ top: after.bottom - bottom + 8, behavior: "instant" });
-      else if (after.top < region.top + 8) content.scrollBy({ top: after.top - region.top - 8, behavior: "instant" });
-    }
-  } else if (box.top < header + 8 || box.bottom > innerHeight - 8) {
-    target.scrollIntoView({ block: "center", behavior: "instant" });
+    // Move only the owning scrollport. scrollIntoView() can also move the
+    // document and leave a control behind the fixed contextual navigation.
+    // A single directional displacement avoids the scroll/focus oscillation
+    // observed with 200% text and viewport-size changes.
+    const top = region.top + 8;
+    const safeBottom = bottom - 8;
+    const shift = box.top < top ? box.top - top :
+      box.bottom > safeBottom ? box.bottom - safeBottom : 0;
+    if (shift !== 0) content.scrollBy({ top: shift, behavior: "instant" });
+  } else {
+    // Desktop owns document scrolling and the header is sticky. Align with
+    // its measured height, rather than centring a target underneath it.
+    const top = header + 8;
+    const bottom = innerHeight - 8;
+    const shift = box.top < top ? box.top - top :
+      box.bottom > bottom ? box.bottom - bottom : 0;
+    if (shift !== 0) window.scrollBy({ top: shift, behavior: "instant" });
   }
 }
 export function useContentScroll(scope: ContentScrollScope) {

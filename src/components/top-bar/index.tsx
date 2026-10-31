@@ -52,7 +52,7 @@ export default function TopBar({ showProfile, showLogout }: Props) {
           }}>
           <summary role="button" aria-expanded={expanded} aria-controls="application-account-menu">Conta<ChevronDown size={18} aria-hidden="true" /></summary>
           <div id="application-account-menu" className={styles.accountMenu}>
-            <p>Configurações da conta</p>
+            <p>{[user?.firstName, user?.lastName].filter(Boolean).join(" ") || "Configurações da conta"}</p>
             <nav aria-label="Opções da conta" onClick={event => {
               if (event.target instanceof Element && event.target.closest("a") && menu.current) menu.current.open = false;
             }}>
