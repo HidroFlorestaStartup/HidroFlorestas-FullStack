@@ -106,6 +106,7 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       longitude,
       municipality: form.get("municipality"),
       state: form.get("state"),
+      cep: form.get("cep"),
       landType: form.get("landType"),
       description: form.get("description"),
     };
@@ -232,6 +233,8 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
                     value={draft.address[name]}
                     onChange={(event) => dispatch({ type: "address-edit", field: name, value: event.target.value })}
                     maxLength={name === "cep" ? 9 : 100}
+                    pattern={name === "cep" ? "[0-9]{5}-?[0-9]{3}" : undefined}
+                    title={name === "cep" ? "Informe oito dígitos, com ou sem hífen" : undefined}
                     placeholder={name === "cep" ? "Ex.: 65000-000" : undefined}
                     className={inputClass}
                   />
@@ -249,10 +252,6 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               {draft.lookupStatus === "unavailable" && "Serviço de endereço indisponível; cadastro permitido pelas coordenadas. "}
               Município, UF e CEP podem ficar vazios ou ser corrigidos manualmente. Ao mudar o ponto,
               sugestões anteriores são retiradas; dados digitados permanecem para revisão.
-            </p>
-            <p className={styles.mapHelp}>
-              O CEP é apenas uma referência nesta versão e não será gravado no cadastro.
-              Município e UF informados são armazenados normalmente.
             </p>
             <label className={labelClass}>
               Descrição{" "}

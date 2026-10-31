@@ -1,5 +1,6 @@
 import { test, expect, type BrowserContext, type TestInfo } from "@playwright/test";
-import { AREA_FIXTURES, setupAreaFixtures, cleanupAreaFixtures, countAreaFixtures } from "../fixtures/areas";
+import { AREA_FIXTURES, setupAreaFixtures, cleanupAreaFixtures, countAreaFixtures, createAreaFixtureClient } from "../fixtures/areas";
+import { writeFile } from "node:fs/promises";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 
 const lab = AREA_FIXTURES.laboratoryIds[0];
@@ -57,10 +58,17 @@ test("three coordinate sources display partial address suggestions without requi
   await expect(page.getByLabel("Latitude", { exact: true })).not.toHaveValue("");
   await expect(page.getByLabel("Município")).toHaveValue("São Luís");
   expect(calls).toBeGreaterThanOrEqual(3);
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.screenshot({ path: "test-results/frontend-areas-hf-ui037-location-mobile.png", fullPage: false });
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await page.screenshot({ path: "test-results/frontend-areas-hf-ui037-location-desktop.png", fullPage: false });
+  for (const [width, height, label] of [[390, 844, "mobile"], [1440, 900, "desktop"]] as const) {
+    await page.setViewportSize({ width, height });
+    const name = "frontend-areas-hf-ui037-location-" + label;
+    const png = info.outputPath(name + ".png");
+    const meta = info.outputPath(name + ".json");
+    const mask = await page.locator("input,textarea").all();
+    await page.screenshot({ path: png, fullPage: false, animations: "disabled", mask });
+    await writeFile(meta, JSON.stringify({ case: "geocoded-map", viewport: { width, height }, fullPage: false, maskedInputs: mask.length, source: "Playwright-synthetic-UI037" }, null, 2) + "\n");
+    await info.attach(name, { path: png, contentType: "image/png" });
+    await info.attach(name + "-viewport", { path: meta, contentType: "application/json" });
+  }
 });
 
 test("manual corrections survive a late suggestion and changing point clears only inferred values", async ({ page, context }, info) => {
@@ -105,6 +113,44 @@ test("unavailable geocoder and all empty optional fields do not block area creat
   const submitted = response.request().postDataJSON() as Record<string, unknown>;
   expect(submitted.municipality).toBe("");
   expect(submitted.state).toBe("");
-  expect("cep" in submitted).toBe(false); // shared write contract is not yet allocated
+  expect(submitted.cep).toBe(""); // absent is accepted and normalized to null
+  expect((await response.json()).area.cep).toBeNull();
   await expect(page).toHaveURL(/\/areas\/[^/]+$/);
+});
+
+test("persists all 8 optional address combinations in synthetic PostgreSQL with POST/GET",async({context},info)=>{
+ await login(context,info);
+ const options=[
+  ["municipality","Alcântara"],["state","MA"],["cep","65000123"],
+ ] as const;
+ const db=createAreaFixtureClient(process.env);
+ try {
+  for(let mask=0;mask<8;mask++){
+   const name=`${AREA_FIXTURES.prefix} UI037 subset ${mask}`;
+   const data:Record<string,unknown>={name,latitude:-2.5,longitude:-44.1};
+   for(let bit=0;bit<options.length;bit++){
+    if(mask&(1<<bit)){const [key,value]=options[bit];data[key]=value;}
+   }
+   const response=await context.request.post(api,{data});
+   expect(response.status(),`POST subset ${mask}`).toBe(201);
+   const {area}=await response.json();
+   const expectedCep=(mask&4)?"65000-123":null;
+   expect(area.cep).toBe(expectedCep);
+   expect(area.municipality).toBe((mask&1)?"Alcântara":null);
+   expect(area.state).toBe((mask&2)?"MA":null);
+   const detail=await context.request.get(`${api}/${area.id}`);
+   expect(detail.status()).toBe(200);
+   expect((await detail.json()).area.cep).toBe(expectedCep);
+   const persisted=await db.collectionArea.findUniqueOrThrow({where:{id:area.id}});
+   expect(persisted.cep).toBe(expectedCep);
+   expect(persisted.municipality).toBe((mask&1)?"Alcântara":null);
+   expect(persisted.state).toBe((mask&2)?"MA":null);
+  }
+  for(const invalid of ["6500-123","65000-12","65000-1234","ABCDEF12",7,{}]){
+   const bad=await context.request.post(api,{data:{
+    name:`${AREA_FIXTURES.prefix} UI037 invalid`,latitude:0,longitude:0,cep:invalid,
+   }});
+   expect(bad.status()).toBe(400);
+  }
+ }finally{await db.$disconnect();}
 });

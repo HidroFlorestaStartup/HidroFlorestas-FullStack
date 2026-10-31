@@ -1,33 +1,53 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { it } from "node:test";
+import { parse } from "yaml";
 import { parseAreaInput } from "../../src/app/api/server/areas/area.contracts";
 
-const base = { name: "Área sem dependência do geocodificador", latitude: -2.5, longitude: -44.1 };
+const base={name:"Área sem CEP obrigatório",latitude:-2.5,longitude:-44.1};
+const entries=[
+  ["municipality","Alcântara"],["state","MA"],["cep","65000123"],
+] as const;
 
-it("the current create-area contract accepts zero, one or two optional persisted address fields", () => {
-  const cases = [
-    [{}, null, null],
-    [{ municipality: "Alcântara" }, "Alcântara", null],
-    [{ state: "MA" }, null, "MA"],
-    [{ municipality: "Alcântara", state: "MA" }, "Alcântara", "MA"],
-    [{ municipality: "", state: "" }, null, null],
-  ] as const;
-  for (const [fields, municipality, state] of cases) {
-    const parsed = parseAreaInput({ ...base, ...fields });
-    assert.ok(parsed);
-    assert.equal(parsed.municipality, municipality);
-    assert.equal(parsed.state, state);
-    assert.equal(parsed.latitude, -2.5);
+it("permits every subset of municipality, state and CEP (0/1/2/3 optional fields)",()=>{
+ for(let mask=0;mask<8;mask++){
+  const data:Record<string,unknown>={...base};
+  for(let index=0;index<entries.length;index++){
+   const [field,value]=entries[index];
+   if(mask&(1<<index))data[field]=value;
   }
+  const parsed=parseAreaInput(data);
+  assert.ok(parsed,"Accepted optional mask "+mask);
+  assert.equal(parsed.municipality,mask&1?"Alcântara":null);
+  assert.equal(parsed.state,mask&2?"MA":null);
+  assert.equal(parsed.cep,mask&4?"65000-123":null);
+ }
 });
-it("the existing privileged allowlist is unchanged by the UI037 form work", () => {
-  for (const key of ["userId", "creator", "laboratoryRoomId", "image", "isActive"]) {
-    assert.equal(parseAreaInput({ ...base, [key]: "forged" }), null);
-  }
+it("accepts null/blank values and rejects supplied malformed postcode",()=>{
+ for(const cep of [null,"","   "])assert.equal(parseAreaInput({...base,cep})?.cep,null);
+ for(const cep of ["65000-12","65000-1234","0000-000",7,[],{}]){
+  assert.equal(parseAreaInput({...base,cep}),null);
+ }
 });
-it("CEP requires the explicitly allocated shared contract writer before POST can accept it", () => {
-  // Honest contract evidence: the later UI-07 decision is not yet implemented
-  // in this shared parser. Never reinterpret a rejected CEP as persisted data.
-  assert.equal(parseAreaInput({ ...base, cep: "65000-000" }), null);
-  assert.equal(parseAreaInput({ ...base, cep: null }), null);
+it("maintains the closed input and privilege protection",()=>{
+ for(const key of ["userId","creator","laboratoryRoomId","image","isActive","laboratoryId","id"]){
+  assert.equal(parseAreaInput({...base,[key]:"forged"}),null);
+ }
+ assert.equal(parseAreaInput({...base,cep:"65000-123",unknown:"forged"}),null);
+});
+it("keeps the historical IMP-003 contract intact and versioned 037 extension explicit",()=>{
+ const current=parse(readFileSync("specs/037-localizacao-endereco-opcional/contracts/area-optional-address.openapi.yaml","utf8"));
+ const old=parse(readFileSync("specs/003-area-registration-and-viewing/contracts/area-registration-api.openapi.yaml","utf8"));
+ assert.equal(current.openapi,"3.1.0");
+ assert.equal(current.info.version,"0.2.0");
+ const schemas=current.components.schemas;
+ assert.equal(schemas.CreateAreaInput.additionalProperties,false);
+ for(const field of ["municipality","state","cep"]) {
+  assert.ok(field in schemas.CreateAreaInput.properties);
+  assert.ok(!schemas.CreateAreaInput.required.includes(field));
+  assert.ok(field in schemas.AreaSummary.properties);
+  assert.ok(field in schemas.AreaDetail.properties);
+ }
+ assert.ok(schemas.CreateAreaInput.properties.cep.pattern);
+ assert.equal("cep" in old.components.schemas.CreateAreaInput.properties,false);
 });

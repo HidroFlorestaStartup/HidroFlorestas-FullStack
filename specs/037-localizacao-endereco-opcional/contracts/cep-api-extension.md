@@ -18,3 +18,7 @@ A spec 003 (histórica) excluía CEP do contrato mínimo, mesmo com a coluna `Co
 ## Gate de aceite do patch
 
 `CEP_PERSISTENCE_VERIFIED` exige teste de POST + GET + armazenamento em banco PostgreSQL sintético para CEP presente e ausente, contrato 400 para CEP inválido, CI no HEAD composto e ausência de drift em autorização/DTO. Este arquivo é uma proposta técnica, não aceite/autorização de integração.
+
+## Correção implementada por writer único C — continuidade 2026-10-31
+
+Registro de coordenação na PR #45 [comentário 6550339752](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6550339752). A instrução atual do mantenedor autoriza correções da Frente C, com checks de HEADs A/B e a reserva de hunks compartilhados focal. `area.contracts.ts` passa a aceitar `cep` opcional/nullable, valida e normaliza CEP fornecido; o DTO de resposta inclui `cep`; formulário envia CEP opcional; o service existente persiste `...parsed` na coluna nullable. O teste histórico da spec 003 preserva seu documento original, enquanto `contracts/area-optional-address.openapi.yaml` versiona o delta de UI-07. Regressões e testes em banco sintético cobrem os cenários. **Sem schema/migration/hosted DB e sem tocar os arquivos A/B.** Esta nota só passa a comprovar runtime quando os checks do SHA final forem observados.
