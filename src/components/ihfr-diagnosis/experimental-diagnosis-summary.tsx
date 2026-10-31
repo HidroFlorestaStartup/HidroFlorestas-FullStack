@@ -55,11 +55,14 @@ export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicD
         </dl>
       </div>
       {diagnosis.explanation && <p className="mt-4 break-words text-sm leading-relaxed text-slate-700">{diagnosis.explanation}</p>}
-      <p className="mt-4 break-all text-xs text-slate-600">Estado científico: {diagnosis.scientificState}</p>
-      <div className="mt-4"><ScientificNotice labels={diagnosis.scientificLabels} /></div>
+      <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold leading-relaxed text-amber-950">IHFR experimental — validação científica pendente.</p>
+      <details className="group mt-4 min-w-0 rounded-xl border border-amber-200 bg-amber-50/50">
+        <summary className="min-h-11 cursor-pointer rounded-xl px-4 py-3 text-sm font-semibold text-amber-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">Ler mais: limites do diagnóstico experimental</summary>
+        <div className="px-3 pb-3 sm:px-4"><p className="mb-3 text-xs text-slate-700">Estado científico: {diagnosis.scientificState}</p><ScientificNotice labels={diagnosis.scientificLabels} /></div>
+      </details>
     </div>
-    <div className="bg-slate-50/60 p-[16px] sm:p-6">
-      <h3 className="flex items-center gap-2 text-sm font-semibold"><FileCheck2 aria-hidden="true" className="size-4 shrink-0 text-emerald-800" />Proveniência e contrato</h3>
+    <details className="group min-w-0 bg-slate-50/60 p-[16px] sm:p-6">
+      <summary className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"><FileCheck2 aria-hidden="true" className="size-4 shrink-0 text-emerald-800" />Proveniência e contrato — Ler mais</summary>
       <p className="mt-2 text-xs leading-relaxed text-slate-600">Identificadores e versões preservados para rastrear este resultado.</p>
       <dl className="mt-4 grid gap-x-6 gap-y-4 sm:grid-cols-2">
         <Detail label="Área de origem" value={diagnosis.areaId} />
@@ -75,6 +78,6 @@ export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicD
         <Detail label="Vigente desde (UTC)" value={dateUTC(diagnosis.validFrom)} />
         <Detail label="Transição de estado em (UTC)" value={dateUTC(diagnosis.transitionedAt)} />
       </dl>
-    </div>
+    </details>
   </section>;
 }

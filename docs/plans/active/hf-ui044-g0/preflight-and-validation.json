@@ -1,0 +1,55 @@
+{
+  "mission": "HF-UI-044-G0",
+  "status": "PASS_STATIC_GUARDS",
+  "baseline": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+  "development_tree": "e74ac641564288df01c85226ddc1ed6a8d22b941",
+  "documentary_head": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+  "starter_head": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+  "parser": "PyYAML 6.0.3 BaseLoader with duplicate-key rejection",
+  "configuration_blob_sha": {
+    "vercel.json": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+    "rc-review.yml": "904731df72c312a0d5e9e932161babffb42fbe9e"
+  },
+  "configuration_sha256": {
+    "vercel.json": "8e906460d0e85c81ac43dba495f8dcb88a0c4673390cb54cd21936dbfaa1a616",
+    "rc-review.yml": "0b9c0661d6179fe932e4d3a2ac8861bbe52916323b62e446204b1196495bd8e1"
+  },
+  "old_guard_entries_preserved": 35,
+  "documentary_guard_reconciled": "docs/handoff-ajustes-interface-20261030",
+  "guard_entries_total": 40,
+  "workflow_branches_before": 20,
+  "workflow_branches_after": 23,
+  "non_filter_workflow_structure": "IDENTICAL",
+  "truth_table_cases": 33,
+  "positive_cases": 23,
+  "negative_cases": 10,
+  "json": "PASS",
+  "yaml_parse": "PASS",
+  "condition_grammar": "PASS",
+  "whitespace": "PASS",
+  "negative_mutation_tests": {
+    "preview_enabled": "REJECTED_AS_EXPECTED",
+    "old_guard_removed": "REJECTED_AS_EXPECTED",
+    "push_branch_missing": "REJECTED_AS_EXPECTED",
+    "if_branch_missing": "REJECTED_AS_EXPECTED",
+    "runner_changed": "REJECTED_AS_EXPECTED",
+    "timeout_weakened": "REJECTED_AS_EXPECTED"
+  },
+  "actionlint": "NOT_RUN_NOT_INSTALLED",
+  "full_functional_gates": "NOT_RUN_IN_STATIC_VALIDATOR",
+  "provider_runtime": "NOT_TESTED_BY_THIS_VALIDATOR",
+  "subagents": "NATIVE_SUBAGENTS_UNAVAILABLE",
+  "review_independence": "SAME_EXECUTOR_SEQUENTIAL_RECHECK_NOT_THIRD_PARTY",
+  "remote_publication": "PENDING_AT_THIS_FROZEN_PREPUBLICATION_RECORD",
+  "reserved_specs": {
+    "035": "feat/ajustes-navegacao-conta",
+    "036": "feat/ajustes-area-coletas-ihfr",
+    "037": "feat/localizacao-endereco-opcional"
+  },
+  "git_no_index_diff_check": {
+    "exit_code": 1,
+    "diagnostic_output": "",
+    "interpretation": "Changes exist; no whitespace diagnostics. Separate whitespace validator PASS."
+  },
+  "scope": "No external I/O, product execution, provider operations or database operations in the static validator. Publication receipts are recorded separately by SHA."
+}
