@@ -86,3 +86,10 @@ No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassi
 - [x] T031 [IMPLEMENT] Particionar shell.spec.ts porlayout cobrindo workspace/laboratório/Conta/Escape/foco/histórico/insets; nenhuma equivalência inventada.
 - [x] T032 [REVIEW] Revisar escopo/whitespace/sintaxe/tipos e entregar commit/handoff local exclusivo ao coordenador.
 - [ ] T033 [RUNTIME] Executar candidata integrada no Windows hospedado, inspecionar pares reais e registrar achados; UI06/aceite humano separados.
+
+## CLOSE02 — QA estática, eixos de evidência incompleta
+
+- [x] T034 [ANALYZE/PLAN] Reproduzir MEDIUM de parsemdois samples e delimitar reparo aos helpersA/FR-035-003.
+- [x] T035 [IMPLEMENT] Classificar parincompleto comoFAIL/INSUFFICIENT_EVIDENCE/PARTIAL emshared/shell e preservar essa classificação nocatch.
+- [x] T036 [TEST/REVIEW] ExecutarREDzero/umruntime eGREENsmoke semDB, tipos completos locais, lint e whitespace; registrar hashes e limitações.
+- [ ] T037 [RUNTIME] Coordenador executar noSHAcorrigido a próxima rodada pertinente, dentro do orçamento; semPASSherdado deR1.

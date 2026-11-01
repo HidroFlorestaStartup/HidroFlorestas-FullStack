@@ -173,3 +173,11 @@ Todo o código novo está emqa/hf-ui044; nenhum produto/infra/B/C alterado porA.
 CodeSHA do smoke9283f31 não herda15/15 da composição6c61056f. CI hospedada,
 comparação bilateral, inspeção de imagens reais do produto e aceite humano permanecem
 NOT_RUN/PENDING. T033 e tarefas bilaterais históricas seguem abertas.
+
+### Adendo CLOSE02 — par incompleto tem evidência insuficiente
+
+Correção local d27a1e6 deMEDIUM da QA: zero/um sample não é par comparável.
+RED2/2FAIL provouPASS/COMPARABLE/PARTIAL anterior; GREEN5/5PASS provou
+FAIL/INSUFFICIENT_EVIDENCE/PARTIAL no retorno eJSONL, com3smokes anteriores intactos.
+Typecheckcompleto local/lint/whitespacePASS. [Recibo combytes testados e archives](evidence/close02-pair-repair.json).
+Runtime hospedado corrigidoNOT_RUN; nenhum produto/config/push ou aceite afetado.

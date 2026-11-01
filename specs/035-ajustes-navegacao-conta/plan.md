@@ -177,3 +177,17 @@ na reserva observada. Node24.14 local serve smoke sintético, não runtime ofici
 REVIEW: smoke Chromium real e contraprovaRED antes da qualificação integrada,
 syntax/focal types e escopo/whitespace; typecheck completo pelo runner do coordenador.
 UI06 bilateral/15gates novos/aceite humano permanecemNOT_RUN até evidência própria.
+
+### CLOSE02 — reparo focal de pares incompletos após QA estática
+
+ANALYZE read-only: o retorno de `some([])` permitiaCOMPARABLE sem imagens;
+shared.capturePair([]) também registravaPASS sem erro de captura. SeveridadeMEDIUM,
+evidência reproduzível emzero/umruntime; não muda produto, requisito ou autoridade.
+PLAN/IMPLEMENT autorizado: cardinalidade diferente dedois torna execuçãoFAIL,
+comparabilidadeINSUFFICIENT_EVIDENCE e completudePARTIAL emshared e shell.
+O catch de shell mantém a classificação capturada emvez de sobrescrevê-la.
+Adicionadosdois casos smoke semDB; caminhos completos preservam lógica anterior.
+REVIEW: RED2/2FAIL antes do reparo; GREEN5/5PASS, types completos locais/lint/diffPASS.
+Node24.14/Chromium existente: não éCI oficial. Código exclusivo d27a1e6,
+[recibo e hashes](evidence/close02-pair-repair.json). Publicação e runtime corrigido
+permanecem com o coordenador; nenhum resultado é herdado da rodada remota emcurso.
