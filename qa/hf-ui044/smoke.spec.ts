@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { archive, configure, createRuntime, observeReload, platformFonts, sample, readCaseMetadata, waitForFontScale, capturePair, withLayoutCleanup } from "./shared";
-import type { EvidenceCase } from "./contract";
+import { archive, configure, createRuntime, observeReload, platformFonts, sample, readCaseMetadata, waitForFontScale, capturePair, withLayoutCleanup, assessFontRegions, readReferenceReloadState, observeFocus } from "./shared";
+import { STARTER_SHA, type EvidenceCase } from "./contract";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { accountMenuFixture } from "./menu-fixture";
@@ -28,7 +28,7 @@ for (const width of [320, 1440]) {
       expect(reload.before.px).toBe(32); expect(reload.after.px).toBe(16);
       expect(reload.interpretation).toBe("INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE");
       const absent = await platformFonts(runtime, "#missing");
-      expect(absent).toEqual({ observation: "UNOBSERVED", elements: [] });
+      expect(absent).toMatchObject({ observation: "UNOBSERVED", elements: [], diagnostics: { regionExists: false } });
       const c: EvidenceCase = { id: "unobserved-" + width, width, height: 900, scale: 100, inset: 0, state: "no-text-region",
         requirementIds: ["FR-035-003"], fixture: { synthetic: true, database: false } };
       const missing = await sample(runtime, c, { regions: { missing: "#missing" } });
@@ -149,4 +149,58 @@ test("sensitive control mask clips to its scrollport and preserves navigation pi
     expect(colors.visibleSensitiveInput).toEqual([255, 0, 255]);
     expect(colors.navigationBelowScrollport).toEqual([0, 100, 0]);
   } finally { await runtime.context.close(); }
+});
+
+test("loading status DIV owns observable rendered text", async ({ browser }) => {
+  const runtime = await createRuntime(browser, "fullstack");
+  try {
+    await runtime.page.setContent('<!doctype html><meta charset="utf-8"><header id="application-header"><span>Shell</span></header><main id="application-content"><div role="status"><svg width="20" height="20" aria-hidden="true"></svg>Carregando laboratório…</div></main>');
+    const fonts = await platformFonts(runtime, "#application-content");
+    expect(fonts.observation).toBe("OBSERVED");
+    expect(await readReferenceReloadState(runtime.page)).toBe("NATIVE_LAB_LOADING");
+    expect(fonts.elements.some(element => element.tag === "DIV" && element.role === "status")).toBe(true);
+  } finally { await runtime.context.close(); }
+});
+
+test("regional source occlusion preserves UNOBSERVED without approving a font", async ({ browser }) => {
+  const runtime = await createRuntime(browser, "fullstack");
+  const c: EvidenceCase = { id: "shell-667-375-200-0-laboratory-closed", width: 667, height: 375, scale: 200, inset: 0,
+    state: "laboratory-closed", requirementIds: ["FR-035-003"], fixture: { synthetic: true, database: false } };
+  try {
+    await runtime.page.setContent('<!doctype html><header id="application-header"><span>Reference shell model</span></header><main id="application-content" style="position:absolute;top:459px"><p>Offscreen text model</p></main>');
+    await configure(runtime, c);
+    const fonts = { header: await platformFonts(runtime, "#application-header"), main: await platformFonts(runtime, "#application-content") };
+    expect(fonts.header.observation).toBe("OBSERVED"); expect(fonts.main.observation).toBe("UNOBSERVED");
+    expect(fonts.main.diagnostics).toMatchObject({ regionExists: true, regionOutsideViewport: true, visibleTextOwnerCount: 0 });
+    // Decision-rule inputs only: this synthetic fixture is not a starter image.
+    const reference = assessFontRegions("starter", STARTER_SHA, c, fonts);
+    expect(reference).toMatchObject({ insufficient: false, explainedReferenceOcclusion: true, qualification: "REGIONAL_FONT_UNOBSERVED", reasons: ["REFERENCE_CONTENT_OCCLUDED"] });
+    expect(reference.regionalFindings[0]).toMatchObject({ observation: "UNOBSERVED", evidence: "INSUFFICIENT_EVIDENCE" });
+    expect(assessFontRegions("fullstack", runtime.code.sha, c, fonts).insufficient).toBe(true);
+    expect(assessFontRegions("starter", "wrong-pin", c, fonts).insufficient).toBe(true);
+    expect(assessFontRegions("starter", STARTER_SHA, { ...c, width: 390 }, fonts).insufficient).toBe(true);
+    const sampleResult = await sample(runtime, { ...c, id: "font-absence-fullstack-blocked" });
+    expect((await readCaseMetadata(sampleResult.json)).comparability).toBe("INSUFFICIENT_EVIDENCE");
+  } finally { await runtime.context.close(); }
+});
+test("reload observes native loading before exact scale reapplication", async ({ browser }) => {
+  const runtime = await createRuntime(browser, "fullstack");
+  try {
+    await runtime.page.route("http://127.0.0.1:3001/reload-loading", route => route.fulfill({ contentType: "text/html", body: '<!doctype html><meta charset="utf-8"><header id="application-header"><span>Shell</span></header><main id="application-content"><div role="status">Carregando laboratório…</div></main>' }));
+    await runtime.page.goto("http://127.0.0.1:3001/reload-loading");
+    const c: EvidenceCase = { id: "reload-native-loading", width: 390, height: 844, scale: 200, inset: 0, state: "synthetic-reload-loading", requirementIds: ["FR-035-003"], fixture: { synthetic: true, database: false } };
+    await configure(runtime, c); const readback = await observeReload(runtime);
+    expect(readback.before.px).toBe(32); expect(readback.after.px).toBe(16);
+    expect(await readReferenceReloadState(runtime.page)).toBe("NATIVE_LAB_LOADING");
+    expect(await runtime.page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(16);
+    await configure(runtime, c); const result = await sample(runtime, c);
+    expect((await readCaseMetadata(result.json)).geometry.rootFontPx).toBe(32);
+  } finally { await runtime.context.close(); }
+});
+test("reference focus obstruction is measurable without claiming a product pass", async ({ page }) => {
+  await page.setViewportSize({ width: 667, height: 375 });
+  await page.setContent('<!doctype html><style>body{margin:0}header{position:fixed;top:0;height:290px;width:100%;background:white;z-index:2}nav{position:fixed;bottom:0;height:129px;width:100%;background:white;z-index:3}a{position:absolute;top:35px;left:349px;width:269px;height:304px}</style><header>Reference header model</header><main><a href="#target">Synthetic focus</a></main><nav>Reference navigation model</nav>');
+  const target = page.getByRole("link", { name: "Synthetic focus", exact: true });
+  await target.focus(); const focus = await observeFocus(target);
+  expect(focus.focused).toBe(true); expect(focus.centerHit).toBe(false); expect(focus.headerBottom).toBeGreaterThan(focus.railTop);
 });

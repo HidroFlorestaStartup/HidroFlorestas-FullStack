@@ -1,4 +1,4 @@
-import { expect, type Browser, type Page } from "@playwright/test";
+import { expect, type Browser, type Page, type Locator } from "@playwright/test";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { appendFile, mkdir, writeFile, readFile } from "node:fs/promises";
@@ -109,32 +109,78 @@ export async function configure(runtime: Runtime, c: LayoutCase) {
   await waitForFontScale(runtime, c, "after-configure");
 }
 export async function platformFonts(runtime: Runtime, selector: string) {
-  // Select actual visible TextNode owners. SVG/Lucide paths are not text fonts.
-  const probes = await runtime.page.evaluate(selector => {
+  const inspected = await runtime.page.evaluate(selector => {
     document.querySelectorAll("[data-hf-ui06-font]").forEach(node => node.removeAttribute("data-hf-ui06-font"));
     const region = document.querySelector(selector);
-    if (!region) return [];
-    return [region, ...region.querySelectorAll("h1,h2,h3,h4,p,strong,small,a,button,span,label,li,summary")]
-      .filter(node => {
-        if (!(node instanceof HTMLElement) || ![...node.childNodes].some(child => child.nodeType === Node.TEXT_NODE && !!child.textContent?.trim())) return false;
-        const style = getComputedStyle(node), r = node.getBoundingClientRect();
-        return style.display !== "none" && style.visibility !== "hidden" && r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
-      }).slice(0, 8).map((node, i) => {
-        node.setAttribute("data-hf-ui06-font", String(i));
-        return { selector: '[data-hf-ui06-font="' + i + '"]', tag: node.tagName, role: node.getAttribute("role") };
-      });
+    if (!region) return { probes: [], regionExists: false, regionRect: null, regionOutsideViewport: false, visibleTextOwnerCount: 0, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCAN256" };
+    const r = region.getBoundingClientRect();
+    const regionRect = { top: r.top, right: r.right, bottom: r.bottom, left: r.left, width: r.width, height: r.height };
+    // LoadingState owns text on a DIV. A tag-name allowlist misses that real
+    // TextNode even though it is visible. Inspect all HTML tags, boundedly.
+    const probes = [region, ...region.querySelectorAll("*")].slice(0, 256).filter(node => {
+      if (!(node instanceof HTMLElement) || ![...node.childNodes].some(child => child.nodeType === Node.TEXT_NODE && !!child.textContent?.trim())) return false;
+      const style = getComputedStyle(node), box = node.getBoundingClientRect();
+      return style.display !== "none" && style.visibility !== "hidden" && box.width > 0 && box.height > 0 && box.bottom > 0 && box.top < innerHeight && box.right > 0 && box.left < innerWidth;
+    }).slice(0, 8).map((node, i) => {
+      node.setAttribute("data-hf-ui06-font", String(i));
+      return { selector: '[data-hf-ui06-font="' + i + '"]', tag: node.tagName, role: node.getAttribute("role") };
+    });
+    return { probes, regionExists: true, regionRect,
+      regionOutsideViewport: r.top >= innerHeight || r.bottom <= 0 || r.left >= innerWidth || r.right <= 0,
+      visibleTextOwnerCount: probes.length, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCAN256" };
   }, selector);
   const { root } = await runtime.cdp.send("DOM.getDocument");
   const elements = [];
-  for (const probe of probes) {
+  for (const probe of inspected.probes) {
     const { nodeId } = await runtime.cdp.send("DOM.querySelector", { nodeId: root.nodeId, selector: probe.selector });
     if (!nodeId) continue;
     const result = await runtime.cdp.send("CSS.getPlatformFontsForNode", { nodeId });
-    const fonts = result.fonts.filter(font => font.glyphCount > 0)
-      .map(({ familyName, isCustomFont, glyphCount }) => ({ familyName, isCustomFont, glyphCount }));
+    const fonts = result.fonts.filter(font => font.glyphCount > 0).map(({ familyName, isCustomFont, glyphCount }) => ({ familyName, isCustomFont, glyphCount }));
     if (fonts.length) elements.push({ tag: probe.tag, role: probe.role, fonts });
   }
-  return { observation: elements.length ? "OBSERVED" : "UNOBSERVED", elements };
+  const diagnostics = { regionExists: inspected.regionExists, regionRect: inspected.regionRect, regionOutsideViewport: inspected.regionOutsideViewport,
+    visibleTextOwnerCount: inspected.visibleTextOwnerCount, method: inspected.method };
+  return { observation: elements.length ? "OBSERVED" : "UNOBSERVED", elements, diagnostics };
+}
+export function assessFontRegions(source: Source, sourceSha: string, c: EvidenceCase, fonts: Record<string, unknown>) {
+  const regions = Object.entries(fonts) as Array<[string, Awaited<ReturnType<typeof platformFonts>>]>;
+  const missing = regions.filter(([, value]) => value.observation !== "OBSERVED");
+  const main = missing.find(([name]) => name === "main")?.[1];
+  // This is an evidence-of-absence exception, not a successful font observation.
+  // Only the pinned reference and the six R2 landscape initial states qualify;
+  // both source images, exact scale, and an observed visible header remain required.
+  const explainedReferenceOcclusion = source === "starter" && sourceSha === STARTER_SHA
+    && c.id.startsWith("shell-") && c.width === 667 && c.height === 375 && c.scale === 200
+    && ["laboratory-closed", "areas-navigation", "forward"].includes(c.state)
+    && missing.length === 1 && !!main?.diagnostics.regionExists && main.diagnostics.regionOutsideViewport
+    && main.diagnostics.visibleTextOwnerCount === 0 && regions.some(([name, value]) => name === "header" && value.observation === "OBSERVED");
+  return { insufficient: !regions.length || missing.length > 0 && !explainedReferenceOcclusion,
+    explainedReferenceOcclusion, qualification: missing.length ? "REGIONAL_FONT_UNOBSERVED" : "OBSERVED",
+    reasons: explainedReferenceOcclusion ? ["REFERENCE_CONTENT_OCCLUDED"] : [],
+    regionalFindings: missing.map(([region, value]) => ({ region, observation: value.observation, evidence: "INSUFFICIENT_EVIDENCE",
+      explanation: explainedReferenceOcclusion ? "REFERENCE_CONTENT_OCCLUDED" : "UNEXPLAINED_REGIONAL_FONT_ABSENCE", diagnostics: value.diagnostics })) };
+}
+export async function readReferenceReloadState(page: Page) {
+  const loading = page.getByRole("status").filter({ hasText: "Carregando laboratório…" });
+  const missing = page.getByText("Recurso não encontrado", { exact: true });
+  let observed = "UNOBSERVED";
+  await expect.poll(async () => {
+    observed = await missing.isVisible() ? "RESOURCE_NOT_FOUND" : await loading.isVisible() ? "NATIVE_LAB_LOADING" : "UNOBSERVED";
+    return observed;
+  }, { timeout: 3_000, intervals: [25, 50, 100, 150, 200] }).not.toBe("UNOBSERVED");
+  return observed; // Do not infer a terminal outcome from native loading.
+}
+export async function observeFocus(target: Locator) {
+  return target.evaluate(async node => {
+    await new Promise<void>(done => requestAnimationFrame(() => requestAnimationFrame(() => done())));
+    const box = node.getBoundingClientRect(), hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+    const rail = [...document.querySelectorAll("nav")].find(item => getComputedStyle(item).position === "fixed" && item.getBoundingClientRect().height > 0);
+    const visibleArea = Math.max(0, Math.min(innerWidth, box.right) - Math.max(0, box.left)) * Math.max(0, Math.min(innerHeight, box.bottom) - Math.max(0, box.top));
+    return { focused: document.activeElement === node, viewportRatio: box.width * box.height > 0 ? visibleArea / (box.width * box.height) : 0,
+      centerHit: hit === node || !!hit && node.contains(hit), rect: { top: box.top, right: box.right, bottom: box.bottom, left: box.left, width: box.width, height: box.height },
+      headerBottom: document.querySelector("#application-header,header")?.getBoundingClientRect().bottom ?? 0,
+      railTop: rail?.getBoundingClientRect().top ?? innerHeight };
+  });
 }
 export async function observeReload(runtime: Runtime) {
   const read = () => runtime.page.evaluate(() => ({ px: parseFloat(getComputedStyle(document.documentElement).fontSize), inlineStyle: document.documentElement.style.fontSize }));
@@ -198,7 +244,7 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
   finally { await runtime.page.locator('[data-hf-ui06-mask-owner="' + maskOwner + '"]').evaluateAll(nodes => nodes.forEach(node => node.remove())); }
   expect(png.readUInt32BE(16)).toBe(c.width); expect(png.readUInt32BE(20)).toBe(c.height);
   const stem = runtime.source + "-" + safeId(c.id);
-  const fontObserved = Object.values(fonts).every(value => value.observation === "OBSERVED");
+  const fontEvidence = assessFontRegions(runtime.source, runtime.code.sha, c, fonts);
   const metadata = { schema: "hf-ui044-close02-v1", caseId: c.id, source: runtime.source, ...runtime.code,
     compositionBase: COMPOSITION_BASE, run: process.env.GITHUB_RUN_ID ?? null, attempt: process.env.GITHUB_RUN_ATTEMPT ?? null,
     state: c.state, actualState: options.actualState ?? c.state, requirementIds: c.requirementIds, fixture: c.fixture,
@@ -206,8 +252,8 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
     viewport: { width: c.width, height: c.height }, textScale: c.scale, safeAreaBottom: c.inset, fullPage: false, maskedInputs: masks.length, maskPolicy: "VISIBLE_CONTROLS_CLIPPED_TO_VIEWPORT_AND_SCROLLPORT", masking,
     geometry, fontsActuallyRendered: fonts, pngSha256: hash(png), blockedRequests: [...runtime.blocked.values()],
     routeClass: c.state, // Deliberately omit actual resource IDs and URL queries.
-    execution: "PASS", comparability: fontObserved ? (options.comparability ?? "COMPARABLE") : "INSUFFICIENT_EVIDENCE",
-    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: "COMPLETE", reasons: options.reasons ?? [], note: options.note ?? null };
+    execution: "PASS", comparability: fontEvidence.insufficient ? "INSUFFICIENT_EVIDENCE" : fontEvidence.explainedReferenceOcclusion ? "NON_EQUIVALENT" : options.comparability ?? "COMPARABLE",
+    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: "COMPLETE", fontEvidence, reasons: [...(options.reasons ?? []), ...fontEvidence.reasons], note: options.note ?? null };
   const json = Buffer.from(JSON.stringify(metadata, null, 2) + "\n");
   await mkdir(archive, { recursive: true });
   await writeFile(join(archive, stem + ".png"), png, { flag: "wx" });
@@ -223,9 +269,11 @@ export async function capturePair(runtimes: Runtime[], c: EvidenceCase, options:
     catch { errors.push(runtime.source + "_CAPTURE_FAILED"); }
   }
   const incomplete = samples.length !== 2;
-  const unobserved = samples.some(s => Object.values(s.fonts).some(v => (v as { observation: string }).observation !== "OBSERVED"));
-  const result = { execution: incomplete || errors.length ? "FAIL" : "PASS", comparability: incomplete || unobserved ? "INSUFFICIENT_EVIDENCE" : options.comparability ?? "COMPARABLE",
-    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons: [...(options.reasons ?? []), ...(incomplete ? ["BILATERAL_PAIR_INCOMPLETE"] : [])], errors, samples };
+  const metadata = await Promise.all(samples.map(sample => readCaseMetadata(sample.json)));
+  const unobserved = metadata.some(item => item.comparability === "INSUFFICIENT_EVIDENCE");
+  const nonEquivalent = metadata.some(item => item.comparability === "NON_EQUIVALENT");
+  const result = { execution: incomplete || errors.length ? "FAIL" : "PASS", comparability: incomplete || unobserved ? "INSUFFICIENT_EVIDENCE" : nonEquivalent ? "NON_EQUIVALENT" : options.comparability ?? "COMPARABLE",
+    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons: [...new Set([...(options.reasons ?? []), ...metadata.flatMap(item => item.reasons ?? [])]), ...(incomplete ? ["BILATERAL_PAIR_INCOMPLETE"] : [])], errors, samples };
   await recordCase(c, result); return result;
 }
 export async function readCaseMetadata(name: string) { return JSON.parse(await readFile(join(archive, name), "utf8")); }

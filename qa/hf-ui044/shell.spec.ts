@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { AUTH_FIXTURE_USERS, countAuthFixtureUsers, runAuthFixtureCommand } from "../../tests/fixtures/auth-users";
 import { createAreaFixtureClient } from "../../tests/fixtures/areas";
-import { FULLSTACK_URL, STARTER_URL, type Runtime, type LayoutCase, type EvidenceCase } from "./contract";
-import { configure, createRuntime, sample, observeReload, registerCases, recordCase, finalizeCases, readCaseMetadata, recordLifecycle, withLayoutCleanup } from "./shared";
+import { FULLSTACK_URL, STARTER_URL, STARTER_SHA, type Source, type CaptureOptions, type Runtime, type LayoutCase, type EvidenceCase } from "./contract";
+import { configure, createRuntime, sample, observeReload, registerCases, recordCase, finalizeCases, readCaseMetadata, recordLifecycle, withLayoutCleanup, observeFocus, readReferenceReloadState } from "./shared";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(180_000);
@@ -28,18 +28,23 @@ test.beforeAll(async () => {
   await registerCases(allCases);
 });
 
-async function capture(runtimes: Runtime[], c: EvidenceCase, unavailable = false, reload = false) {
+type SourceObservation = { actualState?: string; reasons?: string[]; requirement?: CaptureOptions["requirement"];
+  focus?: Awaited<ReturnType<typeof observeFocus>>; reloadScale?: Awaited<ReturnType<typeof observeReload>>; nativeReloadState?: string };
+type SourceObservations = Partial<Record<Source, SourceObservation>>;
+async function capture(runtimes: Runtime[], c: EvidenceCase, unavailable = false, reload = false, observations: SourceObservations = {}) {
   const samples = [], errors: string[] = [], reasons: string[] = [];
   if (unavailable) reasons.push("ACCOUNT_DISCLOSURE_ABSENT_IN_PINNED_STARTER");
-  if (reload) reasons.push("REFERENCE_CREATED_LAB_LOST_AFTER_RELOAD");
+  if (reload) reasons.push("REFERENCE_RELOAD_STATE_NON_EQUIVALENT");
   for (const runtime of runtimes) {
     try {
-      samples.push(await sample(runtime, c, { actualState: runtime.source === "starter" && unavailable ? "reference-account-unavailable"
-        : runtime.source === "starter" && reload ? "reference-resource-not-found" : c.state,
-        comparability: reasons.length ? "NON_EQUIVALENT" : "COMPARABLE", reasons }));
+      const observation = observations[runtime.source];
+      samples.push(await sample(runtime, c, { actualState: observation?.actualState ?? ( runtime.source === "starter" && unavailable ? "reference-account-unavailable"
+        : runtime.source === "starter" && reload ? "reference-reload-state-unobserved" : c.state),
+        comparability: reasons.length || observation?.reasons?.length ? "NON_EQUIVALENT" : "COMPARABLE", requirement: observation?.requirement, reasons: [...reasons, ...(observation?.reasons ?? [])] }));
     } catch { errors.push(runtime.source + "_CAPTURE_FAILED"); }
   }
   const metadata = await Promise.all(samples.map(s => readCaseMetadata(s.json)));
+  for (const item of metadata) reasons.push(...(item.reasons ?? []));
   const incomplete = samples.length !== 2;
   if (incomplete) reasons.push("BILATERAL_PAIR_INCOMPLETE");
   const missingFonts = metadata.some(m => m.comparability === "INSUFFICIENT_EVIDENCE");
@@ -49,7 +54,7 @@ async function capture(runtimes: Runtime[], c: EvidenceCase, unavailable = false
     if (primary.length === 2 && primary.every(Boolean) && primary[0]!.toLowerCase() !== primary[1]!.toLowerCase()) reasons.push("OBSERVED_FONT_MISMATCH_" + region);
   }
   const result = { execution: incomplete || errors.length ? "FAIL" : "PASS", comparability: incomplete || missingFonts ? "INSUFFICIENT_EVIDENCE" : reasons.length ? "NON_EQUIVALENT" : "COMPARABLE",
-    requirement: "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons, samples, errors };
+    requirement: "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons: [...new Set(reasons)], samples, errors, sourceObservations: observations };
   await recordCase(c, result);
   return result;
 }
@@ -116,16 +121,17 @@ for (const layout of layouts) {
     const labName = "HF UI06 synthetic " + layout.id;
     let fixtureOwned = false;
     const db = createAreaFixtureClient(process.env);
-    const run = async (state: string, action?: () => Promise<void>, unavailable = false, reload = false) => {
+    const run = async (state: string, action?: (observations: SourceObservations) => Promise<void>, unavailable = false, reload = false) => {
       const c = evidence(layout, state);
+      const observations: SourceObservations = {};
       try {
-        if (action) await action();
-        const result = await capture(runtimes, c, unavailable, reload);
+        if (action) await action(observations);
+        const result = await capture(runtimes, c, unavailable, reload, observations);
         if (result.execution !== "PASS" || result.completeness !== "COMPLETE") failed.push(state);
       } catch {
         failed.push(state);
         // Capture valid states even if a visual assertion failed, and keep independent cases running.
-        const captured = await capture(runtimes, c, unavailable, reload);
+        const captured = await capture(runtimes, c, unavailable, reload, observations);
         await recordCase(c, { ...captured, execution: "FAIL", comparability: captured.comparability,
           requirement: "DEFECT_FOUND", completeness: "PARTIAL", reason: "STATE_OR_GEOMETRY_ASSERTION_FAILED" });
       }
@@ -161,13 +167,19 @@ for (const layout of layouts) {
         await run("laboratory-account-escape", async () => { for (const r of runtimes) await account(r, false); }, true);
       }
       if (navigationCase(layout)) {
-        await run("last-control-focus", async () => {
+        await run("last-control-focus", async observations => {
           for (const r of runtimes) {
             const main = r.page.locator(r.source === "fullstack" ? "#application-content" : "#conteudo");
             const last = main.locator("a[href]:visible,button:enabled:visible,input:enabled:visible").last();
-            await last.focus(); await expect(last).toBeFocused(); await expect(last).toBeInViewport({ ratio: 1 });
-            const hit = await last.evaluate(node => { const b = node.getBoundingClientRect(), h = document.elementFromPoint(b.left + b.width / 2, b.top + b.height / 2); return h === node || !!h && node.contains(h); });
-            expect(hit).toBe(true);
+            await last.focus(); await expect(last).toBeFocused();
+            const focus = await observeFocus(last);
+            const referenceOccluded = r.source === "starter" && r.code.sha === STARTER_SHA && layout.width === 667 && layout.height === 375 && layout.scale === 200
+              && focus.headerBottom >= focus.railTop && !focus.centerHit;
+            observations[r.source] = { focus, requirement: referenceOccluded ? "DEFECT_FOUND" : "SATISFIED_TECHNICALLY",
+              reasons: referenceOccluded ? ["REFERENCE_FOCUS_OBSCURED"] : [] };
+            if (!referenceOccluded) { await expect(last).toBeInViewport({ ratio: 1 }); expect(focus.centerHit).toBe(true); }
+            // The pinned reference's observed obstruction is recorded literally;
+            // it is not a qualification claim about either source's accessibility.
           }
         });
         await run("areas-navigation", async () => { for (const r of runtimes) {
@@ -176,10 +188,14 @@ for (const layout of layouts) {
         } });
         await run("back", async () => { for (const r of runtimes) { await r.page.goBack(); await expect(r.page).toHaveURL(new RegExp(paths.get(r)! + "/?$")); } });
         await run("forward", async () => { for (const r of runtimes) { await r.page.goForward(); await expect(r.page).toHaveURL(/\/areas\/?$/); } });
-        await run("reload", async () => { for (const r of runtimes) {
-          await observeReload(r);
-          if (r.source === "starter") await expect(r.page.getByText("Recurso não encontrado", { exact: true })).toBeVisible();
-          else await expect(r.page.getByRole("heading", { name: "Áreas Monitoradas", exact: true })).toBeVisible();
+        await run("reload", async observations => { for (const r of runtimes) {
+          const reloadScale = await observeReload(r);
+          if (r.source === "starter") {
+            const nativeReloadState = await readReferenceReloadState(r.page);
+            observations[r.source] = { reloadScale, nativeReloadState, actualState: "reference-" + nativeReloadState.toLowerCase() + "-after-reload",
+              reasons: ["REFERENCE_RELOAD_STATE_NON_EQUIVALENT"] };
+          } else { await expect(r.page.getByRole("heading", { name: "Áreas Monitoradas", exact: true })).toBeVisible(); observations[r.source] = { reloadScale }; }
+          // Only after the before/after readback and native state observation.
           await configure(r, layout);
         } }, false, true);
       }
