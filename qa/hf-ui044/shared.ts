@@ -112,12 +112,12 @@ export async function platformFonts(runtime: Runtime, selector: string) {
   const inspected = await runtime.page.evaluate(selector => {
     document.querySelectorAll("[data-hf-ui06-font]").forEach(node => node.removeAttribute("data-hf-ui06-font"));
     const region = document.querySelector(selector);
-    if (!region) return { probes: [], regionExists: false, regionRect: null, regionOutsideViewport: false, visibleTextOwnerCount: 0, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCAN256" };
+    if (!region) return { probes: [], regionExists: false, regionRect: null, regionOutsideViewport: false, visibleTextOwnerCount: 0, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN" };
     const r = region.getBoundingClientRect();
     const regionRect = { top: r.top, right: r.right, bottom: r.bottom, left: r.left, width: r.width, height: r.height };
     // LoadingState owns text on a DIV. A tag-name allowlist misses that real
-    // TextNode even though it is visible. Inspect all HTML tags, boundedly.
-    const probes = [region, ...region.querySelectorAll("*")].slice(0, 256).filter(node => {
+    // TextNode even though it is visible. Scan the finite scoped DOM, then bound CDP probes to eight visible owners.
+    const probes = [region, ...region.querySelectorAll("*")].filter(node => {
       if (!(node instanceof HTMLElement) || ![...node.childNodes].some(child => child.nodeType === Node.TEXT_NODE && !!child.textContent?.trim())) return false;
       const style = getComputedStyle(node), box = node.getBoundingClientRect();
       return style.display !== "none" && style.visibility !== "hidden" && box.width > 0 && box.height > 0 && box.bottom > 0 && box.top < innerHeight && box.right > 0 && box.left < innerWidth;
@@ -127,7 +127,7 @@ export async function platformFonts(runtime: Runtime, selector: string) {
     });
     return { probes, regionExists: true, regionRect,
       regionOutsideViewport: r.top >= innerHeight || r.bottom <= 0 || r.left >= innerWidth || r.right <= 0,
-      visibleTextOwnerCount: probes.length, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCAN256" };
+      visibleTextOwnerCount: probes.length, method: "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN" };
   }, selector);
   const { root } = await runtime.cdp.send("DOM.getDocument");
   const elements = [];
@@ -156,6 +156,7 @@ export function assessFontRegions(source: Source, sourceSha: string, c: Evidence
     && main.diagnostics.visibleTextOwnerCount === 0 && regions.some(([name, value]) => name === "header" && value.observation === "OBSERVED");
   return { insufficient: !regions.length || missing.length > 0 && !explainedReferenceOcclusion,
     explainedReferenceOcclusion, qualification: missing.length ? "REGIONAL_FONT_UNOBSERVED" : "OBSERVED",
+    comparisonQualification: explainedReferenceOcclusion ? "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION" : missing.length ? "FONT_COMPARISON_INSUFFICIENT_EVIDENCE" : "FONT_OBSERVATION_AVAILABLE_NOT_VISUAL_ACCEPTANCE",
     reasons: explainedReferenceOcclusion ? ["REFERENCE_CONTENT_OCCLUDED"] : [],
     regionalFindings: missing.map(([region, value]) => ({ region, observation: value.observation, evidence: "INSUFFICIENT_EVIDENCE",
       explanation: explainedReferenceOcclusion ? "REFERENCE_CONTENT_OCCLUDED" : "UNEXPLAINED_REGIONAL_FONT_ABSENCE", diagnostics: value.diagnostics })) };

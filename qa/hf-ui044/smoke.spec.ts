@@ -175,6 +175,7 @@ test("regional source occlusion preserves UNOBSERVED without approving a font", 
     // Decision-rule inputs only: this synthetic fixture is not a starter image.
     const reference = assessFontRegions("starter", STARTER_SHA, c, fonts);
     expect(reference).toMatchObject({ insufficient: false, explainedReferenceOcclusion: true, qualification: "REGIONAL_FONT_UNOBSERVED", reasons: ["REFERENCE_CONTENT_OCCLUDED"] });
+    expect(reference.comparisonQualification).toBe("FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION");
     expect(reference.regionalFindings[0]).toMatchObject({ observation: "UNOBSERVED", evidence: "INSUFFICIENT_EVIDENCE" });
     expect(assessFontRegions("fullstack", runtime.code.sha, c, fonts).insufficient).toBe(true);
     expect(assessFontRegions("starter", "wrong-pin", c, fonts).insufficient).toBe(true);
@@ -203,4 +204,16 @@ test("reference focus obstruction is measurable without claiming a product pass"
   const target = page.getByRole("link", { name: "Synthetic focus", exact: true });
   await target.focus(); const focus = await observeFocus(target);
   expect(focus.focused).toBe(true); expect(focus.centerHit).toBe(false); expect(focus.headerBottom).toBeGreaterThan(focus.railTop);
+});
+
+test("visible text after 300 offscreen siblings is still sampled", async ({ browser }) => {
+  const runtime = await createRuntime(browser, "fullstack");
+  try {
+    await runtime.page.setContent('<!doctype html><meta charset="utf-8"><main id="application-content" style="height:200px">' + '<p style="position:absolute;left:-10000px;top:0">Offscreen synthetic</p>'.repeat(300) + '<div role="status">Visible synthetic TextNode after 300 siblings</div></main>');
+    const fonts = await platformFonts(runtime, "#application-content");
+    await mkdir(archive, { recursive: true });
+    await writeFile(join(archive, "font-after-300-siblings.json"), JSON.stringify(fonts, null, 2) + "\n", { flag: "wx" });
+    expect(fonts.observation).toBe("OBSERVED");
+    expect(fonts.elements).toHaveLength(1); expect(fonts.elements[0].tag).toBe("DIV");
+  } finally { await runtime.context.close(); }
 });
