@@ -181,3 +181,12 @@ RED2/2FAIL provouPASS/COMPARABLE/PARTIAL anterior; GREEN5/5PASS provou
 FAIL/INSUFFICIENT_EVIDENCE/PARTIAL no retorno eJSONL, com3smokes anteriores intactos.
 Typecheckcompleto local/lint/whitespacePASS. [Recibo combytes testados e archives](evidence/close02-pair-repair.json).
 Runtime hospedado corrigidoNOT_RUN; nenhum produto/config/push ou aceite afetado.
+
+### Adendo CLOSE02 — nome acessível do laboratório da referência
+
+Código local885b474 corrige exclusivamente o seletorA da criação delaboratório
+nostarter; requiredmarkeraria-hidden impedegetByLabel exact no modelo observado.
+ContraprovaChromiumRED1/1FAIL, GREEN6/6PASS, oldLabelMatches0 e
+accessibleTextboxMatches1. Typesfull locais/lint/whitespacePASS.
+[Recibo comfontes/hashes](evidence/close02-starter-label-repair.json).
+Sem mudarprodutos/timeouts/config oupublicar; runtimeoficial corrigidoNOT_RUN.

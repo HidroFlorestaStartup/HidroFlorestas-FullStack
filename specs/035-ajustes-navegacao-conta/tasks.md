@@ -93,3 +93,10 @@ No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassi
 - [x] T035 [IMPLEMENT] Classificar parincompleto comoFAIL/INSUFFICIENT_EVIDENCE/PARTIAL emshared/shell e preservar essa classificação nocatch.
 - [x] T036 [TEST/REVIEW] ExecutarREDzero/umruntime eGREENsmoke semDB, tipos completos locais, lint e whitespace; registrar hashes e limitações.
 - [ ] T037 [RUNTIME] Coordenador executar noSHAcorrigido a próxima rodada pertinente, dentro do orçamento; semPASSherdado deR1.
+
+## CLOSE02 — seletor acessível da referência
+
+- [x] T038 [ANALYZE/PLAN] Inspecionar FieldShell fixado e reproduzir emChromium a estrutura label/spanaria-hidden/inputrequired semDB.
+- [x] T039 [IMPLEMENT] Trocar somente o seletor do nome de laboratório nostarter por textbox/nomeacessível exato; preservarFullStack/produto/timeouts.
+- [x] T040 [TEST/REVIEW] DemonstrarRED1/1 eGREEN6/6, typesfull locais/lint/diff e persistir contraprova0label/1textbox.
+- [ ] T041 [RUNTIME] Verificar criação de laboratório da referência noSHAda próxima rodada pertinente docoordenador, semPASSherdado.

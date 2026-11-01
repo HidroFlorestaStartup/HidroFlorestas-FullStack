@@ -191,3 +191,15 @@ REVIEW: RED2/2FAIL antes do reparo; GREEN5/5PASS, types completos locais/lint/di
 Node24.14/Chromium existente: não éCI oficial. Código exclusivo d27a1e6,
 [recibo e hashes](evidence/close02-pair-repair.json). Publicação e runtime corrigido
 permanecem com o coordenador; nenhum resultado é herdado da rodada remota emcurso.
+
+### CLOSE02 — seletor da criação de laboratório na referência
+
+ANALYZE read-only: FieldShell295ff da referência cbb954a7 inclui oasterisco
+required emspanaria-hidden. R1Bfalhou no setup relatado pelo coordenador;
+o mesmo seletorA foi reproduzido emChromium sintético: getByLabel exactnãoresolve.
+PLAN/IMPLEMENT: somente createLab nostarter passa atextbox pelo nomeacessível
+exato. FullStack, produto dareferência e timeouts permanecem com os mesmosbytes.
+REVIEW: RED1/1FAIL; GREEN6/6PASS, seletorlabel0matches/textbox1match,
+types completos locais/lint/diffPASS. Código885b474 e [recibo](evidence/close02-starter-label-repair.json).
+Node24.14local/semDB; runtime hospedado corrigido aindaNOT_RUN. Reparo será
+agrupado pelo coordenador após oslogs deA/RC, sem publicar worker ourepetirR1.
