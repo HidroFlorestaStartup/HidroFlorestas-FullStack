@@ -50,3 +50,13 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [x] T020 [ANALYZE] Classificar BUILD FAIL A3 por stack TypeScript (CSSNumberish), sem atribuir a E2E.
 - [x] T021 [IMPLEMENT] Estreitar `endTime` para número no auxiliar E2E, preservando timeout limitado e assertions reais.
 - [ ] T022 [REVIEW] Confirmar Typecheck/Build, E2E e 15 gates do HEAD A4 na Actions oficial, com journal e artefatos.
+
+## Continuidade A5 — ownership e evidências do gate IHFR
+
+- [x] T023 [ANALYZE] Identificar pelos logs e journal do run A4 `41253192621`/1 as duas falhas reais e distingui-las dos 404 G0; registrar limites de viewport 667×375/text200 e cópia do SHA.
+- [x] T024 [PLAN] Conferir as specs 035/036 e ownership: safe-area é A; `ScientificNotice` e assertions IHFR são B; congelar alterações somente A.
+- [x] T025 [IMPLEMENT] Corrigir o padding contextual para 8px + inset e adicionar contraprova de 42px no próprio E2E de shell, sem alterar componentes/testes B.
+- [ ] T026 [REVIEW] Revalidar o SHA final da branch A nos 15 gates, observar `results.jsonl`, screenshots e produzir recibo por run/tentativa; eventual FAIL IHFR dependente de B não pode ser encerrado unilateralmente.
+- [ ] T027 [UI-06] Executar de verdade os dois projetos em estados/viewport equivalentes e registrar capturas `fullPage:false` e proveniência; sem ambos runtimes, `UI06_BILATERAL_NOT_RUN`.
+
+T007/T008/T013–T016/T019/T022 permanecem pendentes enquanto o SHA final não possuir prova completa. Implementar os arquivos não equivale a obter PASS. Sem alteração de ownership dos testes `ihfr-diagnosis-{read,manage}.spec.ts`.

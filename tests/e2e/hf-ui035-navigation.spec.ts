@@ -145,6 +145,9 @@ test("UI-05: simulated bottom safe-area increases the actual fixed rail padding"
   try {
     await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 34, bottomMax: 34 } });
     await expect.poll(() => nav.evaluate(el => parseFloat(getComputedStyle(el).paddingBottom))).toBeGreaterThanOrEqual(before + 34);
+    // A5: the shell reserves 8px plus the simulated 34px inset, not 6px.
+    // The IHFR management journey checks the same real computed geometry.
+    await expect.poll(() => nav.evaluate(el => parseFloat(getComputedStyle(el).paddingBottom))).toBe(42);
     await capture(page, info, "laboratory-375-safearea34");
   } finally {
     await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 0, bottomMax: 0 } });
