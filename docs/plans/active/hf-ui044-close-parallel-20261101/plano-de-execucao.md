@@ -94,3 +94,21 @@ Após runtime, consolidar1 push por owner, inventariar CI separadamente e revis�
 Até3 novos SHAs QA; eventual DOC_HEAD não recebe SUCCESS de CODE_SHA_TESTED. Não publicar
 um quarto SHA documental se as três rodadas técnicas forem necessárias. Recibo PR45 único
 permanece6563833137; PR49 é a candidata Draft, sem merge/deploy.
+
+## RC2 qualificada e última rodada somente de instrumentação
+
+R2 d62fb08, run41353270282/1: RC15/15 PASS,241 E2E e6 IHFR (subconjuntos não somados).
+ZIP13102479714 baixado/digest/CRC validado; quatro UI037 conferem com verificador final
+após todas as suítes. Prova permanece nesse SHA/tree, com aceite humano/provedor pendentes.
+UI-A/B ainda incompletas: causas e imagens reais em round-2.json e recibos035/036.
+
+R3 usa o último SHA autorizado para smoke/UI-A/UI-B (5+35+35min). RC é NOT_RUN em R3:
+nenhum dos630 insumos funcionais Git do filtro oficial mudou; env/comando RC idênticos.
+Não migrar SUCCESS, snapshot ou proveniência de run entre SHAs. Validar manifesto após
+o commit final e antes do push. CI15 permanece vinculada a d62, conforme o contrato
+permite executar só jobs afetados quando falha apenas instrumentação.
+
+Reparos A/B preservam negativos, escala, foco, ratio1 e registros insuficientes. Obstrução
+real da referência fica NON_EQ com UNOBSERVED regional literal; não é aceite tipográfico.
+Após R3, relatórios finais locais commitados/arquivados com hashes e parecer público na
+PR45; nenhum quarto push documental QA. Uma publicação consolidada por owner permanece.

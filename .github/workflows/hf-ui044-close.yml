@@ -244,8 +244,12 @@ jobs:
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
+  # Final R3 changes only qa instrumentation and documentation. RC is NOT_RUN
+  # here: d62fb08/run41353270282 already passed15 with the same630 functional
+  # Git blobs; env/command below are unchanged. Keep its success bound to R2.
   rc-ui037:
     if: >-
+      false &&
       github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
       github.ref == 'refs/heads/codex/hf-ui044-close-20261101' &&
       github.event_name == 'push' && github.event.forced == false &&
