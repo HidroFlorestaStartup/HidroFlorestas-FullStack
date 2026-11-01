@@ -18,3 +18,13 @@ as classes de viewport/estado. Nenhuma diferença de imagem foi declarada observ
 
 Aceite humano: HUMAN_ACCEPTANCE_PENDING. Quatro qualificadores IHFR permanecem obrigatórios;
 comparação técnica não é validação científica definitiva ou homologação de provedor.
+
+## R1 — evidência terminal sem capturas bilaterais
+
+Run41351237110/1/source194e9afa: setup UI-B FAIL,75NOT_RUN,0PNG no artifact13101154606.
+Digest fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643,CRC PASS.
+Não há PNGs para análise de hierarquia/tipografia/densidade nesta rodada. A falha
+é técnica do seletor required-label no setup da referência, reproduzida em Chromium
+sintético; não é defeito visual de produto nem NON_EQUIVALENT aprovado.
+Reparo aguardando runtime corretivo do coordenador. Os registros estáticos anteriores
+continuam classificados como fontes, não como inspeção visual executada.

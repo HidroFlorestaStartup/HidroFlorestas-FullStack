@@ -168,3 +168,15 @@ Os casos preservam texto200, ratio1, foco/hit-testing, quatro qualificadores cie
 ordem/origem/ausência reais. Não se registram payload científico, cookie, token ou segredo. Dados
 sintéticos imutáveis permanecem só até descarte do runner owned; cleanup lógico e Stop físico têm
 recibos separados. Sem ferramenta global instalada no host e sem provedor real/alteração científica.
+
+### R1 — setup UI-B executado com FAIL, pares não iniciados
+
+[Run41351237110/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110),
+source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920, job124982006393, artifact13101154606:
+FAIL no beforeAll,75casos NOT_RUN,0PNG. ZIP local auditado por B: SHA256
+fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643 eCRC PASS.
+Nenhum caso recebeu PASS herdado. Causa reproduzida: label obrigatório do starter
+inclui asterisco aria-hidden que impede getByLabel exato sem esse texto.
+Reparo focal usa getByRole textbox/nome acessível exato; contraprova Chromium sintético
+RED/GREEN em `evidence/close02-reference-label-check.json`. Sem mudança de timeout,
+starter/produto ou banco local. Matriz e análise visual continuam pendentes de nova rodada.

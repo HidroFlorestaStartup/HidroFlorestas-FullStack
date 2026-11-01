@@ -91,3 +91,5 @@ T025/T026 assinalam implementação do harness e fixtures, não execução runti
 sem substituir executor não autor. Typecheck oficial completo permanece dependente do coordenador.
 
 - [x] T031 [CORREÇÃO/REVIEW] Após finding MEDIUM não autor, impedir COMPARABLE/NON_EQUIVALENT sem dois samples em `domain.spec.ts`; contraprova da função real para zero/um/dois samples (6cenários), typecheck/lint locais PASS. Runtime da correção permanece NOT_RUN até nova candidata do coordenador.
+
+- [x] T032 [R1 ANALYZE/PLAN/IMPLEMENT/REVIEW] Corrigir somente o seletor do textbox Nome do laboratório no starter após timeout real de setup; contraprova Chromium sintético da estrutura required/aria-hidden RED/GREEN e auditoria estática dos demais seletores/adapter. Runtime bilateral da correção ainda NOT_RUN.

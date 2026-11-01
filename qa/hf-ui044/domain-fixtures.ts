@@ -118,7 +118,7 @@ export async function setupStarterDomain(runtime: Runtime): Promise<DomainFixtur
   await expect(page).toHaveURL(STARTER_URL + "/workspace");
   await page.getByRole("button", { name: "Criar seu Laboratório IHFR", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Criar Laboratório IHFR", exact: true });
-  await dialog.getByLabel("Nome do laboratório", { exact: true }).fill(LAB_NAME);
+  await dialog.getByRole("textbox", { name: "Nome do laboratório", exact: true }).fill(LAB_NAME);
   await dialog.getByRole("button", { name: "Criar laboratório", exact: true }).click();
   await expect(dialog).toHaveCount(0);
   const card = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: LAB_NAME, exact: true }) });

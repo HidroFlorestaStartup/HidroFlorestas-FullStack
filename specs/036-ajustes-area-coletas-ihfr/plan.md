@@ -212,3 +212,27 @@ zero samples, somente FullStack, somente starter, dois completos, dois NON_EQUIV
 e fontes UNOBSERVED:6/6 PASS. Não houve browser, PG ou runtime B local. Relatório em
 `evidence/close02-pair-classification-check.json`. Typecheck completo local e lint B PASS.
 Nova árvore aguarda a rodada corretiva do coordenador; nenhum resultado CI foi herdado.
+
+### R1 runtime e correção do seletor de referência — 2026-11-01
+
+Run41351237110/attempt1, source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920:
+ui-b falhou no beforeAll aguardando Nome do laboratório no diálogo do starter.
+Artifact13101154606 baixado pelo coordenador e inspecionado também por B na cópia
+local: SHA256 fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643,
+CRC PASS,0PNG e75 casos NOT_RUN. Sem prova bilateral produzida. O fluxo chegou ao
+setup de referência depois das chamadas aguardadas da fixture FullStack; isso não
+constitui comparação visual, suíte B aprovada ou aceite.
+
+ANALYZE: em startercbb954a, FieldShell/TextField coloca o asterisco obrigatório
+num span aria-hidden dentro do label. getByLabel exato usa o texto do label com o
+asterisco; o seletor antigo sem asterisco não encontra o controle. PLAN/IMPLEMENT:
+trocar somente a referência por getByRole textbox com nome acessível exato,
+que exclui aria-hidden. Nenhum timeout, assert, produto ou starter alterado.
+
+REVIEW: Chromium sintético153.0.8010.12 local reproduziu a estrutura exata do
+FieldShell/CreateLab: seletor antigo0matches/filltimeout250ms (contraprova RED);
+textbox de nome acessível1match/fillGREEN. Sem Bun/PG ou servidor local dos projetos.
+O limite250ms é exclusivo da contraprova negativa, não altera testes de produto.
+Auditoria estática dos demais seletores e métodos/retornos/versões do adapter não
+demonstrou outro descompasso; não substitui runtime. Prova e recorte em
+`evidence/close02-reference-label-check.json`. Próxima rodada pertence ao coordenador.

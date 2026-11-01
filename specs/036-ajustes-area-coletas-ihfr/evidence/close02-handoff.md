@@ -45,3 +45,13 @@ Patch de código SHA256 `33eca2553ce1427ae770ccb6f77c25820e001954e637c1be1813e5c
 [close02-pair-classification-check.json](close02-pair-classification-check.json),6/6 PASS
 na declaração real extraída por AST. Typecheck completo local e lint B PASS/exit0.
 Sem PG/browser local, push ou runtime de CI da correção; A/coord mantêm seus próprios writers.
+
+## Delta R1 — seletor required-label da referência
+
+Base `89666f0b1bb78de476a53e19987b25beba26fd14`. Reparo único de código em domain-fixtures.ts: getByRole textbox
+com nome acessível exato, preservando timeout e produto/starter. Patch SHA256
+`8062e43a06e7a0967d8d3cdc3b50e89fa664ecae70568036b844427d7bbaf4e9`. Prova Chromium sintéticoRED/GREEN e auditoria de outros seletores:
+[close02-reference-label-check.json](close02-reference-label-check.json).
+R1 real: source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920/run41351237110/1,
+artifact13101154606,setupFAIL/75NOT_RUN/0PNG; digestfc05f5e8... eCRC verificados.
+Sem bilateralPASS; nova correção permanece sem runtime da candidata até R2.

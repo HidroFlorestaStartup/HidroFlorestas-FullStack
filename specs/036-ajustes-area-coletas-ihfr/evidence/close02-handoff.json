@@ -179,5 +179,36 @@
     "database": false,
     "runtimeCorrectiveCandidate": "NOT_RUN",
     "workerPush": false
+  },
+  "referenceLabelCorrectiveDelta": {
+    "base": "89666f0b1bb78de476a53e19987b25beba26fd14",
+    "codePath": "qa/hf-ui044/domain-fixtures.ts",
+    "codePatchSha256": "8062e43a06e7a0967d8d3cdc3b50e89fa664ecae70568036b844427d7bbaf4e9",
+    "cause": "Pinned FieldShell label includes required asterisk in aria-hidden span; exact getByLabel without asterisk matches0",
+    "repair": "Reference-only exact textbox accessible name selector",
+    "timeoutsChanged": false,
+    "productChanged": false,
+    "starterChanged": false,
+    "counterexample": "close02-reference-label-check.json",
+    "syntheticChromium": "153.0.8010.12",
+    "red": "old exact label0matches/filltimeout",
+    "green": "exact accessible textbox1match/fill succeeds",
+    "round1": {
+      "sourceSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+      "run": 41351237110,
+      "attempt": 1,
+      "job": 124982006393,
+      "artifact": 13101154606,
+      "digest": "fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643",
+      "digestCheckedFromLocalBytes": true,
+      "crc": "PASS",
+      "setup": "FAIL",
+      "casesNotRun": 75,
+      "png": 0
+    },
+    "runtimeCorrectiveCandidate": "NOT_RUN",
+    "bunLocal": false,
+    "databaseLocal": false,
+    "workerPush": false
   }
 }
