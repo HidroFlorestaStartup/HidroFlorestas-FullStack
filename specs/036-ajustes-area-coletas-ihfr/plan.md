@@ -288,3 +288,36 @@ hitfalse; a classificação original continuaFAIL/PARTIAL. Relatório
 `evidence/close02-failure-frame-check.json`. Arquivos sintéticos brutos ficam na área local
 ignorada comhash no relatório, sem pretensão de fonteGit/execução deproduto. TSC/lint/diffPASS.
 Nenhuma alteração a sharedA, configs, produto ou limite de timeout; runtimeR3 ainda pendente.
+
+### Diligência focal pré-R3 — exposição semântica em dois estados centrais
+
+Fonte observada A/R2 no starter667x375/text200: main.top459, header290 ebarra129,
+sem faixa útil de leitura. Os estadosB area-empty ecollection-record capturavam o início
+sem rolar até mensagem vazia/Registro. Ajuste delimitado a esses dois estados: readiness
+oficial, geometria inicial (main/header/faixa/target/ratio/hit), snapshot inicial quando
+mainfora oufaixazero, um único scroll nativo ao alvo em ambasfontes ANTES da medição final,
+e geometria/ratio/hit pós-scroll correlacionados em fixture/index.
+
+Snapshot inicial tem idderivado/arquivos próprios e wrapperliteral
+DIAGNOSTIC_NOT_PLANNED_COVERAGE, comsource/SHA/tree/run/attempt, hashPNG/JSON,
+rawfontRegions e coverageContributionfalse. JSON amostral jáhashado não é reescrito;
+o wrapper e o sampleprincipal referenciam arquivos/hashes por semanticScrollBySource.
+RawUNOBSERVED inicial permaneceUNOBSERVED e não é contado como cobertura da leitura.
+
+Referência inicialocluída usa initialRefOcclusion/NON_EQ explícitos; pós-scroll sobheader/
+nav continuaNON_EQ, com postRatio/postHit/faixareais e o limite literal de que glifosCDP
+não provamlegibilidade. Nenhuma exceção defontes foiacrescentada: qualquerfontgap inesperado
+continuaINSUFFICIENT_EVIDENCE e faz osumárioFAIL. FullStackinitialocluído lançaFAIL após
+preservar snapshot (reasonSOURCE_INITIAL_OBSTRUCTION, nãoclassificado comoreferência).
+FullStackpost exige faixapositiva/hitunobstructed e ratio1 se acaixa doalvo cabe nafaixa;
+se amensagemcaixa for maior que afaixa, exige interseçãopositiva e registra que aleitura
+demanda scroll, sem fingircaixainteira numframe. Todos assertsratio1 dosqualificadores
+científicos preexistentes permanecemintactos. Falha gera frame/diagnóstico anterior.
+
+ContraprovaChromium153 executou afunçãoB e sample/fontcollector reais emDOMsintético nas
+dimensões medidas:4casos (2statesx2sources)PASS. Nativegap191/ratio1/hittrue; referência
+initialtop459/gap0/UNOBSERVEDpreservado; pósratio1/hitfalse/gap0 éNON_EQ e nãorecebeaceite.
+Hashesiniciais mantidos depoisdosampleprincipal. Teste inicialdacontraprova revelou erro
+na própria montagem (margin-collapseeencoding), corrigido somente noexecutor sintético;
+nãofoiatribuídoaoproduto. Prova em evidence/close02-semantic-core-check.json.
+TSCcompleto local/lint/diffPASS; descoberta permanece76; aplicativo/PG/BunlocalNOT_RUN.

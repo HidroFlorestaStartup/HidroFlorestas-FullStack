@@ -297,5 +297,45 @@
     },
     "round3AppRuntime": "NOT_RUN",
     "workerPush": false
+  },
+  "round3SemanticCoreDiligence": {
+    "base": "bb8ac764bb1ba7d8f2c8c316725844f84a9957c0",
+    "codePath": "qa/hf-ui044/domain.spec.ts",
+    "codePatchSha256": "c10a20aeec6378d1d74712aa4900a3519d619af0412c8cf0ead11746b9a4e8c8",
+    "states": [
+      "area-empty",
+      "collection-record"
+    ],
+    "singleNativeReadingScrollBeforeFinalMeasurementBothSources": true,
+    "initialDiagnostic": {
+      "evidenceKind": "DIAGNOSTIC_NOT_PLANNED_COVERAGE",
+      "derivedCaseId": true,
+      "separateFiles": true,
+      "rawUnobservedPreserved": true,
+      "hashedSampleJsonRewritten": false,
+      "coverageContribution": false,
+      "correlation": "fixture.semanticScrollBySource / index"
+    },
+    "sourceExposure": [
+      "initial/main/header/readingGap/targetRect/ratio/hit",
+      "postRatio/postHit/post readingGap",
+      "initialDiagnostic files and SHA256 hashes"
+    ],
+    "referenceObstruction": "NON_EQUIVALENT initialRefOcclusion/post-obstruction; CDP glyphs not legibility pass",
+    "nativeObstruction": "Initial source obstruction throws after preserving frame; post positive gap/hit required, ratio1 for target that fits reading band; oversized box positive intersection and explicit reading-by-scroll limit",
+    "fontExceptionAdded": false,
+    "unexpectedUnobservedStillBlocks": true,
+    "existingScientificRatio1Unchanged": true,
+    "counterexample": "close02-semantic-core-check.json",
+    "counterexampleCasesPassed": 4,
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "discovery": 76,
+      "diff": "PASS"
+    },
+    "applicationRuntime": "NOT_RUN",
+    "round3Runtime": "NOT_RUN",
+    "workerPush": false
   }
 }

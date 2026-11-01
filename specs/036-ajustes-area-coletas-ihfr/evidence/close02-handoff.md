@@ -79,3 +79,17 @@ geometria antes/depois, semretentarassert ou mudar estado. Não contar como samp
 ContraprovaChromium real da própria função:PNG667x375/hashverificado/máscara1/ratio0/hitfalse,
 classificação permaneceFAIL/INSUFFICIENT_EVIDENCE/PARTIAL; prova emclose02-failure-frame-check.json.
 TSCcompleto24.14/lint/diffPASS; semPG/Bun/aplicação local/push. RuntimeR3 continua pendente.
+
+## Diligência focal final B antes de R3
+
+Base `bb8ac764bb1ba7d8f2c8c316725844f84a9957c0`; patchúnico domain.spec.ts SHA256 `c10a20aeec6378d1d74712aa4900a3519d619af0412c8cf0ead11746b9a4e8c8`.
+Somente dois estadoscentrais: area-empty/collection-record agora rolam aoalvosemântico
+emambasfontes antesda medição, preservando inicialocluído emPNG/JSONidderivado +wrapper
+DIAGNOSTIC_NOT_PLANNED_COVERAGE (nãocobertura; rawUNOBSERVED/hashoriginais preservados).
+Fixture/index correlacionam initialDiagnostic/files/hashes einitial/postrect/ratio/hit/gap.
+StarterobstruídoNON_EQliteral; glifosCDPnãosãolegibilidade. Nativeinitialgapinesperado
+bloqueiaapósframe; Nativepostexigegap>0/hittrue e ratio1quandoacaixacabe, ouregistra
+leituraporscrolldecaixamaiorcominterseçãopositiva. Qualificadoresmantêmratio1intacto.
+Semexceçãodefontes; UNOBSERVEDinesperadobloqueia. ContraprovaChromium4casosPASScom
+função/sample/fontcollector reais; JSONhashadonãoalterado. Prova close02-semantic-core-check.json.
+TSC/lint/discovery76/diff locaisPASS; semaplicação/Bun/PGlocal/push. R3continuaNOT_RUN.

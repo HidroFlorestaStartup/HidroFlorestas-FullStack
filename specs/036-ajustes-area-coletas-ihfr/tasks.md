@@ -99,3 +99,5 @@ sem substituir executor não autor. Typecheck oficial completo permanece depende
 - [x] T035 [R2 DIAGNÓSTICO/REVIEW] Persistir classes/linhas helper/geometry sanitizadas em failures, preservar classificação de pares ausentes com6contraprovasPASS, TSC/lint/discovery76/diff locaisPASS. R3 permaneceNOT_RUN até orquestração do coordenador.
 
 - [x] T036 [REVIEW/DIAGNÓSTICO] Preservar um frame mascarado e JSON de fonte/hash/dimensões/ratio/hit/geometry antes/depois para failures B, sem retry/correção de estado; contraprova Chromium da própria boundedPair mantémFAIL/PARTIAL e produz PNG667x375/hash/ratio0/hitfalse. R3aindaNOT_RUN.
+
+- [x] T037 [DILIGÊNCIA FOCAL PRÉ-R3] Somente area-empty/collection-record: preservar frameinicial ocluído comoDIAGNOSTIC_NOT_PLANNED_COVERAGE comUNOBSERVED/hashes, usuário-scrollúnicoantesmediçãoambasfontes, correlaçãofixture/index e pósratio/hit/gap; Nativeexposiçãopositivaassertada, referênciaocluídaNON_EQliteral, semfont-exception. Contraprova4casosChromiumPASS; TSC/lint/discovery76/diffPASS; runtimeR3pendente.
