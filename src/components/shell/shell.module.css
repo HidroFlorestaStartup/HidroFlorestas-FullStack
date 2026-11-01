@@ -75,8 +75,10 @@
 .contextNav .desktopLabel { display: none; }
 .contextNav .mobileLabel { display: inline; }
 .contextNav svg { width: 19px; height: 19px; }
-.accountActions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
-.accountDisclosure { position: relative; }
+/* Anchor the viewport-bounded menu to the full right-aligned action group.
+   Anchoring to Conta alone subtracts the Sair control width and clips the menu. */
+.accountActions { position: relative; display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+.accountDisclosure { position: static; }
 .accountDisclosure summary {
   display: flex; min-width: 44px; min-height: 44px; gap: 6px;
   align-items: center; justify-content: center; padding: 8px 12px;
