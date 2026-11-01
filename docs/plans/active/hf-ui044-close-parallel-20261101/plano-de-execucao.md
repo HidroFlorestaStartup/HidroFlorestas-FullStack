@@ -74,3 +74,23 @@ owner-local-commits.json. Nenhum push/merge/deploy realizado. Worktrees preserva
 
 Estado: EM_ANDAMENTO. Login concluído pelo usuário e confirmado por UI. Root Directory vazio observado em textbox habilitado, vínculo Git correto observado. Nenhuma configuração Vercel alterada. Guard false aditivo confirmado na raiz efetiva antes da rodada1; refs45–48/main/development preservadas e branchQA ainda ausente. Publicação e quatro jobs da rodada1 já autorizados;0rodadas executadas antes deste commit.
 
+## Rodada1 executada e correções agrupadas para rodada2
+
+R1: SHA194e9af, run41351237110/1, quatro jobs; orçamento1/3 QA e0/3 publicações funcionais.
+Smoke: 3 PASS. UI-A: 3/86 pares com imagens (2 PASS/1 FAIL/83 NOT_RUN); UI-B: 0/75 pares por setup FAIL.
+RC: 9 gates PASS/E2E FAIL (227 PASS/1 FAIL/7 NOT_RUN); cinco gates posteriores NOT_RUN.
+ZIPs baixados e verificados por SHA256/CRC; quatro arquivos UI037 presentes após E2E, sem fechar
+preservação após as suítes posteriores ainda NOT_RUN. Detalhes/hashes em round-1.json.
+
+R2 agrupa: classificação de pares incompletos, seletor acessível do starter, menu Conta
+reproduzido/corrigido por A, seis regressões035, máscara recortada ao scrollport e diagnóstico
+que conserva o erro primário. Contraprovas locais documentadas pelos owners; 14 smokes PASS,
+tipos completos/lint locais PASS. Node24.14 local é preflight, não runtime Node24.19 da CI.
+Coordenador restaurou a atribuição OpenStreetMap idêntica à CI oficial depois da falha exata
+de link ausente. Nenhum teste oficial foi afrouxado. Como produto mudou, repetir os15 gates
+na nova candidata; CI histórica/R1 não emprestam PASS. Mesmos4 jobs/110min configurados.
+
+Após runtime, consolidar1 push por owner, inventariar CI separadamente e revisão final não autora.
+Até3 novos SHAs QA; eventual DOC_HEAD não recebe SUCCESS de CODE_SHA_TESTED. Não publicar
+um quarto SHA documental se as três rodadas técnicas forem necessárias. Recibo PR45 único
+permanece6563833137; PR49 é a candidata Draft, sem merge/deploy.

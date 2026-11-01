@@ -1,0 +1,46 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "round": 2,
+  "status": "PLANNED_NOT_EXECUTED",
+  "previousPublishedSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+  "previousRun": 41351237110,
+  "attemptsPerSha": 1,
+  "causeReceipt": "round-1.json",
+  "ownerCommits": {
+    "A_pairClassification": "d27a1e691af746d9d3b4374cc1f9cbccae944aba",
+    "A_referenceSelector": "885b4742146a76510208c18b09d9cd09e6b8bed3",
+    "A_productMenuAndSixRegressions": "97204d79857b634fb862653b0b87f2ff2185dc68",
+    "A_masksAndPrimaryFailureDiagnostics": "9ecfa5ff284249fb283394e83ac6bc3f46677d3e",
+    "A_regressionArchiveNames": "236f82421ba16aa536dffb98d39317870e76f66b",
+    "A_localEvidence": "81707e1c45190c7a8e994b0c0c61f189431bc349",
+    "B_pairClassification": "89666f0b1bb78de476a53e19987b25beba26fd14",
+    "B_referenceSelector": "bc4964986c7645275fcaed8570425893bf7c898e"
+  },
+  "coordinatorCorrection": "Restore NEXT_PUBLIC_MAP_ATTRIBUTION equal to official CI in all four jobs; missing-link cause proven in R1 log. No official map test or product map change.",
+  "localEvidence": {
+    "runtime": "Existing Windows host Node24.14.0/Chromium153, synthetic browser only; no local database and no hosted claim",
+    "smoke": "14/14 PASS on A9ecfa5ff, 12.0 seconds",
+    "menu": "Actual presentation TSX/CSS geometry RED3/6 failing, GREEN6/6 passing; Arial fixture explicitly distinct from application fonts",
+    "mask": "RED navigation pixel magenta; GREEN visible sensitive pixel remains magenta and navigation pixel remains green",
+    "typecheck": "Complete tsc --noEmit --incremental false PASS in composed worktree",
+    "lint": "QA directory and official035/037 tests PASS",
+    "independentReview": "/root/qa_final inspected code, R1 artifacts and correction causes; no new static defect demonstrated; runtime still pending"
+  },
+  "runtimeToExecute": {
+    "platform": "Windows GitHub-hosted",
+    "node": "24.19.0 via pinned setup-node",
+    "bun": "1.3.11 only starter jobs",
+    "postgresql": "Owned fresh runner PostgreSQL17 only jobs requiring it",
+    "jobs": {"smoke": 5, "ui-a": 35, "ui-b": 35, "rc-ui037": 35},
+    "configuredMinutes": 110,
+    "qaConfiguredMinutesAfterThisRound": 220,
+    "qaConfiguredCeiling": 330,
+    "expectedShellPairs": 86,
+    "expectedDomainPairs": 75,
+    "officialGates": 15,
+    "reasonAllGatesRequired": "Product CSS and official035 regression tests changed; R1/historical gates cannot qualify this tree"
+  },
+  "unchangedLimits": ["exact16/32px", "ratio1", "fullPage:false", "no timeout increase", "no scientific change", "no real provider", "no merge", "no deploy"],
+  "preview": "false before push, effective repository root/Git binding proven in preview-proof.json",
+  "finalQualification": "Requires terminal hosted results, downloaded artifacts and non-author review; no PASS asserted here"
+}
