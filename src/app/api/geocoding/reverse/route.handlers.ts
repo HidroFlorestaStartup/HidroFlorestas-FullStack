@@ -55,4 +55,3 @@ export function createReverseGeocodingHandler(deps: Deps) {
     }
   };
 }
-
