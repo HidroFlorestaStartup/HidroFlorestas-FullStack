@@ -109,3 +109,11 @@ No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassi
 - [x] T045 [IMPLEMENT/TEST] Preservarerroprimário/lifecycle e mascarar apenas a interseção visível doscontroles, comcontraprovasCPU/Chromium semDB.
 - [x] T046 [REVIEW] Executar14smokes, typecheckcompleto local/lint/whitespace ehand off separado deproduto/QA/documentação.
 - [ ] T047 [RUNTIME] Coordenador executar15gates eUI06sobreSHAfinalreparado, auditarZIP/JSON/PNG ecomparação real; nãoherdarR1ou6c61056f.
+
+## CLOSE02 — reconciliação R2 e última rodada delimitada
+
+- [x] T048 [ANALYZE] Conciliar86índice/94linhascase/14IDs e inspecionar menu/workspace/laboratório/reload/foco reais porfonte.
+- [x] T049 [PLAN/IMPLEMENT] Registrar exceçãoestrita referênciaocluída semfontPASS; fonteausenteFullStack/foraescopobloqueia; focoProduto ratio1/hit intactos.
+- [x] T050 [IMPLEMENT] Observar estadoLoading/notfound nativo eescalaantes/apósreload, depoisreaplicar16/32; nãoinferirpersistênciadepreferência.
+- [x] T051 [TEST/REVIEW] ContraprovarLoadingDIV/300irmãosoffscreen, executar19smokes/tipos/lint/diff eentregar commitsQAexclusivos.
+- [ ] T052 [RUNTIME/QA] Coordenador executar últimaR3autorizada eQA nãoautora julgar evidência/completude/limites; semaceitehumano automático.

@@ -1,0 +1,378 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "A",
+  "agentId": "/root/a_harness",
+  "r2": {
+    "run": 41353270282,
+    "attempt": 1,
+    "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+    "tree": "b914dee92fcf2072b30747b80f29fc45b2ddcf12",
+    "artifactId": 13102173306,
+    "zipSha256": "8bf7febcda166b52678bc6bebda32cf924760d283cdc6760b90ea3eb5b1ca7d1",
+    "zipCrcVerified": true,
+    "zipEntries": 339,
+    "pngCount": 168,
+    "indexSha256": "e170009d970c9525797e3d5d58acefc8aa42645f62cd8d9d91985aa4b695a10a",
+    "journalSha256": "5d5a80b7e8ce483bbdc3ce62ba585d50fd1c6ef7a6e4a3111c20bd2785de9016",
+    "planned": 86,
+    "caseRows": 94,
+    "latestUniqueCaseRows": 86,
+    "indexLatestAxesMismatches": [],
+    "executionCounts": {
+      "PASS": 78,
+      "FAIL": 8
+    },
+    "comparabilityCounts": {
+      "NON_EQUIVALENT": 67,
+      "INSUFFICIENT_EVIDENCE": 12,
+      "COMPARABLE": 7
+    },
+    "blockedSummaryIds": 14,
+    "explanation": "14summary IDs =8FAIL union12INSUFFICIENT, with6overlap.94case rows =86cases plus8failure amendments; index matches last four axes perid. No observed index race."
+  },
+  "imagesInspected": [
+    {
+      "file": "fullstack-shell-320-900-200-0-workspace-account-open.png",
+      "sha256": "d323e07c55af163c024d2b6478abeea3fe9e4ec2ee57afbe396793cd5f78c3ae",
+      "dimensions": [
+        320,
+        900
+      ],
+      "source": "fullstack",
+      "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 32
+    },
+    {
+      "file": "starter-shell-375-900-100-0-reload.png",
+      "sha256": "df15ad458e7ae2665b4ed052eed803e26aa619434d23ac1dca857eb0c274edda",
+      "dimensions": [
+        375,
+        900
+      ],
+      "source": "starter",
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 16
+    },
+    {
+      "file": "starter-shell-667-375-200-0-laboratory-closed.png",
+      "sha256": "c364a8b9d98ed7a483e6353f628f872064bc9b44dbd8bd334c6cc306c91db3bd",
+      "dimensions": [
+        667,
+        375
+      ],
+      "source": "starter",
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 32
+    },
+    {
+      "file": "starter-shell-667-375-200-0-last-control-focus.png",
+      "sha256": "4f3fd4383850b729976e6c1d556d305e387d364f1b21f6f56e38aa9169f405f1",
+      "dimensions": [
+        667,
+        375
+      ],
+      "source": "starter",
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 32
+    },
+    {
+      "file": "fullstack-shell-667-375-200-0-last-control-focus.png",
+      "sha256": "6a674e0b55a10f807708d9eef29e7ad1e8c3ca0d1b8bc8b8e7731d307f37799c",
+      "dimensions": [
+        667,
+        375
+      ],
+      "source": "fullstack",
+      "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 32
+    },
+    {
+      "file": "fullstack-shell-375-900-100-0-workspace-closed.png",
+      "sha256": "b609ba0fbf9cf13e818cff9d26575616cfb4f6cda027c5e59a0b28f247fb12c0",
+      "dimensions": [
+        375,
+        900
+      ],
+      "source": "fullstack",
+      "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 16
+    },
+    {
+      "file": "starter-shell-375-900-100-0-workspace-closed.png",
+      "sha256": "4d29c76917392e910b24a0ce0cc6cb7ea4ce9d231c27a7d1a63b3b14f793b5bb",
+      "dimensions": [
+        375,
+        900
+      ],
+      "source": "starter",
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 16
+    },
+    {
+      "file": "fullstack-shell-1440-900-100-0-laboratory-closed.png",
+      "sha256": "a913aa1baebe7641dc070af4bcce075873c0a049a4df3c54d7cfe890dc24b4b6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "source": "fullstack",
+      "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 16
+    },
+    {
+      "file": "starter-shell-1440-900-100-0-laboratory-closed.png",
+      "sha256": "c4d19bed2fa17f0a6b1b8bca6d65671f168b8fa7a3f846028d4705663eb2d2ca",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "source": "starter",
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+      "rootFontPx": 16
+    }
+  ],
+  "regionalAbsences": [
+    {
+      "id": "shell-667-375-200-0-laboratory-closed",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 2485,
+        "left": 0,
+        "width": 667,
+        "height": 2026
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    },
+    {
+      "id": "shell-667-375-200-0-areas-navigation",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 1267,
+        "left": 0,
+        "width": 667,
+        "height": 808
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    },
+    {
+      "id": "shell-667-375-200-0-forward",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 1973,
+        "left": 0,
+        "width": 667,
+        "height": 1514
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    },
+    {
+      "id": "shell-667-375-200-34-laboratory-closed",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 2485,
+        "left": 0,
+        "width": 667,
+        "height": 2026
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    },
+    {
+      "id": "shell-667-375-200-34-areas-navigation",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 1267,
+        "left": 0,
+        "width": 667,
+        "height": 808
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    },
+    {
+      "id": "shell-667-375-200-34-forward",
+      "source": "starter",
+      "main": {
+        "top": 459,
+        "right": 667,
+        "bottom": 1973,
+        "left": 0,
+        "width": 667,
+        "height": 1514
+      },
+      "mainFont": "UNOBSERVED",
+      "headerFont": "OBSERVED",
+      "rootFontPx": 32
+    }
+  ],
+  "causes": [
+    {
+      "ids": [
+        "shell-375-900-100-0-reload",
+        "shell-390-844-200-0-reload",
+        "shell-1440-900-100-0-reload",
+        "shell-1440-900-200-0-reload",
+        "shell-667-375-200-0-reload",
+        "shell-667-375-200-34-reload"
+      ],
+      "observed": "Starter native LabGate loading visible after reload; fixed not-found assertion failed beforeconfigure. Fourtext200 starter captures subsequently observed16px untilFAIL; before/afterreadbacks32→16 correctly record inline instrumentation reset.",
+      "source": "Pinned LabGate q.isPending→LoadingStateDIV; q.isError404→NotFoundState. No terminal outcome inferred from loading.",
+      "repair": "Observe bounded native loading/notfound, persist actual per-source state/readback, then configure exact16/32 before screenshot."
+    },
+    {
+      "ids": [
+        "shell-667-375-200-0-last-control-focus",
+        "shell-667-375-200-34-last-control-focus"
+      ],
+      "observed": "FullStack focus BUTTON44x44 centerHittrue; reference link269.5x304 centerHitfalse, headerbottom290 overlapsrailtop246 in375pxheight.",
+      "repair": "Record literal per-source focus/ratio/hit and referenceDEFECT_FOUND/NON_EQ only pinned667×375/text200 with measuredheader/railoverlap. FullStack native ratio1/hit assertions unchanged."
+    },
+    {
+      "ids": [
+        "shell-667-375-200-0-laboratory-closed",
+        "shell-667-375-200-0-areas-navigation",
+        "shell-667-375-200-0-forward",
+        "shell-667-375-200-34-laboratory-closed",
+        "shell-667-375-200-34-areas-navigation",
+        "shell-667-375-200-34-forward"
+      ],
+      "observed": "Reference main outsideviewport, mainfontsUNOBSERVED while headerfontsOBSERVED.",
+      "repair": "Bounded evidence-of-absence exception with bothimages/scales/sourcepin, explicitregionalINSUFFICIENT and FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION. Unknownabsence orFullStackabsence stillblocks."
+    }
+  ],
+  "localCorrections": {
+    "commits": [
+      "86b6fd00fdb047930b9518ff2e7ec7919c7454bd",
+      "58440f763fe2f537cb164fc7ce125cd947cd0652"
+    ],
+    "paths": [
+      "qa/hf-ui044/shared.ts",
+      "qa/hf-ui044/shell.spec.ts",
+      "qa/hf-ui044/smoke.spec.ts"
+    ],
+    "productChanged": false,
+    "timeoutsRaised": false,
+    "fullStackRatioRelaxed": false,
+    "starterChanged": false,
+    "fontSampling": "Finite scopedDOM scan acrossHTMLTextNodeowners, CDPmax8visibleowners; no previsibility256truncation. No rawtext archived.",
+    "redCounterexamples": [
+      {
+        "name": "LoadingStateDIV",
+        "failed": 1,
+        "observed": "UNOBSERVED with tagallowlist; becomesOBSERVED with directTextNode probe onDIV"
+      },
+      {
+        "name": "VisibleDIVafter300offscreensiblings",
+        "failed": 1,
+        "observed": "Previsibilityscan256lost visibleDIV; scopedscanthenmax8observesit"
+      }
+    ],
+    "finalSmoke": {
+      "codeShaTested": "58440f763fe2f537cb164fc7ce125cd947cd0652",
+      "tests": 19,
+      "passed": 19,
+      "exit": 0,
+      "seconds": 12.9,
+      "node": "v24.14.0",
+      "playwright": "1.55.1",
+      "chromium": "153.0.8010.12",
+      "database": false,
+      "hostedCi": false
+    },
+    "checks": {
+      "fullLocalTypecheck": "PASS/exit0",
+      "lint": "PASS/exit0,0warnings",
+      "whitespace": "PASS/exit0"
+    },
+    "negativeCoverage": [
+      "NoCDPfont stillINSUFFICIENT",
+      "FullStackregionalabsence stillblocks",
+      "Wrongstarterpin stillblocks",
+      "Otherlayoutabsence stillblocks",
+      "ReferencefocuscenterHitfalse literal",
+      "NativeLoadingobservedat16beforeconfigure32",
+      "Zero/onepairFAIL/INSUFFICIENT/PARTIAL"
+    ]
+  },
+  "localGreenFiles": {
+    "cases.jsonl": "7edc7347a79dac3d674871b2616b090e47c4b524fa98570f6a3650793f726c3a",
+    "font-after-300-siblings.json": "5cdcf87e68db135aa894909576db379be28f07219c2868f1e641095f080507cd",
+    "fullstack-font-absence-fullstack-blocked.json": "a902dee343c90e1f31fb7dc0673e18a75132a255a094847d17eb7cc95199e800",
+    "fullstack-font-absence-fullstack-blocked.png": "01a0c574a642b50f0b01f91cc2f80ce04a78cafdb24b59c68a0b62e5b0c817fd",
+    "fullstack-incomplete-pair-1.json": "de167e5dd276fbf5bda468ec3073cb5c10027617e58ca377ce3c6b31582e4691",
+    "fullstack-incomplete-pair-1.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+    "fullstack-mask-scrollport.json": "bc4e12c161ad6f481b954313f4cb149c132ce1b169234657bf7d37c1e95bf96a",
+    "fullstack-mask-scrollport.png": "58ce645d9da51de01fac6ba91e83ffb9a869856714c010fd79c2961822e7a484",
+    "fullstack-menu-1440-100.json": "00987c5437b68ed2e288edfa983196c73d1c056692a74c0d8b862b1e7cc697e8",
+    "fullstack-menu-1440-100.png": "c65018d8310a3af8b9f669924e410b74b429a7bf11c9638b110f218454e35959",
+    "fullstack-menu-1440-200.json": "81f9a8dab4e45e0682878585561c625566cdebc31ab595abd948c385bfddb354",
+    "fullstack-menu-1440-200.png": "1075817f265f2e053bdf61bc32867d51fac62786efd172d673dce63bd6e6fce4",
+    "fullstack-menu-320-100.json": "95f3b228b46ad64c6b9511b783bd8aab976d97760a1f50b4e80145247401da2b",
+    "fullstack-menu-320-100.png": "4e5a7956deedf3d41ebded3f42b9a8991737898512ec88fbd5417272872dbf28",
+    "fullstack-menu-320-200.json": "8d2e0318be0ea789d74f82ac2b9daee5a874ead6534bb2ad5bcbd883a21ca1af",
+    "fullstack-menu-320-200.png": "2683e23705ee5f37a60ddf262e06ae6e136043f111e4345081ef882563eda91f",
+    "fullstack-menu-390-100.json": "e823ea9a1ba34939022d680d10fb130bda86dfeb33e7ac77ea7f6b38a0103933",
+    "fullstack-menu-390-100.png": "b5296189c8809005f5599841acacf389ef2193f16f0cdc45d1964cabee665886",
+    "fullstack-menu-390-200.json": "c1a7b9aa36aae6f8050a7b50dab5708d033355ba5d8da33dcf7daf03c007ae10",
+    "fullstack-menu-390-200.png": "406b71971b3181f3fcbf8471daec74e9181e1d79b262f30001b239ac5f5667b2",
+    "fullstack-reload-native-loading.json": "d22167fb384ec6f961551faabf400d702a7c3d026e46737af14dcd615e1b9aa4",
+    "fullstack-reload-native-loading.png": "93c1f7bffd88b2cc8dfdf1d799f73a26b0978325d0976bab5dd01a9dbe1bf4b2",
+    "fullstack-smoke-1440-100-1793570436680.json": "126490d55980979c736b59b948f5c010119363456326b21b0666cdd5863c17c7",
+    "fullstack-smoke-1440-100-1793570436680.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+    "fullstack-smoke-1440-100-1793570437261.json": "adf96c2534fb1e8263c4c3656dff6fbf77e7eafa23e0b5d0b32c9976ce481521",
+    "fullstack-smoke-1440-100-1793570437261.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+    "fullstack-smoke-1440-200.json": "d4e8f9faf221f2003703b4a04ec63e9b78be81e53c15e4f2d1626851983a8650",
+    "fullstack-smoke-1440-200.png": "e4878c238674c25dc4405dda6e270739be725a9df984dd4ed23c73b013331e50",
+    "fullstack-smoke-320-100-1793570435003.json": "ff7220edd9458cb15ad2be90375f9b22c5a6f8d9e9e0bd8a735c338ed2cecd0b",
+    "fullstack-smoke-320-100-1793570435003.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+    "fullstack-smoke-320-100-1793570435604.json": "cadd8f9fd61629891d758b4617a28fff4b5b61c714c7f4d3d1161ac0c9f3bb6f",
+    "fullstack-smoke-320-100-1793570435604.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+    "fullstack-smoke-320-200.json": "2c5bf4c273a16187c44d99203d833c6b9ffd84dc7e5b2af44ec9d79f08a20d05",
+    "fullstack-smoke-320-200.png": "8467cc184dfba8531fb676f5cedb3e78e3302b0b04b228f9e0791bf19dc33c39",
+    "fullstack-unobserved-1440.json": "a813c3793247c35b9d5db1cfa79ba165900d86fde5520af06777a646a8cce5cb",
+    "fullstack-unobserved-1440.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+    "fullstack-unobserved-320.json": "34f98ddb856cab8e10fa4e334edc044bd4a0ddcdc4c90b329ec71829414392b8",
+    "fullstack-unobserved-320.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+    "index.json": "30802441782b3c1059a8f148f8f9f5fad8d42f9b66bf986e1f3fa2f3595b2169",
+    "mask-clipping-pixels.json": "ed502433ab914bbbea490a7d56267a54f96fc02fdb0d6ce8436c294866457807",
+    "menu-1440-100-geometry.json": "12e4a16f21af2cee9d47ed29c7a26a9110262a81727d07f491eaa911f29033ee",
+    "menu-1440-200-geometry.json": "1fad525f5ec788aa472f45feabdea31f781271f0f04411ab27c884047d1eae97",
+    "menu-320-100-geometry.json": "f9f47471051bdc5666e94aaaf6cce62e6475b09ec2246ef0dede28b08222cb5a",
+    "menu-320-200-geometry.json": "29e4a90fe46fe490f669e6c1f235b9698051c8f8e05ba29a60e1f33e4c422bdd",
+    "menu-390-100-geometry.json": "5fc4d966dbf069f43dc21e3725e5b731024a6677b76d4c51360b96f64c8d0870",
+    "menu-390-200-geometry.json": "5534f52358c03856dfb9ef61b497722ac0e6cda06d3fb66c1509e1927cbee313",
+    "starter-required-label.json": "79e7dd603e2c2c6bbcac7118835b8fbdcb887127669eab137e2897cb69b55604"
+  },
+  "published": false,
+  "repairedHostedRuntime": "NOT_RUN; finalboundedR3 owned by coordinator",
+  "state": "A_READY_FOR_FINAL_BOUNDED_RUNTIME_WITH_EXPLICIT_REFERENCE_LIMITS",
+  "humanAcceptance": "PENDING",
+  "independentReview": "Coordinator invokes non-author reviewer; this report is author analysis"
+}

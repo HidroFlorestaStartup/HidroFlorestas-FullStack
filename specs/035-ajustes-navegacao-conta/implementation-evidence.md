@@ -204,3 +204,13 @@ excluirinputstexto/senha.14smokesPASS12s, typesfull locais/lint/diffPASS.
 FonteArial sintética não éruntimePoppins; R1nãoqualificaárvorecorrigida. O histórico
 contextclosed/cleanup permanece inconclusivo quantoàcausaprimária exataA.
 Runtimecorrigido15gates/UI06oficial, imagemrealbarra eaceitehumano continuamNOT_RUN/PENDING.
+
+### Adendo CLOSE02 — UI-A R2 real e instrumentação R3
+
+UIA-R2/d62fb08:78PASS8FAIL/86;14IDs summary=uniãoFAIL+INSUFF, não14falhasdeproduto.
+Menu corrigido real320/text200 inspecionado. Referênciaoculta main/foco em667/text200;
+reloadcapturouLoadingnativo eassertnot-foundfixo impediareconfiguração. [Análise visual](evidence/close02-r2-visual-analysis.md).
+ReparosQA86b6fd0+58440f7 preservamUNOBSERVED/INSUFFregional comqualificação explícita,
+produto ratio1/hit, nativeLoading eescala16/32.19smokesPASS12.9s/tiposfulllocais/lint/diffPASS.
+[Recibo/hashes/casos](evidence/close02-r2-analysis-r3-repair.json). R3hostedcorrigidoNOT_RUN;
+CI/UI06completa/QA nãoautora/aceitehumano permanecem estadosdistintos.

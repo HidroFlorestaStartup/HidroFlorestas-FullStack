@@ -232,3 +232,18 @@ REVIEW:14/14smokesPASS12s no9ecfa5f; typecheckcompleto local/lint/diffPASS.
 Produto97204d7 + nomeartefato236f824; helpersQA9ecfa5f. Runtimeoficialreparado
 NOT_RUN atérodada docoordenador; produtoalterado exige15gates noSHAfinal.
 [Recibo comgeometrias/fontes/hashes](evidence/close02-menu-cleanup-mask-repair.json).
+
+### CLOSE02 — ANALYZE R2 → PLAN/IMPLEMENT para R3 final
+
+R2index/journal conciliados, semraceobservada;14summaryIDs são8FAIL∪12INSUFF.
+Visual realrevisado em[análise](evidence/close02-r2-visual-analysis.md).
+Reparo deConta aparece correto nas imagens reais. Restantes causas são restritas ao
+comparador/àreferência:6reloads,2focosstarterobscuros e6regiõesmainforaViewport.
+PLAN: manterfontemainUNOBSERVED/INSUFFliteral; exceção estrita pin/layout/estado+
+geometria dáNON_EQ semqualificarfonte. Foco porfonte, FullStackratio1/hit intactos;
+referênciaDEFECT_FOUNDliteral. Reload observaLoading/not-foundantesconfigurar32.
+TextNodeDIVincluído; CDP8 após scanDOMescopado semtruncamentopré-visibilidade.
+REVIEW: doisRED1/1 (LoadingDIV e300irmãosoffscreen),GREEN19/19PASS12.9s,
+typescompletoslocais/lint/diffPASS; somenteqa3paths, produto/timeouts intactos.
+Sourcecode58440f7; [recibo](evidence/close02-r2-analysis-r3-repair.json).
+R3oficial segueNOT_RUN atécoordenador; nãoherdarR2FAIL nem declararaceite.
