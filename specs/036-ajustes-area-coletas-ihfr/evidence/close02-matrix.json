@@ -1,0 +1,1650 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "B",
+  "state": "PLANNED_NOT_RUNTIME_EVIDENCE",
+  "pairsPlanned": 75,
+  "testCountDiscovered": 76,
+  "cases": [
+    {
+      "id": "domain-area-empty-320-900-100",
+      "state": "area-empty",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-320-900-200",
+      "state": "area-empty",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-375-900-100",
+      "state": "area-empty",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-375-900-200",
+      "state": "area-empty",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-390-844-100",
+      "state": "area-empty",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-390-844-200",
+      "state": "area-empty",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-768-900-100",
+      "state": "area-empty",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-768-900-200",
+      "state": "area-empty",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-1440-900-100",
+      "state": "area-empty",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-1440-900-200",
+      "state": "area-empty",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-667-375-200",
+      "state": "area-empty",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-empty-844-390-200",
+      "state": "area-empty",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-320-900-100",
+      "state": "area-populated",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-320-900-200",
+      "state": "area-populated",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-375-900-100",
+      "state": "area-populated",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-375-900-200",
+      "state": "area-populated",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-390-844-100",
+      "state": "area-populated",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-390-844-200",
+      "state": "area-populated",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-768-900-100",
+      "state": "area-populated",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-768-900-200",
+      "state": "area-populated",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-1440-900-100",
+      "state": "area-populated",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-1440-900-200",
+      "state": "area-populated",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-667-375-200",
+      "state": "area-populated",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-area-populated-844-390-200",
+      "state": "area-populated",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-001"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-320-900-100",
+      "state": "collection-record",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-320-900-200",
+      "state": "collection-record",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-375-900-100",
+      "state": "collection-record",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-375-900-200",
+      "state": "collection-record",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-390-844-100",
+      "state": "collection-record",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-390-844-200",
+      "state": "collection-record",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-768-900-100",
+      "state": "collection-record",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-768-900-200",
+      "state": "collection-record",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-1440-900-100",
+      "state": "collection-record",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-1440-900-200",
+      "state": "collection-record",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-667-375-200",
+      "state": "collection-record",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-record-844-390-200",
+      "state": "collection-record",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-320-900-100",
+      "state": "collection-missing",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-320-900-200",
+      "state": "collection-missing",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-375-900-100",
+      "state": "collection-missing",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-375-900-200",
+      "state": "collection-missing",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-390-844-100",
+      "state": "collection-missing",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-390-844-200",
+      "state": "collection-missing",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-768-900-100",
+      "state": "collection-missing",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-768-900-200",
+      "state": "collection-missing",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-1440-900-100",
+      "state": "collection-missing",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-1440-900-200",
+      "state": "collection-missing",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-667-375-200",
+      "state": "collection-missing",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-missing-844-390-200",
+      "state": "collection-missing",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-320-900-100",
+      "state": "collection-current",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-320-900-200",
+      "state": "collection-current",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-375-900-100",
+      "state": "collection-current",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-375-900-200",
+      "state": "collection-current",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-390-844-100",
+      "state": "collection-current",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-390-844-200",
+      "state": "collection-current",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-768-900-100",
+      "state": "collection-current",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-768-900-200",
+      "state": "collection-current",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-1440-900-100",
+      "state": "collection-current",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-1440-900-200",
+      "state": "collection-current",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-667-375-200",
+      "state": "collection-current",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-collection-current-844-390-200",
+      "state": "collection-current",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002",
+        "FR-036-002",
+        "FR-036-003"
+      ],
+      "tasks": [
+        "T025",
+        "T026",
+        "T027",
+        "T028"
+      ],
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    {
+      "id": "domain-qualifier-320-900-0-0",
+      "state": "qualifier-scroll",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-320-900-0-1",
+      "state": "qualifier-scroll",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-320-900-0-2",
+      "state": "qualifier-scroll",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-320-900-0-3",
+      "state": "qualifier-scroll",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-667-375-34-0",
+      "state": "qualifier-scroll",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-667-375-34-1",
+      "state": "qualifier-scroll",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-667-375-34-2",
+      "state": "qualifier-scroll",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-667-375-34-3",
+      "state": "qualifier-scroll",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-844-390-0-0",
+      "state": "qualifier-scroll",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-844-390-0-1",
+      "state": "qualifier-scroll",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-844-390-0-2",
+      "state": "qualifier-scroll",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-qualifier-844-390-0-3",
+      "state": "qualifier-scroll",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-003",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-keyboard-history-390",
+      "state": "keyboard-back-forward",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-keyboard-history-1440",
+      "state": "keyboard-back-forward",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "COMPARABLE",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002"
+      ]
+    },
+    {
+      "id": "domain-reload-390-text200",
+      "state": "reload-before-reconfiguration",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "MISSING",
+      "requirements": [
+        "FR-036-004",
+        "SC-036-002"
+      ]
+    }
+  ]
+}

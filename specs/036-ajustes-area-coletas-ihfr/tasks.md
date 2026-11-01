@@ -76,3 +76,16 @@ Os itens T021/T022 apenas confirmam a publicação do patch, não validam o gate
 | T023 | `[x]` / `PASS` somente no código B | 15 linhas PASS/`exitCode=0`, SHA exato, run/tentativa, zero gates reprovados; novo SHA documental deve receber checagem independente. |
 
 `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a`. `DOC_HEAD=commit documental desta revisão (identificar pelo HEAD da PR #47 publicada)`. Sem patch de produto, não se reinterpretam os 15 gates ou se reexecuta a suíte sem causa. Revisão bilateral e QA da composição A/B ainda pendentes.
+
+## CLOSE-PARALLEL-02 / B — novos IDs, histórico preservado
+
+- [x] T024 [ANALYZE/PLAN] Analisar5FR/4SC e fontes fixadas, classificar COV-B1/EQ-B1/EQ-B2 e congelar grade em `evidence/close02-matrix.json`.
+- [x] T025 [IMPLEMENT] Criar `qa/hf-ui044/domain-fixtures.ts` com autenticação oficial, APIs reais owned, offsets/ordem de confirmação inversa, anterior CURRENT e adapter só referência; cleanup sem enfraquecer imutabilidade.
+- [x] T026 [IMPLEMENT] Criar `qa/hf-ui044/domain.spec.ts`:75 casos pareados planejados,60recortes centrais/12qualificadores/2teclado+histórico/1reload, índice incremental e sumário fail-closed.
+- [ ] T027 [RUNTIME] Executar ui-b Windows/Node24.19 na candidata final, registrar SHA/run/attempt/artifact, execução/comparabilidade/requisito/completude individuais. Descoberta local não cumpre esta tarefa.
+- [ ] T028 [REVIEW] Inspecionar os PNGs reais dos dois projetos e todas as diferenças bloqueantes; produzir análise de hierarquia/tipografia/densidade/navegação/ações em `evidence/close02-comparison.md`.
+- [x] T029 [REVIEW/COMMIT] Verificar sintaxe/lint/descoberta/escopo/whitespace e entregar commit local/handoff exclusivo, sem push de worker.
+- [ ] T030 [HANDOFF] Reconciliar resultado terminal da candidata/artefatos com T008/T016, encaminhar revisão não autora e preservar aceite humano/ciência pendentes.
+
+T025/T026 assinalam implementação do harness e fixtures, não execução runtime. T029 é revisão própria,
+sem substituir executor não autor. Typecheck oficial completo permanece dependente do coordenador.

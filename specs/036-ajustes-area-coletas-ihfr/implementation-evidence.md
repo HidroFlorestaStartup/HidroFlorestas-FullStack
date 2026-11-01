@@ -148,3 +148,23 @@ Nesta sessão a API GitHub e o arquivo de CI estavam acessíveis; o ambiente loc
 T009/T015/T023 **`[x]`** pela reconciliação do journal real no **CODE_SHA_TESTED**; T017 **`[x]`** pela documentação/atualização de PR publicada. Integridade do ZIP, fonte SHA, 77 capturas e análise de ownership revisadas sequencialmente por um executor, sem revisão independente simulada. A integração do shell A requer validação futura em composição autorizada; **não se transfere** a CI verde de B a A/C ou à composição. `LOCAL_WORKTREES_NOT_OBSERVABLE`; `NATIVE_SUBAGENTS_NOT_AVAILABLE`.
 
 **DOC_HEAD distinto:** commit que edita apenas os quatro documentos `specs/036-ajustes-area-coletas-ihfr/{spec,plan,tasks,implementation-evidence}.md`; a PR #47 registra seu SHA após push. Se um workflow disparar neste DOC_HEAD, seu resultado será reportado como execução nova (não inferido da Action 41252813575). Nenhum merge, deploy, migrations hospedadas, SMTP, Cloudinary, geocodificador, alteração científica, aprovação humana ou revisão de terceiro foi efetuado.
+
+## CLOSE-PARALLEL-02 / B — instrumentação implementada, runtime pendente
+
+Agente nativo real `/root/b_visual`; ownership exclusivo `qa/hf-ui044/domain{,-fixtures}.ts` e esta
+reserva036. Base6c61056f, pacote22bb9c1b, startercbb954a; nenhum arquivo de produto alterado.
+
+`B_VISUAL_READY_FOR_RUNTIME`: [grade](evidence/close02-matrix.json), [plano](plan.md),
+[análise de comparação e seu estado](evidence/close02-comparison.md).75pares planejados e76testes
+descobertos pelo Playwright local. Apenas sintaxe/lint/discovery executados; execução real domínio,
+PNG integrado e comparação visual desta continuidade ainda NOT_RUN. Não herdar15/15 de6c61056f.
+
+Diferenças estáticas a conferir no runtime: starter ordena pela confirmação e não possui resumo CURRENT
+na área (EQ-B1); score/decomposição são demonstração predefinida (EQ-B2); referência perde registros
+criados no reload. Registrar NON_EQUIVALENT por caso, sem classificar como erro do harness ou aprovação.
+Fonts UNOBSERVED provocam INSUFFICIENT_EVIDENCE, não fallback assumido nem PASS de completude.
+
+Os casos preservam texto200, ratio1, foco/hit-testing, quatro qualificadores científicos e prova de
+ordem/origem/ausência reais. Não se registram payload científico, cookie, token ou segredo. Dados
+sintéticos imutáveis permanecem só até descarte do runner owned; cleanup lógico e Stop físico têm
+recibos separados. Sem ferramenta global instalada no host e sem provedor real/alteração científica.
