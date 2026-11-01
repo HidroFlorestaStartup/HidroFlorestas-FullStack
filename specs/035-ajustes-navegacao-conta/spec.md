@@ -1,5 +1,21 @@
 # Feature Specification: navegação, conta e shell responsivo
 
+**Estado corrente — HF-UI-044-A6, 01/11/2026:** reconciliação documental em revisão; implementação A5 testada isoladamente com FAIL terminal em IHFR. A composição exata A+B+C foi validada com limites. Nenhum código/teste funcional alterado nesta rodada.
+
+`CODE_SHA_TESTED_A=6f236bbe7b5f4d7f9718efaa2c334f7d1520e0a0`: run [41268640475/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41268640475), 12 gates PASS, Ihfr FAIL (5 PASS/1 FAIL), Bootstrap/SchemaAudit NOT_RUN; E2E geral 228 PASS. Não existe PASS isolado de quinze gates de A neste registro.
+
+`CODE_SHA_TESTED_COMPOSITION=6c61056fe1dc2193e225d935f49b78cb6c6781ed`: produto `a585087dbbe9294c18922e3397c2561f245446c9`, árvore com overlay `f40b4e8c0217311869dc5336e4fc15c7176df7a5`; run [41275910130/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41275910130) com 15/15 gates PASS, 235 E2E e 6 IHFR. Esse resultado pertence somente à candidata composta, com os arquivos de B, e não ao SHA isolado de A nem ao futuro `DOC_HEAD` A6 identificado no recibo da PR #46.
+
+**Dependência material:** `ScientificNotice` e testes IHFR pertencem a B/#47. A usa `sm:grid-cols-2`; B preserva as fontes e os quatro qualificadores e usa uma coluna abaixo de `lg`, com ajustes de legibilidade. A safe-area A5 de 34px exige padding computado de 42px. Na composição, o cenário 667×375/texto200 passou com `toBeInViewport({ratio:1})` intacto. Não duplicar esse reparo no shell A, transportar B silenciosamente ou encerrar PASS isolado por PASS composto.
+
+**Aceite:** FR-035-003, US3 e a parcela bilateral de SC-035-001/002/003 continuam pendentes: `UI06_RUNTIME_PENDING` / `UI06_BILATERAL_NOT_RUN`. A proposta focal [UI-06](ui06-runtime-proposal.md) cobre somente shell; UI-06 global exige também área/coleta/IHFR com B. `UI037_CAPTURE_PENDING` é lacuna separada de arquivamento. `HUMAN_ACCEPTANCE_PENDING` e `GEOCODER_OPERATIONAL_PENDING` permanecem explícitos. Matriz por requisito, tarefa e fonte em [evidências](implementation-evidence.md).
+
+As decisões UI de Pedro no handoff #44 não mudam. IHFR conserva `CONTRATO_EXPERIMENTAL`, `VALIDACAO_CIENTIFICA_PENDENTE`, `SUJEITO_A_RECALIBRACAO` e `NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO`.
+
+## Histórico anterior à reconciliação A6
+
+As afirmações temporais abaixo pertencem aos respectivos checkpoints; o estado corrente é o A6 acima. Relatos antigos de CI pendente, ambiente não observável e ferramentas indisponíveis não descrevem esta sessão.
+
 **Feature Branch**: `feat/ajustes-navegacao-conta`
 **Created**: 2026-10-31
 **Status**: Implementação publicada para validação; checks funcionais e aceite humano dependem da execução no SHA final. O estado G0 anterior permanece como histórico.

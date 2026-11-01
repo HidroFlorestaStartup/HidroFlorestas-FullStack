@@ -1,5 +1,39 @@
 # Implementation Plan: navegação e conta — preparação A
 
+## Plano corrente A6 — AGUARDANDO_REVISAO
+
+**Objetivo:** publicar a reconciliação da PR #46/Spec 035 e uma proposta visual focal revisável; preservar o produto aprovado e a dependência de B. A feature completa não está encerrada.
+
+**Origem/autorização:** pedido HF-UI-044-A6 do usuário em 01/11/2026 autoriza correções próprias em A e recibo factual em #45. Nova branch/job UI-06 exige autorização específica; a tentativa composta anterior foi consumida. Constituição 1.0.0, AGENTS, PLANS, SOURCE_AUTHORITY e PRD Code-First conforme classificação; decisões UI de Pedro no handoff #44 em `972f9b00189bf09117883913d8c4fa63e69f4d2f`. Inspeção das specs 035–037 sem ampliar ownership.
+
+**Estado inicial observado:** checkout `G:/projetos/ifma/HidroFlorestas-FullStack` em C, `799c00a42d7f3846c3449d3615d263ce0b0e7bd2`, um worktree registrado; C sem upstream configurado. Única entrada no status: pasta não rastreada `docs/plans/active/hf-ui044-close-qa-actions-prepare/`. Ela contém um clone/scratch com índice composto e arquivos preexistentes: somente leitura. Nenhum reset/clean/checkout, branch local, índice, configuração ou conteúdo dessa preparação alterado. Leitura de objetos Git desse clone e cópia documental própria na raiz de visualizações desta sessão; publicação via API com lease da branch A. Fetch no checkout original recusado por acesso a FETCH_HEAD; não foi necessário alterar suas permissões. Refs atuais foram consultadas na API oficial.
+
+**Leases do corte:** GUARD `07755822f5dc75fe2be1d924005d30ed99f64a0b`; A `6f236bbe7b5f4d7f9718efaa2c334f7d1520e0a0`; B `1c44058cb45e461c719d514829a4e78d2bf7ee05`; C `799c00a42d7f3846c3449d3615d263ce0b0e7bd2`; #45 `a89feceb7fab9bff00fa16efd6e61e553fd9f50c`; development `9b8595d232842d401ce81bbc92c54dd543aa2829`; main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`. A/B/C são descendentes de GUARD; nenhuma foi empilhada. #46/#47/#48 continuam Draft abertas para development; #44 não foi alterada. Revalidar leases antes e após publicar.
+
+**Escopo de escrita:** quatro documentos correntes da Spec 035, `evidence/a6-review.json`, `evidence/ui06-bilateral.patch` (inerte), `ui06-runtime-proposal.md`; metadados da #46 e recibo #45. Produto/testes ativos, B/C, configurações ativas, docs/raw e registros globais somente leitura. Não há nova decisão global que exija editar TECH_DECISIONS/DOCUMENT_REGISTER/PENDING_DECISIONS neste recorte.
+
+| Etapa | Responsável | Critério e estado |
+| --- | --- | --- |
+| ANALYZE | executor A6, sem subagentes | Fontes/refs/ownership e sete arquivos A inspecionados; ZIP A5 e composto auditados; pré-requisitos Spec Kit executados na cópia própria. CONCLUIDO |
+| PLAN | executor A6 | Dependência B explícita; sem nova hipótese de defeito próprio A; tarefas de revisão separadas dos requisitos PASS. CONCLUIDO |
+| IMPLEMENT | executor A6 | Documentos reconciliados; uma proposta de patch UI-06 inerte; publicação somente em A/#46 e recibo #45. EM_ANDAMENTO até recibo remoto |
+| REVIEW | executor A6 | Diff/whitespace/links/classificações, integridade dos ZIPs, invariantes do patch e readback por SHA; observar CI automática de A6, sem rerun/dispatch. EM_ANDAMENTO até recibo remoto |
+| UI-06 executada e aceite | mantenedor/QA/B | Nova autorização específica de runtime, comparação real e aceite humano. PENDENTE |
+
+**Análise Spec Kit (somente leitura, anterior às edições):** 5 FR, 4 SC e 27 tarefas; todos os requisitos possuem tarefas (100% cobertura de planejamento, não de aprovação). Sem violação nova da constituição ou requisito órfão. Quatro inconsistências de estado: I1 HIGH — CI final A5 ainda pendente nos topos; I2 HIGH — dependência corrigida B e PASS composto ausentes; I3 MEDIUM — revisões realizadas confundidas com aprovação; I4 HIGH — UI-06 sem pares/runtime e UI037 sem captura dedicada no ZIP. Remediação documental autorizada no pedido A6, sem mudar requisitos. T007/T015/T027 continuam abertas; T019/T022 preservam os critérios originais de PASS.
+
+**Decisão pendente de integração:** se a política do mantenedor exigir A verde isolada, escolher B antes de A e revalidar na nova base, ou autorizar transporte mínimo do reparo compartilhado. Não foi observada uma decisão que dispense essa exigência; nenhuma das opções foi executada. Guards/#45 seguem dependência de integração. Não fazer merge/rebase/empilhamento por conta própria.
+
+**Riscos e pontos de parada:** drift concorrente da branch recusa atualização por lease; não atribuir PASS composto a A; nenhuma alteração funcional sem RED causal novo; nova publicação/job UI-06 somente após aprovar o diff e sua guarda Preview false antes do primeiro push. A proposta shell não encerra UI-06 global. QA/C controla o arquivamento UI037. Ciência/aceite operacional/humano seguem separados.
+
+**Validação proporcional:** não repetir quinze gates por documentação. Os ZIPs oficiais A5 e composto foram baixados, hashes/CRC/journals conferidos; fontes A/B/composta comparadas; duas capturas compostas 667×375 visualizadas. CLI de pré-requisitos passou na cópia com os caminhos Git Bash corrigidos após falhas de inicialização/caminho; sem hook `.specify/extensions.yml` no corte observado. Nenhum runtime starter/FullStack/PG foi iniciado no host. Build/typecheck/lint/testes ativos novos NOT_RUN por delta documental; CI automática decorrente da publicação terá resultado próprio no recibo da PR.
+
+**Histórico A6:** 01/11/2026 NAO_INICIADO → EM_ANDAMENTO (auditoria e redação) → AGUARDANDO_REVISAO (reconciliação preparada; publicação e recibo identificados na PR #46). Publicação documental não conclui a feature nem concede merge/deploy.
+
+## Histórico anterior à reconciliação A6
+
+As afirmações temporais abaixo pertencem aos respectivos checkpoints; o estado corrente é o A6 acima. Relatos antigos de CI pendente, ambiente não observável e ferramentas indisponíveis não descrevem esta sessão.
+
 **Branch**: `feat/ajustes-navegacao-conta` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
 **Estado**: EM_ANDAMENTO — mapa concretizado e código/testes preparados na própria reserva. Scripts CLI do Spec Kit não executados neste ambiente API-only; estrutura specify → plan → tasks → implement reconciliada manualmente.
 
@@ -112,3 +146,34 @@ O run A2 `41251125020` eliminou as 5 falhas anteriores de conta, dashboard e hea
 **PLAN/escopo:** arquivos editáveis A são `src/components/shell/shell.module.css`, `tests/e2e/hf-ui035-navigation.spec.ts` e a documentação `specs/035-ajustes-navegacao-conta/{plan,tasks,implementation-evidence}.md`. Outros arquivos de B/C, fixtures, testes IHFR B, `vercel.json`, workflow, schema, cálculos e autenticação ficam intocados. Confirmar regressões de navegação, contexto/conta, foco, teclado, 320–1440px, safe-area e consumidores. As verificações oficiais permanecem sem relaxamento.
 
 **REVIEW obrigatório:** conferir o SHA publicado, o run/tentativa do HEAD com `.accounts-validation/results.jsonl`, os quinze nomes únicos e `exitCode=0`, screenshots e log bruto. A falta de PASS em B no branch A permanece FAIL, nunca herdar 15/15 de #48 ou outro commit. UI-06 bilateral requer runtimes realmente executados de starter e FullStack; em sessão GitHub API sem checkout contemporâneo/runtime duplo, `UI06_BILATERAL_NOT_RUN` e T007/T015 permanecem abertos. Sem review independente, simulação de subagentes, merge ou deploy.
+
+## CLOSE-PARALLEL-02 A — 2026-11-01
+
+Estado EM_ANDAMENTO. Origem: mandato atual do usuário e PROMPT01 em22bb9c1b.
+ANALYZE somente leitura: FR035-001..005 e SC035-001..004 têm tarefas; lacuna material
+UI06/T007/T015/T027 permanece. Readiness de dois frames conflita com escala exata
+durante transition:.3s em globals.css; query CDP em contêiner genérico não observa
+TextNodes; ações Conta não existem no starter. Sem conflito normativo/científico.
+RECOMENDACAO técnica autorizada: adaptar patch5e38263d, sem alterar globals.css.
+Fontes: harness048de7c5, startercbb954a7, decisões972f9b00, composição6c61056f.
+Sete documentos A6 transportados por blobs deff5db4f; histórico preservado.
+
+PLAN: shared.ts espera16/32px com polling3s, estabilidade pós-layout e diagnóstico
+persistido antes de FAIL; CDP em até8 TextNode owners visíveis por região, sem texto;
+UNOBSERVED é evidência insuficiente. Observar reload antes de reconfigurar inline.
+Contrato congelado do coordenador emqa/hf-ui044/contract.ts. Smoke sem imports DB.
+Casos independentes porlayout; fixture/autenticação/cleanup owned por teste,
+índice planejado e JSONL incremental duráveis, sem336pares monolíticos.
+Matriz:7viewports x100/200, Conta320/390/1440 ambos contextos; inset0/34 em375/667;
+foco/hit-test/Back/Forward/reload nas classes mobile/paisagem/desktop relevantes.
+ratio1 e qualificadores preservados; defeito de menu só altera produto após reprodução.
+
+ANALYZE pós-plano: T028..T033 cobremFR035-003/SC035-003 e apoio001/002;
+nenhum requisito novo nem tarefa órfã. ConstituiçãoI–VII mantida. Não criar dados/modelo.
+Skills lidas e aplicadas por adaptação manual; paths-only SpecKit executado sem escrita
+de feature.json; setup-plan/CLI completa não invocados. Sem extensions.yml/checklists
+na reserva observada. Node24.14 local serve smoke sintético, não runtime oficial24.19.
+
+REVIEW: smoke Chromium real e contraprovaRED antes da qualificação integrada,
+syntax/focal types e escopo/whitespace; typecheck completo pelo runner do coordenador.
+UI06 bilateral/15gates novos/aceite humano permanecemNOT_RUN até evidência própria.

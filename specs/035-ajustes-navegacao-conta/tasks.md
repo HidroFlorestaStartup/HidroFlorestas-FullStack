@@ -1,5 +1,22 @@
 # Tasks: 035 — navegação, conta e shell
 
+## Estado corrente A6
+
+Revisões podem estar [x] com resultado FAIL: isso documenta execução/registro e não aprova o requisito. A5 isolada `41268640475/1` continua 12 PASS/Ihfr FAIL/2 NOT_RUN; composição `41275910130/1` tem 15/15 PASS somente em `6c61056fe1dc2193e225d935f49b78cb6c6781ed`. Dependência B e decisão de integração permanecem abertas. [Matriz individual](implementation-evidence.md) identifica fontes e limitações.
+
+- [x] A6-01 ANALYZE: auditar refs/ownership, journals/logs/ZIPs A5 e composto e analisar consistência Spec Kit.
+- [x] A6-02 PLAN/IMPLEMENT: reconciliar quatro documentos e preparar uma proposta visual focal inerte; publicar na branch A/#46 e recibo factual #45, identificados na PR.
+- [x] A6-03 REVIEW: verificar escopo, integridade, links, estados, diff e readback; resultado de eventual CI nova permanece próprio do DOC_HEAD no recibo.
+- [ ] A6-04 PENDENCIA_DE_DECISAO: mantenedor decide integração de B antes de A + revalidação na nova base, ou transporte mínimo autorizado, se exigir A isolada verde.
+- [ ] A6-05 UI06_RUNTIME_PENDING: autorizar e executar proposta focal; T007/T015/T027 não encerradas por preparação. UI-06 global exige B/área/coleta/IHFR.
+- [ ] A6-06 UI037_CAPTURE_PENDING: QA/C preserva e arquiva mobile/desktop PNG+JSON, conforme handoff, sem edição por A.
+
+Não existe aceite humano/científico/operacional nesta reconciliação.
+
+## Histórico anterior à reconciliação A6
+
+As afirmações temporais abaixo pertencem aos respectivos checkpoints; o estado corrente é o A6 acima. Relatos antigos de CI pendente, ambiente não observável e ferramentas indisponíveis não descrevem esta sessão.
+
 Entrada: [spec](spec.md), [plan](plan.md), handoff #44 fixado em `972f9b00189bf09117883913d8c4fa63e69f4d2f`. Lista inicial de G0; implementar somente após detalhar arquivos reais. Testes são obrigatórios nesta missão.
 
 ## Preparação
@@ -20,7 +37,7 @@ Entrada: [spec](spec.md), [plan](plan.md), handoff #44 fixado em `972f9b00189bf0
 ## US3 — comparação visual e validação
 
 - [ ] T007 [US3] Comparar runtimes starter/FullStack em 320, 375/390, 768 e 1440 px; registrar capturas viewport e análise em `implementation-evidence.md`, sem copiar mocks/TanStack.
-- [ ] T008 Executar testes focais e os quinze gates preservados de `scripts/rc-review-validation.ps1` em ambiente sintético autorizado; registrar resultados, falhas e NOT_RUN, sem atribuir PASS herdado.
+- [x] T008 Executar testes focais e os quinze gates preservados de `scripts/rc-review-validation.ps1` em ambiente sintético autorizado; registrar resultados, falhas e NOT_RUN, sem atribuir PASS herdado.
 - [x] T009 Atualizar `spec.md`, `plan.md`, `tasks.md` e `implementation-evidence.md`; publicar no PR Draft próprio com diff exclusivo/acumulado, revisão e pendências. Sem merge/deploy.
 
 Não marcar implementação ou testes como feitos por esta preparação. Ações em arquivos compartilhados não são paralelizáveis sem ownership explícito.
@@ -38,10 +55,10 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [x] T010 [ANALYZE] Inventariar 10 falhas reais do artefato `41232069860/13054207847`, por arquivo/linha/geometry, mantendo G0 e d8951199 separados.
 - [x] T011 [PLAN] Confrontar achados com FR-035, SC-035, constituição, Code-First e ownership; fixar reparos de conta, header, foco, footer e dashboard sem editar B/C.
 - [x] T012 [IMPLEMENT] Corrigir apenas shell/TopBar e suites consumidoras A, preservando verificações de autorização e asserts de geometria, com novo commit candidato.
-- [ ] T013 [REVIEW] Reexecutar o runner oficial de 15 gates no SHA da publicação A2 e qualificar PASS/FAIL por log/artefato.
+- [x] T013 [REVIEW] Reexecutar o runner oficial de 15 gates no SHA da publicação A2 e qualificar PASS/FAIL por log/artefato.
 - [ ] T014 [REVIEW] Conferir capturas e geométricas móveis reais do SHA A2, checkout/layout e foco em 320/text200 e paisagem 844×390/text200.
 - [ ] T015 [REVIEW] Executar comparação bilateral starter/FullStack runtime ou preservar T007 como NOT_RUN.
-- [ ] T016 Atualizar evidências e PR46 com SHA/attempt do resultado final e bloqueios, sem simular revisão independente.
+- [x] T016 Atualizar evidências e PR46 com SHA/attempt do resultado final e bloqueios, sem simular revisão independente.
 
 - [x] T017 [ANALYZE/PLAN] Reconciliar 5 falhas E2E A2 com artefato 13061886214 e retificar plano de foco, scrollport e timing.
 - [x] T018 [IMPLEMENT] Corrigir scroll-padding no shell, espera com limite por animação e seleção do último controle habilitado, preservando todas as contraprovas funcionais.
@@ -56,7 +73,16 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [x] T023 [ANALYZE] Identificar pelos logs e journal do run A4 `41253192621`/1 as duas falhas reais e distingui-las dos 404 G0; registrar limites de viewport 667×375/text200 e cópia do SHA.
 - [x] T024 [PLAN] Conferir as specs 035/036 e ownership: safe-area é A; `ScientificNotice` e assertions IHFR são B; congelar alterações somente A.
 - [x] T025 [IMPLEMENT] Corrigir o padding contextual para 8px + inset e adicionar contraprova de 42px no próprio E2E de shell, sem alterar componentes/testes B.
-- [ ] T026 [REVIEW] Revalidar o SHA final da branch A nos 15 gates, observar `results.jsonl`, screenshots e produzir recibo por run/tentativa; eventual FAIL IHFR dependente de B não pode ser encerrado unilateralmente.
+- [x] T026 [REVIEW] Revalidar o SHA final da branch A nos 15 gates, observar `results.jsonl`, screenshots e produzir recibo por run/tentativa; eventual FAIL IHFR dependente de B não pode ser encerrado unilateralmente.
 - [ ] T027 [UI-06] Executar de verdade os dois projetos em estados/viewport equivalentes e registrar capturas `fullPage:false` e proveniência; sem ambos runtimes, `UI06_BILATERAL_NOT_RUN`.
 
-T007/T008/T013–T016/T019/T022 permanecem pendentes enquanto o SHA final não possuir prova completa. Implementar os arquivos não equivale a obter PASS. Sem alteração de ownership dos testes `ihfr-diagnosis-{read,manage}.spec.ts`.
+No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassifica individualmente as revisões acima; T007/T014/T015/T019/T022/T027 seguem abertas. Implementar ou revisar os arquivos não equivale a obter PASS. Sem alteração de ownership dos testes `ihfr-diagnosis-{read,manage}.spec.ts`.
+
+## CLOSE-PARALLEL-02 — tarefas novas preservando histórico
+
+- [x] T028 [ANALYZE/PLAN] Confrontar spec/plan/tasks e contrato comum; mapear escala/fontes/reload e ownership A.
+- [x] T029 [IMPLEMENT] Implementar shared.ts com escala exata, TextNodes CDP, reload e persistência incremental conforme FR-035-003/SC-035-003.
+- [x] T030 [TEST] Contraprova RED e smoke Chromium sem DB100→200→100/320/1440, CDP ausente e diagnóstico antes de FAIL.
+- [x] T031 [IMPLEMENT] Particionar shell.spec.ts porlayout cobrindo workspace/laboratório/Conta/Escape/foco/histórico/insets; nenhuma equivalência inventada.
+- [x] T032 [REVIEW] Revisar escopo/whitespace/sintaxe/tipos e entregar commit/handoff local exclusivo ao coordenador.
+- [ ] T033 [RUNTIME] Executar candidata integrada no Windows hospedado, inspecionar pares reais e registrar achados; UI06/aceite humano separados.

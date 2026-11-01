@@ -1,0 +1,157 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "kind": "SYNTHETIC_SMOKE_NOT_PRODUCT",
+  "codeShaTested": "9283f31a30c0445ebee4f245b045ffba19be3b24",
+  "tree": "61c46b12444c895051f60d513baa109235c14c53",
+  "node": "v24.14.0",
+  "playwright": "1.55.1",
+  "chromium": "153.0.8010.12",
+  "database": false,
+  "globalToolsInstalled": false,
+  "runtime": "Windows operator host; existing Chromium executable override; NOT hosted CI",
+  "red": {
+    "command": "node qa/hf-ui044/scale-red.mjs",
+    "expectedExit": 1,
+    "observedExit": 1,
+    "algorithm": "legacy-two-frames",
+    "expectedPx": 32,
+    "observedPx": 16.2348,
+    "synthetic": true,
+    "node": "v24.14.0"
+  },
+  "green": {
+    "command": "node node_modules/@playwright/test/cli.js test --config qa/hf-ui044/playwright.smoke.config.ts",
+    "exit": 0,
+    "passed": 3,
+    "durationSeconds": 7.4
+  },
+  "files": [
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/cases.jsonl",
+      "sha256": "6b58c97f025635fd6266bf9e2b9230372c65fa528dc1599e474ec34f20a9c48e",
+      "bytes": 22114
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-100-1793566403189.json",
+      "sha256": "66be55a09f3c57332d0b42cc67ea80b9bc427da5809dcf5d08faf85966e0aa38",
+      "bytes": 2765
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-100-1793566403189.png",
+      "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+      "bytes": 13257,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-100-1793566403749.json",
+      "sha256": "9e240b5badcae58f745f17252ce2f4b8c97b825263c7662d9d615effb5cee0fe",
+      "bytes": 2749
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-100-1793566403749.png",
+      "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+      "bytes": 13257,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-200.json",
+      "sha256": "a7c8ecf7b3528edb225058e4afade151afadbf2540238e7e9447388575d8cae5",
+      "bytes": 2759
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-1440-200.png",
+      "sha256": "e4878c238674c25dc4405dda6e270739be725a9df984dd4ed23c73b013331e50",
+      "bytes": 25766,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-100-1793566401529.json",
+      "sha256": "812c363c2f4028dc1a7aa9d447d2a0613a56583328001fb8fd926d24442e8624",
+      "bytes": 2756
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-100-1793566401529.png",
+      "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+      "bytes": 9709,
+      "dimensions": [
+        320,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-100-1793566402124.json",
+      "sha256": "fbc887e4061dd426bb7cc835bd72505b33b452f57d47be3c5ae9c284f6f72e2e",
+      "bytes": 2752
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-100-1793566402124.png",
+      "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+      "bytes": 9709,
+      "dimensions": [
+        320,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-200.json",
+      "sha256": "7fe3f57f0f46005056b8cd70e7e21a3847ae15d4735b0f8c3fa839619f68d53e",
+      "bytes": 2750
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-smoke-320-200.png",
+      "sha256": "8467cc184dfba8531fb676f5cedb3e78e3302b0b04b228f9e0791bf19dc33c39",
+      "bytes": 22035,
+      "dimensions": [
+        320,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-unobserved-1440.json",
+      "sha256": "c350da2777575dc35e9dbfa9d2b37b174efd34bba040972cbd324dfe96c0c181",
+      "bytes": 1753
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-unobserved-1440.png",
+      "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+      "bytes": 13257,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-unobserved-320.json",
+      "sha256": "a72411df21ca5712071a0ac38221543dfa26f4f46057bb1c531b24187c546ce3",
+      "bytes": 1744
+    },
+    {
+      "path": ".accounts-validation/ui06-smoke-local-utf8/fullstack-unobserved-320.png",
+      "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+      "bytes": 9709,
+      "dimensions": [
+        320,
+        900
+      ]
+    }
+  ],
+  "visualInspection": [
+    "Pre-UTF8 synthetic1440 screenshot inspected; mojibake corrected by meta charset in9283f31",
+    "Corrected320/text200 screenshot inspected: readable UTF8, reflow, synthetic text only"
+  ],
+  "limitations": [
+    "Not FullStack UI06 runtime",
+    "Not starter bilateral evidence",
+    "Not official Node24.19.0 runtime",
+    "Not human acceptance"
+  ]
+}
