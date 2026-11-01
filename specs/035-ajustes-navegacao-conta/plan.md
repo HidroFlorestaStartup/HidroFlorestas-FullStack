@@ -146,3 +146,34 @@ O run A2 `41251125020` eliminou as 5 falhas anteriores de conta, dashboard e hea
 **PLAN/escopo:** arquivos editáveis A são `src/components/shell/shell.module.css`, `tests/e2e/hf-ui035-navigation.spec.ts` e a documentação `specs/035-ajustes-navegacao-conta/{plan,tasks,implementation-evidence}.md`. Outros arquivos de B/C, fixtures, testes IHFR B, `vercel.json`, workflow, schema, cálculos e autenticação ficam intocados. Confirmar regressões de navegação, contexto/conta, foco, teclado, 320–1440px, safe-area e consumidores. As verificações oficiais permanecem sem relaxamento.
 
 **REVIEW obrigatório:** conferir o SHA publicado, o run/tentativa do HEAD com `.accounts-validation/results.jsonl`, os quinze nomes únicos e `exitCode=0`, screenshots e log bruto. A falta de PASS em B no branch A permanece FAIL, nunca herdar 15/15 de #48 ou outro commit. UI-06 bilateral requer runtimes realmente executados de starter e FullStack; em sessão GitHub API sem checkout contemporâneo/runtime duplo, `UI06_BILATERAL_NOT_RUN` e T007/T015 permanecem abertos. Sem review independente, simulação de subagentes, merge ou deploy.
+
+## CLOSE-PARALLEL-02 A — 2026-11-01
+
+Estado EM_ANDAMENTO. Origem: mandato atual do usuário e PROMPT01 em22bb9c1b.
+ANALYZE somente leitura: FR035-001..005 e SC035-001..004 têm tarefas; lacuna material
+UI06/T007/T015/T027 permanece. Readiness de dois frames conflita com escala exata
+durante transition:.3s em globals.css; query CDP em contêiner genérico não observa
+TextNodes; ações Conta não existem no starter. Sem conflito normativo/científico.
+RECOMENDACAO técnica autorizada: adaptar patch5e38263d, sem alterar globals.css.
+Fontes: harness048de7c5, startercbb954a7, decisões972f9b00, composição6c61056f.
+Sete documentos A6 transportados por blobs deff5db4f; histórico preservado.
+
+PLAN: shared.ts espera16/32px com polling3s, estabilidade pós-layout e diagnóstico
+persistido antes de FAIL; CDP em até8 TextNode owners visíveis por região, sem texto;
+UNOBSERVED é evidência insuficiente. Observar reload antes de reconfigurar inline.
+Contrato congelado do coordenador emqa/hf-ui044/contract.ts. Smoke sem imports DB.
+Casos independentes porlayout; fixture/autenticação/cleanup owned por teste,
+índice planejado e JSONL incremental duráveis, sem336pares monolíticos.
+Matriz:7viewports x100/200, Conta320/390/1440 ambos contextos; inset0/34 em375/667;
+foco/hit-test/Back/Forward/reload nas classes mobile/paisagem/desktop relevantes.
+ratio1 e qualificadores preservados; defeito de menu só altera produto após reprodução.
+
+ANALYZE pós-plano: T028..T033 cobremFR035-003/SC035-003 e apoio001/002;
+nenhum requisito novo nem tarefa órfã. ConstituiçãoI–VII mantida. Não criar dados/modelo.
+Skills lidas e aplicadas por adaptação manual; paths-only SpecKit executado sem escrita
+de feature.json; setup-plan/CLI completa não invocados. Sem extensions.yml/checklists
+na reserva observada. Node24.14 local serve smoke sintético, não runtime oficial24.19.
+
+REVIEW: smoke Chromium real e contraprovaRED antes da qualificação integrada,
+syntax/focal types e escopo/whitespace; typecheck completo pelo runner do coordenador.
+UI06 bilateral/15gates novos/aceite humano permanecemNOT_RUN até evidência própria.

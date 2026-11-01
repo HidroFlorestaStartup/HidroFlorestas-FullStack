@@ -161,3 +161,15 @@ Os reparos são autoria de código/testes, **não PASS**: é indispensável a Ac
 - **Falha B, não transferível:** `ihfr-diagnosis-read.spec.ts:46` reporta `ratio=0.9667754173278809` para qualificador de texto completo a 667×375/rootFont32px. Evidência própria do A4: `.accounts-validation/frontend-ihfr/*qualifiers-667-375-text200-viewport.json` com header bottom 74, `#application-content` top74/bottom375, `#application-navigation` top300.5/bottom375, sem overflow horizontal; PNG `fullPage:false` da mesma cena. Na árvore A, `ScientificNotice` ainda está em duas colunas `sm:grid-cols-2`; a Frente B já publicou ajuste para uma coluna em telas inferiores a `lg` em seu HEAD `d7586ab95c69c45211e463516080e741bbb3931a`, sem relaxar `ratio:1`. O shell A **não** edita `src/components/ihfr-diagnosis/**` nem `tests/e2e/ihfr-diagnosis-*.spec.ts`. Encaminhamento a #47 para revisão coordenada de composição.
 - **Segurança/limites:** a reprodução original foi em PostgreSQL17 sintético de CI, Windows/Node24.19; sem ação em banco hospedado. `LOCAL_WORKTREES_NOT_OBSERVABLE`, `NATIVE_SUBAGENTS_NOT_AVAILABLE`; a execução de starter e FullStack no mesmo ambiente **não foi possível** nesta sessão GitHub API, portanto `UI06_BILATERAL_NOT_RUN`, T007/T015 não PASS. Sem aprovação humana, revisão independente, merge ou deploy.
 - **Estado deste adendo antes do novo run:** apenas autoria de patch e assert A; todos os resultados do SHA novo são `NOT_RUN` até observação terminal por run/tentativa. A descrição/recibo da PR #46 será atualizada sem alterar mais o HEAD quando houver informação.
+
+## CLOSE-PARALLEL-02 A — autoria executada, runtime integrado pendente
+
+`A_HARNESS_READY_FOR_RUNTIME`: [handoff](evidence/close02-handoff.md),
+[manifesto](evidence/close02-handoff.json) e [smoke real sintético](evidence/close02-local-smoke.json).
+ContraprovaRED antiga16.2348px≠32; smoke3/3PASS no código9283f31, comNode24.14 local
+eChromium153 existente, semDB. Tipo completo local e lintPASS após correçãoTS2783.
+16layouts/86pares planejados (nãoexecutados) substituem monólito sem remover dimensões.
+Todo o código novo está emqa/hf-ui044; nenhum produto/infra/B/C alterado porA.
+CodeSHA do smoke9283f31 não herda15/15 da composição6c61056f. CI hospedada,
+comparação bilateral, inspeção de imagens reais do produto e aceite humano permanecem
+NOT_RUN/PENDING. T033 e tarefas bilaterais históricas seguem abertas.

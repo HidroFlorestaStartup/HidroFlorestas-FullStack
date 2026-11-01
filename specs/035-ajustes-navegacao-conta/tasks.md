@@ -77,3 +77,12 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [ ] T027 [UI-06] Executar de verdade os dois projetos em estados/viewport equivalentes e registrar capturas `fullPage:false` e proveniência; sem ambos runtimes, `UI06_BILATERAL_NOT_RUN`.
 
 No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassifica individualmente as revisões acima; T007/T014/T015/T019/T022/T027 seguem abertas. Implementar ou revisar os arquivos não equivale a obter PASS. Sem alteração de ownership dos testes `ihfr-diagnosis-{read,manage}.spec.ts`.
+
+## CLOSE-PARALLEL-02 — tarefas novas preservando histórico
+
+- [x] T028 [ANALYZE/PLAN] Confrontar spec/plan/tasks e contrato comum; mapear escala/fontes/reload e ownership A.
+- [x] T029 [IMPLEMENT] Implementar shared.ts com escala exata, TextNodes CDP, reload e persistência incremental conforme FR-035-003/SC-035-003.
+- [x] T030 [TEST] Contraprova RED e smoke Chromium sem DB100→200→100/320/1440, CDP ausente e diagnóstico antes de FAIL.
+- [x] T031 [IMPLEMENT] Particionar shell.spec.ts porlayout cobrindo workspace/laboratório/Conta/Escape/foco/histórico/insets; nenhuma equivalência inventada.
+- [x] T032 [REVIEW] Revisar escopo/whitespace/sintaxe/tipos e entregar commit/handoff local exclusivo ao coordenador.
+- [ ] T033 [RUNTIME] Executar candidata integrada no Windows hospedado, inspecionar pares reais e registrar achados; UI06/aceite humano separados.
