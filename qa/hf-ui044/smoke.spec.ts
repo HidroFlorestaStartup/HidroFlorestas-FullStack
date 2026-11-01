@@ -5,7 +5,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
-const html = '<!doctype html><html style="font-size:100%"><head><style>*{transition:.3s;font-family:Arial}body{margin:0}header,main{padding:8px}</style></head><body><header><span>Texto real sintético</span></header><main><h1>Escala e fonte</h1><p>Instrumentação sem banco</p><button>Último controle</button></main></body></html>';
+const html = '<!doctype html><html style="font-size:100%"><head><meta charset="utf-8"><style>*{transition:.3s;font-family:Arial}body{margin:0}header,main{padding:8px}</style></head><body><header><span>Texto real sintético</span></header><main><h1>Escala e fonte</h1><p>Instrumentação sem banco</p><button>Último controle</button></main></body></html>';
 for (const width of [320, 1440]) {
   test("exact 100-200-100 scale, visible text CDP and reload readback at " + width, async ({ browser }) => {
     const runtime = await createRuntime(browser, "fullstack");
