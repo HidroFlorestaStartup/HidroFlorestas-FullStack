@@ -1,0 +1,296 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "PROMPT03/C",
+  "agentId": "/root/c_capture",
+  "round": 2,
+  "state": "UI037_CAPTURE_VERIFIED",
+  "scope": "Dedicated synthetic UI037 archive after all official suites on exact R2 SHA; not human acceptance or UI06 bilateral qualification.",
+  "candidateSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+  "candidateTree": "b914dee92fcf2072b30747b80f29fc45b2ddcf12",
+  "ui037SourceBlob": "0ad6bdfcc54094a0ffff924c3bb564ce234d2f7c",
+  "ui037SourceEqualsWorkerCode": true,
+  "runId": 41353270282,
+  "attempt": 1,
+  "jobId": 124987834454,
+  "artifactId": 13102479714,
+  "runUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282",
+  "artifactUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282/artifacts/13102479714",
+  "archive": {
+    "bytes": 29490770,
+    "sha256": "90c5c5fe77af91a6179f3fb4c425fbfc1df5b429c3f5d02d9b597e9779b73a82",
+    "expectedDigestSource": "Actions digest supplied by coordinator",
+    "digestMatch": true,
+    "zipCrc": "PASS_ALL_ENTRIES",
+    "entries": 792,
+    "pngEntries": 476
+  },
+  "files": [
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.png",
+      "bytes": 38898,
+      "sha256": "8a623dbcf81343e317a265a01179cb014318406d85b26e0fa29b0fa4577bd0c7",
+      "zipCrc32": "fba464fc",
+      "dimensions": [
+        390,
+        844
+      ],
+      "pngIntegrity": {
+        "chunks": 13,
+        "allChunkCrc": "PASS",
+        "idatDecompression": "PASS",
+        "decodedScanlineBytes": 988324
+      },
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.json",
+      "bytes": 1327,
+      "sha256": "124b3c35998473bf94c98c65c92b2fd4aa2fa10a22b94149e83164d9104a76fa",
+      "zipCrc32": "8c91282d",
+      "dimensions": null,
+      "pngIntegrity": null,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.png",
+      "bytes": 89688,
+      "sha256": "a3b8462db40fae67dd9ffd11cd9a27689922f6aab4ac37bf96879541cb29af01",
+      "zipCrc32": "628446d8",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "pngIntegrity": {
+        "chunks": 25,
+        "allChunkCrc": "PASS",
+        "idatDecompression": "PASS",
+        "decodedScanlineBytes": 3888900
+      },
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.json",
+      "bytes": 3652,
+      "sha256": "688af76df0b8e6e544fd325c185c6a8fff6cfe08f86bda5f49cc65fffe39bbf0",
+      "zipCrc32": "4cc8edce",
+      "dimensions": null,
+      "pngIntegrity": null,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8
+    }
+  ],
+  "finalVerification": {
+    "path": ".accounts-validation/hf-ui044-final-verification.json",
+    "sha256": "e26ddcac5d560e4e4ecde2767b5b787da9a472fdbdeb4b2b0bb34d2043b094ae",
+    "identityMatch": true,
+    "allFourFileHashesMatchIndependentReads": true,
+    "state": "CAPTURE_PRESENT_AFTER_ALL_SUITES",
+    "sourceStepOrderVerified": "official runner -> final verifier -> upload on exact R2 workflow",
+    "retentionDays": 14
+  },
+  "journal": {
+    "path": ".accounts-validation/results.jsonl",
+    "sha256": "18459f0840e81dc8e34c3d7bba979905152a529dcf81af2f3b4438088cf53232",
+    "records": 15,
+    "uniqueNames": 15,
+    "orderedOfficialNames": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint",
+      "E2E",
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "allPassExit0": true,
+    "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae",
+    "snapshotConstant": true,
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "logs": [
+      {
+        "gate": "RegressionSetup",
+        "path": ".accounts-validation/regressionsetup-1793569379266.log",
+        "sha256": "a454c459afd792d4eb02feb7513a3251f8e08bf63e32c9e1b02c896614d79671",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Unit",
+        "path": ".accounts-validation/unit-1793569387223.log",
+        "sha256": "e271a76aa2f23dc46cff5226032aa5bed22e7b274b3aa98af41fc7cfdf5eea5a",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Integration",
+        "path": ".accounts-validation/integration-1793569416070.log",
+        "sha256": "f3acaca86a41181e6d472e9eb20300efd40bae0a2508666c8cab27a750b6b54b",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Migration",
+        "path": ".accounts-validation/migration-1793569529658.log",
+        "sha256": "95888ac7e944ca6aa512df30f2d0392c753b95de1214e32ecdffbede79b05b2c",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Contract",
+        "path": ".accounts-validation/contract-1793569546063.log",
+        "sha256": "64247224b4d4e99480dd9c3393870a3ee972a6afdef3ae01c4074cf1c789f428",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "R1",
+        "path": ".accounts-validation/r1-1793569550462.log",
+        "sha256": "5fa803efce442bc4aa6fcef2c8d5265c23c4b4ab15b347cf22ede32445783b28",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Build",
+        "path": ".accounts-validation/build-1793569560765.log",
+        "sha256": "fdefd441114ffcdf3e25c3b72e33814f1a5a2cf485d9f61d86cb47775f70bc84",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Typecheck",
+        "path": ".accounts-validation/typecheck-1793569592670.log",
+        "sha256": "c50ddbdb9782ccd017dc7a1c2e5357727ec4bd0a9f7fb902e05c643aa2c08187",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Lint",
+        "path": ".accounts-validation/lint-1793569607354.log",
+        "sha256": "f209be11b3a330d32d06f1454bb4c1778f6139729bc850e7b0fb5e226d2e0431",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "E2E",
+        "path": ".accounts-validation/e2e-1793569662361.log",
+        "sha256": "fcf14b3d4902c792f9cb9a5fb83be860a450dd00a2e70fe7a5ed3fb0cfa6d22d",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Https",
+        "path": ".accounts-validation/https-1793570458939.log",
+        "sha256": "6ae3379ddb7086c5442c67b2b1c63dd692489c27cf53e5b5be6e7082ec825f7b",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Deletion",
+        "path": ".accounts-validation/deletion-1793570499409.log",
+        "sha256": "d49352596aa6374274eddbe349f4a8e4ef3afcd402cc70d44e53ca23e61e57e7",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Ihfr",
+        "path": ".accounts-validation/ihfr-1793570513503.log",
+        "sha256": "9cde782d48dc3e2b017e6063b81f5cc168a77eeeee3ff7b3bf7427630f06e1a2",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Bootstrap",
+        "path": ".accounts-validation/bootstrap-1793570595352.log",
+        "sha256": "979ff083bb9f55a17c477ac855bbce79d790311d324614cdebfc10985abffe0b",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "SchemaAudit",
+        "path": ".accounts-validation/schemaaudit-1793570600569.log",
+        "sha256": "668b224b4e85a9f0d8d273a68b578f9ae5d498dade8c9170d8d14e94cb705652",
+        "result": "PASS",
+        "exitCode": 0
+      }
+    ]
+  },
+  "counts": {
+    "E2E": 241,
+    "Ihfr": 6,
+    "overlapPolicy": "Ihfr is an overlapping subset; do not add counts as unique tests"
+  },
+  "imageInspection": {
+    "performed": true,
+    "method": "view_image of actual extracted mobile/desktop PNG; bytes equal ZIP",
+    "reviewer": "same worker who authored capture instrumentation; not independent QA",
+    "mobile": [
+      "Viewport390x844 with visible mask, map/marker and Confirmar action.",
+      "Address controls are outside the captured scroll crop, so their legibility is not asserted from this image.",
+      "Cancelar is partially at bottom crop edge near fixed navigation; no geometry/keyboard defect is inferred from this static image."
+    ],
+    "desktop": [
+      "Viewport1440x900 with optional-address labels, masked inputs and map.",
+      "Suggestion text begins near lower edge; no full-page or provider-real proof claimed."
+    ],
+    "humanVisualAcceptance": "PENDING"
+  },
+  "archiveAuditAxes": {
+    "execution": "PASS",
+    "comparability": "INSUFFICIENT_EVIDENCE",
+    "comparabilityScope": "No bilateral comparison required or claimed for C; UI06 A/B is separate",
+    "requirement": "SATISFIED_TECHNICALLY",
+    "completeness": "COMPLETE"
+  },
+  "captureTimeMetadataClassification": "Immutable JSONs retain PARTIAL/HUMAN_DECISION_PENDING from capture time; later archive audit closes only technical file-preservation completeness.",
+  "t024": "COMPLETE_ON_R2",
+  "round3Rc": "NOT_RUN_AS_PLANNED_BY_COORDINATOR",
+  "round3SuccessInherited": false,
+  "round3SourceEquivalence": "Coordinator reports630 functional blobs unchanged; this C receipt does not identify or qualify a future SHA3 or transfer SUCCESS.",
+  "productChangedByThisFollowup": false,
+  "testsChangedByThisFollowup": false,
+  "pushByWorker": false,
+  "independentReview": "PENDING_SEPARATE_PROMPT04",
+  "humanAcceptance": "PENDING",
+  "geocoder": "NOT_CONFIGURED/NOT_RUN; GEOCODER_OPERATIONAL_PENDING",
+  "science": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ]
+}

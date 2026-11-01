@@ -177,3 +177,16 @@ para a preservação observada. Estado UI037_CAPTURE_ARCHIVED_PARTIAL: E2Efalhou
 em outro cenário de atribuição de mapa e5gates posteriores não rodaram; T024
 continua pendente da próxima candidata e de prova após suítes posteriores.
 Recibo `evidence/close02-round1-ui037.json`; review independente continua separado.
+
+### REVIEW final C — rodada2, sem novo patch funcional
+
+ANALYZE/REVIEW dos artefatos executados R2 concluiu a lacuna material T024.
+ZIP real baixado foi auditado por bytes, CRC integral e checks de PNG/JSON;
+verificador final e journal confirmam15gatesPASS/exit0/snapshotconstante,
+4capturas dedicadas após as suítes posteriores e identidade d62fb08/R2.
+Código do workflow exato confirma ordem runner→verificador→upload; sourceblob037
+igual ao código C. Imagens reais mobile/desktop inspecionadas pelo autor.
+IMPLEMENT nesta etapa: somente registro documental e T024[x]. Estado do recorte
+C: CONCLUIDO tecnicamente quanto ao arquivamento, AGUARDANDO_REVISAO não autora
+e publicação consolidada exclusiva do coordenador. Sem nova execução local.
+RC3NOT_RUN; não transferir SUCCESS daR2. Aceites humanos/provedor/ciência pendentes.

@@ -43,3 +43,20 @@ digest/CRC, hashes/metadados/fontes e inspeção das duas imagens executadas.
 `close02-round1-ui037.json` e implementation-evidence registram a prova e o limite:
 E2EFAIL e5gates posterioresNOT_RUN; T024 e UI037_CAPTURE_VERIFIED final pendentes.
 Os NOT_RUN do handoff inicial acima são o snapshot anterior, preservado como tal.
+
+## Handoff terminal C — R2 verificada, publicação única pelo coordenador
+
+Estado atual **UI037_CAPTURE_VERIFIED**, limitado ao CODE_SHA_TESTED_COMPOSITION
+d62fb08cf65aca5dc704231f88594030f49279cb/treeb914dee92fcf2072b30747b80f29fc45b2ddcf12,
+run41353270282/1/artifact13102479714.15gatesPASS/241E2E/6IHFRsobreposto;4arquivos
+dedicados após suítes posteriores, digest/CRC/PNGchunks/hash/metas/fontes/imagens
+auditados pelo autor em `close02-round2-ui037.json`. T024 concluída. Snapshot
+inicial e R1parcial acima são históricos preservados, sem reescrita dos artefatos.
+
+Coordenador: transportar somente delta exclusivo C após setup1b6a2d3 para a
+branch funcional correta, preservando C localc7b/remota799c e4docs já conciliados.
+Agrupar uma publicação; não importar árvore composta/A/B/infra. Este recibo
+documental não exige novaCI. Registrar DOC_HEAD publicado separadamente do
+CODE_SHA_TESTED_COMPOSITION R2. Rodada3RCNOT_RUN, sem SUCCESS herdado, ainda que
+equivalência funcional seja comprovada separadamente. Review não autora PROMPT04,
+aceite humano/geocoder/ciência continuam eixos próprios. Worker não fez push.

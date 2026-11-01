@@ -189,3 +189,47 @@ Estado: `UI037_CAPTURE_ARCHIVED_PARTIAL`; **T024 permanece aberta** porque as
 suítes posteriores não rodaram. Não é `UI037_CAPTURE_VERIFIED` final e não é15/15.
 Nova candidata exige sua própria identidade/evidência; este recibo preserva R1.
 Sem alteração de código/produto/pipeline por este followup, sem push pelo worker.
+
+## CLOSE-PARALLEL-02 — fechamento UI037_CAPTURE_VERIFIED / R2
+
+**EVIDENCIA_IMPLEMENTACAO:** `CODE_SHA_TESTED_COMPOSITION=d62fb08cf65aca5dc704231f88594030f49279cb`,
+árvore `b914dee92fcf2072b30747b80f29fc45b2ddcf12`, [run41353270282/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282),
+job124987834454, [artifact13102479714](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282/artifacts/13102479714).
+Não é código C isolado nem prova herdada da composição histórica6c.
+
+ZIP real29.490.770 bytes,792entradas/476PNG, SHA256
+`90c5c5fe77af91a6179f3fb4c425fbfc1df5b429c3f5d02d9b597e9779b73a82`, igual ao digest
+Actions fornecido pelo coordenador. CRC integral PASS. Journal real tem15nomes
+oficiais únicos em ordem, todosPASS/exit0 e snapshotconstante
+`e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae`.
+E2E241PASS; Ihfr6PASS é subconjunto sobreposto, não somar como testes únicos.
+
+Os4arquivos dedicados `ui037-frontend-areas-hf-ui037-location-{mobile,desktop}-viewport.{png,json}`
+constam do ZIP após as suítes posteriores. PNG390×844/1440×900, fullPage:false,
+rootFontSize16/textScale100,8inputs mascarados, SHA/tree/run/attempt corretos,
+Poppins/Poppins SemiBold OBSERVED com glyphCount>0. SHA256PNG confere com JSON;
+hashes dos4bytes conferem também com `hf-ui044-final-verification.json`.
+CRC individual ZIP, CRC de todos os chunks dos2PNG e descompressãoIDAT PASS.
+O workflow do SHA exato executa runner→verificador→upload; o verificador e o
+journal são provas executadas, não apenas expectativa do código. Fonte037 no
+SHA R2 tem blob `0ad6bdfcc54094a0ffff924c3bb564ce234d2f7c`, igual ao do worker.
+
+As2imagens reais foram vistas: mobile preserva o recorte de mapa/ação com
+campos de endereço fora do scroll capturado; desktop mostra labels opcionais,
+inputs mascarados e mapa. Cancelar parcialmente na borda mobile não é classificado
+como defeito sem geometria/foco. Não é prova de legibilidade de todos os campos
+no mesmo frame, dispositivo físico, serviço real ou aceite humano.
+
+Resultado: **UI037_CAPTURE_VERIFIED; T024[x]** para R2. Os JSON imutáveis mantêm
+PARTIAL/HUMAN_DECISION_PENDING do instante da captura; esta auditoria posterior
+fecha completude do arquivamento técnico e não altera classificação/bytes originais.
+[Recibo completo por arquivo/gate/hash](evidence/close02-round2-ui037.json).
+Autoria da instrumentação e desta auditoria é do workerC; não é review independente.
+
+Rodada3: RC **NOT_RUN**, conforme recorte informado pelo coordenador. Equivalência
+de630blobs funcionais foi informada pelo coordenador; este recibo não qualifica
+SHA3 futuro nem transfere SUCCESS para ele ou para DOC_HEAD posterior. O coordenador
+publica uma vez o delta C preservando cabeças locais/remotas. Sem patch novo de
+produto/teste/pipeline por esta revisão, sem push pelo worker.
+`GEOCODER_OPERATIONAL_PENDING`; `HUMAN_ACCEPTANCE_PENDING`; quatro qualificadores
+científicos preservados. QA não autora e demais eixos UI06 pertencem a recibos próprios.

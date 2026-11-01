@@ -107,3 +107,12 @@ de persistência/não sobrescrita executada, 2/2 PASS, com bytes sintéticos.
 `UI037_CAPTURE_PENDING` continua até runtime real e auditoria dos quatro arquivos
 no ZIP final após as suítes posteriores. Captura não é aceite visual/humano.
 `GEOCODER_OPERATIONAL_PENDING` e os qualificadores científicos são preservados.
+
+## CLOSE-PARALLEL-02 — UI037_CAPTURE_VERIFIED na rodada2
+
+Estado técnico de arquivamento: **UI037_CAPTURE_VERIFIED** na candidata
+`d62fb08cf65aca5dc704231f88594030f49279cb`, [run41353270282/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282),
+artifact13102479714. Os4PNG/JSON dedicados foram validados após15gatesPASS,
+incluindo suítes posteriores ao E2E. T024 fechada somente nesse alcance.
+Não é aceite humano, comparação bilateral UI06 ou operação de geocoder.
+O SHA documental posterior e a rodada3 não recebem SUCCESS dessa run.

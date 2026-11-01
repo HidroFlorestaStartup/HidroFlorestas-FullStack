@@ -70,7 +70,7 @@ As ocorrências anteriores de `pendente`, `NOT_RUN` e `FAIL` neste arquivo perte
 - [x] T021 [US1] Completar metadados sanitizados de viewport/escala/fonte/máscara/fixture/SHA/tree/run/attempt/hash no mesmo teste, sem substituir as asserções funcionais.
 - [x] T022 [US1] Executar contraprova sintética da função real de cópia para sobrevivência à limpeza de outputDir e recusa de sobrescrita em `specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs`; registrar limites de runtime.
 - [x] T023 Transportar somente quatro documentos sanitizados33d idênticos a c7b, conferir blobs e registrar em `specs/037-localizacao-endereco-opcional/evidence/close02-handoff.json`; preservar branch/commit original e limpeza21.
-- [ ] T024 Após runtime do coordenador, auditar ZIP final com os quatro arquivos UI037, digest/CRC/dimensões/metadados depois das suítes posteriores e registrar em `specs/037-localizacao-endereco-opcional/implementation-evidence.md`.
+- [x] T024 Após runtime do coordenador, auditar ZIP final com os quatro arquivos UI037, digest/CRC/dimensões/metadados depois das suítes posteriores e registrar em `specs/037-localizacao-endereco-opcional/implementation-evidence.md`.
 
 Dependências: T020/T021 precedem T022 e runtime; T023 é independente; T024 exige
 artefatos reais do coordenador. Checklist técnico aberto está autorizado pelo
@@ -83,3 +83,12 @@ workflow/guard/upload/scripts não são editados por C.
 
 T024 permanece aberta: R1 entregou4arquivos válidos, mas Https/Deletion/Ihfr não
 rodaram após E2EFAIL. Não transferir essa prova ou os9gatesPASS para o SHA seguinte.
+
+### Encerramento técnico T024 — rodada2
+
+T024 [x] somente na candidata `d62fb08cf65aca5dc704231f88594030f49279cb`,
+run41353270282/1/artifact13102479714:15gatesPASS/exit0/snapshotconstante;
+4UI037 verificados no ZIP após Https/Deletion/Ihfr e suítes restantes.
+Digest/CRC/PNG-chunks/JSON/hashes/dimensões/proveniência/fontes e2imagens reais
+auditados em `evidence/close02-round2-ui037.json`. O estado R1parcial acima é
+histórico e não foi apagado. A RC da rodada3 é NOT_RUN, sem SUCCESS herdado.

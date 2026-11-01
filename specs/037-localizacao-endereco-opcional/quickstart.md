@@ -27,3 +27,10 @@ e desktop1440×900 em `.accounts-validation/frontend-areas/`, stems
 `ui037-frontend-areas-hf-ui037-location-{mobile,desktop}-viewport`. Validar digest/CRC,
 hash PNG/JSON, fullPage:false e SHA/tree/run/attempt do mesmo runtime. Conferir
 imagem real e máscara; só então UI037_CAPTURE_VERIFIED. Não repetir provider real.
+
+## Resultado executado do passo UI037 — R2
+
+O ZIP13102479714 de d62fb08/R2 passou a auditoria dos4arquivos após as suítes
+posteriores, junto aos15gatesPASS; `UI037_CAPTURE_VERIFIED` e T024 concluídos
+nesse SHA. Consulte `evidence/close02-round2-ui037.json`. Nenhuma repetição é
+necessária por esta atualização documental. RC3NOT_RUN; não herdar verde.
