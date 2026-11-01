@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { AUTH_FIXTURE_USERS, countAuthFixtureUsers, runAuthFixtureCommand } from "../../tests/fixtures/auth-users";
 import { createAreaFixtureClient } from "../../tests/fixtures/areas";
 import { FULLSTACK_URL, STARTER_URL, type Runtime, type LayoutCase, type EvidenceCase } from "./contract";
-import { configure, createRuntime, sample, observeReload, registerCases, recordCase, finalizeCases, readCaseMetadata } from "./shared";
+import { configure, createRuntime, sample, observeReload, registerCases, recordCase, finalizeCases, readCaseMetadata, recordLifecycle, withLayoutCleanup } from "./shared";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(180_000);
@@ -130,14 +130,19 @@ for (const layout of layouts) {
           requirement: "DEFECT_FOUND", completeness: "PARTIAL", reason: "STATE_OR_GEOMETRY_ASSERTION_FAILED" });
       }
     };
-    try {
+    await withLayoutCleanup(layout.id, async () => {
+      await recordLifecycle(layout.id, "setup", "STARTED", "fixture-guard");
       expect(await countAuthFixtureUsers(process.env)).toBe(0);
-      fixtureOwned = true; await runAuthFixtureCommand("setup", process.env);
+      fixtureOwned = true;
+      await recordLifecycle(layout.id, "setup", "STARTED", "fixture-setup");
+      await runAuthFixtureCommand("setup", process.env);
       await db.user.update({ where: { id: actor.id }, data: { firstName: "Marcos", lastName: "Lima" } });
       expect(await db.researchersLinked.count({ where: { userId: actor.id } })).toBe(0);
       for (const source of ["fullstack", "starter"] as const) {
         const runtime = await createRuntime(browser, source); runtimes.push(runtime);
+        await recordLifecycle(layout.id, "setup", "STARTED", runtime.source + "-workspace-login");
         await workspaceLogin(runtime); await configure(runtime, layout);
+        await recordLifecycle(layout.id, "setup", "PASS", runtime.source + "-workspace-login");
       }
       await run("workspace-closed");
       if (accountCase(layout)) {
@@ -146,7 +151,9 @@ for (const layout of layouts) {
       }
       for (const runtime of runtimes) {
         await configure(runtime, { ...layout, width: 1440, height: 900, scale: 100, inset: 0 });
+        await recordLifecycle(layout.id, "setup", "STARTED", runtime.source + "-create-lab");
         paths.set(runtime, await createLab(runtime, labName)); await configure(runtime, layout);
+        await recordLifecycle(layout.id, "setup", "PASS", runtime.source + "-create-lab");
       }
       await run("laboratory-closed");
       if (accountCase(layout)) {
@@ -176,7 +183,8 @@ for (const layout of layouts) {
           await configure(r, layout);
         } }, false, true);
       }
-    } finally {
+    }, async () => {
+      await recordLifecycle(layout.id, "cleanup", "STARTED", "owned-fixture-cleanup");
       try {
         if (fixtureOwned) {
           const labs = await db.laboratoryRoom.findMany({ where: { userId: actor.id, name: labName }, select: { id: true } });
@@ -193,7 +201,7 @@ for (const layout of layouts) {
         await db.$disconnect();
         for (const r of runtimes) await r.context.close();
       }
-    }
+    });
     expect(failed, "Captured failing cases remain in durable evidence").toEqual([]);
   });
 }

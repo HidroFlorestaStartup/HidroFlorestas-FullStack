@@ -145,6 +145,25 @@ export async function observeReload(runtime: Runtime) {
     interpretation: before.inlineStyle !== after.inlineStyle ? "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE" : "INLINE_INSTRUMENTATION_UNCHANGED_NOT_USER_PREFERENCE" };
   await append(result); return result;
 }
+async function visibleControlMasks(page: Page) {
+  return page.locator("input,textarea").evaluateAll(nodes => ({ controlsConsidered: nodes.length,
+    rectangles: nodes.flatMap(node => {
+      const box = node.getBoundingClientRect(), ownStyle = getComputedStyle(node);
+      let left = Math.max(0, box.left), top = Math.max(0, box.top), right = Math.min(innerWidth, box.right), bottom = Math.min(innerHeight, box.bottom);
+      if (ownStyle.visibility !== "visible" || box.width <= 0 || box.height <= 0) return [];
+      let ancestor: Element | null = node.parentElement;
+      while (ancestor) {
+        const style = getComputedStyle(ancestor), bounds = ancestor.getBoundingClientRect();
+        const clipLeft = bounds.left + ancestor.clientLeft, clipTop = bounds.top + ancestor.clientTop;
+        if (/hidden|clip|auto|scroll/.test(style.overflowX)) { left = Math.max(left, clipLeft); right = Math.min(right, clipLeft + ancestor.clientWidth); }
+        if (/hidden|clip|auto|scroll/.test(style.overflowY)) { top = Math.max(top, clipTop); bottom = Math.min(bottom, clipTop + ancestor.clientHeight); }
+        const root = ancestor.getRootNode();
+        ancestor = ancestor.parentElement ?? (root instanceof ShadowRoot ? root.host : null);
+      }
+      return right > left && bottom > top ? [{ left, top, width: right - left, height: bottom - top }] : [];
+    }),
+  }));
+}
 export async function sample(runtime: Runtime, c: EvidenceCase, options: CaptureOptions = {}): Promise<Sample> {
   await waitForFontScale(runtime, c, "before-sample:" + c.state);
   const regions = options.regions ?? { header: runtime.source === "fullstack" ? "#application-header" : "header", main: runtime.source === "fullstack" ? "#application-content" : "#conteudo" };
@@ -159,8 +178,24 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
       overflow: document.documentElement.scrollWidth > innerWidth, focus: { tag: focus?.tagName ?? null, rect: rect(focus), centerHit: !!focus && !!hit && (focus === hit || focus.contains(hit)) },
       header: rect(document.querySelector("#application-header,header")), main: rect(document.querySelector("#application-content,#conteudo,main")), rail: rect(rail ?? null) };
   });
-  const masks = await runtime.page.locator("input,textarea").all();
-  const png = await runtime.page.screenshot({ fullPage: false, animations: "disabled", mask: masks });
+  // Playwright masks an element's full box even outside an overflow scrollport.
+  // Mask only its painted rectangle, retaining every visible sensitive pixel and
+  // avoiding a magenta rectangle over unrelated fixed navigation below it.
+  const masking = await visibleControlMasks(runtime.page);
+  const maskOwner = safeId(c.id);
+  await runtime.page.evaluate(({ rectangles, owner }) => {
+    for (const rect of rectangles) {
+      const overlay = document.createElement("div");
+      overlay.setAttribute("data-hf-ui06-mask-owner", owner); overlay.setAttribute("aria-hidden", "true");
+      Object.assign(overlay.style, { position: "fixed", left: rect.left + "px", top: rect.top + "px", width: rect.width + "px", height: rect.height + "px",
+        pointerEvents: "none", zIndex: "2147483647", transition: "none" });
+      document.body.appendChild(overlay);
+    }
+  }, { rectangles: masking.rectangles, owner: maskOwner });
+  const masks = await runtime.page.locator('[data-hf-ui06-mask-owner="' + maskOwner + '"]').all();
+  let png: Buffer;
+  try { png = await runtime.page.screenshot({ fullPage: false, animations: "disabled", mask: masks }); }
+  finally { await runtime.page.locator('[data-hf-ui06-mask-owner="' + maskOwner + '"]').evaluateAll(nodes => nodes.forEach(node => node.remove())); }
   expect(png.readUInt32BE(16)).toBe(c.width); expect(png.readUInt32BE(20)).toBe(c.height);
   const stem = runtime.source + "-" + safeId(c.id);
   const fontObserved = Object.values(fonts).every(value => value.observation === "OBSERVED");
@@ -168,7 +203,7 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
     compositionBase: COMPOSITION_BASE, run: process.env.GITHUB_RUN_ID ?? null, attempt: process.env.GITHUB_RUN_ATTEMPT ?? null,
     state: c.state, actualState: options.actualState ?? c.state, requirementIds: c.requirementIds, fixture: c.fixture,
     runtimeOrigin: c.fixture.database === false ? "SYNTHETIC_SMOKE_NOT_PRODUCT" : "REAL_APPLICATION_RUNTIME",
-    viewport: { width: c.width, height: c.height }, textScale: c.scale, safeAreaBottom: c.inset, fullPage: false, maskedInputs: masks.length,
+    viewport: { width: c.width, height: c.height }, textScale: c.scale, safeAreaBottom: c.inset, fullPage: false, maskedInputs: masks.length, maskPolicy: "VISIBLE_CONTROLS_CLIPPED_TO_VIEWPORT_AND_SCROLLPORT", masking,
     geometry, fontsActuallyRendered: fonts, pngSha256: hash(png), blockedRequests: [...runtime.blocked.values()],
     routeClass: c.state, // Deliberately omit actual resource IDs and URL queries.
     execution: "PASS", comparability: fontObserved ? (options.comparability ?? "COMPARABLE") : "INSUFFICIENT_EVIDENCE",
@@ -194,3 +229,25 @@ export async function capturePair(runtimes: Runtime[], c: EvidenceCase, options:
   await recordCase(c, result); return result;
 }
 export async function readCaseMetadata(name: string) { return JSON.parse(await readFile(join(archive, name), "utf8")); }
+
+export async function recordLifecycle(caseId: string, phase: "setup" | "execution" | "cleanup", status: "STARTED" | "PASS" | "FAIL", stage: string, error?: unknown) {
+  await append({ kind: "lifecycle", caseId: safeId(caseId), phase, status, stage,
+    errorClass: error instanceof Error ? error.name.replace(/[^a-z0-9_-]/gi, "").slice(0, 40) : error === undefined ? null : "UnknownError" });
+}
+/** A timed-out browser can make API cleanup fail. Preserve both diagnostics and
+ * rethrow the original operation failure instead of replacing it in finally. */
+export async function withLayoutCleanup(caseId: string, operation: () => Promise<void>, cleanup: () => Promise<void>) {
+  let primary: unknown, cleanupFailure: unknown, diagnosticFailure: unknown;
+  let primaryFailed = false, cleanupFailed = false;
+  const record = async (phase: "execution" | "cleanup", status: "PASS" | "FAIL", error?: unknown) => {
+    try { await recordLifecycle(caseId, phase, status, phase === "execution" ? "primary-operation" : "owned-cleanup", error); }
+    catch (failure) { diagnosticFailure = failure; }
+  };
+  try { await operation(); }
+  catch (error) { primary = error; primaryFailed = true; await record("execution", "FAIL", error); }
+  try { await cleanup(); await record("cleanup", "PASS"); }
+  catch (error) { cleanupFailure = error; cleanupFailed = true; await record("cleanup", "FAIL", error); }
+  if (primaryFailed) throw primary;
+  if (cleanupFailed) throw cleanupFailure;
+  if (diagnosticFailure) throw diagnosticFailure;
+}
