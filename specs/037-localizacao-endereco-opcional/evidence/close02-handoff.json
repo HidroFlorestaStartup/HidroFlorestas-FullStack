@@ -182,5 +182,45 @@
     "VALIDACAO_CIENTIFICA_PENDENTE",
     "SUJEITO_A_RECALIBRACAO",
     "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
-  ]
+  ],
+  "followups": [
+    {
+      "round": 1,
+      "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+      "runId": 41351237110,
+      "attempt": 1,
+      "artifactId": 13101891983,
+      "state": "UI037_CAPTURE_ARCHIVED_PARTIAL",
+      "receipt": "close02-round1-ui037.json",
+      "t024": "OPEN",
+      "finalVerified": false
+    },
+    {
+      "round": 2,
+      "candidateSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "candidateTree": "b914dee92fcf2072b30747b80f29fc45b2ddcf12",
+      "runId": 41353270282,
+      "attempt": 1,
+      "jobId": 124987834454,
+      "artifactId": 13102479714,
+      "state": "UI037_CAPTURE_VERIFIED",
+      "receipt": "close02-round2-ui037.json",
+      "t024": "COMPLETE_ON_R2",
+      "finalVerified": true,
+      "rcRound3": "NOT_RUN",
+      "successInheritedToLaterSha": false
+    }
+  ],
+  "snapshotPhase": "Initial pre-runtime snapshot retained; latestState and followups supersede only current technical capture status.",
+  "latestState": "UI037_CAPTURE_VERIFIED",
+  "publicationHandoff": {
+    "publisher": "coordinator only",
+    "oneConsolidatedPublication": true,
+    "transport": "exclusive C deltas after setup1b6a2d3; preserve localc7b/remote799c and existing4docs",
+    "codeShaTestedComposition": "d62fb08cf65aca5dc704231f88594030f49279cb",
+    "docHead": "Resolve after coordinator publication; no tested status inherited",
+    "independentReview": "Separate PROMPT04 pending",
+    "humanAcceptance": "PENDING",
+    "geocoder": "PENDING"
+  }
 }
