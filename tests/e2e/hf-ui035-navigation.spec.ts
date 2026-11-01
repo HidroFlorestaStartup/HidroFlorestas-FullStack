@@ -195,7 +195,7 @@ for (const width of [320, 390, 1440]) for (const textScale of [100, 200] as cons
     } finally { await cdp.detach(); }
     const state = "account-menu-" + width + "-text" + textScale;
     await capture(page, info, state);
-    const target = join(process.cwd(), ".accounts-validation", "frontend-mobile-navigation", "hf-ui035-" + state + "-rects.json");
+    const target = join(process.cwd(), ".accounts-validation", "frontend-mobile-navigation", "hf-ui035-" + state + "-rects-geometry.json");
     await writeFile(target, JSON.stringify({ source: "fullstack", syntheticFixture: true, fullPage: false, textScale,
       sha: process.env.GITHUB_SHA ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
       tree: execFileSync("git", ["rev-parse", "HEAD^{tree}"], { encoding: "utf8" }).trim(),
