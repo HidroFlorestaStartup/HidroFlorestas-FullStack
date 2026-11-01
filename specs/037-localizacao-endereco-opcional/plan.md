@@ -167,3 +167,13 @@ Scope/whitespace/JSON/blobs/globs PASS. Autorrevisão, não revisão independent
 T024 continua aberta para o coordenador:15 gates, quatro arquivos no ZIP depois
 das suítes posteriores, digest/CRC/hash/dimensões e inspeção real das imagens.
 Estado deste plano focal: AGUARDANDO_REVISAO/runtime. Publicação só coordenador.
+
+### Rodada1 / revisão parcial de artefatos UI037
+
+ANALYZE/REVIEW pós-runtime: ZIP41351237110/1 baixado pelo coordenador foi lido
+integralmente pelo worker C; digest/CRC e4PNG/JSON UI037 conferidos,2imagens
+inspecionadas. Registro somente em docs037; nenhum patch de produto é necessário
+para a preservação observada. Estado UI037_CAPTURE_ARCHIVED_PARTIAL: E2Efalhou
+em outro cenário de atribuição de mapa e5gates posteriores não rodaram; T024
+continua pendente da próxima candidata e de prova após suítes posteriores.
+Recibo `evidence/close02-round1-ui037.json`; review independente continua separado.

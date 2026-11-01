@@ -1,0 +1,165 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "PROMPT03/C",
+  "agentId": "/root/c_capture",
+  "round": 1,
+  "state": "UI037_CAPTURE_ARCHIVED_PARTIAL",
+  "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+  "candidateTree": "ab61890437706cf3a547630da8dc0c42f86d129d",
+  "ui037SourceBlob": "0ad6bdfcc54094a0ffff924c3bb564ce234d2f7c",
+  "ui037SourceEqualsWorkerCode": true,
+  "runId": 41351237110,
+  "attempt": 1,
+  "artifactId": 13101891983,
+  "runUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110",
+  "artifactUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110/artifacts/13101891983",
+  "archive": {
+    "size": 35829999,
+    "sha256": "55c7de50bbba209db0015b8e2d14473bc6530c6665fadc4335fb7547335bdd3e",
+    "expectedDigestSource": "Coordinator-provided Actions artifact digest",
+    "digestMatch": true,
+    "crc": "PASS_ALL_ENTRIES",
+    "entries": 872
+  },
+  "files": [
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.png",
+      "size": 38769,
+      "sha256": "82a7520c37572bc40bc879ce2ee282f13af6e8f973529bc65766aa1d1c838cd8",
+      "crc32": "299e626a",
+      "dimensions": [
+        390,
+        844
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ]
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.json",
+      "size": 1327,
+      "sha256": "c019e32bff89f27df1cfa1d51fb0663654f23f8cd665660c433a3874b7c6987a",
+      "crc32": "963f199a",
+      "dimensions": null,
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ]
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.png",
+      "size": 89552,
+      "sha256": "74dc55a17b482af96c767f3c221a86b4f6c373edd77dcd120dace72bb49d39be",
+      "crc32": "faa2cf3c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ]
+    },
+    {
+      "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.json",
+      "size": 3652,
+      "sha256": "035442bbbd284e75cb34c2877c6bb77e61716cc19bf66cbeb3e578bb331816b6",
+      "crc32": "caf3c8e1",
+      "dimensions": null,
+      "textScale": 100,
+      "rootFontSize": 16,
+      "maskedInputs": 8,
+      "fontStatus": "OBSERVED",
+      "fontFamilies": [
+        "Poppins",
+        "Poppins SemiBold"
+      ]
+    }
+  ],
+  "journal": {
+    "path": ".accounts-validation/results.jsonl",
+    "sha256": "0d3d5f4e86a77c0d8833f1550fb5a2362eade5abfec5851f41ddfaa3f5d6106f",
+    "records": 10,
+    "uniqueGates": 10,
+    "pass": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint"
+    ],
+    "fail": [
+      "E2E"
+    ],
+    "notRun": [
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a",
+    "snapshotConstant": true,
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+  },
+  "e2e": {
+    "path": ".accounts-validation/e2e-1793568210359.log",
+    "sha256": "51d1552b3f965a29d88f493795387c1c41cea6ac34131de9d942a0cb6eee1bda",
+    "passed": 227,
+    "failed": 1,
+    "notRun": 7,
+    "failure": "frontend-territorial-map.spec.ts:73:7; expected visible OpenStreetMap attribution link, locator absent",
+    "causeScope": "Workflow env attribution anchor restoration is reported by coordinator; this receipt directly verifies the failed locator and does not claim a new passing runtime."
+  },
+  "imageInspection": {
+    "performedBy": "/root/c_capture via view_image",
+    "extractedBytesEqualZip": true,
+    "mobile": {
+      "file": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.png",
+      "observations": [
+        "390x844 viewport, mask visibly covers form input/textarea content.",
+        "Current scroll shows map, point marker and Confirmar ponto e cadastrar action.",
+        "Address fields are outside this crop; the image alone does not prove their legibility.",
+        "Cancelar is partially visible at lower crop edge near fixed navigation; no DOM geometry or keyboard reachability conclusion is made."
+      ]
+    },
+    "desktop": {
+      "file": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.png",
+      "observations": [
+        "1440x900 viewport shows area form, coordinate/address optional labels and map.",
+        "Input values are masked; UI suggestion copy begins near bottom of viewport.",
+        "Synthetic identity only; no real provider imagery or data is evidenced."
+      ]
+    },
+    "visualAcceptance": "NOT_GRANTED"
+  },
+  "axes": {
+    "execution": "PASS_ARCHIVE_INTEGRITY_ONLY",
+    "comparability": "INSUFFICIENT_EVIDENCE",
+    "requirement": "HUMAN_DECISION_PENDING",
+    "completeness": "PARTIAL"
+  },
+  "technicalLimit": "The4 files are preserved in the actual terminal artifact of this failed E2E round. Later Https/Deletion/Ihfr suites did not run, so post-later-suite durability is still NOT_RUN and T024 remains open.",
+  "finalUi037CaptureVerified": false,
+  "productChangedByThisFollowup": false,
+  "publicationByWorker": false,
+  "humanAcceptance": "PENDING",
+  "realGeocoder": "NOT_CONFIGURED/NOT_RUN"
+}

@@ -34,3 +34,12 @@ Comando da contraprova: `node --test specs/037-localizacao-endereco-opcional/evi
 UI037_CAPTURE_PENDING; runtime UI037/15 gates/ZIP final NOT_RUN pelo worker.
 Autorrevisão, sem review independente. Publicação exclusivamente coordenador.
 HUMAN_ACCEPTANCE_PENDING; GEOCODER_OPERATIONAL_PENDING. Sem merge/deploy/ciência.
+
+## Followup R1 — snapshot posterior ao handoff inicial
+
+`UI037_CAPTURE_ARCHIVED_PARTIAL`: captura real e4arquivos válidos no ZIP da
+candidata194e9afa, run41351237110/1/artifact13101891983. Auditoria integral de
+digest/CRC, hashes/metadados/fontes e inspeção das duas imagens executadas.
+`close02-round1-ui037.json` e implementation-evidence registram a prova e o limite:
+E2EFAIL e5gates posterioresNOT_RUN; T024 e UI037_CAPTURE_VERIFIED final pendentes.
+Os NOT_RUN do handoff inicial acima são o snapshot anterior, preservado como tal.

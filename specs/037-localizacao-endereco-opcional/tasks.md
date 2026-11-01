@@ -76,3 +76,10 @@ Dependências: T020/T021 precedem T022 e runtime; T023 é independente; T024 exi
 artefatos reais do coordenador. Checklist técnico aberto está autorizado pelo
 mandato atual, sem transformá-lo em PASS ou aceite. Ownership C exclusivo;
 workflow/guard/upload/scripts não são editados por C.
+
+### Revisão pós-runtime da rodada1
+
+- [x] T025 Auditar em `evidence/close02-round1-ui037.json` o ZIP real41351237110/1, digest/CRC,4arquivos UI037, fontes/proveniência e2imagens; registrar preservação parcial sem fechar T024 quando as suítes posteriores forem NOT_RUN.
+
+T024 permanece aberta: R1 entregou4arquivos válidos, mas Https/Deletion/Ihfr não
+rodaram após E2EFAIL. Não transferir essa prova ou os9gatesPASS para o SHA seguinte.

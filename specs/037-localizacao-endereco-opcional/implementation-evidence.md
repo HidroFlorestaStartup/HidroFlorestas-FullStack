@@ -156,3 +156,36 @@ Não há checklist037 nem hooks registrados. Não foi executado browser/PG/prove
 no host; não há RED de navegador alegado. Capturas reais e revisão não autora
 continuam necessárias. Handoff completo em `evidence/close02-handoff.{md,json}`.
 `HUMAN_ACCEPTANCE_PENDING`; `GEOCODER_OPERATIONAL_PENDING`.
+
+## CLOSE-PARALLEL-02 — rodada1 UI037: arquivamento parcial executado
+
+EVIDENCIA_IMPLEMENTACAO: candidata `194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920`, árvore
+`ab61890437706cf3a547630da8dc0c42f86d129d`, [run41351237110/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110),
+[artefato13101891983](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110/artifacts/13101891983).
+ZIP efetivamente lido:35.829.999 bytes,872 entradas, SHA256
+`55c7de50bbba209db0015b8e2d14473bc6530c6665fadc4335fb7547335bdd3e`, igual ao digest
+Actions fornecido pelo coordenador; CRC integral PASS. Os4 arquivos UI037 dedicados
+estão no ZIP, com PNG390×844/1440×900, JSONfullPage:false,16px/100%,8inputs
+mascarados, SHA/tree/run/attempt corretos e Poppins/Poppins SemiBold OBSERVED via
+CDP com glyphCount>0. Hash PNG confere com JSON; JSON/PNG e CRC individuais estão
+no [recibo auditável](evidence/close02-round1-ui037.json). Os bytes extraídos vistos
+na inspeção das duas imagens são idênticos aos bytes do ZIP.
+
+Inspeção visual real pelo próprio autor: desktop mostra formulário/labels opcionais
+e mapa com valores mascarados; mobile mostra o mapa e ação Confirmar, no scroll
+capturado, com campos de endereço fora do recorte. Cancelar está parcialmente na
+borda inferior; sem geometria/foco não se conclui defeito ou acessibilidade pelo
+PNG. Esta é prova de captura sintética, não aceite visual, dispositivo físico ou
+geocodificador real. O blob do teste037 no SHA executado é igual ao do worker.
+
+Resultado da composição nesta rodada:9gates PASS, E2EFAIL (227PASS/1FAIL/7NOT_RUN),
+Https/Deletion/Ihfr/Bootstrap/SchemaAudit NOT_RUN. Log aponta ausência do link
+OpenStreetMap em `frontend-territorial-map.spec.ts:73:7`; restauração do anchor no
+env da QA é reparo informado pelo coordenador, ainda sem PASS novo neste recibo.
+Não se atribui resultado terminal individual aos4testes037 só por ausência no
+relatório de falhas do dot reporter. Capturas UI037 foram executadas e arquivadas.
+
+Estado: `UI037_CAPTURE_ARCHIVED_PARTIAL`; **T024 permanece aberta** porque as
+suítes posteriores não rodaram. Não é `UI037_CAPTURE_VERIFIED` final e não é15/15.
+Nova candidata exige sua própria identidade/evidência; este recibo preserva R1.
+Sem alteração de código/produto/pipeline por este followup, sem push pelo worker.

@@ -182,5 +182,18 @@
     "VALIDACAO_CIENTIFICA_PENDENTE",
     "SUJEITO_A_RECALIBRACAO",
     "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "followups": [
+    {
+      "round": 1,
+      "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+      "runId": 41351237110,
+      "attempt": 1,
+      "artifactId": 13101891983,
+      "state": "UI037_CAPTURE_ARCHIVED_PARTIAL",
+      "receipt": "close02-round1-ui037.json",
+      "t024": "OPEN",
+      "finalVerified": false
+    }
   ]
 }
