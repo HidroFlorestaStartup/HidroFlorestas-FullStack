@@ -32,12 +32,12 @@
   "vercelInspection": {
     "project": "hidro-florestas-full-stack",
     "repositoryFilterConfirmed": "HidroFlorestaStartup/HidroFlorestas-FullStack",
-    "connectorAccount": "HidroFlorestaStartup",
+    "connectorAccount": "connected Vercel project account",
     "rootDirectory": "NOT_OBSERVED_CONNECTOR_OMITS_FIELD",
     "browserAccountMismatch": true,
     "loginAction": "AUTOMATIC_APPROVAL_REVIEW_REJECTED",
     "rejectionReason": "Google sign-in method and intended account not explicitly authorized",
-    "requestedSpecificApproval": "Google sign-in exclusively for hidrofloresta@gmail.com; read-only Root Directory and Git binding",
+    "requestedSpecificApproval": "Google sign-in exclusively for the connected project account; read-only Root Directory and Git binding",
     "providerSettingsChanged": false
   },
   "hostedRoundsPublished": 0,
