@@ -1,0 +1,1255 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "A",
+  "agentId": "/root/a_harness",
+  "base": "4814a814f1394d5b902b278f2fc145c73917a9a1",
+  "functionalProductCommit": "97204d7",
+  "qaInstrumentationCommit": "9ecfa5ff284249fb283394e83ac6bc3f46677d3e",
+  "officialArtifactFilenameCommit": "236f82421ba16aa536dffb98d39317870e76f66b",
+  "r1": {
+    "run": "41351237110",
+    "attempt": 1,
+    "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+    "artifactId": 13101369298,
+    "zipSha256": "b9c5471dabe51f0eb2b0623f4bcf38f3ab1c42b6ce3cc84c60a7e5033e82ac5e",
+    "codeCssMatchesSyntheticRedBase": true,
+    "cases": {
+      "planned": 86,
+      "recorded": 3,
+      "pass": 2,
+      "fail": 1,
+      "notRun": 83
+    },
+    "finding": "Account menu clipped to viewport left; PNG real inspected, Poppins SemiBold observed in metadata",
+    "pngSha256": "2a64736c1d5f3167b6ed65fda525d983f7a23cee9cdc47972577f1de561d4d03",
+    "limits": "17test failures do not prove17independent product defects. Timeout/context closure and cleanup failure observed; exact primary A timeout cause not preserved. Starter label bug independently reproduced; causal assignment to historical A timeout remains INFERENCIA."
+  },
+  "domReproduction": {
+    "source": "Real TopBar/UserProfile TSX rendered with React SSR; actual shell CSS/Tailwind preflight; synthetic session/native image/link adapters",
+    "origin": "SYNTHETIC_SMOKE_NOT_PRODUCT",
+    "fontFixture": "Arial, CDP-observed fonts persisted; not a Poppins equivalence claim",
+    "red": {
+      "tests": 6,
+      "passed": 3,
+      "failed": 3,
+      "exit": 1
+    },
+    "green": {
+      "tests": 6,
+      "passed": 6,
+      "exit": 0
+    },
+    "mechanism": "Menu width288 anchored at Conta right256 gives left−32 in320/text200. Anchoring to whole action group right308 gives left20 without changing width/font."
+  },
+  "geometries": [
+    {
+      "width": 320,
+      "textScale": 100,
+      "before": {
+        "panel": {
+          "top": 64.140625,
+          "right": 247.15625,
+          "bottom": 227.140625,
+          "left": -40.84375,
+          "width": 288,
+          "height": 163,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 81.140625,
+          "right": 230.15625,
+          "bottom": 102.140625,
+          "left": -23.84375,
+          "width": 254,
+          "height": 21,
+          "scrollWidth": 254,
+          "clientWidth": 254,
+          "position": "static"
+        },
+        "password": {
+          "top": 114.140625,
+          "right": 230.15625,
+          "bottom": 158.140625,
+          "left": -23.84375,
+          "width": 254,
+          "height": 44,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 166.140625,
+          "right": 230.15625,
+          "bottom": 210.140625,
+          "left": -23.84375,
+          "width": 254,
+          "height": 44,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 64.578125,
+          "right": 298.53125,
+          "bottom": 227.578125,
+          "left": 10.53125,
+          "width": 288,
+          "height": 163,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 81.578125,
+          "right": 281.53125,
+          "bottom": 102.578125,
+          "left": 27.53125,
+          "width": 254,
+          "height": 21,
+          "scrollWidth": 254,
+          "clientWidth": 254,
+          "position": "static"
+        },
+        "password": {
+          "top": 114.578125,
+          "right": 281.53125,
+          "bottom": 158.578125,
+          "left": 27.53125,
+          "width": 254,
+          "height": 44,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 166.578125,
+          "right": 281.53125,
+          "bottom": 210.578125,
+          "left": 27.53125,
+          "width": 254,
+          "height": 44,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 31
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 320,
+      "textScale": 200,
+      "before": {
+        "panel": {
+          "top": 67.484375,
+          "right": 256,
+          "bottom": 277.484375,
+          "left": -32,
+          "width": 288,
+          "height": 210,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 84.484375,
+          "right": 239,
+          "bottom": 126.484375,
+          "left": -15,
+          "width": 254,
+          "height": 42,
+          "scrollWidth": 254,
+          "clientWidth": 254,
+          "position": "static"
+        },
+        "password": {
+          "top": 138.484375,
+          "right": 239,
+          "bottom": 195.484375,
+          "left": -15,
+          "width": 254,
+          "height": 57,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 203.484375,
+          "right": 239,
+          "bottom": 260.484375,
+          "left": -15,
+          "width": 254,
+          "height": 57,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 66.90625,
+          "right": 308,
+          "bottom": 276.90625,
+          "left": 20,
+          "width": 288,
+          "height": 210,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 83.90625,
+          "right": 291,
+          "bottom": 125.90625,
+          "left": 37,
+          "width": 254,
+          "height": 42,
+          "scrollWidth": 254,
+          "clientWidth": 254,
+          "position": "static"
+        },
+        "password": {
+          "top": 137.90625,
+          "right": 291,
+          "bottom": 194.90625,
+          "left": 37,
+          "width": 254,
+          "height": 57,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 202.90625,
+          "right": 291,
+          "bottom": 259.90625,
+          "left": 37,
+          "width": 254,
+          "height": 57,
+          "scrollWidth": 252,
+          "clientWidth": 252,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 30
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 390,
+      "textScale": 100,
+      "before": {
+        "panel": {
+          "top": 64.140625,
+          "right": 317.15625,
+          "bottom": 227.140625,
+          "left": -2.84375,
+          "width": 320,
+          "height": 163,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 81.140625,
+          "right": 300.15625,
+          "bottom": 102.140625,
+          "left": 14.15625,
+          "width": 286,
+          "height": 21,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 114.140625,
+          "right": 300.15625,
+          "bottom": 158.140625,
+          "left": 14.15625,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 166.140625,
+          "right": 300.15625,
+          "bottom": 210.140625,
+          "left": 14.15625,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 64.5625,
+          "right": 368.546875,
+          "bottom": 227.5625,
+          "left": 48.546875,
+          "width": 320,
+          "height": 163,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 81.5625,
+          "right": 351.546875,
+          "bottom": 102.5625,
+          "left": 65.546875,
+          "width": 286,
+          "height": 21,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 114.5625,
+          "right": 351.546875,
+          "bottom": 158.5625,
+          "left": 65.546875,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 166.5625,
+          "right": 351.546875,
+          "bottom": 210.5625,
+          "left": 65.546875,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 31
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 390,
+      "textScale": 200,
+      "before": {
+        "panel": {
+          "top": 68.46875,
+          "right": 326,
+          "bottom": 278.46875,
+          "left": 6,
+          "width": 320,
+          "height": 210,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 85.46875,
+          "right": 309,
+          "bottom": 127.46875,
+          "left": 23,
+          "width": 286,
+          "height": 42,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 139.46875,
+          "right": 309,
+          "bottom": 196.46875,
+          "left": 23,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 204.46875,
+          "right": 309,
+          "bottom": 261.46875,
+          "left": 23,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 65.65625,
+          "right": 378,
+          "bottom": 275.65625,
+          "left": 58,
+          "width": 320,
+          "height": 210,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 82.65625,
+          "right": 361,
+          "bottom": 124.65625,
+          "left": 75,
+          "width": 286,
+          "height": 42,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 136.65625,
+          "right": 361,
+          "bottom": 193.65625,
+          "left": 75,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 201.65625,
+          "right": 361,
+          "bottom": 258.65625,
+          "left": 75,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 30
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "textScale": 100,
+      "before": {
+        "panel": {
+          "top": 66.3125,
+          "right": 1333.421875,
+          "bottom": 229.3125,
+          "left": 1013.421875,
+          "width": 320,
+          "height": 163,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 83.3125,
+          "right": 1316.421875,
+          "bottom": 104.3125,
+          "left": 1030.421875,
+          "width": 286,
+          "height": 21,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 116.3125,
+          "right": 1316.421875,
+          "bottom": 160.3125,
+          "left": 1030.421875,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 168.3125,
+          "right": 1316.421875,
+          "bottom": 212.3125,
+          "left": 1030.421875,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 66.3125,
+          "right": 1416,
+          "bottom": 229.3125,
+          "left": 1096,
+          "width": 320,
+          "height": 163,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 83.3125,
+          "right": 1399,
+          "bottom": 104.3125,
+          "left": 1113,
+          "width": 286,
+          "height": 21,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 116.3125,
+          "right": 1399,
+          "bottom": 160.3125,
+          "left": 1113,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 168.3125,
+          "right": 1399,
+          "bottom": 212.3125,
+          "left": 1113,
+          "width": 286,
+          "height": 44,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "STRONG",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "SMALL",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 19
+                }
+              ]
+            },
+            {
+              "tag": "SPAN",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 2
+                }
+              ]
+            },
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "SPAN",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 4
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 31
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 1440,
+      "textScale": 200,
+      "before": {
+        "panel": {
+          "top": 82.578125,
+          "right": 1318.984375,
+          "bottom": 292.578125,
+          "left": 998.984375,
+          "width": 320,
+          "height": 210,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 99.578125,
+          "right": 1301.984375,
+          "bottom": 141.578125,
+          "left": 1015.984375,
+          "width": 286,
+          "height": 42,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 153.578125,
+          "right": 1301.984375,
+          "bottom": 210.578125,
+          "left": 1015.984375,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 218.578125,
+          "right": 1301.984375,
+          "bottom": 275.578125,
+          "left": 1015.984375,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "after": {
+        "panel": {
+          "top": 86.9375,
+          "right": 1416,
+          "bottom": 296.9375,
+          "left": 1096,
+          "width": 320,
+          "height": 210,
+          "scrollWidth": 318,
+          "clientWidth": 318,
+          "position": "absolute"
+        },
+        "name": {
+          "top": 103.9375,
+          "right": 1399,
+          "bottom": 145.9375,
+          "left": 1113,
+          "width": 286,
+          "height": 42,
+          "scrollWidth": 286,
+          "clientWidth": 286,
+          "position": "static"
+        },
+        "password": {
+          "top": 157.9375,
+          "right": 1399,
+          "bottom": 214.9375,
+          "left": 1113,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        },
+        "deletion": {
+          "top": 222.9375,
+          "right": 1399,
+          "bottom": 279.9375,
+          "left": 1113,
+          "width": 286,
+          "height": 57,
+          "scrollWidth": 284,
+          "clientWidth": 284,
+          "position": "static"
+        }
+      },
+      "fontsActuallyRendered": {
+        "header": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "STRONG",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "SMALL",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 19
+                }
+              ]
+            },
+            {
+              "tag": "SPAN",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 2
+                }
+              ]
+            },
+            {
+              "tag": "SUMMARY",
+              "role": "button",
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 5
+                }
+              ]
+            },
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 11
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "A",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 13
+                }
+              ]
+            },
+            {
+              "tag": "SPAN",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 4
+                }
+              ]
+            }
+          ]
+        },
+        "main": {
+          "observation": "OBSERVED",
+          "elements": [
+            {
+              "tag": "P",
+              "role": null,
+              "fonts": [
+                {
+                  "familyName": "Arial",
+                  "isCustomFont": false,
+                  "glyphCount": 31
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "productDelta": {
+    "paths": [
+      "src/components/shell/shell.module.css",
+      "tests/e2e/hf-ui035-navigation.spec.ts"
+    ],
+    "css": "Position relative on accountActions, static on accountDisclosure; menu dimensions, font and contracts unchanged",
+    "officialRegression": "6newcases320/390/1440×100/200 with exact16/32px stable check, name/actions rects and CDP fonts, ratio1 and Escape/focus",
+    "filenameCompatibility": "6/6hf-ui035-account-menu-*-rects-geometry.json match official frontend-mobile-navigation/*-geometry.json; generic captures preserved",
+    "runtime": "Official6casesNOT_RUN for repaired tree locally; coordinator must run15gates on finalcandidate"
+  },
+  "qaDelta": {
+    "diagnostics": "Lifecycle stage STARTED/PASS before/after fixture/login/lab creation. withLayoutCleanup records primary and cleanup failures separately, only errorClass, and rethrows original primary error. Ownership/cleanup scope preserved; no retries/timeouts enlarged.",
+    "mask": "Allinput/textarea protection preserved. Transparent fixed non-interactive mask locators clip rectangles to viewport and ancestor overflow before screenshot; no source control removed or product scroll/style change.",
+    "maskRed": {
+      "tests": 1,
+      "failed": 1,
+      "navigationPixel": [
+        255,
+        0,
+        255
+      ],
+      "sensitivePixel": [
+        255,
+        0,
+        255
+      ]
+    },
+    "maskGreen": {
+      "visibleSensitiveInput": [
+        255,
+        0,
+        255
+      ],
+      "navigationBelowScrollport": [
+        0,
+        100,
+        0
+      ]
+    },
+    "maskR1Limit": "Magenta region from partially clipped text control obscured navigation; R1photo limited there. Range hypothesis not confirmed and no range exclusion applied."
+  },
+  "finalLocalVerification": {
+    "codeShaTested": "9ecfa5ff284249fb283394e83ac6bc3f46677d3e",
+    "tests": 14,
+    "passed": 14,
+    "durationSeconds": 12.0,
+    "exit": 0,
+    "fullTypecheck": "PASS/exit0",
+    "lintFiveTypeScriptFiles": "PASS/exit0",
+    "whitespace": "PASS/exit0",
+    "node": "v24.14.0",
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.12",
+    "database": false,
+    "hostedCi": false,
+    "globalInstall": false
+  },
+  "archives": {
+    "menuRed": {
+      "path": ".accounts-validation/ui06-menu-repair-red",
+      "files": {
+        "cases.jsonl": "e17e676133711f8dc8fe4b33af6c045d3786bbab780ae6771a4dcc01be923e5a",
+        "fullstack-menu-1440-100.json": "bd2a61eda22da0b4f06ee25e3c9799d01e494442dcce93f7532d0c98212dcbe2",
+        "fullstack-menu-1440-100.png": "75cece68b24fe99ab505b5459be491dd579de281c587b5d97acdacad8d6f1883",
+        "fullstack-menu-1440-200.json": "1930ff960563dd816e9c8be56d52c0716af76aa9526cfd8ea4aab1fc7daf4e94",
+        "fullstack-menu-1440-200.png": "5bde8d31aa8908af7a3e9932bf93d2dc517e201fd692be892d2b9164969016ad",
+        "fullstack-menu-320-100.json": "b0f2b86c3380737f4c8c6ccd2dcf2cc1b5db510ae2cd690eebc4b072ccec8763",
+        "fullstack-menu-320-100.png": "c227a3276e2625b49331d681045cdfbf000d0d3b3e885d20595ece18f1790909",
+        "fullstack-menu-320-200.json": "d94a50f66062ab4387a70e8ea460dd02f345591d8732ac5259c4975df5b19970",
+        "fullstack-menu-320-200.png": "ff9e14186be477070ec79e7812fecfe3758f3e23cb8f932e2d4c4af409b86963",
+        "fullstack-menu-390-100.json": "88c1c3c3c3b9044eeca79cce50caa87258111a6d9afaa957925093ab4dc74b50",
+        "fullstack-menu-390-100.png": "a09b7e288f56adba9bb60c6566cc60aabdced673703b591b7e96d6aa7ada8c8f",
+        "fullstack-menu-390-200.json": "8ffbfaaec5fb3dd9682d6849a4341251c7c32530ec28e50ef20054f48f6678fc",
+        "fullstack-menu-390-200.png": "dcffb6b951a474fda6a2ae7a41def1df1bd096a62aa88c4502e178406d2f3b51",
+        "menu-1440-100-geometry.json": "8da456a4f7e9fcf7053437f443f5d5b5729ef707956303a2aafaac42c8a76727",
+        "menu-1440-200-geometry.json": "a8b18bf089f2ad2c7295e4857a4cacaef0c7b0d1fb672865ff1198fe9da80e71",
+        "menu-320-100-geometry.json": "b8c9396fde3113a36cc6dbdc2540e4429ded32597cf9466862639a8cf9d94789",
+        "menu-320-200-geometry.json": "0c8b8eae08dbc388bd929452d2ed574d8607d96d74ed802a26a21fc078ce6f16",
+        "menu-390-100-geometry.json": "db0c4a33b3e2e2ea8bd65168a4b4131df0d05455b08301559901991eb8b37739",
+        "menu-390-200-geometry.json": "2b65705c98dd762014d5fefd997bba59bb9028a8b019aac33629e86fc7f1d3f3"
+      }
+    },
+    "maskRed": {
+      "path": ".accounts-validation/ui06-mask-repair-red",
+      "files": {
+        "cases.jsonl": "d3bc30f2f6662c0e4273e8aed4f8dc87fea7f4662ab7deddb77eea821f404215",
+        "fullstack-mask-scrollport.json": "121289ca58c2bf5a5829e6da648608f5ba4e425868b5ec4ccac96aa51f82842e",
+        "fullstack-mask-scrollport.png": "3fb15f8786eda71f5bbe6bb76bfd846acb8e098e0fb0b8c5ac160107d5dedc7a",
+        "mask-clipping-pixels.json": "e700dd716522ad0d12c8e184d0609661881113e9315c81ab17c777ecd4612ac6"
+      }
+    },
+    "finalGreen": {
+      "path": ".accounts-validation/ui06-a-final-repair-green",
+      "files": {
+        "cases.jsonl": "d181310fae94db0c0f905cb2849ba8cacf3c038adb361313dcb86235b0f3146e",
+        "fullstack-incomplete-pair-1.json": "68dc8469814a41448089f959ffe761b1926d5daf5680b58b32f45be6b92d3deb",
+        "fullstack-incomplete-pair-1.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-mask-scrollport.json": "a82a0fd7d6eed6b41f89159605f51aeb0b6e532f645417194e283c1358aa3087",
+        "fullstack-mask-scrollport.png": "58ce645d9da51de01fac6ba91e83ffb9a869856714c010fd79c2961822e7a484",
+        "fullstack-menu-1440-100.json": "d2650628282c6c3128323a156d7764c86d6b097dd4a5d09228232f73455cba29",
+        "fullstack-menu-1440-100.png": "c65018d8310a3af8b9f669924e410b74b429a7bf11c9638b110f218454e35959",
+        "fullstack-menu-1440-200.json": "5ca68359db3b35413aaa8e351fa8515b39cceb45e51e8cde974f7cc7a7b328a6",
+        "fullstack-menu-1440-200.png": "1075817f265f2e053bdf61bc32867d51fac62786efd172d673dce63bd6e6fce4",
+        "fullstack-menu-320-100.json": "ad15a9bdd54e1c4ba5d1d443411cc6326ab800745685ace5e3cafdba1ca0bef8",
+        "fullstack-menu-320-100.png": "4e5a7956deedf3d41ebded3f42b9a8991737898512ec88fbd5417272872dbf28",
+        "fullstack-menu-320-200.json": "f7332268540ddb66d5bd4dcb687f37787d7f0cab82ba0334e720d780a8844d06",
+        "fullstack-menu-320-200.png": "2683e23705ee5f37a60ddf262e06ae6e136043f111e4345081ef882563eda91f",
+        "fullstack-menu-390-100.json": "9105922a4aa24d6ea3e772b2efd56373fb7b3ca7a864948f825c0d644d8f45d8",
+        "fullstack-menu-390-100.png": "b5296189c8809005f5599841acacf389ef2193f16f0cdc45d1964cabee665886",
+        "fullstack-menu-390-200.json": "3244b659209502b382eb03a16e49b71cdd36ba571b0183bce5f14e7e36ffa184",
+        "fullstack-menu-390-200.png": "406b71971b3181f3fcbf8471daec74e9181e1d79b262f30001b239ac5f5667b2",
+        "fullstack-smoke-1440-100-1793569030078.json": "42d7634563c70bfa64ed3a0c9e6ee562aa2cb8a3146c461d8885059e9eeb26f3",
+        "fullstack-smoke-1440-100-1793569030078.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-smoke-1440-100-1793569030660.json": "97b9660121234633ccc1935d3a5b53dc4635f840e425a9422b1daac1bb18f24c",
+        "fullstack-smoke-1440-100-1793569030660.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-smoke-1440-200.json": "711121392ea84233a6413da7b9717f352f2347729e6280d55069931eaa150039",
+        "fullstack-smoke-1440-200.png": "e4878c238674c25dc4405dda6e270739be725a9df984dd4ed23c73b013331e50",
+        "fullstack-smoke-320-100-1793569028393.json": "96090f945f26989954ae20ebc8d71a3cf62bf49aece676066a70c15222a7d65c",
+        "fullstack-smoke-320-100-1793569028393.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-smoke-320-100-1793569029000.json": "6b6ef3860f60353c707e2ad10345d649406937eb4bfa699e98407be0314c8e74",
+        "fullstack-smoke-320-100-1793569029000.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-smoke-320-200.json": "4cf151804b79606c32209f28c9c39add3f5004603ad78a4945df17eaea084d1a",
+        "fullstack-smoke-320-200.png": "8467cc184dfba8531fb676f5cedb3e78e3302b0b04b228f9e0791bf19dc33c39",
+        "fullstack-unobserved-1440.json": "45a83cf84baf0a37cc555fce9d3d7e9d8bc92270bc2bb9ea40e69e672603f6c5",
+        "fullstack-unobserved-1440.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-unobserved-320.json": "69738e8ca8dffdc121c56af890fca13036fca3ab7f3df8015ed8f28b1d6c8a65",
+        "fullstack-unobserved-320.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "index.json": "547ee767d6363cb0255f5cf68c568ce2d0b7e410ae942d95dd6e4dd4f6de428c",
+        "mask-clipping-pixels.json": "ed502433ab914bbbea490a7d56267a54f96fc02fdb0d6ce8436c294866457807",
+        "menu-1440-100-geometry.json": "12e4a16f21af2cee9d47ed29c7a26a9110262a81727d07f491eaa911f29033ee",
+        "menu-1440-200-geometry.json": "ce1b1f7d9af57acaea793e5188c1f879cecf546b9cf1a39873cd8c82c73ef17c",
+        "menu-320-100-geometry.json": "86e55216617720d9cb39f150b1515ec4c7f887aaee2a310acfe898d714228fb2",
+        "menu-320-200-geometry.json": "71027816e973eb3a9af64957b25bacbb48a65ae607a5be06f828ba56ca5184e6",
+        "menu-390-100-geometry.json": "c2b4e03ae8e615c0bbdf8ffab14dc842a952b249275a33008aafe19b8e333468",
+        "menu-390-200-geometry.json": "cdfd89fc096357be3c87717b74214193d7159b35afb8c6d46b9ee7996af091db",
+        "starter-required-label.json": "79e7dd603e2c2c6bbcac7118835b8fbdcb887127669eab137e2897cb69b55604"
+      }
+    }
+  },
+  "published": false,
+  "state": "A_REPAIRS_READY_FOR_BOUNDED_HOSTED_RUNTIME",
+  "humanAcceptance": "PENDING",
+  "scientificQualifiersPreserved": true
+}

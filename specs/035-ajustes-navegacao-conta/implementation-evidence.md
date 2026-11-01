@@ -190,3 +190,17 @@ ContraprovaChromiumRED1/1FAIL, GREEN6/6PASS, oldLabelMatches0 e
 accessibleTextboxMatches1. Typesfull locais/lint/whitespacePASS.
 [Recibo comfontes/hashes](evidence/close02-starter-label-repair.json).
 Sem mudarprodutos/timeouts/config oupublicar; runtimeoficial corrigidoNOT_RUN.
+
+### Adendo CLOSE02 — menuR1 reproduzido e reparado, runtime novo pendente
+
+R1UIA41351237110/1/194e9af, artifact13101369298,ZIPdigestb9c5471d...:
+3parescoletados/86 (2PASS/1FAIL),83NOT_RUN. PNGreal mostra menucortadoàesquerda.
+DOMrealTSX/CSS emfixturesemNext/DB,Arialexplicitamenteobservado: RED3/6FAIL;
+reparo containingblock deConta para grupoConta+Sair deuGREEN6/6.
+Produto97204d7 efilename236f824 trazem6regressões oficiais035 executáveisnaAisolada.
+HelperQA9ecfa5f: lifecyclepreservaerroprimário; máscara clippa ao scrollport sem
+excluirinputstexto/senha.14smokesPASS12s, typesfull locais/lint/diffPASS.
+[Recibo integral/geometrias/fontes/hashes](evidence/close02-menu-cleanup-mask-repair.json).
+FonteArial sintética não éruntimePoppins; R1nãoqualificaárvorecorrigida. O histórico
+contextclosed/cleanup permanece inconclusivo quantoàcausaprimária exataA.
+Runtimecorrigido15gates/UI06oficial, imagemrealbarra eaceitehumano continuamNOT_RUN/PENDING.

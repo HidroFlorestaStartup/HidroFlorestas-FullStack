@@ -100,3 +100,12 @@ No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassi
 - [x] T039 [IMPLEMENT] Trocar somente o seletor do nome de laboratório nostarter por textbox/nomeacessível exato; preservarFullStack/produto/timeouts.
 - [x] T040 [TEST/REVIEW] DemonstrarRED1/1 eGREEN6/6, typesfull locais/lint/diff e persistir contraprova0label/1textbox.
 - [ ] T041 [RUNTIME] Verificar criação de laboratório da referência noSHAda próxima rodada pertinente docoordenador, semPASSherdado.
+
+## CLOSE02 — reparo demonstrado do menu e qualidade da evidência
+
+- [x] T042 [ANALYZE/PLAN] InspecionarR1real e reproduzir DOM/TSX/CSS do menuem6recortes antesdecorrigir produto; distinguirfontes/limites.
+- [x] T043 [IMPLEMENT] Corrigir somente containingblock do menuemCSSA, preservando dimensões/fontes/contratos.
+- [x] T044 [TEST] Escrever6regressões oficiais035 comnome/links/fontes/escalaexata/ratio1 earchivamento-geometry.json; marcaçãoautoria, nãoruntime.
+- [x] T045 [IMPLEMENT/TEST] Preservarerroprimário/lifecycle e mascarar apenas a interseção visível doscontroles, comcontraprovasCPU/Chromium semDB.
+- [x] T046 [REVIEW] Executar14smokes, typecheckcompleto local/lint/whitespace ehand off separado deproduto/QA/documentação.
+- [ ] T047 [RUNTIME] Coordenador executar15gates eUI06sobreSHAfinalreparado, auditarZIP/JSON/PNG ecomparação real; nãoherdarR1ou6c61056f.

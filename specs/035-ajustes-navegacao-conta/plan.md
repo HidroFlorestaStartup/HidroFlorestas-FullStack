@@ -203,3 +203,32 @@ REVIEW: RED1/1FAIL; GREEN6/6PASS, seletorlabel0matches/textbox1match,
 types completos locais/lint/diffPASS. Código885b474 e [recibo](evidence/close02-starter-label-repair.json).
 Node24.14local/semDB; runtime hospedado corrigido aindaNOT_RUN. Reparo será
 agrupado pelo coordenador após oslogs deA/RC, sem publicar worker ourepetirR1.
+
+### CLOSE02 — menu demonstrado em R1, diagnóstico e máscara
+
+ANALYZE read-only: PNGrealR1/194e9af mostrou menuConta foraàesquerda;
+ZIP13101369298 temdigestb9c5471d...,3pares/86,83NOT_RUN,17testesFAIL.
+CSSdeR1 é blobidênticoàbase doRED. TSX/CSS reais renderizadossemNext/DB,
+comsessão/imagem/link sintéticos eArial explicitamente observado, reproduziram3/6FAIL.
+Em320/text200: containingblockConta termina256; menulargura288 inicia−32.
+PLAN/IMPLEMENT autorizado somenteA: containingblock no grupoConta+Sair,
+right308, menucomeça20; dimensões/fontes não reduzidas. GREEN6/6.
+Regressão oficial035 acrescenta6casos320/390/1440×100/200 semimportqa,
+escalaexata16/32, nome/links/CDP/ratio1 eEscape. Artefatos usam-rects-geometry.json,
+comprovadamente cobertosnogloboficial. Mantenedor integraBparaIHFR; nenhumB copiado.
+
+R1timeout/contextclosed/cleanup observado; causa primária exataA não preservada,
+logo não afirmar retroativamente que seletorstarter foi a única causa. Diagnóstico
+novo grava estágios e preservaerroprimário quando cleanup tambémfalha. Sem ampliar
+timeouts, retries, escopodecleanup ou tocarfixturesalheias. Guard inicial continuafailclosed.
+
+MáscaraR1 encobria barra porque boundingbox deinputtextoparcialmente fora do
+scrollport era mascaradointegralmente. Sem prova de range, nenhumtipofoi excluído.
+REDpixelnavmagenta; novo recorte da máscara ao viewport/overflow mantém pixelda
+senhavisívelmagenta e navegaçãoverde. Overlays transparentes nãointerativos são
+somenteinstrumentação, removidos após captura; scroll/estilo deproduto não alterados.
+
+REVIEW:14/14smokesPASS12s no9ecfa5f; typecheckcompleto local/lint/diffPASS.
+Produto97204d7 + nomeartefato236f824; helpersQA9ecfa5f. Runtimeoficialreparado
+NOT_RUN atérodada docoordenador; produtoalterado exige15gates noSHAfinal.
+[Recibo comgeometrias/fontes/hashes](evidence/close02-menu-cleanup-mask-repair.json).
