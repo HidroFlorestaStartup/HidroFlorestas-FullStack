@@ -94,7 +94,7 @@ async function createLab(runtime: Runtime, labName: string) {
   if (runtime.source === "starter") {
     await page.getByRole("button", { name: "Criar seu Laboratório IHFR", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "Criar Laboratório IHFR", exact: true });
-    await dialog.getByLabel("Nome do laboratório", { exact: true }).fill(labName);
+    await dialog.getByRole("textbox", { name: "Nome do laboratório", exact: true }).fill(labName);
     await dialog.getByRole("button", { name: "Criar laboratório", exact: true }).click();
     await expect(dialog).toHaveCount(0);
   } else {

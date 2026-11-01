@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { archive, configure, createRuntime, observeReload, platformFonts, sample, readCaseMetadata, waitForFontScale, capturePair } from "./shared";
 import type { EvidenceCase } from "./contract";
-import { readFile } from "node:fs/promises";
+import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
@@ -68,3 +68,20 @@ for (const sourceCount of [0, 1]) {
     } finally { if (runtime) await runtime.context.close(); }
   });
 }
+
+test("starter required label uses the accessible textbox name", async ({ page }) => {
+  // Mirrors FieldShell at starter cbb954a7, including the aria-hidden required marker.
+  await page.setContent('<!doctype html><meta charset="utf-8"><div role="dialog" aria-label="Criar Laboratório IHFR"><div><label for="lab-name">Nome do laboratório<span aria-hidden="true"> *</span></label><input id="lab-name" required></div></div>');
+  const dialog = page.getByRole("dialog", { name: "Criar Laboratório IHFR", exact: true });
+  const oldLabelMatches = await dialog.getByLabel("Nome do laboratório", { exact: true }).count();
+  const accessibleTextboxMatches = await dialog.getByRole("textbox", { name: "Nome do laboratório", exact: true }).count();
+  expect(oldLabelMatches).toBe(0);
+  expect(accessibleTextboxMatches).toBe(1);
+  await dialog.getByRole("textbox", { name: "Nome do laboratório", exact: true }).fill("Laboratório sintético");
+  await mkdir(archive, { recursive: true });
+  await writeFile(join(archive, "starter-required-label.json"), JSON.stringify({
+    runtimeOrigin: "SYNTHETIC_SMOKE_NOT_PRODUCT", starterSha: "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    structure: "label[for] + span[aria-hidden] required marker + input", oldLabelMatches, accessibleTextboxMatches,
+  }, null, 2) + "\n", { flag: "wx" });
+  await expect(dialog.getByRole("textbox", { name: "Nome do laboratório", exact: true })).toHaveValue("Laboratório sintético");
+});
