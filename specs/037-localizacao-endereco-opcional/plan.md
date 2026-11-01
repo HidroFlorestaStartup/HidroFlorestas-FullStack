@@ -120,3 +120,50 @@ Ao admitir campo novo opcional na API, o tipo `CreateAreaInput` não pode obriga
 **REVIEW:** [run 41251980306 / tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306) `completed/success` no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb`; [artefato 13062501328](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306/artifacts/13062501328) e journal confirmam 15/15 gates com `exitCode=0`, 224 E2E PASS, oito subsets de endereço no contrato e no teste E2E. Os arquivos `hf-ui037-location` específicos não constam do ZIP; capturas de `frontend-areas` têm procedência, dimensões e escala documentadas em `implementation-evidence.md`. O commit documental posterior requer verificação de equivalência estática e não recebe automaticamente os 15 PASS.
 
 **Paradas preservadas:** geocodificador real `NOT_CONFIGURED/NOT_RUN` (fornecedor, taxa global, cache, atribuição, licença, retenção/privacidade); QA independente/composição A+B+C, homologação humana/acessibilidade/dispositivo real, merge e deploy `PENDING`. T010/T011/T017 são fechamento **da implementação sintética e rastreabilidade**, não desses aceites. Não empregar serviço externo, migration ou deploy para encerrar a documentação.
+
+## CLOSE-PARALLEL-02 / PROMPT03 — plano focal C (2026-11-01)
+
+Estado: EM_ANDAMENTO. Agente nativo real `/root/c_capture`, worktree exclusiva
+`hf044-c`, branch local `codex/hf044-c-local-20261101`, base funcional `6c61056f`
+e setup `1b6a2d3`. Mandato atual adota o contrato comum do pacote `22bb9c1b`.
+RECOMENDACAO técnica: corrigir somente instrumentação do teste existente e docs.
+CF-PRD-FR-005 continua referência de rastreabilidade EM_REVISAO; a decisão UI-07
+de Pedro em `972f9b00` governa o recorte, sem promover o catálogo histórico.
+
+ANALYZE somente leitura: 9 FR/SC e 19 tarefas históricas; nenhuma contradição
+constitucional material. C1 HIGH: T015 registra outputPath/attach, mas os globs
+reais leem a pasta durável e não fecham QA-04. C2 MEDIUM: os quatro documentos
+sanitizados33d estão na C local c7b, porém ausentes da base composta. Nenhuma
+remoção entre suítes foi observada. Não atribuir causa retrospectiva.
+
+PLAN: acrescentar T020–T024 preservando histórico; coletar fonte renderizada por
+CDP em elementos textuais, escala medida, SHA/tree, run/attempt, máscara e hash
+PNG; copiar PNG+JSON imediatamente, com COPYFILE_EXCL e nomes aceitos pelos
+globs oficiais. Preservar o teste de três origens e casos de concorrência/CEP.
+Transportar somente os quatro blobs idênticos33d/c7b, sem brutos e sem repetir
+a limpeza21. Executar contraprova sintética da persistência e não sobrescrita;
+runtime real e auditoria do ZIP final após outras suítes cabem ao coordenador.
+
+Segunda ANALYZE após PLAN: T020–T024 cobrem as duas lacunas, fonte/proveniência
+e validação terminal. Sem nova entidade, API, schema, Next.js API, provider ou
+mudança de produto. Não executar setup-plan que sobrescreve plano histórico.
+Skills analyze/plan/tasks/implement foram aplicadas manualmente; prereq
+paths-only executado com contexto de feature por processo e validação manual
+dos três artefatos para manter análise somente leitura. Não é execução da CLI.
+Não há checklists037 nem `.specify/extensions.yml`; nenhum hook é aplicável.
+Constituição e ignores existentes preservados. Próxima revisão: diff, sintaxe,
+tipos focais, contraprova e handoff; aceites humanos/operacionais permanecem.
+
+### IMPLEMENT → REVIEW C / estado de handoff
+
+Implementados T020/T021 e T023: cópia exclusiva durável e metadados sanitizados;
+quatro docs33d/c7b transportados por identidade dos blobs, sem limpeza de originais.
+T022: função real de cópia extraída por AST TypeScript executada com bytes
+sintéticos, 2 testes PASS (sobrevivência à remoção da saída e EEXIST); não é
+runtime UI037. Fonte completa parseada; helpers e loop alterado passaram
+typecheck estrito focal local. Lint dos dois arquivos PASS; warning de React
+detect sem pacote na worktree não foi convertido em falha ou prova de runtime.
+Scope/whitespace/JSON/blobs/globs PASS. Autorrevisão, não revisão independente.
+T024 continua aberta para o coordenador:15 gates, quatro arquivos no ZIP depois
+das suítes posteriores, digest/CRC/hash/dimensões e inspeção real das imagens.
+Estado deste plano focal: AGUARDANDO_REVISAO/runtime. Publicação só coordenador.

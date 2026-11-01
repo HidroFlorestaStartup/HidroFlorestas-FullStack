@@ -63,3 +63,16 @@ As ocorrências anteriores de `pendente`, `NOT_RUN` e `FAIL` neste arquivo perte
 **Atribuição visual correta:** o artefato contém `.accounts-validation/frontend-areas/after-frontend-areas-new-map-{320,375,768,1440}-viewport.png` e metadados, além de `new-focus`. A captura 320 px tem texto 200% (`rootFontSize=32px`); a 1440 px, 100% (`16px`). Os arquivos específicos `frontend-areas-hf-ui037-location-{mobile,desktop}.png`, embora previstos em `tests/e2e/hf-ui037-location.spec.ts`, **não aparecem como entradas independentes do ZIP**. Não alegar captura de geocodificador real nem prova inexistente.
 
 **Estados separados:** `UI037_CODE_SYNTHETIC_CLOSED` (somente SHA testado); `GEOCODER_OPERATIONAL_PENDING` (`NOT_CONFIGURED/NOT_RUN` para provedor real, quotas/atribuição/cache/privacidade pendentes); `HUMAN_ACCEPTANCE_PENDING` (inclusive QA de composição e revisão por terceiro). `LOCAL_WORKTREES_NOT_OBSERVABLE`; `NATIVE_SUBAGENTS_NOT_AVAILABLE`. Nenhum merge, deploy ou migration hospedada foi autorizado/executado por este fechamento.
+
+## CLOSE-PARALLEL-02 / PROMPT03 — delta focal (2026-11-01)
+
+- [x] T020 [US1] Preservar PNG+JSON imediatamente fora do outputDir com COPYFILE_EXCL em `tests/e2e/hf-ui037-location.spec.ts`, usando nomes cobertos pelos globs oficiais.
+- [x] T021 [US1] Completar metadados sanitizados de viewport/escala/fonte/máscara/fixture/SHA/tree/run/attempt/hash no mesmo teste, sem substituir as asserções funcionais.
+- [x] T022 [US1] Executar contraprova sintética da função real de cópia para sobrevivência à limpeza de outputDir e recusa de sobrescrita em `specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs`; registrar limites de runtime.
+- [x] T023 Transportar somente quatro documentos sanitizados33d idênticos a c7b, conferir blobs e registrar em `specs/037-localizacao-endereco-opcional/evidence/close02-handoff.json`; preservar branch/commit original e limpeza21.
+- [ ] T024 Após runtime do coordenador, auditar ZIP final com os quatro arquivos UI037, digest/CRC/dimensões/metadados depois das suítes posteriores e registrar em `specs/037-localizacao-endereco-opcional/implementation-evidence.md`.
+
+Dependências: T020/T021 precedem T022 e runtime; T023 é independente; T024 exige
+artefatos reais do coordenador. Checklist técnico aberto está autorizado pelo
+mandato atual, sem transformá-lo em PASS ou aceite. Ownership C exclusivo;
+workflow/guard/upload/scripts não são editados por C.

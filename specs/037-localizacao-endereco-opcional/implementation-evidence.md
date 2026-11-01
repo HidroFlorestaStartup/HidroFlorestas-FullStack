@@ -121,3 +121,38 @@ Correção T018 adicionada na mesma branch por commit derivado (contrato ativo e
 - **`UI037_CODE_SYNTHETIC_CLOSED`**: código e persistência CEP opcional verificados por CI sintética no SHA `63925b3639f3eec1dd4bd737f7be7adb881c83eb`.
 - **`GEOCODER_OPERATIONAL_PENDING`**: provedor `NOT_CONFIGURED/NOT_RUN`; decisão de fornecedor, limites distribuídos, cache, atribuição/licença, privacidade e eventual homologação real dependem de autoridade operacional. Não configurar `HF_REVERSE_GEOCODER_URL` nem acessar Nominatim público neste recorte.
 - **`HUMAN_ACCEPTANCE_PENDING`**: revisão independente, QA da composição A+B+C, acessibilidade/dispositivo físico, aceite humano, merge e deploy **não executados**. Próxima QA deve testar a composição dos HEADs reais e recapturar `hf-ui037-location` explicitamente se capturas próprias forem critério de homologação, sem ampliar a permissão desta PR.
+
+## CLOSE-PARALLEL-02 / PROMPT03 — entrega C local (2026-11-01)
+
+Agente real `/root/c_capture`; base funcional `6c61056fe1dc2193e225d935f49b78cb6c6781ed`;
+setup `1b6a2d349a527ac6153d027a21e521c88b691e7b`. Mandato atual do usuário/pacote22bb.
+Estado `C_CAPTURE_READY_FOR_RUNTIME`, não `UI037_CAPTURE_VERIFIED`.
+
+EVIDENCIA_IMPLEMENTACAO: `tests/e2e/hf-ui037-location.spec.ts` preserva os mesmos
+quatro testes funcionais, login/fixtures/cleanup/POST/GET/Prisma e três origens.
+O loop de fotos copia PNG+JSON imediatamente com COPYFILE_EXCL para a pasta
+durável. Nomes exatos `ui037-frontend-areas-hf-ui037-location-{mobile,desktop}-viewport.{png,json}`
+casam com `.accounts-validation/frontend-areas/*.png` e
+`.accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json` do uploader
+oficial. Nenhum workflow, script oficial, ignore, produto ou provedor foi editado.
+Metadados novos: fonte FullStack/SHA/tree/runId/attempt, fixture sintética, estado,
+viewport, rootFontSize/textScale reais, fullPage:false, máscaras, fontes renderizadas
+por CDP apenas de headings/labels visíveis com glyphCount>0 e hash SHA256 do PNG.
+Lista CDP vazia = UNOBSERVED, sem alegar fallback. JSON é hasheado na auditoria final.
+
+| Requisito/tarefa | Verificação executada | Resultado e limite |
+| --- | --- | --- |
+| UI-07/SC-037-004, T020/T022 | `node --test specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs` | 2/2 PASS; helper real extraído por AST, bytes sintéticos; prova persistência após limpeza simulada e recusa EEXIST, não screenshot/browser |
+| T021 | parser TypeScript arquivo completo e typecheck estrito focal dos helpers/loop real | PASS local Node24.14/TypeScript existente; full typecheck de aplicação no runner ainda NOT_RUN |
+| T020–T023 | lint focal teste E2E + contraprova; git diff --check; JSON e globs; comparação blobs | PASS; ESLint avisou React detect sem pacote na worktree; não houve instalação |
+| T023 | docs33d comparados com c7b e transportados só4 arquivos sanitizados | DOC_RECONCILIATION_APPLIED na cópia; ALREADY_PRESENT em C local c7b; fonte/branches preservadas |
+| T024 | runtime real UI037,15 gates e auditoria ZIP final pós-suítes | NOT_RUN pelo worker; execução exclusiva do coordenador, nenhum PASS herdado |
+
+READ-ONLY ANALYZE foi adaptado com `check-prerequisites.sh --paths-only --json`
+e validação manual spec/plan/tasks, evitando o efeito feature.json do modo normal;
+contexto por variável de processo. PLAN/tasks incrementais e segunda análise
+de consistência precederam código. Skills aplicadas manualmente, sem declarar CLI.
+Não há checklist037 nem hooks registrados. Não foi executado browser/PG/provedor
+no host; não há RED de navegador alegado. Capturas reais e revisão não autora
+continuam necessárias. Handoff completo em `evidence/close02-handoff.{md,json}`.
+`HUMAN_ACCEPTANCE_PENDING`; `GEOCODER_OPERATIONAL_PENDING`.
