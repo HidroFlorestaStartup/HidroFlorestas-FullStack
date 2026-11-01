@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/ajustes-area-coletas-ihfr`
 **Created**: 2026-10-31
-**Status**: Implementação publicada na branch; execução dos testes no HEAD final e aceite ainda pendentes.
+**Status**: Implementação B validada em CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a` (15/15 gates, run 41252813575/tentativa 1); comparação bilateral UI-06 e aceite ainda pendentes. O histórico abaixo conserva checkpoints anteriores.
 **Input**: UI-02, UI-03, UI-04 e UI-06 em área/coleta, aprovadas no handoff de Pedro #44; divisão confirmada na missão HF-UI-044-G0.
 **Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b`, independente de A/C.
 
@@ -77,3 +77,8 @@ API/leituras podem exigir adaptação focal, a demonstrar pelo executor. Qualque
 **FR-036-003 / SC-036-002:** os quatro qualificadores experimentais completos permanecem legíveis quando os detalhes são abertos por teclado; a expressão humana “Limites do diagnóstico experimental” não pode fragmentar uma palavra na largura 320px com texto a 200%. Não é autorizado reduzir a ampliação, desativar a verificação ou mudar a ciência.
 
 **Estado:** requisito já aprovado e implementado; correções locais e regressões documentadas no plano e nas tarefas. Aceite humano e comparação executada com o starter permanecem independentes dos testes sintéticos de CI.
+
+
+## Estado verificado HF-UI-044-CLOSE-B (2026-11-01)
+
+`EVIDENCIA_IMPLEMENTACAO`: a suíte RC no **código** `d7586ab95c69c45211e463516080e741bbb3931a` terminou 15/15 PASS em [run 41252813575, tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41252813575). As verificações de ocorrências/offsets, links, presença ambiental e qualificadores no cenário sintético constam dos testes e logs desse mesmo código. Capturas verificadas da execução **FullStack** não constituem a comparação bilateral solicitada por FR-036-004/SC-036-002. **T008/T016 continuam NOT_RUN**, pois o starter `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f` não foi executado em paridade de fixtures/estado/viewport. O impedimento e o mapa de provas estão em [implementation-evidence.md](implementation-evidence.md). Não existe aceite humano, validação científica definitiva ou validação composta com o HEAD A atual.

@@ -1,7 +1,7 @@
 # Implementation Plan: área/coletas/IHFR — preparação B
 
 **Branch**: `feat/ajustes-area-coletas-ihfr` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
-**Estado**: IMPLEMENTADO_EM_REVISAO; fonte G0 preservada, validação runtime/visual e revisão independente pendentes.
+**Estado**: IMPLEMENTADO_EM_REVISAO; CI sintética do código B 15/15 PASS em `d7586ab95c69c45211e463516080e741bbb3931a`. Comparação bilateral Lovable × FullStack, composição com A e revisão/aceite independentes pendentes. A documentação mantém seu histórico por SHA.
 
 ## Summary and technical context
 
@@ -107,3 +107,13 @@ Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/so
 **PLAN corretivo:** (1) validar a URL completa inclusive o anchor existente, assegurando navegação contextual e ausência de resultado para a coleta recente; (2) manter uma coluna de qualificadores até `lg` em `ScientificNotice`, promovendo duas colunas somente quando houver largura efetiva suficiente, preservando `expect(label).toBeInViewport({ratio:1})`, quatro rótulos e fonte 200%. Não retirar assertions nem alterar viewport. (3) repetir gates reais no commit final, inspeção estática e registro por SHA. Não editar helper compartilhado.
 
 **Evidência de controle:** [Run #41251345900](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251345900), [artefato #13061703054](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251345900/artifacts/13061703054), `.accounts-validation/ihfr-1793489228324.log`. Qualificador não precisa ser parcialmente exibido quando 2 colunas se tornam estreitas; layout responsivo de 1 coluna melhora a legibilidade sem reinterpretação científica.
+
+
+## HF-UI-044-CLOSE-B — plano executado e limites de revisão (2026-11-01)
+
+1. **ANALYZE:** reconciliados o escopo #44, os contratos UI-02/03/04/06, os itens T008/T009/T015/T016/T017/T023, o HEAD de B e os HEADs concorrentes A/C; verificado o artefato real 13062377832. A base de comparação Lovable é TanStack com mock em memória; FullStack é Next.js com autorização e PostgreSQL sintético.
+2. **PLAN:** preservar código e testes aprovados, verificar cada registro de `.accounts-validation/results.jsonl` no ZIP oficial e catalogar capturas `fullPage:false` por tela/viewport/estado. Tentar o pareamento sem usar screenshots de Pedro como runtime atual; não editar shell A, formulário C, científico, guardas ou CI.
+3. **IMPLEMENT:** somente reconciliação versionada dentro da reserva `specs/036-ajustes-area-coletas-ihfr/`. Nenhum patch de produto foi justificado por captura comparável; não reexecutar 15 gates indiscriminadamente sobre o mesmo `CODE_SHA_TESTED`. Um novo HEAD documental NÃO herda o PASS da execução anterior.
+4. **REVIEW:** no código `d7586ab...`, run 41252813575/1, journal 15 PASS/0 FAIL/0 NOT_RUN; ZIP íntegro; 77 pares PNG+JSON FullStack B/IHFR com `head` idêntico e `fullPage:false`, viewport documental sem overflow registrado. **Starter executado neste ambiente: NOT_RUN**; falta a mesma fixture/viewport lado a lado. T008/T016 permanecem abertos. T017: PR #47 deve conservar Draft, estado no topo e histórico de tentativas.
+
+**Ambiente e impedimento:** acesso de leitura/escrita ao GitHub, artefato Actions local e inspeção estática da referência de Pedro; sem checkout atual dos dois repositórios neste runtime, sem Bun e sem resolução DNS do GitHub. O ZIP local disponível é histórico (`007-ihfr-evolution`), não representa nenhum dos HEADs de comparação. Não houve Cloud Browser, provedor, migration hospedada ou nova execução browser. `LOCAL_WORKTREES_NOT_OBSERVABLE`; `NATIVE_SUBAGENTS_NOT_AVAILABLE`; nenhuma revisão independente simulada. `B_VISUAL_EVIDENCE_PENDING` por ausência do runtime starter com fixtures equivalentes e da comparação bilateral executada. A validação de consumo pelo shell A requer QA composta read-only e/ou futura integração autorizada, não cherry-pick nesta branch.
