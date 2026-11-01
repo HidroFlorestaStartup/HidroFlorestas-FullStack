@@ -193,5 +193,4 @@ Critérios de término:75 casos com recibos completos, inspeção real de pares 
 técnico obrigatório ou lacuna, revisão não autora, estado do Git explícito. Até lá T008/T016/T027/T028
 permanecem abertos. HUMAN_ACCEPTANCE_PENDING; qualificadores experimentais IHFR preservados.
 
-**Checagem local adicional:** 	sc --noEmit --incremental false PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.
-
+**Checagem local adicional:** `tsc --noEmit --incremental false` PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.
