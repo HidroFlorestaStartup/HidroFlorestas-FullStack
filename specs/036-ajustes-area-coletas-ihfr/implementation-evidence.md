@@ -180,3 +180,19 @@ inclui asterisco aria-hidden que impede getByLabel exato sem esse texto.
 Reparo focal usa getByRole textbox/nome acessível exato; contraprova Chromium sintético
 RED/GREEN em `evidence/close02-reference-label-check.json`. Sem mudança de timeout,
 starter/produto ou banco local. Matriz e análise visual continuam pendentes de nova rodada.
+
+### R2 — matriz executada com evidência parcial e sumário FAIL
+
+[Run41353270282/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282),
+source d62fb08cf65aca5dc704231f88594030f49279cb, artifact13102906085. Digest
+099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548/CRCverificados porB;
+147entradas,71PNG;75casos,1PASS/74FAIL. Um par completo;74starterfalharam em navigateDomain;
+cinco também falharam no FullStack ratio1. Sumário obrigatórioFAIL; coleta de75testes não
+equivale a75PASS de requisito. Sem UI06_B_EVIDENCE_COMPLETE.
+
+Delta mínimo paraR3: navprincipal da referência nomeado explicitamente (colisão com breadcrumb
+demonstrada em Chromium), readiness oficial antes do scroll de qualificadores (mecanismo focoRAF
+reproduzido sinteticamente; atribuição individualR2 aindaINFERENCIA), diagnóstico seguro de falhas.
+Nenhum assert, timeout, produto, starter, sharedhelper ou configuração alterado porB.
+Contraprovas e análise parcial de imagens em evidence/close02-round2-counterexamples.json e
+evidence/close02-comparison.md. TSC/lint/discovery/diff locaisPASS; runtimeR3 pendente.

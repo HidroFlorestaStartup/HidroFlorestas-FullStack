@@ -6,6 +6,7 @@ import { createRuntime, configure, sample, recordCase, registerCases, finalizeCa
 import { setupFullstackDomain, setupStarterDomain, navigateDomain, AREA_NAME, EMPTY_NAME, type DomainFixture } from "./domain-fixtures";
 import { IHFR_SCIENTIFIC_QUALIFICATIONS } from "../../tests/e2e/support/frontend-ihfr-evidence";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
+import { waitForMissionRender } from "../../tests/e2e/support/frontend-mission-evidence";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(90_000);
@@ -52,9 +53,30 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
       }));
     } catch (error) {
       // Never serialize arbitrary exception messages: transports may carry secrets.
-      const code = error instanceof Error && error.name === "TimeoutError" ? "TIMEOUT" : "CASE_ASSERTION_OR_CAPTURE_FAILED";
-      const location=error instanceof Error?error.stack?.match(/(?:domain\.spec|shared)\.ts:\d+:\d+/)?.[0]:undefined;
-      errors.push(runtime.source+":"+code+(location?"@"+location:""));
+      const code = error instanceof Error && /strict mode violation/i.test(error.message) ? "LOCATOR_STRICT_MODE" :
+        error instanceof Error && /toBeInViewport/.test(error.message) ? "VIEWPORT_ASSERTION" :
+        error instanceof Error && error.name === "TimeoutError" ? "TIMEOUT" : "CASE_ASSERTION_OR_CAPTURE_FAILED";
+      const locations=error instanceof Error?[...new Set(error.stack?.match(/(?:domain(?:\.spec|-fixtures)|shared)\.ts:\d+:\d+/g)??[])]:[];
+      errors.push(runtime.source+":"+code+(locations[0]?"@"+locations[0]:""));
+      const qualifierIndex=IHFR_CONTRACT.labels.indexOf(c.fixture.qualifier as typeof IHFR_CONTRACT.labels[number]);
+      const qualifierText=qualifierIndex<0?null:runtime.source==="fullstack"?IHFR_SCIENTIFIC_QUALIFICATIONS[qualifierIndex]:IHFR_CONTRACT.labels[qualifierIndex];
+      const geometry=await runtime.page.evaluate(({qualifierText})=>{
+        const rect=(node:Element|null)=>{if(!node)return null;const r=node.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height};};
+        const content=document.getElementById("application-content")??document.getElementById("conteudo");
+        const qualifier=qualifierText?[...document.querySelectorAll("span,code")].find(node=>node.textContent===qualifierText):null;
+        return {viewport:{width:innerWidth,height:innerHeight},rootFontPx:parseFloat(getComputedStyle(document.documentElement).fontSize),
+          scrollX,scrollY,active:{tag:document.activeElement?.tagName??null,rect:rect(document.activeElement)},
+          content:{rect:rect(content),scrollTop:content?.scrollTop??null,clientHeight:content?.clientHeight??null},qualifier:rect(qualifier??null),
+          navs:[...document.querySelectorAll("nav")].filter(node=>node.getBoundingClientRect().width>0&&node.getBoundingClientRect().height>0)
+            .map(node=>({label:node.getAttribute("aria-label"),rect:rect(node)}))};
+      },{qualifierText}).catch(()=>({unavailable:true}));
+      try {
+        await mkdir(archive,{recursive:true});
+        await writeFile(join(archive,"diagnostic-"+runtime.source+"-"+c.id+".json"),JSON.stringify({
+          kind:"domain-case-failure",caseId:c.id,source:runtime.source,...runtime.code,run:process.env.GITHUB_RUN_ID??null,
+          attempt:process.env.GITHUB_RUN_ATTEMPT??null,code,errorClass:error instanceof Error?error.name:"NON_ERROR",locations,geometry,
+        },null,2)+"\n",{flag:"wx"});
+      } catch { errors.push(runtime.source+":DIAGNOSTIC_PERSIST_FAILED"); }
     }
   }
   const pairComplete=samples.length===2;
@@ -148,6 +170,9 @@ async function openDetails(runtime:Runtime) {
       await expect(detail).toHaveAttribute("open","");
     }
   }
+  // Opening/focusing summaries queues the shell's focus-reveal rAF and resize
+  // work. Drain that causal work before the one qualifier scroll/measurement.
+  await runtime.page.evaluate(waitForMissionRender);
   return region;
 }
 async function assertHit(control:Locator) {

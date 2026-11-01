@@ -152,7 +152,10 @@ export async function navigateDomain(runtime: Runtime, fixture: DomainFixture, t
   } else {
     // Real client links preserve the reference's in-memory fixture. Hard reload
     // is deliberately reserved for the terminal reload case, not hidden here.
-    const nav = runtime.page.locator("nav:visible").filter({ has: runtime.page.getByRole("link", { name: "Áreas", exact: true }) });
+    // The area PageHeader also has a visible breadcrumb nav containing Áreas.
+    // Name the primary navigation explicitly so repeated client visits stay unique.
+    const nav = runtime.page.locator('nav[aria-label="Navegação principal"]:visible,nav[aria-label="Navegação principal (celular)"]:visible');
+    await expect(nav).toHaveCount(1);
     await nav.getByRole("link", { name: "Áreas", exact: true }).click();
     const areaPath = target === "empty" ? fixture.emptyPath : fixture.areaPath;
     await runtime.page.locator('a[href="' + areaPath + '"]').first().click();

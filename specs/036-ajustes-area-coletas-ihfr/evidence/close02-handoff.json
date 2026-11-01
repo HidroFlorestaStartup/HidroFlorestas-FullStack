@@ -210,5 +210,56 @@
     "bunLocal": false,
     "databaseLocal": false,
     "workerPush": false
+  },
+  "round2CorrectiveDelta": {
+    "base": "bc4964986c7645275fcaed8570425893bf7c898e",
+    "codePaths": [
+      "qa/hf-ui044/domain-fixtures.ts",
+      "qa/hf-ui044/domain.spec.ts"
+    ],
+    "codePatchSha256": "e4a7c4fb48c9b9f0e085324bddf622bcf21314be0b934fea978fa8b9022b1086",
+    "round2": {
+      "sourceSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "run": 41353270282,
+      "attempt": 1,
+      "artifact": 13102906085,
+      "digest": "099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548",
+      "crc": "PASS",
+      "entries": 147,
+      "png": 71,
+      "cases": 75,
+      "pass": 1,
+      "fail": 74,
+      "starterNavigationErrors": 74,
+      "fullstackQualifierErrors": 5
+    },
+    "repairs": [
+      "Named primary navigation rather than all visible navs with Áreas; count1 required",
+      "Official waitForMissionRender after summary focus/open and before one qualifier scroll/ratio1",
+      "Sanitized helper-line/error-class/geometry failure receipts"
+    ],
+    "proof": "close02-round2-counterexamples.json",
+    "pairClassificationRegression": "close02-pair-classification-check-r3.json",
+    "rootCauseQualification": {
+      "navigation": "SOURCE_AND_SYNTHETIC_CHROMIUM_COUNTEREXAMPLE",
+      "qualifierIndividualR2": "INFERENCIA_SUPPORTED_BY_REPRODUCED_REAL_FUNCTIONS_CAUSAL_MECHANISM"
+    },
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "discovery": 76,
+      "pairClassificationCounterexamples": 6,
+      "diff": "PASS"
+    },
+    "productChanged": false,
+    "starterChanged": false,
+    "sharedHelperChangedByB": false,
+    "timeoutsChanged": false,
+    "ratioRelaxed": false,
+    "localAppRuntime": false,
+    "localBun": false,
+    "localDatabase": false,
+    "workerPush": false,
+    "round3Runtime": "NOT_RUN"
   }
 }

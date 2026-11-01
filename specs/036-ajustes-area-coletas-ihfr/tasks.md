@@ -93,3 +93,7 @@ sem substituir executor não autor. Typecheck oficial completo permanece depende
 - [x] T031 [CORREÇÃO/REVIEW] Após finding MEDIUM não autor, impedir COMPARABLE/NON_EQUIVALENT sem dois samples em `domain.spec.ts`; contraprova da função real para zero/um/dois samples (6cenários), typecheck/lint locais PASS. Runtime da correção permanece NOT_RUN até nova candidata do coordenador.
 
 - [x] T032 [R1 ANALYZE/PLAN/IMPLEMENT/REVIEW] Corrigir somente o seletor do textbox Nome do laboratório no starter após timeout real de setup; contraprova Chromium sintético da estrutura required/aria-hidden RED/GREEN e auditoria estática dos demais seletores/adapter. Runtime bilateral da correção ainda NOT_RUN.
+
+- [x] T033 [R2 CORREÇÃO] Resolver colisão demonstrada entre breadcrumbÁreas e navprincipal do starter em `domain-fixtures.ts`; contraprovaChromium320/1440 strictRED e namedNavGREEN, sem reload/first/timeout.
+- [x] T034 [R2 CORREÇÃO] Drenar trabalho causal de foco/layout com waitForMissionRender oficial ANTES do único scroll dos qualificadores em `domain.spec.ts`; contraprova com funções reais de shell nas3classes, ratio1 preservado. Atribuição individualR2 permanece INFERENCIA.
+- [x] T035 [R2 DIAGNÓSTICO/REVIEW] Persistir classes/linhas helper/geometry sanitizadas em failures, preservar classificação de pares ausentes com6contraprovasPASS, TSC/lint/discovery76/diff locaisPASS. R3 permaneceNOT_RUN até orquestração do coordenador.

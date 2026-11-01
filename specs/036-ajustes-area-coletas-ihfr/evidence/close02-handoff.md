@@ -55,3 +55,17 @@ com nome acessível exato, preservando timeout e produto/starter. Patch SHA256
 R1 real: source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920/run41351237110/1,
 artifact13101154606,setupFAIL/75NOT_RUN/0PNG; digestfc05f5e8... eCRC verificados.
 Sem bilateralPASS; nova correção permanece sem runtime da candidata até R2.
+
+## Delta R2 B para a última rodada autorizada
+
+Base `bc4964986c7645275fcaed8570425893bf7c898e`; patch de código exclusivo SHA256 `e4a7c4fb48c9b9f0e085324bddf622bcf21314be0b934fea978fa8b9022b1086`.
+Dois arquivosB: navprincipal referência nomeado+count1; openDetails aguarda readiness oficial
+antes do scrollratio1; failures preservam classe/linhashelper/geometry sanitizadas. Semshared/config,
+produto, starter, timeouts ou asserts alterados. ContraprovasChromiumnav/foco nas3classesPASS;
+seiscontraprovas da boundedPairatualPASS; TSCcompleto24.14/lint/discovery76/diff locaisPASS.
+
+R2real source d62fb08cf65aca5dc704231f88594030f49279cb/run41353270282/1/artifact13102906085:
+digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548/CRCverificados;
+75casos1PASS/74FAIL,71PNG; única comparação bilateral inspecionada éempty320/100.
+NãoháBilateralPASS; R3aindaNOT_RUN. Causa NAVdemonstrada; mecanismoFOCUSdemonstrado
+sinteticamente, atribuição individualR2INFERENCIA. Maisdetalhes nos novosrecibos e comparação.

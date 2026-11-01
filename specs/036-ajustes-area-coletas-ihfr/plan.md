@@ -236,3 +236,37 @@ O limite250ms é exclusivo da contraprova negativa, não altera testes de produt
 Auditoria estática dos demais seletores e métodos/retornos/versões do adapter não
 demonstrou outro descompasso; não substitui runtime. Prova e recorte em
 `evidence/close02-reference-label-check.json`. Próxima rodada pertence ao coordenador.
+
+### R2 — falhas observadas e delta focal para a última rodada
+
+Fonte d62fb08cf65aca5dc704231f88594030f49279cb / run41353270282/1 / artifact13102906085.
+ZIP auditado por B: digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548,
+CRC PASS,147entradas/71PNG. Índice75casos:1PASS/74FAIL, um par completo,69samples
+unilaterais e5casos sem sample. Os75 testes de coleta terminaram sem lançar suas falhas
+preservadas; o teste obrigatório de sumário falhou corretamente. Não são75requisitosPASS.
+
+ANALYZE B-R2-NAV:74erros starter na chamada navigateDomain; antes da primeira área o
+dashboard só contém navprincipal com Áreas, mas a página da área acrescenta um breadcrumb
+`nav[aria-label="Trilha de navegação"]` com o mesmo link. O filtro antigo nav:visible+Áreas
+torna-se ambíguo. Contraprova Chromium em320/1440:2matches e strict-mode real; seletor
+pelos nomes oficiais da navegação principal tem1match e clickPASS. IMPLEMENT: nomear
+somente navprincipal desktop/celular visível e exigir count1, preservando navegação cliente
+e fixture em memória, sem first/reload, mudança de produto ou timeout.
+
+ANALYZE B-R2-FOCUS:cinco failures ratio1 FullStack (320indexes1/2,667inset34index2,
+844indexes1/2). Recibos antigos omitiram a geometria do ponto da falha. `keepFocusVisible`
+do shell agenda revealFocus em rAF e ResizeObserver ao abrir/focar summaries; openDetails
+focava o summarydeproveniência imediatamente antes de rolar o qualificador. Contraprova
+com ownScroll/revealFocus reais e waitForMissionRender oficial extraídos por AST reproduziu
+nas3classes a mudança tardia: em667, labeltop182→-545 após RAF; aguardar readiness oficial
+antes do único scroll mantémratio1PASS. **INFERENCIA**: mecanismo explica os5failuresR2,
+mas sua atribuição individual não é prova de produto sem geometria real daquele ponto.
+IMPLEMENT: aguardar waitForMissionRender oficial ao terminar openDetails e ANTES de
+scroll/ratio1. Não se aplica sono fixo, blur, estilo ou rolagem corretiva depois da medição.
+
+Diagnóstico adicional B: persistir classe de erro, localização sanitizada incluindo domain-fixtures.ts,
+viewport/escala, retângulo do qualificador/foco/navs e scrollport, sem texto pessoal, URL, cookie,
+payload ou mensagem bruta de exceção. Falha permanece FAIL/PARTIAL/INSUFFICIENT_EVIDENCE.
+Contraprovas em evidence/close02-round2-counterexamples.json; sixcenários da função boundedPair
+atual continuamPASS (close02-pair-classification-check-r3.json). TSCcompleto local24.14,
+lintB, descoberta76 e whitespacePASS. Sem PG/Bun local e sem execuçãoR3 declarada.
