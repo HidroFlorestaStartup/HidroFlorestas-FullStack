@@ -1,6 +1,6 @@
 {
   "mission": "HF-UI-044-CLOSE-PARALLEL-02",
-  "state": "BLOCKED_AWAITING_PERSONAL_LOGIN",
+  "state": "EM_ANDAMENTO_READY_FOR_ROUND_1",
   "codeShaReviewed": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
   "codeTreeReviewed": "844423332f26c6192a44d2b391fcc70143d65025",
   "qaAuthor": "/root/qa_final",
@@ -13,9 +13,9 @@
   "googleAuthorizationReceived": true,
   "useAnotherAccountAuthorizationReceived": true,
   "targetAccountIdentified": true,
-  "currentBrowserStep": "USER_MUST_COMPLETE_PASSWORD_AND_ANY_FURTHER_AUTHENTICATION",
+  "currentBrowserStep": "PERSONAL_LOGIN_COMPLETE_ROOT_AND_GIT_VERIFIED",
   "credentialsRequestedInChat": false,
-  "rootDirectory": "NOT_OBSERVED",
+  "rootDirectory": "",
   "nextActions": [
     "After user confirms completed login, inspect Vercel Root Directory and Git binding read-only",
     "Record sanitized Preview applicability proof and confirm branch false before first push",

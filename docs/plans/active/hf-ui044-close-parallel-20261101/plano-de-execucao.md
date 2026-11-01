@@ -69,3 +69,8 @@ Recibo factual único PR45:6563833137, referências46/47/48 publicadas. Atualiza
 mesmo comentário com a prova de runtime posterior, sem transformar o corte parcial
 em conclusão técnica integral. Commits funcionais exclusivos locais estão em
 owner-local-commits.json. Nenhum push/merge/deploy realizado. Worktrees preservados.
+
+## Retomada após login pessoal
+
+Estado: EM_ANDAMENTO. Login concluído pelo usuário e confirmado por UI. Root Directory vazio observado em textbox habilitado, vínculo Git correto observado. Nenhuma configuração Vercel alterada. Guard false aditivo confirmado na raiz efetiva antes da rodada1; refs45–48/main/development preservadas e branchQA ainda ausente. Publicação e quatro jobs da rodada1 já autorizados;0rodadas executadas antes deste commit.
+
