@@ -2,7 +2,7 @@
 
 **Feature Branch**: `feat/localizacao-endereco-opcional`
 **Created**: 2026-10-31
-**Status**: IMPLEMENTACAO_CORRETIVA_EM_CODIGO — CEP opcional no contrato e persistência sintética em validação no SHA seguinte; provedor real não ativado, revisão/aceite humano pendentes.
+**Status**: `UI037_CODE_SYNTHETIC_CLOSED` no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb`, Actions `41251980306/1` (15/15 gates PASS, 224 E2E); `GEOCODER_OPERATIONAL_PENDING`; `HUMAN_ACCEPTANCE_PENDING`. Passagens que falam de execução futura abaixo são o histórico de implementação, não o estado do SHA validado.
 **Input**: UI-07 aprovada por Pedro no handoff #44; organização confirmada pela missão HF-UI-044-G0.
 **Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b`, sem herdar A/B/setup.
 
@@ -90,3 +90,9 @@ O teste `tests/contract/hf-ui037-address-optional.test.ts` confirma as oito comb
 - Oito combinações no contrato e no E2E (POST/GET/Prisma sintético), inclusive sem todos os campos, mais casos de CEP inválido. Capturas viewport em `TestInfo.outputPath` e attachments, com máscaras para entradas do formulário.
 - **Sem migrations**: `CollectionArea.cep String?` já integra schema. Nenhuma escrita em `main`, `development`, em A/B, ou em provedores hospedados. O fornecedor de geocodificação permanece **não configurado**, e não há validação de disponibilidade real.
 - O resultado global da CI continua **pendente** de run terminal por SHA. O incidente de timeout da navegação móvel pertence ao owner A e não autoriza reduzir assertions nem retirar o gate.
+
+## Estado terminal do recorte sintético — CLOSE-C (2026-11-01)
+
+`FR-037-001..005` e `SC-037-001..004` possuem cobertura de código/testes em Unit, Integration, Contract, E2E e Gates oficiais no SHA `63925b3639f3eec1dd4bd737f7be7adb881c83eb`, [Actions 41251980306/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306), 15/15 PASS e 224 E2E. A matriz de prova individual, a separação de capturas e as falhas históricas estão em [implementation-evidence.md](implementation-evidence.md).
+
+**Limite de aceite:** este estado comprova **código e teste sintético**, não consultas a fornecedor real, conformidade de quota/cache/atribuição/licença/privacidade, captura dedicada `hf-ui037-location` no artefato, teste em dispositivo físico, QA independente ou aprovação humana. `HF_REVERSE_GEOCODER_URL` permanece desabilitado por padrão. `GEOCODER_OPERATIONAL_PENDING` e `HUMAN_ACCEPTANCE_PENDING` não bloqueiam a classificação técnica `UI037_CODE_SYNTHETIC_CLOSED`, mas **bloqueiam alegação de aceitação/ativação operacional**. A próxima validação deve considerar a composição de #45–#48 sob os HEADs atuais e autorização do mantenedor, sem merge nesta etapa.

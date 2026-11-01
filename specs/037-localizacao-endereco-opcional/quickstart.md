@@ -13,3 +13,7 @@
 **Validações específicas adicionadas:** `tests/unit/hf-ui037-geocoding.test.ts`, `tests/integration/hf-ui037-reverse-route.test.ts`, `tests/contract/hf-ui037-address-optional.test.ts`, `tests/e2e/hf-ui037-location.spec.ts`, `tests/unit/area-contracts.test.ts`, `tests/e2e/area-registration.spec.ts`.
 
 Não executar merge/deploy nem se a CI ficar verde; revisão independente e aceite humano são etapas externas.
+
+## Nota de execução observada — CLOSE-C (2026-11-01)
+
+O [run oficial 41251980306, tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306) no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb` terminou 15/15 PASS, 224 E2E. Os globs de `package.json`, `scripts/imp006-test-runner.ts` e `playwright.config.ts` incluem realmente as suites 037. No [artefato 13062501328](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306/artifacts/13062501328) existem capturas do formulário pela suíte geral `frontend-areas` (320/375/768/1440 px, com metadados; 320 px a 200% do texto), **mas não existem entradas próprias `frontend-areas-hf-ui037-location-{mobile,desktop}.png`**. Assim, o passo 5 acima descreve a expectativa do harness, não um arquivo encontrado. A execução com provedor real segue `NOT_RUN/NOT_CONFIGURED`; aceitar manualmente só com nova evidência e decisão, sem alterar o status técnico sintético.

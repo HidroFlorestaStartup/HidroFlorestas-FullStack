@@ -1,6 +1,6 @@
-# UI-07 — extensão mínima de CEP em contrato compartilhado (proposta, NÃO APLICADA)
+# UI-07 — extensão mínima de CEP em contrato compartilhado (proposta histórica, implementada)
 
-**Estado:** PENDENTE_DE_ALOCACAO_DE_WRITER. Recorte C — PR #48; pedido enviado ao coordenador na PR #45, comentário https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6547701906.
+**Estado vigente:** `IMPLEMENTADO_VERIFICADO` na implementação sintética do SHA `63925b3639f3eec1dd4bd737f7be7adb881c83eb`, [CI 41251980306/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306), 15/15 gates PASS. **Histórico do pedido:** antes da alocação, `PENDENTE_DE_ALOCACAO_DE_WRITER`; pedido original à PR #45 em https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6547701906; coordenação efetiva no comentário https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6550339752. O diagnóstico e o hunk abaixo são preservados como proposta anterior, **não como estado atual**.
 
 ## Diagnóstico e autoridade
 

@@ -1,7 +1,7 @@
 # Implementation Plan: localização/endereço opcional — preparação C
 
 **Branch**: `feat/localizacao-endereco-opcional` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
-**Estado**: EM_ANDAMENTO; plano inicial G0, sem alegar execução concluída do Spec Kit.
+**Estado**: `UI037_CODE_SYNTHETIC_CLOSED` no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb` (run 41251980306/1); `GEOCODER_OPERATIONAL_PENDING` e `HUMAN_ACCEPTANCE_PENDING`. O planejamento G0 abaixo é histórico e permanece preservado.
 
 ## Summary and technical context
 
@@ -108,3 +108,15 @@ A suíte Unit identificou validador vivo ainda vinculado ao contrato IMP-003 ori
 ## Compatibilidade TS de entrada de área
 
 Ao admitir campo novo opcional na API, o tipo `CreateAreaInput` não pode obrigar todos os consumidores internos legados a fornecer `cep:null`. O parser sempre retorna objeto com valor explícito normalizado, mas o parâmetro de serviço e fixtures TypeScript aceitam omissão via `cep?:string|null`. O runner mostrou essa incompatibilidade no Build de 506cb57 (TS2345), não na paridade Unit; a correção é estritamente de tipo e não exige migration ou mudança de permissões.
+
+## Fechamento HF-UI-044-CLOSE-C — PLAN → IMPLEMENT → REVIEW (2026-11-01)
+
+**ANALYZE:** constatou-se documentação desatualizada de T010/T011/T017, embora o código de persistência opcional de CEP já estivesse testado no SHA `63925b3639f3eec1dd4bd737f7be7adb881c83eb`. Havia diferença material entre capturas `frontend-areas` arquivadas e capturas dedicadas `hf-ui037-location` ausentes do ZIP. Não foi constatada necessidade de patch novo de produto, schema, testes ou pipeline.
+
+**PLAN:** corrigir exclusivamente a rastreabilidade em `specs/037-localizacao-endereco-opcional/**`, manter a PR #48 Draft; preservar a responsabilidade C pelos contratos aditivos já coordenados, sem tocar nas branches A/B e sem executar CI hospedada manualmente. Distinguir explicitamente SHA de código testado de commit documental de fechamento.
+
+**IMPLEMENT:** marcar T010, T011 e T017 como concluídas nos alcances comprovados e atualizar spec, evidências, quickstart/contrato histórico e PR. Nenhuma mudança em `src/**`, `tests/**`, `prisma/**`, `.github/workflows/rc-review.yml`, `vercel.json` ou dependências.
+
+**REVIEW:** [run 41251980306 / tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306) `completed/success` no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb`; [artefato 13062501328](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306/artifacts/13062501328) e journal confirmam 15/15 gates com `exitCode=0`, 224 E2E PASS, oito subsets de endereço no contrato e no teste E2E. Os arquivos `hf-ui037-location` específicos não constam do ZIP; capturas de `frontend-areas` têm procedência, dimensões e escala documentadas em `implementation-evidence.md`. O commit documental posterior requer verificação de equivalência estática e não recebe automaticamente os 15 PASS.
+
+**Paradas preservadas:** geocodificador real `NOT_CONFIGURED/NOT_RUN` (fornecedor, taxa global, cache, atribuição, licença, retenção/privacidade); QA independente/composição A+B+C, homologação humana/acessibilidade/dispositivo real, merge e deploy `PENDING`. T010/T011/T017 são fechamento **da implementação sintética e rastreabilidade**, não desses aceites. Não empregar serviço externo, migration ou deploy para encerrar a documentação.
