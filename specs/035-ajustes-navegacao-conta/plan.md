@@ -1,5 +1,39 @@
 # Implementation Plan: navegação e conta — preparação A
 
+## Plano corrente A6 — AGUARDANDO_REVISAO
+
+**Objetivo:** publicar a reconciliação da PR #46/Spec 035 e uma proposta visual focal revisável; preservar o produto aprovado e a dependência de B. A feature completa não está encerrada.
+
+**Origem/autorização:** pedido HF-UI-044-A6 do usuário em 01/11/2026 autoriza correções próprias em A e recibo factual em #45. Nova branch/job UI-06 exige autorização específica; a tentativa composta anterior foi consumida. Constituição 1.0.0, AGENTS, PLANS, SOURCE_AUTHORITY e PRD Code-First conforme classificação; decisões UI de Pedro no handoff #44 em `972f9b00189bf09117883913d8c4fa63e69f4d2f`. Inspeção das specs 035–037 sem ampliar ownership.
+
+**Estado inicial observado:** checkout `G:/projetos/ifma/HidroFlorestas-FullStack` em C, `799c00a42d7f3846c3449d3615d263ce0b0e7bd2`, um worktree registrado; C sem upstream configurado. Única entrada no status: pasta não rastreada `docs/plans/active/hf-ui044-close-qa-actions-prepare/`. Ela contém um clone/scratch com índice composto e arquivos preexistentes: somente leitura. Nenhum reset/clean/checkout, branch local, índice, configuração ou conteúdo dessa preparação alterado. Leitura de objetos Git desse clone e cópia documental própria na raiz de visualizações desta sessão; publicação via API com lease da branch A. Fetch no checkout original recusado por acesso a FETCH_HEAD; não foi necessário alterar suas permissões. Refs atuais foram consultadas na API oficial.
+
+**Leases do corte:** GUARD `07755822f5dc75fe2be1d924005d30ed99f64a0b`; A `6f236bbe7b5f4d7f9718efaa2c334f7d1520e0a0`; B `1c44058cb45e461c719d514829a4e78d2bf7ee05`; C `799c00a42d7f3846c3449d3615d263ce0b0e7bd2`; #45 `a89feceb7fab9bff00fa16efd6e61e553fd9f50c`; development `9b8595d232842d401ce81bbc92c54dd543aa2829`; main `beba96fbf6bbaac8771dbb29abea2f9f8f5b0054`. A/B/C são descendentes de GUARD; nenhuma foi empilhada. #46/#47/#48 continuam Draft abertas para development; #44 não foi alterada. Revalidar leases antes e após publicar.
+
+**Escopo de escrita:** quatro documentos correntes da Spec 035, `evidence/a6-review.json`, `evidence/ui06-bilateral.patch` (inerte), `ui06-runtime-proposal.md`; metadados da #46 e recibo #45. Produto/testes ativos, B/C, configurações ativas, docs/raw e registros globais somente leitura. Não há nova decisão global que exija editar TECH_DECISIONS/DOCUMENT_REGISTER/PENDING_DECISIONS neste recorte.
+
+| Etapa | Responsável | Critério e estado |
+| --- | --- | --- |
+| ANALYZE | executor A6, sem subagentes | Fontes/refs/ownership e sete arquivos A inspecionados; ZIP A5 e composto auditados; pré-requisitos Spec Kit executados na cópia própria. CONCLUIDO |
+| PLAN | executor A6 | Dependência B explícita; sem nova hipótese de defeito próprio A; tarefas de revisão separadas dos requisitos PASS. CONCLUIDO |
+| IMPLEMENT | executor A6 | Documentos reconciliados; uma proposta de patch UI-06 inerte; publicação somente em A/#46 e recibo #45. EM_ANDAMENTO até recibo remoto |
+| REVIEW | executor A6 | Diff/whitespace/links/classificações, integridade dos ZIPs, invariantes do patch e readback por SHA; observar CI automática de A6, sem rerun/dispatch. EM_ANDAMENTO até recibo remoto |
+| UI-06 executada e aceite | mantenedor/QA/B | Nova autorização específica de runtime, comparação real e aceite humano. PENDENTE |
+
+**Análise Spec Kit (somente leitura, anterior às edições):** 5 FR, 4 SC e 27 tarefas; todos os requisitos possuem tarefas (100% cobertura de planejamento, não de aprovação). Sem violação nova da constituição ou requisito órfão. Quatro inconsistências de estado: I1 HIGH — CI final A5 ainda pendente nos topos; I2 HIGH — dependência corrigida B e PASS composto ausentes; I3 MEDIUM — revisões realizadas confundidas com aprovação; I4 HIGH — UI-06 sem pares/runtime e UI037 sem captura dedicada no ZIP. Remediação documental autorizada no pedido A6, sem mudar requisitos. T007/T015/T027 continuam abertas; T019/T022 preservam os critérios originais de PASS.
+
+**Decisão pendente de integração:** se a política do mantenedor exigir A verde isolada, escolher B antes de A e revalidar na nova base, ou autorizar transporte mínimo do reparo compartilhado. Não foi observada uma decisão que dispense essa exigência; nenhuma das opções foi executada. Guards/#45 seguem dependência de integração. Não fazer merge/rebase/empilhamento por conta própria.
+
+**Riscos e pontos de parada:** drift concorrente da branch recusa atualização por lease; não atribuir PASS composto a A; nenhuma alteração funcional sem RED causal novo; nova publicação/job UI-06 somente após aprovar o diff e sua guarda Preview false antes do primeiro push. A proposta shell não encerra UI-06 global. QA/C controla o arquivamento UI037. Ciência/aceite operacional/humano seguem separados.
+
+**Validação proporcional:** não repetir quinze gates por documentação. Os ZIPs oficiais A5 e composto foram baixados, hashes/CRC/journals conferidos; fontes A/B/composta comparadas; duas capturas compostas 667×375 visualizadas. CLI de pré-requisitos passou na cópia com os caminhos Git Bash corrigidos após falhas de inicialização/caminho; sem hook `.specify/extensions.yml` no corte observado. Nenhum runtime starter/FullStack/PG foi iniciado no host. Build/typecheck/lint/testes ativos novos NOT_RUN por delta documental; CI automática decorrente da publicação terá resultado próprio no recibo da PR.
+
+**Histórico A6:** 01/11/2026 NAO_INICIADO → EM_ANDAMENTO (auditoria e redação) → AGUARDANDO_REVISAO (reconciliação preparada; publicação e recibo identificados na PR #46). Publicação documental não conclui a feature nem concede merge/deploy.
+
+## Histórico anterior à reconciliação A6
+
+As afirmações temporais abaixo pertencem aos respectivos checkpoints; o estado corrente é o A6 acima. Relatos antigos de CI pendente, ambiente não observável e ferramentas indisponíveis não descrevem esta sessão.
+
 **Branch**: `feat/ajustes-navegacao-conta` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
 **Estado**: EM_ANDAMENTO — mapa concretizado e código/testes preparados na própria reserva. Scripts CLI do Spec Kit não executados neste ambiente API-only; estrutura specify → plan → tasks → implement reconciliada manualmente.
 
