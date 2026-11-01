@@ -24,3 +24,7 @@ O pacote local original `HF-UI-044-G0-EVIDENCIAS.zip` contém 14 entradas (hando
 ## Segurança e integração
 
 GUARD_SHA continua fixo; a publicação posterior deste índice não é requisito de ancestralidade das frentes. Sem merge, deploy, mudança em main/development, banco hospedado, SMTP, Cloudinary ou ciência. `REV-01`–`REV-03` seguem fora do escopo.
+
+## Continuidade posterior — fechamento técnico e operacional
+
+[**Prompts de conclusão HF-UI-044-CLOSE-01**](fechamento-20261031.md): A5/CI, comparação visual B, consolidação C, QA de composição, coordenação final e encaminhamentos operacionais de Pedro/Luciano. **Esses prompts não alteram o GUARD_SHA e não constituem execução funcional.**
