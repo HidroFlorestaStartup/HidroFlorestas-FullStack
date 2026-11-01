@@ -35,3 +35,13 @@ T008/T016/T027/T028/T030 seguem abertos até execução, inspeção real dos PNG
 EQ-B1 (ordem por confirmação/sem resumo CURRENT), EQ-B2 (score/decomposição demo) e EQ-B3 (memória/reload)
 ficam NON_EQUIVALENT com causa de fonte explícita, sem herdar PASS ou aprovar UX.
 HUMAN_ACCEPTANCE_PENDING, revisão não autora pendente e quatro qualificadores IHFR preservados.
+
+## Delta corretivo B após revisão não autora
+
+Base exclusiva `091924cf9feef25c273d99159a73e6ed86af18d2`. `boundedPair` agora exige samples.length===2;
+zero/um sample resulta FAIL / INSUFFICIENT_EVIDENCE / PARTIAL e erro explícito,
+preservando todos os asserts, timeouts e sumário obrigatório.
+Patch de código SHA256 `33eca2553ce1427ae770ccb6f77c25820e001954e637c1be1813e5cff7f134cc`. Relatório local:
+[close02-pair-classification-check.json](close02-pair-classification-check.json),6/6 PASS
+na declaração real extraída por AST. Typecheck completo local e lint B PASS/exit0.
+Sem PG/browser local, push ou runtime de CI da correção; A/coord mantêm seus próprios writers.

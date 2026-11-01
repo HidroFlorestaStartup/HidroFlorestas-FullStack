@@ -89,3 +89,5 @@ Os itens T021/T022 apenas confirmam a publicação do patch, não validam o gate
 
 T025/T026 assinalam implementação do harness e fixtures, não execução runtime. T029 é revisão própria,
 sem substituir executor não autor. Typecheck oficial completo permanece dependente do coordenador.
+
+- [x] T031 [CORREÇÃO/REVIEW] Após finding MEDIUM não autor, impedir COMPARABLE/NON_EQUIVALENT sem dois samples em `domain.spec.ts`; contraprova da função real para zero/um/dois samples (6cenários), typecheck/lint locais PASS. Runtime da correção permanece NOT_RUN até nova candidata do coordenador.

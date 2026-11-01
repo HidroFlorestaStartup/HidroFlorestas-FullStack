@@ -159,5 +159,25 @@
     "VALIDACAO_CIENTIFICA_PENDENTE",
     "SUJEITO_A_RECALIBRACAO",
     "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
-  ]
+  ],
+  "correctiveDelta": {
+    "base": "091924cf9feef25c273d99159a73e6ed86af18d2",
+    "finding": "MEDIUM_NON_AUTHOR_REVIEW_EMPTY_ARRAY_VACUOUS_EVERY",
+    "codePaths": [
+      "qa/hf-ui044/domain.spec.ts"
+    ],
+    "codePatchSha256": "33eca2553ce1427ae770ccb6f77c25820e001954e637c1be1813e5cff7f134cc",
+    "behavior": "Samples length other than exactly2 => execution FAIL, comparability INSUFFICIENT_EVIDENCE, completeness PARTIAL",
+    "assertionsRelaxed": false,
+    "timeoutsChanged": false,
+    "requiredSummaryPreserved": true,
+    "counterexample": "close02-pair-classification-check.json",
+    "syntheticCasesPassed": 6,
+    "typecheckLocal": "PASS_EXIT0_NODE24.14",
+    "lintLocal": "PASS_EXIT0",
+    "browser": false,
+    "database": false,
+    "runtimeCorrectiveCandidate": "NOT_RUN",
+    "workerPush": false
+  }
 }

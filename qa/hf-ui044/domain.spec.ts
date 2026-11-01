@@ -57,7 +57,9 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
       errors.push(runtime.source+":"+code+(location?"@"+location:""));
     }
   }
-  const fontsObserved=samples.every(entry=>Object.values(entry.fonts).every(value=>
+  const pairComplete=samples.length===2;
+  if(!pairComplete) errors.push("PAIR_REQUIRES_TWO_SOURCE_SAMPLES");
+  const fontsObserved=pairComplete&&samples.every(entry=>Object.values(entry.fonts).every(value=>
     value&&typeof value==="object"&&"observation" in value&&value.observation==="OBSERVED"));
   const result = { execution:errors.length?"FAIL":"PASS", comparability:fontsObserved?(options.comparability??"COMPARABLE"):"INSUFFICIENT_EVIDENCE",
     requirement:errors.length?"DEFECT_FOUND":options.requirement??"HUMAN_DECISION_PENDING",

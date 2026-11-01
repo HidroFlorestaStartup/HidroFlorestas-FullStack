@@ -194,3 +194,21 @@ técnico obrigatório ou lacuna, revisão não autora, estado do Git explícito.
 permanecem abertos. HUMAN_ACCEPTANCE_PENDING; qualificadores experimentais IHFR preservados.
 
 **Checagem local adicional:** `tsc --noEmit --incremental false` PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.
+
+### Correção focal pós-revisão não autora — classificação de par incompleto
+
+`EVIDENCIA_IMPLEMENTACAO`: o revisor não autor identificou MEDIUM em `boundedPair`:
+`samples.every(...)` em array vazio retorna true e podia registrar COMPARABLE mesmo
+sem par, embora execution/completeness já impedissem aprovação pelo sumário.
+
+ANALYZE: erro técnico da classificação do recibo, sem mudança de requisito/produto.
+PLAN/IMPLEMENT: exigir exatamente dois samples antes de avaliar fontes/comparabilidade;
+qualquer quantidade diferente de2 acrescenta erro sanitizado e registra FAIL /
+INSUFFICIENT_EVIDENCE / PARTIAL. Preservados asserts, timeouts, grade e sumário fail-closed.
+
+REVIEW: contraprova sintética Node executou a própria declaração boundedPair extraída
+por AST, com dependências de captura substituídas apenas no executor de teste local;
+zero samples, somente FullStack, somente starter, dois completos, dois NON_EQUIVALENT
+e fontes UNOBSERVED:6/6 PASS. Não houve browser, PG ou runtime B local. Relatório em
+`evidence/close02-pair-classification-check.json`. Typecheck completo local e lint B PASS.
+Nova árvore aguarda a rodada corretiva do coordenador; nenhum resultado CI foi herdado.
