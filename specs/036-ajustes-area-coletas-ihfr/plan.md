@@ -1,5 +1,7 @@
 # Implementation Plan: área/coletas/IHFR — preparação B
 
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
 **Branch**: `feat/ajustes-area-coletas-ihfr` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
 **Estado**: IMPLEMENTADO_EM_REVISAO; CI sintética do código B 15/15 PASS em `d7586ab95c69c45211e463516080e741bbb3931a`. Comparação bilateral Lovable × FullStack, composição com A e revisão/aceite independentes pendentes. A documentação mantém seu histórico por SHA.
 
@@ -194,3 +196,130 @@ técnico obrigatório ou lacuna, revisão não autora, estado do Git explícito.
 permanecem abertos. HUMAN_ACCEPTANCE_PENDING; qualificadores experimentais IHFR preservados.
 
 **Checagem local adicional:** `tsc --noEmit --incremental false` PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.
+
+### Correção focal pós-revisão não autora — classificação de par incompleto
+
+`EVIDENCIA_IMPLEMENTACAO`: o revisor não autor identificou MEDIUM em `boundedPair`:
+`samples.every(...)` em array vazio retorna true e podia registrar COMPARABLE mesmo
+sem par, embora execution/completeness já impedissem aprovação pelo sumário.
+
+ANALYZE: erro técnico da classificação do recibo, sem mudança de requisito/produto.
+PLAN/IMPLEMENT: exigir exatamente dois samples antes de avaliar fontes/comparabilidade;
+qualquer quantidade diferente de2 acrescenta erro sanitizado e registra FAIL /
+INSUFFICIENT_EVIDENCE / PARTIAL. Preservados asserts, timeouts, grade e sumário fail-closed.
+
+REVIEW: contraprova sintética Node executou a própria declaração boundedPair extraída
+por AST, com dependências de captura substituídas apenas no executor de teste local;
+zero samples, somente FullStack, somente starter, dois completos, dois NON_EQUIVALENT
+e fontes UNOBSERVED:6/6 PASS. Não houve browser, PG ou runtime B local. Relatório em
+`evidence/close02-pair-classification-check.json`. Typecheck completo local e lint B PASS.
+Nova árvore aguarda a rodada corretiva do coordenador; nenhum resultado CI foi herdado.
+
+### R1 runtime e correção do seletor de referência — 2026-11-01
+
+Run41351237110/attempt1, source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920:
+ui-b falhou no beforeAll aguardando Nome do laboratório no diálogo do starter.
+Artifact13101154606 baixado pelo coordenador e inspecionado também por B na cópia
+local: SHA256 fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643,
+CRC PASS,0PNG e75 casos NOT_RUN. Sem prova bilateral produzida. O fluxo chegou ao
+setup de referência depois das chamadas aguardadas da fixture FullStack; isso não
+constitui comparação visual, suíte B aprovada ou aceite.
+
+ANALYZE: em startercbb954a, FieldShell/TextField coloca o asterisco obrigatório
+num span aria-hidden dentro do label. getByLabel exato usa o texto do label com o
+asterisco; o seletor antigo sem asterisco não encontra o controle. PLAN/IMPLEMENT:
+trocar somente a referência por getByRole textbox com nome acessível exato,
+que exclui aria-hidden. Nenhum timeout, assert, produto ou starter alterado.
+
+REVIEW: Chromium sintético153.0.8010.12 local reproduziu a estrutura exata do
+FieldShell/CreateLab: seletor antigo0matches/filltimeout250ms (contraprova RED);
+textbox de nome acessível1match/fillGREEN. Sem Bun/PG ou servidor local dos projetos.
+O limite250ms é exclusivo da contraprova negativa, não altera testes de produto.
+Auditoria estática dos demais seletores e métodos/retornos/versões do adapter não
+demonstrou outro descompasso; não substitui runtime. Prova e recorte em
+`evidence/close02-reference-label-check.json`. Próxima rodada pertence ao coordenador.
+
+### R2 — falhas observadas e delta focal para a última rodada
+
+Fonte d62fb08cf65aca5dc704231f88594030f49279cb / run41353270282/1 / artifact13102906085.
+ZIP auditado por B: digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548,
+CRC PASS,147entradas/71PNG. Índice75casos:1PASS/74FAIL, um par completo,69samples
+unilaterais e5casos sem sample. Os75 testes de coleta terminaram sem lançar suas falhas
+preservadas; o teste obrigatório de sumário falhou corretamente. Não são75requisitosPASS.
+
+ANALYZE B-R2-NAV:74erros starter na chamada navigateDomain; antes da primeira área o
+dashboard só contém navprincipal com Áreas, mas a página da área acrescenta um breadcrumb
+`nav[aria-label="Trilha de navegação"]` com o mesmo link. O filtro antigo nav:visible+Áreas
+torna-se ambíguo. Contraprova Chromium em320/1440:2matches e strict-mode real; seletor
+pelos nomes oficiais da navegação principal tem1match e clickPASS. IMPLEMENT: nomear
+somente navprincipal desktop/celular visível e exigir count1, preservando navegação cliente
+e fixture em memória, sem first/reload, mudança de produto ou timeout.
+
+ANALYZE B-R2-FOCUS:cinco failures ratio1 FullStack (320indexes1/2,667inset34index2,
+844indexes1/2). Recibos antigos omitiram a geometria do ponto da falha. `keepFocusVisible`
+do shell agenda revealFocus em rAF e ResizeObserver ao abrir/focar summaries; openDetails
+focava o summarydeproveniência imediatamente antes de rolar o qualificador. Contraprova
+com ownScroll/revealFocus reais e waitForMissionRender oficial extraídos por AST reproduziu
+nas3classes a mudança tardia: em667, labeltop182→-545 após RAF; aguardar readiness oficial
+antes do único scroll mantémratio1PASS. **INFERENCIA**: mecanismo explica os5failuresR2,
+mas sua atribuição individual não é prova de produto sem geometria real daquele ponto.
+IMPLEMENT: aguardar waitForMissionRender oficial ao terminar openDetails e ANTES de
+scroll/ratio1. Não se aplica sono fixo, blur, estilo ou rolagem corretiva depois da medição.
+
+Diagnóstico adicional B: persistir classe de erro, localização sanitizada incluindo domain-fixtures.ts,
+viewport/escala, retângulo do qualificador/foco/navs e scrollport, sem texto pessoal, URL, cookie,
+payload ou mensagem bruta de exceção. Falha permanece FAIL/PARTIAL/INSUFFICIENT_EVIDENCE.
+Contraprovas em evidence/close02-round2-counterexamples.json; sixcenários da função boundedPair
+atual continuamPASS (close02-pair-classification-check-r3.json). TSCcompleto local24.14,
+lintB, descoberta76 e whitespacePASS. Sem PG/Bun local e sem execuçãoR3 declarada.
+
+### Diagnóstico executável preservado para R3, inclusive se o requisito falhar
+
+Atendendo à revisão não autora, boundedPair registra uma única imagem de viewport
+mascarada (input/select/textarea; fullPagefalse; animationsallow) depois do erro original,
+sem retry de assert, blur, estilo ou scroll corretivo. JSON dedicado inclui fonte/SHA/tree/
+run/attempt, hashPNG/dimensões, classe/linhahelper e geometria antes/depois do frame,
+IntersectionObserver.intersectionRatio real do qualificador e hit-test do centro.
+O receipt é failure-diagnostic-not-acceptance e mantém FAIL / INSUFFICIENT_EVIDENCE /
+PARTIAL. Não se confunde esse PNG com sample aprovado; se a captura diagnóstica falhar,
+o JSON registra o limite sem aprovar a evidência.
+
+Contraprova Chromium sintética executou a própria boundedPair extraída por AST: assert
+ratio1 falha com alvo fora da viewport; frame667x375 mascarado ehashverificado, ratio0,
+hitfalse; a classificação original continuaFAIL/PARTIAL. Relatório
+`evidence/close02-failure-frame-check.json`. Arquivos sintéticos brutos ficam na área local
+ignorada comhash no relatório, sem pretensão de fonteGit/execução deproduto. TSC/lint/diffPASS.
+Nenhuma alteração a sharedA, configs, produto ou limite de timeout; runtimeR3 ainda pendente.
+
+### Diligência focal pré-R3 — exposição semântica em dois estados centrais
+
+Fonte observada A/R2 no starter667x375/text200: main.top459, header290 ebarra129,
+sem faixa útil de leitura. Os estadosB area-empty ecollection-record capturavam o início
+sem rolar até mensagem vazia/Registro. Ajuste delimitado a esses dois estados: readiness
+oficial, geometria inicial (main/header/faixa/target/ratio/hit), snapshot inicial quando
+mainfora oufaixazero, um único scroll nativo ao alvo em ambasfontes ANTES da medição final,
+e geometria/ratio/hit pós-scroll correlacionados em fixture/index.
+
+Snapshot inicial tem idderivado/arquivos próprios e wrapperliteral
+DIAGNOSTIC_NOT_PLANNED_COVERAGE, comsource/SHA/tree/run/attempt, hashPNG/JSON,
+rawfontRegions e coverageContributionfalse. JSON amostral jáhashado não é reescrito;
+o wrapper e o sampleprincipal referenciam arquivos/hashes por semanticScrollBySource.
+RawUNOBSERVED inicial permaneceUNOBSERVED e não é contado como cobertura da leitura.
+
+Referência inicialocluída usa initialRefOcclusion/NON_EQ explícitos; pós-scroll sobheader/
+nav continuaNON_EQ, com postRatio/postHit/faixareais e o limite literal de que glifosCDP
+não provamlegibilidade. Nenhuma exceção defontes foiacrescentada: qualquerfontgap inesperado
+continuaINSUFFICIENT_EVIDENCE e faz osumárioFAIL. FullStackinitialocluído lançaFAIL após
+preservar snapshot (reasonSOURCE_INITIAL_OBSTRUCTION, nãoclassificado comoreferência).
+FullStackpost exige faixapositiva/hitunobstructed e ratio1 se acaixa doalvo cabe nafaixa;
+se amensagemcaixa for maior que afaixa, exige interseçãopositiva e registra que aleitura
+demanda scroll, sem fingircaixainteira numframe. Todos assertsratio1 dosqualificadores
+científicos preexistentes permanecemintactos. Falha gera frame/diagnóstico anterior.
+
+ContraprovaChromium153 executou afunçãoB e sample/fontcollector reais emDOMsintético nas
+dimensões medidas:4casos (2statesx2sources)PASS. Nativegap191/ratio1/hittrue; referência
+initialtop459/gap0/UNOBSERVEDpreservado; pósratio1/hitfalse/gap0 éNON_EQ e nãorecebeaceite.
+Hashesiniciais mantidos depoisdosampleprincipal. Teste inicialdacontraprova revelou erro
+na própria montagem (margin-collapseeencoding), corrigido somente noexecutor sintético;
+nãofoiatribuídoaoproduto. Prova em evidence/close02-semantic-core-check.json.
+TSCcompleto local/lint/diffPASS; descoberta permanece76; aplicativo/PG/BunlocalNOT_RUN.

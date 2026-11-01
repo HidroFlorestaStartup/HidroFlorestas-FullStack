@@ -1,0 +1,57 @@
+{
+  "kind": "synthetic-node-counterexample-actual-B-function",
+  "browser": false,
+  "database": false,
+  "node": "v24.14.0",
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "zero-samples",
+      "result": "PASS",
+      "samples": 0,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "completeness": "PARTIAL"
+    },
+    {
+      "case": "one-fullstack-sample",
+      "result": "PASS",
+      "samples": 1,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "completeness": "PARTIAL"
+    },
+    {
+      "case": "one-starter-sample",
+      "result": "PASS",
+      "samples": 1,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "completeness": "PARTIAL"
+    },
+    {
+      "case": "two-observed-samples",
+      "result": "PASS",
+      "samples": 2,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "completeness": "COMPLETE"
+    },
+    {
+      "case": "two-non-equivalent-samples",
+      "result": "PASS",
+      "samples": 2,
+      "execution": "PASS",
+      "comparability": "NON_EQUIVALENT",
+      "completeness": "COMPLETE"
+    },
+    {
+      "case": "two-unobserved-font-samples",
+      "result": "PASS",
+      "samples": 2,
+      "execution": "PASS",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "completeness": "COMPLETE"
+    }
+  ]
+}

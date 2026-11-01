@@ -2,7 +2,7 @@
   "mission": "HF-UI-044-CLOSE-PARALLEL-02",
   "role": "B",
   "agentId": "/root/b_visual",
-  "state": "B_VISUAL_READY_FOR_RUNTIME",
+  "state": "BLOCKED_WITH_EXACT_FINDINGS",
   "worktree": "managed:hf044-b/HidroFlorestas-FullStack",
   "branch": "codex/hf044-b-local-20261101",
   "functionalBase": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
@@ -45,14 +45,17 @@
       "specs/036-ajustes-area-coletas-ihfr/spec.md",
       "specs/036-ajustes-area-coletas-ihfr/tasks.md",
       "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
-      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json"
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json",
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-findings.md",
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-runtime.json"
     ],
     "functionalBProductDelta": [],
     "excludeFromFunctionalB": [
       "qa/hf-ui044/domain.spec.ts",
       "qa/hf-ui044/domain-fixtures.ts"
     ],
-    "reason": "Executable domain comparator requires shared.ts(A) and contract/configs(coordinator); keep it on composed QA candidate, never import whole composition into B"
+    "reason": "Executable domain comparator requires shared.ts(A) and contract/configs(coordinator); keep it on composed QA candidate, never import whole composition into B",
+    "terminalMode": "DOCS_ONLY_036_[skip ci]_COORDINATOR_AFTER_REVIEW_NO_WORKER_PUSH"
   },
   "coverage": {
     "plannedPairs": 75,
@@ -81,8 +84,8 @@
       "T029",
       "T030"
     ],
-    "runtime": "NOT_RUN",
-    "imageInspection": "NOT_RUN"
+    "runtime": "PARTIAL_FAIL_9_PASS_3_FAIL_63_NOT_RUN",
+    "imageInspection": "24_AVAILABLE_PNG_INSPECTED_MATRIX_INCOMPLETE"
   },
   "checks": [
     {
@@ -116,14 +119,24 @@
   "officialCommand": "HF_UI044_SUITE=domain; node node_modules/@playwright/test/cli.js test --config qa/hf-ui044/playwright.visual.config.ts domain.spec.ts --workers=1 --retries=0",
   "officialCommandContext": "Run only through coordinator Windows Actions script/accounts-local-postgresql Run Regression; inherited native guards and webServer required",
   "runtimeEvidence": {
-    "codeShaTested": null,
-    "run": null,
-    "attempt": null,
-    "artifact": null,
-    "execution": "NOT_RUN",
-    "comparability": "PLANNED_PER_CASE_NOT_RUNTIME_EVALUATION",
+    "codeShaTested": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73",
+    "treeTested": "9b3f6d39c89a35e90bf357e058f3fb037907e125",
+    "run": 41356318087,
+    "attempt": 1,
+    "job": 124997441830,
+    "artifact": 13104015300,
+    "artifactSha256": "2e1911a57327e38267c0ec36016514272a00727cc4943f55d72b32f91d4f0f33",
+    "execution": "FAIL",
+    "comparability": "9_COMPARABLE_66_INSUFFICIENT_EVIDENCE",
     "requirement": "HUMAN_DECISION_PENDING",
-    "completeness": "MISSING"
+    "completeness": "PARTIAL",
+    "counts": {
+      "PASS": 9,
+      "FAIL": 3,
+      "NOT_RUN": 63
+    },
+    "finalManifest": "close02-final-runtime.json",
+    "finalFindings": "close02-final-findings.md"
   },
   "knownDifferences": [
     {
@@ -143,21 +156,268 @@
     }
   ],
   "cleanup": {
-    "browser": "Implemented in afterAll; runtime NOT_RUN",
+    "firstWorkerBrowserReceipt": "PASS",
+    "restartCleanupReceipt": "EEXIST; original receipt preserved; no overwrite",
     "logicalData": "NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL",
-    "physicalData": "Coordinator Stop in finally, then disposable GitHub-hosted runner discarded",
-    "triggersDisabled": false,
-    "providers": false
+    "postgresStop": "OBSERVED_IN_JOB_LOG_2026-11-01T22:24:16Z_DATA_PRESERVED",
+    "physicalDataDeletion": "NOT_ATTESTED_BY_STOP; hosted runner disposal belongs to coordinator/platform"
   },
   "initialGitStatus": "Clean at assigned setup, before coordinator imported two A helper commits",
   "statusBeforeReceipt": "Clean at implementation commit; receipt adds own two files and fixes own plan whitespace only",
   "preservation": "No principal checkout/index/branch edit, no owner A/C code edit, no removal/reset/cleanup of existing21files, no global tool installation",
   "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING",
-  "independentReview": "NOT_RUN_PENDING_NON_AUTHOR_AFTER_RUNTIME",
+  "independentReview": "FOCAL_FINDINGS_RECEIVED; final consolidated verdict belongs to coordinator/non-author",
   "scientificQualifiers": [
     "CONTRATO_EXPERIMENTAL",
     "VALIDACAO_CIENTIFICA_PENDENTE",
     "SUJEITO_A_RECALIBRACAO",
     "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
-  ]
+  ],
+  "correctiveDelta": {
+    "base": "091924cf9feef25c273d99159a73e6ed86af18d2",
+    "finding": "MEDIUM_NON_AUTHOR_REVIEW_EMPTY_ARRAY_VACUOUS_EVERY",
+    "codePaths": [
+      "qa/hf-ui044/domain.spec.ts"
+    ],
+    "codePatchSha256": "33eca2553ce1427ae770ccb6f77c25820e001954e637c1be1813e5cff7f134cc",
+    "behavior": "Samples length other than exactly2 => execution FAIL, comparability INSUFFICIENT_EVIDENCE, completeness PARTIAL",
+    "assertionsRelaxed": false,
+    "timeoutsChanged": false,
+    "requiredSummaryPreserved": true,
+    "counterexample": "close02-pair-classification-check.json",
+    "syntheticCasesPassed": 6,
+    "typecheckLocal": "PASS_EXIT0_NODE24.14",
+    "lintLocal": "PASS_EXIT0",
+    "browser": false,
+    "database": false,
+    "runtimeCorrectiveCandidate": "NOT_RUN",
+    "workerPush": false
+  },
+  "referenceLabelCorrectiveDelta": {
+    "base": "89666f0b1bb78de476a53e19987b25beba26fd14",
+    "codePath": "qa/hf-ui044/domain-fixtures.ts",
+    "codePatchSha256": "8062e43a06e7a0967d8d3cdc3b50e89fa664ecae70568036b844427d7bbaf4e9",
+    "cause": "Pinned FieldShell label includes required asterisk in aria-hidden span; exact getByLabel without asterisk matches0",
+    "repair": "Reference-only exact textbox accessible name selector",
+    "timeoutsChanged": false,
+    "productChanged": false,
+    "starterChanged": false,
+    "counterexample": "close02-reference-label-check.json",
+    "syntheticChromium": "153.0.8010.12",
+    "red": "old exact label0matches/filltimeout",
+    "green": "exact accessible textbox1match/fill succeeds",
+    "round1": {
+      "sourceSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+      "run": 41351237110,
+      "attempt": 1,
+      "job": 124982006393,
+      "artifact": 13101154606,
+      "digest": "fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643",
+      "digestCheckedFromLocalBytes": true,
+      "crc": "PASS",
+      "setup": "FAIL",
+      "casesNotRun": 75,
+      "png": 0
+    },
+    "runtimeCorrectiveCandidate": "NOT_RUN",
+    "bunLocal": false,
+    "databaseLocal": false,
+    "workerPush": false
+  },
+  "round2CorrectiveDelta": {
+    "base": "bc4964986c7645275fcaed8570425893bf7c898e",
+    "codePaths": [
+      "qa/hf-ui044/domain-fixtures.ts",
+      "qa/hf-ui044/domain.spec.ts"
+    ],
+    "codePatchSha256": "e4a7c4fb48c9b9f0e085324bddf622bcf21314be0b934fea978fa8b9022b1086",
+    "round2": {
+      "sourceSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "run": 41353270282,
+      "attempt": 1,
+      "artifact": 13102906085,
+      "digest": "099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548",
+      "crc": "PASS",
+      "entries": 147,
+      "png": 71,
+      "cases": 75,
+      "pass": 1,
+      "fail": 74,
+      "starterNavigationErrors": 74,
+      "fullstackQualifierErrors": 5
+    },
+    "repairs": [
+      "Named primary navigation rather than all visible navs with Áreas; count1 required",
+      "Official waitForMissionRender after summary focus/open and before one qualifier scroll/ratio1",
+      "Sanitized helper-line/error-class/geometry failure receipts"
+    ],
+    "proof": "close02-round2-counterexamples.json",
+    "pairClassificationRegression": "close02-pair-classification-check-r3.json",
+    "rootCauseQualification": {
+      "navigation": "SOURCE_AND_SYNTHETIC_CHROMIUM_COUNTEREXAMPLE",
+      "qualifierIndividualR2": "INFERENCIA_SUPPORTED_BY_REPRODUCED_REAL_FUNCTIONS_CAUSAL_MECHANISM"
+    },
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "discovery": 76,
+      "pairClassificationCounterexamples": 6,
+      "diff": "PASS"
+    },
+    "productChanged": false,
+    "starterChanged": false,
+    "sharedHelperChangedByB": false,
+    "timeoutsChanged": false,
+    "ratioRelaxed": false,
+    "localAppRuntime": false,
+    "localBun": false,
+    "localDatabase": false,
+    "workerPush": false,
+    "round3Runtime": "NOT_RUN"
+  },
+  "round3FailureDiagnostic": {
+    "base": "561e34b2b33604a25fab3fc291c79360bb308f6e",
+    "codePath": "qa/hf-ui044/domain.spec.ts",
+    "codePatchSha256": "0e3dfd33370bee1b9efcb9ed75ac3e8fce9210c5e476184df42603434cbf3bc5",
+    "singleMaskedFrame": true,
+    "fullPage": false,
+    "animations": "allow",
+    "maskedControls": [
+      "input",
+      "select",
+      "textarea"
+    ],
+    "metadata": [
+      "source/SHA/tree/run/attempt",
+      "PNGsha256 and actual viewport dimensions",
+      "sanitized class/helper locations",
+      "actual IntersectionObserver ratio and center hit",
+      "geometry before/after frame",
+      "original FAIL/INSUFFICIENT_EVIDENCE/PARTIAL"
+    ],
+    "artifactKind": "domain-case-failure",
+    "evidenceKind": "failure-diagnostic-not-acceptance",
+    "countAsPassedSample": false,
+    "retryAssertion": false,
+    "correctiveScroll": false,
+    "blurOrStyleChange": false,
+    "counterexample": "close02-failure-frame-check.json",
+    "counterexampleResult": "PASS_REAL_CHROMIUM_SYNTHETIC_DOM",
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "diff": "PASS"
+    },
+    "round3AppRuntime": "NOT_RUN",
+    "workerPush": false
+  },
+  "round3SemanticCoreDiligence": {
+    "base": "bb8ac764bb1ba7d8f2c8c316725844f84a9957c0",
+    "codePath": "qa/hf-ui044/domain.spec.ts",
+    "codePatchSha256": "c10a20aeec6378d1d74712aa4900a3519d619af0412c8cf0ead11746b9a4e8c8",
+    "states": [
+      "area-empty",
+      "collection-record"
+    ],
+    "singleNativeReadingScrollBeforeFinalMeasurementBothSources": true,
+    "initialDiagnostic": {
+      "evidenceKind": "DIAGNOSTIC_NOT_PLANNED_COVERAGE",
+      "derivedCaseId": true,
+      "separateFiles": true,
+      "rawUnobservedPreserved": true,
+      "hashedSampleJsonRewritten": false,
+      "coverageContribution": false,
+      "correlation": "fixture.semanticScrollBySource / index"
+    },
+    "sourceExposure": [
+      "initial/main/header/readingGap/targetRect/ratio/hit",
+      "postRatio/postHit/post readingGap",
+      "initialDiagnostic files and SHA256 hashes"
+    ],
+    "referenceObstruction": "NON_EQUIVALENT initialRefOcclusion/post-obstruction; CDP glyphs not legibility pass",
+    "nativeObstruction": "Initial source obstruction throws after preserving frame; post positive gap/hit required, ratio1 for target that fits reading band; oversized box positive intersection and explicit reading-by-scroll limit",
+    "fontExceptionAdded": false,
+    "unexpectedUnobservedStillBlocks": true,
+    "existingScientificRatio1Unchanged": true,
+    "counterexample": "close02-semantic-core-check.json",
+    "counterexampleCasesPassed": 4,
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "discovery": 76,
+      "diff": "PASS"
+    },
+    "applicationRuntime": "NOT_RUN",
+    "round3Runtime": "NOT_RUN",
+    "workerPush": false
+  },
+  "initialImplementationSnapshot": {
+    "state": "B_VISUAL_READY_FOR_RUNTIME",
+    "coverage": {
+      "plannedPairs": 75,
+      "centralPairs": 60,
+      "qualifierPairs": 12,
+      "keyboardHistoryPairs": 2,
+      "reloadPairs": 1,
+      "testsDiscovered": 76,
+      "requirements": [
+        "FR-036-001",
+        "FR-036-002",
+        "FR-036-003",
+        "FR-036-004",
+        "FR-036-005",
+        "SC-036-001",
+        "SC-036-002",
+        "SC-036-003",
+        "SC-036-004"
+      ],
+      "newTasks": [
+        "T024",
+        "T025",
+        "T026",
+        "T027",
+        "T028",
+        "T029",
+        "T030"
+      ],
+      "runtime": "NOT_RUN",
+      "imageInspection": "NOT_RUN"
+    },
+    "runtimeEvidence": {
+      "codeShaTested": null,
+      "run": null,
+      "attempt": null,
+      "artifact": null,
+      "execution": "NOT_RUN",
+      "comparability": "PLANNED_PER_CASE_NOT_RUNTIME_EVALUATION",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING"
+    },
+    "cleanup": {
+      "browser": "Implemented in afterAll; runtime NOT_RUN",
+      "logicalData": "NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL",
+      "physicalData": "Coordinator Stop in finally, then disposable GitHub-hosted runner discarded",
+      "triggersDisabled": false,
+      "providers": false
+    },
+    "independentReview": "NOT_RUN_PENDING_NON_AUTHOR_AFTER_RUNTIME"
+  },
+  "terminalReadOnlyReview": {
+    "roundsUsed": 3,
+    "limit": 3,
+    "codeCommitAtReview": "d1e6f83e67a546c25e647d1b36e32ac124a2b885",
+    "codeChanged": false,
+    "testsExecuted": false,
+    "workerPush": false,
+    "currentDocsCommit": "Identify by the commit containing this receipt; do not self-reference a future SHA",
+    "openTasks": [
+      "T008",
+      "T016",
+      "T027",
+      "T028",
+      "T030",
+      "T039",
+      "T040"
+    ]
+  }
 }

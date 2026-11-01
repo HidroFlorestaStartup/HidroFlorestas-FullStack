@@ -1,5 +1,7 @@
 # Feature Specification: área, coletas e apresentação IHFR
 
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
 **Feature Branch**: `feat/ajustes-area-coletas-ihfr`
 **Created**: 2026-10-31
 **Status**: Implementação B validada em CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a` (15/15 gates, run 41252813575/tentativa 1); comparação bilateral UI-06 e aceite ainda pendentes. O histórico abaixo conserva checkpoints anteriores.

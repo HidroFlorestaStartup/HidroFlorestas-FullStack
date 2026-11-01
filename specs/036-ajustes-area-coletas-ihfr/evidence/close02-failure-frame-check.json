@@ -1,0 +1,33 @@
+{
+  "kind": "synthetic-chromium-actual-boundedPair-failure-frame-check",
+  "result": "PASS",
+  "browser": "153.0.8010.12",
+  "node": "v24.14.0",
+  "sourceFunctionSha256": "2d474e66e5f5d8b6427213ae01961565fcdb303d39f657127ee4571a70924945",
+  "frame": "Single masked viewport frame captured after original ratio1 failure; no state correction or assertion retry",
+  "pngSha256": "4bf6156becc20511f95d7c301422aa9f197b96e360b1420a486225420023b618",
+  "viewport": {
+    "width": 667,
+    "height": 375
+  },
+  "maskedInputs": 1,
+  "ratio": 0,
+  "hit": {
+    "center": {
+      "x": 94.171875,
+      "y": 1004
+    },
+    "tag": null,
+    "unobstructed": false
+  },
+  "classification": {
+    "execution": "FAIL",
+    "comparability": "INSUFFICIENT_EVIDENCE",
+    "completeness": "PARTIAL"
+  },
+  "qualification": "Synthetic DOM only; null Git source ids in local probe metadata; not application runtime or CI evidence",
+  "bun": false,
+  "database": false,
+  "productAssertionsRelaxed": false,
+  "productTimeoutsChanged": false
+}

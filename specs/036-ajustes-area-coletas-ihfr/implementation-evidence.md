@@ -168,3 +168,39 @@ Os casos preservam texto200, ratio1, foco/hit-testing, quatro qualificadores cie
 ordem/origem/ausência reais. Não se registram payload científico, cookie, token ou segredo. Dados
 sintéticos imutáveis permanecem só até descarte do runner owned; cleanup lógico e Stop físico têm
 recibos separados. Sem ferramenta global instalada no host e sem provedor real/alteração científica.
+
+### R1 — setup UI-B executado com FAIL, pares não iniciados
+
+[Run41351237110/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110),
+source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920, job124982006393, artifact13101154606:
+FAIL no beforeAll,75casos NOT_RUN,0PNG. ZIP local auditado por B: SHA256
+fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643 eCRC PASS.
+Nenhum caso recebeu PASS herdado. Causa reproduzida: label obrigatório do starter
+inclui asterisco aria-hidden que impede getByLabel exato sem esse texto.
+Reparo focal usa getByRole textbox/nome acessível exato; contraprova Chromium sintético
+RED/GREEN em `evidence/close02-reference-label-check.json`. Sem mudança de timeout,
+starter/produto ou banco local. Matriz e análise visual continuam pendentes de nova rodada.
+
+### R2 — matriz executada com evidência parcial e sumário FAIL
+
+[Run41353270282/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41353270282),
+source d62fb08cf65aca5dc704231f88594030f49279cb, artifact13102906085. Digest
+099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548/CRCverificados porB;
+147entradas,71PNG;75casos,1PASS/74FAIL. Um par completo;74starterfalharam em navigateDomain;
+cinco também falharam no FullStack ratio1. Sumário obrigatórioFAIL; coleta de75testes não
+equivale a75PASS de requisito. Sem UI06_B_EVIDENCE_COMPLETE.
+
+Delta mínimo paraR3: navprincipal da referência nomeado explicitamente (colisão com breadcrumb
+demonstrada em Chromium), readiness oficial antes do scroll de qualificadores (mecanismo focoRAF
+reproduzido sinteticamente; atribuição individualR2 aindaINFERENCIA), diagnóstico seguro de falhas.
+Nenhum assert, timeout, produto, starter, sharedhelper ou configuração alterado porB.
+Contraprovas e análise parcial de imagens em evidence/close02-round2-counterexamples.json e
+evidence/close02-comparison.md. TSC/lint/discovery/diff locaisPASS; runtimeR3 pendente.
+
+## Fechamento terminal CLOSE-PARALLEL-02 / R3
+
+**BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE.** R3 foi executada, com 9 PASS / 3 FAIL / 63 NOT_RUN no índice de 75 casos. [Parecer factual](evidence/close02-final-findings.md), [manifesto e hashes](evidence/close02-final-runtime.json) e [comparação visual real](evidence/close02-comparison.md). Código testado `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, árvore `9b3f6d39c89a35e90bf357e058f3fb037907e125`, run 41356318087/1/job 124997441830/artifact 13104015300. ZIP SHA256 `2e1911a57327e38267c0ec36016514272a00727cc4943f55d72b32f91d4f0f33` e CRC conferidos;24 PNGs disponíveis inspecionados, não equivalentes à cobertura75.
+
+Falhas reais: overflow referência320px/texto 200%; ratio 1 nativo667px/texto 200%; timeout de navegação referência844px/texto 200%. O timeout reiniciou worker e o guard recusou 4 usuários já criados; cleanup emnome fixo preservou recibo original com EEXIST. Os 63 casos restantes, incluindo qualificadores/teclado/reload, e o sumário obrigatório não rodaram. Causas inferidas e propostas futuras ficam identificadas no parecer; nenhuma foi implementada/testada após consumir3/3 rodadas.
+
+T008/T016/T027/T028 continuam abertos por cobertura incompleta. Inspeção de todos osPNG disponíveis foi realizada, mas não fecha comparação dos estados ausentes. T030 mantém pendências de reconciliação/publicação/revisão não autora final; parecerB não é aceite. Este delta final altera somente documentos036, sem código, produto, timeout, assert, rerun ou push do worker. PASS histórico de outrosSHAs não é transferido ao novoDOC_HEAD.

@@ -1,5 +1,9 @@
 # Handoff B — HF-UI-044-CLOSE-PARALLEL-02
 
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
+**Histórico de implementação e reparos anteriores ao resultado terminal:**
+
 **B_VISUAL_READY_FOR_RUNTIME**. Agente nativo real `/root/b_visual`, worktree managed `hf044-b`,
 branch `codex/hf044-b-local-20261101`. Base funcional6c61056f; setup1b6a2d3;
 helpers A importados pelo coordenador em f4d551d/51b9733, sem autoria B.
@@ -35,3 +39,67 @@ T008/T016/T027/T028/T030 seguem abertos até execução, inspeção real dos PNG
 EQ-B1 (ordem por confirmação/sem resumo CURRENT), EQ-B2 (score/decomposição demo) e EQ-B3 (memória/reload)
 ficam NON_EQUIVALENT com causa de fonte explícita, sem herdar PASS ou aprovar UX.
 HUMAN_ACCEPTANCE_PENDING, revisão não autora pendente e quatro qualificadores IHFR preservados.
+
+## Delta corretivo B após revisão não autora
+
+Base exclusiva `091924cf9feef25c273d99159a73e6ed86af18d2`. `boundedPair` agora exige samples.length===2;
+zero/um sample resulta FAIL / INSUFFICIENT_EVIDENCE / PARTIAL e erro explícito,
+preservando todos os asserts, timeouts e sumário obrigatório.
+Patch de código SHA256 `33eca2553ce1427ae770ccb6f77c25820e001954e637c1be1813e5cff7f134cc`. Relatório local:
+[close02-pair-classification-check.json](close02-pair-classification-check.json),6/6 PASS
+na declaração real extraída por AST. Typecheck completo local e lint B PASS/exit0.
+Sem PG/browser local, push ou runtime de CI da correção; A/coord mantêm seus próprios writers.
+
+## Delta R1 — seletor required-label da referência
+
+Base `89666f0b1bb78de476a53e19987b25beba26fd14`. Reparo único de código em domain-fixtures.ts: getByRole textbox
+com nome acessível exato, preservando timeout e produto/starter. Patch SHA256
+`8062e43a06e7a0967d8d3cdc3b50e89fa664ecae70568036b844427d7bbaf4e9`. Prova Chromium sintéticoRED/GREEN e auditoria de outros seletores:
+[close02-reference-label-check.json](close02-reference-label-check.json).
+R1 real: source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920/run41351237110/1,
+artifact13101154606,setupFAIL/75NOT_RUN/0PNG; digestfc05f5e8... eCRC verificados.
+Sem bilateralPASS; nova correção permanece sem runtime da candidata até R2.
+
+## Delta R2 B para a última rodada autorizada
+
+Base `bc4964986c7645275fcaed8570425893bf7c898e`; patch de código exclusivo SHA256 `e4a7c4fb48c9b9f0e085324bddf622bcf21314be0b934fea978fa8b9022b1086`.
+Dois arquivosB: navprincipal referência nomeado+count1; openDetails aguarda readiness oficial
+antes do scrollratio1; failures preservam classe/linhashelper/geometry sanitizadas. Semshared/config,
+produto, starter, timeouts ou asserts alterados. ContraprovasChromiumnav/foco nas3classesPASS;
+seiscontraprovas da boundedPairatualPASS; TSCcompleto24.14/lint/discovery76/diff locaisPASS.
+
+R2real source d62fb08cf65aca5dc704231f88594030f49279cb/run41353270282/1/artifact13102906085:
+digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548/CRCverificados;
+75casos1PASS/74FAIL,71PNG; única comparação bilateral inspecionada éempty320/100.
+NãoháBilateralPASS; R3aindaNOT_RUN. Causa NAVdemonstrada; mecanismoFOCUSdemonstrado
+sinteticamente, atribuição individualR2INFERENCIA. Maisdetalhes nos novosrecibos e comparação.
+
+## Delta de diagnóstico executável R3
+
+Base `561e34b2b33604a25fab3fc291c79360bb308f6e`; patch exclusivo domain.spec.ts SHA256 `0e3dfd33370bee1b9efcb9ed75ac3e8fce9210c5e476184df42603434cbf3bc5`.
+Falhas preservam um PNGmascarado de viewport eJSONdedicado (kinddomain-case-failure,
+evidenceKindfailure-diagnostic-not-acceptance), actualviewport/hash/source/ratio/hit e
+geometria antes/depois, semretentarassert ou mudar estado. Não contar como samplePASS.
+ContraprovaChromium real da própria função:PNG667x375/hashverificado/máscara1/ratio0/hitfalse,
+classificação permaneceFAIL/INSUFFICIENT_EVIDENCE/PARTIAL; prova emclose02-failure-frame-check.json.
+TSCcompleto24.14/lint/diffPASS; semPG/Bun/aplicação local/push. RuntimeR3 continua pendente.
+
+## Diligência focal final B antes de R3
+
+Base `bb8ac764bb1ba7d8f2c8c316725844f84a9957c0`; patchúnico domain.spec.ts SHA256 `c10a20aeec6378d1d74712aa4900a3519d619af0412c8cf0ead11746b9a4e8c8`.
+Somente dois estadoscentrais: area-empty/collection-record agora rolam aoalvosemântico
+emambasfontes antesda medição, preservando inicialocluído emPNG/JSONidderivado +wrapper
+DIAGNOSTIC_NOT_PLANNED_COVERAGE (nãocobertura; rawUNOBSERVED/hashoriginais preservados).
+Fixture/index correlacionam initialDiagnostic/files/hashes einitial/postrect/ratio/hit/gap.
+StarterobstruídoNON_EQliteral; glifosCDPnãosãolegibilidade. Nativeinitialgapinesperado
+bloqueiaapósframe; Nativepostexigegap>0/hittrue e ratio1quandoacaixacabe, ouregistra
+leituraporscrolldecaixamaiorcominterseçãopositiva. Qualificadoresmantêmratio1intacto.
+Semexceçãodefontes; UNOBSERVEDinesperadobloqueia. ContraprovaChromium4casosPASScom
+função/sample/fontcollector reais; JSONhashadonãoalterado. Prova close02-semantic-core-check.json.
+TSC/lint/discovery76/diff locaisPASS; semaplicação/Bun/PGlocal/push. R3continuaNOT_RUN.
+
+## Handoff final documental
+
+Parecer e manifesto finais: [close02-final-findings.md](close02-final-findings.md), [close02-final-runtime.json](close02-final-runtime.json). São nove pares completos aproveitáveis com requisito humano pendente, três failures preservados e 63 NOT_RUN; UI06 B não está completo. Reload não executado e sem causa atribuída. As propostas futuras são RECOMENDACAO/NOT_IMPLEMENTED/NOT_RUN.
+
+Após autorização final da coordenação, este commit documental pode ser transportado como docs-only 036 `[skip ci]`; worker não faz push. O coordenador registra o SHA do commit após criá-lo, publica/reconcilia PRs e parecer na PR #45 e obtém revisão não autora consolidada. Não copiar os arquivos QA compostos para a branch funcionalB, nem transportar produto de outro owner. Delta produto B vazio. Dados sintéticos seguem imutáveis; Stop observado preservou dados, sem declaração de remoção pelo recibo. Novo DOC_HEAD não herda PASS de runtime. Sem quarta rodada.
