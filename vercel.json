@@ -3,6 +3,7 @@
   "git": {
     "deploymentEnabled": {
       "development": false,
+      "codex/hf-ui044-composition-qa-20261101": false,
       "feat/account-verification-recovery": false,
       "feat/account-deletion": false,
       "review/cri-reconciliation-20261010": false,

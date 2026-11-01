@@ -7,10 +7,37 @@ import { parse } from "yaml";
 import { serializeAreaDetail, serializeAreaSummary } from "../../src/app/api/server/areas/area.contracts";
 
 // Exercise the real serializer. Do not duplicate the expected DTO as a hand-written fixture.
-const document = parse(readFileSync(
+const historicalDocument = parse(readFileSync(
   "specs/003-area-registration-and-viewing/contracts/area-registration-api.openapi.yaml",
   "utf8",
 ));
+const optionalAddressExtension = parse(readFileSync(
+  "specs/037-localizacao-endereco-opcional/contracts/area-optional-address.openapi.yaml",
+  "utf8",
+));
+// The IMP-003 document remains historical and immutable. Assemble only the active
+// serializer validation schema from its closed contract plus the approved UI-07
+// optional CEP delta. All non-address constraints continue to be enforced.
+const document = structuredClone(historicalDocument);
+document.components.schemas.Cep = structuredClone(optionalAddressExtension.components.schemas.Cep);
+document.components.schemas.CreateAreaInput.properties.cep =
+  structuredClone(optionalAddressExtension.components.schemas.CreateAreaInput.properties.cep);
+for (const name of ["AreaSummary", "AreaDetail"]) {
+  const schema = document.components.schemas[name];
+  schema.required = [...schema.required, "cep"];
+  schema.properties.cep = structuredClone(optionalAddressExtension.components.schemas[name].properties.cep);
+}
+function currentExample<T extends Record<string, unknown>>(original: T): T {
+  const copy = structuredClone(original);
+  // Historical published examples predate CEP. Adapt examples for validation
+  // against the new current wire contract; do not mutate the old OpenAPI file.
+  const dto = copy as Record<string, unknown>;
+  if (Array.isArray(dto.areas)) dto.areas = dto.areas.map((area: Record<string, unknown>) => ({ ...area, cep: null }));
+  if (dto.area && typeof dto.area === "object" && !Array.isArray(dto.area)) {
+    dto.area = { ...(dto.area as Record<string, unknown>), cep: null };
+  }
+  return copy;
+}
 const ajv = new Ajv2020({ strict: false, allErrors: true });
 addFormats(ajv);
 const contractId = "https://hidroflorestas.invalid/contracts/areas.openapi.yaml";
@@ -39,6 +66,7 @@ function source(cover: { revision: number; assetId: string | null } | null): Sou
     longitude: -44.123456,
     municipality: null,
     state: null,
+    cep: null,
     cover,
     userId: "internal-user-id",
     image: "https://private-provider.example.invalid/should-not-leak",
@@ -64,7 +92,7 @@ test("CRI-REV-005 RED/GREEN: real area serializer matches the closed AreaListRes
     assertConforms(result);
     const output = result.areas[0];
     assert.ok(output?.cover);
-    assert.deepEqual(Object.keys(output).sort(), ["cover", "id", "latitude", "longitude", "municipality", "name", "state"]);
+    assert.deepEqual(Object.keys(output).sort(), ["cep", "cover", "id", "latitude", "longitude", "municipality", "name", "state"]);
     assert.deepEqual(Object.keys(output.cover).sort(), ["featureEnabled", "hasImage", "revision"]);
     assert.equal(output.cover.featureEnabled, enabled);
     assert.equal(output.cover.hasImage, Boolean(cover?.assetId));
@@ -77,7 +105,7 @@ test("CRI-REV-005 RED/GREEN: real area serializer matches the closed AreaListRes
 test("CRI-REV-005: OpenAPI published example is valid and cover is required on area list", () => {
   const examples = document.components.schemas.AreaListResponse.examples;
   assert.ok(Array.isArray(examples) && examples.length > 0);
-  for (const example of examples) assertConforms(example);
+  for (const example of examples) assertConforms(currentExample(example));
   const withoutCover = list(null, false);
   const first = withoutCover.areas[0];
   assert.ok(first);
@@ -122,10 +150,22 @@ test("CRI-REV-005: real detail projection and its published examples remain vali
   assert.equal("cover" in result.area, false);
   assert.equal(validatesDetail(result), true, JSON.stringify(validatesDetail.errors));
   for (const example of document.components.schemas.AreaDetailResponse.examples) {
-    assert.equal(validatesDetail(example), true, JSON.stringify(validatesDetail.errors));
+    assert.equal(validatesDetail(currentExample(example)), true, JSON.stringify(validatesDetail.errors));
   }
   const validatesMutation = ajv.compile({ $ref: `${contractId}#/components/schemas/AreaMutationResponse` });
   for (const example of document.components.schemas.AreaMutationResponse.examples) {
-    assert.equal(validatesMutation(example), true, JSON.stringify(validatesMutation.errors));
+    assert.equal(validatesMutation(currentExample(example)), true, JSON.stringify(validatesMutation.errors));
   }
+});
+
+test("UI-07 live contract augments historical CEP exclusion without relaxing closed serializer",()=>{
+ assert.equal("cep" in historicalDocument.components.schemas.AreaSummary.properties,false);
+ assert.equal("cep" in document.components.schemas.AreaSummary.properties,true);
+ assert.equal(document.components.schemas.AreaSummary.additionalProperties,false);
+ const value=list(null,false);
+ assertConforms(value);
+ const missing = {...value.areas[0]} as Record<string, unknown>;
+ delete missing.cep;
+ assert.equal(validates({...value,areas:[missing]}),false);
+ assert.equal(validates({...value,areas:[{...value.areas[0],userId:"forged"}]}),false);
 });

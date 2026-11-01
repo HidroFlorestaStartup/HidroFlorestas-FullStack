@@ -61,7 +61,7 @@ function remember(path: string, content: HTMLElement) {
   if (positions.size > 50) positions.delete(positions.keys().next().value!);
 }
 function revealFocus(target: HTMLElement, content: HTMLDivElement) {
-  if (document.activeElement !== target || target.closest("dialog[open]")) return;
+  if (document.activeElement !== target || target.closest("dialog[open]") || target.closest("#application-navigation")) return;
   const header = document.getElementById("application-header")?.getBoundingClientRect().bottom ?? 0;
   if (target === content) {
     if (ownScroll(content)) content.scrollTo({ top: 0, behavior: "instant" });
@@ -71,9 +71,26 @@ function revealFocus(target: HTMLElement, content: HTMLDivElement) {
   const box = target.getBoundingClientRect();
   if (ownScroll(content)) {
     const region = content.getBoundingClientRect();
-    if (box.top < region.top + 8 || box.bottom > region.bottom - 8) target.scrollIntoView({ block: "nearest", behavior: "instant" });
-  } else if (box.top < header + 8 || box.bottom > innerHeight - 8) {
-    target.scrollIntoView({ block: "center", behavior: "instant" });
+    const rail = document.getElementById("application-navigation");
+    const bottom = rail && getComputedStyle(rail).position === "fixed"
+      ? Math.min(region.bottom, rail.getBoundingClientRect().top) : region.bottom;
+    // Move only the owning scrollport. scrollIntoView() can also move the
+    // document and leave a control behind the fixed contextual navigation.
+    // A single directional displacement avoids the scroll/focus oscillation
+    // observed with 200% text and viewport-size changes.
+    const top = region.top + 8;
+    const safeBottom = bottom - 8;
+    const shift = box.top < top ? box.top - top :
+      box.bottom > safeBottom ? box.bottom - safeBottom : 0;
+    if (shift !== 0) content.scrollBy({ top: shift, behavior: "instant" });
+  } else {
+    // Desktop owns document scrolling and the header is sticky. Align with
+    // its measured height, rather than centring a target underneath it.
+    const top = header + 8;
+    const bottom = innerHeight - 8;
+    const shift = box.top < top ? box.top - top :
+      box.bottom > bottom ? box.bottom - bottom : 0;
+    if (shift !== 0) window.scrollBy({ top: shift, behavior: "instant" });
   }
 }
 export function useContentScroll(scope: ContentScrollScope) {
