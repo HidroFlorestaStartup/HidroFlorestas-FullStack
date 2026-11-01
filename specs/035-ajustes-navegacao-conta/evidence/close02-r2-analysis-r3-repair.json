@@ -319,7 +319,9 @@
       "ReferencefocuscenterHitfalse literal",
       "NativeLoadingobservedat16beforeconfigure32",
       "Zero/onepairFAIL/INSUFFICIENT/PARTIAL"
-    ]
+    ],
+    "reloadStateObservationLimit": "nativeReloadState is observed before configure(). It is not a terminal-state assertion and does not prove that the later PNG still shows the same state. Reviewer must compare the actual image; do not relabel a transitioned image from an earlier observation. before/afterfont readbacks precede reconfiguration.",
+    "current19TestOutputs": "managed:hf044-a/.accounts-validation/ui06-r3-final-green/;47files, hashes inlocalGreenFiles. Earlier3-test smoke folders are historical receipts."
   },
   "localGreenFiles": {
     "cases.jsonl": "7edc7347a79dac3d674871b2616b090e47c4b524fa98570f6a3650793f726c3a",

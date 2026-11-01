@@ -35,3 +35,11 @@ Novo REDcom300irmãosoffscreen demonstrou porquê truncarantesdavisibilidade per
 Verificação local final:19/19smokesPASS12.9s no58440f7; typecheckcompleto/lint/diffPASS.
 Node24.14/Chromium153local, semDB. RuntimehostedcorrigidoR3 aindaNOT_RUN.
 ProntidãoUI06A eaceitehumano não são concedidos por este relatório deautoria.
+
+Precisão deobservação: `nativeReloadState` éleitura anterior a`configure()`. Não
+afirma estado terminal nem garante queoPNGposterior permaneceuLoading/not-found.
+O revisor deve confrontaraimagemreal, preservando eventualtransição entreleituras;
+não rotularimagemnova comobservationanterior semverificação. before/afterfont são
+anterioresàreconfiguração. Saída local atualdos19smokes: worktreemanaged`hf044-a`,
+`.accounts-validation/ui06-r3-final-green/`,47arquivoscomhashes norecibo; pastas
+antigasde3smokes permanecemhistóricas.
