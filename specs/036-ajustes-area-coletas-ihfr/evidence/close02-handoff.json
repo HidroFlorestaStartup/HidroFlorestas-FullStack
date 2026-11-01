@@ -261,5 +261,41 @@
     "localDatabase": false,
     "workerPush": false,
     "round3Runtime": "NOT_RUN"
+  },
+  "round3FailureDiagnostic": {
+    "base": "561e34b2b33604a25fab3fc291c79360bb308f6e",
+    "codePath": "qa/hf-ui044/domain.spec.ts",
+    "codePatchSha256": "0e3dfd33370bee1b9efcb9ed75ac3e8fce9210c5e476184df42603434cbf3bc5",
+    "singleMaskedFrame": true,
+    "fullPage": false,
+    "animations": "allow",
+    "maskedControls": [
+      "input",
+      "select",
+      "textarea"
+    ],
+    "metadata": [
+      "source/SHA/tree/run/attempt",
+      "PNGsha256 and actual viewport dimensions",
+      "sanitized class/helper locations",
+      "actual IntersectionObserver ratio and center hit",
+      "geometry before/after frame",
+      "original FAIL/INSUFFICIENT_EVIDENCE/PARTIAL"
+    ],
+    "artifactKind": "domain-case-failure",
+    "evidenceKind": "failure-diagnostic-not-acceptance",
+    "countAsPassedSample": false,
+    "retryAssertion": false,
+    "correctiveScroll": false,
+    "blurOrStyleChange": false,
+    "counterexample": "close02-failure-frame-check.json",
+    "counterexampleResult": "PASS_REAL_CHROMIUM_SYNTHETIC_DOM",
+    "localChecks": {
+      "typecheck": "PASS_NODE24.14",
+      "lint": "PASS",
+      "diff": "PASS"
+    },
+    "round3AppRuntime": "NOT_RUN",
+    "workerPush": false
   }
 }

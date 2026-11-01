@@ -270,3 +270,21 @@ payload ou mensagem bruta de exceção. Falha permanece FAIL/PARTIAL/INSUFFICIEN
 Contraprovas em evidence/close02-round2-counterexamples.json; sixcenários da função boundedPair
 atual continuamPASS (close02-pair-classification-check-r3.json). TSCcompleto local24.14,
 lintB, descoberta76 e whitespacePASS. Sem PG/Bun local e sem execuçãoR3 declarada.
+
+### Diagnóstico executável preservado para R3, inclusive se o requisito falhar
+
+Atendendo à revisão não autora, boundedPair registra uma única imagem de viewport
+mascarada (input/select/textarea; fullPagefalse; animationsallow) depois do erro original,
+sem retry de assert, blur, estilo ou scroll corretivo. JSON dedicado inclui fonte/SHA/tree/
+run/attempt, hashPNG/dimensões, classe/linhahelper e geometria antes/depois do frame,
+IntersectionObserver.intersectionRatio real do qualificador e hit-test do centro.
+O receipt é failure-diagnostic-not-acceptance e mantém FAIL / INSUFFICIENT_EVIDENCE /
+PARTIAL. Não se confunde esse PNG com sample aprovado; se a captura diagnóstica falhar,
+o JSON registra o limite sem aprovar a evidência.
+
+Contraprova Chromium sintética executou a própria boundedPair extraída por AST: assert
+ratio1 falha com alvo fora da viewport; frame667x375 mascarado ehashverificado, ratio0,
+hitfalse; a classificação original continuaFAIL/PARTIAL. Relatório
+`evidence/close02-failure-frame-check.json`. Arquivos sintéticos brutos ficam na área local
+ignorada comhash no relatório, sem pretensão de fonteGit/execução deproduto. TSC/lint/diffPASS.
+Nenhuma alteração a sharedA, configs, produto ou limite de timeout; runtimeR3 ainda pendente.

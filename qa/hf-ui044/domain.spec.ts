@@ -1,6 +1,7 @@
 import { test, expect, type Locator } from "@playwright/test";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { createHash } from "node:crypto";
 import type { CaptureOptions, EvidenceCase, LayoutCase, Runtime } from "./contract";
 import { createRuntime, configure, sample, recordCase, registerCases, finalizeCases, observeReload, archive } from "./shared";
 import { setupFullstackDomain, setupStarterDomain, navigateDomain, AREA_NAME, EMPTY_NAME, type DomainFixture } from "./domain-fixtures";
@@ -60,21 +61,44 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
       errors.push(runtime.source+":"+code+(locations[0]?"@"+locations[0]:""));
       const qualifierIndex=IHFR_CONTRACT.labels.indexOf(c.fixture.qualifier as typeof IHFR_CONTRACT.labels[number]);
       const qualifierText=qualifierIndex<0?null:runtime.source==="fullstack"?IHFR_SCIENTIFIC_QUALIFICATIONS[qualifierIndex]:IHFR_CONTRACT.labels[qualifierIndex];
-      const geometry=await runtime.page.evaluate(({qualifierText})=>{
+      const readGeometry=()=>runtime.page.evaluate(async ({qualifierText})=>{
         const rect=(node:Element|null)=>{if(!node)return null;const r=node.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height};};
         const content=document.getElementById("application-content")??document.getElementById("conteudo");
         const qualifier=qualifierText?[...document.querySelectorAll("span,code")].find(node=>node.textContent===qualifierText):null;
+        const intersectionRatio=qualifier?await new Promise<number>(resolve=>{
+          const observer=new IntersectionObserver(entries=>{const ratio=entries[0]?.intersectionRatio??0;observer.disconnect();resolve(ratio);});
+          observer.observe(qualifier);
+        }):null;
+        const box=qualifier?.getBoundingClientRect();
+        const center=box?{x:box.left+box.width/2,y:box.top+box.height/2}:null;
+        const hit=center?document.elementFromPoint(center.x,center.y):null;
         return {viewport:{width:innerWidth,height:innerHeight},rootFontPx:parseFloat(getComputedStyle(document.documentElement).fontSize),
           scrollX,scrollY,active:{tag:document.activeElement?.tagName??null,rect:rect(document.activeElement)},
           content:{rect:rect(content),scrollTop:content?.scrollTop??null,clientHeight:content?.clientHeight??null},qualifier:rect(qualifier??null),
+          qualifierIntersectionRatio:intersectionRatio,qualifierHit:{center,tag:hit?.tagName??null,unobstructed:!!qualifier&&!!hit&&(hit===qualifier||qualifier.contains(hit))},
           navs:[...document.querySelectorAll("nav")].filter(node=>node.getBoundingClientRect().width>0&&node.getBoundingClientRect().height>0)
             .map(node=>({label:node.getAttribute("aria-label"),rect:rect(node)}))};
       },{qualifierText}).catch(()=>({unavailable:true}));
+      const geometry=await readGeometry();
       try {
         await mkdir(archive,{recursive:true});
-        await writeFile(join(archive,"diagnostic-"+runtime.source+"-"+c.id+".json"),JSON.stringify({
-          kind:"domain-case-failure",caseId:c.id,source:runtime.source,...runtime.code,run:process.env.GITHUB_RUN_ID??null,
-          attempt:process.env.GITHUB_RUN_ATTEMPT??null,code,errorClass:error instanceof Error?error.name:"NON_ERROR",locations,geometry,
+        const stem="diagnostic-"+runtime.source+"-"+c.id;
+        let frame:Record<string,unknown>={status:"NOT_CAPTURED"};
+        try {
+          const masks=await runtime.page.locator("input,select,textarea").all();
+          const png=await runtime.page.screenshot({fullPage:false,animations:"allow",mask:masks});
+          await writeFile(join(archive,stem+".png"),png,{flag:"wx"});
+          frame={status:"CAPTURED",file:stem+".png",pngSha256:createHash("sha256").update(png).digest("hex"),
+            viewport:{width:png.readUInt32BE(16),height:png.readUInt32BE(20)},maskedInputs:masks.length};
+        } catch { frame={status:"CAPTURE_FAILED_WITH_ORIGINAL_CASE_FAIL_PRESERVED"}; }
+        const geometryAfterFrame=await readGeometry();
+        await writeFile(join(archive,stem+".json"),JSON.stringify({
+          kind:"domain-case-failure",evidenceKind:"failure-diagnostic-not-acceptance",caseId:c.id,source:runtime.source,...runtime.code,run:process.env.GITHUB_RUN_ID??null,
+          attempt:process.env.GITHUB_RUN_ATTEMPT??null,code,errorClass:error instanceof Error?error.name:"NON_ERROR",locations,
+          fullPage:false,animations:"allow",viewport:frame.viewport??null,pngSha256:frame.pngSha256??null,
+          frame,geometry,geometryAfterFrame,requested:{width:c.width,height:c.height,textScale:c.scale,safeAreaBottom:c.inset},
+          execution:"FAIL",comparability:"INSUFFICIENT_EVIDENCE",requirement:"DEFECT_FOUND",completeness:"PARTIAL",
+          note:"One unmodified failure frame; no retry, blur, style change or corrective scroll after the failed assertion. The case remains FAIL.",
         },null,2)+"\n",{flag:"wx"});
       } catch { errors.push(runtime.source+":DIAGNOSTIC_PERSIST_FAILED"); }
     }

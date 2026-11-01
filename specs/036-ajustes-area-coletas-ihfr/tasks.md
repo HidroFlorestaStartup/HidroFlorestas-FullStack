@@ -97,3 +97,5 @@ sem substituir executor não autor. Typecheck oficial completo permanece depende
 - [x] T033 [R2 CORREÇÃO] Resolver colisão demonstrada entre breadcrumbÁreas e navprincipal do starter em `domain-fixtures.ts`; contraprovaChromium320/1440 strictRED e namedNavGREEN, sem reload/first/timeout.
 - [x] T034 [R2 CORREÇÃO] Drenar trabalho causal de foco/layout com waitForMissionRender oficial ANTES do único scroll dos qualificadores em `domain.spec.ts`; contraprova com funções reais de shell nas3classes, ratio1 preservado. Atribuição individualR2 permanece INFERENCIA.
 - [x] T035 [R2 DIAGNÓSTICO/REVIEW] Persistir classes/linhas helper/geometry sanitizadas em failures, preservar classificação de pares ausentes com6contraprovasPASS, TSC/lint/discovery76/diff locaisPASS. R3 permaneceNOT_RUN até orquestração do coordenador.
+
+- [x] T036 [REVIEW/DIAGNÓSTICO] Preservar um frame mascarado e JSON de fonte/hash/dimensões/ratio/hit/geometry antes/depois para failures B, sem retry/correção de estado; contraprova Chromium da própria boundedPair mantémFAIL/PARTIAL e produz PNG667x375/hash/ratio0/hitfalse. R3aindaNOT_RUN.

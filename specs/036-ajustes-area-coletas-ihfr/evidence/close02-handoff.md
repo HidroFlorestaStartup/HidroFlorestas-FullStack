@@ -69,3 +69,13 @@ digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548/CRCverifi
 75casos1PASS/74FAIL,71PNG; única comparação bilateral inspecionada éempty320/100.
 NãoháBilateralPASS; R3aindaNOT_RUN. Causa NAVdemonstrada; mecanismoFOCUSdemonstrado
 sinteticamente, atribuição individualR2INFERENCIA. Maisdetalhes nos novosrecibos e comparação.
+
+## Delta de diagnóstico executável R3
+
+Base `561e34b2b33604a25fab3fc291c79360bb308f6e`; patch exclusivo domain.spec.ts SHA256 `0e3dfd33370bee1b9efcb9ed75ac3e8fce9210c5e476184df42603434cbf3bc5`.
+Falhas preservam um PNGmascarado de viewport eJSONdedicado (kinddomain-case-failure,
+evidenceKindfailure-diagnostic-not-acceptance), actualviewport/hash/source/ratio/hit e
+geometria antes/depois, semretentarassert ou mudar estado. Não contar como samplePASS.
+ContraprovaChromium real da própria função:PNG667x375/hashverificado/máscara1/ratio0/hitfalse,
+classificação permaneceFAIL/INSUFFICIENT_EVIDENCE/PARTIAL; prova emclose02-failure-frame-check.json.
+TSCcompleto24.14/lint/diffPASS; semPG/Bun/aplicação local/push. RuntimeR3 continua pendente.
