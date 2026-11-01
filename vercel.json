@@ -42,7 +42,8 @@
       "feat/ajustes-navegacao-conta": false,
       "feat/ajustes-area-coletas-ihfr": false,
       "feat/localizacao-endereco-opcional": false,
-      "docs/handoff-ajustes-interface-20261030": false
+      "docs/handoff-ajustes-interface-20261030": false,
+      "codex/hf-ui044-close-20261101": false
     }
   }
 }

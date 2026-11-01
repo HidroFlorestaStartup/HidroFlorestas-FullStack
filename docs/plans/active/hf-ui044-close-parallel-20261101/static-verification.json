@@ -1,0 +1,48 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "localNode": "24.14.0",
+  "officialNodeRequired": "24.19.0",
+  "configurationChecks": {
+    "yamlNoDuplicateKeys": "PASS",
+    "jobs": 4,
+    "configuredMinutesPerRound": 110,
+    "maximumRounds": 3,
+    "configuredQaCeiling": 330,
+    "functionalAutoCiAdditionalCeiling": 105,
+    "combinedCeiling": 445,
+    "exactPushBranch": "codex/hf-ui044-close-20261101",
+    "attemptOneOnly": true,
+    "forcedDeletedRejected": true,
+    "eventCreatedRequired": false,
+    "previewFalseAdded": true,
+    "existingPreviewRulesPreserved": true,
+    "artifactRetentionDays": 14,
+    "secretReferences": 0
+  },
+  "localChecks": {
+    "prismaGenerate": "PASS",
+    "nextTypegen": "PASS",
+    "fullTypecheckAfterSourceRepair": "PASS",
+    "infrastructureLint": "PASS",
+    "powershellParse": "PASS",
+    "whitespace": "PASS",
+    "ui037PreservationCounterproof": "2/2 PASS"
+  },
+  "vercelInspection": {
+    "project": "hidro-florestas-full-stack",
+    "repositoryFilterConfirmed": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+    "connectorAccount": "HidroFlorestaStartup",
+    "rootDirectory": "NOT_OBSERVED_CONNECTOR_OMITS_FIELD",
+    "browserAccountMismatch": true,
+    "loginAction": "AUTOMATIC_APPROVAL_REVIEW_REJECTED",
+    "rejectionReason": "Google sign-in method and intended account not explicitly authorized",
+    "requestedSpecificApproval": "Google sign-in exclusively for hidrofloresta@gmail.com; read-only Root Directory and Git binding",
+    "providerSettingsChanged": false
+  },
+  "hostedRoundsPublished": 0,
+  "hostedRuns": "NOT_RUN",
+  "previewProof": "PENDING_ROOT_DIRECTORY",
+  "humanAcceptance": "PENDING",
+  "scientificValidation": "PENDING_UNCHANGED"
+}

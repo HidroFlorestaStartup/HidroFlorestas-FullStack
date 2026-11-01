@@ -36,3 +36,16 @@ hashes/CRC/dimensões/metadados e revisão independente. Resultados ainda NOT_RU
 - 2026-11-01: fontes e refs reconfirmadas; quatro worktrees managed isolados criados;
   contrato de evidência antes da delegação. Skills aplicadas manualmente conforme mandato;
   não se declara CLI Spec Kit nem execução do setup-plan que sobrescreveria plano existente.
+
+## Avanço da execução local
+
+- Três agentes nativos /root/a_harness, /root/b_visual, /root/c_capture efetivamente delegados.
+- A: contraprova RED da espera antiga e smoke Chromium real; B: casos e fixtures nativas;
+  C: contraprova de preservação2/2 e quatro docs sanitizados33d transportados porblobs.
+- Coordenador: quatro jobs, orçamento110min/rodada; parser/YAML/guard/lint/tipos locais PASS.
+  Propriedade source duplicada foi encontrada pelo typecheck completo e reparada pelo owner A.
+- Runtime hospedado: NOT_RUN, zero rodadas publicadas até este recibo.
+- Comprovação Root Directory Vercel pendente: conector confirma projeto/vínculo filtrado,
+  mas não expõe raiz. Browser estava em conta distinta. Revisão automática rejeitou login
+  Google por falta de método/conta explicitamente autorizados; confirmação específica solicitada.
+  Nenhuma configuração de provedor foi alterada. Guard false local já incluído; push aguarda prova.
