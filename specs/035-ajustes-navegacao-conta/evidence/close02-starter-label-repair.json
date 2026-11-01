@@ -1,0 +1,85 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "A",
+  "agentId": "/root/a_harness",
+  "finding": "STARTER_REQUIRED_LABEL_SELECTOR",
+  "base": "6b05ce577f404957319b6332eded7ec4e9e6d91b",
+  "codeCommit": "885b4742146a76510208c18b09d9cd09e6b8bed3",
+  "starterSha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+  "source": "src/components/hf/primitives.tsx FieldShell lines295ff; local pinned starter reconfirmed",
+  "scope": "Only createLab reference branch selector; FullStack selector, starter product, configuration and timeouts unchanged",
+  "red": {
+    "tests": 1,
+    "failed": 1,
+    "exit": 1,
+    "observed": "getByLabel exact fails to fill; synthetic negative timeout1000ms only"
+  },
+  "green": {
+    "tests": 6,
+    "passed": 6,
+    "exit": 0,
+    "durationSeconds": 7.7,
+    "probe": {
+      "runtimeOrigin": "SYNTHETIC_SMOKE_NOT_PRODUCT",
+      "starterSha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "structure": "label[for] + span[aria-hidden] required marker + input",
+      "oldLabelMatches": 0,
+      "accessibleTextboxMatches": 1
+    }
+  },
+  "testedBytes": {
+    "qa/hf-ui044/shell.spec.ts": "b2307dde3073e3b27fd142003fb95dab70d88c726d358c881afe8f85c4f4b567",
+    "qa/hf-ui044/smoke.spec.ts": "268105a3f9bf658cb90f5e2b672a400cf282ffbb62da823ef5d921a976293bc9"
+  },
+  "provenance": "GREEN executed on6b05 with the two changed files; exact bytes subsequently committed885b474 and verified against git show",
+  "checks": {
+    "fullLocalTypecheck": "PASS/exit0",
+    "lintTwoFiles": "PASS/exit0",
+    "whitespace": "PASS/exit0"
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.12",
+    "database": false,
+    "hostedCi": false,
+    "globalInstall": false
+  },
+  "archives": {
+    "red": {
+      "path": ".accounts-validation/ui06-label-repair-red",
+      "files": {
+        "red-error-context.md": "444e2c679db59fe4dbe9ccb6810536b7bca6790e356f479e4e854aaea6a68928"
+      }
+    },
+    "green": {
+      "path": ".accounts-validation/ui06-label-repair-green",
+      "files": {
+        "cases.jsonl": "03a097bb8871aae0fb42fda1bcc168af12e038e4d76a9b33c87cbbb81de71187",
+        "fullstack-incomplete-pair-1.json": "048749cbb99e7eaacf70449a0e100c29dd1b48e3dcedd1727020b77169c44b87",
+        "fullstack-incomplete-pair-1.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-smoke-1440-100-1793568379731.json": "e2bff00b3dc484fe99265203b1162d70f92fb15e06a5769b099d127a0cc16176",
+        "fullstack-smoke-1440-100-1793568379731.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-smoke-1440-100-1793568380290.json": "447389ae43abbefbff3b6dbe55a540b8aba60a9081190ff19879b92a6d464623",
+        "fullstack-smoke-1440-100-1793568380290.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-smoke-1440-200.json": "2da1e30dd95cb350ddfcd4073aa14ec5df32ed13291f05e96a69df3f88f732bb",
+        "fullstack-smoke-1440-200.png": "e4878c238674c25dc4405dda6e270739be725a9df984dd4ed23c73b013331e50",
+        "fullstack-smoke-320-100-1793568378096.json": "1ca363795bff445d6119e42f67898459d4518f8f8ecd62edebc4b093d18c810e",
+        "fullstack-smoke-320-100-1793568378096.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-smoke-320-100-1793568378678.json": "fdff8fee1f6b5faf3e53cc8bcdb6ef6c2e3a42f2ae8b79bf68f298a76a53ad76",
+        "fullstack-smoke-320-100-1793568378678.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "fullstack-smoke-320-200.json": "f41c693f0192b2730a299311df8e41bf5c9288338be53922f01e138a3d3f134d",
+        "fullstack-smoke-320-200.png": "8467cc184dfba8531fb676f5cedb3e78e3302b0b04b228f9e0791bf19dc33c39",
+        "fullstack-unobserved-1440.json": "b0292423d19ffe83352e29ceefb7ad0042b8d2763e3cad6580889e811a982079",
+        "fullstack-unobserved-1440.png": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+        "fullstack-unobserved-320.json": "68675270db1fd65b5566858916b1b9614914ba2adef841bf9487af52cab27d0c",
+        "fullstack-unobserved-320.png": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+        "index.json": "0a2034eb12e73a8d41caa90e57b8245e431cd5e9c8508d3dc14de85d7b7f6004",
+        "starter-required-label.json": "79e7dd603e2c2c6bbcac7118835b8fbdcb887127669eab137e2897cb69b55604"
+      }
+    }
+  },
+  "published": false,
+  "officialCorrectedRuntime": "NOT_RUN; coordinator groups changes for next bounded round",
+  "observedVsInference": "Domain beforeAll R1 failure reported by coordinator. A same selector source plus synthetic reproduction verified; actual A hosted result remains associated with its own logs."
+}

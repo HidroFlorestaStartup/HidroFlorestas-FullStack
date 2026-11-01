@@ -173,3 +173,50 @@ Todo o código novo está emqa/hf-ui044; nenhum produto/infra/B/C alterado porA.
 CodeSHA do smoke9283f31 não herda15/15 da composição6c61056f. CI hospedada,
 comparação bilateral, inspeção de imagens reais do produto e aceite humano permanecem
 NOT_RUN/PENDING. T033 e tarefas bilaterais históricas seguem abertas.
+
+### Adendo CLOSE02 — par incompleto tem evidência insuficiente
+
+Correção local d27a1e6 deMEDIUM da QA: zero/um sample não é par comparável.
+RED2/2FAIL provouPASS/COMPARABLE/PARTIAL anterior; GREEN5/5PASS provou
+FAIL/INSUFFICIENT_EVIDENCE/PARTIAL no retorno eJSONL, com3smokes anteriores intactos.
+Typecheckcompleto local/lint/whitespacePASS. [Recibo combytes testados e archives](evidence/close02-pair-repair.json).
+Runtime hospedado corrigidoNOT_RUN; nenhum produto/config/push ou aceite afetado.
+
+### Adendo CLOSE02 — nome acessível do laboratório da referência
+
+Código local885b474 corrige exclusivamente o seletorA da criação delaboratório
+nostarter; requiredmarkeraria-hidden impedegetByLabel exact no modelo observado.
+ContraprovaChromiumRED1/1FAIL, GREEN6/6PASS, oldLabelMatches0 e
+accessibleTextboxMatches1. Typesfull locais/lint/whitespacePASS.
+[Recibo comfontes/hashes](evidence/close02-starter-label-repair.json).
+Sem mudarprodutos/timeouts/config oupublicar; runtimeoficial corrigidoNOT_RUN.
+
+### Adendo CLOSE02 — menuR1 reproduzido e reparado, runtime novo pendente
+
+R1UIA41351237110/1/194e9af, artifact13101369298,ZIPdigestb9c5471d...:
+3parescoletados/86 (2PASS/1FAIL),83NOT_RUN. PNGreal mostra menucortadoàesquerda.
+DOMrealTSX/CSS emfixturesemNext/DB,Arialexplicitamenteobservado: RED3/6FAIL;
+reparo containingblock deConta para grupoConta+Sair deuGREEN6/6.
+Produto97204d7 efilename236f824 trazem6regressões oficiais035 executáveisnaAisolada.
+HelperQA9ecfa5f: lifecyclepreservaerroprimário; máscara clippa ao scrollport sem
+excluirinputstexto/senha.14smokesPASS12s, typesfull locais/lint/diffPASS.
+[Recibo integral/geometrias/fontes/hashes](evidence/close02-menu-cleanup-mask-repair.json).
+FonteArial sintética não éruntimePoppins; R1nãoqualificaárvorecorrigida. O histórico
+contextclosed/cleanup permanece inconclusivo quantoàcausaprimária exataA.
+Runtimecorrigido15gates/UI06oficial, imagemrealbarra eaceitehumano continuamNOT_RUN/PENDING.
+
+### Adendo CLOSE02 — UI-A R2 real e instrumentação R3
+
+UIA-R2/d62fb08:78PASS8FAIL/86;14IDs summary=uniãoFAIL+INSUFF, não14falhasdeproduto.
+Menu corrigido real320/text200 inspecionado. Referênciaoculta main/foco em667/text200;
+reloadcapturouLoadingnativo eassertnot-foundfixo impediareconfiguração. [Análise visual](evidence/close02-r2-visual-analysis.md).
+ReparosQA86b6fd0+58440f7 preservamUNOBSERVED/INSUFFregional comqualificação explícita,
+produto ratio1/hit, nativeLoading eescala16/32.19smokesPASS12.9s/tiposfulllocais/lint/diffPASS.
+[Recibo/hashes/casos](evidence/close02-r2-analysis-r3-repair.json). R3hostedcorrigidoNOT_RUN;
+CI/UI06completa/QA nãoautora/aceitehumano permanecem estadosdistintos.
+
+### Fechamento CLOSE02 — UI-A R3 executada e auditada
+
+**UI06_A_EVIDENCE_COMPLETE** no recorte de coleta bilateral. Run41356318087/1, SHAebf7e9707d5beba949ae932cdffeb3f9068f8a73, artifact13103164262, ZIPd993e92f...:347entradas/172PNGs/172metadados, hashes/dimensões/CRC3328chunks verificados.86PASS/COMPLETE,79NON_EQUIVALENT/7COMPARABLE,86HUMAN_DECISION_PENDING; índice=último journal.32imagens abertas, discriminadas no[recibo final](evidence/close02-r3-final.json); [análise visual](evidence/close02-r3-visual-analysis.md).
+
+Menu real reparado mostra nome/links inteiros; máscara375100 não cobre navegação. FullStack focos ratio1/hittrue preservados. Referência mantém6mainUNOBSERVED/INSUFFregional e2focosDEFECT_FOUND, semfontPASS. Seis Loading pré-configure não são terminal; em667/text200 CDPstatus observado antecedePNG semmainlegível, limite temporal explícito. HUMAN_TYPOGRAPHY_REVIEW_PENDING/HUMAN_ACCEPTANCE_PENDING; UI06_B bloqueada. RC2d62/15PASS/241E2E/6IHFR informado pelo coordenador, RC3NOT_RUN. Sem herdarPASS doSHAanterior, sem quarto runQA, código oupush do worker. Documentos atuais superam osNOT_RUN da preparação preservada acima.

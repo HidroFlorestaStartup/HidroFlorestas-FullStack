@@ -36,7 +36,7 @@ Entrada: [spec](spec.md), [plan](plan.md), handoff #44 fixado em `972f9b00189bf0
 
 ## US3 — comparação visual e validação
 
-- [ ] T007 [US3] Comparar runtimes starter/FullStack em 320, 375/390, 768 e 1440 px; registrar capturas viewport e análise em `implementation-evidence.md`, sem copiar mocks/TanStack.
+- [x] T007 [US3] Comparar runtimes starter/FullStack em 320, 375/390, 768 e 1440 px; registrar capturas viewport e análise em `implementation-evidence.md`, sem copiar mocks/TanStack.
 - [x] T008 Executar testes focais e os quinze gates preservados de `scripts/rc-review-validation.ps1` em ambiente sintético autorizado; registrar resultados, falhas e NOT_RUN, sem atribuir PASS herdado.
 - [x] T009 Atualizar `spec.md`, `plan.md`, `tasks.md` e `implementation-evidence.md`; publicar no PR Draft próprio com diff exclusivo/acumulado, revisão e pendências. Sem merge/deploy.
 
@@ -57,7 +57,7 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [x] T012 [IMPLEMENT] Corrigir apenas shell/TopBar e suites consumidoras A, preservando verificações de autorização e asserts de geometria, com novo commit candidato.
 - [x] T013 [REVIEW] Reexecutar o runner oficial de 15 gates no SHA da publicação A2 e qualificar PASS/FAIL por log/artefato.
 - [ ] T014 [REVIEW] Conferir capturas e geométricas móveis reais do SHA A2, checkout/layout e foco em 320/text200 e paisagem 844×390/text200.
-- [ ] T015 [REVIEW] Executar comparação bilateral starter/FullStack runtime ou preservar T007 como NOT_RUN.
+- [x] T015 [REVIEW] Executar comparação bilateral starter/FullStack runtime ou preservar T007 como NOT_RUN.
 - [x] T016 Atualizar evidências e PR46 com SHA/attempt do resultado final e bloqueios, sem simular revisão independente.
 
 - [x] T017 [ANALYZE/PLAN] Reconciliar 5 falhas E2E A2 com artefato 13061886214 e retificar plano de foco, scrollport e timing.
@@ -74,7 +74,7 @@ Não marcar implementação ou testes como feitos por esta preparação. Ações
 - [x] T024 [PLAN] Conferir as specs 035/036 e ownership: safe-area é A; `ScientificNotice` e assertions IHFR são B; congelar alterações somente A.
 - [x] T025 [IMPLEMENT] Corrigir o padding contextual para 8px + inset e adicionar contraprova de 42px no próprio E2E de shell, sem alterar componentes/testes B.
 - [x] T026 [REVIEW] Revalidar o SHA final da branch A nos 15 gates, observar `results.jsonl`, screenshots e produzir recibo por run/tentativa; eventual FAIL IHFR dependente de B não pode ser encerrado unilateralmente.
-- [ ] T027 [UI-06] Executar de verdade os dois projetos em estados/viewport equivalentes e registrar capturas `fullPage:false` e proveniência; sem ambos runtimes, `UI06_BILATERAL_NOT_RUN`.
+- [x] T027 [UI-06] Executar de verdade os dois projetos em estados/viewport equivalentes e registrar capturas `fullPage:false` e proveniência; sem ambos runtimes, `UI06_BILATERAL_NOT_RUN`.
 
 No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassifica individualmente as revisões acima; T007/T014/T015/T019/T022/T027 seguem abertas. Implementar ou revisar os arquivos não equivale a obter PASS. Sem alteração de ownership dos testes `ihfr-diagnosis-{read,manage}.spec.ts`.
 
@@ -85,4 +85,43 @@ No checkpoint A5, T007/T008/T013–T016/T019/T022 estavam pendentes. A6 reclassi
 - [x] T030 [TEST] Contraprova RED e smoke Chromium sem DB100→200→100/320/1440, CDP ausente e diagnóstico antes de FAIL.
 - [x] T031 [IMPLEMENT] Particionar shell.spec.ts porlayout cobrindo workspace/laboratório/Conta/Escape/foco/histórico/insets; nenhuma equivalência inventada.
 - [x] T032 [REVIEW] Revisar escopo/whitespace/sintaxe/tipos e entregar commit/handoff local exclusivo ao coordenador.
-- [ ] T033 [RUNTIME] Executar candidata integrada no Windows hospedado, inspecionar pares reais e registrar achados; UI06/aceite humano separados.
+- [x] T033 [RUNTIME] Executar candidata integrada no Windows hospedado, inspecionar pares reais e registrar achados; UI06/aceite humano separados.
+
+## CLOSE02 — QA estática, eixos de evidência incompleta
+
+- [x] T034 [ANALYZE/PLAN] Reproduzir MEDIUM de parsemdois samples e delimitar reparo aos helpersA/FR-035-003.
+- [x] T035 [IMPLEMENT] Classificar parincompleto comoFAIL/INSUFFICIENT_EVIDENCE/PARTIAL emshared/shell e preservar essa classificação nocatch.
+- [x] T036 [TEST/REVIEW] ExecutarREDzero/umruntime eGREENsmoke semDB, tipos completos locais, lint e whitespace; registrar hashes e limitações.
+- [x] T037 [RUNTIME] Coordenador executar noSHAcorrigido a próxima rodada pertinente, dentro do orçamento; semPASSherdado deR1.
+
+## CLOSE02 — seletor acessível da referência
+
+- [x] T038 [ANALYZE/PLAN] Inspecionar FieldShell fixado e reproduzir emChromium a estrutura label/spanaria-hidden/inputrequired semDB.
+- [x] T039 [IMPLEMENT] Trocar somente o seletor do nome de laboratório nostarter por textbox/nomeacessível exato; preservarFullStack/produto/timeouts.
+- [x] T040 [TEST/REVIEW] DemonstrarRED1/1 eGREEN6/6, typesfull locais/lint/diff e persistir contraprova0label/1textbox.
+- [x] T041 [RUNTIME] Verificar criação de laboratório da referência noSHAda próxima rodada pertinente docoordenador, semPASSherdado.
+
+## CLOSE02 — reparo demonstrado do menu e qualidade da evidência
+
+- [x] T042 [ANALYZE/PLAN] InspecionarR1real e reproduzir DOM/TSX/CSS do menuem6recortes antesdecorrigir produto; distinguirfontes/limites.
+- [x] T043 [IMPLEMENT] Corrigir somente containingblock do menuemCSSA, preservando dimensões/fontes/contratos.
+- [x] T044 [TEST] Escrever6regressões oficiais035 comnome/links/fontes/escalaexata/ratio1 earchivamento-geometry.json; marcaçãoautoria, nãoruntime.
+- [x] T045 [IMPLEMENT/TEST] Preservarerroprimário/lifecycle e mascarar apenas a interseção visível doscontroles, comcontraprovasCPU/Chromium semDB.
+- [x] T046 [REVIEW] Executar14smokes, typecheckcompleto local/lint/whitespace ehand off separado deproduto/QA/documentação.
+- [ ] T047 [RUNTIME] Coordenador executar15gates eUI06sobreSHAfinalreparado, auditarZIP/JSON/PNG ecomparação real; nãoherdarR1ou6c61056f.
+
+## CLOSE02 — reconciliação R2 e última rodada delimitada
+
+- [x] T048 [ANALYZE] Conciliar86índice/94linhascase/14IDs e inspecionar menu/workspace/laboratório/reload/foco reais porfonte.
+- [x] T049 [PLAN/IMPLEMENT] Registrar exceçãoestrita referênciaocluída semfontPASS; fonteausenteFullStack/foraescopobloqueia; focoProduto ratio1/hit intactos.
+- [x] T050 [IMPLEMENT] Observar estadoLoading/notfound nativo eescalaantes/apósreload, depoisreaplicar16/32; nãoinferirpersistênciadepreferência.
+- [x] T051 [TEST/REVIEW] ContraprovarLoadingDIV/300irmãosoffscreen, executar19smokes/tipos/lint/diff eentregar commitsQAexclusivos.
+- [ ] T052 [RUNTIME/QA] Coordenador executar últimaR3autorizada eQA nãoautora julgar evidência/completude/limites; semaceitehumano automático.
+
+## CLOSE02 — fechamento factual A na R3
+
+- [x] T053 [ANALYZE/REVIEW] AuditarZIP13103164262/digestd993e92f,172PNG/3328chunks/172JSON e86índice/journal porSHA/run/attempt.
+- [x] T054 [REVIEW] Abrir32imagens reais de ambasfontes e documentar menu/rail/foco/reload/fontes,6mainUNOBSERVED e temporalidadeCDP→PNG seminventarfontPASS.
+- [x] T055 [COMMIT/HANDOFF] RegistrarUI06_A_EVIDENCE_COMPLETE e entregardocs-onlylocal ao coordenador para publicação funcional únicaA, semcopiarB/QA.
+
+T007/T015/T027/T033 encerradas pela coleta/análiseR3ebf7e970, não por reclassificação de run antigo. T037/T041 verificadas na execução efetiva de reparos: R2 conservou suasfalhas eR3 completou86pares, incluindo criação real da referência. T047/T052 conservampendências coordenadas: RC2d62/15PASS é distinta deRC3NOT_RUN; revisão não autora/conclusão global não são atribuídas ao autorA. Tasks deSHAhistóricos não reexecutados permanecem comseuestado. HUMAN_TYPOGRAPHY_REVIEW_PENDING/HUMAN_ACCEPTANCE_PENDING; UI06_B bloqueada. [Recibo final](evidence/close02-r3-final.json).

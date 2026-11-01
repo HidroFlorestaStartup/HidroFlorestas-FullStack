@@ -1,82 +1,172 @@
 {
   "mission": "HF-UI-044-CLOSE-PARALLEL-02",
-  "role": "A_HARNESS",
+  "role": "A_HARNESS_AND_SHELL",
   "agentId": "/root/a_harness",
-  "worktree": "managed:hf044-a/HidroFlorestas-FullStack",
   "branch": "codex/hf044-a-local-20261101",
   "base": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
-  "setup": "7704d98184e68b8ea04d2e028f52cec3c525afad",
-  "codeHead": "9283f31a30c0445ebee4f245b045ffba19be3b24",
-  "codeTree": "61c46b12444c895051f60d513baa109235c14c53",
-  "state": "A_HARNESS_READY_FOR_RUNTIME",
-  "productPathsChanged": [],
-  "instrumentationPaths": [
-    "qa/hf-ui044/shared.ts",
-    "qa/hf-ui044/smoke.spec.ts",
-    "qa/hf-ui044/scale-red.mjs",
-    "qa/hf-ui044/shell.spec.ts"
+  "state": "UI06_A_EVIDENCE_COMPLETE",
+  "currentEvidence": "close02-r3-final.json",
+  "visualAnalysis": "close02-r3-visual-analysis.md",
+  "testedCandidate": {
+    "sha": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73",
+    "tree": "9b3f6d39c89a35e90bf357e058f3fb037907e125",
+    "run": 41356318087,
+    "attempt": 1,
+    "artifactId": 13103164262
+  },
+  "productPathsChanged": [
+    "src/components/shell/shell.module.css",
+    "tests/e2e/hf-ui035-navigation.spec.ts"
   ],
-  "documentationScope": "specs/035-ajustes-navegacao-conta/**",
-  "commits": [
-    "19b8ff13452a230311b7daf6814dde730b7504ea",
-    "c4eb9ea578a44aad5f72e95d764cf5e8188e09f1",
-    "6dc3bb17501a796ea245bdfed783f346fff54832",
-    "9283f31a30c0445ebee4f245b045ffba19be3b24"
+  "instrumentationFinalCode": "58440f763fe2f537cb164fc7ce125cd947cd0652",
+  "productCommits": [
+    "97204d7",
+    "236f82421ba16aa536dffb98d39317870e76f66b"
   ],
-  "patchHashCode": "56ec1a48d5c0a5f03c733c7ff595387d9c2cf3c6e8d2a6406d673394416ad445",
-  "published": false,
+  "workerPublished": false,
+  "coordinatorFunctionalPublication": "PENDING_AT_THIS_DOC_COMMIT",
   "cases": {
     "layouts": 16,
-    "pairsPlanned": 86,
-    "pngPlanned": 172,
-    "testsIncludingSummary": 17,
-    "bilateralExecution": "NOT_RUN"
+    "pairs": 86,
+    "pngPerSource": {
+      "fullstack": 86,
+      "starter": 86
+    },
+    "execution": {
+      "PASS": 86
+    },
+    "comparability": {
+      "NON_EQUIVALENT": 79,
+      "COMPARABLE": 7
+    },
+    "requirement": {
+      "HUMAN_DECISION_PENDING": 86
+    },
+    "completeness": {
+      "COMPLETE": 86
+    },
+    "caseJournalRows": 86,
+    "indexMatchesLatestJournal": true,
+    "noIncompleteCases": true,
+    "widths": [
+      320,
+      375,
+      390,
+      667,
+      768,
+      844,
+      1440
+    ],
+    "textScale": [
+      100,
+      200
+    ],
+    "insets": [
+      0,
+      34
+    ],
+    "insetScope": "375/667 relevant text200 scenarios; not a cross product for every viewport",
+    "fullPage": false
   },
-  "checks": [
-    {
-      "command": "SpecKit check-prerequisites.sh --json --paths-only with worktree-local feature env",
-      "result": "PASS",
-      "notes": "Full analysis/plan/implement adapted manually; non-paths-only helper persists feature.json and was not used in read-only ANALYZE."
-    },
-    {
-      "command": "node node_modules/typescript/bin/tsc --noEmit --skipLibCheck --target ES2022 --module commonjs --moduleResolution node --esModuleInterop qa/hf-ui044/contract.ts qa/hf-ui044/shared.ts qa/hf-ui044/shell.spec.ts",
-      "exit": 0,
-      "result": "PASS"
-    },
-    {
-      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
-      "result": "PASS",
-      "notes": "Initially TS2783 source duplicate; fixed6dc3bb1 and full local check passed. Official hosted typecheck remains NOT_RUN."
-    },
-    {
-      "command": "eslint shared.ts smoke.spec.ts shell.spec.ts scale-red.mjs",
-      "exit": 0,
-      "result": "PASS"
-    },
-    {
-      "command": "git diff --check",
-      "exit": 0,
-      "result": "PASS"
-    }
-  ],
-  "runtimeReceipt": "close02-local-smoke.json",
-  "knownFindings": [
-    "Account320 name/menu clipping remains a candidate to reproduce in hosted runtime; geometry asserts and durable capture added; no product patch inferred.",
-    "Historical A isolated IHFR FAIL remains historical and B-owned; ratio1 unchanged."
-  ],
-  "dependencies": [
-    "Coordinator transport commits + focal configs + hosted runtime",
-    "B consumes frozen contract and A shared helper",
-    "Non-author PROMPT04 after terminal artifacts"
-  ],
-  "gitInitial": "clean at7704d981; coordinator smoke config later copied as exclusive coordinator artifact",
-  "gitFinalExpected": "All A-owned changes committed; coordinator smoke config remains untracked locally and excluded from A commit; ignored smoke evidence and dependency read junctions retained",
-  "decisions": [
+  "pending": [
+    "HUMAN_TYPOGRAPHY_REVIEW_PENDING",
     "HUMAN_ACCEPTANCE_PENDING",
+    "A_R3_RAIL_LABEL_GEOMETRY_PENDING",
+    "UI06_B_EVIDENCE_INCOMPLETE",
     "GEOCODER_OPERATIONAL_PENDING",
     "CONTRATO_EXPERIMENTAL",
     "VALIDACAO_CIENTIFICA_PENDENTE",
     "SUJEITO_A_RECALIBRACAO",
     "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
-  ]
+  ],
+  "currentLocalContraproofs": {
+    "codeSha": "58440f763fe2f537cb164fc7ce125cd947cd0652",
+    "archive": "managed:hf044-a/.accounts-validation/ui06-r3-final-green/",
+    "tests": "19/19 PASS",
+    "files": 47,
+    "runtime": "Local Node24.14/Chromium153; synthetic smoke withoutDB, not hosted product runtime"
+  },
+  "transport": "A CSS + own035 E2E +035 docs only for functionalA; sharedQA stays candidate/coordinator. NoB code transported.",
+  "initialHandoffHistorical": {
+    "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+    "role": "A_HARNESS",
+    "agentId": "/root/a_harness",
+    "worktree": "managed:hf044-a/HidroFlorestas-FullStack",
+    "branch": "codex/hf044-a-local-20261101",
+    "base": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+    "setup": "7704d98184e68b8ea04d2e028f52cec3c525afad",
+    "codeHead": "9283f31a30c0445ebee4f245b045ffba19be3b24",
+    "codeTree": "61c46b12444c895051f60d513baa109235c14c53",
+    "state": "A_HARNESS_READY_FOR_RUNTIME",
+    "productPathsChanged": [],
+    "instrumentationPaths": [
+      "qa/hf-ui044/shared.ts",
+      "qa/hf-ui044/smoke.spec.ts",
+      "qa/hf-ui044/scale-red.mjs",
+      "qa/hf-ui044/shell.spec.ts"
+    ],
+    "documentationScope": "specs/035-ajustes-navegacao-conta/**",
+    "commits": [
+      "19b8ff13452a230311b7daf6814dde730b7504ea",
+      "c4eb9ea578a44aad5f72e95d764cf5e8188e09f1",
+      "6dc3bb17501a796ea245bdfed783f346fff54832",
+      "9283f31a30c0445ebee4f245b045ffba19be3b24"
+    ],
+    "patchHashCode": "56ec1a48d5c0a5f03c733c7ff595387d9c2cf3c6e8d2a6406d673394416ad445",
+    "published": false,
+    "cases": {
+      "layouts": 16,
+      "pairsPlanned": 86,
+      "pngPlanned": 172,
+      "testsIncludingSummary": 17,
+      "bilateralExecution": "NOT_RUN"
+    },
+    "checks": [
+      {
+        "command": "SpecKit check-prerequisites.sh --json --paths-only with worktree-local feature env",
+        "result": "PASS",
+        "notes": "Full analysis/plan/implement adapted manually; non-paths-only helper persists feature.json and was not used in read-only ANALYZE."
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --skipLibCheck --target ES2022 --module commonjs --moduleResolution node --esModuleInterop qa/hf-ui044/contract.ts qa/hf-ui044/shared.ts qa/hf-ui044/shell.spec.ts",
+        "exit": 0,
+        "result": "PASS"
+      },
+      {
+        "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+        "result": "PASS",
+        "notes": "Initially TS2783 source duplicate; fixed6dc3bb1 and full local check passed. Official hosted typecheck remains NOT_RUN."
+      },
+      {
+        "command": "eslint shared.ts smoke.spec.ts shell.spec.ts scale-red.mjs",
+        "exit": 0,
+        "result": "PASS"
+      },
+      {
+        "command": "git diff --check",
+        "exit": 0,
+        "result": "PASS"
+      }
+    ],
+    "runtimeReceipt": "close02-local-smoke.json",
+    "knownFindings": [
+      "Account320 name/menu clipping remains a candidate to reproduce in hosted runtime; geometry asserts and durable capture added; no product patch inferred.",
+      "Historical A isolated IHFR FAIL remains historical and B-owned; ratio1 unchanged."
+    ],
+    "dependencies": [
+      "Coordinator transport commits + focal configs + hosted runtime",
+      "B consumes frozen contract and A shared helper",
+      "Non-author PROMPT04 after terminal artifacts"
+    ],
+    "gitInitial": "clean at7704d981; coordinator smoke config later copied as exclusive coordinator artifact",
+    "gitFinalExpected": "All A-owned changes committed; coordinator smoke config remains untracked locally and excluded from A commit; ignored smoke evidence and dependency read junctions retained",
+    "decisions": [
+      "HUMAN_ACCEPTANCE_PENDING",
+      "GEOCODER_OPERATIONAL_PENDING",
+      "CONTRATO_EXPERIMENTAL",
+      "VALIDACAO_CIENTIFICA_PENDENTE",
+      "SUJEITO_A_RECALIBRACAO",
+      "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+    ]
+  }
 }

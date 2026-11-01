@@ -1,3 +1,13 @@
+# CLOSE-PARALLEL-02 — handoff final A
+
+Estado **UI06_A_EVIDENCE_COMPLETE**: a coleta bilateral planejada do shell foi executada e auditada no run41356318087/1, SHAebf7e970, artifact13103164262. São86pares PASS/COMPLETE,172PNGs,79NON_EQUIVALENT/7COMPARABLE e86HUMAN_DECISION_PENDING. [Análise visual final](close02-r3-visual-analysis.md), [recibo com manifesto/hashes](close02-r3-final.json).
+
+Ressalva visual A-R3-RAIL-LABEL-1440-200: rótulos Laboratórios/card parecem próximos no desktop/text200; faltam retângulos individuais para afirmar interseção ou causa. Os seis mainUNOBSERVED da referência e os dois focos obscuros permanecem literais. Os seis reloadsLoading foram observados antes da configuração; o estado e a fonte medidos não garantem legibilidade no PNG posterior. Coleta completa não é paridade/aceite; HUMAN_TYPOGRAPHY_REVIEW_PENDING e HUMAN_ACCEPTANCE_PENDING.
+
+Produto transportável para A funcional: CSS97204d7 + próprio E2E035236f824 + docs035. Shared/shell/smoke são instrumentação da candidata QA com contrato/config do coordenador; não copiá-los ou copiarScientificNoticeB paraA. Publicação única consolidada e revisão não autora pertencem ao coordenador. B permanece bloqueada; RC2d62/15PASS é resultado distinto deRC3NOT_RUN. Nenhum código/rerun/push nesta conclusão.
+
+## Checkpoint inicial preservado, superado pelos recibos posteriores
+
 # CLOSE-PARALLEL-02 — A harness handoff
 
 Estado: **A_HARNESS_READY_FOR_RUNTIME**. Autor real `/root/a_harness`, worktree managed

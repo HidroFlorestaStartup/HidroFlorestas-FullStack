@@ -177,3 +177,79 @@ na reserva observada. Node24.14 local serve smoke sintético, não runtime ofici
 REVIEW: smoke Chromium real e contraprovaRED antes da qualificação integrada,
 syntax/focal types e escopo/whitespace; typecheck completo pelo runner do coordenador.
 UI06 bilateral/15gates novos/aceite humano permanecemNOT_RUN até evidência própria.
+
+### CLOSE02 — reparo focal de pares incompletos após QA estática
+
+ANALYZE read-only: o retorno de `some([])` permitiaCOMPARABLE sem imagens;
+shared.capturePair([]) também registravaPASS sem erro de captura. SeveridadeMEDIUM,
+evidência reproduzível emzero/umruntime; não muda produto, requisito ou autoridade.
+PLAN/IMPLEMENT autorizado: cardinalidade diferente dedois torna execuçãoFAIL,
+comparabilidadeINSUFFICIENT_EVIDENCE e completudePARTIAL emshared e shell.
+O catch de shell mantém a classificação capturada emvez de sobrescrevê-la.
+Adicionadosdois casos smoke semDB; caminhos completos preservam lógica anterior.
+REVIEW: RED2/2FAIL antes do reparo; GREEN5/5PASS, types completos locais/lint/diffPASS.
+Node24.14/Chromium existente: não éCI oficial. Código exclusivo d27a1e6,
+[recibo e hashes](evidence/close02-pair-repair.json). Publicação e runtime corrigido
+permanecem com o coordenador; nenhum resultado é herdado da rodada remota emcurso.
+
+### CLOSE02 — seletor da criação de laboratório na referência
+
+ANALYZE read-only: FieldShell295ff da referência cbb954a7 inclui oasterisco
+required emspanaria-hidden. R1Bfalhou no setup relatado pelo coordenador;
+o mesmo seletorA foi reproduzido emChromium sintético: getByLabel exactnãoresolve.
+PLAN/IMPLEMENT: somente createLab nostarter passa atextbox pelo nomeacessível
+exato. FullStack, produto dareferência e timeouts permanecem com os mesmosbytes.
+REVIEW: RED1/1FAIL; GREEN6/6PASS, seletorlabel0matches/textbox1match,
+types completos locais/lint/diffPASS. Código885b474 e [recibo](evidence/close02-starter-label-repair.json).
+Node24.14local/semDB; runtime hospedado corrigido aindaNOT_RUN. Reparo será
+agrupado pelo coordenador após oslogs deA/RC, sem publicar worker ourepetirR1.
+
+### CLOSE02 — menu demonstrado em R1, diagnóstico e máscara
+
+ANALYZE read-only: PNGrealR1/194e9af mostrou menuConta foraàesquerda;
+ZIP13101369298 temdigestb9c5471d...,3pares/86,83NOT_RUN,17testesFAIL.
+CSSdeR1 é blobidênticoàbase doRED. TSX/CSS reais renderizadossemNext/DB,
+comsessão/imagem/link sintéticos eArial explicitamente observado, reproduziram3/6FAIL.
+Em320/text200: containingblockConta termina256; menulargura288 inicia−32.
+PLAN/IMPLEMENT autorizado somenteA: containingblock no grupoConta+Sair,
+right308, menucomeça20; dimensões/fontes não reduzidas. GREEN6/6.
+Regressão oficial035 acrescenta6casos320/390/1440×100/200 semimportqa,
+escalaexata16/32, nome/links/CDP/ratio1 eEscape. Artefatos usam-rects-geometry.json,
+comprovadamente cobertosnogloboficial. Mantenedor integraBparaIHFR; nenhumB copiado.
+
+R1timeout/contextclosed/cleanup observado; causa primária exataA não preservada,
+logo não afirmar retroativamente que seletorstarter foi a única causa. Diagnóstico
+novo grava estágios e preservaerroprimário quando cleanup tambémfalha. Sem ampliar
+timeouts, retries, escopodecleanup ou tocarfixturesalheias. Guard inicial continuafailclosed.
+
+MáscaraR1 encobria barra porque boundingbox deinputtextoparcialmente fora do
+scrollport era mascaradointegralmente. Sem prova de range, nenhumtipofoi excluído.
+REDpixelnavmagenta; novo recorte da máscara ao viewport/overflow mantém pixelda
+senhavisívelmagenta e navegaçãoverde. Overlays transparentes nãointerativos são
+somenteinstrumentação, removidos após captura; scroll/estilo deproduto não alterados.
+
+REVIEW:14/14smokesPASS12s no9ecfa5f; typecheckcompleto local/lint/diffPASS.
+Produto97204d7 + nomeartefato236f824; helpersQA9ecfa5f. Runtimeoficialreparado
+NOT_RUN atérodada docoordenador; produtoalterado exige15gates noSHAfinal.
+[Recibo comgeometrias/fontes/hashes](evidence/close02-menu-cleanup-mask-repair.json).
+
+### CLOSE02 — ANALYZE R2 → PLAN/IMPLEMENT para R3 final
+
+R2index/journal conciliados, semraceobservada;14summaryIDs são8FAIL∪12INSUFF.
+Visual realrevisado em[análise](evidence/close02-r2-visual-analysis.md).
+Reparo deConta aparece correto nas imagens reais. Restantes causas são restritas ao
+comparador/àreferência:6reloads,2focosstarterobscuros e6regiõesmainforaViewport.
+PLAN: manterfontemainUNOBSERVED/INSUFFliteral; exceção estrita pin/layout/estado+
+geometria dáNON_EQ semqualificarfonte. Foco porfonte, FullStackratio1/hit intactos;
+referênciaDEFECT_FOUNDliteral. Reload observaLoading/not-foundantesconfigurar32.
+TextNodeDIVincluído; CDP8 após scanDOMescopado semtruncamentopré-visibilidade.
+REVIEW: doisRED1/1 (LoadingDIV e300irmãosoffscreen),GREEN19/19PASS12.9s,
+typescompletoslocais/lint/diffPASS; somenteqa3paths, produto/timeouts intactos.
+Sourcecode58440f7; [recibo](evidence/close02-r2-analysis-r3-repair.json).
+R3oficial segueNOT_RUN atécoordenador; nãoherdarR2FAIL nem declararaceite.
+
+### CLOSE02 — REVIEW/COMMIT/HANDOFF R3 real
+
+ANALYZE/REVIEW: artefato final13103164262, run41356318087/1, SHAebf7e970 auditado integralmente por hashes/CRC/dimensões e índice/journal, com32PNGs abertos. Resultado86PASS/COMPLETE,79NON_EQUIVALENT/7COMPARABLE; requisito86HUMAN_DECISION_PENDING. [Análise e limites](evidence/close02-r3-visual-analysis.md), [manifesto](evidence/close02-r3-final.json). Coleta A encerra UI06_A_EVIDENCE_COMPLETE, preservando6mainUNOBSERVED/INSUFFregional e tipografia/aceite humano pendentes.
+
+Não há nova IMPLEMENT nesta conclusão: docs-only, três rodadasQA esgotadas. Publicação funcional consolidada A transporta CSS+próprio035+docs; QA permanece candidata. RC2d62/15PASS comunicado pelo coordenador não se torna RC3 (NOT_RUN); UI06_B bloqueada e CI isoladaA/dependênciaB continuam distintas. NativeLoading é observação pré-configure; CDP≠legibilidade do PNG posterior.

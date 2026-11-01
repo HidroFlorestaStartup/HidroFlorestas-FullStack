@@ -82,3 +82,7 @@ Reutilizar a stack e APIs existentes; implementação e inspeção detalhada ain
 **Rastreabilidade:** UI-01 → FR-035-001/004, US1; UI-05 → FR-035-002/004, US2; UI-06 → FR-035-003, US3 (comparação de runtime do starter pendente). Code-First (EM_REVISAO): CF-PRD-FR-003/004/011, CF-US-004/005/007/008 e CF-UC-004/006/016/017; contratos implementados das specs 018/019. Nenhuma regra nova de laboratório, permissão, conta ou sessão foi aprovada.
 
 **Limite objetivo:** UI-06 exige execução real de starter e FullStack no mesmo estado/viewport; screenshots originais da PR #44 são apenas referência. O gate visual completo permanece NOT_RUN até haver as duas execuções e comparação documentada. Resultados reais da Actions ficam na descrição da PR #46, sempre associados ao SHA/tentativa.
+
+## Estado factual CLOSE02 — coleta R3, 01/11/2026
+
+O requisito FR-035-003 agora possui execução bilateral real e[análise atual](evidence/close02-r3-visual-analysis.md): run41356318087/1, SHAebf7e970,86pares/172PNGs completos. **UI06_A_EVIDENCE_COMPLETE** qualifica a coleta, não aprovação da tipografia/US3 ou aceite humano.79paresNON_EQUIVALENT e6regiõesmainstarterUNOBSERVED continuam explícitos. HUMAN_TYPOGRAPHY_REVIEW_PENDING/HUMAN_ACCEPTANCE_PENDING e bloqueioUI06_B permanecem. Este adendo substitui somente oNOT_RUN da comparaçãoA nos parágrafos históricos; não muda intenção, requisitos ou resultados antigos.

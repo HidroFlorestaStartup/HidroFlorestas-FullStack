@@ -1,6 +1,7 @@
 import { expect, test, type BrowserContext, type Page, type TestInfo } from "@playwright/test";
 import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { execFileSync } from "node:child_process";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 import { AUTH_FIXTURE_USERS, countAuthFixtureUsers, runAuthFixtureCommand } from "../fixtures/auth-users";
 import { AREA_FIXTURES, cleanupAreaFixtures, countAreaFixtures, setupAreaFixtures } from "../fixtures/areas";
@@ -154,3 +155,55 @@ test("UI-05: simulated bottom safe-area increases the actual fixed rail padding"
     await cdp.detach();
   }
 });
+
+// Product regression: this file remains executable on functional A without qa/.
+for (const width of [320, 390, 1440]) for (const textScale of [100, 200] as const) {
+  test("UI-01: account menu name and actions fit " + width + "px at text" + textScale, async ({ page, context }, info) => {
+    await login(context, info, AUTH_FIXTURE_USERS[0].id);
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/workspace"); await page.waitForLoadState("networkidle");
+    await page.evaluate(scale => document.documentElement.style.setProperty("font-size", scale + "%", "important"), textScale);
+    const expectedPx = textScale === 200 ? 32 : 16;
+    await expect.poll(() => page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize)),
+      { timeout: 3_000, intervals: [25, 50, 100, 150, 200] }).toBe(expectedPx);
+    await page.evaluate(async () => { await document.fonts.ready; await new Promise<void>(done => requestAnimationFrame(() => requestAnimationFrame(() => done()))); });
+    expect(await page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize))).toBe(expectedPx);
+    const account = page.getByRole("button", { name: "Conta", exact: true });
+    await account.focus(); await account.press("Enter");
+    await expect(account).toHaveAttribute("aria-expanded", "true");
+    const menu = page.locator("#application-account-menu");
+    const name = menu.locator("p");
+    await expect(name).toHaveText([AUTH_FIXTURE_USERS[0].firstName, AUTH_FIXTURE_USERS[0].lastName].join(" "));
+    for (const label of ["Alterar senha", "Excluir conta"]) await expect(menu.getByRole("link", { name: label, exact: true })).toBeInViewport({ ratio: 1 });
+    const geometry = await menu.evaluate(node => {
+      const rect = (element: Element) => { const r = element.getBoundingClientRect(); return { left: r.left, right: r.right, top: r.top, bottom: r.bottom,
+        width: r.width, height: r.height, scrollWidth: element.scrollWidth, clientWidth: element.clientWidth }; };
+      return { viewport: { width: innerWidth, height: innerHeight }, rootFontPx: parseFloat(getComputedStyle(document.documentElement).fontSize),
+        menu: rect(node), name: rect(node.querySelector("p")!), links: [...node.querySelectorAll("a")].map(rect) };
+    });
+    const cdp = await context.newCDPSession(page);
+    const fonts = [];
+    try {
+      await cdp.send("DOM.enable"); await cdp.send("CSS.enable");
+      const { root } = await cdp.send("DOM.getDocument");
+      for (const selector of ['#application-account-menu p', '#application-account-menu a[href="/change-password"]', '#application-account-menu a[href="/delete-account"]']) {
+        const { nodeId } = await cdp.send("DOM.querySelector", { nodeId: root.nodeId, selector });
+        const result = await cdp.send("CSS.getPlatformFontsForNode", { nodeId });
+        const observed = result.fonts.filter(font => font.glyphCount > 0).map(({ familyName, isCustomFont, glyphCount }) => ({ familyName, isCustomFont, glyphCount }));
+        expect(observed.length).toBeGreaterThan(0); fonts.push({ selector, fonts: observed });
+      }
+    } finally { await cdp.detach(); }
+    const state = "account-menu-" + width + "-text" + textScale;
+    await capture(page, info, state);
+    const target = join(process.cwd(), ".accounts-validation", "frontend-mobile-navigation", "hf-ui035-" + state + "-rects-geometry.json");
+    await writeFile(target, JSON.stringify({ source: "fullstack", syntheticFixture: true, fullPage: false, textScale,
+      sha: process.env.GITHUB_SHA ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim(),
+      tree: execFileSync("git", ["rev-parse", "HEAD^{tree}"], { encoding: "utf8" }).trim(),
+      run: process.env.GITHUB_RUN_ID ?? null, attempt: process.env.GITHUB_RUN_ATTEMPT ?? null, ...geometry, fonts }, null, 2) + "\n");
+    for (const rect of [geometry.menu, geometry.name, ...geometry.links]) {
+      expect(rect.left).toBeGreaterThanOrEqual(0); expect(rect.right).toBeLessThanOrEqual(width);
+      expect(rect.scrollWidth).toBeLessThanOrEqual(rect.clientWidth);
+    }
+    await account.press("Escape"); await expect(account).toHaveAttribute("aria-expanded", "false"); await expect(account).toBeFocused();
+  });
+}
