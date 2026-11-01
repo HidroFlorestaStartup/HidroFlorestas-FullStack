@@ -1,0 +1,107 @@
+name: UI06 shell bilateral evidence
+on:
+  push:
+    branches: [codex/hf-ui044-ui06-bilateral-20261101]
+permissions:
+  contents: read
+concurrency:
+  group: ui06-shell-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  capture:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/codex/hf-ui044-ui06-bilateral-20261101' &&
+      github.event_name == 'push' && github.event.created == true &&
+      github.event.forced == false && github.event.deleted == false && github.run_attempt == 1
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Verify frozen base, diff and Preview guard
+        run: |
+          $ErrorActionPreference='Stop'
+          if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows') { throw 'Hosted Windows only.' }
+          $expected='6c61056fe1dc2193e225d935f49b78cb6c6781ed'
+          $parent=(& git rev-parse HEAD^).Trim()
+          if ($LASTEXITCODE -or $parent -ne $expected) { throw 'Wrong visual candidate parent.' }
+          $parents=(& git rev-list --parents -n 1 HEAD).Trim() -split ' '
+          if ($LASTEXITCODE -or $parents.Count -ne 2) { throw 'Expected one parent.' }
+          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-ui06-bilateral-20261101' -cne $false) { throw 'Preview guard absent.' }
+          $allowed=@('.github/workflows/hf-ui06-bilateral.yml','vercel.json','scripts/hf-ui06-visual.ps1','tests/e2e/hf-ui06-bilateral.spec.ts')
+          $changed=@(& git diff --name-only $expected HEAD)
+          if ($LASTEXITCODE -or $changed.Count -ne 4 -or @($changed | Where-Object { $_ -notin $allowed }).Count) { throw 'Unexpected patch scope.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count) { throw 'Private dotenv prohibited.' }
+          if (Test-Path -LiteralPath '.vercel') { throw 'Provider project configuration prohibited.' }
+          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET')) {
+            if (Test-Path "Env:$name") { throw "Inherited application/provider configuration prohibited: $name" }
+          }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
+          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
+          path: starter
+          persist-credentials: false
+      # Exact mechanism verified in RC run 41275910130/1.
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Install locked dependencies and runner-only Bun
+        timeout-minutes: 9
+        run: |
+          $ErrorActionPreference='Stop'
+          node --version
+          npm --version
+          if ((node --version).Trim() -ne 'v24.19.0' -or $LASTEXITCODE) { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'FullStack locked install failed.' }
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generate failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next route/type generation failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Candidate typecheck failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+          npm install --global bun@1.3.11 --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Runner-only Bun install failed.' }
+          if ((bun --version).Trim() -ne '1.3.11' -or $LASTEXITCODE) { throw 'Wrong runner Bun.' }
+          Push-Location ../starter
+          try {
+            if ((git rev-parse HEAD).Trim() -ne 'cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f') { throw 'Wrong starter SHA.' }
+            bun install --frozen-lockfile
+            if ($LASTEXITCODE) { throw 'Starter frozen install failed.' }
+            bun run typecheck
+            if ($LASTEXITCODE) { throw 'Starter typecheck failed.' }
+          } finally { Pop-Location }
+      - name: Capture only the focal UI06 matrix
+        timeout-minutes: 21
+        run: ./scripts/hf-ui06-visual.ps1
+      - name: Archive durable masked pairs
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: ui06-shell-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/ui06/*.png
+            fullstack/.accounts-validation/ui06/*.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
