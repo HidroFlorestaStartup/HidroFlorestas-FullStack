@@ -1,0 +1,163 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "B",
+  "agentId": "/root/b_visual",
+  "state": "B_VISUAL_READY_FOR_RUNTIME",
+  "worktree": "managed:hf044-b/HidroFlorestas-FullStack",
+  "branch": "codex/hf044-b-local-20261101",
+  "functionalBase": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+  "setupCommit": "1b6a2d349a527ac6153d027a21e521c88b691e7b",
+  "importedDependencyCommitsNotAuthoredByB": [
+    "f4d551d",
+    "51b9733"
+  ],
+  "implementationCommit": "f42408310b9135ba7075be7452bedac02ae97cd2",
+  "implementationTree": "36299c935705e04bdea76d86d4dfda003600bdb7",
+  "implementationPatchSha256": "baef29cd3e87624e08a3b550b9d3994d1ce8aa3f51e2b3929cff27d6f5f7173b",
+  "pathsChangedInImplementation": [
+    "qa/hf-ui044/domain-fixtures.ts",
+    "qa/hf-ui044/domain.spec.ts",
+    "specs/036-ajustes-area-coletas-ihfr/evidence/close02-comparison.md",
+    "specs/036-ajustes-area-coletas-ihfr/evidence/close02-matrix.json",
+    "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+    "specs/036-ajustes-area-coletas-ihfr/plan.md",
+    "specs/036-ajustes-area-coletas-ihfr/spec.md",
+    "specs/036-ajustes-area-coletas-ihfr/tasks.md"
+  ],
+  "receiptPaths": [
+    "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
+    "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json"
+  ],
+  "productPaths": [],
+  "instrumentationPaths": [
+    "qa/hf-ui044/domain.spec.ts",
+    "qa/hf-ui044/domain-fixtures.ts"
+  ],
+  "publication": {
+    "performed": false,
+    "workerPush": false,
+    "candidate": "Only exclusive B delta plus dependencies supplied by coordinator",
+    "functionalBAllowlist": [
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-comparison.md",
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-matrix.json",
+      "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "specs/036-ajustes-area-coletas-ihfr/spec.md",
+      "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
+      "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json"
+    ],
+    "functionalBProductDelta": [],
+    "excludeFromFunctionalB": [
+      "qa/hf-ui044/domain.spec.ts",
+      "qa/hf-ui044/domain-fixtures.ts"
+    ],
+    "reason": "Executable domain comparator requires shared.ts(A) and contract/configs(coordinator); keep it on composed QA candidate, never import whole composition into B"
+  },
+  "coverage": {
+    "plannedPairs": 75,
+    "centralPairs": 60,
+    "qualifierPairs": 12,
+    "keyboardHistoryPairs": 2,
+    "reloadPairs": 1,
+    "testsDiscovered": 76,
+    "requirements": [
+      "FR-036-001",
+      "FR-036-002",
+      "FR-036-003",
+      "FR-036-004",
+      "FR-036-005",
+      "SC-036-001",
+      "SC-036-002",
+      "SC-036-003",
+      "SC-036-004"
+    ],
+    "newTasks": [
+      "T024",
+      "T025",
+      "T026",
+      "T027",
+      "T028",
+      "T029",
+      "T030"
+    ],
+    "runtime": "NOT_RUN",
+    "imageInspection": "NOT_RUN"
+  },
+  "checks": [
+    {
+      "command": "TypeScript transpileModule over domain.spec.ts/domain-fixtures.ts",
+      "exitCode": 0,
+      "result": "PASS_SYNTAX_ONLY"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "result": "PASS_LOCAL_FULL_TYPECHECK",
+      "node": "24.14.0",
+      "qualification": "Existing dependency/generated junctions; not CI setup-node24.19, Prisma generation or Next typegen"
+    },
+    {
+      "command": "npx eslint qa/hf-ui044/domain.spec.ts qa/hf-ui044/domain-fixtures.ts",
+      "exitCode": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "Playwright CLI test --list using temporary B-only config without webServer/database",
+      "exitCode": 0,
+      "result": "PASS_76_TESTS_DISCOVERED",
+      "runtime": false
+    },
+    {
+      "command": "git diff --check",
+      "result": "Initial commit had extra EOF blank line in plan.md; corrected in receipt commit; final verification separately required"
+    }
+  ],
+  "officialCommand": "HF_UI044_SUITE=domain; node node_modules/@playwright/test/cli.js test --config qa/hf-ui044/playwright.visual.config.ts domain.spec.ts --workers=1 --retries=0",
+  "officialCommandContext": "Run only through coordinator Windows Actions script/accounts-local-postgresql Run Regression; inherited native guards and webServer required",
+  "runtimeEvidence": {
+    "codeShaTested": null,
+    "run": null,
+    "attempt": null,
+    "artifact": null,
+    "execution": "NOT_RUN",
+    "comparability": "PLANNED_PER_CASE_NOT_RUNTIME_EVALUATION",
+    "requirement": "HUMAN_DECISION_PENDING",
+    "completeness": "MISSING"
+  },
+  "knownDifferences": [
+    {
+      "id": "EQ-B1",
+      "classification": "NON_EQUIVALENT",
+      "source": "starter cbb954 area route sorts confirmedAt and has no area current summary"
+    },
+    {
+      "id": "EQ-B2",
+      "classification": "NON_EQUIVALENT",
+      "source": "starter cbb954 adapter uses predefined numeric diagnosis/decomposition"
+    },
+    {
+      "id": "EQ-B3",
+      "classification": "NON_EQUIVALENT",
+      "source": "reference created resource is memory-only and reload loses it"
+    }
+  ],
+  "cleanup": {
+    "browser": "Implemented in afterAll; runtime NOT_RUN",
+    "logicalData": "NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL",
+    "physicalData": "Coordinator Stop in finally, then disposable GitHub-hosted runner discarded",
+    "triggersDisabled": false,
+    "providers": false
+  },
+  "initialGitStatus": "Clean at assigned setup, before coordinator imported two A helper commits",
+  "statusBeforeReceipt": "Clean at implementation commit; receipt adds own two files and fixes own plan whitespace only",
+  "preservation": "No principal checkout/index/branch edit, no owner A/C code edit, no removal/reset/cleanup of existing21files, no global tool installation",
+  "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING",
+  "independentReview": "NOT_RUN_PENDING_NON_AUTHOR_AFTER_RUNTIME",
+  "scientificQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ]
+}

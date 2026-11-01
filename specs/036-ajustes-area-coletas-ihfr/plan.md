@@ -117,3 +117,80 @@ Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/so
 4. **REVIEW:** no código `d7586ab...`, run 41252813575/1, journal 15 PASS/0 FAIL/0 NOT_RUN; ZIP íntegro; 77 pares PNG+JSON FullStack B/IHFR com `head` idêntico e `fullPage:false`, viewport documental sem overflow registrado. **Starter executado neste ambiente: NOT_RUN**; falta a mesma fixture/viewport lado a lado. T008/T016 permanecem abertos. T017: PR #47 deve conservar Draft, estado no topo e histórico de tentativas.
 
 **Ambiente e impedimento:** acesso de leitura/escrita ao GitHub, artefato Actions local e inspeção estática da referência de Pedro; sem checkout atual dos dois repositórios neste runtime, sem Bun e sem resolução DNS do GitHub. O ZIP local disponível é histórico (`007-ihfr-evolution`), não representa nenhum dos HEADs de comparação. Não houve Cloud Browser, provedor, migration hospedada ou nova execução browser. `LOCAL_WORKTREES_NOT_OBSERVABLE`; `NATIVE_SUBAGENTS_NOT_AVAILABLE`; nenhuma revisão independente simulada. `B_VISUAL_EVIDENCE_PENDING` por ausência do runtime starter com fixtures equivalentes e da comparação bilateral executada. A validação de consumo pelo shell A requer QA composta read-only e/ou futura integração autorizada, não cherry-pick nesta branch.
+
+## CLOSE-PARALLEL-02 / B — ANALYZE → PLAN → IMPLEMENT → REVIEW
+
+Estado: EM_ANDAMENTO / B_VISUAL_READY_FOR_RUNTIME. Agente nativo `/root/b_visual`,
+worktree própria `hf044-b`, branch `codex/hf044-b-local-20261101`; base6c61056f,
+setup1b6a2d3 e helper A transportado pelo coordenador em f4d551d, sem autoria B desse helper.
+Checkout principal e seu índice não foram alterados por B.
+
+### ANALYZE somente leitura
+
+| ID | Severidade | Fonte | Constatação / tratamento autorizado |
+|---|---|---|---|
+| COV-B1 | HIGH | FR-036-004, T008/T016 | Falta teste bilateral executável de domínio; acrescentar T024–T030 e casos focais. |
+| EQ-B1 | MEDIUM | starter route área cbb954a | Ordena `confirmedAt`, sem resumo CURRENT da área. NON_EQUIVALENT; UI-02 posterior governa o produto. |
+| EQ-B2 | MEDIUM | starter adapter/mock.ts cbb954a | Scores/decomposição predefinidos; mesmo input não prova equivalência científica/numérica. |
+
+Inventário:5 FR,4 SC e23 tarefas prévias. Os nove requisitos têm tarefas; não há requisito
+novo de produto, conflito constitucional, mudança científica ou tarefa sem recorte autorizado.
+Sem `.specify/extensions.yml` ou checklist036. Skills locais analyze/plan/implement lidas;
+pré-requisitos Bash executados com contexto036. O script persiste `.specify/feature.json`
+ignorado na própria worktree; não foi executado setup-plan porque copiaria template sobre plano
+existente. O ciclo foi adaptado manualmente com delta mínimo, sem alegar CLI Spec Kit completa.
+
+### PLAN e reanálise de consistência
+
+1. T024: congelar grade por requisito/estado/viewport em [close02-matrix.json](evidence/close02-matrix.json).
+2. T025: fixtures oficiais de autenticação e APIs reais para laboratório/áreas/coletas/ambientais/IHFR;
+   confirmar mais nova antes da anterior e preservar offsets distintos, replay por chave e origem CURRENT.
+3. T026: testes independentes e coleta incremental durável via helper A. Falha visual isolada deixa recibo
+   sanitizado por id/linha e não interrompe os casos seguros; sumário terminal rejeita FAIL/NOT_RUN/lacunas/fontes UNOBSERVED.
+4. T027/T028: executar job ui-b do coordenador e analisar PNGs reais; comparar hierarquia, tipografia,
+   densidade, navegação e ações. Não publicar aceitação antecipada.
+5. T029/T030: validação estática/revisão própria/commit local, depois resultado factual de runtime
+   e entrega ao revisor não autor. Infraestrutura/configs/guardas pertencem exclusivamente ao coordenador.
+
+Reanálise: cada delta mapeia FR-036-004/SC-036-002; ordenação/origem também FR-036-001;
+qualificadores FR-036-003; autorização/imutabilidade FR-036-005. Sem dependência circular de A:
+B escreveu fixtures/casos contra contrato congelado, depois consumiu helpers somente leitura.
+
+### Implementação e validação local
+
+Grade: cinco estados ×12 layouts =60 pares;12 qualificadores (320x900,667x375/inset34,844x390,
+todos200); duas jornadas teclado/histórico390/1440/200; um reload390/200. São75 pares planejados,
+150 PNG/JSON potenciais, mais um teste de resumo, sem equiparar contagem à aprovação.
+Layout central:320/375/390/768/1440 em100/200 e667x375/844x390 em200.
+
+Captura de área povoada centraliza a seção Coletas confirmadas; registro mantém início da coleta;
+ausência centraliza a mensagem humana; resultado centraliza IHFR. Qualificadores completos são
+rolados e medidos individualmente, com `toBeInViewport({ratio:1})` preservado. Nenhum ajuste de estilo
+ou scroll é aplicado depois da medição para esconder defeito. Escala após client navigation é medida.
+Reload registra antes/depois antes da reconfiguração; perda da fixture em memória no starter é explícita.
+
+Executado localmente com Node24.14 existente: sintaxe TypeScript PASS; ESLint dos dois arquivos PASS;
+descoberta Playwright sem servidor/banco PASS (76 testes). Typecheck focal encontrou inicialmente
+cinco erros de tipo da grade B (corrigidos) e um erro no helper A compartilhado, devolvido ao owner
+(`source` duplicado, shared.ts:180), corrigido por A em6dc3bb1. Typecheck completo oficial e runtime
+domínio cabem ao runner Windows Node24.19.0; não foram declarados executados localmente.
+
+### Setup/cleanup e privacidade
+
+Máquina ui-b exclusiva. Validar runner/ref/attempt e auth fixture vazia antes de setup; login nativo,
+papéis reais USER/OWNER. Adapter de referência só no próprio browser. Não arquivar inputs científicos,
+chaves idempotentes, payloads HTTP, segredos, cookies ou storage. Traces/vídeos/screenshots automáticos off;
+helpers mascaram input/textarea e salvam apenas PNG/JSON sanitizados com SHA/tree/run/attempt.
+
+DELETE laboratório recusa áreas/confirmados, conforme `laboratories.service.ts`. Não desabilitar triggers
+nem falsificar cleanup lógico. Dados sintéticos imutáveis ficam somente no banco owned até Stop/descarte
+do runner, procedimento confirmado pelo coordenador nesta missão. Teardown lógico de dados:
+NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL;
+browser/CDP são fechados no afterAll; Stop físico é responsabilidade do orquestrador em finally.
+Nenhum PostgreSQL, Bun ou provedor real foi executado/provisionado no host de B.
+
+Critérios de término:75 casos com recibos completos, inspeção real de pares e diferenças, sem erro
+técnico obrigatório ou lacuna, revisão não autora, estado do Git explícito. Até lá T008/T016/T027/T028
+permanecem abertos. HUMAN_ACCEPTANCE_PENDING; qualificadores experimentais IHFR preservados.
+
+**Checagem local adicional:** `tsc --noEmit --incremental false` PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.

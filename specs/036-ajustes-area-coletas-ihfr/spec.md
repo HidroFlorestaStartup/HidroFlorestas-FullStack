@@ -82,3 +82,24 @@ API/leituras podem exigir adaptação focal, a demonstrar pelo executor. Qualque
 ## Estado verificado HF-UI-044-CLOSE-B (2026-11-01)
 
 `EVIDENCIA_IMPLEMENTACAO`: a suíte RC no **código** `d7586ab95c69c45211e463516080e741bbb3931a` terminou 15/15 PASS em [run 41252813575, tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41252813575). As verificações de ocorrências/offsets, links, presença ambiental e qualificadores no cenário sintético constam dos testes e logs desse mesmo código. Capturas verificadas da execução **FullStack** não constituem a comparação bilateral solicitada por FR-036-004/SC-036-002. **T008/T016 continuam NOT_RUN**, pois o starter `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f` não foi executado em paridade de fixtures/estado/viewport. O impedimento e o mapa de provas estão em [implementation-evidence.md](implementation-evidence.md). Não existe aceite humano, validação científica definitiva ou validação composta com o HEAD A atual.
+
+## Continuidade CLOSE-PARALLEL-02 / B — 2026-11-01
+
+`EVIDENCIA_IMPLEMENTACAO` estática: nova instrumentação focal em `qa/hf-ui044/domain.spec.ts`
+e `domain-fixtures.ts`, fora do testDir oficial. Nenhum arquivo de produto, contrato científico,
+schema, shell A ou formulário C alterado. Base funcional composta `6c61056f`, pacote `22bb9c1b`.
+
+FR-036-004/SC-036-002 são exercitados por75 casos pareados planejados:60 recortes centrais,
+12 capturas individuais de qualificadores, duas jornadas teclado/histórico e uma observação
+de reload. O índice registra também NOT_RUN. A referência preserva seu adapter/mock no próprio
+browser; o FullStack recebe chamadas HTTP nativas autenticadas sobre PostgreSQL owned do runner.
+
+As fontes do starter `cbb954a` mostram ordenação por confirmação e ausência do resumo CURRENT
+na área; scores são predefinidos para demonstração. São diferenças de modelo explicitadas como
+NON_EQUIVALENT, sem alterar a decisão posterior UI-02 ou importar resultados simulados.
+Área vazia/registro/ausência possuem estados semanticamente pareados; a avaliação visual depende
+dos PNG reais. Execução, comparabilidade, requisito e completude são eixos independentes.
+
+Runtime bilateral desta continuidade e inspeção de imagens: NOT_RUN no corte de implementação.
+T008/T016 e novos itens de runtime continuam abertos. `B_VISUAL_READY_FOR_RUNTIME` descreve
+o preparo do código, não `UI06_B_EVIDENCE_COMPLETE`. Aceite humano permanece pendente.
