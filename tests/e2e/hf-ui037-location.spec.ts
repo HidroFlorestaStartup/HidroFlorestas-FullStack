@@ -1,6 +1,10 @@
-import { test, expect, type BrowserContext, type TestInfo } from "@playwright/test";
+import { test, expect, type BrowserContext, type Page, type TestInfo } from "@playwright/test";
 import { AREA_FIXTURES, setupAreaFixtures, cleanupAreaFixtures, countAreaFixtures, createAreaFixtureClient } from "../fixtures/areas";
-import { writeFile } from "node:fs/promises";
+import { copyFile, mkdir, writeFile } from "node:fs/promises";
+import { constants } from "node:fs";
+import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
+import { join } from "node:path";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
 
 const lab = AREA_FIXTURES.laboratoryIds[0];
@@ -11,6 +15,47 @@ async function login(context: BrowserContext, info: TestInfo) {
     name: "auth_token", value: signSessionToken(AREA_FIXTURES.userIds[0]),
     url: String(info.project.use.baseURL),
   }]);
+}
+
+// Archive outside Playwright outputDir before any subsequent suite can clean it.
+// COPYFILE_EXCL makes an accidental repeated attempt visible instead of replacing proof.
+async function preserveUi037Capture(png: string, meta: string, label: string,
+  durable = join(process.cwd(), ".accounts-validation", "frontend-areas")) {
+  if (label !== "mobile" && label !== "desktop") throw new Error("Unknown UI037 capture label.");
+  await mkdir(durable, { recursive: true });
+  const stem = "ui037-frontend-areas-hf-ui037-location-" + label + "-viewport";
+  const pngPath = join(durable, stem + ".png");
+  const jsonPath = join(durable, stem + ".json");
+  await copyFile(png, pngPath, constants.COPYFILE_EXCL);
+  await copyFile(meta, jsonPath, constants.COPYFILE_EXCL);
+  return { pngPath, jsonPath };
+}
+
+async function ui037ObservedFonts(page: Page) {
+  const cdp = await page.context().newCDPSession(page);
+  try {
+    await cdp.send("DOM.enable");
+    await cdp.send("CSS.enable");
+    const { root } = await cdp.send("DOM.getDocument");
+    // Text-bearing headings/labels only; never serialize text or sample SVG icons.
+    const { nodeIds } = await cdp.send("DOM.querySelectorAll", {
+      nodeId: root.nodeId, selector: "h1,h2,label",
+    });
+    const samples = [];
+    const visibleIndexes = await page.locator("h1,h2,label").evaluateAll(nodes => nodes
+      .map((node, index) => ({ index, rect: node.getBoundingClientRect() }))
+      .filter(({ rect }) => rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < innerHeight)
+      .map(({ index }) => index));
+    for (const index of visibleIndexes.slice(0, 12)) {
+      const nodeId = nodeIds[index];
+      if (!nodeId) continue;
+      const { fonts } = await cdp.send("CSS.getPlatformFontsForNode", { nodeId });
+      const rendered = fonts.filter(font => font.glyphCount > 0)
+        .map(({ familyName, isCustomFont, glyphCount }) => ({ familyName, isCustomFont, glyphCount }));
+      if (rendered.length) samples.push({ sampleIndex: samples.length, fonts: rendered });
+    }
+    return { status: samples.length ? "OBSERVED" : "UNOBSERVED", samples };
+  } finally { await cdp.detach(); }
 }
 
 test.describe.configure({ mode: "serial" });
@@ -64,8 +109,34 @@ test("three coordinate sources display partial address suggestions without requi
     const png = info.outputPath(name + ".png");
     const meta = info.outputPath(name + ".json");
     const mask = await page.locator("input,textarea").all();
-    await page.screenshot({ path: png, fullPage: false, animations: "disabled", mask });
-    await writeFile(meta, JSON.stringify({ case: "geocoded-map", viewport: { width, height }, fullPage: false, maskedInputs: mask.length, source: "Playwright-synthetic-UI037" }, null, 2) + "\n");
+    await page.evaluate(() => document.fonts.ready.then(() => undefined));
+    const measured = await page.evaluate(() => ({
+      width: innerWidth, height: innerHeight, devicePixelRatio,
+      rootFontSize: parseFloat(getComputedStyle(document.documentElement).fontSize),
+      computedBodyFont: getComputedStyle(document.body).fontFamily,
+    }));
+    expect(measured.width).toBe(width);
+    expect(measured.height).toBe(height);
+    expect(Number.isFinite(measured.rootFontSize)).toBe(true);
+    const fontsActuallyRendered = await ui037ObservedFonts(page);
+    const screenshot = await page.screenshot({ path: png, fullPage: false, animations: "disabled", mask });
+    expect(screenshot.readUInt32BE(16)).toBe(width);
+    expect(screenshot.readUInt32BE(20)).toBe(height);
+    const identity = (ref: string) => execFileSync("git", ["rev-parse", ref], { encoding: "utf8" }).trim();
+    const sourceSha = identity("HEAD");
+    if (process.env.GITHUB_SHA) expect(sourceSha).toBe(process.env.GITHUB_SHA);
+    await writeFile(meta, JSON.stringify({
+      case: "geocoded-map", source: "FullStack", sourceSha, sourceTree: identity("HEAD^{tree}"),
+      runId: process.env.GITHUB_RUN_ID ?? null, attempt: process.env.GITHUB_RUN_ATTEMPT ?? null,
+      state: "map-geocoded-address-present-masked", fixture: { synthetic: true, name: "AREA_FIXTURES" },
+      viewport: { width, height }, fullPage: false, maskedInputs: mask.length,
+      textScale: measured.rootFontSize / 16 * 100, ...measured, fontsActuallyRendered,
+      pngSha256: createHash("sha256").update(screenshot).digest("hex"),
+      execution: "PASS", comparability: "INSUFFICIENT_EVIDENCE",
+      requirement: "HUMAN_DECISION_PENDING", completeness: "PARTIAL",
+      note: "Single-project synthetic UI037 capture; final archive and visual review remain pending.",
+    }, null, 2) + "\n");
+    await preserveUi037Capture(png, meta, label);
     await info.attach(name, { path: png, contentType: "image/png" });
     await info.attach(name + "-viewport", { path: meta, contentType: "application/json" });
   }

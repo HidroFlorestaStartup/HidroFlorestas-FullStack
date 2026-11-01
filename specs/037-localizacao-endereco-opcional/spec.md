@@ -96,3 +96,14 @@ O teste `tests/contract/hf-ui037-address-optional.test.ts` confirma as oito comb
 `FR-037-001..005` e `SC-037-001..004` possuem cobertura de código/testes em Unit, Integration, Contract, E2E e Gates oficiais no SHA `63925b3639f3eec1dd4bd737f7be7adb881c83eb`, [Actions 41251980306/1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306), 15/15 PASS e 224 E2E. A matriz de prova individual, a separação de capturas e as falhas históricas estão em [implementation-evidence.md](implementation-evidence.md).
 
 **Limite de aceite:** este estado comprova **código e teste sintético**, não consultas a fornecedor real, conformidade de quota/cache/atribuição/licença/privacidade, captura dedicada `hf-ui037-location` no artefato, teste em dispositivo físico, QA independente ou aprovação humana. `HF_REVERSE_GEOCODER_URL` permanece desabilitado por padrão. `GEOCODER_OPERATIONAL_PENDING` e `HUMAN_ACCEPTANCE_PENDING` não bloqueiam a classificação técnica `UI037_CODE_SYNTHETIC_CLOSED`, mas **bloqueiam alegação de aceitação/ativação operacional**. A próxima validação deve considerar a composição de #45–#48 sob os HEADs atuais e autorização do mantenedor, sem merge nesta etapa.
+
+## CLOSE-PARALLEL-02 — evidência dedicada UI037 (2026-11-01)
+
+`C_CAPTURE_READY_FOR_RUNTIME`: instrumentação corrigida na worktree C, sem
+mudança de produto/API/CEP/schema. PNG+JSON são copiados imediatamente para
+`.accounts-validation/frontend-areas/` com nomes dedicados `ui037-frontend-areas-hf-ui037-location-{mobile,desktop}-viewport`;
+metadados registram escala/fontes/proveniência/máscaras e hash PNG. Contraprova
+de persistência/não sobrescrita executada, 2/2 PASS, com bytes sintéticos.
+`UI037_CAPTURE_PENDING` continua até runtime real e auditoria dos quatro arquivos
+no ZIP final após as suítes posteriores. Captura não é aceite visual/humano.
+`GEOCODER_OPERATIONAL_PENDING` e os qualificadores científicos são preservados.

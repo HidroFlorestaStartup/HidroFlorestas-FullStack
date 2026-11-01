@@ -17,3 +17,13 @@ Não executar merge/deploy nem se a CI ficar verde; revisão independente e acei
 ## Nota de execução observada — CLOSE-C (2026-11-01)
 
 O [run oficial 41251980306, tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306) no `CODE_SHA_TESTED=63925b3639f3eec1dd4bd737f7be7adb881c83eb` terminou 15/15 PASS, 224 E2E. Os globs de `package.json`, `scripts/imp006-test-runner.ts` e `playwright.config.ts` incluem realmente as suites 037. No [artefato 13062501328](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251980306/artifacts/13062501328) existem capturas do formulário pela suíte geral `frontend-areas` (320/375/768/1440 px, com metadados; 320 px a 200% do texto), **mas não existem entradas próprias `frontend-areas-hf-ui037-location-{mobile,desktop}.png`**. Assim, o passo 5 acima descreve a expectativa do harness, não um arquivo encontrado. A execução com provedor real segue `NOT_RUN/NOT_CONFIGURED`; aceitar manualmente só com nova evidência e decisão, sem alterar o status técnico sintético.
+
+## Cópia dedicada CLOSE-PARALLEL-02
+
+Contraprova sem banco: `node --test specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs`.
+No runtime oficial do coordenador, executar os15 gates sobre a candidata final;
+após Https/Deletion/Ihfr, exigir no ZIP exatamente PNG+JSON dedicados mobile390×844
+e desktop1440×900 em `.accounts-validation/frontend-areas/`, stems
+`ui037-frontend-areas-hf-ui037-location-{mobile,desktop}-viewport`. Validar digest/CRC,
+hash PNG/JSON, fullPage:false e SHA/tree/run/attempt do mesmo runtime. Conferir
+imagem real e máscara; só então UI037_CAPTURE_VERIFIED. Não repetir provider real.
