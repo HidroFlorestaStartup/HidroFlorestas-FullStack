@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { archive, configure, createRuntime, observeReload, platformFonts, sample, readCaseMetadata, waitForFontScale } from "./shared";
+import { archive, configure, createRuntime, observeReload, platformFonts, sample, readCaseMetadata, waitForFontScale, capturePair } from "./shared";
 import type { EvidenceCase } from "./contract";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -43,3 +43,28 @@ test("scale timeout persists sampled diagnostic and rethrows", async ({ browser 
     expect(lines.some(line => line.kind === "scale-diagnostic" && line.caseId === "expected-failure" && line.expectedPx === 32 && line.sampledPx.includes(16))).toBe(true);
   } finally { await runtime.context.close(); }
 });
+
+for (const sourceCount of [0, 1]) {
+  test("incomplete bilateral pair with " + sourceCount + " runtime is insufficient and fails", async ({ browser }) => {
+    const c: EvidenceCase = { id: "incomplete-pair-" + sourceCount, width: 320, height: 900, scale: 100, inset: 0,
+      state: "synthetic-incomplete-pair", requirementIds: ["FR-035-003"], fixture: { synthetic: true, database: false } };
+    const runtime = sourceCount === 1 ? await createRuntime(browser, "fullstack") : undefined;
+    try {
+      if (runtime) {
+        await runtime.page.route("http://127.0.0.1:3001/synthetic-pair", route => route.fulfill({ contentType: "text/html", body: html }));
+        await runtime.page.goto("http://127.0.0.1:3001/synthetic-pair");
+        await configure(runtime, c);
+      }
+      const result = await capturePair(runtime ? [runtime] : [], c, { regions: { header: "header", main: "main" } });
+      expect(result.execution).toBe("FAIL");
+      expect(result.comparability).toBe("INSUFFICIENT_EVIDENCE");
+      expect(result.completeness).toBe("PARTIAL");
+      expect(result.samples).toHaveLength(sourceCount);
+      const lines = (await readFile(join(archive, "cases.jsonl"), "utf8")).trim().split("\n").map(line => JSON.parse(line));
+      const persisted = lines.filter(line => line.kind === "case" && line.id === c.id).at(-1);
+      expect(persisted.execution).toBe("FAIL");
+      expect(persisted.comparability).toBe("INSUFFICIENT_EVIDENCE");
+      expect(persisted.completeness).toBe("PARTIAL");
+    } finally { if (runtime) await runtime.context.close(); }
+  });
+}

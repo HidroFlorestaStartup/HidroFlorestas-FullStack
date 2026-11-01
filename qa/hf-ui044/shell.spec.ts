@@ -40,16 +40,18 @@ async function capture(runtimes: Runtime[], c: EvidenceCase, unavailable = false
     } catch { errors.push(runtime.source + "_CAPTURE_FAILED"); }
   }
   const metadata = await Promise.all(samples.map(s => readCaseMetadata(s.json)));
+  const incomplete = samples.length !== 2;
+  if (incomplete) reasons.push("BILATERAL_PAIR_INCOMPLETE");
   const missingFonts = metadata.some(m => m.comparability === "INSUFFICIENT_EVIDENCE");
   for (const region of ["header", "main"]) {
     const primary = metadata.map(m => (m.fontsActuallyRendered[region]?.elements ?? []).flatMap((e: { fonts: { familyName: string; glyphCount: number }[] }) => e.fonts)
       .sort((a: { glyphCount: number }, b: { glyphCount: number }) => b.glyphCount - a.glyphCount)[0]?.familyName as string | undefined);
     if (primary.length === 2 && primary.every(Boolean) && primary[0]!.toLowerCase() !== primary[1]!.toLowerCase()) reasons.push("OBSERVED_FONT_MISMATCH_" + region);
   }
-  const result = { execution: errors.length ? "FAIL" : "PASS", comparability: missingFonts ? "INSUFFICIENT_EVIDENCE" : reasons.length ? "NON_EQUIVALENT" : "COMPARABLE",
-    requirement: "HUMAN_DECISION_PENDING", completeness: samples.length === 2 ? "COMPLETE" : "PARTIAL", reasons, samples, errors };
+  const result = { execution: incomplete || errors.length ? "FAIL" : "PASS", comparability: incomplete || missingFonts ? "INSUFFICIENT_EVIDENCE" : reasons.length ? "NON_EQUIVALENT" : "COMPARABLE",
+    requirement: "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons, samples, errors };
   await recordCase(c, result);
-  return result.execution === "PASS" && result.completeness === "COMPLETE";
+  return result;
 }
 async function account(runtime: Runtime, open: boolean) {
   const control = runtime.page.getByRole("button", { name: "Conta", exact: true });
@@ -118,12 +120,13 @@ for (const layout of layouts) {
       const c = evidence(layout, state);
       try {
         if (action) await action();
-        if (!await capture(runtimes, c, unavailable, reload)) failed.push(state);
+        const result = await capture(runtimes, c, unavailable, reload);
+        if (result.execution !== "PASS" || result.completeness !== "COMPLETE") failed.push(state);
       } catch {
         failed.push(state);
         // Capture valid states even if a visual assertion failed, and keep independent cases running.
-        await capture(runtimes, c, unavailable, reload);
-        await recordCase(c, { execution: "FAIL", comparability: unavailable || reload ? "NON_EQUIVALENT" : "COMPARABLE",
+        const captured = await capture(runtimes, c, unavailable, reload);
+        await recordCase(c, { ...captured, execution: "FAIL", comparability: captured.comparability,
           requirement: "DEFECT_FOUND", completeness: "PARTIAL", reason: "STATE_OR_GEOMETRY_ASSERTION_FAILED" });
       }
     };

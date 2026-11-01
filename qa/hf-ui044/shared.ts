@@ -187,9 +187,10 @@ export async function capturePair(runtimes: Runtime[], c: EvidenceCase, options:
     try { samples.push(await sample(runtime, c, options)); }
     catch { errors.push(runtime.source + "_CAPTURE_FAILED"); }
   }
+  const incomplete = samples.length !== 2;
   const unobserved = samples.some(s => Object.values(s.fonts).some(v => (v as { observation: string }).observation !== "OBSERVED"));
-  const result = { execution: errors.length ? "FAIL" : "PASS", comparability: unobserved ? "INSUFFICIENT_EVIDENCE" : options.comparability ?? "COMPARABLE",
-    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: samples.length === 2 ? "COMPLETE" : "PARTIAL", reasons: options.reasons ?? [], errors, samples };
+  const result = { execution: incomplete || errors.length ? "FAIL" : "PASS", comparability: incomplete || unobserved ? "INSUFFICIENT_EVIDENCE" : options.comparability ?? "COMPARABLE",
+    requirement: options.requirement ?? "HUMAN_DECISION_PENDING", completeness: incomplete ? "PARTIAL" : "COMPLETE", reasons: [...(options.reasons ?? []), ...(incomplete ? ["BILATERAL_PAIR_INCOMPLETE"] : [])], errors, samples };
   await recordCase(c, result); return result;
 }
 export async function readCaseMetadata(name: string) { return JSON.parse(await readFile(join(archive, name), "utf8")); }
