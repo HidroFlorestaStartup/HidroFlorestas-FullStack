@@ -49,3 +49,23 @@ hashes/CRC/dimensões/metadados e revisão independente. Resultados ainda NOT_RU
   mas não expõe raiz. Browser estava em conta distinta. Revisão automática rejeitou login
   Google por falta de método/conta explicitamente autorizados; confirmação específica solicitada.
   Nenhuma configuração de provedor foi alterada. Guard false local já incluído; push aguarda prova.
+
+## Ponto de continuidade após revisão não autora
+
+Estado: BLOQUEADO somente na publicação/runtime dependentes da prova de raiz.
+Implementação A/B/C commitada, integração de código09ac98e e parecer não autorcd98460
+concluídos no alcance estático. Sem defeito estático novo demonstrado; três gaps de
+evidência PUB-001/EVID-001/EVID-002 permanecem. Tipos/lint locais PASS; smoke3/3 e
+contraprovaC2/2 executados; runtime hospedado e ZIP final NOT_RUN; orçamento0/3.
+
+As duas rejeições automáticas de navegação foram superadas por autorizações
+explícitas do usuário. O Google identificou a conta correta e agora exige senha;
+browser foi mostrado para login pessoal. Não solicitar senha/código no chat.
+Depois da confirmação, ler Root Directory/vínculo Git, retomar EM_ANDAMENTO,
+registrar guard aplicável e executar rodada1 já autorizada. A autorização de
+publicação/reparos/orçamento original continua vigente; não pedi-la novamente.
+
+Recibo factual único PR45:6563833137, referências46/47/48 publicadas. Atualizar esse
+mesmo comentário com a prova de runtime posterior, sem transformar o corte parcial
+em conclusão técnica integral. Commits funcionais exclusivos locais estão em
+owner-local-commits.json. Nenhum push/merge/deploy realizado. Worktrees preservados.

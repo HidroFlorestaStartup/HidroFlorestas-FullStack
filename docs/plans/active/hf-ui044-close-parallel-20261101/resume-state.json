@@ -1,0 +1,50 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "state": "BLOCKED_AWAITING_PERSONAL_LOGIN",
+  "codeShaReviewed": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
+  "codeTreeReviewed": "844423332f26c6192a44d2b391fcc70143d65025",
+  "qaAuthor": "/root/qa_final",
+  "qaCommit": "cd98460cc26e273a7722aaf9dce8114f3960ebb1",
+  "localBranch": "codex/hf-ui044-close-20261101",
+  "published": false,
+  "hostedRoundsUsed": 0,
+  "hostedRoundsAllowed": 3,
+  "hostedRuntime": "NOT_RUN",
+  "googleAuthorizationReceived": true,
+  "useAnotherAccountAuthorizationReceived": true,
+  "targetAccountIdentified": true,
+  "currentBrowserStep": "USER_MUST_COMPLETE_PASSWORD_AND_ANY_FURTHER_AUTHENTICATION",
+  "credentialsRequestedInChat": false,
+  "rootDirectory": "NOT_OBSERVED",
+  "nextActions": [
+    "After user confirms completed login, inspect Vercel Root Directory and Git binding read-only",
+    "Record sanitized Preview applicability proof and confirm branch false before first push",
+    "Recheck remote leases and first-push candidate",
+    "Run round1 with four bounded hosted jobs; inspect real artifacts",
+    "Corrections only by owners, new SHA/attempt1, maximum3rounds",
+    "Complete non-author runtime review and update same factual PR45 comment",
+    "Publish exclusive functional deltas and reconcile affected PRs within budget"
+  ],
+  "publicReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6563833137",
+  "referenceComments": {
+    "46": 6563835743,
+    "47": 6563836430,
+    "48": 6563837671
+  },
+  "worktrees": [
+    "hf044-coord",
+    "hf044-a",
+    "hf044-b",
+    "hf044-c",
+    "hf044-qa"
+  ],
+  "gitFinalObservation": "All five managed worktrees clean; principal c7b and documentary33d preserved; no reset/clean/main/development/#44 push",
+  "limits": [
+    "NO_MERGE",
+    "NO_DEPLOY",
+    "NO_REAL_PROVIDERS",
+    "NO_SCIENTIFIC_CHANGE",
+    "HUMAN_ACCEPTANCE_PENDING",
+    "GEOCODER_OPERATIONAL_PENDING"
+  ]
+}
