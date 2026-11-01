@@ -167,6 +167,7 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
   const metadata = { schema: "hf-ui044-close02-v1", caseId: c.id, source: runtime.source, ...runtime.code,
     compositionBase: COMPOSITION_BASE, run: process.env.GITHUB_RUN_ID ?? null, attempt: process.env.GITHUB_RUN_ATTEMPT ?? null,
     state: c.state, actualState: options.actualState ?? c.state, requirementIds: c.requirementIds, fixture: c.fixture,
+    runtimeOrigin: c.fixture.database === false ? "SYNTHETIC_SMOKE_NOT_PRODUCT" : "REAL_APPLICATION_RUNTIME",
     viewport: { width: c.width, height: c.height }, textScale: c.scale, safeAreaBottom: c.inset, fullPage: false, maskedInputs: masks.length,
     geometry, fontsActuallyRendered: fonts, pngSha256: hash(png), blockedRequests: [...runtime.blocked.values()],
     routeClass: c.state, // Deliberately omit actual resource IDs and URL queries.
@@ -177,7 +178,7 @@ export async function sample(runtime: Runtime, c: EvidenceCase, options: Capture
   await writeFile(join(archive, stem + ".png"), png, { flag: "wx" });
   await writeFile(join(archive, stem + ".json"), json, { flag: "wx" });
   const result = { png: stem + ".png", json: stem + ".json", pngSha256: hash(png), jsonSha256: hash(json), geometry, fonts };
-  await append({ kind: "sample", id: c.id, source: runtime.source, ...metadata, files: result });
+  await append({ kind: "sample", id: c.id, ...metadata, files: result });
   return result;
 }
 export async function capturePair(runtimes: Runtime[], c: EvidenceCase, options: CaptureOptions = {}) {
