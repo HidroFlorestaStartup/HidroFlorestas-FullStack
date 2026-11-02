@@ -159,3 +159,14 @@ Origem: instruções do usuário nesta sessão; uma nova rodada/attempt1,90 runn
 - [x] T059 [ONDA1/EXECUTE] Receber B/CI/UX, executar contraprovas e checks aplicáveis, integrar somente deltas comprovados, congelar candidata local sem finding conhecido.
 - [ ] T060 [ONDA2/REVIEW/PUBLISH/CI] Obter QA não autora pré-publicação, publicar únicoSHAfinal/Preview=false porFF normal e observar exatamente focal3→matriz75→RC15; pedir uma revisãoCodex noSHAfinal se ainda não houver válida.
 - [ ] T061 [ONDA2/QA/HANDOFF] Auditar resultados/ZIPs/PNGs/CRC/hashes/provenance/UI037 e parecerCodex, reconciliar estados somente com provas próprias; publicar parecer factualPR50 e síntesePR45 com reciboJSON sem novo push/merge/deploy.
+
+## STARTER-T1T2-RECOVERY — duas ondas, 2026-11-02
+
+Origem: mandato atual do usuário, independente dos orçamentos históricos. FR-036-004/SC-036-002/003/004. Um SHA/attempt1, até90 runner-minutes, zero reruns.
+
+- [x] T062 [ONDA1/RECONCILE/PLAN] Reconferir repo/PR50/HEAD/tree/CI, preservar principalC e ignorados/histórico, reservar ownership root/T1/T2/CI e registrar plano/inventário sanitizado.
+- [x] T063 [ONDA1/T1] Reproduzir teclado/histórico no starter fixado com Chromium real, provar tab sequence/último controle/Enter/Back/Forward/texto200 e negativos de foco perdido/invisível/obstruído; corrigir somente contrato comprovado.
+- [x] T064 [ONDA1/T2] Medir reloadQuery/adapter e32→16 antes configure, observar terminal limitado com transições e negativos fast/slow/404/loading/erro/unknown/sem reseed; corrigir somente causa comprovada.
+- [x] T065 [ONDA1/INTEGRATE] Integrar root-only domain.spec.ts e helpers QA necessários; executar RED/GREEN/regressões/TypeScript/lint/Chromium, preservar75IDs/A86/UI037/produto/ciência/guardas e congelar candidata.
+- [ ] T066 [ONDA2/QA/CI] QA nativa não autora sem finding material antes do push; publicar candidato único porFF, solicitar uma revisãoCodex e executar uma rodada focal3→matriz75→RC15 no SHA final; sem rerun.
+- [ ] T067 [ONDA2/TERMINAL/HANDOFF] QA não autora auditar75IDs/150samples/15gates/UI037/ZIPs/CRC/hashes/provenance/PNGs/review, publicar parecerPR50 e síntesePR45, preservar pendências humanas e estado factual sem novo commit.

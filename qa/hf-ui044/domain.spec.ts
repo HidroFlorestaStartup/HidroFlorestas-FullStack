@@ -10,6 +10,8 @@ import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diag
 import { waitForMissionRender } from "../../tests/e2e/support/frontend-mission-evidence";
 import { planReadableScroll, classifyHorizontalOverflow, selectReadingScrollOwner, measureReadingExposure, applyReadingScroll, assessReadingExposure } from "./domain-geometry";
 import { selectDomainCases, collectDomainCases, withOwnedSourceBudget, classifyDomainPair } from "./domain-collection";
+import { observeStarterReloadTerminal } from "./t2-reload";
+import { observeKeyboardTraversal, assessKeyboardTraversal } from "./t1-focus";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(90_000);
@@ -393,18 +395,38 @@ for(const c of navigationCases) {
       await configure(runtime,c);
       const action=runtime.page.getByRole("link",{name:runtime.source==="fullstack"?"Registrar dados ambientais":"Registrar medições",exact:true});
       await action.focus(); await expect(action).toBeFocused(); await assertHit(action);
-      await runtime.page.keyboard.press("Tab");
-      expect(await runtime.page.evaluate(()=>document.activeElement!==document.body)).toBe(true);
-    },{comparability:"COMPARABLE",note:"Keyboard native area→collection action, Back/Forward, final action focus and hit testing; source-specific labels remain native."});
+      if(runtime.source==="fullstack") {
+        await runtime.page.keyboard.press("Tab");
+        expect(await runtime.page.evaluate(()=>document.activeElement!==document.body)).toBe(true);
+      } else {
+        const observation=await observeKeyboardTraversal(runtime.page,action);
+        const assessment=assessKeyboardTraversal(observation,true);
+        const observations=(c.fixture.keyboardTraversalBySource??{}) as Record<string,unknown>;
+        c.fixture.keyboardTraversalBySource=observations;
+        observations[runtime.source]={observation,assessment}; // BODY requires an observed native boundary and reverse return.
+        expect(assessment.pass,assessment.reason??"Reference native keyboard traversal must be causally verified").toBe(true);
+        await expect(action).toBeFocused();
+        await assertHit(action);
+      }
+    },{comparability:"NON_EQUIVALENT",reasons:["SOURCE_NATIVE_TAB_ORDER_AND_REFERENCE_REVERSE_RETURN_BEFORE_CAPTURE"],
+      note:"Both sources activate area→collection and verify Back/Forward, action focus and hit testing. Native FullStack requires non-BODY focus after Tab; reference records actual Tab order and Shift+Tab return. Reference document boundary requires last-control, document blur/focus events and exact native return; capture follows that return, so final focus phases differ explicitly."});
   });
 }
 
 caseExecutors.set(reloadCase.id,async()=>{
   await boundedPair(reloadCase,async(runtime,fixture)=>{
     await ready(runtime,fixture,"collection-missing"); await configure(runtime,reloadCase);
-    await observeReload(runtime); // Records before/after before any instrumentation reset.
+    const scaleObservation=await observeReload(runtime); // Must precede terminal observation and instrumentation reset.
+    const observations=(reloadCase.fixture.reloadObservationBySource??{}) as Record<string,unknown>;
+    reloadCase.fixture.reloadObservationBySource=observations;
+    observations[runtime.source]={scale:scaleObservation};
     if(runtime.source==="fullstack") await expect(runtime.page.getByRole("region",{name:"Diagnóstico IHFR experimental",exact:true})).toBeVisible();
-    else await expect(runtime.page.getByText("Recurso não encontrado",{exact:true})).toBeVisible();
+    else {
+      const terminal=await observeStarterReloadTerminal(runtime.page);
+      observations[runtime.source]={scale:scaleObservation,terminal}; // Preserve timeouts/unknown/errors before asserting.
+      expect(terminal.state,"Pinned reference reload must reach the observed404 terminal; loading/redirect/unknown never approve").toBe("RESOURCE_NOT_FOUND");
+      await expect(runtime.page.getByText("Recurso não encontrado",{exact:true})).toBeVisible();
+    }
     await configure(runtime,reloadCase);
   },{comparability:"NON_EQUIVALENT",reasons:["PINNED_REFERENCE_CREATED_FIXTURE_IS_MEMORY_ONLY_AND_LOST_AFTER_RELOAD"],
     note:"Inline font-size reset is instrumentation behavior, not browser zoom or user-preference persistence."});
