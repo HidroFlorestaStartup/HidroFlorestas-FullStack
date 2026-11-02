@@ -1,0 +1,20 @@
+{
+  "mission": "HF-UI-044-FINAL-PR50-ONE-SHOT",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "state": "PARTIAL",
+  "projectRoot": "G:/projetos/ifma/HidroFlorestas-FullStack",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "mainCheckoutInitial": {"branch":"feat/localizacao-endereco-opcional","sha":"c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07","trackedStatus":"CLEAN","untrackedStatus":"NONE","index":"CLEAN","locks":"NONE_OBSERVED"},
+  "candidate": {"branch":"fix/hf-ui044-ui06-b-residual-20261101","sha":"ea45002718aa33fced29eae70a7e592e31c0f996","tree":"2786f70d3ab015683a03a506505e51be736c0fc5","base":"ebf7e9707d5beba949ae932cdffeb3f9068f8a73","pr":50,"state":"OPEN_DRAFT","runsBefore":0,"statusesBefore":0},
+  "protectedRemoteRefs": {"main":"beba96fbf6bbaac8771dbb29abea2f9f8f5b0054","development":"9b8595d232842d401ce81bbc92c54dd543aa2829","pr44":"972f9b00189bf09117883913d8c4fa63e69f4d2f"},
+  "prs": {"45":{"head":"22bb9c1bee446e02b0bf8ce702e0db89b9e74905","state":"OPEN_DRAFT"},"46":{"head":"e5d030918bc0c04c321aff42cbc2e3fb6faad256","state":"OPEN_DRAFT","isolatedCI":"IHFR_FAIL"},"47":{"head":"ca1d03b49c214986c7640d80e6e78d8067753ae2","state":"OPEN_DRAFT","headCI":"NOT_RUN"},"48":{"head":"641be73e32bcbaed282cac81dec9ae85a52b32de","state":"OPEN_DRAFT","ownCI":"15_PASS"},"49":{"head":"ebf7e9707d5beba949ae932cdffeb3f9068f8a73","state":"OPEN_DRAFT","B":"9_PASS_3_FAIL_63_NOT_RUN"}},
+  "preservation": {"existingBranchesAndWorktrees":"PRESERVED","srcTestsPrismaDependenciesVsR3":"IDENTICAL_GIT_DIFF_EXIT_0","starter":"READ_ONLY_cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f"},
+  "preview": {"candidateGuard":false,"receiptReused":"docs/plans/active/hf-ui044-close-parallel-20261101/preview-proof.json","receiptObservedUtc":"2026-11-01T21:17:18.0878075Z","project":"hidro-florestas-full-stack","projectId":"prj_DiLVjku1AglHtTXv8ckxg8pBiZR3","rootDirectory":"","effectiveRoot":"repository root","metadataCurrentUpdatedAt":1793043621013,"metadataPredatesRootReceipt":true,"settingsChanged":false,"newLogin":false},
+  "specKit": {"prerequisite":"PASS_REAL_BASH_HELPER","override":"SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr","requiredFiles":"PRESENT","extensions":"ABSENT","analysis":"5_FR_4_SC_46_TASKS_100_PERCENT_PLANNING_COVERAGE_0_CRITICAL","findings":["LIFECYCLE_RESTART_FRESHNESS_HIGH","RUNTIME_75_PENDING_HIGH","NONAUTHOR_QA_PENDING_HIGH","NEW_BUDGET_ADDENDUM_REQUIRED_MEDIUM"]},
+  "owners": {"B":"/root/owner_b; domain files and Spec036; shared.assessFontRegions narrowly allocated","CI":"/root/owner_ci; exclusive workflow/script/runner gates/verifiers","QA":"/root/qa_reviewer; READ_ONLY_NONAUTHOR","coordinator":"/root; sole Git index/ref/commit/push integrator"},
+  "DAG":"O0_RECONCILE_ANALYZE_PLAN -> O1_B_AND_CI_LOCAL_PROOFS -> NONAUTHOR_PREFLIGHT -> O2_FOCAL3 -> COMPLETE75 -> RC15 -> O3_ONLY_ON_MATERIAL_FAILURE_NEW_SHA -> O4_FROZEN_SHA_REVIEW_HANDOFF",
+  "budget": {"historical":"3_OF_3_CLOSED","newRoundsAuthorized":2,"newRoundsUsed":0,"jobsPerRound":{"b-focal-3":20,"b-complete-75":35,"rc-final":35},"configuredMaximumRunnerMinutes":180,"actualRunnerMinutes":"NOT_RUN"},
+  "host": {"node":"24.14.0_LOCAL_NOT_CI_24.19.0","globalRuntimeInstallations":0,"gitCoreLongpaths":"LOCAL_REPOSITORY_TRUE_TO_CREATE_MANAGED_WORKTREES","worktreeCreationFirstAttempt":"FAILED_FILENAME_TOO_LONG_PRESERVED_NO_USER_DATA_REMOVED","sandbox":"Managed worktrees require scoped escalated shell access; no bare/worktree config repair"},
+  "pending":["UI06_B_EVIDENCE_COMPLETE_NOT_RUN","RC_FINAL_15_GATES_NOT_RUN","FINAL_SHA_REVIEW_NOT_RUN","HUMAN_ACCEPTANCE_PENDING","GEOCODER_OPERATIONAL_PENDING","VALIDACAO_CIENTIFICA_PENDENTE"],
+  "prohibitedActionsPerformed":[]
+}

@@ -1,9 +1,13 @@
-param([Parameter(Mandatory=$true)][ValidateSet('shell','domain')][string]$Suite)
+param(
+  [Parameter(Mandatory=$true)][ValidateSet('shell','domain')][string]$Suite,
+  [ValidateSet('focal-3','complete-75')][string]$CaseSet
+)
 $ErrorActionPreference='Stop'
-if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows' -or $env:GITHUB_RUN_ATTEMPT -ne '1' -or
-    $env:GITHUB_REF -ne 'refs/heads/codex/hf-ui044-close-20261101') {
-  throw 'UI06 requires its authorized Windows Actions single attempt for this SHA.'
-}
+& node (Join-Path $PSScriptRoot 'hf-ui044-pr50-contract.mjs') --runner
+if ($LASTEXITCODE) { throw 'UI06 requires its exact authorized hosted Windows push and first attempt.' }
+if ($Suite -ne 'domain' -or -not $CaseSet) { throw 'PR50 requires an explicit domain case set.' }
+$env:HF_UI044_PUSH_GUARD='PASS'
+$env:HF_UI044_CASE_SET=$CaseSet
 if ((& node --version).Trim() -ne 'v24.19.0' -or $LASTEXITCODE) { throw 'Expected runner Node 24.19.0.' }
 $ui06GlobalModules=(& npm root --global).Trim()
 if ($LASTEXITCODE) { throw 'Cannot resolve runner-only Bun package.' }
@@ -16,7 +20,7 @@ $ui06Bun=Join-Path $ui06BunPackage 'bin/bun.exe'
 if (-not (Test-Path -LiteralPath $ui06Bun -PathType Leaf)) { throw 'Runner Bun executable missing.' }
 if ((& $ui06Bun --version).Trim() -ne '1.3.11' -or $LASTEXITCODE) { throw 'Expected runner Bun 1.3.11.' }
 $ui06Starter=Join-Path (Split-Path (Get-Location) -Parent) 'starter'
-$ui06Archive=Join-Path (Get-Location) ('.accounts-validation/ui06-'+$Suite)
+$ui06Archive=Join-Path (Get-Location) ('.accounts-validation/ui06-b-'+$CaseSet)
 if (Test-Path -LiteralPath $ui06Archive) { throw 'UI06 archive already exists; no evidence may be reused.' }
 $env:HF_UI044_SUITE=$Suite
 $env:HF_UI044_ARCHIVE=$ui06Archive
@@ -25,7 +29,9 @@ $ui06Provisioned=$false
 $ui06PrimaryFailed=$false
 $ui06CleanupFailed=$false
 $ui06Environment=@{}
-$ui06Receipt=@{node='24.19.0';bun='1.3.11';setup='NOT_RUN';capture='NOT_RUN';stop='NOT_RUN';starterStop='NOT_RUN'}
+$ui06Receipt=@{node='24.19.0';bun='1.3.11';caseSet=$CaseSet;sourceSha=$env:GITHUB_SHA;
+  tree=(& git rev-parse 'HEAD^{tree}').Trim();run=$env:GITHUB_RUN_ID;attempt=$env:GITHUB_RUN_ATTEMPT;
+  setup='NOT_RUN';capture='NOT_RUN';stop='NOT_RUN';starterStop='NOT_RUN'}
 # Same ephemeral application-protection recipe as the official RC runner.
 # PostgreSQL/JWT/session credentials and ownership come only from its wrapper.
 function New-Ui06SyntheticKey {
@@ -35,6 +41,7 @@ function New-Ui06SyntheticKey {
   finally { $ui06Random.Dispose(); [Array]::Clear($ui06Bytes,0,$ui06Bytes.Length) }
 }
 try {
+  $ui06Provisioned=$true # Stop owned cluster even if provisioning fails after startup.
   & ./scripts/rc-review-validation.ps1 -InitializeCiCluster -Gates RegressionSetup
   if ($LASTEXITCODE) { throw 'Official synthetic regression setup failed.' }
   # The official runner has already stopped the cluster in its finally.
@@ -65,7 +72,8 @@ try {
   # Run starts/verifies the owned cluster and supplies the guarded Regression
   # context, synthetic login password/JWT/request key. No explicit Start needed.
   $ui06Receipt.capture='FAIL'
-  & ./scripts/accounts-local-postgresql.ps1 -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('node_modules/@playwright/test/cli.js','test','--config=qa/hf-ui044/playwright.visual.config.ts','--workers=1','--retries=0','--global-timeout=1440000')
+  $ui06Timeout=if($CaseSet -eq 'focal-3'){'600000'}else{'1440000'}
+  & ./scripts/accounts-local-postgresql.ps1 -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('node_modules/@playwright/test/cli.js','test','--config=qa/hf-ui044/playwright.visual.config.ts','--workers=1','--retries=0',"--global-timeout=$ui06Timeout")
   if ($LASTEXITCODE) { throw 'UI06 focal capture failed; no bilateral acceptance inferred.' }
   $ui06Receipt.capture='PASS'
   & git diff --exit-code --quiet
@@ -90,6 +98,7 @@ finally {
   }
   $ui06Values=$null; $ui06Environment=$null
   New-Item -ItemType Directory -Force -Path $ui06Archive | Out-Null
+  if (Test-Path -LiteralPath (Join-Path $ui06Archive 'runner.json')) { throw 'Runner receipt collision; preserve first receipt.' }
   $ui06Receipt | ConvertTo-Json | Set-Content -Encoding utf8 (Join-Path $ui06Archive 'runner.json')
   if ($ui06CleanupFailed -and -not $ui06PrimaryFailed) { throw 'UI06 cleanup failed.' }
 }

@@ -1,14 +1,15 @@
 import { test, expect, type Locator } from "@playwright/test";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, appendFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 import type { CaptureOptions, EvidenceCase, LayoutCase, Runtime } from "./contract";
-import { createRuntime, configure, sample, recordCase, registerCases, finalizeCases, observeReload, archive } from "./shared";
+import { createRuntime, configure, sample, recordCase, registerCases, finalizeCases, observeReload, archive, readCaseMetadata } from "./shared";
 import { setupFullstackDomain, setupStarterDomain, navigateDomain, AREA_NAME, EMPTY_NAME, type DomainFixture } from "./domain-fixtures";
 import { IHFR_SCIENTIFIC_QUALIFICATIONS } from "../../tests/e2e/support/frontend-ihfr-evidence";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { waitForMissionRender } from "../../tests/e2e/support/frontend-mission-evidence";
 import { planReadableScroll, classifyHorizontalOverflow } from "./domain-geometry";
+import { selectDomainCases, collectDomainCases, withOwnedSourceBudget, classifyDomainPair } from "./domain-collection";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(90_000);
@@ -38,7 +39,18 @@ const qualifierCases = qualifierLayouts.flatMap(layout => IHFR_CONTRACT.labels.m
   layout, { qualifier:label, safeAreaBottom:layout.inset })));
 const navigationCases = [390,1440].map(width => evidence("domain-keyboard-history-"+width,"keyboard-back-forward",{ width,height:width===390?844:900,scale:200,inset:0 }));
 const reloadCase = evidence("domain-reload-390-text200","reload-observed-before-reconfiguration",{width:390,height:844,scale:200,inset:0});
-const planned = [...cases,...qualifierCases,...navigationCases,reloadCase];
+const caseSet = process.env.HF_UI044_CASE_SET;
+const planned = selectDomainCases([...cases,...qualifierCases,...navigationCases,reloadCase], caseSet);
+const caseExecutors = new Map<string, () => Promise<void>>();
+const quarantined = new Set<string>();
+const ownedContextsClosed = new Set<string>();
+const cleanupFailures:string[] = [];
+let collectionDeadline = 0;
+async function quarantine(runtime: Runtime) {
+  quarantined.add(runtime.source);
+  await runtime.context.close(); // Cancel page/navigation/CDP/capture work before continuation.
+  ownedContextsClosed.add(runtime.source);
+}
 const runtimes: Runtime[] = [];
 const fixtures = new Map<string,DomainFixture>();
 const failures: Array<{id:string;code:string}> = [];
@@ -66,23 +78,39 @@ async function recordRootOverflow(runtime: Runtime, c: EvidenceCase, options: Ca
   }
 }
 
-async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:DomainFixture)=>Promise<void>, options:CaptureOptions={}) {
+async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:DomainFixture,sourceOptions:CaptureOptions)=>Promise<void>, options:CaptureOptions={}) {
   const samples = [], errors:string[] = [];
+  const sourceExecutions: Array<{source:string;execution:string;reason?:string}> = [];
   for (const runtime of runtimes) {
+    if (quarantined.has(runtime.source) || Date.now() >= collectionDeadline) {
+      const reason = quarantined.has(runtime.source) ? "OWNED_CONTEXT_QUARANTINED_AFTER_CAUSAL_FAILURE" : "COLLECTION_BUDGET_EXHAUSTED";
+      sourceExecutions.push({source:runtime.source,execution:"NOT_RUN",reason});
+      errors.push(runtime.source+":"+reason); continue;
+    }
+    const sourceOptions:CaptureOptions = {...options,reasons:[...(options.reasons??[])]};
+    const sourceExecution = {source:runtime.source,execution:"FAIL"};
+    sourceExecutions.push(sourceExecution);
+    await appendFile(join(archive,"domain-source-starts.jsonl"),JSON.stringify({caseId:c.id,source:runtime.source,
+      execution:"STARTED",sourceSha:runtime.code.sha,run:process.env.GITHUB_RUN_ID,attempt:process.env.GITHUB_RUN_ATTEMPT})+"\n");
     try {
+      const captured = await withOwnedSourceBudget(async () => {
       const fixture = fixtures.get(runtime.source)!;
-      await prepare(runtime,fixture);
-      await recordRootOverflow(runtime, c, options);
-      samples.push(await sample(runtime,{...c,fixture:{...c.fixture,sourceFixture:fixture}}, {
-        ...options, actualState: runtime.source==="starter" ? c.state+"-REFERENCE_DEMONSTRATION" : c.state+"-NATIVE_PRODUCT",
-      }));
+      await prepare(runtime,fixture,sourceOptions);
+      await recordRootOverflow(runtime, c, sourceOptions);
+      return await sample(runtime,{...c,fixture:{...c.fixture,sourceFixture:fixture}}, {
+        ...sourceOptions, actualState: runtime.source==="starter" ? c.state+"-REFERENCE_DEMONSTRATION" : c.state+"-NATIVE_PRODUCT",
+      });
+      },Math.min(40_000,collectionDeadline-Date.now()),()=>quarantine(runtime));
+      samples.push(captured); sourceExecution.execution="PASS";
     } catch (error) {
       // Never serialize arbitrary exception messages: transports may carry secrets.
       const code = error instanceof Error && /strict mode violation/i.test(error.message) ? "LOCATOR_STRICT_MODE" :
         error instanceof Error && /toBeInViewport/.test(error.message) ? "VIEWPORT_ASSERTION" :
-        error instanceof Error && error.name === "TimeoutError" ? "TIMEOUT" : "CASE_ASSERTION_OR_CAPTURE_FAILED";
+        error instanceof Error && error.name === "TimeoutError" ? "TIMEOUT" :
+        error instanceof Error && error.message === "DOMAIN_SOURCE_BUDGET_EXHAUSTED" ? "SOURCE_BUDGET_EXHAUSTED" : "CASE_ASSERTION_OR_CAPTURE_FAILED";
       const locations=error instanceof Error?[...new Set(error.stack?.match(/(?:domain(?:\.spec|-fixtures)|shared)\.ts:\d+:\d+/g)??[])]:[];
       errors.push(runtime.source+":"+code+(locations[0]?"@"+locations[0]:""));
+      if(error instanceof Error && error.message === "DOMAIN_OWNED_CONTEXT_CLOSE_FAILED") cleanupFailures.push(runtime.source+":OWNED_CONTEXT_CLOSE_FAILED_AFTER_SOURCE_BUDGET");
       const qualifierIndex=IHFR_CONTRACT.labels.indexOf(c.fixture.qualifier as typeof IHFR_CONTRACT.labels[number]);
       const qualifierText=qualifierIndex<0?null:runtime.source==="fullstack"?IHFR_SCIENTIFIC_QUALIFICATIONS[qualifierIndex]:IHFR_CONTRACT.labels[qualifierIndex];
       const readGeometry=()=>runtime.page.evaluate(async ({qualifierText})=>{
@@ -103,14 +131,15 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
           navs:[...document.querySelectorAll("nav")].filter(node=>node.getBoundingClientRect().width>0&&node.getBoundingClientRect().height>0)
             .map(node=>({label:node.getAttribute("aria-label"),rect:rect(node)}))};
       },{qualifierText}).catch(()=>({unavailable:true}));
-      const geometry=await readGeometry();
       try {
+        await withOwnedSourceBudget(async () => {
+        const geometry=await readGeometry();
         await mkdir(archive,{recursive:true});
         const stem="diagnostic-"+runtime.source+"-"+c.id;
         let frame:Record<string,unknown>={status:"NOT_CAPTURED"};
         try {
           const masks=await runtime.page.locator("input,select,textarea").all();
-          const png=await runtime.page.screenshot({fullPage:false,animations:"allow",mask:masks});
+          const png=await runtime.page.screenshot({fullPage:false,animations:"allow",mask:masks,timeout:5_000});
           await writeFile(join(archive,stem+".png"),png,{flag:"wx"});
           frame={status:"CAPTURED",file:stem+".png",pngSha256:createHash("sha256").update(png).digest("hex"),
             viewport:{width:png.readUInt32BE(16),height:png.readUInt32BE(20)},maskedInputs:masks.length};
@@ -124,16 +153,22 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
           execution:"FAIL",comparability:"INSUFFICIENT_EVIDENCE",requirement:"HUMAN_DECISION_PENDING",completeness:"PARTIAL",
           note:"Technical FAIL is not proof of a native product defect. Preserve original frame and exact source without retry or corrective scroll.",
         },null,2)+"\n",{flag:"wx"});
-      } catch { errors.push(runtime.source+":DIAGNOSTIC_PERSIST_FAILED"); }
+        },6_000,()=>quarantine(runtime));
+      } catch (diagnosticError) {
+        errors.push(runtime.source+":DIAGNOSTIC_PERSIST_FAILED");
+        if(diagnosticError instanceof Error && diagnosticError.message === "DOMAIN_OWNED_CONTEXT_CLOSE_FAILED") cleanupFailures.push(runtime.source+":OWNED_CONTEXT_CLOSE_FAILED_AFTER_DIAGNOSTIC_BUDGET");
+      }
     }
   }
   const pairComplete=samples.length===2;
   if(!pairComplete) errors.push("PAIR_REQUIRES_TWO_SOURCE_SAMPLES");
+  const metadata = await Promise.all(samples.map(entry=>readCaseMetadata(entry.json)));
   const fontsObserved=pairComplete&&samples.every(entry=>Object.values(entry.fonts).every(value=>
     value&&typeof value==="object"&&"observation" in value&&value.observation==="OBSERVED"));
-  const result = { execution:errors.length?"FAIL":"PASS", comparability:fontsObserved?(options.comparability??"COMPARABLE"):"INSUFFICIENT_EVIDENCE",
+  const result = { ...classifyDomainPair(samples.length,errors,metadata,options.comparability),
+    fontsObserved,sourceExecutions,
     requirement:options.requirement??"HUMAN_DECISION_PENDING", // Technical failures alone do not attribute a native product defect.
-    completeness:errors.length?"PARTIAL":"COMPLETE", reasons:options.reasons??[], samples, errors };
+    reasons:[...new Set([...(options.reasons??[]),...metadata.flatMap(entry=>entry.reasons??[])])], samples, errors };
   await recordCase(c,result);
   if (errors.length) failures.push({id:c.id,code:errors.join(";")});
 }
@@ -141,10 +176,11 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
 test.beforeAll(async ({browser}) => {
   test.setTimeout(120_000);
   await registerCases(planned);
+  await writeFile(join(archive,"domain-selection.json"),JSON.stringify({caseSet,plannedCount:planned.length,ids:planned.map(c=>c.id),
+    sourceSha:process.env.GITHUB_SHA,run:process.env.GITHUB_RUN_ID,attempt:process.env.GITHUB_RUN_ATTEMPT},null,2)+"\n",{flag:"wx"});
   const fullstack = await createRuntime(browser,"fullstack"); runtimes.push(fullstack);
   const starter = await createRuntime(browser,"starter"); runtimes.push(starter);
-  // Bounded actions should be caught as case FAILs before the 90s test hard
-  // timeout can kill/restart the worker and collide with owned fixture receipts.
+  // Per-source deadlines below bound page/CDP work; action limits stay unchanged.
   for (const runtime of runtimes) {
     runtime.page.setDefaultTimeout(12_000);
     runtime.page.setDefaultNavigationTimeout(15_000);
@@ -285,16 +321,16 @@ async function semanticCoreExposure(runtime:Runtime,c:EvidenceCase,state:DomainS
 }
 
 for(const c of cases) {
-  test(c.id,async () => {
+  caseExecutors.set(c.id,async () => {
     const state=c.state as DomainState;
     const reasons=state==="area-populated"?["PINNED_STARTER_SORTS_CONFIRMATION_AND_HAS_NO_AREA_CURRENT_SUMMARY_UI02_OVERRIDES_REFERENCE"]:
       state==="collection-current"?["STARTER_PREDEFINED_DEMO_SCORE_AND_DECOMPOSITION_VS_NATIVE_COMPUTED_EXPERIMENTAL_RESULT"]:[];
     const comparison:CaptureOptions={comparability:reasons.length?"NON_EQUIVALENT":"COMPARABLE",reasons,
       requirement:"HUMAN_DECISION_PENDING",note:"Same semantic reading state/viewport/text scale; initial/post source exposure and any initialRefOcclusion are preserved in fixture/index. CDP glyph observation is not unobscured legibility or visual acceptance."};
-    await boundedPair(c,async(runtime,fixture)=>{
+    await boundedPair(c,async(runtime,fixture,sourceComparison)=>{
       await ready(runtime,fixture,state);
       await configure(runtime,c);
-      await semanticCoreExposure(runtime,c,state,comparison);
+      await semanticCoreExposure(runtime,c,state,sourceComparison);
       // Capture the named semantic region, rather than an unrelated map or
       // metadata block above it. This scroll precedes all recorded geometry.
       if(state==="area-populated") await runtime.page.getByRole("heading",{name:"Coletas confirmadas",exact:true})
@@ -329,7 +365,7 @@ async function assertHit(control:Locator) {
   })).toBe(true);
 }
 for(const c of qualifierCases) {
-  test(c.id,async()=>{
+  caseExecutors.set(c.id,async()=>{
     const index=IHFR_CONTRACT.labels.indexOf(c.fixture.qualifier as typeof IHFR_CONTRACT.labels[number]);
     await boundedPair(c,async(runtime,fixture)=>{
       await ready(runtime,fixture,"collection-current");
@@ -346,7 +382,7 @@ for(const c of qualifierCases) {
 }
 
 for(const c of navigationCases) {
-  test(c.id,async()=>{
+  caseExecutors.set(c.id,async()=>{
     await boundedPair(c,async(runtime,fixture)=>{
       await ready(runtime,fixture,"area-populated"); await configure(runtime,c);
       const link=runtime.page.locator('a[href="'+fixture.newerPath+'"]').first();
@@ -367,7 +403,7 @@ for(const c of navigationCases) {
   });
 }
 
-test(reloadCase.id,async()=>{
+caseExecutors.set(reloadCase.id,async()=>{
   await boundedPair(reloadCase,async(runtime,fixture)=>{
     await ready(runtime,fixture,"collection-missing"); await configure(runtime,reloadCase);
     await observeReload(runtime); // Records before/after before any instrumentation reset.
@@ -379,7 +415,18 @@ test(reloadCase.id,async()=>{
 });
 
 test("domain-required-coverage-summary",async()=>{
+  test.setTimeout(1_320_000); // Below existing global24min; no action timeout increase.
   expect(setupComplete).toBe(true);
+  collectionDeadline=Date.now()+1_260_000; // Reserve60s for final journal/cleanup.
+  await collectDomainCases(planned,async c=>{
+    const execute=caseExecutors.get(c.id);
+    if(!execute) throw new Error("DOMAIN_CASE_EXECUTOR_MISSING");
+    await test.step(c.id,execute);
+  },async c=>{
+    failures.push({id:c.id,code:"COLLECTOR_UNEXPECTED_CASE_FAILURE"});
+    await recordCase(c,{execution:"FAIL",comparability:"INSUFFICIENT_EVIDENCE",requirement:"HUMAN_DECISION_PENDING",
+      completeness:"PARTIAL",samples:[],errors:["COLLECTOR_UNEXPECTED_CASE_FAILURE"]});
+  });
   await finalizeCases();
   expect(failures,"See sanitized case ids and source-specific FAIL receipts").toEqual([]);
 });
@@ -390,16 +437,18 @@ test.afterAll(async({}, workerInfo)=>{
     physicalCleanup:"REQUIRES_ORCHESTRATOR_STOP_AND_HOSTED_RUNNER_DISPOSAL",failures,
   };
   for(const runtime of runtimes) {
-    try { await runtime.cdp.detach(); await runtime.context.close(); }
+    if(ownedContextsClosed.has(runtime.source)) continue;
+    try { await withOwnedSourceBudget(async()=>{await runtime.cdp.detach();await runtime.context.close();},5_000,()=>quarantine(runtime)); }
     catch { receipt.browserCleanup="FAIL"; }
   }
+  if(cleanupFailures.length) receipt.browserCleanup="FAIL";
   await mkdir(archive,{recursive:true});
   // Preserve the first receipt. After a hard worker restart a distinct worker
   // may write a distinct receipt, never overwrite the original with a false PASS.
   const receiptName = workerInfo.workerIndex === 0 ? "domain-cleanup.json" :
     "domain-cleanup-worker-" + workerInfo.workerIndex + ".json";
   await writeFile(join(archive,receiptName),JSON.stringify({ ...receipt,
-    workerIndex:workerInfo.workerIndex, run:process.env.GITHUB_RUN_ID??null,
+    workerIndex:workerInfo.workerIndex, caseSet, cleanupFailures, quarantinedSources:[...quarantined], run:process.env.GITHUB_RUN_ID??null,
     attempt:process.env.GITHUB_RUN_ATTEMPT??null },null,2)+"\n",{flag:"wx"});
   if(receipt.browserCleanup!=="PASS") throw new Error("DOMAIN_BROWSER_CLEANUP_FAILED");
 });

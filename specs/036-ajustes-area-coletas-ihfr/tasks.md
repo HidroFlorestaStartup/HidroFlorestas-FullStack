@@ -123,3 +123,15 @@ As tarefas T039/T040 e T008/T016/T027/T028 permanecem abertas até runtime final
 ## D: correção da guarda do runner sintético na PR #50
 
 - [x] T046 [BUG/SECURITY] Corrigir a guarda `setupFullstackDomain`: a candidata `fix/hf-ui044-ui06-b-residual-20261101` era recusada antes do setup por aceitar exclusivamente `refs/heads/codex/hf-ui044-close-20261101`. Autorizar **somente** a referência QA original e a candidata B, exigindo GitHub Actions, repositório exato, Windows e primeira tentativa; preservar o zero-fixture guard, sem acionamento de CI nem provedores. Teste RED comprovado, GREEN 17/17 com verificações negativas, TSC do helper PASS. Runtime no novo SHA `NOT_RUN`.
+
+## Phase 1: fechamento técnico PR50 autorizado
+
+- [x] T047 [ANALYZE/PLAN] Cruzar5FR/4SC/46tarefas e constituição sem escrita, registrar lacunas e plano mínimo autorizado em plan.md; preservar R3 e orçamento histórico3/3.
+- [x] T048 [IMPLEMENT] Reparar lifecycle em qa/hf-ui044/domain.spec.ts e domain-collection.ts: coletor único com steps independentes, seleção focal3/matriz75, prazo por fonte com encerramento owned e estados de execução honestos; frescor e recibos wx preservados (FR-036-004/SC-036-002).
+- [x] T049 [TEST/REVIEW] Contraprovar continuação após rejeição, cancelamento/cleanup antes do próximo caso, seleção exata sem duplicatas e guardas; testar geometria/ratio1 e typecheck focal sem runtime de produto (SC-036-002/SC-036-004).
+- [ ] T050 [RUNTIME/CI] Coordenador executar focal3 → matriz75 → RC15 no SHA final com até2rodadas novas; verificar pares, provenance, UI037 e NOT_RUN explícitos, sem importar PASS histórico (FR-036-004/SC-036-002/SC-036-003).
+- [ ] T051 [QA/HANDOFF] Revisor não autor inspecionar PNGs/diffs/manifestos e coordenador reconciliar T008/T016/T027/T028/T030/T044/T045 com evidências finais; preservar HUMAN_ACCEPTANCE_PENDING e ciência experimental (SC-036-004).
+
+## Phase 2: Convergence
+
+- [ ] T052 [CONVERGENCE/EVIDENCE] Completar a qualificação executada ainda parcial: coordenador deve fechar T050 e revisão T051 no SHA efetivamente testado, reconciliando os itens históricos T008/T016/T027/T028/T030/T044/T045 somente com resultados finais observados. Origem FR-036-004/SC-036-002/SC-036-003, plan: fechamento PR50; gap partial. Nenhuma implementação de produto adicional inferida.

@@ -7,6 +7,9 @@ import { isApprovedFreshWindowsRunner } from './runner-gate.ts';
 
 const baseline = {
   GITHUB_ACTIONS: 'true',
+  GITHUB_EVENT_NAME: 'push',
+  RUNNER_ENVIRONMENT: 'github-hosted',
+  HF_UI044_PUSH_GUARD: 'PASS',
   GITHUB_REPOSITORY: 'HidroFlorestaStartup/HidroFlorestas-FullStack',
   RUNNER_OS: 'Windows',
   GITHUB_RUN_ATTEMPT: '1',
@@ -51,4 +54,12 @@ test('fixture must actually invoke gate before touching synthetic database', () 
   const databaseAt = fixture.indexOf('countAuthFixtureUsers(process.env)');
   assert.ok(invokedAt > 0 && databaseAt > invokedAt,
     'authorization predicate must precede database fixture setup');
+});
+
+test('rejects non-push, self-hosted, or unattested push context', () => {
+  for (const patch of [
+    {GITHUB_EVENT_NAME:'pull_request'}, {GITHUB_EVENT_NAME:'workflow_dispatch'}, {GITHUB_EVENT_NAME:undefined},
+    {RUNNER_ENVIRONMENT:'self-hosted'}, {RUNNER_ENVIRONMENT:undefined},
+    {HF_UI044_PUSH_GUARD:'FAIL'}, {HF_UI044_PUSH_GUARD:undefined},
+  ]) assert.equal(isApprovedFreshWindowsRunner({...baseline,...patch}), false);
 });
