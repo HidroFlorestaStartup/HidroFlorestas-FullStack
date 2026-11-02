@@ -149,3 +149,13 @@ Origem: missão HF-UI-044-PR50-SENIOR-FULLSTACK-FINAL-ONE-ROUND enviada pelo usu
 - [x] T055 [O1/REVIEW] Executar testes puros/negativos, TypeScript completo/focal, lint e Chromium com rotinas reais do comparador nas larguras/escala/bandas/ranges obrigatórios; obter revisão não autora do diff antes do único commit/push.
 - [ ] T056 [O2/O3/RUNTIME] Integrador publicar um único HEAD e observar exatamente uma rodada focal3→matriz75→RC15; comprovar 75IDs/150amostras e15gates no SHA final, sem reexecução automática ou PASS transferido.
 - [ ] T057 [O4/QA/HANDOFF] Auditar ZIP/hash/CRC/manifestos/PNGs com QA independente, solicitar CodexReview do SHA final, reconciliar T008/T016/T027/T028/T030/T044/T045/T050/T051/T052 e publicar handoff/recibo nas PRs50/45 sem novo commit; preservar HUMAN_ACCEPTANCE_PENDING e qualificadores científicos.
+
+
+## HF-UI044-PR50 — mandato de duas ondas — 2026-11-02
+
+Origem: instruções do usuário nesta sessão; uma nova rodada/attempt1,90 runner-minutes. Histórico e caixas anteriores preservados. FR-036-004/SC-036-002/003/004.
+
+- [x] T058 [ONDA1/RECONCILE/PLAN] Reconciliar worktreePR50 por FF com ea43ad24, preservar principalC, inventariar estado e aplicar SpecKit036/constituição; registrar ownership de três agentes reais e limites em plan.md.
+- [x] T059 [ONDA1/EXECUTE] Receber B/CI/UX, executar contraprovas e checks aplicáveis, integrar somente deltas comprovados, congelar candidata local sem finding conhecido.
+- [ ] T060 [ONDA2/REVIEW/PUBLISH/CI] Obter QA não autora pré-publicação, publicar únicoSHAfinal/Preview=false porFF normal e observar exatamente focal3→matriz75→RC15; pedir uma revisãoCodex noSHAfinal se ainda não houver válida.
+- [ ] T061 [ONDA2/QA/HANDOFF] Auditar resultados/ZIPs/PNGs/CRC/hashes/provenance/UI037 e parecerCodex, reconciliar estados somente com provas próprias; publicar parecer factualPR50 e síntesePR45 com reciboJSON sem novo push/merge/deploy.
