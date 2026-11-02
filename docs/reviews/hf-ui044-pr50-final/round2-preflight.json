@@ -1,0 +1,19 @@
+{
+  "mission":"HF-UI-044-FINAL-PR50-ONE-SHOT",
+  "classification":"EVIDENCIA_IMPLEMENTACAO",
+  "cut":"O3_PRE_SECOND_AND_LAST_PUSH",
+  "parent":"72a70afdd941e18805a4004571fd3b4df5e52913",
+  "causalRun":{"id":41380591865,"attempt":1,"job":125070344187,"error":"Inherited private application configuration prohibited: PGUSER","stage":"PREFLIGHT_BEFORE_DEPENDENCIES_OR_DATABASE_OR_CASES","wallSeconds":31},
+  "correction":"Neutralize exactly 45 documented libpq and hosted-image selectors only after exact GitHub-hosted Windows push/root/SHA checks; persist inert selectors via GITHUB_ENV and verify names-only exclusive SHA/tree/run/attempt/job receipt before removing tombstones for owned helpers",
+  "primarySources":["https://raw.githubusercontent.com/actions/runner-images/main/images/windows/scripts/build/Install-PostgreSQL.ps1","https://www.postgresql.org/docs/current/libpq-envars.html"],
+  "red":{"ownerCI":"EXECUTED_OLD_HELPER_REJECTED_PGUSER","independentQA":"EXECUTED_HELPER_FROM_72a70af_REJECTED_PGUSER"},
+  "green":{"tests":21,"pass":21,"fail":0,"independentQA":"21_PASS_PLUS_14_PRIVATE_CONFIGURATION_NEGATIVES","coordinator":"21_PASS_AND_CONTRACT_CHECK_AND_FOCAL_LINT","yaml":"PASS","powerShellASTAllWorkflowBlocks":"PASS","diff":"PASS"},
+  "guardsPreserved":["DATABASE_URL_PRESENCE_INCLUDING_EMPTY","TEST_DATABASE_URL_PRESENCE_INCLUDING_EMPTY","DIRECT_URL_AND_POSTGRES_URL","PRIVATE_ROOT_FILES_AND_VERCEL_DIRECTORY","PROVIDER_OR_APPLICATION_CONFIGURATION","UNKNOWN_PG_SELECTORS_INCLUDING_EMPTY","REPOSITORY_REF_PUSH_EVENT_PAYLOAD_SHA_ROOT_ATTEMPT_ONE_HOSTED_WINDOWS","PREVIEW_FALSE","FRESH_OWNED_DATABASE","RATIO_ONE","THREE_SEQUENTIAL_JOBS_20_35_35"],
+  "sourceValuesLoggedHashedOrPersisted":false,
+  "productScientificStarterOrAChanges":false,
+  "newRuntimeBeforeThisPush":"NOT_RUN",
+  "review":{"reviewer":"/root/qa_reviewer","mode":"READ_ONLY_NONAUTHOR","materialFindingsOpen":0},
+  "budget":{"newRoundsAlreadyUsed":1,"newRoundsMaximum":2,"remainingAfterNextPush":0,"configuredAggregateCeilingRunnerMinutes":180,"sameShaRerun":false,"thirdRound":false},
+  "stopCondition":"After second-round failure preserve exact evidence and return BLOCKED_WITH_EXACT_FINDINGS; no third push that triggers CI",
+  "acceptances":["HUMAN_ACCEPTANCE_PENDING","GEOCODER_OPERATIONAL_PENDING","CONTRATO_EXPERIMENTAL","VALIDACAO_CIENTIFICA_PENDENTE","SUJEITO_A_RECALIBRACAO","NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"]
+}

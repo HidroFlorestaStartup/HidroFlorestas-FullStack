@@ -5,6 +5,10 @@ param(
 $ErrorActionPreference='Stop'
 & node (Join-Path $PSScriptRoot 'hf-ui044-pr50-contract.mjs') --runner
 if ($LASTEXITCODE) { throw 'UI06 requires its exact authorized hosted Windows push and first attempt.' }
+# The preflight verified this names-only receipt against SHA/tree/run/job. Remove
+# inert GITHUB_ENV tombstones before invoking any synthetic application helper.
+$ui06RunnerEnvironment=Get-Content -Raw .accounts-validation/hf-ui044-runner-environment.json | ConvertFrom-Json
+foreach ($ui06PgName in $ui06RunnerEnvironment.neutralizedNames) { Remove-Item -LiteralPath "Env:$ui06PgName" -ErrorAction SilentlyContinue }
 if ($Suite -ne 'domain' -or -not $CaseSet) { throw 'PR50 requires an explicit domain case set.' }
 $env:HF_UI044_PUSH_GUARD='PASS'
 $env:HF_UI044_CASE_SET=$CaseSet

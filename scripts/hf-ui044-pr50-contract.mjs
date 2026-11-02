@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync, appendFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module';
@@ -9,6 +9,44 @@ export const branch = 'fix/hf-ui044-ui06-b-residual-20261101';
 export const ref = `refs/heads/${branch}`;
 export const jobGuard = `github.repository == '${repository}' && github.ref == '${ref}' && github.event_name == 'push' && github.event.forced == false && github.event.deleted == false && github.run_attempt == 1`;
 const fail = message => { throw new Error(message); };
+// PostgreSQL primary libpq environment reference, plus the three runner-image
+// installation selectors. Unknown PG* variables remain rejected, even if empty.
+// https://www.postgresql.org/docs/current/libpq-envars.html
+// https://raw.githubusercontent.com/actions/runner-images/main/images/windows/scripts/build/Install-PostgreSQL.ps1
+export const neutralizedPgNames = Object.freeze([
+  'PGHOST','PGHOSTADDR','PGPORT','PGDATABASE','PGUSER','PGPASSWORD','PGPASSFILE',
+  'PGSERVICE','PGSERVICEFILE','PGOPTIONS','PGAPPNAME','PGSSLMODE','PGREQUIRESSL',
+  'PGSSLCOMPRESSION','PGSSLCERT','PGSSLKEY','PGSSLCERTMODE','PGSSLROOTCERT',
+  'PGSSLCRL','PGSSLCRLDIR','PGSSLSNI','PGREQUIREPEER','PGSSLMINPROTOCOLVERSION',
+  'PGSSLMAXPROTOCOLVERSION','PGGSSENCMODE','PGKRBSRVNAME','PGGSSLIB','PGGSSDELEGATION',
+  'PGCONNECT_TIMEOUT','PGCLIENTENCODING','PGTARGETSESSIONATTRS','PGLOADBALANCEHOSTS',
+  'PGSSLNEGOTIATION','PGREQUIREAUTH','PGCHANNELBINDING','PGMINPROTOCOLVERSION',
+  'PGMAXPROTOCOLVERSION','PGDATESTYLE','PGTZ','PGGEQO','PGSYSCONFDIR','PGLOCALEDIR',
+  'PGBIN','PGROOT','PGDATA',
+]);
+const environmentReceipt = '.accounts-validation/hf-ui044-runner-environment.json';
+function pgKeys(env) {
+  const names=Object.keys(env).filter(name=>/^PG/i.test(name));
+  for(const name of names) if(!neutralizedPgNames.includes(name.toUpperCase())) fail(`Unknown PostgreSQL environment selector prohibited: ${name.replace(/[^a-z0-9_]/gi,'')}`);
+  return names;
+}
+export function sanitizeHostedLibpq(root, env, event) {
+  // No original values are logged, hashed, or persisted. Only names are inventoried.
+  assertRunnerContext(env,event);
+  if(Object.hasOwn(env,'HF_UI044_LIBPQ_SANITIZED')) fail('Fresh environment neutralization cannot be repeated.');
+  const names=pgKeys(env), clean={...env};
+  for(const name of names) delete clean[name];
+  verifyPrivateEnvironment(root,clean); // All application/provider config still rejects by presence, including empty.
+  const presentNames=names.map(name=>name.toUpperCase()).sort();
+  clean.HF_UI044_LIBPQ_SANITIZED='PASS';
+  return {environment:clean,presentNames,neutralizedNames:[...neutralizedPgNames]};
+}
+export function assertEnvironmentReceipt(receipt, env, tree) {
+  if(receipt?.schema!=='hf-ui044-hosted-environment-v1' || receipt.sourceSha!==env.GITHUB_SHA || receipt.tree!==tree || receipt.run!==env.GITHUB_RUN_ID || receipt.attempt!==env.GITHUB_RUN_ATTEMPT || receipt.job!==env.GITHUB_JOB ||
+    receipt.policy!=='EXPLICIT_PG_SELECTORS_EMPTY_OR_ABSENT_ONLY' || JSON.stringify(receipt.neutralizedNames)!==JSON.stringify(neutralizedPgNames) || !Array.isArray(receipt.presentNames) || receipt.presentNames.some(name=>!neutralizedPgNames.includes(name))) fail('Hosted environment neutralization receipt mismatch.');
+  if(env.HF_UI044_LIBPQ_SANITIZED!=='PASS') fail('Hosted environment neutralization attestation missing.');
+}
+
 export function assertRunnerContext(env, event) {
   for (const [key,value] of Object.entries({GITHUB_ACTIONS:'true',GITHUB_REPOSITORY:repository,
     GITHUB_REF:ref,GITHUB_EVENT_NAME:'push',GITHUB_RUN_ATTEMPT:'1',RUNNER_OS:'Windows',RUNNER_ENVIRONMENT:'github-hosted'})) {
@@ -40,7 +78,11 @@ export function validateWorkflow(workflow) {
       if (step.uses?.startsWith('actions/setup-node@') && step.with?.['node-version'] !== '24.19.0') fail('Wrong Node pin.');
     }
     const runs = job.steps.map(step=>step.run ?? '').join('\n');
-    if (!runs.includes('node scripts/hf-ui044-pr50-contract.mjs --runner') || !runs.includes('node scripts/hf-ui044-pr50-contract.mjs --check')) fail('Missing preflight.');
+    const sanitizeAt=job.steps.findIndex(step=>step.run?.includes('--runner --sanitize-libpq'));
+    const installAt=job.steps.findIndex(step=>step.run?.includes('npm ci'));
+    if(sanitizeAt<0 || installAt<=sanitizeAt || job.steps.some((step,i)=>i<sanitizeAt && step.run)) fail('Neutralization must precede dependency or application commands.');
+    if(index===2 && !runs.includes('$runnerEnvironment.neutralizedNames')) fail('RC must remove neutralized selectors before owned helpers.');
+    if (!runs.includes('node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq') || !runs.includes('node scripts/hf-ui044-pr50-contract.mjs --check')) fail('Missing preflight.');
     if (index < 2 && (!runs.includes(`./scripts/hf-ui06-visual.ps1 -Suite domain -CaseSet ${index ? 'complete-75':'focal-3'}`) || !runs.includes('bun@1.3.11'))) fail('Case selection or Bun pin missing.');
     if (index === 2 && (!runs.includes('./scripts/rc-review-validation.ps1 -InitializeCiCluster') || !runs.includes('node scripts/hf-ui044-verify.mjs'))) fail('Official RC or post-suite UI037 check missing.');
     const uploads = job.steps.filter(step=>step.uses?.startsWith('actions/upload-artifact@'));
@@ -52,7 +94,8 @@ export function validateWorkflow(workflow) {
       if (!path.startsWith('fullstack/.accounts-validation/') && !path.startsWith('fullstack/test-results/')) fail('Artifact outside synthetic allowlist.');
       if (!/\.(?:png|json|jsonl|log)$/.test(path) || /\.\.\//.test(path)) fail('Artifact is not an allowlisted evidence extension.');
     }
-    if (index < 2 && paths.some(path=>!path.startsWith(`fullstack/.accounts-validation/ui06-b-${index ? 'complete-75':'focal-3'}/`))) fail('Focal and full artifacts must be isolated.');
+    if (!paths.includes('fullstack/'+environmentReceipt)) fail('Names-only runner receipt must be archived.');
+    if (index < 2 && paths.some(path=>path!=='fullstack/'+environmentReceipt && !path.startsWith(`fullstack/.accounts-validation/ui06-b-${index ? 'complete-75':'focal-3'}/`))) fail('Focal and full artifacts must be isolated.');
   }
 }
 export function checkFiles(root = process.cwd()) {
@@ -67,22 +110,43 @@ export function checkFiles(root = process.cwd()) {
 }
 export function verifyPrivateEnvironment(root, env) {
   if (existsSync(join(root,'.vercel')) || readdirSync(root).some(name=>name.startsWith('.env') && !name.endsWith('.example'))) fail('Private root configuration prohibited.');
-  const prohibited = ['DATABASE_URL','TEST_DATABASE_URL','DIRECT_URL','POSTGRES_URL','PGHOST','PGPORT','PGDATABASE','PGUSER','PGPASSWORD','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_CLOUD_NAME','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET','ACCOUNT_REQUEST_KEY','ACCOUNT_PROOF_KEYS','MAIL_PAYLOAD_ENCRYPTION_KEYS','MAIL_IDEMPOTENCY_KEY','MAIL_WORKER_SECRET','DOTENV_CONFIG_PATH','HF_UI044_PUSH_GUARD'];
+  const prohibited = ['DATABASE_URL','TEST_DATABASE_URL','DIRECT_URL','POSTGRES_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_CLOUD_NAME','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET','ACCOUNT_REQUEST_KEY','ACCOUNT_PROOF_KEYS','MAIL_PAYLOAD_ENCRYPTION_KEYS','MAIL_IDEMPOTENCY_KEY','MAIL_WORKER_SECRET','DOTENV_CONFIG_PATH','HF_UI044_PUSH_GUARD'];
   for (const name of prohibited) if (Object.hasOwn(env,name)) fail(`Inherited private application configuration prohibited: ${name}`);
+  for(const name of pgKeys(env)) if(env.HF_UI044_LIBPQ_SANITIZED!=='PASS' || env[name]!=='') fail(`Non-neutralized PostgreSQL environment selector prohibited: ${name}`);
   if (env.HF_REVERSE_GEOCODER_URL) fail('Real geocoder configuration prohibited.');
 }
-export function runnerPreflight(root = process.cwd(), env = process.env) {
+export function persistHostedEnvironment(root, env, event, tree) {
+  if(!env.GITHUB_ENV || !['b-focal-3','b-complete-75','rc-final'].includes(env.GITHUB_JOB)) fail('Authorized job and GitHub environment-file persistence required.');
+  const result=sanitizeHostedLibpq(root,env,event);
+  const receipt={schema:'hf-ui044-hosted-environment-v1',sourceSha:env.GITHUB_SHA,tree,run:env.GITHUB_RUN_ID,attempt:env.GITHUB_RUN_ATTEMPT,job:env.GITHUB_JOB,
+    policy:'EXPLICIT_PG_SELECTORS_EMPTY_OR_ABSENT_ONLY',presentNames:result.presentNames,neutralizedNames:result.neutralizedNames};
+  mkdirSync(join(root,'.accounts-validation'),{recursive:true});
+  writeFileSync(join(root,environmentReceipt),JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});
+  // GITHUB_ENV empty values shadow machine-level defaults in EVERY later step.
+  // Application/provider keys are never added to this narrowly bounded policy.
+  appendFileSync(env.GITHUB_ENV,neutralizedPgNames.map(name=>`${name}=\n`).join('')+'HF_UI044_LIBPQ_SANITIZED=PASS\n');
+  for(const name of pgKeys(env)) delete env[name];
+  env.HF_UI044_LIBPQ_SANITIZED='PASS';
+}
+export function runnerPreflight(root = process.cwd(), env = process.env, sanitize = false) {
   if (!env.GITHUB_EVENT_PATH) fail('GitHub push payload path is required.');
-  assertRunnerContext(env,JSON.parse(readFileSync(env.GITHUB_EVENT_PATH,'utf8')));
+  const event=JSON.parse(readFileSync(env.GITHUB_EVENT_PATH,'utf8'));
+  assertRunnerContext(env,event);
   const git = args=>execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
   if (resolve(git(['rev-parse','--show-toplevel'])).toLowerCase() !== resolve(root).toLowerCase() || git(['rev-parse','HEAD']) !== env.GITHUB_SHA) fail('Checked-out root/SHA differs from event.');
   execFileSync('git',['diff','--exit-code','--quiet'],{cwd:root});
   execFileSync('git',['diff','--cached','--exit-code','--quiet'],{cwd:root});
-  verifyPrivateEnvironment(root,env);
   checkFiles(root);
+  const tree=git(['rev-parse','HEAD^{tree}']);
+  if(sanitize) {
+    if(!env.GITHUB_ENV || !['b-focal-3','b-complete-75','rc-final'].includes(env.GITHUB_JOB)) fail('Authorized job and GitHub environment-file persistence required.');
+    persistHostedEnvironment(root,env,event,tree);
+  }
+  verifyPrivateEnvironment(root,env);
+  assertEnvironmentReceipt(JSON.parse(readFileSync(join(root,environmentReceipt),'utf8')),env,tree);
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  if (process.argv[2] === '--runner') runnerPreflight();
+  if (process.argv[2] === '--runner') runnerPreflight(process.cwd(),process.env,process.argv[3]==='--sanitize-libpq');
   else if (process.argv[2] === '--check') {
     const require = createRequire(import.meta.url);
     const workflow = require('yaml').parse(readFileSync('.github/workflows/hf-ui044-pr50-final.yml','utf8'));

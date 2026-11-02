@@ -7,7 +7,7 @@ import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import { deflateSync } from 'node:zlib';
 import { assertOfficialGates } from './hf-ui044-verify.mjs';
-import { assertRunnerContext, validateWorkflow, verifyPrivateEnvironment, checkFiles, repository, ref } from './hf-ui044-pr50-contract.mjs';
+import { assertRunnerContext, validateWorkflow, verifyPrivateEnvironment, checkFiles, repository, ref, sanitizeHostedLibpq, persistHostedEnvironment, assertEnvironmentReceipt, neutralizedPgNames } from './hf-ui044-pr50-contract.mjs';
 import { expectedCaseIds, assertCoverage, verifyDomainEvidence, assertPng } from './hf-ui044-b-verify.mjs';
 const require=createRequire(import.meta.url);
 const workflow=require('yaml').parse(readFileSync('.github/workflows/hf-ui044-pr50-final.yml','utf8'));
@@ -30,6 +30,8 @@ test('workflow negative mutations cannot expand event, jobs, budget, credentials
  mutate(w=>w.jobs['b-focal-3'].steps[0].uses='actions/checkout@main');mutate(w=>w.jobs['b-focal-3'].steps[0].with['persist-credentials']=true);
  mutate(w=>w.jobs['b-focal-3'].steps.at(-1).with.path='fullstack/.env');mutate(w=>w.jobs['b-focal-3'].steps.at(-1).with['retention-days']=90);
  mutate(w=>w.jobs['b-focal-3'].steps[1]['continue-on-error']=true);
+ mutate(w=>{const step=w.jobs['b-focal-3'].steps.find(step=>step.run?.includes('--sanitize-libpq'));step.run=step.run.replace(' --sanitize-libpq','');});
+ mutate(w=>{const step=w.jobs['b-focal-3'].steps.at(-1);step.with.path=step.with.path.replace('fullstack/.accounts-validation/hf-ui044-runner-environment.json','');});
 });
 test('inherited private config and root env files fail without revealing values',()=>{
  const root=mkdtempSync(join(tmpdir(),'hf-ui044-contract-'));
@@ -111,5 +113,67 @@ test('source pair artifacts verify bytes, source provenance and separate cleanup
   put('domain-cleanup.json',{browserCleanup:'PASS',failures:[],cleanupFailures:[],quarantinedSources:[],caseSet:'focal-3',run:'123',attempt:'1'});
   writeFileSync(join(root,index.cases[0].samples[0].png),'corrupt');
   await assert.rejects(verifyDomainEvidence(root,'focal-3',identity),/SAMPLE_HASH_MISMATCH/);
+ }finally{rmSync(root,{recursive:true,force:true});}
+});
+
+test('O3 regression: attested inert libpq tombstones survive subsequent Actions steps',()=>{
+ const root=mkdtempSync(join(tmpdir(),'hf-ui044-libpq-red-'));
+ try {assert.doesNotThrow(()=>verifyPrivateEnvironment(root,{PGUSER:'',PGPASSWORD:'',HF_UI044_LIBPQ_SANITIZED:'PASS'}));}
+ finally {rmSync(root,{recursive:true,force:true});}
+});
+
+test('O3 host PGUSER reproduction remains rejected without explicit hosted neutralization',()=>{
+ const root=mkdtempSync(join(tmpdir(),'hf-ui044-host-defaults-'));
+ try {
+  const inherited={...env,PGUSER:'synthetic-host-user',PGPASSWORD:'synthetic-host-password',PGBIN:'synthetic-host-bin',PGROOT:'synthetic-host-root',PGDATA:'synthetic-host-data'};
+  assert.throws(()=>verifyPrivateEnvironment(root,inherited),/Non-neutralized PostgreSQL/);
+  const result=sanitizeHostedLibpq(root,inherited,event);
+  assert.deepEqual(result.presentNames,['PGBIN','PGDATA','PGPASSWORD','PGROOT','PGUSER']);
+  assert.ok(neutralizedPgNames.every(name=>!Object.hasOwn(result.environment,name)));
+  assert.equal(result.environment.HF_UI044_LIBPQ_SANITIZED,'PASS');
+  assert.doesNotThrow(()=>verifyPrivateEnvironment(root,result.environment));
+  const receiptText=JSON.stringify({presentNames:result.presentNames,neutralizedNames:result.neutralizedNames});
+  assert.ok(!receiptText.includes('synthetic-host-'));
+  assert.throws(()=>sanitizeHostedLibpq(root,{...inherited,RUNNER_ENVIRONMENT:'self-hosted'},event));
+  assert.throws(()=>sanitizeHostedLibpq(root,{...inherited,GITHUB_RUN_ATTEMPT:'2'},event));
+ } finally {rmSync(root,{recursive:true,force:true});}
+});
+test('O3 neutralization never permits private app values or unknown PG selectors, including empty values',()=>{
+ const root=mkdtempSync(join(tmpdir(),'hf-ui044-libpq-negative-'));
+ try {
+  for(const key of ['DATABASE_URL','TEST_DATABASE_URL','DIRECT_URL','POSTGRES_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_API_KEY','ACCOUNT_REQUEST_KEY','DOTENV_CONFIG_PATH','HF_UI044_PUSH_GUARD'])
+   for(const value of ['', 'synthetic-private-do-not-print'])
+    assert.throws(()=>sanitizeHostedLibpq(root,{...env,PGUSER:'synthetic', [key]:value},event),error=>!error.message.includes('synthetic-private-do-not-print'));
+  for(const value of ['', 'synthetic']) {
+   assert.throws(()=>sanitizeHostedLibpq(root,{...env,PG_UNRECOGNIZED:value},event));
+   assert.throws(()=>verifyPrivateEnvironment(root,{HF_UI044_LIBPQ_SANITIZED:'PASS',PG_UNRECOGNIZED:value}));
+  }
+  for(const key of neutralizedPgNames) {
+   assert.throws(()=>verifyPrivateEnvironment(root,{[key]:''}));
+   assert.throws(()=>verifyPrivateEnvironment(root,{HF_UI044_LIBPQ_SANITIZED:'PASS',[key]:'synthetic-not-inert'}));
+   assert.doesNotThrow(()=>verifyPrivateEnvironment(root,{HF_UI044_LIBPQ_SANITIZED:'PASS',[key]:''}));
+  }
+  writeFileSync(join(root,'.env.local'),'synthetic');assert.throws(()=>sanitizeHostedLibpq(root,{...env,PGUSER:'synthetic'},event));
+ }finally{rmSync(root,{recursive:true,force:true});}
+});
+test('O3 names-only receipt and GITHUB_ENV persist inert selectors across steps and reject reinjection',()=>{
+ const root=mkdtempSync(join(tmpdir(),'hf-ui044-libpq-persist-'));
+ try{
+  const githubEnvironment=join(root,'github-env'), initial={...env,GITHUB_ENV:githubEnvironment,GITHUB_JOB:'b-focal-3',PGUSER:'synthetic-host-user',PGPASSWORD:'synthetic-host-password'};
+  persistHostedEnvironment(root,initial,event,tree);
+  const receipt=JSON.parse(readFileSync(join(root,'.accounts-validation/hf-ui044-runner-environment.json'),'utf8'));
+  assertEnvironmentReceipt(receipt,initial,tree);assert.doesNotThrow(()=>verifyPrivateEnvironment(root,initial));
+  const written=readFileSync(githubEnvironment,'utf8');
+  assert.ok(!written.includes('synthetic-host-'));
+  const nextStep={...env,GITHUB_JOB:'b-focal-3',...Object.fromEntries(written.trim().split('\n').map(line=>{const offset=line.indexOf('=');return[line.slice(0,offset),line.slice(offset+1)];}))};
+  assertEnvironmentReceipt(receipt,nextStep,tree);assert.doesNotThrow(()=>verifyPrivateEnvironment(root,nextStep));
+  assert.ok(neutralizedPgNames.every(name=>nextStep[name]===''));
+  for(const [key,value] of [['PGUSER','synthetic-injected'],['PGPASSWORD','synthetic-injected'],['DATABASE_URL',''],['TEST_DATABASE_URL','']])
+   assert.throws(()=>verifyPrivateEnvironment(root,{...nextStep,[key]:value}));
+  assert.throws(()=>assertEnvironmentReceipt({...receipt,run:'999'},nextStep,tree));
+  assert.throws(()=>assertEnvironmentReceipt({...receipt,job:'rc-final'},nextStep,tree));
+  assert.throws(()=>assertEnvironmentReceipt({...receipt,sourceSha:'c'.repeat(40)},nextStep,tree));
+  assert.throws(()=>assertEnvironmentReceipt(receipt,{...nextStep,HF_UI044_LIBPQ_SANITIZED:undefined},tree));
+  assert.throws(()=>persistHostedEnvironment(root,initial,event,tree));
  }finally{rmSync(root,{recursive:true,force:true});}
 });

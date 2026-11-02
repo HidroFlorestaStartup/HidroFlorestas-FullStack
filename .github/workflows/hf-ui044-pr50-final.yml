@@ -39,7 +39,7 @@ jobs:
           cache-dependency-path: fullstack/package-lock.json
       - name: Verify branch, containment and synthetic-only environment
         run: |
-          node scripts/hf-ui044-pr50-contract.mjs --runner
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
           if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
       - name: Install locked dependencies and Chromium
         run: |
@@ -93,6 +93,7 @@ jobs:
         with:
           name: hf-ui044-b-focal-3-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
             fullstack/.accounts-validation/ui06-b-focal-3/*.png
             fullstack/.accounts-validation/ui06-b-focal-3/*.json
             fullstack/.accounts-validation/ui06-b-focal-3/*.jsonl
@@ -130,7 +131,7 @@ jobs:
           cache-dependency-path: fullstack/package-lock.json
       - name: Verify branch, containment and synthetic-only environment
         run: |
-          node scripts/hf-ui044-pr50-contract.mjs --runner
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
           if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
       - name: Install locked dependencies and Chromium
         run: |
@@ -184,6 +185,7 @@ jobs:
         with:
           name: hf-ui044-b-complete-75-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
             fullstack/.accounts-validation/ui06-b-complete-75/*.png
             fullstack/.accounts-validation/ui06-b-complete-75/*.json
             fullstack/.accounts-validation/ui06-b-complete-75/*.jsonl
@@ -221,7 +223,7 @@ jobs:
           cache-dependency-path: fullstack/package-lock.json
       - name: Verify branch, containment and synthetic-only environment
         run: |
-          node scripts/hf-ui044-pr50-contract.mjs --runner
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
           if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
       - name: Install locked dependencies and Chromium
         run: |
@@ -244,7 +246,12 @@ jobs:
           npx tsc --noEmit --incremental false
           if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
       - name: Execute exactly fifteen official gates with owned runner PostgreSQL
-        run: ./scripts/rc-review-validation.ps1 -InitializeCiCluster
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --runner
+          if ($LASTEXITCODE) { throw 'RC runner environment attestation failed.' }
+          $runnerEnvironment=Get-Content -Raw .accounts-validation/hf-ui044-runner-environment.json | ConvertFrom-Json
+          foreach ($name in $runnerEnvironment.neutralizedNames) { Remove-Item -LiteralPath "Env:$name" -ErrorAction SilentlyContinue }
+          ./scripts/rc-review-validation.ps1 -InitializeCiCluster
       - name: Verify durable UI037 after later suites and official journal
         run: node scripts/hf-ui044-verify.mjs
       - name: Archive allowlisted synthetic evidence
@@ -253,6 +260,7 @@ jobs:
         with:
           name: hf-ui044-rc-final-${{ github.sha }}-attempt-${{ github.run_attempt }}
           path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
             fullstack/.accounts-validation/*.log
             fullstack/.accounts-validation/results.jsonl
             fullstack/test-results/**/frontend-login-*.png

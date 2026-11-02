@@ -135,3 +135,7 @@ As tarefas T039/T040 e T008/T016/T027/T028 permanecem abertas até runtime final
 ## Phase 2: Convergence
 
 - [ ] T052 [CONVERGENCE/EVIDENCE] Completar a qualificação executada ainda parcial: coordenador deve fechar T050 e revisão T051 no SHA efetivamente testado, reconciliando os itens históricos T008/T016/T027/T028/T030/T044/T045 somente com resultados finais observados. Origem FR-036-004/SC-036-002/SC-036-003, plan: fechamento PR50; gap partial. Nenhuma implementação de produto adicional inferida.
+
+## Checkpoint O3 — run41380591865/1, 2026-11-02
+
+EVIDENCIA_IMPLEMENTACAO: SHA72a70afdd941e18805a4004571fd3b4df5e52913 falhou antes de npm/PG/runtime: preflight rejeitou a presença herdada de PGUSER. Focal0/3iniciados; matriz75 eRC15skipped/NOT_RUN. Não houve75FAIL executados nem nova prova visual. Orçamento1/2rodadas novas consumida; uma restante depende de correção efetiva, contraprova e novoSHA pelo coordenador. Recibo: evidence/pr50-round1-runtime.json. T050/T051/T052 e os itens históricos dependentes permanecem[ ]; nenhum resultado foi promovido entreSHAs.
