@@ -6,6 +6,7 @@ import { validEnvironmentalPayload } from "../../tests/fixtures/environmental-da
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { FULLSTACK_URL, STARTER_URL, type Runtime } from "./contract";
 import { waitForFontScale } from "./shared";
+import { isApprovedFreshWindowsRunner } from "./runner-gate";
 
 export const LAB_NAME = "HF UI06 domain synthetic laboratory";
 export const AREA_NAME = "HF UI06 domain populated area";
@@ -44,8 +45,7 @@ function fixturePaths(values: Omit<DomainFixture, "base" | "areaPath" | "emptyPa
 
 /** Official auth fixture, native HTTP writes, only the fresh runner-owned database. */
 export async function setupFullstackDomain(runtime: Runtime): Promise<DomainFixture> {
-  if (runtime.source !== "fullstack" || process.env.GITHUB_ACTIONS !== "true" || process.env.RUNNER_OS !== "Windows" ||
-      process.env.GITHUB_REF !== "refs/heads/codex/hf-ui044-close-20261101" || process.env.GITHUB_RUN_ATTEMPT !== "1")
+  if (runtime.source !== "fullstack" || !isApprovedFreshWindowsRunner(process.env))
     throw new Error("DOMAIN_FIXTURE_REQUIRES_AUTHORIZED_FRESH_WINDOWS_RUNNER");
   expect(await countAuthFixtureUsers(process.env)).toBe(0);
   await runAuthFixtureCommand("setup", process.env);

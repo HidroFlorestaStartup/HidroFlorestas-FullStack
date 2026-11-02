@@ -119,3 +119,7 @@ As tarefas T039/T040 e T008/T016/T027/T028 permanecem abertas até runtime final
 - [x] T043 [REVIEW] Executar teste geométrico puro, Chromium sintético e análise de sintaxe; documentar comandos/exit codes e preservar o estado B R3 em FAIL.
 - [ ] T044 [RUNTIME] Validar os três casos B antes do restante da matriz em novo SHA e ambiente hospedado próprio autorizado; provar 75/75 casos/150 amostras, hashes, foco e integridade sem esconder FAIL/NOT_RUN.
 - [ ] T045 [INDEPENDENT QA] Revisão não autora da nova matriz B e da composição, com decisão sobre dependência A+B e aceite visual humano separado.
+
+## D: correção da guarda do runner sintético na PR #50
+
+- [x] T046 [BUG/SECURITY] Corrigir a guarda `setupFullstackDomain`: a candidata `fix/hf-ui044-ui06-b-residual-20261101` era recusada antes do setup por aceitar exclusivamente `refs/heads/codex/hf-ui044-close-20261101`. Autorizar **somente** a referência QA original e a candidata B, exigindo GitHub Actions, repositório exato, Windows e primeira tentativa; preservar o zero-fixture guard, sem acionamento de CI nem provedores. Teste RED comprovado, GREEN 17/17 com verificações negativas, TSC do helper PASS. Runtime no novo SHA `NOT_RUN`.
