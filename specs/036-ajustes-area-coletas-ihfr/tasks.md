@@ -139,3 +139,13 @@ As tarefas T039/T040 e T008/T016/T027/T028 permanecem abertas até runtime final
 ## Checkpoint O3 — run41380591865/1, 2026-11-02
 
 EVIDENCIA_IMPLEMENTACAO: SHA72a70afdd941e18805a4004571fd3b4df5e52913 falhou antes de npm/PG/runtime: preflight rejeitou a presença herdada de PGUSER. Focal0/3iniciados; matriz75 eRC15skipped/NOT_RUN. Não houve75FAIL executados nem nova prova visual. Orçamento1/2rodadas novas consumida; uma restante depende de correção efetiva, contraprova e novoSHA pelo coordenador. Recibo: evidence/pr50-round1-runtime.json. T050/T051/T052 e os itens históricos dependentes permanecem[ ]; nenhum resultado foi promovido entreSHAs.
+
+## Mandato senior final de uma rodada — 2026-11-02
+
+Origem: missão HF-UI-044-PR50-SENIOR-FULLSTACK-FINAL-ONE-ROUND enviada pelo usuário nesta sessão. FR-036-004, SC-036-002/003/004. Os limites de rodadas anteriores permanecem históricos; este mandato autoriza somente um novo SHA/attempt1, teto90 runner-minutes. Os marcadores seguintes não importam PASS histórico.
+
+- [x] T053 [O0/RECONCILE] Revalidar identidade/head/tree/remotos/ancestralidade/status/ignored/locks/owners e SpecKit036; preservar checkoutC e worktrees, registrar ownership exclusivo e contrato do novo mandato em plan.md.
+- [x] T054 [O1/IMPLEMENT] Reproduzir P1/P2 antes da correção e implementar seleção DOM do scroll owner e classificação completa da banda na instrumentação B, preservando ratio1/hit/FAIL/fonte e evidências históricas.
+- [x] T055 [O1/REVIEW] Executar testes puros/negativos, TypeScript completo/focal, lint e Chromium com rotinas reais do comparador nas larguras/escala/bandas/ranges obrigatórios; obter revisão não autora do diff antes do único commit/push.
+- [ ] T056 [O2/O3/RUNTIME] Integrador publicar um único HEAD e observar exatamente uma rodada focal3→matriz75→RC15; comprovar 75IDs/150amostras e15gates no SHA final, sem reexecução automática ou PASS transferido.
+- [ ] T057 [O4/QA/HANDOFF] Auditar ZIP/hash/CRC/manifestos/PNGs com QA independente, solicitar CodexReview do SHA final, reconciliar T008/T016/T027/T028/T030/T044/T045/T050/T051/T052 e publicar handoff/recibo nas PRs50/45 sem novo commit; preservar HUMAN_ACCEPTANCE_PENDING e qualificadores científicos.

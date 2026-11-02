@@ -8,7 +8,7 @@ import { setupFullstackDomain, setupStarterDomain, navigateDomain, AREA_NAME, EM
 import { IHFR_SCIENTIFIC_QUALIFICATIONS } from "../../tests/e2e/support/frontend-ihfr-evidence";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { waitForMissionRender } from "../../tests/e2e/support/frontend-mission-evidence";
-import { planReadableScroll, classifyHorizontalOverflow } from "./domain-geometry";
+import { planReadableScroll, classifyHorizontalOverflow, selectReadingScrollOwner, measureReadingExposure, applyReadingScroll, assessReadingExposure } from "./domain-geometry";
 import { selectDomainCases, collectDomainCases, withOwnedSourceBudget, classifyDomainPair } from "./domain-collection";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
@@ -236,21 +236,7 @@ async function semanticCoreExposure(runtime:Runtime,c:EvidenceCase,state:DomainS
   const target=state==="area-empty"?runtime.page.getByText(runtime.source==="fullstack"?
     "Esta área ainda não tem coletas confirmadas.":"Nenhuma coleta confirmada",{exact:false}).first():
     runtime.page.getByRole("heading",{name:"Registro",exact:true});
-  const exposure=()=>target.evaluate(async node=>{
-    const rect=(element:Element|null)=>{if(!element)return null;const r=element.getBoundingClientRect();return{top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height};};
-    const header=rect(document.querySelector("#application-header,header"));
-    const main=rect(document.querySelector("#application-content,#conteudo"));
-    const rails=[...document.querySelectorAll("nav")].filter(element=>getComputedStyle(element).position==="fixed"&&element.getBoundingClientRect().height>0);
-    const railTop=rails.length?Math.min(...rails.map(element=>element.getBoundingClientRect().top)):innerHeight;
-    const readingTop=Math.max(0,header?.bottom??0,main?.top??0),readingBottom=Math.min(innerHeight,railTop,main?.bottom??innerHeight);
-    const ratio=await new Promise<number>(resolve=>{const observer=new IntersectionObserver(entries=>{observer.disconnect();resolve(entries[0]?.intersectionRatio??0);});observer.observe(node);});
-    const targetRect=rect(node)!;const point={x:targetRect.left+targetRect.width/2,y:targetRect.top+targetRect.height/2};
-    const hit=document.elementFromPoint(point.x,point.y);
-    return{viewport:{width:innerWidth,height:innerHeight},rootFontPx:parseFloat(getComputedStyle(document.documentElement).fontSize),
-      header,main,railTop,readingTop,readingBottom,availableReadingHeight:Math.max(0,readingBottom-readingTop),
-      target:{rect:targetRect,ratio,hit:{point,tag:hit?.tagName??null,unobstructed:!!hit&&(hit===node||node.contains(hit))}},
-      mainOutsideViewport:!!main&&main.top>=innerHeight};
-  });
+  const exposure=()=>target.evaluate(measureReadingExposure);
   await runtime.page.evaluate(waitForMissionRender);
   const initial=await exposure();
   const initialOccluded=initial.mainOutsideViewport||initial.availableReadingHeight===0;
@@ -280,43 +266,53 @@ async function semanticCoreExposure(runtime:Runtime,c:EvidenceCase,state:DomainS
       pngSha256:diagnostic.pngSha256,jsonSha256:diagnostic.jsonSha256};
     if(runtime.source==="fullstack") throw new Error("NATIVE_INITIAL_READING_BAND_OBSTRUCTED");
   }
-  // A normal reading gesture, applied identically in both sources before any
-  // One native reading gesture, before the final measurement. For FullStack,
-  // scrollIntoView(center) targets a CSS-padded scrollport, not the unobscured
-  // region between the fixed header and mobile rail. R3 measured top49.67 < header74.
+  // Read the computed DOM owner and use only its measured scroll range. The
+  // document owns desktop scrolling; auto scrollports keep ownership at range0.
+  const owner=selectReadingScrollOwner(initial.scrollports);
+  observation.scrollOwner=owner.scrollOwner;observation.overflowY=owner.overflowY;
+  observation.source=runtime.source;observation.sourceSha=runtime.code.sha;
+  observation.scrollTopInitial=owner.scrollTop;
+  observation.contentMaxScrollTop=initial.scrollports.content.maxScrollTop;
+  observation.documentMaxScrollTop=initial.scrollports.document.maxScrollTop;
   if (runtime.source === "fullstack" && initial.availableReadingHeight > 0) {
-    const content = runtime.page.locator("#application-content");
-    const scrollport = await content.evaluate(node => ({
-      scrollTop: node.scrollTop, maxScrollTop: Math.max(0, node.scrollHeight - node.clientHeight),
-      paddingStart: getComputedStyle(node).scrollPaddingBlockStart,
-      paddingEnd: getComputedStyle(node).scrollPaddingBlockEnd,
-    }));
-    const plan = planReadableScroll({ targetTop: initial.target.rect.top,
-      targetHeight: initial.target.rect.height, readingTop: initial.readingTop,
-      readingBottom: initial.readingBottom, scrollTop: scrollport.scrollTop,
-      maxScrollTop: scrollport.maxScrollTop });
-    observation.scrollPlan = { ...plan, scrollport, method: "ONE_SCROLL_IN_NATIVE_READING_BAND" };
-    await content.evaluate((node, delta) => (node as HTMLElement).scrollBy({ top: delta, behavior: "instant" }), plan.delta);
+    const plan=planReadableScroll({targetTop:initial.target.rect.top,targetHeight:initial.target.rect.height,
+      readingTop:initial.readingTop,readingBottom:initial.readingBottom,scrollTop:owner.scrollTop,maxScrollTop:owner.maxScrollTop});
+    observation.scrollPlan={...plan,scrollport:owner,method:"ONE_SCROLL_IN_NATIVE_READING_BAND"};
+    await target.evaluate(applyReadingScroll,{scrollOwner:owner.scrollOwner,delta:plan.delta});
   } else {
-    await target.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
-    observation.scrollPlan = { method: "ONE_SCROLL_IN_REFERENCE_VIEWPORT", initialReadingBand: initial.availableReadingHeight };
+    await target.evaluate(node=>node.scrollIntoView({block:"center",behavior:"instant"}));
+    observation.scrollPlan={method:"ONE_SCROLL_IN_REFERENCE_VIEWPORT",initialReadingBand:initial.availableReadingHeight,
+      requestedDelta:null,clamped:null,planObservation:"NOT_APPLICABLE_REFERENCE_SCROLL_INTO_VIEW"};
   }
   await runtime.page.evaluate(waitForMissionRender);
   const post=await exposure();observation.post=post;observation.postRatio=post.target.ratio;observation.postHit=post.target.hit;
-  const fitsReadingBand=post.target.rect.height<=post.availableReadingHeight&&post.target.rect.width<=post.viewport.width;
+  const postOwner=selectReadingScrollOwner(post.scrollports);
+  observation.scrollTopFinal=postOwner.scrollTop;
+  observation.appliedDelta=postOwner.scrollTop-owner.scrollTop;
+  const visibility=assessReadingExposure({targetTop:post.target.rect.top,targetBottom:post.target.rect.bottom,
+    targetLeft:post.target.rect.left,targetRight:post.target.rect.right,readingTop:post.readingTop,readingBottom:post.readingBottom,
+    viewportWidth:post.viewport.width,ratio:post.target.ratio,centerHit:post.target.hit.unobstructed,
+    edgeHits:post.target.hitPoints.every(point=>point.unobstructed)});
+  observation.visibility=visibility;
+  const fitsReadingBand=visibility.fitsReadingBand;
   observation.ratio1Applicable=fitsReadingBand;
   if(runtime.source==="fullstack") {
     expect(post.availableReadingHeight,"Native semantic reading band remains positive").toBeGreaterThan(0);
     expect(post.target.hit.unobstructed,"Native semantic target center is unobscured").toBe(true);
-    if(fitsReadingBand) await expect(target).toBeInViewport({ratio:1});
+    expect(postOwner.scrollOwner,"Native scroll owner remains stable").toBe(owner.scrollOwner);
+    if(fitsReadingBand) {
+      await expect(target).toBeInViewport({ratio:1});
+      expect(visibility.withinReadingBand,"Whole native target fits the unobscured reading band").toBe(true);
+      expect(visibility.fullyExposed,"Native target edges remain unobstructed by fixed or sticky elements").toBe(true);
+    }
     else {
       expect(post.target.ratio,"Oversized native message remains visible for reading by scroll").toBeGreaterThan(0);
       observation.readingLimit="TARGET_BOX_TALLER_THAN_READING_BAND_REQUIRES_USER_SCROLL_NOT_WHOLE_BOX_IN_ONE_FRAME";
     }
   }
-  if(runtime.source==="starter"&&(!post.target.hit.unobstructed||post.availableReadingHeight===0)) {
-    comparison.comparability="NON_EQUIVALENT";comparison.reasons??=[];
-    comparison.reasons.push("starter:POST_SCROLL_TEXT_OCCLUDED_BY_REFERENCE_HEADER_NAV:CDP_IS_NOT_LEGIBILITY_PASS");
+  if(runtime.source==="starter"&&visibility.comparability!=="COMPARABLE") {
+    comparison.comparability=visibility.comparability;comparison.reasons??=[];
+    comparison.reasons.push(visibility.reason!);
   }
 }
 

@@ -73,3 +73,63 @@ test('existing R3 failure receipts are immutable inputs, not reclassified as PAS
   assert.match(spec, /NATIVE_HORIZONTAL_OVERFLOW/);
   assert.match(spec, /PINNED_REFERENCE_HORIZONTAL_OVERFLOW/);
 });
+
+const { selectReadingScrollOwner, assessReadingExposure } = await import('./domain-geometry.ts');
+const ports = (overflowY='auto', range=4000) => ({
+  content:{exists:true,connected:true,containsTarget:true,overflowY,clientHeight:301,scrollHeight:301+range,scrollTop:0,maxScrollTop:range},
+  document:{exists:true,connected:true,clientHeight:390,scrollHeight:5890,scrollTop:0,maxScrollTop:5500,windowScrollY:0,scrollingElementTag:'HTML'},
+});
+const exposureInput = {targetTop:150,targetBottom:250,targetLeft:8,targetRight:312,readingTop:121,readingBottom:390,viewportWidth:844,
+  ratio:1,centerHit:true,edgeHits:true};
+
+test('desktop844 observed: content overflow visible has range0; document range is used',()=>{
+ const input=ports('visible',0);
+ const owner=selectReadingScrollOwner(input);
+ const plan=planReadableScroll({targetTop:3778.671875,targetHeight:218,readingTop:121,readingBottom:390,
+   scrollTop:owner.scrollTop,maxScrollTop:owner.maxScrollTop});
+ assert.equal(owner.scrollOwner,'document');
+ assert.ok(plan.delta>0);assert.equal(plan.predictedFullExposure,true);
+ const wrong=planReadableScroll({targetTop:3778.671875,targetHeight:218,readingTop:121,readingBottom:390,
+   scrollTop:input.content.scrollTop,maxScrollTop:input.content.maxScrollTop});
+ assert.equal(wrong.delta,0);assert.equal(wrong.predictedFullExposure,false);
+});
+test('mobile own scrollport remains content even when its range is zero',()=>{
+ const owner=selectReadingScrollOwner(ports('auto',0));
+ assert.equal(owner.scrollOwner,'content');assert.equal(owner.maxScrollTop,0);
+ const plan=planReadableScroll({targetTop:1000,targetHeight:100,readingTop:74,readingBottom:298.5,scrollTop:owner.scrollTop,maxScrollTop:owner.maxScrollTop});
+ assert.equal(plan.delta,0);assert.equal(plan.clamped,true);assert.equal(plan.predictedFullExposure,false);
+});
+for(const overflow of ['visible','hidden','clip'])test(`non-owning overflow ${overflow} uses document despite content dimensions`,()=>{
+ assert.equal(selectReadingScrollOwner(ports(overflow)).scrollOwner,'document');
+});
+for(const property of ['exists','connected','containsTarget'])test(`content ${property}=false cannot own target scrolling`,()=>{
+ const input=ports();input.content[property]=false;assert.equal(selectReadingScrollOwner(input).scrollOwner,'document');
+});
+test('document uses window.scrollY and the actual scrollingElement range',()=>{
+ const input=ports('visible',0);input.document.windowScrollY=300;input.document.scrollTop=300;
+ assert.deepEqual(selectReadingScrollOwner(input),{scrollOwner:'document',scrollTop:300,maxScrollTop:5500,overflowY:'visible'});
+ input.document.exists=false;assert.throws(()=>selectReadingScrollOwner(input),/INVALID_SCROLL_OWNER_GEOMETRY/);
+});
+test('invalid scroll geometry does not manufacture an owner or available range',()=>{
+ const input=ports();input.content.maxScrollTop=NaN;
+ assert.throws(()=>selectReadingScrollOwner(input),/INVALID_SCROLL_OWNER_GEOMETRY/);
+});
+test('reference26px header occlusion remains NON_EQUIVALENT with ratio1 and centerHit',()=>{
+ const observation=assessReadingExposure({...exposureInput,targetTop:111,targetBottom:279,readingTop:137});
+ assert.equal(observation.fitsReadingBand,true);assert.equal(observation.withinReadingBand,false);
+ assert.equal(observation.fullyExposed,false);assert.equal(observation.comparability,'NON_EQUIVALENT');
+ assert.equal(observation.reason,'REFERENCE_READING_BAND_OCCLUSION');
+});
+test('unobstructed whole target can be comparable; partial ratio or overlay cannot',()=>{
+ assert.equal(assessReadingExposure(exposureInput).fullyExposed,true);
+ for(const delta of [{ratio:0.999},{edgeHits:false},{centerHit:false},{targetBottom:400},{targetLeft:-2}]){
+  const result=assessReadingExposure({...exposureInput,...delta});assert.equal(result.fullyExposed,false);assert.equal(result.comparability,'NON_EQUIVALENT');
+ }
+});
+test('oversized target remains partial exposure, never whole text legibility',()=>{
+ const result=assessReadingExposure({...exposureInput,targetBottom:700});
+ assert.equal(result.fitsReadingBand,false);assert.equal(result.fullyExposed,false);assert.equal(result.comparability,'NON_EQUIVALENT');
+});
+test('unobserved geometry is insufficient evidence',()=>{
+ assert.equal(assessReadingExposure({...exposureInput,ratio:NaN}).comparability,'INSUFFICIENT_EVIDENCE');
+});
