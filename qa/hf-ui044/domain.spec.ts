@@ -8,6 +8,7 @@ import { setupFullstackDomain, setupStarterDomain, navigateDomain, AREA_NAME, EM
 import { IHFR_SCIENTIFIC_QUALIFICATIONS } from "../../tests/e2e/support/frontend-ihfr-evidence";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { waitForMissionRender } from "../../tests/e2e/support/frontend-mission-evidence";
+import { planReadableScroll, classifyHorizontalOverflow } from "./domain-geometry";
 
 test.use({ trace: "off", video: "off", screenshot: "off" });
 test.setTimeout(90_000);
@@ -43,12 +44,35 @@ const fixtures = new Map<string,DomainFixture>();
 const failures: Array<{id:string;code:string}> = [];
 let setupComplete = false;
 
+/** Check both products, without promoting pinned-reference layout defects to native defects. */
+async function recordRootOverflow(runtime: Runtime, c: EvidenceCase, options: CaptureOptions) {
+  const geometry = await runtime.page.evaluate(() => {
+    const documentWidth = document.documentElement.scrollWidth, viewportWidth = innerWidth;
+    const excessPx = Math.max(0, documentWidth - viewportWidth);
+    const offenders = excessPx > 0 ? [...document.querySelectorAll("body *")]
+      .filter(node => { const rect = node.getBoundingClientRect(); return rect.width > 0 && rect.right > viewportWidth; })
+      .slice(0, 6).map(node => { const rect = node.getBoundingClientRect();
+        return { tag: node.tagName, role: node.getAttribute("role"), left: rect.left, right: rect.right, width: rect.width }; }) : [];
+    return { documentWidth, viewportWidth, excessPx, offenders };
+  });
+  const classification = classifyHorizontalOverflow(runtime.source, geometry.documentWidth, geometry.viewportWidth);
+  const prior = (c.fixture.horizontalOverflowBySource ?? {}) as Record<string, unknown>;
+  prior[runtime.source] = { ...geometry, ...classification };
+  c.fixture.horizontalOverflowBySource = prior; // Carries into each synthetic sample's JSON.
+  if (classification.nativeFailure) throw new Error("NATIVE_HORIZONTAL_OVERFLOW");
+  if (classification.referenceNonEquivalent) {
+    options.comparability = "NON_EQUIVALENT";
+    options.reasons = [...new Set([...(options.reasons ?? []), "PINNED_REFERENCE_HORIZONTAL_OVERFLOW"])];
+  }
+}
+
 async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:DomainFixture)=>Promise<void>, options:CaptureOptions={}) {
   const samples = [], errors:string[] = [];
   for (const runtime of runtimes) {
     try {
       const fixture = fixtures.get(runtime.source)!;
       await prepare(runtime,fixture);
+      await recordRootOverflow(runtime, c, options);
       samples.push(await sample(runtime,{...c,fixture:{...c.fixture,sourceFixture:fixture}}, {
         ...options, actualState: runtime.source==="starter" ? c.state+"-REFERENCE_DEMONSTRATION" : c.state+"-NATIVE_PRODUCT",
       }));
@@ -97,8 +121,8 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
           attempt:process.env.GITHUB_RUN_ATTEMPT??null,code,errorClass:error instanceof Error?error.name:"NON_ERROR",locations,
           fullPage:false,animations:"allow",viewport:frame.viewport??null,pngSha256:frame.pngSha256??null,
           frame,geometry,geometryAfterFrame,requested:{width:c.width,height:c.height,textScale:c.scale,safeAreaBottom:c.inset},
-          execution:"FAIL",comparability:"INSUFFICIENT_EVIDENCE",requirement:"DEFECT_FOUND",completeness:"PARTIAL",
-          note:"One unmodified failure frame; no retry, blur, style change or corrective scroll after the failed assertion. The case remains FAIL.",
+          execution:"FAIL",comparability:"INSUFFICIENT_EVIDENCE",requirement:"HUMAN_DECISION_PENDING",completeness:"PARTIAL",
+          note:"Technical FAIL is not proof of a native product defect. Preserve original frame and exact source without retry or corrective scroll.",
         },null,2)+"\n",{flag:"wx"});
       } catch { errors.push(runtime.source+":DIAGNOSTIC_PERSIST_FAILED"); }
     }
@@ -108,7 +132,7 @@ async function boundedPair(c: EvidenceCase, prepare: (runtime:Runtime,fixture:Do
   const fontsObserved=pairComplete&&samples.every(entry=>Object.values(entry.fonts).every(value=>
     value&&typeof value==="object"&&"observation" in value&&value.observation==="OBSERVED"));
   const result = { execution:errors.length?"FAIL":"PASS", comparability:fontsObserved?(options.comparability??"COMPARABLE"):"INSUFFICIENT_EVIDENCE",
-    requirement:errors.length?"DEFECT_FOUND":options.requirement??"HUMAN_DECISION_PENDING",
+    requirement:options.requirement??"HUMAN_DECISION_PENDING", // Technical failures alone do not attribute a native product defect.
     completeness:errors.length?"PARTIAL":"COMPLETE", reasons:options.reasons??[], samples, errors };
   await recordCase(c,result);
   if (errors.length) failures.push({id:c.id,code:errors.join(";")});
@@ -119,6 +143,12 @@ test.beforeAll(async ({browser}) => {
   await registerCases(planned);
   const fullstack = await createRuntime(browser,"fullstack"); runtimes.push(fullstack);
   const starter = await createRuntime(browser,"starter"); runtimes.push(starter);
+  // Bounded actions should be caught as case FAILs before the 90s test hard
+  // timeout can kill/restart the worker and collide with owned fixture receipts.
+  for (const runtime of runtimes) {
+    runtime.page.setDefaultTimeout(12_000);
+    runtime.page.setDefaultNavigationTimeout(15_000);
+  }
   fixtures.set("fullstack",await setupFullstackDomain(fullstack));
   fixtures.set("starter",await setupStarterDomain(starter));
   setupComplete=true;
@@ -215,8 +245,27 @@ async function semanticCoreExposure(runtime:Runtime,c:EvidenceCase,state:DomainS
     if(runtime.source==="fullstack") throw new Error("NATIVE_INITIAL_READING_BAND_OBSTRUCTED");
   }
   // A normal reading gesture, applied identically in both sources before any
-  // final geometry/font capture. It does not fix or conceal the initial frame.
-  await target.evaluate(node=>node.scrollIntoView({block:"center",behavior:"instant"}));
+  // One native reading gesture, before the final measurement. For FullStack,
+  // scrollIntoView(center) targets a CSS-padded scrollport, not the unobscured
+  // region between the fixed header and mobile rail. R3 measured top49.67 < header74.
+  if (runtime.source === "fullstack" && initial.availableReadingHeight > 0) {
+    const content = runtime.page.locator("#application-content");
+    const scrollport = await content.evaluate(node => ({
+      scrollTop: node.scrollTop, maxScrollTop: Math.max(0, node.scrollHeight - node.clientHeight),
+      paddingStart: getComputedStyle(node).scrollPaddingBlockStart,
+      paddingEnd: getComputedStyle(node).scrollPaddingBlockEnd,
+    }));
+    const plan = planReadableScroll({ targetTop: initial.target.rect.top,
+      targetHeight: initial.target.rect.height, readingTop: initial.readingTop,
+      readingBottom: initial.readingBottom, scrollTop: scrollport.scrollTop,
+      maxScrollTop: scrollport.maxScrollTop });
+    observation.scrollPlan = { ...plan, scrollport, method: "ONE_SCROLL_IN_NATIVE_READING_BAND" };
+    await content.evaluate((node, delta) => (node as HTMLElement).scrollBy({ top: delta, behavior: "instant" }), plan.delta);
+  } else {
+    await target.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
+    observation.scrollPlan = { method: "ONE_SCROLL_IN_REFERENCE_VIEWPORT", initialReadingBand: initial.availableReadingHeight };
+  }
+  await runtime.page.evaluate(waitForMissionRender);
   const post=await exposure();observation.post=post;observation.postRatio=post.target.ratio;observation.postHit=post.target.hit;
   const fitsReadingBand=post.target.rect.height<=post.availableReadingHeight&&post.target.rect.width<=post.viewport.width;
   observation.ratio1Applicable=fitsReadingBand;
@@ -254,7 +303,7 @@ for(const c of cases) {
         .evaluate(node=>node.scrollIntoView({block:"center",behavior:"instant"}));
       if(state==="collection-missing") await runtime.page.getByText(runtime.source==="fullstack"?"Não há conjunto de dados ambientais confirmado para esta coleta.":"Nenhum conjunto ambiental confirmado.",{exact:true})
         .evaluate(node=>node.scrollIntoView({block:"center",behavior:"instant"}));
-      expect(await runtime.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      // recordRootOverflow() checks native overflow and classifies reference differences before sampling.
     },comparison);
   });
 }
@@ -290,7 +339,7 @@ for(const c of qualifierCases) {
       await label.evaluate(node=>node.scrollIntoView({block:"center",behavior:"instant"}));
       // Preserve ratio1 for the actual A+B product interaction, including 667x375/200/inset34.
       await expect(label).toBeInViewport({ratio:1});
-      expect(await runtime.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      // recordRootOverflow() checks native overflow and classifies reference differences before sampling.
     },{comparability:"NON_EQUIVALENT",reasons:["REFERENCE_HAS_ONE_TECHNICAL_DETAILS_DISCLOSURE_AND_PREDEFINED_SCORE_PRODUCT_HAS_APPROVED_LIMITS_AND_PROVENANCE_DISCLOSURES"],
       note:"Each qualifier is scrolled into view individually; four labels need not share one photograph. No style/scroll change occurs after the measurement."});
   });
@@ -335,7 +384,7 @@ test("domain-required-coverage-summary",async()=>{
   expect(failures,"See sanitized case ids and source-specific FAIL receipts").toEqual([]);
 });
 
-test.afterAll(async()=>{
+test.afterAll(async({}, workerInfo)=>{
   const receipt:{browserCleanup:string;logicalDataTeardown:string;physicalCleanup:string;failures:typeof failures}={
     browserCleanup:"PASS",logicalDataTeardown:"NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL",
     physicalCleanup:"REQUIRES_ORCHESTRATOR_STOP_AND_HOSTED_RUNNER_DISPOSAL",failures,
@@ -345,6 +394,12 @@ test.afterAll(async()=>{
     catch { receipt.browserCleanup="FAIL"; }
   }
   await mkdir(archive,{recursive:true});
-  await writeFile(join(archive,"domain-cleanup.json"),JSON.stringify(receipt,null,2)+"\n",{flag:"wx"});
+  // Preserve the first receipt. After a hard worker restart a distinct worker
+  // may write a distinct receipt, never overwrite the original with a false PASS.
+  const receiptName = workerInfo.workerIndex === 0 ? "domain-cleanup.json" :
+    "domain-cleanup-worker-" + workerInfo.workerIndex + ".json";
+  await writeFile(join(archive,receiptName),JSON.stringify({ ...receipt,
+    workerIndex:workerInfo.workerIndex, run:process.env.GITHUB_RUN_ID??null,
+    attempt:process.env.GITHUB_RUN_ATTEMPT??null },null,2)+"\n",{flag:"wx"});
   if(receipt.browserCleanup!=="PASS") throw new Error("DOMAIN_BROWSER_CLEANUP_FAILED");
 });

@@ -1,5 +1,7 @@
 # Implementation Plan: área/coletas/IHFR — preparação B
 
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
 **Branch**: `feat/ajustes-area-coletas-ihfr` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
 **Estado**: IMPLEMENTADO_EM_REVISAO; CI sintética do código B 15/15 PASS em `d7586ab95c69c45211e463516080e741bbb3931a`. Comparação bilateral Lovable × FullStack, composição com A e revisão/aceite independentes pendentes. A documentação mantém seu histórico por SHA.
 
@@ -321,3 +323,13 @@ Hashesiniciais mantidos depoisdosampleprincipal. Teste inicialdacontraprova reve
 na própria montagem (margin-collapseeencoding), corrigido somente noexecutor sintético;
 nãofoiatribuídoaoproduto. Prova em evidence/close02-semantic-core-check.json.
 TSCcompleto local/lint/diffPASS; descoberta permanece76; aplicativo/PG/BunlocalNOT_RUN.
+
+## D: correção residual de UI06-B, sem nova rodada hospedada (2026-11-01)
+
+**Escopo:** somente `qa/hf-ui044/domain.spec.ts`, `domain-fixtures.ts`, utilitário geométrico e teste focal de Node, além de tarefas/evidências 036. Nenhum componente de produto, cálculo IHFR, schema, rota, frontend de A/C ou referência Lovable será alterado. A execução R3 `ebf7e970`/`41356318087/1` permanece FAIL e suas 3/3 rodadas consumidas.
+
+**Dependência / gates:** caso 320×900/texto200 da referência: registrar scrollWidth, largura de viewport e culpados sem transferir overflow para a qualidade do produto; caso FullStack 667×375/texto200: um scroll pré-medição considera header/nav efetivos e o scroll-padding 8px/140px, preserva razão exata1/hit; caso starter844×390/texto200: navegação de preparação em1440/100%, viewport requerido aplicado antes da captura e navegação de usuário testada separadamente na dimensão solicitada. Limites explícitos de ações evitam reinício por espera ilimitada; hard timeout residual continua FAIL e exige isolamento owned, nunca apagar 4 fixtures antigas nem sobrescrever recibos.
+
+**Validação planejada:** TSC do helper sem dependências, parser TS dos arquivos reais, testes Node para contraprovas de geometria/overflow, Chromium sintético com scrollport da R3, revisão do diff; runtime com FullStack+starter e CI ficam `NOT_RUN` até orçamento explícito. `NON_EQUIVALENT` é diferença de fonte, não PASS visual. Qualquer `DEFECT_FOUND` exige prova de requisito nativo, não mera falha de captura. Sem subagente real disponível, autoria da correção não é QA independente.
+
+**Integração:** patch isolado sobre QA `ebf7e970` e nova branch com Preview false na primeira árvore, sem push para A/B/C/QA existente. Não reexecutar as 15 lanes da R2 só por documentação, nem herdar seu sucesso no SHA futuro. Owner de CI/guard único; conferir SHA da candidata e ref antes da publicação.

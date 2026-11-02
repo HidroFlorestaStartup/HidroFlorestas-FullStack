@@ -5,6 +5,7 @@ import { createAreaFixtureClient } from "../../tests/fixtures/areas";
 import { validEnvironmentalPayload } from "../../tests/fixtures/environmental-data";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { FULLSTACK_URL, STARTER_URL, type Runtime } from "./contract";
+import { waitForFontScale } from "./shared";
 
 export const LAB_NAME = "HF UI06 domain synthetic laboratory";
 export const AREA_NAME = "HF UI06 domain populated area";
@@ -148,18 +149,24 @@ export async function setupStarterDomain(runtime: Runtime): Promise<DomainFixtur
 export async function navigateDomain(runtime: Runtime, fixture: DomainFixture, target: "empty" | "area" | "newer" | "older") {
   const path = target === "empty" ? fixture.emptyPath : target === "area" ? fixture.areaPath : target === "newer" ? fixture.newerPath : fixture.olderPath;
   if (runtime.source === "fullstack") {
-    await runtime.page.goto(FULLSTACK_URL + path);
+    await runtime.page.goto(FULLSTACK_URL + path, { timeout: 15_000 });
   } else {
-    // Real client links preserve the reference's in-memory fixture. Hard reload
-    // is deliberately reserved for the terminal reload case, not hidden here.
-    // The area PageHeader also has a visible breadcrumb nav containing Áreas.
-    // Name the primary navigation explicitly so repeated client visits stay unique.
+    // Fixture setup only: navigate the pinned in-memory starter from a canonical
+    // 1440/100% layout. The requested 320/200 or landscape layout is applied by
+    // configure() AFTER arrival, and keyboard/Back/Forward are tested at that layout.
+    // This prevents a previous reference-only occlusion from poisoning the next case.
+    await runtime.page.setViewportSize({ width: 1440, height: 900 });
+    await runtime.page.evaluate(() => document.documentElement.style.setProperty("font-size", "100%", "important"));
+    await runtime.cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: 0, bottomMax: 0 } });
+    await waitForFontScale(runtime, { id:"domain-reference-route-prep", width:1440, height:900, scale:100, inset:0 }, "pre-route-setup");
+    // Real client links preserve the adapter's memory. No reload/force click.
     const nav = runtime.page.locator('nav[aria-label="Navegação principal"]:visible,nav[aria-label="Navegação principal (celular)"]:visible');
-    await expect(nav).toHaveCount(1);
-    await nav.getByRole("link", { name: "Áreas", exact: true }).click();
+    await expect(nav).toHaveCount(1, { timeout: 10_000 });
+    await nav.getByRole("link", { name: "Áreas", exact: true }).click({ timeout: 12_000 });
     const areaPath = target === "empty" ? fixture.emptyPath : fixture.areaPath;
-    await runtime.page.locator('a[href="' + areaPath + '"]').first().click();
-    if (target === "newer" || target === "older") await runtime.page.locator('a[href="' + path + '"]').first().click();
+    await runtime.page.locator('a[href="' + areaPath + '"]').first().click({ timeout: 12_000 });
+    if (target === "newer" || target === "older")
+      await runtime.page.locator('a[href="' + path + '"]').first().click({ timeout: 12_000 });
   }
-  await expect(runtime.page).toHaveURL(new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "/?$"));
+  await expect(runtime.page).toHaveURL(new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "/?$"), { timeout: 10_000 });
 }

@@ -101,3 +101,21 @@ sem substituir executor não autor. Typecheck oficial completo permanece depende
 - [x] T036 [REVIEW/DIAGNÓSTICO] Preservar um frame mascarado e JSON de fonte/hash/dimensões/ratio/hit/geometry antes/depois para failures B, sem retry/correção de estado; contraprova Chromium da própria boundedPair mantémFAIL/PARTIAL e produz PNG667x375/hash/ratio0/hitfalse. R3aindaNOT_RUN.
 
 - [x] T037 [DILIGÊNCIA FOCAL PRÉ-R3] Somente area-empty/collection-record: preservar frameinicial ocluído comoDIAGNOSTIC_NOT_PLANNED_COVERAGE comUNOBSERVED/hashes, usuário-scrollúnicoantesmediçãoambasfontes, correlaçãofixture/index e pósratio/hit/gap; Nativeexposiçãopositivaassertada, referênciaocluídaNON_EQliteral, semfont-exception. Contraprova4casosChromiumPASS; TSC/lint/discovery76/diffPASS; runtimeR3pendente.
+
+## Estado terminal R3 — histórico acima preservado
+
+T027 tem execução **PARTIAL/FAIL**, não NOT_RUN total: run 41356318087/1, código ebf7e9707d5beba949ae932cdffeb3f9068f8a73, índice de 75 casos: 9 PASS / 3 FAIL / 63 NOT_RUN. T028 tem inspeção **PARTIAL** da matriz: 24 PNGs disponíveis inspecionados, faltam 63 recortes planejados e três pares não fecham. T008/T016/T027/T028 permanecem `[ ]`; T030 permanece `[ ]` até reconciliação/publicação e revisão final pela coordenação. Os checkpoints anteriores de “R3pendente/NOT_RUN” pertencem à preparação anterior ao run, não ao resultado atual.
+
+- [x] T038 [REVIEW/HANDOFF DOCUMENTAL] Auditar bytes/CRC/índice e 24 PNGs reais de R3, separar 9 pares completos/três failures / 63 NOT_RUN, preservar diagnósticos/UNOBSERVED e registrar causas como INFERENCIA quando não provadas; publicar parecer e manifesto 036 locais, sem qualquer código/teste/push/rerun após 3/3 rodadas.
+- [ ] T039 [RECOMENDACAO FUTURA / NÃO EXECUTAR NESTA MISSÃO] Contraprovar overflow da referência, alinhamento com scroll-padding de 8/140px, preparação de navegação e lifecycle de worker descritos em `evidence/close02-final-findings.md`; preservar guard/assert/ratio 1 e obter novo escopo de execução antes de reparar/rodar novamente.
+- [ ] T040 [REVIEW HUMANO PENDENTE] Triar a quebra observada de “automaticamente” no aviso nativo 320px/texto 200% e as limitações visuais da referência, sem promover referência a norma ou alterar ciência; autorizar patch somente se defeito de produto demonstrado.
+
+## D: reparo residual da comparação bilateral — candidata sem CI adicional
+
+As tarefas T039/T040 e T008/T016/T027/T028 permanecem abertas até runtime final e aceite. Este recorte de D: não altera as provas R3 nem transforma contraprova sintética em sucesso oficial.
+
+- [x] T041 [ANALYZE/PLAN] Reconferir HEADs R2/R3 e ler contraprovas R3 nos três casos B, Spec036 e gates de propriedade; escolher reparo estrito do comparador, sem mudança científica/produto.
+- [x] T042 [IMPLEMENT] Implementar alinhamento ao reading-band nativo (sem reduzir ratio1), overflow de referência como NON_EQUIVALENT com dimensões e sem alterar o starter, navegação de fixture em viewport canônico antes da medição, timeout limitado e recibo por worker.
+- [x] T043 [REVIEW] Executar teste geométrico puro, Chromium sintético e análise de sintaxe; documentar comandos/exit codes e preservar o estado B R3 em FAIL.
+- [ ] T044 [RUNTIME] Validar os três casos B antes do restante da matriz em novo SHA e ambiente hospedado próprio autorizado; provar 75/75 casos/150 amostras, hashes, foco e integridade sem esconder FAIL/NOT_RUN.
+- [ ] T045 [INDEPENDENT QA] Revisão não autora da nova matriz B e da composição, com decisão sobre dependência A+B e aceite visual humano separado.
