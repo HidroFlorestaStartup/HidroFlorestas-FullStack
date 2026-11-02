@@ -107,18 +107,49 @@ export async function measureReadingExposure(node: Element) {
   const point = { x:targetRect.left + targetRect.width/2, y:targetRect.top + targetRect.height/2 };
   const hit = document.elementFromPoint(point.x, point.y);
   const unobstructed = (element: Element | null) => !!element && (element === node || node.contains(element));
-  // Ratio1 ignores fixed/sticky overlays. Probe the full target box, including its edges.
-  const insetX = Math.min(1, targetRect.width/2), insetY = Math.min(1, targetRect.height/2);
-  const hitPoints = [
-    {x:targetRect.left+insetX,y:targetRect.top+insetY},
-    {x:targetRect.right-insetX,y:targetRect.top+insetY},
-    point,
-    {x:targetRect.left+insetX,y:targetRect.bottom-insetY},
-    {x:targetRect.right-insetX,y:targetRect.bottom-insetY},
-  ].map(p => { const element = document.elementFromPoint(p.x,p.y); return { ...p, tag:element?.tagName ?? null, unobstructed:unobstructed(element) }; });
+  // getBoundingClientRect() is rectangular; border-radius clips the hit region.
+  // Probe INSIDE each computed corner ellipse, not its transparent 1px corner.
+  // Resolve percentages and CSS radius overlap before picking the five points.
+  // No retry, ancestor acceptance, CSS mutation or visibility-threshold change.
+  const style = getComputedStyle(node);
+  const radius = (value: string) => {
+    const parts = value.trim().split(/\s+/);
+    const length = (part: string, size: number) => {
+      if (!/^(?:\d+\.?\d*|\.\d+)(?:px|%)?$/.test(part)) return NaN;
+      return parseFloat(part) * (part.endsWith("%") ? size / 100 : 1);
+    };
+    const x = length(parts[0], targetRect.width);
+    const y = length(parts[1] ?? parts[0], targetRect.height);
+    return x === 0 || y === 0 ? {x:0,y:0} : {x,y};
+  };
+  const radii = [style.borderTopLeftRadius, style.borderTopRightRadius,
+    style.borderBottomRightRadius, style.borderBottomLeftRadius].map(radius);
+  const radiiObserved = targetRect.width > 0 && targetRect.height > 0 &&
+    radii.every(r => Number.isFinite(r.x) && Number.isFinite(r.y) && r.x >= 0 && r.y >= 0);
+  const fit = (size: number, sum: number) => sum > 0 ? size / sum : 1;
+  const factor = radiiObserved ? Math.min(1,
+    fit(targetRect.width, radii[0].x + radii[1].x),
+    fit(targetRect.width, radii[3].x + radii[2].x),
+    fit(targetRect.height, radii[0].y + radii[3].y),
+    fit(targetRect.height, radii[1].y + radii[2].y)) : 0;
+  const corner = (index: number, right: boolean, bottom: boolean) => {
+    const r = radii[index];
+    // Half of each used radius is inside its quarter ellipse (0.5²+0.5²<1).
+    const dx = Math.min(targetRect.width / 2, Math.max(1, r.x * factor / 2));
+    const dy = Math.min(targetRect.height / 2, Math.max(1, r.y * factor / 2));
+    return {x:right ? targetRect.right-dx : targetRect.left+dx,
+      y:bottom ? targetRect.bottom-dy : targetRect.top+dy};
+  };
+  const coordinates = radiiObserved ? [corner(0,false,false),corner(1,true,false),point,
+    corner(3,false,true),corner(2,true,true)] : [point];
+  const hitPoints = coordinates.map(p => {
+    const element = document.elementFromPoint(p.x,p.y);
+    return { ...p, tag:element?.tagName ?? null, unobstructed:radiiObserved && unobstructed(element) };
+  });
   return { viewport:{width:innerWidth,height:innerHeight}, rootFontPx:parseFloat(getComputedStyle(document.documentElement).fontSize),
     scrollports, header, main, railTop, readingTop, readingBottom, availableReadingHeight:Math.max(0,readingBottom-readingTop),
-    target:{rect:targetRect,ratio,hit:{point,tag:hit?.tagName??null,unobstructed:unobstructed(hit)},hitPoints},
+    target:{rect:targetRect,ratio,hit:{point,tag:hit?.tagName??null,unobstructed:unobstructed(hit)},hitPoints,
+      hitTestMethod:"COMPUTED_ROUNDED_BORDER_INTERIOR_FIVE_POINTS",radiiObserved,radii,radiusScale:factor},
     mainOutsideViewport:!!main&&main.top>=innerHeight };
 }
 
