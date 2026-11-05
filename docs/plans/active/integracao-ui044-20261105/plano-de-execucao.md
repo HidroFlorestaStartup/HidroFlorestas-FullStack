@@ -1,5 +1,11 @@
 # Plano — integração UI-044 e Preview de aceite
 
+## Encerramento da integração e atualização documental — 05/11/2026
+
+Estado vigente do plano: AGUARDANDO_REVISAO da atualização documental; integração técnica e aceite de Pedro CONCLUIDOS COM TRES RESSALVAS. Após revisão da trilha documental, arquivar conforme PLANS.md, preservando apontadores existentes. A origem da autorização foi ampliada pela mensagem atual de Pedro, que confirmou os três ajustes e autorizou o merge #51; os estados EM_ANDAMENTO/HUMAN_ACCEPTANCE_PENDING abaixo são históricos.
+
+EVIDENCIA_IMPLEMENTACAO: CI42101827226/1 concluiu quinze gates PASS no head febee101aa; Codex Review concluída sem findings. Merge #51 `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, árvore idêntica à candidata. Main beba96f preservada. [Aceite e CI](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605), [recibo da integração](../correcoes-finais-ui044-20261105/aceite-e-integracao.json) e [execução futura](../correcoes-finais-ui044-20261105/prompt-de-execucao.md). As três correções não foram implementadas nesta publicação. Nenhum deploy, limpeza ou nova suíte funcional local. Riscos/qualificadores científicos e gates operacionais mantêm seus limites.
+
 ID HF-UI044-INT-20261105. Estado EM_ANDAMENTO. Data 05/11/2026 America/Fortaleza.
 
 ## Autoridade e objetivo

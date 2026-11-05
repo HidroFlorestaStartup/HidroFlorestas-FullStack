@@ -1,5 +1,9 @@
 # Registro documental
 
+## Aceite UI-044 e handoff das correções finais — 05/11/2026
+
+[Prompt autorizado](../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md), [plano de publicação](../plans/active/correcoes-finais-ui044-20261105/plano-de-publicacao.md), [recibo](../plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json) e [três prints originais](../plans/active/correcoes-finais-ui044-20261105/evidencias/readme.md): autoridade UX de Pedro registrada nesta conversa e no comentário6671722605 da PR51. Integração #51 concluída em 7bae1f87cb8d6a708b7c4de0b990e82e5a503369; quinze gates PASS e Codex Review pertencem ao head febee101aa, cuja árvore foi preservada no merge. As três correções permanecem PENDENTES e terão PR própria para development. Os textos anteriores são históricos; aceite de usabilidade/design não confere homologação operacional ou científica.
+
 ## Integração UI-044 para aceite — 05/11/2026
 
 [Pacote](../releases/2026-11-05-hf-ui044-integration/readme.md), [plano](../plans/active/integracao-ui044-20261105/plano-de-execucao.md), [proveniência](../releases/2026-11-05-hf-ui044-integration/proveniencia.json) e [matriz](../releases/2026-11-05-hf-ui044-integration/matriz-de-reconciliacao.md): preparação autorizada por Pedro nesta conversa; HUMAN_ACCEPTANCE_PENDING. Fontes44–50 reconciliadas por conteúdo; snapshots preservam variantes divergentes. Testes/Preview terão evidência própria e nenhum aceite humano ou científico é antecipado. Sem merge ou limpeza. Histórico anterior preservado abaixo.

@@ -1,5 +1,11 @@
 # Integração UI-044 — candidata para testes manuais
 
+## Fechamento vigente — integrada com três ressalvas de UX
+
+Em 05/11/2026, Pedro aprovou o restante da usabilidade, design e aparência testados, confirmou as três correções e autorizou o merge. [Recibo de aceite](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605). PR51 integrada em `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, tree0c836da964c377a7d1e6bc8b2331524e931ea901, idêntica ao head febee101aa. CI42101827226/1: quinze gates PASS/E2E241; Codex Review concluída sem findings nesse head. Não houve nova suíte no merge nem aprovação científica/operacional.
+
+Próxima execução: [prompt das três correções](../../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md), [recibo detalhado](../../plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json). Correções ainda PENDENTES. A autorização inicial e os estados de preparação abaixo são preservados como histórico, superados neste alcance pela decisão posterior de Pedro. Sem autoaprovação formal, deploy ou limpeza.
+
 Estado: PREPARADA_PARA_CI_E_PREVIEW; HUMAN_ACCEPTANCE_PENDING. Data: 05/11/2026, America/Fortaleza.
 
 ## Autoridade
