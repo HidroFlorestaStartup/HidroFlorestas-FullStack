@@ -20,6 +20,15 @@ test("member reads the current experimental DTO with labels, keyboard access and
   const diagnosis = page.getByRole("region", { name: "Diagnóstico IHFR experimental" });
   await expect(diagnosis).toBeVisible();
   await expect(diagnosis.getByText(/Qualidade dos dados:/)).toBeVisible();
+  const limits = diagnosis.locator("details").first();
+  const provenance = diagnosis.locator("details").last();
+  await expect(limits).not.toHaveAttribute("open");
+  await limits.locator("summary").focus();
+  await page.keyboard.press("Enter");
+  await expect(limits).toHaveAttribute("open", "");
+  await provenance.locator("summary").focus();
+  await page.keyboard.press("Enter");
+  await expect(provenance).toHaveAttribute("open", "");
   for (const component of ["W", "S", "V", "T"]) await expect(diagnosis.getByText(component, { exact: true })).toBeVisible();
   for (const label of ["CONTRATO_EXPERIMENTAL", "VALIDACAO_CIENTIFICA_PENDENTE", "SUJEITO_A_RECALIBRACAO", "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"]) await expect(diagnosis.getByText(label, { exact: true })).toBeVisible();
   for (const value of [IHFR_CONTEXTS.measurement, IHFR_DOMAIN.supplement, IHFR_CONTRACT.measurementVersion, IHFR_CONTRACT.inputVersion, IHFR_CONTRACT.activeMathVersion, IHFR_CONTRACT.algorithmVersion, IHFR_CONTRACT.contractHash, "CURRENT", "2026-09-20 12:03:00 UTC", "Não se aplica"]) await expect(diagnosis).toContainText(value);

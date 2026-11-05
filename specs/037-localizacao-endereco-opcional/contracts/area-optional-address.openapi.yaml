@@ -1,0 +1,118 @@
+openapi: 3.1.0
+info:
+  title: HidroFlorestas UI-07 — contrato incremental de endereço opcional
+  version: 0.2.0
+  description: >-
+    Complemento específico ao contrato histórico IMP-003. NÃO substitui nem modifica
+    os artefatos históricos da spec 003. Endereço reverso é sugestão, não precondição.
+paths:
+  /api/laboratories/{laboratoryId}/areas:
+    post:
+      operationId: createAreaWithOptionalAddress
+      summary: Cria área com coordenadas obrigatórias e endereço opcional
+      parameters:
+        - name: laboratoryId
+          in: path
+          required: true
+          schema: {type: string, format: uuid}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/CreateAreaInput'}
+      responses:
+        '201':
+          description: Área criada, CEP normalizado ou nulo
+          headers:
+            Cache-Control:
+              schema: {type: string, const: no-store}
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [area]
+                properties:
+                  area: {$ref: '#/components/schemas/AreaDetail'}
+        '400': {description: Entrada inválida, incluindo CEP malformado}
+        '401': {description: Sessão ausente ou não autorizada}
+        '403': {description: Permissão insuficiente}
+        '404': {description: Laboratório inacessível}
+        '409': {description: Laboratório somente leitura}
+        '500': {description: Falha interna sanitizada}
+  /api/laboratories/{laboratoryId}/areas/{areaId}:
+    get:
+      operationId: getAreaWithOptionalAddress
+      summary: Retorna o detalhe da área com CEP quando existente
+      parameters:
+        - name: laboratoryId
+          in: path
+          required: true
+          schema: {type: string, format: uuid}
+        - name: areaId
+          in: path
+          required: true
+          schema: {type: string, format: uuid}
+      responses:
+        '200':
+          description: Área com CEP string ou null
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [area]
+                properties:
+                  area: {$ref: '#/components/schemas/AreaDetail'}
+        '401': {description: Não autenticado}
+        '404': {description: Inacessível}
+        '500': {description: Falha interna sanitizada}
+components:
+  schemas:
+    Cep:
+      type: [string, 'null']
+      pattern: '^\d{5}-\d{3}$'
+      description: CEP brasileiro com hífen após normalização; null quando não fornecido
+    CreateAreaInput:
+      type: object
+      additionalProperties: false
+      required: [name, latitude, longitude]
+      properties:
+        name: {type: string, minLength: 1, maxLength: 100}
+        latitude: {type: number, minimum: -90, maximum: 90}
+        longitude: {type: number, minimum: -180, maximum: 180}
+        municipality: {type: [string, 'null'], maxLength: 100}
+        state: {type: [string, 'null'], maxLength: 100}
+        cep:
+          type: [string, 'null']
+          pattern: '^\d{5}-?\d{3}$'
+          description: Aceita 8 dígitos com ou sem hífen; normalizado no servidor
+        landType: {type: [string, 'null'], maxLength: 100}
+        description: {type: [string, 'null'], maxLength: 2000}
+    AreaSummary:
+      type: object
+      additionalProperties: false
+      required: [id, name, latitude, longitude, municipality, state, cep]
+      properties:
+        id: {type: string, format: uuid}
+        name: {type: string}
+        latitude: {type: number}
+        longitude: {type: number}
+        municipality: {type: [string, 'null']}
+        state: {type: [string, 'null']}
+        cep: {$ref: '#/components/schemas/Cep'}
+    AreaDetail:
+      type: object
+      description: >-
+        Campos mínimos de endereço UI-07. DTO real mantém também landType,
+        description, createdAt, laboratory e readOnly de IMP-003.
+      additionalProperties: true
+      required: [id, name, latitude, longitude, municipality, state, cep]
+      properties:
+        id: {type: string, format: uuid}
+        name: {type: string}
+        latitude: {type: number}
+        longitude: {type: number}
+        municipality: {type: [string, 'null']}
+        state: {type: [string, 'null']}
+        cep: {$ref: '#/components/schemas/Cep'}

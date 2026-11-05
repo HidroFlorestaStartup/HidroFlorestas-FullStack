@@ -106,7 +106,20 @@ test("collection, environmental confirmation and IHFR creation work without brow
     });
   }
   await authenticate(page, required("IMP006_E2E_OWNER_ID"), baseURL);
-  const collectionNewUrl = required("IMP006_E2E_MANAGE_URL").replace(/\/collections\/[^/]+$/, "/collections/new");
+  // UI-036: isolate the presentation fixture from the seeded IMP-006 diagnostic
+  // whose occurredAt is the current clock time and is legitimately newer.
+  // This area exists only in the runner-owned synthetic PostgreSQL schema.
+  const areaRoot = required("IMP006_E2E_MANAGE_URL").replace(/\/areas\/[^/]+\/collections\/[^/]+$/, "/areas");
+  if (!areaRoot.startsWith("/dashboard/laboratories/") || !areaRoot.endsWith("/areas")) {
+    throw new Error("INVALID_UI036_SYNTHETIC_AREA_ROOT");
+  }
+  const createdArea = await page.context().request.post(areaRoot.replace(/^\/dashboard\//, "/api/"), {
+    data: { name: "HF-UI036 isolated IHFR provenance", latitude: -3.12, longitude: -38.48 },
+  });
+  expect(createdArea.status()).toBe(201);
+  const areaId = (await createdArea.json()).area.id as string;
+  expect(areaId).toMatch(/^[0-9a-f-]{36}$/i);
+  const collectionNewUrl = `${areaRoot}/${areaId}/collections/new`;
   await page.goto(collectionNewUrl);
   expect(await page.evaluate(() => typeof crypto.randomUUID)).toBe("undefined");
   expect(await page.evaluate(() => typeof crypto.getRandomValues)).toBe("function");
@@ -153,8 +166,42 @@ test("collection, environmental confirmation and IHFR creation work without brow
   const response = await created;
   expect(response.status()).toBe(201);
   expect(response.request().headers()["idempotency-key"]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+  const createdDiagnosis = await response.json() as { diagnosis: { collectionId: string } | null };
+  expect(createdDiagnosis.diagnosis?.collectionId).toBe(collectionId);
   await expect(page.getByRole("status").first()).toContainText("Vigente: sim");
   await expect(page.getByRole("status").last()).toBeFocused();
+
+  // UI036: a later field collection does not displace an older CURRENT diagnosis.
+  // Explicitly inspect the first recorded CURRENT result before adding the later
+  // collection. No fake diagnosis, fabricated score or science calculation.
+  const areaUrl = collectionNewUrl.replace(/\/collections\/new$/, "");
+  await page.goto(areaUrl);
+  const currentBefore = page.getByRole("complementary", { name: "Último IHFR disponível da área" });
+  await expect(currentBefore).toContainText(collectionId);
+  await page.goto(collectionNewUrl);
+  await fillCollectionOccurrence(page, "2026-09-25T11:00:00-03:00");
+  await page.getByRole("button", { name: "Revisar coleta" }).click();
+  const laterPost = page.waitForResponse(response => response.url().endsWith("/collections") && response.request().method() === "POST");
+  await page.getByRole("button", { name: "Confirmar coleta" }).click();
+  const laterResponse = await laterPost;
+  expect(laterResponse.status()).toBe(201);
+  const laterId = (await laterResponse.json()).collection.id as string;
+  await page.goto(areaUrl);
+  const entries = page.getByRole("list", { name: "Coletas ordenadas por ocorrência em campo" }).getByRole("listitem");
+  // The isolated area has exactly two confirmed records, unlike the shared
+  // historical IMP-006 fixture. Field occurrence, not confirmation, orders them.
+  await expect(entries).toHaveCount(2);
+  await expect(entries.first()).toContainText(laterId);
+  await expect(entries.nth(1)).toContainText(collectionId);
+  const latest = page.getByRole("complementary", { name: "Último IHFR disponível da área" });
+  await expect(latest).toContainText("Coleta de origem:");
+  await expect(latest).toContainText(collectionId);
+  await expect(latest).not.toContainText(laterId);
+  await expect(latest).toContainText("validação científica pendente");
+  await entries.filter({ hasText: laterId }).getByRole("link", { name: "IHFR", exact: true }).click();
+  // The IHFR link intentionally targets its heading, preserving contextual navigation.
+  await expect(page).toHaveURL(areaUrl + "/collections/" + laterId + "#ihfr-diagnosis-heading");
+  await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
 });
 
 test("OWNER and contextual ADMIN create, replace, revoke and recover with one stable key", async ({ page }, info) => {

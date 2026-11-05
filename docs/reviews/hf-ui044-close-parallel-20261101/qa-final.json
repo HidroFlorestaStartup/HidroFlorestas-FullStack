@@ -1,0 +1,294 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "PROMPT04_NON_AUTHOR_QA",
+  "reviewerAgentId": "/root/qa_final",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "result": "BLOCKED_WITH_EXACT_FINDINGS",
+  "reviewScope": "INDEPENDENT_STATIC_REVIEW_COMPLETE_RUNTIME_PENDING",
+  "independence": {
+    "nativeDelegation": true,
+    "codeAuthors": [
+      "/root/a_harness",
+      "/root/b_visual",
+      "/root/c_capture",
+      "/root"
+    ],
+    "reviewerAuthoredAuditedCode": false,
+    "sharedGitAccountIsNotHumanApproval": true
+  },
+  "candidate": {
+    "codeSha": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
+    "tree": "844423332f26c6192a44d2b391fcc70143d65025",
+    "functionalBase": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+    "branchIntended": "codex/hf-ui044-close-20261101",
+    "published": false,
+    "hostedRounds": 0,
+    "newHostedRun": null
+  },
+  "worktree": "managed:hf044-qa/HidroFlorestas-FullStack",
+  "branch": "codex/hf044-qa-final-local-20261101",
+  "initialGit": "CLEAN detached at reviewed candidate",
+  "allowedReportPaths": [
+    "docs/reviews/hf-ui044-close-parallel-20261101/qa-final.md",
+    "docs/reviews/hf-ui044-close-parallel-20261101/qa-final.json"
+  ],
+  "sourcePrHeadsObserved": [
+    {
+      "number": 45,
+      "head": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905"
+    },
+    {
+      "number": 46,
+      "head": "ff5db4f820b6351a1cc5b5145c9c8bcaec6a40c5"
+    },
+    {
+      "number": 47,
+      "head": "1c44058cb45e461c719d514829a4e78d2bf7ee05"
+    },
+    {
+      "number": 48,
+      "head": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2"
+    }
+  ],
+  "implementationFindingsDemonstrated": [],
+  "blockingEvidenceFindings": [
+    {
+      "id": "QA02-PUB-001",
+      "severity": "HIGH",
+      "kind": "PUBLICATION_PRECONDITION",
+      "owner": "coordinator/operator",
+      "path": "docs/plans/active/hf-ui044-close-parallel-20261101/static-verification.json",
+      "line": 36,
+      "case": "Preview containment before first push",
+      "evidence": "rootDirectory=NOT_OBSERVED_CONNECTOR_OMITS_FIELD; previewProof=PENDING_ROOT_DIRECTORY; zero hosted rounds. Coordinator reports native approval rejected Google sign-in and specific approval remains pending.",
+      "repair": "Obtain an authorized current Root Directory/Git-binding observation or a sufficient identified receipt; verify additive false guard at effective project root before publishing. Do not bypass native approval."
+    },
+    {
+      "id": "QA02-EVID-001",
+      "severity": "HIGH",
+      "kind": "MANDATORY_EVIDENCE_MISSING",
+      "owner": "coordinator/runtime then A+B and non-author QA",
+      "path": "qa/hf-ui044/domain.spec.ts",
+      "line": 208,
+      "case": "UI06 A and B final evidence",
+      "evidence": "86 shell pairs and75 domain pairs are planned; no new hosted run/artifact or bilateral product/reference PNGs exist in this cut. Local smoke is explicitly SYNTHETIC_SMOKE_NOT_PRODUCT.",
+      "repair": "After PUB-001, execute the allowed Windows/Node24.19 jobs, audit source-specific PNG+JSON/indices and inspect real pairs; record differences without treating NON_EQUIVALENT as acceptance."
+    },
+    {
+      "id": "QA02-EVID-002",
+      "severity": "HIGH",
+      "kind": "MANDATORY_EVIDENCE_MISSING",
+      "owner": "coordinator/runtime then non-author QA",
+      "path": "scripts/hf-ui044-verify.mjs",
+      "line": 5,
+      "case": "Final15 gates and UI037 archive after later suites",
+      "evidence": "Changed mandatory UI037 test has no new official journal or final ZIP. Durable copy helper and uploader globs are statically compatible;2/2 synthetic copy tests are not UI037 runtime or final archive proof.",
+      "repair": "Run the fifteen official gates on final candidate, verify15 unique PASS/exit0/same snapshot and four dedicated UI037 files after later suites; download artifact by real ID and verify official digest/ZIP CRC/hash/dimensions/provenance."
+    }
+  ],
+  "checksPerformedByReviewer": [
+    {
+      "name": "Candidate SHA/tree and scope vs6c",
+      "result": "PASS",
+      "notes": "51 changed paths; no delta in src/prisma/package manifests/lockfile or official protection scripts/rc-review.yml."
+    },
+    {
+      "name": "Native GitHub PR45–48 metadata read",
+      "result": "PASS",
+      "notes": "Open Draft heads equal pins; no publication by reviewer."
+    },
+    {
+      "name": "Actual local A evidence integrity",
+      "result": "PASS",
+      "codeShaTested": "9283f31a30c0445ebee4f245b045ffba19be3b24",
+      "files": 17,
+      "png": 8,
+      "json": 8,
+      "jsonl": 1,
+      "pngCrcChunks": 58,
+      "dimensions": [
+        [
+          320,
+          900
+        ],
+        [
+          1440,
+          900
+        ]
+      ],
+      "scope": "Synthetic local smoke only; no product or starter evidence."
+    },
+    {
+      "name": "Visual inspection of actual local smoke images",
+      "result": "PASS_WITH_SCOPE",
+      "images": [
+        "fullstack-smoke-1440-100-1793566403189.png",
+        "fullstack-smoke-320-200.png"
+      ],
+      "notes": "UTF-8 Portuguese text legible; expected enlargement observed; these images are not product acceptance."
+    },
+    {
+      "name": "Four sanitized reconciliation Git blobs vs33d",
+      "result": "PASS",
+      "blobs": 4
+    },
+    {
+      "name": "PowerShell parser, node --check verifier, git diff --check",
+      "result": "PASS"
+    },
+    {
+      "name": "Static scale/fonts/reload and fixture/API selectors review",
+      "result": "NO_NEW_CODE_DEFECT_DEMONSTRATED",
+      "notes": "Exact16/32px polling rethrows with diagnostics; TextNodes and positive glyphs observed; empty CDP remainsUNOBSERVED; reload observation precedes reconfiguration; native product APIs and reference-only adapter retained."
+    },
+    {
+      "name": "Static workflow/guard/archive review",
+      "result": "PASS_WITH_PUBLICATION_PRECONDITION",
+      "notes": "4 jobs5/35/35/35min,110/round; exact push branch/attempt1/nonforced/nondeleted; setup-node24.19 pin; Bun only starter jobs; owned PG in pertinent jobs;14days explicit PNG/JSON/JSONL/log allowlist; existing Preview rules preserved."
+    }
+  ],
+  "checksNotRun": [
+    {
+      "name": "New Windows/Node24.19 official runtime and15 gates",
+      "reason": "Publication prerequisite PUB-001 unresolved."
+    },
+    {
+      "name": "Final hosted artifact download/digest/ZIP CRC/UI037 PNG verification",
+      "reason": "No new run/artifact exists."
+    },
+    {
+      "name": "Product/reference visual comparison",
+      "reason": "No new bilateral product/reference PNGs exist."
+    },
+    {
+      "name": "Reviewer rerun full typecheck/lint/smoke",
+      "reason": "No source change by reviewer; author/coordinator results kept as source-bound claims; reviewer independently audited their evidence and syntax."
+    }
+  ],
+  "reportedPriorLocalChecks": {
+    "A_smoke": "3/3 PASS local Node24.14 Chromium153.0.8010.12, not CI",
+    "A_legacy_counterexample": "expected assertion exit1, observed16.2348px vs32px",
+    "C_copyCounterproof": "2/2 PASS synthetic filesystem, not browser/PG",
+    "coordinatorTypecheckLint": "PASS_LOCAL_NOT_CI"
+  },
+  "uiMatrix": [
+    {
+      "requirement": "UI-01",
+      "owner": "A",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 86,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-02",
+      "owner": "B",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 75,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-03",
+      "owner": "B",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 75,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-04",
+      "owner": "B/A composition",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 75,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-05",
+      "owner": "A",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 86,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-06",
+      "owner": "A+B",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": 161,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "UI-07",
+      "owner": "C",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "MISSING",
+      "plannedPairsInRelevantSuiteNotUniqueTests": null,
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    }
+  ],
+  "completionFlags": {
+    "UI06_A_EVIDENCE_COMPLETE": "NOT_PROVEN",
+    "UI06_B_EVIDENCE_COMPLETE": "NOT_PROVEN",
+    "UI037_CAPTURE_VERIFIED": "NOT_PROVEN",
+    "COMPOSITION_REGRESSION_PASS": "NOT_PROVEN_FOR_NEW_TREE",
+    "INDEPENDENT_TECHNICAL_REVIEW_COMPLETE": "NOT_PROVEN_RUNTIME_REVIEW_MISSING"
+  },
+  "historicalEvidence": {
+    "sha": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+    "run": 41275910130,
+    "attempt": 1,
+    "artifact": 13071771510,
+    "result": "15/15 PASS_HISTORICAL_ONLY",
+    "receipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6554039611",
+    "a6Receipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6559195702",
+    "downloadedByThisReviewer": false,
+    "inheritedByNewCandidate": false
+  },
+  "publicationByReviewer": "NOT_DONE_TEXT_HANDED_TO_COORDINATOR",
+  "preservation": {
+    "principalHeadObserved": "c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07",
+    "principalGitStatus": "CLEAN",
+    "historicalWorktreesBranchesReceiptsDeleted": false,
+    "cleanup21Repeated": false,
+    "productEditedByReviewer": false
+  },
+  "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING",
+  "geocoderOperation": "GEOCODER_OPERATIONAL_PENDING",
+  "scientific": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ]
+}

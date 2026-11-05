@@ -1,0 +1,226 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "PROMPT03/C-CAPTURE-GIT",
+  "agentId": "/root/c_capture",
+  "state": "C_CAPTURE_READY_FOR_RUNTIME",
+  "worktreeName": "hf044-c",
+  "branch": "codex/hf044-c-local-20261101",
+  "worktreePathPublicationPolicy": "Absolute local path is in coordinator private registry; omitted from public receipt.",
+  "functionalBase": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+  "setup": "1b6a2d349a527ac6153d027a21e521c88b691e7b",
+  "head": "6d1a019f723b3be563965c3201872f4c9846ce35",
+  "tree": "6408ae4c7d63ffcb69562867ceb374cf5d58d71e",
+  "authorizedPaths": [
+    "tests/e2e/hf-ui037-location.spec.ts",
+    "specs/037-localizacao-endereco-opcional/**",
+    "docs/plans/completed/hf-ui044-worktree-reconcile-01.md",
+    "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/{readme.md,inventory.json,verification.json}"
+  ],
+  "actualCodeCommitPaths": [
+    "docs/plans/completed/hf-ui044-worktree-reconcile-01.md",
+    "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/inventory.json",
+    "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/readme.md",
+    "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/verification.json",
+    "specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs",
+    "specs/037-localizacao-endereco-opcional/implementation-evidence.md",
+    "specs/037-localizacao-endereco-opcional/plan.md",
+    "specs/037-localizacao-endereco-opcional/quickstart.md",
+    "specs/037-localizacao-endereco-opcional/spec.md",
+    "specs/037-localizacao-endereco-opcional/tasks.md",
+    "tests/e2e/hf-ui037-location.spec.ts"
+  ],
+  "handoffPaths": [
+    "specs/037-localizacao-endereco-opcional/evidence/close02-handoff.md",
+    "specs/037-localizacao-endereco-opcional/evidence/close02-handoff.json"
+  ],
+  "productChanges": [],
+  "instrumentationChanges": [
+    "tests/e2e/hf-ui037-location.spec.ts",
+    "specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs"
+  ],
+  "codeCommits": [
+    "6d1a019f723b3be563965c3201872f4c9846ce35"
+  ],
+  "codePatchSha256": "6e53567438c40ec0966a20c450f4043cfc8ea646f311146e50a7e87ea1ccd02f",
+  "publication": "NOT_DONE_BY_WORKER",
+  "git": {
+    "initial": "CLEAN at setup",
+    "afterCodeCommit": "CLEAN",
+    "principal": "NOT_EDITED_BY_WORKER",
+    "destructiveCleanup": "NOT_PERFORMED"
+  },
+  "reconciliation": {
+    "candidate": "DOC_RECONCILIATION_APPLIED",
+    "localC": "ALREADY_PRESENT",
+    "sourceCommit": "33d9b8b156bf275cd7f0d122fac0957d7689997a",
+    "localCCommit": "c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07",
+    "fourBlobsEqual": true,
+    "originalsReadOrImported": false,
+    "cleanup21Repeated": false
+  },
+  "checks": [
+    {
+      "command": "check-prerequisites.sh --paths-only --json with process feature context; manual spec/plan/tasks validation",
+      "exitCode": 0,
+      "result": "PASS_READ_ONLY_ADAPTATION"
+    },
+    {
+      "command": "node --test specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs",
+      "exitCode": 0,
+      "tests": 2,
+      "result": "PASS",
+      "scope": "Actual extracted copy helper; synthetic bytes, no browser/PG"
+    },
+    {
+      "command": "TypeScript parser full file + strict noEmit typecheck actual two helpers and capture loop, installed TypeScript",
+      "exitCode": 0,
+      "result": "PASS_FOCAL",
+      "runtime": "Local Node24.14, not CI Node24.19"
+    },
+    {
+      "command": "eslint tests/e2e/hf-ui037-location.spec.ts specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs with existing config/dependencies",
+      "exitCode": 0,
+      "result": "PASS",
+      "warning": "React detect package absent in task copy; assumed latest by plugin"
+    },
+    {
+      "command": "git diff --check; git diff --cached --check; JSON parse; exact uploader glob and four blob comparison",
+      "exitCode": 0,
+      "result": "PASS"
+    }
+  ],
+  "traceability": [
+    {
+      "requirement": "UI-07/SC-037-004",
+      "tasks": [
+        "T020",
+        "T021",
+        "T022"
+      ],
+      "case": "mobile390x844/desktop1440x900 masked viewport; immediate exclusive archive",
+      "implementation": "COMPLETE",
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirementEvaluation": "HUMAN_DECISION_PENDING",
+      "evidenceCompleteness": "PARTIAL",
+      "run": null,
+      "attempt": null,
+      "artifact": null
+    },
+    {
+      "requirement": "contract closure Git",
+      "tasks": [
+        "T023"
+      ],
+      "case": "four sanitized docs33d/c7b",
+      "execution": "PASS",
+      "evidenceCompleteness": "COMPLETE"
+    },
+    {
+      "requirement": "UI037_CAPTURE_VERIFIED",
+      "tasks": [
+        "T024"
+      ],
+      "case": "final ZIP after later suites; exact4 files/digest/CRC/dimensions/hashes",
+      "execution": "NOT_RUN",
+      "evidenceCompleteness": "MISSING",
+      "owner": "coordinator/runtime + non-author review"
+    }
+  ],
+  "runtime": {
+    "complete": "NOT_RUN",
+    "partial": "synthetic filesystem contra2PASS only",
+    "newBrowserOrPG": "NOT_RUN",
+    "redBrowser": "NOT_RUN",
+    "ci15Gates": "NOT_RUN",
+    "visualComparison": "NOT_RUN",
+    "humanAcceptance": "PENDING",
+    "realProvider": "NOT_CONFIGURED/NOT_RUN"
+  },
+  "artifactContract": {
+    "directory": ".accounts-validation/frontend-areas",
+    "stems": [
+      "ui037-frontend-areas-hf-ui037-location-mobile-viewport",
+      "ui037-frontend-areas-hf-ui037-location-desktop-viewport"
+    ],
+    "extensions": [
+      "png",
+      "json"
+    ],
+    "fullPage": false,
+    "viewports": [
+      [
+        390,
+        844
+      ],
+      [
+        1440,
+        900
+      ]
+    ],
+    "metadataIdentityKeys": [
+      "sourceSha",
+      "sourceTree",
+      "runId",
+      "attempt"
+    ],
+    "copyPolicy": "COPYFILE_EXCL"
+  },
+  "limitations": [
+    "Not an independent review; worker authored patch and receipt.",
+    "UI037_CAPTURE_VERIFIED requires real final ZIP after later suites.",
+    "Full application typecheck and15 gates only official runner; no green inherited.",
+    "No screenshot physical device or scientific/provider acceptance."
+  ],
+  "dependencies": [
+    "Coordinator integrates exclusive delta, runs final15 gates and artifact verifier.",
+    "Coordinator publishes normal/fast-forward to C preserving remote799c and localc7b.",
+    "Non-author PROMPT04 reviews final source and executed artifacts."
+  ],
+  "scientific": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "followups": [
+    {
+      "round": 1,
+      "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+      "runId": 41351237110,
+      "attempt": 1,
+      "artifactId": 13101891983,
+      "state": "UI037_CAPTURE_ARCHIVED_PARTIAL",
+      "receipt": "close02-round1-ui037.json",
+      "t024": "OPEN",
+      "finalVerified": false
+    },
+    {
+      "round": 2,
+      "candidateSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "candidateTree": "b914dee92fcf2072b30747b80f29fc45b2ddcf12",
+      "runId": 41353270282,
+      "attempt": 1,
+      "jobId": 124987834454,
+      "artifactId": 13102479714,
+      "state": "UI037_CAPTURE_VERIFIED",
+      "receipt": "close02-round2-ui037.json",
+      "t024": "COMPLETE_ON_R2",
+      "finalVerified": true,
+      "rcRound3": "NOT_RUN",
+      "successInheritedToLaterSha": false
+    }
+  ],
+  "snapshotPhase": "Initial pre-runtime snapshot retained; latestState and followups supersede only current technical capture status.",
+  "latestState": "UI037_CAPTURE_VERIFIED",
+  "publicationHandoff": {
+    "publisher": "coordinator only",
+    "oneConsolidatedPublication": true,
+    "transport": "exclusive C deltas after setup1b6a2d3; preserve localc7b/remote799c and existing4docs",
+    "codeShaTestedComposition": "d62fb08cf65aca5dc704231f88594030f49279cb",
+    "docHead": "Resolve after coordinator publication; no tested status inherited",
+    "independentReview": "Separate PROMPT04 pending",
+    "humanAcceptance": "PENDING",
+    "geocoder": "PENDING"
+  }
+}

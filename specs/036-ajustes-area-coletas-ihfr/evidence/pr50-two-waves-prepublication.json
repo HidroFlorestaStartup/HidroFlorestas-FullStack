@@ -1,0 +1,133 @@
+{
+  "schema": "hf-ui044-pr50-two-waves-prepublication-v1",
+  "mission": "HF-UI044-PR50-TWO-WAVES-20261102",
+  "state": "WAVE1_COMPLETE_AWAITING_INDEPENDENT_QA",
+  "baselineSha": "ea43ad24a8307be6a0c7b183320b460f42dbc32d",
+  "baselineTree": "2f58a09d0655261003bf5831788f2469894b937e",
+  "branch": "fix/hf-ui044-ui06-b-residual-20261101",
+  "base": "codex/hf-ui044-close-20261101",
+  "pr": 50,
+  "finalSha": "ASSIGNED_BY_SINGLE_COMMIT_AFTER_QA",
+  "technicalDelta": "NONE",
+  "changedFiles": [
+    "specs/036-ajustes-area-coletas-ihfr/plan.md",
+    "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+    "specs/036-ajustes-area-coletas-ihfr/evidence/pr50-two-waves-b-20261102.md",
+    "specs/036-ajustes-area-coletas-ihfr/evidence/pr50-two-waves-prepublication.json"
+  ],
+  "authors": {
+    "coordinator": "/root",
+    "b": "/root/b_engineering",
+    "ciReadOnly": "/root/ci_safety",
+    "uxReadOnly": "/root/ux_evidence"
+  },
+  "handoffs": {
+    "b": "NO_CODE_CHANGE_REQUIRED",
+    "bReceiptSha256": "073d43b046bea9611a817501208a946925680a844530bec24994b89855435a73",
+    "ci": "CI_READY",
+    "uxReceiptSha256": "d352222a7e0c97b6db0307d86c72b3215cc6716344f16565fd2264bbeb64a3cc"
+  },
+  "checks": {
+    "b": {
+      "pass": 78,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0
+    },
+    "ci": {
+      "pass": 21,
+      "fail": 0,
+      "exit": 0,
+      "overlapB": 8
+    },
+    "presentation036": {
+      "pass": 4,
+      "exit": 0
+    },
+    "presentationIhfr": {
+      "pass": 3,
+      "exit": 0
+    },
+    "ui037": {
+      "pass": 7,
+      "exit": 0
+    },
+    "distinctPass": 105,
+    "redParent": {
+      "pass": 0,
+      "fail": 3,
+      "exit": 1,
+      "expected": true
+    },
+    "typecheckFull": {
+      "exit": 0
+    },
+    "typecheckFocal": {
+      "exit": 0
+    },
+    "lint": {
+      "exit": 0,
+      "errors": 0,
+      "preexistingWarnings": 2
+    },
+    "staticContract": {
+      "exit": 0
+    },
+    "powershellParse": {
+      "errors": 0
+    },
+    "runnerNegative": {
+      "exit": 1,
+      "expected": true
+    }
+  },
+  "commands": [
+    "node --experimental-strip-types --test qa/hf-ui044/domain-geometry.test.mjs qa/hf-ui044/domain-collection.test.mjs qa/hf-ui044/runner-gate.test.mjs qa/hf-ui044/domain-hit-contour-browser.test.mjs qa/hf-ui044/domain-scroll-owner-browser.test.mjs qa/hf-ui044/domain-lifecycle-browser.test.mjs",
+    "node --test scripts/hf-ui044-ci-contract.test.mjs qa/hf-ui044/runner-gate.test.mjs",
+    "node scripts/hf-ui044-pr50-contract.mjs --check",
+    "npx tsc --noEmit --incremental false",
+    "npm run lint",
+    "node --import=tsx --test tests/unit/hf-ui036-area-presentation.test.ts",
+    "node --import=tsx --test tests/unit/frontend-ihfr-presentation.test.tsx",
+    "node --import=tsx --test tests/unit/hf-ui037-geocoding.test.ts"
+  ],
+  "localRuntime": {
+    "node": "24.14.0",
+    "chromium": "156.0.8078.79",
+    "platform": "Windows"
+  },
+  "hosted": {
+    "newRoundsAuthorized": 1,
+    "used": 0,
+    "attempt": 1,
+    "timeLimitsMinutes": [
+      20,
+      35,
+      35
+    ],
+    "configuredRunnerMinutes": 90,
+    "rerunAuthorized": false,
+    "caseSets": [
+      "focal-3",
+      "complete-75",
+      "RC15"
+    ],
+    "state": "NOT_RUN"
+  },
+  "codexBaseline": {
+    "comment": 6578723280,
+    "sha": "ea43ad24a8307be6a0c7b183320b460f42dbc32d",
+    "state": "COMPLETED_NO_MAJOR_ISSUES",
+    "finalShaReview": "PENDING"
+  },
+  "preview": false,
+  "merge": false,
+  "deploy": false,
+  "humanAcceptance": "PENDING",
+  "experimentalQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ]
+}

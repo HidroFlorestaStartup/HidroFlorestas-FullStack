@@ -1,0 +1,19 @@
+{
+  "observedUtc": "2026-11-01T21:17:18.0878075Z",
+  "method": "Authenticated Vercel UI read-only; DOM textbox value and Connected Git Repository link",
+  "gitSettingsUrl": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/settings/git",
+  "settingsChanged": false,
+  "project": "hidro-florestas-full-stack",
+  "status": "PRE_PUSH_PREVIEW_GUARD_APPLICABILITY_VERIFIED",
+  "guardValue": false,
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "rootDirectoryValue": "",
+  "rootFieldDisabled": false,
+  "effectiveRoot": "repository root",
+  "rootSettingsUrl": "https://vercel.com/hidrofloresta-8598/hidro-florestas-full-stack/settings/build-and-deployment",
+  "guardPath": "vercel.json",
+  "guardBranch": "codex/hf-ui044-close-20261101",
+  "connectedRepository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "deployRequested": false
+}

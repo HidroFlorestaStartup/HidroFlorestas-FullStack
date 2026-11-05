@@ -1,5 +1,9 @@
 # Contexto do projeto HidroFlorestas
 
+## Preparação de integração UI-044 — 05/11/2026
+
+DECISAO_CONFIRMADA: Pedro autorizou preparar uma PR única e Preview isolado para seus novos testes; aceite visual e merge permanecem pendentes. [Pacote de reconciliação](docs/releases/2026-11-05-hf-ui044-integration/readme.md) preserva decisões/prints44, G045, recibosA/B e variantes históricas, mantendo o código da candidata50. CI do novoSHA e Preview têm recibos próprios; PASS de3c9b9c8 não é herdado. Não integrar/limpar branches nem promover Production por esta autorização. Registros seguintes permanecem históricos.
+
 ## Continuidade HF-NIGHT-01 — 25/10/2026, estudantes
 
 `EVIDENCIA_IMPLEMENTACAO`: os quatro originais da revisão destinada a Thales

@@ -1,0 +1,59 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "state": "EM_ANDAMENTO_READY_FOR_LAST_ROUND",
+  "codeShaReviewed": "181be8cffa9adc68531266f33d4e000ea7f27509",
+  "codeTreeReviewed": "844423332f26c6192a44d2b391fcc70143d65025",
+  "qaAuthor": "/root/qa_final",
+  "qaCommit": "cd98460cc26e273a7722aaf9dce8114f3960ebb1",
+  "localBranch": "codex/hf-ui044-close-20261101",
+  "published": true,
+  "hostedRoundsUsed": 2,
+  "hostedRoundsAllowed": 3,
+  "hostedRuntime": "R2_RC15_PASS_UI037_VERIFIED; UI06_A/B_INCOMPLETE; R3_PENDING",
+  "googleAuthorizationReceived": true,
+  "useAnotherAccountAuthorizationReceived": true,
+  "targetAccountIdentified": true,
+  "currentBrowserStep": "PERSONAL_LOGIN_COMPLETE_ROOT_AND_GIT_VERIFIED",
+  "credentialsRequestedInChat": false,
+  "rootDirectory": "",
+  "nextActions": [
+    "Final prepush functional manifest/env proof; normal third QA push with Preview false",
+    "Execute only smoke/UI-A/UI-B; RC_R3 explicitly NOT_RUN and proof remains d62",
+    "Audit terminal R3 ZIPs and bilateral images; no fourth QA SHA even for docs",
+    "Consolidate one functional publication per owner; A/C automatic CI separately; B docs-only NOT_RUN",
+    "Final non-author review; same PR45 factual verdict, reconcile PRs and preserve all worktrees"
+  ],
+  "publicReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/45#issuecomment-6563833137",
+  "referenceComments": {
+    "46": 6563835743,
+    "47": 6563836430,
+    "48": 6563837671
+  },
+  "worktrees": [
+    "hf044-coord",
+    "hf044-a",
+    "hf044-b",
+    "hf044-c",
+    "hf044-qa"
+  ],
+  "gitFinalObservation": "Coordinator task-owned changes only; workers preserved. Functional publication refs remain local; no feature/main/development/#44 pushes",
+  "limits": [
+    "NO_MERGE",
+    "NO_DEPLOY",
+    "NO_REAL_PROVIDERS",
+    "NO_SCIENTIFIC_CHANGE",
+    "HUMAN_ACCEPTANCE_PENDING",
+    "GEOCODER_OPERATIONAL_PENDING"
+  ],
+  "lastPublishedSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+  "lastRun": 41351237110,
+  "lastAttempt": 1,
+  "preflightRound2": {
+    "runtime": "Local Node24.14.0; not hosted CI",
+    "fullTypecheck": "PASS",
+    "targetedLint": "PASS",
+    "attributionMatchesOfficialInAllFourJobs": true,
+    "jobMinutesTotal": 110,
+    "ownerASmoke": "14/14 PASS on9ecfa5ff; synthetic browser only"
+  }
+}

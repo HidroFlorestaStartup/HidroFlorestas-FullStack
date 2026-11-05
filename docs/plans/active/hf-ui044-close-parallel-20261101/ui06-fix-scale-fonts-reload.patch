@@ -1,0 +1,148 @@
+diff --git a/tests/e2e/hf-ui06-bilateral.spec.ts b/tests/e2e/hf-ui06-bilateral.spec.ts
+index c9005e7..186b0aa 100644
+--- a/tests/e2e/hf-ui06-bilateral.spec.ts
++++ b/tests/e2e/hf-ui06-bilateral.spec.ts
+@@ -39,6 +39,9 @@ const report = {
+   operations: { fixtureSetups:0, browserContexts:0, logins:0, labCreations:0, reloads:0 },
+   reloadSampling: "One actual reload per runtime, then all 28 post-reload layouts; not 28 reload operations.",
+   cleanup: "NOT_RUN", pairs: [] as object[], startedUtc: new Date().toISOString(),
++  scaleDiagnostics: [] as Array<{ source: Source; caseId: string; phase: string; expectedPx: number; sampledPx: number[] }>,
++  reloadScaleReadback: [] as Array<{ source: Source; beforePx: number; afterPx: number; priorCaseId: string;
++    interpretation: string }>,
+ };
+ let ownsArchive = false;
+ let ownsFixture = false;
+@@ -58,6 +61,34 @@ async function settle(page: Page) {
+     await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+   });
+ }
++/** The app uses a 300ms universal CSS transition, including html font-size.
++ * Two requestAnimationFrame callbacks are NOT a font-scale readiness gate.
++ * Observe the real computed value (without changing product CSS) until it
++ * reaches the exact requested value; record bounded diagnostics on failure.
++ */
++async function waitForFontScale(runtime: Runtime, c: MatrixCase, phase: string) {
++  const expectedPx = c.scale === 200 ? 32 : 16;
++  const sampledPx: number[] = [];
++  try {
++    await expect.poll(async () => {
++      const px = await runtime.page.evaluate(() =>
++        parseFloat(getComputedStyle(document.documentElement).fontSize));
++      sampledPx.push(px);
++      return px;
++    }, { timeout: 3_000, intervals: [25, 50, 100, 150, 200] }).toBe(expectedPx);
++    // The font scale has reached its final value. Check it again after layout.
++    await settle(runtime.page);
++    const finalPx = await runtime.page.evaluate(() =>
++      parseFloat(getComputedStyle(document.documentElement).fontSize));
++    expect(finalPx).toBe(expectedPx);
++  } catch (error) {
++    report.scaleDiagnostics.push({ source: runtime.source, caseId: c.id, phase,
++      expectedPx, sampledPx: sampledPx.slice(-20) });
++    await saveReport(); // preserve evidence before a failing assertion ends the test
++    throw error;
++  }
++}
++
+ async function configure(runtime: Runtime, c: MatrixCase) {
+   await runtime.page.setViewportSize({width:c.width,height:c.height});
+   await runtime.page.evaluate(scale => document.documentElement.style.setProperty("font-size",scale+"%","important"),c.scale);
+@@ -69,17 +100,31 @@ async function configure(runtime: Runtime, c: MatrixCase) {
+     for (const id of ["application-content","conteudo","application-navigation"])
+       document.getElementById(id)?.scrollTo({top:0,left:0,behavior:"instant"});
+   });
+-  await settle(runtime.page);
++  await waitForFontScale(runtime,c,"after-configure");
+ }
++/** CDP does not recurse through a generic header/main container when querying
++ * platform fonts. Probe a bounded number of descendant elements that can own
++ * visible text nodes; never fetch/log actual rendered strings or user content.
++ */
+ async function platformFonts(runtime: Runtime, selector: string): Promise<Font[]> {
+   const {root} = await runtime.cdp.send("DOM.getDocument");
+-  const {nodeId} = await runtime.cdp.send("DOM.querySelector",{nodeId:root.nodeId,selector});
+-  if (!nodeId) return [];
+-  const result = await runtime.cdp.send("CSS.getPlatformFontsForNode",{nodeId});
+-  return result.fonts.map(({familyName,isCustomFont,glyphCount}) => ({familyName,isCustomFont,glyphCount}));
++  const {nodeIds} = await runtime.cdp.send("DOM.querySelectorAll",{
++    nodeId:root.nodeId,
++    selector:selector+" :is(h1,h2,h3,p,strong,small,a,button,span,label,li)",
++  });
++  for (const nodeId of nodeIds.slice(0,32)) {
++    const result = await runtime.cdp.send("CSS.getPlatformFontsForNode",{nodeId});
++    if (result.fonts.some(font => font.glyphCount > 0)) {
++      return result.fonts.filter(font => font.glyphCount > 0)
++        .map(({familyName,isCustomFont,glyphCount}) => ({familyName,isCustomFont,glyphCount}));
++    }
++  }
++  return []; // UNOBSERVED, not evidence of a real fallback
+ }
+ async function sample(runtime: Runtime, c: MatrixCase, requestedState: string, actualState = requestedState) {
+-  await settle(runtime.page);
++  // After a client navigation, do not reuse an old scale assertion. The
++  // instrumented root scale must still match this case before evidence exists.
++  await waitForFontScale(runtime,c,"before-sample:"+requestedState);
+   const header = runtime.source === "fullstack" ? "#application-header" : "header";
+   const main = runtime.source === "fullstack" ? "#application-content" : "#conteudo";
+   const fonts = { header:await platformFonts(runtime,header), main:await platformFonts(runtime,main) };
+@@ -127,7 +172,11 @@ async function sample(runtime: Runtime, c: MatrixCase, requestedState: string, a
+     pngSha256:metadata.pngSha256,jsonSha256:createHash("sha256").update(json).digest("hex")};
+ }
+ async function pair(c: MatrixCase, state: string, unavailable = false, reload = false) {
+-  const accountUnavailable=unavailable || state.includes("-account-");
++  // Opening Conta and closing it with Escape have no starter counterpart.
++  // The initial CLOSED workspace/lab layout can still be compared visually,
++  // without treating it as an equivalent account capability.
++  const accountUnavailable=unavailable || state.endsWith("-account-open")
++    || state.endsWith("-account-closed-after-escape");
+   const samples = [];
+   for (const runtime of runtimes) {
+     const actual = runtime.source==="starter" && accountUnavailable ? "reference-account-UNAVAILABLE"
+@@ -137,13 +186,21 @@ async function pair(c: MatrixCase, state: string, unavailable = false, reload =
+   const reasons: string[] = [];
+   if (accountUnavailable) reasons.push("ACCOUNT_DISCLOSURE_ABSENT_IN_PINNED_STARTER");
+   if (reload) reasons.push("REFERENCE_CREATED_LAB_LOST_AFTER_RELOAD");
++  const unobserved: string[] = [];
+   for (const region of ["header","main"] as const) {
+     const primary = samples.map(item => [...item.fonts[region]].sort((a,b)=>b.glyphCount-a.glyphCount)[0]?.familyName ?? "");
+-    if (primary.some(name=>!/poppins/i.test(name))) reasons.push("POPPINS_NOT_OBSERVED_"+region.toUpperCase());
++    if (primary.some(name=>!name)) {
++      unobserved.push("RENDERED_FONT_UNOBSERVED_"+region.toUpperCase());
++      continue; // An empty CDP answer is NOT proof of a fallback or mismatch.
++    }
++    if (primary.some(name=>!/poppins/i.test(name))) reasons.push("RENDERED_FONT_NOT_POPPINS_"+region.toUpperCase());
+     if (primary[0].toLowerCase()!==primary[1].toLowerCase()) reasons.push("OBSERVED_FONT_MISMATCH_"+region.toUpperCase());
+   }
+-  report.pairs.push({case:c,state,classification:reasons.length ? "NON_EQUIVALENT" : "COMPARABLE_NOT_ACCEPTED",
+-    reasons:[...new Set(reasons)],samples:samples.map(({png,json,pngSha256,jsonSha256})=>({png,json,pngSha256,jsonSha256}))});
++  const classification = reasons.length ? "NON_EQUIVALENT"
++    : unobserved.length ? "INSUFFICIENT_EVIDENCE" : "COMPARABLE_NOT_ACCEPTED";
++  report.pairs.push({case:c,state,classification,
++    reasons:[...new Set(reasons)],missingEvidence:unobserved,
++    samples:samples.map(({png,json,pngSha256,jsonSha256})=>({png,json,pngSha256,jsonSha256}))});
+   await saveReport();
+ }
+ async function account(runtime: Runtime, open: boolean) {
+@@ -344,9 +401,21 @@ test("UI06: shared real fixtures, 28 combinations and explicit non-equivalence",
+       await dashboardReady(runtime);
+     }
+   }
+-  // Persistence is an operation, not a viewport. Reload once, then sample every required layout.
++  // Persistence is an operation, not a viewport. The inline 200% setting is
++  // test instrumentation, not an application preference. Read its value both
++  // immediately before and after the REAL reload, before configure() reapplies
++  // it for visual comparison. Never claim this proves user zoom persistence.
+   for (const runtime of runtimes) {
++    const priorCaseId = matrix[matrix.length-1].id;
++    const beforePx = await runtime.page.evaluate(() =>
++      parseFloat(getComputedStyle(document.documentElement).fontSize));
+     await runtime.page.reload(); report.operations.reloads++;
++    const afterPx = await runtime.page.evaluate(() =>
++      parseFloat(getComputedStyle(document.documentElement).fontSize));
++    report.reloadScaleReadback.push({ source:runtime.source, beforePx, afterPx, priorCaseId,
++      interpretation: beforePx===afterPx ? "INLINE_TEST_SCALE_PRESERVED"
++        : "INLINE_TEST_SCALE_RESET_ON_DOCUMENT_RELOAD_NOT_APP_PREFERENCE" });
++    await saveReport();
+     if (runtime.source==="fullstack") {
+       await dashboardReady(runtime);
+     } else {

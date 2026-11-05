@@ -1,0 +1,217 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "A",
+  "agentId": "/root/a_harness",
+  "finding": "MEDIUM_INCOMPLETE_PAIR_AXES",
+  "base": "72ad1bc3db0a2a9ef86be042775c7d24f40af579",
+  "codeCommit": "d27a1e691af746d9d3b4374cc1f9cbccae944aba",
+  "codeTree": "de7fb24858a8577892d8f6117e96ae99257f4e60",
+  "workingTreeDuringTest": "72ad1bc with the three changed code files; exact bytes subsequently committed as d27a1e6 and verified by git show",
+  "testedFileSha256": {
+    "qa/hf-ui044/shared.ts": "2e86b9c266297ff1d38f2341406142dd9a77d7c37abd57edae21eb9c4795dcd2",
+    "qa/hf-ui044/shell.spec.ts": "97697e021e4832c1f52df3407aef0da820153993a421a8c0fc8c39d772c9d045",
+    "qa/hf-ui044/smoke.spec.ts": "c67d40be6278cf5c73966c383f30360141485f295d756749c8065e4d43b6bc63"
+  },
+  "red": {
+    "tests": 2,
+    "failed": 2,
+    "exit": 1,
+    "observed": "Both0/1runtime yieldedPASS/COMPARABLE/PARTIAL before correction"
+  },
+  "green": {
+    "tests": 5,
+    "passed": 5,
+    "exit": 0,
+    "durationSeconds": 7.9,
+    "observed": "0/1runtime yieldsFAIL/INSUFFICIENT_EVIDENCE/PARTIAL in return value and persisted JSONL"
+  },
+  "checks": {
+    "fullLocalTypecheck": {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit": 0
+    },
+    "lintThreeChangedFiles": {
+      "exit": 0
+    },
+    "gitDiffCheck": {
+      "exit": 0
+    }
+  },
+  "environment": {
+    "node": "v24.14.0",
+    "playwright": "1.55.1",
+    "chromium": "153.0.8010.12",
+    "origin": "SYNTHETIC_SMOKE_NOT_PRODUCT",
+    "database": false,
+    "hostedCi": false,
+    "globalInstall": false
+  },
+  "archives": {
+    "red": {
+      "path": ".accounts-validation/ui06-pair-repair-red",
+      "cases": [
+        {
+          "id": "incomplete-pair-0",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "PARTIAL"
+        },
+        {
+          "id": "incomplete-pair-1",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "PARTIAL"
+        }
+      ],
+      "files": [
+        {
+          "name": "cases.jsonl",
+          "sha256": "75e234e6e31fad94986c1227f5b470b73910fb4eb37826414d6a88cc25e93c68",
+          "bytes": 4429
+        },
+        {
+          "name": "fullstack-incomplete-pair-1.json",
+          "sha256": "8f96d275289db41500b7757ad687948c355911551cba2e152c4738a53617382e",
+          "bytes": 2794
+        },
+        {
+          "name": "fullstack-incomplete-pair-1.png",
+          "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+          "bytes": 9709
+        },
+        {
+          "name": "index.json",
+          "sha256": "30fb22c6ff6cbc10d1a3db2cb34f977d03af1a2b0494a6a9e26db5038f9c2b3c",
+          "bytes": 216
+        }
+      ]
+    },
+    "green": {
+      "path": ".accounts-validation/ui06-pair-repair-green",
+      "cases": [
+        {
+          "id": "incomplete-pair-0",
+          "execution": "FAIL",
+          "comparability": "INSUFFICIENT_EVIDENCE",
+          "completeness": "PARTIAL"
+        },
+        {
+          "id": "incomplete-pair-1",
+          "execution": "FAIL",
+          "comparability": "INSUFFICIENT_EVIDENCE",
+          "completeness": "PARTIAL"
+        }
+      ],
+      "files": [
+        {
+          "name": "cases.jsonl",
+          "sha256": "c0c998913f682815e5662b2677b3e49fa8a7c3fb4000f9bd78616a97bd3fa474",
+          "bytes": 26659
+        },
+        {
+          "name": "fullstack-incomplete-pair-1.json",
+          "sha256": "8f96d275289db41500b7757ad687948c355911551cba2e152c4738a53617382e",
+          "bytes": 2794
+        },
+        {
+          "name": "fullstack-incomplete-pair-1.png",
+          "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+          "bytes": 9709
+        },
+        {
+          "name": "fullstack-smoke-1440-100-1793568254841.json",
+          "sha256": "b80fa0ec31d236dca124269db907735cb9716eabb646f1dbdc1e272b58ebd5b7",
+          "bytes": 2765
+        },
+        {
+          "name": "fullstack-smoke-1440-100-1793568254841.png",
+          "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+          "bytes": 13257
+        },
+        {
+          "name": "fullstack-smoke-1440-100-1793568255427.json",
+          "sha256": "c1228d39d5791c562cb2cb437c0736a700c863e5fc6b6c4f077d36d1436110ff",
+          "bytes": 2765
+        },
+        {
+          "name": "fullstack-smoke-1440-100-1793568255427.png",
+          "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+          "bytes": 13257
+        },
+        {
+          "name": "fullstack-smoke-1440-200.json",
+          "sha256": "f03e94d76891663315cd4ca2b224a7d9eff5ff9ba594a51694c5d62acca8c711",
+          "bytes": 2759
+        },
+        {
+          "name": "fullstack-smoke-1440-200.png",
+          "sha256": "e4878c238674c25dc4405dda6e270739be725a9df984dd4ed23c73b013331e50",
+          "bytes": 25766
+        },
+        {
+          "name": "fullstack-smoke-320-100-1793568253020.json",
+          "sha256": "fbb7a60ed498c1e6665d41228cc1bf07b782455fb9fe7d6a1d7a035d5f5dc472",
+          "bytes": 2756
+        },
+        {
+          "name": "fullstack-smoke-320-100-1793568253020.png",
+          "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+          "bytes": 9709
+        },
+        {
+          "name": "fullstack-smoke-320-100-1793568253624.json",
+          "sha256": "cd40e86cb2f3b3d25b5bbec19c2e3da8217dd0fd2c290f516a409a64ef300550",
+          "bytes": 2764
+        },
+        {
+          "name": "fullstack-smoke-320-100-1793568253624.png",
+          "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+          "bytes": 9709
+        },
+        {
+          "name": "fullstack-smoke-320-200.json",
+          "sha256": "8f72715e01b0049389ae9a178d7c763aaf4d9845d3151fbb0ccfb5623b7ba047",
+          "bytes": 2742
+        },
+        {
+          "name": "fullstack-smoke-320-200.png",
+          "sha256": "8467cc184dfba8531fb676f5cedb3e78e3302b0b04b228f9e0791bf19dc33c39",
+          "bytes": 22035
+        },
+        {
+          "name": "fullstack-unobserved-1440.json",
+          "sha256": "57b637d81513e25a921648c3fee9618a6db29f1b0f254a1a906c85e1803723c2",
+          "bytes": 1753
+        },
+        {
+          "name": "fullstack-unobserved-1440.png",
+          "sha256": "148dbee8d846e1f413735fa9d2fca45d2251f94292512dd861928ff4dc5279b9",
+          "bytes": 13257
+        },
+        {
+          "name": "fullstack-unobserved-320.json",
+          "sha256": "cafcc6a8072a6dd2ffebc2647aebbb037e3b6cc46049052d9c2251f46f8653cc",
+          "bytes": 1744
+        },
+        {
+          "name": "fullstack-unobserved-320.png",
+          "sha256": "3e01c183b3058b01ad4b9cb7c1909aeed11d44a7378e3babf864d03cb4c884aa",
+          "bytes": 9709
+        },
+        {
+          "name": "index.json",
+          "sha256": "30fb22c6ff6cbc10d1a3db2cb34f977d03af1a2b0494a6a9e26db5038f9c2b3c",
+          "bytes": 216
+        }
+      ]
+    }
+  },
+  "published": false,
+  "officialRuntime": "NOT_RUN for corrected commit; coordinator owns subsequent bounded round",
+  "limitations": [
+    "No bilateral product/starter runtime in this local check",
+    "No new15gate claim",
+    "No product/config/workflow change",
+    "Existing captures preserved; separate RED/GREEN archives"
+  ]
+}

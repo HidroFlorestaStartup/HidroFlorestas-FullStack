@@ -1,0 +1,368 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "mission": "HF-UI-044-A6",
+  "date": "2026-11-01",
+  "codeShaTestedA": "6f236bbe7b5f4d7f9718efaa2c334f7d1520e0a0",
+  "codeShaTestedComposition": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+  "productTree": "a585087dbbe9294c18922e3397c2561f245446c9",
+  "operationalTree": "f40b4e8c0217311869dc5336e4fc15c7176df7a5",
+  "isolatedA": {
+    "run": 41268640475,
+    "attempt": 1,
+    "artifact": 13068508529,
+    "zipSha256": "a92859386fe798f6c88d1b2e87c14b438f13e15226b19e6db87a8dd8a8de8971",
+    "crcError": null,
+    "journalSha256": "99c4f87059b303473e322b065467501fee341548f7a1339923ec0e8b2ddb7265",
+    "journal": [
+      {
+        "gate": "RegressionSetup",
+        "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:20:18.582Z",
+        "endedUtc": "2026-11-01T03:20:31.033Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1793503218581.log"
+      },
+      {
+        "gate": "Unit",
+        "command": "npm run test:unit",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:20:31.308Z",
+        "endedUtc": "2026-11-01T03:20:59.927Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1793503231308.log"
+      },
+      {
+        "gate": "Integration",
+        "command": "npm run test:integration",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:21:00.231Z",
+        "endedUtc": "2026-11-01T03:23:12.044Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1793503260231.log"
+      },
+      {
+        "gate": "Migration",
+        "command": "npm run test:migration",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:23:12.323Z",
+        "endedUtc": "2026-11-01T03:23:28.547Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1793503392322.log"
+      },
+      {
+        "gate": "Contract",
+        "command": "npm run test:contract",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:23:28.806Z",
+        "endedUtc": "2026-11-01T03:23:37.518Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1793503408806.log"
+      },
+      {
+        "gate": "R1",
+        "command": "npm run test:mail:r1",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:23:37.819Z",
+        "endedUtc": "2026-11-01T03:24:22.619Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1793503417818.log"
+      },
+      {
+        "gate": "Build",
+        "command": "npm run build",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:24:22.906Z",
+        "endedUtc": "2026-11-01T03:24:50.852Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1793503462906.log"
+      },
+      {
+        "gate": "Typecheck",
+        "command": "npm run typecheck",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:24:51.117Z",
+        "endedUtc": "2026-11-01T03:25:02.998Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1793503491116.log"
+      },
+      {
+        "gate": "Lint",
+        "command": "npm run lint",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:25:03.259Z",
+        "endedUtc": "2026-11-01T03:25:27.872Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1793503503259.log"
+      },
+      {
+        "gate": "E2E",
+        "command": "npm run test:e2e",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:25:28.152Z",
+        "endedUtc": "2026-11-01T03:37:52.716Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1793503528152.log"
+      },
+      {
+        "gate": "Https",
+        "command": "npm run test:e2e:https",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:37:53.047Z",
+        "endedUtc": "2026-11-01T03:38:33.963Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\https-1793504273047.log"
+      },
+      {
+        "gate": "Deletion",
+        "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:38:34.210Z",
+        "endedUtc": "2026-11-01T03:38:47.667Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\deletion-1793504314209.log"
+      },
+      {
+        "gate": "Ihfr",
+        "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+        "snapshot": "30c9e37b02c4eb8368dad710d82bb30ba39cdb2f88230fef6daead310280d502",
+        "startedUtc": "2026-11-01T03:38:47.926Z",
+        "endedUtc": "2026-11-01T03:40:04.583Z",
+        "exitCode": 1,
+        "result": "FAIL",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\ihfr-1793504327926.log"
+      }
+    ]
+  },
+  "composition": {
+    "run": 41275910130,
+    "attempt": 1,
+    "artifact": 13071771510,
+    "zipSha256": "7d1a588c60f614515b2d97169479df5b392c8cad6c160978e68225fafdc90c16",
+    "crcError": null,
+    "entries": 771,
+    "pngCount": 468,
+    "journalSha256": "810a76ea02d6fefa2e9c1dbf0d168ab7dd5c50a5c104bac30e6263c5267cb8d8",
+    "journal": [
+      {
+        "gate": "RegressionSetup",
+        "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:12:22.941Z",
+        "endedUtc": "2026-11-01T05:12:30.840Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1793509942941.log"
+      },
+      {
+        "gate": "Unit",
+        "command": "npm run test:unit",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:12:31.129Z",
+        "endedUtc": "2026-11-01T05:12:59.710Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1793509951128.log"
+      },
+      {
+        "gate": "Integration",
+        "command": "npm run test:integration",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:13:00.014Z",
+        "endedUtc": "2026-11-01T05:15:09.179Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1793509980013.log"
+      },
+      {
+        "gate": "Migration",
+        "command": "npm run test:migration",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:15:09.523Z",
+        "endedUtc": "2026-11-01T05:15:45.516Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1793510109521.log"
+      },
+      {
+        "gate": "Contract",
+        "command": "npm run test:contract",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:15:45.795Z",
+        "endedUtc": "2026-11-01T05:15:49.739Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1793510145794.log"
+      },
+      {
+        "gate": "R1",
+        "command": "npm run test:mail:r1",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:15:50.010Z",
+        "endedUtc": "2026-11-01T05:16:00.070Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1793510150008.log"
+      },
+      {
+        "gate": "Build",
+        "command": "npm run build",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:16:00.334Z",
+        "endedUtc": "2026-11-01T05:16:27.531Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1793510160333.log"
+      },
+      {
+        "gate": "Typecheck",
+        "command": "npm run typecheck",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:16:27.813Z",
+        "endedUtc": "2026-11-01T05:16:38.895Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1793510187812.log"
+      },
+      {
+        "gate": "Lint",
+        "command": "npm run lint",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:16:39.162Z",
+        "endedUtc": "2026-11-01T05:17:01.278Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1793510199162.log"
+      },
+      {
+        "gate": "E2E",
+        "command": "npm run test:e2e",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:17:01.555Z",
+        "endedUtc": "2026-11-01T05:30:25.848Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1793510221555.log"
+      },
+      {
+        "gate": "Https",
+        "command": "npm run test:e2e:https",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:30:26.167Z",
+        "endedUtc": "2026-11-01T05:31:06.555Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\https-1793511026167.log"
+      },
+      {
+        "gate": "Deletion",
+        "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:31:06.819Z",
+        "endedUtc": "2026-11-01T05:31:19.984Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\deletion-1793511066818.log"
+      },
+      {
+        "gate": "Ihfr",
+        "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:31:20.244Z",
+        "endedUtc": "2026-11-01T05:32:42.268Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": ".accounts-validation\\ihfr-1793511080243.log"
+      },
+      {
+        "gate": "Bootstrap",
+        "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:32:42.535Z",
+        "endedUtc": "2026-11-01T05:32:47.571Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\bootstrap-1793511162534.log"
+      },
+      {
+        "gate": "SchemaAudit",
+        "command": "npm run test:ihfr:audit:assert-zero",
+        "snapshot": "de403fffef4a88b505eada85225b785422231f7f7392bd40a56b0bc8a2ba8c40",
+        "startedUtc": "2026-11-01T05:32:47.862Z",
+        "endedUtc": "2026-11-01T05:32:48.650Z",
+        "exitCode": 0,
+        "result": "PASS",
+        "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+        "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\schemaaudit-1793511167862.log"
+      }
+    ],
+    "ui037DedicatedEntries": []
+  },
+  "states": [
+    "UI06_RUNTIME_PENDING",
+    "UI06_BILATERAL_NOT_RUN",
+    "UI037_CAPTURE_PENDING",
+    "HUMAN_ACCEPTANCE_PENDING",
+    "GEOCODER_OPERATIONAL_PENDING"
+  ],
+  "newRuntimeExecuted": false,
+  "functionalChanges": false,
+  "independentReview": false,
+  "ui037DeletionObserved": false,
+  "staticChecks": {
+    "localMarkdownLinks": 15,
+    "ownersPaths": [
+      20,
+      19,
+      24
+    ],
+    "overlaps": 0,
+    "sourceABlobsMatchComposition": 7,
+    "patchApplyCheck": "PASS",
+    "yamlDuplicateKeys": "PASS",
+    "powerShellParser": "PASS",
+    "typeScriptSyntaxOnly": "PASS",
+    "typeScriptFullCheck": "NOT_RUN",
+    "activeFunctionalChecks": "NOT_RUN_DOCUMENTATION_ONLY",
+    "previewGuardsPreserved": 41
+  }
+}

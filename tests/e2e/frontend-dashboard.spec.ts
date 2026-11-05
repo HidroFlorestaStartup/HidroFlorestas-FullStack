@@ -445,8 +445,10 @@ function responseBarrier() {
 }
 
 async function chooseEmptyLaboratoryThroughWorkspace(page: Page) {
-  await page.getByRole("navigation", { name: "Navegação principal", exact: true })
-    .getByRole("link", { name: "Laboratórios", exact: true }).click();
+  // Navigation originates in the persistent shell while the previous
+  // laboratory's real API responses are deliberately held by this test.
+  // The contextual return link itself is covered in hf-ui035-navigation.
+  await page.getByRole("link", { name: "HidroFlorestas — ir ao workspace", exact: true }).click();
   await expect(page).toHaveURL(/\/workspace$/);
   const laboratory = page.getByRole("listitem").filter({
     has: page.getByRole("heading", { name: DASHBOARD_FIXTURE_PREFIX + " laboratory 2", exact: true }),

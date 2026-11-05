@@ -29,7 +29,9 @@ test("frontend IHFR keeps unknown qualifiers and metadata visible with honest fa
   assert.match(html, /Validação científica pendente/);
   assert.match(html, /Data indisponível/);
   assert.match(html, /Não se aplica/);
-  assert.doesNotMatch(html, /<details/);
+  assert.match(html, /<details/);
+  assert.match(html, /<summary/);
+  assert.doesNotMatch(html, /<details[^>]*\sopen/);
   assert.equal(ihfrLabel("eligibility", "FUTURE_RESULT"), "FUTURE_RESULT");
   assert.equal(ihfrLabel("eligibility", "constructor"), "constructor");
   assert.equal(ihfrLabel("eligibility", "__proto__"), "__proto__");
