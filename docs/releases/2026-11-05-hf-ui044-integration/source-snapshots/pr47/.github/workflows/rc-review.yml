@@ -1,0 +1,126 @@
+name: RC review checks
+
+on:
+  push:
+    branches:
+      - review/015-environmental-drafts
+      - review/016-area-covers
+      - review/cri-audit-20261010
+      - release/cri-rc-20261010
+      - review/cri-rc-validation-20261012
+      - feat/frontend-login
+      - feat/frontend-account
+      - feat/frontend-workspace-shell
+      - feat/frontend-laboratory-dashboard
+      - feat/frontend-areas-cover
+      - 022-fix-concurrency-ihfr
+      - feat/frontend-collections
+      - feat/frontend-environmental-drafts
+      - feat/frontend-ihfr
+      - feat/frontend-territorial-map
+      - feat/frontend-user-administration
+      - feat/frontend-landing-consolidation
+      - release/frontend-rc-20261021
+      - fix/investigacoes-intermitentes-20261023-local01
+      - release/hf-close-01-20261025
+      - feat/ajustes-navegacao-conta
+      - feat/ajustes-area-coletas-ihfr
+      - feat/localizacao-endereco-opcional
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rc-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: >-
+      github.ref_name == 'review/015-environmental-drafts' ||
+      github.ref_name == 'review/016-area-covers' ||
+      github.ref_name == 'review/cri-audit-20261010' ||
+      github.ref_name == 'release/cri-rc-20261010' ||
+      github.ref_name == 'review/cri-rc-validation-20261012' ||
+      github.ref_name == 'feat/frontend-login' ||
+      github.ref_name == 'feat/frontend-account' ||
+      github.ref_name == 'feat/frontend-workspace-shell' ||
+      github.ref_name == 'feat/frontend-laboratory-dashboard' ||
+      github.ref_name == 'feat/frontend-areas-cover' ||
+      github.ref_name == '022-fix-concurrency-ihfr' ||
+      github.ref_name == 'feat/frontend-collections' ||
+      github.ref_name == 'feat/frontend-environmental-drafts' ||
+      github.ref_name == 'feat/frontend-ihfr' ||
+      github.ref_name == 'feat/frontend-territorial-map' ||
+      github.ref_name == 'feat/frontend-user-administration' ||
+      github.ref_name == 'feat/frontend-landing-consolidation' ||
+      github.ref_name == 'release/frontend-rc-20261021' ||
+      github.ref_name == 'fix/investigacoes-intermitentes-20261023-local01' ||
+      github.ref_name == 'release/hf-close-01-20261025' ||
+      github.ref_name == 'feat/ajustes-navegacao-conta' ||
+      github.ref_name == 'feat/ajustes-area-coletas-ihfr' ||
+      github.ref_name == 'feat/localizacao-endereco-opcional'
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.19.0
+          cache: npm
+      - name: Install locked dependencies and Chromium
+        run: |
+          node --version
+          npm --version
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE -ne 0) { throw 'Locked installation failed' }
+          npx prisma generate
+          if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed' }
+          npx playwright install chromium
+          if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed' }
+      - name: Validate with owned synthetic PostgreSQL and current guards
+        run: ./scripts/rc-review-validation.ps1 -InitializeCiCluster
+      - name: Preserve redacted validation logs
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: rc-validation-${{ github.sha }}
+          path: |
+            .accounts-validation/*.log
+            .accounts-validation/results.jsonl
+            test-results/**/frontend-login-*.png
+            test-results/**/frontend-account-*.png
+            .accounts-validation/frontend-account/*.png
+            test-results/**/frontend-workspace-*.png
+            .accounts-validation/frontend-workspace/*.png
+            .accounts-validation/frontend-mobile-navigation/*.png
+            .accounts-validation/frontend-mobile-navigation/*-geometry.json
+            .accounts-validation/frontend-dashboard/*.png
+            .accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
+            .accounts-validation/frontend-areas/*.png
+            .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            test-results/**/frontend-collections-*.png
+            test-results/**/frontend-collections-*-viewport.json
+            .accounts-validation/frontend-collections/*-frontend-collections-*.png
+            .accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
+            test-results/**/frontend-environmental-*.png
+            test-results/**/frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*.png
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
+            .accounts-validation/frontend-landing/*-frontend-landing-*.png
+            .accounts-validation/frontend-landing/*-frontend-landing-*-viewport.json
+          if-no-files-found: warn
+          retention-days: 14
+          include-hidden-files: true

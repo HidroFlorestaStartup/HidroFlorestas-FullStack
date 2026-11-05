@@ -1,0 +1,148 @@
+{
+  "id": "HF-UI-20261030",
+  "date": "2026-10-30",
+  "timezone": "America/Fortaleza",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "documentationBranch": "docs/handoff-ajustes-interface-20261030",
+  "base": {
+    "branch": "development",
+    "commit": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+    "tree": "e74ac641564288df01c85226ddc1ed6a8d22b941"
+  },
+  "visualSource": {
+    "repository": "HidroFlorestaStartup/hidroflorestas-frontend-starter",
+    "branch": "main",
+    "observedCommit": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "screenshotCommitBinding": "NOT_PROVEN"
+  },
+  "authority": {
+    "classification": "DECISAO_CONFIRMADA",
+    "person": "Pedro Vítor",
+    "source": "Anotações, oito imagens, respostas a cinco esclarecimentos e concordância final nesta conversa",
+    "finalConfirmation": "Okay, Concordo!"
+  },
+  "execution": {
+    "scopeIds": [
+      "UI-01",
+      "UI-02",
+      "UI-03",
+      "UI-04",
+      "UI-05",
+      "UI-06",
+      "UI-07"
+    ],
+    "futureIds": [
+      "REV-01",
+      "REV-02",
+      "REV-03"
+    ],
+    "implementation": "NAO_INICIADO",
+    "commitPushAndPR": "AUTHORIZED_WITHOUT_ROUTINE_RECONFIRMATION",
+    "merge": "MAINTAINER",
+    "deploy": "NOT_AUTHORIZED_BY_THIS_HANDOFF",
+    "functionalTests": "NOT_RUN",
+    "newVisualExecution": "NOT_RUN"
+  },
+  "screenshots": [
+    {
+      "source": "paginaInicial_HidroFlorestas.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-workspace.png",
+      "bytes": 131985,
+      "sha256": "abe3ef676cfdac3c7465c19815874769ba7dbe521d204e520bf53c38987768f8",
+      "gitBlobSha": "7bfe240b30f98d0b6cb89eb56b446a799ba35c6e",
+      "width": 1911,
+      "height": 1010,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "inicialLaboratorio.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-laboratorio-resumo.png",
+      "bytes": 105799,
+      "sha256": "cd055f8159552829b6d940841fe1b1a95492ee401edc8a3d13ff42c2839fe425",
+      "gitBlobSha": "f5176ed84fc9a5e7d53727a86864b27764004943",
+      "width": 1899,
+      "height": 984,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "area.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-area.png",
+      "bytes": 112192,
+      "sha256": "95d6dea2527e5a2a6d06a185dadb8e57d12e09d65acdf1d425d990a9b8f109a2",
+      "gitBlobSha": "4671c9613b2e72b8ab9da27d79742e3c5efa7c1a",
+      "width": 893,
+      "height": 928,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "FrontEndLovable.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-area.png",
+      "bytes": 212641,
+      "sha256": "3c050dc4a24958f61e2cc0fd98d85fc17a8b016463740fa5ed9b326cbfe3a0e4",
+      "gitBlobSha": "d69c8861d832e98572f67bc9c2fe2262d4c48b22",
+      "width": 1884,
+      "height": 900,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "DetalheDaColeta.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-detalhe-coleta.png",
+      "bytes": 89194,
+      "sha256": "64341b20c508e5af805653cb00018d60348afbaeeeab61a336438c50ea36c8e6",
+      "gitBlobSha": "5bb8ecccb0dc28a327150048ad69f31a3dc6d7fd",
+      "width": 766,
+      "height": 959,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "FrontEndLovable-coletaConfirmada.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-coleta-confirmada.png",
+      "bytes": 169402,
+      "sha256": "c54ec65446b3982bdf5c77af1c52a850226d20dd039e4da206a238fc779a942d",
+      "gitBlobSha": "72356a9b2889a14489f926c073ad18ae2633522c",
+      "width": 1468,
+      "height": 842,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "FrontEndLovable-Layout-mobile.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-layout-mobile.png",
+      "bytes": 49995,
+      "sha256": "d3bfa091fa4897f12499a158fc55e6a4cf37de0aa01c815b601f7c96a42514a5",
+      "gitBlobSha": "5e068df5ddb35b57ddd0cced7904291bacd2206d",
+      "width": 439,
+      "height": 740,
+      "origin": "USER_PROVIDED"
+    },
+    {
+      "source": "FullStack-Layout-Mobile.png",
+      "path": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-layout-mobile.png",
+      "bytes": 54494,
+      "sha256": "f305a99eb2d6c841cba96ece6ca236256e624099f17470638800165530ebeb66",
+      "gitBlobSha": "24052965a5d73436ee5dd0e34e68db428569b29e",
+      "width": 520,
+      "height": 835,
+      "origin": "USER_PROVIDED"
+    }
+  ],
+  "preservedOpenPRs": [
+    41,
+    42,
+    43
+  ],
+  "preparationValidation": {
+    "status": "PASS",
+    "newLocalReferences": 36,
+    "historyPreserved": true,
+    "existingGuardsPreserved": 35,
+    "screenshotCount": 8,
+    "credentialScan": "PASS",
+    "functionalTests": "NOT_RUN",
+    "imageSHA256AndSize": "PASS",
+    "imageGitBlobSHA": "PASS",
+    "whitespace": "PASS",
+    "textFiles": 10,
+    "validationScope": "new-package-and-added-canonical-pointers",
+    "note": "No application test, new visual runtime, human acceptance or scientific validation performed by this documentation preparation"
+  }
+}

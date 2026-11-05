@@ -1,5 +1,9 @@
 # Registro documental
 
+## Integração UI-044 para aceite — 05/11/2026
+
+[Pacote](../releases/2026-11-05-hf-ui044-integration/readme.md), [plano](../plans/active/integracao-ui044-20261105/plano-de-execucao.md), [proveniência](../releases/2026-11-05-hf-ui044-integration/proveniencia.json) e [matriz](../releases/2026-11-05-hf-ui044-integration/matriz-de-reconciliacao.md): preparação autorizada por Pedro nesta conversa; HUMAN_ACCEPTANCE_PENDING. Fontes44–50 reconciliadas por conteúdo; snapshots preservam variantes divergentes. Testes/Preview terão evidência própria e nenhum aceite humano ou científico é antecipado. Sem merge ou limpeza. Histórico anterior preservado abaixo.
+
 ## Registro HF-DOC —24/10/2026, continuidade C0→C1
 
 CONCILIACAO_C1_CONCLUIDA_COM_LIMITES: [adendo Code-First](../code-first-prd/implementation/estado-conciliado-20261024.md),

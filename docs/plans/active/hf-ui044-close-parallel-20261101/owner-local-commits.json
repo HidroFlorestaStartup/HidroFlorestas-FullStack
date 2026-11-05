@@ -1,0 +1,71 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "commits": [
+    {
+      "owner": "A",
+      "localRef": "refs/heads/codex/hf044-publish-a-local-20261101",
+      "parent": "ff5db4f820b6351a1cc5b5145c9c8bcaec6a40c5",
+      "head": "4b10cc82d1fb5af6da256140ab069f39a64934de",
+      "tree": "ea63b2ce1ae7acc125e0e34176cd334a8799468c",
+      "paths": [
+        "specs/035-ajustes-navegacao-conta/evidence/close02-handoff.json",
+        "specs/035-ajustes-navegacao-conta/evidence/close02-handoff.md",
+        "specs/035-ajustes-navegacao-conta/evidence/close02-local-smoke.json",
+        "specs/035-ajustes-navegacao-conta/implementation-evidence.md",
+        "specs/035-ajustes-navegacao-conta/plan.md",
+        "specs/035-ajustes-navegacao-conta/tasks.md"
+      ],
+      "patchSha256": "95243793f4296fb858f882200cd1981279bfddf62193bfaa1ceb0cc12cc73968",
+      "published": false,
+      "hostedRuntime": "NOT_RUN",
+      "candidateSource": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
+      "preservation": "C parent retains original c7b and four sanitized docs; A/B parents are observed remote heads; no composed source tree copied"
+    },
+    {
+      "owner": "B",
+      "localRef": "refs/heads/codex/hf044-publish-b-local-20261101",
+      "parent": "1c44058cb45e461c719d514829a4e78d2bf7ee05",
+      "head": "f77c561bb55a92b6f3f6ca9f353350e580509367",
+      "tree": "9d9108fb3c681c957932261fdaf378ef76474071",
+      "paths": [
+        "specs/036-ajustes-area-coletas-ihfr/evidence/close02-comparison.md",
+        "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json",
+        "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
+        "specs/036-ajustes-area-coletas-ihfr/evidence/close02-matrix.json",
+        "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+        "specs/036-ajustes-area-coletas-ihfr/plan.md",
+        "specs/036-ajustes-area-coletas-ihfr/spec.md",
+        "specs/036-ajustes-area-coletas-ihfr/tasks.md"
+      ],
+      "patchSha256": "0cabd312be9be25562ccab89887c6e68a8eda553416ed961bf586c898a279371",
+      "published": false,
+      "hostedRuntime": "NOT_RUN",
+      "candidateSource": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
+      "preservation": "C parent retains original c7b and four sanitized docs; A/B parents are observed remote heads; no composed source tree copied"
+    },
+    {
+      "owner": "C",
+      "localRef": "refs/heads/codex/hf044-publish-c-local-20261101",
+      "parent": "c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07",
+      "head": "02f8a14e14ee224d6c43430fda847fa85dacfa5c",
+      "tree": "56af5e4c61dd221d223c07ece9d906f4f35c490e",
+      "paths": [
+        "specs/037-localizacao-endereco-opcional/evidence/close02-handoff.json",
+        "specs/037-localizacao-endereco-opcional/evidence/close02-handoff.md",
+        "specs/037-localizacao-endereco-opcional/evidence/close02-preservation-check.mjs",
+        "specs/037-localizacao-endereco-opcional/implementation-evidence.md",
+        "specs/037-localizacao-endereco-opcional/plan.md",
+        "specs/037-localizacao-endereco-opcional/quickstart.md",
+        "specs/037-localizacao-endereco-opcional/spec.md",
+        "specs/037-localizacao-endereco-opcional/tasks.md",
+        "tests/e2e/hf-ui037-location.spec.ts"
+      ],
+      "patchSha256": "919c8b6999a89cac89d77f286d4ac7d2408a66850aa66b7bd51d2c3d2a9310e9",
+      "published": false,
+      "hostedRuntime": "NOT_RUN",
+      "candidateSource": "09ac98e7bbedd30a92fafe6dfc5165462e318deb",
+      "preservation": "C parent retains original c7b and four sanitized docs; A/B parents are observed remote heads; no composed source tree copied"
+    }
+  ],
+  "publicationRequires": "Preview applicability/root proof and fresh remote lease; no hosted PASS claimed"
+}

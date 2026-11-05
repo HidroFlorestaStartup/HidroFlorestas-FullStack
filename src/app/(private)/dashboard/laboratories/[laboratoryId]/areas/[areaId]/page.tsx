@@ -6,6 +6,8 @@ import { areasService } from "@/app/api/server/services/areas.service";
 import { AreaAccessError } from "@/app/api/server/areas/area.authorization";
 import { AreaMap } from "@/components/areas/area-map";
 import { AreaCoverEditor } from "@/components/areas/area-cover";
+import { AreaCollections } from "@/components/areas/area-collections";
+import { readAreaCollections } from "@/app/api/server/collections/area-collections.read";
 import styles from "@/components/areas/areas.module.css";
 export default async function AreaDetail({
   params,
@@ -22,6 +24,10 @@ export default async function AreaDetail({
       throw new Error("Não foi possível carregar a área.");
     });
   const { area } = result;
+  const collections = await readAreaCollections(principal.id, laboratoryId, areaId).catch((error) => {
+    if (error instanceof AreaAccessError && error.code === "NOT_FOUND") notFound();
+    throw new Error("Não foi possível carregar as coletas da área.");
+  });
   const optional = [
     ["Município", area.municipality],
     ["UF", area.state],
@@ -109,6 +115,7 @@ export default async function AreaDetail({
           </div>
         </aside>
       </div>
+      <AreaCollections laboratoryId={laboratoryId} areaId={areaId} rows={collections} />
     </article>
   );
 }

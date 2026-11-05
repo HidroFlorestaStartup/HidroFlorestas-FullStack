@@ -1,0 +1,186 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "candidateSha": "194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920",
+  "run": 41351237110,
+  "attempt": 1,
+  "round": 1,
+  "runUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41351237110",
+  "budget": {
+    "qaHeadsPublished": 1,
+    "qaHeadsAllowed": 3,
+    "configuredMinutesThisRound": 110,
+    "configuredQaMinutesCeiling": 330,
+    "functionalPublicationsUsed": 0,
+    "functionalConfiguredMinutesCeiling": 105
+  },
+  "preview": "Root Directory and Git binding read-only proof in preview-proof.json; additive branch false before first push; no deployment requested",
+  "jobs": {
+    "smoke": {
+      "id": 124981633254,
+      "execution": "PASS",
+      "testsPassed": 3,
+      "artifact": 13101338282,
+      "zipSha256": "edaeccf5a584b7304c0ddac509ead998ebf598c45a9b37ffb27f4bf80e3be0e1",
+      "zipCrc": "PASS",
+      "pngCount": 8,
+      "sampleMetadataVerified": 8,
+      "negativeUnobservedFontCases": 2,
+      "qualification": "Synthetic instrumentation only; negative UNOBSERVED cases correctly remain INSUFFICIENT_EVIDENCE"
+    },
+    "ui-a": {
+      "id": 124982006424,
+      "execution": "FAIL",
+      "plannedPairs": 86,
+      "pairsWithTwoImages": 3,
+      "caseExecution": {
+        "PASS": 2,
+        "FAIL": 1,
+        "NOT_RUN": 83
+      },
+      "artifact": 13101369298,
+      "zipSha256": "b9c5471dabe51f0eb2b0623f4bcf38f3ab1c42b6ce3cc84c60a7e5033e82ac5e",
+      "zipCrc": "PASS",
+      "pngCount": 6,
+      "sampleMetadataVerified": 6,
+      "completeness": "PARTIAL",
+      "comparability": "NON_EQUIVALENT",
+      "findings": [
+        "Native account menu and name visibly clipped at left in FullStack320/text100; source does not provide account disclosure in starter",
+        "OBSERVED_FONT_MISMATCH_header is recorded as NON_EQUIVALENT rather than a claimed fallback or visual acceptance",
+        "First layout timeout followed by context-closed API cleanup failure left four fixture users; subsequent layouts failed the isolation check, not independent product regressions",
+        "Input mask covered part of bottom navigation; those pixels cannot support a visual navigation judgment"
+      ]
+    },
+    "ui-b": {
+      "id": 124982006393,
+      "execution": "FAIL",
+      "plannedPairs": 75,
+      "pairsWithTwoImages": 0,
+      "caseExecution": {
+        "NOT_RUN": 75
+      },
+      "artifact": 13101154606,
+      "zipSha256": "fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643",
+      "zipCrc": "PASS",
+      "pngCount": 0,
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "completeness": "MISSING",
+      "cause": "Starter beforeAll timed out locating exact label Nome do laboratório: pinned reference FieldShell includes required star; accessible textbox selector has one match in actual DOM counterproof",
+      "cleanup": "Runner receipt records owned cluster Stop and starter Stop PASS; no bilateral claim"
+    },
+    "rc-ui037": {
+      "id": 124981633442,
+      "jobStatus": "completed",
+      "execution": "FAIL",
+      "gatesPass": 9,
+      "gateFailed": "E2E",
+      "gatesNotRun": [
+        "Https",
+        "Deletion",
+        "Ihfr",
+        "Bootstrap",
+        "SchemaAudit"
+      ],
+      "journal": [
+        {
+          "gate": "RegressionSetup",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Unit",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Integration",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Migration",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Contract",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "R1",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Build",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Typecheck",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "Lint",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        },
+        {
+          "gate": "E2E",
+          "result": "FAIL",
+          "exitCode": 1,
+          "snapshot": "7db965081d1b2197980b14f7dadd9fa2606acc4d0fb60c06c317b892229e0f1a"
+        }
+      ],
+      "e2e": {
+        "passed": 227,
+        "failed": 1,
+        "notRun": 7,
+        "uniqueTotalPlanned": 235
+      },
+      "cause": "QA workflow NEXT_PUBLIC_MAP_ATTRIBUTION omitted the anchor used by the official CI. E2E frontend-territorial-map.spec.ts:96 expects visible OpenStreetMap link; actual log says element(s) not found. map-config.ts passes the configured attribution to Leaflet.",
+      "repair": "Restore identical official rc-review.yml attribution in four QA jobs. Product, official tests, external tile loopback and provider guards remain unchanged by this configuration repair.",
+      "artifact": 13101891983,
+      "zipSha256": "55c7de50bbba209db0015b8e2d14473bc6530c6665fadc4335fb7547335bdd3e",
+      "zipCrc": "PASS",
+      "entries": 872,
+      "pngCount": 578,
+      "distinctPngBasenames": 472,
+      "distinctPngHashes": 379,
+      "countReconciliation": "Original local audit field png=472 counts a dictionary by basename. The ZIP contains578 PNG entries; independent QA verified all11046 PNG chunk CRCs. Repeated paths/copies do not count as unique evidence.",
+      "pngChunkCrcVerified": 11046,
+      "ui037": {
+        "dedicatedFiles": 4,
+        "metadataVerified": 2,
+        "dimensions": [
+          "390x844",
+          "1440x900"
+        ],
+        "fullPage": false,
+        "status": "PRESENT_AFTER_E2E_ONLY; LATER_SUITES_NOT_RUN; FINAL_PRESERVATION_PENDING"
+      },
+      "finalVerification": "NOT_RUN because E2E failed; no fifteen-gate success inherited"
+    }
+  },
+  "localEvidence": ".accounts-validation/close02/round1/ contains ZIPs, extracted synthetic files and independent audit receipts; archive SHA256s above match GitHub metadata",
+  "localCorrectionsBeforeRound2": [
+    "Incomplete bilateral pair classification repaired by actual zero/one sample counterexamples, without claiming evidence complete",
+    "A and B starter laboratory selector replaced by exact accessible textbox name; old selector RED and replacement GREEN against actual FieldShell DOM",
+    "A reproduces menu geometry before minimal owner-only product correction; no timeout increase, ratio relaxation or scientific change",
+    "QA map attribution restored to official CI HTML anchor after exact missing-link failure; no relaxation of territorial-map assertions"
+  ],
+  "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING",
+  "geocoder": "GEOCODER_OPERATIONAL_PENDING"
+}

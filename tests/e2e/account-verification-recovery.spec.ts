@@ -240,6 +240,8 @@ test.describe("browser account journeys with a deterministic outbox transport", 
       await recovery.getByRole("button", { name: "Redefinir senha", exact: true }).click();
       await expect(recovery.getByRole("link", { name: "Solicitar novo link" })).toBeVisible();
       await received(email, /senha.*alterada|senha.*atualizada/i);
+      await page.getByRole("button", { name: "Conta", exact: true }).click();
+      await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toBeVisible();
       await page.getByRole("link", { name: "Alterar senha", exact: true }).click();
       await page.getByLabel("Senha atual", { exact: true }).fill(newPassword);
       await page.getByLabel("Nova senha", { exact: true }).fill(password);

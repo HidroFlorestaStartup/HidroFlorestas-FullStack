@@ -1,0 +1,133 @@
+{
+  "task": "HF-UI-044-WORKTREE-RECONCILE-01",
+  "informationClassification": "EVIDENCIA_IMPLEMENTACAO",
+  "date": "2026-11-01",
+  "timezone": "America/Fortaleza",
+  "documentaryBranch": "docs/hf-ui044-worktree-reconcile-01",
+  "documentaryBase": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+  "observedRemoteMetadata": {
+    "checkedUtc": "2026-11-01T18:29:09.551543Z",
+    "pullRequest": {
+      "number": 48,
+      "state": "open",
+      "draft": true,
+      "headRef": "feat/localizacao-endereco-opcional",
+      "headSha": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2",
+      "baseRef": "development",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/48"
+    },
+    "run": {
+      "id": 41275910130,
+      "attempt": 1,
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "headSha": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+      "headBranch": "codex/hf-ui044-composition-qa-20261101",
+      "workflowPath": ".github/workflows/rc-review.yml",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41275910130"
+    },
+    "fetch": {
+      "command": "git fetch --no-tags origin refs/heads/feat/localizacao-endereco-opcional:refs/remotes/origin/feat/localizacao-endereco-opcional refs/heads/development:refs/remotes/origin/development",
+      "preFetchTrackingC": "8cbcf8fedd1dac4981f0425b98fc5cc4ab50e89b",
+      "localC": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2",
+      "trackingC": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2",
+      "trackingDevelopment": "9b8595d232842d401ce81bbc92c54dd543aa2829"
+    }
+  },
+  "historicalPreparation": {
+    "state": "SUBSTITUIDO",
+    "designClassification": "RECOMENDACAO",
+    "candidateWorkflow": ".github/workflows/hf-ui044-composition-qa.yml",
+    "candidateBranch": "codex/hf-ui044-close-qa-actions-20261101",
+    "candidateControlTree": "0c4401e543c3e1312b2d27c5ba0dda8d002973b1",
+    "candidateCommit": null,
+    "runBinding": "NONE_DO_NOT_TRANSFER_PASS",
+    "originalRuntime": "NOT_RUN"
+  },
+  "preservation": {
+    "task": "HF-UI-044-WORKTREE-RECONCILE-01",
+    "checkedUtc": "2026-11-01T18:29:18.7067626Z",
+    "sourceRelative": "docs/plans/active/hf-ui044-close-qa-actions-prepare",
+    "archiveRelative": ".accounts-validation/hf-ui044-worktree-reconcile-01/original-package",
+    "ignoredBy": ".gitignore:91:/.accounts-validation/",
+    "pendingFiles": 21,
+    "totalFiles": 3272,
+    "totalBytes": 147382464.0,
+    "totalDirectories": 476,
+    "preservationManifestSha256": "4258767006781daf8285b02c43a211307795344827a6ab71ff5230b9cbf6d2f9",
+    "sourceStableDuringCopy": true,
+    "sourceEqualsCopy": true,
+    "copyPhaseOriginalsStillPresent": true
+  },
+  "checks": {
+    "originalPackageManifest20Entries": "PASS",
+    "pendingInventory21Entries": "PASS",
+    "inventorySha256": "a3879f5b61007e111af287e912a0dfc567761de1be6421d7aad971709d069315",
+    "copyAllFilesAndDirectories": "PASS",
+    "documentaryDiffReview": "PASS",
+    "frontCCleanup": "PASS"
+  },
+  "publicationPolicy": "Somente síntese, metadados públicos selecionados e hashes; nenhum original bruto, candidato, patch ou resposta de conector incluído.",
+  "notRun": [
+    "UI-06",
+    "runtime",
+    "testes funcionais",
+    "banco",
+    "provedores",
+    "nova auditoria de journals/artefatos da run",
+    "push",
+    "merge",
+    "deploy"
+  ],
+  "humanAcceptance": "NOT_ASSESSED",
+  "scientific": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "withdrawal": {
+    "task": "HF-UI-044-WORKTREE-RECONCILE-01",
+    "checkedUtc": "2026-11-01T18:31:01.58786Z",
+    "originalSourceAbsent": true,
+    "pendingFilesRemovedFromC": 21,
+    "archiveFilesRechecked": 3272,
+    "archiveBytes": 147382464.0,
+    "archiveIntegrity": "PASS",
+    "frontCStatus": "CLEAN",
+    "frontCHead": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2",
+    "frontCBranch": "feat/localizacao-endereco-opcional",
+    "sourcePathsRemaining": [],
+    "originalPackagePreservedOutsideGit": true
+  },
+  "documentaryReview": {
+    "task": "HF-UI-044-WORKTREE-RECONCILE-01",
+    "reviewer": "Codex da própria missão; não é revisão independente ou humana",
+    "result": "PASS",
+    "checks": [
+      "JSON sem duplicatas",
+      "21 identidades/hashes contra cópia local",
+      "links Markdown locais",
+      "whitespace",
+      "scan de padrões sensíveis",
+      "inspeção de geração por whitelist sem corpos privados",
+      "escopo documental exato de quatro arquivos",
+      "base development",
+      "HEAD/branch/diffs C preservados"
+    ],
+    "localLinks": 3,
+    "paths": [
+      "docs/plans/completed/hf-ui044-worktree-reconcile-01.md",
+      "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/inventory.json",
+      "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/readme.md",
+      "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/verification.json"
+    ],
+    "notRun": [
+      "produto",
+      "UI-06",
+      "runtime",
+      "journals/artefatos remotos"
+    ]
+  }
+}

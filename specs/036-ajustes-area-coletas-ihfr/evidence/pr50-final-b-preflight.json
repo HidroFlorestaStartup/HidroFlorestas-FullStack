@@ -1,0 +1,119 @@
+{
+  "schema": "hf-ui044-pr50-b-preflight-v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "status": "PARTIAL_READY_FOR_HOSTED_RUNTIME",
+  "baseHead": "ea45002718aa33fced29eae70a7e592e31c0f996",
+  "testedRevision": "working-tree-before-coordinator-commit",
+  "historicalR3": {
+    "sha": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73",
+    "run": "41356318087",
+    "attempt": 1,
+    "execution": {
+      "PASS": 9,
+      "FAIL": 3,
+      "NOT_RUN": 63
+    },
+    "unchanged": true
+  },
+  "newBudget": {
+    "maximumRounds": 2,
+    "roundsExecutedByOwnerB": 0
+  },
+  "analysis": {
+    "requirements": 5,
+    "successCriteria": 4,
+    "existingTasksBeforeAdendum": 46,
+    "documentaryRequirementCoverage": "9/9",
+    "critical": 0,
+    "high": 3,
+    "medium": 1,
+    "constitutionPrinciplesChecked": 7
+  },
+  "tests": [
+    {
+      "command": "node --experimental-strip-types --test qa/hf-ui044/domain*.test.mjs",
+      "environment": {
+        "node": "24.14.0",
+        "syntheticBrowserEnabled": true,
+        "chromiumSource": "existing local Chromium1243; no installation"
+      },
+      "exitCode": 0,
+      "tests": 19,
+      "pass": 19,
+      "fail": 0,
+      "skipped": 0
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "scope": "full repository after coordinator integrated CI guard fix"
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js qa/hf-ui044/domain.spec.ts qa/hf-ui044/domain-collection.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "counterexamples": {
+    "firstCaseRejection": "actual collectDomainCases starts all75 once; preserves first failed ID",
+    "sourceDeadline": "actual Chromium page.evaluate unresolved; owned context closed and operation rejected before next independent step",
+    "cleanupFailure": "throwing and hanging cleanup stay failure; bounded5s in runtime,5ms synthetic",
+    "pairClassification": "zero/one samples or missing/insufficient metadata cannot qualify; two metadata records and native error remain FAIL/PARTIAL",
+    "geometry": "existing R3 scroll coordinates and reference overflow classification preserved",
+    "redClaim": "No newly executed RED claimed. Historical R3 and existing geometry counterexample remain historical; missing default local browser executable was environment setup failure, not product regression."
+  },
+  "runtime": {
+    "fullstack": "NOT_RUN_LOCAL",
+    "starter": "NOT_RUN_LOCAL",
+    "postgresql": "NOT_RUN_LOCAL",
+    "bun": "NOT_RUN_LOCAL",
+    "hostedFocal3": "NOT_RUN_BY_OWNER_B",
+    "hostedComplete75": "NOT_RUN_BY_OWNER_B",
+    "rc15": "NOT_RUN_BY_OWNER_B"
+  },
+  "classifications": {
+    "rawUnobserved": "preserved",
+    "nonEquivalent": "not visual acceptance",
+    "requirement": "HUMAN_DECISION_PENDING"
+  },
+  "files": [
+    {
+      "path": "qa/hf-ui044/domain.spec.ts",
+      "sha256": "fedd2dcdb54beffa01a5550fad9e7536df888824905b0819430a98723c741a70"
+    },
+    {
+      "path": "qa/hf-ui044/domain-collection.ts",
+      "sha256": "e34c5c5d361123d9a6075b11570df7ac169d73d14710d3ee61fdff8dc46eda80"
+    },
+    {
+      "path": "qa/hf-ui044/domain-collection.test.mjs",
+      "sha256": "5b86f78bfa14ebb69f4dabfc97ada9a9b42177c1325fd05ebc5caa088aa28e94"
+    },
+    {
+      "path": "qa/hf-ui044/domain-lifecycle-browser.test.mjs",
+      "sha256": "c818f92499bf57fcdbd947b4cc9406d9585c11a1be67db1737d96932318d6f71"
+    }
+  ],
+  "convergence": {
+    "requirementsAndCriteriaChecked": 9,
+    "planDecisionsChecked": 3,
+    "constitutionPrinciplesChecked": 7,
+    "findings": {
+      "partial": 1
+    },
+    "tasksAppended": [
+      "T052"
+    ],
+    "remaining": "hosted runtime+independent evidence review; no product/contract gap inferred"
+  },
+  "limits": [
+    "shared.ts unchanged; narrower font exception not applied after automatic approval scope rejection",
+    "No application or database executed locally",
+    "No source FAIL fabricated for unstarted quarantined source; sourceExecutions records NOT_RUN explicitly and missing sample blocks final gate",
+    "No hosted PASS inherited across SHAs",
+    "Human/scientific/operational acceptance remains separate"
+  ]
+}

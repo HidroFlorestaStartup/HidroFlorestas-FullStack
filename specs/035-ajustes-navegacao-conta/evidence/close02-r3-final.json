@@ -1,0 +1,3503 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "role": "PROMPT01_A",
+  "agentId": "/root/a_harness",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "state": "UI06_A_EVIDENCE_COMPLETE",
+  "meaning": "Bilateral shell collection, provenance, integrity and documented visual comparison complete for the planned A matrix. This is not visual parity, human acceptance or global UI06 completion.",
+  "runtime": {
+    "source": {
+      "sha": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73",
+      "tree": "9b3f6d39c89a35e90bf357e058f3fb037907e125"
+    },
+    "starter": {
+      "sha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+      "tree": "7620e01ca64cd218f55f789b447a3121e44ea815"
+    },
+    "run": 41356318087,
+    "attempt": 1,
+    "round": 3,
+    "job": 124997441839,
+    "runUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41356318087/attempts/1",
+    "jobUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41356318087/job/124997441839",
+    "jobConclusion": "SUCCESS_REPORTED_BY_COORDINATOR",
+    "playwrightTestsIncludingSummary": 17,
+    "testCountBasis": "Coordinator terminal log22:21:42.809 Running17tests;22:25:16.136=17passed(3.6m)",
+    "runtimeOrigin": "REAL_APPLICATION_RUNTIME",
+    "fixtures": "Synthetic owned laboratory and account context in both real applications",
+    "hostedStack": "Windows GitHub-hosted; setup-node24.19.0 contract; local Node24.14.0 is not the hosted runtime",
+    "playwrightSummary": "17 passed (3.6m)"
+  },
+  "artifact": {
+    "id": 13103164262,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41356318087/artifacts/13103164262",
+    "zipSha256": "d993e92fae9b8dd3e3c70e2683422fba63301bab70c9c74a87c0ba9fe01e0382",
+    "zipEntries": 347,
+    "zipCrcVerified": true,
+    "pngCount": 172,
+    "pngChunksCrcVerified": 3328,
+    "metadataCount": 172,
+    "allSampleHashesVerified": true,
+    "allPngDimensionsVerified": true,
+    "allRootFontSizesExact": true,
+    "indexSha256": "7f4d8429f2d053dc0ca6100d3cf901de8370d14726d52100af9ed407406af1cc",
+    "journalSha256": "6c12f9ad44a7996229d02a2df95afda2592948ce46c45a98a0a2c5505d2e2582",
+    "retentionDays": 14,
+    "localCustody": "Coordinator managed worktree, .accounts-validation/close02/round3/shell.zip and shell/; verified copy retained, not reuploaded by worker"
+  },
+  "coverage": {
+    "layouts": 16,
+    "pairs": 86,
+    "pngPerSource": {
+      "fullstack": 86,
+      "starter": 86
+    },
+    "execution": {
+      "PASS": 86
+    },
+    "comparability": {
+      "NON_EQUIVALENT": 79,
+      "COMPARABLE": 7
+    },
+    "requirement": {
+      "HUMAN_DECISION_PENDING": 86
+    },
+    "completeness": {
+      "COMPLETE": 86
+    },
+    "caseJournalRows": 86,
+    "indexMatchesLatestJournal": true,
+    "noIncompleteCases": true,
+    "widths": [
+      320,
+      375,
+      390,
+      667,
+      768,
+      844,
+      1440
+    ],
+    "textScale": [
+      100,
+      200
+    ],
+    "insets": [
+      0,
+      34
+    ],
+    "insetScope": "375/667 relevant text200 scenarios; not a cross product for every viewport",
+    "fullPage": false
+  },
+  "fontEvidence": {
+    "familiesObserved": [
+      "Poppins",
+      "Poppins ExtraBold",
+      "Poppins Medium",
+      "Poppins SemiBold",
+      "Segoe UI Emoji"
+    ],
+    "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN",
+    "rawRegionalUnobserved": [
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-0-laboratory-closed",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 2485,
+            "left": 0,
+            "width": 667,
+            "height": 2026
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 2485,
+                  "left": 0,
+                  "width": 667,
+                  "height": 2026
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-0-areas-navigation",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 1267,
+            "left": 0,
+            "width": 667,
+            "height": 808
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 1267,
+                  "left": 0,
+                  "width": 667,
+                  "height": 808
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-0-forward",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 1973,
+            "left": 0,
+            "width": 667,
+            "height": 1514
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 1973,
+                  "left": 0,
+                  "width": 667,
+                  "height": 1514
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-34-laboratory-closed",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 2059,
+            "left": 0,
+            "width": 667,
+            "height": 1600
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 2059,
+                  "left": 0,
+                  "width": 667,
+                  "height": 1600
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-34-areas-navigation",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 1267,
+            "left": 0,
+            "width": 667,
+            "height": 808
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 1267,
+                  "left": 0,
+                  "width": 667,
+                  "height": 808
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-34-forward",
+        "region": "main",
+        "observation": "UNOBSERVED",
+        "diagnostics": {
+          "regionExists": true,
+          "regionRect": {
+            "top": 459,
+            "right": 667,
+            "bottom": 1973,
+            "left": 0,
+            "width": 667,
+            "height": 1514
+          },
+          "regionOutsideViewport": true,
+          "visibleTextOwnerCount": 0,
+          "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+        },
+        "fontEvidence": {
+          "insufficient": false,
+          "explainedReferenceOcclusion": true,
+          "qualification": "REGIONAL_FONT_UNOBSERVED",
+          "comparisonQualification": "FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION",
+          "reasons": [
+            "REFERENCE_CONTENT_OCCLUDED"
+          ],
+          "regionalFindings": [
+            {
+              "region": "main",
+              "observation": "UNOBSERVED",
+              "evidence": "INSUFFICIENT_EVIDENCE",
+              "explanation": "REFERENCE_CONTENT_OCCLUDED",
+              "diagnostics": {
+                "regionExists": true,
+                "regionRect": {
+                  "top": 459,
+                  "right": 667,
+                  "bottom": 1973,
+                  "left": 0,
+                  "width": 667,
+                  "height": 1514
+                },
+                "regionOutsideViewport": true,
+                "visibleTextOwnerCount": 0,
+                "method": "DIRECT_VISIBLE_TEXT_OWNERS_MAX8_SCOPED_DOM_SCAN"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "unobservedCount": 6,
+    "missingFullstackRegionCount": 0,
+    "regionalMissingIsNotFontPass": true,
+    "humanTypographyReview": "PENDING",
+    "comparisonDoesNotProveFallback": true,
+    "scope": "CDP reports rendered glyphs at sampling time; font observations and geometry are not an atomic snapshot with the later screenshot."
+  },
+  "referenceLimits": {
+    "overflowTrue": [
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-workspace-closed"
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-laboratory-closed"
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-workspace-account-open"
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-workspace-account-escape"
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-laboratory-account-open"
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-320-900-200-0-laboratory-account-escape"
+      }
+    ],
+    "focus667Text200": [
+      {
+        "source": "fullstack",
+        "caseId": "shell-667-375-200-0-last-control-focus",
+        "focus": {
+          "tag": "BUTTON",
+          "rect": {
+            "top": 136.75,
+            "right": 627,
+            "bottom": 180.75,
+            "left": 583,
+            "width": 44,
+            "height": 44
+          },
+          "centerHit": true
+        },
+        "header": {
+          "top": 0,
+          "right": 667,
+          "bottom": 74,
+          "left": 0,
+          "width": 667,
+          "height": 74
+        },
+        "rail": {
+          "top": 298.5,
+          "right": 667,
+          "bottom": 375,
+          "left": 0,
+          "width": 667,
+          "height": 76.5
+        },
+        "execution": "PASS",
+        "comparability": "COMPARABLE",
+        "reasons": []
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-0-last-control-focus",
+        "focus": {
+          "tag": "A",
+          "rect": {
+            "top": 35,
+            "right": 619,
+            "bottom": 339,
+            "left": 349.5,
+            "width": 269.5,
+            "height": 304
+          },
+          "centerHit": false
+        },
+        "header": {
+          "top": 0,
+          "right": 667,
+          "bottom": 290,
+          "left": 0,
+          "width": 667,
+          "height": 290
+        },
+        "rail": {
+          "top": 246,
+          "right": 667,
+          "bottom": 375,
+          "left": 0,
+          "width": 667,
+          "height": 129
+        },
+        "execution": "PASS",
+        "comparability": "NON_EQUIVALENT",
+        "reasons": [
+          "REFERENCE_FOCUS_OBSCURED"
+        ]
+      },
+      {
+        "source": "fullstack",
+        "caseId": "shell-667-375-200-34-last-control-focus",
+        "focus": {
+          "tag": "BUTTON",
+          "rect": {
+            "top": 119.75,
+            "right": 627,
+            "bottom": 163.75,
+            "left": 583,
+            "width": 44,
+            "height": 44
+          },
+          "centerHit": true
+        },
+        "header": {
+          "top": 0,
+          "right": 667,
+          "bottom": 74,
+          "left": 0,
+          "width": 667,
+          "height": 74
+        },
+        "rail": {
+          "top": 264.5,
+          "right": 667,
+          "bottom": 375,
+          "left": 0,
+          "width": 667,
+          "height": 110.5
+        },
+        "execution": "PASS",
+        "comparability": "COMPARABLE",
+        "reasons": []
+      },
+      {
+        "source": "starter",
+        "caseId": "shell-667-375-200-34-last-control-focus",
+        "focus": {
+          "tag": "A",
+          "rect": {
+            "top": 35,
+            "right": 619,
+            "bottom": 339,
+            "left": 349.5,
+            "width": 269.5,
+            "height": 304
+          },
+          "centerHit": false
+        },
+        "header": {
+          "top": 0,
+          "right": 667,
+          "bottom": 290,
+          "left": 0,
+          "width": 667,
+          "height": 290
+        },
+        "rail": {
+          "top": 246,
+          "right": 667,
+          "bottom": 375,
+          "left": 0,
+          "width": 667,
+          "height": 129
+        },
+        "execution": "PASS",
+        "comparability": "NON_EQUIVALENT",
+        "reasons": [
+          "REFERENCE_FOCUS_OBSCURED"
+        ]
+      }
+    ],
+    "contentOcclusion": "Only pinned starter 667x375 text200 laboratory-closed/areas-navigation/forward inset0/34 receives bounded NON_EQUIVALENT. Raw main UNOBSERVED and regional INSUFFICIENT_EVIDENCE retained. Main top459 outside375 viewport, header observed. No FullStack exemption.",
+    "reload": {
+      "sourceObservations": [
+        {
+          "caseId": "shell-375-900-100-0-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 16,
+                  "inlineStyle": "100%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 16,
+                  "inlineStyle": "100%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": "shell-390-844-200-0-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": "shell-1440-900-100-0-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 16,
+                  "inlineStyle": "100%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 16,
+                  "inlineStyle": "100%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": "shell-1440-900-200-0-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": "shell-667-375-200-0-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        },
+        {
+          "caseId": "shell-667-375-200-34-reload",
+          "sourceObservations": {
+            "fullstack": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "fullstack",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              }
+            },
+            "starter": {
+              "reloadScale": {
+                "kind": "reload-scale",
+                "source": "starter",
+                "before": {
+                  "px": 32,
+                  "inlineStyle": "200%"
+                },
+                "after": {
+                  "px": 16,
+                  "inlineStyle": ""
+                },
+                "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+              },
+              "nativeReloadState": "NATIVE_LAB_LOADING",
+              "actualState": "reference-native_lab_loading-after-reload",
+              "reasons": [
+                "REFERENCE_RELOAD_STATE_NON_EQUIVALENT"
+              ]
+            }
+          }
+        }
+      ],
+      "interpretation": "Six reference NATIVE_LAB_LOADING observations precede configure. They do not prove terminal loading/not-found, failed persistence or that later PNG has same visible state. At667 text200 inset0/34, CDP sees status DIV at sampling time (header bottom306), but final PNG shows only banner/header/navigation. CDP OBSERVED is not legibility in the final photo.",
+      "scaleReadbacks": [
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 16,
+            "inlineStyle": "100%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 16,
+            "inlineStyle": "100%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 16,
+            "inlineStyle": "100%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 16,
+            "inlineStyle": "100%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "fullstack",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        },
+        {
+          "kind": "reload-scale",
+          "source": "starter",
+          "before": {
+            "px": 32,
+            "inlineStyle": "200%"
+          },
+          "after": {
+            "px": 16,
+            "inlineStyle": ""
+          },
+          "interpretation": "INLINE_INSTRUMENTATION_RESET_NOT_USER_PREFERENCE"
+        }
+      ],
+      "reconfiguration": "Exact16/32px reapplied only after before/after reads; no user preference persistence claimed."
+    }
+  },
+  "visualInspection": {
+    "imagesInspectedCount": 32,
+    "imageNames": [
+      "fullstack-shell-320-900-200-0-workspace-account-open.png",
+      "starter-shell-320-900-200-0-workspace-account-open.png",
+      "fullstack-shell-1440-900-200-0-laboratory-account-open.png",
+      "starter-shell-1440-900-200-0-laboratory-account-open.png",
+      "fullstack-shell-667-375-200-0-laboratory-closed.png",
+      "starter-shell-667-375-200-0-laboratory-closed.png",
+      "fullstack-shell-667-375-200-0-last-control-focus.png",
+      "starter-shell-667-375-200-0-last-control-focus.png",
+      "fullstack-shell-320-900-100-0-workspace-account-open.png",
+      "starter-shell-320-900-100-0-workspace-account-open.png",
+      "fullstack-shell-390-844-200-0-laboratory-account-open.png",
+      "starter-shell-390-844-200-0-laboratory-account-open.png",
+      "fullstack-shell-375-900-200-34-workspace-closed.png",
+      "starter-shell-375-900-200-34-workspace-closed.png",
+      "fullstack-shell-375-900-100-0-reload.png",
+      "starter-shell-375-900-100-0-reload.png",
+      "fullstack-shell-667-375-200-34-last-control-focus.png",
+      "starter-shell-667-375-200-34-last-control-focus.png",
+      "fullstack-shell-667-375-200-0-reload.png",
+      "starter-shell-667-375-200-0-reload.png",
+      "starter-shell-667-375-200-34-reload.png",
+      "fullstack-shell-844-390-200-0-laboratory-closed.png",
+      "starter-shell-844-390-200-0-laboratory-closed.png",
+      "fullstack-shell-768-900-100-0-laboratory-closed.png",
+      "starter-shell-768-900-100-0-laboratory-closed.png",
+      "fullstack-shell-375-900-100-0-workspace-closed.png",
+      "starter-shell-375-900-100-0-workspace-closed.png",
+      "fullstack-shell-390-844-100-0-workspace-account-escape.png",
+      "starter-shell-390-844-100-0-workspace-account-escape.png",
+      "fullstack-shell-320-900-200-0-laboratory-closed.png",
+      "starter-shell-320-900-200-0-laboratory-closed.png",
+      "fullstack-shell-1440-900-200-0-laboratory-closed.png"
+    ],
+    "fullstackMenu": "Name and both account links complete in320100/200,390200 and1440200 inspected images; Escape390100 closed menu and focused disclosure visible.",
+    "workspaceAndRail": "375100 actual input mask ends above bottom rail;375200inset34 bottom navigation remains visible.768100 and1440200 use contextual side rail;667/390 use bottom rail;844200 uses side rail. Reference banner/toast/header/proportions differ and remain unmodified.",
+    "focus": "All six FullStack sourceObservations show focused=true, viewportRatio=1 and centerHit=true. Two reference667200 observations have centerHit=false and source requirement DEFECT_FOUND; pair remains NON_EQUIVALENT/HUMAN_DECISION_PENDING.",
+    "visualFindingPendingGeometry": {
+      "id": "A-R3-RAIL-LABEL-1440-200",
+      "severity": "P2_CANDIDATE",
+      "files": [
+        "fullstack-shell-1440-900-200-0-laboratory-account-open.png",
+        "fullstack-shell-1440-900-200-0-laboratory-closed.png"
+      ],
+      "observation": "Laboratórios extends beyond the drawn side rail toward the adjacent contextual card, making labels visually close. Individual label rectangles were not recorded; glyph intersection or proven CSS cause is not established. Desktop rail width/min-width explanation remains INFERENCIA. No repair or new execution after round3."
+    },
+    "servedDevelopmentIndicator": "FullStack captures retain Next development indicator; some reload images show a1Issue badge near bottom-left. No screenshot cleanup, diagnosis of that badge or claim of production deployment is made."
+  },
+  "historyAndPublication": {
+    "productCommits": [
+      "97204d7",
+      "236f82421ba16aa536dffb98d39317870e76f66b"
+    ],
+    "qaFinalCodeCommits": [
+      "86b6fd00fdb047930b9518ff2e7ec7919c7454bd",
+      "58440f763fe2f537cb164fc7ce125cd947cd0652"
+    ],
+    "authorHeadBeforeFinalDocs": "2818992f4817e98ebf3313878dba4af44f30786f",
+    "finalChange": "Documentation only; no source/test/config/workflow changes and no new QA execution.",
+    "functionalATransport": "Coordinator transports only A CSS, own035 E2E and035 documents to functional A; QA instrument belongs to candidate and requires coordinator contract/config. Do not copy B ScientificNotice or shared QA into isolated productA.",
+    "workerPushes": 0,
+    "fourthQaRound": false,
+    "qaRoundBudgetExhausted": true
+  },
+  "otherStatesReportedByCoordinator": {
+    "UI06_B": "BLOCKED_9PASS_3FAIL_63NOT_RUN",
+    "compositionRegression": {
+      "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+      "run": 41353270282,
+      "attempt": 1,
+      "gates": "15_PASS",
+      "e2e": 241,
+      "ihfr": 6,
+      "basis": "Coordinator report, not a new A independent RC audit"
+    },
+    "RC_R3": "NOT_RUN",
+    "isolatedA": "CI result must be reported separately; existing ScientificNotice/IHFR dependency belongs toB and is not copied or relaxed byA.",
+    "nonAuthorReview": "Owned by PROMPT04; A authorship review is not independent signoff."
+  },
+  "pending": [
+    "HUMAN_TYPOGRAPHY_REVIEW_PENDING",
+    "HUMAN_ACCEPTANCE_PENDING",
+    "A_R3_RAIL_LABEL_GEOMETRY_PENDING",
+    "UI06_B_EVIDENCE_INCOMPLETE",
+    "GEOCODER_OPERATIONAL_PENDING",
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "sampleManifest": [
+    {
+      "caseId": "shell-320-900-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-workspace-closed.png",
+      "pngSha256": "8db8ed12f9e55c8e5510b4eaff73677b8bd068fb211d570bfab2504092cc98b0",
+      "json": "fullstack-shell-320-900-100-0-workspace-closed.json",
+      "jsonSha256": "613af248f43b89b1a560d3ef1b61c7db50fef1320aed09af7335c4f7ff3d087a",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-workspace-closed.png",
+      "pngSha256": "b92ada0d03efe3ae0caa8ab722d36e21b77860652a2118e95d3f8d921374b68b",
+      "json": "starter-shell-320-900-100-0-workspace-closed.json",
+      "jsonSha256": "84278e18bfd8d10b2ae7a452e59ddbb0343cd27c92212d8eb9af031c70c82ae7",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-laboratory-closed.png",
+      "pngSha256": "4645df7d61d12a350e30d0d5cdb1dfd9323e8cb43f618edd83ade3bacc6e73ed",
+      "json": "fullstack-shell-320-900-100-0-laboratory-closed.json",
+      "jsonSha256": "f928314f466bfc847ff97348783c5aa9949b3de9b12a00231830b14bb47def0b",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-laboratory-closed.png",
+      "pngSha256": "d0036d4603aaab45243a80d93aad971b2ef59f1f419d4e36447eb4180d53b72e",
+      "json": "starter-shell-320-900-100-0-laboratory-closed.json",
+      "jsonSha256": "d51a48bd298c5c73b154d0787c6deaff8ed982e0df410e9031e66255b4498e93",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-workspace-account-open.png",
+      "pngSha256": "975678d382af48e90687eaa98b55ff5c19f5e06c29cb3de6e899b15a3e8df107",
+      "json": "fullstack-shell-320-900-100-0-workspace-account-open.json",
+      "jsonSha256": "97c91439cd0684854a32f40c2c960d4c428530dc15e74aa9298aa75438e0f307",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-100-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-workspace-account-open.png",
+      "pngSha256": "b92ada0d03efe3ae0caa8ab722d36e21b77860652a2118e95d3f8d921374b68b",
+      "json": "starter-shell-320-900-100-0-workspace-account-open.json",
+      "jsonSha256": "e017801817d20cac4e65b19ba2fabc2a6c0ce179ce0d7d00f4051bdebd39f0c4",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-100-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-workspace-account-escape.png",
+      "pngSha256": "fefdecbb6442418cdabcb2491cad55393905ada10287b5e6b105f2c67c0ab8ce",
+      "json": "fullstack-shell-320-900-100-0-workspace-account-escape.json",
+      "jsonSha256": "42f4f4cfb34a3c3438d1fc8c611287927ded5896414248aa563bcbc9904eccc9",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-workspace-account-escape.png",
+      "pngSha256": "b92ada0d03efe3ae0caa8ab722d36e21b77860652a2118e95d3f8d921374b68b",
+      "json": "starter-shell-320-900-100-0-workspace-account-escape.json",
+      "jsonSha256": "0edd5cf032a7bf4d3563f541111bbecfb28bab3a2c2034d24ec559aee45086ca",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-laboratory-account-open.png",
+      "pngSha256": "e9e72c983fb3cf4b28bd5838887fc94a677247558440f6ca2f651be2db27941e",
+      "json": "fullstack-shell-320-900-100-0-laboratory-account-open.json",
+      "jsonSha256": "88c5bad6889c707166ff1da851d0ba17747d02bbb21826c6eb2d980ef4e46ab0",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-laboratory-account-open.png",
+      "pngSha256": "d0036d4603aaab45243a80d93aad971b2ef59f1f419d4e36447eb4180d53b72e",
+      "json": "starter-shell-320-900-100-0-laboratory-account-open.json",
+      "jsonSha256": "fdb56256e14b9002f051d1e7ece641622fc881ddf0bcc1aa55602e8fb04ea2fa",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-100-0-laboratory-account-escape.png",
+      "pngSha256": "6e7ec0f9d8e4f61cee7883fc3be1541b61550839aacce1392d42b917b2f2c909",
+      "json": "fullstack-shell-320-900-100-0-laboratory-account-escape.json",
+      "jsonSha256": "f77eb49d53a8771d1942088c70bd68c344b95b61c0bd951f942359d9572646b1",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-100-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-320-900-100-0-laboratory-account-escape.png",
+      "pngSha256": "d0036d4603aaab45243a80d93aad971b2ef59f1f419d4e36447eb4180d53b72e",
+      "json": "starter-shell-320-900-100-0-laboratory-account-escape.json",
+      "jsonSha256": "fad461a3dc9141e9c8a0eda6a1deab170162b8da4132af007fbb57d3dcff9aba",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-workspace-closed.png",
+      "pngSha256": "026cdf875e6fa9848aaa4eb99da8a0adc66883cb78eefd8e9056e5d283605e4b",
+      "json": "fullstack-shell-320-900-200-0-workspace-closed.json",
+      "jsonSha256": "4a6964eecc402f1fdb9d23d830d1b144d9f285717be991e2d79fd0bfa0f81206",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-workspace-closed.png",
+      "pngSha256": "a5e40ecaffb1837b7164015470e236b2f906868b79b231499201e6c43a75b6bc",
+      "json": "starter-shell-320-900-200-0-workspace-closed.json",
+      "jsonSha256": "12c6e740dbc9c14ab0cbd74b834a011344ce2920e9b1509fa7fb739868f02f48",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-laboratory-closed.png",
+      "pngSha256": "03d4a625599399394bea86669af86a359fbf843e300becf5409ef892b1693eb4",
+      "json": "fullstack-shell-320-900-200-0-laboratory-closed.json",
+      "jsonSha256": "fc1ee797dc4eab398db6d4bfa840a2f89ddda0d47fe51946b07afdfa2abebe6b",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-laboratory-closed.png",
+      "pngSha256": "3a68a2514c132ae4d2e82281a172dd14bf162dd761fb70d9278fa1297101ddd5",
+      "json": "starter-shell-320-900-200-0-laboratory-closed.json",
+      "jsonSha256": "d246a25d2a3d71c8569345845e2d3fed0bc34a86440b3771c82197c305b1f62d",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-workspace-account-open.png",
+      "pngSha256": "d323e07c55af163c024d2b6478abeea3fe9e4ec2ee57afbe396793cd5f78c3ae",
+      "json": "fullstack-shell-320-900-200-0-workspace-account-open.json",
+      "jsonSha256": "7a139c9667354baf780d0360ab13cb89f4f6d948594783f60058edfa54fbb83e",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-workspace-account-open.png",
+      "pngSha256": "a5e40ecaffb1837b7164015470e236b2f906868b79b231499201e6c43a75b6bc",
+      "json": "starter-shell-320-900-200-0-workspace-account-open.json",
+      "jsonSha256": "5f6dcb15df8a37eb79fc44008c97303e27f3499220eadfefbdfe4f288fa1e909",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-workspace-account-escape.png",
+      "pngSha256": "e0d7503ca40ce4738886e8ae4fe808ff331bd4c3ab87e0e77feef25c568d2f80",
+      "json": "fullstack-shell-320-900-200-0-workspace-account-escape.json",
+      "jsonSha256": "f49ab9ee864b808c8d8fbd4dea49213a562012d5aff35d7eb20088bac4c716a1",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-workspace-account-escape.png",
+      "pngSha256": "a5e40ecaffb1837b7164015470e236b2f906868b79b231499201e6c43a75b6bc",
+      "json": "starter-shell-320-900-200-0-workspace-account-escape.json",
+      "jsonSha256": "32123a8875a3dfa6a96e5bd93cb052e9e70a4c2ec64c06eb4c2bb3128fafec3d",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-laboratory-account-open.png",
+      "pngSha256": "dc4309bc01a892340797c5b86ff3989be0d3439e27a234e1b1fd441615022aef",
+      "json": "fullstack-shell-320-900-200-0-laboratory-account-open.json",
+      "jsonSha256": "38fbb2d5d99d78e95e8cd17b6b710c63f3fe8e38abb0d094038f9e7778714e00",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-laboratory-account-open.png",
+      "pngSha256": "3a68a2514c132ae4d2e82281a172dd14bf162dd761fb70d9278fa1297101ddd5",
+      "json": "starter-shell-320-900-200-0-laboratory-account-open.json",
+      "jsonSha256": "b3f50e4a6c934602559ef976d9a05f973e5f151a1fd1d649602812451c53d498",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-320-900-200-0-laboratory-account-escape.png",
+      "pngSha256": "7920b152c38742a70ca57420a9dd37c69c73404df33ab28be917364669b338d7",
+      "json": "fullstack-shell-320-900-200-0-laboratory-account-escape.json",
+      "jsonSha256": "f36c475cc9046b1db585e175525154c272708b6969fe977229897082df2382f2",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-320-900-200-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-320-900-200-0-laboratory-account-escape.png",
+      "pngSha256": "3a68a2514c132ae4d2e82281a172dd14bf162dd761fb70d9278fa1297101ddd5",
+      "json": "starter-shell-320-900-200-0-laboratory-account-escape.json",
+      "jsonSha256": "ada20c49cd902f56cb4d3f2e2bdd31aa4dc1bf088503d6d2eeeb40309b4ebcdd",
+      "dimensions": [
+        320,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-workspace-closed.png",
+      "pngSha256": "b609ba0fbf9cf13e818cff9d26575616cfb4f6cda027c5e59a0b28f247fb12c0",
+      "json": "fullstack-shell-375-900-100-0-workspace-closed.json",
+      "jsonSha256": "b975f1f0926a37453c363fb03fe192c8467d135a8f0859112a0a95dda1e29847",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-workspace-closed.png",
+      "pngSha256": "4d29c76917392e910b24a0ce0cc6cb7ea4ce9d231c27a7d1a63b3b14f793b5bb",
+      "json": "starter-shell-375-900-100-0-workspace-closed.json",
+      "jsonSha256": "74bb571f261a2437768a2eac31ede1eb7c2a9949bf841ac581a3abcf8caf4729",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-laboratory-closed.png",
+      "pngSha256": "a2d337e399d0dd09a61198a0be3cc04ee7ed607450ff27014f14296f1968fff8",
+      "json": "fullstack-shell-375-900-100-0-laboratory-closed.json",
+      "jsonSha256": "3b5648e6292947ec4aedf9c57f6f02becfebbbcedfd97614731f98d7daf639c5",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-laboratory-closed.png",
+      "pngSha256": "443648685da12b5e2e634d5fdfd54f63bb53ae735195a06847431b1452214b53",
+      "json": "starter-shell-375-900-100-0-laboratory-closed.json",
+      "jsonSha256": "5ea87bcd0012a1f527ff0aed35adbbe461254016902bdc669685382cb8cde359",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-last-control-focus.png",
+      "pngSha256": "3dfa8f547e00d3133523cea5722731e8bcba48dfa4fd1fcf66ddc5d6088019ef",
+      "json": "fullstack-shell-375-900-100-0-last-control-focus.json",
+      "jsonSha256": "b303b3d716488246f3c0863c77ea0d7126fdf09d1823fa1e2385aaf87b49a844",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-last-control-focus.png",
+      "pngSha256": "443648685da12b5e2e634d5fdfd54f63bb53ae735195a06847431b1452214b53",
+      "json": "starter-shell-375-900-100-0-last-control-focus.json",
+      "jsonSha256": "6972ae5b2b0a1887cd227ec57cd20c2f2ab90c37149aa2da7523b454c5782aef",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-areas-navigation.png",
+      "pngSha256": "dd9f5e056464b9c707fb38be9b4045bc5f81a664d54e47fbdb0cd5e93bc04f26",
+      "json": "fullstack-shell-375-900-100-0-areas-navigation.json",
+      "jsonSha256": "b7e8bb695d57bdffae3573880450f76c688f58eee16a6ebb8aea1637d554bb19",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-areas-navigation.png",
+      "pngSha256": "ad2cf2bd16829c98b197585acbaf49b9dc5d2781df28eb7180f2aade0f96fc8d",
+      "json": "starter-shell-375-900-100-0-areas-navigation.json",
+      "jsonSha256": "8b2466ea32fb1934d64a21d14654577fd5a9e7e273200a7971b9647ac629740b",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-back.png",
+      "pngSha256": "84dcd1ad7e5dd084ed4f26bb2a283dfaa8f3d6449d88454521d82975f72d5f5e",
+      "json": "fullstack-shell-375-900-100-0-back.json",
+      "jsonSha256": "703dc2b3d3a5b55d16e6484c5e1c41f6909257b0e8ba2caeb2d0026e999b6bb8",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-back",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-back.png",
+      "pngSha256": "15299cf2bcc909fd33a525a2ba5a75bd67e44c53d855b0ef44546deeb378e480",
+      "json": "starter-shell-375-900-100-0-back.json",
+      "jsonSha256": "56f01dbd97714341e689be20e5a9bb2c83e210cbcc9e75d8e7c9abaa111022ce",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-forward.png",
+      "pngSha256": "fa2587bf384ec8e62a15a7b3f8358d6ca4a511c41fa80fa11d6bc31fd378c5f3",
+      "json": "fullstack-shell-375-900-100-0-forward.json",
+      "jsonSha256": "80c40f527405cf9a33d3106283497edc87229f0779332a59220f1461e8b83f7c",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-forward",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-forward.png",
+      "pngSha256": "e5b01a65dc109f13f6c44e1d8f8dcff1d372eb6ea1be1a7666f14e971ff25383",
+      "json": "starter-shell-375-900-100-0-forward.json",
+      "jsonSha256": "08914fb32fbe7cd0109c50eab81c112fbf882ec1f245a9fb19e13a84818f4d65",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-100-0-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-100-0-reload.png",
+      "pngSha256": "f198583e602ec6740ea3c7feb37ff374a61622b6b78b8c9a70f37b19bfe09154",
+      "json": "fullstack-shell-375-900-100-0-reload.json",
+      "jsonSha256": "9b20e4f6edbb800dcd77ce190bc318ee425397cef09111214b05cd683806d56f",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-100-0-reload",
+      "source": "starter",
+      "png": "starter-shell-375-900-100-0-reload.png",
+      "pngSha256": "df15ad458e7ae2665b4ed052eed803e26aa619434d23ac1dca857eb0c274edda",
+      "json": "starter-shell-375-900-100-0-reload.json",
+      "jsonSha256": "b7af7b4e6da81c5f2fe92545dabc3b30e86d4cf86d58c6e2a324da478817e9e2",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-200-0-workspace-closed.png",
+      "pngSha256": "a76ede644121e28d4e545703da51b4956ccce279b69b2b8d29b67ba50d03b8a0",
+      "json": "fullstack-shell-375-900-200-0-workspace-closed.json",
+      "jsonSha256": "6e37706de5b9fdc945baaec41ffab2335d03268b83db186734d5cdb94a4b2dfc",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-200-0-workspace-closed.png",
+      "pngSha256": "b55ffc61709acbda0792055e4ed19cad5b4b8a1dd63eed3be86953dd950f047b",
+      "json": "starter-shell-375-900-200-0-workspace-closed.json",
+      "jsonSha256": "efc5d874095e81bb075d352579d703cde48ba08701509b0264af50a64957a6f6",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-200-0-laboratory-closed.png",
+      "pngSha256": "d6ec55b7f4691116eebcac253c845677d979bfc25037b4ca9d75c9abbdead672",
+      "json": "fullstack-shell-375-900-200-0-laboratory-closed.json",
+      "jsonSha256": "345e02180d29fba68a52af97877fdec38ac1f956443e459f7abaaa31efe19292",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-200-0-laboratory-closed.png",
+      "pngSha256": "c68d29d7dd071357148100d3041b13b515cf7b4c3e088a3ec57922a762a23d86",
+      "json": "starter-shell-375-900-200-0-laboratory-closed.json",
+      "jsonSha256": "981a3bd3320d897dbec33f5914f07da96f5fea2938f13decdbce60c4e949e62b",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-workspace-closed.png",
+      "pngSha256": "47134d20a50c5aeb8f732c07e027540ab0f1d8ca4c8552f9f94fc88acf35f9ac",
+      "json": "fullstack-shell-390-844-100-0-workspace-closed.json",
+      "jsonSha256": "5baa71499dd39b5517a53aa43c0465005171dd7a59ecb19d8f913f921c9e12c3",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-workspace-closed.png",
+      "pngSha256": "4741e3e6b4df33c04dc2919081fcc537e01111963d8ebc76f2d9beb2ae912572",
+      "json": "starter-shell-390-844-100-0-workspace-closed.json",
+      "jsonSha256": "4389e3970e34060c294c63d98c237ec847f5f7153584ecb16bc4c62994b8993c",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-laboratory-closed.png",
+      "pngSha256": "cebb720e5b22ea699cbaafbfade416c551ed560a1c86d3a52fe4aca124ab8685",
+      "json": "fullstack-shell-390-844-100-0-laboratory-closed.json",
+      "jsonSha256": "2446dc466267a226fe8354437756dbfc3879a72d3b39979a1d0348c3edb1d8d0",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-laboratory-closed.png",
+      "pngSha256": "eb57d751bb012b64e9610f0f3189456dfec3ebd4a1539ece1f82eec700f9f401",
+      "json": "starter-shell-390-844-100-0-laboratory-closed.json",
+      "jsonSha256": "5aa6fc0e79cd02388b1e405a499d6376cdd62138ff6bd17f2640b90d37ae8b95",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-workspace-account-open.png",
+      "pngSha256": "472a317a4e9dc5827b5fd5f61fbb2e9af08b17cd0983679b92d8ef63c5a55efe",
+      "json": "fullstack-shell-390-844-100-0-workspace-account-open.json",
+      "jsonSha256": "1405a006d02ccf7bdf5917154f359d0cb9622c8350e18576b982055a93b6359f",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-workspace-account-open.png",
+      "pngSha256": "4741e3e6b4df33c04dc2919081fcc537e01111963d8ebc76f2d9beb2ae912572",
+      "json": "starter-shell-390-844-100-0-workspace-account-open.json",
+      "jsonSha256": "b7f248ae0d719e42a6f9c800999795cb6851cc80002273ea0d6e142af6c19474",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-workspace-account-escape.png",
+      "pngSha256": "41c03fb1c3e9e8b0a900bc0c557be627f8a0de6be57972593e8de29ce5164f76",
+      "json": "fullstack-shell-390-844-100-0-workspace-account-escape.json",
+      "jsonSha256": "49b218b80869a60d67d0472118ec8ff08d2d6d5420cf030e4225d5fd42c68bce",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-390-844-100-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-workspace-account-escape.png",
+      "pngSha256": "4741e3e6b4df33c04dc2919081fcc537e01111963d8ebc76f2d9beb2ae912572",
+      "json": "starter-shell-390-844-100-0-workspace-account-escape.json",
+      "jsonSha256": "f7a826a7a4cca93a5173045901132d6ad0321ca49b30b52a6a89aea78861a22b",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-laboratory-account-open.png",
+      "pngSha256": "f61fb8d5fd528624db8d8a7bdc237439383882906175f96349497a5afc35100a",
+      "json": "fullstack-shell-390-844-100-0-laboratory-account-open.json",
+      "jsonSha256": "8ae9c86be5cb15be66df5929204e6bafa179d820ffc23a60cbd2a89178db13c8",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-laboratory-account-open.png",
+      "pngSha256": "eb57d751bb012b64e9610f0f3189456dfec3ebd4a1539ece1f82eec700f9f401",
+      "json": "starter-shell-390-844-100-0-laboratory-account-open.json",
+      "jsonSha256": "f90001610c52e81001d6490ebb1c41574421f77f8d6a9c3648fca44d5eb05cd8",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-100-0-laboratory-account-escape.png",
+      "pngSha256": "0051b165bfd22e9e198fc9e8b9e29e50e90722b252e10e08ddc77b547da28ca7",
+      "json": "fullstack-shell-390-844-100-0-laboratory-account-escape.json",
+      "jsonSha256": "b4dc06365b783fd7dee36f2711cf50330a17e86bb2b3b534c92900313cca2cf3",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-100-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-390-844-100-0-laboratory-account-escape.png",
+      "pngSha256": "eb57d751bb012b64e9610f0f3189456dfec3ebd4a1539ece1f82eec700f9f401",
+      "json": "starter-shell-390-844-100-0-laboratory-account-escape.json",
+      "jsonSha256": "8b26449a040be3279f0dec44a2049df387e55e8bcb800d82f480759af1aec3d3",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-workspace-closed.png",
+      "pngSha256": "70e6c2067a3f272cb87a53c4b0938c062f39aa563f9a42c7aec43b64738ecfe4",
+      "json": "fullstack-shell-390-844-200-0-workspace-closed.json",
+      "jsonSha256": "3295a91bbf184afb7abea7b2ee1ccec2716ffe1c5cda6567c2820da8efcfb596",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-workspace-closed.png",
+      "pngSha256": "4a86bb0d6475aa3f2e87687da3fa2e1d3d002565ee7aeb8d748c95693c7ac068",
+      "json": "starter-shell-390-844-200-0-workspace-closed.json",
+      "jsonSha256": "97ae8ac39903342db707e8232a92ac3135a3ab8f026784a0e363b0562faf8d34",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-laboratory-closed.png",
+      "pngSha256": "877faa7b4c720365ddb48781911c378e42da77435bf5f6ad5cc09bd347424f17",
+      "json": "fullstack-shell-390-844-200-0-laboratory-closed.json",
+      "jsonSha256": "82a58e3d800df78e7ab5e30d25414b9971456457d52c711fb11f31ea1f2f0016",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-laboratory-closed.png",
+      "pngSha256": "3fa0fef0a8d2e990dcbbe01fd8b78936e1e71e7e3347666ddb4d0d366d841d13",
+      "json": "starter-shell-390-844-200-0-laboratory-closed.json",
+      "jsonSha256": "24b1408a682490e5b790980abd41ecdb42619e6f34a260b7873af11982056040",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-workspace-account-open.png",
+      "pngSha256": "a610d8aba55b454916400b027395b16b3d8c2b955acf66e55c6745ec79861da5",
+      "json": "fullstack-shell-390-844-200-0-workspace-account-open.json",
+      "jsonSha256": "e5ed9d3a54c1e7bc6ecd76b38f01cfa1b74f000b6fb18c995cdde7f6cd9f48e9",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-workspace-account-open.png",
+      "pngSha256": "4a86bb0d6475aa3f2e87687da3fa2e1d3d002565ee7aeb8d748c95693c7ac068",
+      "json": "starter-shell-390-844-200-0-workspace-account-open.json",
+      "jsonSha256": "716efce1d32f830dfccb457b8f3d62ea639243de2a53e8b3db89b9217c5cf1be",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-workspace-account-escape.png",
+      "pngSha256": "874e75269cbae2b29869a0ec288edc2d1edb472899435f0b0bfcaff87cf2c27e",
+      "json": "fullstack-shell-390-844-200-0-workspace-account-escape.json",
+      "jsonSha256": "1b2c74589d5188b7741bb1654bb75cac54f76952fcd10efe8bea5c2cf1d6f3fa",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-workspace-account-escape.png",
+      "pngSha256": "4a86bb0d6475aa3f2e87687da3fa2e1d3d002565ee7aeb8d748c95693c7ac068",
+      "json": "starter-shell-390-844-200-0-workspace-account-escape.json",
+      "jsonSha256": "7d42335030249a749fb5f9790391b976459e36adf83cfd3253929007599df129",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-laboratory-account-open.png",
+      "pngSha256": "a4a3bfab11f019d68a21af1dab4c53ab46958baa1e0238fb9191805ab834ea4b",
+      "json": "fullstack-shell-390-844-200-0-laboratory-account-open.json",
+      "jsonSha256": "cbdbfb7d75e8793bcdd5c76a2d7896860abdd8efc7bdff9934586595e5600c35",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-laboratory-account-open.png",
+      "pngSha256": "3fa0fef0a8d2e990dcbbe01fd8b78936e1e71e7e3347666ddb4d0d366d841d13",
+      "json": "starter-shell-390-844-200-0-laboratory-account-open.json",
+      "jsonSha256": "e6c1256a3b16799ea021ce076a84c86380853393b63b006dd007c0f02e51a793",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-laboratory-account-escape.png",
+      "pngSha256": "4c974ee6fba02eaa7d8a78e737b4ceddca6109512f4dcd9e4a1871593709c1c6",
+      "json": "fullstack-shell-390-844-200-0-laboratory-account-escape.json",
+      "jsonSha256": "ad905867cc2a55a2c62ddb904a80165bcd6118222d29853b7376a954c09870a4",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-laboratory-account-escape.png",
+      "pngSha256": "3fa0fef0a8d2e990dcbbe01fd8b78936e1e71e7e3347666ddb4d0d366d841d13",
+      "json": "starter-shell-390-844-200-0-laboratory-account-escape.json",
+      "jsonSha256": "43875cfd191105b6ecc9bcf7ff1d0d712d8e9af25dfdb29ba22b231614c9b621",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-last-control-focus.png",
+      "pngSha256": "eabca8a836bd468e18ae5d6415f724c5af9b8b6be44cb456c1264e0350ed3a7e",
+      "json": "fullstack-shell-390-844-200-0-last-control-focus.json",
+      "jsonSha256": "9e8a2eac539bcf756a8466b853cd94ac58e9d436d9add0c75698007b7b40992c",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-last-control-focus.png",
+      "pngSha256": "d9c9d590bcf3d59d91931f84ac0f9a045f0c27ee2967f524440d5920b8dd9816",
+      "json": "starter-shell-390-844-200-0-last-control-focus.json",
+      "jsonSha256": "8538095f37255308083a7d1d4d5d7655c22067aaf9eb09fb2f5087371e7fecb8",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-areas-navigation.png",
+      "pngSha256": "8c90899cbc82b35cfc88ce501ce82c9f02021e986784e785e58cca3d4958c8f7",
+      "json": "fullstack-shell-390-844-200-0-areas-navigation.json",
+      "jsonSha256": "7be7d167ccc523ccc21838e2c07e0000bd4bc2af57f48f6514630ac0c54cb075",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-areas-navigation.png",
+      "pngSha256": "0be3b92b2a75dc1ff48d5b626d5a14bb57c69ecd77bbae5ceabf49cd82c24928",
+      "json": "starter-shell-390-844-200-0-areas-navigation.json",
+      "jsonSha256": "a5ad0232ed17c7e6bdf5420a5a269a6c8f9dee39fcc396f06f904717edc7e64c",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-back.png",
+      "pngSha256": "fd638f385201455b9b9ba616021e3ac6e07081b2a623f13ff60d0d6cc9bfbb58",
+      "json": "fullstack-shell-390-844-200-0-back.json",
+      "jsonSha256": "93e19bcb713d40f6503c263e928a0736af6266df17907c8e80c6942415d31a73",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-back",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-back.png",
+      "pngSha256": "651ccee877c8328625b85bfa649c5a02158836bcf1a6e88dc47ec27b668862b8",
+      "json": "starter-shell-390-844-200-0-back.json",
+      "jsonSha256": "f9202fec344ff2a167737b8f148d7300842d181bb14f7c3fe094b7f0bc004278",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-forward.png",
+      "pngSha256": "4552c9455d969394ff63f0520097e1e434c28397a71f4d6e8afe16286cc5b1de",
+      "json": "fullstack-shell-390-844-200-0-forward.json",
+      "jsonSha256": "3a4bee0b5ed22fd2d08f9b2234f33b936bacd6451bb3292496315c6d7633f4b2",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-forward",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-forward.png",
+      "pngSha256": "ecad195a45d5ebadc3919658537aa60cb2a43556c1fb7b9ba950e3150c143ca4",
+      "json": "starter-shell-390-844-200-0-forward.json",
+      "jsonSha256": "16ca09609074c68d8ca38294f6d481c2bfb5f39aa0fbabd1fb1b09d7a9cfbc0d",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-390-844-200-0-reload.png",
+      "pngSha256": "8c90899cbc82b35cfc88ce501ce82c9f02021e986784e785e58cca3d4958c8f7",
+      "json": "fullstack-shell-390-844-200-0-reload.json",
+      "jsonSha256": "67a15fac83e33b573d2a8d2af353d735cd7a7e9e25d2875ea9bc986df34de54a",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-390-844-200-0-reload",
+      "source": "starter",
+      "png": "starter-shell-390-844-200-0-reload.png",
+      "pngSha256": "8c05043a9d470116d69b898d741d0d74ab302f6ae5cde3c3ac962b18cc5685e4",
+      "json": "starter-shell-390-844-200-0-reload.json",
+      "jsonSha256": "dab84a053c8807a15a971a2188b159f39e403117a26a5efda6163adf9830aa26",
+      "dimensions": [
+        390,
+        844
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-768-900-100-0-workspace-closed.png",
+      "pngSha256": "ff7af85d8c68c91768970bcf48ed245a1d54f93667e601e5647629fcfdcec7be",
+      "json": "fullstack-shell-768-900-100-0-workspace-closed.json",
+      "jsonSha256": "9f1db2396aa3777ef4b887f45ad8e015344c661e22171cb1e71aeb11a79c1f64",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-768-900-100-0-workspace-closed.png",
+      "pngSha256": "1368d58af09a3734ba128adfa569d20cf1ebba171fa0e9968faca6105e8fd1fb",
+      "json": "starter-shell-768-900-100-0-workspace-closed.json",
+      "jsonSha256": "c4221d9ef9aa681557db6a3602c7a2b9e4e43e4f6d4e39c77c9bb3ded9ea106e",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-768-900-100-0-laboratory-closed.png",
+      "pngSha256": "7850b95fa0ae867e30969c3022305971fdde7c36bda9606a6147a7b0f92ae9aa",
+      "json": "fullstack-shell-768-900-100-0-laboratory-closed.json",
+      "jsonSha256": "1c9a8977b6a67dea9f6a6ff46968d07fe47fbc8379b5143f618d4cba725b555c",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-768-900-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-768-900-100-0-laboratory-closed.png",
+      "pngSha256": "1a6f6c78eb13f411c2683365ff8462224ac898812a3c7f6b6c5c8592890db1cd",
+      "json": "starter-shell-768-900-100-0-laboratory-closed.json",
+      "jsonSha256": "4d5ceb9cc6f95cd85fd0e4606e140e90bb4799a8990a835d5ce856de91718b84",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-768-900-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-768-900-200-0-workspace-closed.png",
+      "pngSha256": "6e8d7fa2a630cd2b5048d93d75b68b2cf8c334af17f0a3fdaa67b71a699e8349",
+      "json": "fullstack-shell-768-900-200-0-workspace-closed.json",
+      "jsonSha256": "35b46027714fa01dcc183e8fdbd82be93826b19d70d7f2ebcbb1dfa845631b47",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-768-900-200-0-workspace-closed.png",
+      "pngSha256": "450868e0657f7d6ac5a99b6c15af4482296523786468e43679e9d17cfc7069f1",
+      "json": "starter-shell-768-900-200-0-workspace-closed.json",
+      "jsonSha256": "f6054ab07fc6e22498f8377d6adb63507b875456701a18e66875c268bd94548b",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-768-900-200-0-laboratory-closed.png",
+      "pngSha256": "b47aa5e5df37bd8370f74471261d09707a543f770c54c3615a66857d8eef19eb",
+      "json": "fullstack-shell-768-900-200-0-laboratory-closed.json",
+      "jsonSha256": "8c8d6a066f156824865c493b7c193fe99372f36680aab161c8e8172275dbeb68",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-768-900-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-768-900-200-0-laboratory-closed.png",
+      "pngSha256": "fee470a4bcffa179e74b532b450d9b159d93e2cf5ce8e6080a70a09719c5e1a3",
+      "json": "starter-shell-768-900-200-0-laboratory-closed.json",
+      "jsonSha256": "909ceb9daf3cd156162fae67a8db3ac428a7b9aafaf18a70c49a1190f42bf501",
+      "dimensions": [
+        768,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-workspace-closed.png",
+      "pngSha256": "90d10898637f784a4ec993ce3fabd776fd2b4b9c967f97b40d30398c02fecf03",
+      "json": "fullstack-shell-1440-900-100-0-workspace-closed.json",
+      "jsonSha256": "78e10c89bcd85a44a724f2525b899ac75b4ba5df172be4a67d55771f7d6cd23e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-workspace-closed.png",
+      "pngSha256": "896afbd211958e51a049c3c2e594f40275234ffc09c5f6bd204c0bdb73aab0dd",
+      "json": "starter-shell-1440-900-100-0-workspace-closed.json",
+      "jsonSha256": "65ca22977e8d6f37e6d04af2bc77a4c22dfba47e16d8feea7cf7ff6da406786d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-laboratory-closed.png",
+      "pngSha256": "a913aa1baebe7641dc070af4bcce075873c0a049a4df3c54d7cfe890dc24b4b6",
+      "json": "fullstack-shell-1440-900-100-0-laboratory-closed.json",
+      "jsonSha256": "2efe3753fffbb14ded5d40727cfbaa386c362cf9bfcc3b15f750e423e308225f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-laboratory-closed.png",
+      "pngSha256": "c4d19bed2fa17f0a6b1b8bca6d65671f168b8fa7a3f846028d4705663eb2d2ca",
+      "json": "starter-shell-1440-900-100-0-laboratory-closed.json",
+      "jsonSha256": "596d201aa60558209926dfdf0c8cfc7ed0d947067ade5524d9c5a3f56c66f7a3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-workspace-account-open.png",
+      "pngSha256": "fdee361a6b46e376c8a31e60e3bc832f7a27a6b97513686283d7a92a2700b1c0",
+      "json": "fullstack-shell-1440-900-100-0-workspace-account-open.json",
+      "jsonSha256": "ee7a65c3790394aba61b80941c5e199a3fad077d7c05524be860aad733836c24",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-workspace-account-open.png",
+      "pngSha256": "896afbd211958e51a049c3c2e594f40275234ffc09c5f6bd204c0bdb73aab0dd",
+      "json": "starter-shell-1440-900-100-0-workspace-account-open.json",
+      "jsonSha256": "46df16d2e7ea3c6613b9ee59a2689a09d80a262d7c177724e0043a986b462ee2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-workspace-account-escape.png",
+      "pngSha256": "5204de844f5a86d8d2d33a58e45f270adef8f964d08aa3bc1cae688f5b163b56",
+      "json": "fullstack-shell-1440-900-100-0-workspace-account-escape.json",
+      "jsonSha256": "322de65b26f09c2131f2c580f9b6dcaae13c9ef80684ddec2c74b58de4310b18",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-workspace-account-escape.png",
+      "pngSha256": "896afbd211958e51a049c3c2e594f40275234ffc09c5f6bd204c0bdb73aab0dd",
+      "json": "starter-shell-1440-900-100-0-workspace-account-escape.json",
+      "jsonSha256": "8fa62d0ab0cc0a4f1a43e516a64e07f14c34491e09a7b1a9f98dcd5a64884910",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-laboratory-account-open.png",
+      "pngSha256": "acda90799d45700ff116fd4ee8a55f4c2a0c90f0eae4252553da92350240ed5a",
+      "json": "fullstack-shell-1440-900-100-0-laboratory-account-open.json",
+      "jsonSha256": "81779f4b22e80fc14c6c2771ba663d9721b79f12159ab15e628711b4ce809c92",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-laboratory-account-open.png",
+      "pngSha256": "c4d19bed2fa17f0a6b1b8bca6d65671f168b8fa7a3f846028d4705663eb2d2ca",
+      "json": "starter-shell-1440-900-100-0-laboratory-account-open.json",
+      "jsonSha256": "64a06303e2ad6297e76bd6e822b6adbcb41b4d64cee5c91d5d7b45d41daf3150",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-laboratory-account-escape.png",
+      "pngSha256": "a706ae5753c3786a8eba4e06f3779820fa0738095fcf5b55041df3b2448c35be",
+      "json": "fullstack-shell-1440-900-100-0-laboratory-account-escape.json",
+      "jsonSha256": "14b68e1ae4efc4cb262b7aec881fc73f6245501b047d4cbe3dbd402c9e9ac03e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-laboratory-account-escape.png",
+      "pngSha256": "c4d19bed2fa17f0a6b1b8bca6d65671f168b8fa7a3f846028d4705663eb2d2ca",
+      "json": "starter-shell-1440-900-100-0-laboratory-account-escape.json",
+      "jsonSha256": "870582a2ccb49f93ac1544febfe8d1bbb9570cf6e338d2c14dafec18d7c8044e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-last-control-focus.png",
+      "pngSha256": "bf472261a8099c289ea45c89041eb70180ba209916e70566595f90e93ec6b57d",
+      "json": "fullstack-shell-1440-900-100-0-last-control-focus.json",
+      "jsonSha256": "89e95f27ea5a4df39fdbba1d8eb2c243a2171326bff7fccd71e863dab0c05c4d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-last-control-focus.png",
+      "pngSha256": "c4d19bed2fa17f0a6b1b8bca6d65671f168b8fa7a3f846028d4705663eb2d2ca",
+      "json": "starter-shell-1440-900-100-0-last-control-focus.json",
+      "jsonSha256": "e34411ec425455f2935c3695e990d8c2eabb301d61130b98283c64e235ea50a7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-areas-navigation.png",
+      "pngSha256": "eca9d1430abad6dc393cacfb5fa5a8ca95e0aa61b6bcb92591b8e0c037fb4390",
+      "json": "fullstack-shell-1440-900-100-0-areas-navigation.json",
+      "jsonSha256": "a5b6f14b23c1a8f8beeb88d449090188a772c8363bd485e8866600a8efb1ca56",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-areas-navigation.png",
+      "pngSha256": "a8966a6178d2dcf08d5fe2a08ea1b3f881ac7349d28f56b6fc2db4d588e4127b",
+      "json": "starter-shell-1440-900-100-0-areas-navigation.json",
+      "jsonSha256": "2b3f13704b004e5b7cd750f9c3e6d4beca9c2b9e9139141464df16cffaa77bbb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-back.png",
+      "pngSha256": "0a54d02cd024461d1971dff633b6fa4c62b82cae959f5b051c1f63fce9864479",
+      "json": "fullstack-shell-1440-900-100-0-back.json",
+      "jsonSha256": "98191fc25047f66cf5a9d51fa75a22d8e42e77c9863a6f6722e6137c0acfb2a7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-back",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-back.png",
+      "pngSha256": "39947aeb8b4859d60d93f1bffd180354dbf196a42412fa8b9c11af2a5a39b93a",
+      "json": "starter-shell-1440-900-100-0-back.json",
+      "jsonSha256": "526c4ed024450cc4462dec29811c46009d28b8089b363d0020fbb3ace146157a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-forward.png",
+      "pngSha256": "fa4277320e6f4ab37b7fbb98f13cb983e55a5b102a6745246925f0685aa8473f",
+      "json": "fullstack-shell-1440-900-100-0-forward.json",
+      "jsonSha256": "f35d2abb15bdb609317ebfefecdd2436aceb132a623a27454ee921a3cf816578",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-forward",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-forward.png",
+      "pngSha256": "a8966a6178d2dcf08d5fe2a08ea1b3f881ac7349d28f56b6fc2db4d588e4127b",
+      "json": "starter-shell-1440-900-100-0-forward.json",
+      "jsonSha256": "5f0becc086705cff74f8e615aaca325b4fd099b0ed3c6f1717683d60476aa6ad",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-100-0-reload.png",
+      "pngSha256": "54a5517a291476b21b94df1ed68cff5c980a935622b17c23978bfba5badc9f56",
+      "json": "fullstack-shell-1440-900-100-0-reload.json",
+      "jsonSha256": "5589c3f92ef47f0ce1820ef9c1c6e2de7ca3da37c652159bb285af4fa2da9111",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-100-0-reload",
+      "source": "starter",
+      "png": "starter-shell-1440-900-100-0-reload.png",
+      "pngSha256": "94a80fb353c2639b990ffdb402697bcef8dd6ce63515b2588387cdd2959020a5",
+      "json": "starter-shell-1440-900-100-0-reload.json",
+      "jsonSha256": "c7a819b1eee338e198fe2135f090a2d051fd27464db68e1fe8304eb8d1c4a083",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-workspace-closed.png",
+      "pngSha256": "76fd29191a31768d05613116fe7820b4abe0a2080f4291e57c465ca8f25fbd88",
+      "json": "fullstack-shell-1440-900-200-0-workspace-closed.json",
+      "jsonSha256": "8b825151406b81688a261ed14fb8d2455d63657b517327d41bbf0144bb68bbd6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-workspace-closed.png",
+      "pngSha256": "dc83f67ac9f7aa4f3d277b4529cff432f256c1b179a763bf4886e6e41b749ded",
+      "json": "starter-shell-1440-900-200-0-workspace-closed.json",
+      "jsonSha256": "d6354bc3228f9f554066033a6230806075527878026945b9b1b2923f1de803dd",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-laboratory-closed.png",
+      "pngSha256": "910c8d25ebde531d969069fcc3d6a5c22b1b27e5a56c5f0889b4e39836b7a7e4",
+      "json": "fullstack-shell-1440-900-200-0-laboratory-closed.json",
+      "jsonSha256": "bf776f96910e3b5ddd3a26ef5c83ad66070253ef3a123825ab76dc7bd71a0a54",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-laboratory-closed.png",
+      "pngSha256": "98dc96b4e92eb976dc5e1ef80815fc9252a37119e7e0f06426914bed9b1c1183",
+      "json": "starter-shell-1440-900-200-0-laboratory-closed.json",
+      "jsonSha256": "192b3e7b569fe7731363327cfa1fa161598bf80742b2a817bd4f1c3c44df7626",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-workspace-account-open.png",
+      "pngSha256": "696ffcfb24fa6021cbc6d117b2b3a39ff93f2e25510c0fa7744aa1d29dcc509f",
+      "json": "fullstack-shell-1440-900-200-0-workspace-account-open.json",
+      "jsonSha256": "11a429b296cdbb122d5cffa0c7e62804a4c3d5f8743917aa891c2302eadace11",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-account-open",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-workspace-account-open.png",
+      "pngSha256": "dc83f67ac9f7aa4f3d277b4529cff432f256c1b179a763bf4886e6e41b749ded",
+      "json": "starter-shell-1440-900-200-0-workspace-account-open.json",
+      "jsonSha256": "8cd37a28e208f8c6f8c4274382343f3d357ea77b09c2d48cff0a00e25d3d1e32",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-workspace-account-escape.png",
+      "pngSha256": "ad899b239b7b0cf445604cf78310383b2d2fd3fc9122458e33e8ce7527174664",
+      "json": "fullstack-shell-1440-900-200-0-workspace-account-escape.json",
+      "jsonSha256": "d0227eea15e272e573bf72eda9962278e20cc75ff20c6c7064a514faf74e6d5b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-workspace-account-escape",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-workspace-account-escape.png",
+      "pngSha256": "dc83f67ac9f7aa4f3d277b4529cff432f256c1b179a763bf4886e6e41b749ded",
+      "json": "starter-shell-1440-900-200-0-workspace-account-escape.json",
+      "jsonSha256": "9427d8611f8506f4593bfa29ca27dd7bf319c839b397390b1dd465ff1e052769",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-account-open",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-laboratory-account-open.png",
+      "pngSha256": "ac1b424a6ebaf9faa90c263c6431d1ab50a090fb25dd54cc4ba88f602ee9efd5",
+      "json": "fullstack-shell-1440-900-200-0-laboratory-account-open.json",
+      "jsonSha256": "29df7ff4cd7de34b00eca2620eb2b2c78fb82ead92a5a889162a13db9955ede2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-account-open",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-laboratory-account-open.png",
+      "pngSha256": "98dc96b4e92eb976dc5e1ef80815fc9252a37119e7e0f06426914bed9b1c1183",
+      "json": "starter-shell-1440-900-200-0-laboratory-account-open.json",
+      "jsonSha256": "9262971e89aba24709f7bf1b9e95d75e1a203e757e0df6f2e2967b99e64990da",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-account-escape",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-laboratory-account-escape.png",
+      "pngSha256": "7984757372e212eb3978bc689aecb0c7f51dc6260d1e6af0af7bf612ce8a4f9e",
+      "json": "fullstack-shell-1440-900-200-0-laboratory-account-escape.json",
+      "jsonSha256": "1cade6c7e5163e1ba9018707e8207c616d7f7ff23fe63902efa50b74d84abdee",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-laboratory-account-escape",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-laboratory-account-escape.png",
+      "pngSha256": "98dc96b4e92eb976dc5e1ef80815fc9252a37119e7e0f06426914bed9b1c1183",
+      "json": "starter-shell-1440-900-200-0-laboratory-account-escape.json",
+      "jsonSha256": "2631535879587df4882ff5dd3fda56138cda40ba420bfe4835b48fdc91530f22",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-last-control-focus.png",
+      "pngSha256": "402880a6f487b32fa0f74d88eef7e48ac33715acabef344bc2ae2436cd43642d",
+      "json": "fullstack-shell-1440-900-200-0-last-control-focus.json",
+      "jsonSha256": "2b0932ea08c450c7d6874b5849faa8049587982f911973ed99e0058ecc3bdce1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-last-control-focus.png",
+      "pngSha256": "98dc96b4e92eb976dc5e1ef80815fc9252a37119e7e0f06426914bed9b1c1183",
+      "json": "starter-shell-1440-900-200-0-last-control-focus.json",
+      "jsonSha256": "771c946bc1e5d674f6b73c80ddf6df60269aba5705c2e031d885e44a43bb4ce9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-areas-navigation.png",
+      "pngSha256": "65fdec3bd47cd682ff176de7d3985ea4e428b7450c73a4ef473f8862ac80110f",
+      "json": "fullstack-shell-1440-900-200-0-areas-navigation.json",
+      "jsonSha256": "144b64d8f8ff836731900fa0fbaa7eaadc814ef023b43fedc378628ec263b715",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-areas-navigation.png",
+      "pngSha256": "8b36c8d4021eab39a9054191b42a08fa108106957742f326ec1c495af1707be1",
+      "json": "starter-shell-1440-900-200-0-areas-navigation.json",
+      "jsonSha256": "9ec91a2eb6769eef610afbc29287b399f282da2c76a09652120cf28cfb464f30",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-back.png",
+      "pngSha256": "ba39844d641ec4fb329f170042122b177fad83e1a998d07784ca3939800c1c7d",
+      "json": "fullstack-shell-1440-900-200-0-back.json",
+      "jsonSha256": "78528818e004238ad2ebec1901a9dbe2ae0f6e989c51424f155e3d74de41f830",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-back",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-back.png",
+      "pngSha256": "63400264ed5ace0efbd87d26c2995c6354705a5c0e7da47503ebb82c2c9a9f11",
+      "json": "starter-shell-1440-900-200-0-back.json",
+      "jsonSha256": "aa56a5c4266facf0cb316e6531fe38f70b3b17d1dbde3a583dba06cfdc78625f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-forward.png",
+      "pngSha256": "65fdec3bd47cd682ff176de7d3985ea4e428b7450c73a4ef473f8862ac80110f",
+      "json": "fullstack-shell-1440-900-200-0-forward.json",
+      "jsonSha256": "eb358ae899d539c76710944bbd5b5a073f1203bb6eaac74f1ff1166559bbb036",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-forward",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-forward.png",
+      "pngSha256": "8b36c8d4021eab39a9054191b42a08fa108106957742f326ec1c495af1707be1",
+      "json": "starter-shell-1440-900-200-0-forward.json",
+      "jsonSha256": "1fe91d64b135d2fd2f429fa4b0fb69f1a9e6489ec480fe73695d704301405959",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-1440-900-200-0-reload.png",
+      "pngSha256": "02d9d553b5055dc69d6efeb01722326b59c9a89d30c1ca180f6eb1decffe39af",
+      "json": "fullstack-shell-1440-900-200-0-reload.json",
+      "jsonSha256": "d667d496f2eb26afe5d309c2b25d3995126bb88a822d0d92196c75769b488058",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-1440-900-200-0-reload",
+      "source": "starter",
+      "png": "starter-shell-1440-900-200-0-reload.png",
+      "pngSha256": "c4fea1876cea0406972fbe141b872c8a17bd559901bfa56d68ca237b9fc2f941",
+      "json": "starter-shell-1440-900-200-0-reload.json",
+      "jsonSha256": "6ca69ce9fcc193ab5b77c80f19f6aef4c57b7223ccf5b37e0d8bce15670dd4b9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-100-0-workspace-closed.png",
+      "pngSha256": "bc04206a1e246f275df0830dffec7f810e5a72921116bc3ca75494c454e7b367",
+      "json": "fullstack-shell-667-375-100-0-workspace-closed.json",
+      "jsonSha256": "ed94d3035b7ff48e81fa1d950c65e6ff93d229b620f17fca6b93b70490d13638",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-100-0-workspace-closed.png",
+      "pngSha256": "422ceb232184427a070265ffc61aecfeddd5e82f27eb12c90fcf9eca7c849df6",
+      "json": "starter-shell-667-375-100-0-workspace-closed.json",
+      "jsonSha256": "e1db34aaf59c74df3a2562237c3416c98606d9620dc0ce42efe860fe2bf8a431",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-100-0-laboratory-closed.png",
+      "pngSha256": "03b59cca839451f4ffd586567d5a64c809f1652c3133123c17a8980d6dfb5a58",
+      "json": "fullstack-shell-667-375-100-0-laboratory-closed.json",
+      "jsonSha256": "4faf8524b3d7f5c2119f07b8a9481ea3b080e7f9da6a41e56a13fbc29a24d195",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-100-0-laboratory-closed.png",
+      "pngSha256": "36f12a0f1af612adf876a418bad78f0b900dc20e530afcdc66fc55447e5ae657",
+      "json": "starter-shell-667-375-100-0-laboratory-closed.json",
+      "jsonSha256": "ff6bd0c142918d35dda7392e8db999710f210c0ee3db8f4196967e8a0859348e",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-workspace-closed.png",
+      "pngSha256": "cd59752e02a4c29178da2c0ff341df5c289b15809eccc37745b2654ed67ffa56",
+      "json": "fullstack-shell-667-375-200-0-workspace-closed.json",
+      "jsonSha256": "f444f1b726d996ac6dd38021060a6131ce9e7a6d1842eba9c18230b1ac5bbc05",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-workspace-closed.png",
+      "pngSha256": "8270e46f0f8f3531b5eea3935a7abde76f5d1023b616ee0401535f39bff7edde",
+      "json": "starter-shell-667-375-200-0-workspace-closed.json",
+      "jsonSha256": "8989eabbba033f4ea46f74a1fcb6a10276277e1fa16ebe231ab35875361e9814",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-laboratory-closed.png",
+      "pngSha256": "5181c97d6e18a8e875d0a942905be2adcab96abcf018ec1b4d389ff02cbff789",
+      "json": "fullstack-shell-667-375-200-0-laboratory-closed.json",
+      "jsonSha256": "cd7ae5e914917e88d35d8079926395783635d5d268e9c3d6895c011d0f4a25d8",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-laboratory-closed.png",
+      "pngSha256": "c364a8b9d98ed7a483e6353f628f872064bc9b44dbd8bd334c6cc306c91db3bd",
+      "json": "starter-shell-667-375-200-0-laboratory-closed.json",
+      "jsonSha256": "20488ca0a62983dbbe95a327d7e38ea430fb59f1da45888e04bd7d56c8ec9479",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-0-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-last-control-focus.png",
+      "pngSha256": "6a674e0b55a10f807708d9eef29e7ad1e8c3ca0d1b8bc8b8e7731d307f37799c",
+      "json": "fullstack-shell-667-375-200-0-last-control-focus.json",
+      "jsonSha256": "9029250428d7a415f58c45084828cf874a48ef6bd83aabb46ccacd6cdd60b56c",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-0-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-last-control-focus.png",
+      "pngSha256": "4f3fd4383850b729976e6c1d556d305e387d364f1b21f6f56e38aa9169f405f1",
+      "json": "starter-shell-667-375-200-0-last-control-focus.json",
+      "jsonSha256": "08ca07df720917480e7a2daf70acc5ba08051766cb24751c54002ac41df1dbfc",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-0-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-areas-navigation.png",
+      "pngSha256": "6769cafe262f445816aded9503cf7ce68d8df5da3ab55bf2d827241ce8b11304",
+      "json": "fullstack-shell-667-375-200-0-areas-navigation.json",
+      "jsonSha256": "38498ecd6d823e2d3880ecbb89726b387c2657a2f1ceaa2ee0f846850316180b",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-areas-navigation.png",
+      "pngSha256": "6bc592beb38f2b9fcca4f32719ef9340a3f7f6b3055617aabe752526fd2ab09d",
+      "json": "starter-shell-667-375-200-0-areas-navigation.json",
+      "jsonSha256": "54ef1197c91b3e3d4241bf2ead37b7aa09e6f1434f174d96baf788f6f66ee92d",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-back.png",
+      "pngSha256": "d3e73921e9115af98a46bc72a1e6e92de3c4f8a1638489d22725f8b2de6426c6",
+      "json": "fullstack-shell-667-375-200-0-back.json",
+      "jsonSha256": "a0d44d076773864a5513f353c2223c2c9f1ed5709cad37c1329cbbe406da2831",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-back",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-back.png",
+      "pngSha256": "4f3fd4383850b729976e6c1d556d305e387d364f1b21f6f56e38aa9169f405f1",
+      "json": "starter-shell-667-375-200-0-back.json",
+      "jsonSha256": "11139fd839eb79e1b0fb3fe11efd83b827e973654451df51e45ca035bfcca47c",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-forward.png",
+      "pngSha256": "6769cafe262f445816aded9503cf7ce68d8df5da3ab55bf2d827241ce8b11304",
+      "json": "fullstack-shell-667-375-200-0-forward.json",
+      "jsonSha256": "5eb794841ec393cfd1dae3b54d3ccdc12fc9f121b5845704e1fac41bb987ccd9",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-forward",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-forward.png",
+      "pngSha256": "f56e4dc12cc896273e381dddedee474eb3d1245c0a8c779f187b6d40c1badca2",
+      "json": "starter-shell-667-375-200-0-forward.json",
+      "jsonSha256": "b3fcd184d433eb4f6dd142ac01d03a88e75f31784e19595ac146152509eaf6de",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-0-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-0-reload.png",
+      "pngSha256": "17001adb1eb3008994dff4a628ce0f4e11df2aabf0448769a952a0c109606f8d",
+      "json": "fullstack-shell-667-375-200-0-reload.json",
+      "jsonSha256": "1f107893576421b15eafe1923d61bb7f4644748e595b4f987722779ceebdf19a",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-0-reload",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-0-reload.png",
+      "pngSha256": "2670df4d64f8f228fcaa8837ac115d6b4b356bc185638696aa9369cc8b25365e",
+      "json": "starter-shell-667-375-200-0-reload.json",
+      "jsonSha256": "53433d323c4938d4f5782695894123482507d14a22a0b60a254048bd913bf672",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-844-390-100-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-844-390-100-0-workspace-closed.png",
+      "pngSha256": "253587e3ebe52e84281d2fdff8517c249b3e468d45371fbc1d92fcbb155217a0",
+      "json": "fullstack-shell-844-390-100-0-workspace-closed.json",
+      "jsonSha256": "d3ec3e9757f7404fad491d6fffde55cb756f5d014ffe32cf275031d3af979ecd",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-100-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-844-390-100-0-workspace-closed.png",
+      "pngSha256": "a794d8d6abc5511bbafd6b5c0791b14ada33ed900d1fc72912c1a63df6cdc180",
+      "json": "starter-shell-844-390-100-0-workspace-closed.json",
+      "jsonSha256": "6a86f6675eb3efc06f1d9ca177d9589bd53ee81a111038b571161976beccb338",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-100-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-844-390-100-0-laboratory-closed.png",
+      "pngSha256": "794957bf34b65c904654cf598c9e56e35f56f95de290b98b1ac027063f64d029",
+      "json": "fullstack-shell-844-390-100-0-laboratory-closed.json",
+      "jsonSha256": "aec792e5a28862330f059be30f2bb31860d217f563078f916811a4407da0f63e",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-100-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-844-390-100-0-laboratory-closed.png",
+      "pngSha256": "73aaa737a260f6990a9c81acebb69e0884fe8493f9a0f2c5ece15a7fd2bd5033",
+      "json": "starter-shell-844-390-100-0-laboratory-closed.json",
+      "jsonSha256": "87996404770c66f84f5921729bdd7e6c310ab2a381273cb0bd2f4e5bba5c81c8",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 16,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-200-0-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-844-390-200-0-workspace-closed.png",
+      "pngSha256": "923330ab2db0118e786537b19f7a93051c6f8574fed16491ccc73be6546072f7",
+      "json": "fullstack-shell-844-390-200-0-workspace-closed.json",
+      "jsonSha256": "7f8d9e400e82f2d15eac636be83ba724586b1037a9e7954ebb76b51106701d74",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-200-0-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-844-390-200-0-workspace-closed.png",
+      "pngSha256": "c3fc111dfa5a7f7be649d6af367c6e3b0c19117e8240c2cfbf304b5b6cc216cf",
+      "json": "starter-shell-844-390-200-0-workspace-closed.json",
+      "jsonSha256": "cdfd358139ca20adf9e624c12b5db454f7672c40722400eabfa975b52d0a1190",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-844-390-200-0-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-844-390-200-0-laboratory-closed.png",
+      "pngSha256": "9ad554af52698b46540e051f6311e11c8c7bbd1af39930b25c10ca565da8b427",
+      "json": "fullstack-shell-844-390-200-0-laboratory-closed.json",
+      "jsonSha256": "a182fb940baca14bb16b28d82c2e8e5ee6e024cdc418bcb49da0ddba044f0c1e",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-844-390-200-0-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-844-390-200-0-laboratory-closed.png",
+      "pngSha256": "eeb885fb41d5196ac8e528cdf769b8d03b5ccd40e33f24889f4d522cba1c7f99",
+      "json": "starter-shell-844-390-200-0-laboratory-closed.json",
+      "jsonSha256": "86d8aae9458be5ba862f0ad1b95762e1c1c4e6d3108d5882fdd882ef6ba874ab",
+      "dimensions": [
+        844,
+        390
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-200-34-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-200-34-workspace-closed.png",
+      "pngSha256": "1a0d4a64490f4277526ffb78e288c383a55cb903072f1b8da5812d6d47e47468",
+      "json": "fullstack-shell-375-900-200-34-workspace-closed.json",
+      "jsonSha256": "f6ad93188dbf24fb5104919f0de1b70aacb8cab8cb113b8adade800769767aed",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-200-34-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-200-34-workspace-closed.png",
+      "pngSha256": "b55ffc61709acbda0792055e4ed19cad5b4b8a1dd63eed3be86953dd950f047b",
+      "json": "starter-shell-375-900-200-34-workspace-closed.json",
+      "jsonSha256": "f7c4a738fb8df0a3f48735b861c0a3ab73dc4b5101f499e8752093f80455a46d",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-375-900-200-34-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-375-900-200-34-laboratory-closed.png",
+      "pngSha256": "402a599e9f50d0f57a3514fe29c7a2e07f81eea7cd12f3b09a8e738f32ee5334",
+      "json": "fullstack-shell-375-900-200-34-laboratory-closed.json",
+      "jsonSha256": "9bb8e4e052b85274179d5a50bfa89f1b78ccb58ac357ef2a52385c7fcb373b57",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-375-900-200-34-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-375-900-200-34-laboratory-closed.png",
+      "pngSha256": "e833d5b98341e447c9a6de3e82dd4a5aebe53078c4024bed7d180626defcf9dc",
+      "json": "starter-shell-375-900-200-34-laboratory-closed.json",
+      "jsonSha256": "30d6291c50242f9191b4de7b0c1939f85977b2aabd3ecf4d76fd9b7de00e2903",
+      "dimensions": [
+        375,
+        900
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-workspace-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-workspace-closed.png",
+      "pngSha256": "59c0c0293beb620c328e41314dd472700420d23d778c1f3850990f54efd56dfd",
+      "json": "fullstack-shell-667-375-200-34-workspace-closed.json",
+      "jsonSha256": "8674fb855be5d59f012f57220e85b23202158fcec467fdb20aafd2bab08d20e8",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-workspace-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-workspace-closed.png",
+      "pngSha256": "8270e46f0f8f3531b5eea3935a7abde76f5d1023b616ee0401535f39bff7edde",
+      "json": "starter-shell-667-375-200-34-workspace-closed.json",
+      "jsonSha256": "c2383da17429faaa0707043a429979b8e7904933459c5d2ba43ec1abda8055f1",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-laboratory-closed",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-laboratory-closed.png",
+      "pngSha256": "1d82bb408660db7945d7f1e9fe4e96b3d21ecc2770f13417785dbc12e484a216",
+      "json": "fullstack-shell-667-375-200-34-laboratory-closed.json",
+      "jsonSha256": "670e1d3633124b2fe04c1a449d91f546f0313d026523c1637c8608a31d08bad5",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-laboratory-closed",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-laboratory-closed.png",
+      "pngSha256": "64ab50328374f2e308f38a1668deaa762399adde02e1a6c77c482e34f4f8ad23",
+      "json": "starter-shell-667-375-200-34-laboratory-closed.json",
+      "jsonSha256": "3dabc38f7c1cf7fdef3fc903c5550a8939e368a66f35f8b93a7619042c94665f",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-last-control-focus",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-last-control-focus.png",
+      "pngSha256": "0592729b839680e4ffef99e7e6b63c01fc876d6fd4febf7e9d8fff8ea0ee6092",
+      "json": "fullstack-shell-667-375-200-34-last-control-focus.json",
+      "jsonSha256": "708c110dc8ebad22da6bba28e7d0a557beaaea1ca277ece49cc9a0ff445f3ea4",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-34-last-control-focus",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-last-control-focus.png",
+      "pngSha256": "e0a0e01c144d1b7d282b6a561f141559d6c7685922f1287a7cda3428d9a53cee",
+      "json": "starter-shell-667-375-200-34-last-control-focus.json",
+      "jsonSha256": "a55e743b6654516bce554f3b89213331c4033e65e4d2ae04e40c21a9ddc0c805",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    },
+    {
+      "caseId": "shell-667-375-200-34-areas-navigation",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-areas-navigation.png",
+      "pngSha256": "b6f4a5d3ebdd4bc9eda1fc0e2b9ebb2a49e250391f94fb742b37cbc7d96fefec",
+      "json": "fullstack-shell-667-375-200-34-areas-navigation.json",
+      "jsonSha256": "5cc945b4d57ce9b23e6946833647b11824c4ca1c2a14c58bdc6ebae73a49358c",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-areas-navigation",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-areas-navigation.png",
+      "pngSha256": "159ed2c48c82a5af927e0b8d60c86f39783836dcf2f7b0a05d7873908f0bba86",
+      "json": "starter-shell-667-375-200-34-areas-navigation.json",
+      "jsonSha256": "45279c8290b63e7c2854cae85079bdf10203cc897e43290116adf3750096a88a",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-back",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-back.png",
+      "pngSha256": "c1a1efb9d1e964a12e4429411154a3275f6cefe26bd9020613585d13aaa4b48b",
+      "json": "fullstack-shell-667-375-200-34-back.json",
+      "jsonSha256": "f68b3b44d6afd9a6832de8b8ad02952b93a74ba0f80f5cab34a0d4f9884102a6",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-back",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-back.png",
+      "pngSha256": "e0a0e01c144d1b7d282b6a561f141559d6c7685922f1287a7cda3428d9a53cee",
+      "json": "starter-shell-667-375-200-34-back.json",
+      "jsonSha256": "ba840cab57bc795da046de4215d73a5c0f4bd714f3d0e32cf53be71e7a638e09",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-forward",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-forward.png",
+      "pngSha256": "b6f4a5d3ebdd4bc9eda1fc0e2b9ebb2a49e250391f94fb742b37cbc7d96fefec",
+      "json": "fullstack-shell-667-375-200-34-forward.json",
+      "jsonSha256": "a57e6aa9fc6938fc2512c0b5e85c69199f4561f3d92e5281ce45f615528c3f64",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-forward",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-forward.png",
+      "pngSha256": "159ed2c48c82a5af927e0b8d60c86f39783836dcf2f7b0a05d7873908f0bba86",
+      "json": "starter-shell-667-375-200-34-forward.json",
+      "jsonSha256": "0b14e975774a75e3cdd88c7307c0a6bc39506dbf454327f3ccb68cc961f20828",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-reload",
+      "source": "fullstack",
+      "png": "fullstack-shell-667-375-200-34-reload.png",
+      "pngSha256": "b6f4a5d3ebdd4bc9eda1fc0e2b9ebb2a49e250391f94fb742b37cbc7d96fefec",
+      "json": "fullstack-shell-667-375-200-34-reload.json",
+      "jsonSha256": "41f3c75617aa0ac15aa41fca63cdfa4a3ddc0dfcc13a5f9c787c8f18a721abe7",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": false
+    },
+    {
+      "caseId": "shell-667-375-200-34-reload",
+      "source": "starter",
+      "png": "starter-shell-667-375-200-34-reload.png",
+      "pngSha256": "2670df4d64f8f228fcaa8837ac115d6b4b356bc185638696aa9369cc8b25365e",
+      "json": "starter-shell-667-375-200-34-reload.json",
+      "jsonSha256": "8f30c891316a14229fba431f3ec316260f45b84e3eb3ead580b5632913e8a988",
+      "dimensions": [
+        667,
+        375
+      ],
+      "rootFontPx": 32,
+      "visuallyInspectedByA": true
+    }
+  ],
+  "finalDocumentChecks": {
+    "jsonAndRelativeReferences": "PASS",
+    "sourceScope": "035_DOCUMENTATION_ONLY",
+    "artifactManifestReconciled": "PASS",
+    "whitespace": "PASS",
+    "newRuntimeOrSuiteExecuted": false
+  }
+}

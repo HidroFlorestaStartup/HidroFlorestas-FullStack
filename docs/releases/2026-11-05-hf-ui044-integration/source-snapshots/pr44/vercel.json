@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "docs/handoff-ajustes-interface-20261030": false,
+      "development": false,
+      "feat/account-verification-recovery": false,
+      "feat/account-deletion": false,
+      "review/cri-reconciliation-20261010": false,
+      "review/014-account-test-runners": false,
+      "review/015-environmental-drafts": false,
+      "review/016-area-covers": false,
+      "review/cri-audit-20261010": false,
+      "release/cri-rc-20261010": false,
+      "review/cri-rc-validation-20261012": false,
+      "feat/frontend-login": false,
+      "feat/frontend-account": false,
+      "feat/frontend-workspace-shell": false,
+      "feat/frontend-laboratory-dashboard": false,
+      "feat/frontend-areas-cover": false,
+      "022-fix-concurrency-ihfr": false,
+      "feat/frontend-collections": false,
+      "feat/frontend-environmental-drafts": false,
+      "feat/frontend-ihfr": false,
+      "feat/frontend-territorial-map": false,
+      "feat/frontend-user-administration": false,
+      "feat/frontend-landing-consolidation": false,
+      "release/frontend-rc-20261021": false,
+      "fix/investigacoes-intermitentes-20261023-local01": false,
+      "docs/hf-doc-local01-20261024": false,
+      "docs/hf-doc-chat01-20261024": false,
+      "docs/hf-int-doc27-20261024": false,
+      "docs/hf-night-students-20261025": false,
+      "fix/hf-night-fr015-20261025": false,
+      "fix/hf-night-async-focus-20261025": false,
+      "fix/hf-night-admin-focus-20261025": false,
+      "test/hf-night-local-scheduler-20261025": false,
+      "test/hf-night-baseline-20261025": false,
+      "feat/hf-night-01": false,
+      "release/hf-close-01-20261025": false
+    }
+  }
+}

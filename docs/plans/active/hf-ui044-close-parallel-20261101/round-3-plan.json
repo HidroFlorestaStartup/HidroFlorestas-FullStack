@@ -1,0 +1,54 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "round": 3,
+  "status": "PLANNED_NOT_EXECUTED",
+  "previousPublishedSha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+  "previousRun": 41353270282,
+  "attemptsPerSha": 1,
+  "causesAndArtifacts": "round-2.json",
+  "ownerCommits": {
+    "A": [
+      "86b6fd00fdb047930b9518ff2e7ec7919c7454bd",
+      "58440f763fe2f537cb164fc7ce125cd947cd0652"
+    ],
+    "B": [
+      "561e34b2b33604a25fab3fc291c79360bb308f6e",
+      "bb8ac764bb1ba7d8f2c8c316725844f84a9957c0",
+      "d1e6f83e67a546c25e647d1b36e32ac124a2b885"
+    ]
+  },
+  "jobsToExecute": {
+    "smoke": 5,
+    "ui-a": 35,
+    "ui-b": 35
+  },
+  "rcUi037": "NOT_RUN_ON_R3; job explicitly disabled because only instrumentation changed",
+  "scheduledTimeoutSum": 75,
+  "retainedFourJobDefinitionTimeoutSum": 110,
+  "qaCeilingConservativelyCounted": 330,
+  "CODE_SHA_TESTED_RC": "d62fb08cf65aca5dc704231f88594030f49279cb",
+  "RC_RUN": 41353270282,
+  "RC_ATTEMPT": 1,
+  "functionalSourceEquality": {
+    "method": "Actual official isMailSnapshotPath over tracked Git blobs/modes; not raw checkout-byte fingerprint",
+    "paths": 630,
+    "manifestSha256": "0622a8b235e30943e132d4aefab60791ac3a43f2a76d3ab9fd593c2236e6166d",
+    "preliminaryCodeTarget": "181be8cffa9adc68531266f33d4e000ea7f27509",
+    "finalPublishedHead": "Coordinator must recompute after final local commit and before push",
+    "rcEnvAndCommand": "Identical to R2; only new workflow job condition differs",
+    "qualification": "No SUCCESS transferred to another SHA; new UI06 runtime still required"
+  },
+  "localPreflight": {
+    "node": "24.14.0, not CI24.19",
+    "A_smoke": "19/19 PASS on58440f7,12.9s,Chromium153,single-project synthetic",
+    "B": "Actual navigation/focus-reveal/failure-frame counterproofs PASS",
+    "composedTypecheck": "PASS",
+    "composedFocalLint": "PASS"
+  },
+  "boundedReferenceFindings": "Pinned667x375/text200 main absence remains UNOBSERVED/INSUFFICIENT regionally and FONT_COMPARISON_NOT_ASSESSABLE_FOR_OCCLUDED_REFERENCE_REGION. Pair NON_EQUIVALENT records evidence of absence; no font/visual acceptance.",
+  "B_semanticCore": "Only area-empty/collection-record add one declared semantic scroll before measurement in both sources. Initial obstruction has own immutable diagnostic PNG/JSON/hash/wrapper and zero planned coverage contribution; regional UNOBSERVED remains literal. FullStack initial obstruction fails; post requires positive band/unobstructed hit and ratio1 for fitting target, with explicit reading-by-scroll limit for oversized message. Qualifier ratio1 unchanged. Obstructed reference remains NON_EQ, never font/legibility acceptance.",
+  "finalComposedPreflight": {"codeHead": "3ba9ae5b7553ececd0ba56310b026f73e9bbdba8", "runtime": "Local Node24.14, not CI", "fullTypecheck": "PASS", "focalLint": "PASS", "BIntegratedBlobEqualsReviewedD1": "aec94bdc244cb2d80e94eef27bae5ef1b5125267"},
+  "nativeRequirements": "FullStack ratio1, exact16/32, hit/focus remain strict in the original scenarios; no product or official test change after R2",
+  "remainingLimit": "This is the last authorized QA head/attempt. No fourth documentation push; archive final docs locally with hashes and publish factual final review in same PR45 comment.",
+  "finalQualification": "Await all161 bilateral cases, actual PNG analysis, terminal R3 artifacts and final non-author review; human/science/provider acceptance pending"
+}

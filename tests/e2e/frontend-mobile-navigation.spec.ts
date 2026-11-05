@@ -63,15 +63,23 @@ async function restorationDifference(page: Page, saved: number) {
   }, saved);
 }
 async function settleTransitions(page: Page) {
-  // Await the existing global .3s transitions naturally. New transitions can
-  // replace an inherited font-size transition while the root text scale changes.
+  // Animated shells can continually replace an Animation.finished promise
+  // during font-scale reflow. Wait for one bounded transition interval and
+  // two layout frames; the following focus and hit/visibility assertions are
+  // the actual correctness gate, never the animation promise itself.
   await page.evaluate(async () => {
-    for (;;) {
-      const finite = document.getAnimations().filter(animation =>
-        animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
-      if (!finite.length) return;
-      await Promise.allSettled(finite.map(animation => animation.finished));
+    const transitionEnds = document.getAnimations().filter(animation => {
+      const endTime = animation.effect?.getComputedTiming().endTime;
+      return animation.playState === "running" &&
+        typeof endTime === "number" && Number.isFinite(endTime) && endTime <= 1000;
+    }).map(animation => animation.finished);
+    if (transitionEnds.length) {
+      await Promise.race([
+        Promise.allSettled(transitionEnds),
+        new Promise<void>(resolve => setTimeout(resolve, 900)),
+      ]);
     }
+    await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
   });
 }
 async function focusAndExpose(target: Locator) {
@@ -122,7 +130,7 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         const list = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: AREA_FIXTURES.prefix + " 0", exact: true }) });
         await expect(list).toBeVisible();
         const nav = page.getByRole("navigation", { name: "Navegação principal", exact: true });
-        expect(await nav.getByRole("link").count()).toBe(isAdmin ? 4 : 3);
+        expect(await nav.getByRole("link").count()).toBe(isAdmin ? 2 : 1);
         for (const link of await nav.getByRole("link").all()) {
           const broken = await link.evaluate(node => {
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT); let child: Node | null;
@@ -238,10 +246,10 @@ for (const width of [375, 320]) for (const percent of [100, 200]) {
         await page.getByRole("button", { name: "Conta", exact: true }).click();
         await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toBeVisible(); await page.keyboard.press("Escape");
         await page.setViewportSize({ width: 768, height: 900 });
-        await expect(page.getByRole("button", { name: "Conta", exact: true })).toHaveCount(0);
+        await expect(page.getByRole("button", { name: "Conta", exact: true })).toHaveCount(1);
         await page.setViewportSize({ width, height: 900 });
       }
-      await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Sair", exact: true }).click();
+      await page.getByRole("link", { name: "Sair", exact: true }).click();
       await expect(page).toHaveURL(/\/login$/);
     } finally {
       await db.user.update({ where: { id: owner }, data: { role: original.role } }); await db.$disconnect();

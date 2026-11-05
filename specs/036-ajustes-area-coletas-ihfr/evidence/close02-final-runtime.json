@@ -1,0 +1,4238 @@
+{
+  "schema": "hf-ui044-b-terminal-docs-v1",
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "owner": "B",
+  "nativeAgent": "/root/b_visual",
+  "state": "BLOCKED_WITH_EXACT_FINDINGS",
+  "ui06": "UI06_B_EVIDENCE_INCOMPLETE",
+  "evidenceComplete": false,
+  "codeShaTested": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73",
+  "treeTested": "9b3f6d39c89a35e90bf357e058f3fb037907e125",
+  "workerCodeCommit": "d1e6f83e67a546c25e647d1b36e32ac124a2b885",
+  "run": 41356318087,
+  "attempt": 1,
+  "job": 124997441830,
+  "artifact": 13104015300,
+  "artifactSha256": "2e1911a57327e38267c0ec36016514272a00727cc4943f55d72b32f91d4f0f33",
+  "artifactIntegrity": {
+    "digestCheckedFromLocalBytes": true,
+    "zipCrc": "PASS",
+    "entries": 55,
+    "png": 24,
+    "pngChunksCrcVerifiedByCoordinator": 434,
+    "sampleMetadataVerifiedByCoordinator": 22
+  },
+  "counts": {
+    "PASS": 9,
+    "FAIL": 3,
+    "NOT_RUN": 63
+  },
+  "comparabilityCounts": {
+    "COMPARABLE": 9,
+    "INSUFFICIENT_EVIDENCE": 66
+  },
+  "playwrightWrappers": {
+    "passed": 11,
+    "failed": 2,
+    "didNotRun": 63,
+    "qualification": "Wrapper PASS does not override boundedPair FAIL; final summary did not run"
+  },
+  "coverageByState": {
+    "area-empty": {
+      "PASS": 9,
+      "FAIL": 3
+    },
+    "area-populated": {
+      "NOT_RUN": 12
+    },
+    "collection-current": {
+      "NOT_RUN": 12
+    },
+    "collection-missing": {
+      "NOT_RUN": 12
+    },
+    "collection-record": {
+      "NOT_RUN": 12
+    },
+    "ihfr-qualifier-CONTRATO_EXPERIMENTAL": {
+      "NOT_RUN": 3
+    },
+    "ihfr-qualifier-NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO": {
+      "NOT_RUN": 3
+    },
+    "ihfr-qualifier-SUJEITO_A_RECALIBRACAO": {
+      "NOT_RUN": 3
+    },
+    "ihfr-qualifier-VALIDACAO_CIENTIFICA_PENDENTE": {
+      "NOT_RUN": 3
+    },
+    "keyboard-back-forward": {
+      "NOT_RUN": 2
+    },
+    "reload-observed-before-reconfiguration": {
+      "NOT_RUN": 1
+    }
+  },
+  "reviewedPng": [
+    {
+      "file": "diagnostic-fullstack-domain-area-empty-667-375-200.png",
+      "sha256": "9c3fb21e4ace9026676c3f61c952462a9424ac66a5edb2bf6dac1331e6a46886",
+      "visuallyInspected": true,
+      "qualification": "DIAGNOSTIC_NOT_ACCEPTANCE"
+    },
+    {
+      "file": "diagnostic-starter-domain-area-empty-320-900-200.png",
+      "sha256": "301a73aa305d3ab6f831cca0fa3d6f1812b888a4f8de0ed551a799dcd5aafb7c",
+      "visuallyInspected": true,
+      "qualification": "DIAGNOSTIC_NOT_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-1440-900-100.png",
+      "sha256": "75911996726d1c366dab941a093881af55345752ebc9d7c1dba48d23a67e74a9",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-1440-900-200.png",
+      "sha256": "85f51fc0dc9cf1ceba410b268d63fd029558df9855610a54d7dc68605bb7cf86",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-320-900-100.png",
+      "sha256": "3c5f7ae7a9cb6d6f3d28dee5e0742dbe35c6a3788de4942c65e72ff4b3263f58",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-320-900-200.png",
+      "sha256": "2d0c7c5d043529836520d7c790711f18c60668a0e9e3a5a1bdfa4a71856d4b7b",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-375-900-100.png",
+      "sha256": "3b2871547f29dc88a3b0600cd86ae61b25d4ef0f0104c1a1df9fdfc12083589f",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-375-900-200.png",
+      "sha256": "7612758353015d06fded6398ff88942fd7f8a61a9d8e1da5e154ad7f183ebf8b",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-390-844-100.png",
+      "sha256": "1bbbf70567eabda1a97b491015955acc06555e8c135fb8ecb8baa2e00020d58a",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-390-844-200.png",
+      "sha256": "53132137bdb8b332f44cdcff635fdfe3378f6355b8b3043ba080170d18f43e5c",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-768-900-100.png",
+      "sha256": "f7fe4008710de73ba5f465cb2341ca06a07cefcdbcb07e371f8003f1187e2c54",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-768-900-200.png",
+      "sha256": "2272869751501512db7f6672886eee303f078d8aa3139a0d90e38e4eacda8fe8",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "fullstack-domain-area-empty-844-390-200.png",
+      "sha256": "2e00e0ffd877132a596d871a4677baafbec98c2440e02a6d351aabaf3507ec12",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-1440-900-100.png",
+      "sha256": "9f36d9220b2c323e0471ff465098c6363bb86522b532aaa5ecf5d7f943d11472",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-1440-900-200.png",
+      "sha256": "1fc32c523a761429a45e48accbe2176b90c5059266c8ace26cd7c4b52480ed9c",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-320-900-100.png",
+      "sha256": "6d9c6a1264367e72136f3dbca2a6bae1ff62ffe1c6abef766ca01f829ce91cfb",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-375-900-100.png",
+      "sha256": "2798c84b0c8cc87de3a2c983c3a5fdaa76fce5cdeb0f9a078591d60bf6c80e22",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-375-900-200.png",
+      "sha256": "d52f10cdaf62b93691e9201378e3527886d2ea214caaef307735492d45973aff",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-390-844-100.png",
+      "sha256": "5a20582c5d28f6e3282715b82d10d6e492ff32528fce8cf5a532a10c0ef4ec57",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-390-844-200.png",
+      "sha256": "239a97816a62ca5fb57600dadeff317d9cdc116524a8f236336c73f1660c9367",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-667-375-200-initial-occluded.png",
+      "sha256": "f56e4dc12cc896273e381dddedee474eb3d1245c0a8c779f187b6d40c1badca2",
+      "visuallyInspected": true,
+      "qualification": "DIAGNOSTIC_NOT_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-667-375-200.png",
+      "sha256": "c31351c46375405792efe723b48028f46e7e888d8ee288845921f30dadef2e7c",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-768-900-100.png",
+      "sha256": "8be88a88c275f1d755ba1885e81a2128e209094a1f0f5711bec501b8c49578cd",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    },
+    {
+      "file": "starter-domain-area-empty-768-900-200.png",
+      "sha256": "e025c69dbc83e442984c33eceaf66e3f7caefd9bb8eeb7c6c5665a50aae1adf4",
+      "visuallyInspected": true,
+      "qualification": "PLANNED_SOURCE_VIEWPORT_NOT_WHOLE_PAGE_ACCEPTANCE"
+    }
+  ],
+  "allAvailablePngVisuallyInspected": true,
+  "allPlannedPngAvailable": false,
+  "cases": [
+    {
+      "id": "domain-area-empty-320-900-100",
+      "state": "area-empty",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-320-900-100.png",
+          "json": "fullstack-domain-area-empty-320-900-100.json",
+          "pngSha256": "3c5f7ae7a9cb6d6f3d28dee5e0742dbe35c6a3788de4942c65e72ff4b3263f58",
+          "jsonSha256": "f733e6df77ed3a228955ed1826d35e38367ff40b56f28b8ff0db7566dc9aabbb",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-320-900-100.png",
+          "json": "starter-domain-area-empty-320-900-100.json",
+          "pngSha256": "6d9c6a1264367e72136f3dbca2a6bae1ff62ffe1c6abef766ca01f829ce91cfb",
+          "jsonSha256": "b4c7471bcdddfcfb4b512f739dc2ed0b8813771481a24258a8cf55a221b722b5",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 900,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 839
+            },
+            "railTop": 829,
+            "readingTop": 61,
+            "readingBottom": 829,
+            "availableReadingHeight": 768,
+            "target": {
+              "rect": {
+                "top": 1988.203125,
+                "bottom": 2098.203125,
+                "left": 16,
+                "right": 304,
+                "width": 288,
+                "height": 110
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 2043.203125
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 900,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 839
+            },
+            "railTop": 829,
+            "readingTop": 61,
+            "readingBottom": 829,
+            "availableReadingHeight": 768,
+            "target": {
+              "rect": {
+                "top": 598.203125,
+                "bottom": 708.203125,
+                "left": 16,
+                "right": 304,
+                "width": 288,
+                "height": 110
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 653.203125
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 160,
+              "y": 653.203125
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 85,
+              "bottom": 231,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 146
+            },
+            "main": {
+              "top": 231,
+              "bottom": 1839,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 1608
+            },
+            "railTop": 835,
+            "readingTop": 231,
+            "readingBottom": 835,
+            "availableReadingHeight": 604,
+            "target": {
+              "rect": {
+                "top": 984,
+                "bottom": 1040,
+                "left": 69,
+                "right": 251,
+                "width": 182,
+                "height": 56
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 1012
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 146,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 146
+            },
+            "main": {
+              "top": -331,
+              "bottom": 1277,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 1608
+            },
+            "railTop": 835,
+            "readingTop": 146,
+            "readingBottom": 835,
+            "availableReadingHeight": 689,
+            "target": {
+              "rect": {
+                "top": 422,
+                "bottom": 478,
+                "left": 69,
+                "right": 251,
+                "width": 182,
+                "height": 56
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 160,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-320-900-200",
+      "state": "area-empty",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "DEFECT_FOUND",
+      "completeness": "PARTIAL",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-320-900-200.png",
+          "json": "fullstack-domain-area-empty-320-900-200.json",
+          "pngSha256": "2d0c7c5d043529836520d7c790711f18c60668a0e9e3a5a1bdfa4a71856d4b7b",
+          "jsonSha256": "2f942284b5fdd6b36385d9068b0f150c3605aec2f2bd20bf03f37265c90e4d07",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [
+        "starter:CASE_ASSERTION_OR_CAPTURE_FAILED@domain.spec.ts:257:97",
+        "PAIR_REQUIRES_TWO_SOURCE_SAMPLES"
+      ],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 900,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 826
+            },
+            "railTop": 767,
+            "readingTop": 74,
+            "readingBottom": 767,
+            "availableReadingHeight": 693,
+            "target": {
+              "rect": {
+                "top": 4766.796875,
+                "bottom": 5224.796875,
+                "left": 16,
+                "right": 304,
+                "width": 288,
+                "height": 458
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 4995.796875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 900,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 826
+            },
+            "railTop": 767,
+            "readingTop": 74,
+            "readingBottom": 767,
+            "availableReadingHeight": 693,
+            "target": {
+              "rect": {
+                "top": 249.796875,
+                "bottom": 707.796875,
+                "left": 16,
+                "right": 304,
+                "width": 288,
+                "height": 458
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 160,
+                  "y": 478.796875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 160,
+              "y": 478.796875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 201,
+              "bottom": 491,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 290
+            },
+            "main": {
+              "top": 491,
+              "bottom": 4315,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 3824
+            },
+            "railTop": 771,
+            "readingTop": 491,
+            "readingBottom": 771,
+            "availableReadingHeight": 280,
+            "target": {
+              "rect": {
+                "top": 2244,
+                "bottom": 2524,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 2384
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 290,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 290
+            },
+            "main": {
+              "top": -1443,
+              "bottom": 2381,
+              "left": 0,
+              "right": 320,
+              "width": 320,
+              "height": 3824
+            },
+            "railTop": 771,
+            "readingTop": 290,
+            "readingBottom": 771,
+            "availableReadingHeight": 481,
+            "target": {
+              "rect": {
+                "top": 310,
+                "bottom": 590,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 196.359375,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-375-900-100",
+      "state": "area-empty",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-375-900-100.png",
+          "json": "fullstack-domain-area-empty-375-900-100.json",
+          "pngSha256": "3b2871547f29dc88a3b0600cd86ae61b25d4ef0f0104c1a1df9fdfc12083589f",
+          "jsonSha256": "a1986e91a40825655b5027219bd4c2bbcbe9728469bb9f97a87e7bab2f4372a4",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-375-900-100.png",
+          "json": "starter-domain-area-empty-375-900-100.json",
+          "pngSha256": "2798c84b0c8cc87de3a2c983c3a5fdaa76fce5cdeb0f9a078591d60bf6c80e22",
+          "jsonSha256": "d23783c16fe2f0bb826c2ad0a4a648536aebd29327c9ff9b5e62353ddc6ce778",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 900,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 839
+            },
+            "railTop": 829,
+            "readingTop": 61,
+            "readingBottom": 829,
+            "availableReadingHeight": 768,
+            "target": {
+              "rect": {
+                "top": 1984.875,
+                "bottom": 2094.875,
+                "left": 16,
+                "right": 359,
+                "width": 343,
+                "height": 110
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 2039.875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 900,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 839
+            },
+            "railTop": 829,
+            "readingTop": 61,
+            "readingBottom": 829,
+            "availableReadingHeight": 768,
+            "target": {
+              "rect": {
+                "top": 597.875,
+                "bottom": 707.875,
+                "left": 16,
+                "right": 359,
+                "width": 343,
+                "height": 110
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 652.875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 187.5,
+              "y": 652.875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 61,
+              "bottom": 207,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 146
+            },
+            "main": {
+              "top": 207,
+              "bottom": 1795,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 1588
+            },
+            "railTop": 835,
+            "readingTop": 207,
+            "readingBottom": 835,
+            "availableReadingHeight": 628,
+            "target": {
+              "rect": {
+                "top": 960,
+                "bottom": 1016,
+                "left": 69,
+                "right": 306,
+                "width": 237,
+                "height": 56
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 988
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 146,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 146
+            },
+            "main": {
+              "top": -331,
+              "bottom": 1257,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 1588
+            },
+            "railTop": 835,
+            "readingTop": 146,
+            "readingBottom": 835,
+            "availableReadingHeight": 689,
+            "target": {
+              "rect": {
+                "top": 422,
+                "bottom": 478,
+                "left": 69,
+                "right": 306,
+                "width": 237,
+                "height": 56
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 187.5,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-375-900-200",
+      "state": "area-empty",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-375-900-200.png",
+          "json": "fullstack-domain-area-empty-375-900-200.json",
+          "pngSha256": "7612758353015d06fded6398ff88942fd7f8a61a9d8e1da5e154ad7f183ebf8b",
+          "jsonSha256": "7dfdccc797ce5497d8ef7bb6c78669baf61ef4dbb54f84ff981efea543ee2d20",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-375-900-200.png",
+          "json": "starter-domain-area-empty-375-900-200.json",
+          "pngSha256": "d52f10cdaf62b93691e9201378e3527886d2ea214caaef307735492d45973aff",
+          "jsonSha256": "ca4cec457d5befa3111c620522bc37e5306d40dde66c45bd04dc1940f76445c3",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 900,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 826
+            },
+            "railTop": 767,
+            "readingTop": 74,
+            "readingBottom": 767,
+            "availableReadingHeight": 693,
+            "target": {
+              "rect": {
+                "top": 4082.46875,
+                "bottom": 4460.46875,
+                "left": 16,
+                "right": 359,
+                "width": 343,
+                "height": 378
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 4271.46875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 900,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 826
+            },
+            "railTop": 767,
+            "readingTop": 74,
+            "readingBottom": 767,
+            "availableReadingHeight": 693,
+            "target": {
+              "rect": {
+                "top": 330.46875,
+                "bottom": 708.46875,
+                "left": 16,
+                "right": 359,
+                "width": 343,
+                "height": 378
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 187.5,
+                  "y": 519.46875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 187.5,
+              "y": 519.46875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 201,
+              "bottom": 491,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 290
+            },
+            "main": {
+              "top": 491,
+              "bottom": 4027,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 3536
+            },
+            "railTop": 771,
+            "readingTop": 491,
+            "readingBottom": 771,
+            "availableReadingHeight": 280,
+            "target": {
+              "rect": {
+                "top": 1956,
+                "bottom": 2236,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 2096
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 375,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 290,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 290
+            },
+            "main": {
+              "top": -1155,
+              "bottom": 2381,
+              "left": 0,
+              "right": 375,
+              "width": 375,
+              "height": 3536
+            },
+            "railTop": 771,
+            "readingTop": 290,
+            "readingBottom": 771,
+            "availableReadingHeight": 481,
+            "target": {
+              "rect": {
+                "top": 310,
+                "bottom": 590,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 196.359375,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-390-844-100",
+      "state": "area-empty",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-390-844-100.png",
+          "json": "fullstack-domain-area-empty-390-844-100.json",
+          "pngSha256": "1bbbf70567eabda1a97b491015955acc06555e8c135fb8ecb8baa2e00020d58a",
+          "jsonSha256": "ec0c4e349018ddef832aad2271de77687c83fbb560784bd07cd6226215425869",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-390-844-100.png",
+          "json": "starter-domain-area-empty-390-844-100.json",
+          "pngSha256": "5a20582c5d28f6e3282715b82d10d6e492ff32528fce8cf5a532a10c0ef4ec57",
+          "jsonSha256": "156ffd14486e44bfcf541a65b91cafdd70f9de2fcab0694fc0014384129381dd",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 844,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 783
+            },
+            "railTop": 773,
+            "readingTop": 61,
+            "readingBottom": 773,
+            "availableReadingHeight": 712,
+            "target": {
+              "rect": {
+                "top": 1877.484375,
+                "bottom": 1987.484375,
+                "left": 16,
+                "right": 374,
+                "width": 358,
+                "height": 110
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 1932.484375
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 61,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 61
+            },
+            "main": {
+              "top": 61,
+              "bottom": 844,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 783
+            },
+            "railTop": 773,
+            "readingTop": 61,
+            "readingBottom": 773,
+            "availableReadingHeight": 712,
+            "target": {
+              "rect": {
+                "top": 542.484375,
+                "bottom": 652.484375,
+                "left": 16,
+                "right": 374,
+                "width": 358,
+                "height": 110
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 597.484375
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 195,
+              "y": 597.484375
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 61,
+              "bottom": 207,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 146
+            },
+            "main": {
+              "top": 207,
+              "bottom": 1771,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 1564
+            },
+            "railTop": 779,
+            "readingTop": 207,
+            "readingBottom": 779,
+            "availableReadingHeight": 572,
+            "target": {
+              "rect": {
+                "top": 936,
+                "bottom": 992,
+                "left": 69,
+                "right": 321,
+                "width": 252,
+                "height": 56
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 964
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 146,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 146
+            },
+            "main": {
+              "top": -335,
+              "bottom": 1229,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 1564
+            },
+            "railTop": 779,
+            "readingTop": 146,
+            "readingBottom": 779,
+            "availableReadingHeight": 633,
+            "target": {
+              "rect": {
+                "top": 394,
+                "bottom": 450,
+                "left": 69,
+                "right": 321,
+                "width": 252,
+                "height": 56
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 422
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 195,
+              "y": 422
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-390-844-200",
+      "state": "area-empty",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-390-844-200.png",
+          "json": "fullstack-domain-area-empty-390-844-200.json",
+          "pngSha256": "53132137bdb8b332f44cdcff635fdfe3378f6355b8b3043ba080170d18f43e5c",
+          "jsonSha256": "010902a41793d7c8746ef6c212fb502969128c88a81e1de317d44364f09207b9",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-390-844-200.png",
+          "json": "starter-domain-area-empty-390-844-200.json",
+          "pngSha256": "239a97816a62ca5fb57600dadeff317d9cdc116524a8f236336c73f1660c9367",
+          "jsonSha256": "e89635143298319daf00b8f56f2abace8d639c8cfa0df1cc5ff68fe979295a79",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 844,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 770
+            },
+            "railTop": 711,
+            "readingTop": 74,
+            "readingBottom": 711,
+            "availableReadingHeight": 637,
+            "target": {
+              "rect": {
+                "top": 4009.28125,
+                "bottom": 4347.28125,
+                "left": 16,
+                "right": 374,
+                "width": 358,
+                "height": 338
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 4178.28125
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 844,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 770
+            },
+            "railTop": 711,
+            "readingTop": 74,
+            "readingBottom": 711,
+            "availableReadingHeight": 637,
+            "target": {
+              "rect": {
+                "top": 314.28125,
+                "bottom": 652.28125,
+                "left": 16,
+                "right": 374,
+                "width": 358,
+                "height": 338
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 195,
+                  "y": 483.28125
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 195,
+              "y": 483.28125
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 201,
+              "bottom": 491,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 290
+            },
+            "main": {
+              "top": 491,
+              "bottom": 4027,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 3536
+            },
+            "railTop": 715,
+            "readingTop": 491,
+            "readingBottom": 715,
+            "availableReadingHeight": 224,
+            "target": {
+              "rect": {
+                "top": 1956,
+                "bottom": 2236,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 2096
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 290,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 290
+            },
+            "main": {
+              "top": -1183,
+              "bottom": 2353,
+              "left": 0,
+              "right": 390,
+              "width": 390,
+              "height": 3536
+            },
+            "railTop": 715,
+            "readingTop": 290,
+            "readingBottom": 715,
+            "availableReadingHeight": 425,
+            "target": {
+              "rect": {
+                "top": 282,
+                "bottom": 562,
+                "left": 137,
+                "right": 255.71875,
+                "width": 118.71875,
+                "height": 280
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 196.359375,
+                  "y": 422
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 196.359375,
+              "y": 422
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-768-900-100",
+      "state": "area-empty",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-768-900-100.png",
+          "json": "fullstack-domain-area-empty-768-900-100.json",
+          "pngSha256": "f7fe4008710de73ba5f465cb2341ca06a07cefcdbcb07e371f8003f1187e2c54",
+          "jsonSha256": "ecb8181c3b59dfa83e8b6190e837d02303b31ac082f3fbf2423b0ffc0d33f24a",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-768-900-100.png",
+          "json": "starter-domain-area-empty-768-900-100.json",
+          "pngSha256": "8be88a88c275f1d755ba1885e81a2128e209094a1f0f5711bec501b8c49578cd",
+          "jsonSha256": "7e33d2d0e501eef921baefe9852b5b3e8bd756db97579d4d53f0073f3f29d571",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 73.625,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 73.625
+            },
+            "main": {
+              "top": 73.625,
+              "bottom": 2207.3125,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 2133.6875
+            },
+            "railTop": 900,
+            "readingTop": 73.625,
+            "readingBottom": 900,
+            "availableReadingHeight": 826.375,
+            "target": {
+              "rect": {
+                "top": 2069.3125,
+                "bottom": 2159.3125,
+                "left": 224,
+                "right": 744,
+                "width": 520,
+                "height": 90
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 484,
+                  "y": 2114.3125
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 73.625,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 73.625
+            },
+            "main": {
+              "top": -1233.375,
+              "bottom": 900.3125,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 2133.6875
+            },
+            "railTop": 900,
+            "readingTop": 73.625,
+            "readingBottom": 900,
+            "availableReadingHeight": 826.375,
+            "target": {
+              "rect": {
+                "top": 762.3125,
+                "bottom": 852.3125,
+                "left": 224,
+                "right": 744,
+                "width": 520,
+                "height": 90
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 484,
+                  "y": 807.3125
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 484,
+              "y": 807.3125
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 61,
+              "bottom": 130,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 69
+            },
+            "main": {
+              "top": 130,
+              "bottom": 1362,
+              "left": 112,
+              "right": 768,
+              "width": 656,
+              "height": 1232
+            },
+            "railTop": 900,
+            "readingTop": 130,
+            "readingBottom": 900,
+            "availableReadingHeight": 770,
+            "target": {
+              "rect": {
+                "top": 811,
+                "bottom": 839,
+                "left": 193,
+                "right": 687,
+                "width": 494,
+                "height": 28
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 440,
+                  "y": 825
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 69,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 69
+            },
+            "main": {
+              "top": -245,
+              "bottom": 987,
+              "left": 112,
+              "right": 768,
+              "width": 656,
+              "height": 1232
+            },
+            "railTop": 900,
+            "readingTop": 69,
+            "readingBottom": 900,
+            "availableReadingHeight": 831,
+            "target": {
+              "rect": {
+                "top": 436,
+                "bottom": 464,
+                "left": 193,
+                "right": 687,
+                "width": 494,
+                "height": 28
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 440,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 440,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-768-900-200",
+      "state": "area-empty",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-768-900-200.png",
+          "json": "fullstack-domain-area-empty-768-900-200.json",
+          "pngSha256": "2272869751501512db7f6672886eee303f078d8aa3139a0d90e38e4eacda8fe8",
+          "jsonSha256": "c2815b02d78a88eb3e468de1cee5d37b88a7583a576a57ce9b05bd869a2a3bcd",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-768-900-200.png",
+          "json": "starter-domain-area-empty-768-900-200.json",
+          "pngSha256": "e025c69dbc83e442984c33eceaf66e3f7caefd9bb8eeb7c6c5665a50aae1adf4",
+          "jsonSha256": "684621451dfbf92ebddb1457af4db7d7588d282cb4ca3e5b17c4e839caf952d4",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 121,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 121
+            },
+            "main": {
+              "top": 121,
+              "bottom": 4181,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 4060
+            },
+            "railTop": 900,
+            "readingTop": 121,
+            "readingBottom": 900,
+            "availableReadingHeight": 779,
+            "target": {
+              "rect": {
+                "top": 3875,
+                "bottom": 4133,
+                "left": 224,
+                "right": 744,
+                "width": 520,
+                "height": 258
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 484,
+                  "y": 4004
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 121,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 121
+            },
+            "main": {
+              "top": -3160,
+              "bottom": 900,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 4060
+            },
+            "railTop": 900,
+            "readingTop": 121,
+            "readingBottom": 900,
+            "availableReadingHeight": 779,
+            "target": {
+              "rect": {
+                "top": 594,
+                "bottom": 852,
+                "left": 224,
+                "right": 744,
+                "width": 520,
+                "height": 258
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 484,
+                  "y": 723
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 484,
+              "y": 723
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 121,
+              "bottom": 258,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 137
+            },
+            "main": {
+              "top": 258,
+              "bottom": 4370,
+              "left": 224,
+              "right": 768,
+              "width": 544,
+              "height": 4112
+            },
+            "railTop": 900,
+            "readingTop": 258,
+            "readingBottom": 900,
+            "availableReadingHeight": 642,
+            "target": {
+              "rect": {
+                "top": 2803,
+                "bottom": 2971,
+                "left": 385,
+                "right": 607,
+                "width": 222,
+                "height": 168
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 496,
+                  "y": 2887
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 137,
+              "left": 0,
+              "right": 768,
+              "width": 768,
+              "height": 137
+            },
+            "main": {
+              "top": -2179,
+              "bottom": 1933,
+              "left": 224,
+              "right": 768,
+              "width": 544,
+              "height": 4112
+            },
+            "railTop": 900,
+            "readingTop": 137,
+            "readingBottom": 900,
+            "availableReadingHeight": 763,
+            "target": {
+              "rect": {
+                "top": 366,
+                "bottom": 534,
+                "left": 385,
+                "right": 607,
+                "width": 222,
+                "height": 168
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 496,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 496,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-1440-900-100",
+      "state": "area-empty",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-1440-900-100.png",
+          "json": "fullstack-domain-area-empty-1440-900-100.json",
+          "pngSha256": "75911996726d1c366dab941a093881af55345752ebc9d7c1dba48d23a67e74a9",
+          "jsonSha256": "9f31fce869b2226cbf40293194f813546512fdb60133b2b6febd762d0746b082",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-1440-900-100.png",
+          "json": "starter-domain-area-empty-1440-900-100.json",
+          "pngSha256": "9f36d9220b2c323e0471ff465098c6363bb86522b532aaa5ecf5d7f943d11472",
+          "jsonSha256": "df82a2152e1a493cf2ce3c90c43d1ba43c4ca8a9f1a7ab7c27d579b9d17bc93c",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 73.625,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 73.625
+            },
+            "main": {
+              "top": 73.625,
+              "bottom": 1962.828125,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 1889.203125
+            },
+            "railTop": 900,
+            "readingTop": 73.625,
+            "readingBottom": 900,
+            "availableReadingHeight": 826.375,
+            "target": {
+              "rect": {
+                "top": 1844.828125,
+                "bottom": 1914.828125,
+                "left": 320,
+                "right": 1320,
+                "width": 1000,
+                "height": 70
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 820,
+                  "y": 1879.828125
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 73.625,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 73.625
+            },
+            "main": {
+              "top": -989.375,
+              "bottom": 899.828125,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 1889.203125
+            },
+            "railTop": 900,
+            "readingTop": 73.625,
+            "readingBottom": 899.828125,
+            "availableReadingHeight": 826.203125,
+            "target": {
+              "rect": {
+                "top": 781.828125,
+                "bottom": 851.828125,
+                "left": 320,
+                "right": 1320,
+                "width": 1000,
+                "height": 70
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 820,
+                  "y": 816.828125
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 820,
+              "y": 816.828125
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 61,
+              "bottom": 130,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 69
+            },
+            "main": {
+              "top": 130,
+              "bottom": 961,
+              "left": 112,
+              "right": 1440,
+              "width": 1328,
+              "height": 831
+            },
+            "railTop": 900,
+            "readingTop": 130,
+            "readingBottom": 900,
+            "availableReadingHeight": 770,
+            "target": {
+              "rect": {
+                "top": 785,
+                "bottom": 813,
+                "left": 257,
+                "right": 819.796875,
+                "width": 562.796875,
+                "height": 28
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 538.3984375,
+                  "y": 799
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 16,
+            "header": {
+              "top": 0,
+              "bottom": 69,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 69
+            },
+            "main": {
+              "top": 69,
+              "bottom": 900,
+              "left": 112,
+              "right": 1440,
+              "width": 1328,
+              "height": 831
+            },
+            "railTop": 900,
+            "readingTop": 69,
+            "readingBottom": 900,
+            "availableReadingHeight": 831,
+            "target": {
+              "rect": {
+                "top": 724,
+                "bottom": 752,
+                "left": 257,
+                "right": 819.796875,
+                "width": 562.796875,
+                "height": 28
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 538.3984375,
+                  "y": 738
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 538.3984375,
+              "y": 738
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-1440-900-200",
+      "state": "area-empty",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "PASS",
+      "comparability": "COMPARABLE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "COMPLETE",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-1440-900-200.png",
+          "json": "fullstack-domain-area-empty-1440-900-200.json",
+          "pngSha256": "85f51fc0dc9cf1ceba410b268d63fd029558df9855610a54d7dc68605bb7cf86",
+          "jsonSha256": "3899ae59200b611dce569de61a83a3b37ce04f357a2654575c49eda2a3ed3a12",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        },
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-1440-900-200.png",
+          "json": "starter-domain-area-empty-1440-900-200.json",
+          "pngSha256": "1fc32c523a761429a45e48accbe2176b90c5059266c8ace26cd7c4b52480ed9c",
+          "jsonSha256": "d83ca3337dc582e5a6b23bee159e570dc2dba4d16dff8db5753c9c938c597b70",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 139,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 139
+            },
+            "main": {
+              "top": 139,
+              "bottom": 3549.671875,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 3410.671875
+            },
+            "railTop": 900,
+            "readingTop": 139,
+            "readingBottom": 900,
+            "availableReadingHeight": 761,
+            "target": {
+              "rect": {
+                "top": 3323.671875,
+                "bottom": 3501.671875,
+                "left": 320,
+                "right": 1320,
+                "width": 1000,
+                "height": 178
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 820,
+                  "y": 3412.671875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 139,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 139
+            },
+            "main": {
+              "top": -2511,
+              "bottom": 899.671875,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 3410.671875
+            },
+            "railTop": 900,
+            "readingTop": 139,
+            "readingBottom": 899.671875,
+            "availableReadingHeight": 760.671875,
+            "target": {
+              "rect": {
+                "top": 673.671875,
+                "bottom": 851.671875,
+                "left": 320,
+                "right": 1320,
+                "width": 1000,
+                "height": 178
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 820,
+                  "y": 762.671875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 820,
+              "y": 762.671875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 121,
+              "bottom": 258,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 137
+            },
+            "main": {
+              "top": 258,
+              "bottom": 1880,
+              "left": 224,
+              "right": 1440,
+              "width": 1216,
+              "height": 1622
+            },
+            "railTop": 900,
+            "readingTop": 258,
+            "readingBottom": 900,
+            "availableReadingHeight": 642,
+            "target": {
+              "rect": {
+                "top": 1299,
+                "bottom": 1411,
+                "left": 417,
+                "right": 795.796875,
+                "width": 378.796875,
+                "height": 112
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 606.3984375,
+                  "y": 1355
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 137,
+              "left": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 137
+            },
+            "main": {
+              "top": -647,
+              "bottom": 975,
+              "left": 224,
+              "right": 1440,
+              "width": 1216,
+              "height": 1622
+            },
+            "railTop": 900,
+            "readingTop": 137,
+            "readingBottom": 900,
+            "availableReadingHeight": 763,
+            "target": {
+              "rect": {
+                "top": 394,
+                "bottom": 506,
+                "left": 417,
+                "right": 795.796875,
+                "width": 378.796875,
+                "height": 112
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 606.3984375,
+                  "y": 450
+                },
+                "tag": "P",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 606.3984375,
+              "y": 450
+            },
+            "tag": "P",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-667-375-200",
+      "state": "area-empty",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "DEFECT_FOUND",
+      "completeness": "PARTIAL",
+      "sourceSamples": [
+        {
+          "source": "starter",
+          "png": "starter-domain-area-empty-667-375-200.png",
+          "json": "starter-domain-area-empty-667-375-200.json",
+          "pngSha256": "c31351c46375405792efe723b48028f46e7e888d8ee288845921f30dadef2e7c",
+          "jsonSha256": "ad677a391fc19eb14751ff63eef4d28ca9df040dda0dff296d006ef89e26f6e6",
+          "execution": "PASS",
+          "comparability": "NON_EQUIVALENT",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [
+        "fullstack:VIEWPORT_ASSERTION@domain.spec.ts:226:46",
+        "PAIR_REQUIRES_TWO_SOURCE_SAMPLES"
+      ],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 667,
+              "height": 375
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 375,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 301
+            },
+            "railTop": 298.5,
+            "readingTop": 74,
+            "readingBottom": 298.5,
+            "availableReadingHeight": 224.5,
+            "target": {
+              "rect": {
+                "top": 3703.671875,
+                "bottom": 3921.671875,
+                "left": 16,
+                "right": 651,
+                "width": 635,
+                "height": 218
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 333.5,
+                  "y": 3812.671875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 667,
+              "height": 375
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 74,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 74
+            },
+            "main": {
+              "top": 74,
+              "bottom": 375,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 301
+            },
+            "railTop": 298.5,
+            "readingTop": 74,
+            "readingBottom": 298.5,
+            "availableReadingHeight": 224.5,
+            "target": {
+              "rect": {
+                "top": 49.671875,
+                "bottom": 267.671875,
+                "left": 16,
+                "right": 651,
+                "width": 635,
+                "height": 218
+              },
+              "ratio": 0.8884031176567078,
+              "hit": {
+                "point": {
+                  "x": 333.5,
+                  "y": 158.671875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 0.8884031176567078,
+          "postHit": {
+            "point": {
+              "x": 333.5,
+              "y": 158.671875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        },
+        "starter": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 667,
+              "height": 375
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 169,
+              "bottom": 459,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 290
+            },
+            "main": {
+              "top": 459,
+              "bottom": 3419,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 2960
+            },
+            "railTop": 246,
+            "readingTop": 459,
+            "readingBottom": 246,
+            "availableReadingHeight": 0,
+            "target": {
+              "rect": {
+                "top": 1908,
+                "bottom": 2020,
+                "left": 161,
+                "right": 506,
+                "width": 345,
+                "height": 112
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 333.5,
+                  "y": 1964
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": true
+          },
+          "initialRefOcclusion": true,
+          "initialDiagnostic": {
+            "evidenceKind": "DIAGNOSTIC_NOT_PLANNED_COVERAGE",
+            "wrapper": "initial-obstruction-starter-domain-area-empty-667-375-200.json",
+            "wrapperSha256": "ccc77f8780f07c2a0b027ee8f61996c98cd9c89636c699fd84d30b69bf3f18ac",
+            "png": "starter-domain-area-empty-667-375-200-initial-occluded.png",
+            "json": "starter-domain-area-empty-667-375-200-initial-occluded.json",
+            "pngSha256": "f56e4dc12cc896273e381dddedee474eb3d1245c0a8c779f187b6d40c1badca2",
+            "jsonSha256": "3e75055daa3bee5ebd9761532b8942c782e694ede3d5d11c4cc2ddea1950ae5a"
+          },
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 667,
+              "height": 375
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 290,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 290
+            },
+            "main": {
+              "top": -1318,
+              "bottom": 1642,
+              "left": 0,
+              "right": 667,
+              "width": 667,
+              "height": 2960
+            },
+            "railTop": 246,
+            "readingTop": 290,
+            "readingBottom": 246,
+            "availableReadingHeight": 0,
+            "target": {
+              "rect": {
+                "top": 131,
+                "bottom": 243,
+                "left": 161,
+                "right": 506,
+                "width": 345,
+                "height": 112
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 333.5,
+                  "y": 187
+                },
+                "tag": "SPAN",
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 333.5,
+              "y": 187
+            },
+            "tag": "SPAN",
+            "unobstructed": false
+          },
+          "ratio1Applicable": false
+        }
+      }
+    },
+    {
+      "id": "domain-area-empty-844-390-200",
+      "state": "area-empty",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "FAIL",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "DEFECT_FOUND",
+      "completeness": "PARTIAL",
+      "sourceSamples": [
+        {
+          "source": "fullstack",
+          "png": "fullstack-domain-area-empty-844-390-200.png",
+          "json": "fullstack-domain-area-empty-844-390-200.json",
+          "pngSha256": "2e00e0ffd877132a596d871a4677baafbec98c2440e02a6d351aabaf3507ec12",
+          "jsonSha256": "f19caf0524913f166fce61c33da28a3daae4d40a124c579ab41890b9830873f2",
+          "execution": "PASS",
+          "comparability": "COMPARABLE",
+          "completeness": "COMPLETE",
+          "classificationScope": "SOURCE_SAMPLE; case classification remains separate"
+        }
+      ],
+      "errors": [
+        "starter:CASE_ASSERTION_OR_CAPTURE_FAILED@domain-fixtures.ts:161:70",
+        "PAIR_REQUIRES_TWO_SOURCE_SAMPLES"
+      ],
+      "semanticScrollBySource": {
+        "fullstack": {
+          "target": "empty-area-message",
+          "initial": {
+            "viewport": {
+              "width": 844,
+              "height": 390
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 121,
+              "left": 0,
+              "right": 844,
+              "width": 844,
+              "height": 121
+            },
+            "main": {
+              "top": 121,
+              "bottom": 4044.671875,
+              "left": 0,
+              "right": 844,
+              "width": 844,
+              "height": 3923.671875
+            },
+            "railTop": 390,
+            "readingTop": 121,
+            "readingBottom": 390,
+            "availableReadingHeight": 269,
+            "target": {
+              "rect": {
+                "top": 3778.671875,
+                "bottom": 3996.671875,
+                "left": 224,
+                "right": 820,
+                "width": 596,
+                "height": 218
+              },
+              "ratio": 0,
+              "hit": {
+                "point": {
+                  "x": 522,
+                  "y": 3887.671875
+                },
+                "tag": null,
+                "unobstructed": false
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "initialRefOcclusion": false,
+          "initialDiagnostic": null,
+          "scroll": "ONE_NATIVE_SCROLL_BEFORE_FINAL_MEASUREMENT",
+          "fontObservationMeaning": "CDP_GLYPHS_DO_NOT_PROVE_UNOBSCURED_TEXT_LEGIBILITY",
+          "post": {
+            "viewport": {
+              "width": 844,
+              "height": 390
+            },
+            "rootFontPx": 32,
+            "header": {
+              "top": 0,
+              "bottom": 121,
+              "left": 0,
+              "right": 844,
+              "width": 844,
+              "height": 121
+            },
+            "main": {
+              "top": -3534,
+              "bottom": 389.671875,
+              "left": 0,
+              "right": 844,
+              "width": 844,
+              "height": 3923.671875
+            },
+            "railTop": 390,
+            "readingTop": 121,
+            "readingBottom": 389.671875,
+            "availableReadingHeight": 268.671875,
+            "target": {
+              "rect": {
+                "top": 123.671875,
+                "bottom": 341.671875,
+                "left": 224,
+                "right": 820,
+                "width": 596,
+                "height": 218
+              },
+              "ratio": 1,
+              "hit": {
+                "point": {
+                  "x": 522,
+                  "y": 232.671875
+                },
+                "tag": "DIV",
+                "unobstructed": true
+              }
+            },
+            "mainOutsideViewport": false
+          },
+          "postRatio": 1,
+          "postHit": {
+            "point": {
+              "x": 522,
+              "y": 232.671875
+            },
+            "tag": "DIV",
+            "unobstructed": true
+          },
+          "ratio1Applicable": true
+        }
+      }
+    },
+    {
+      "id": "domain-area-populated-320-900-100",
+      "state": "area-populated",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-320-900-200",
+      "state": "area-populated",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-375-900-100",
+      "state": "area-populated",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-375-900-200",
+      "state": "area-populated",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-390-844-100",
+      "state": "area-populated",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-390-844-200",
+      "state": "area-populated",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-768-900-100",
+      "state": "area-populated",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-768-900-200",
+      "state": "area-populated",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-1440-900-100",
+      "state": "area-populated",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-1440-900-200",
+      "state": "area-populated",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-667-375-200",
+      "state": "area-populated",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-area-populated-844-390-200",
+      "state": "area-populated",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-320-900-100",
+      "state": "collection-record",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-320-900-200",
+      "state": "collection-record",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-375-900-100",
+      "state": "collection-record",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-375-900-200",
+      "state": "collection-record",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-390-844-100",
+      "state": "collection-record",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-390-844-200",
+      "state": "collection-record",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-768-900-100",
+      "state": "collection-record",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-768-900-200",
+      "state": "collection-record",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-1440-900-100",
+      "state": "collection-record",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-1440-900-200",
+      "state": "collection-record",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-667-375-200",
+      "state": "collection-record",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-record-844-390-200",
+      "state": "collection-record",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-320-900-100",
+      "state": "collection-missing",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-320-900-200",
+      "state": "collection-missing",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-375-900-100",
+      "state": "collection-missing",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-375-900-200",
+      "state": "collection-missing",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-390-844-100",
+      "state": "collection-missing",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-390-844-200",
+      "state": "collection-missing",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-768-900-100",
+      "state": "collection-missing",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-768-900-200",
+      "state": "collection-missing",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-1440-900-100",
+      "state": "collection-missing",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-1440-900-200",
+      "state": "collection-missing",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-667-375-200",
+      "state": "collection-missing",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-missing-844-390-200",
+      "state": "collection-missing",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-320-900-100",
+      "state": "collection-current",
+      "width": 320,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-320-900-200",
+      "state": "collection-current",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-375-900-100",
+      "state": "collection-current",
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-375-900-200",
+      "state": "collection-current",
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-390-844-100",
+      "state": "collection-current",
+      "width": 390,
+      "height": 844,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-390-844-200",
+      "state": "collection-current",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-768-900-100",
+      "state": "collection-current",
+      "width": 768,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-768-900-200",
+      "state": "collection-current",
+      "width": 768,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-1440-900-100",
+      "state": "collection-current",
+      "width": 1440,
+      "height": 900,
+      "scale": 100,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-1440-900-200",
+      "state": "collection-current",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-667-375-200",
+      "state": "collection-current",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-collection-current-844-390-200",
+      "state": "collection-current",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-320-900-0-0",
+      "state": "ihfr-qualifier-CONTRATO_EXPERIMENTAL",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-320-900-0-1",
+      "state": "ihfr-qualifier-VALIDACAO_CIENTIFICA_PENDENTE",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-320-900-0-2",
+      "state": "ihfr-qualifier-SUJEITO_A_RECALIBRACAO",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-320-900-0-3",
+      "state": "ihfr-qualifier-NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-667-375-34-0",
+      "state": "ihfr-qualifier-CONTRATO_EXPERIMENTAL",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-667-375-34-1",
+      "state": "ihfr-qualifier-VALIDACAO_CIENTIFICA_PENDENTE",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-667-375-34-2",
+      "state": "ihfr-qualifier-SUJEITO_A_RECALIBRACAO",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-667-375-34-3",
+      "state": "ihfr-qualifier-NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+      "width": 667,
+      "height": 375,
+      "scale": 200,
+      "inset": 34,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-844-390-0-0",
+      "state": "ihfr-qualifier-CONTRATO_EXPERIMENTAL",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-844-390-0-1",
+      "state": "ihfr-qualifier-VALIDACAO_CIENTIFICA_PENDENTE",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-844-390-0-2",
+      "state": "ihfr-qualifier-SUJEITO_A_RECALIBRACAO",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-qualifier-844-390-0-3",
+      "state": "ihfr-qualifier-NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-keyboard-history-390",
+      "state": "keyboard-back-forward",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-keyboard-history-1440",
+      "state": "keyboard-back-forward",
+      "width": 1440,
+      "height": 900,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    },
+    {
+      "id": "domain-reload-390-text200",
+      "state": "reload-observed-before-reconfiguration",
+      "width": 390,
+      "height": 844,
+      "scale": 200,
+      "inset": 0,
+      "execution": "NOT_RUN",
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "sourceSamples": [],
+      "errors": []
+    }
+  ],
+  "codeBlobsUnchanged": [
+    {
+      "path": "qa/hf-ui044/domain.spec.ts",
+      "sha256": "356eee7375c5a6a9f9fc85e1bfa1cea8c10fa324f2aa3c97b13be015d616939f",
+      "matchesRuntimeBlob": true
+    },
+    {
+      "path": "qa/hf-ui044/domain-fixtures.ts",
+      "sha256": "7addddebaabc68a1622232a604d97821afaa7c0679b3044d41513f18e4cf8d89",
+      "matchesRuntimeBlob": true
+    }
+  ],
+  "failureDiagnostics": [
+    {
+      "file": "diagnostic-fullstack-domain-area-empty-667-375-200.json",
+      "sha256": "b8e42326732f7abed487f5350be77a39e6a29e6b8d6a8fc72ca28129fddf9191",
+      "caseId": "domain-area-empty-667-375-200",
+      "source": "fullstack",
+      "code": "VIEWPORT_ASSERTION",
+      "errorClass": "Error",
+      "locations": [
+        "domain.spec.ts:226:46",
+        "domain.spec.ts:248:7",
+        "domain.spec.ts:51:7",
+        "domain.spec.ts:245:5"
+      ],
+      "frame": {
+        "status": "CAPTURED",
+        "file": "diagnostic-fullstack-domain-area-empty-667-375-200.png",
+        "pngSha256": "9c3fb21e4ace9026676c3f61c952462a9424ac66a5edb2bf6dac1331e6a46886",
+        "viewport": {
+          "width": 667,
+          "height": 375
+        },
+        "maskedInputs": 0
+      }
+    },
+    {
+      "file": "diagnostic-starter-domain-area-empty-320-900-200.json",
+      "sha256": "6de334e31000e43bccab4e7db86130340625f54a706c3516fc4b6f24e06c7148",
+      "caseId": "domain-area-empty-320-900-200",
+      "source": "starter",
+      "code": "CASE_ASSERTION_OR_CAPTURE_FAILED",
+      "errorClass": "Error",
+      "locations": [
+        "domain.spec.ts:257:97",
+        "domain.spec.ts:51:7",
+        "domain.spec.ts:245:5"
+      ],
+      "frame": {
+        "status": "CAPTURED",
+        "file": "diagnostic-starter-domain-area-empty-320-900-200.png",
+        "pngSha256": "301a73aa305d3ab6f831cca0fa3d6f1812b888a4f8de0ed551a799dcd5aafb7c",
+        "viewport": {
+          "width": 320,
+          "height": 900
+        },
+        "maskedInputs": 0
+      }
+    },
+    {
+      "file": "diagnostic-starter-domain-area-empty-844-390-200.json",
+      "sha256": "93090cef947bc9c082b9426e2882511c2b3990e15be65480cde21da9e4bff74d",
+      "caseId": "domain-area-empty-844-390-200",
+      "source": "starter",
+      "code": "CASE_ASSERTION_OR_CAPTURE_FAILED",
+      "errorClass": "Error",
+      "locations": [
+        "domain-fixtures.ts:161:70",
+        "domain.spec.ts:135:3",
+        "domain.spec.ts:246:7",
+        "domain.spec.ts:51:7",
+        "domain.spec.ts:245:5"
+      ],
+      "frame": {
+        "status": "CAPTURE_FAILED_WITH_ORIGINAL_CASE_FAIL_PRESERVED"
+      }
+    }
+  ],
+  "findings": [
+    "B-R3-REF-OVERFLOW-320",
+    "B-R3-NATIVE-TARGET-667",
+    "B-R3-REF-OCCLUSION-667",
+    "B-R3-NAV-TIMEOUT-844",
+    "B-R3-WORKER-LIFECYCLE",
+    "B-R3-VISUAL-REF-TEXT200",
+    "B-R3-VISUAL-NATIVE-WORD320"
+  ],
+  "notRun": [
+    "area-populated:12",
+    "collection-record:12",
+    "collection-missing:12",
+    "collection-current:12",
+    "individual-qualifiers:12",
+    "keyboard-history:2",
+    "reload:1",
+    "required-final-summary:1"
+  ],
+  "reloadFinding": "NOT_RUN; no terminal reload cause established in R3",
+  "cleanup": {
+    "firstWorkerBrowserReceipt": "PASS",
+    "restartCleanupReceipt": "EEXIST; original receipt preserved; no overwrite",
+    "logicalData": "NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL",
+    "postgresStop": "OBSERVED_IN_JOB_LOG_2026-11-01T22:24:16Z_DATA_PRESERVED",
+    "physicalDataDeletion": "NOT_ATTESTED_BY_STOP; hosted runner disposal belongs to coordinator/platform"
+  },
+  "afterBudget": {
+    "roundsUsed": 3,
+    "roundLimit": 3,
+    "codeChanges": false,
+    "productTests": false,
+    "push": false,
+    "rerun": false,
+    "scope": "Read-only evidence audit and docs036 only"
+  },
+  "futureRecommendations": "close02-final-findings.md; RECOMENDACAO only, not implemented or executed",
+  "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING",
+  "scientificAcceptance": "NOT_IN_SCOPE_VALIDACAO_CIENTIFICA_PENDENTE",
+  "independentReview": "FOCAL_FINDINGS_RECEIVED; final consolidated verdict belongs to coordinator/non-author",
+  "scientificQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ]
+}
