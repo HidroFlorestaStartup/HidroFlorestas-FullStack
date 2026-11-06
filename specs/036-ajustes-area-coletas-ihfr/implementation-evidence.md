@@ -1,5 +1,7 @@
 # Evidências — frente B / Spec 036
 
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
 > **Estado atual em 2026-11-01:** `CODE_IMPLEMENTED_CI_15_OF_15_PASS` no **CODE_SHA_TESTED** `d7586ab95c69c45211e463516080e741bbb3931a` (run `41252813575`, tentativa 1). `B_VISUAL_EVIDENCE_PENDING`: a comparação bilateral executada com Lovable permanece NOT_RUN. O registro G0/FAIL e as pendências históricas abaixo são preservados como cortes anteriores, não como estado atual. `DOC_HEAD` é o commit desta reconciliação, distinto do código testado; consultar a PR #47 para seu SHA e CI próprios.
 
 Data: 2026-10-31. Estado: PREPARACAO_G0; produto NAO_IMPLEMENTADO nesta frente.
@@ -196,3 +198,25 @@ reproduzido sinteticamente; atribuição individualR2 aindaINFERENCIA), diagnós
 Nenhum assert, timeout, produto, starter, sharedhelper ou configuração alterado porB.
 Contraprovas e análise parcial de imagens em evidence/close02-round2-counterexamples.json e
 evidence/close02-comparison.md. TSC/lint/discovery/diff locaisPASS; runtimeR3 pendente.
+
+## Ciclo C1–C3 — 05/11/2026
+
+O recorte vigente usa B=`7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, com decisão pinada em `71b8c95b7d1d1509b7155a36d65f70289c0a39f3`. [Índice e recibo O0](evidence/ui044-correcoes-finais-20261105/readme.md). Históricos acima conservados por SHA; nenhum PASS é herdado.
+
+O0 reconfirmado com três agentes reais, três prints por hash, governança/skills/Spec036 e guias Next16.3.8. Pré-requisitos e setups Spec Kit: exit0, estado local restaurado. P01/P02/P03 liberados com ownership/worktrees separados; P00 guarda config/spec/publicação. Resultados do produto, composição, CI15 e reviews dependem das evidências novas listadas no índice e do recibo final na PR.
+
+O artefato histórico13451261604/run42101827226/1, código febee101aa, foi baixado e teve SHA-256 `eb191c2f7ef4655c99838be71831d484df4e124ef708cba76c1ec9ecc0606e1e` recalculado. Serve apenas de baseline equivalente quando estado/viewport correspondem. Não é prova desta correção. Merge/deploy e homologação operacional/científica continuam fora desta execução.
+
+Onda1 composta por P00: recibos P01/P02/P03 e hashes/preimages em [composition-progress.json](evidence/ui044-correcoes-finais-20261105/composition-progress.json). Localmente, 17/17 unidades focais PASS, typecheck integral PASS e lint PASS (dois warnings anteriores), com identidade por hash de cada arquivo técnico no [recibo local](evidence/ui044-correcoes-finais-20261105/p00-local-validation.json). RED anterior dos novos testes preservado: seis falhas funcionais em B, duas situações já corretas. Não se soma a repetição desses testes por workers.
+
+A guarda exata antes de publicar está comprovada em [p00-guard-check.json](evidence/ui044-correcoes-finais-20261105/p00-guard-check.json). As demais configurações são semanticamente idênticas a B. Browser/RC15/Codex/P04 terminal continuam pendentes e serão registrados por F/run/attempt na PR; não são inferidos dos checks locais.
+
+F1 teve FAIL real de escopo no E2E US4; [recovery-f1.json](evidence/ui044-correcoes-finais-20261105/recovery-f1.json) preserva run/attempt, digest/CRC do ZIP e os quinze estados (9 PASS, 1 FAIL, 5 NOT_RUN). O reparo de P03 foi auditado por P04 não autora e passou em typecheck/lint local. Produto/CI/guards permanecem iguais a F1; os resultados do SHA sucessor dependem de nova RC oficial.
+
+F2 `3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06` passou 12 gates, inclusive E2E geral 241/241, e falhou em Ihfr por quatro timeouts na espera do helper UI044; dois casos Ihfr passaram. Bootstrap/SchemaAudit não executaram. [Recibo F2](evidence/ui044-correcoes-finais-20261105/recovery-f2.json): artifact 13470862110 com digest/CRC verificados, matriz parcial 7/23. A investigação causal e o reparo pertencem a P03, com contra-análise de P04; não se atribui PASS geral às capturas parciais.
+
+A instrumentação da espera F2 foi revisada sem autoria em [p04-f2-diagnostic-review.json](evidence/ui044-correcoes-finais-20261105/p04-f2-diagnostic-review.json). [Recibo P03](evidence/ui044-correcoes-finais-20261105/p03-f2-diagnostic-receipt.json), [fontes e resumo das provas sintéticas](evidence/ui044-correcoes-finais-20261105/p03-f2-diagnostic-probes.json) e [checks do integrador](evidence/ui044-correcoes-finais-20261105/p00-f2-diagnostic-local.json) qualificam somente o instrumento. A chamada oficial e os casos permanecem. A causa F2, a recuperação funcional e O3 continuam pendentes.
+
+F3 `8d5566bea4dcca7d2e48529b2aae3aab28c6e922` falhou com12 gates PASS, Ihfr1 PASS/5 FAIL e2 NOT_RUN. [Recibo F3](evidence/ui044-correcoes-finais-20261105/recovery-f3.json) preserva identidade, digest/CRC e matriz7/23; [observações ordenadas](evidence/ui044-correcoes-finais-20261105/f3-render-observations.json) mostram quatro esperas bloqueadas em `animation.finished` de transição finita390×844, sem atribuição da causa interna. A quinta falha traz query landUseType ausente, com INSUFFICIENT_DATA. P03 prepara reparos focais de observação/pré-condições, P04 revisa sem autoria e P02 investiga a falha distinta. A instrumentação temporária não é um reparo e será removida. T079/T080/O3 seguem pendentes até a qualificação do sucessor.
+
+F4 `dee68689bd78a4bd1cd8519cf963396320a7ca5b` teve12 gates PASS, E2E geral244/244 e Ihfr5 PASS/1 FAIL. [Recibo F4](evidence/ui044-correcoes-finais-20261105/recovery-f4.json): artefato13474109562, digest/CRC conferidos e matriz17/23. O novo failure OWNER é a entrada landUseType ausente no GET; o instante interno da perda não foi observado. P03 reforça a preparação/valores/request do fluxo OWNER/ADMIN, preservando a espera e as três contraprovas aprovadas em F4. P04 revisa sem autoria. T081 e O3 permanecem pendentes até a qualificação integral do sucessor.

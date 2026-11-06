@@ -1,5 +1,7 @@
 # Tasks: 036 — área, coletas e IHFR
 
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
 **Corte atual HF-UI-044-CLOSE-B (2026-11-01):** T009/T015/T023 encerradas pela evidência de CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a`, run `41252813575`/tentativa 1, 15/15 PASS; T017 encerrada pela publicação documental e atualização da PR Draft #47, identificadas no próprio histórico da PR. T008/T016 **não** foram marcadas: comparação bilateral executada Lovable × FullStack continua `NOT_RUN`/`B_VISUAL_EVIDENCE_PENDING`. O commit documental posterior é um HEAD novo e não recebe automaticamente o PASS do código.
 
 Lista inicial G0; fonte #44 em `972f9b00189bf09117883913d8c4fa63e69f4d2f`. Completar mapa de arquivos/Spec Kit antes de produto. Testes obrigatórios.
@@ -170,3 +172,50 @@ Origem: mandato atual do usuário, independente dos orçamentos históricos. FR-
 - [x] T065 [ONDA1/INTEGRATE] Integrar root-only domain.spec.ts e helpers QA necessários; executar RED/GREEN/regressões/TypeScript/lint/Chromium, preservar75IDs/A86/UI037/produto/ciência/guardas e congelar candidata.
 - [ ] T066 [ONDA2/QA/CI] QA nativa não autora sem finding material antes do push; publicar candidato único porFF, solicitar uma revisãoCodex e executar uma rodada focal3→matriz75→RC15 no SHA final; sem rerun.
 - [ ] T067 [ONDA2/TERMINAL/HANDOFF] QA não autora auditar75IDs/150samples/15gates/UI037/ZIPs/CRC/hashes/provenance/PNGs/review, publicar parecerPR50 e síntesePR45, preservar pendências humanas e estado factual sem novo commit.
+
+## Phase 3: correções finais UI044 — 2026-11-05
+
+Origem: handoff pinado `71b8c95b7d1d1509b7155a36d65f70289c0a39f3` e mandato P00. Escopo C1–C3; histórico T001–T067 preservado. T069–T072 marcam implementação de código/testes, não execução de browser; esta depende de T075. Marcadores representam o snapshot pré-publicação; resultados posteriores ao freeze F ficam no recibo da PR do próprio F, sem commit documental que herde CI antiga.
+
+- [x] T068 Registrar O0/base/tree/ownership/fontes/guias, prerequisites e crosswalk C1–C3 em `specs/036-ajustes-area-coletas-ihfr/plan.md` e `specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/o0.json`; liberar os owners após verificar os gates materiais.
+- [x] T069 [P] [US1] Implementar C1 em `src/components/areas/area-collections.tsx`, removendo link IHFR e exibindo somente score CURRENT da própria coleta, sem inventar zero, alterar resumo ou ordenação (FR-036-001, FR-036-005).
+- [x] T070 [P] [US2] Implementar C2+C3 em `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx`, `src/components/collections/collection-detail.tsx`, `src/components/collections/collection-detail-layout.tsx` e `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx`: aviso somente na leitura, ordem mobile e desktop/estado único preservados (FR-036-002, FR-036-003, FR-036-005).
+- [x] T071 [P] [US1] Adaptar regressões C1 em `tests/unit/hf-ui044-final-corrections.test.tsx`, `tests/e2e/hf-ui036-area-collections.spec.ts` e `tests/e2e/ihfr-diagnosis-manage.spec.ts`: score próprio/ausência/zero registrado/precisão, destinos e resumo/ordem preservados (SC-036-001).
+- [x] T072 [US3] Acrescentar provas C2+C3 em `tests/e2e/ihfr-diagnosis-read.spec.ts`, `tests/e2e/ihfr-diagnosis-manage.spec.ts`, `tests/e2e/support/ui044-final-corrections.ts` e unidades de apresentação: aviso único, atual/ausente, gerencia/não gerencia, ordem/IDs/foco e transições reais (SC-036-001, SC-036-002).
+- [x] T073 [P] Acrescentar somente `fix/ui044-correcoes-finais-20261105` em `vercel.json` com deploy false e nos filtros push/if de `.github/workflows/rc-review.yml`, preservando demais guardas e quinze gates (SC-036-003, SC-036-004).
+- [x] T074 Compor deltas P01/P02/P03/P00 com hashes/preimages, executar diff/typecheck/lint/unidades focais e congelar F/tree em `specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/` antes de publicar branch/PR única (SC-036-001, SC-036-004).
+- [ ] T075 Verificar quinze gates de `scripts/rc-review-validation.ps1` e capturas reais C1–C3 em1440,375/390,320/texto200 no F, registrando run/attempt/artefatos e PASS/FAIL/NOT_RUN no recibo da PR (SC-036-002, SC-036-003).
+- [ ] T076 Obter P04 não autora e recibo Codex Review no F, tratar findings materiais e conferir ausência de alteração científica/API/schema/auth/dependências no diff da PR (FR-036-005, SC-036-004).
+- [ ] T077 Reconfirmar HEAD/base/tree/CI/reviews/matriz e publicar handoff O4 na PR única para Pedro, com estados factuais e sem merge/deploy.
+
+Dependências: T068 → T069 || T070 || (T071 → T072) || T073 → T074 → T075 || preparação T076 → conclusão T076 → T077. P03 é único writer de T071/T072; marcador paralelo não autoriza dois autores no mesmo teste. Os checks antigos continuam com seus significados e SHAs históricos.
+
+## Phase 4: convergência após a execução de F1
+
+- [x] T078 [US2] Corrigir o escopo do teste US4 em `tests/e2e/collection-registration.spec.ts`, mantendo privacidade no artigo completo e metadados mínimos no bloco Registro; conferir preimages, revisão não autora, typecheck/lint e registrar o FAIL real em `evidence/ui044-correcoes-finais-20261105/recovery-f1.json` (origem SC-036-001/SC-036-004, run42140950096).
+
+T078 é implementação do reparo, não PASS de navegador. T075–T077 exigem requalificação no SHA sucessor; F1 continua FAIL e seus cinco gates posteriores ao E2E continuam NOT_RUN.
+
+## Phase 5: convergência após a execução de F2
+
+- [ ] T079 [US2] Investigar e corrigir a causa comprovada dos timeouts em `tests/e2e/support/ui044-final-corrections.ts`, preservando readiness, matriz de 23 cenários, asserts de DOM/foco/geometria e helpers oficiais; confrontar preimage/revisão não autora e registrar provas em `evidence/ui044-correcoes-finais-20261105/recovery-f2.json` (origem SC-036-001/SC-036-002/SC-036-004, run 42144128465).
+
+F2 permanece FAIL: 12 gates PASS, Ihfr FAIL, dois gates posteriores NOT_RUN. T075–T077 dependem do SHA final requalificado; resultados parciais não liberam O3.
+
+Corte diagnóstico de T079: instrumentação do await entregue e revisada, preservando helper oficial, asserts e matriz. Provas Node sintéticas, typecheck completo e lint focal PASS. O checkbox permanece aberto porque a causa real e o reparo funcional dependem da execução oficial instrumentada.
+
+## Phase 6: convergência após a execução diagnóstica F3
+
+F3, run42150335260/1, permanece FAIL:12 gates PASS, Ihfr1 PASS/5 FAIL e2 gates NOT_RUN. A observação localiza os quatro bloqueios no await de `animation.finished`, sem demonstrar a causa interna da promessa pendente. O adendo de ownership permite o reparo focal da implementação do helper oficial e suas contraprovas, preservando seu contrato de prontidão e os demais helpers. T079 continua aberto até requalificação do reparo; o instrumento temporário não é correção funcional.
+
+- [ ] T080 [US2] Reparar a preparação do teste sem browser randomUUID em `tests/e2e/ihfr-diagnosis-manage.spec.ts`: aguardar composição observável, provar valores selecionados/preenchidos e query landUseType antes do resultado ELIGIBLE; preservar fixture, domínio, assert de elegibilidade, idempotência e jornada. Confrontar o failure F3 e revisão não autora em `evidence/ui044-correcoes-finais-20261105/recovery-f3.json` (origem SC-036-001/SC-036-004).
+
+Dependência de recuperação: diagnóstico F3 → reparo T079 || investigação T080 → composição P00 → RC15/Codex/P04 no SHA sucessor → T075/T076/T077. Não há rerun cego ou promoção de PASS entre SHAs.
+
+## Phase 7: convergência após F4
+
+F4 permanece FAIL:12 gates PASS, Ihfr5 PASS/1 FAIL e2 NOT_RUN; matriz17/23. O E2E geral244/244 e os casos de leitura/inativos confirmaram o avanço do reparo de renderização neste SHA. O fluxo sem randomUUID passou. O fechamento de T075–T077/T079/T080 continua vinculado ao recibo do SHA final, não a resultado transferido.
+
+- [ ] T081 [US2] Corrigir a preparação observável do fluxo OWNER/ADMIN em `tests/e2e/ihfr-diagnosis-manage.spec.ts`: compartilhar a pré-condição desktop, exigir FOREST/data antes e depois das inspeções e validar a primeira query contextual, preservando foco, matriz, lifecycle, idempotência e domínio. Conferir preimages, revisão não autora e execução no sucessor, com o FAIL F4 preservado em `evidence/ui044-correcoes-finais-20261105/recovery-f4.json` (origem SC-036-001/SC-036-002/SC-036-004).
+
+Dependência: evidência F4 → T081 e revisão → composição P00 → RC15/Codex/QA no sucessor → fechamento factual T075–T077. As tarefas históricas permanecem intactas.

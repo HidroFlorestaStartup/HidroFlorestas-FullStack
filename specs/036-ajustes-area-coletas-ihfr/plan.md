@@ -1,5 +1,7 @@
 # Implementation Plan: área/coletas/IHFR — preparação B
 
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
 **Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
 
 **Branch**: `feat/ajustes-area-coletas-ihfr` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
@@ -427,3 +429,79 @@ Onda2: agente nativoExtraHigh nãoautor /root/qa_independent convocado apósfree
 EVIDENCIA_IMPLEMENTACAO: /root/qa_independent emitiu PREPUBLICATION_QA_NO_MATERIAL_FINDINGS,22checks própriosPASS (20sintéticos,fluxorealT1/T2 e multicontexto comjornada/preassertsoficiais). Comprovou75IDsbaseline/verifier,24blobsprotegidos,ownership e integridade. Recibo scratch/qa/prepublication.json SHA256f60a2763da73faed624738d96f2b8b0cff62462a673fd5772a24fc63569f27fe. Probe direto inicial comsetupdiferente foi preservado e repetido comjornadaoficial; não é findingdeproduto nemmotivo parafocoartificial. Nenhumaedição técnica posterior à revisão. Corpo do recibo rastreado somente atualizado comresultadoQA epreflight factual.
 
 Remoto/API e gitls-remote conferidos: PR50Draft/head9a90e959/baseebf7e970,quatroruns históricos completed,zeroativos. Conta thalesvalente para comentários confirmada no registro anterior eAPIatual. Coordenador pode publicar umúnicocommit consolidado,sem skip-ci,porFFnormal na mesmabranch; solicitaruma vez @codex review noSHAfinal. CI hospedada ainda0/1consumida nestecheckpoint. Semherdar73pares/75FullStackPASS para novoSHA. Resultadoposterior ficará norecibofinal/comentáriosPR50/45,semsegundocommit documental; merge/deploy/release não autorizados.
+
+## Ciclo C1–C3 — HF-UI044-CORRECOES-FINAIS-20261105
+
+**Estado deste ciclo: EM_ANDAMENTO.** P00 coordena e publica uma única branch `fix/ui044-correcoes-finais-20261105`, com PR Draft para development. Base B=`7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, árvore `0c836da964c377a7d1e6bc8b2331524e931ea901`. [Recibo comum O0](evidence/ui044-correcoes-finais-20261105/o0.json) e [índice de evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os mandatos/limites de campanhas anteriores acima permanecem históricos; esta execução não os repete nem os declara quitados.
+
+### ANALYZE e autoridade
+
+A decisão atual de Pedro detalha FR-036-001/FR-036-002/FR-036-003/FR-036-005 e SC-036-001/SC-036-002/SC-036-003/SC-036-004. O0 reconfirmou o merge51, a PR52 documental ainda aberta, fontes e três PNGs por blobs/SHA-256, ausência da branch pretendida e checkout isolado limpo. Não há evidência publicada de workers existentes; sessões externas sem publicação não são observáveis. Não importar a branch documental nem as branches antigas como base funcional.
+
+Achados anteriores ao código: os cards já recebem score próprio; o teste de gestão ainda clica no link IHFR removido por C1; o helper de viewport ainda exige qualificadores dentro das ações removidas por C2; C3 exige separar apresentação mantendo o estado único, não inverter o grupo completo. Constituição I–VII preservada; nenhuma decisão nova de produto ou ciência.
+
+### PLAN e ownership
+
+| Frente | Executor real / workspace isolado | Escrita exclusiva |
+|---|---|---|
+| P00 | `/root`, `repo` | spec/plan/tasks/evidence036, `vercel.json`, `.github/workflows/rc-review.yml`, composição e publicação |
+| P01 | `/root/p01_cards`, `wt-p01` | `src/components/areas/area-collections.tsx` |
+| P02 | `/root/p02_detail`, `wt-p02` | page do detalhe, `src/components/collections/collection-detail.tsx`, `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx`; `src/components/collections/collection-detail-layout.tsx`, reservado no adendo O0 |
+| P03 | `/root/p03_tests`, `wt-p03` | E2E036/read/manage, novo helper `ui044-final-corrections.ts` e unidade `hf-ui044-final-corrections.test.tsx`; nenhum produto/config/spec canônico |
+| P04 | revisão não autora por agente sem autoria nos arquivos auditados | somente parecer e evidências; sem implementação de produto/testes/config |
+
+O0 teve agentes reais `/root/o0_refs`, `/root/o0_speckit`, `/root/o0_guards`. Onda1 usa no máximo três subagentes ativos; não exigir novos filhos enquanto os slots estiverem ocupados. Os workers são detached em B, sem refs remotas. Node_modules do lock é compartilhado somente para leitura, sem instalações por worker.
+
+**DAG:** O0 → P01 || P02 || P03 || P00 docs/guardas → O2 composição P01→P02→P03→P00 → freeze F/tree → CI15 || Codex || P04 → O4 handoff para Pedro. A ordem de composição não serializa a implementação. P02 informa a P03 interfaces/seletores antes dos testes dependentes; conflitos pontuais voltam ao owner.
+
+### IMPLEMENT e validação
+
+A apresentação usa dados já carregados. C2 retira somente a cópia do aviso nas ações. C3 deve manter o client state de gerenciamento único e permitir slots/composição de conteúdo sem transportar código server-only para o cliente. Guias da instalação Next16.3.8 correspondente ao lock foram lidos; hashes e origem estão em O0. Não criar dependências/backend ou duplicar componentes escondidos por breakpoint.
+
+Os comandos reais de Spec Kit `check-prerequisites.sh --json --require-spec --require-tasks --include-tasks`, `setup-plan.sh --json` e `setup-tasks.sh --json`, com `SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr`, tiveram exit0. O setup-plan atual preservou o plano existente; o setup-tasks emitiu template/paths sem sobrescrever tarefas. `.specify/feature.json` foi preservado/restaurado; hooks e checklists036 ausentes. Skills apply por análise/edição real, sem alegar slash commands inexistentes. Fluxo enxuto autorizado não cria nova feature, research ou contratos redundantes.
+
+P00 confere preimages B, Git blobs, SHA-256, patch e escopo de cada entrega. Validação local proporcional: diff/check, typecheck/lint e unidades focais. Ambiente Chat Linux/Node24.22.1 não substitui Windows/Node24.19 da CI oficial. Os testes com banco/browser usam apenas a RC oficial e seu PostgreSQL owned; `test:e2e:ihfr:full-ui` não é fallback.
+
+Antes da primeira ref remota, a árvore candidata contém a guarda false da branch exata no Vercel e somente as inserções nominais em push/if RC. Runners/actions/permissões/timeouts/guardas/gates históricos permanecem. P00 reconfirma ref antes de publicar; usa atualização normal e expectativa do SHA quando aplicável. Sem force, merge ou deploy.
+
+### REVIEW, converge e handoff
+
+O3 exige os quinze gates reais de F, capturas/JSON por estado/viewport, revisão de código e QA não autora dos arquivos auditados. Confrontar o baseline visual autenticado de febee101aa quando o estado/viewport corresponder. PASS histórico, testes apenas escritos, ausência de findings ou request pendente não são aprovação do novo SHA. O runner para no primeiro FAIL; os posteriores são NOT_RUN.
+
+Converge compara somente C1–C3 com spec/plan/tasks atualizados. Novos gaps materiais geram tarefas append-only, sem renumerar nem reabrir campanhas históricas. Nenhum capítulo vazio de convergence se não houver gap novo de implementação. Gates ainda aguardando execução permanecem abertos no snapshot de freeze e recebem resultado no recibo da PR do mesmo F; não fazer commit só para recibo e alegar CI antiga.
+
+Riscos principais: score de outra coleta, ausência confundida com zero, duplicação/obsolescência de estado, perda de qualificadores, reordenação visual divergente de DOM/foco, desktop deslocado, seleção de IHFR ausente na suíte E2E geral. Owners/testes focais tratam cada um. Bloqueio localizado não interrompe frente independente. Sem nova decisão humana para as escolhas técnicas já autorizadas; aceite e merge finais continuam do mantenedor.
+
+Histórico do ciclo: 05/11 O0 PASS; P01/P02/P03 compostos sequencialmente com preimages/hashes/postimages idênticos aos recibos. Os oito testes novos demonstraram RED funcional em B (seis falhas por link/aviso redundantes, dois casos já corretos); após composição, 17/17 unidades focais PASS, typecheck completo exit0 e lint exit0 com dois warnings preexistentes fora do delta. Verificação semântica das guardas e diff/check PASS. [Recibos e resultados locais](evidence/ui044-correcoes-finais-20261105/readme.md).
+
+A composição C3 usa uma árvore ativa conforme `matchMedia(80rem)`, com snapshot SSR estável mobile e controlador único acima da disposição. No desktop, as duas pilhas mantêm alturas independentes; o limite de largura original permanece somente no gerenciamento. Ao cruzar o breakpoint, os slots podem remontar: valores/controlador, disclosures abertos, foco lógico e retorno do diálogo são preservados; identidade física dos nós não é requisito. A primeira renderização SSR segue a ordem mobile até hidratar. P03 cobre esse contrato observável sem simular foco de sucesso nem permitir chamadas adicionais por resize.
+
+P04 foi distribuído entre três agentes reais sem autoria de produto/testes/config/Spec: `/root/o0_guards` (C2/C3 e parecer integrado), `/root/o0_refs` (C1/dados/navegação/testes) e `/root/o0_speckit` (consistência Spec Kit/histórico). Pré-revisão em andamento neste snapshot; browser, CI15 e Codex da candidata permanecem NOT_RUN até publicação e execução.
+
+### Recuperação factual após F1
+
+F1 `921b5ff153865816922b0f509bfda0642a9f4085` teve nove gates PASS e E2E FAIL no run42140950096/1; Https/Deletion/Ihfr/Bootstrap/SchemaAudit não executados. O teste legado US4 proibia IHFR no artigo completo, que passou legitimamente a incluir a leitura. P03 recebeu reserva adicional do único teste afetado após demonstração material. O reparo preserva privacidade global e exige Registro único, visível, imutável e sem IHFR; cobre reload/inativo e destinos. P04 não autora conferiu o delta e seus hashes sem findings. Typecheck completo e lint focal PASS. Produto, guards e pipeline permanecem idênticos a F1. [Recibo da recuperação](evidence/ui044-correcoes-finais-20261105/recovery-f1.json).
+
+Converge acrescentou somente T078, preservando o histórico. A próxima publicação é um sucessor normal na mesma branch/PR, motivado pelo defeito real; todos os quinze gates e reviews devem qualificar esse novo SHA. A matriz de layout não chegou a executar em F1. Nenhum resultado terminal do sucessor é antecipado neste commit.
+
+### Recuperação factual após F2
+
+F2 `3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06` teve 12 gates PASS, Ihfr FAIL e Bootstrap/SchemaAudit NOT_RUN no run 42144128465/1. O E2E geral passou 241 testes, confirmando o reparo US4 de F1. O gate Ihfr registrou 2 PASS e 4 timeouts, todos na espera `page.evaluate(waitForMissionRender)` do novo helper UI044, linha 64. A matriz chegou a 7/23 casos. O stack prova o ponto de bloqueio, não o mecanismo interno da espera. P03 investiga/corrige o helper reservado e P04 faz contra-análise não autora; nenhum timeout, helper oficial ou guarda será enfraquecido. [Recibo factual](evidence/ui044-correcoes-finais-20261105/recovery-f2.json).
+
+A candidata diagnóstica acrescenta observadores temporários e logs limitados ao await que travou, mantendo a chamada oficial e todos os asserts/casos. P03 entregou patch com preimage F2 conferido; P04 aprovou somente a instrumentação após tratar rollback parcial, isolamento de falhas de logging e preservação do receiver RAF. Provas Node: 16 casos de equivalência sintética e cinco casos de controle da espera; typecheck completo/lint focal PASS no integrador. Esses resultados não provam causa no Chromium. A publicação seguinte usa a mesma RC15/branch/PR para obter a evidência faltante, sem tocar guards/timeouts ou executar workflows históricos. T079 funcional permanece pendente, inclusive se a observação alterar timing e a execução ficar verde.
+
+### Recuperação factual após F3
+
+F3 `8d5566bea4dcca7d2e48529b2aae3aab28c6e922`, run42150335260/1, preserva 12 gates PASS e E2E geral241/241, mas Ihfr tem1 PASS/5 FAIL e a matriz permanece7/23. Bootstrap/SchemaAudit não executados. Artefato13472578538 tem29.039.558bytes, SHA256 `10c1d6abdbd746b6bb3b7158949ab769d8596f0cccb1289dcc0a8df44ee4afb2`; integridade/CRC conferidos. Codex concluiu no SHA integral sem findings, sem substituir o FAIL de runtime. [Recibo factual](evidence/ui044-correcoes-finais-20261105/recovery-f3.json).
+
+Os115 eventos diagnósticos representam11 sessões; a ordem correta vem de `sequence`, pois a entrega assíncrona do console pode trocar linhas. Sete esperas terminaram; quatro em390×844 ficaram na promessa `finished` capturada de uma CSSTransition running/pending=false/endTime300ms. Nenhuma conclusão/rejeição, nova amostra ou construção de MessageChannel foi registrada nesses quatro casos. A causa interna da promessa pendente não está demonstrada; não atribuir pausa, taxa zero ou defeito do Chromium.
+
+A necessidade material autoriza P03 a reparar somente a observação de prontidão em `frontend-mission-evidence.ts` e acrescentar contraprovas em `frontend-mission-evidence.spec.ts`, conforme adendo de ownership com preimages F3. Reamostrar o mesmo predicado running+endTime finito entre frames; preservar a barreira final de dois rAF+MessageChannel, foco, rolagem única, negativos e timeouts. Retirar o instrumento temporário do helper UI044. P04 confronta o código e contraprovas de pausa/remoção/substituição após a amostra, animação que continua ativa e animação surgida durante a barreira. Prova sintética não substitui a execução browser oficial.
+
+O quinto failure ocorre antes do instrumento: GET de elegibilidade sem `landUseType`, ao contrário de F2, seguido de INSUFFICIENT_DATA. O estado vazio explica o query omitido; a razão interna de a seleção não persistir é inferência. P02 investiga em leitura; P03 reforça a preparação observável do layout e prova os dois campos e o query antes do assert ELIGIBLE, sem repetir seleção silenciosamente, forçar parâmetros ou mudar domínio/fixture. Converge acrescenta T080. P00 integra os deltas revisados, executa verificações locais e publica sucessor normal na mesma branch/PR; O3 continua exigindo quinze gates e matriz completa no SHA sucessor.
+
+### Recuperação factual após F4
+
+F4 `dee68689bd78a4bd1cd8519cf963396320a7ca5b`, run42154773481/1, teve12 gates PASS, E2E geral244/244 e Ihfr5 PASS/1 FAIL; Bootstrap/SchemaAudit NOT_RUN. A matriz avançou a17/23, faltando OWNER vigente nas quatro larguras e ADMIN ausente/vigente. O [recibo F4](evidence/ui044-correcoes-finais-20261105/recovery-f4.json) preserva logs, SHA/digest/CRC e os estados distintos. As três novas contraprovas pertencem à suíte E2E geral aprovada; os quatro bloqueios anteriores não ocorreram. O cenário sem randomUUID passou com a preparação explícita de composição/entrada. Isso qualifica o reparo de espera no próprio F4, sem promover O3 ou transferir resultado ao sucessor.
+
+A falha agora alcançada é o GET OWNER sem landUseType após as provas de viewport. O fluxo OWNER/ADMIN ainda preenche antes de provar composição desktop e valores pretendidos; a matriz pode comparar e preservar um snapshot já vazio. Os helpers de inspeção e o cancelamento do diálogo não contêm reset explícito dos valores; o instante interno da perda permanece não observado. P03 mantém ownership exclusivo de `ihfr-diagnosis-manage.spec.ts` para compartilhar a pré-condição já usada pelo primeiro caso, exigir FOREST/data antes e depois de cada conjunto de inspeções e conferir a query contextual da primeira resposta. Nenhum reselect, query forçada, alteração de domínio/fixture, timeout ou helper de espera. P02 investiga em leitura e P04 revisa sem autoria. P00 compõe e publica um sucessor normal na mesma branch/PR após hashes e checks locais, com nova RC15/Codex/QA integral.

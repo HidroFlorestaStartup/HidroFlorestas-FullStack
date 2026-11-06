@@ -4,6 +4,8 @@ import { expect, test } from "./support/ihfr-diagnostics";
 import { captureIHFRViewport, expectIHFRControl, expectIHFRScientificWords, expectIHFRUnfragmentedWords, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
 import { Client } from "pg";
 import { signSessionToken } from "../../src/app/api/server/auth/session";
+import { captureMissionViewport } from "./support/frontend-mission-evidence";
+import { expectUI044Notice, inspectUI044Detail, inspectUI044DetailMatrix } from "./support/ui044-final-corrections";
 
 const required = (name: string) => {
   const value = process.env[name];
@@ -14,6 +16,21 @@ const required = (name: string) => {
 async function authenticate(page: Page, actorId: string, baseURL: string) {
   await page.context().clearCookies();
   await page.context().addCookies([{ name: "auth_token", value: signSessionToken(actorId), url: baseURL }]);
+}
+
+async function expectDesktopCollectionDetail(page: Page) {
+  // Wait for the observable client desktop composition before interacting with
+  // controls from the server's initial mobile tree. Do not reselect lost input.
+  expect(page.viewportSize()!.width).toBeGreaterThanOrEqual(1280);
+  const detail = page.getByRole("article", { name: "Detalhe da coleta", exact: true });
+  await expect(detail).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="record"]')).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="reading"]')).toHaveCount(1);
+  await expect.poll(() => detail.evaluate(node => {
+    const record = node.querySelector('[data-collection-detail-block="record"]');
+    const reading = node.querySelector('[data-collection-detail-block="reading"]');
+    return Boolean(record && reading && (record.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING));
+  }), { message: "Client desktop composition precedes IHFR input" }).toBe(true);
 }
 
 async function operationRows(collectionUrl: string): Promise<number> {
@@ -55,12 +72,14 @@ async function confirmByKeyboard(page: Page, trigger: ReturnType<Page["getByRole
 
 async function inspectManagementViewports(page: Page, info: TestInfo, management: Locator) {
   const create = management.getByRole("button", { name: "Criar diagnóstico", exact: true });
-  for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [667, 375, 200]]) {
+  const landUse = await management.getByLabel("Uso predominante da terra").inputValue();
+  const observedAt = await management.getByLabel("Data e hora da observação").inputValue();
+  for (const [width, height, scale] of [[320, 900, 100], [375, 900, 100], [390, 844, 100], [768, 900, 100], [1440, 900, 100], [320, 900, 200], [667, 375, 200]]) {
     const scenario = `frontend-ihfr-management-${width}-${height}-${scale}`;
     await settleIHFRViewport(page, width, height, scale);
     if (scale === 200) {
       await expectIHFRUnfragmentedWords(management.getByRole("heading", { name: "Gerenciar diagnóstico IHFR experimental", exact: true }));
-      await expectIHFRScientificWords(management);
+      await expectIHFRScientificWords(page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true }));
       await expectIHFRUnfragmentedWords(management.getByRole("button", { name: "Verificar elegibilidade", exact: true }));
       await expectIHFRUnfragmentedWords(create);
     }
@@ -80,9 +99,26 @@ async function inspectManagementViewports(page: Page, info: TestInfo, management
       await expectIHFRUnfragmentedWords(dialog.getByRole("button", { name: "Confirmar", exact: true }));
     }
     await captureIHFRViewport(page, info, `${scenario}-confirmation`);
+    if (width === 1440) {
+      // Keep the confirmation open across the desktop/mobile parent change.
+      // Escape must return to the current trigger, not a detached former slot.
+      await settleIHFRViewport(page, 375, 900);
+      await expect(dialog).toHaveCount(1);
+      await expect(dialog.getByRole("button", { name: "Cancelar" })).toBeFocused();
+      await expect(management.getByLabel("Uso predominante da terra")).toHaveValue(landUse);
+      await expect(management.getByLabel("Data e hora da observação")).toHaveValue(observedAt);
+      await expectIHFRControl(dialog.getByRole("button", { name: "Cancelar" }), page, info, "frontend-ihfr-ui044-dialog-resize-375");
+      await captureIHFRViewport(page, info, "frontend-ihfr-ui044-dialog-resize-375");
+    }
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
     await expect(create).toBeFocused();
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue(landUse);
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue(observedAt);
+    if (width === 1440) {
+      await expectIHFRControl(create, page, info, "frontend-ihfr-ui044-dialog-return-375");
+      await captureIHFRViewport(page, info, "frontend-ihfr-ui044-dialog-return-375");
+    }
   }
   const cdp = await page.context().newCDPSession(page);
   try {
@@ -153,12 +189,18 @@ test("collection, environmental confirmation and IHFR creation work without brow
   await expect(page).toHaveURL(`${baseURL}${collectionUrl}/environmental-data`);
 
   await page.goto(collectionUrl);
+  await expectDesktopCollectionDetail(page);
   await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
   await page.getByLabel("Data e hora da observação").fill("2026-09-24T12:00");
+  await expect(page.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+  await expect(page.getByLabel("Data e hora da observação")).toHaveValue("2026-09-24T12:00");
   const eligibility = page.waitForResponse((response) => response.url().includes("/ihfr-diagnosis/eligibility") && response.request().method() === "GET");
   await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
   const eligible = await eligibility;
   expect(eligible.status()).toBe(200);
+  const eligibilityUrl = new URL(eligible.request().url());
+  expect(eligibilityUrl.pathname).toBe(collectionUrl.replace(/^\/dashboard\//, "/api/") + "/ihfr-diagnosis/eligibility");
+  expect(Array.from(eligibilityUrl.searchParams.entries())).toEqual([["landUseType", "FOREST"]]);
   expect((await eligible.json()).outcome).toBe("ELIGIBLE");
   const created = page.waitForResponse((response) => response.url().endsWith("/ihfr-diagnosis/diagnoses") && response.request().method() === "POST");
   await page.getByRole("button", { name: "Criar diagnóstico" }).click();
@@ -166,7 +208,7 @@ test("collection, environmental confirmation and IHFR creation work without brow
   const response = await created;
   expect(response.status()).toBe(201);
   expect(response.request().headers()["idempotency-key"]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
-  const createdDiagnosis = await response.json() as { diagnosis: { collectionId: string } | null };
+  const createdDiagnosis = await response.json() as { diagnosis: { collectionId: string; displayScore: number } | null };
   expect(createdDiagnosis.diagnosis?.collectionId).toBe(collectionId);
   await expect(page.getByRole("status").first()).toContainText("Vigente: sim");
   await expect(page.getByRole("status").last()).toBeFocused();
@@ -186,26 +228,70 @@ test("collection, environmental confirmation and IHFR creation work without brow
   const laterResponse = await laterPost;
   expect(laterResponse.status()).toBe(201);
   const laterId = (await laterResponse.json()).collection.id as string;
+  // A second CURRENT diagnosis with a different real API result proves that
+  // cards never reuse the area's summary. No seeded/domain fixture is modified.
+  const apiCollections = collectionNewUrl.replace(/^\/dashboard\//, "/api/").replace(/\/new$/, "");
+  const secondCollectionResponse = await page.request.post(apiCollections, {
+    headers: { "idempotency-key": crypto.randomUUID() },
+    data: { ...confirmedCollection.request().postDataJSON(), occurredAt: "2026-09-23T11:00:00-03:00" },
+  });
+  expect(secondCollectionResponse.status()).toBe(201);
+  const secondId = (await secondCollectionResponse.json()).collection.id as string;
+  const secondEnvironmental = await page.request.post(`${apiCollections}/${secondId}/environmental-data`, {
+    headers: { "idempotency-key": crypto.randomUUID() }, data: confirmedEnvironmental.request().postDataJSON(),
+  });
+  expect(secondEnvironmental.status()).toBe(201);
+  const originalDiagnosisBody = response.request().postDataJSON();
+  const secondDiagnosisResponse = await page.request.post(`${apiCollections}/${secondId}/ihfr-diagnosis/diagnoses`, {
+    headers: { "idempotency-key": crypto.randomUUID() },
+    data: { ...originalDiagnosisBody, supplement: { ...originalDiagnosisBody.supplement, landUseType: "URBAN" } },
+  });
+  expect(secondDiagnosisResponse.status()).toBe(201);
+  const secondDiagnosis = await secondDiagnosisResponse.json();
+  expect(secondDiagnosis.diagnosis.collectionId).toBe(secondId);
+  expect(secondDiagnosis.diagnosis.displayScore).not.toBe(createdDiagnosis.diagnosis!.displayScore);
   await page.goto(areaUrl);
   const entries = page.getByRole("list", { name: "Coletas ordenadas por ocorrência em campo" }).getByRole("listitem");
-  // The isolated area has exactly two confirmed records, unlike the shared
+  // The isolated area has exactly three confirmed records, unlike the shared
   // historical IMP-006 fixture. Field occurrence, not confirmation, orders them.
-  await expect(entries).toHaveCount(2);
+  await expect(entries).toHaveCount(3);
   await expect(entries.first()).toContainText(laterId);
   await expect(entries.nth(1)).toContainText(collectionId);
+  await expect(entries.nth(2)).toContainText(secondId);
   const latest = page.getByRole("complementary", { name: "Último IHFR disponível da área" });
   await expect(latest).toContainText("Coleta de origem:");
   await expect(latest).toContainText(collectionId);
   await expect(latest).not.toContainText(laterId);
   await expect(latest).toContainText("validação científica pendente");
-  await entries.filter({ hasText: laterId }).getByRole("link", { name: "IHFR", exact: true }).click();
-  // The IHFR link intentionally targets its heading, preserving contextual navigation.
-  await expect(page).toHaveURL(areaUrl + "/collections/" + laterId + "#ihfr-diagnosis-heading");
+  for (const [width, height, scale] of [[1440, 900, 100], [375, 900, 100], [390, 844, 100], [320, 900, 200]]) {
+    await settleIHFRViewport(page, width, height, scale);
+    for (const [id, score] of [[laterId, null], [collectionId, createdDiagnosis.diagnosis!.displayScore], [secondId, secondDiagnosis.diagnosis.displayScore]] as const) {
+      const card = entries.filter({ hasText: id });
+      await expect(card).toHaveCount(1);
+      await expect(card.getByRole("link", { name: "IHFR", exact: true, includeHidden: true })).toHaveCount(0);
+      await expect(card.getByRole("link", { includeHidden: true })).toHaveCount(2);
+      await expect(card.getByRole("link", { name: "Abrir coleta", exact: true })).toHaveAttribute("href", `${areaUrl}/collections/${id}`);
+      await expect(card.getByRole("link", { name: "Dados ambientais", exact: true })).toHaveAttribute("href", `${areaUrl}/collections/${id}/environmental-data`);
+      if (score === null) await expect(card.getByText(/Score registrado:/)).toHaveCount(0);
+      else await expect(card.getByText(`Score registrado: ${score}`, { exact: true })).toHaveCount(1);
+      await card.getByRole("link", { name: "Abrir coleta", exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
+      await captureMissionViewport(page, info, `frontend-collections-ui044-${score === null ? "absent" : id === collectionId ? "current-first" : "current-second"}-${width}-${scale}`, scale);
+    }
+  }
+  await settleIHFRViewport(page, 1280, 900);
+  await entries.filter({ hasText: laterId }).getByRole("link", { name: "Abrir coleta", exact: true }).click();
+  await expect(page).toHaveURL(`${baseURL}${areaUrl}/collections/${laterId}`);
   await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+  await page.getByRole("link", { name: "Voltar à área", exact: true }).click();
+  await expect(page).toHaveURL(`${baseURL}${areaUrl}`);
+  await entries.filter({ hasText: collectionId }).getByRole("link", { name: "Dados ambientais", exact: true }).click();
+  await expect(page).toHaveURL(`${baseURL}${collectionUrl}/environmental-data`);
+  await page.getByRole("link", { name: "Voltar à coleta", exact: true }).click();
+  await expect(page).toHaveURL(`${baseURL}${collectionUrl}`);
 });
 
 test("OWNER and contextual ADMIN create, replace, revoke and recover with one stable key", async ({ page }, info) => {
-  test.setTimeout(90_000);
+  test.setTimeout(120_000);
   const actors = [
     { id: required("IMP006_E2E_OWNER_ID"), url: required("IMP006_E2E_MANAGE_URL") },
     { id: required("IMP006_E2E_ADMIN_ID"), url: required("IMP006_E2E_ADMIN_MANAGE_URL") },
@@ -213,14 +299,37 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
   for (const actor of actors) {
     await authenticate(page, actor.id, String(info.project.use.baseURL));
     await page.goto(actor.url);
+    await expectDesktopCollectionDetail(page);
     // Retained hidden content must not compete with the current accessible form.
     const reading = page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true });
     const management = page.getByRole("region", { name: "Gerenciar diagnóstico IHFR experimental", exact: true });
+    const profile = actor === actors[0] ? "owner" as const : "admin" as const;
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await management.getByLabel("Uso predominante da terra").selectOption("FOREST");
     await management.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
-    if (actor === actors[0]) await inspectManagementViewports(page, info, management);
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
+    await expectUI044Notice(page, { diagnosis: false, actions: true, profile });
+    if (actor === actors[0]) {
+      await inspectUI044DetailMatrix(page, info, { diagnosis: false, actions: true, profile });
+      await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+      await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
+      await inspectManagementViewports(page, info, management);
+    } else {
+      await settleIHFRViewport(page, 375, 900);
+      await inspectUI044Detail(page, info, { diagnosis: false, actions: true, profile });
+    }
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
+    const eligibility = page.waitForResponse((response) => response.url().includes("/ihfr-diagnosis/eligibility") && response.request().method() === "GET");
     await management.getByRole("button", { name: "Verificar elegibilidade" }).click();
+    const eligible = await eligibility;
+    expect(eligible.status()).toBe(200);
+    const eligibilityUrl = new URL(eligible.request().url());
+    const collectionPath = new URL(actor.url, String(info.project.use.baseURL)).pathname;
+    expect(eligibilityUrl.pathname).toBe(collectionPath.replace(/^\/dashboard\//, "/api/") + "/ihfr-diagnosis/eligibility");
+    expect(Array.from(eligibilityUrl.searchParams.entries())).toEqual([["landUseType", "FOREST"]]);
+    expect((await eligible.json()).outcome).toBe("ELIGIBLE");
     await expect(management.getByRole("status").first()).toContainText("ELIGIBLE");
 
     const create = management.getByRole("button", { name: "Criar diagnóstico" });
@@ -234,6 +343,10 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(management.getByRole("status").first()).toContainText("Vigente: sim");
     await expect(management.getByRole("button", { name: "Substituir diagnóstico" })).toBeVisible();
     await expect(management.getByRole("button", { name: "Revogar diagnóstico" })).toBeVisible();
+    await expect(reading.getByText("Score registrado", { exact: true }).locator("..").locator("dd")).toHaveText(String(created.diagnosis.displayScore));
+    await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toHaveCount(0);
+    if (actor === actors[0]) await inspectUI044DetailMatrix(page, info, { diagnosis: true, actions: true, profile });
+    else await inspectUI044Detail(page, info, { diagnosis: true, actions: true, profile });
     const createdKey = createdResponse.request().headers()["idempotency-key"];
     const recovered = await page.request.get(`${new URL(createdResponse.url()).origin}${new URL(createdResponse.url()).pathname.replace(/\/diagnoses$/, `/operations/${createdKey}`)}`);
     expect(recovered.status()).toBe(200);
@@ -254,7 +367,8 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     expect((await (await refreshedEligibility).json()).currentDiagnosisId).toBe(external.diagnosis.id);
     await expect(management.getByRole("alert")).toContainText("vigente mudou");
     await expect(management.getByRole("alert")).toBeFocused();
-    await expect(reading).toContainText(String(external.diagnosis.displayScore));
+    await expect(reading.getByText("Score registrado", { exact: true }).locator("..").locator("dd")).toHaveText(String(external.diagnosis.displayScore));
+    await expectUI044Notice(page, { diagnosis: true, actions: true, profile });
     await expect(management.getByRole("status").first()).toContainText("Vigente: sim");
 
     let timedOutKey = "";
@@ -294,9 +408,12 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     expect(replacement.request().headers()["idempotency-key"]).toBe(timedOutKey);
     expect(replacement.request().postDataJSON()).toEqual(timedOutBody);
     expect(new URL(replacement.request().url()).pathname).toBe(timedOutPath);
+    const replaced = await replacement.json();
     await expect(management.getByRole("status").last()).toContainText("registrado");
     await expect(management.getByRole("status").last()).toBeFocused();
     await expect(management.getByRole("status").first()).toContainText("Vigente: sim");
+    await expect(reading.getByText("Score registrado", { exact: true }).locator("..").locator("dd")).toHaveText(String(replaced.diagnosis.displayScore));
+    await expectUI044Notice(page, { diagnosis: true, actions: true, profile });
 
     await management.getByLabel("Motivo da revogação").fill("Correção autorizada");
     const revoked = page.waitForResponse((response) => response.url().endsWith("/revocations") && response.request().method() === "POST");
@@ -305,6 +422,7 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await expect(management.getByRole("status").last()).toBeFocused();
     await expect(management.getByRole("status").first()).toContainText("Vigente: não");
+    await expectUI044Notice(page, { diagnosis: false, actions: true, profile });
     await page.setViewportSize({ width: 320, height: 844 });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     if (actor === actors[0]) await captureIHFRViewport(page, info, "frontend-ihfr-revoked-320");
@@ -313,14 +431,19 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
 });
 
 test("MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM", async ({ page }, info) => {
+  test.setTimeout(90_000);
   for (const scenario of [
-    { id: required("IMP006_E2E_MEMBER_ID"), url: required("IMP006_E2E_COLLECTION_URL") },
-    { id: required("IMP006_E2E_OWNER_ID"), url: required("IMP006_E2E_INACTIVE_COLLECTION_URL") },
+    { id: required("IMP006_E2E_MEMBER_ID"), url: required("IMP006_E2E_COLLECTION_URL"), diagnosis: true, profile: "member" as const },
+    { id: required("IMP006_E2E_OWNER_ID"), url: required("IMP006_E2E_INACTIVE_COLLECTION_URL"), diagnosis: false, profile: "inactive-owner" as const },
   ]) {
     await authenticate(page, scenario.id, String(info.project.use.baseURL));
     await page.goto(scenario.url);
     await expect(page.getByRole("button", { name: /criar diagnóstico|substituir diagnóstico|revogar diagnóstico/i })).toHaveCount(0);
     await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental" })).toBeVisible();
+    await expectUI044Notice(page, { diagnosis: scenario.diagnosis, actions: false, profile: scenario.profile });
+    if (scenario.profile === "inactive-owner") {
+      await inspectUI044DetailMatrix(page, info, { diagnosis: false, actions: false, profile: "inactive-owner" });
+    }
     await page.keyboard.press("Tab");
     expect(await page.evaluate(() => document.activeElement !== document.body)).toBe(true);
   }

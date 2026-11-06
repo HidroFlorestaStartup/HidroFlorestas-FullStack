@@ -1,0 +1,330 @@
+{
+  "id": "P04-F4-FAILURE-CAUSAL-REVIEW",
+  "status": "FAIL_F4_CONFIRMED; FOCAL_TEST_PRECONDITION_REPAIR_PENDING",
+  "at_utc": "2026-11-06T03:31:48.066701+00:00",
+  "executor": "/root/o0_guards",
+  "independence": "No authorship or mutation of product/tests/config/Spec036. Read-only artifacts and source inspection; writes only own handoff.",
+  "identity": {
+    "head": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "tree": "0a74466cc7e521a5eddfb2013f86075323dee9ff",
+    "run": "42154773481",
+    "attempt": 1,
+    "job": "127686195383"
+  },
+  "artifact": {
+    "id": "13474109562",
+    "zip_path": "/workspace/scratch/100be1d812fa/validation/ui044-f4-rc-failure.zip",
+    "zip_sha256": "c15a4c38645c571b9a8214385e17c9c8c1d949c061022e43ee5bd849620cbc3f",
+    "zip_bytes": 35812738,
+    "zip_digest_and_size": "independently recalculated",
+    "crc": "PASS in P00 verifier; not rerun here",
+    "verification_receipt_sha256": "3572df8a649470b5148bb4b333cb2d380b48e38e68806ba415aaa4f35bc03d1d",
+    "manifest_sha256": "a4f0687bad796475424067be96bdac0c5423a515c738dc79a244a72f52e987fa"
+  },
+  "actual_results": {
+    "gates": [
+      {
+        "gate": "RegressionSetup",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Unit",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Integration",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Migration",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Contract",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "R1",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Build",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Typecheck",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Lint",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "E2E",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Https",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Deletion",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "gate": "Ihfr",
+        "result": "FAIL",
+        "exit_code": 1
+      },
+      {
+        "gate": "Bootstrap",
+        "result": "NOT_RUN",
+        "exit_code": null
+      },
+      {
+        "gate": "SchemaAudit",
+        "result": "NOT_RUN",
+        "exit_code": null
+      }
+    ],
+    "results_sha256": "bb9a69289d422bbb5d3938cc1973da18deeac050148843930a4b4ecdd9c15f4f",
+    "general_e2e": {
+      "passed": 244,
+      "failed": 0,
+      "log_sha256": "c7097305a05b1e8b457a946772245989490165f74d6c8ba169d3a50a40be12a8",
+      "evidence": "Log starts Running 244 tests using 1 worker and ends 244 passed. Prior F4 static audit establishes the three new native counterproofs belong to this suite; dot reporter does not print their individual names."
+    },
+    "ihfr": {
+      "passed": 5,
+      "failed": 1,
+      "log_sha256": "0083de86cf1fcddff437f5010511f0b548e92414dd4a59a9fc1a07c0806301cc",
+      "first_randomUUID_flow": "PASS, 18.8s",
+      "lifecycle_OWNER_ADMIN": "FAIL, 29.8s, before creation and before ADMIN iteration",
+      "prior_wait_timeouts": "not present in F4 log; read-only/inactive and first flow complete"
+    }
+  },
+  "matrix": {
+    "actual": 17,
+    "required": 23,
+    "reviewer_check": "Read all 17 layout JSON identities and unique case tuples; this is coverage/identity checking, not complete visual acceptance.",
+    "present_cases": [
+      [
+        "inactive-member",
+        false,
+        false,
+        375,
+        100
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        320,
+        200
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        375,
+        100
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        390,
+        100
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        1440,
+        100
+      ],
+      [
+        "member",
+        false,
+        false,
+        320,
+        200
+      ],
+      [
+        "member",
+        false,
+        false,
+        375,
+        100
+      ],
+      [
+        "member",
+        false,
+        false,
+        390,
+        100
+      ],
+      [
+        "member",
+        false,
+        false,
+        1440,
+        100
+      ],
+      [
+        "member",
+        true,
+        false,
+        320,
+        200
+      ],
+      [
+        "member",
+        true,
+        false,
+        375,
+        100
+      ],
+      [
+        "member",
+        true,
+        false,
+        390,
+        100
+      ],
+      [
+        "member",
+        true,
+        false,
+        1440,
+        100
+      ],
+      [
+        "owner",
+        false,
+        true,
+        320,
+        200
+      ],
+      [
+        "owner",
+        false,
+        true,
+        375,
+        100
+      ],
+      [
+        "owner",
+        false,
+        true,
+        390,
+        100
+      ],
+      [
+        "owner",
+        false,
+        true,
+        1440,
+        100
+      ]
+    ],
+    "missing_cases": [
+      [
+        "owner",
+        true,
+        true,
+        1440,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        375,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        390,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        320,
+        200
+      ],
+      [
+        "admin",
+        false,
+        true,
+        375,
+        100
+      ],
+      [
+        "admin",
+        true,
+        true,
+        375,
+        100
+      ]
+    ]
+  },
+  "observed_failure": {
+    "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "source_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+    "assertion_line": 312,
+    "expected": "ELIGIBLE",
+    "received_outcome": "INSUFFICIENT_DATA",
+    "received_reasons": [
+      "MISSING_LAND_USE_TYPE",
+      "INSUFFICIENT_DIMENSION"
+    ],
+    "request": "First lifecycle OWNER eligibility GET returns 200 without any query at raw-log line 59.",
+    "first_flow_counterexample": "Earlier repaired randomUUID flow sends landUseType=FOREST and passes; it uses the same unchanged wait and application."
+  },
+  "source_analysis": [
+    "Lifecycle OWNER/ADMIN fills FOREST and the observation date before proving desktop client composition and without asserting either field value.",
+    "Before requesting eligibility, OWNER executes the absent 4-viewport matrix and management 7-viewport/dialog checks. All complete far enough to reach the eligibility assertion.",
+    "inspectUI044DetailMatrix snapshots whatever input values currently exist, then compares equality; an already-empty initial value can therefore remain equal without proving the intended FOREST precondition.",
+    "inspectManagementViewports also snapshots inputs at entry. Existing 1440-to-375 dialog assertions compare against that snapshot; most Escape steps and the final 1280 return lack explicit expected-value checks.",
+    "The observed missing query and MISSING_LAND_USE_TYPE establish an absent domain input at request time. They do not locate when or why it was lost.",
+    "P02 independently reports that terrain requires slope plus landUseType, making the second reason consistent with this same missing supplement; its focal source receipt will be referenced separately when delivered."
+  ],
+  "visual_observation": {
+    "path": "/workspace/scratch/100be1d812fa/validation/run42154773481/.accounts-validation/frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-ui044-owner-absent-1440-100-actions.png",
+    "sha256": "acc35c536e19d176b3614afadee7c35d2f59c2d1afab9f0bd0f97b1051b04e52",
+    "viewed": true,
+    "detail": "First OWNER-absent 1440 actions PNG shows rendered management and scientific notice/metadata columns. Input/select/date values are deliberately masked in magenta; this image cannot establish their earlier values or the loss moment."
+  },
+  "justified_next_patch_constraints": [
+    "Reuse the existing observable desktop preparation before each OWNER/ADMIN lifecycle fill; retain a single select and fill.",
+    "Assert literal expected land use/date immediately after filling, after matrix and after management viewport or ADMIN branch, including final return viewport.",
+    "Additional after-Escape value assertions may strengthen the already-anchored snapshot without reselecting or mutating inputs.",
+    "Capture the first eligibility response without filtering for correct query; assert contextual pathname, exact FOREST query, status 200, exact ELIGIBLE outcome and retain original UI assertion.",
+    "Preserve fixture/domain values, all matrix cases, lifecycle/409/recovery/idempotency assertions, timeout and retries. Do not modify product or official wait helpers for this test-only candidate."
+  ],
+  "limits": [
+    "No proof of hydration timing, specific state reset, animation pause or browser defect in this failure.",
+    "If an asserted valid value is later lost after observable preparation, surface a product finding rather than refill/retry.",
+    "F4 remains FAIL; no prior or current suite PASS qualifies a successor SHA.",
+    "No browser/test/DB/provider execution, CI rerun, escalation or publication performed by reviewer.",
+    "Patch and final pre/post hashes are not yet reviewed in this causal receipt. No O3/global PASS."
+  ],
+  "handoff": "P03 may produce the already-authorized focused manage.spec.ts patch; P04 will review its exact delta/hashes and preservation. P00 remains sole integrator."
+}

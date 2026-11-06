@@ -1,0 +1,302 @@
+{
+  "mission": "HF-UI044-CORRECOES-FINAIS-20261105",
+  "front": "P02-C2-C3",
+  "status": "IMPLEMENTED_PENDING_INDEPENDENT_REVIEW",
+  "created_at_utc": "2026-11-06T00:49:52.570085+00:00",
+  "executor": "/root/p02_detail",
+  "coordinator": "/root",
+  "worktree": "/workspace/scratch/100be1d812fa/wt-p02",
+  "branch": null,
+  "head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "head_tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+  "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "subject": "dirty working tree postimages listed below; no child commit, push, PR, merge or deploy",
+  "o0": {
+    "path": "/workspace/scratch/100be1d812fa/repo/specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/o0.json",
+    "sha256": "fb319da8961caf33de016e6cb4d75d10e0e9a4ca7cbb25f9ed6ce793b0d9adc9",
+    "status": "PASS inherited and identity rechecked"
+  },
+  "ownership": {
+    "paths": [
+      "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+      "src/components/collections/collection-detail.tsx",
+      "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "src/components/collections/collection-detail-layout.tsx"
+    ],
+    "additional_path_reservation": "P00 approved src/components/collections/collection-detail-layout.tsx in session; no other new product paths",
+    "shared_tests": "/root/p03_tests only",
+    "canonical_spec": "/root only"
+  },
+  "files": [
+    {
+      "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+      "operation": "modify",
+      "preimage": {
+        "blob": "8f78ea8d8e29308a64b7289026a1595ccd054aa6",
+        "sha256": "db60ed6caf5e54f1d66766a9832238212fece8443481db15704ae0ed80a38a43"
+      },
+      "postimage": {
+        "blob": "ab0dfce397a9f7539b49897acccdc812ba49b515",
+        "sha256": "87688081b0e7388b726a79c39f46038d6c3517aedb04db503717cf7bd2738f4b",
+        "bytes": 2961
+      }
+    },
+    {
+      "path": "src/components/collections/collection-detail.tsx",
+      "operation": "modify",
+      "preimage": {
+        "blob": "2c8b97c6a761a5eeba7fa2c67d73cad0bf9b165d",
+        "sha256": "4eea4b9c0006cad872f335b322b1910869389d3d42f1168d7d16b55295bdd09b"
+      },
+      "postimage": {
+        "blob": "1ba881c009a6ad45545edba72934c449ddf743dc",
+        "sha256": "0faba70a683bce1c274d055e0981256a3d2060799c8c97693ca8b34aa714ef8d",
+        "bytes": 3754
+      }
+    },
+    {
+      "path": "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "operation": "modify",
+      "preimage": {
+        "blob": "d47eea4757f9906f2ca1b22ba0d2fa634b9fd61e",
+        "sha256": "0797a2022aabde6643264837c2ef4cf9039253bad681578d76b5191dad8560e9"
+      },
+      "postimage": {
+        "blob": "0a7572c4d8420ba3f60f4052b4d432ec75f0f001",
+        "sha256": "e18cdf5feb9126b225ebb44123c8fa6bed4efaaeadd9b57fd22b3faddc824d3a",
+        "bytes": 19380
+      }
+    },
+    {
+      "path": "src/components/collections/collection-detail-layout.tsx",
+      "operation": "add",
+      "preimage": null,
+      "postimage": {
+        "blob": "af4de05055f6369c817d9c972fb380a303c2f8ca",
+        "sha256": "7bb3c8e1d6a25a7269ecf91ccfeb42a8293607938b4df0f21dd94ad24c73c191",
+        "bytes": 4577
+      }
+    }
+  ],
+  "patch": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p02/p02.patch",
+    "sha256": "d3406dcf8b2e60168bd5c8e5c0d4ddd60271c7b7487fe22a03e2c9883ed2f4db",
+    "bytes": 22043,
+    "apply_cached_check_on_B": "PASS",
+    "reverse_check_on_postimage": "PASS"
+  },
+  "implementation": {
+    "C2": "Removed ScientificNotice import/render only from authorized actions. The three reading/notice files are byte-for-byte unchanged.",
+    "C3": "Server creates serializable ReactNode slots for header, record and environmental cards. CollectionDetailLayout renders exactly one active composition: mobile header, reading, record, environmental, actions; desktop original independent columns with 1:1.35 ratio.",
+    "single_controller": "IHFRDiagnosisManagement retains all state and lifecycle requests. The reading slot is derived from current diagnosis state on every render, not initialDiagnosis. The dialog stays outside breakpoint-dependent presentation.",
+    "responsive_state": "useSyncExternalStore uses 80rem matchMedia and stable false SSR snapshot; root-scoped position snapshots restore open disclosures and logical focus on breakpoint change. Dialog return uses current action button refs after reparenting.",
+    "authorization": "The existing ACTIVE and membershipRole != MEMBER gate in the server page is unchanged.",
+    "preserved": "Forms, missing-environmental notice, provenance, scientific qualifiers, idempotency/replay key/body/path, feedback, reconciliation, APIs, schema, auth and dependencies unchanged.",
+    "tradeoff": "Presentation nodes remount when crossing xl; same-node identity is not asserted. Observable state/focus/disclosures are the agreed acceptance contract. Desktop first SSR preview uses mobile sequence until hydration reconciles the breakpoint.",
+    "widths": "Existing max-w-4xl cap applies to reading/actions only when management actions are present; read-only layout retains uncapped original column width."
+  },
+  "native_agents": {
+    "parent": "/root",
+    "peer_tests": "/root/p03_tests",
+    "independent_review": "/root/o0_guards",
+    "children_spawned": [],
+    "reason": "Parent real P01/P02/P03 slots occupied; no simulated children. Architectural review coordinated by root and P03, independent review delegated to existing nonauthor P04 auditor."
+  },
+  "spec_kit": {
+    "mode": "localized analyze/plan/tasks crosswalk, implement and convergence review; no new feature",
+    "feature": "specs/036-ajustes-area-coletas-ihfr",
+    "skills": [
+      "speckit-analyze",
+      "speckit-plan",
+      "speckit-tasks",
+      "speckit-implement",
+      "speckit-converge"
+    ],
+    "prerequisite_command": "SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+    "prerequisite_exit": 0,
+    "feature_selection_restored": true,
+    "canonical_files_modified": false,
+    "crosswalk": [
+      {
+        "requirement": "FR-036-002 / US2",
+        "code": "live reading and states unchanged; unique scientific notice",
+        "proposed_task": "T070 (P00 canonical owner)"
+      },
+      {
+        "requirement": "FR-036-003",
+        "code": "scientific contracts and reading components preserved byte-for-byte",
+        "proposed_task": "T070"
+      },
+      {
+        "requirement": "FR-036-005",
+        "code": "authorization/lifecycle/idempotency preserved",
+        "proposed_task": "T070"
+      },
+      {
+        "requirement": "SC-036-001/002/004 and US3",
+        "code": "mobile DOM sequence and independent desktop stacks, focus/disclosure preservation",
+        "tests": "P03 shared tests plus final browser/CI required"
+      }
+    ],
+    "convergence": "implementation present; browser, independent review and integrated CI remain required, no global feature PASS",
+    "slash_commands": "NOT_RUN; executable installed scripts and skill workflow used, no invented slash runtime"
+  },
+  "checks": [
+    {
+      "name": "O0/base/ownership",
+      "status": "PASS",
+      "command": "git status; rev-parse HEAD/tree; O0 hash; worktree inventory",
+      "exit_code": 0
+    },
+    {
+      "name": "Spec Kit prerequisites",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "ESLint four owned files",
+      "status": "PASS",
+      "command": "node_modules/.bin/eslint <page> src/components/collections/collection-detail.tsx src/components/collections/collection-detail-layout.tsx src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "exit_code": 0
+    },
+    {
+      "name": "git diff --check",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "existing reading accessibility unit tests",
+      "status": "PASS",
+      "command": "node --import=tsx --test tests/unit/ihfr-diagnosis-read-accessibility.test.tsx",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0
+    },
+    {
+      "name": "global TypeScript",
+      "status": "BLOCKED",
+      "command": "node_modules/.bin/tsc --noEmit --incremental false",
+      "exit_code": 2,
+      "cause": "src/generated/prisma missing in worker; TS2307 and cascading diagnostics. No generation or dependency changes performed. Root will typecheck composed tree."
+    },
+    {
+      "name": "patch cached apply check against B",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "patch reverse check against worker postimages",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "name": "ESLint focal after cap correction and git diff --check",
+      "status": "PASS",
+      "command": "node_modules/.bin/eslint src/components/collections/collection-detail-layout.tsx && git diff --check",
+      "exit_code": 0
+    },
+    {
+      "name": "preserved shared CSS and scientific reading components",
+      "status": "PASS",
+      "command": "git diff --quiet HEAD -- collections.module.css scientific-notice.tsx experimental-diagnosis-summary.tsx no-current-diagnosis.tsx",
+      "exit_code": 0
+    }
+  ],
+  "comparisons": {
+    "pinned_pngs": "READ three originals; references only",
+    "desktop_1440": "NOT_RUN new application screenshot/browser in P02",
+    "mobile_375_390": "NOT_RUN new application screenshot/browser in P02",
+    "mobile_320_text200": "NOT_RUN new application screenshot/browser in P02",
+    "lifecycle_mutations": "NOT_RUN browser in P02; controller code unchanged except focus refs/composition",
+    "permissions": "STATIC_REVIEW unchanged canManage gate; runtime delegated P03/CI",
+    "official_ci": "NOT_RUN by worker; coordinator final SHA gate",
+    "codex_review": "NOT_RUN by worker; coordinator final SHA gate"
+  },
+  "independent_review": {
+    "status": "PENDING",
+    "reviewer": "/root/o0_guards",
+    "requested": true
+  },
+  "sources": [
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/aceite-e-integracao.json",
+      "sha256": "23b5f2be24dd1b5861309826fb2afca4e0900d48228ed9bdffa26572a769cd99",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/evidencias/01-area-link-ihfr-redundante.png",
+      "sha256": "f6b535f2a41ee2e3d76fcae9bff73fd30089cedc1285367572d470c123367cee",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/evidencias/02-detalhe-aviso-experimental-duplicado.png",
+      "sha256": "8615a03dedf3d0018e59664b53f5e93c60f8d7a7ea464029276830b318ca1b82",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/evidencias/03-mobile-prioridade-leitura-da-coleta.png",
+      "sha256": "3b35a0cfaf1a0f0120a5cb60c8ce5fd146e705650e61fd0e2e96726e8ecc30da",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/evidencias/readme.md",
+      "sha256": "1f36d5467f548a45e82c4145960d82ad8320d8dce91d11ca1f25d74e0885e5e6",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/plano-de-publicacao.md",
+      "sha256": "e28d07c412ca64bed33f0100498bebe6e71df909ea41ada8c26612f958ff07af",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/sources-pinned/prompt-de-execucao.md",
+      "sha256": "833faeafc95e073fbdae765bceab9248c0b52ea5f856bc99d5bcad93324c881f",
+      "read": true,
+      "classification": "DECISAO_CONFIRMADA/C1-C3 and documentary visual evidence; no new implementation proof"
+    }
+  ],
+  "limits": [
+    "No PASS copied from historical PR51 or any other SHA.",
+    "No application runtime, browser or database service launched by P02.",
+    "One additional focal client layout reserved; shared CSS and science components untouched."
+  ],
+  "next": "P04 independent code review; P00 verifies manifest/preimages and composes P01→P02→P03; integrated checks/screenshots and official CI qualify final SHA.",
+  "updated_at_utc": "2026-11-06T00:51:15.097743+00:00",
+  "command_output": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p02/command-output.json",
+    "sha256": "4550674c15f27e78e266af4bff272624922bb4854fd118e0f0193c65d6814157",
+    "note": "Typecheck output excerpt truncated by original tool budget; result exit2 retained."
+  },
+  "environment": {
+    "os": "Linux",
+    "node": "24.22.1",
+    "next": "16.3.8",
+    "dependencies": "shared installed lockfile node_modules symlink; worker installed nothing",
+    "database": "NOT_RUN",
+    "processes_started": []
+  },
+  "guide_hashes": [
+    {
+      "path": "/workspace/scratch/100be1d812fa/wt-p02/node_modules/next/dist/docs/01-app/01-getting-started/05-server-and-client-components.md",
+      "sha256": "c3f53d13af341d19a601a846082f34abcea2b599c805ab9cd2f32173295e5914"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/wt-p02/node_modules/next/dist/docs/01-app/02-guides/server-and-client-boundary.md",
+      "sha256": "8f689eab26b887c81ae2dba18d681fd7af0b6ea5bcaedcfe59e807bd7da2e854"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/wt-p02/node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-client.md",
+      "sha256": "b46c9669be66bf95c946bf47a9518b2fd755ae6303c977c364c5a632942d223e"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/wt-p02/node_modules/next/dist/docs/01-app/01-getting-started/11-css.md",
+      "sha256": "26732dd6853d66b3edb7e7cda65e46c3ff150525377f51f187e4a075d253eeda"
+    }
+  ]
+}

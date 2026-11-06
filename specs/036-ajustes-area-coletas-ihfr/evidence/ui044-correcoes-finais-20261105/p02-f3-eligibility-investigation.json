@@ -1,0 +1,238 @@
+{
+  "id": "P02-ELIGIBILITY-INVESTIGATION-F3",
+  "executor": "/root/p02_resize_investigation",
+  "timestamp_utc": "2026-11-06T02:59:16.830185+00:00",
+  "state": "PROXIMATE_CAUSE_CONFIRMED_INTERNAL_STATE_LOSS_NOT_PROVEN",
+  "scope": "Read-only source/log investigation of fifth new F3 failure, independent of render-wait failures",
+  "identity": {
+    "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "F2": "3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06",
+    "F3": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+    "F3_tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+    "branch": "fix/ui044-correcoes-finais-20261105",
+    "clean_at_initial_observation": true
+  },
+  "failure": {
+    "run": 42150335260,
+    "attempt": 1,
+    "test": "collection, environmental confirmation and IHFR creation work without browser randomUUID",
+    "file": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "line": 181,
+    "expected": "ELIGIBLE",
+    "received": "INSUFFICIENT_DATA",
+    "F2_case_result": "PASS",
+    "F3_case_result": "FAIL"
+  },
+  "artifact": {
+    "sha": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+    "run": "42150335260",
+    "attempt": "1",
+    "artifact_sha256": "10c1d6abdbd746b6bb3b7158949ab769d8596f0cccb1289dcc0a8df44ee4afb2",
+    "artifact_bytes": 29039558,
+    "zip_crc": "PASS",
+    "entry_count": 766
+  },
+  "source_identity": [
+    {
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "F2_sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+      "F3_sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+      "F2_blob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+      "F3_blob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+      "F2_sha256": "e18cdf5feb9126b225ebb44123c8fa6bed4efaaeadd9b57fd22b3faddc824d3a",
+      "F3_sha256": "e18cdf5feb9126b225ebb44123c8fa6bed4efaaeadd9b57fd22b3faddc824d3a",
+      "F2_blob": "0a7572c4d8420ba3f60f4052b4d432ec75f0f001",
+      "F3_blob": "0a7572c4d8420ba3f60f4052b4d432ec75f0f001",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "src/components/collections/collection-detail-layout.tsx",
+      "F2_sha256": "7bb3c8e1d6a25a7269ecf91ccfeb42a8293607938b4df0f21dd94ad24c73c191",
+      "F3_sha256": "7bb3c8e1d6a25a7269ecf91ccfeb42a8293607938b4df0f21dd94ad24c73c191",
+      "F2_blob": "af4de05055f6369c817d9c972fb380a303c2f8ca",
+      "F3_blob": "af4de05055f6369c817d9c972fb380a303c2f8ca",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-eligibility.handler.ts",
+      "F2_sha256": "154173d302a4008054f0d9ce7274698254df0929232e56fd3dd00708b442b4aa",
+      "F3_sha256": "154173d302a4008054f0d9ce7274698254df0929232e56fd3dd00708b442b4aa",
+      "F2_blob": "1cc0fdfd94a65b6410525cbd3d6bf722aea945f7",
+      "F3_blob": "1cc0fdfd94a65b6410525cbd3d6bf722aea945f7",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "src/app/api/server/services/ihfr-diagnosis.service.ts",
+      "F2_sha256": "8458fe398e0e0002db0e194170a330faea9ebabe1bafd327691f4a1a33ff5626",
+      "F3_sha256": "8458fe398e0e0002db0e194170a330faea9ebabe1bafd327691f4a1a33ff5626",
+      "F2_blob": "0de76d312f14b7c0c93663afa727fc9d2b5bb5b3",
+      "F3_blob": "0de76d312f14b7c0c93663afa727fc9d2b5bb5b3",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "src/app/api/server/ihfr-diagnosis/evaluator.ts",
+      "F2_sha256": "1259e75f838f6ed8bf0427681ac45448039a23a6647da34c6b01ea932f0b3c80",
+      "F3_sha256": "1259e75f838f6ed8bf0427681ac45448039a23a6647da34c6b01ea932f0b3c80",
+      "F2_blob": "22e1a6f335c4841c7f861430919bb71e1e3c4279",
+      "F3_blob": "22e1a6f335c4841c7f861430919bb71e1e3c4279",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "scripts/imp006-local-e2e.ts",
+      "F2_sha256": "382bc19edb38135ca70755517e94c2866334d0a8185e10779d1aea1a4cd10bea",
+      "F3_sha256": "382bc19edb38135ca70755517e94c2866334d0a8185e10779d1aea1a4cd10bea",
+      "F2_blob": "b8221ad9b0ef1587b2488c70ebc718334573b2f6",
+      "F3_blob": "b8221ad9b0ef1587b2488c70ebc718334573b2f6",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "tests/fixtures/ihfr-diagnosis-domain.ts",
+      "F2_sha256": "37ac8961d2a687a1ca15dbbd053dd821ff687049c68b7063d1e3f2efdf563e1b",
+      "F3_sha256": "37ac8961d2a687a1ca15dbbd053dd821ff687049c68b7063d1e3f2efdf563e1b",
+      "F2_blob": "b1ffab0440fbc5197198cbccef42c038b9298ddf",
+      "F3_blob": "b1ffab0440fbc5197198cbccef42c038b9298ddf",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "playwright.imp006.config.ts",
+      "F2_sha256": "93afe0133475d85a8d1dcaef7c5b18ea69ec0526610b4798d6bbc048844579cf",
+      "F3_sha256": "93afe0133475d85a8d1dcaef7c5b18ea69ec0526610b4798d6bbc048844579cf",
+      "F2_blob": "26781dc60651a049215ded39e2749a8d8525a4ab",
+      "F3_blob": "26781dc60651a049215ded39e2749a8d8525a4ab",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "tests/e2e/support/ihfr-diagnostics.ts",
+      "F2_sha256": "3d6051219de10590276c2dde3d247c7d96c3562d7248be6289dcf678572d7e0e",
+      "F3_sha256": "3d6051219de10590276c2dde3d247c7d96c3562d7248be6289dcf678572d7e0e",
+      "F2_blob": "1871eca594a831d0c2e34913ffbd227bd9335c2c",
+      "F3_blob": "1871eca594a831d0c2e34913ffbd227bd9335c2c",
+      "identical_F2_F3": true
+    },
+    {
+      "path": "tests/e2e/support/collection-occurrence.ts",
+      "F2_sha256": "dc65deecd20effa9109b6c38bf64811e73eab3e4777b0e39c629d662e619406b",
+      "F3_sha256": "dc65deecd20effa9109b6c38bf64811e73eab3e4777b0e39c629d662e619406b",
+      "F2_blob": "57a3a01a29f10ea58d5cd418ea8f01d043121aad",
+      "F3_blob": "57a3a01a29f10ea58d5cd418ea8f01d043121aad",
+      "identical_F2_F3": true
+    }
+  ],
+  "logs": {
+    "F2": {
+      "path": "/workspace/scratch/100be1d812fa/validation/run42144128465/.accounts-validation/ihfr-1793929843049.log",
+      "sha256": "bcaad34a1efe3e3469f56a1c31fd6ee6551bcd5fc709398cc7d4cb59152c1a08",
+      "first_case_relevant_lines": [
+        "IMP-006 schema owned by this run: imp006_test_364da00d75294680abdce86f91f21873",
+        "Next stdout:  POST /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/3dfb0087-d50a-4464-9994-5a3bdc7ac8fa/environmental-data 201 in 944ms (next.js: 902ms, application-code: 42ms)",
+        "Next stdout:  GET /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/3dfb0087-d50a-4464-9994-5a3bdc7ac8fa/ihfr-diagnosis/eligibility?landUseType=FOREST 200 in 1436ms (next.js: 1276ms, application-code: 160ms)",
+        "Next stdout:  POST /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/3dfb0087-d50a-4464-9994-5a3bdc7ac8fa/ihfr-diagnosis/diagnoses 201 in 1143ms (next.js: 1070ms, application-code: 73ms)",
+        "Next stdout:  GET /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/3dfb0087-d50a-4464-9994-5a3bdc7ac8fa/ihfr-diagnosis/eligibility?landUseType=FOREST 200 in 26ms (next.js: 13ms, application-code: 13ms)",
+        "Next stdout:  POST /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/d8e126c0-6de5-4037-9c9d-233f3f366b6c/environmental-data 201 in 43ms (next.js: 16ms, application-code: 27ms)",
+        "Next stdout:  POST /api/laboratories/60000000-0000-4000-8000-000000000011/areas/260ca5d2-51f2-4c96-a11c-35b6a59cd2b1/collections/d8e126c0-6de5-4037-9c9d-233f3f366b6c/ihfr-diagnosis/diagnoses 201 in 95ms (next.js: 28ms, application-code: 67ms)"
+      ],
+      "diagnostic_render_observer_events_before_first_failure": 0
+    },
+    "F3": {
+      "path": "/workspace/scratch/100be1d812fa/validation/run42150335260/.accounts-validation/ihfr-1793932900995.log",
+      "sha256": "09b0bfe95258e5a5a8b5945c7ba61d1ac469e409a4795a0c0f61204fd716d9a9",
+      "first_case_relevant_lines": [
+        "IMP-006 schema owned by this run: imp006_test_0244b094525a40d188473e33d778b296",
+        "Next stdout:  POST /api/laboratories/60000000-0000-4000-8000-000000000011/areas/54c4a966-a49d-4180-a064-aa33533f6a6f/collections/c5799032-dc13-477f-9410-32427acfc8c9/environmental-data 201 in 644ms (next.js: 618ms, application-code: 26ms)",
+        "Next stdout:  GET /api/laboratories/60000000-0000-4000-8000-000000000011/areas/54c4a966-a49d-4180-a064-aa33533f6a6f/collections/c5799032-dc13-477f-9410-32427acfc8c9/ihfr-diagnosis/eligibility 200 in 997ms (next.js: 844ms, application-code: 152ms)"
+      ],
+      "diagnostic_render_observer_events_before_first_failure": 0
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "status": "VERIFIED_LOG",
+      "claim": "F3 first eligibility GET omits the landUseType query. F2 equivalent GET includes landUseType=FOREST. F3 collection and environmental confirmation succeeded with201 before eligibility200."
+    },
+    {
+      "id": "F2",
+      "status": "VERIFIED_SOURCE",
+      "claim": "Client refreshEligibility builds the query from React landUseType state; the empty-string initial state omits it. selectOption in the test is not followed by a persistent-value assertion before the GET.",
+      "source": "ihfr-diagnosis-management.tsx:24,60-69,167; ihfr-diagnosis-manage.spec.ts:174-181"
+    },
+    {
+      "id": "F3",
+      "status": "VERIFIED_SOURCE",
+      "claim": "Eligibility handler passes missing landUseType as undefined. Service pushes MISSING_LAND_USE_TYPE, and if measurement/manifest validation reaches that path, the nonempty reason list deterministically produces INSUFFICIENT_DATA. A missing environmental set would independently produce the same outcome; raw response reasons are not present in this artifact.",
+      "source": "ihfr-diagnosis-eligibility.handler.ts:19-24; ihfr-diagnosis.service.ts:44-65"
+    },
+    {
+      "id": "F4",
+      "status": "VERIFIED_SOURCE",
+      "claim": "Eligibility does not use occurredAt, observedAt or the wall-clock date. It checks confirmedAt presence, measurement version/payload, optional landUseType and dimensions. The fixed collection date2026-09-24T09:00:00-03:00 and observation2026-09-24T12:00 are unchanged; there is no eligibility expiry comparison in this path.",
+      "source": "ihfr-diagnosis-manage.spec.ts:146,176; ihfr-diagnosis.service.ts:44-65"
+    },
+    {
+      "id": "F5",
+      "status": "VERIFIED_SOURCE_AND_LOG",
+      "claim": "Test creates a new isolated area through API and confirms its own collection/environmental set. Runner uses an owned synthetic schema, single worker and zero retries. Source/fixture/runner hashes matchF2/F3; no new backend or scientific-contract delta explains this difference.",
+      "source": "test:128-172; imp006-local-e2e.ts:50-96; playwright.imp006.config.ts"
+    },
+    {
+      "id": "F6",
+      "status": "VERIFIED_SOURCE",
+      "claim": "C3 supplies getServerSnapshot=false and switches slots into desktop columns after client state resolves. Desktop DOM has record before reading; mobile/SSR has reading before record. The controller stays above the layout, but DOM changes before or during initial interaction can only be attributed causally with observation.",
+      "source": "collection-detail-layout.tsx:19-21,44-77,86-92"
+    },
+    {
+      "id": "F7",
+      "status": "VERIFIED_SOURCE_AND_LOG",
+      "claim": "The F3 render observer is defined in the changed helper and installed only by inspectUI044Detail. This first test fails before reaching later presentation checks, and no observer event appears before its failure. The first test source itself is byte-identicalF2/F3.",
+      "source": "ui044-final-corrections.ts definitions/call sites; manage test; first-case log slice"
+    },
+    {
+      "id": "F8",
+      "status": "VERIFIED_ARTIFACT",
+      "claim": "The log references error-context.md, but the downloaded ZIP contains zero error-context.md entries. Exact request/response bodies and final input values are not available in the artifact.",
+      "source": "/workspace/scratch/100be1d812fa/validation/ui044-f3-rc-diagnostic.zip"
+    }
+  ],
+  "causal_assessment": {
+    "confirmed": "The eligibility request lacked the intended land-use input; the API contract correctly treats missing land use as insufficient. This is a concrete missing-input failure, not evidence of changed science or expired fixture dates.",
+    "inference": "Interaction before React hydration/desktop composition completed could leave or restore the controller landUseType state to empty despite selectOption on the visible DOM. This is consistent with SSR/mobile-to-desktop composition but not directly observed in F3.",
+    "not_claimed": [
+      "Flake diagnosis",
+      "A confirmed hydration bug or exact lost-event ordering",
+      "All insufficiency response reasons",
+      "Success of any proposed patch",
+      "Runtime PASS on a successor"
+    ]
+  },
+  "proposed_minimal_change": {
+    "owner": "P03 after P00 reservation",
+    "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "classification": "RECOMENDACAO",
+    "steps": [
+      "Before the two form fills, assert desktop viewport and wait for the observable desktop composition: one article named Detalhe da coleta, unique record/reading blocks, record.compareDocumentPosition(reading) includes DOCUMENT_POSITION_FOLLOWING. This is true in desktop and false in SSR/mobile; do not depend on pixels or the render waiter with an unrelated failure.",
+      "Select FOREST and fill2026-09-24T12:00 once. After both operations, assert both field values remain correct.",
+      "Keep capturing the first eligibility GET without filtering out a wrong query. Before asserting ELIGIBLE, assert the response/request pathname matches this collection and searchParams.getAll(landUseType) equals [FOREST].",
+      "Keep the existing201/API/idempotency/ELIGIBLE/lifecycle expectations. Do not force a query, intercept the request, reseed data, silently reselect, add retries or increase timeout."
+    ],
+    "limits": "This adds a concrete client-composition precondition and detects input loss earlier; it does not itself prove or fix all possible early-user-interaction defects in product. If loss remains after the composition predicate, return it as a product finding with evidence."
+  },
+  "other_observation": {
+    "pattern_warning": "F3 console recorded invalid HTML pattern [+-][0-9]{2}:[0-9]{2} under RegExp v. Collection/environmental posts nevertheless returned201; no connection to omitted landUseType is shown. Do not broaden the UI044 repair to this unrelated warning without evidence."
+  },
+  "checks": {
+    "read_only_git_and_hashes": "EXECUTED",
+    "artifact_zip_entry_inventory": "EXECUTED",
+    "browser": "NOT_RUN (existing environment restriction; no bypass attempted)",
+    "database": "NOT_RUN",
+    "CI": "NOT_RUN by this agent",
+    "source_mutations": "NONE",
+    "publication": "NONE"
+  },
+  "writes": [
+    "This receipt only; root/P03/P04 informed via collaboration messages."
+  ]
+}

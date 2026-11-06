@@ -4,6 +4,7 @@ import { IHFR_CONTEXTS } from "../fixtures/ihfr-diagnosis-contexts";
 import { IHFR_DOMAIN } from "../fixtures/ihfr-diagnosis-domain";
 import { IHFR_CONTRACT } from "../../src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { captureIHFRViewport, expectIHFRScientificWords, expectIHFRUnfragmentedWords, IHFR_SCIENTIFIC_QUALIFICATIONS, settleIHFRViewport } from "./support/frontend-ihfr-evidence";
+import { expectUI044Notice, inspectUI044Detail, inspectUI044DetailMatrix } from "./support/ui044-final-corrections";
 
 const required = (name: string) => {
   const value = process.env[name];
@@ -16,6 +17,7 @@ test.beforeEach(async ({ context }, info) => {
 });
 
 test("member reads the current experimental DTO with labels, keyboard access and responsive layout", async ({ page }, info) => {
+  test.setTimeout(90_000);
   await page.goto(required("IMP006_E2E_COLLECTION_URL"));
   const diagnosis = page.getByRole("region", { name: "Diagnóstico IHFR experimental" });
   await expect(diagnosis).toBeVisible();
@@ -23,6 +25,7 @@ test("member reads the current experimental DTO with labels, keyboard access and
   const limits = diagnosis.locator("details").first();
   const provenance = diagnosis.locator("details").last();
   await expect(limits).not.toHaveAttribute("open");
+  await expectUI044Notice(page, { diagnosis: true, actions: false, profile: "member" });
   await limits.locator("summary").focus();
   await page.keyboard.press("Enter");
   await expect(limits).toHaveAttribute("open", "");
@@ -37,6 +40,7 @@ test("member reads the current experimental DTO with labels, keyboard access and
   for (const restricted of ["actorUserId", "idempotencyKey", "requestHash", "payloadHash", "evidence", "lifecycleEvents"]) expect(text).not.toContain(restricted);
   for (const width of [320, 375, 390, 768, 1280, 1440]) {
     await settleIHFRViewport(page, width, width === 390 ? 844 : 900);
+    if ([375, 390, 1440].includes(width)) await inspectUI044Detail(page, info, { diagnosis: true, actions: false, profile: "member" });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await diagnosis.getByRole("heading", { name: "Diagnóstico IHFR experimental", exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
     await captureIHFRViewport(page, info, `frontend-ihfr-result-${width}`);
@@ -45,6 +49,7 @@ test("member reads the current experimental DTO with labels, keyboard access and
   }
   for (const [width, height] of [[320, 900], [667, 375]]) {
     await settleIHFRViewport(page, width, height, 200);
+    if (width === 320) await inspectUI044Detail(page, info, { diagnosis: true, actions: false, profile: "member" });
     await expectIHFRUnfragmentedWords(diagnosis.getByRole("heading", { name: "Diagnóstico IHFR experimental", exact: true }));
     await expectIHFRScientificWords(diagnosis);
     await diagnosis.getByText("Limites do diagnóstico experimental", { exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
@@ -67,15 +72,18 @@ test("member reads the current experimental DTO with labels, keyboard access and
 });
 
 test("member sees honest absence and inactive laboratory stays read only", async ({ page }, info) => {
+  test.setTimeout(90_000);
   await page.goto(required("IMP006_E2E_ABSENT_COLLECTION_URL"));
   await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental" }).getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
   await expect(page.getByText(/Qualidade dos dados:/)).toHaveCount(0);
+  await inspectUI044DetailMatrix(page, info, { diagnosis: false, actions: false, profile: "member" });
   await settleIHFRViewport(page, 375, 900);
   await page.getByRole("heading", { name: "Diagnóstico IHFR experimental", exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
   await captureIHFRViewport(page, info, "frontend-ihfr-absence-375");
   await page.goto(required("IMP006_E2E_INACTIVE_COLLECTION_URL"));
   await expect(page.getByText(/Laboratório inativo.*somente leitura/i).first()).toBeVisible();
   await expect(page.getByRole("button", { name: /criar diagnóstico|substituir diagnóstico|revogar diagnóstico/i })).toHaveCount(0);
+  await inspectUI044Detail(page, info, { diagnosis: false, actions: false, profile: "inactive-member" });
   await page.getByRole("heading", { name: "Diagnóstico IHFR experimental", exact: true }).evaluate(node => node.scrollIntoView({ block: "center" }));
   await captureIHFRViewport(page, info, "frontend-ihfr-inactive-375");
 });

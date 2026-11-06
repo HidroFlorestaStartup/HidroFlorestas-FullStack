@@ -1,0 +1,798 @@
+{
+  "executor": "/root/p03_tests",
+  "scope": "Exact synthetic proof sources/results and preservation; not application browser evidence",
+  "artifacts": [
+    {
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-resampling.mjs",
+      "sha256": "20d351f97bb82360105d37c97eb6fbd2a7c2c5544fc51602f71b90f5729d1f62",
+      "content": "import { strict as assert } from \"node:assert\";\nimport { createContext, runInContext } from \"node:vm\";\nimport { readFile, writeFile } from \"node:fs/promises\";\nimport { createHash } from \"node:crypto\";\n\nif (process.env.HF_UI044_F3_PROBE !== \"1\") throw new Error(\"EXPLICIT_SYNTHETIC_PROBE_REQUIRED\");\nconst revision = process.env.HF_UI044_WAIT_REVISION;\nif (![\"before\", \"after\"].includes(revision)) throw new Error(\"EXPLICIT_BEFORE_OR_AFTER_REQUIRED\");\nconst module = await import(\"../../../wt-p03/tests/e2e/support/frontend-mission-evidence.ts\");\nconst { waitForMissionRender } = module.default ?? module;\nconst cases = [\"pauses-after-snapshot\", \"removed-after-snapshot\", \"replaced-after-snapshot\", \"natural-finish\", \"finite-keeps-running\", \"paused-at-entry\", \"infinite-at-entry\", \"animation-during-final-barrier\", \"late-focus\"];\nconst results = [];\n\nfor (const kind of cases) {\n  let frame = 0;\n  let nextId = 0;\n  let frames = [];\n  let tasks = [];\n  let resolved = false;\n  let resolvedAt = null;\n  let samples = 0;\n  let finishedReads = 0;\n  let channels = 0;\n  let messages = 0;\n  let pendingFocus = false;\n  let focusReveals = 0;\n  let pendingAtReadiness = null;\n  const trace = [];\n  const animation = (state = \"running\", endTime = 300) => {\n    let finish;\n    const promise = new Promise(resolve => { finish = resolve; });\n    return {\n      playState: state, effect: { getComputedTiming: () => ({ endTime }) },\n      get finished() { finishedReads++; return promise; },\n      finish() { this.playState = \"finished\"; finish(); },\n    };\n  };\n  const first = animation(kind === \"paused-at-entry\" ? \"paused\" : \"running\", kind === \"infinite-at-entry\" ? Infinity : 300);\n  const replacement = animation();\n  let animations = [\"animation-during-final-barrier\", \"late-focus\"].includes(kind) ? [] : [first];\n  const context = createContext({\n    __name: (fn, name) => Object.defineProperty(fn, \"name\", { value: name, configurable: true }),\n    document: { getAnimations: () => { samples++; trace.push({ frame, event: \"sample\", states: animations.map(a => a.playState) }); return animations; } },\n    requestAnimationFrame: callback => { frames.push(callback); return ++nextId; },\n    MessageChannel: class {\n      constructor() {\n        channels++;\n        this.port1 = { onmessage: null, close() {} };\n        this.port2 = { close() {}, postMessage: () => tasks.push(() => { messages++; this.port1.onmessage(); }) };\n      }\n    },\n  });\n  runInContext(`(${waitForMissionRender.toString()})()`, context).then(() => {\n    resolved = true; resolvedAt = frame; pendingAtReadiness = pendingFocus;\n    trace.push({ frame, event: \"resolved\" });\n  });\n  for (frame = 1; frame <= 12; frame++) {\n    if (frame === 1 && kind === \"pauses-after-snapshot\") first.playState = \"paused\";\n    if (frame === 1 && kind === \"removed-after-snapshot\") animations = [];\n    if (frame === 1 && kind === \"replaced-after-snapshot\") { first.playState = \"paused\"; animations = [replacement]; }\n    if (frame === 3 && kind === \"natural-finish\") first.finish();\n    if (frame === 4 && kind === \"replaced-after-snapshot\") replacement.finish();\n    if (frame === 2 && kind === \"animation-during-final-barrier\") animations = [replacement];\n    if (frame === 5 && kind === \"animation-during-final-barrier\") replacement.finish();\n    const scheduled = frames; frames = [];\n    for (const callback of scheduled) {\n      callback(frame * 16.67);\n      // rAF callbacks can have a microtask checkpoint between them.\n      for (let turn = 0; turn < 6; turn++) await Promise.resolve();\n    }\n    if (frame === 1 && kind === \"late-focus\") {\n      pendingFocus = true;\n      frames.push(() => { pendingFocus = false; focusReveals++; });\n    }\n    const queued = tasks; tasks = [];\n    for (const callback of queued) callback();\n    for (let turn = 0; turn < 6; turn++) await Promise.resolve();\n  }\n  let failure = null;\n  try {\n    assert.equal(resolved, kind !== \"finite-keeps-running\", \"Readiness follows the current active finite set\");\n    if (resolved) { assert.ok(samples >= 2); assert.ok(channels >= 1); assert.ok(messages >= 1); }\n    if (kind === \"natural-finish\") assert.ok(resolvedAt >= 5, \"natural finish still precedes final two-frame barrier\");\n    if (kind === \"replaced-after-snapshot\") assert.ok(resolvedAt >= 6, \"replacement must finish before final barrier\");\n    if (kind === \"animation-during-final-barrier\") assert.ok(resolvedAt >= 7, \"new active animation forces another readiness cycle\");\n    if ([\"paused-at-entry\", \"infinite-at-entry\"].includes(kind)) assert.equal(finishedReads, 0);\n    if (kind === \"late-focus\") { assert.equal(pendingAtReadiness, false); assert.equal(focusReveals, 1); }\n  } catch (error) { failure = error.message; }\n  results.push({ kind, status: failure ? \"FAIL\" : \"PASS\", failure, resolved, resolvedAt, samples, finishedReads, channels, messages, trace });\n}\nconst bytes = await readFile(new URL(\"../../../wt-p03/tests/e2e/support/frontend-mission-evidence.ts\", import.meta.url));\nconst report = {\n  revision, status: results.every(result => result.status === \"PASS\") ? \"PASS\" : \"FAIL\",\n  helperSha256: createHash(\"sha256\").update(bytes).digest(\"hex\"),\n  scope: \"Exact imported helper in a deterministic Node VM; explicit animation lifecycle and 12 controlled render turns, no DB/browser/network or timeout modification.\",\n  limitation: \"A synthetic counterproof of snapshot/promise dependence, not a reproduction of Chromium's internal F3 transition behavior.\",\n  results,\n};\nawait writeFile(new URL(`./probe-wait-${revision}.json`, import.meta.url), JSON.stringify(report, null, 2) + \"\\n\");\nconsole.log(JSON.stringify({ revision, status: report.status, helperSha256: report.helperSha256, cases: results.map(({ kind, status, failure }) => ({ kind, status, failure })) }, null, 2));\nprocess.exitCode = report.status === \"PASS\" ? 0 : 1;\n"
+    },
+    {
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-before.json",
+      "sha256": "ee5e5592699bfd2056fb3cbfe44c3c45eb990785e4f664a64491872bd76b65cb",
+      "content": {
+        "revision": "before",
+        "status": "FAIL",
+        "helperSha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+        "scope": "Exact imported helper in a deterministic Node VM; explicit animation lifecycle and 12 controlled render turns, no DB/browser/network or timeout modification.",
+        "limitation": "A synthetic counterproof of snapshot/promise dependence, not a reproduction of Chromium's internal F3 transition behavior.",
+        "results": [
+          {
+            "kind": "pauses-after-snapshot",
+            "status": "FAIL",
+            "failure": "Readiness follows the current active finite set\n\nfalse !== true\n",
+            "resolved": false,
+            "resolvedAt": null,
+            "samples": 1,
+            "finishedReads": 1,
+            "channels": 0,
+            "messages": 0,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "removed-after-snapshot",
+            "status": "FAIL",
+            "failure": "Readiness follows the current active finite set\n\nfalse !== true\n",
+            "resolved": false,
+            "resolvedAt": null,
+            "samples": 1,
+            "finishedReads": 1,
+            "channels": 0,
+            "messages": 0,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "replaced-after-snapshot",
+            "status": "FAIL",
+            "failure": "Readiness follows the current active finite set\n\nfalse !== true\n",
+            "resolved": false,
+            "resolvedAt": null,
+            "samples": 1,
+            "finishedReads": 1,
+            "channels": 0,
+            "messages": 0,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "natural-finish",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 5,
+            "samples": 3,
+            "finishedReads": 1,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "finite-keeps-running",
+            "status": "PASS",
+            "failure": null,
+            "resolved": false,
+            "resolvedAt": null,
+            "samples": 1,
+            "finishedReads": 1,
+            "channels": 0,
+            "messages": 0,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "paused-at-entry",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "infinite-at-entry",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "animation-during-final-barrier",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 7,
+            "samples": 5,
+            "finishedReads": 1,
+            "channels": 2,
+            "messages": 2,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 7,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 7,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "late-focus",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-after.json",
+      "sha256": "67c4859b7357644f8419bd55ebeb1d190db48aae5440bd4b2f5bf4bb09f951e3",
+      "content": {
+        "revision": "after",
+        "status": "PASS",
+        "helperSha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+        "scope": "Exact imported helper in a deterministic Node VM; explicit animation lifecycle and 12 controlled render turns, no DB/browser/network or timeout modification.",
+        "limitation": "A synthetic counterproof of snapshot/promise dependence, not a reproduction of Chromium's internal F3 transition behavior.",
+        "results": [
+          {
+            "kind": "pauses-after-snapshot",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 3,
+            "samples": 3,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 1,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "removed-after-snapshot",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 3,
+            "samples": 3,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 1,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 3,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "replaced-after-snapshot",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 6,
+            "samples": 6,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 1,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 4,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 6,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 6,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "natural-finish",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 5,
+            "samples": 5,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 1,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "finite-keeps-running",
+            "status": "PASS",
+            "failure": null,
+            "resolved": false,
+            "resolvedAt": null,
+            "samples": 13,
+            "finishedReads": 0,
+            "channels": 0,
+            "messages": 0,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 1,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 4,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 6,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 7,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 8,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 9,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 10,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 11,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 12,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "paused-at-entry",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "paused"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "infinite-at-entry",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "animation-during-final-barrier",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 7,
+            "samples": 7,
+            "finishedReads": 0,
+            "channels": 2,
+            "messages": 2,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 3,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 4,
+                "event": "sample",
+                "states": [
+                  "running"
+                ]
+              },
+              {
+                "frame": 5,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 7,
+                "event": "sample",
+                "states": [
+                  "finished"
+                ]
+              },
+              {
+                "frame": 7,
+                "event": "resolved"
+              }
+            ]
+          },
+          {
+            "kind": "late-focus",
+            "status": "PASS",
+            "failure": null,
+            "resolved": true,
+            "resolvedAt": 2,
+            "samples": 2,
+            "finishedReads": 0,
+            "channels": 1,
+            "messages": 1,
+            "trace": [
+              {
+                "frame": 0,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "sample",
+                "states": []
+              },
+              {
+                "frame": 2,
+                "event": "resolved"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/preservation.json",
+      "sha256": "57ead8a12dcab2f7d25f09e930b48af3af51bd9187456699690eb80b0a93fcd5",
+      "content": {
+        "status": "PASS",
+        "checks": [
+          {
+            "check": "official helper changes only the captured-promise wait branch; original predicate, final double-rAF/MessageChannel, control-scroll and hit tests preserved",
+            "status": "PASS"
+          },
+          {
+            "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+            "status": "PASS_INSERTIONS_ONLY",
+            "original_bytes_preserved_in_order": true
+          },
+          {
+            "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+            "status": "PASS_INSERTIONS_ONLY",
+            "original_bytes_preserved_in_order": true
+          },
+          {
+            "path": "tests/e2e/support/ui044-final-corrections.ts",
+            "status": "PASS_EXACT_F2_PRE_INSTRUMENTATION",
+            "sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+            "matrix_assertions_captures_preserved": true
+          },
+          {
+            "path": "tests/e2e/support/frontend-ihfr-evidence.ts",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "2acab0c0a4c119a4c8bb759f83e421affeec0970a098558f74557bbe3322d66c"
+          },
+          {
+            "path": "tests/e2e/support/ihfr-diagnostics.ts",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "3d6051219de10590276c2dde3d247c7d96c3562d7248be6289dcf678572d7e0e"
+          },
+          {
+            "path": "tests/e2e/ihfr-diagnosis-read.spec.ts",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "38020bde77a770205bf492dc3fd8a224cc3f971577f3119a497c572854fb2edf"
+          },
+          {
+            "path": "tests/e2e/collection-registration.spec.ts",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "d3fe0fa25f60a98e8ebdd4bb0c0e6a9c13730deac4d7e3a233bc42e8bf4b0a82"
+          },
+          {
+            "path": "tests/e2e/hf-ui036-area-collections.spec.ts",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "549db5e7121144d94430a46cca5c6f396ecbad9fe5ee8944a92567df59e9fc94"
+          },
+          {
+            "path": "tests/unit/hf-ui044-final-corrections.test.tsx",
+            "status": "PASS_BYTE_IDENTICAL_F3",
+            "sha256": "7a6915554d88ac7144cceee170c1e9448527f725350becdad134cffa239affe3"
+          }
+        ]
+      }
+    },
+    {
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/causal-report.md",
+      "sha256": "2c320b444befe3ecdbeb25c69b66fe9c1de20e3c4680cae0bc555de48ff7e90f",
+      "content": "# P03 — recuperação F3, T079 e T080\n\n## Estado\n\nReparo candidato produzido contra F3 `8d5566bea4dcca7d2e48529b2aae3aab28c6e922`, tree `15381c32e37aea5932dab38e6fcd0ff6dadd9d40`. F3 permanece **FAIL**. A validação sintética e estática abaixo não qualifica a aplicação nem a CI sucessora. P00 é o integrador e publicador único.\n\n## T079 — espera por animações\n\nO log autenticado da execução `42150335260/1` foi reagrupado por perfil, presença de diagnóstico, ações, largura e altura, ordenando os eventos por `sequence`. A ordem textual de saída do console não define uma sessão: em vários grupos a sequência 2 precede a 1. O agrupamento corrigido contém 115 eventos e 11 sessões com sequências únicas; sete esperas terminam em 20–33 ms. Fonte: `f3-observations-sorted.json` e log `.accounts-validation/ihfr-1793932900995.log` do artefato F3.\n\nNas quatro sessões em 390×844, a sequência completa tem somente quatro eventos. A amostra contém uma `CSSTransition` em `DIV`, estado `running`, `pending=false`, `currentTime` de aproximadamente 16,6 ms e `endTime=300`. Depois dela, um frame global já agendado é entregue; não há outra amostra, resolução/rejeição da promise ou criação de canal. Como a sequência final é 4, o limite de amostragem do observador não explica a ausência dos eventos posteriores.\n\nIsso localiza a dependência que bloqueia o helper: `Promise.allSettled` sobre as promises `finished` capturadas na primeira amostra. O ramo final de dois frames e MessageChannel não é alcançado nessa chamada. O trace não informa o estado posterior da transição, sua taxa de reprodução ou por que aquela promise não assentou. **Não foi demonstrado um defeito interno do Chromium, taxa zero, pausa ou remoção concreta nessa aplicação.**\n\nO contrato do helper já selecionava somente animações documentais atualmente `running` com `endTime` finito e excluía pausadas. Capturar uma promise e ficar preso nela pode contrariar esse contrato quando a animação pausa, sai da lista documental ou é substituída após a seleção. A leitura normativa sobre essa diferença está em `handoffs/render-wait-spec/render-wait-spec.md`; a contraprova executável usa a função real de F3, com primitivas explicitamente controladas em Node.\n\n### Reparo\n\nO ramo que encontrou animações passa a aguardar um frame e consultar novamente o mesmo predicado. Uma animação finita que continua rodando continua impedindo a conclusão. Quando a lista atual deixa de ter animações selecionadas, a barreira original de dois rAF e MessageChannel ainda é obrigatória; se uma nova animação surgir nesse intervalo, outro ciclo é necessário.\n\nNão há prazo de sucesso, fallback, cancelamento de animações, blur, rolagem adicional ou alteração da tolerância geométrica. A instrumentação temporária F3 foi removida integralmente; o helper UI044 volta exatamente ao hash anterior à instrumentação, preservando matriz, asserts e capturas.\n\n### Contraprovas\n\nO mesmo script `probe-wait-resampling.mjs` executou o helper importado antes e depois da alteração, com 12 turnos de renderização controlados por cenário:\n\n| Cenário | F3 original | Candidato |\n|---|---|---|\n| Pausa após primeira amostra; promise antiga pendente | FAIL | PASS |\n| Sai da lista documental após primeira amostra | FAIL | PASS |\n| Substituição após primeira amostra | FAIL | PASS |\n| Término natural antes da barreira final | PASS | PASS |\n| Finita permanece running; conclusão continua bloqueada | PASS | PASS |\n| Pausada desde a entrada, ignorada pelo predicado | PASS | PASS |\n| Infinita desde a entrada, ignorada pelo predicado | PASS | PASS |\n| Nova finita surge na barreira final e exige novo ciclo | PASS | PASS |\n| Revelação tardia de foco termina antes da prontidão | PASS | PASS |\n\nO RED foi funcional: três expectativas de conclusão falharam enquanto a função original aguardava a promise histórica. Não houve erro de importação, discovery ou ambiente nesses resultados. O GREEN tem nove cenários. Esses modelos não reproduzem o mecanismo interno específico da transição F3.\n\nTrês regressões foram acrescentadas ao arquivo de navegador já existente: uma transição CSS nativa pausada depois da amostra; outra seguida por uma animação finita substituta; e uma transição iniciada dentro da barreira final. Os testes existentes de foco tardio, conclusão natural, uma única rolagem, nove pontos de hit-test, obstáculos e viewports permanecem byte a byte. Os três novos testes de navegador estão **NOT_RUN localmente**; deverão executar na CI autorizada.\n\n## T080 — entrada ausente no primeiro GET de elegibilidade\n\nÉ uma falha separada, anterior à instalação de qualquer observador. F2 enviou `landUseType=FOREST`; o primeiro GET equivalente de F3 não possui query. O handler transforma a ausência em `undefined`; o serviço trata ausência de uso da terra como insuficiência. As razões completas do corpo da resposta e os valores finais dos inputs não foram preservados no artefato. A análise independente e os hashes F2/F3 constam no recibo `handoffs/p02-eligibility-investigation/receipt.json`.\n\nA composição C3 inicia com a árvore móvel de SSR e, no desktop, muda a ordem de Registro/leitura depois da ativação no cliente. Interagir antes dessa composição é uma hipótese consistente para o input perdido, mas a ordem exata dessa perda não foi observada em F3.\n\nO teste agora exige a composição desktop observável antes de preencher: article e blocos únicos, viewport desktop e Registro precedendo leitura no DOM. Depois de uma única seleção e um único preenchimento, exige ambos os valores. Continua capturando a primeira resposta de elegibilidade sem filtrar requests incorretos; em seguida verifica o pathname contextual e a query exata antes de manter a expectativa original `ELIGIBLE`.\n\nNão foram alterados produto, API, fixtures, payloads, backend, ciência, retries ou timeouts. Não há reselect silencioso nem query forçada. Se a perda persistir após essa precondição, o teste continuará falhando com evidência mais próxima da entrada defeituosa. Este ajuste não demonstra correção de toda interação possível antes da hidratação.\n\n## Validação e próximo gate\n\n- Node: RED funcional de F3, exit 1; GREEN do candidato, exit 0.\n- ESLint focal dos quatro paths: PASS, exit 0.\n- Typecheck focal dos helpers e do arquivo de contraprovas: PASS, exit 0.\n- Diff-check focal: PASS, exit 0.\n- Browser, DB e CI local: NOT_RUN. A restrição de socket já conhecida não foi retentada nem contornada.\n- Full typecheck, lint composto, CI15 e fechamento de T079/T080: responsabilidade de P00 sobre o próximo SHA.\n- Revisão final de P04 e confronto do patch/recibo: exigidos antes da integração.\n\nTodos os preimages, postimages, hashes, comandos e resultados estão em `receipt.json`. Não houve commit, publicação, merge ou deploy por P03 nesta recuperação.\n"
+    }
+  ]
+}

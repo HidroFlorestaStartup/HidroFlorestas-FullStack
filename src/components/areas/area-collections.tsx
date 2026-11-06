@@ -53,7 +53,9 @@ export function AreaCollections({
               <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
                 <Link className="inline-flex min-h-11 items-center rounded-xl bg-emerald-800 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + row.id}>Abrir coleta</Link>
                 <Link className="flex min-h-11 w-full min-w-0 max-w-full items-center justify-center rounded-xl border border-emerald-900/20 px-2 py-2 text-center text-sm font-semibold text-emerald-900 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 sm:inline-flex sm:w-auto sm:justify-start sm:gap-1 sm:px-3 sm:text-left" href={base + row.id + "/environmental-data"}><Leaf size={16} className="hidden shrink-0 sm:block" aria-hidden="true" /><span className="break-normal [hyphens:none]">Dados ambientais</span></Link>
-                <Link className="inline-flex min-h-11 items-center rounded-xl px-2 py-2 text-sm font-semibold text-emerald-900 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + row.id + "#ihfr-diagnosis-heading"}>IHFR</Link>
+                {row.currentDiagnosis && (
+                  <p className="min-w-0 self-center px-2 py-2 text-sm font-semibold text-slate-900">Score registrado: {row.currentDiagnosis.displayScore}</p>
+                )}
               </div>
             </li>
           ))}

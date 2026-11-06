@@ -1,0 +1,99 @@
+{
+  "id": "P04-F4-RECOVERY-PATCH-REVIEW",
+  "status": "PASS_STATIC_RECOVERY_PATCH_SCOPED",
+  "overall_status": "F4 FAIL; successor O3/runtime PENDING",
+  "at_utc": "2026-11-06T03:35:06.155024+00:00",
+  "executor": "/root/o0_guards",
+  "author": "/root/p03_tests",
+  "integrator": "/root",
+  "independence": "Reviewer has no authorship of audited product/tests/config/Spec036. Read-only inspection and independent hash/text reconstruction only; no test/browser/DB/CI execution.",
+  "basis": {
+    "head": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "tree": "0a74466cc7e521a5eddfb2013f86075323dee9ff",
+    "candidate": "Exact uncommitted one-file P03 patch; successor SHA not inferred"
+  },
+  "patch": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/p03-f4-lifecycle-input-preconditions.patch",
+    "sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5",
+    "receipt_path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/receipt.json",
+    "receipt_sha256": "0ecaccf8b01ca6161aff46bd51965c33e9a7257bbc9e58a280e15f9d502acc03",
+    "file": {
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "preimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+      "preimage_git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b",
+      "postimage_sha256": "83c5521a96b17f05cda671b4a48a5822142fcd4b781a7c39809a8129b8cc2c08",
+      "postimage_git_blob": "2e89cbf023c67ed71bcefff02f05ca6d5b401e31",
+      "patch_sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5"
+    }
+  },
+  "findings": [],
+  "checks": [
+    {
+      "check": "identity_and_patch",
+      "status": "PASS",
+      "detail": "Recomputed receipt/patch and all eight artifact hashes. Checked F4 preimage and WT postimage SHA256/Git blob IDs. Independently applied unified hunks in memory: exact postimage and only the authorized manage.spec.ts path."
+    },
+    {
+      "check": "extraction_preservation",
+      "status": "PASS",
+      "detail": "Common desktop helper body matches the F4 first-test preparation byte for byte. Removing the wrapper and inlining its first call reconstructs the old source with insertions only. No original lifecycle assertion/capture/action is removed."
+    },
+    {
+      "check": "input_actions_and_timeouts",
+      "status": "PASS",
+      "detail": "Ordered selectOption/fill/test.setTimeout source sequences are identical. Two composition checks observe state without changing viewport or refilling. No retry, skip, forced query or additional input correction."
+    },
+    {
+      "check": "anchored_state_retention",
+      "status": "PASS_STATIC",
+      "detail": "Lifecycle checks FOREST and 2026-09-20T12:00 after its one fill, after OWNER matrix and after management viewports or ADMIN branch. These literals anchor the previously unconstrained snapshot. Each Escape now checks both stored field values, and the final 1280 return is followed by the common literal checks."
+    },
+    {
+      "check": "first_response_and_ui",
+      "status": "PASS_STATIC",
+      "detail": "The first eligibility response is captured by endpoint/method without filtering by desired query. Assertions check 200, contextual pathname, exact single landUseType=FOREST query and exact ELIGIBLE JSON outcome. The original UI ELIGIBLE assertion remains. Wrong/missing input continues to fail visibly."
+    },
+    {
+      "check": "matrix_lifecycle_and_domain",
+      "status": "PASS",
+      "detail": "All four matrix viewports, seven management viewport/dialog scenarios, OWNER/ADMIN sequence, creation/replacement/revocation/recovery/idempotency and negative paths remain. Fixtures, dates, domain/API and product are unchanged."
+    },
+    {
+      "check": "surrounding_proofs_unchanged",
+      "status": "PASS",
+      "detail": "Independently compared nine neighboring test/helper files to F4 byte for byte, including official readiness helper, three native browser counterproofs and the UI044 matrix helper. No new application-readiness change is part of this recovery."
+    },
+    {
+      "check": "author_validation_evidence",
+      "status": "PASS_FOCAL_EVIDENCE_REVIEW",
+      "detail": "Read author receipt and authenticated lint/diff/apply/preservation logs. Author reports exit0 for focal lint, diff and apply-check. Full composed TypeScript/lint and RC15 are P00 gates, not presumed by this receipt."
+    }
+  ],
+  "causal_evidence": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p04/recovery-f4/causal-review.json",
+    "sha256": "1152723a3c2e13cf0ebf4bf521f1f1df839585078f8c5895f5f319c33c2e1f73",
+    "result": "F4 real Ihfr failure before OWNER creation; missing landUseType query and UI MISSING_LAND_USE_TYPE/INSUFFICIENT_DIMENSION. Exact loss moment not demonstrated.",
+    "gates": {
+      "PASS": 12,
+      "FAIL": 1,
+      "NOT_RUN": 2
+    },
+    "general_e2e": "244 PASS at F4",
+    "ihfr": "5 PASS / 1 FAIL at F4",
+    "matrix": "17/23 at F4"
+  },
+  "interpretation": "This candidate closes an observed test-preparation/observability gap without correcting input silently. It will expose loss after a proven valid state rather than letting an empty snapshot satisfy retention checks. It does not establish a product root cause or prove the successor runtime now succeeds.",
+  "remaining_gates": [
+    "P00 verifies the exact postimage on composition and full local checks.",
+    "Qualify all 15 RC gates and all 23 matrix cases on the successor SHA, including the newly reached OWNER CURRENT and ADMIN cases.",
+    "Independent visual/JSON artifact inspection and final-SHA Codex/QA remain mandatory before O3 closure."
+  ],
+  "limits": [
+    "No hydration, animation, resize or cancel mechanism is asserted as the observed cause.",
+    "A later loss after asserted readiness/values remains a real failure; no reselect or retry is introduced.",
+    "Passing F4 readiness and randomUUID cases are retained evidence for F4 only; no runtime PASS transfer to the successor.",
+    "P00 append-only documentary recovery and composed checks are outside this exact one-file patch receipt until supplied.",
+    "No publication, review request, merge or deploy performed or authorized by this reviewer."
+  ],
+  "handoff": "No open material static finding. P00 may compose this exact authorized patch under existing gates; O3 remains incomplete until the successor evidence is terminal."
+}

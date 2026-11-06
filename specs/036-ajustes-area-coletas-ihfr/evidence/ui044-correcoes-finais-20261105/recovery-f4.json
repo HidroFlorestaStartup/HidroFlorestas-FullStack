@@ -1,0 +1,253 @@
+{
+  "id": "HF-UI044-CORRECOES-FINAIS-20261105-RECOVERY-F4",
+  "at": "2026-11-06T03:30:51.344793+00:00",
+  "executor": "/root (P00)",
+  "failed_sha": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+  "failed_tree": "0a74466cc7e521a5eddfb2013f86075323dee9ff",
+  "run": 42154773481,
+  "attempt": 1,
+  "job": 127686195383,
+  "artifact": 13474109562,
+  "artifact_sha256": "c15a4c38645c571b9a8214385e17c9c8c1d949c061022e43ee5bd849620cbc3f",
+  "artifact_bytes": 35812738,
+  "zip_crc": "PASS",
+  "gate_results": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:10:25.630Z",
+      "endedUtc": "2026-11-06T03:10:30.589Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1793934625630.log"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:10:30.764Z",
+      "endedUtc": "2026-11-06T03:10:49.394Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1793934630764.log"
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:10:49.580Z",
+      "endedUtc": "2026-11-06T03:12:07.308Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1793934649580.log"
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:07.499Z",
+      "endedUtc": "2026-11-06T03:12:18.693Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1793934727499.log"
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:18.866Z",
+      "endedUtc": "2026-11-06T03:12:21.466Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1793934738866.log"
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:21.660Z",
+      "endedUtc": "2026-11-06T03:12:29.095Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1793934741660.log"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:29.264Z",
+      "endedUtc": "2026-11-06T03:12:47.248Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1793934749264.log"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:47.450Z",
+      "endedUtc": "2026-11-06T03:12:56.321Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1793934767449.log"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:12:56.514Z",
+      "endedUtc": "2026-11-06T03:13:20.101Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1793934776514.log"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:13:20.278Z",
+      "endedUtc": "2026-11-06T03:23:31.879Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1793934800278.log"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:23:32.082Z",
+      "endedUtc": "2026-11-06T03:24:02.146Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\https-1793935412082.log"
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:24:02.343Z",
+      "endedUtc": "2026-11-06T03:24:11.613Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation\\deletion-1793935442343.log"
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "a1572c0faff1cb4c3eb80c1301d70622f15b0d1b734ca800ed6cc25038bad89b",
+      "startedUtc": "2026-11-06T03:24:11.792Z",
+      "endedUtc": "2026-11-06T03:25:48.806Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation\\ihfr-1793935451791.log"
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "NOT_RUN"
+    }
+  ],
+  "e2e_general": {
+    "passed": 244,
+    "failed": 0,
+    "new_render_counterproofs": 3,
+    "qualification": "Whole E2E passed; all3 new cases included by unchanged collection/configuration and no skips"
+  },
+  "ihfr": {
+    "passed": 5,
+    "failed": 1,
+    "first_randomUUID_case": "PASS18.8s",
+    "failure_test": "OWNER and contextual ADMIN create, replace, revoke and recover with one stable key",
+    "location": "tests/e2e/ihfr-diagnosis-manage.spec.ts:312",
+    "expected": "ELIGIBLE",
+    "received": "INSUFFICIENT_DATA; MISSING_LAND_USE_TYPE; INSUFFICIENT_DIMENSION",
+    "request": "OWNER eligibility GET missing landUseType",
+    "prior_render_timeouts": "Not observed; completed all four absent OWNER viewports and read/inactive matrices"
+  },
+  "layout_matrix": {
+    "observed": 17,
+    "expected": 23,
+    "missing": [
+      [
+        "owner",
+        true,
+        true,
+        1440,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        375,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        390,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        320,
+        200
+      ],
+      [
+        "admin",
+        false,
+        true,
+        375,
+        100
+      ],
+      [
+        "admin",
+        true,
+        true,
+        375,
+        100
+      ]
+    ]
+  },
+  "owner": "/root/p03_tests",
+  "independent_reviewer": "/root/o0_guards",
+  "read_only_investigator": "/root/p02_resize_investigation",
+  "reserved_path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+  "preimage": {
+    "sha": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b",
+    "sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55"
+  },
+  "analysis": {
+    "observed": "Lifecycle path selects/fills before proving client desktop composition and intended values; subsequent matrix compares a DOM snapshot without requiring FOREST/date as its initial value.",
+    "not_observed": "Exact event/hydration ordering that lost initial input; no explicit product reset by confirmation cancellation found.",
+    "candidate_repair": "Reuse the same desktop-composition precondition that passed the first case, verify intended values before/after matrix and management viewport checks, and require contextual first GET query without reselect or filtering wrong requests."
+  },
+  "repair_status": "COMPOSED_EXACT_REVIEWED_PATCH; local checks and final successor runtime pending",
+  "preserved": "No product, scientific, fixture, helper, guard, timeout or workflow change in this recovery",
+  "successor_gate": "Same branch/PR; all15 gates, Codex and independent final artifact/PNG review on successor; no blind rerun",
+  "merge": false,
+  "deploy": false,
+  "composed_patch_sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5",
+  "composed_postimage_sha256": "83c5521a96b17f05cda671b4a48a5822142fcd4b781a7c39809a8129b8cc2c08"
+}
