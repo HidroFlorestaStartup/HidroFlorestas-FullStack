@@ -73,3 +73,7 @@ Instrumentação preparada: [P03](p03-f2-diagnostic-receipt.json), [P04 não aut
 [Recibo F3](recovery-f3.json):12 gates PASS, Ihfr FAIL (1 PASS/5 FAIL),2 NOT_RUN, E2E geral241/241 e matriz7/23. O [trace ordenado](f3-render-observations.json) localiza quatro bloqueios em `animation.finished` de uma transição finita no viewport390×844; a causa interna da promessa pendente não foi atribuída. A primeira versão do parser assumia ordem das linhas do console e foi rejeitada; o relatório canônico agrupa por perfil/estado/viewport, ordena por sequência e exige uma instalação e sequências únicas por sessão.
 
 P03 recebeu adendo focal para o helper oficial e suas contraprovas, preservando o predicado de prontidão e a barreira final. A instrumentação temporária será removida. A falha distinta de elegibilidade tem query `landUseType` ausente; a preparação do formulário e as asserções de entrada/request serão reforçadas sem relaxar ELIGIBLE nem alterar domínio ou fixture. T079/T080 e O3 permanecem pendentes neste corte.
+
+## Recuperação de F4
+
+[Recibo F4](recovery-f4.json):12 gates PASS, E2E geral244/244, Ihfr5 PASS/1 FAIL e2 NOT_RUN; matriz17/23. Os bloqueios de renderização não ocorreram e o primeiro caso de entrada passou. O failure OWNER apresenta query landUseType ausente depois das provas de viewport, em fluxo sem a mesma preparação explícita. P03 corrige somente o teste compartilhado; P04 revisa. Helpers, domínio, fixture, guardas e timeouts permanecem. T081 registra o recorte; a qualificação integral pertence ao sucessor.

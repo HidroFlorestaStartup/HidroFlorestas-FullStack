@@ -1,0 +1,271 @@
+{
+  "id": "P04-F5-PREPUBLICATION-COMPOSITION",
+  "status": "PASS_STATIC_COMPOSITION_SCOPED",
+  "overall_status": "F4 FAIL preserved; successor F5 runtime PENDING",
+  "at_utc": "2026-11-06T03:39:29.292293+00:00",
+  "executor": "/root/o0_guards",
+  "integrator": "/root",
+  "independence": "No authorship or mutation of audited product/tests/config/Spec036. Only this assigned handoff is written. No browser, DB, tests or CI rerun.",
+  "identity": {
+    "head": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "head_tree": "0a74466cc7e521a5eddfb2013f86075323dee9ff",
+    "candidate": "F5 uncommitted composition, identified by the postimage hashes below; no final SHA or tree inferred",
+    "branch": "fix/ui044-correcoes-finais-20261105"
+  },
+  "findings": [],
+  "checks": [
+    {
+      "check": "composition_scope",
+      "status": "PASS",
+      "detail": "Exactly 12 changed/new paths: one previously reviewed manage test and 11 Spec036/evidence paths. No other technical delta. Composed manage postimage exactly matches P03 and P04 patch review."
+    },
+    {
+      "check": "append_only_documentation",
+      "status": "PASS",
+      "detail": "All F4 bytes of plan/tasks/implementation-evidence/readme are preserved as prefixes. Read each appended section; F4 failure, candidate limits, actor ownership and successor gates are stated consistently."
+    },
+    {
+      "check": "historical_tasks",
+      "status": "PASS",
+      "detail": "All 80 F4 task IDs, exact lines and checkbox states preserved. T081 is the sole new unique ID and is unchecked. T075–T077/T079/T080 also remain unchecked; no historical baseline is repinned."
+    },
+    {
+      "check": "crosswalk",
+      "status": "PASS",
+      "detail": "T081 [US2] maps to observable collection composition, state/focus/viewport checks under SC-036-001/002 and scope preservation under SC-036-004. Existing specification and ownership addenda are unchanged; the already owned manage test remains the sole P03 write area."
+    },
+    {
+      "check": "failure_facts",
+      "status": "PASS",
+      "detail": "Canonical recovery records exactly match the previously verified F4 15-gate accounting: 12 PASS, Ihfr FAIL, Bootstrap/SchemaAudit NOT_RUN; E2E244 PASS, Ihfr5 PASS/1 FAIL, matrix17/23 and the same six missing cases. No successor PASS claimed."
+    },
+    {
+      "check": "causal_claims",
+      "status": "PASS",
+      "detail": "Read canonical recovery and P02/P03/P04 reports. They distinguish the observed omitted query/UI reasons from an unobserved loss mechanism. Missing input sufficiently explains the domain reasons without asserting a fixture defect, hydration ordering or product reset. Prepared input and retained state remain assertions, not corrective fills."
+    },
+    {
+      "check": "exact_receipt_copies",
+      "status": "PASS",
+      "detail": "Four P02/P03/P04 canonical receipts match their original bytes and hashes."
+    },
+    {
+      "check": "proof_bundle",
+      "status": "PASS",
+      "detail": "All seven bundled text contents reproduce the exact P03 originals and their declared SHA256, including patch, causal report, preservation/preimage and lint/diff/apply logs."
+    },
+    {
+      "check": "p02_source_identity",
+      "status": "PASS",
+      "detail": "Read the new P02 investigation and independently checked all 11 F3/F4 source hash pairs and two unchanged-block hashes. This validates the source identities of the investigator contribution without repeating runtime/domain execution."
+    },
+    {
+      "check": "composed_local_checks",
+      "status": "PASS_LOCAL_EVIDENCE_REVIEW",
+      "detail": "Read and hash-verified P00 local receipt plus both source logs: full npm run typecheck and focal ESLint each exit0 on the reviewed composed postimage. No reviewer test rerun. Earlier source receipts that said local checks pending are historical snapshots, now supplemented by this later P00 receipt."
+    },
+    {
+      "check": "o0_guards_and_requirements",
+      "status": "PASS",
+      "detail": "Immutable O0 retains its agreed hash. Vercel/RC15/package/lock/Playwright config/spec/ownership bytes match F4. No product, scientific, fixture, helper or configuration delta."
+    },
+    {
+      "check": "stable_reviewed_snapshot",
+      "status": "PASS",
+      "detail": "All audited paths are identified by postimage SHA256 and Git blob below. Freeze/publication must retain these bytes; later self-referential review/manifest evidence is separate."
+    }
+  ],
+  "postimages": [
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p00-f4-recovery-local.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "52b0fd1470f2736c5199a754a61608630438f928d377efc9b023433e41c0a07b",
+      "postimage_git_blob": "3726b5839f75ee6a1f24c87439b49bd4f7d460b8",
+      "bytes": 3382
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p02-f4-eligibility-investigation.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "9c61be8ccfdf08adbf1cdb4d4850570bc8529606bae08176325323700ecde21b",
+      "postimage_git_blob": "900c66cfd8a67c28a7822317b17013b9b887bcbc",
+      "bytes": 19581
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p03-f4-recovery-proofs.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "1b02106e9398268367608954b9665e1394af909753a603e7f10c6d5036e4b556",
+      "postimage_git_blob": "3ab02a38278f2a5639fef38acff13e8d55f06408",
+      "bytes": 15449
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p03-f4-recovery-receipt.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "0ecaccf8b01ca6161aff46bd51965c33e9a7257bbc9e58a280e15f9d502acc03",
+      "postimage_git_blob": "830de64147a4fb2752ef5186b4348ec3f7be4ea1",
+      "bytes": 6899
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p04-f4-causal-review.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "1152723a3c2e13cf0ebf4bf521f1f1df839585078f8c5895f5f319c33c2e1f73",
+      "postimage_git_blob": "5d562850ba78cb87cfccf20cfdac9e85e5caf027",
+      "bytes": 9706
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p04-f4-patch-review.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "df603d6eca5be989210d2ed3687d8945713dc18f07392239403976bffd001fe7",
+      "postimage_git_blob": "b0c74c4e7bea7e0c92917756b6a67428f7bc405c",
+      "bytes": 6401
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/readme.md",
+      "preimage_sha256": "ed75e99e038029549d9f4060635295278b7ef7c01204dba333db81a9dec8206f",
+      "postimage_sha256": "498933830e37503ffa0bdc34b53bd9681575e95ded4f02d420923ec6fb39e4fc",
+      "postimage_git_blob": "3b46956a0159de919d5faf9df74a8b7b2934a131",
+      "bytes": 9074
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/recovery-f4.json",
+      "preimage_sha256": null,
+      "postimage_sha256": "3521e59150f57a08b5407a88eba1b91530478c02dd052926b750c8eb2ce09b51",
+      "postimage_git_blob": "4a436af9b60f1d51ce87786cae21d5b86916ff2a",
+      "bytes": 10027
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "preimage_sha256": "4bd25a0dadadd5d1c2e5ab24a9e8a4e418feb21b727d079ef8e12292bf1a6826",
+      "postimage_sha256": "c505fc2e9b80574ec6ed6b792a993a8981751756d85ac3719b71b56bf367209e",
+      "postimage_git_blob": "4e150692a7893e3f6af0c5e2bd566f689ab53420",
+      "bytes": 27987
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "preimage_sha256": "e82b2bbdfbdfe8eb371c69918b2b07db425e6ec81da4b665234faed26ec96090",
+      "postimage_sha256": "dc53a4b6261b02d39da8feffe8c18f16e34b15afcffc429926c7bfa4075aec33",
+      "postimage_git_blob": "037726d1b7b24347900238e2f392ad34ba6d01ba",
+      "bytes": 71500
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "preimage_sha256": "c3b8f57666a1beafb3dba6ff0a3f1f8c1a63210e666ad5bc3c3eb9b2de05acdd",
+      "postimage_sha256": "57a0f82f3021cd0d057287eb49957ce9268e059c8232638cfd8b589ea971faef",
+      "postimage_git_blob": "3dab1fb101ce1f4358cca8df8c7056ce49216cb6",
+      "bytes": 29180
+    },
+    {
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "preimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+      "postimage_sha256": "83c5521a96b17f05cda671b4a48a5822142fcd4b781a7c39809a8129b8cc2c08",
+      "postimage_git_blob": "2e89cbf023c67ed71bcefff02f05ca6d5b401e31",
+      "bytes": 35528
+    }
+  ],
+  "append_only_documents": [
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "preimage_sha256": "e82b2bbdfbdfe8eb371c69918b2b07db425e6ec81da4b665234faed26ec96090",
+      "postimage_sha256": "dc53a4b6261b02d39da8feffe8c18f16e34b15afcffc429926c7bfa4075aec33",
+      "append_only": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "preimage_sha256": "c3b8f57666a1beafb3dba6ff0a3f1f8c1a63210e666ad5bc3c3eb9b2de05acdd",
+      "postimage_sha256": "57a0f82f3021cd0d057287eb49957ce9268e059c8232638cfd8b589ea971faef",
+      "append_only": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "preimage_sha256": "4bd25a0dadadd5d1c2e5ab24a9e8a4e418feb21b727d079ef8e12292bf1a6826",
+      "postimage_sha256": "c505fc2e9b80574ec6ed6b792a993a8981751756d85ac3719b71b56bf367209e",
+      "append_only": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/readme.md",
+      "preimage_sha256": "ed75e99e038029549d9f4060635295278b7ef7c01204dba333db81a9dec8206f",
+      "postimage_sha256": "498933830e37503ffa0bdc34b53bd9681575e95ded4f02d420923ec6fb39e4fc",
+      "append_only": true
+    }
+  ],
+  "task_counts": {
+    "before": 80,
+    "after": 81,
+    "new_pending": "T081",
+    "pending_final_gates": [
+      "T075",
+      "T076",
+      "T077",
+      "T079",
+      "T080",
+      "T081"
+    ]
+  },
+  "exact_receipt_copies": [
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p02-f4-eligibility-investigation.json",
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p02-eligibility-investigation-f4/receipt.json",
+      "sha256": "9c61be8ccfdf08adbf1cdb4d4850570bc8529606bae08176325323700ecde21b",
+      "exact_copy": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p03-f4-recovery-receipt.json",
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/receipt.json",
+      "sha256": "0ecaccf8b01ca6161aff46bd51965c33e9a7257bbc9e58a280e15f9d502acc03",
+      "exact_copy": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p04-f4-causal-review.json",
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p04/recovery-f4/causal-review.json",
+      "sha256": "1152723a3c2e13cf0ebf4bf521f1f1df839585078f8c5895f5f319c33c2e1f73",
+      "exact_copy": true
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p04-f4-patch-review.json",
+      "source": "/workspace/scratch/100be1d812fa/handoffs/p04/recovery-f4/patch-review.json",
+      "sha256": "df603d6eca5be989210d2ed3687d8945713dc18f07392239403976bffd001fe7",
+      "exact_copy": true
+    }
+  ],
+  "p02_contribution": {
+    "executor": "/root/p02_resize_investigation",
+    "source_sha256": "9c61be8ccfdf08adbf1cdb4d4850570bc8529606bae08176325323700ecde21b",
+    "scope": "read-only focal investigation; no repository authorship",
+    "source_pairs_verified": 11,
+    "unchanged_blocks_verified": 2
+  },
+  "local_checks": {
+    "path": "/workspace/scratch/100be1d812fa/repo/specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p00-f4-recovery-local.json",
+    "sha256": "52b0fd1470f2736c5199a754a61608630438f928d377efc9b023433e41c0a07b",
+    "typecheck_exit_code": 0,
+    "lint_exit_code": 0,
+    "environment": "Chat Linux Node24.22.1 npm11.9.0; official CI runner remains distinct",
+    "log_hashes_verified": [
+      {
+        "path": "/workspace/scratch/100be1d812fa/validation/f5-typecheck.log",
+        "sha256": "2f3be8e0e6b9d65aa28853afa544bef301ee1d202fd4c9e4f53ea1764772ca74"
+      },
+      {
+        "path": "/workspace/scratch/100be1d812fa/validation/f5-lint.log",
+        "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+      }
+    ]
+  },
+  "preserved_result": {
+    "sha": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "run": "42154773481/1",
+    "status": "FAIL",
+    "gate_counts": {
+      "PASS": 12,
+      "FAIL": 1,
+      "NOT_RUN": 2
+    },
+    "matrix": "17/23"
+  },
+  "limits": [
+    "This is a prepublication composition audit, not final-SHA runtime qualification.",
+    "No final successor commit/tree, CI, Codex, 23/23 matrix or visual acceptance is inferred from local checks.",
+    "Exact hydration/event ordering or a specific product state-loss mechanism remains unobserved.",
+    "No commit, push, merge or deploy performed by reviewer; P00 is the sole integrator/publisher."
+  ],
+  "handoff": "No material finding. Freeze/publication may proceed under existing P00 authorization using these exact postimages, followed by successor RC15/Codex and independent artifact/PNG QA. O3 remains incomplete."
+}

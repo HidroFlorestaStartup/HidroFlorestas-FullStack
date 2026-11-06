@@ -18,6 +18,21 @@ async function authenticate(page: Page, actorId: string, baseURL: string) {
   await page.context().addCookies([{ name: "auth_token", value: signSessionToken(actorId), url: baseURL }]);
 }
 
+async function expectDesktopCollectionDetail(page: Page) {
+  // Wait for the observable client desktop composition before interacting with
+  // controls from the server's initial mobile tree. Do not reselect lost input.
+  expect(page.viewportSize()!.width).toBeGreaterThanOrEqual(1280);
+  const detail = page.getByRole("article", { name: "Detalhe da coleta", exact: true });
+  await expect(detail).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="record"]')).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="reading"]')).toHaveCount(1);
+  await expect.poll(() => detail.evaluate(node => {
+    const record = node.querySelector('[data-collection-detail-block="record"]');
+    const reading = node.querySelector('[data-collection-detail-block="reading"]');
+    return Boolean(record && reading && (record.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING));
+  }), { message: "Client desktop composition precedes IHFR input" }).toBe(true);
+}
+
 async function operationRows(collectionUrl: string): Promise<number> {
   const schema = required("IMP006_TEST_SCHEMA");
   if (!/^imp006_test_[0-9a-f]{32}$/.test(schema)) throw new Error("IMP-006 E2E schema is not owned");
@@ -98,6 +113,8 @@ async function inspectManagementViewports(page: Page, info: TestInfo, management
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
     await expect(create).toBeFocused();
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue(landUse);
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue(observedAt);
     if (width === 1440) {
       await expectIHFRControl(create, page, info, "frontend-ihfr-ui044-dialog-return-375");
       await captureIHFRViewport(page, info, "frontend-ihfr-ui044-dialog-return-375");
@@ -172,18 +189,7 @@ test("collection, environmental confirmation and IHFR creation work without brow
   await expect(page).toHaveURL(`${baseURL}${collectionUrl}/environmental-data`);
 
   await page.goto(collectionUrl);
-  // Wait for the observable client desktop composition before interacting with
-  // controls from the server's initial mobile tree. Do not reselect lost input.
-  expect(page.viewportSize()!.width).toBeGreaterThanOrEqual(1280);
-  const detail = page.getByRole("article", { name: "Detalhe da coleta", exact: true });
-  await expect(detail).toHaveCount(1);
-  await expect(detail.locator('[data-collection-detail-block="record"]')).toHaveCount(1);
-  await expect(detail.locator('[data-collection-detail-block="reading"]')).toHaveCount(1);
-  await expect.poll(() => detail.evaluate(node => {
-    const record = node.querySelector('[data-collection-detail-block="record"]');
-    const reading = node.querySelector('[data-collection-detail-block="reading"]');
-    return Boolean(record && reading && (record.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING));
-  }), { message: "Client desktop composition precedes IHFR input" }).toBe(true);
+  await expectDesktopCollectionDetail(page);
   await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
   await page.getByLabel("Data e hora da observação").fill("2026-09-24T12:00");
   await expect(page.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
@@ -293,6 +299,7 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
   for (const actor of actors) {
     await authenticate(page, actor.id, String(info.project.use.baseURL));
     await page.goto(actor.url);
+    await expectDesktopCollectionDetail(page);
     // Retained hidden content must not compete with the current accessible form.
     const reading = page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true });
     const management = page.getByRole("region", { name: "Gerenciar diagnóstico IHFR experimental", exact: true });
@@ -300,15 +307,29 @@ test("OWNER and contextual ADMIN create, replace, revoke and recover with one st
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await management.getByLabel("Uso predominante da terra").selectOption("FOREST");
     await management.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
     await expectUI044Notice(page, { diagnosis: false, actions: true, profile });
     if (actor === actors[0]) {
       await inspectUI044DetailMatrix(page, info, { diagnosis: false, actions: true, profile });
+      await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+      await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
       await inspectManagementViewports(page, info, management);
     } else {
       await settleIHFRViewport(page, 375, 900);
       await inspectUI044Detail(page, info, { diagnosis: false, actions: true, profile });
     }
+    await expect(management.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+    await expect(management.getByLabel("Data e hora da observação")).toHaveValue("2026-09-20T12:00");
+    const eligibility = page.waitForResponse((response) => response.url().includes("/ihfr-diagnosis/eligibility") && response.request().method() === "GET");
     await management.getByRole("button", { name: "Verificar elegibilidade" }).click();
+    const eligible = await eligibility;
+    expect(eligible.status()).toBe(200);
+    const eligibilityUrl = new URL(eligible.request().url());
+    const collectionPath = new URL(actor.url, String(info.project.use.baseURL)).pathname;
+    expect(eligibilityUrl.pathname).toBe(collectionPath.replace(/^\/dashboard\//, "/api/") + "/ihfr-diagnosis/eligibility");
+    expect(Array.from(eligibilityUrl.searchParams.entries())).toEqual([["landUseType", "FOREST"]]);
+    expect((await eligible.json()).outcome).toBe("ELIGIBLE");
     await expect(management.getByRole("status").first()).toContainText("ELIGIBLE");
 
     const create = management.getByRole("button", { name: "Criar diagnóstico" });

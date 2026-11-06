@@ -211,3 +211,11 @@ F3, run42150335260/1, permanece FAIL:12 gates PASS, Ihfr1 PASS/5 FAIL e2 gates N
 - [ ] T080 [US2] Reparar a preparação do teste sem browser randomUUID em `tests/e2e/ihfr-diagnosis-manage.spec.ts`: aguardar composição observável, provar valores selecionados/preenchidos e query landUseType antes do resultado ELIGIBLE; preservar fixture, domínio, assert de elegibilidade, idempotência e jornada. Confrontar o failure F3 e revisão não autora em `evidence/ui044-correcoes-finais-20261105/recovery-f3.json` (origem SC-036-001/SC-036-004).
 
 Dependência de recuperação: diagnóstico F3 → reparo T079 || investigação T080 → composição P00 → RC15/Codex/P04 no SHA sucessor → T075/T076/T077. Não há rerun cego ou promoção de PASS entre SHAs.
+
+## Phase 7: convergência após F4
+
+F4 permanece FAIL:12 gates PASS, Ihfr5 PASS/1 FAIL e2 NOT_RUN; matriz17/23. O E2E geral244/244 e os casos de leitura/inativos confirmaram o avanço do reparo de renderização neste SHA. O fluxo sem randomUUID passou. O fechamento de T075–T077/T079/T080 continua vinculado ao recibo do SHA final, não a resultado transferido.
+
+- [ ] T081 [US2] Corrigir a preparação observável do fluxo OWNER/ADMIN em `tests/e2e/ihfr-diagnosis-manage.spec.ts`: compartilhar a pré-condição desktop, exigir FOREST/data antes e depois das inspeções e validar a primeira query contextual, preservando foco, matriz, lifecycle, idempotência e domínio. Conferir preimages, revisão não autora e execução no sucessor, com o FAIL F4 preservado em `evidence/ui044-correcoes-finais-20261105/recovery-f4.json` (origem SC-036-001/SC-036-002/SC-036-004).
+
+Dependência: evidência F4 → T081 e revisão → composição P00 → RC15/Codex/QA no sucessor → fechamento factual T075–T077. As tarefas históricas permanecem intactas.
