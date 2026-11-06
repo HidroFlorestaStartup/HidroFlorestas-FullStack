@@ -10,7 +10,7 @@ Data: 05/11/2026, America/Fortaleza. P00 é o coordenador, integrador e publicad
 - Branch única: `fix/ui044-correcoes-finais-20261105`; destino development.
 - O0: **PASS**, [manifesto comum com ownership/preimages/guias](o0.json).
 - O1: deltas P01/P02/P03 entregues e aplicados com hashes/preimages/postimages idênticos. [Recibo da composição](composition-progress.json).
-- O2: composição, conferência de identidade e checks locais **PASS**; candidata congelada para publicação. F/tree serão registrados na PR. O3: CI, Codex e QA independente **PENDING**, conforme execução paralela do contrato. O4: **NOT_RUN neste snapshot**.
+- O2: composição e checks locais **PASS**. F1 foi publicado na PR53; sua CI terminou **FAIL**. Reparo T078 integrado e revisado, aguardando qualificação do sucessor na mesma PR. O3/O4 do sucessor: **PENDING** neste snapshot.
 
 ## Crosswalk
 
@@ -55,3 +55,9 @@ A pré-revisão P04 envolve `/root/o0_guards`, `/root/o0_refs` e `/root/o0_speck
 ## Corte para publicação
 
 P00 revisou o diff composto e confrontou todos os preimages/postimages, escopo e checks locais; nenhum achado material conhecido nesse corte. Essa revisão do integrador não é a QA independente final. Conforme P00/GATES5–6, F será publicado com P04, CI e Codex ainda pendentes, para que os três recebam a mesma identidade e executem em paralelo. O parecer independente não é presumido. O recibo terminal na PR governa o resultado posterior deste snapshot.
+
+## Recuperação de F1 e qualificação do sucessor
+
+[Recibo F1](recovery-f1.json): 9 gates PASS, E2E FAIL (237 PASS, 1 FAIL, 3 não executados) e 5 gates NOT_RUN. A falha é a seleção do artigo completo pelo teste US4 de metadados mínimos após C3. O [patch de P03](p03-recovery-receipt.json) exige Registro único/visível/imutável sem IHFR e mantém privacidade no artigo completo, inclusive reload/inativo. [QA não autora do reparo](p04-recovery-review.json): PASS estático, sem findings. [Typecheck/lint locais](recovery-local-validation.json): exit0.
+
+Produto, scripts, guards e demais testes não mudaram. A nova rodada é necessária para corrigir e qualificar esse defeito comprovado no novo SHA, preservando a execução falha. A matriz de 23 casos ainda é NOT_RUN em F1. O Codex de F1 concluiu sem findings; esse recibo não qualifica o sucessor. Resultados finais ficam no recibo da mesma PR53, sem commit documental posterior para anunciar CI antiga.

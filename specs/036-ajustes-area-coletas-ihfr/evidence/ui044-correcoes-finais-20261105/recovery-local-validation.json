@@ -1,0 +1,36 @@
+{
+  "base": "921b5ff153865816922b0f509bfda0642a9f4085",
+  "path": "tests/e2e/collection-registration.spec.ts",
+  "sha256": "d3fe0fa25f60a98e8ebdd4bb0c0e6a9c13730deac4d7e3a233bc42e8bf4b0a82",
+  "checks": [
+    {
+      "name": "recovery-lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "tests/e2e/collection-registration.spec.ts"
+      ],
+      "exit": 0,
+      "seconds": 1.36,
+      "log": "recovery-lint.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    },
+    {
+      "name": "recovery-typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exit": 0,
+      "seconds": 9.75,
+      "log": "recovery-typecheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": ""
+    }
+  ],
+  "browser": "NOT_RUN locally; final CI required"
+}

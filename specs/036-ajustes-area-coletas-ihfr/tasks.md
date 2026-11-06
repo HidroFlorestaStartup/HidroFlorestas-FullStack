@@ -189,3 +189,9 @@ Origem: handoff pinado `71b8c95b7d1d1509b7155a36d65f70289c0a39f3` e mandato P00.
 - [ ] T077 Reconfirmar HEAD/base/tree/CI/reviews/matriz e publicar handoff O4 na PR única para Pedro, com estados factuais e sem merge/deploy.
 
 Dependências: T068 → T069 || T070 || (T071 → T072) || T073 → T074 → T075 || preparação T076 → conclusão T076 → T077. P03 é único writer de T071/T072; marcador paralelo não autoriza dois autores no mesmo teste. Os checks antigos continuam com seus significados e SHAs históricos.
+
+## Phase 4: convergência após a execução de F1
+
+- [x] T078 [US2] Corrigir o escopo do teste US4 em `tests/e2e/collection-registration.spec.ts`, mantendo privacidade no artigo completo e metadados mínimos no bloco Registro; conferir preimages, revisão não autora, typecheck/lint e registrar o FAIL real em `evidence/ui044-correcoes-finais-20261105/recovery-f1.json` (origem SC-036-001/SC-036-004, run42140950096).
+
+T078 é implementação do reparo, não PASS de navegador. T075–T077 exigem requalificação no SHA sucessor; F1 continua FAIL e seus cinco gates posteriores ao E2E continuam NOT_RUN.

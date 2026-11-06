@@ -15,6 +15,19 @@
       "path": "src/components/collections/collection-detail-layout.tsx",
       "preimage": null,
       "reason": "Single active responsive slot composition preserving independent desktop column heights and mobile DOM sequence; IHFR controller remains stable, no duplicate hidden trees."
+    },
+    {
+      "owner": "P03",
+      "agent": "/root/p03_tests",
+      "path": "tests/e2e/collection-registration.spec.ts",
+      "preimage": {
+        "sha": "921b5ff153865816922b0f509bfda0642a9f4085",
+        "git_blob": "e3d0a22776d9cc29fb527babce72789515a081c9",
+        "sha256": "8b514f616a61d3f80e064139108158418a5da9cd06a42db45a91f591bca2f8e5"
+      },
+      "recorded_at": "2026-11-05T22:27:29.711860-03:00",
+      "authorized_in_session_before_edit": true,
+      "reason": "Actual RC E2E failure after C3 widened article composition; adapt minimal-record selector while retaining global private-field exclusion."
     }
   ]
 }
