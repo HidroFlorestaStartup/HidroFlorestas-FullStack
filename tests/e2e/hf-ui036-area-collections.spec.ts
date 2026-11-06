@@ -83,6 +83,15 @@ test("UI036 real area read: field occurrence beats confirmation; responsive view
     await expect(cards.nth(1)).toContainText(X.older);
     await expect(cards.first()).toContainText("16/09/2026 08:00:00 (UTC-03:00)");
     await expect(cards.nth(1)).toContainText("15/09/2026 17:45:00 (UTC+05:45)");
+    for (const [index, collectionId] of [X.newer, X.older].entries()) {
+      const card = cards.nth(index);
+      await expect(card.getByRole("link", { name: "IHFR", exact: true, includeHidden: true })).toHaveCount(0);
+      await expect(card.getByRole("link", { includeHidden: true })).toHaveCount(2);
+      await expect(card.getByRole("link", { name: "Abrir coleta", exact: true })).toHaveAttribute("href", `${path}/collections/${collectionId}`);
+      await expect(card.getByRole("link", { name: "Dados ambientais", exact: true })).toHaveAttribute("href", `${path}/collections/${collectionId}/environmental-data`);
+      await expect(card.getByText(/Score registrado:/)).toHaveCount(0);
+      await expect(card.getByText("Sem IHFR vigente", { exact: true })).toBeVisible();
+    }
     await expect(page.getByRole("complementary", { name: "Último IHFR disponível da área" }))
       .toContainText("Nenhum diagnóstico IHFR vigente disponível");
     await expect(page.getByRole("link", { name: "Registrar coleta" })).toBeVisible();
@@ -114,6 +123,14 @@ test("UI036 keyboard route: area -> collection -> environmental form -> collecti
   await page.getByRole("link", { name: "Voltar à coleta" }).click();
   await expect(page).toHaveURL(path + "/collections/" + X.newer);
   await page.getByRole("link", { name: "Voltar à área" }).click();
+  await expect(page).toHaveURL(path);
+  const environmental = first.getByRole("link", { name: "Dados ambientais", exact: true });
+  await environmental.focus();
+  await environmental.press("Enter");
+  await expect(page).toHaveURL(path + "/collections/" + X.newer + "/environmental-data");
+  await page.getByRole("link", { name: "Voltar à coleta", exact: true }).click();
+  await expect(page).toHaveURL(path + "/collections/" + X.newer);
+  await page.getByRole("link", { name: "Voltar à área", exact: true }).click();
   await expect(page).toHaveURL(path);
 });
 

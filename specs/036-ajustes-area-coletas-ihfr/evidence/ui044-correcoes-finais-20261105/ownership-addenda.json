@@ -1,0 +1,20 @@
+{
+  "o0_sha256": "fb319da8961caf33de016e6cb4d75d10e0e9a4ca7cbb25f9ed6ce793b0d9adc9",
+  "issued_at": "2026-11-05T21:42:05.251494-03:00",
+  "addenda": [
+    {
+      "owner": "P03",
+      "agent": "/root/p03_tests",
+      "path": "tests/e2e/support/ui044-final-corrections.ts",
+      "preimage": null,
+      "reason": "Shared C2/C3 DOM/geometry/profile assertions for read/manage, reusing official capture helpers without modifying guards."
+    },
+    {
+      "owner": "P02",
+      "agent": "/root/p02_detail",
+      "path": "src/components/collections/collection-detail-layout.tsx",
+      "preimage": null,
+      "reason": "Single active responsive slot composition preserving independent desktop column heights and mobile DOM sequence; IHFR controller remains stable, no duplicate hidden trees."
+    }
+  ]
+}

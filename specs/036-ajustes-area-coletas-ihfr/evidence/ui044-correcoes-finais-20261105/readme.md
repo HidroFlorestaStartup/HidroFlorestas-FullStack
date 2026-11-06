@@ -1,0 +1,57 @@
+# Correções finais UI044 — ciclo C1–C3
+
+Data: 05/11/2026, America/Fortaleza. P00 é o coordenador, integrador e publicador único.
+
+## Identidade e estado
+
+- Base B: `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`.
+- Árvore base: `0c836da964c377a7d1e6bc8b2331524e931ea901`.
+- Fonte: [handoff pinado em71b8c95](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/71b8c95b7d1d1509b7155a36d65f70289c0a39f3/docs/plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md).
+- Branch única: `fix/ui044-correcoes-finais-20261105`; destino development.
+- O0: **PASS**, [manifesto comum com ownership/preimages/guias](o0.json).
+- O1: deltas P01/P02/P03 entregues e aplicados com hashes/preimages/postimages idênticos. [Recibo da composição](composition-progress.json).
+- O2: composição, conferência de identidade e checks locais **PASS**; candidata congelada para publicação. F/tree serão registrados na PR. O3: CI, Codex e QA independente **PENDING**, conforme execução paralela do contrato. O4: **NOT_RUN neste snapshot**.
+
+## Crosswalk
+
+| Recorte | Requisitos | Tarefas | Owner |
+|---|---|---|---|
+| C1 — link/score por coleta | FR-036-001; FR-036-005; US1 | T069; T071 | P01 produto, P03 testes |
+| C2 — aviso único na leitura | FR-036-003; FR-036-005; US3 | T070; T072 | P02 produto, P03 testes |
+| C3 — leitura primeiro no mobile | FR-036-002; FR-036-005; US2 | T070; T072 | P02 produto, P03 testes |
+| Identidade/guardas/composição | SC-036-001; SC-036-004 | T068; T073; T074 | P00 |
+| Browser/CI/review/handoff | SC-036-001; SC-036-002; SC-036-003; SC-036-004 | T075; T076; T077 | P00, P03 evidência, P04 não autora |
+
+## Execução e preservação
+
+As skills reais analyze/plan/tasks/implement/converge orientam o ciclo enxuto da Spec036. Prerequisites, setup-plan e setup-tasks executados com exit0; spec/plan/tasks anteriores preservados pelos scripts e estado `.specify/feature.json` restaurado. O histórico de tarefas não é reclassificado.
+
+P01 `/root/p01_cards`, P02 `/root/p02_detail` e P03 `/root/p03_tests` são subagentes reais. Até três simultâneos; sem publicação por worker. O0 foi auditado por `/root/o0_refs`, `/root/o0_speckit` e `/root/o0_guards`, com ausência de autoria de produto/config/testes.
+
+P00 recebe patches com hashes e preimages contra B. A candidata deve conter deploy=false para a branch exata antes de sua primeira ref remota. Após freeze, recibos terminais ficam na descrição/comentário da mesma PR, identificando F/tree/run/attempt; não se acrescenta commit somente para anunciar resultados de outro SHA.
+
+## Limites
+
+O código previamente testado `febee101aa718de5b236f99f8080621c405a1d7f` e seu run42101827226/1 são baseline histórico. Capturas equivalentes podem ser comparadas, mas seus resultados não qualificam F. A CI oficial é Windows/Node24.19/PostgreSQL sintético owned; o workspace Chat usa Linux/Node24.22.1. Nenhum teste contra banco hospedado, fallback full-ui, provedor, merge ou deploy é autorizado.
+
+CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO permanecem. O handoff futuro é técnico para revisão de Pedro; não representa aceite de Luciano nem homologação operacional/científica.
+
+## Entregas e checks da composição
+
+| Evidência | Resultado e limite |
+|---|---|
+| [P01](p01-receipt.json) | C1; patch `658c3ef0ed198fc027a493a9fa77f3ab2a4cacae9fcdb3d4ae2ab0214d525bf2` |
+| [P02](p02-receipt.json) | C2/C3; patch `d3406dcf8b2e60168bd5c8e5c0d4ddd60271c7b7487fe22a03e2c9883ed2f4db` |
+| [P03](p03-receipt.json) | Testes; patch `eed5f52d80ec69ac3c286f8f96b9add0813ef11ff81c3346a4e21e45190160f1` |
+| [RED funcional](p03-red.json) | Oito testes novos contra B: seis falhas funcionais + dois PASS; sem falha de imports |
+| [Validação local](p00-local-validation.json) | 17/17 unidades, typecheck completo e lint PASS; dois warnings preexistentes, nenhum erro |
+| [Guardas](p00-guard-check.json) | Somente nome exato em Vercel=false e push/if RC; demais valores semanticamente iguais a B |
+| [Ownership adicional](ownership-addenda.json) | Novo layout focal P02 e helper de testes P03 reservados antes da escrita |
+
+P02/P03 registraram typecheck exit2 em suas worktrees sem Prisma gerado. P00 gerou o cliente do schema existente, sem banco, e executou o typecheck composto com exit0. Isso resolve a limitação local; nenhum erro foi ocultado. Os testes são identificados pelos hashes técnicos e ainda não representam a execução de CI de um commit publicado.
+
+A pré-revisão P04 envolve `/root/o0_guards`, `/root/o0_refs` e `/root/o0_speckit`, todos sem autoria dos deltas auditados. Resultados finais dependem de F e da execução real. A matriz escrita cobre OWNER com/sem diagnóstico, MEMBER com/sem, inativo, ADMIN/lifecycle,1440/375/390 e320 com texto200; zero/precisão são provas de apresentação, sem cálculo científico artificial. Capturas e geometria ainda NOT_RUN neste registro; os nomes seguem os padrões de upload oficiais existentes.
+
+## Corte para publicação
+
+P00 revisou o diff composto e confrontou todos os preimages/postimages, escopo e checks locais; nenhum achado material conhecido nesse corte. Essa revisão do integrador não é a QA independente final. Conforme P00/GATES5–6, F será publicado com P04, CI e Codex ainda pendentes, para que os três recebam a mesma identidade e executem em paralelo. O parecer independente não é presumido. O recibo terminal na PR governa o resultado posterior deste snapshot.

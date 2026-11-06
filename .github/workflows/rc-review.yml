@@ -28,6 +28,7 @@ on:
       - feat/localizacao-endereco-opcional
       - codex/hf-ui044-composition-qa-20261101
       - integrate/hf-ui044-aceite-20261105
+      - fix/ui044-correcoes-finais-20261105
   workflow_dispatch:
 
 permissions:
@@ -67,7 +68,8 @@ jobs:
       github.ref_name == 'feat/ajustes-navegacao-conta' ||
       github.ref_name == 'feat/ajustes-area-coletas-ihfr' ||
       github.ref_name == 'feat/localizacao-endereco-opcional' ||
-      github.ref_name == 'integrate/hf-ui044-aceite-20261105'
+      github.ref_name == 'integrate/hf-ui044-aceite-20261105' ||
+      github.ref_name == 'fix/ui044-correcoes-finais-20261105'
     runs-on: windows-latest
     timeout-minutes: 35
     defaults:

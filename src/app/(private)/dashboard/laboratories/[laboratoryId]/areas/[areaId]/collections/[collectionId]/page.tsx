@@ -2,7 +2,8 @@ import { notFound, redirect } from "next/navigation";
 
 import { AuthBoundaryError, requireAuth } from "@/app/api/server/middlewares/auth.middleware";
 import { CollectionServiceError, collectionsService } from "@/app/api/server/services/collections.service";
-import { CollectionDetail } from "@/components/collections/collection-detail";
+import { createCollectionDetailSlots } from "@/components/collections/collection-detail";
+import { CollectionDetailLayout } from "@/components/collections/collection-detail-layout";
 import { ExperimentalDiagnosisSummary } from "@/components/ihfr-diagnosis/experimental-diagnosis-summary";
 import { NoCurrentDiagnosis } from "@/components/ihfr-diagnosis/no-current-diagnosis";
 import { IHFRDiagnosisManagement } from "@/components/ihfr-diagnosis/ihfr-diagnosis-management";
@@ -36,16 +37,8 @@ export default async function CollectionDetailPage({
     if ((error instanceof CollectionServiceError || code === "NOT_FOUND") && code === "NOT_FOUND") notFound();
     throw new Error("Não foi possível carregar a coleta.");
   }
-  return (
-    <div className="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
-      <CollectionDetail collection={collection} hasConfirmedEnvironmentalData={environmentalConfirmed} />
-      <div className="min-w-0 space-y-6">
-        {canManage
-          ? <IHFRDiagnosisManagement key={diagnosisContext!.collectionId} context={diagnosisContext!} initialDiagnosis={diagnosis} />
-          : diagnosis
-            ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} />
-            : <NoCurrentDiagnosis />}
-      </div>
-    </div>
-  );
+  const detailSlots = createCollectionDetailSlots({ collection, hasConfirmedEnvironmentalData: environmentalConfirmed });
+  return canManage
+    ? <IHFRDiagnosisManagement key={diagnosisContext!.collectionId} context={diagnosisContext!} initialDiagnosis={diagnosis} detailSlots={detailSlots} />
+    : <CollectionDetailLayout {...detailSlots} reading={diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />} />;
 }

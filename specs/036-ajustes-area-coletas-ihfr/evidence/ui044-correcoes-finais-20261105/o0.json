@@ -1,0 +1,364 @@
+{
+  "id": "HF-UI044-CORRECOES-FINAIS-20261105-O0",
+  "status": "PASS",
+  "issued_at": "2026-11-05T21:36:46.701594-03:00",
+  "timezone": "America/Fortaleza",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "coordinator": "/root (P00)",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "repository_id": 1409854835,
+  "account": "HidroFlorestaStartup",
+  "base": {
+    "ref": "development",
+    "sha": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "contains_merge51": true
+  },
+  "source": {
+    "sha": "71b8c95b7d1d1509b7155a36d65f70289c0a39f3",
+    "tree": "0c843174c0361f42483fb629563487e44179f43e",
+    "pr": 52,
+    "state": "OPEN",
+    "files": [
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json",
+        "git_blob": "3d09611c8c9cec6d18c6eea4e02798fc5d85be19",
+        "sha256": "23b5f2be24dd1b5861309826fb2afca4e0900d48228ed9bdffa26572a769cd99",
+        "bytes": 6144
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/01-area-link-ihfr-redundante.png",
+        "git_blob": "de0ac5f15c382ad8bf10efc88851c47a3d4c8a46",
+        "sha256": "f6b535f2a41ee2e3d76fcae9bff73fd30089cedc1285367572d470c123367cee",
+        "bytes": 187961
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/02-detalhe-aviso-experimental-duplicado.png",
+        "git_blob": "ca01b0f2cdb16ea55e07cf3967d7a409edfa6b81",
+        "sha256": "8615a03dedf3d0018e59664b53f5e93c60f8d7a7ea464029276830b318ca1b82",
+        "bytes": 226757
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/03-mobile-prioridade-leitura-da-coleta.png",
+        "git_blob": "6b07593ac3b3404ba5ceb5107d056f1494a6fa97",
+        "sha256": "3b35a0cfaf1a0f0120a5cb60c8ce5fd146e705650e61fd0e2e96726e8ecc30da",
+        "bytes": 63542
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/readme.md",
+        "git_blob": "5360d4e2799806b0d538adb4964cf7a38c986cb3",
+        "sha256": "1f36d5467f548a45e82c4145960d82ad8320d8dce91d11ca1f25d74e0885e5e6",
+        "bytes": 1072
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/plano-de-publicacao.md",
+        "git_blob": "cef5b016705d7c49131e6a5f43daa80e39afd5e5",
+        "sha256": "e28d07c412ca64bed33f0100498bebe6e71df909ea41ada8c26612f958ff07af",
+        "bytes": 3857
+      },
+      {
+        "path": "docs/plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md",
+        "git_blob": "564dbc70b3c15a980d86b3b6f49ee03a38b88834",
+        "sha256": "833faeafc95e073fbdae765bceab9248c0b52ea5f856bc99d5bcad93324c881f",
+        "bytes": 11560
+      }
+    ]
+  },
+  "public_branch": "fix/ui044-correcoes-finais-20261105",
+  "public_pr": null,
+  "first_remote_ref_requires_deploy_false": true,
+  "remote_branch_at_o0": "NOT_FOUND",
+  "remote_worker_deliveries": "NOT_FOUND_IN_AVAILABLE_REFS_AND_PRS",
+  "external_unpublished_sessions": "NOT_OBSERVABLE",
+  "publication_owner": "P00",
+  "target": "development",
+  "merge_authorized": false,
+  "deploy_authorized": false,
+  "o0_agents": [
+    {
+      "id": "/root/o0_refs",
+      "role": "refs, ancestry and preservation",
+      "status": "PASS_SCOPED"
+    },
+    {
+      "id": "/root/o0_speckit",
+      "role": "Spec Kit analysis/crosswalk",
+      "status": "ANALYSIS_COMPLETE_SCOPED"
+    },
+    {
+      "id": "/root/o0_guards",
+      "role": "non-author guards review",
+      "status": "PASS_SCOPED"
+    }
+  ],
+  "concurrency": {
+    "max_active_subagents": 3,
+    "o0_completed_before_wave1": true,
+    "nested_spawns": "NO_FREE_SLOTS_WHILE_WAVE1_ACTIVE"
+  },
+  "ownership": {
+    "P00": {
+      "agent": "/root",
+      "workspace": "/workspace/scratch/100be1d812fa/repo",
+      "files": [
+        {
+          "path": "specs/036-ajustes-area-coletas-ihfr/spec.md",
+          "blob": "6fa5207445f48434bdac7c70d22344b445f3b6b6",
+          "sha256": "b948d31c50440c0ea5a83cfcd0976c54ac36d4b5b7557233d1aa0e84734e9293",
+          "exists": true
+        },
+        {
+          "path": "specs/036-ajustes-area-coletas-ihfr/plan.md",
+          "blob": "9018d10e81db29911c41baf48493a4ee6cdad895",
+          "sha256": "78b7136d65b72d3b537f26c2d2e8e55f6d277ab065365d98d684f59ca30adf3d",
+          "exists": true
+        },
+        {
+          "path": "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+          "blob": "32c9897a3589b99fde5ab5f68f9460f3fa22683c",
+          "sha256": "0a2112870ff43652969e45022788ca5267576d6947a48ad99b662ac357aa1a24",
+          "exists": true
+        },
+        {
+          "path": "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+          "blob": "48184510abe24fe9e15731850d674259feccf90f",
+          "sha256": "78d083184eb6d50131ab1364c43cd3df943cc7fa323a6c09e3d2c967d1fd06de",
+          "exists": true
+        },
+        {
+          "path": "vercel.json",
+          "blob": "8e33d74486a49d283cf771e120becb2d3a392e6d",
+          "sha256": "a6628b2c4ef901f7e356c17e66ea932d4653c589016c8195337bdb76053563ab",
+          "exists": true
+        },
+        {
+          "path": ".github/workflows/rc-review.yml",
+          "blob": "abeaeee8b97bad47c286340cf35f7d86a1e7a422",
+          "sha256": "8959bbc560f37864589d1b3bad759e923c276679a346a43a938bba83064e9da1",
+          "exists": true
+        }
+      ],
+      "publication": true,
+      "evidence_prefix": "evidence/ui044-correcoes-finais-20261105/p00/"
+    },
+    "P01": {
+      "agent": "/root/p01_cards",
+      "workspace": "/workspace/scratch/100be1d812fa/wt-p01",
+      "files": [
+        {
+          "path": "src/components/areas/area-collections.tsx",
+          "blob": "2a7163516cd43340180a7605e40801e816c2c046",
+          "sha256": "e551386b5ac3d47a60c764e51e6f68a78ba612b6c4befeacd17af04a25835fdd",
+          "exists": true
+        }
+      ],
+      "publication": false,
+      "evidence_prefix": "evidence/ui044-correcoes-finais-20261105/p01/"
+    },
+    "P02": {
+      "agent": "/root/p02_detail",
+      "workspace": "/workspace/scratch/100be1d812fa/wt-p02",
+      "files": [
+        {
+          "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+          "blob": "8f78ea8d8e29308a64b7289026a1595ccd054aa6",
+          "sha256": "db60ed6caf5e54f1d66766a9832238212fece8443481db15704ae0ed80a38a43",
+          "exists": true
+        },
+        {
+          "path": "src/components/collections/collection-detail.tsx",
+          "blob": "2c8b97c6a761a5eeba7fa2c67d73cad0bf9b165d",
+          "sha256": "4eea4b9c0006cad872f335b322b1910869389d3d42f1168d7d16b55295bdd09b",
+          "exists": true
+        },
+        {
+          "path": "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+          "blob": "d47eea4757f9906f2ca1b22ba0d2fa634b9fd61e",
+          "sha256": "0797a2022aabde6643264837c2ef4cf9039253bad681578d76b5191dad8560e9",
+          "exists": true
+        }
+      ],
+      "publication": false,
+      "evidence_prefix": "evidence/ui044-correcoes-finais-20261105/p02/"
+    },
+    "P03": {
+      "agent": "/root/p03_tests",
+      "workspace": "/workspace/scratch/100be1d812fa/wt-p03",
+      "files": [
+        {
+          "path": "tests/e2e/hf-ui036-area-collections.spec.ts",
+          "blob": "a0a91e140db1adb92bc1d8cbcfd846f5dd30ed1e",
+          "sha256": "78c17015ce4b0ebc61cccacbaac160e2509b8354fb2163b861580d7afbee190b",
+          "exists": true
+        },
+        {
+          "path": "tests/e2e/ihfr-diagnosis-read.spec.ts",
+          "blob": "e66ed1532e82ecd553d0e3d43b745f5ad441c098",
+          "sha256": "24943d58c9e1f2c240aa7ce9c701417c62644b1d7d1798f6d95a361c1850fbce",
+          "exists": true
+        },
+        {
+          "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+          "blob": "a6aec94fcc2e64dd37a0b13d8839c038bc4bec6a",
+          "sha256": "b2416fa05a122b141636286506cf5db6dca45dcd7028c4bc5ad1478847b6f30a",
+          "exists": true
+        },
+        {
+          "path": "tests/unit/hf-ui036-area-presentation.test.ts",
+          "blob": "821d795c81ede70dc87ef6e7874d97d2e114005f",
+          "sha256": "6b644a59669d781a2ed6dff744bb4df6a677c6f8621e5369d7eafe6c7759933b",
+          "exists": true
+        },
+        {
+          "path": "tests/unit/frontend-ihfr-presentation.test.tsx",
+          "blob": "713e121af7e93605db29da2da6ba762d417dbb56",
+          "sha256": "f4244657ac7b5b8eb72a61e52eefabe23c4693081e9edf0ede10465bb64b1df5",
+          "exists": true
+        },
+        {
+          "path": "tests/unit/ihfr-diagnosis-read-accessibility.test.tsx",
+          "blob": "1acf1646d8761edc8becd89b56a67d72ea5916eb",
+          "sha256": "2a804f0cf50a96c2632718762df4207d67cc4685a2714895467db3638f7aa46b",
+          "exists": true
+        },
+        {
+          "path": "tests/unit/hf-ui044-final-corrections.test.tsx",
+          "blob": null,
+          "sha256": null,
+          "exists": false
+        }
+      ],
+      "publication": false,
+      "evidence_prefix": "evidence/ui044-correcoes-finais-20261105/p03/"
+    }
+  },
+  "interfaces": {
+    "C1": "Existing ol label Coletas ordenadas por ocorrência em campo; li identified by ID text; links Abrir coleta / Dados ambientais keep existing destinations; only row.currentDiagnosis.displayScore, unchanged text precision; absent is not zero; top summary preserved.",
+    "C2": "Exact title Limites do diagnóstico experimental counted in DOM, 1 within reading, 0 within management, outside transient dialogs; details opened by keyboard when diagnosis exists.",
+    "C3": "Header/return then reading, Registro, Dados ambientais, permitted actions in mobile DOM and geometry; desktop columns/relative positions; single state/controller and no duplicated IDs/cards/forms. P02 must notify P03 of composition/semantic selectors before dependent tests."
+  },
+  "speckit": {
+    "feature": "specs/036-ajustes-area-coletas-ihfr",
+    "last_existing_task": "T067",
+    "new_tasks": "T068-T077",
+    "skills": [
+      "analyze",
+      "plan",
+      "tasks",
+      "implement",
+      "converge"
+    ],
+    "prerequisites": {
+      "command": "SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+      "exit_code": 0,
+      "stdout": "{\"FEATURE_DIR\":\"/workspace/scratch/100be1d812fa/repo/specs/036-ajustes-area-coletas-ihfr\",\"AVAILABLE_DOCS\":[\"tasks.md\"]}\n",
+      "stderr": "",
+      "feature_state_preexisting": false,
+      "feature_state_restored": true,
+      "time": "2026-11-05T21:34:55.991508-03:00"
+    },
+    "hooks_present": false,
+    "checklists_present": false,
+    "historical_open_tasks_preserved": true,
+    "new_feature_created": false
+  },
+  "runtime": {
+    "chat": "Linux, Node24.22.1/npm11.9.0",
+    "official_ci": "Windows/Node24.19.0/owned synthetic PostgreSQL17",
+    "next_version": "16.3.8",
+    "lock_blob": "6b779938e3b121b69878c0b791b48db778481ccd",
+    "dependency_provision": "npm ci --ignore-scripts --no-audit --no-fund; exit0; 562 packages; lock/package unchanged",
+    "guides": [
+      {
+        "path": "node_modules/next/dist/docs/01-app/01-getting-started/05-server-and-client-components.md",
+        "sha256": "c3f53d13af341d19a601a846082f34abcea2b599c805ab9cd2f32173295e5914"
+      },
+      {
+        "path": "node_modules/next/dist/docs/01-app/02-guides/server-and-client-boundary.md",
+        "sha256": "8f689eab26b887c81ae2dba18d681fd7af0b6ea5bcaedcfe59e807bd7da2e854"
+      },
+      {
+        "path": "node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-client.md",
+        "sha256": "b46c9669be66bf95c946bf47a9518b2fd755ae6303c977c364c5a632942d223e"
+      },
+      {
+        "path": "node_modules/next/dist/docs/01-app/01-getting-started/11-css.md",
+        "sha256": "26732dd6853d66b3edb7e7cda65e46c3ff150525377f51f187e4a075d253eeda"
+      },
+      {
+        "path": "node_modules/next/dist/docs/01-app/03-api-reference/02-components/link.md",
+        "sha256": "e2a12de1d1e8b7e59a7046d4674862d2a2ff9e8641596f121ff9a584aa3e7daa"
+      }
+    ],
+    "p05": "NOT_NEEDED_AT_O0"
+  },
+  "commands_and_gates": {
+    "local": [
+      "git diff --check",
+      "npm run typecheck",
+      "npm run lint",
+      "node --import=tsx --test tests/unit/hf-ui036-area-presentation.test.ts tests/unit/frontend-ihfr-presentation.test.tsx tests/unit/ihfr-diagnosis-read-accessibility.test.tsx tests/unit/hf-ui044-final-corrections.test.tsx"
+    ],
+    "ci_gates": [
+      "RegressionSetup",
+      "Unit",
+      "Integration",
+      "Migration",
+      "Contract",
+      "R1",
+      "Build",
+      "Typecheck",
+      "Lint",
+      "E2E",
+      "Https",
+      "Deletion",
+      "Ihfr",
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "browser_viewports": [
+      "1440",
+      "375",
+      "390",
+      "320 with text 200%"
+    ],
+    "qa": "P04 non-author and Codex at F; not inferred from empty findings",
+    "not_authorized": [
+      "test:e2e:ihfr:full-ui",
+      "hosted database/provider",
+      "merge",
+      "deploy",
+      "force push",
+      "worktree cleanup"
+    ]
+  },
+  "dag": [
+    "O0",
+    "P01 || P02 || P03 || P00 (Spec036 and guards)",
+    "O2 composition P01 -> P02 -> P03 -> P00",
+    "O3 CI15 || Codex || P04 on F",
+    "O4 PR handoff to Pedro"
+  ],
+  "later_gates": {
+    "O1": "NOT_RUN",
+    "O2": "NOT_RUN",
+    "O3": "NOT_RUN",
+    "O4": "NOT_RUN"
+  },
+  "baseline_only": {
+    "code_sha_tested": "febee101aa718de5b236f99f8080621c405a1d7f",
+    "run": 42101827226,
+    "attempt": 1,
+    "artifact": 13451261604,
+    "artifact_sha256": "eb191c2f7ef4655c99838be71831d484df4e124ef708cba76c1ec9ecc0606e1e",
+    "not_reused_as_pass_for_new_sha": true
+  },
+  "preservation": {
+    "preexisting_tracked_diff": 0,
+    "preexisting_untracked": 0,
+    "new_workspace_only": true,
+    "source_workspaces_untouched": true,
+    "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "protected_refs_unchanged": true
+  }
+}

@@ -1,5 +1,7 @@
 # Tasks: 036 — área, coletas e IHFR
 
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
 **Corte atual HF-UI-044-CLOSE-B (2026-11-01):** T009/T015/T023 encerradas pela evidência de CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a`, run `41252813575`/tentativa 1, 15/15 PASS; T017 encerrada pela publicação documental e atualização da PR Draft #47, identificadas no próprio histórico da PR. T008/T016 **não** foram marcadas: comparação bilateral executada Lovable × FullStack continua `NOT_RUN`/`B_VISUAL_EVIDENCE_PENDING`. O commit documental posterior é um HEAD novo e não recebe automaticamente o PASS do código.
 
 Lista inicial G0; fonte #44 em `972f9b00189bf09117883913d8c4fa63e69f4d2f`. Completar mapa de arquivos/Spec Kit antes de produto. Testes obrigatórios.
@@ -170,3 +172,20 @@ Origem: mandato atual do usuário, independente dos orçamentos históricos. FR-
 - [x] T065 [ONDA1/INTEGRATE] Integrar root-only domain.spec.ts e helpers QA necessários; executar RED/GREEN/regressões/TypeScript/lint/Chromium, preservar75IDs/A86/UI037/produto/ciência/guardas e congelar candidata.
 - [ ] T066 [ONDA2/QA/CI] QA nativa não autora sem finding material antes do push; publicar candidato único porFF, solicitar uma revisãoCodex e executar uma rodada focal3→matriz75→RC15 no SHA final; sem rerun.
 - [ ] T067 [ONDA2/TERMINAL/HANDOFF] QA não autora auditar75IDs/150samples/15gates/UI037/ZIPs/CRC/hashes/provenance/PNGs/review, publicar parecerPR50 e síntesePR45, preservar pendências humanas e estado factual sem novo commit.
+
+## Phase 3: correções finais UI044 — 2026-11-05
+
+Origem: handoff pinado `71b8c95b7d1d1509b7155a36d65f70289c0a39f3` e mandato P00. Escopo C1–C3; histórico T001–T067 preservado. T069–T072 marcam implementação de código/testes, não execução de browser; esta depende de T075. Marcadores representam o snapshot pré-publicação; resultados posteriores ao freeze F ficam no recibo da PR do próprio F, sem commit documental que herde CI antiga.
+
+- [x] T068 Registrar O0/base/tree/ownership/fontes/guias, prerequisites e crosswalk C1–C3 em `specs/036-ajustes-area-coletas-ihfr/plan.md` e `specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/o0.json`; liberar os owners após verificar os gates materiais.
+- [x] T069 [P] [US1] Implementar C1 em `src/components/areas/area-collections.tsx`, removendo link IHFR e exibindo somente score CURRENT da própria coleta, sem inventar zero, alterar resumo ou ordenação (FR-036-001, FR-036-005).
+- [x] T070 [P] [US2] Implementar C2+C3 em `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx`, `src/components/collections/collection-detail.tsx`, `src/components/collections/collection-detail-layout.tsx` e `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx`: aviso somente na leitura, ordem mobile e desktop/estado único preservados (FR-036-002, FR-036-003, FR-036-005).
+- [x] T071 [P] [US1] Adaptar regressões C1 em `tests/unit/hf-ui044-final-corrections.test.tsx`, `tests/e2e/hf-ui036-area-collections.spec.ts` e `tests/e2e/ihfr-diagnosis-manage.spec.ts`: score próprio/ausência/zero registrado/precisão, destinos e resumo/ordem preservados (SC-036-001).
+- [x] T072 [US3] Acrescentar provas C2+C3 em `tests/e2e/ihfr-diagnosis-read.spec.ts`, `tests/e2e/ihfr-diagnosis-manage.spec.ts`, `tests/e2e/support/ui044-final-corrections.ts` e unidades de apresentação: aviso único, atual/ausente, gerencia/não gerencia, ordem/IDs/foco e transições reais (SC-036-001, SC-036-002).
+- [x] T073 [P] Acrescentar somente `fix/ui044-correcoes-finais-20261105` em `vercel.json` com deploy false e nos filtros push/if de `.github/workflows/rc-review.yml`, preservando demais guardas e quinze gates (SC-036-003, SC-036-004).
+- [x] T074 Compor deltas P01/P02/P03/P00 com hashes/preimages, executar diff/typecheck/lint/unidades focais e congelar F/tree em `specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/` antes de publicar branch/PR única (SC-036-001, SC-036-004).
+- [ ] T075 Verificar quinze gates de `scripts/rc-review-validation.ps1` e capturas reais C1–C3 em1440,375/390,320/texto200 no F, registrando run/attempt/artefatos e PASS/FAIL/NOT_RUN no recibo da PR (SC-036-002, SC-036-003).
+- [ ] T076 Obter P04 não autora e recibo Codex Review no F, tratar findings materiais e conferir ausência de alteração científica/API/schema/auth/dependências no diff da PR (FR-036-005, SC-036-004).
+- [ ] T077 Reconfirmar HEAD/base/tree/CI/reviews/matriz e publicar handoff O4 na PR única para Pedro, com estados factuais e sem merge/deploy.
+
+Dependências: T068 → T069 || T070 || (T071 → T072) || T073 → T074 → T075 || preparação T076 → conclusão T076 → T077. P03 é único writer de T071/T072; marcador paralelo não autoriza dois autores no mesmo teste. Os checks antigos continuam com seus significados e SHAs históricos.

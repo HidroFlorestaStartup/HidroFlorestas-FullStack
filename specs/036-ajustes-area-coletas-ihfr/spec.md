@@ -1,5 +1,7 @@
 # Feature Specification: área, coletas e apresentação IHFR
 
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
 **Feature Branch**: `feat/ajustes-area-coletas-ihfr`
 **Created**: 2026-10-31
 **Status**: Implementação B validada em CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a` (15/15 gates, run 41252813575/tentativa 1); comparação bilateral UI-06 e aceite ainda pendentes. O histórico abaixo conserva checkpoints anteriores.
@@ -103,3 +105,19 @@ dos PNG reais. Execução, comparabilidade, requisito e completude são eixos in
 Runtime bilateral desta continuidade e inspeção de imagens: NOT_RUN no corte de implementação.
 T008/T016 e novos itens de runtime continuam abertos. `B_VISUAL_READY_FOR_RUNTIME` descreve
 o preparo do código, não `UI06_B_EVIDENCE_COMPLETE`. Aceite humano permanece pendente.
+
+## Ciclo vigente C1–C3 — correções finais UI044, 05/11/2026
+
+**DECISAO_CONFIRMADA:** [handoff de Pedro pinado em 71b8c95](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/71b8c95b7d1d1509b7155a36d65f70289c0a39f3/docs/plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md) e [aceite com três ressalvas](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605). O restante aprovado permanece preservado. A base desta correção é development `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, tree `0c836da964c377a7d1e6bc8b2331524e931ea901`, que contém o merge51. Os estados anteriores desta spec são históricos, não resultados desta candidata. [O0 e acompanhamento do ciclo](evidence/ui044-correcoes-finais-20261105/readme.md).
+
+| Correção | Requisito existente | Critério focal de aceite |
+|---|---|---|
+| C1 | US1; FR-036-001; FR-036-005 | Em cada card, remover o link de nome exato IHFR e preservar Abrir coleta/Dados ambientais com destinos reais. Exibir somente Score registrado: valor de `row.currentDiagnosis.displayScore` daquela coleta, quando há diagnóstico vigente. Preservar precisão textual e zero registrado; ausência não vira zero nem recebe o resultado de outra coleta. Resumo superior, metadata e ordem por ocorrência permanecem. |
+| C2 | US3; FR-036-003; FR-036-005 | Uma ocorrência exata de Limites do diagnóstico experimental no DOM da leitura e zero nas ações, fora de diálogos transitórios. Com diagnóstico, abrir o disclosure por teclado; sem diagnóstico, preservar ausência honesta e qualificadores. Cobrir gerenciamento permitido, MEMBER e laboratório inativo. |
+| C3 | US2; FR-036-002; FR-036-005 | Mobile: título/retorno, Leitura, Registro, Dados ambientais, Ações quando permitidas, em ordem DOM, visual e de foco coerente. Desktop1440 mantém colunas e posições relativas. Um controlador de gerenciamento e uma instância de cada bloco, formulário e ID; leitura atualizada nas mutações, conflitos e recuperação. |
+
+A alternativa C1 sem score continua autorizada somente diante de complexidade material comprovada e registrada. A implementação observada já fornece o score; o ciclo adota a preferência com score, sem novo cálculo, query, API ou arredondamento. Prop zero em unidade comprova rendering, nunca cálculo científico.
+
+SC-036-001/SC-036-002 exigem regressões significativas e capturas da aplicação Next real nos estados alterados:1440,375,390 e320 com texto200%, sem overflow/obstrução, com/sem diagnóstico e com/sem ações. Reutilizar provas existentes de criar/substituir/revogar,409,unknown/recovery/replay. SC-036-003 exige os quinze gates do F e SC-036-004 preserva o escopo. FR-036-004 e caixas históricas permanecem registradas; não reabrir toda a comparação Lovable nesta correção focal.
+
+Sem alteração de ciência, API, schema, migrations, autenticação, dependências, provedores ou shell. Permanecem CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO. O aceite das novas correções e o merge são de Pedro; não atribuídos a Luciano.
