@@ -42,7 +42,10 @@ export function createReverseGeocodingHandler(deps: Deps) {
     const timeout = setTimeout(() => controller.abort(), deps.timeoutMs ?? 5000);
     try {
       const response = await deps.fetcher(endpoint.toString(), {
-        method: "GET", headers: { Accept: "application/json" },
+        method: "GET", headers: {
+          Accept: "application/json",
+          "User-Agent": "HidroFlorestas/1.0 (+https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack)",
+        },
         cache: "no-store", signal: controller.signal, redirect: "error",
       });
       if (!response.ok) return json({ error: "GEOCODING_UNAVAILABLE" }, 503);

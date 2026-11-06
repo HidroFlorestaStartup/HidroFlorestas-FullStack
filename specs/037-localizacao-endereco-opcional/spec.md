@@ -116,3 +116,14 @@ artifact13102479714. Os4PNG/JSON dedicados foram validados após15gatesPASS,
 incluindo suítes posteriores ao E2E. T024 fechada somente nesse alcance.
 Não é aceite humano, comparação bilateral UI06 ou operação de geocoder.
 O SHA documental posterior e a rodada3 não recebem SUCCESS dessa run.
+
+
+## Ciclo autorizado de teste real — 2026-11-06
+
+Pedro solicitou configurar o preenchimento real de município, UF e CEP no Preview para teste manual e perguntou sobre gratuidade. Este ciclo autoriza a configuração e a adaptação mínima necessária, mantendo cadastro, contratos opcionais e correções manuais. Photon público foi selecionado tecnicamente dentro desse pedido, sem conta, chave ou contratação paga. A escolha não constitui homologação para piloto ou uso em escala.
+
+- As três origens existentes (dispositivo, mapa e coordenadas digitadas) continuam usando o proxy autenticado.
+- Aceitar GeoJSON Photon sem usar nome de ponto de interesse como município; preservar formatos anteriores e campos ausentes como null.
+- Enviar somente coordenadas e headers técnicos ao provedor. Sem senha, sessão ou dados de coleta no pedido externo.
+- Sugestões continuam opcionais/editáveis; falha, timeout ou limite não impede cadastro.
+- Preview privado sobre banco sintético existente; sem Production, migration ou merge neste ciclo.

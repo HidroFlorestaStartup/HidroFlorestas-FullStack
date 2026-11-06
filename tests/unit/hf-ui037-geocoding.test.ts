@@ -76,3 +76,29 @@ it("rejects stale failure or stale start after the user changes a point", () => 
   assert.equal(areaDraftReducer(ready, { type: "lookup-failed", revision: 1 }), ready);
   assert.equal(areaDraftReducer(ready, { type: "lookup-start", revision: 1 }), ready);
 });
+
+it("normalizes a Photon FeatureCollection without exposing POI metadata", () => {
+  assert.deepEqual(normalizeReverseAddress({
+    type: "FeatureCollection", features: [{
+      type: "Feature", geometry: { type: "Point", coordinates: [-44.3589, -3.3925] },
+      properties: { name: "Escola de teste", city: "Itapecuru Mirim", state: "Maranhão", postcode: "65485-000", countrycode: "BR" },
+    }],
+  }), { municipality: "Itapecuru Mirim", state: "MA", cep: "65485-000" });
+});
+it("keeps absent/invalid Photon fields optional and never treats a POI name as municipality", () => {
+  const empty = { municipality: null, state: null, cep: null };
+  for (const payload of [
+    { type: "FeatureCollection", features: [] },
+    { type: "FeatureCollection", features: [null] },
+    { type: "FeatureCollection", features: [{ properties: { city: "Invalid feature" } }] },
+    { type: "Other", features: [{ type: "Feature", properties: { city: "Wrong root" } }] },
+    { type: "FeatureCollection", features: [{ type: "Feature", properties: { name: "POI", county: "County", city: 123, state: "Unknown", postcode: "bad" } }] },
+  ]) assert.deepEqual(normalizeReverseAddress(payload), empty);
+  assert.deepEqual(normalizeReverseAddress({
+    type: "FeatureCollection", features: [{ type: "Feature", properties: { state: "MA" } }],
+  }), { municipality: null, state: "MA", cep: null });
+  assert.deepEqual(normalizeReverseAddress({
+    municipality: "Manual adapter", state: "CE", cep: "60000123",
+    type: "FeatureCollection", features: [{ type: "Feature", properties: { city: "Provider", state: "MA", postcode: "65485-000" } }],
+  }), { municipality: "Manual adapter", state: "CE", cep: "60000-123" });
+});

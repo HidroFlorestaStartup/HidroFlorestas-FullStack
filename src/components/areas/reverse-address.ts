@@ -41,15 +41,20 @@ function cep(value: unknown): string | null {
 export function normalizeReverseAddress(payload: unknown): ReverseAddress {
   const root = object(payload);
   const address = object(root.address);
+  const feature = root.type === "FeatureCollection" && Array.isArray(root.features)
+    ? object(root.features[0]) : {};
+  const photon = feature.type === "Feature" ? object(feature.properties) : {};
   // Accept our normalized adapter's fields and the common reverse-geocoder
-  // "address" shape; never infer a missing field from unrelated geography.
+  // "address" shape, then Photon GeoJSON; never infer a municipality from a POI name.
   return {
     municipality: text(root.municipality, 100)
       ?? text(address.city, 100) ?? text(address.town, 100)
-      ?? text(address.municipality, 100) ?? text(address.village, 100),
+      ?? text(address.municipality, 100) ?? text(address.village, 100)
+      ?? text(photon.city, 100) ?? text(photon.town, 100)
+      ?? text(photon.municipality, 100) ?? text(photon.village, 100),
     state: uf(root.state) ?? uf(address["ISO3166-2-lvl4"] && String(address["ISO3166-2-lvl4"]).split("-").at(-1))
-      ?? uf(address.state),
-    cep: cep(root.cep) ?? cep(address.cep) ?? cep(address.postcode),
+      ?? uf(address.state) ?? uf(photon.state),
+    cep: cep(root.cep) ?? cep(address.cep) ?? cep(address.postcode) ?? cep(photon.postcode),
   };
 }
 export async function lookupReverseAddress(
