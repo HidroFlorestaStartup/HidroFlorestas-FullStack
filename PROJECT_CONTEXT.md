@@ -1,5 +1,19 @@
 # Contexto do projeto HidroFlorestas
 
+## Estado vigente — UI-044 concluída e organização das PRs — 06/11/2026
+
+DECISAO_CONFIRMADA: Pedro informou que testou C1–C3 com sucesso e aprovou as correções. [Aprovação registrada](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435). PR53 integrada em `865054b53e5820582d7956a29dc95fc9a2690bd8`; árvore igual ao head1f305fb validado por quinze gates/E2E244 e Codex Review. As três ressalvas anteriores estão atendidas nesse escopo.
+
+EVIDENCIA_IMPLEMENTACAO: PRs44–48/50 encerradas como substituídas; heads e55 blobs da proveniência de51 reconferidos. A consolidação documental pela PR52 preserva os três recibos de41, seu guard, o handoff52, os três prints e os adendos históricos, sem reaplicar produto antigo. [Plano e recibo](docs/plans/active/encerramento-prs-ui044-20261106/plano-de-execucao.md). Os estados de espera nos adendos anteriores são históricos e não reabrem as correções.
+
+Main, branches, código, testes, schema, dependências, workflow e ambientes preservados; nenhuma nova suíte funcional, autoaprovação, deploy ou limpeza destrutiva nesta organização. Homologação operacional e validação científica mantêm seus limites próprios.
+
+## Estado vigente — UI-044 integrada e três correções autorizadas — 05/11/2026
+
+DECISAO_CONFIRMADA: Pedro aprovou o restante da usabilidade, design e aparência após seus testes manuais e confirmou somente três ajustes pendentes: link IHFR redundante dos cards, aviso experimental duplicado e prioridade da leitura no mobile. Autorizou integrar #51 e publicar o [prompt dessas correções](docs/plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md). O executor está autorizado a implementar, validar, fazer commits, push e abrir/atualizar PR para development, sem nova confirmação rotineira; o merge futuro fica com Pedro.
+
+EVIDENCIA_IMPLEMENTACAO: #51/head febee101aa integrado em `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, árvore idêntica à candidata validada. CI42101827226/1: quinze gates PASS, E2E241. Codex Review do head concluída sem findings. [Aceite público](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605) e [recibo](docs/plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json) distinguem essa integração das correções ainda não implementadas. Main beba96f preservada; sem deploy, limpeza ou nova suíte funcional nesta publicação documental. Aceite de Pedro não certifica operação, acessibilidade integral ou ciência. Os adendos abaixo são históricos e não substituem este estado vigente.
+
 ## Preparação de integração UI-044 — 05/11/2026
 
 DECISAO_CONFIRMADA: Pedro autorizou preparar uma PR única e Preview isolado para seus novos testes; aceite visual e merge permanecem pendentes. [Pacote de reconciliação](docs/releases/2026-11-05-hf-ui044-integration/readme.md) preserva decisões/prints44, G045, recibosA/B e variantes históricas, mantendo o código da candidata50. CI do novoSHA e Preview têm recibos próprios; PASS de3c9b9c8 não é herdado. Não integrar/limpar branches nem promover Production por esta autorização. Registros seguintes permanecem históricos.

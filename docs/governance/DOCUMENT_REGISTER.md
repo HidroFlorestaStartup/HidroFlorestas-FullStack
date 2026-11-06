@@ -1,5 +1,15 @@
 # Registro documental
 
+## Consolidação após aceite final da UI-044 — 06/11/2026
+
+[Plano de encerramento](../plans/active/encerramento-prs-ui044-20261106/plano-de-execucao.md) e [recibo de consolidação](../plans/active/encerramento-prs-ui044-20261106/recibo-de-consolidacao.json): seis PRs substituídas encerradas, conteúdos exclusivos de41/52 preservados e estados atuais conciliados. O [plano da demonstração de26/10](../plans/active/demonstracao-reuniao-20261026.md), [recibo original](../plans/active/recibo-demonstracao-reuniao-20261026.md) e [JSON histórico](../plans/active/demonstracao-reuniao-20261026.json) pertencem ao SHA/deployment daquela execução, sem novo PASS operacional.
+
+O [handoff das três correções](../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md) foi executado pela PR53 e aceito por Pedro; as menções PENDENTE no recibo datado de05/11 são históricas. Os três PNGs e JSON original permanecem por blob. A inclusão dos documentos não homologa o piloto nem valida ciência.
+
+## Aceite UI-044 e handoff das correções finais — 05/11/2026
+
+[Prompt autorizado](../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md), [plano de publicação](../plans/active/correcoes-finais-ui044-20261105/plano-de-publicacao.md), [recibo](../plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json) e [três prints originais](../plans/active/correcoes-finais-ui044-20261105/evidencias/readme.md): autoridade UX de Pedro registrada nesta conversa e no comentário6671722605 da PR51. Integração #51 concluída em 7bae1f87cb8d6a708b7c4de0b990e82e5a503369; quinze gates PASS e Codex Review pertencem ao head febee101aa, cuja árvore foi preservada no merge. As três correções permanecem PENDENTES e terão PR própria para development. Os textos anteriores são históricos; aceite de usabilidade/design não confere homologação operacional ou científica.
+
 ## Integração UI-044 para aceite — 05/11/2026
 
 [Pacote](../releases/2026-11-05-hf-ui044-integration/readme.md), [plano](../plans/active/integracao-ui044-20261105/plano-de-execucao.md), [proveniência](../releases/2026-11-05-hf-ui044-integration/proveniencia.json) e [matriz](../releases/2026-11-05-hf-ui044-integration/matriz-de-reconciliacao.md): preparação autorizada por Pedro nesta conversa; HUMAN_ACCEPTANCE_PENDING. Fontes44–50 reconciliadas por conteúdo; snapshots preservam variantes divergentes. Testes/Preview terão evidência própria e nenhum aceite humano ou científico é antecipado. Sem merge ou limpeza. Histórico anterior preservado abaixo.

@@ -1,5 +1,15 @@
 # Plano — integração UI-044 e Preview de aceite
 
+## Atualização vigente — ciclo visual aceito e integrado
+
+Em 06/11/2026, C1–C3 foram aceitas por Pedro e integradas na PR53/865054b. A integração inicial51/7bae1f8 permanece como sua base histórica. O handoff52 foi executado; seus estados de espera abaixo são históricos, não uma nova tarefa. [Aceite](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435) e [organização documental](../encerramento-prs-ui044-20261106/plano-de-execucao.md). As atualizações desta consolidação são documentais; nenhuma suíte funcional nova é atribuída a elas.
+
+## Encerramento da integração e atualização documental — 05/11/2026
+
+Estado vigente do plano: AGUARDANDO_REVISAO da atualização documental; integração técnica e aceite de Pedro CONCLUIDOS COM TRES RESSALVAS. Após revisão da trilha documental, arquivar conforme PLANS.md, preservando apontadores existentes. A origem da autorização foi ampliada pela mensagem atual de Pedro, que confirmou os três ajustes e autorizou o merge #51; os estados EM_ANDAMENTO/HUMAN_ACCEPTANCE_PENDING abaixo são históricos.
+
+EVIDENCIA_IMPLEMENTACAO: CI42101827226/1 concluiu quinze gates PASS no head febee101aa; Codex Review concluída sem findings. Merge #51 `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, árvore idêntica à candidata. Main beba96f preservada. [Aceite e CI](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605), [recibo da integração](../correcoes-finais-ui044-20261105/aceite-e-integracao.json) e [execução futura](../correcoes-finais-ui044-20261105/prompt-de-execucao.md). As três correções não foram implementadas nesta publicação. Nenhum deploy, limpeza ou nova suíte funcional local. Riscos/qualificadores científicos e gates operacionais mantêm seus limites.
+
 ID HF-UI044-INT-20261105. Estado EM_ANDAMENTO. Data 05/11/2026 America/Fortaleza.
 
 ## Autoridade e objetivo
