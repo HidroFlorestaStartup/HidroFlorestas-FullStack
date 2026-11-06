@@ -190,3 +190,14 @@ IMPLEMENT nesta etapa: somente registro documental e T024[x]. Estado do recorte
 C: CONCLUIDO tecnicamente quanto ao arquivamento, AGUARDANDO_REVISAO não autora
 e publicação consolidada exclusiva do coordenador. Sem nova execução local.
 RC3NOT_RUN; não transferir SUCCESS daR2. Aceites humanos/provedor/ciência pendentes.
+
+
+## Ciclo autorizado de teste real — 2026-11-06
+
+Base: development@5813523135db950170460761b18dda3ef6a965b5. Branch: fix/geocodificacao-preview-20261106. Reutilizar a spec 037 e acrescentar este ciclo, sem sobrescrever planejamento/evidências históricos. O pré-requisito Spec Kit usa SPECIFY_FEATURE_DIRECTORY explícito; não há checklists/ nem extensões nesta spec.
+
+Plano: testar RED do formato Photon e identificação do cliente; adaptar normalizeReverseAddress e User-Agent do proxy; executar GREEN/contrato/typecheck/lint; publicar PR Draft e CI oficial no próprio SHA; configurar somente envs Preview da branch e implantar manualmente; conferir no browser os três caminhos com coordenadas públicas, sem criar áreas. GPS automatizado será emulado, não prova de dispositivo físico. Resultados remotos serão registrados no PR sem atribuir PASS antigo ao novo head.
+
+Escopo de produto: src/components/areas/reverse-address.ts e src/app/api/geocoding/reverse/route.handlers.ts. Testes focais existentes unit/integration. Configuração: adicionar somente a branch aos filtros push/if oficiais e guarda false de deploy Git em vercel.json. Gates, permissões, runners e variáveis de CI continuam preservados; CI não consulta serviço externo. Sem dependências, schema, autenticação ou redesenho.
+
+Provedor: https://photon.komoot.io/reverse?limit=1. Gratuito para volume razoável no servidor público, sujeito a limitação/bloqueio e indisponibilidade; sem SLA ou quota ilimitada garantidos. Coordenadas são enviadas à infraestrutura externa. Dados OSM podem estar incompletos; CEP/município/UF são sugestões. Mapas preservam atribuição OpenStreetMap. Para volume elevado, reavaliar hospedagem própria/provedor. Reversão: desligar HF_REVERSE_GEOCODER_URL no Preview e recriar deploy, ou repontar alias ao deploy anterior preservado. Valores secretos e link de proteção não pertencem ao GitHub.

@@ -92,3 +92,12 @@ run41353270282/1/artifact13102479714:15gatesPASS/exit0/snapshotconstante;
 Digest/CRC/PNG-chunks/JSON/hashes/dimensões/proveniência/fontes e2imagens reais
 auditados em `evidence/close02-round2-ui037.json`. O estado R1parcial acima é
 histórico e não foi apagado. A RC da rodada3 é NOT_RUN, sem SUCCESS herdado.
+
+
+## Ciclo autorizado de teste real — 2026-11-06
+
+- [x] T026 Registrar autorização, provedor, limites, privacidade e escopo nos adendos de spec/plan/research.
+- [x] T027 Demonstrar RED focal do Photon/identificação sem alterar asserções anteriores.
+- [x] T028 Adaptar normalização e header, mantendo DTO/opcionalidade/timeout/auth; GREEN focal e contrato.
+- [ ] T029 Publicar PR Draft, disparar CI oficial no próprio SHA, configurar somente Preview e realizar teste real autenticado dos três caminhos. Recibo de execução no PR; não marcar concluído por antecipação.
+- [ ] T030 Aceite manual de Pedro e decisão posterior sobre integração. Sem merge automático.
