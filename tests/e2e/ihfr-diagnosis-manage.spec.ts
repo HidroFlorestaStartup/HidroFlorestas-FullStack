@@ -172,12 +172,29 @@ test("collection, environmental confirmation and IHFR creation work without brow
   await expect(page).toHaveURL(`${baseURL}${collectionUrl}/environmental-data`);
 
   await page.goto(collectionUrl);
+  // Wait for the observable client desktop composition before interacting with
+  // controls from the server's initial mobile tree. Do not reselect lost input.
+  expect(page.viewportSize()!.width).toBeGreaterThanOrEqual(1280);
+  const detail = page.getByRole("article", { name: "Detalhe da coleta", exact: true });
+  await expect(detail).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="record"]')).toHaveCount(1);
+  await expect(detail.locator('[data-collection-detail-block="reading"]')).toHaveCount(1);
+  await expect.poll(() => detail.evaluate(node => {
+    const record = node.querySelector('[data-collection-detail-block="record"]');
+    const reading = node.querySelector('[data-collection-detail-block="reading"]');
+    return Boolean(record && reading && (record.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING));
+  }), { message: "Client desktop composition precedes IHFR input" }).toBe(true);
   await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
   await page.getByLabel("Data e hora da observação").fill("2026-09-24T12:00");
+  await expect(page.getByLabel("Uso predominante da terra")).toHaveValue("FOREST");
+  await expect(page.getByLabel("Data e hora da observação")).toHaveValue("2026-09-24T12:00");
   const eligibility = page.waitForResponse((response) => response.url().includes("/ihfr-diagnosis/eligibility") && response.request().method() === "GET");
   await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
   const eligible = await eligibility;
   expect(eligible.status()).toBe(200);
+  const eligibilityUrl = new URL(eligible.request().url());
+  expect(eligibilityUrl.pathname).toBe(collectionUrl.replace(/^\/dashboard\//, "/api/") + "/ihfr-diagnosis/eligibility");
+  expect(Array.from(eligibilityUrl.searchParams.entries())).toEqual([["landUseType", "FOREST"]]);
   expect((await eligible.json()).outcome).toBe("ELIGIBLE");
   const created = page.waitForResponse((response) => response.url().endsWith("/ihfr-diagnosis/diagnoses") && response.request().method() === "POST");
   await page.getByRole("button", { name: "Criar diagnóstico" }).click();

@@ -1,0 +1,720 @@
+{
+  "sha": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+  "source_log": "/workspace/scratch/100be1d812fa/validation/run42150335260/.accounts-validation/ihfr-1793932900995.log",
+  "source_sha256": "09b0bfe95258e5a5a8b5945c7ba61d1ac469e409a4795a0c0f61204fd716d9a9",
+  "event_count": 115,
+  "session_count": 11,
+  "sessions": [
+    {
+      "start_line": 34,
+      "profile": "owner",
+      "diagnosis": false,
+      "actions": true,
+      "width": 1440,
+      "height": 900,
+      "end_line": 48,
+      "records": 15,
+      "last_event": "observer-restored",
+      "last_sequence": 15,
+      "last_elapsed_ms": 28,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 5,
+        "frames": 4,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 49,
+      "profile": "owner",
+      "diagnosis": false,
+      "actions": true,
+      "width": 375,
+      "height": 900,
+      "end_line": 61,
+      "records": 13,
+      "last_event": "observer-restored",
+      "last_sequence": 13,
+      "last_elapsed_ms": 24,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 4,
+        "frames": 3,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 62,
+      "profile": "owner",
+      "diagnosis": false,
+      "actions": true,
+      "width": 390,
+      "height": 844,
+      "end_line": 65,
+      "records": 4,
+      "last_event": "frame-delivered",
+      "last_sequence": 4,
+      "last_elapsed_ms": 13,
+      "last_counters": {
+        "samples": 1,
+        "finite": 1,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 1,
+        "frames": 1,
+        "channels": 0,
+        "messages": 0
+      },
+      "restoration_logged": false,
+      "observed_events": [
+        {
+          "line": 63,
+          "event": "observer-installed",
+          "sequence": 1,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 0,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": null
+        },
+        {
+          "line": 62,
+          "event": "frame-scheduled",
+          "sequence": 2,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 96,
+            "parentFrame": null
+          }
+        },
+        {
+          "line": 64,
+          "event": "animations-sampled",
+          "sequence": 3,
+          "elapsedMs": 2,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": [
+            {
+              "id": 1,
+              "kind": "CSSTransition",
+              "playState": "running",
+              "pending": false,
+              "currentTime": 16.665999999999848,
+              "timelineTime": 4782.964,
+              "endTime": 300,
+              "targetTag": "DIV"
+            }
+          ]
+        },
+        {
+          "line": 65,
+          "event": "frame-delivered",
+          "sequence": 4,
+          "elapsedMs": 13,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 1,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 96,
+            "parentFrame": null
+          }
+        }
+      ],
+      "active_animation_sample": {
+        "line": 64,
+        "sequence": 3,
+        "elapsedMs": 2,
+        "animations": [
+          {
+            "id": 1,
+            "kind": "CSSTransition",
+            "playState": "running",
+            "pending": false,
+            "currentTime": 16.665999999999848,
+            "timelineTime": 4782.964,
+            "endTime": 300,
+            "targetTag": "DIV"
+          }
+        ]
+      }
+    },
+    {
+      "start_line": 75,
+      "profile": "inactive-owner",
+      "diagnosis": false,
+      "actions": false,
+      "width": 1440,
+      "height": 900,
+      "end_line": 89,
+      "records": 15,
+      "last_event": "observer-restored",
+      "last_sequence": 15,
+      "last_elapsed_ms": 31,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 5,
+        "frames": 4,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 90,
+      "profile": "inactive-owner",
+      "diagnosis": false,
+      "actions": false,
+      "width": 375,
+      "height": 900,
+      "end_line": 102,
+      "records": 13,
+      "last_event": "observer-restored",
+      "last_sequence": 13,
+      "last_elapsed_ms": 22,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 4,
+        "frames": 3,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 103,
+      "profile": "inactive-owner",
+      "diagnosis": false,
+      "actions": false,
+      "width": 390,
+      "height": 844,
+      "end_line": 106,
+      "records": 4,
+      "last_event": "frame-delivered",
+      "last_sequence": 4,
+      "last_elapsed_ms": 11,
+      "last_counters": {
+        "samples": 1,
+        "finite": 1,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 1,
+        "frames": 1,
+        "channels": 0,
+        "messages": 0
+      },
+      "restoration_logged": false,
+      "observed_events": [
+        {
+          "line": 104,
+          "event": "observer-installed",
+          "sequence": 1,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 0,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": null
+        },
+        {
+          "line": 103,
+          "event": "frame-scheduled",
+          "sequence": 2,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 101,
+            "parentFrame": null
+          }
+        },
+        {
+          "line": 105,
+          "event": "animations-sampled",
+          "sequence": 3,
+          "elapsedMs": 2,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": [
+            {
+              "id": 1,
+              "kind": "CSSTransition",
+              "playState": "running",
+              "pending": false,
+              "currentTime": 16.70000000000016,
+              "timelineTime": 3354.2,
+              "endTime": 300,
+              "targetTag": "DIV"
+            }
+          ]
+        },
+        {
+          "line": 106,
+          "event": "frame-delivered",
+          "sequence": 4,
+          "elapsedMs": 11,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 1,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 101,
+            "parentFrame": null
+          }
+        }
+      ],
+      "active_animation_sample": {
+        "line": 105,
+        "sequence": 3,
+        "elapsedMs": 2,
+        "animations": [
+          {
+            "id": 1,
+            "kind": "CSSTransition",
+            "playState": "running",
+            "pending": false,
+            "currentTime": 16.70000000000016,
+            "timelineTime": 3354.2,
+            "endTime": 300,
+            "targetTag": "DIV"
+          }
+        ]
+      }
+    },
+    {
+      "start_line": 122,
+      "profile": "member",
+      "diagnosis": true,
+      "actions": false,
+      "width": 375,
+      "height": 900,
+      "end_line": 136,
+      "records": 15,
+      "last_event": "observer-restored",
+      "last_sequence": 15,
+      "last_elapsed_ms": 20,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 5,
+        "frames": 4,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 137,
+      "profile": "member",
+      "diagnosis": true,
+      "actions": false,
+      "width": 390,
+      "height": 844,
+      "end_line": 140,
+      "records": 4,
+      "last_event": "frame-delivered",
+      "last_sequence": 4,
+      "last_elapsed_ms": 8,
+      "last_counters": {
+        "samples": 1,
+        "finite": 1,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 1,
+        "frames": 1,
+        "channels": 0,
+        "messages": 0
+      },
+      "restoration_logged": false,
+      "observed_events": [
+        {
+          "line": 138,
+          "event": "observer-installed",
+          "sequence": 1,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 0,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": null
+        },
+        {
+          "line": 137,
+          "event": "frame-scheduled",
+          "sequence": 2,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 84,
+            "parentFrame": null
+          }
+        },
+        {
+          "line": 139,
+          "event": "animations-sampled",
+          "sequence": 3,
+          "elapsedMs": 2,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": [
+            {
+              "id": 1,
+              "kind": "CSSTransition",
+              "playState": "running",
+              "pending": false,
+              "currentTime": 16.599999999999948,
+              "timelineTime": 3044.8,
+              "endTime": 300,
+              "targetTag": "DIV"
+            }
+          ]
+        },
+        {
+          "line": 140,
+          "event": "frame-delivered",
+          "sequence": 4,
+          "elapsedMs": 8,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 1,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 84,
+            "parentFrame": null
+          }
+        }
+      ],
+      "active_animation_sample": {
+        "line": 139,
+        "sequence": 3,
+        "elapsedMs": 2,
+        "animations": [
+          {
+            "id": 1,
+            "kind": "CSSTransition",
+            "playState": "running",
+            "pending": false,
+            "currentTime": 16.599999999999948,
+            "timelineTime": 3044.8,
+            "endTime": 300,
+            "targetTag": "DIV"
+          }
+        ]
+      }
+    },
+    {
+      "start_line": 147,
+      "profile": "member",
+      "diagnosis": false,
+      "actions": false,
+      "width": 1440,
+      "height": 900,
+      "end_line": 161,
+      "records": 15,
+      "last_event": "observer-restored",
+      "last_sequence": 15,
+      "last_elapsed_ms": 33,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 5,
+        "frames": 4,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 162,
+      "profile": "member",
+      "diagnosis": false,
+      "actions": false,
+      "width": 375,
+      "height": 900,
+      "end_line": 174,
+      "records": 13,
+      "last_event": "observer-restored",
+      "last_sequence": 13,
+      "last_elapsed_ms": 29,
+      "last_counters": {
+        "samples": 2,
+        "finite": 0,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 4,
+        "frames": 3,
+        "channels": 1,
+        "messages": 1
+      },
+      "restoration_logged": true,
+      "active_animation_sample": null
+    },
+    {
+      "start_line": 175,
+      "profile": "member",
+      "diagnosis": false,
+      "actions": false,
+      "width": 390,
+      "height": 844,
+      "end_line": 178,
+      "records": 4,
+      "last_event": "frame-delivered",
+      "last_sequence": 4,
+      "last_elapsed_ms": 10,
+      "last_counters": {
+        "samples": 1,
+        "finite": 1,
+        "finished": 0,
+        "rejected": 0,
+        "scheduledFrames": 1,
+        "frames": 1,
+        "channels": 0,
+        "messages": 0
+      },
+      "restoration_logged": false,
+      "observed_events": [
+        {
+          "line": 176,
+          "event": "observer-installed",
+          "sequence": 1,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 0,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": null
+        },
+        {
+          "line": 175,
+          "event": "frame-scheduled",
+          "sequence": 2,
+          "elapsedMs": 0,
+          "visibility": "visible",
+          "counters": {
+            "samples": 0,
+            "finite": 0,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 84,
+            "parentFrame": null
+          }
+        },
+        {
+          "line": 177,
+          "event": "animations-sampled",
+          "sequence": 3,
+          "elapsedMs": 3,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 0,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": [
+            {
+              "id": 1,
+              "kind": "CSSTransition",
+              "playState": "running",
+              "pending": false,
+              "currentTime": 16.668000000000127,
+              "timelineTime": 3533.7,
+              "endTime": 300,
+              "targetTag": "DIV"
+            }
+          ]
+        },
+        {
+          "line": 178,
+          "event": "frame-delivered",
+          "sequence": 4,
+          "elapsedMs": 10,
+          "visibility": "visible",
+          "counters": {
+            "samples": 1,
+            "finite": 1,
+            "finished": 0,
+            "rejected": 0,
+            "scheduledFrames": 1,
+            "frames": 1,
+            "channels": 0,
+            "messages": 0
+          },
+          "detail": {
+            "id": 84,
+            "parentFrame": null
+          }
+        }
+      ],
+      "active_animation_sample": {
+        "line": 177,
+        "sequence": 3,
+        "elapsedMs": 3,
+        "animations": [
+          {
+            "id": 1,
+            "kind": "CSSTransition",
+            "playState": "running",
+            "pending": false,
+            "currentTime": 16.668000000000127,
+            "timelineTime": 3533.7,
+            "endTime": 300,
+            "targetTag": "DIV"
+          }
+        ]
+      }
+    }
+  ],
+  "grouping": "Stable profile/diagnosis/actions/viewport key, one installation and unique sequences enforced; console delivery order is not event order.",
+  "limits": [
+    "Restoration is a finally action, not proof that the wait succeeded.",
+    "Correlate with test results; sampled event counts are not full iteration counts.",
+    "Instrumented behavior alone does not establish causal repair."
+  ],
+  "summary_note": "Successful sessions retain counters/result; blocked sessions retain all four observed events. Repeated head/tail rows removed. Full raw log is pinned inside the verified F3 artifact.",
+  "full_corrected_summary_sha256": "dba52872ca0812ec13d7d60d54b48a321071cf8e050849fd527926a47d70b1c9"
+}

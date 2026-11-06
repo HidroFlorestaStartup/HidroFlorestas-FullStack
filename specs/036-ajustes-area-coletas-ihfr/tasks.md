@@ -203,3 +203,11 @@ T078 é implementação do reparo, não PASS de navegador. T075–T077 exigem re
 F2 permanece FAIL: 12 gates PASS, Ihfr FAIL, dois gates posteriores NOT_RUN. T075–T077 dependem do SHA final requalificado; resultados parciais não liberam O3.
 
 Corte diagnóstico de T079: instrumentação do await entregue e revisada, preservando helper oficial, asserts e matriz. Provas Node sintéticas, typecheck completo e lint focal PASS. O checkbox permanece aberto porque a causa real e o reparo funcional dependem da execução oficial instrumentada.
+
+## Phase 6: convergência após a execução diagnóstica F3
+
+F3, run42150335260/1, permanece FAIL:12 gates PASS, Ihfr1 PASS/5 FAIL e2 gates NOT_RUN. A observação localiza os quatro bloqueios no await de `animation.finished`, sem demonstrar a causa interna da promessa pendente. O adendo de ownership permite o reparo focal da implementação do helper oficial e suas contraprovas, preservando seu contrato de prontidão e os demais helpers. T079 continua aberto até requalificação do reparo; o instrumento temporário não é correção funcional.
+
+- [ ] T080 [US2] Reparar a preparação do teste sem browser randomUUID em `tests/e2e/ihfr-diagnosis-manage.spec.ts`: aguardar composição observável, provar valores selecionados/preenchidos e query landUseType antes do resultado ELIGIBLE; preservar fixture, domínio, assert de elegibilidade, idempotência e jornada. Confrontar o failure F3 e revisão não autora em `evidence/ui044-correcoes-finais-20261105/recovery-f3.json` (origem SC-036-001/SC-036-004).
+
+Dependência de recuperação: diagnóstico F3 → reparo T079 || investigação T080 → composição P00 → RC15/Codex/P04 no SHA sucessor → T075/T076/T077. Não há rerun cego ou promoção de PASS entre SHAs.

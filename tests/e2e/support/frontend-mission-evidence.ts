@@ -130,7 +130,10 @@ export async function waitForMissionRender() {
   while (true) {
     const animations = activeFiniteAnimations();
     if (animations.length) {
-      await Promise.allSettled(animations.map(animation => animation.finished));
+      // A captured finished promise may no longer describe the current running
+      // set. Recheck that set on each frame; readiness still requires no
+      // running finite animation.
+      await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
       continue;
     }
     // ResizeObserver runs after rAF and queues focus work for the next frame.

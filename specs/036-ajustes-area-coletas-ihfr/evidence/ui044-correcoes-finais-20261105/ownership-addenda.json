@@ -28,6 +28,32 @@
       "recorded_at": "2026-11-05T22:27:29.711860-03:00",
       "authorized_in_session_before_edit": true,
       "reason": "Actual RC E2E failure after C3 widened article composition; adapt minimal-record selector while retaining global private-field exclusion."
+    },
+    {
+      "owner": "P03",
+      "agent": "/root/p03_tests",
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "preimage": {
+        "sha": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+        "git_blob": "1344dfba41b0f1caf840e3d002167ce8499aa9f3",
+        "sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f"
+      },
+      "recorded_at": "2026-11-06T02:56:49.179842+00:00",
+      "authorized_in_session_before_edit": true,
+      "reason": "Four actual F3 traces locate indefinite wait on a captured finite CSS transition finished promise; re-sample the existing running/finite readiness predicate between frames, retaining the final two-frame/message barrier and every assertion."
+    },
+    {
+      "owner": "P03",
+      "agent": "/root/p03_tests",
+      "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "preimage": {
+        "sha": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+        "git_blob": "01fabe38f6d4b0099025d6be6b0b2b0662994491",
+        "sha256": "6eb67271131140d93ac3aea01f6d1c7b1f8c36bef130fd540a0686d020902725"
+      },
+      "recorded_at": "2026-11-06T02:56:49.179842+00:00",
+      "authorized_in_session_before_edit": true,
+      "reason": "Add focused counterproofs for the render-wait recovery while retaining all existing readiness, focus, one-scroll and obstruction tests."
     }
   ]
 }
