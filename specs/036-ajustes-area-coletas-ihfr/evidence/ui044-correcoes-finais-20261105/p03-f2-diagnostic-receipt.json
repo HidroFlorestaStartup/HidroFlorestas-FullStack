@@ -1,0 +1,171 @@
+{
+  "task": "P03 UI044 recovery F2 / T079 diagnostic instrumentation",
+  "executor": "/root/p03_tests",
+  "reviewer": "/root/o0_guards",
+  "integrator": "/root",
+  "status": "READY_FOR_INDEPENDENT_DIAGNOSTIC_REVIEW",
+  "functional_fix": "NOT_CLAIMED",
+  "successor_ci": "PENDING",
+  "base": {
+    "head": "3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06",
+    "tree": "d18b5743935c65065508e6bf7fa579203edf50d9",
+    "root_head_observed": "3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06",
+    "worktree": "/workspace/scratch/100be1d812fa/wt-p03",
+    "worktree_head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369"
+  },
+  "ownership": [
+    "tests/e2e/support/ui044-final-corrections.ts"
+  ],
+  "source_failure": {
+    "run": "42144128465/1",
+    "job": "127651383885",
+    "artifact": "13470862110",
+    "zip_sha256": "9372d4968df2336b87a9be14ca53db235c9025b83423d37b965d077dc01d2ca5",
+    "log": "/workspace/scratch/100be1d812fa/validation/run42144128465/.accounts-validation/ihfr-1793929843049.log",
+    "observed": "Four timeouts at the extra official wait after resize to 390x844; 7/23 matrix geometry records. The exact internal await is not yet observed.",
+    "time_evidence": "ZIP timestamps place the prior 1440/375 captures only seconds apart, followed by long waits before subsequent tests; cumulative screenshot cost does not explain 90-120 seconds.",
+    "clock": "No page.clock usage in IHFR specs/config/fixture/runner; account verification clock lives in the separate general suite."
+  },
+  "change": {
+    "kind": "DIAGNOSTIC_ONLY",
+    "description": "Temporarily observe native getAnimations, requestAnimationFrame and MessageChannel around the original page.evaluate(waitForMissionRender), relay sanitized bounded logs, restore exact descriptors/listeners transactionally.",
+    "prefix": "UI044_RENDER_OBSERVATION",
+    "failure_policy": "No fallback, timeout change, animation cancellation, focus/scroll mutation or synthetic success. The original wait still determines completion/failure.",
+    "privacy": "Only head/profile/state, viewport/visibility, counts, numeric timing, native animation kind and target tag. No text, href, fixture identifiers, credentials or form values."
+  },
+  "file": {
+    "path": "tests/e2e/support/ui044-final-corrections.ts",
+    "preimage_sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+    "preimage_git_blob": "fe64c8b5ba5cdc3f5839b3008b41a82132693d6a",
+    "postimage_sha256": "832af7cce12fec0a5dfb17b865fda3b1f86fe7c517ceaea2a293c1af20a2433b",
+    "postimage_git_blob": "60496289430ca289ec6a5e00361ed36fe1c038e8",
+    "patch_sha256": "486857bcbf67e6cfc64d6f31f82425e776d48cfc1bc47e1629a178dfb4774718"
+  },
+  "validation": [
+    {
+      "command": "HF_UI044_F2_PROBE=1 node --import=tsx /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.mjs",
+      "exit_code": 0,
+      "result": "PASS_CONTROL_FLOW_ONLY; 5 explicitly synthetic Node cases"
+    },
+    {
+      "command": "HF_UI044_F2_PROBE=1 node --import=tsx /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.mjs",
+      "exit_code": 0,
+      "result": "PASS_SYNTHETIC_OBSERVER_EQUIVALENCE; 16 cases including pending/rejection, native receiver/timestamp, cancelled RAF, constructor/newTarget, diagnostic failures and partial-install rollback"
+    },
+    {
+      "command": "npx --no-install eslint tests/e2e/support/ui044-final-corrections.ts",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "npx --no-install tsc --noEmit --strict --skipLibCheck --target ES2022 --module CommonJS --moduleResolution Node --lib ES2022,DOM tests/e2e/support/ui044-final-corrections.ts",
+      "exit_code": 0,
+      "result": "PASS_FOCAL_TYPECHECK_ONLY"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git apply --check /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/p03-f2-wait-observation.patch",
+      "cwd": "/workspace/scratch/100be1d812fa/repo",
+      "exit_code": 0,
+      "result": "PASS_READ_ONLY_CHECK_AGAINST_F2"
+    },
+    {
+      "command": "Byte reconstruction of exact F2 preimage excluding instrumentation",
+      "exit_code": 0,
+      "result": "PASS; original matrix/assertions/captures untouched"
+    },
+    {
+      "command": "HF_UI044_F2_PROBE=1 node --import=tsx /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-minimal.mjs",
+      "exit_code": 1,
+      "result": "BLOCKED_BEFORE_BROWSER_PAGE; Chromium Unix socket Operation not permitted"
+    },
+    {
+      "command": "Same local synthetic browser command with require_escalated",
+      "exit_code": null,
+      "result": "NOT_RUN_APPROVAL_REJECTED; granular sandbox_approval=false; no bypass or repetition"
+    }
+  ],
+  "review": {
+    "independent_agent": "/root/o0_guards",
+    "status": "STATIC_CODE_REVIEW_NO_OPEN_MATERIAL_FINDINGS; awaiting final patch/receipt hash audit",
+    "addressed_findings": [
+      "Rollback registered before first mutation and transactionally executed on partial install",
+      "Diagnostic logging/inspection/listener failures cannot alter native operation results",
+      "RAF callback receiver and timestamp forwarded from native callback"
+    ]
+  },
+  "limitations": [
+    "Node VM dependencies are explicit mocks, not Chromium. No application runtime PASS, F2 root cause, or functional fix is claimed.",
+    "Instrumentation adds observation work and promise handlers; it may affect timing. A green diagnostic run alone will not prove a causal repair.",
+    "The official frontend-mission-evidence.ts and frontend-ihfr-evidence.ts remain byte-identical to F2.",
+    "No DB, hosted browser, CI rerun, installation, product/config/Spec edit, publication, merge or deploy performed by P03.",
+    "Initial standalone Node probe import/transpiler setup errors were resolved before final focal results; they were not functional RED."
+  ],
+  "handoff": "P04 verifies hashes; P00 composes diagnostic successor only after review, runs the already authorized RC15, then uses observed await-stage evidence to complete T079. Functional recovery remains pending.",
+  "artifacts": [
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/p03-f2-wait-observation.patch",
+      "sha256": "486857bcbf67e6cfc64d6f31f82425e776d48cfc1bc47e1629a178dfb4774718"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/preimage-f2.ts",
+      "sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/preservation.json",
+      "sha256": "e9555affc12c3280d46d013fdcba9f05e48789b6473e594db258309311fcf850"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.mjs",
+      "sha256": "7c37a1042810afbe8d8bd17e58c3be0e84f4297fea19bdc5dd32873b44c55838"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.json",
+      "sha256": "5eeae9c5e014f3a16f850f34da127434525c4928d0b91220ce1d78a700af89d5"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.log",
+      "sha256": "5eeae9c5e014f3a16f850f34da127434525c4928d0b91220ce1d78a700af89d5"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.mjs",
+      "sha256": "0b575b02d1ed63a1caf7cbd82d41f9c9fd0720ad6faa89becffbc954d4a01d1b"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.json",
+      "sha256": "d8e3f46beb4531d748afb523b96d4a66661f09e429f3a4fe8ecad2474b273e3f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.log",
+      "sha256": "d2b7d53f1e5a4486966a1054351d5767d73c0c02eb4e66623d9783ab6a407e34"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-minimal.mjs",
+      "sha256": "b8881d87bf04b576d53d15fb8d3cb37fdd704854ad1c98a684d16aa6f8479e77"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-minimal.log",
+      "sha256": "d1855d5becbeaba3fb007270e004b3a2c2c45e8512778576d3e696dc0bf02e75"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/lint.log",
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/typecheck-focal.log",
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/apply-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

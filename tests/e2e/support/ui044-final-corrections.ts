@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { expect, type Page, type TestInfo } from "@playwright/test";
+import { expect, type ConsoleMessage, type Page, type TestInfo } from "@playwright/test";
 import { captureIHFRViewport, expectIHFRControl, expectIHFRScientificWords, settleIHFRViewport } from "./frontend-ihfr-evidence";
 import { waitForMissionRender } from "./frontend-mission-evidence";
 
@@ -9,6 +9,141 @@ const noticeTitle = "Limites do diagnóstico experimental";
 export type UI044DetailState = { diagnosis: boolean; actions: boolean; profile: "owner" | "admin" | "member" | "inactive-owner" | "inactive-member" };
 const readingRegion = (page: Page) => page.locator('section[aria-labelledby="ihfr-diagnosis-heading"]');
 const managementRegion = (page: Page) => page.locator('section[aria-labelledby="ihfr-management-heading"]');
+
+/** Temporary F2 diagnostics. Observe native primitives without changing the
+ * official wait, animation state, focus, scrolling or the test deadline. */
+export function installUI044RenderObservation(context: UI044DetailState & { head: string }) {
+  const host = window as Window & { __ui044RestoreRenderObservation?: () => void };
+  if (host.__ui044RestoreRenderObservation) throw new Error("UI044_RENDER_OBSERVER_ALREADY_INSTALLED");
+  const original = {
+    animations: document.getAnimations,
+    frames: window.requestAnimationFrame,
+    channel: window.MessageChannel,
+    animationsDescriptor: Object.getOwnPropertyDescriptor(document, "getAnimations"),
+    framesDescriptor: Object.getOwnPropertyDescriptor(window, "requestAnimationFrame"),
+    channelDescriptor: Object.getOwnPropertyDescriptor(window, "MessageChannel"),
+  };
+  const started = performance.now();
+  let enabled = true;
+  let sequence = 0;
+  let currentFrame: number | null = null;
+  const counters = { samples: 0, finite: 0, finished: 0, rejected: 0, scheduledFrames: 0, frames: 0, channels: 0, messages: 0 };
+  const observed = new WeakMap<Animation, Promise<Animation>>();
+  const animationIds = new WeakMap<Animation, number>();
+  const ports: { port: MessagePort; listener: () => void }[] = [];
+  let lastAnimationId = 0;
+  const emit = (event: string, detail: unknown = null) => {
+    if (!enabled) return;
+    sequence++;
+    // Bound repeated-loop output while retaining its exponentially spaced progress.
+    try {
+      if (sequence <= 80 || Number.isInteger(Math.log2(sequence)) || event === "observer-restored") console.info("UI044_RENDER_OBSERVATION " + JSON.stringify({
+        ...context, event, sequence, elapsedMs: Math.round(performance.now() - started),
+        width: innerWidth, height: innerHeight, visibility: document.visibilityState,
+        counters: { ...counters }, detail,
+      }));
+    } catch { /* A diagnostic failure must not alter a native operation. */ }
+  };
+  // Register rollback before the first replacement, including partial install.
+  host.__ui044RestoreRenderObservation = () => {
+    for (const { port, listener } of ports) {
+      try { port.removeEventListener("message", listener); } catch { /* Diagnostic listener only. */ }
+    }
+    const restore = (target: object, key: string, descriptor: PropertyDescriptor | undefined) => {
+      if (descriptor) Object.defineProperty(target, key, descriptor);
+      else Reflect.deleteProperty(target, key);
+    };
+    restore(document, "getAnimations", original.animationsDescriptor);
+    restore(window, "requestAnimationFrame", original.framesDescriptor);
+    restore(window, "MessageChannel", original.channelDescriptor);
+    emit("observer-restored");
+    enabled = false;
+    delete host.__ui044RestoreRenderObservation;
+  };
+  try {
+    document.getAnimations = function (...args) {
+      const animations = original.animations.apply(this, args);
+      try {
+        const active = animations.filter(animation => animation.playState === "running" && Number.isFinite(animation.effect?.getComputedTiming().endTime));
+        for (const animation of active) if (!animationIds.has(animation)) animationIds.set(animation, ++lastAnimationId);
+        counters.samples++;
+        counters.finite = active.length;
+        emit("animations-sampled", active.slice(0, 12).map(animation => ({
+          id: animationIds.get(animation),
+          kind: animation.constructor.name, playState: animation.playState, pending: animation.pending,
+          currentTime: typeof animation.currentTime === "number" ? animation.currentTime : null,
+          timelineTime: typeof animation.timeline?.currentTime === "number" ? animation.timeline.currentTime : null,
+          endTime: animation.effect?.getComputedTiming().endTime,
+          targetTag: (animation.effect as KeyframeEffect | null)?.target?.tagName ?? null,
+        })));
+        for (const animation of active) {
+          const finished = animation.finished;
+          if (observed.get(animation) === finished) continue;
+          observed.set(animation, finished);
+          const id = animationIds.get(animation);
+          finished.then(() => { counters.finished++; emit("animation-finished", { id }); }, () => { counters.rejected++; emit("animation-rejected", { id }); });
+        }
+      } catch { emit("observer-error", { stage: "animations" }); }
+      return animations;
+    };
+    window.requestAnimationFrame = function (callback) {
+      if (typeof callback !== "function") return original.frames.call(this, callback);
+      const parentFrame = currentFrame;
+      const id = original.frames.call(this, function (this: Window, time) {
+        counters.frames++;
+        const previous = currentFrame;
+        currentFrame = id;
+        emit("frame-delivered", { id, parentFrame });
+        try { callback.call(this, time); } finally { currentFrame = previous; }
+      });
+      counters.scheduledFrames++;
+      emit("frame-scheduled", { id, parentFrame });
+      return id;
+    };
+    window.MessageChannel = new Proxy(original.channel, {
+      construct(target, args, newTarget) {
+        const channel = Reflect.construct(target, args, newTarget) as MessageChannel;
+        const id = ++counters.channels;
+        emit("channel-created", { id, frame: currentFrame });
+        try {
+          // Do not start the port or replace its consumer's onmessage handler.
+          const listener = () => { counters.messages++; emit("message-delivered", { id }); };
+          ports.push({ port: channel.port1, listener });
+          channel.port1.addEventListener("message", listener);
+        } catch { emit("observer-error", { stage: "message-listener" }); }
+        return channel;
+      },
+    });
+    emit("observer-installed");
+  } catch (error) {
+    host.__ui044RestoreRenderObservation();
+    throw error;
+  }
+}
+
+async function observeUI044Render(page: Page, state: UI044DetailState) {
+  const relay = (message: ConsoleMessage) => {
+    if (message.text().startsWith("UI044_RENDER_OBSERVATION ")) console.info(message.text());
+  };
+  page.on("console", relay);
+  let installed = false;
+  let completed = false;
+  try {
+    await page.evaluate(installUI044RenderObservation, { ...state, head: process.env.GITHUB_SHA ?? "local-working-tree" });
+    installed = true;
+    await page.evaluate(waitForMissionRender);
+    completed = true;
+  } finally {
+    try {
+      if (installed) await page.evaluate(() => {
+        (window as Window & { __ui044RestoreRenderObservation?: () => void }).__ui044RestoreRenderObservation?.();
+      }).catch(error => {
+        if (completed) throw error;
+        console.info("UI044_RENDER_OBSERVATION_CLEANUP_UNAVAILABLE");
+      });
+    } finally { page.off("console", relay); }
+  }
+}
 
 /** Counts all DOM copies, including closed disclosure/hidden breakpoint copies. */
 export async function expectUI044Notice(page: Page, state: UI044DetailState) {
@@ -61,7 +196,7 @@ export async function inspectUI044Detail(page: Page, info: TestInfo, state: UI04
     }
   }
   await expect(reading.getByText(noticeTitle, { exact: true })).toBeVisible();
-  await page.evaluate(waitForMissionRender);
+  await observeUI044Render(page, state);
   const geometry = await page.evaluate(({ actions }) => {
     const block = (name: string) => document.querySelector(`[data-collection-detail-block="${name}"]`)!;
     const header = block("header");

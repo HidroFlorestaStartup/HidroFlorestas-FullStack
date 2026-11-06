@@ -195,3 +195,11 @@ Dependências: T068 → T069 || T070 || (T071 → T072) || T073 → T074 → T07
 - [x] T078 [US2] Corrigir o escopo do teste US4 em `tests/e2e/collection-registration.spec.ts`, mantendo privacidade no artigo completo e metadados mínimos no bloco Registro; conferir preimages, revisão não autora, typecheck/lint e registrar o FAIL real em `evidence/ui044-correcoes-finais-20261105/recovery-f1.json` (origem SC-036-001/SC-036-004, run42140950096).
 
 T078 é implementação do reparo, não PASS de navegador. T075–T077 exigem requalificação no SHA sucessor; F1 continua FAIL e seus cinco gates posteriores ao E2E continuam NOT_RUN.
+
+## Phase 5: convergência após a execução de F2
+
+- [ ] T079 [US2] Investigar e corrigir a causa comprovada dos timeouts em `tests/e2e/support/ui044-final-corrections.ts`, preservando readiness, matriz de 23 cenários, asserts de DOM/foco/geometria e helpers oficiais; confrontar preimage/revisão não autora e registrar provas em `evidence/ui044-correcoes-finais-20261105/recovery-f2.json` (origem SC-036-001/SC-036-002/SC-036-004, run 42144128465).
+
+F2 permanece FAIL: 12 gates PASS, Ihfr FAIL, dois gates posteriores NOT_RUN. T075–T077 dependem do SHA final requalificado; resultados parciais não liberam O3.
+
+Corte diagnóstico de T079: instrumentação do await entregue e revisada, preservando helper oficial, asserts e matriz. Provas Node sintéticas, typecheck completo e lint focal PASS. O checkbox permanece aberto porque a causa real e o reparo funcional dependem da execução oficial instrumentada.
