@@ -1,0 +1,282 @@
+{
+  "schema": "ui044-worker-receipt/v1",
+  "front": "P01",
+  "scope": "C1 — cards: próprio score registrado, sem link avulso IHFR",
+  "status": "C1_PATCH_READY_FOR_REVIEW",
+  "created_at_utc": "2026-11-06T00:41:29.435580+00:00",
+  "created_at_america_fortaleza": "2026-11-05T21:41:29.435580-03:00",
+  "executor": {
+    "agent_id": "/root/p01_cards",
+    "role": "exclusive C1 product author",
+    "workspace": "/workspace/scratch/100be1d812fa/wt-p01"
+  },
+  "base": {
+    "sha": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "ref_observed": "development",
+    "worktree_head": "detached at B"
+  },
+  "o0_receipt": {
+    "path": "/workspace/scratch/100be1d812fa/repo/specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/o0.json",
+    "sha256": "fb319da8961caf33de016e6cb4d75d10e0e9a4ca7cbb25f9ed6ce793b0d9adc9",
+    "status": "PASS",
+    "hash_reconfirmed": true
+  },
+  "sources": {
+    "pin": "71b8c95b7d1d1509b7155a36d65f70289c0a39f3",
+    "tree": "0c843174c0361f42483fb629563487e44179f43e",
+    "root": "/workspace/scratch/100be1d812fa/sources-pinned",
+    "normative_readback": "00-leia-primeiro + P01 + pinned execution/publication/acceptance/evidence texts and PNGs, project instructions, Constitution and Spec036"
+  },
+  "files": [
+    {
+      "path": "src/components/areas/area-collections.tsx",
+      "preimage": {
+        "git_blob": "2a7163516cd43340180a7605e40801e816c2c046",
+        "sha256": "e551386b5ac3d47a60c764e51e6f68a78ba612b6c4befeacd17af04a25835fdd",
+        "bytes": 6274,
+        "copy": "preimage.tsx"
+      },
+      "postimage": {
+        "git_blob": "94b814556d81b41ac6f8fa38c155cb913e2c28fa",
+        "sha256": "e2d6661e1f38e6788788b81f7a5d743889a0591ec443e7ea7d13c9c278b097d1",
+        "bytes": 6187,
+        "copy": "postimage.tsx"
+      }
+    }
+  ],
+  "patch": {
+    "file": "p01-c1-cards.patch",
+    "sha256": "658c3ef0ed198fc027a493a9fa77f3ab2a4cacae9fcdb3d4ae2ab0214d525bf2",
+    "bytes": 1890,
+    "format": "git diff --binary --full-index"
+  },
+  "ownership": {
+    "product_paths_changed": [
+      "src/components/areas/area-collections.tsx"
+    ],
+    "outside_ownership_product_changes": false,
+    "shared_spec_test_config_writes": false,
+    "local_commit": null,
+    "remote_publication": false,
+    "worktree_preserved": true
+  },
+  "implementation": {
+    "score_source": "row.currentDiagnosis.displayScore from the current diagnosis of the individual row",
+    "condition": "row.currentDiagnosis object exists; absence null renders no score",
+    "zero_and_precision": "displayScore remains the existing string, interpolated verbatim. No truthiness test on score, parse, rounding, arithmetic or conversion.",
+    "removed": "only per-card Link with exact accessible name IHFR",
+    "preserved": [
+      "Abrir coleta link and destination",
+      "Dados ambientais link and destination",
+      "Último IHFR experimental disponível and Consultar resultado e proveniência",
+      "field occurrence ordering",
+      "IDs, metadata and badges",
+      "read/query/auth/scientific-state contracts"
+    ],
+    "new_ui": "only Score registrado: <displayScore> paragraph in existing card footer",
+    "alternative_without_score": {
+      "used": false,
+      "reason": "Existing projection already supplies each row currentDiagnosis.displayScore; no material technical complexity."
+    }
+  },
+  "spec_kit": {
+    "feature": "specs/036-ajustes-area-coletas-ihfr",
+    "skills": [
+      "speckit-analyze",
+      "speckit-plan",
+      "speckit-tasks",
+      "speckit-implement",
+      "speckit-converge"
+    ],
+    "cycle": "Analyze existing projection/read scope; plan minimum C1 change; map tasks/requirements; implement; static/local focal convergence; independent/final gates remain with P00.",
+    "prerequisite_execution": {
+      "command": "SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks",
+      "exit_code": 0,
+      "stdout": "{\"FEATURE_DIR\":\"/workspace/scratch/100be1d812fa/wt-p01/specs/036-ajustes-area-coletas-ihfr\",\"AVAILABLE_DOCS\":[\"tasks.md\"]}\n",
+      "stderr": "",
+      "feature_state_preexisting": false,
+      "feature_state_restored": true,
+      "timestamp": "2026-11-05T21:38:39.248749-03:00"
+    },
+    "feature_state_preserved": "absent before and after actual prerequisite run",
+    "canonical_artifacts_owner": "P00 /root",
+    "crosswalk": {
+      "task": "T069 (allocation from O0; canonical update by P00)",
+      "requirements": [
+        "FR-036-001",
+        "FR-036-005"
+      ],
+      "story": "US1",
+      "success_criteria": [
+        "SC-036-001",
+        "SC-036-002",
+        "SC-036-004"
+      ],
+      "test_task_owner": "T071 / P03"
+    },
+    "slash_commands": {
+      "status": "NOT_RUN",
+      "reason": "Applied installed source skills and actual prerequisite script; no invented CLI/slash invocation."
+    }
+  },
+  "environment": {
+    "node": "v24.22.1",
+    "npm": "11.9.0",
+    "next": "16.3.8"
+  },
+  "tested_identity": {
+    "head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "base_tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "working_tree_modified": true,
+    "patch_sha256": "658c3ef0ed198fc027a493a9fa77f3ab2a4cacae9fcdb3d4ae2ab0214d525bf2",
+    "changed_product_postimage": "e2d6661e1f38e6788788b81f7a5d743889a0591ec443e7ea7d13c9c278b097d1",
+    "note": "Local checks ran on the owned uncommitted C1 delta; no claim that committed B or final integrated F includes the patch."
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--import=tsx",
+        "--test",
+        "tests/unit/hf-ui036-area-presentation.test.ts"
+      ],
+      "exit_code": 0,
+      "log": "unit-existing.log",
+      "status": "PASS",
+      "name": "unit-existing"
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/components/areas/area-collections.tsx"
+      ],
+      "exit_code": 0,
+      "log": "lint-focal.log",
+      "status": "PASS",
+      "name": "lint-focal"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "diff-check.log"
+    },
+    {
+      "name": "patch-reverse-check",
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/workspace/scratch/100be1d812fa/handoffs/p01/p01-c1-cards.patch"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "patch-reverse-check.log"
+    },
+    {
+      "name": "status",
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "status.log"
+    }
+  ],
+  "test_scope": {
+    "executed": "4 existing area-presentation unit tests and focal ESLint; git diff/check and patch reverse/check",
+    "existing_unit_limit": "Existing projection tests cover ordering, current-pointer absence/history, experimental filtering and no invented zero; they do not exercise new card rendering.",
+    "new_rendering_browser_proofs": {
+      "status": "DELEGATED",
+      "owner": "/root/p03_tests",
+      "requested": [
+        "two distinct own collection scores",
+        "registered zero and exact textual precision",
+        "recent no-diagnosis card cannot inherit older score",
+        "exact original navigation links and absence of exact IHFR link",
+        "top summary and occurrence order",
+        "desktop/mobile including width320 and text200%"
+      ]
+    },
+    "browser": {
+      "status": "NOT_RUN",
+      "reason": "P01 does not run service/database; final browser proof via coordinated integration/CI."
+    },
+    "ci_final_sha": {
+      "status": "NOT_RUN",
+      "reason": "P00 publishes composed candidate and qualifies its final SHA."
+    },
+    "captures": {
+      "status": "NOT_RUN",
+      "reason": "No P01 browser session executed."
+    }
+  },
+  "real_agents": [
+    {
+      "id": "/root",
+      "role": "coordinator and sole integrator/publisher"
+    },
+    {
+      "id": "/root/p01_cards",
+      "role": "C1 author; actual execution"
+    },
+    {
+      "id": "/root/p02_detail",
+      "role": "parallel C2/C3 author; no writes in C1"
+    },
+    {
+      "id": "/root/p03_tests",
+      "role": "parallel test owner; observable contract delivered; independent product contract analysis completed"
+    }
+  ],
+  "extra_children": {
+    "spawned": false,
+    "reason": "P00 reserved all three real worker slots; explicitly instructed no nested children and coordinated independent review."
+  },
+  "review": {
+    "author_static_review": {
+      "status": "PASS",
+      "findings": [],
+      "scope": "Exact minimal patch and row data flow; no new query/fallback/scientific logic"
+    },
+    "contract_analyst": {
+      "status": "PASS",
+      "agent_id": "/root/p03_tests",
+      "authorship": "No authored C1 product edits; P03 owns tests.",
+      "observed": "Real diff in /workspace/scratch/100be1d812fa/wt-p01",
+      "conclusion": "row.currentDiagnosis is from same map/ID; displayScore interpolation preserves string precision and textual zero without conversion; object condition omits null with no fallback. Both hrefs, metadata, summary and sorting unchanged.",
+      "limit": "Independent product contract analysis; no final runtime QA claimed.",
+      "message_received": true
+    },
+    "independent_patch_review": {
+      "status": "PENDING",
+      "coordinator": "/root",
+      "review_identity_required": "658c3ef0ed198fc027a493a9fa77f3ab2a4cacae9fcdb3d4ae2ab0214d525bf2",
+      "no_independent_pass_claimed": true
+    }
+  },
+  "gates": {
+    "O0": "PASS (common receipt verified)",
+    "O1": "PENDING independent patch review; authored delta and focal checks ready",
+    "O2": "NOT_RUN / P00 composition",
+    "O3": "NOT_RUN / final candidate QA+CI",
+    "O4": "NOT_RUN / P00 maintainer handoff"
+  },
+  "findings": [],
+  "handoff": {
+    "to": "/root",
+    "next": "Compare patch hash and B/preimage, obtain non-author review, apply into single candidate and execute P03/final QA+CI; leave P01 worktree intact."
+  }
+}

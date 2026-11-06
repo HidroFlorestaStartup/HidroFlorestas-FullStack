@@ -1,5 +1,9 @@
 # Plano — integração UI-044 e Preview de aceite
 
+## Atualização vigente — ciclo visual aceito e integrado
+
+Em 06/11/2026, C1–C3 foram aceitas por Pedro e integradas na PR53/865054b. A integração inicial51/7bae1f8 permanece como sua base histórica. O handoff52 foi executado; seus estados de espera abaixo são históricos, não uma nova tarefa. [Aceite](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435) e [organização documental](../encerramento-prs-ui044-20261106/plano-de-execucao.md). As atualizações desta consolidação são documentais; nenhuma suíte funcional nova é atribuída a elas.
+
 ## Encerramento da integração e atualização documental — 05/11/2026
 
 Estado vigente do plano: AGUARDANDO_REVISAO da atualização documental; integração técnica e aceite de Pedro CONCLUIDOS COM TRES RESSALVAS. Após revisão da trilha documental, arquivar conforme PLANS.md, preservando apontadores existentes. A origem da autorização foi ampliada pela mensagem atual de Pedro, que confirmou os três ajustes e autorizou o merge #51; os estados EM_ANDAMENTO/HUMAN_ACCEPTANCE_PENDING abaixo são históricos.

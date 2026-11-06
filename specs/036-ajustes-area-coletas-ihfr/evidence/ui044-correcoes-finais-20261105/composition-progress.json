@@ -1,0 +1,168 @@
+{
+  "base": {
+    "sha": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "ref_observed": "development",
+    "worktree_head": "detached at B"
+  },
+  "deltas": [
+    {
+      "id": "P01",
+      "patch_sha256": "658c3ef0ed198fc027a493a9fa77f3ab2a4cacae9fcdb3d4ae2ab0214d525bf2",
+      "receipt_sha256": "2d0772c4fce033c31253fe27cdee0f88eb9fc0865a28be06e4631d82b059cb99",
+      "preimage": {
+        "git_blob": "2a7163516cd43340180a7605e40801e816c2c046",
+        "sha256": "e551386b5ac3d47a60c764e51e6f68a78ba612b6c4befeacd17af04a25835fdd",
+        "bytes": 6274,
+        "copy": "preimage.tsx"
+      },
+      "postimage": {
+        "git_blob": "94b814556d81b41ac6f8fa38c155cb913e2c28fa",
+        "sha256": "e2d6661e1f38e6788788b81f7a5d743889a0591ec443e7ea7d13c9c278b097d1",
+        "bytes": 6187,
+        "copy": "postimage.tsx"
+      },
+      "path": "src/components/areas/area-collections.tsx",
+      "status": "APPLIED_WITH_IDENTICAL_POSTIMAGE",
+      "applied_by": "/root",
+      "at": "2026-11-05T21:49:58.057772-03:00",
+      "review": "P03 real non-author product contract analysis PASS; final P04/CI still pending"
+    },
+    {
+      "id": "P02",
+      "patch_sha256": "d3406dcf8b2e60168bd5c8e5c0d4ddd60271c7b7487fe22a03e2c9883ed2f4db",
+      "receipt_sha256": "7c8d161ae5e04b2cf71e447e7681ab01dd9e48dfd7ba0e66504a386d38f6af3c",
+      "files": [
+        {
+          "path": "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+          "operation": "modify",
+          "preimage": {
+            "blob": "8f78ea8d8e29308a64b7289026a1595ccd054aa6",
+            "sha256": "db60ed6caf5e54f1d66766a9832238212fece8443481db15704ae0ed80a38a43"
+          },
+          "postimage": {
+            "blob": "ab0dfce397a9f7539b49897acccdc812ba49b515",
+            "sha256": "87688081b0e7388b726a79c39f46038d6c3517aedb04db503717cf7bd2738f4b",
+            "bytes": 2961
+          }
+        },
+        {
+          "path": "src/components/collections/collection-detail.tsx",
+          "operation": "modify",
+          "preimage": {
+            "blob": "2c8b97c6a761a5eeba7fa2c67d73cad0bf9b165d",
+            "sha256": "4eea4b9c0006cad872f335b322b1910869389d3d42f1168d7d16b55295bdd09b"
+          },
+          "postimage": {
+            "blob": "1ba881c009a6ad45545edba72934c449ddf743dc",
+            "sha256": "0faba70a683bce1c274d055e0981256a3d2060799c8c97693ca8b34aa714ef8d",
+            "bytes": 3754
+          }
+        },
+        {
+          "path": "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+          "operation": "modify",
+          "preimage": {
+            "blob": "d47eea4757f9906f2ca1b22ba0d2fa634b9fd61e",
+            "sha256": "0797a2022aabde6643264837c2ef4cf9039253bad681578d76b5191dad8560e9"
+          },
+          "postimage": {
+            "blob": "0a7572c4d8420ba3f60f4052b4d432ec75f0f001",
+            "sha256": "e18cdf5feb9126b225ebb44123c8fa6bed4efaaeadd9b57fd22b3faddc824d3a",
+            "bytes": 19380
+          }
+        },
+        {
+          "path": "src/components/collections/collection-detail-layout.tsx",
+          "operation": "add",
+          "preimage": null,
+          "postimage": {
+            "blob": "af4de05055f6369c817d9c972fb380a303c2f8ca",
+            "sha256": "7bb3c8e1d6a25a7269ecf91ccfeb42a8293607938b4df0f21dd94ad24c73c191",
+            "bytes": 4577
+          }
+        }
+      ],
+      "status": "APPLIED_WITH_IDENTICAL_POSTIMAGES",
+      "applied_by": "/root",
+      "at": "2026-11-05T21:51:46.007985-03:00",
+      "review": "P04 running; final runtime CI and reviews pending"
+    },
+    {
+      "id": "P03",
+      "patch_sha256": "eed5f52d80ec69ac3c286f8f96b9add0813ef11ff81c3346a4e21e45190160f1",
+      "receipt_sha256": "78df388c326b803b04541971990f74d4995acf2b77aa466c9e481102ea93ac3c",
+      "files": [
+        {
+          "path": "tests/e2e/hf-ui036-area-collections.spec.ts",
+          "preimage": {
+            "status": "EXISTS",
+            "gitBlob": "a0a91e140db1adb92bc1d8cbcfd846f5dd30ed1e",
+            "sha256": "78c17015ce4b0ebc61cccacbaac160e2509b8354fb2163b861580d7afbee190b"
+          },
+          "postimage": {
+            "gitBlob": "4fc5056815e4cd8e32447771bc4e9d1f4627121f",
+            "sha256": "549db5e7121144d94430a46cca5c6f396ecbad9fe5ee8944a92567df59e9fc94",
+            "bytes": 8858
+          }
+        },
+        {
+          "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+          "preimage": {
+            "status": "EXISTS",
+            "gitBlob": "a6aec94fcc2e64dd37a0b13d8839c038bc4bec6a",
+            "sha256": "b2416fa05a122b141636286506cf5db6dca45dcd7028c4bc5ad1478847b6f30a"
+          },
+          "postimage": {
+            "gitBlob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+            "sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+            "bytes": 32504
+          }
+        },
+        {
+          "path": "tests/e2e/ihfr-diagnosis-read.spec.ts",
+          "preimage": {
+            "status": "EXISTS",
+            "gitBlob": "e66ed1532e82ecd553d0e3d43b745f5ad441c098",
+            "sha256": "24943d58c9e1f2c240aa7ce9c701417c62644b1d7d1798f6d95a361c1850fbce"
+          },
+          "postimage": {
+            "gitBlob": "8c8141cad4fcd49279a3d844a6fbb7dcfc8ff8e8",
+            "sha256": "38020bde77a770205bf492dc3fd8a224cc3f971577f3119a497c572854fb2edf",
+            "bytes": 6886
+          }
+        },
+        {
+          "path": "tests/e2e/support/ui044-final-corrections.ts",
+          "preimage": {
+            "status": "ABSENT",
+            "gitBlob": null,
+            "sha256": null
+          },
+          "postimage": {
+            "gitBlob": "fe64c8b5ba5cdc3f5839b3008b41a82132693d6a",
+            "sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+            "bytes": 13003
+          }
+        },
+        {
+          "path": "tests/unit/hf-ui044-final-corrections.test.tsx",
+          "preimage": {
+            "status": "ABSENT",
+            "gitBlob": null,
+            "sha256": null
+          },
+          "postimage": {
+            "gitBlob": "5ecd70a96b84cd5ec169e6979706ba18d21a09a3",
+            "sha256": "7a6915554d88ac7144cceee170c1e9448527f725350becdad134cffa239affe3",
+            "bytes": 7169
+          }
+        }
+      ],
+      "status": "APPLIED_WITH_IDENTICAL_POSTIMAGES",
+      "applied_by": "/root",
+      "at": "2026-11-05T21:51:46.022073-03:00",
+      "review": "P04 running; final runtime CI and reviews pending"
+    }
+  ]
+}

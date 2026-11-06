@@ -6,7 +6,7 @@ import type { IHFRLandUseType, IHFRRouteContext, PublicDiagnosis } from "@/types
 import { IHFR_CONTRACT } from "@/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants";
 import { ExperimentalDiagnosisSummary } from "./experimental-diagnosis-summary";
 import { NoCurrentDiagnosis } from "./no-current-diagnosis";
-import { ScientificNotice } from "./scientific-notice";
+import { CollectionDetailLayout, type CollectionDetailSlots } from "@/components/collections/collection-detail-layout";
 import { ihfrLabel } from "./ihfr-presentation";
 import { LAND_USE_LABELS } from "./land-use-labels";
 import { createClientUuid } from "@/lib/client-uuid";
@@ -19,7 +19,7 @@ const landUseTypes = Object.keys(LAND_USE_LABELS) as IHFRLandUseType[];
 const controlClass = "mt-2 min-h-11 w-full min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none focus-visible:border-emerald-700 focus-visible:ring-2 focus-visible:ring-emerald-700/30 disabled:bg-slate-100 disabled:text-slate-600";
 const buttonClass = "min-h-11 max-w-full rounded-xl px-[16px] py-2.5 text-sm font-semibold leading-relaxed transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 disabled:cursor-not-allowed disabled:opacity-50";
 
-export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context: IHFRRouteContext; initialDiagnosis: PublicDiagnosis | null }) {
+export function IHFRDiagnosisManagement({ context, initialDiagnosis, detailSlots }: { context: IHFRRouteContext; initialDiagnosis: PublicDiagnosis | null; detailSlots?: CollectionDetailSlots }) {
   const [diagnosis, setDiagnosis] = useState(initialDiagnosis);
   const [landUseType, setLandUseType] = useState<IHFRLandUseType | "">("");
   const [provenanceKind, setProvenanceKind] = useState<"FIELD_OBSERVATION" | "AUTHORIZED_RECORD">("FIELD_OBSERVATION");
@@ -33,7 +33,9 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
   const [confirmation, setConfirmation] = useState<"DIAGNOSE" | "REVOKE" | null>(null);
   const dialogButton = useRef<HTMLButtonElement>(null);
   const confirmButton = useRef<HTMLButtonElement>(null);
-  const dialogTrigger = useRef<HTMLElement | null>(null);
+  const diagnoseButton = useRef<HTMLButtonElement>(null);
+  const revokeButton = useRef<HTMLButtonElement>(null);
+  const dialogTrigger = useRef<"DIAGNOSE" | "REVOKE" | null>(null);
   const feedbackRef = useRef<HTMLParagraphElement>(null);
   const base = `/api/laboratories/${context.laboratoryId}/areas/${context.areaId}/collections/${context.collectionId}/ihfr-diagnosis`;
 
@@ -122,13 +124,13 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
     if (attempt) { announce("Recupere ou repita a tentativa pendente antes de iniciar outra operação.", "alert"); return; }
     if (kind === "DIAGNOSE" && (!observedAt || Number.isNaN(Date.parse(observedAt)))) { announce("Informe a data da observação.", "alert"); return; }
     if (kind === "REVOKE" && (reason.trim().length < 1 || reason.length > 500)) { announce("Informe um motivo de 1 a 500 caracteres.", "alert"); return; }
-    dialogTrigger.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    dialogTrigger.current = kind;
     setConfirmation(kind);
   }
 
   function closeConfirmation(restoreTrigger = true) {
     setConfirmation(null);
-    if (restoreTrigger) requestAnimationFrame(() => dialogTrigger.current?.focus());
+    if (restoreTrigger) requestAnimationFrame(() => (dialogTrigger.current === "REVOKE" ? revokeButton : diagnoseButton).current?.focus());
   }
 
   function confirm() {
@@ -148,9 +150,8 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
     void send(current);
   }
 
-  return <div className="mx-auto min-w-0 max-w-4xl space-y-6">
-    {diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />}
-    <section aria-labelledby="ihfr-management-heading" aria-busy={busy} className="min-w-0 rounded-[1.25rem] border border-emerald-900/10 bg-white p-[16px] text-slate-900 shadow-sm sm:p-6">
+  const reading = diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />;
+  const actions = <section aria-labelledby="ihfr-management-heading" aria-busy={busy} className="min-w-0 rounded-[1.25rem] border border-emerald-900/10 bg-white p-[16px] text-slate-900 shadow-sm sm:p-6">
       <div className="flex flex-wrap items-start gap-3">
         <span className="rounded-xl bg-emerald-50 p-2.5 text-emerald-800"><Settings2 aria-hidden="true" className="size-5" /></span>
         <div className="min-w-0 flex-1 basis-48">
@@ -159,7 +160,6 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
           <p className="mt-2 text-sm leading-relaxed text-slate-600">Informe o contexto da observação, confira a elegibilidade e revise a ação antes de confirmar.</p>
         </div>
       </div>
-      <div className="mt-5"><ScientificNotice /></div>
       <fieldset disabled={busy || Boolean(attempt)} className="mt-6 min-w-0">
         <legend className="text-sm font-semibold">Dados da observação</legend>
         <div className="mt-3 grid min-w-0 gap-4 sm:grid-cols-2">
@@ -182,7 +182,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
       <p id="land-use-help" className="mt-3 text-xs leading-relaxed text-slate-600">Selecione um único uso predominante. Se não puder determinar, mantenha indeterminado; pode haver insuficiência de dados. Solo exposto aqui é uma categoria territorial, diferente do percentual de solo exposto nos dados ambientais.</p>
       <div className="mt-5 flex flex-wrap gap-3">
         <button type="button" disabled={busy} onClick={() => void refreshEligibility()} className={`${buttonClass} border border-emerald-800/30 bg-white text-emerald-900 hover:bg-emerald-50`}>Verificar elegibilidade</button>
-        <button type="button" disabled={busy || Boolean(attempt)} onClick={() => prepare("DIAGNOSE")} className={`${buttonClass} bg-emerald-800 text-white hover:bg-emerald-900`}>{diagnosis ? "Substituir diagnóstico" : "Criar diagnóstico"}</button>
+        <button ref={diagnoseButton} type="button" disabled={busy || Boolean(attempt)} onClick={() => prepare("DIAGNOSE")} className={`${buttonClass} bg-emerald-800 text-white hover:bg-emerald-900`}>{diagnosis ? "Substituir diagnóstico" : "Criar diagnóstico"}</button>
       </div>
       {busy && <p className="mt-3 text-sm text-slate-600">Operação em andamento…</p>}
       {eligibility && <div role="status" aria-atomic="true" className={`mt-4 min-w-0 rounded-2xl border p-4 text-sm ${eligibility.eligible ? "border-emerald-200 bg-emerald-50 text-emerald-950" : "border-amber-200 bg-amber-50 text-amber-950"}`}>
@@ -196,7 +196,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         <label className="mt-4 block min-w-0 text-sm font-medium">Motivo da revogação
           <textarea value={reason} onChange={(event) => setReason(event.target.value)} disabled={busy || Boolean(attempt)} aria-describedby="ihfr-revocation-help" maxLength={500} rows={3} className={`${controlClass} resize-y`} />
         </label>
-        <button type="button" disabled={busy || Boolean(attempt)} onClick={() => prepare("REVOKE")} className={`${buttonClass} mt-3 border border-amber-800/30 bg-white text-amber-900 hover:bg-amber-100`}>Revogar diagnóstico</button>
+        <button ref={revokeButton} type="button" disabled={busy || Boolean(attempt)} onClick={() => prepare("REVOKE")} className={`${buttonClass} mt-3 border border-amber-800/30 bg-white text-amber-900 hover:bg-amber-100`}>Revogar diagnóstico</button>
       </div>}
       {feedback && <p ref={feedbackRef} tabIndex={-1} role={feedback.kind} aria-live={feedback.kind === "alert" ? "assertive" : "polite"} className={`mt-5 break-words rounded-2xl border p-4 text-sm leading-relaxed outline-offset-4 focus:outline-2 focus:outline-emerald-800 ${feedback.kind === "alert" ? "border-amber-300 bg-amber-50 text-amber-950" : "border-emerald-200 bg-emerald-50 text-emerald-950"}`}>{feedback.text}</p>}
       {attempt && unknown && <div className="mt-4 min-w-0 rounded-2xl border border-amber-300 bg-amber-50 p-[12px] sm:p-4">
@@ -207,7 +207,12 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
           <button type="button" disabled={busy} onClick={() => void send(attempt)} className={`${buttonClass} border border-amber-800/30 bg-white text-amber-950 hover:bg-amber-100`}>Repetir com a mesma chave</button>
         </div>
       </div>}
-    </section>
+    </section>;
+
+  return <>
+    {detailSlots
+      ? <CollectionDetailLayout {...detailSlots} reading={reading} actions={actions} />
+      : <div className="mx-auto min-w-0 max-w-4xl space-y-6">{reading}{actions}</div>}
     {confirmation && <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-[12px] sm:p-[16px]">
       <div role="dialog" aria-modal="true" aria-labelledby="ihfr-confirm-title" aria-describedby="ihfr-confirm-description" onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); closeConfirmation(); } else if (event.key === "Tab" && event.shiftKey && document.activeElement === dialogButton.current) { event.preventDefault(); confirmButton.current?.focus(); } else if (event.key === "Tab" && !event.shiftKey && document.activeElement === confirmButton.current) { event.preventDefault(); dialogButton.current?.focus(); } }} className="max-h-[calc(100dvh-24px)] w-full min-w-0 max-w-md overflow-y-auto overscroll-contain rounded-[1.25rem] bg-white p-[20px] text-slate-900 shadow-xl sm:p-[24px]">
         <h2 id="ihfr-confirm-title" className="text-lg font-semibold">Confirmar {confirmation === "REVOKE" ? "revogação" : diagnosis ? "substituição" : "criação"}</h2>
@@ -221,5 +226,5 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis }: { context
         </div>
       </div>
     </div>}
-  </div>;
+  </>;
 }

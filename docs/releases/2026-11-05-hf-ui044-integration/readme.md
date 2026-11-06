@@ -1,5 +1,11 @@
 # Integração UI-044 — candidata para testes manuais
 
+## Encerramento vigente — 06/11/2026
+
+O aceite anterior com três ressalvas foi concluído: [PR53](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53), merge865054b, com [aprovação manual de Pedro](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435). A candidata1f305fb passou pelos quinze gates/E2E244 e pelo Codex; a árvore do merge é idêntica à candidata. As ressalvas C1–C3 não permanecem pendentes.
+
+O histórico da integração51, a proveniência e os snapshots abaixo continuam íntegros. As PRs44–48/50 foram encerradas sem reaplicar seus códigos. [Consolidação e evidências](../../plans/active/encerramento-prs-ui044-20261106/plano-de-execucao.md) distinguem recibos históricos de41/52 do estado atual. Sem novo deploy, operação de banco ou validação científica.
+
 ## Fechamento vigente — integrada com três ressalvas de UX
 
 Em 05/11/2026, Pedro aprovou o restante da usabilidade, design e aparência testados, confirmou as três correções e autorizou o merge. [Recibo de aceite](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605). PR51 integrada em `7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, tree0c836da964c377a7d1e6bc8b2331524e931ea901, idêntica ao head febee101aa. CI42101827226/1: quinze gates PASS/E2E241; Codex Review concluída sem findings nesse head. Não houve nova suíte no merge nem aprovação científica/operacional.

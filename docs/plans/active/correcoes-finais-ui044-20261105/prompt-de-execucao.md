@@ -1,5 +1,11 @@
 # Execução autorizada — três correções finais da UI-044
 
+## Estado vigente — executado, aceito e integrado em 06/11/2026
+
+Este é um mandato histórico já executado. C1, C2 e C3 foram implementadas na [PR #53](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53), testadas manualmente e [aprovadas por Pedro](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435), e integradas em development no merge `865054b53e5820582d7956a29dc95fc9a2690bd8`. Não reexecutar estas instruções como trabalho pendente. O texto de 05/11 permanece preservado abaixo, com seus estados e evidências daquele corte.
+
+A CI42157996425/1 e a revisão Codex pertencem ao head1f305fb da correção; a árvore do merge foi conferida igual à candidata. A organização das PRs é documentada no [plano de encerramento](../encerramento-prs-ui044-20261106/plano-de-execucao.md). Este registro não atribui aceite a Luciano, homologação operacional ou validação científica.
+
 Estado: correções aprovadas por Pedro e ainda não implementadas neste handoff.
 Data: 05/11/2026 (America/Fortaleza).
 Repositório: https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack

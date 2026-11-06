@@ -1,0 +1,193 @@
+{
+  "schema": "ui044-p04-spec-recovery/v1",
+  "id": "P04-SPEC-RECOVERY-F3",
+  "status": "PASS_STATIC_DOCUMENTATION_SCOPED",
+  "at_utc": "2026-11-06T03:04:03.057488+00:00",
+  "executor": "/root/o0_speckit",
+  "audited_head": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+  "audited_head_tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+  "audited_working_copy": "Uncommitted documentation recovery delta, identified by per-file SHA256 below; no successor commit inferred.",
+  "independence": "No authorship of audited files. Prior O0 crosswalk advisory involvement was disclosed in spec-audit.json; this recovery receipt is read-only review.",
+  "findings": [],
+  "preimages_and_postimages": [
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": "db712d2e1bdbb9c4681851ddbd54befd7d7e661e",
+      "preimage_sha256": "0d4aa063522b8192f7b887d209de674b0b7a8bf043967e18fcb583b7d37ad5c6",
+      "postimage_sha256": "e82b2bbdfbdfe8eb371c69918b2b07db425e6ec81da4b665234faed26ec96090"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": "f01511e8c96d0ee84d14351b4c8ac9c10ad5ac57",
+      "preimage_sha256": "00d13ef4b41c17c85e4758cfc0b28e772b89f0a314f2a6ba18afdc7d28b4c810",
+      "postimage_sha256": "c3b8f57666a1beafb3dba6ff0a3f1f8c1a63210e666ad5bc3c3eb9b2de05acdd"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": "9d7422ba842670f62b05c1deeca7cc1d7720e4e7",
+      "preimage_sha256": "f5e3ef0c6488e6bb38ca50564cc8792f717c69abccdd173473684d988f79811e",
+      "postimage_sha256": "4bd25a0dadadd5d1c2e5ab24a9e8a4e418feb21b727d079ef8e12292bf1a6826"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/ownership-addenda.json",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": "a62670a99a1d25a19ea492cf1ee8afab16e8e4a2",
+      "preimage_sha256": "398a1b29e4e44d8e9c17102d2135376590eb89cd6de809e2fd7ccc81817b0ad7",
+      "postimage_sha256": "f01b99e530c7d85beec0bc6a5c6efac6ba703057080484b4fb22f2dd14e2c889"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/readme.md",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": "7a15997a29b2c907384d9e3e171a9f840093366b",
+      "preimage_sha256": "392622a346718d4c3d2cdada77e6a444ca627cdfc3431cbb4d62cabdbf25606e",
+      "postimage_sha256": "ed75e99e038029549d9f4060635295278b7ef7c01204dba333db81a9dec8206f"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/recovery-f3.json",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": null,
+      "preimage_sha256": null,
+      "postimage_sha256": "cea54ac4ffbb016f6eee59f842ca16a5fbaf4d66112896f632cae16b99e2eaa4"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/f3-render-observations.json",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": null,
+      "preimage_sha256": null,
+      "postimage_sha256": "9e0aba7e173eebfc34c2ef82b18bcf5574e1c2d6d311987fa86e192961e87d36"
+    },
+    {
+      "path": "specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p02-f3-eligibility-investigation.json",
+      "preimage_commit": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+      "preimage_blob": null,
+      "preimage_sha256": null,
+      "postimage_sha256": "713dc2d024d2c7c1f275de94c16a78df5fff7733b6a17782e09612085df0d5a3"
+    }
+  ],
+  "checks": [
+    {
+      "check": "identity",
+      "status": "PASS",
+      "detail": "F3 HEAD and tree match assignment; working-copy documentation is audited by the postimage hashes below, not represented as a published successor."
+    },
+    {
+      "check": "append_only:plan.md",
+      "status": "PASS",
+      "detail": "All F3 bytes preserved as prefix; current recovery text only appended."
+    },
+    {
+      "check": "append_only:tasks.md",
+      "status": "PASS",
+      "detail": "All F3 bytes preserved as prefix; current recovery text only appended."
+    },
+    {
+      "check": "append_only:implementation-evidence.md",
+      "status": "PASS",
+      "detail": "All F3 bytes preserved as prefix; current recovery text only appended."
+    },
+    {
+      "check": "append_only:readme.md",
+      "status": "PASS",
+      "detail": "All F3 bytes preserved as prefix; current recovery text only appended."
+    },
+    {
+      "check": "historical_tasks",
+      "status": "PASS",
+      "detail": "T001–T067 IDs, statuses and exact text preserved from B; integrity-only comparison."
+    },
+    {
+      "check": "f3_task_history",
+      "status": "PASS",
+      "detail": "All 79 tasks at F3 preserved; T080 is the only added ID, with no duplication."
+    },
+    {
+      "check": "pending_tasks",
+      "status": "PASS",
+      "detail": "T075–T077, T079 and T080 remain unchecked. No repair or future CI PASS inferred."
+    },
+    {
+      "check": "o0_immutable",
+      "status": "PASS",
+      "detail": "O0 immutable receipt hash matches contract."
+    },
+    {
+      "check": "spec_unchanged",
+      "status": "PASS",
+      "detail": "No new requirement or alteration to the previously audited C1–C3 specification."
+    },
+    {
+      "check": "ownership_history",
+      "status": "PASS",
+      "detail": "Existing ownership entries and receipt metadata are preserved."
+    },
+    {
+      "check": "ownership_extension",
+      "status": "PASS",
+      "detail": "Only two focused official test/helper paths added to P03, with F3 commit/blob/SHA256 checked. Need is documented by four observed blocked waits; authored recovery code and actual authorization chronology are reviewed by P00/P04 lead, not inferred from this metadata alone."
+    },
+    {
+      "check": "failure_preserved",
+      "status": "PASS",
+      "detail": "Run 42150335260/1 remains FAIL: 12 PASS, Ihfr FAIL (1 passed/5 failed), Bootstrap/SchemaAudit NOT_RUN; matrix 7/23. Successor qualification is explicitly pending."
+    },
+    {
+      "check": "diagnostic_facts",
+      "status": "PASS",
+      "detail": "Independently regrouped raw log by profile/diagnosis/actions/viewport and sequence: 115 events, 11 unique sessions, seven reaching message/restoration and four blocked 390×844 sessions. Raw-log SHA256 matches. Native finished-promise cause remains unproven; console delivery order is not used as event order."
+    },
+    {
+      "check": "corrected_summary_identity",
+      "status": "PASS",
+      "detail": "Corrected source summary digest matches the canonical reduced report."
+    },
+    {
+      "check": "eligibility_evidence",
+      "status": "PASS",
+      "detail": "Investigation receipt and F3 log digests match; first eligibility request omits landUseType. Missing-input observation is distinguished from unproven hydration/state-loss ordering and from any proposed repair success."
+    },
+    {
+      "check": "eligibility_source_integrity",
+      "status": "PASS",
+      "detail": "All 11 recorded F2/F3 source pairs match their Git blobs and SHA256; integrity comparison only, without reopening domain investigation."
+    },
+    {
+      "check": "f3_artifact_identity",
+      "status": "PASS",
+      "detail": "Local F3 ZIP digest, 29,039,558 bytes and CRC independently checked; this does not qualify partial browser captures or final O3."
+    },
+    {
+      "check": "crosswalk",
+      "status": "PASS",
+      "detail": "Existing C1→FR-036-001/005, US1, T069/T071; C2→FR-036-003/005, US3, T070/T072; C3→FR-036-002/005, US2, T070/T072 remain intact. T079 extends SC-036-001/002/004 readiness validation; T080 extends SC-036-001/004 observable form/request preparation, both feeding T075–T077 on the successor SHA."
+    },
+    {
+      "check": "claim_limits",
+      "status": "PASS",
+      "detail": "Read plan/tasks/implementation/readme and three new receipts: no overall runtime PASS; first parser explicitly superseded; proof of blocked location is not called proof of Chromium/internal cause; eligibility inference labeled; fixture/domain/ELIGIBLE expectations preserved as constraints. Spec Kit installation/use was already audited at O0 and no state-writing command was repeated."
+    },
+    {
+      "check": "stable_snapshot",
+      "status": "PASS",
+      "detail": "All eight audited working-copy postimages remained identical throughout this audit; HEAD stayed F3."
+    }
+  ],
+  "task_states": {
+    "T075": "PENDING",
+    "T076": "PENDING",
+    "T077": "PENDING",
+    "T079": "PENDING",
+    "T080": "PENDING"
+  },
+  "o0_sha256": "fb319da8961caf33de016e6cb4d75d10e0e9a4ca7cbb25f9ed6ce793b0d9adc9",
+  "limits": [
+    "No product/test/helper implementation review; P04 lead owns that review.",
+    "No browser, DB, provider, workflow execution, push, ref update or Spec Kit state-writing command performed.",
+    "No independent remote CI/Codex query in this documentary audit. F3 local artifact facts were checked; successor runtime and review remain pending.",
+    "No final PASS_SCOPED, merge, deploy or handoff approval follows from this report."
+  ],
+  "handoff": "Documentary recovery delta is coherent and preserves failures, source identity and historical task states. P00 may compose it under the existing publication gates, with P04 code review and local checks; full RC15/browser matrix/Codex/P04 qualification remains required on the successor SHA.",
+  "commands_exit_code": 0
+}

@@ -274,6 +274,111 @@ test('render readiness drains focus queued by a late ResizeObserver before one s
   expect(geometry.unobstructed).toBe(true);
 });
 
+type MissionAnimationLifecycleProbe = {
+  first: Animation | null;
+  replacement: Animation | null;
+  firstFinished: boolean;
+  replacementFinished: boolean;
+  activeAtEntry: number;
+  replacementObservedRunning: boolean;
+};
+
+for (const operation of ['pause', 'replace'] as const) {
+  test(`render readiness rechecks a CSS transition after ${operation} instead of retaining its finished promise`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.setContent(`<style>body{margin:0}#changing{height:20px;transition:height .3s linear}</style>
+      <div id="changing"></div><label for="field">Campo</label><input id="field">`);
+    await page.getByLabel('Campo').fill('synthetic');
+    await page.evaluate(operation => {
+      const state: MissionAnimationLifecycleProbe = {
+        first: null, replacement: null, firstFinished: false, replacementFinished: false,
+        activeAtEntry: 0, replacementObservedRunning: false,
+      };
+      (window as unknown as { missionAnimationLifecycle: MissionAnimationLifecycleProbe }).missionAnimationLifecycle = state;
+      const target = document.getElementById('changing')!;
+      const getAnimations = document.getAnimations.bind(document);
+      let armed = false;
+      document.getAnimations = () => {
+        if (!armed) {
+          armed = true;
+          target.getBoundingClientRect();
+          target.style.height = '120px';
+          const active = getAnimations().filter(animation => animation instanceof CSSTransition &&
+            (animation.effect as KeyframeEffect | null)?.target === target && animation.playState === 'running');
+          state.activeAtEntry = active.length;
+          const first = state.first = active[0];
+          if (!first) throw new Error('EXPECTED_SYNTHETIC_CSS_TRANSITION');
+          first.finished.then(() => { state.firstFinished = true; }, () => { state.firstFinished = true; });
+          // This fixture mutation happens after readiness's initial sample.
+          // Pausing leaves the captured finished promise pending indefinitely.
+          requestAnimationFrame(() => {
+            first.pause();
+            if (operation === 'replace') {
+              state.replacement = target.animate([{ opacity: 0.25 }, { opacity: 1 }], { duration: 96 });
+              state.replacement.finished.then(() => { state.replacementFinished = true; });
+            }
+          });
+        }
+        const animations = getAnimations();
+        if (state.replacement && animations.includes(state.replacement) && state.replacement.playState === 'running') state.replacementObservedRunning = true;
+        return animations;
+      };
+    }, operation);
+    await page.evaluate(waitForMissionRender);
+    const state = await page.evaluate(() => {
+      const state = (window as unknown as { missionAnimationLifecycle: MissionAnimationLifecycleProbe }).missionAnimationLifecycle;
+      return {
+        activeAtEntry: state.activeAtEntry, firstState: state.first?.playState, firstFinished: state.firstFinished,
+        replacementState: state.replacement?.playState ?? null, replacementFinished: state.replacementFinished,
+        replacementObservedRunning: state.replacementObservedRunning,
+      };
+    });
+    expect(state.activeAtEntry).toBe(1);
+    expect(state.firstState).toBe('paused');
+    expect(state.firstFinished).toBe(false);
+    if (operation === 'replace') {
+      expect(state.replacementObservedRunning).toBe(true);
+      expect(state.replacementState).toBe('finished');
+      expect(state.replacementFinished).toBe(true);
+    } else expect(state.replacementState).toBeNull();
+    await expect(page.getByLabel('Campo')).toBeFocused();
+  });
+}
+
+test('a finite transition started during the final frame barrier requires another readiness cycle', async ({ page }) => {
+  await page.setContent('<style>#changing{height:20px;transition:height .3s linear}</style><div id="changing"></div>');
+  await page.evaluate(() => {
+    const state = { startedAt: 0, finishedAt: 0, ends: 0, activeSamples: 0 };
+    (window as unknown as { missionLateAnimation: typeof state }).missionLateAnimation = state;
+    const target = document.getElementById('changing')!;
+    target.addEventListener('transitionend', event => {
+      if (event.propertyName === 'height') { state.ends++; state.finishedAt = Number(document.timeline.currentTime); }
+    });
+    const getAnimations = document.getAnimations.bind(document);
+    let armed = false;
+    document.getAnimations = () => {
+      const animations = getAnimations();
+      if (!armed) {
+        armed = true;
+        requestAnimationFrame(() => {
+          target.getBoundingClientRect();
+          state.startedAt = Number(document.timeline.currentTime);
+          target.style.height = '120px';
+        });
+      }
+      if (animations.some(animation => animation.playState === 'running' && Number.isFinite(animation.effect?.getComputedTiming().endTime))) state.activeSamples++;
+      return animations;
+    };
+  });
+  await page.evaluate(waitForMissionRender);
+  const state = await page.evaluate(() => (window as unknown as {
+    missionLateAnimation: { startedAt: number; finishedAt: number; ends: number; activeSamples: number };
+  }).missionLateAnimation);
+  expect(state.activeSamples).toBeGreaterThan(0);
+  expect(state.ends).toBe(1);
+  expect(state.finishedAt).toBeGreaterThanOrEqual(state.startedAt + 300);
+});
+
 type MissionCaptureOrderProbe = {
   activeAtEntry: number;
   armedAt: number | null;

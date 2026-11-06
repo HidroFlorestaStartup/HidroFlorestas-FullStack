@@ -1,0 +1,28 @@
+{
+  "schema": "ui044-p00-guard-check/v1",
+  "executor": "/root",
+  "time": "2026-11-05T21:47:14.279898-03:00",
+  "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "branch": "fix/ui044-correcoes-finais-20261105",
+  "command": [
+    "node",
+    "-e",
+    "const assert = require('node:assert/strict');\nconst fs = require('node:fs');\nconst cp = require('node:child_process');\nconst yaml = require('yaml');\nconst B = '7bae1f87cb8d6a708b7c4de0b990e82e5a503369';\nconst branch = 'fix/ui044-correcoes-finais-20261105';\nconst original = (path) => cp.execFileSync('git',['show',B+':'+path],{encoding:'utf8'});\nconst vBase = JSON.parse(original('vercel.json'));\nconst vNow = JSON.parse(fs.readFileSync('vercel.json','utf8'));\nassert.equal(vNow.git.deploymentEnabled[branch],false);\ndelete vNow.git.deploymentEnabled[branch];\nassert.deepEqual(vNow,vBase);\nconst wBase = yaml.parse(original('.github/workflows/rc-review.yml'));\nconst wNow = yaml.parse(fs.readFileSync('.github/workflows/rc-review.yml','utf8'));\nassert.equal(wNow.on.push.branches.filter(x=>x===branch).length,1);\nwNow.on.push.branches=wNow.on.push.branches.filter(x=>x!==branch);\nconst suffix=\" || github.ref_name == '\"+branch+\"'\";\nconst flatten=s=>s.trim().replace(/\\s+/g,' ');\nassert.ok(flatten(wNow.jobs.validate.if).endsWith(suffix));\nassert.equal(flatten(wNow.jobs.validate.if).slice(0,-suffix.length),flatten(wBase.jobs.validate.if));\nwNow.jobs.validate.if=wBase.jobs.validate.if;\nassert.deepEqual(wNow,wBase);\nconsole.log('PASS exact Vercel false entry; PASS exact RC push/if addition; all other configuration values unchanged');"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS exact Vercel false entry; PASS exact RC push/if addition; all other configuration values unchanged\n",
+  "stderr": "",
+  "status": "PASS",
+  "files": [
+    {
+      "path": "vercel.json",
+      "sha256": "a3d491aabf34839a79f74188791d77ed86a8e9d816cdce8f31ef4717f8e8a53d",
+      "git_blob": "fe2a9b5c632724b12682d4d22aee5c0a77c5458a"
+    },
+    {
+      "path": ".github/workflows/rc-review.yml",
+      "sha256": "f9ca15353b5c4e81d598a709531c7ade654d02575c91130b2c986628f7f6852b",
+      "git_blob": "5e967493d6ef384154aa0147aee81a511966ead5"
+    }
+  ]
+}

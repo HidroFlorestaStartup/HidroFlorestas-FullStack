@@ -1,0 +1,170 @@
+{
+  "id": "UI044-F1-RECOVERY",
+  "recorded_at": "2026-11-05T22:27:29.711860-03:00",
+  "coordinator": "/root",
+  "failed_sha": "921b5ff153865816922b0f509bfda0642a9f4085",
+  "failed_tree": "d20450d781685c547557869d3d7e92a0958f5e35",
+  "run": 42140950096,
+  "attempt": 1,
+  "job": 127640826092,
+  "artifact": 13467774733,
+  "artifact_bytes": 38132154,
+  "artifact_sha256": "0143d84a3f94681be0d9098e63917d8c98b7de4ce0a7e44c3fd038561948d823",
+  "zip_crc": "PASS",
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:03:01.469Z",
+      "endedUtc": "2026-11-06T01:03:09.367Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1793926981468.log"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:03:09.639Z",
+      "endedUtc": "2026-11-06T01:03:39.087Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1793926989638.log"
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:03:39.408Z",
+      "endedUtc": "2026-11-06T01:05:39.992Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1793927019407.log"
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:05:40.265Z",
+      "endedUtc": "2026-11-06T01:05:56.163Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1793927140265.log"
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:05:56.434Z",
+      "endedUtc": "2026-11-06T01:06:00.355Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1793927156433.log"
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:06:00.630Z",
+      "endedUtc": "2026-11-06T01:06:10.608Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1793927160630.log"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:06:10.867Z",
+      "endedUtc": "2026-11-06T01:06:39.147Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1793927170866.log"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:06:39.427Z",
+      "endedUtc": "2026-11-06T01:06:50.946Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1793927199426.log"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:06:51.216Z",
+      "endedUtc": "2026-11-06T01:07:16.521Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1793927211216.log"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "52c25ff48c65a164fe2762d4ee6339d34ff092a84d6817b9ba25333dc9e41089",
+      "startedUtc": "2026-11-06T01:07:16.784Z",
+      "endedUtc": "2026-11-06T01:20:29.789Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1793927236783.log"
+    },
+    {
+      "gate": "Https",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "Deletion",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "Ihfr",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "NOT_RUN"
+    }
+  ],
+  "e2e": {
+    "passed": 237,
+    "failed": 1,
+    "not_run": 3,
+    "case": "US4 reads a minimal immutable detail for current roles and inactive laboratories",
+    "file": "tests/e2e/collection-registration.spec.ts",
+    "line_in_F1": 236
+  },
+  "cause": "Article legitimately includes IHFR reading after C3; legacy minimal metadata assertion applied /IHFR/i to the whole article. Runtime text and non-author source audit confirm the scope mismatch.",
+  "repair": "Assert unique visible immutable record, original dates and no IHFR in record; retain private field exclusion on whole article, extend after reload and in inactive case; preserve contextual links and role checks.",
+  "new_ownership": {
+    "owner": "/root/p03_tests",
+    "path": "tests/e2e/collection-registration.spec.ts",
+    "authorized_in_session_before_edit": true,
+    "preimage_sha256": "8b514f616a61d3f80e064139108158418a5da9cd06a42db45a91f591bca2f8e5"
+  },
+  "patch_sha256": "2d1371bdaa92842465929aa73bde8a3a84df0fc3c0d38b4490df2fbb6d00dc4c",
+  "independent_patch_review_sha256": "19b522e732ee8f1d76f27d6665c5febc0ebb5a23904557af23bdadbc04d5adac",
+  "local_recovery_checks": "TypeScript complete and focused ESLint exit0; no local DB/browser run",
+  "unchanged": "All product files, prior tests apart from the one named, guard configuration, scripts and dependencies equal F1",
+  "F1_qualification": "FAIL; no Ihfr/layout matrix executed, no historical PASS inherited",
+  "successor_gate": "Full official RC15 and Codex/independent review required on successor SHA; same branch/PR, no rerun of defective F1",
+  "merge": false,
+  "deploy": false
+}
