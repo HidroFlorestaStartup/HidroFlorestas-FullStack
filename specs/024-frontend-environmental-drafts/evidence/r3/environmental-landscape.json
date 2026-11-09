@@ -1,0 +1,3429 @@
+{
+  "scope": "Exact ApplicationShell and environmental Form/Review/Detail React SSR; contextual wrapper synthetic; Next adapters for static rendering; actual CSS modules and generated Tailwind; Arial fallback; no DB or Next server; form SSR controls disabled, geometry only",
+  "browser": "153.0.8010.0",
+  "playwright": "1.55.1",
+  "node": "24.19.0",
+  "notOfficialGate": true,
+  "cases": [
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 466.625,
+        "y": 37.1875,
+        "width": 320.375,
+        "height": 92,
+        "top": 37.1875,
+        "right": 787,
+        "bottom": 129.1875,
+        "left": 466.625
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 474.5859699817943,
+          "y": 42.252634785020305,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 779.0390300182057,
+          "y": 42.252634785020305,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 474.5859699817943,
+          "y": 124.1223652149797,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 779.0390300182057,
+          "y": 124.1223652149797,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 83.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 41.1875,
+          "tag": "A",
+          "className": "s_accountLink s_accountDanger",
+          "inside": false
+        },
+        {
+          "x": 783,
+          "y": 83.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 125.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 470.625,
+          "y": 83.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 217,
+        "y": 34.3125,
+        "width": 267.40625,
+        "height": 98,
+        "top": 34.3125,
+        "right": 484.40625,
+        "bottom": 132.3125,
+        "left": 217
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 224.7474253203718,
+          "y": 39.612654791310774,
+          "tag": "DIV",
+          "className": "s_headerInfo",
+          "inside": false
+        },
+        {
+          "x": 476.6588246796282,
+          "y": 39.612654791310774,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 224.7474253203718,
+          "y": 127.01234520868923,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 476.6588246796282,
+          "y": 127.01234520868923,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 83.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 38.3125,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 480.40625,
+          "y": 83.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 128.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 221,
+          "y": 83.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 531.59375,
+        "y": 250.3125,
+        "width": 288.40625,
+        "height": 92,
+        "top": 250.3125,
+        "right": 820,
+        "bottom": 342.3125,
+        "left": 531.59375
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 539.4677311784851,
+          "y": 255.47301057703868,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 812.1260188215149,
+          "y": 255.47301057703868,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 539.4677311784851,
+          "y": 337.1519894229613,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 812.1260188215149,
+          "y": 337.1519894229613,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 254.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 338.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 535.59375,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 435.828125,
+        "y": 134.375,
+        "width": 384.171875,
+        "height": 92,
+        "top": 134.375,
+        "right": 820,
+        "bottom": 226.375,
+        "left": 435.828125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 443.926788163002,
+          "y": 139.29024042219308,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 811.901336836998,
+          "y": 139.29024042219308,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 443.926788163002,
+          "y": 221.4597595778069,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 811.901336836998,
+          "y": 221.4597595778069,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 180.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 138.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 180.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 222.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 439.828125,
+          "y": 180.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 308.28125,
+        "y": 250.375,
+        "width": 511.71875,
+        "height": 92,
+        "top": 250.375,
+        "right": 820,
+        "bottom": 342.375,
+        "left": 308.28125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 316.56714402889367,
+          "y": 255.0897145077031,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 811.7141059711064,
+          "y": 255.0897145077031,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 316.56714402889367,
+          "y": 337.6602854922969,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 811.7141059711064,
+          "y": 337.6602854922969,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 254.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 338.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 312.28125,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 185,
+        "y": 35.375,
+        "width": 634,
+        "height": 96,
+        "top": 35.375,
+        "right": 819,
+        "bottom": 131.375,
+        "left": 185
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 189,
+          "y": 39.375,
+          "tag": "HEADER",
+          "className": "s_header",
+          "inside": false
+        },
+        {
+          "x": 815,
+          "y": 39.375,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 189,
+          "y": 127.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 815,
+          "y": 127.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 83.375,
+          "tag": "H3",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 39.375,
+          "tag": "A",
+          "className": "s_accountLink s_accountDanger",
+          "inside": false
+        },
+        {
+          "x": 815,
+          "y": 83.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 127.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 189,
+          "y": 83.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 466.625,
+        "y": 149.1875,
+        "width": 320.375,
+        "height": 92,
+        "top": 149.1875,
+        "right": 787,
+        "bottom": 241.1875,
+        "left": 466.625
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 474.5859699817943,
+          "y": 154.25263478502032,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 779.0390300182057,
+          "y": 154.25263478502032,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 474.5859699817943,
+          "y": 236.1223652149797,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 779.0390300182057,
+          "y": 236.1223652149797,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 195.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 153.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 783,
+          "y": 195.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 626.8125,
+          "y": 237.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 470.625,
+          "y": 195.1875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 217,
+        "y": 146.3125,
+        "width": 267.40625,
+        "height": 98,
+        "top": 146.3125,
+        "right": 484.40625,
+        "bottom": 244.3125,
+        "left": 217
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 224.7474253203718,
+          "y": 151.61265479131077,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 476.6588246796282,
+          "y": 151.61265479131077,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 224.7474253203718,
+          "y": 239.01234520868923,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 476.6588246796282,
+          "y": 239.01234520868923,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 195.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 150.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 480.40625,
+          "y": 195.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 350.703125,
+          "y": 240.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 221,
+          "y": 195.3125,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 531.59375,
+        "y": 250.3125,
+        "width": 288.40625,
+        "height": 92,
+        "top": 250.3125,
+        "right": 820,
+        "bottom": 342.3125,
+        "left": 531.59375
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 539.4677311784851,
+          "y": 255.47301057703868,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 812.1260188215149,
+          "y": 255.47301057703868,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 539.4677311784851,
+          "y": 337.1519894229613,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 812.1260188215149,
+          "y": 337.1519894229613,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 254.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 675.796875,
+          "y": 338.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 535.59375,
+          "y": 296.3125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 435.828125,
+        "y": 149.375,
+        "width": 384.171875,
+        "height": 92,
+        "top": 149.375,
+        "right": 820,
+        "bottom": 241.375,
+        "left": 435.828125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 443.926788163002,
+          "y": 154.29024042219308,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 811.901336836998,
+          "y": 154.29024042219308,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 443.926788163002,
+          "y": 236.4597595778069,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 811.901336836998,
+          "y": 236.4597595778069,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 195.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 153.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 195.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 627.9140625,
+          "y": 237.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 439.828125,
+          "y": 195.375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 308.28125,
+        "y": 250.375,
+        "width": 511.71875,
+        "height": 92,
+        "top": 250.375,
+        "right": 820,
+        "bottom": 342.375,
+        "left": 308.28125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 316.56714402889367,
+          "y": 255.0897145077031,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 811.7141059711064,
+          "y": 255.0897145077031,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 316.56714402889367,
+          "y": 337.6602854922969,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 811.7141059711064,
+          "y": 337.6602854922969,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 254.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 816,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 564.140625,
+          "y": 338.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 312.28125,
+          "y": 296.375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 185,
+        "y": 147.375,
+        "width": 634,
+        "height": 96,
+        "top": 147.375,
+        "right": 819,
+        "bottom": 243.375,
+        "left": 185
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 189,
+          "y": 151.375,
+          "tag": "DETAILS",
+          "className": "e_group",
+          "inside": false
+        },
+        {
+          "x": 815,
+          "y": 151.375,
+          "tag": "SECTION",
+          "className": "",
+          "inside": false
+        },
+        {
+          "x": 189,
+          "y": 239.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 815,
+          "y": 239.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 195.375,
+          "tag": "H3",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 151.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 815,
+          "y": 195.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 502,
+          "y": 239.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 189,
+          "y": 195.375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 49,
+        "y": 267.78125,
+        "width": 222,
+        "height": 134,
+        "top": 267.78125,
+        "right": 271,
+        "bottom": 401.78125,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.21086251069012,
+          "y": 273.671757833397,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 263.7891374893099,
+          "y": 273.671757833397,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 56.21086251069012,
+          "y": 395.890742166603,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 263.7891374893099,
+          "y": 395.890742166603,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 334.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 271.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 334.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 397.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 334.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 49,
+        "y": 286.59375,
+        "width": 222,
+        "height": 98,
+        "top": 286.59375,
+        "right": 271,
+        "bottom": 384.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.56675595413912,
+          "y": 292.09378755080616,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 263.4332440458609,
+          "y": 292.09378755080616,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 56.56675595413912,
+          "y": 379.09371244919384,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 263.4332440458609,
+          "y": 379.09371244919384,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 335.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 290.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 335.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 380.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 335.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 16,
+        "y": 270.59375,
+        "width": 288,
+        "height": 134,
+        "top": 270.59375,
+        "right": 304,
+        "bottom": 404.59375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -372,
+        "width": 320,
+        "height": 85,
+        "top": -372,
+        "right": 320,
+        "bottom": -287,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.49929714604425,
+          "y": 276.1684337157199,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 276.1684337157199,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 23.49929714604425,
+          "y": 399.0190662842801,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 399.0190662842801,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 337.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 274.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 337.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 400.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 337.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 16,
+        "y": 443.34375,
+        "width": 288,
+        "height": 134,
+        "top": 443.34375,
+        "right": 304,
+        "bottom": 577.34375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.49929714604425,
+          "y": 448.9184337157199,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 448.9184337157199,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 23.49929714604425,
+          "y": 571.7690662842801,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 571.7690662842801,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 447.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 573.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 16,
+        "y": 601.34375,
+        "width": 288,
+        "height": 176,
+        "top": 601.34375,
+        "right": 304,
+        "bottom": 777.34375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.18945551116176,
+          "y": 607.2574233066971,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.8105444888382,
+          "y": 607.2574233066971,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 23.18945551116176,
+          "y": 771.4300766933029,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.8105444888382,
+          "y": 771.4300766933029,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 605.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 773.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 17,
+        "y": 267.09375,
+        "width": 286,
+        "height": 135.1875,
+        "top": 267.09375,
+        "right": 303,
+        "bottom": 402.28125,
+        "left": 17
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 21,
+          "y": 271.09375,
+          "tag": "DETAILS",
+          "className": "e_group",
+          "inside": false
+        },
+        {
+          "x": 299,
+          "y": 271.09375,
+          "tag": "SECTION",
+          "className": "",
+          "inside": false
+        },
+        {
+          "x": 21,
+          "y": 398.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 299,
+          "y": 398.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 334.6875,
+          "tag": "SPAN",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 271.09375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 299,
+          "y": 334.6875,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 398.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 334.6875,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 49,
+        "y": 379.78125,
+        "width": 222,
+        "height": 134,
+        "top": 379.78125,
+        "right": 271,
+        "bottom": 513.78125,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.21086251069012,
+          "y": 385.671757833397,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 263.7891374893099,
+          "y": 385.671757833397,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 56.21086251069012,
+          "y": 507.890742166603,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 263.7891374893099,
+          "y": 507.890742166603,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 446.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 383.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 446.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 509.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 446.78125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 49,
+        "y": 398.59375,
+        "width": 222,
+        "height": 98,
+        "top": 398.59375,
+        "right": 271,
+        "bottom": 496.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.56675595413912,
+          "y": 404.09378755080616,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 263.4332440458609,
+          "y": 404.09378755080616,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 56.56675595413912,
+          "y": 491.09371244919384,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 263.4332440458609,
+          "y": 491.09371244919384,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 447.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 402.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 447.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 492.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 447.59375,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 16,
+        "y": 382.59375,
+        "width": 288,
+        "height": 134,
+        "top": 382.59375,
+        "right": 304,
+        "bottom": 516.59375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -260,
+        "width": 320,
+        "height": 85,
+        "top": -260,
+        "right": 320,
+        "bottom": -175,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.49929714604425,
+          "y": 388.1684337157199,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 388.1684337157199,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 23.49929714604425,
+          "y": 511.0190662842801,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 511.0190662842801,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 449.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 386.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 449.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 512.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 449.59375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 16,
+        "y": 443.34375,
+        "width": 288,
+        "height": 134,
+        "top": 443.34375,
+        "right": 304,
+        "bottom": 577.34375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.49929714604425,
+          "y": 448.9184337157199,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 448.9184337157199,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 23.49929714604425,
+          "y": 571.7690662842801,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 296.5007028539558,
+          "y": 571.7690662842801,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 447.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 573.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 510.34375,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 16,
+        "y": 601.34375,
+        "width": 288,
+        "height": 176,
+        "top": 601.34375,
+        "right": 304,
+        "bottom": 777.34375,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 23.18945551116176,
+          "y": 607.2574233066971,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.8105444888382,
+          "y": 607.2574233066971,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 23.18945551116176,
+          "y": 771.4300766933029,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 296.8105444888382,
+          "y": 771.4300766933029,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 605.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 300,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 773.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 689.34375,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 17,
+        "y": 379.09375,
+        "width": 286,
+        "height": 135.1875,
+        "top": 379.09375,
+        "right": 303,
+        "bottom": 514.28125,
+        "left": 17
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 21,
+          "y": 383.09375,
+          "tag": "DETAILS",
+          "className": "e_group",
+          "inside": false
+        },
+        {
+          "x": 299,
+          "y": 383.09375,
+          "tag": "SECTION",
+          "className": "",
+          "inside": false
+        },
+        {
+          "x": 21,
+          "y": 510.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 299,
+          "y": 510.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 446.6875,
+          "tag": "SPAN",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 383.09375,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 299,
+          "y": 446.6875,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 510.28125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 446.6875,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 33,
+        "y": 366.578125,
+        "width": 309,
+        "height": 47,
+        "top": 366.578125,
+        "right": 342,
+        "bottom": 413.578125,
+        "left": 33
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 37,
+          "y": 370.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 370.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 409.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 409.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 390.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 370.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 390.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 409.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 390.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 33,
+        "y": 369.296875,
+        "width": 309,
+        "height": 50,
+        "top": 369.296875,
+        "right": 342,
+        "bottom": 419.296875,
+        "left": 33
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -210,
+        "width": 375,
+        "height": 69,
+        "top": -210,
+        "right": 375,
+        "bottom": -141,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 37,
+          "y": 373.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 373.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 415.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 415.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 394.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 373.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 394.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 415.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 394.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 16,
+        "y": 370.296875,
+        "width": 343,
+        "height": 47,
+        "top": 370.296875,
+        "right": 359,
+        "bottom": 417.296875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -375,
+        "width": 375,
+        "height": 69,
+        "top": -375,
+        "right": 375,
+        "bottom": -306,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 374.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 374.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 413.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 413.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 393.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 374.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 393.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 413.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 393.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 16,
+        "y": 685.671875,
+        "width": 343,
+        "height": 47,
+        "top": 685.671875,
+        "right": 359,
+        "bottom": 732.671875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 16,
+        "y": 744.671875,
+        "width": 343,
+        "height": 47,
+        "top": 744.671875,
+        "right": 359,
+        "bottom": 791.671875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "original",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 17,
+        "y": 448.078125,
+        "width": 341,
+        "height": 48,
+        "top": 448.078125,
+        "right": 358,
+        "bottom": 496.078125,
+        "left": 17
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 21,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 472.078125,
+          "tag": "H3",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 472.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 472.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "save",
+      "rect": {
+        "x": 33,
+        "y": 422.578125,
+        "width": 309,
+        "height": 47,
+        "top": 422.578125,
+        "right": 342,
+        "bottom": 469.578125,
+        "left": 33
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 37,
+          "y": 426.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 426.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 465.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 465.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 446.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 426.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 446.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 465.578125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 446.078125,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "last-field",
+      "rect": {
+        "x": 33,
+        "y": 425.296875,
+        "width": 309,
+        "height": 50,
+        "top": 425.296875,
+        "right": 342,
+        "bottom": 475.296875,
+        "left": 33
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -154,
+        "width": 375,
+        "height": 69,
+        "top": -154,
+        "right": 375,
+        "bottom": -85,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 37,
+          "y": 429.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 429.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 471.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 471.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 450.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 429.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 338,
+          "y": 450.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 471.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        },
+        {
+          "x": 37,
+          "y": 450.296875,
+          "tag": "INPUT",
+          "className": "e_control",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "form",
+      "target": "review",
+      "rect": {
+        "x": 16,
+        "y": 426.296875,
+        "width": 343,
+        "height": 47,
+        "top": 426.296875,
+        "right": 359,
+        "bottom": 473.296875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": -319,
+        "width": 375,
+        "height": 69,
+        "top": -319,
+        "right": 375,
+        "bottom": -250,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 430.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 430.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 469.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 469.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 449.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 430.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 449.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 469.296875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 449.796875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "back",
+      "rect": {
+        "x": 16,
+        "y": 685.671875,
+        "width": 343,
+        "height": 47,
+        "top": 685.671875,
+        "right": 359,
+        "bottom": 732.671875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 689.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 728.671875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 709.171875,
+          "tag": "BUTTON",
+          "className": "e_secondary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "review",
+      "target": "confirm",
+      "rect": {
+        "x": 16,
+        "y": 744.671875,
+        "width": 343,
+        "height": 47,
+        "top": 744.671875,
+        "right": 359,
+        "bottom": 791.671875,
+        "left": 16
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 20,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 748.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 355,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 787.671875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        },
+        {
+          "x": 20,
+          "y": 768.171875,
+          "tag": "BUTTON",
+          "className": "e_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 100,
+      "variant": "symmetric",
+      "view": "detail",
+      "target": "last-group",
+      "rect": {
+        "x": 17,
+        "y": 448.078125,
+        "width": 341,
+        "height": 48,
+        "top": 448.078125,
+        "right": 358,
+        "bottom": 496.078125,
+        "left": 17
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 21,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 472.078125,
+          "tag": "H3",
+          "className": "",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 452.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 354,
+          "y": 472.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 492.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        },
+        {
+          "x": 21,
+          "y": 472.078125,
+          "tag": "SUMMARY",
+          "className": "e_groupHeading",
+          "inside": true
+        }
+      ]
+    }
+  ]
+}

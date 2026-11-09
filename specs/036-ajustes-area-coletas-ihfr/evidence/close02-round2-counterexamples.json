@@ -1,0 +1,108 @@
+{
+  "kind": "synthetic-chromium-round2-B-counterexamples",
+  "browser": "153.0.8010.12",
+  "node": "v24.14.0",
+  "result": "PASS",
+  "navigation": [
+    {
+      "width": 320,
+      "oldMatches": 2,
+      "oldClick": "STRICT_MODE_VIOLATION",
+      "namedPrimaryMatches": 1,
+      "correctedClick": "PASS"
+    },
+    {
+      "width": 1440,
+      "oldMatches": 2,
+      "oldClick": "STRICT_MODE_VIOLATION",
+      "namedPrimaryMatches": 1,
+      "correctedClick": "PASS"
+    }
+  ],
+  "focus": [
+    {
+      "width": 320,
+      "height": 900,
+      "rail": 133,
+      "red": {
+        "result": "RATIO1_FAIL_AFTER_DEFERRED_FOCUS_REVEAL",
+        "before": {
+          "top": 445,
+          "bottom": 529,
+          "height": 84
+        },
+        "after": {
+          "top": -43,
+          "bottom": 41,
+          "height": 84
+        }
+      },
+      "green": {
+        "result": "RATIO1_PASS_AFTER_OFFICIAL_READINESS_BEFORE_SINGLE_SCROLL",
+        "rect": {
+          "top": 445,
+          "bottom": 529,
+          "height": 84
+        }
+      }
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "rail": 110,
+      "red": {
+        "result": "RATIO1_FAIL_AFTER_DEFERRED_FOCUS_REVEAL",
+        "before": {
+          "top": 182,
+          "bottom": 266,
+          "height": 84
+        },
+        "after": {
+          "top": -545,
+          "bottom": -461,
+          "height": 84
+        }
+      },
+      "green": {
+        "result": "RATIO1_PASS_AFTER_OFFICIAL_READINESS_BEFORE_SINGLE_SCROLL",
+        "rect": {
+          "top": 182,
+          "bottom": 266,
+          "height": 84
+        }
+      }
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "rail": 0,
+      "red": {
+        "result": "RATIO1_FAIL_AFTER_DEFERRED_FOCUS_REVEAL",
+        "before": {
+          "top": 190,
+          "bottom": 274,
+          "height": 84
+        },
+        "after": {
+          "top": -420,
+          "bottom": -336,
+          "height": 84
+        }
+      },
+      "green": {
+        "result": "RATIO1_PASS_AFTER_OFFICIAL_READINESS_BEFORE_SINGLE_SCROLL",
+        "rect": {
+          "top": 190,
+          "bottom": 274,
+          "height": 84
+        }
+      }
+    }
+  ],
+  "nativeFunctions": "Actual ownScroll/revealFocus from product and waitForMissionRender from official evidence helper, extracted by AST; no product changes",
+  "runtimeQualification": "Synthetic DOM causal counterexample, not FullStack/starter app runtime",
+  "ratioRelaxed": false,
+  "productTimeoutChanged": false,
+  "bun": false,
+  "database": false
+}

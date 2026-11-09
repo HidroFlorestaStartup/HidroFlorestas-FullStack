@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-22T00:17:13.092066+00:00",
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "method": "POST",
+  "path": "/api/auth/logout",
+  "runtimeContext": "same IMP006 server configuration as failed NAV4; no fixture, no guard changes; fresh ephemeral JWT unused by logout",
+  "cases": [
+    {
+      "requestOrigin": "http://127.0.0.1:3000",
+      "requestHost": "127.0.0.1:3000",
+      "cookiesSent": false,
+      "status": 403,
+      "success": false,
+      "code": "FORBIDDEN"
+    },
+    {
+      "requestOrigin": "http://localhost:3000",
+      "requestHost": "127.0.0.1:3000",
+      "cookiesSent": false,
+      "status": 200,
+      "success": true,
+      "code": null
+    }
+  ]
+}

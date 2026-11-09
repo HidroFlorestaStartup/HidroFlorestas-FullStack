@@ -1,0 +1,15 @@
+IMP-006 PostgreSQL is already running.
+IMP-006 schema owned by this run: imp006_test_a916956aa1e94abfba14391317750087
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-commit","snapshot":[{"tx":"10353","snapshot":"10353:10353:","pid":17944}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-commit","snapshot":[{"tx":"10355","snapshot":"10355:10355:","pid":17944}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-commit","snapshot":[{"tx":"10357","snapshot":"10357:10357:","pid":17944}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable commit conflicts resolve the resulting hourly quota (1539.0591ms)
+IMP-006 schema owned by this run: imp006_test_23f7695cfc7d4dc6ba0dffe2bcbe1c94
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"before-write","snapshot":[{"tx":"10384","snapshot":"10384:10384:","pid":40392}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"before-write","snapshot":[{"tx":"10386","snapshot":"10386:10386:","pid":40392}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"before-write","snapshot":[{"tx":"10388","snapshot":"10388:10388:","pid":40392}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable write conflicts resolve the resulting hourly quota (1054.7178ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3358.2679

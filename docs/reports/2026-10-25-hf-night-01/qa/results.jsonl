@@ -1,0 +1,1 @@
+{"gate":"Unit","command":"npm run test:unit","snapshot":"e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59","startedUtc":"2026-10-25T04:02:54.607Z","endedUtc":"2026-10-25T04:03:17.827Z","exitCode":0,"result":"PASS","environment":"Windows/Node24.19/owned-loopback-PostgreSQL17","log":"docs\\reports\\2026-10-25-hf-night-01\\qa\\unit-1792900974607.log"}

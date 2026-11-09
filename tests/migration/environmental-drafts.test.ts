@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { withMigrationDatabase, applyAreaMigration, applyCollectionMigration, applyEnvironmentalMigration } from "./migration-test-harness";
+import { readFile } from "node:fs/promises";
+test("draft migration is additive and enforces personal uniqueness, positive revision and restricted ownership",async()=>withMigrationDatabase(async client=>{
+ await applyAreaMigration(client);await applyCollectionMigration(client);await applyEnvironmentalMigration(client);
+ const before=(await client.query('SELECT count(*)::int AS count FROM "EnvironmentalMeasurementSet"')).rows;
+ await client.query(await readFile("prisma/migrations/20261010000100_environmental_drafts/migration.sql","utf8"));
+ assert.deepEqual((await client.query('SELECT count(*)::int AS count FROM "EnvironmentalMeasurementSet"')).rows,before);
+ await client.query(`INSERT INTO "User" (id,email,"firstName","lastName",password,"updatedAt") VALUES ('draft-owner','draft-owner@migration.test.invalid','Synthetic','Test','synthetic',now())`);
+ await client.query("BEGIN");
+ await client.query(`INSERT INTO "LaboratoryRoom" (id,name,"userId","accessCode","updatedAt") VALUES ('draft-lab','Synthetic','draft-owner','draft-lab-code',now())`);
+ await client.query(`INSERT INTO "ResearchersLinked" (id,"userId","laboratoryRoomId",role) VALUES ('draft-membership','draft-owner','draft-lab','OWNER')`);
+ await client.query("COMMIT");
+ await client.query(`INSERT INTO "CollectionArea" (id,name,"userId","laboratoryRoomId",latitude,longitude,"updatedAt") VALUES ('draft-area','Synthetic','draft-owner','draft-lab',0,0,now())`);
+ await client.query(`INSERT INTO "CollectionData" (id,"userId","laboratoryRoomId","collectionAreaId","updatedAt") VALUES ('draft-collection','draft-owner','draft-lab','draft-area',now())`);
+ await client.query(`INSERT INTO "EnvironmentalDraft" (id,"userId","collectionDataId","formVersion",fields,"lastSaveKey","lastSaveHash","updatedAt") VALUES ('draft','draft-owner','draft-collection','environmental-draft-v1','{}','synthetic',$1,now())`,["a".repeat(64)]);
+ for(const change of ['revision=0',`"formVersion"='v99'`,`fields='[]'`])await assert.rejects(client.query(`UPDATE "EnvironmentalDraft" SET ${change}`));
+ await assert.rejects(client.query(`INSERT INTO "EnvironmentalDraft" SELECT 'duplicate',"userId","collectionDataId","formVersion",fields,revision,"lastSaveKey","lastSaveHash","createdAt","updatedAt" FROM "EnvironmentalDraft"`),/EnvironmentalDraft_userId_collectionDataId_key/);
+ await assert.rejects(client.query(`DELETE FROM "EnvironmentalDraft" WHERE id='absent'; DELETE FROM "CollectionData" WHERE id='draft-collection'`),/EnvironmentalDraft_collectionDataId_fkey/);
+ const foreignKeys=await client.query("SELECT confdeltype FROM pg_constraint WHERE conrelid='\"EnvironmentalDraft\"'::regclass AND contype='f'");assert.ok(foreignKeys.rows.every(r=>r.confdeltype==='r'));
+}));

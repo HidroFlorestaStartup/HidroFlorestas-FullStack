@@ -6,9 +6,12 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useAuth } from "@/contexts/auth.context";
 import { parseAuthEnvelope } from "@/types/auth.type";
 import { AccountShell, accountButtonClass, accountInputClass } from "./account-shell";
+import { useAccountReady } from "./account-controls";
 import { ACCOUNT_NETWORK_MESSAGE, ACCOUNT_RESPONSE_MESSAGE, parseAccountFailure, parseVerificationState, readAccountJson, submitAccountRequest, type VerificationState } from "./account-client";
 
 export function EmailVerificationForm() {
+  const ready = useAccountReady();
+  const inFlight = useRef(false);
   const { fetchUserData, logout } = useAuth();
   const router = useRouter();
   const [state, setState] = useState<VerificationState | null>(null);
@@ -50,14 +53,16 @@ export function EmailVerificationForm() {
   }
 
   async function retryState() {
-    if (busy) return;
+    if (!ready || busy || inFlight.current) return;
+    inFlight.current = true;
     setBusy(true); setError("");
-    try { await refreshState(); } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { setBusy(false); }
+    try { await refreshState(); } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { inFlight.current = false; setBusy(false); }
   }
 
   async function confirm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (busy || !state?.challengeId) return;
+    if (!ready || busy || inFlight.current || !state?.challengeId) return;
+    inFlight.current = true;
     setBusy(true); setError(""); setMessage("");
     try {
       const response = await submitAccountRequest("/api/auth/email-verification/confirm", { challengeId: state.challengeId, code });
@@ -72,11 +77,12 @@ export function EmailVerificationForm() {
         setSessionExpired(response.status === 401);
         await refreshState();
       }
-    } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { setBusy(false); }
+    } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { inFlight.current = false; setBusy(false); }
   }
 
   async function resend() {
-    if (busy || waitSeconds > 0) return;
+    if (!ready || busy || inFlight.current || waitSeconds > 0) return;
+    inFlight.current = true;
     setBusy(true); setError(""); setMessage("");
     resendKey.current ??= crypto.randomUUID();
     try {
@@ -92,12 +98,13 @@ export function EmailVerificationForm() {
         if (failure?.retryAfterSeconds) setRetryAt(Date.now() + failure.retryAfterSeconds * 1000);
         setSessionExpired(response.status === 401);
       }
-    } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { setBusy(false); }
+    } catch { setError(ACCOUNT_NETWORK_MESSAGE); } finally { inFlight.current = false; setBusy(false); }
   }
 
   return <AccountShell title="Confirme seu e-mail" description="Digite o código de seis dígitos recebido por e-mail para continuar.">
     {!sessionExpired && state ? <Link href="/delete-account" className="mb-5 inline-block text-sm text-red-700 underline">Excluir minha conta</Link> : null}
     {loading ? <p role="status">Consultando sua verificação…</p> : null}
+    {busy ? <p role="status" className="mb-4">Processando solicitação…</p> : null}
     {error ? <p ref={errorRef} tabIndex={-1} role="alert" className="mb-4 rounded-lg bg-red-50 p-3 text-red-800">{error}</p> : null}
     {sessionExpired ? <p className="mb-5">Entre com seu e-mail e senha para retomar a verificação. <Link href="/login" className="font-semibold text-amber-800 underline">Ir para o login</Link></p> : null}
     {state?.status === "VERIFIED" ? <p role="status">Seu e-mail já foi confirmado. <Link href="/login" className="font-semibold text-amber-800 underline">Entre para continuar.</Link></p> : null}
@@ -113,6 +120,6 @@ export function EmailVerificationForm() {
     </> : null}
     {message ? <p role="status" aria-live="polite" className="mt-4 text-green-800">{message}</p> : null}
     {!loading && !state && !sessionExpired ? <button type="button" disabled={busy} onClick={retryState} className="mt-4 font-semibold text-amber-800 underline">Tentar novamente</button> : null}
-    <div className="mt-7 flex flex-wrap justify-between gap-3 text-sm"><Link href="/forgot-password" className="text-amber-800 underline">Esqueci minha senha</Link><button type="button" disabled={busy} onClick={() => { void logout(); }} className="text-amber-800 underline">Sair</button></div>
+    <div className="mt-7 flex flex-wrap justify-between gap-3 text-sm"><Link href="/forgot-password" className="text-amber-800 underline">Esqueci minha senha</Link><button type="button" disabled={!ready || busy} onClick={() => { void logout(); }} className="text-amber-800 underline">Sair</button></div>
   </AccountShell>;
 }

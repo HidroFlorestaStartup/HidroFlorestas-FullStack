@@ -1,0 +1,198 @@
+{
+  "id": "HF-UI044-ACEITE-20261105",
+  "date": "2026-11-05",
+  "timezone": "America/Fortaleza",
+  "classification": "DECISAO_CONFIRMADA",
+  "source": "Mensagem de Pedro nesta conversa: confirmação dos três ajustes, aprovação do restante da usabilidade/design/aparência e autorização expressa para registrar, fazer merge e preparar instruções.",
+  "authority": {
+    "by": "Pedro",
+    "acceptance": "ACEITE_HUMANO_COM_TRES_RESSALVAS",
+    "otherPeopleApprovalInferred": false,
+    "operationalHomologation": false,
+    "scientificApproval": false
+  },
+  "acceptanceComment": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6671722605",
+  "integration": {
+    "pr": 51,
+    "reviewedHead": "febee101aa718de5b236f99f8080621c405a1d7f",
+    "merge": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "tree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "developmentBefore": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+    "mainPreserved": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "treeIdenticalToValidatedCandidate": true,
+    "selfApprovalCreated": false
+  },
+  "ci": {
+    "head": "febee101aa718de5b236f99f8080621c405a1d7f",
+    "run": 42101827226,
+    "attempt": 1,
+    "job": 127506292256,
+    "result": "SUCCESS",
+    "gates": [
+      {
+        "gate": "RegressionSetup",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Unit",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Integration",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Migration",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Contract",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "R1",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Build",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Typecheck",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Lint",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "E2E",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Https",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Deletion",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Ihfr",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "Bootstrap",
+        "result": "PASS",
+        "exitCode": 0
+      },
+      {
+        "gate": "SchemaAudit",
+        "result": "PASS",
+        "exitCode": 0
+      }
+    ],
+    "counts": {
+      "E2E": 241,
+      "Integration": 235,
+      "Migration": 37,
+      "Contract": 10,
+      "R1": 17,
+      "Https": 2,
+      "Deletion": 3,
+      "Ihfr": 6
+    },
+    "countsNotSummed": true,
+    "lint": {
+      "errors": 0,
+      "warnings": 2
+    },
+    "localFunctionalSuiteRepeatedThisPublication": false,
+    "mergeHasNewCiExecution": false
+  },
+  "review": {
+    "sha": "febee101aa718de5b236f99f8080621c405a1d7f",
+    "status": "completed",
+    "hasAnyFindings": false,
+    "hasUnresolvedFindings": false,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/51#issuecomment-6668350866"
+  },
+  "corrections": [
+    {
+      "id": "C1",
+      "state": "PENDENTE",
+      "viewports": "desktop e mobile",
+      "requirement": "Remover link IHFR dos cards; manter Abrir coleta/Dados ambientais; preferir Score registrado da própria coleta quando simples com dados existentes; alternativa aceita mantém só dois botões; resumo superior preservado."
+    },
+    {
+      "id": "C2",
+      "state": "PENDENTE",
+      "viewports": "desktop e mobile",
+      "requirement": "Aviso Limites do diagnóstico experimental somente em LEITURA DA COLETA; remover repetição em AÇÕES AUTORIZADAS."
+    },
+    {
+      "id": "C3",
+      "state": "PENDENTE",
+      "viewports": "somente mobile",
+      "requirement": "Após título/retorno: Leitura da coleta, Registro, Dados ambientais, Ações autorizadas; desktop preservado."
+    }
+  ],
+  "executionAuthorization": {
+    "implement": true,
+    "validate": true,
+    "commit": true,
+    "push": true,
+    "openOrUpdatePrTo": "development",
+    "routineExtraConfirmationRequired": false,
+    "futureMergeBy": "Pedro",
+    "futureMergeAuthorized": false,
+    "deployAuthorized": false,
+    "deleteBranchesAuthorized": false
+  },
+  "images": [
+    {
+      "sourceName": "1_Area_RedundantLinkIHFRScreenshot from 2026-11-05 18-35-18.png",
+      "destination": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/01-area-link-ihfr-redundante.png",
+      "size": 187961,
+      "sha256": "f6b535f2a41ee2e3d76fcae9bff73fd30089cedc1285367572d470c123367cee",
+      "gitBlobSha": "de0ac5f15c382ad8bf10efc88851c47a3d4c8a46"
+    },
+    {
+      "sourceName": "2_DetalheDaColeta_Redundant_LimitesDoDiagnosticoScreenshot from 2026-11-05 18-39-14.png",
+      "destination": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/02-detalhe-aviso-experimental-duplicado.png",
+      "size": 226757,
+      "sha256": "8615a03dedf3d0018e59664b53f5e93c60f8d7a7ea464029276830b318ca1b82",
+      "gitBlobSha": "ca01b0f2cdb16ea55e07cf3967d7a409edfa6b81"
+    },
+    {
+      "sourceName": "3_DetalhesDaColeta_LeituraDaColeta_DeveSerOPrimeiroCardNoMobileScreenshot from 2026-11-05 18-46-49.png",
+      "destination": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/03-mobile-prioridade-leitura-da-coleta.png",
+      "size": 63542,
+      "sha256": "3b35a0cfaf1a0f0120a5cb60c8ce5fd146e705650e61fd0e2e96726e8ecc30da",
+      "gitBlobSha": "6b07593ac3b3404ba5ceb5107d056f1494a6fa97"
+    }
+  ],
+  "handoffBranch": "docs/handoff-ui044-correcoes-finais",
+  "implementationState": "NAO_IMPLEMENTADO_NESTE_HANDOFF",
+  "historicalEvidencePreserved": true,
+  "limits": [
+    "GEOCODER_OPERATIONAL_PENDING",
+    "Homologação operacional separada",
+    "IHFR experimental, validação científica pendente",
+    "Nenhuma aprovação atribuída a Luciano",
+    "Sem limpeza ou deploy"
+  ]
+}

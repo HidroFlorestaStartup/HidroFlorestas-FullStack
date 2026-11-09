@@ -1,0 +1,246 @@
+{
+  "capturedUtc": "2026-10-16T03:37:07.506Z",
+  "phase": "before the receipt commit; its exact final SHA and checks are published on PR7",
+  "initial": {
+    "source": "8f183983e9134efd651e15fd872209faf4503468",
+    "audit": "52f612ff9c8aed279212ee5ba61581c3d66474cc",
+    "rc": "f351373ab19eab7d4331d5d72d988f34a621e337",
+    "validation": "59baff4f5cbe44164014aaf760a0651604177abb"
+  },
+  "branches": [
+    {
+      "ref": "review/016-area-covers",
+      "head": "0b154ce1ea5b2e528c1c84227880060ce452adf7",
+      "trees": {
+        "src": "5104e166da5d1d8cff844e3b497eb5ccea56c0c8",
+        "tests": "3081ed37853e86fbc7975fa5e2508af98ec95426",
+        "scripts": "b6d8dce6a71de5ee52e974ab00c43bf984c678b8",
+        "prisma/schema.prisma": "47be09072b12fd65500076e6a9f28e9adaff4889",
+        "package.json": "7cb36c0f1d0d95b18f27408d97092ff69acaf579",
+        "package-lock.json": "723e866807ec248ba80c1868185a94c79978165f",
+        "vercel.json": "dc91711f0af76df3644aa425eec1166a5590248a"
+      }
+    },
+    {
+      "ref": "review/cri-audit-20261010",
+      "head": "3a514097ed027a9af4f286ff7fcf5b2d2277588d",
+      "trees": {
+        "src": "5104e166da5d1d8cff844e3b497eb5ccea56c0c8",
+        "tests": "3081ed37853e86fbc7975fa5e2508af98ec95426",
+        "scripts": "b6d8dce6a71de5ee52e974ab00c43bf984c678b8",
+        "prisma/schema.prisma": "47be09072b12fd65500076e6a9f28e9adaff4889",
+        "package.json": "7cb36c0f1d0d95b18f27408d97092ff69acaf579",
+        "package-lock.json": "723e866807ec248ba80c1868185a94c79978165f",
+        "vercel.json": "dc91711f0af76df3644aa425eec1166a5590248a"
+      }
+    },
+    {
+      "ref": "release/cri-rc-20261010",
+      "head": "ee1242da5e5ffec10ceee8101c8cd6f52b1e06f4",
+      "trees": {
+        "src": "5104e166da5d1d8cff844e3b497eb5ccea56c0c8",
+        "tests": "3081ed37853e86fbc7975fa5e2508af98ec95426",
+        "scripts": "b6d8dce6a71de5ee52e974ab00c43bf984c678b8",
+        "prisma/schema.prisma": "47be09072b12fd65500076e6a9f28e9adaff4889",
+        "package.json": "2ae662addbd1adf18e401f71c75f37654b3a2cfd",
+        "package-lock.json": "6b779938e3b121b69878c0b791b48db778481ccd",
+        "vercel.json": "dc91711f0af76df3644aa425eec1166a5590248a"
+      }
+    },
+    {
+      "ref": "review/cri-rc-validation-20261012",
+      "head": "934158ead60013a0dde3926372984dead3025cd1",
+      "trees": {
+        "src": "5104e166da5d1d8cff844e3b497eb5ccea56c0c8",
+        "tests": "3081ed37853e86fbc7975fa5e2508af98ec95426",
+        "scripts": "b6d8dce6a71de5ee52e974ab00c43bf984c678b8",
+        "prisma/schema.prisma": "47be09072b12fd65500076e6a9f28e9adaff4889",
+        "package.json": "2ae662addbd1adf18e401f71c75f37654b3a2cfd",
+        "package-lock.json": "6b779938e3b121b69878c0b791b48db778481ccd",
+        "vercel.json": "dc91711f0af76df3644aa425eec1166a5590248a"
+      }
+    }
+  ],
+  "commits": [
+    {
+      "sha": "0d90254fc6c3e3f542e8564f95b998a75ff3a470",
+      "parents": [
+        "8f183983e9134efd651e15fd872209faf4503468"
+      ],
+      "subject": "docs(specs): planeja correções CRI-REV e registra política A"
+    },
+    {
+      "sha": "357f6fbaf679c350623451030a52297f817a9721",
+      "parents": [
+        "0d90254fc6c3e3f542e8564f95b998a75ff3a470"
+      ],
+      "subject": "docs(specs): preserva checklist histórico no planejamento focal"
+    },
+    {
+      "sha": "d93124e21974c0e571ad30f28fd04010a399e757",
+      "parents": [
+        "357f6fbaf679c350623451030a52297f817a9721"
+      ],
+      "subject": "fix(images): explicita disponibilidade e valida quotas antes do provedor"
+    },
+    {
+      "sha": "036f54a529b5097c3b8c787b7e598a8af3c76a44",
+      "parents": [
+        "d93124e21974c0e571ad30f28fd04010a399e757"
+      ],
+      "subject": "docs(review): normaliza cópias sanitizadas das evidências RED"
+    },
+    {
+      "sha": "98d8aaca7e3938fed60677c54b14846d4e234c2f",
+      "parents": [
+        "52f612ff9c8aed279212ee5ba61581c3d66474cc",
+        "036f54a529b5097c3b8c787b7e598a8af3c76a44"
+      ],
+      "subject": "merge(review): propaga correções CRI-REV para auditoria"
+    },
+    {
+      "sha": "b842b292bc4cd2580770abda408d6be16eb17a92",
+      "parents": [
+        "f351373ab19eab7d4331d5d72d988f34a621e337",
+        "98d8aaca7e3938fed60677c54b14846d4e234c2f"
+      ],
+      "subject": "merge(rc): recebe disponibilidade e preflight das capas"
+    },
+    {
+      "sha": "a8d5819671d2fda693d9b6b0ebcffd8209fd4627",
+      "parents": [
+        "036f54a529b5097c3b8c787b7e598a8af3c76a44"
+      ],
+      "subject": "docs(specs): planeja retry de conflitos do adaptador após falha no CI"
+    },
+    {
+      "sha": "247fe5e1b1a1864968e0c1118c651c95e288bd0b",
+      "parents": [
+        "a8d5819671d2fda693d9b6b0ebcffd8209fd4627"
+      ],
+      "subject": "fix(images): repete conflitos de commit do adaptador PostgreSQL"
+    },
+    {
+      "sha": "1c28288f73f089064c5dcf14793da423354e4e6d",
+      "parents": [
+        "98d8aaca7e3938fed60677c54b14846d4e234c2f",
+        "247fe5e1b1a1864968e0c1118c651c95e288bd0b"
+      ],
+      "subject": "merge(review): recebe retry de conflitos PostgreSQL nas capas"
+    },
+    {
+      "sha": "b1d770c37eef319d599f6abb7da43a7bcc5c9aab",
+      "parents": [
+        "b842b292bc4cd2580770abda408d6be16eb17a92",
+        "1c28288f73f089064c5dcf14793da423354e4e6d"
+      ],
+      "subject": "merge(rc): sincroniza retry do adaptador sem duplicar dependências"
+    },
+    {
+      "sha": "3add0541110999b4406fd77500e5eff2c47aac64",
+      "parents": [
+        "b1d770c37eef319d599f6abb7da43a7bcc5c9aab"
+      ],
+      "subject": "docs(release): atualiza prontidão e evidências dos achados CRI-REV"
+    },
+    {
+      "sha": "94b37a841e9b2d5beb7e392177c6a766ea637aa9",
+      "parents": [
+        "59baff4f5cbe44164014aaf760a0651604177abb",
+        "3add0541110999b4406fd77500e5eff2c47aac64"
+      ],
+      "subject": "merge(review): sincroniza revisão independente com RC corrigida"
+    },
+    {
+      "sha": "0b154ce1ea5b2e528c1c84227880060ce452adf7",
+      "parents": [
+        "247fe5e1b1a1864968e0c1118c651c95e288bd0b"
+      ],
+      "subject": "docs(handoff): registra publicação, sincronização e re-review dos achados"
+    },
+    {
+      "sha": "3a514097ed027a9af4f286ff7fcf5b2d2277588d",
+      "parents": [
+        "1c28288f73f089064c5dcf14793da423354e4e6d",
+        "0b154ce1ea5b2e528c1c84227880060ce452adf7"
+      ],
+      "subject": "merge(review): propaga recibo final e re-review para auditoria"
+    },
+    {
+      "sha": "edbb7ddef5140262c94cfb940a6842da816273c4",
+      "parents": [
+        "3add0541110999b4406fd77500e5eff2c47aac64",
+        "3a514097ed027a9af4f286ff7fcf5b2d2277588d"
+      ],
+      "subject": "merge(rc): recebe fechamento documental das correções CRI-REV"
+    },
+    {
+      "sha": "ee1242da5e5ffec10ceee8101c8cd6f52b1e06f4",
+      "parents": [
+        "edbb7ddef5140262c94cfb940a6842da816273c4"
+      ],
+      "subject": "docs(release): fecha recibo de publicação e mantém aprovação humana pendente"
+    },
+    {
+      "sha": "934158ead60013a0dde3926372984dead3025cd1",
+      "parents": [
+        "94b37a841e9b2d5beb7e392177c6a766ea637aa9",
+        "ee1242da5e5ffec10ceee8101c8cd6f52b1e06f4"
+      ],
+      "subject": "merge(review): recebe fechamento final da RC sem alterar revisão histórica"
+    }
+  ],
+  "originalCommits": [
+    "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+    "6bf9f2ba94698516282e482b690fbe5d812088f5",
+    "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+    "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+    "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+    "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+    "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+    "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+    "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+    "d8a32d39572785d87744e2b10c87e79ad019ba46",
+    "539f38d52bba207d2822528d4afd6b936aa64d9f"
+  ],
+  "dependencyCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "dependencyOccurrences": {
+    "release/cri-rc-20261010": 1,
+    "review/cri-rc-validation-20261012": 1
+  },
+  "checks": {
+    "ancestry": true,
+    "originalCommitsPreserved": true,
+    "independentHistoricalEvidenceUnchanged": true,
+    "noFunctionalDiffPR7": true
+  },
+  "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "development": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "pr7Files": [
+    "docs/governance/DOCUMENT_REGISTER.md",
+    "docs/plans/completed/revisao-release-candidate-cri-20261012.md",
+    "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+    "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+    "docs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+    "docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+  ],
+  "worktrees": "worktree C:/projetos/consolidados/HidroFlorestas-cri-review-20261015\nHEAD 0b154ce1ea5b2e528c1c84227880060ce452adf7\nbranch refs/heads/review/016-area-covers\n\nworktree C:/projetos/consolidados/HidroFlorestas-cri-audit-20261015\nHEAD 3a514097ed027a9af4f286ff7fcf5b2d2277588d\nbranch refs/heads/review/cri-audit-20261010\n\nworktree C:/projetos/consolidados/HidroFlorestas-cri-rc-20261015\nHEAD ee1242da5e5ffec10ceee8101c8cd6f52b1e06f4\nbranch refs/heads/release/cri-rc-20261010\n\nworktree C:/projetos/consolidados/HidroFlorestas-cri-validation-20261015\nHEAD 934158ead60013a0dde3926372984dead3025cd1\nbranch refs/heads/review/cri-rc-validation-20261012"
+}

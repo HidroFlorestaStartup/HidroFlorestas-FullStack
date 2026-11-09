@@ -1,3 +1,4 @@
+import styles from "./environmental.module.css";
 import { formatCollectionOccurrence } from "@/lib/collection-date-time";
 import Link from "next/link";
 import { ArrowLeft, ClipboardList } from "lucide-react";
@@ -12,6 +13,9 @@ import { environmentalDataService } from "@/app/api/server/services/environmenta
 import type { EnvironmentalContext } from "@/types/environmental-data.type";
 import { EnvironmentalDetail } from "./environmental-data-detail";
 import { EnvironmentalForm } from "./environmental-data-form";
+import { environmentalDraftService } from "@/app/api/server/environmental-data/draft.service";
+import { EnvironmentalDraftActions } from "./environmental-draft-actions";
+import { makeEnvironmentalInitiatorProof } from "@/app/api/server/environmental-data/environmental-initiation";
 
 export async function EnvironmentalDataPage({
   params,
@@ -23,9 +27,12 @@ export async function EnvironmentalDataPage({
   const ids = await params;
   let collection;
   let data;
+  let draft;
+  let principalId = "";
 
   try {
     const principal = await requireAuth();
+    principalId = principal.id;
     collection = (
       await collectionsService.detail(
         principal.id,
@@ -36,6 +43,7 @@ export async function EnvironmentalDataPage({
     ).collection;
     data = (await environmentalDataService.detail(principal.id, ids))
       .environmentalData;
+    draft = await environmentalDraftService.detail(principal.id, ids);
   } catch (error) {
     if (error instanceof AuthBoundaryError && error.code === "UNAUTHORIZED") {
       redirect("/login");
@@ -48,17 +56,18 @@ export async function EnvironmentalDataPage({
     throw new Error("Não foi possível carregar os dados ambientais.");
   }
 
+  const initiatorProof = makeEnvironmentalInitiatorProof(principalId);
   const collectionPath = `/dashboard/laboratories/${ids.laboratoryId}/areas/${ids.areaId}/collections/${ids.collectionId}`;
   const basePath = `${collectionPath}/environmental-data`;
 
   return (
     <article
       aria-labelledby="environmental-title"
-      className="mx-auto max-w-6xl space-y-6 px-1 pb-24 pt-4 sm:px-4 md:pb-4"
+      className={styles.page}
     >
       <Link
         href={collectionPath}
-        className="inline-flex items-center gap-2 font-semibold text-amber-800 hover:underline"
+        className={styles.back}
       >
         <ArrowLeft size={18} aria-hidden="true" />
         Voltar à coleta
@@ -69,7 +78,7 @@ export async function EnvironmentalDataPage({
         </p>
         <h1
           id="environmental-title"
-          className="mt-1 text-3xl font-bold tracking-tight text-slate-900"
+          className={styles.title}
         >
           {registration && !data
             ? "Registrar dados ambientais"
@@ -81,13 +90,13 @@ export async function EnvironmentalDataPage({
       </header>
       <section
         aria-label="Origem da coleta"
-        className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+        className={styles.card}
       >
         <div className="mb-4 flex items-center gap-2 font-semibold text-slate-800">
           <ClipboardList size={20} aria-hidden="true" />
           Coleta de origem
         </div>
-        <dl className="grid gap-4 text-sm sm:grid-cols-2">
+        <dl className={styles.context}>
           <div>
             <dt className="text-slate-500">Laboratório</dt>
             <dd className="font-semibold">{collection.laboratory.name}</dd>
@@ -109,7 +118,7 @@ export async function EnvironmentalDataPage({
       {collection.readOnly && (
         <p
           role="status"
-          className="rounded-xl border border-amber-200 bg-amber-50 p-4 font-semibold text-amber-950"
+          className={styles.notice}
         >
           Laboratório inativo — somente leitura.
         </p>
@@ -118,6 +127,8 @@ export async function EnvironmentalDataPage({
         <EnvironmentalForm
           apiPath={basePath.replace("/dashboard/", "/api/")}
           basePath={basePath}
+          initialDraft={draft}
+          initiatorProof={initiatorProof}
         />
       ) : (
         <EnvironmentalDetail
@@ -126,6 +137,7 @@ export async function EnvironmentalDataPage({
           basePath={basePath}
         />
       )}
+      {draft && (!registration || data || collection.readOnly) && <EnvironmentalDraftActions apiPath={basePath.replace("/dashboard/", "/api/")} initialDraft={draft} readOnly={collection.readOnly} initiatorProof={initiatorProof} />}
     </article>
   );
 }

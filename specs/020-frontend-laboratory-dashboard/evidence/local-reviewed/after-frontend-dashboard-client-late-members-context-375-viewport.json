@@ -1,0 +1,38 @@
+{
+  "name": "client-late-members-context-375",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-client-late-members-context-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 755,
+      "extent": 839
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "a",
+    "x": 33,
+    "y": 365,
+    "width": 309,
+    "height": 44
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

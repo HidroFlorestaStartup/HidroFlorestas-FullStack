@@ -1,0 +1,10 @@
+{
+  "artifact_id": 12288662735,
+  "expected_digest": "sha256:fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+  "local_zip_sha256": "fc88413bfde9e5af9c43e08c1de11a4de59dd9eccce343b74d00ab3b45df843f",
+  "digest_verified": true,
+  "zip_bytes": 20691926,
+  "archive_entries": 523,
+  "extracted_files": 523,
+  "evidence_directory": "/workspace/scratch/a76ba001bd5a/evidence/phase7-r3-v3-candidate"
+}

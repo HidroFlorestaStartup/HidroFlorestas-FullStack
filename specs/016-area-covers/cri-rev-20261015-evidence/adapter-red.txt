@@ -1,0 +1,63 @@
+✔ CRI-REV-002 transaction retries explicit conflict P2034 (1.2875ms)
+✔ CRI-REV-002 transaction retries explicit conflict P2002 (0.1703ms)
+✖ CRI-REV-002 transaction retries explicit conflict 40001 (0.1775ms)
+✖ CRI-REV-002 transaction retries explicit conflict 40P01 (0.2921ms)
+✖ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (0.3181ms)
+✖ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (0.4139ms)
+✖ CRI-REV-002 transaction retry remains bounded to three and sanitized (1.9156ms)
+✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.2319ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 3
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 696.9886
+
+✖ failing tests:
+
+test at tests\integration\area-cover-transactions.test.ts:2:1883
+✖ CRI-REV-002 transaction retries explicit conflict 40001 (0.1775ms)
+  Error: INTERNAL_ERROR
+      at AreaCoverService.transaction (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\src\app\api\server\images\service.ts:16:390) {
+    code: 'INTERNAL_ERROR'
+  }
+
+test at tests\integration\area-cover-transactions.test.ts:2:1883
+✖ CRI-REV-002 transaction retries explicit conflict 40P01 (0.2921ms)
+  Error: INTERNAL_ERROR
+      at AreaCoverService.transaction (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\src\app\api\server\images\service.ts:16:390) {
+    code: 'INTERNAL_ERROR'
+  }
+
+test at tests\integration\area-cover-transactions.test.ts:2:2182
+✖ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (0.3181ms)
+  Error: INTERNAL_ERROR
+      at AreaCoverService.transaction (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\src\app\api\server\images\service.ts:16:390) {
+    code: 'INTERNAL_ERROR'
+  }
+
+test at tests\integration\area-cover-transactions.test.ts:2:2564
+✖ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (0.4139ms)
+  Error: INTERNAL_ERROR
+      at AreaCoverService.transaction (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\src\app\api\server\images\service.ts:16:390) {
+    code: 'INTERNAL_ERROR'
+  }
+
+test at tests\integration\area-cover-transactions.test.ts:2:2925
+✖ CRI-REV-002 transaction retry remains bounded to three and sanitized (1.9156ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 3
+
+      at TestContext.<anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-cover-transactions.test.ts:11:342)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

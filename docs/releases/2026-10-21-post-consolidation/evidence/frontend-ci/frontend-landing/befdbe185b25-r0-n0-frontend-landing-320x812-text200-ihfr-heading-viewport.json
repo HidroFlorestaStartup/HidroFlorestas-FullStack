@@ -1,0 +1,17 @@
+{
+  "width": 320,
+  "height": 812,
+  "scrollX": 0,
+  "scrollY": 5784,
+  "documentWidth": 320,
+  "activeTag": "BODY",
+  "rootFontSizePx": 32,
+  "physicalDevice": false,
+  "fullPage": false,
+  "animations": "allow",
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "scenarioId": "befdbe185b25",
+  "evidenceKind": "application-viewport",
+  "textScale": 200,
+  "note": "Public application, Chromium emulation; not manual accessibility acceptance."
+}

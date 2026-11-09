@@ -289,3 +289,17 @@ e scheduler operacional. Push não executado: risco da integração histórica
 ainda não comprovado. Nenhum merge, force-push ou alteração de produção/juniors.
 Nova solicitação do usuário de implementar exclusão de conta será uma feature
 separada, sem alterar esta homologação antes de suas próprias verificações.
+
+
+## Reconciliação de 2026-10-10
+
+Nenhuma ação remota nesta execução. Aprovações antigas de destinos não autorizam operar recursos remotos pelo pedido v1.0 atual. [Matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) preserva o Gate B: comprovar reset por link (recebimento/consumo/revogação) e reenvio com código anterior recusado. T025 e fechamento T028 da spec 012 continuam abertos. O roteiro existente é reutilizado após autorização operacional específica, sem nova aprovação redundante de políticas já confirmadas.
+
+
+## Checkpoint local integrado — 2026-10-10
+
+Regressão de mail/contas após drafts/capas executada em PostgreSQL próprio e
+transporte sintético; exclusão dedicada e HTTPS também passaram. [Evidências reais](../../specs/016-area-covers/implementation-evidence.md).
+Gate B de reset recebido/reenvio antigo invalidado e aceite humano de exclusão
+continuam pendentes; reutilizar este roteiro somente após autorização específica
+do destino e candidato. Nenhum SMTP/scheduler/deploy foi alterado nesta sessão.

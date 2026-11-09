@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "hf-synthetic-restore/v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "startedUtc": "2026-10-25T05:15:34.962Z",
+  "result": "FAIL",
+  "scope": "synthetic local logical restore only; operational recovery not claimed",
+  "stages": [
+    {
+      "stage": "pg_dump",
+      "command": "pg_dump --format=custom --no-acl --file <private-dump> --dbname hf_night_restore_source_485ed76a",
+      "durationMs": 1.8085000000000946,
+      "exitCode": 1
+    }
+  ],
+  "sourceAndTargetPreserved": true,
+  "runId": "485ed76a",
+  "sourceDatabase": "hf_night_restore_source_485ed76a",
+  "targetDatabase": "hf_night_restore_target_485ed76a",
+  "sourceSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "functionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+  "postgresExeSha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+  "dump": {
+    "privateIgnored": true,
+    "published": false
+  },
+  "freshTargetPublicTables": 0,
+  "safeErrorCode": "NATIVE_TOOL_FAILED",
+  "failedStage": "pg_dump",
+  "exitCode": 1,
+  "endedUtc": "2026-10-25T05:15:35.952Z",
+  "durationMs": 990.5533
+}

@@ -1,0 +1,559 @@
+{
+  "id": "HF-UI044-INT-20261105",
+  "authority": {
+    "person": "Pedro Vítor",
+    "source": "Confirmação para iniciar a preparação recomendada nesta conversa",
+    "mergeAuthorized": false,
+    "cleanupAuthorized": false,
+    "humanAcceptance": "PENDING"
+  },
+  "developmentBase": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+  "codeCandidate": "3c9b9c83e3abca48ede0b8c4f03343e4b4aa3698",
+  "codeCandidateTree": "0f134faf3d69c87a449f908d106d3986a34192a1",
+  "branch": "integrate/hf-ui044-aceite-20261105",
+  "sources": [
+    {
+      "pr": 44,
+      "sha": "972f9b00189bf09117883913d8c4fa63e69f4d2f"
+    },
+    {
+      "pr": 45,
+      "sha": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905"
+    },
+    {
+      "pr": 46,
+      "sha": "e5d030918bc0c04c321aff42cbc2e3fb6faad256"
+    },
+    {
+      "pr": 47,
+      "sha": "ca1d03b49c214986c7640d80e6e78d8067753ae2"
+    },
+    {
+      "pr": 48,
+      "sha": "641be73e32bcbaed282cac81dec9ae85a52b32de"
+    },
+    {
+      "pr": 49,
+      "sha": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73"
+    },
+    {
+      "pr": 50,
+      "sha": "3c9b9c83e3abca48ede0b8c4f03343e4b4aa3698"
+    }
+  ],
+  "paths": [
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/criterios-de-aceite.md",
+      "sourceBlob": "4e27ec70e2b07540a6f65bd68ad57862c77fc8a7",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/criterios-de-aceite.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/decisoes-e-escopo.md",
+      "sourceBlob": "6bf9c2e1308a5e13139d0e25d160e767c4d8bff1",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/decisoes-e-escopo.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/evidencias-de-preparacao.json",
+      "sourceBlob": "5bd9df4032e03e3c7835445505898e0d8c226e50",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/evidencias-de-preparacao.json",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/plano-de-execucao.md",
+      "sourceBlob": "4365ad290062cdcc1419af17a196ff323a6c845f",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/plano-de-execucao.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/prompt-de-execucao.md",
+      "sourceBlob": "d6c3cadbf965e1240b298cf92447ffd701bde389",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/prompt-de-execucao.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/readme.md",
+      "sourceBlob": "a6a761ac31a8d9684d29a864fda2ca9235941a80",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/readme.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias-visuais.md",
+      "sourceBlob": "f09c795301e8d8ef1f4a0f931c52843f22d92824",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias-visuais.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-area.png",
+      "sourceBlob": "4671c9613b2e72b8ab9da27d79742e3c5efa7c1a",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-area.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-detalhe-coleta.png",
+      "sourceBlob": "5bb8ecccb0dc28a327150048ad69f31a3dc6d7fd",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-detalhe-coleta.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-laboratorio-resumo.png",
+      "sourceBlob": "f5176ed84fc9a5e7d53727a86864b27764004943",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-laboratorio-resumo.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-layout-mobile.png",
+      "sourceBlob": "24052965a5d73436ee5dd0e34e68db428569b29e",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-layout-mobile.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-workspace.png",
+      "sourceBlob": "7bfe240b30f98d0b6cb89eb56b446a799ba35c6e",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/fullstack-workspace.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-area.png",
+      "sourceBlob": "d69c8861d832e98572f67bc9c2fe2262d4c48b22",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-area.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-coleta-confirmada.png",
+      "sourceBlob": "72356a9b2889a14489f926c073ad18ae2633522c",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-coleta-confirmada.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-layout-mobile.png",
+      "sourceBlob": "5e068df5ddb35b57ddd0cced7904291bacd2206d",
+      "destination": "docs/plans/active/ajustes-interface-pos-testes-20261030/referencias/lovable-layout-mobile.png",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "PROJECT_CONTEXT.md",
+      "sourceBlob": "de1326c30d0931d7286a1a6a475fd438860e2e6e",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr44/PROJECT_CONTEXT.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "d3b232b71585db0dbc62a69cc8a0750f028143bf"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "docs/governance/DOCUMENT_REGISTER.md",
+      "sourceBlob": "688560a53bdc26b84ca8bfa38e03a17ec7879d8d",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr44/docs/governance/DOCUMENT_REGISTER.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "580a707433195232a722cd741bd03e4c2a2bcec8"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "d9d99fd1fee138d598b9a0581692ce765f0a0db1",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr44/vercel.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "13840216920fd01b7ffdff765b9ec623ba650600"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/README.md",
+      "sourceBlob": "db411768e2f8281dd4460bb85644a335c85b23ca",
+      "destination": "docs/plans/active/hf-ui044-g0/README.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/fechamento-20261031.md",
+      "sourceBlob": "4eba97b76cdf8027175155d4196bca0d5a80b8a7",
+      "destination": "docs/plans/active/hf-ui044-g0/fechamento-20261031.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/handoff-de-execucao.md",
+      "sourceBlob": "b23e568205ffd3109022879c7407dd490921fd8f",
+      "destination": "docs/plans/active/hf-ui044-g0/handoff-de-execucao.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-a5-ihfr-shell.md",
+      "sourceBlob": "1a6af70a5f13db3415aecc394f5975a31273cbde",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-a5-ihfr-shell.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-b-ui06-comparacao.md",
+      "sourceBlob": "26524a75f54ca136f2fbe1abb5781b2893692494",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-b-ui06-comparacao.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-c-spec037.md",
+      "sourceBlob": "ab9e090c8954e99b8c6b801dd8dda9d99e687b51",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-c-spec037.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-coordenador.md",
+      "sourceBlob": "f60e01fe44eedcbca73a115150d4c8a8a55f180a",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-coordenador.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-operacional-alunos.md",
+      "sourceBlob": "b456be8f7a73c506de59baec4bd1f00f9a833c8b",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-operacional-alunos.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/fechamento-qa-composicao-independente.md",
+      "sourceBlob": "aac382448c276a7cf2d4520b315914e3038f13f4",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/fechamento-qa-composicao-independente.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-a.md",
+      "sourceBlob": "1cec2a77d0be7b7e0e4661326c6b188a305e3d08",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-a.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-b.md",
+      "sourceBlob": "9a1b82053e72478a1aa1a645b007e18386ddb68e",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-b.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-c.md",
+      "sourceBlob": "6a84166b55bb1decdf73b52c30c9513a5ff309d2",
+      "destination": "docs/plans/active/hf-ui044-g0/prompts/implementar-frente-c.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": ".github/workflows/rc-review.yml",
+      "sourceBlob": "904731df72c312a0d5e9e932161babffb42fbe9e",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr45/.github/workflows/rc-review.yml",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "5a1ee3087ff7b17ca2840fbded2df9081f3a4e7f"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr45/vercel.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "13840216920fd01b7ffdff765b9ec623ba650600"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/evidence/close02-r3-final.json",
+      "sourceBlob": "14ae090d997a737076f2d1f648dd676991bfda14",
+      "destination": "specs/035-ajustes-navegacao-conta/evidence/close02-r3-final.json",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/evidence/close02-r3-visual-analysis.md",
+      "sourceBlob": "71ca42804ef46399e9366bde91fe79dc0ddb50a9",
+      "destination": "specs/035-ajustes-navegacao-conta/evidence/close02-r3-visual-analysis.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": ".github/workflows/rc-review.yml",
+      "sourceBlob": "904731df72c312a0d5e9e932161babffb42fbe9e",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/.github/workflows/rc-review.yml",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "5a1ee3087ff7b17ca2840fbded2df9081f3a4e7f"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/evidence/close02-handoff.json",
+      "sourceBlob": "5ea661988e60427bb5633ae188f09ca18dade4e1",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/evidence/close02-handoff.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "4c36593ec4daef2e79c5bfb04440d22a5ec69bb6"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/evidence/close02-handoff.md",
+      "sourceBlob": "dc1da8d183e7c8c3598d35e07775d906ffdfac68",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/evidence/close02-handoff.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "4003eaf6d73b6afe1fdc2cbbc02b5d5cb938d41e"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/implementation-evidence.md",
+      "sourceBlob": "5f9bc91845763b74e53f091faaec106a79d2a59a",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/implementation-evidence.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "752894a9988586f165562806fdd6e431f1318d57"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/plan.md",
+      "sourceBlob": "d2294366dbe19eebc79b96f8afd53e19b7e60a90",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/plan.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "9c29eb975bb72bb36f082e88b59888228195cd28"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/spec.md",
+      "sourceBlob": "c292dcb26f82b1a82eff47f8e21d01a978928af2",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/spec.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "c94397adfbd4c60e6009bc570bf50ab11d862fae"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "specs/035-ajustes-navegacao-conta/tasks.md",
+      "sourceBlob": "31d41c7c1fd866c46e8802848b5d450b8388fd59",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/specs/035-ajustes-navegacao-conta/tasks.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "c07314f6dc281039173bfb8a252d2d969e9c4ba5"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr46/vercel.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "13840216920fd01b7ffdff765b9ec623ba650600"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-findings.md",
+      "sourceBlob": "05bf0f1be68edc530e50238bf583b510e9c21c80",
+      "destination": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-findings.md",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-runtime.json",
+      "sourceBlob": "359ff3268db2f72a7dafcded1107d22f8b176565",
+      "destination": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-final-runtime.json",
+      "kind": "RESTORED_MISSING"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": ".github/workflows/rc-review.yml",
+      "sourceBlob": "904731df72c312a0d5e9e932161babffb42fbe9e",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/.github/workflows/rc-review.yml",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "5a1ee3087ff7b17ca2840fbded2df9081f3a4e7f"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-comparison.md",
+      "sourceBlob": "c860490d9e5c1379eec5bdfd26d0ada7b94647d4",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/evidence/close02-comparison.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "fcc5369edad0c56ff217a08ce6a8b517b2d9c5a5"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json",
+      "sourceBlob": "2cf969362a265adb48c03e8270ec737a1db5ec9c",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "e04eeecac5d54ee8425ee266f5d115a740e5b19f"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
+      "sourceBlob": "42a38890e62dcd67cca20bed0650ea557f434ee3",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/evidence/close02-handoff.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "354bc97047b75e67f87a14ec66011a5b7f30b195"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "sourceBlob": "bb39a21e239277df877f41c4708dbd33fcc0da58",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/implementation-evidence.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "48184510abe24fe9e15731850d674259feccf90f"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "sourceBlob": "836d031eca99bea5d34fa1d2cdf9b9a8322b5830",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/plan.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "9018d10e81db29911c41baf48493a4ee6cdad895"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/spec.md",
+      "sourceBlob": "057bfd1333a300a8a423ec7d98949711a886a041",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/spec.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "6fa5207445f48434bdac7c70d22344b445f3b6b6"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "sourceBlob": "d4261b1f49217334ff3b931b935c6f8399931559",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/specs/036-ajustes-area-coletas-ihfr/tasks.md",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "32c9897a3589b99fde5ab5f68f9460f3fa22683c"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr47/vercel.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "13840216920fd01b7ffdff765b9ec623ba650600"
+    },
+    {
+      "pr": 48,
+      "sourceCommit": "641be73e32bcbaed282cac81dec9ae85a52b32de",
+      "sourcePath": ".github/workflows/rc-review.yml",
+      "sourceBlob": "904731df72c312a0d5e9e932161babffb42fbe9e",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr48/.github/workflows/rc-review.yml",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "5a1ee3087ff7b17ca2840fbded2df9081f3a4e7f"
+    },
+    {
+      "pr": 48,
+      "sourceCommit": "641be73e32bcbaed282cac81dec9ae85a52b32de",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "destination": "docs/releases/2026-11-05-hf-ui044-integration/source-snapshots/pr48/vercel.json",
+      "kind": "HISTORICAL_VARIANT_ARCHIVED",
+      "activeBlob": "13840216920fd01b7ffdff765b9ec623ba650600"
+    },
+    {
+      "pr": 44,
+      "sourceCommit": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "d9d99fd1fee138d598b9a0581692ce765f0a0db1",
+      "kind": "GUARDS_UNION_WITH_CANDIDATE",
+      "destination": "vercel.json"
+    },
+    {
+      "pr": 45,
+      "sourceCommit": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "kind": "GUARDS_UNION_WITH_CANDIDATE",
+      "destination": "vercel.json"
+    },
+    {
+      "pr": 46,
+      "sourceCommit": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "kind": "GUARDS_UNION_WITH_CANDIDATE",
+      "destination": "vercel.json"
+    },
+    {
+      "pr": 47,
+      "sourceCommit": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "kind": "GUARDS_UNION_WITH_CANDIDATE",
+      "destination": "vercel.json"
+    },
+    {
+      "pr": 48,
+      "sourceCommit": "641be73e32bcbaed282cac81dec9ae85a52b32de",
+      "sourcePath": "vercel.json",
+      "sourceBlob": "e04b55e86bb6ed1ad6fecfadd7d285a0e5444851",
+      "kind": "GUARDS_UNION_WITH_CANDIDATE",
+      "destination": "vercel.json"
+    }
+  ],
+  "functionalBlobMismatch": [],
+  "CI": "NOT_RUN_AT_PREPARATION",
+  "Preview": "NOT_RUN_AT_PREPARATION",
+  "historicalCI": {
+    "sha": "3c9b9c83e3abca48ede0b8c4f03343e4b4aa3698",
+    "run": "41488874486",
+    "attempt": 1,
+    "reusedAsCurrentPass": false
+  }
+}

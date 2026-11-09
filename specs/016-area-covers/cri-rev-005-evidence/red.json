@@ -1,0 +1,10 @@
+﻿{
+    "endedUtc":  "2026-10-17T17:51:34.3138384Z",
+    "head":  "7a5681a32a320a14efaa400fedddad14fa9b60f5",
+    "exitCode":  1,
+    "node":  "v24.19.0",
+    "yamlBlob":  "8e2a7a69f0471da379122cd4376dcaa02e7bcf0e",
+    "command":  "node --import=tsx --test tests/unit/area-openapi-parity.test.ts",
+    "testSha256":  "48e10f7ee932d936c0badad76a309279a2bd8a89bf93d2a4880de29d138b7611",
+    "startedUtc":  "2026-10-17T17:51:25.4006160Z"
+}

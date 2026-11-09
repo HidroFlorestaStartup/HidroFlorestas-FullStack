@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-18",
+  "branch": "feat/frontend-login",
+  "sourceCommit": "9bb0eb99a543391dd0f8a6bb452c65752d74673a",
+  "environment": "Windows / Node24.19.0 / locked npm / owned loopback PostgreSQL17 / Chromium",
+  "officialGates": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "5c247a851ca4c1bc86b045f7c1634a5603d8305dfd8ec78cf0a6f42dc5ded76d",
+      "startedUtc": "2026-10-18T13:36:49.252Z",
+      "endedUtc": "2026-10-18T13:36:52.585Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/regressionsetup-1792330609252.log",
+      "logSha256": "f42fb8bc9febec777dc54b5cdbd9a4667cbde3e2b3ad4b931a8d64bb5054dd02"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "bc3642d86fd8af6d13edf7adb4532a6b077811bc634440c9da8f982d740446f8",
+      "startedUtc": "2026-10-18T13:38:14.056Z",
+      "endedUtc": "2026-10-18T13:38:26.874Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/unit-1792330694056.log",
+      "logSha256": "b7a3798eda19412ea88245e72d0ad44b9bd48e11a04c98c47ea57606c878c82c"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "bc3642d86fd8af6d13edf7adb4532a6b077811bc634440c9da8f982d740446f8",
+      "startedUtc": "2026-10-18T13:38:27.215Z",
+      "endedUtc": "2026-10-18T13:38:49.760Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/build-1792330707215.log",
+      "logSha256": "d62114282cf8fddc6a712f223c4fc6386180597293a0a46530e58c886b5556be"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "1c924ab4f9cac6078f29e18b489035b4e6e8d5459eac130ef1de1dbc52243b36",
+      "startedUtc": "2026-10-18T13:38:50.093Z",
+      "endedUtc": "2026-10-18T13:38:57.137Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/typecheck-1792330730092.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "1c924ab4f9cac6078f29e18b489035b4e6e8d5459eac130ef1de1dbc52243b36",
+      "startedUtc": "2026-10-18T13:38:57.433Z",
+      "endedUtc": "2026-10-18T13:39:11.139Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/lint-1792330737433.log",
+      "logSha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "1c924ab4f9cac6078f29e18b489035b4e6e8d5459eac130ef1de1dbc52243b36",
+      "startedUtc": "2026-10-18T13:39:11.503Z",
+      "endedUtc": "2026-10-18T13:42:28.608Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/e2e-1792330751503.log",
+      "logSha256": "ec70d6accad53e3e72d7d8b7f7365396f96595c0a7149b54eea2c4816b36c8a2"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "1c924ab4f9cac6078f29e18b489035b4e6e8d5459eac130ef1de1dbc52243b36",
+      "startedUtc": "2026-10-18T13:42:28.972Z",
+      "endedUtc": "2026-10-18T13:43:03.306Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/https-1792330948972.log",
+      "logSha256": "113fbdb22f245861d9cec602f2b4f6314e0baec97f2b4def34c2e8c3affefce7"
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "1c924ab4f9cac6078f29e18b489035b4e6e8d5459eac130ef1de1dbc52243b36",
+      "startedUtc": "2026-10-18T13:43:03.635Z",
+      "endedUtc": "2026-10-18T13:43:04.271Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/schemaaudit-1792330983635.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "7a1f47b908746f9fb795ad45442b883471fdcf2d41a45d2a026257c3a228bfa5",
+      "startedUtc": "2026-10-18T13:44:36.878Z",
+      "endedUtc": "2026-10-18T13:44:39.152Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/typecheck-1792331076878.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "7a1f47b908746f9fb795ad45442b883471fdcf2d41a45d2a026257c3a228bfa5",
+      "startedUtc": "2026-10-18T13:44:39.459Z",
+      "endedUtc": "2026-10-18T13:44:48.358Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/lint-1792331079459.log",
+      "logSha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "7a1f47b908746f9fb795ad45442b883471fdcf2d41a45d2a026257c3a228bfa5",
+      "startedUtc": "2026-10-18T13:44:48.651Z",
+      "endedUtc": "2026-10-18T13:48:03.355Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/e2e-1792331088650.log",
+      "logSha256": "d03acd4e7bd7db4ff26411ca2fd296bc09c609cf4468b5bfcb0e71456e80014d"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:48:49.076Z",
+      "endedUtc": "2026-10-18T13:49:03.352Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/build-1792331329075.log",
+      "logSha256": "6b2dde24909765b196feb4aac08d432a4af7f4bceb3ada00900cb35ea88f4908"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:49:03.770Z",
+      "endedUtc": "2026-10-18T13:49:06.964Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/typecheck-1792331343769.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:49:07.342Z",
+      "endedUtc": "2026-10-18T13:49:18.330Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/lint-1792331347341.log",
+      "logSha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:49:18.704Z",
+      "endedUtc": "2026-10-18T13:52:31.460Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/e2e-1792331358703.log",
+      "logSha256": "cd42d201c261403606fbeb67a5834069479611e54f472147e5333b5cfa2d81d6"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:52:31.785Z",
+      "endedUtc": "2026-10-18T13:53:04.923Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/https-1792331551785.log",
+      "logSha256": "29ce1e802623bbc65a80387fb3412786522b5404fb527a8dcfc72ab08ff80ebc"
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+      "startedUtc": "2026-10-18T13:53:05.204Z",
+      "endedUtc": "2026-10-18T13:53:05.727Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation/schemaaudit-1792331585204.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8"
+    }
+  ],
+  "additionalExecutions": [
+    {
+      "scenario": "original login delayed hydration",
+      "head": "514106a",
+      "result": "FAIL",
+      "failed": 1,
+      "evidence": "red-hydration.log"
+    },
+    {
+      "scenario": "original login presentation",
+      "head": "514106a",
+      "result": "PASS",
+      "passed": 3
+    },
+    {
+      "scenario": "focal without full RC synthetic policy",
+      "result": "FAIL",
+      "passed": 8,
+      "failed": 2,
+      "evidence": "failed-focal-incomplete-environment.log"
+    },
+    {
+      "scenario": "320px 200% label before CSS correction",
+      "head": "61b27ac",
+      "result": "FAIL",
+      "failed": 1,
+      "evidence": "red-reflow.log"
+    },
+    {
+      "scenario": "320px 200% label after CSS correction",
+      "sourceEquivalentTo": "9bb0eb9",
+      "result": "PASS",
+      "passed": 1,
+      "evidence": "green-reflow.log"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "after-frontend-login-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "4e1f1cf6783400ee91fd236d47a3522f22b1e4424569be16fe114ef18c00d6b0",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "after-frontend-login-320-text200.png",
+      "width": 320,
+      "height": 1583,
+      "sha256": "23f0e1c363511f80a75ebe09b36fb7eea9f2d0779dff05acd387239da4f8e579",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "after-frontend-login-375.png",
+      "width": 375,
+      "height": 900,
+      "sha256": "d8f1f6723721681c860e5627478c87b874045b009991a8c324c56c892e188481",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "after-frontend-login-768.png",
+      "width": 768,
+      "height": 900,
+      "sha256": "dd079f53a04c2bfba3a5d8018f88d5a96ac8a2909f3e0b759fa2e4e52a9ddcde",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "after-frontend-login-loading.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "2b5a01e3a38564dfa8f52d89091ff75847ba5c92836fe24760a13f11ee430623",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "after-frontend-login-network-error.png",
+      "width": 1280,
+      "height": 774,
+      "sha256": "95c1cf35496bda45efe137f6645e04b68965928f9bf4a0f97f8e14edf3d09f8e",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "before-frontend-login-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "f1e7c14131968682dab52e9f72fa460e4416cda349bb50585774dcb9156a4c06",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "before-frontend-login-375.png",
+      "width": 375,
+      "height": 902,
+      "sha256": "648769391bc95cfcc899997ce2010ab390f362dd01ac032cb949c21cc247edc4",
+      "credentials": "empty or masked"
+    },
+    {
+      "path": "before-frontend-login-768.png",
+      "width": 768,
+      "height": 900,
+      "sha256": "b911dc785d367746c4c3713163b530e4f61de31dcf04def6bfd212a94e59e1eb",
+      "credentials": "empty or masked"
+    }
+  ]
+}

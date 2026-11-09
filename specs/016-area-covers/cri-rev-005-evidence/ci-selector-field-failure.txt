@@ -1,0 +1,42 @@
+IMP-006 E2E preflight passed: target 3ca357615da4, schema public.
+IMP-006 schema owned by this run: imp006_test_230624a3cdb44d78aa87531aa37c9670
+
+Running 6 tests using 1 worker
+
+  ok 1 tests\e2e\ihfr-diagnosis-manage.spec.ts:50:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID (12.1s)
+  x  2 tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key (5.9s)
+  ok 3 tests\e2e\ihfr-diagnosis-manage.spec.ts:192:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM (1.8s)
+  ok 4 tests\e2e\ihfr-diagnosis-manage.spec.ts:206:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal (1.7s)
+  ok 5 tests\e2e\ihfr-diagnosis-read.spec.ts:17:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout (2.0s)
+  ok 6 tests\e2e\ihfr-diagnosis-read.spec.ts:39:5 › member sees honest absence and inactive laboratory stays read only (1.4s)
+
+
+  1) tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+
+    Error: locator.selectOption: Error: strict mode violation: getByLabel('Uso predominante da terra') resolved to 2 elements:
+        1) <select aria-describedby="land-use-help" class="mt-1 w-full rounded border p-2">…</select> aka getByRole('region', { name: 'Gerenciar diagnóstico IHFR' }).getByLabel('Uso predominante da')
+        2) <select aria-describedby="land-use-help" class="mt-1 w-full rounded border p-2">…</select> aka getByLabel('Uso predominante da').nth(1)
+
+    Call log:
+      - waiting for getByLabel('Uso predominante da terra')
+
+
+      118 |     await page.goto(actor.url);
+      119 |     await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true }).getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
+    > 120 |     await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
+          |                                                        ^
+      121 |     await page.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+      122 |     await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
+      123 |     await expect(page.getByRole("status").first()).toContainText("ELIGIBLE");
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-manage.spec.ts:120:56
+
+    Error Context: test-results\ihfr-diagnosis-manage-OWNE-e2786-recover-with-one-stable-key\error-context.md
+
+  1 failed
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+  5 passed (26.8s)
+Error: IMP-006 Playwright failed with exit code 1
+    at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\scripts\imp006-local-e2e.ts:94:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+    at async main (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\scripts\imp006-local-e2e.ts:53:3)

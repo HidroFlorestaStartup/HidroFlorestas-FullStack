@@ -1,0 +1,103 @@
+{
+  "kind": "synthetic-diagnostic",
+  "scripts": 40,
+  "observations": [
+    {
+      "label": "before-selection",
+      "values": [
+        {
+          "name": "water.hasSpring",
+          "value": "",
+          "reactHandler": false
+        },
+        {
+          "name": "soil.infiltrationRateMmPerHour",
+          "value": "",
+          "reactHandler": false
+        },
+        {
+          "name": "terrain.elevationMeters",
+          "value": "",
+          "reactHandler": false
+        }
+      ],
+      "spring": ""
+    },
+    {
+      "label": "after-native-selection-before-hydration",
+      "values": [
+        {
+          "name": "water.hasSpring",
+          "value": "false",
+          "reactHandler": false
+        },
+        {
+          "name": "soil.infiltrationRateMmPerHour",
+          "value": "",
+          "reactHandler": false
+        },
+        {
+          "name": "terrain.elevationMeters",
+          "value": "",
+          "reactHandler": false
+        }
+      ],
+      "spring": "false"
+    },
+    {
+      "label": "after-hydration-and-number-changes",
+      "values": [
+        {
+          "name": "water.hasSpring",
+          "value": "",
+          "reactHandler": true
+        },
+        {
+          "name": "soil.infiltrationRateMmPerHour",
+          "value": "0",
+          "reactHandler": true
+        },
+        {
+          "name": "terrain.elevationMeters",
+          "value": "12.",
+          "reactHandler": true
+        }
+      ],
+      "spring": ""
+    },
+    {
+      "label": "first-save-payload",
+      "fields": {
+        "soil.infiltrationRateMmPerHour": {
+          "kind": "editing",
+          "raw": "0"
+        },
+        "terrain.elevationMeters": {
+          "kind": "editing",
+          "raw": "12."
+        }
+      }
+    },
+    {
+      "label": "after-reload",
+      "values": [
+        {
+          "name": "water.hasSpring",
+          "value": "",
+          "reactHandler": false
+        },
+        {
+          "name": "soil.infiltrationRateMmPerHour",
+          "value": "0",
+          "reactHandler": false
+        },
+        {
+          "name": "terrain.elevationMeters",
+          "value": "12.",
+          "reactHandler": false
+        }
+      ],
+      "spring": ""
+    }
+  ]
+}

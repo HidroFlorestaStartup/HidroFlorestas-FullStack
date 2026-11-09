@@ -1,0 +1,38 @@
+{
+  "name": "list-focus-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-list-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 968,
+      "height": 724,
+      "extent": 2166
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 16,
+    "y": 351.75,
+    "width": 197.421875,
+    "height": 64
+  },
+  "target": null,
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

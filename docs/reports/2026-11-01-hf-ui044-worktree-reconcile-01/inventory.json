@@ -1,0 +1,248 @@
+{
+  "task": "HF-UI-044-WORKTREE-RECONCILE-01",
+  "informationClassification": "EVIDENCIA_IMPLEMENTACAO",
+  "originalPackageState": "SUBSTITUIDO",
+  "scope": "docs/plans/active/hf-ui044-close-qa-actions-prepare",
+  "inventoryScope": "Somente os 21 arquivos não rastreados e não ignorados do pacote; sem inventariar arquivos rastreados da aplicação.",
+  "originalsLocationRelativeToFrontC": ".accounts-validation/hf-ui044-worktree-reconcile-01/original-package",
+  "hashAlgorithm": "SHA-256",
+  "originalPendingFileCount": 21,
+  "classificationCounts": {
+    "CONTEUDO_PRIVADO_NAO_PUBLICAVEL": 2,
+    "DOCUMENTACAO_UTIL_PUBLICAVEL_SANITIZADA": 2,
+    "EVIDENCIA_HISTORICA_LOCAL": 17
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 10,
+      "sha256": "b89b8c5f24ac8b34f94a35c01f1a4916e14b9217aaa23804294033f0fa0dad4d",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Regra local do scratch; preservada com o pacote, sem necessidade de publicá-la.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/.gitignore"
+    },
+    {
+      "path": "build-control-tree.py",
+      "bytes": 2005,
+      "sha256": "557cccfa5a6c10fea137559c519f8b492e672fa9ca4d69fc224b25ea0d39de4d",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Gerador histórico de objetos/índice da proposta substituída; não executar.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/build-control-tree.py"
+    },
+    {
+      "path": "candidate-manifest.json",
+      "bytes": 1304,
+      "sha256": "d11a8bb0ec9115726cbd7241de6c6ad16c0db2a1f00ed71c45f6eb983f948f7d",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Identidades dos candidatos antigos; não é recibo da run executada.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/candidate-manifest.json"
+    },
+    {
+      "path": "candidates/.github/workflows/hf-ui044-composition-qa.yml",
+      "bytes": 7287,
+      "sha256": "9defc80e3cb15d891513efd29a2938064e86f29aa345f79e4e532c8526017440",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Workflow apenas proposto, distinto do rc-review.yml da run indicada.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/candidates/.github/workflows/hf-ui044-composition-qa.yml"
+    },
+    {
+      "path": "candidates/scripts/hf-ui044-compose.ps1",
+      "bytes": 5768,
+      "sha256": "d2e5f5779104b2abef2f29f3e434fb4d30384cd26ede5eb5327b170e40779fe5",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Helper da proposta histórica; sem vínculo de execução com a run indicada.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/candidates/scripts/hf-ui044-compose.ps1"
+    },
+    {
+      "path": "candidates/scripts/hf-ui044-evidence.ps1",
+      "bytes": 7201,
+      "sha256": "c9ea781a09a0509d5df45ded68cb6e7da76f887fb8982f90a0c591c9baa46909",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Helper da proposta histórica; seus resultados não certificam a run indicada.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/candidates/scripts/hf-ui044-evidence.ps1"
+    },
+    {
+      "path": "candidates/vercel.json",
+      "bytes": 1990,
+      "sha256": "2065206f7b2e48cb614b406b52ed8087c103b9e3c318bc3e5102f1af42fcaaef",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Configuração candidata antiga; não substituir a configuração ativa.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/candidates/vercel.json"
+    },
+    {
+      "path": "commands-after-authorization.ps1.txt",
+      "bytes": 6586,
+      "sha256": "ce7c52374d74a3bb817a70ed4a68cd11c84033f5169e0f89900e8145653dcdd5",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Comandos operacionais obsoletos, preservados inertes e fora do Git.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/commands-after-authorization.ps1.txt"
+    },
+    {
+      "path": "composition-local.json",
+      "bytes": 5850,
+      "sha256": "71f15595a5516abb744a9d9a62b0badbb61371479c37557618f216bcd63a03bf",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Recibo estático local histórico, runtime NOT_RUN; não equivale à composição executada.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/composition-local.json"
+    },
+    {
+      "path": "control-candidate.patch",
+      "bytes": 21890,
+      "sha256": "11e752c6081cd50714492f6073b0be8d66369fc37c536db7bff0ed99e482ff45",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Patch da proposta antiga, não aplicado nem publicado nesta missão.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/control-candidate.patch"
+    },
+    {
+      "path": "gates-not-run.json",
+      "bytes": 2082,
+      "sha256": "48ea910d6aa50063988cb097716160b5428221611008a375424c47fa81bb0684",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Ausência histórica de execução preservada; não promover os NOT_RUN a PASS.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/gates-not-run.json"
+    },
+    {
+      "path": "negative-verification.json",
+      "bytes": 207,
+      "sha256": "d678144be138831764b04625c27880f59d4fb38972218ea28a0e3edb6a0c7dfa",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Contraprova histórica do verificador sem journal; não é teste funcional atual.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/negative-verification.json"
+    },
+    {
+      "path": "package-manifest.json",
+      "bytes": 3397,
+      "sha256": "e8be29bcac8353df1842ab9d9b03c1ea68b6a310c4ef59bd242643274d25933b",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Manifesto histórico mantido por bytes; integridade reapresentada no inventário sanitizado.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/package-manifest.json"
+    },
+    {
+      "path": "plan.md",
+      "bytes": 6073,
+      "sha256": "091ce88fc43e6909144628ce8421a97fc848dbe97fa65d165504a22894d4641e",
+      "classification": "DOCUMENTACAO_UTIL_PUBLICAVEL_SANITIZADA",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Plano útil como proveniência histórica, resumido e marcado SUBSTITUIDO sem copiar o texto bruto.",
+      "publication": "SINTESE_SANITIZADA_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/plan.md"
+    },
+    {
+      "path": "prepare-candidates.py",
+      "bytes": 6708,
+      "sha256": "5ba80dce0c4aaff96d34bd097d71ebd7befcb016b382cdb1caffde7765dbb9ce",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Gerador dos candidatos históricos; não executar nem regenerar.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/prepare-candidates.py"
+    },
+    {
+      "path": "readme.md",
+      "bytes": 17465,
+      "sha256": "d514f0f4f1cf8d662be3df93c5627505788bf611284f148901c53968f8e3579c",
+      "classification": "DOCUMENTACAO_UTIL_PUBLICAVEL_SANITIZADA",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Síntese útil como proveniência histórica, sanitizada e marcada SUBSTITUIDO.",
+      "publication": "SINTESE_SANITIZADA_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/readme.md"
+    },
+    {
+      "path": "sources/github-readback.json",
+      "bytes": 72892,
+      "sha256": "487c000edd4f9663f8ba9e575e92cad45a888faa1e9d87cfbccc806969cea0a8",
+      "classification": "CONTEUDO_PRIVADO_NAO_PUBLICAVEL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Resposta bruta de fonte/conector; conservação local restrita, sem publicar corpos ou metadados de conta.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/sources/github-readback.json"
+    },
+    {
+      "path": "sources/vercel-guard-applicability.json",
+      "bytes": 1340,
+      "sha256": "273b50e90f8f241a50cace6c8f108303843491608752df059d5098c21a9d3f0b",
+      "classification": "CONTEUDO_PRIVADO_NAO_PUBLICAVEL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Resposta/recibo bruto de conector e projeto; conservação local restrita, sem publicar a resposta.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/sources/vercel-guard-applicability.json"
+    },
+    {
+      "path": "static-review.json",
+      "bytes": 742,
+      "sha256": "87fa979bc68d4048e518045d8d5dd880627b2d344eab09894e52e878ad850dca",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Revisão estática histórica dos candidatos; não é revisão do workflow executado.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/static-review.json"
+    },
+    {
+      "path": "validate-candidates.py",
+      "bytes": 6251,
+      "sha256": "e59b3bd9cddbb70fb4923d4b1a340f769d0e0d427c2a158c1ce774b0fb53c73a",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Auditor histórico dos candidatos; preservado sem nova execução.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/validate-candidates.py"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 636,
+      "sha256": "64282752c6b6b1613a081a10bec6d1e819be4e5c830b0e887ee62d32a1d2f263",
+      "classification": "EVIDENCIA_HISTORICA_LOCAL",
+      "informationClassification": "RECOMENDACAO",
+      "reason": "Resumo do preparo histórico; não é verificação atual de runtime.",
+      "publication": "HASH_E_CLASSIFICACAO_SOMENTE",
+      "originalPreservedOutsideGit": true,
+      "preservedRelativePath": "original-package/verification-summary.json"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "gate": "SchemaAudit",
+    "command": "npm run test:ihfr:audit:assert-zero",
+    "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+    "startedUtc": "2026-10-18T14:12:41.688Z",
+    "endedUtc": "2026-10-18T14:12:42.207Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "log": "C:\\projetos\\consolidados\\HidroFlorestas-frontend-login\\.accounts-validation\\schemaaudit-1792332761688.log",
+    "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8"
+  },
+  {
+    "gate": "Ihfr",
+    "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+    "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+    "startedUtc": "2026-10-18T14:11:56.641Z",
+    "endedUtc": "2026-10-18T14:12:36.480Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "log": ".accounts-validation\\ihfr-1792332716641.log",
+    "logSha256": "f229d668ac524ab5d204886c744e911a10f69ab19cff7d1a2672607348bb8427"
+  },
+  {
+    "gate": "Bootstrap",
+    "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+    "snapshot": "32f4f017adcda9b7851ac3ddbd29e227a4405eb5f06f27495bffefd6c748abf9",
+    "startedUtc": "2026-10-18T14:12:36.783Z",
+    "endedUtc": "2026-10-18T14:12:41.395Z",
+    "exitCode": 0,
+    "result": "PASS",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "log": "C:\\projetos\\consolidados\\HidroFlorestas-frontend-login\\.accounts-validation\\bootstrap-1792332756782.log",
+    "logSha256": "4b048757314fd43ddc2f3d05761b90aeb7c2ace5cb7f32f3689ab718c71cd780"
+  }
+]

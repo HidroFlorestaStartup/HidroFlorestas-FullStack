@@ -1,0 +1,45 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "checkedUtc": "2026-10-13T17:56:40.865933+00:00",
+  "authentication": "existing local Git credential, memory only",
+  "actor": "thalesvalente",
+  "connectorAttempts": "HTTP 403 Resource not accessible by integration; no mutations performed by connector",
+  "actions": [
+    {
+      "action": "request-rereview",
+      "pr": 4,
+      "httpStatus": 201,
+      "reviewers": [
+        "PedroVitor237"
+      ],
+      "head": "c3172718011ee70d3613387c61b3774601010a85",
+      "error": null
+    },
+    {
+      "action": "request-rereview",
+      "pr": 6,
+      "httpStatus": 201,
+      "reviewers": [
+        "PedroVitor237"
+      ],
+      "head": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c",
+      "error": null
+    },
+    {
+      "action": "review-comment",
+      "pr": 4,
+      "httpStatus": 201,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4262167643",
+      "id": 4262167643,
+      "error": null
+    },
+    {
+      "action": "review-comment",
+      "pr": 6,
+      "httpStatus": 201,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6151817393",
+      "id": 6151817393,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+name: HF UI044 close synthetic evidence
+on:
+  push:
+    branches: [codex/hf-ui044-close-20261101]
+permissions:
+  contents: read
+concurrency:
+  group: hf-ui044-close-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  smoke:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/codex/hf-ui044-close-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    runs-on: windows-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          $ErrorActionPreference='Stop'
+          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-close-20261101' -cne $false) { throw 'Preview guard absent.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count -or (Test-Path '.vercel')) { throw 'Private configuration prohibited.' }
+          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET')) {
+            if (Test-Path "Env:$name") { throw "Inherited application/provider configuration prohibited: $name" }
+          }
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Execute synthetic browser proof without database
+        run: |
+          $env:HF_UI044_SUITE='smoke'
+          npx playwright test --config=qa/hf-ui044/playwright.smoke.config.ts
+          if ($LASTEXITCODE) { throw 'Instrument smoke failed.' }
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-smoke-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/ui06-smoke/*.png
+            fullstack/.accounts-validation/ui06-smoke/*.json
+            fullstack/.accounts-validation/ui06-smoke/*.jsonl
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  ui-a:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/codex/hf-ui044-close-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    needs: smoke
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          $ErrorActionPreference='Stop'
+          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-close-20261101' -cne $false) { throw 'Preview guard absent.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count -or (Test-Path '.vercel')) { throw 'Private configuration prohibited.' }
+          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET')) {
+            if (Test-Path "Env:$name") { throw "Inherited application/provider configuration prohibited: $name" }
+          }
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
+          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
+          path: starter
+          persist-credentials: false
+      - name: Install runner-only Bun and locked starter
+        run: |
+          npm install --global bun@1.3.11 --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Runner Bun installation failed.' }
+          if ((bun --version).Trim() -ne '1.3.11') { throw 'Wrong runner Bun.' }
+          Push-Location ../starter
+          try {
+            if ((git rev-parse HEAD).Trim() -ne 'cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f') { throw 'Wrong starter SHA.' }
+            bun install --frozen-lockfile
+            if ($LASTEXITCODE) { throw 'Starter frozen installation failed.' }
+            bun run typecheck
+            if ($LASTEXITCODE) { throw 'Starter typecheck failed.' }
+          } finally { Pop-Location }
+      - name: Execute real bilateral shell cases
+        run: ./scripts/hf-ui06-visual.ps1 -Suite shell
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-shell-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/ui06-shell/*.png
+            fullstack/.accounts-validation/ui06-shell/*.json
+            fullstack/.accounts-validation/ui06-shell/*.jsonl
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  ui-b:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/codex/hf-ui044-close-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    needs: smoke
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          $ErrorActionPreference='Stop'
+          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-close-20261101' -cne $false) { throw 'Preview guard absent.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count -or (Test-Path '.vercel')) { throw 'Private configuration prohibited.' }
+          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET')) {
+            if (Test-Path "Env:$name") { throw "Inherited application/provider configuration prohibited: $name" }
+          }
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
+          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
+          path: starter
+          persist-credentials: false
+      - name: Install runner-only Bun and locked starter
+        run: |
+          npm install --global bun@1.3.11 --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Runner Bun installation failed.' }
+          if ((bun --version).Trim() -ne '1.3.11') { throw 'Wrong runner Bun.' }
+          Push-Location ../starter
+          try {
+            if ((git rev-parse HEAD).Trim() -ne 'cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f') { throw 'Wrong starter SHA.' }
+            bun install --frozen-lockfile
+            if ($LASTEXITCODE) { throw 'Starter frozen installation failed.' }
+            bun run typecheck
+            if ($LASTEXITCODE) { throw 'Starter typecheck failed.' }
+          } finally { Pop-Location }
+      - name: Execute real bilateral domain cases
+        run: ./scripts/hf-ui06-visual.ps1 -Suite domain
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-domain-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/ui06-domain/*.png
+            fullstack/.accounts-validation/ui06-domain/*.json
+            fullstack/.accounts-validation/ui06-domain/*.jsonl
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  # Final R3 changes only qa instrumentation and documentation. RC is NOT_RUN
+  # here: d62fb08/run41353270282 already passed15 with the same630 functional
+  # Git blobs; env/command below are unchanged. Keep its success bound to R2.
+  rc-ui037:
+    if: >-
+      false &&
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/codex/hf-ui044-close-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          $ErrorActionPreference='Stop'
+          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-close-20261101' -cne $false) { throw 'Preview guard absent.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count -or (Test-Path '.vercel')) { throw 'Private configuration prohibited.' }
+          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','JWT_SECRET','SMTP_HOST','SMTP_USER','SMTP_APP_PASSWORD','MAIL_FROM','CLOUDINARY_URL','CLOUDINARY_API_KEY','CLOUDINARY_API_SECRET')) {
+            if (Test-Path "Env:$name") { throw "Inherited application/provider configuration prohibited: $name" }
+          }
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - name: Execute exactly fifteen official gates with owned runner PostgreSQL
+        run: ./scripts/rc-review-validation.ps1 -InitializeCiCluster
+      - name: Verify durable UI037 after later suites and official journal
+        run: node scripts/hf-ui044-verify.mjs
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-rc-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/*.log
+            fullstack/.accounts-validation/results.jsonl
+            fullstack/test-results/**/frontend-login-*.png
+            fullstack/test-results/**/frontend-account-*.png
+            fullstack/.accounts-validation/frontend-account/*.png
+            fullstack/test-results/**/frontend-workspace-*.png
+            fullstack/.accounts-validation/frontend-workspace/*.png
+            fullstack/.accounts-validation/frontend-mobile-navigation/*.png
+            fullstack/.accounts-validation/frontend-mobile-navigation/*-geometry.json
+            fullstack/.accounts-validation/frontend-dashboard/*.png
+            fullstack/.accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
+            fullstack/.accounts-validation/frontend-areas/*.png
+            fullstack/.accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            fullstack/test-results/**/frontend-collections-*.png
+            fullstack/test-results/**/frontend-collections-*-viewport.json
+            fullstack/.accounts-validation/frontend-collections/*-frontend-collections-*.png
+            fullstack/.accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
+            fullstack/test-results/**/frontend-environmental-*.png
+            fullstack/test-results/**/frontend-environmental-*-viewport.json
+            fullstack/.accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            fullstack/.accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
+            fullstack/.accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            fullstack/.accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+            fullstack/.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*.png
+            fullstack/.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
+            fullstack/.accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
+            fullstack/.accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
+            fullstack/.accounts-validation/frontend-landing/*-frontend-landing-*.png
+            fullstack/.accounts-validation/frontend-landing/*-frontend-landing-*-viewport.json
+            fullstack/.accounts-validation/hf-ui044-final-verification.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

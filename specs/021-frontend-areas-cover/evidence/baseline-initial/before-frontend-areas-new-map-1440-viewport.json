@@ -1,0 +1,43 @@
+{
+  "name": "new-map-1440",
+  "screenshot": {
+    "filename": "before-frontend-areas-new-map-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 222
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 1171,
+      "extent": 1171
+    }
+  },
+  "active": {
+    "tag": "input",
+    "x": 229,
+    "y": 347.625,
+    "width": 298.34375,
+    "height": 46
+  },
+  "target": {
+    "x": 869.6875,
+    "y": 257.625,
+    "width": 501.3125,
+    "height": 384
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

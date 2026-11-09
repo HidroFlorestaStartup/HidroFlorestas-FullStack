@@ -1,0 +1,20 @@
+{
+  "control": "scheduler-held-before-commit",
+  "beforeCommit": [
+    {
+      "phase": "native-raf",
+      "alertPresent": false
+    }
+  ],
+  "afterCommit": [
+    {
+      "phase": "native-raf",
+      "alertPresent": false
+    },
+    {
+      "phase": "dom-mutation",
+      "alertPresent": true
+    }
+  ],
+  "alertFocused": false
+}

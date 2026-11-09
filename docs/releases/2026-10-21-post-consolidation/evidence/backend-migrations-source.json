@@ -1,0 +1,90 @@
+{
+  "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "scope": "local source only; hosted state not queried",
+  "migrations": [
+    {
+      "migration": "20260907120000_unique_laboratory_access_code",
+      "bytes": 87,
+      "sha256": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+      "git_blob": "424442ec84bb30b1d7ad22346ba8e1cb7a6adf72"
+    },
+    {
+      "migration": "20260914000100_area_registration_and_membership_roles",
+      "bytes": 4622,
+      "sha256": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+      "git_blob": "1256d2dc5444828acdddc49c553836bbcaa79ba5"
+    },
+    {
+      "migration": "20260915000100_collection_registration_metadata",
+      "bytes": 3461,
+      "sha256": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+      "git_blob": "428e64780904d5aeeca6e159a95184b4fb76ab18"
+    },
+    {
+      "migration": "20260917000100_environmental_measurement_set",
+      "bytes": 1523,
+      "sha256": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+      "git_blob": "69981ceb5bbd5f9fc1e6231eba0f57859babe8b1"
+    },
+    {
+      "migration": "20260919000100_user_administration",
+      "bytes": 2744,
+      "sha256": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+      "git_blob": "43b1016d91e516a22db15aaf0c894746d2a3f6be"
+    },
+    {
+      "migration": "20260920000100_ihfr_experimental_diagnosis",
+      "bytes": 13885,
+      "sha256": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+      "git_blob": "e9c6b4a32ed22b9ee5ea3d75ccca9159752bb0b6"
+    },
+    {
+      "migration": "20260920000100_remove_legacy_is_admin",
+      "bytes": 508,
+      "sha256": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+      "git_blob": "3dbfee0ad39f3609940150d1781437b588a21465"
+    },
+    {
+      "migration": "20260926000100_ihfr_lifecycle_reference_integrity",
+      "bytes": 4399,
+      "sha256": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+      "git_blob": "557f416e03bd03f118226780ce44aaddf3ff6b8d"
+    },
+    {
+      "migration": "20261004000100_mail_foundation",
+      "bytes": 4308,
+      "sha256": "ba923a694ae362e114c8ae003224bf5b102139e2c3e7328b09b5d77fa3626029",
+      "git_blob": "58c96ad80e5f508566fb03a798893a90b59aa747"
+    },
+    {
+      "migration": "20261004000200_account_verification_recovery",
+      "bytes": 2065,
+      "sha256": "4f36b168678d882e9a55e19a255b64e5752d8babc212977b59c162c1e84f6222",
+      "git_blob": "0557a742fc6bc3a8f25b9c5b0e3268b1a769bcbe"
+    },
+    {
+      "migration": "20261004000300_account_rate_limit_actions",
+      "bytes": 557,
+      "sha256": "65e030a67736ee1bb3b2390e1e4eb54218f8c5882c50e7205b47a8030d52d771",
+      "git_blob": "3de57c54768fc99a6f8223e65feda4817eed2390"
+    },
+    {
+      "migration": "20261005000100_account_deletion_mail_ownership",
+      "bytes": 1060,
+      "sha256": "38c609f75b9789e8cc41f5d490c682155eb0c70cb973d71d52ba2d9aa0380fcd",
+      "git_blob": "c8160e6822411ac308f5e8187612bad865e51b3e"
+    },
+    {
+      "migration": "20261010000100_environmental_drafts",
+      "bytes": 1319,
+      "sha256": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+      "git_blob": "b5707b523667ce88e0239c2b01019934a73da4e2"
+    },
+    {
+      "migration": "20261010000200_area_covers",
+      "bytes": 3219,
+      "sha256": "d6ca4a6b7d79617a83eeccc84b9bf9383d99f5f4dfdee1bae893362563d8003d",
+      "git_blob": "211a8ae92f72469df69476c71704ec5f1487150b"
+    }
+  ]
+}

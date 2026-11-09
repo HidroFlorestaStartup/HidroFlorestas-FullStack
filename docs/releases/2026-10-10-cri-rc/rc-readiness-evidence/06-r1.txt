@@ -1,0 +1,33 @@
+ℹ tests 17
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+✔ R1 cancel challenge after early read but before final fence prevents SMTP (459.336ms)
+IMP-006 schema owned by this run: imp006_test_da7ff85147554819a7a20d5705cde5f6
+✔ R1 invalidate challenge after early read but before final fence prevents SMTP (407.6983ms)
+IMP-006 schema owned by this run: imp006_test_8f9035edfead4dcaad7ec18aecb96469
+✔ R1 consume challenge after early read but before final fence prevents SMTP (558.5003ms)
+IMP-006 schema owned by this run: imp006_test_6e0ba42fe891489296a95c9e33752a82
+✔ R1 valid final fence passes operational deadline separately from shorter challenge validity (401.9522ms)
+IMP-006 schema owned by this run: imp006_test_6c5e34868b414a71a86761c56343430f
+✔ R1 production database clock fence permits an unexpired real-time claim (392.4039ms)
+IMP-006 schema owned by this run: imp006_test_3411221efa0842569ab74f4b7032b15d
+✔ R1 monotonic elapsed time refuses delayed final fence even with application clock behind PostgreSQL (389.6705ms)
+IMP-006 schema owned by this run: imp006_test_8ced80be3afd4fcaa04d9729fa71a6c8
+✔ R1 delayed final fence past message validity never starts SMTP (385.7214ms)
+IMP-006 schema owned by this run: imp006_test_57a0913d4a924383a0195d0b0b0158ec
+✔ R1 delayed final fence past challenge validity never starts SMTP (388.7205ms)
+IMP-006 schema owned by this run: imp006_test_dcd3ba7e10464b1d9862086ecd89d2db
+✔ R1 database failure at final fence preserves durable payload and recovery without SMTP (389.4316ms)
+✔ R1 operational deadline after SMTP accepts DATA destroys connection and remains ambiguous (1611.416ms)
+✔ R1 transport deadline is the minimum of SMTP cap, proof validity and operational lease deadline (1.0978ms)
+✔ R1 expired operational deadline or proof never opens SMTP connection (5.9494ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8380.9465

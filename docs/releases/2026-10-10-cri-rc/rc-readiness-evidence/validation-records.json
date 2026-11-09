@@ -1,0 +1,311 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "capturedUtc": "2026-10-13T19:22:36.465546+00:00",
+  "testedHead": "9fe2becccf2286da354c3f3fcc6ff9958c28b034",
+  "recordedHeadBeforeDocumentClosure": "9fe2becccf2286da354c3f3fcc6ff9958c28b034",
+  "functionalSnapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+  "originalCommits": [
+    {
+      "sha": "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+      "parents": [
+        "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+      ],
+      "authorDate": "2026-10-10T13:55:03-03:00",
+      "committerDate": "2026-10-10T13:55:03-03:00",
+      "subject": "docs(plans): reconcilia contas e registra evolução autorizada"
+    },
+    {
+      "sha": "6bf9f2ba94698516282e482b690fbe5d812088f5",
+      "parents": [
+        "c59a7b6eb1198e20535356934805f0b93d2e99c2"
+      ],
+      "authorDate": "2026-10-10T13:56:38-03:00",
+      "committerDate": "2026-10-10T13:56:38-03:00",
+      "subject": "docs(specs): planeja correção dos runners de contas"
+    },
+    {
+      "sha": "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+      "parents": [
+        "6bf9f2ba94698516282e482b690fbe5d812088f5"
+      ],
+      "authorDate": "2026-10-10T14:11:20-03:00",
+      "committerDate": "2026-10-10T14:11:20-03:00",
+      "subject": "fix(accounts): corrige runners e checksums locais de migrations"
+    },
+    {
+      "sha": "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+      "parents": [
+        "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a"
+      ],
+      "authorDate": "2026-10-10T14:11:38-03:00",
+      "committerDate": "2026-10-10T14:11:38-03:00",
+      "subject": "docs(specs): planeja rascunhos pessoais de medições"
+    },
+    {
+      "sha": "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+      "parents": [
+        "26f2bd77568fb7be01ae6347e08a4a2796c917a0"
+      ],
+      "authorDate": "2026-10-10T14:51:50-03:00",
+      "committerDate": "2026-10-10T14:51:50-03:00",
+      "subject": "feat(drafts): salva medições parciais pessoais com consumo transacional"
+    },
+    {
+      "sha": "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+      "parents": [
+        "45da350c34f873619a81bb5b3022bf97a1d1bc7c"
+      ],
+      "authorDate": "2026-10-10T14:52:17-03:00",
+      "committerDate": "2026-10-10T14:52:17-03:00",
+      "subject": "docs(specs): planeja capas privadas com ownership e reconciliação"
+    },
+    {
+      "sha": "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+      "parents": [
+        "1ae3ca51ebb0291751a39c1b2f873431ab09da52"
+      ],
+      "authorDate": "2026-10-10T15:27:18-03:00",
+      "committerDate": "2026-10-10T15:27:18-03:00",
+      "subject": "feat(images): integra capas privadas com validação e cleanup próprio"
+    },
+    {
+      "sha": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+      "parents": [
+        "06fcbe005b7198b0708f280d9844f5edc0c7451d"
+      ],
+      "authorDate": "2026-10-10T15:32:01-03:00",
+      "committerDate": "2026-10-10T15:32:01-03:00",
+      "subject": "docs(handoff): consolida evidências, commits e pendências da entrega"
+    },
+    {
+      "sha": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "parents": [
+        "41f33db7ca30db3f9d971999c3f8131f4fc188a0"
+      ],
+      "authorDate": "2026-10-10T16:18:48-03:00",
+      "committerDate": "2026-10-10T16:18:48-03:00",
+      "subject": "docs(audit): registra revisão técnica da entrega local"
+    },
+    {
+      "sha": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "parents": [
+        "497d2e5326ea33232bf9fbd44442162d77f0a86c"
+      ],
+      "authorDate": "2026-10-10T16:26:52-03:00",
+      "committerDate": "2026-10-10T16:26:52-03:00",
+      "subject": "docs(audit): corrige estados e rastreabilidade das evidências"
+    },
+    {
+      "sha": "539f38d52bba207d2822528d4afd6b936aa64d9f",
+      "parents": [
+        "d8a32d39572785d87744e2b10c87e79ad019ba46"
+      ],
+      "authorDate": "2026-10-10T16:38:42-03:00",
+      "committerDate": "2026-10-10T16:38:42-03:00",
+      "subject": "docs(audit): reconcilia revisão focal e prontidão local"
+    }
+  ],
+  "dependencyCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "records": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:14:09.028Z",
+      "endedUtc": "2026-10-13T19:14:14.252Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "01-regressionsetup.txt",
+      "sourceLogSha256": "e4e887ac3ff3f6196d1e1f13eec004cf9ac742a8323be69deb5ee4e461a53ffb",
+      "excerptSha256": "6abda2f3d6649a021ef185a80ebb8064e05021a4ba197b6a4d4519b6f3674a6a"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:14:14.558Z",
+      "endedUtc": "2026-10-13T19:14:26.681Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "02-unit.txt",
+      "sourceLogSha256": "4ffe8398ca7f82b0acdb9a4ad1fd93ff185e0192f3bd66af2d2e97a7295275e8",
+      "excerptSha256": "426568454576a690bfa3944dbc835e495376b337fe632a8e1d2f84fc7ec49112"
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:14:26.983Z",
+      "endedUtc": "2026-10-13T19:15:45.862Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "03-integration.txt",
+      "sourceLogSha256": "ec2d2d8d8865589258011d98f6f33e32b1ac6009b7c91bbd4a6a4af39f8b2696",
+      "excerptSha256": "c4e6cbb6d58dda9b53426c7b2e3f7f065b031dc7017dda75c74dc8ba9f0a1cca"
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:15:46.171Z",
+      "endedUtc": "2026-10-13T19:16:00.407Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "04-migration.txt",
+      "sourceLogSha256": "d40977acfebc017fc8f2072d6de8efa61a840b51bb6bcbf9c2fd3607b4b2e659",
+      "excerptSha256": "35d3097a1f92ba6e4d4968eb5f3641bf4a38885e5482573ef18d75b2b7b93f63"
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:00.713Z",
+      "endedUtc": "2026-10-13T19:16:03.557Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "05-contract.txt",
+      "sourceLogSha256": "fa6119d346938be8b2fb4de00e0d621d1538ecd6b2e8a5f1dd0c870268b39362",
+      "excerptSha256": "924ef39d19a68f34c10630e616740e587ea96bafd0ea3565965a8e517da81272"
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:03.863Z",
+      "endedUtc": "2026-10-13T19:16:12.580Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "06-r1.txt",
+      "sourceLogSha256": "3a63d14c110292b63539d78f250f3624b5f6cf0a5aecac8b1c4d55029186da20",
+      "excerptSha256": "b8c93b699b67bd5923aa3acbfeedd98e53ca3938106e3ca5d596928e9c6a5e6f"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:12.891Z",
+      "endedUtc": "2026-10-13T19:16:33.214Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "07-build.txt",
+      "sourceLogSha256": "d4ca9e761f6cdffc5d0df64a0550e111b45c78ee601f8f96c0539dda80c496c1",
+      "excerptSha256": "a70082127c3f998cbadd25870bb879930d91bd33387a0086130c6149787e5a39"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:33.518Z",
+      "endedUtc": "2026-10-13T19:16:39.862Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "08-typecheck.txt",
+      "sourceLogSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "excerptSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:40.176Z",
+      "endedUtc": "2026-10-13T19:16:51.764Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "09-lint.txt",
+      "sourceLogSha256": "d09dce93590e3f22691222f624ee8d54b57b3b9de0f01ed3d5339612ff620d22",
+      "excerptSha256": "445bb6cc3d82a814173c27ee2460d03c13dab6456a6563239c84fe2bc751f19f"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:16:52.079Z",
+      "endedUtc": "2026-10-13T19:19:48.837Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "10-e2e.txt",
+      "sourceLogSha256": "f993377ee9b8f9ee1f59131760a1a1579e2e51646866cfeafea53114bf5c7717",
+      "excerptSha256": "d525b959ef5265ff8f09843d2b8aef902cfef85f6a46686578db51f083937817"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:19:49.125Z",
+      "endedUtc": "2026-10-13T19:20:25.704Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "11-https.txt",
+      "sourceLogSha256": "5770dbfd2ac29eb805e33117c453d8fdbc835199702af029daee0a710fd5a497",
+      "excerptSha256": "264d4ef521ec6b0213e395e33a96b56fbfc6994cdb793854726a57c7154dac06"
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:20:25.980Z",
+      "endedUtc": "2026-10-13T19:20:35.966Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "12-deletion.txt",
+      "sourceLogSha256": "65d7bdda99e9405c5d3689b61959d2e9953c9465b7e3c0e651ea183996fa571f",
+      "excerptSha256": "65d7bdda99e9405c5d3689b61959d2e9953c9465b7e3c0e651ea183996fa571f"
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:20:36.256Z",
+      "endedUtc": "2026-10-13T19:21:18.097Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "13-ihfr.txt",
+      "sourceLogSha256": "b155705d53843ca567fe674c14463059031aa6664bb7cea5c9506b5b58649021",
+      "excerptSha256": "b155705d53843ca567fe674c14463059031aa6664bb7cea5c9506b5b58649021"
+    },
+    {
+      "gate": "Bootstrap",
+      "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:21:18.461Z",
+      "endedUtc": "2026-10-13T19:21:27.609Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "14-bootstrap.txt",
+      "sourceLogSha256": "a9fc6aa79a96ea8a933b03f353094778afd659d8b58130c46f95b16acf941182",
+      "excerptSha256": "0e4f9818c6274e2428acc27570e4879f64eca72d2963d5ee06580d670694e073"
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "f7148613de807f0d1e6912ba67f718cd78bf4362455a61d94f6b328de914d02c",
+      "startedUtc": "2026-10-13T19:21:27.908Z",
+      "endedUtc": "2026-10-13T19:21:28.551Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "15-schemaaudit.txt",
+      "sourceLogSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "excerptSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8"
+    }
+  ],
+  "limits": [
+    "Only owned synthetic loopback PostgreSQL and fake providers.",
+    "Historical FAILs are retained in feature/review evidence.",
+    "No student approval, deploy, remote migration or scientific validation."
+  ]
+}

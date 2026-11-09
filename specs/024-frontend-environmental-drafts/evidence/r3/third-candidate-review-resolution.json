@@ -1,0 +1,12 @@
+{
+  "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+  "run_id": 39472759694,
+  "attempt": 1,
+  "job_id": 118800800378,
+  "codex_receipt_id": 6297927596,
+  "thread_id": "PRRT_kwDOVAitc86uZ6ZY",
+  "original_comment_id": 4327041011,
+  "closing_reply_id": 4328737531,
+  "resolved": true,
+  "scope": "Technical finding resolution after exact-SHA official validation; no review approval, human acceptance, merge or deployment."
+}

@@ -1,0 +1,340 @@
+{
+  "run_id": 39465856665,
+  "attempt": 1,
+  "job_id": 118776943818,
+  "head_sha": "85e397bd4271ab07a197ea88db652227e6e392ce",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "failure",
+  "run_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465856665",
+  "artifact": {
+    "id": 12287280647,
+    "name": "rc-validation-85e397bd4271ab07a197ea88db652227e6e392ce",
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/artifacts/12287280647",
+    "digest": "sha256:c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e",
+    "size_bytes": 20601581,
+    "local_zip_sha256": "c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e",
+    "digest_verified": true
+  },
+  "Codex": {
+    "reviewed_sha": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "status": "completed",
+    "receipt_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/19#issuecomment-6296990762",
+    "has_any_findings": false,
+    "has_unresolved_findings": false
+  },
+  "fingerprint": {
+    "value": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+    "same_in_all_recorded_gates": true,
+    "recorded_gate_count": 13,
+    "expected_windows_checkout": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+    "matches_expected": true,
+    "functional_files": 564,
+    "expected_method": "Pinned committed inputs filtered with git core.autocrlf=true; per-file SHA256 then sorted compact JSON manifest SHA256.",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+  },
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 407,
+        "pass": 407,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 231,
+        "pass": 231,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 37,
+        "pass": 37,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 6,
+        "pass": 6,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 17,
+        "pass": 17,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0
+    },
+    {
+      "gate": "E2E",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 188,
+        "pass": 188,
+        "fail": 0,
+        "skip": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Https",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 2,
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Deletion",
+      "result": "PASS",
+      "exitCode": 0,
+      "counts": {
+        "total": 3,
+        "pass": 3,
+        "fail": 0,
+        "skip": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Ihfr",
+      "result": "FAIL",
+      "exitCode": 1,
+      "counts": {
+        "total": 6,
+        "pass": 0,
+        "fail": 6,
+        "skip": 0,
+        "not_run": 0
+      }
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "NOT_RUN",
+      "exitCode": null,
+      "reason": "Runner stops after failed Ihfr gate; no result row exists."
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "NOT_RUN",
+      "exitCode": null,
+      "reason": "Runner stops after failed Ihfr gate; no result row exists."
+    }
+  ],
+  "e2e": {
+    "total": 188,
+    "pass": 188,
+    "fail": 0,
+    "skip": 0,
+    "not_run": 0,
+    "retries": 0,
+    "expected_total": 188,
+    "matches_expected": true,
+    "expected_composition": {
+      "original": 166,
+      "geometry_and_render_readiness": 21,
+      "environmental_persisted_post_p1": 1
+    },
+    "source": ".accounts-validation/e2e-1792517991362.log"
+  },
+  "critical_tests": [
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "viewport, text200, touch, focus and last controls remain usable",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-collections.spec.ts",
+      "name": "P1: a lost response must not replay under a different logged-in member",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "environmental form, draft actions and review remain usable at each viewport",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: retry de rascunho nao pode persistir o preenchimento de A como rascunho de B",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-environmental-drafts.spec.ts",
+      "name": "P1: tentativa de confirmar dados de A nao pode ser confirmada sob a sessao B apos persistencia e resposta perdida",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    },
+    {
+      "file": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "name": "text scale transitions finish before the single scroll while input focus remains protected",
+      "result": "PASS",
+      "evidence": "All188 E2E tests passed with zero failures/skips/not-run; the dot reporter does not emit individual passing names."
+    }
+  ],
+  "first_failure": {
+    "gate": "Ihfr",
+    "file": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "line": 51,
+    "test": "collection, environmental confirmation and IHFR creation work without browser randomUUID",
+    "first_observed_error": "HTTP404 on initial collection creation page navigation",
+    "route_template": "/dashboard/laboratories/{laboratory}/areas/{area}/collections/new",
+    "later_assertion": "selectOption(manual) on the collection timezone field timed out after120000ms because the page was404.",
+    "assertion_file": "tests/e2e/support/collection-occurrence.ts",
+    "assertion_line": 7,
+    "caller_line": 65,
+    "all_six_navigation_results_are_404": true,
+    "diagnostics": [
+      {
+        "test": "collection, environmental confirmation and IHFR creation work without browser randomUUID",
+        "status": "timedOut",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      },
+      {
+        "test": "OWNER and contextual ADMIN create, replace, revoke and recover with one stable key",
+        "status": "failed",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      },
+      {
+        "test": "MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM",
+        "status": "failed",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      },
+      {
+        "test": "well-formed incompatible version reaches the real API and shows a recoverable terminal",
+        "status": "timedOut",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      },
+      {
+        "test": "member reads the current experimental DTO with labels, keyboard access and responsive layout",
+        "status": "failed",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      },
+      {
+        "test": "member sees honest absence and inactive laboratory stays read only",
+        "status": "failed",
+        "navigation_statuses": [
+          404
+        ],
+        "ready": "complete",
+        "login": false,
+        "occurrence": false,
+        "regions": []
+      }
+    ],
+    "source": ".accounts-validation/ihfr-1792518732781.log",
+    "causal_status": "Observed route failure; no root cause assigned to scientific behavior, geometry or H4."
+  },
+  "server_observations": {
+    "ihfr_started_loopback_port": 62337,
+    "owned_schema_marker_present": true,
+    "owned_schema_sanitized": "imp006_test_<run-specific>",
+    "owned_schema_marker_sha256": "c0a91fc4d8fa53aeb60c674199cf88614ca32c0fb367c7c9935a4265597f2b64",
+    "error_marker_occurrences": [],
+    "note": "No listed marker found in recorded gate logs does not prove a server configuration value or exclude a schema mismatch."
+  },
+  "captures": {
+    "metadata_count": 54,
+    "all_head_sha_match": true,
+    "all_have_png": true,
+    "by_phase": {
+      "frontend-collections": 27,
+      "frontend-environmental": 27
+    },
+    "by_kind": {
+      "application-viewport": 53,
+      "synthetic-helper-counterproof": 1
+    },
+    "ihfr_screenshot_or_error_context_present": false,
+    "visual_review": "PIXELS_REVIEWED_WITH_QUALIFICATIONS; see second-candidate-visual-review.md and second-candidate-visual-summary.json"
+  },
+  "local_evidence_directory": "evidence/phase7-r3-v2-candidate"
+}

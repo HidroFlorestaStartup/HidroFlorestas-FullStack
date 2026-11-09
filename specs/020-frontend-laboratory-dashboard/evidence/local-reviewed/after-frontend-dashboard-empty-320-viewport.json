@@ -1,0 +1,38 @@
+{
+  "name": "empty-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-empty-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1937,
+      "height": 724,
+      "extent": 2828
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "p",
+    "x": 32,
+    "y": 462.296875,
+    "width": 256,
+    "height": 221.1875
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "empty-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-empty-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1082,
+      "height": 724,
+      "extent": 1938
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 900
+  },
+  "target": {
+    "x": 33,
+    "y": 432.75,
+    "width": 254,
+    "height": 168
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

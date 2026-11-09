@@ -1,0 +1,48 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "runtimeCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "postgresVersion": "17.10",
+  "nodeVersion": "24.19.0",
+  "prismaVersion": "7.4.2",
+  "rows": [
+    {
+      "command": "node --import=tsx scripts/imp006-test-runner.ts integration",
+      "counts": {
+        "tests": 187,
+        "pass": 187,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "exitCode": 0
+    },
+    {
+      "command": "node --import=tsx scripts/imp006-test-runner.ts migration",
+      "counts": {
+        "tests": 37,
+        "pass": 37,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "exitCode": 0
+    },
+    {
+      "command": "node --import=tsx scripts/imp006-test-runner.ts contract",
+      "counts": {
+        "tests": 6,
+        "pass": 6,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "exitCode": 0
+    }
+  ],
+  "bootstrap": {
+    "migrations": 14,
+    "failed": 0,
+    "transactionalSmokeRolledBack": true,
+    "ownedDatabaseDisposed": true
+  }
+}

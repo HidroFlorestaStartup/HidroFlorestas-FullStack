@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "scope": "Read-only review of official phase 6 v3 PNG/JSON evidence. Seven changed application images and one new synthetic image were inspected directly; nineteen application images and one synthetic image are byte-identical to previously inspected v2 images. No repository edits or additional browser tests.",
+  "status": "PIXELS_REVIEWED_WITH_QUALIFICATIONS",
+  "provenance": {
+    "head": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+    "runId": 39469650449,
+    "attempt": 1,
+    "jobId": 118790047117,
+    "artifactId": 12286659078,
+    "zipSha256": "57748ae803485ddff742b5f43dcaaf6a8ec76f12b1788e2788cef39d0587956e",
+    "zipBytes": 19261404,
+    "zipEntries": 469,
+    "integrityVerificationOwner": "qa_account"
+  },
+  "runtimeReceipt": {
+    "reviewed": true,
+    "allFifteenGatesPass": true,
+    "e2ePass": 182,
+    "e2eFail": 0,
+    "ihfrPass": 6,
+    "ihfrFail": 0,
+    "exactShaCodexFindings": [],
+    "exactShaCodexReceiptId": 6297489682,
+    "overallMissionApprovalAsserted": false,
+    "source": "Downloaded receipt.json from the independent QA observer; this visual review does not rerun gates."
+  },
+  "inventory": {
+    "pngJsonPairs": 28,
+    "applicationPairs": 26,
+    "applicationMatrixPairs": 24,
+    "applicationFlowPairs": 2,
+    "syntheticPairs": 2,
+    "allDurable": true,
+    "durablePairsSurvivedLaterDeletionAndIhfrGates": true,
+    "allHeadsMatch": true,
+    "allPngDimensionsMatchMetadata": true,
+    "allMatrixFilenamesMatchScaleAndViewport": true,
+    "allRootFontSizesMatchScales": true,
+    "allPhysicalDeviceFalse": true,
+    "allFullPageFalse": true,
+    "horizontalOverflowObserved": false,
+    "metadataIssueCount": 0,
+    "matrixComplete": true,
+    "allCaptureAnimationsAllow": true
+  },
+  "pixelReview": {
+    "applicationImagesReviewed": 26,
+    "applicationImagesInspectedDirectlyThisRound": 7,
+    "applicationImagesMatchedByExactSha256ToInspectedV2": 19,
+    "syntheticImagesReviewedForSeparation": 2,
+    "syntheticImagesInspectedDirectlyThisRound": 1,
+    "syntheticImagesMatchedByExactSha256ToInspectedV2": 1,
+    "finalControlFramesReviewed": 18,
+    "finalControlFramesWithCompleteTargetVisible": 18,
+    "beforeFramesReviewed": 6,
+    "beforeFrameMeaning": "Same revision and run, rendered viewport before target positioning; not a historical before-fix comparison.",
+    "beforeFramesWithLoadingOnly": 0,
+    "syntheticFramesExcludedFromApplicationAcceptance": true
+  },
+  "matrix": [
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Review, confirm and environmental-data link are wholly visible after positioning. Bottom navigation is present; the development indicator covers part of its first label, and a thin screenshot mask touches the bottom edge in final detail."
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Final controls are wholly visible. The unscrolled detail-before frame now shows loaded laboratory/collection context. In the final detail frame a screenshot mask crosses bottom-navigation pixels."
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Final controls are wholly visible; account header and side navigation remain visible. Form-control masks appear below the detail target."
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Final controls are wholly visible; account header and side navigation remain visible. This is a desktop viewport capture, not full-page evidence."
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 200,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Final controls remain wholly visible above bottom navigation. Labels wrap across several lines. The development indicator partly covers the first navigation item."
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "textScale": 200,
+      "statesInspected": [
+        "form",
+        "review",
+        "detail-before",
+        "detail"
+      ],
+      "finalTargetsVisible": true,
+      "observation": "Final controls remain wholly visible below the header. The before-detail frame is unscrolled and does not contain the target link; after-positioning shows the complete link. The secondary back action in review is partly above the viewport while the confirm target is complete."
+    }
+  ],
+  "qualifications": [
+    "These images and metadata belong to the exact v3 SHA. All metadata record animations allow. Natural-finish/readiness ordering is established by the source-linked automated tests and counterproofs, not by static pixels alone.",
+    "Pink screenshot masks cross some bottom-navigation pixels, including final detail at 375x900/text100 and a thin lower edge at 320x900/text100. Those pixels cannot prove actual application overlap or a fully unobstructed navigation item.",
+    "The Next development indicator overlaps part of the first mobile navigation label in some frames; it was not hidden to improve the evidence.",
+    "At 844x390/text200 the final confirmation is fully visible while the secondary back action is partly above the header boundary; the capture does not show all actions simultaneously.",
+    "The six before-detail captures are the same run before target positioning. They are not evidence of product behavior before a CSS or helper correction.",
+    "Physical-device keyboard, assistive technology and manual accessibility acceptance are not established by these emulated static captures.",
+    "The two flow screenshots are viewport samples. The uncertain-result frame does not display the entire warning and retry area.",
+    "The detail matrix visits a pre-existing fixture after reviewing a new unsaved occurrence. Displayed timestamps across those separate states must not be used as evidence of precision loss.",
+    "Nineteen application PNGs and one synthetic PNG are SHA-256 identical to the corresponding v2 files already inspected; that explicit byte comparison supports reuse of the prior pixel observations without claiming a new direct view of every unchanged file.",
+    "The successful phase 6 v3 runtime and pixel review do not close the separate phase 7 IHFR 404 failure or establish its cause."
+  ],
+  "representativeFrameSuggestions": [
+    {
+      "rank": 1,
+      "capture": "frontend-collections-form-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+      "imageSha256": "41452bade621d0e3862ebf19be99d4f7e4308ad9bd66a1bd2bc282903efe75f7",
+      "metadataFilename": "5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+      "metadataSha256": "9f99f06e68c99e67450b5c1378deec3fc6b3d94a179f959c13eea14465ba9b20",
+      "reason": "Primary narrow-screen evidence: complete review control above the bottom navigation at text 200%.",
+      "copyRecommendation": "Suitable for versioning as representative official v3 pixels with this exact SHA/run/artifact provenance and the documented visual limits. Integrator owns any copy to the repository."
+    },
+    {
+      "rank": 2,
+      "capture": "frontend-collections-detail-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+      "imageSha256": "1c08bef513eb006d5259dac677d5d2f2efe54d8960f5a71ad5665b11c8bdcd31",
+      "metadataFilename": "5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+      "metadataSha256": "ce62836f85124083d5ab3cc4911ee20385e20469ddb28bf4cdf3ece589dd11c9",
+      "reason": "Primary landscape evidence: complete environmental-data link below the sticky account header at text 200%.",
+      "copyRecommendation": "Suitable for versioning as representative official v3 pixels with this exact SHA/run/artifact provenance and the documented visual limits. Integrator owns any copy to the repository."
+    },
+    {
+      "rank": 3,
+      "capture": "frontend-collections-detail-before-844-390-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+      "imageSha256": "c54545313af83444084d31f666e1965a7500485662f4f2fd612d29bc60299bef",
+      "metadataFilename": "5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+      "metadataSha256": "ed82b0c68263a15ab44f14ed48ed5d51ff68bc77ee158a63747d38f2e800ae15",
+      "reason": "Optional companion to the preceding frame: unscrolled viewport in the same run, not the UI before a code correction.",
+      "copyRecommendation": "Suitable for versioning as representative official v3 pixels with this exact SHA/run/artifact provenance and the documented visual limits. Integrator owns any copy to the repository."
+    },
+    {
+      "rank": 4,
+      "capture": "frontend-collections-review-320-900-200",
+      "filename": "5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+      "imageSha256": "0f6441f944b2cbd7d35947767d199f8235b81a6157faeb6021feb770a95c2ee8",
+      "metadataFilename": "5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+      "metadataSha256": "753496e05bbc53344287048874ca0c23256459af5f4f41c7cc7f8ead0b144616",
+      "reason": "Optional confirmation-state evidence: complete final confirmation control and visible bottom navigation at text 200%.",
+      "copyRecommendation": "Suitable for versioning as representative official v3 pixels with this exact SHA/run/artifact provenance and the documented visual limits. Integrator owns any copy to the repository."
+    }
+  ],
+  "metadataAudit": "third-candidate-visual-metadata.json",
+  "pixelHashComparison": "third-candidate-pixel-comparison.json"
+}

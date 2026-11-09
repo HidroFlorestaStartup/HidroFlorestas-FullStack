@@ -1,0 +1,381 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:integration
+npm notice run node --import=tsx scripts/imp006-test-runner.ts integration
+IMP-006 read-only preflight passed: target 3ca357615da4, schema public, duration_ms=49. Tests may write to isolated schemas.
+[2026-10-19T15:09:30.860Z] START phase=integration attempt=1 target=3ca357615da4 schema=public
+IMP-006 schema owned by this run: imp006_test_d1927456625a4af18a7487e465435499
+✔ deletion removes only own identity, proofs, receipts and encrypted mail; stale sessions fail (832.6529ms)
+IMP-006 schema owned by this run: imp006_test_772d4ef151e94799a6f77a0e47db1e32
+✔ deletion requires a live session, exact confirmation and password; failures are durably limited (505.9393ms)
+IMP-006 schema owned by this run: imp006_test_269c81a6a35c46a1b418c06cc0167017
+✔ deletion rollback restores identity and all authentication inputs (495.9406ms)
+IMP-006 schema owned by this run: imp006_test_5baf411e655744598a4a9932c12b7ae7
+✔ scientific and administrative blockers are counted and unchanged on attempted deletion (475.0061ms)
+IMP-006 schema owned by this run: imp006_test_b7dba15a6e9745d1b814cb19e4a76c1b
+✔ last active administrator is protected, including concurrent self deletions (506.6205ms)
+IMP-006 schema owned by this run: imp006_test_a6b2ba9769bd4717a416fc6b33077917
+✔ stale credential versions and inactive users cannot delete, even with a matching password (408.7664ms)
+IMP-006 schema owned by this run: imp006_test_31cc255a767149ac9869fe7860c22ffa
+✔ unowned live legacy notices temporarily prevent deletion without touching other accounts (635.3904ms)
+IMP-006 schema owned by this run: imp006_test_a6a87cf81b9f47c6b7dadf8764e3fe24
+✔ password notices have explicit ownership and delete with the updated credential version (511.7351ms)
+IMP-006 schema owned by this run: imp006_test_7ad975c33ba443edbb57793be73321ed
+✔ mail ownership preserves replay but rejects changing the owner or mismatching a challenge (586.627ms)
+IMP-006 schema owned by this run: imp006_test_d1277a16abed435e998d19968b30e17d
+✔ a password revision while comparison is pending prevents deletion (421.232ms)
+IMP-006 schema owned by this run: imp006_test_adcf8102be61450b83e95609eb8c594d
+✔ a new scientific link after GET eligibility is rechecked at DELETE (480.7317ms)
+IMP-006 schema owned by this run: imp006_test_8de5b2ac8f7d4d53a13d9d1fd0257071
+✔ R1 deletion before final send fence cannot restore deleted mail (489.1747ms)
+IMP-006 schema owned by this run: imp006_test_b37e9f8c446943febcb74c08e164aa55
+✔ R1 deletion during authorized transport cannot restore deleted mail (689.5869ms)
+IMP-006 schema owned by this run: imp006_test_46841afe38494e839daadac277062a5b
+✔ accounts signup atomically stores commitments and encrypted mail; replay proves original ownership (877.1326ms)
+IMP-006 schema owned by this run: imp006_test_5af2fdd54c2d4fb98a6586c37988712d
+✔ accounts rollback removes new identity, challenge, request and mail atomically (666.6259ms)
+IMP-006 schema owned by this run: imp006_test_15558de1ae884ac7874715c7e103d8b4
+✔ accounts concurrent identical signup and different-key canonical duplicates create one identity (621.2555ms)
+IMP-006 schema owned by this run: imp006_test_e2eef8e932834742aee3b757e0365c04
+✔ accounts invalid verification attempts survive errors, exhaust once and cancel encrypted mail (660.3697ms)
+IMP-006 schema owned by this run: imp006_test_b83ff4562d0e4b2faa676bd7e498c5fa
+✔ accounts proofs belong to exact user, purpose, email and credential version (685.039ms)
+IMP-006 schema owned by this run: imp006_test_caa74c7a24f142688a6476cc5c7c686b
+✔ accounts successful verification is one-time and preserves active state, role and password (539.8276ms)
+IMP-006 schema owned by this run: imp006_test_9d3df06291a04a03ab3aea50e1925c2c
+✔ accounts resend honors cooldown, replay and invalidation without duplicating mail (511.2248ms)
+IMP-006 schema owned by this run: imp006_test_2b26d3702977459185d17a7a9c65cea5
+✔ accounts retained proof key rotation consumes old proof; retired key fails closed (611.6901ms)
+IMP-006 schema owned by this run: imp006_test_7039d3390564455e8c4f0a21ed86c686
+✔ accounts reset request is neutral for nonexistent, pending, blocked, inactive and throttled identities (488.179ms)
+IMP-006 schema owned by this run: imp006_test_4d2c4dbd1cde4773bc7680689358e229
+✔ accounts repeated reset key preserves current proof; new request invalidates previous proof (612.6178ms)
+IMP-006 schema owned by this run: imp006_test_f203675c4d48400fa8920de695bbbb22
+✔ accounts reset is single-use, increments version, invalidates proofs and queues challenge-free notification (567.9697ms)
+IMP-006 schema owned by this run: imp006_test_b31e958ab0ea415d8ec0ca0e9ad89007
+✔ accounts reset expiration during password hashing rejects without changing credentials (438.3988ms)
+IMP-006 schema owned by this run: imp006_test_5972296c1c894c11be7387be90c7e626
+✔ accounts fresh consumption clock rejects delayed verification read crossing expiry (426.5702ms)
+IMP-006 schema owned by this run: imp006_test_1e476e0b044b43c8b0dda2dad8878cdb
+✔ accounts fresh consumption clock rejects delayed reset read crossing expiry (451.7775ms)
+IMP-006 schema owned by this run: imp006_test_d550a107311449ea8a0630521daff657
+✔ accounts login rechecks password and version after concurrent reset (457.9688ms)
+IMP-006 schema owned by this run: imp006_test_c114c631a1d5475b82d8e6140f57d8f3
+✔ accounts password change rechecks hash/version after concurrent reset and requires current password (461.9293ms)
+IMP-006 schema owned by this run: imp006_test_d364587e177b4be297df637852a4b4eb
+✔ accounts password change transaction rollback preserves hash/version/proofs and removes notification (504.8908ms)
+IMP-006 schema owned by this run: imp006_test_1b244895cdd941efba10045122428f22
+✔ accounts legacy cohort and administrative roles retain approved authentication destination (499.558ms)
+IMP-006 schema owned by this run: imp006_test_0d271c0145034140a640ab89d255e725
+✔ accounts total budget100 is shared across workflows while reset response remains neutral (958.0492ms)
+IMP-006 schema owned by this run: imp006_test_c48c1957c75a42e1ad3dba06684b6c38
+✔ accounts invalid attempt delayed beyond validity does not spend a post-expiry attempt (426.7424ms)
+IMP-006 schema owned by this run: imp006_test_0ab5d6f31aa14b0193b69e63d7894aae
+✔ accounts reset rollback restores consumed proof and hash/version while dropping notification (488.0147ms)
+IMP-006 schema owned by this run: imp006_test_f5aace3a79f74850819987ed329e0742
+✔ accounts commitment maintenance expires at24h in bounded batches and preserves future requests (420.5423ms)
+IMP-006 schema owned by this run: imp006_test_54b4e739269f478194beb64cf4d5a398
+✔ accounts throttled reset avoids new durable receipts and identity lookup while preserving neutral return (451.4858ms)
+IMP-006 schema owned by this run: imp006_test_02d29cdc261142ec957eb3f998f3b1f4
+✔ accounts confirmation versus resend has one consistent serialized result (626.1152ms)
+IMP-006 schema owned by this run: imp006_test_ab65a71a787149379792ef0d176c4ef0
+✔ accounts verification and reset never reactivate an account disabled after proof issuance (507.4733ms)
+▶ admin user audit route
+  ✔ returns 200 and rejects invalid query (3.2107ms)
+  ✔ maps 401/403/404/500 (1.5275ms)
+✔ admin user audit route (5.3932ms)
+▶ admin user role route
+  ✔ returns 200 and revalidates current authority on every request (3.7063ms)
+  ✔ maps 400/401/403/404/409/500 (3.3093ms)
+✔ admin user role route (7.7632ms)
+▶ admin user status route
+  ✔ returns 200 and rejects malformed input without mutation (5.4708ms)
+  ✔ maps 401/403/404/409/500 with enumerated recovery (1.9881ms)
+✔ admin user status route (8.1964ms)
+▶ admin user read routes
+  ✔ returns list/detail 200 with no-store and validates query (3.8491ms)
+  ✔ maps 401/403/404/500 and denies laboratory-only authority (1.6404ms)
+✔ admin user read routes (6.163ms)
+▶ admin response security
+  ✔ keeps user, audit and error payloads allowlisted (3.303ms)
+✔ admin response security (3.907ms)
+✔ cover HTTP bounds CSRF/closed confirmation, hides provider failures and proxies private bytes (9.6811ms)
+✔ CRI-REV-001 configuration fails closed for disabled, absent, invalid and incomplete settings (1.432ms)
+✔ preset accepts documented CSV/array equivalently and rejects unsigned or transforming options (7.2302ms)
+✔ cleanup provider proves immutable identity/context through plural API and deletes assetIds only (18.8162ms)
+✔ upload ticket signs controlled authenticated destination and preset without secret or delivery URL (1.1948ms)
+✔ CRI-REV-002 transaction retries explicit conflict P2034 (155.5972ms)
+✔ CRI-REV-002 transaction retries explicit conflict P2002 (147.3718ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40001 (132.9399ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40P01 (147.988ms)
+✔ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (150.5549ms)
+✔ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (133.1353ms)
+✔ CRI-REV-002 transaction retry remains bounded to three and sanitized (369.1135ms)
+✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.79ms)
+✔ CRI-REV-005 waits for bounded contention backoff before starting the next transaction (1.8225ms)
+✔ CRI-REV-005 keeps three attempts and only two backoffs on repeated supported conflicts (0.7986ms)
+✔ CRI-REV-005 never backs off or retries arbitrary failures (0.3549ms)
+IMP-006 schema owned by this run: imp006_test_6877edac4c054c5b999ff0ffa27bf3a5
+✔ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (638.935ms)
+IMP-006 schema owned by this run: imp006_test_e22a31b2d5304e1e9164e0f02b503ef0
+✔ CRI-REV-002 hourly quota independently rejects without provider I/O (667.2616ms)
+IMP-006 schema owned by this run: imp006_test_2f1afa3e482e46288bd4209f3b246849
+✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (419.6845ms)
+IMP-006 schema owned by this run: imp006_test_41b3154766154a58a1d0ebcb3438dd43
+✔ CRI-REV-002 revalidates role during preset without an open transaction (413.5844ms)
+IMP-006 schema owned by this run: imp006_test_7341bd76c35b4290bc971afe9b50d035
+✔ CRI-REV-002 revalidates membership during preset without an open transaction (454.7623ms)
+IMP-006 schema owned by this run: imp006_test_4cf4b075c42945d6b5281907d465575b
+✔ CRI-REV-002 revalidates laboratory during preset without an open transaction (433.7861ms)
+IMP-006 schema owned by this run: imp006_test_cb6e07ea6db241d6807ac3db259707d5
+✔ CRI-REV-002 revalidates account during preset without an open transaction (442.665ms)
+IMP-006 schema owned by this run: imp006_test_a3d7ca766f694d788633fb493b95c2cf
+✔ CRI-REV-002 revalidates revision during preset without an open transaction (470.7263ms)
+IMP-006 schema owned by this run: imp006_test_e0131967d0d94e72b35cc9886943bff4
+✔ CRI-REV-002 simultaneous eligible requests respect per-user active quota (766.6092ms)
+IMP-006 schema owned by this run: imp006_test_16c18a2e33df4b008181911936d2f3f1
+✔ CRI-REV-002 simultaneous same-key requests converge and changed preset preserves jobs (760.742ms)
+IMP-006 schema owned by this run: imp006_test_52658264f3ff44599cfb2c3625062aa0
+✔ CRI-REV-002 concurrent hourly quota is checked again after preset (776.2507ms)
+IMP-006 schema owned by this run: imp006_test_e343954e0af34566835a77c656727b59
+✔ CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota (500.9463ms)
+IMP-006 schema owned by this run: imp006_test_586d62fae10e4417936cdef6be788a87
+✔ CRI-REV-002 retries P2034 in transaction 1 without duplicate jobs or repeated I/O (618.2833ms)
+IMP-006 schema owned by this run: imp006_test_6781c0cf62ab4184b5a8fc23dc6681f9
+✔ CRI-REV-002 retries P2002 in transaction 1 without duplicate jobs or repeated I/O (629.0404ms)
+IMP-006 schema owned by this run: imp006_test_f8d1943b991844d9929cf88261d39ca6
+✔ CRI-REV-002 retries P2034 in transaction 2 without duplicate jobs or repeated I/O (603.5612ms)
+IMP-006 schema owned by this run: imp006_test_4c132f40d0944c60bbd4e0fa3a0e6354
+✔ CRI-REV-002 retries P2002 in transaction 2 without duplicate jobs or repeated I/O (621.3087ms)
+IMP-006 schema owned by this run: imp006_test_3dd9910bf3de415f9d805c1a7e50a2d7
+✔ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (691.1123ms)
+IMP-006 schema owned by this run: imp006_test_7184d15a95b24b93b6fae02f2112dc10
+✔ CRI-REV-001 real service HTTP contract has safe availability and preserves disabled content refusal (551.8109ms)
+IMP-006 schema owned by this run: imp006_test_332c317c83fe44a988998b5435a8c393
+✔ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (774.491ms)
+IMP-006 schema owned by this run: imp006_test_d30d17b52e6b4018ba3c4af38d12cf2d
+✔ cover authorization uses current laboratory role, validates context, strips EXIF and revokes read (606.1822ms)
+IMP-006 schema owned by this run: imp006_test_80f892c8f1434daca6a8d8a7526714d5
+✔ cover replacement preserves old, retries ambiguous upload, conflicts concurrent revisions and ABA removal (738.2201ms)
+IMP-006 schema owned by this run: imp006_test_a9194aae1a704252b55ee04d6f0a28a3
+✔ cleanup proves ownership, preserves referenced assets, retries and revisits late resources including raw (792.3404ms)
+IMP-006 schema owned by this run: imp006_test_e26819ca38a243e9a7d2d894d46addad
+✔ contextual ADMIN edits, global ADMIN has no bypass and live revocation/downgrade blocks finalization (667.4567ms)
+IMP-006 schema owned by this run: imp006_test_ea8308034ea841b1a4aaf66206e0006a
+✔ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (549.5912ms)
+IMP-006 schema owned by this run: imp006_test_b5ace111f9ec49e4ade31e35a6c64484
+✔ permitted uploader account deletion rolls back safely then preserves team reading and owned cleanup (732.9937ms)
+✔ POST derives identity from the authenticated principal and rejects privilege injection (5.6235ms)
+✔ all three handlers sanitize failures and preserve no-store (2.2507ms)
+✔ keeps inactive area detail readable with the inherited read-only DTO (0.2957ms)
+▶ requireAuth adapter
+  ✔ passes the cookie token to the core and returns its principal (0.929ms)
+  ✔ does not grant authority from cookie presence alone (0.3613ms)
+  ✔ maps controlled core failures without exposing their cause (0.1275ms)
+✔ requireAuth adapter (2.1014ms)
+▶ POST /api/auth/logout
+  ✔ idempotently expires the cookie for every session condition (5.8213ms)
+  ✔ returns a controlled internal envelope if cookie removal fails (0.7886ms)
+✔ POST /api/auth/logout (7.3162ms)
+▶ GET /api/auth/me
+  ✔ returns no-store and an exact public DTO for an ACTIVE principal (4.5232ms)
+  ✔ uniformly rejects every non-authoritative session condition (5.8605ms)
+  ✔ returns a controlled 500 without serializing internal failures (0.757ms)
+  ✔ never leaks the internal principal fields (0.3496ms)
+✔ GET /api/auth/me (12.2677ms)
+▶ POST /api/auth/sign-in
+  ✔ returns 400 for invalid JSON and invalid syntax before consulting credentials (10.1372ms)
+  ✔ creates the seven-day HTTP-only cookie only for valid ACTIVE credentials (1.8212ms)
+  ✔ returns the server-derived admin destination only after successful authentication (0.6686ms)
+  ✔ uses one 401 response for absent, incorrect, and ineligible credentials (1.4604ms)
+  ✔ returns a generic 500 for internal results and thrown errors (0.569ms)
+  ✔ never exposes a token or privileged fields in JSON (0.4378ms)
+✔ POST /api/auth/sign-in (15.9258ms)
+▶ POST collection route
+  ✔ creates and replays with exact envelope, API Location and no-store (6.7501ms)
+  ✔ rejects missing, malformed or non-profile idempotency keys and closed bodies (1.8843ms)
+  ✔ maps authentication, authorization, not-found, read-only, conflict and internal errors (1.4499ms)
+✔ POST collection route (11.1203ms)
+▶ GET collection detail route
+  ✔ returns the closed contextual DTO with no-store (0.4142ms)
+  ✔ maps unauthenticated, missing/crossed and internal failures uniformly (0.5241ms)
+✔ GET collection detail route (1.085ms)
+✔ derives identity, forwards cursor and uses no-store (3.7301ms)
+✔ sanitizes auth, access, cursor and internal errors (1.5746ms)
+✔ reauthorizes independent calls and never reuses a previous payload (0.4967ms)
+✔ keeps inaccessible and missing laboratories indistinguishable (0.7559ms)
+✔ returns an inactive authorized context as read-only (0.2753ms)
+✔ PostgreSQL races and contextual authorization preserve a single immutable set (688.2208ms)
+✔ POST/GET envelopes, session author, Location, no-store and replay (8.4682ms)
+✔ rejects invalid JSON/header/extra fields before invoking service (1.8085ms)
+✔ sanitizes every error and applies no-store on both methods (3.1701ms)
+✔ draft HTTP limits bytes, rejects CSRF/malformed JSON and derives owner from session (9.6285ms)
+✔ confirmation requires paired valid draft headers and forwards the selected revision (2.2785ms)
+IMP-006 schema owned by this run: imp006_test_0188737411e14c60bc9412820aff5f92
+✔ draft isolation, replay, two laboratories, removed membership and inactive/blocked identities (772.6774ms)
+IMP-006 schema owned by this run: imp006_test_217c69a16a47443c98db6a247ef664a8
+✔ draft concurrent save has one winner and delayed discard cannot delete a recreated draft (568.8635ms)
+IMP-006 schema owned by this run: imp006_test_1c204aa188124d8c863d80b6ba31a4cd
+✔ confirmation consumes only current personal draft atomically, preserves rollback and replay (744.5312ms)
+IMP-006 schema owned by this run: imp006_test_760dd63203bb40ca89fdcb7b5500f4f4
+✔ allowed account deletion removes only personal drafts and rolls back them on failure (575.9976ms)
+IMP-006 schema owned by this run: imp006_test_7ba4e3696e9843c9b1dabb50e1a4c469
+✔ confirmation requires current personal draft reference and save versus confirm has a consistent winner (736.9531ms)
+IMP-006 schema owned by this run: imp006_test_87670e65c4274b70b4081a72d629db47
+✔ PostgreSQL contested transaction: REPLACE same key and request (990.9591ms)
+IMP-006 schema owned by this run: imp006_test_3c32f8fc75144ac79198b3f598993d1e
+✔ PostgreSQL contested transaction: REPLACE same key divergent request (607.4005ms)
+IMP-006 schema owned by this run: imp006_test_a2fdcaead5184de3a452cf2d9795405d
+✔ PostgreSQL contested transaction: REPLACE distinct keys (533.2119ms)
+IMP-006 schema owned by this run: imp006_test_9f2135a7eeb747dbaeb84ec8b54de4b9
+✔ PostgreSQL contested transaction: REPLACE versus REVOKE (499.9801ms)
+IMP-006 schema owned by this run: imp006_test_ecc0a14ec85b4909876f3f89be60d6f1
+✔ PostgreSQL contested transaction: REVOKE versus REVOKE (519.7962ms)
+IMP-006 schema owned by this run: imp006_test_2550b01f99934cf3acf42f0ee1629626
+✔ PostgreSQL contested transaction: CREATE same key and request (528.7975ms)
+IMP-006 schema owned by this run: imp006_test_f00f876628114ed794deae9d69f95622
+✔ PostgreSQL contested transaction: CREATE distinct keys (516.8344ms)
+IMP-006 schema owned by this run: imp006_test_cf0d7c01510742eda97a091de7b57f29
+✔ PostgreSQL contested transaction: CREATE divergent payloads (527.6916ms)
+IMP-006 schema owned by this run: imp006_test_8f29e1b1db2a4a609851735d2ffd88de
+✔ PostgreSQL contested transaction: CREATE versus REPLACE (483.065ms)
+✔ current endpoint authenticates, derives context and returns absence with no-store (4.3378ms)
+✔ current endpoint rejects malformed route context before lookup (0.4239ms)
+✔ detail endpoint forwards server-derived context and exposes only the public allowlist (4.0214ms)
+✔ missing, crossed and revoked-membership lookups share the same 404 envelope (1.0696ms)
+✔ missing or invalid session is sanitized as 401 (7.0035ms)
+✔ missing, inaccessible, revoked and crossed resources share 404 (2.6002ms)
+✔ OWNER, contextual ADMIN and MEMBER can read deterministic allowlisted eligibility (0.948ms)
+✔ technical eligibility does not grant write access in an inactive laboratory (0.2858ms)
+✔ closed land-use query accepts exactly seven values (0.5245ms)
+✔ unknown enum, alias, casing, duplicate and extra query data are 400 INVALID_INPUT (0.5896ms)
+✔ malformed contextual UUID is indistinguishable from an inaccessible resource (0.1776ms)
+✔ valid absence stays INSUFFICIENT_DATA instead of INVALID_INPUT (0.3475ms)
+✔ incompatible measurement version is a controlled eligibility outcome (0.214ms)
+IMP-006 schema owned by this run: imp006_test_c10174f77e5b49d4a82b9293bbf3c870
+✔ real eligibility is side-effect free in the application's isolated PostgreSQL schema (628.6219ms)
+IMP-006 schema owned by this run: imp006_test_2e23320200a442249c3f396d3c9e5b10
+✔ IHFR fixtures cover actors, contexts and lifecycle states (499.6124ms)
+IMP-006 schema owned by this run: imp006_test_2d40230c75eb445399398a5475df5b86
+✔ IHFR fixture schema is discarded after an injected failure (393.3305ms)
+✔ operation recovery requires authentication (3.8855ms)
+IMP-006 schema owned by this run: imp006_test_5f7a7587482c484ba39df1978adc0ac6
+✔ real terminal recovery is actor/context scoped, replay-only and omits restricted ledger fields (741.1821ms)
+IMP-006 schema owned by this run: imp006_test_3188c1092a734493b0fd441e76e3de23
+✔ persisted insufficient fixture records only terminal operation without a diagnosis (661.8167ms)
+IMP-006 schema owned by this run: imp006_test_951488cbb055400e9fe2d0df9880b5b8
+✔ PostgreSQL fixtures preserve contextual read, lifecycle and membership boundaries (541.794ms)
+IMP-006 schema owned by this run: imp006_test_54dd4572a47342f6843b597bb852e8e9
+✔ real current read distinguishes accessible absence from absent or crossed collection (523.9009ms)
+✔ OWNER, contextual ADMIN and MEMBER may read even when laboratory is inactive (0.5533ms)
+✔ revocation boundary validates authentication, contextual identifiers, JSON, key and closed reason (7.8261ms)
+IMP-006 schema owned by this run: imp006_test_c5cdcc60017244d6a274b0ac0c145129
+✔ real revocation is contextual, immutable, replayable and returns only the public terminal DTO (759.5961ms)
+IMP-006 schema owned by this run: imp006_test_3ecaa38d6ae14c7fa231896817cbe351
+✔ real PostgreSQL lifecycle persists replacement, revocation, creation and replay atomically (847.5044ms)
+IMP-006 schema owned by this run: imp006_test_c78d2170898d4bae80bf39136c188359
+✔ injected failures at each write checkpoint roll back all IHFR domain tables (752.1438ms)
+IMP-006 schema owned by this run: imp006_test_7cc9ef1d29af4c979232a967a15cc119
+✔ PostgreSQL permits 1:N diagnosis reuse and rejects duplicate collection payload (566.2814ms)
+IMP-006 schema owned by this run: imp006_test_a8af2627c61e426ab0abd8d4119959a6
+✔ concurrent compatible operations converge on one supplement without public leakage (636.6142ms)
+✔ write boundary authenticates and rejects closed-body, key and media-type violations (7.4855ms)
+IMP-006 schema owned by this run: imp006_test_36769c53aa124c0cbef6a9312e4e1976
+✔ real write route enforces current contextual role, state, replay, Location and public DTO (808.7951ms)
+IMP-006 schema owned by this run: imp006_test_f16ecc2d4e514d96bc04fa852948c97b
+✔ valid absence is terminal without domain writes; incompatible stored version is 422 and recoverable (613.0238ms)
+IMP-006 schema owned by this run: imp006_test_748955e997f149e9932f46f6950f9759
+✔ well-formed request version mismatches persist one recoverable terminal and never change IHFR domain state (567.4036ms)
+IMP-006 schema owned by this run: imp006_test_c49e0d02fd954ade83e0cc58edebb412
+✔ contextual write authorization precedes valid and malformed request input (452.2142ms)
+IMP-006 schema owned by this run: imp006_test_3f5ae621401a453d9dbfdde1977a596e
+✔ IMP-005 confirmed payload flows through IHFR eligibility, CREATE, CURRENT, REPLACE and REVOKE (831.1326ms)
+▶ /api/laboratories
+  ✔ uses only principal.id for POST and returns exact DTO (4.6562ms)
+  ✔ rejects client identity and maps limit (1.5114ms)
+  ✔ lists only service-scoped data (0.411ms)
+  ✔ maps unauthenticated and internal failures without details (0.7025ms)
+  ✔ does not invoke creation when the session is not authoritative (0.5083ms)
+✔ /api/laboratories (8.6661ms)
+▶ laboratory context access
+  ✔ returns current context and revalidates membership on every call (1.1709ms)
+  ✔ represents an inactive linked laboratory as read-only (0.1277ms)
+  ✔ uses the same not-found result for invalid, missing and revoked access (0.3855ms)
+  ✔ checks account eligibility before revealing membership (0.1062ms)
+✔ laboratory context access (2.493ms)
+✔ rejects forged identity and OWNER transitions before writes (4.4315ms)
+✔ maps access errors and sanitizes internal failures on both routes (2.1216ms)
+▶ /api/laboratories/[laboratoryId]
+  ✔ returns scoped details and member initials (4.4051ms)
+  ✔ requires exact confirmation and maps owner/data restrictions (1.3098ms)
+  ✔ passes only the authenticated principal and maps inaccessible laboratories as not found (1.0428ms)
+  ✔ preserves the IMP-002 conflict envelope when collections prevent deletion (0.4106ms)
+✔ /api/laboratories/[laboratoryId] (7.9135ms)
+IMP-006 schema owned by this run: imp006_test_23bdab46ec3547639669121959781753
+✔ R1 delayed pre-send result past lease remains recoverable: old worker never starts SMTP (694.2008ms)
+IMP-006 schema owned by this run: imp006_test_51c185a10ea34822b76e3de7a53e893b
+✔ R1 delayed pre-send result past lease after another worker SENT: old worker never starts SMTP (436.1361ms)
+IMP-006 schema owned by this run: imp006_test_4b3972262abc48e9867b77c5ead9bcdc
+✔ R1 successful final fence response delayed past lease cannot start SMTP after recovery (429.2899ms)
+IMP-006 schema owned by this run: imp006_test_5e8cd7a6ceb44f5e9341a6d94feae013
+✔ R1 near-end lease refuses SMTP after delayed early read and preserves finite recovery (449.5191ms)
+IMP-006 schema owned by this run: imp006_test_3aa5b9dea56744f78e21367188b48d2f
+✔ R1 near-end lease refuses SMTP after delayed final fence and preserves finite recovery (428.4547ms)
+IMP-006 schema owned by this run: imp006_test_384a20be17b0498bb6c781402193e449
+✔ R1 cancel challenge after early read but before final fence prevents SMTP (435.1272ms)
+IMP-006 schema owned by this run: imp006_test_738ef60a8eb34f7389788d6f7e5d6036
+✔ R1 invalidate challenge after early read but before final fence prevents SMTP (427.497ms)
+IMP-006 schema owned by this run: imp006_test_d6515e40eb2b4da5a42ed507f9c12dc3
+✔ R1 consume challenge after early read but before final fence prevents SMTP (457.6697ms)
+IMP-006 schema owned by this run: imp006_test_eceeda84580243bc8f27a7b997ac0006
+✔ R1 valid final fence passes operational deadline separately from shorter challenge validity (446.7843ms)
+IMP-006 schema owned by this run: imp006_test_9b61957f74b44b6499fd4419be1550c1
+✔ R1 production database clock fence permits an unexpired real-time claim (413.9654ms)
+IMP-006 schema owned by this run: imp006_test_0304d4cad95b497f9e12ae28d9bf7aae
+✔ R1 monotonic elapsed time refuses delayed final fence even with application clock behind PostgreSQL (415.8293ms)
+IMP-006 schema owned by this run: imp006_test_8d822f33b6fe4d8abb10fa21e4e11eff
+✔ R1 delayed final fence past message validity never starts SMTP (555.3483ms)
+IMP-006 schema owned by this run: imp006_test_3b62e8b1a4974b6597204145bcb1264e
+✔ R1 delayed final fence past challenge validity never starts SMTP (405.1769ms)
+IMP-006 schema owned by this run: imp006_test_6d19e327d6eb48f4a1371189e96f0b26
+✔ R1 database failure at final fence preserves durable payload and recovery without SMTP (404.345ms)
+IMP-006 schema owned by this run: imp006_test_750cf273f5c74551af0616fdec8f0f92
+✔ MAIL-FR-003 producer+enqueue commit/rollback; confidential durable idempotency and divergence (448.0597ms)
+IMP-006 schema owned by this run: imp006_test_5a11ade54b314f39a9e2c4e4de339ae6
+✔ same-key concurrent enqueue is one durable intent; shared Pg limits have one winner (457.5143ms)
+IMP-006 schema owned by this run: imp006_test_05c780edf0db4914bb300343a822cd1a
+✔ two workers, atomic claim, no lock across SMTP, redacted observability (425.0303ms)
+IMP-006 schema owned by this run: imp006_test_bb08733c6756418ba358b7e09dc84492
+✔ expired lease recovers with new ownership; late old result cannot overwrite (427.1144ms)
+IMP-006 schema owned by this run: imp006_test_8f0c23ba44694c3a8c743068158c90e4
+✔ timeout after acceptance permits duplicate attempt but keeps consistent state and same payload (416.0954ms)
+IMP-006 schema owned by this run: imp006_test_50b3314a521b44cab55d7d8302f4c373
+✔ provider outage retries with bounded backoff/jitter, max attempts and permanent failure (492.6094ms)
+IMP-006 schema owned by this run: imp006_test_798fd82812184401b2c4e4c09813364b
+✔ expiration and invalidated challenge prevent sends; cancellation fences in-flight result (489.6657ms)
+IMP-006 schema owned by this run: imp006_test_410f6641ae854d7597c95e45b58b0e16
+✔ abandoned claims exhaust finite attempts; cleanup bounded/repeated and active rows preserved (411.0768ms)
+IMP-006 schema owned by this run: imp006_test_d9e61ea384e0481baccffc0073ee5199
+✔ enforced batch/concurrency bounds and authenticated payload failure without retries (420.3359ms)
+IMP-006 schema owned by this run: imp006_test_f5af5141be774c608099a06cd5e29d7a
+✔ database failure awaits sibling SMTP before rejecting; no work escapes server response (563.0465ms)
+IMP-006 schema owned by this run: imp006_test_e5ccd51ee591401885836b89511f0515
+✔ four claims respect concurrency two and pre-send expiry fence after earlier wave (551.017ms)
+✔ derives the principal, forwards context and returns no-store (4.9815ms)
+✔ sanitizes unauthenticated, inaccessible and internal failures (1.6346ms)
+✔ one request wins each account revision and mutation/audit remain atomic (388.1904ms)
+✔ concurrent changes never remove both final ACTIVE ADMIN accounts (350.0252ms)
+✔ p95 for an allowlisted page of 50 synthetic accounts stays below two seconds (450.9908ms)
+▶ user administration routes
+  ✔ derives the actor and forwards only parsed list filters (3.7918ms)
+  ✔ validates status input before invoking the service (1.1475ms)
+  ✔ returns sanitized authentication, authorization, and conflict errors (1.2242ms)
+✔ user administration routes (6.9461ms)
+ℹ tests 218
+ℹ suites 15
+ℹ pass 218
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92149.8496
+[2026-10-19T15:11:03.079Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=0 duration_ms=92218
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-7qoYGA\integration-attempt-1.log

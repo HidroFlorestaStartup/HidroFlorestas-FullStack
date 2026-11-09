@@ -1,0 +1,168 @@
+[2026-10-16T02:44:36.556Z] START phase=cri-red-integration attempt=1 target=3ca357615da4
+stdout: ✔ cover HTTP bounds CSRF/closed confirmation, hides provider failures and proxies private bytes (7.842ms)
+stdout: ✔ preset accepts documented CSV/array equivalently and rejects unsigned or transforming options (7.987ms)
+stdout: ✔ cleanup provider proves immutable identity/context through plural API and deletes assetIds only (15.4677ms)
+stdout: ✔ upload ticket signs controlled authenticated destination and preset without secret or delivery URL (1.1311ms)
+stdout: IMP-006 schema owned by this run: imp006_test_3d53a85e6dcb44f6a188e7eaba8aa181
+stdout: ✖ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (1063.8674ms)
+stdout: IMP-006 schema owned by this run: imp006_test_6b819b63865544888b1b057a3eb6f988
+stdout: ✖ CRI-REV-002 hourly quota independently rejects without provider I/O (561.9781ms)
+stdout: IMP-006 schema owned by this run: imp006_test_6f9fcc2d77a24ec4bfc95fc091bf148a
+stdout: ✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (437.3388ms)
+stdout: IMP-006 schema owned by this run: imp006_test_4091aa2ca8314469acb6b2d72beada25
+stdout: ✔ CRI-REV-002 revalidates role during preset without an open transaction (409.5669ms)
+stdout: IMP-006 schema owned by this run: imp006_test_6f9a8cc6dab24814a2e93ca166ac6ada
+stdout: ✔ CRI-REV-002 revalidates membership during preset without an open transaction (458.2544ms)
+stdout: IMP-006 schema owned by this run: imp006_test_a1c5b6829b684491b3da4a9cb25ffb07
+stdout: ✔ CRI-REV-002 revalidates laboratory during preset without an open transaction (423.139ms)
+stdout: IMP-006 schema owned by this run: imp006_test_9fd1815ba9e6415697ac2a3e561f67f4
+stdout: ✔ CRI-REV-002 revalidates account during preset without an open transaction (398.5183ms)
+stdout: IMP-006 schema owned by this run: imp006_test_d6838672101b4a0c85ce762dedd0d863
+stdout: ✔ CRI-REV-002 revalidates revision during preset without an open transaction (411.8566ms)
+stdout: IMP-006 schema owned by this run: imp006_test_eb0bc9bae03540bbae29a65e2e224ac1
+stdout: ✔ CRI-REV-002 simultaneous eligible requests respect per-user active quota (520.2322ms)
+stdout: IMP-006 schema owned by this run: imp006_test_2925c4883aaa4f028771d1130d2c3fe3
+stdout: ✔ CRI-REV-002 simultaneous same-key requests converge and changed preset preserves jobs (515.0637ms)
+stdout: IMP-006 schema owned by this run: imp006_test_716be3daf8854e50897d77c8bcfbd1e5
+stdout: ✖ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (403.3998ms)
+stdout: IMP-006 schema owned by this run: imp006_test_3f384b06ef344aa6836df8dfd1527930
+stdout: ✖ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (451.1142ms)
+stdout: IMP-006 schema owned by this run: imp006_test_469f1980bc374c64a9af335a869c9cc6
+stdout: ✔ cover authorization uses current laboratory role, validates context, strips EXIF and revokes read (469.1811ms)
+stdout: IMP-006 schema owned by this run: imp006_test_578a0d57ca904f749dc413540c24671b
+stdout: ✔ cover replacement preserves old, retries ambiguous upload, conflicts concurrent revisions and ABA removal (601.4211ms)
+stdout: IMP-006 schema owned by this run: imp006_test_1eebc0300857474e9814a9867e5651cc
+stdout: ✔ cleanup proves ownership, preserves referenced assets, retries and revisits late resources including raw (620.1184ms)
+stdout: IMP-006 schema owned by this run: imp006_test_7466698a462e46089b4351cc52f29431
+stdout: ✔ contextual ADMIN edits, global ADMIN has no bypass and live revocation/downgrade blocks finalization (489.8484ms)
+stdout: IMP-006 schema owned by this run: imp006_test_eef195bfac114786b1923a78872aaadd
+stdout: ✖ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (568.8467ms)
+stdout: IMP-006 schema owned by this run: imp006_test_752c1378024148f29df08b5a7233fd72
+stdout: ✔ permitted uploader account deletion rolls back safely then preserves team reading and owned cleanup (550.5277ms)
+stdout: ℹ tests 22
+stdout: ℹ suites 0
+stdout: ℹ pass 17
+stdout: ℹ fail 5
+stdout: ℹ cancelled 0
+stdout: ℹ skipped 0
+stdout: ℹ todo 0
+stdout: ℹ duration_ms 11387.2809
+stdout:
+stdout: ✖ failing tests:
+stdout:
+stdout: test at tests\integration\area-covers.test.ts:2:2706
+stdout: ✖ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (1063.8674ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+stdout:
+stdout:   1 !== 0
+stdout:
+stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:19:117)
+stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
+stdout:       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: 1,
+stdout:     expected: 0,
+stdout:     operator: 'strictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+stdout:
+stdout: test at tests\integration\area-covers.test.ts:2:3982
+stdout: ✖ CRI-REV-002 hourly quota independently rejects without provider I/O (561.9781ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+stdout:
+stdout:   11 !== 10
+stdout:
+stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:28:118)
+stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
+stdout:       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: 11,
+stdout:     expected: 10,
+stdout:     operator: 'strictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+stdout:
+stdout: test at tests\integration\area-covers.test.ts:2:8751
+stdout: ✖ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (403.3998ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+stdout:   + actual - expected
+stdout:
+stdout:     {
+stdout:       canEdit: true,
+stdout:   -   featureEnabled: false,
+stdout:       image: {
+stdout:         hasImage: false,
+stdout:         revision: 0
+stdout:       }
+stdout:     }
+stdout:
+stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:74:155)
+stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
+stdout:       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: { image: { revision: 0, hasImage: false }, canEdit: true },
+stdout:     expected: { image: { revision: 0, hasImage: false }, canEdit: true, featureEnabled: false },
+stdout:     operator: 'deepStrictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+stdout:
+stdout: test at tests\integration\area-covers.test.ts:2:11019
+stdout: ✖ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (451.1142ms)
+stdout:   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+stdout:   + actual - expected
+stdout:
+stdout:     {
+stdout:       canEdit: true,
+stdout:   -   featureEnabled: false,
+stdout:       image: {
+stdout:         hasImage: true,
+stdout:         height: 24,
+stdout:         revision: 1,
+stdout:         width: 32
+stdout:
+stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:86:9)
+stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
+stdout:       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: true,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: { image: { revision: 1, hasImage: true, width: 32, height: 24 }, canEdit: true },
+stdout:     expected: { image: { revision: 1, hasImage: true, width: 32, height: 24 }, canEdit: true, featureEnabled: false },
+stdout:     operator: 'deepStrictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+stdout:
+stdout: test at tests\integration\area-covers.test.ts:2:24020
+stdout: ✖ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (568.8467ms)
+stdout:   AssertionError [ERR_ASSERTION]: CRI-REV-002 active quota must precede provider I/O
+stdout:
+stdout:   5 !== 4
+stdout:
+stdout:       at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:137:244)
+stdout:       at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+stdout:       at async <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\integration\area-covers.test.ts:17:426)
+stdout:       at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+stdout:       at async Test.run (node:internal/test_runner/test:1389:7)
+stdout:       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+stdout:     generatedMessage: false,
+stdout:     code: 'ERR_ASSERTION',
+stdout:     actual: 5,
+stdout:     expected: 4,
+stdout:     operator: 'strictEqual',
+stdout:     diff: 'simple'
+stdout:   }
+[2026-10-16T02:44:48.006Z] END phase=cri-red-integration attempt=1 target=3ca357615da4 exit=1 duration_ms=11450

@@ -1,0 +1,14 @@
+import { defineConfig } from '@playwright/test';
+import { resolve } from 'node:path';
+import base from '../../../playwright.config';
+
+// Retain the official database, origin, port, worker and retry guards.
+export default defineConfig({
+  ...base,
+  testDir: resolve(process.cwd(), 'tests'),
+  testMatch: ['**/frontend-territorial-map.spec.ts', '**/territorial-map.spec.ts', '**/authenticated.spec.ts'],
+  outputDir: '.accounts-validation/navigation-auth-results',
+  reporter: [[resolve(process.cwd(), 'tests/investigations/navigation/closed-reporter.ts')]],
+  use: { ...base.use, trace: 'off', screenshot: 'off', video: 'off' },
+  webServer: base.webServer && !Array.isArray(base.webServer) ? { ...base.webServer, stdout: 'pipe', stderr: 'pipe' } : base.webServer,
+});

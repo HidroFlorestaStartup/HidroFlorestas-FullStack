@@ -1,5 +1,23 @@
 # Modelo de dados e estratégia de migrations
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+Persistência implementada: AccountEmailChallenge, MailOutbox, MailRateLimitBucket, AccountRequest e campos emailVerifiedAt/credentialVersion/emailCanonical/verificationRequired em User. São 12 migrations versionadas no corte auditado, incluindo ownership de mensagens para exclusão. Modelos separados de desafios e fila genérica de cleanup abaixo são propostas históricas. Novas migrations serão aditivas e validadas isoladamente; retenção automática de drafts não foi aprovada.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 Todos os nomes são `PROPOSTA`. O schema final deve nascer nas specs futuras e ser reconciliado com a base então vigente.
 
 ## Modelos candidatos
@@ -57,3 +75,8 @@ Todos os nomes são `PROPOSTA`. O schema final deve nascer nas specs futuras e s
 - Depois de ativar verificação/revogação, rollback de comportamento exige plano específico; não remover `credentialVersion` nem marcar contas verificadas/desverificadas em massa.
 - Objetos Cloudinary e e-mails são efeitos externos irreversíveis por transação SQL. Use jobs reconciliáveis, idempotency e relatório de órfãos; rollback nunca promete “desenviar” mensagem.
 - Purge só ocorre após retenção aprovada, backup/observabilidade e seleção exata; nunca apagar históricos confirmados para liberar fixtures.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

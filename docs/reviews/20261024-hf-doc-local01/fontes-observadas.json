@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024",
+  "front": "LOCAL",
+  "observedAtUtc": "2026-10-24T15:36:18Z",
+  "account": "HidroFlorestaStartup",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "permissionObserved": "admin",
+  "source": "GitHub connector: get_pr_info, fetch_pr_comments, list_pull_request_reviews; Git fetch without prune",
+  "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "studentReviewSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+  "pullRequests": [
+    {
+      "number": 27,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "head": "docs/pilot-readiness-20261021",
+      "headSha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "base": "development",
+      "baseShaReturned": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+      "baseShaMeaning": "Valor retornado pelo conector; #27 informa baseline histórico b1f83cf. Não presumir base remota atual diferente de origin/development observada.",
+      "changedFiles": 208,
+      "formalReviews": [],
+      "comments": [
+        {
+          "id": 6329614420,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420",
+          "createdAt": "2026-10-22T00:24:15Z",
+          "updatedAt": "2026-10-23T07:16:21Z",
+          "excerpt": "<!-- codex-pull-request-review-summary -->\n<!-- codex-review-state:v1 {\"code_review\":{\"commit_sha\":\"223839c9ae91591ded8de387144d8c1ee84b5c20\",\"has_any_findings\":false,\"has_unresolved_findings\":false,\"status\":\"completed\"},\"security_review\":{\"commit_sha\":null,\"has_any_findings\":null,\"has_unresolved_findings\":null,\"status\":null}} -->\n\n## Codex Review Summary\n\nThis comment shows the latest Codex review activity on this pull request.\n\n| Review | Status | Commit | Review trigger |\n| --- | --- | --- | --- |\n| 📝 **Code Review** | ✅ **Completed** <relative-time datetime=\"2026-10-23T07:16:20.400826Z\">2026-10-23T07:16:20.400826Z</relative-time> | `223839c` | Manual request |\n\n\n\n",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6358797593,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6358797593",
+          "createdAt": "2026-10-23T06:19:14Z",
+          "updatedAt": "2026-10-23T06:19:14Z",
+          "excerpt": "## Continuação confirmada — 23/10/2026\n\nRegistro técnico por Codex autorizado nesta conversa; não é review formal nem conclusão automática da revisão pendente.\n\n**DECISAO_CONFIRMADA:** Pedro concordou em seguir com a integração dos relatórios após a revisão aplicável, mantendo as investigações abertas e o piloto bloqueado, e solicitou uma etapa dedicada para outro desenvolvedor investigar e corrigir as falhas intermitentes. Essa decisão cobre a incorporação dos registros, sem declarar as falhas resolvidas ou aceitar/liberar os riscos operacionais de contas, banco e recuperação. A investigação causal de G1 permanece aberta; G3–G5 mantêm seus critérios próprios.\n\n#26 integrado sem autoaprovação por **c4adfb379e5dc78f27f31b91edbd13f43228d9f9**. #27 permanece aberto no head223839c9ae91591ded8de387144d8c1ee84b5c20; a revisão oficial final ainda aparece running na consulta desta sessão, sem recibo conclusivo. Nenhum merge ou dispensa dessa revisão foi realizado. Antes de um futuro merge, reconferir a base development atual, ancestralidade, diff efetivo e conclusão da revisão.\n\n**Etapa HF-INV-20261023-01 publicada no PR #28:**\nhttps://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/docs/handoff-investigacoes-intermitentes-20261023/docs/plans/active/investigacoes-intermitentes-20261023/prompt-de-execucao.md\n\nO plano/prompt autorizam investigação, correções demonstradas, validação, commits/push e PRs para development, sem confirmação adicional de rotina; merges e aceites com o mantenedor. Incluem INV-001–005, NAV4 local, settleTransitions e contraprovas auxiliares pertinentes; preservam FAILs e estados inconclusivos. O executor pode recuperar as evidências imutáveis deste PR sem importar sua branch inteira e avançar nos experimentos independentes enquanto esta revisão aguarda conclusão.\n\nHandoff exclusivamente documental, execução futura NAO_INICIADO, sem nova suíte funcional, inspeção visual, operação em provedor/banco hospedado ou liberação do piloto.",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6359630181,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6359630181",
+          "createdAt": "2026-10-23T07:16:18Z",
+          "updatedAt": "2026-10-23T07:16:18Z",
+          "excerpt": "<!-- codex-review-receipt:v1 -->\n\nCodex Review: Didn't find any major issues. Another round soon, please!\n\n**Reviewed commit:** `223839c9ae`\n\n",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6375179339,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6375179339",
+          "createdAt": "2026-10-23T21:34:00Z",
+          "updatedAt": "2026-10-23T22:19:16Z",
+          "excerpt": "Adendo factual de reconciliação — HF-INV-20261023-01-LOCAL01,23/10/2026. Atualização final após os recibos da candidata29.\n\n#27 permanece aberta/sem merge em `223839c9ae91591ded8de387144d8c1ee84b5c20`, reconferida. O [resumo oficial Codex desta27](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420) concluiu em23/10 às07:16:20.400826UTC: completed,has_any_findings=false,has_unresolved_findings=false. O trecho running do corpo é histórico; nenhum novo pedido foi feito neste SHA. **CI funcional de223839c9 continua NOT_RUN**; os quinzePASS de131ade3/run39699435699/tentativa1 não foram transferidos.\n\nA investigação está entregue na [PR #29](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29), base development `c4adfb379e5dc78f27f31b91edbd13f43228d9f9`, HEAD `00477e961e36416d8d602d36f7e0ee195c487148`, árvore `c980346ef3044e0da79d36c42f3cd0da0a4839c2`. [CI própria final](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375857925): run40030207450/tentativa1/job120676307853,15/15gates PASS/exit0, journal e artifact conferidos. [Codex do00477e9](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375564800) concluído sem findings; [nativo/CLI2](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375571838) concluídos, doisP2 tratados e limitesP3 documentados. A candidata anterior52cdf6e teve seu próprio CI/review; o P2 local encontrado depois foi corrigido antes desta prova final.\n\nNAV4 autenticado original4/4PASS e protocolos dos noveIDs executados. A [errata HTTP](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/docs/releases/2026-10-23-hf-inv-local01/review/http-classification-errata.md) conserva recibos e distingue GET Next/RSC de documentos; seis404históricos continuam provados no browser e com causa inconclusiva. Riscos históricos não foram aceitos em nome do mantenedor. Essas são provas da candidata29, não testes do HEAD desta27. Branch desta27 e trabalho de Pedro preservados. Sem merge/deploy/provedores/banco hospedado/novo e-mail; G3–G5 e piloto continuam separados.",
+          "excerptOnly": true,
+          "mutableComment": true
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/28",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "head": "docs/handoff-investigacoes-intermitentes-20261023",
+      "headSha": "f56f73fda1d7bd459a1415bf02df25edc9120674",
+      "base": "development",
+      "baseShaReturned": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "baseShaMeaning": "Valor retornado pelo conector; #27 informa baseline histórico b1f83cf. Não presumir base remota atual diferente de origin/development observada.",
+      "changedFiles": 8,
+      "formalReviews": [],
+      "comments": [
+        {
+          "id": 6359764701,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/28#issuecomment-6359764701",
+          "createdAt": "2026-10-23T07:25:20Z",
+          "updatedAt": "2026-10-23T07:25:20Z",
+          "excerpt": "## Atualização publicada — revisão #27 e responsabilidades\n\nHead vigente deste handoff: **f56f73fda1d7bd459a1415bf02df25edc9120674**, na mesma branch/PR. Alterados apenas prompt, plano e recibo JSON. Textos anteriores preservados por adendos, JSON e whitespace novo válidos, seis referências a comentários conferidos e **3/3 blobs remotos iguais aos bytes locais**. Sem nova suíte funcional ou mudança de produto/configuração.\n\nA revisão do **#27/223839c9** está **completed, sem achados registrados**, conforme [recibo oficial](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6359630181) e [resumo estruturado](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420), concluída em23/10/2026 às07:16:20UTC/04:16:20 America/Fortaleza. Não há recibo que confirme cancelamento da execução anterior; uma nova solicitação não foi apresentada como cancelamento confirmado. Histórico de running preservado como observação anterior.\n\nAs instruções esclarecem: aceite/integração do #27 e gestão de sua revisão pertencem ao mantenedor; o próximo desenvolvedor executa a investigação das intermitências e providencia revisão das novas entregas que produzir. Não precisa retomar, cancelar ou repetir a revisão concluída desse head. Deve conferir referências atuais antes de começar, sem bloquear os experimentos independentes por um estado histórico do bot.\n\n**Checks do head f56f73f:** Vercel success; Vercel Preview Comments completed/success. Não são validação funcional ou aceite humano. #27 e #28 permanecem sem merge nesta atualização. CI funcional do head223839c9 continua NOT_RUN; os15gates anteriores pertencem a131ade3. Investigações, G3–G5 e qualificadores IHFR preservados.",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6374225844,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/28#issuecomment-6374225844",
+          "createdAt": "2026-10-23T20:35:59Z",
+          "updatedAt": "2026-10-23T22:19:20Z",
+          "excerpt": "Execução HF-INV-20261023-01-LOCAL01 — recibo final de23/10/2026.\n\nFonte dos alunos efetivamente lida: HEAD `f56f73fda1d7bd459a1415bf02df25edc9120674`, prompt/plano/preparacao-evidencias.json por SHA imutável. O b84f423 do corpo é checkpoint anterior. Branch/arquivos/autoria de Pedro preservados; esta PR28 segue aberta/sem merge, sem reescrita da descrição. A preparação NAO_INICIADO foi sucedida pela execução em branch própria, sem importar esta branch inteira.\n\nBase real reconferida: development `c4adfb379e5dc78f27f31b91edbd13f43228d9f9`; main beba96f preservada. Quatro subagentes nativos reais, worktrees/runtime isolados. Início por NAV4 com sessão real: original4/4, origemA/B/A3/3, Back12/12+12reloads. IHFRduasrodadas6/6, concorrência baseline1/1+espelhos2/2; navegação pública3/3 e autenticada13/13. Negativos e causas históricas preservados; nenhum patch especulativo de produto. A errata documental não altera resultados UI nem recibos originais.\n\nEntrega verificável na [PR #29](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29), HEAD `00477e961e36416d8d602d36f7e0ee195c487148`, árvore `c980346ef3044e0da79d36c42f3cd0da0a4839c2`,91paths publicados iguais à candidata local. [Pacote](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/docs/releases/2026-10-23-hf-inv-local01/readme.md). [CI oficial final](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375857925): run40030207450/tentativa1/job120676307853, **15/15PASS/exit0**, digest/CRC/caminhos/journal conferidos. [Nativo e CLI2](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375571838) concluídos, doisP2 corrigidos; [Codex remoto final](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375564800) sem findings. O estado/veredito da PR29 é a fonte vigente desta entrega, sem herdar CI de outro SHA.\n\n#27 permanece em223839c9, [Codex concluído](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6329614420) em23/10 às07:16:20UTC, sem findings. CI funcional desse SHA é NOT_RUN, distinta de131ade3/run39699435699/tentativa1. Não se reabriu aquele review. Merge/aceites e risco residual continuam com o mantenedor. Sem merge/deploy/operação em provedores ou banco hospedado/novo e-mail; G3–G5 e os qualificadores experimentais IHFR permanecem.",
+          "excerptOnly": true,
+          "mutableComment": true
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "head": "fix/investigacoes-intermitentes-20261023-local01",
+      "headSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "base": "development",
+      "baseShaReturned": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "baseShaMeaning": "Valor retornado pelo conector; #27 informa baseline histórico b1f83cf. Não presumir base remota atual diferente de origin/development observada.",
+      "changedFiles": 91,
+      "formalReviews": [],
+      "comments": [
+        {
+          "id": 6375564800,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375564800",
+          "createdAt": "2026-10-23T21:58:13Z",
+          "updatedAt": "2026-10-23T21:58:13Z",
+          "excerpt": "<!-- codex-review-receipt:v1 -->\n\nCodex Review: Didn't find any major issues. Swish!\n\n**Reviewed commit:** `00477e961e`\n\n",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6375571838,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375571838",
+          "createdAt": "2026-10-23T21:58:43Z",
+          "updatedAt": "2026-10-23T21:58:43Z",
+          "excerpt": "Recibo de revisão local — HEAD final `00477e961e36416d8d602d36f7e0ee195c487148`, árvore `c980346ef3044e0da79d36c42f3cd0da0a4839c2`.\n\n**Nativo D:** diff integral contra development c4adfb3,91caminhos, doisP2 tratados/reconferidos, zeroP0–P2 aberto, trêsP3 com limites explícitos. [Parecer](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/00477e961e36416d8d602d36f7e0ee195c487148/docs/releases/2026-10-23-hf-inv-local01/review/independent-review.md) examina70660f3; D conferiu depois que70660f3→00477e9 muda somente seus dois pareceres. Git limpa/diffPASS; normalização EOL foi distinguida de igualdade dos blobs.\n\n**CLI1:** revisão integral c4adfb3→52cdf6e encontrou CLI-D-P2-002, preservado no [recibo anterior](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375354310). Processoexit0 comfinding não foi considerado aprovação.\n\n**CLI2:** revisão incremental52cdf6e→00477e9,21:52:41.155154UTC até conclusão observada antes21:54:46UTC: processoexit0, **nenhum finding materialP0–P2**. Codex CLI0.162.0-alpha.17.2 confirmou gpt-6.1-sol/ultra, sandboxread-only eapprovalnever. Comando sanitizado: `codex review --base 52cdf6ed28b12dfc0428cdf07f042c63f698da5c -c sandbox_mode=\"read-only\" -c developer_instructions=\"<HEAD fixo; escopo incremental; somente leitura; sem runtime/dados privados>\"`. Confiança Git restrita ao processo/worktree; nenhuma configuração global alterada.\n\nConclusão da CLI2: “Nenhum finding material P0–P2 no delta. CLI-D-P2-002 foi tratado com errata indexada, sínteses coerentes e recibos originais preservados; conferi hashes dos blobs Git, EOL, contagens, JSON e links. Revisão somente leitura, sem runtime, testes pesados ou verificação remota; PASS anteriores não foram considerados CI final.”\n\nChecks CLI2:11paths documentais,3JSON/51links/3runs correspondentes, sem problemas. Coordenação:27JSON/199links na candidata inteira, diff/escopo/contenção PASS,91paths publicados iguais e árvore remota idêntica. A/B/C/D encerrados; nenhum serviço próprio permanece. CLI2 não substitui o CI40030207450 ou o Codex remoto do00477e9, ainda acompanhados.",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6375857925,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375857925",
+          "createdAt": "2026-10-23T22:18:37Z",
+          "updatedAt": "2026-10-23T22:18:37Z",
+          "excerpt": "CI oficial FINAL — **15/15 PASS no HEAD00477e9**, sem herança de resultado.\n\n[Run40030207450/tentativa1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/40030207450), job120676307853. SHA `00477e961e36416d8d602d36f7e0ee195c487148`; árvore `c980346ef3044e0da79d36c42f3cd0da0a4839c2`, iguais à publicação local/remota. Check-run validate completed/success. Gatejournal e joblog contêm os mesmos15registros: digest/tamanho da reconstrução integral coincidem, não apenas o check global verde.\n\nContagens: Unit402+17; Integration231; Migration37; Contract6; R1 17; E2E220; Https2; Deletion3; Ihfr6. Sem somar R1/subconjuntos/repetições como casos únicos. Lint:0erros/2advertências existentes. Linhas de títulos/controles contendo “failed” não substituem os sumários de testes; Integration231/231,fail0.\n\nArtifact12536015424:26.896.265bytes, digest API/bytes `b43364b1e6e3038d30b33aa75525c9777be393928f2c11b9200438155cf0c998`;735membros/28.334.875bytes descomprimidos, todos os caminhos/CRCs verificados, symlinks recusados e nenhum membro extraído ou executado. Journal6244bytes, SHA-256 `9b8f9d5ae2fe4c1bebc23cb83d8b7d8258244ef1890d0a186b323f9c33d096dc`,15gates únicos, todos exit0. Logs e capturas permanecem no artifact oficial; a verificação de CRC não é inspeção visual integral.\n\nCodex remoto do mesmo SHA [concluído às21:58:14.680262UTC](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375178203), has_any_findings=false/has_unresolved_findings=false; [recibo imutável do00477e9](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375564800). [Nativo/CLI2](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375571838) concluídos, doisP2 tratados e trêsP3 com limites explícitos. Zero review_threads abertos na leitura final. A investigação não concede merge, homologação ou aceite científico/humano.\n\n",
+          "excerptOnly": true,
+          "mutableComment": true
+        },
+        {
+          "id": 6375908310,
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375908310",
+          "createdAt": "2026-10-23T22:22:17Z",
+          "updatedAt": "2026-10-23T22:22:17Z",
+          "excerpt": "**HF-INV-20261023-01-LOCAL01 — ENTREGA_TECNICA_CONCLUIDA_PARA_REVISAO.**\n\nPR29 **Ready for review**, aberta/sem merge, HEAD `00477e961e36416d8d602d36f7e0ee195c487148`, árvore `c980346ef3044e0da79d36c42f3cd0da0a4839c2`, mergeable:true na consulta. M0–M6 atendidos no alcance investigativo. Os quinze gates finais, duas correçõesP2 e reviews concluídos têm [recibo CI](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375857925), [recibo local](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375571838) e [Codex final](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6375564800). Após marcar Ready, o resumo Codex segue completed no mesmo SHA, sem findings ou pendências; nenhum pedido duplicado foi feito.\n\nO plano permanece AGUARDANDO_REVISAO para o mantenedor. Não significa causas antigas resolvidas, risco aceito ou piloto homologado. NAV4 tem causa de ingresso demonstrada apenas na reprodução atual; demais históricos mantêm NAO_REPRODUZIDO/INCONCLUSIVO conforme a matriz. Os trêsP3 e limites de fonte/geom/máscaras permanecem explícitos. Spec Kit foi aplicado ao enquadramento: plano transversal/protocolos e análise das skills instaladas, sem inventar feature/spec de correção funcional inexistente.\n\n[Adendo27](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27#issuecomment-6375179339) e [handoff28](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/28#issuecomment-6374225844) atualizados. Ambas abertas/sem merge, seus HEADs e branches preservados. Developmentc4adfb3/mainbeba96f reconferidas. Checkout original0f669b7 com zero alteração rastreada e as oito entradas não rastreadas iniciais; candidata limpa e alinhada0/0.\n\nA/B/C/D encerrados. Worktrees/commits e dados sintéticos privados preservados; serviços próprios parados, sem listeners3001/3200/55426/55427. Serviço preexistente3000 preservado. PostgreSQL anterior55427 foi parado ordenadamente sob autorização explícita, sem apagar dados. Ambos os runs oficiais e review remoto concluídos; nenhum job/agente futuro agendado ou promessa de trabalho fora da sessão. Referências temporárias de download consumidas foram removidas do diretório privado.\n\nPróximo ato humano: revisar e decidir integração/aceites, conferir a política administrativa aplicável e aceitar ou encaminhar os riscos históricos. G3–G5 continuam exigindo suas provas operacionais próprias; nenhum responsável foi inventado. Sem merge, deploy, operação em provedores/banco hospedado ou novo e-mail. IHFR conserva os quatro qualificadores experimentais do contrato.\n\n",
+          "excerptOnly": true,
+          "mutableComment": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Comentários GitHub podem ser editados; este recibo fixa o texto/excerto consultado e datas, não os torna commits imutáveis.",
+    "Não contém valores de ambiente, cookies, conteúdo VC codificado ou endereços de e-mail.",
+    "CI consultada não executada nesta missão; comentário CI completo contém detalhes adicionais não duplicados."
+  ],
+  "timestampMeaning": "Timestamp do registro consolidado desta sessão; comentários mantêm createdAt/updatedAt do servidor, não são objetos Git imutáveis.",
+  "snapshotTrees": [
+    {
+      "ref": "origin/development",
+      "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "tree": "24baec02321084fc1abedddd6355896a0b81eaa1"
+    },
+    {
+      "ref": "PR29",
+      "sha": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "tree": "c980346ef3044e0da79d36c42f3cd0da0a4839c2"
+    },
+    {
+      "ref": "PR27",
+      "sha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "tree": "f1d236a587e6876513e1d4921fe5d1c455e79602"
+    },
+    {
+      "ref": "PR28",
+      "sha": "f56f73fda1d7bd459a1415bf02df25edc9120674",
+      "tree": "80b6276c8926d203b327c941de6d18fdf1382ee8"
+    },
+    {
+      "ref": "origin/docs/revisao-20261024",
+      "sha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "tree": "e4cd17b11c738b5dec194b70484e02d6f4a8258c"
+    }
+  ],
+  "snapshotTreeSource": "git show -s --format=%H,%T,%P; 2026-10-24T15:45:19Z"
+}

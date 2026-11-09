@@ -1,0 +1,38 @@
+{
+  "name": "summary-375",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-summary-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 210,
+      "height": 755,
+      "extent": 4063
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "a",
+    "x": 16,
+    "y": 365.96875,
+    "width": 343,
+    "height": 155.59375
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

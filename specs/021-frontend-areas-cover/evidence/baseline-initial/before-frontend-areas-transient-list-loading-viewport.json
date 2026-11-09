@@ -1,0 +1,43 @@
+{
+  "name": "transient-list-loading",
+  "screenshot": {
+    "filename": "before-frontend-areas-transient-list-loading-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 19
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 665,
+      "extent": 665
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": -19,
+    "width": 1280,
+    "height": 720
+  },
+  "target": {
+    "x": 184,
+    "y": 447.625,
+    "width": 1072,
+    "height": 192
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

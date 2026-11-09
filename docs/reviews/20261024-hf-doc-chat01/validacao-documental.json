@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024-CHAT01",
+  "front": "CHAT",
+  "mode": "PARALELO",
+  "stage": "C0",
+  "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "examinedCandidateSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+  "studentReviewSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+  "recordedAtUtc": "2026-10-24T15:58:18Z",
+  "result": "PASS_DOCUMENTAL_C0",
+  "resultDoesNotMeanC1": true,
+  "globalStatus": "AGUARDANDO_HANDOFF_LOCAL",
+  "publicationStatus": "PUBLICACAO_BLOQUEADA_POR_GATILHO",
+  "remoteReviewStatus": "NAO_SOLICITADO_PUBLICACAO_BLOQUEADA",
+  "localHandoffConsumed": false,
+  "functionalTests": "NOT_RUN",
+  "functionalCi": "NOT_RUN",
+  "gitContext": {
+    "mode": "SOURCE_BLOBS_AND_PROPOSED_FILES",
+    "fullClone": "FAILED_PROXY_CONNECTION",
+    "gitStatus": "NAO_APLICAVEL_SEM_CHECKOUT",
+    "remoteCommitsCreated": 0,
+    "remoteBranchesCreated": 0,
+    "remotePullRequestsCreated": 0,
+    "baselineNeverFabricated": true
+  },
+  "scope": {
+    "authorDocumentPaths": [
+      "PROJECT_CONTEXT.md",
+      "docs/code-first-prd/implementation/backlog.md",
+      "docs/code-first-prd/implementation/estado-conciliado-20261024.md",
+      "docs/code-first-prd/implementation/implementation-plan.md",
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/active/hf-doc-20261024/chat/plano.md",
+      "docs/reviews/20261024-hf-doc-chat01/conciliacao-local-chat.md",
+      "docs/reviews/20261024-hf-doc-chat01/decisoes-e-recomendacoes.md",
+      "docs/reviews/20261024-hf-doc-chat01/diagnostico-rth-p2-001.md",
+      "docs/reviews/20261024-hf-doc-chat01/evidencias-autoridade.json",
+      "docs/reviews/20261024-hf-doc-chat01/fontes-operacao.json",
+      "docs/reviews/20261024-hf-doc-chat01/gate-publicacao.md",
+      "docs/reviews/20261024-hf-doc-chat01/handoff-final.md",
+      "docs/reviews/20261024-hf-doc-chat01/instrumentos-sob-demanda.md",
+      "docs/reviews/20261024-hf-doc-chat01/mapa-fontes-autoridade.md",
+      "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c0.json",
+      "docs/reviews/20261024-hf-doc-chat01/matriz-prontidao-g3-g5.md",
+      "docs/reviews/20261024-hf-doc-chat01/readme.md"
+    ],
+    "reviewerOutputPaths": [
+      "docs/reviews/20261024-hf-doc-chat01/revisao-independente.md"
+    ],
+    "selfPath": "docs/reviews/20261024-hf-doc-chat01/validacao-documental.json",
+    "forbiddenProductTestConfigPathsChanged": [],
+    "localOwnershipPathsChanged": [],
+    "historicalRawPathsChanged": []
+  },
+  "checks": {
+    "sourceBlobIntegrity": {
+      "result": "PASS",
+      "records": 25
+    },
+    "preimagePreservation": {
+      "result": "PASS",
+      "files": 4
+    },
+    "jsonSyntax": {
+      "result": "PASS",
+      "authorJsonFiles": 3,
+      "selfJsonParsedOnWrite": true
+    },
+    "decisionTable": {
+      "ids": [
+        "DOC-D01",
+        "DOC-D02",
+        "DOC-D03",
+        "DOC-D04",
+        "DOC-D05",
+        "DOC-D06",
+        "DOC-D07",
+        "DOC-D08"
+      ],
+      "columnsPerRow": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "jsonIdsMatch": true
+    },
+    "impMatrix": {
+      "ids": [
+        "IMP-002",
+        "IMP-003",
+        "IMP-004",
+        "IMP-005",
+        "IMP-006",
+        "IMP-007",
+        "IMP-008",
+        "IMP-009"
+      ],
+      "axisKeys": [
+        "implementacao",
+        "validacao_local",
+        "validacao_ci",
+        "revisao_tecnica",
+        "homologacao",
+        "aceite_humano",
+        "validacao_cientifica",
+        "integracao"
+      ],
+      "tableJsonChecked": true,
+      "technicalClassification": "PENDING_LOCAL"
+    },
+    "localLinks": {
+      "checked": 42,
+      "missing": 0,
+      "scope": "new files and added canonical blocks; unchanged historical links excluded"
+    },
+    "immutableGitHubLinks": {
+      "checked": 144,
+      "invalid": 0,
+      "method": "path membership in complete Git tree responses for exact SHA; not per-page HTTP or claim audit"
+    },
+    "privacyScreen": {
+      "result": "PASS",
+      "flags": [],
+      "scope": "new text only; history preserved"
+    },
+    "whitespace": {
+      "result": "PASS",
+      "gitDiffNoIndexCheckExitCode": 1,
+      "diagnosticOutput": "",
+      "exitCodeMeaning": "no-index returns 1 for a nonempty diff; no diagnostic output and no whitespace findings is clean",
+      "newTextTrailingWhitespacePaths": []
+    },
+    "manifestAcyclicity": {
+      "result": "PASS",
+      "selfHashIncluded": false,
+      "independentReviewHashIncluded": false,
+      "reviewerMayHashThisFile": true
+    },
+    "specKit": {
+      "skillsRead": [
+        "speckit-analyze",
+        "speckit-checklist"
+      ],
+      "featurePipelineExecuted": false,
+      "method": "PLANS and constitution; documentary consistency, ambiguity and traceability review"
+    }
+  },
+  "preimages": [
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "sourceRef": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "847bf027e60c7f72cef836979e477e09a02dd8e0",
+      "sha256": "13787513dd44d6f7d9f2a7d3e412039c24a24a7a9b91563c874c3242dc7dd9a7",
+      "originalBytes": 22100,
+      "proposedBytes": 22779,
+      "insertedBytes": 679,
+      "originalHeadingAndSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "sourceRef": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "cb6739097110a57f0ea203f14d53598ad943e3e4",
+      "sha256": "770c35978669b28c1cf01017fb1a0f1b9b77ac83782a612d32605922734846be",
+      "originalBytes": 9858,
+      "proposedBytes": 10443,
+      "insertedBytes": 585,
+      "originalHeadingAndSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/implementation-plan.md",
+      "sourceRef": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "f2a12c6571db0221800e71df674817dfdda41604",
+      "sha256": "54dd01a53faf40b0bedad6b30fc2852d5f5555c16721079b0d1b1e89f7d99e79",
+      "originalBytes": 8335,
+      "proposedBytes": 8920,
+      "insertedBytes": 585,
+      "originalHeadingAndSuffixPreserved": true,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/governance/DOCUMENT_REGISTER.md",
+      "sourceRef": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "04ec372bdad83e0164da4e17d956bfd4fe591a10",
+      "sha256": "20ab6ba9a0ec0360804b81180e7b578e606743f8376d0d3507a37dd52993da6c",
+      "originalBytes": 61524,
+      "proposedBytes": 62249,
+      "insertedBytes": 725,
+      "originalHeadingAndSuffixPreserved": true,
+      "result": "PASS"
+    }
+  ],
+  "sourceIntegrity": [
+    {
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "cb6739097110a57f0ea203f14d53598ad943e3e4",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/implementation-plan.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "f2a12c6571db0221800e71df674817dfdda41604",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/governance/DOCUMENT_REGISTER.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "04ec372bdad83e0164da4e17d956bfd4fe591a10",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/governance/PENDING_DECISIONS.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "9119933704bd85c87c8079778493089bdea03f59",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/readme.md",
+      "ref": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "gitBlobSha1": "cc7d0300e6ca61f571f32d3788d4690b40b3e20c",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/incident-matrix.md",
+      "ref": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "gitBlobSha1": "fddd8551b0088fda91356c53d8bf031678f06b99",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/operational-handoff.md",
+      "ref": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "gitBlobSha1": "6c1a95f2cfc18524d9b7cdf74cf6af486d02f141",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/validation.md",
+      "ref": "00477e961e36416d8d602d36f7e0ee195c487148",
+      "gitBlobSha1": "99bab7c8b0143a341e607c51adcdd87c02d1227e",
+      "result": "PASS"
+    },
+    {
+      "path": "AGENTS.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "bf39919afe898357871f31f5d1ca52e082dee3ec",
+      "result": "PASS"
+    },
+    {
+      "path": "PLANS.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "63b03c361c80b2bee7e814242566fc01a6dafd04",
+      "result": "PASS"
+    },
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "847bf027e60c7f72cef836979e477e09a02dd8e0",
+      "result": "PASS"
+    },
+    {
+      "path": "TECH_DECISIONS.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "4f5d344091d214f749ec0f8e3b49d1f7d5e39589",
+      "result": "PASS"
+    },
+    {
+      "path": ".specify/memory/constitution.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "1340110c28c54c669e35355ab037812f051c20fb",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/governance/SOURCE_AUTHORITY.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "a6cd8a293ddea46e7f58392079ae1b6549f389ba",
+      "result": "PASS"
+    },
+    {
+      "path": "vercel.json",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "77e515959534593a7cefbcef4d2a005abde7c93b",
+      "result": "PASS"
+    },
+    {
+      "path": ".github/workflows/rc-review.yml",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "0c0e554259305e571d9893da904916d6d4e9b1d8",
+      "result": "PASS"
+    },
+    {
+      "path": ".agents/skills/speckit-analyze/SKILL.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "62f12672fb4753f8c1bdcae6a371ae394192e9e9",
+      "result": "PASS"
+    },
+    {
+      "path": ".agents/skills/speckit-checklist/SKILL.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "fd9ca0e60189bc1631bd7e111ad537b3252e80c3",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/code-first-prd/governance/source-policy.md",
+      "ref": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "gitBlobSha1": "cdc9c7010a6a09869b875b5e53c48f5013052071",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md",
+      "ref": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "gitBlobSha1": "31394011249d0cc14bef31476e8967e316c5e64c",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-revisao-thales/proximos-passos.md",
+      "ref": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "gitBlobSha1": "0fb8a7f4ac2c07a3bb5079be36c98494a8616fa6",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-revisao-thales/evidencias.json",
+      "ref": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "gitBlobSha1": "9b34016408c0e9693e11e45417d7b368cf783b25",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/plans/active/revisao-thales-20261024.md",
+      "ref": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "gitBlobSha1": "2bd10ed9491182098e332fb2ba9c791f3a18e4df",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-21-post-consolidation/operational-readiness.md",
+      "ref": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "gitBlobSha1": "3910176d4a41c16eaa7cbc505a67542d893028ce",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/releases/2026-10-21-post-consolidation/evidence/operations-resumption-verification.json",
+      "ref": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "gitBlobSha1": "f0c3fbe7eefa8b01604a4cca61da142820cd70e0",
+      "result": "PASS"
+    }
+  ],
+  "authorDocumentHashes": [
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "bytes": 22779,
+      "sha256": "e5e4c7e6b0da8356ea0f17d72f6e5a6513d78cd2f54e42e372192a9f2c9dfdf1"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/backlog.md",
+      "bytes": 10443,
+      "sha256": "bcdbad164ca785f823b360a02b05e1e609f80e87189526ae7c16e0492a290b06"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/estado-conciliado-20261024.md",
+      "bytes": 16436,
+      "sha256": "5532e6636d7484d351f47293976d617991b0840be359421b312b5f2c60fb2372"
+    },
+    {
+      "path": "docs/code-first-prd/implementation/implementation-plan.md",
+      "bytes": 8920,
+      "sha256": "ae03e0008f706c1c387257760f62f374083d12a2b67479fd00a34145c023ec40"
+    },
+    {
+      "path": "docs/governance/DOCUMENT_REGISTER.md",
+      "bytes": 62249,
+      "sha256": "6f06f798b2b921cdef3fb6b3a972054e90acd95bb4c7a9c790618316fe841f77"
+    },
+    {
+      "path": "docs/plans/active/hf-doc-20261024/chat/plano.md",
+      "bytes": 8866,
+      "sha256": "8bd44ce703dea85c790487438aef111be47e97d060bcde5e09a50c6c521bae98"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/conciliacao-local-chat.md",
+      "bytes": 9592,
+      "sha256": "e36e64bc16dfdfcb4a8a4526191a8f8e1e343103e42a96c70ace48e0bf61b8b9"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/decisoes-e-recomendacoes.md",
+      "bytes": 17355,
+      "sha256": "f9efc4295840b77514a308b97b45524713135a6f3cc0e1a191a32328bf4829f2"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/diagnostico-rth-p2-001.md",
+      "bytes": 12395,
+      "sha256": "7e99dad8e7130056c99334b7ac5395d41ce66d0f8b2cced0b713af701180b0f1"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/evidencias-autoridade.json",
+      "bytes": 7196,
+      "sha256": "a01d1b473efa299be86e0c69b1e0e73d508f4cafeed3e902614d4bdf5fde66e8"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/fontes-operacao.json",
+      "bytes": 11126,
+      "sha256": "eb19c6a9ddbe058ccdc4564da5dc5eb32c42952dd1c46b0d2d5167b9c412b1f8"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/gate-publicacao.md",
+      "bytes": 4553,
+      "sha256": "bda73dae4099b78d4372855da0e5786db917bf00e7cfb9f602ce25eee302f0f8"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/handoff-final.md",
+      "bytes": 5955,
+      "sha256": "06cfc6711bd7c1509dba177d0aa522dcf3842c3f9753db753c8b5a2c22c3fd93"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/instrumentos-sob-demanda.md",
+      "bytes": 4348,
+      "sha256": "7db3eec6d386109d80e14f1393c3692a2b579fb4328d3e276f5bf382bcff2a36"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/mapa-fontes-autoridade.md",
+      "bytes": 13315,
+      "sha256": "8eb73c36e27d0a041c9e777a67bb1e0f70df2a4c4790bb6e80be04d633d4433b"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/matriz-imp-c0.json",
+      "bytes": 12317,
+      "sha256": "c24fe540b51f0acd19ed65b7e5e14ae72df7d8ad8512b3e766adb7c6644f63f7"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/matriz-prontidao-g3-g5.md",
+      "bytes": 13973,
+      "sha256": "8a8c77ff81c3c4128a5f1b181d4e6e3fc540e6f18e214a8991f2ed0ec96f1e48"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-chat01/readme.md",
+      "bytes": 8026,
+      "sha256": "439d47c6fa4b6643173ce6dccf94f6e742baccc48094334c0205303d649cc2da"
+    }
+  ],
+  "nativeAgentLedger": [
+    {
+      "id": "C-COORD",
+      "role": "coordination and canonical writing",
+      "native": true
+    },
+    {
+      "id": "C-A",
+      "role": "authority and decisions",
+      "nativeSubagent": true,
+      "output": "decisoes-e-recomendacoes.md; mapa-fontes-autoridade.md; evidencias-autoridade.json"
+    },
+    {
+      "id": "C-B",
+      "role": "documentation and operational readiness",
+      "nativeSubagent": true,
+      "output": "matriz-prontidao-g3-g5.md; diagnostico-rth-p2-001.md; fontes-operacao.json; instrumentos-sob-demanda.md"
+    },
+    {
+      "id": "C-R",
+      "role": "independent review",
+      "nativeSubagent": true,
+      "output": "docs/reviews/20261024-hf-doc-chat01/revisao-independente.md",
+      "separateReceipt": true
+    }
+  ],
+  "independentReview": {
+    "path": "docs/reviews/20261024-hf-doc-chat01/revisao-independente.md",
+    "status": "RESULTADO_NO_PARECER_SEPARADO",
+    "reviewerOutputExcludedFromOwnHashes": true
+  },
+  "barrier": {
+    "capturedAt": "2026-10-24 15:45:18 UTC",
+    "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+    "localHandoffConsumed": false,
+    "localSha": null,
+    "results": [
+      {
+        "key": "development-final",
+        "result": {
+          "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/branches/development",
+          "name": "development",
+          "sha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+          "tree": "24baec02321084fc1abedddd6355896a0b81eaa1"
+        }
+      },
+      {
+        "key": "local-branch-final",
+        "result": {
+          "branches": [],
+          "cursor": null
+        }
+      },
+      {
+        "key": "local-pr-final",
+        "result": {
+          "issues": []
+        }
+      },
+      {
+        "key": "chat-pr-final",
+        "result": {
+          "issues": []
+        }
+      },
+      {
+        "key": "comments-29-barrier",
+        "result": {
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29",
+          "count": 10,
+          "hfDoc": []
+        }
+      }
+    ]
+  },
+  "localAnnouncement": {
+    "origin": "USER_RELAY_OF_LOCAL_HANDOFF_SUMMARY",
+    "recordedAtUtc": "2026-10-24T15:57:04Z",
+    "localCommitShaReported": "6f24cb345b8b3a33c46b9b76c3eb6171328296bd",
+    "archiveSha256Reported": "2d598359ce495977bc8869d579ed2403b11dc8d37813803c350a7ed5dae1f7a3",
+    "archiveFilename": "hf-doc-local01-6f24cb34-pacote-chat.zip",
+    "receiptFilename": "hf-doc-local01-6f24cb34-recibo-final.json",
+    "artifactsReceived": false,
+    "integrityVerified": false,
+    "handoffConsumed": false,
+    "reportedRemotePublication": false,
+    "accessState": "AGUARDANDO_ARQUIVOS_LOCAL",
+    "claimedSourceRefs": {
+      "baseShort": "c4adfb3",
+      "candidateShort": "00477e9",
+      "studentShort": "d2168c8"
+    },
+    "claimedCounts": {
+      "files": 16,
+      "technicalRecords": 40,
+      "sourceBlobs": 500,
+      "immutableLinks": 1285,
+      "localLinks": 13
+    },
+    "claimedReview": "THREE_P2_AND_TWO_P3_TREATED_ZERO_OPEN_P0_P2",
+    "verificationLimit": "Relato recebido na conversa com caminhos da máquina LOCAL; arquivos não disponíveis no workspace CHAT. Claims e hashes ainda não conferidos; sem criação de evidência substituta."
+  },
+  "notPerformed": [
+    "application code changes",
+    "functional tests",
+    "build",
+    "browser",
+    "new HF-INV experiments",
+    "configuration changes",
+    "hosted operations",
+    "merge",
+    "deploy",
+    "email",
+    "LOCAL evidence production"
+  ],
+  "limits": [
+    "C0 does not close the detailed IMP matrix or LOCAL handoff barrier.",
+    "CI and runtime results from other SHAs are consulted only.",
+    "Full Git checkout unavailable; no local commit is claimed.",
+    "This validation covers the author documentary delta; independent reviewer output has its own checks."
+  ],
+  "errors": []
+}

@@ -1,0 +1,262 @@
+{
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "runId": 39267705060,
+  "jobId": 118134854957,
+  "attempt": 3,
+  "headSha": "7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d",
+  "runUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39267705060",
+  "jobUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39267705060/job/118134854957",
+  "status": "completed",
+  "conclusion": "success",
+  "jobCompletedUtc": "2026-10-19T15:19:24Z",
+  "verifiedUtc": "2026-10-19T15:22:50.3435708Z",
+  "scope": "CI fase4; tentativa3; leitura do artefato sanitizado; nenhuma suíte local executada nesta conferência",
+  "gateCount": 15,
+  "uniqueGateCount": 15,
+  "allGatesPassExitZero": true,
+  "singleSnapshot": true,
+  "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:04:24.776Z",
+      "endedUtc": "2026-10-19T15:04:32.463Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/regressionsetup-1792422264775.log",
+      "counts": null
+    },
+    {
+      "gate": "Unit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:04:32.761Z",
+      "endedUtc": "2026-10-19T15:04:58.775Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/unit-1792422272760.log",
+      "counts": {
+        "testBatches": [
+          296,
+          17
+        ],
+        "tests": 313,
+        "passed": 313,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "gate": "Integration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:04:59.090Z",
+      "endedUtc": "2026-10-19T15:06:51.517Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/integration-1792422299089.log",
+      "counts": {
+        "testBatches": [
+          218
+        ],
+        "tests": 218,
+        "passed": 218,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "gate": "Migration",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:06:51.778Z",
+      "endedUtc": "2026-10-19T15:07:07.747Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/migration-1792422411777.log",
+      "counts": {
+        "testBatches": [
+          37
+        ],
+        "tests": 37,
+        "passed": 37,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "gate": "Contract",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:07:08.032Z",
+      "endedUtc": "2026-10-19T15:07:11.776Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/contract-1792422428032.log",
+      "counts": {
+        "testBatches": [
+          6
+        ],
+        "tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "gate": "R1",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:07:12.067Z",
+      "endedUtc": "2026-10-19T15:07:23.684Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/r1-1792422432067.log",
+      "counts": {
+        "testBatches": [
+          17
+        ],
+        "tests": 17,
+        "passed": 17,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "gate": "Build",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:07:23.944Z",
+      "endedUtc": "2026-10-19T15:07:51.130Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/build-1792422443943.log",
+      "counts": null
+    },
+    {
+      "gate": "Typecheck",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:07:51.448Z",
+      "endedUtc": "2026-10-19T15:08:01.423Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/typecheck-1792422471447.log",
+      "counts": null
+    },
+    {
+      "gate": "Lint",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:08:01.698Z",
+      "endedUtc": "2026-10-19T15:08:22.551Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/lint-1792422481698.log",
+      "counts": null
+    },
+    {
+      "gate": "E2E",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:08:22.850Z",
+      "endedUtc": "2026-10-19T15:16:59.902Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/e2e-1792422502850.log",
+      "counts": {
+        "passed": 136
+      }
+    },
+    {
+      "gate": "Https",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:17:00.269Z",
+      "endedUtc": "2026-10-19T15:17:51.554Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/https-1792423020269.log",
+      "counts": {
+        "passed": 2
+      }
+    },
+    {
+      "gate": "Deletion",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:17:51.851Z",
+      "endedUtc": "2026-10-19T15:18:06.194Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/deletion-1792423071851.log",
+      "counts": {
+        "passed": 3
+      }
+    },
+    {
+      "gate": "Ihfr",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:18:06.497Z",
+      "endedUtc": "2026-10-19T15:19:01.998Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/ihfr-1792423086497.log",
+      "counts": {
+        "passed": 6
+      }
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:19:02.298Z",
+      "endedUtc": "2026-10-19T15:19:08.532Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/bootstrap-1792423142297.log",
+      "counts": {
+        "migrations": 14,
+        "failedMigrations": 0,
+        "syntheticTransactionPassedAndRolledBack": true,
+        "ownedDatabaseDisposed": true
+      }
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "PASS",
+      "exitCode": 0,
+      "startedUtc": "2026-10-19T15:19:08.889Z",
+      "endedUtc": "2026-10-19T15:19:09.773Z",
+      "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+      "logEntry": ".accounts-validation/schemaaudit-1792423148888.log",
+      "counts": {
+        "managedTestCandidateSchemas": 0
+      }
+    }
+  ],
+  "artifact": {
+    "id": 12197323787,
+    "name": "rc-validation-7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d",
+    "createdUtc": "2026-10-19T15:19:13Z",
+    "apiDigest": "sha256:86d8237b51e749cb249e93215848b82f33707a15f33fa976ae42bc7961627364",
+    "downloadSha256": "86d8237b51e749cb249e93215848b82f33707a15f33fa976ae42bc7961627364",
+    "digestMatches": true,
+    "sizeBytes": 14359184,
+    "entryCount": 289,
+    "entryTypes": [
+      {
+        "extension": ".log",
+        "count": 15
+      },
+      {
+        "extension": ".png",
+        "count": 228
+      },
+      {
+        "extension": ".json",
+        "count": 45
+      },
+      {
+        "extension": ".jsonl",
+        "count": 1
+      }
+    ],
+    "localZip": ".accounts-validation/github-phase4-ci-attempt3.zip"
+  },
+  "limitations": [
+    "PASS da tentativa3 não apaga as falhas das tentativas anteriores nem demonstra sua causa.",
+    "Causas dos FAILs anteriores permanecem indeterminadas.",
+    "Este recibo não representa aceite humano, ciência validada ou operação em provedores reais.",
+    "Contagens são por gate; Unit contém os lotes296+17 e não devem ser somadas como casos únicos entre gates."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "members-focus-768",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-members-focus-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 823,
+      "extent": 823
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "button",
+    "x": 501.46875,
+    "y": 585.59375,
+    "width": 218.53125,
+    "height": 44
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "empty-375",
+  "screenshot": {
+    "filename": "after-frontend-areas-empty-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 155,
+      "height": 755,
+      "extent": 910
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 375,
+    "height": 900
+  },
+  "target": {
+    "x": 47.25,
+    "y": 622.359375,
+    "width": 280.5,
+    "height": 28
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

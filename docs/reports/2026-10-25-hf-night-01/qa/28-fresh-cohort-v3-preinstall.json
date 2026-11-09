@@ -1,0 +1,14 @@
+﻿{
+    "utc":  "2026-10-25T04:46:32.8059394Z",
+    "cohort":  "v3-fresh",
+    "root":  ".accounts-validation/hf-night-runtime-v3",
+    "directoryFresh":  true,
+    "dataDirectoryPresent":  false,
+    "credentialPresent":  false,
+    "ownerMarkerPresent":  false,
+    "binaryPackageOnlyCopied":  true,
+    "databaseOrCredentialsCopied":  false,
+    "postgresExeSha256":  "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+    "privateAclPrincipals":  2,
+    "reason":  "new cohort after demonstrated fixture audit reuse; no deletion of v2"
+}

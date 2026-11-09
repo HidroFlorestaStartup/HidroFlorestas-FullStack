@@ -1,0 +1,43 @@
+{
+  "name": "list-375",
+  "screenshot": {
+    "filename": "after-frontend-areas-list-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 307,
+      "height": 755,
+      "extent": 1062
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 375,
+    "height": 900
+  },
+  "target": {
+    "x": 33,
+    "y": 521.359375,
+    "width": 173.421875,
+    "height": 25
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

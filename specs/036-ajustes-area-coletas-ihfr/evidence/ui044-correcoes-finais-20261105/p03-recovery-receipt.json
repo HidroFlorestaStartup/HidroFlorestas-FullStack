@@ -1,0 +1,172 @@
+{
+  "id": "HF-UI044-CORRECOES-FINAIS-20261105-P03-RECOVERY-F1",
+  "executor": "/root/p03_tests",
+  "status": "PATCH_READY_FOR_INTEGRATION",
+  "at": "2026-11-06T01:25:03.247085+00:00",
+  "timezone": "UTC",
+  "ownership": [
+    "tests/e2e/collection-registration.spec.ts"
+  ],
+  "worker": {
+    "path": "/workspace/scratch/100be1d812fa/wt-p03",
+    "head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+    "headTree": "0c836da964c377a7d1e6bc8b2331524e931ea901",
+    "branch": "detached; prior five-file P03 delta preserved byte-for-byte"
+  },
+  "candidate": {
+    "base": "921b5ff153865816922b0f509bfda0642a9f4085",
+    "tree": "d20450d781685c547557869d3d7e92a0958f5e35",
+    "productReadFrom": "/workspace/scratch/100be1d812fa/repo",
+    "observedHead": "921b5ff153865816922b0f509bfda0642a9f4085",
+    "workerBaselineNotPromotedToCandidatePass": true
+  },
+  "preimage": {
+    "path": "tests/e2e/collection-registration.spec.ts",
+    "sha256": "8b514f616a61d3f80e064139108158418a5da9cd06a42db45a91f591bca2f8e5",
+    "gitBlob": "e3d0a22776d9cc29fb527babce72789515a081c9",
+    "bytes": 16394,
+    "identicalIn": [
+      "B 7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+      "F1 921b5ff153865816922b0f509bfda0642a9f4085",
+      "wt-p03 before edit",
+      "root before edit"
+    ],
+    "proof": "preimage-proof.json"
+  },
+  "postimage": {
+    "path": "tests/e2e/collection-registration.spec.ts",
+    "sha256": "d3fe0fa25f60a98e8ebdd4bb0c0e6a9c13730deac4d7e3a233bc42e8bf4b0a82",
+    "gitBlob": "6b0cb8ffe8a5735e2859e2644ff9b26053d3a8da",
+    "bytes": 17825
+  },
+  "patch": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/p03-collection-registration-f1.patch",
+    "sha256": "2d1371bdaa92842465929aa73bde8a3a84df0fc3c0d38b4490df2fbb6d00dc4c",
+    "bytes": 3852,
+    "base": "921b5ff153865816922b0f509bfda0642a9f4085",
+    "singlePathOnly": true
+  },
+  "failure": {
+    "run": 42140950096,
+    "attempt": 1,
+    "sha": "921b5ff153865816922b0f509bfda0642a9f4085",
+    "gate": "E2E",
+    "reportedCounts": {
+      "pass": 237,
+      "fail": 1,
+      "didNotRun": 3
+    },
+    "test": "US4 reads a minimal immutable detail for current roles and inactive laboratories",
+    "oldLine": 236,
+    "oldAssertion": "expect(detail).not.toContainText(/userId|confirmationKey|observations|IHFR/i)",
+    "runtimeEvidenceSource": "Coordinator /root supplied actual run outcome; /root/o0_guards independently confirmed cause. P03 inspected unchanged failing test and current F1 composition, not a new local runtime.",
+    "cause": "C3 intentionally changed the labelled article into the entire composed detail, including legitimate IHFR reading/actions. Legacy metadata assertion still rejected IHFR across the article. The immutable Registro remains separate in data-collection-detail-block=record."
+  },
+  "changes": [
+    "Locate exactly one labelled article and exactly one record block; require visible Registro heading and Imutável badge before negative assertions.",
+    "Scope original occurrence/confirmation metadata assertions to record, retaining absence of IHFR there.",
+    "Keep userId/confirmationKey/observations forbidden across the entire article for OWNER/ADMIN/MEMBER and after reload.",
+    "Apply the same non-empty record and global privacy checks to inactive laboratory; retain readonly notice and no edit/delete controls.",
+    "Verify contextual Voltar à área href for active and inactive laboratory/area IDs; preserve role loops and route construction."
+  ],
+  "corpusReview": {
+    "scope": "Read-only tests/e2e, tests/unit, qa on F1; article/getByRole/DOM selectors and mixed IHFR/observations predicates searched",
+    "finding": "Only this assertion globally forbade IHFR within the detail article. No other concrete incompatible scope assumption found.",
+    "remainingSelectors": [
+      {
+        "path": "tests/e2e/frontend-collections.spec.ts",
+        "kind": "positive occurrence text within detail article; unaffected by additive reading"
+      },
+      {
+        "path": "tests/e2e/hf-ui036-area-collections.spec.ts",
+        "kind": "article visibility; unaffected"
+      },
+      {
+        "path": "tests/e2e/collection-registration.spec.ts",
+        "kind": "responsive article visibility/width; still checks entire current detail within viewport; retained"
+      },
+      {
+        "paths": [
+          "tests/e2e/frontend-environmental-drafts.spec.ts",
+          "tests/e2e/environmental-data-read.spec.ts"
+        ],
+        "kind": "differently named environmental articles; not affected by collection layout"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "lint",
+      "command": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "tests/e2e/collection-registration.spec.ts"
+      ],
+      "cwd": "/workspace/scratch/100be1d812fa/wt-p03",
+      "exitCode": 0,
+      "status": "PASS",
+      "at": "2026-11-06T01:25:03.232152+00:00",
+      "log": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/lint.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "921b5ff153865816922b0f509bfda0642a9f4085",
+        "--",
+        "tests/e2e/collection-registration.spec.ts"
+      ],
+      "cwd": "/workspace/scratch/100be1d812fa/wt-p03",
+      "exitCode": 0,
+      "status": "PASS",
+      "at": "2026-11-06T01:25:03.236943+00:00",
+      "log": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/diff-check.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "apply-check-f1",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/p03-collection-registration-f1.patch"
+      ],
+      "cwd": "/workspace/scratch/100be1d812fa/repo",
+      "exitCode": 0,
+      "status": "PASS",
+      "at": "2026-11-06T01:25:03.238774+00:00",
+      "log": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/apply-check-f1.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "preservation": {
+    "priorHandoffFiles": "PASS exact SHA-256 vs preservation-before.json",
+    "priorFiveTestDeltas": "PASS exact SHA-256 vs preservation-before.json",
+    "additionalEditedPaths": [],
+    "productConfigSpecFixtures": "UNCHANGED",
+    "noMergeDeployPush": true
+  },
+  "spec036": {
+    "existingCrosswalk": [
+      "T072 regression coverage",
+      "T074 composition",
+      "T075 final CI"
+    ],
+    "canonicalWrites": "NONE; parent coordinates recovery documentation"
+  },
+  "independentReview": {
+    "reviewer": "/root/o0_guards",
+    "status": "PENDING receipt/patch audit; P03 is test author"
+  },
+  "runtime": {
+    "newRunStatus": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "database": "NOT_RUN",
+    "fullUiRunner": "NOT_RUN",
+    "noGreenClaimForF1OrF2": true
+  },
+  "handoff": "P00 validate patch/preimage -> compose into F2 -> independent counter-analysis -> official CI on F2; prior F1 remains failed. No local DB/browser or remote action executed by P03."
+}

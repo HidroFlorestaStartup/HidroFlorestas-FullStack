@@ -1,0 +1,43 @@
+{
+  "name": "ui-fake-enabled-native-file-focus-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-ui-fake-enabled-native-file-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1420,
+      "height": 724,
+      "extent": 3743
+    }
+  },
+  "active": {
+    "tag": "input",
+    "x": 32,
+    "y": 407.34375,
+    "width": 256,
+    "height": 80
+  },
+  "target": {
+    "x": 32,
+    "y": 407.34375,
+    "width": 256,
+    "height": 80
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

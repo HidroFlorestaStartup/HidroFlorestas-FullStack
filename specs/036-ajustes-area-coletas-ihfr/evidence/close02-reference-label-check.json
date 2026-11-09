@@ -1,0 +1,44 @@
+{
+  "kind": "synthetic-chromium-reference-required-label-counterexample",
+  "result": "PASS",
+  "browser": "153.0.8010.12",
+  "node": "v24.14.0",
+  "source": "HidroFlorestaStartup/hidroflorestas-frontend-starter@cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+  "sourcePaths": [
+    "src/components/hf/primitives.tsx:295",
+    "src/routes/workspace.tsx"
+  ],
+  "fixture": "DOM structure of pinned FieldShell/TextField and CreateLab dialog, including aria-hidden required asterisk",
+  "counts": {
+    "oldExactLabel": 0,
+    "labelIncludingHiddenAsterisk": 1,
+    "accessibleNameTextbox": 1
+  },
+  "red": "Old exact getByLabel fill times out on the real structure with bounded250ms synthetic timeout",
+  "green": "Exact textbox accessible name excludes aria-hidden asterisk and fill succeeds",
+  "productTimeoutsChanged": false,
+  "bun": false,
+  "database": false,
+  "fullstackRuntime": false,
+  "referenceAppRuntime": false,
+  "remainingSelectorsStaticAudit": {
+    "sourcePin": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "result": "NO_OTHER_STATIC_MISMATCH_DEMONSTRATED",
+    "checked": [
+      "login persona/status/Entrar",
+      "workspace create-lab button/dialog/title/create-button",
+      "lab card listitem/heading/Acessar",
+      "nav Áreas visibility and source link",
+      "area/collection exact href templates",
+      "empty-area message",
+      "collection Registro heading",
+      "missing-environment message/action",
+      "diagnosis named region/heading/quality label",
+      "details summaries and four qualifiers",
+      "reload resource-not-found text",
+      "adapter createArea/createCollection/createEnvironmental/createDiagnosis and return shapes",
+      "IHFR versions/contract hash; demo score remains non-equivalent"
+    ],
+    "qualification": "Static inspection only; does not claim execution of the reference app, adapter fixture flow or remaining case matrix"
+  }
+}

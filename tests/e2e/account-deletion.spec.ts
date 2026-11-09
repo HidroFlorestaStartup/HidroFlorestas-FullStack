@@ -15,7 +15,16 @@ test("normal account: GET and cancellation preserve access; wrong password, keyb
     expect((await second.request.get(`${origin}/api/auth/me`)).status()).toBe(200);
     await page.getByRole("link", { name: "Cancelar e voltar" }).click();
     await expect(page).toHaveURL(/\/workspace$/);
+    await page.getByRole("button", { name: "Conta", exact: true }).click();
     await page.getByRole("link", { name: "Excluir conta", exact: true }).click();
+    // Exercise a document entry after the shell has produced its real UI cache.
+    // Keep the existing cancellation/menu/password/deletion assertions intact.
+    await expect(page.getByLabel("Senha atual", { exact: true })).toBeVisible();
+    await page.goto("/workspace");
+    await page.getByLabel("Nome do laborat\u00f3rio", { exact: true }).click();
+    await page.keyboard.press("Tab");
+    await expect.poll(() => page.evaluate(() => sessionStorage.length)).toBeGreaterThan(0);
+    await page.goto("/delete-account");
     await page.getByLabel("Senha atual", { exact: true }).fill("incorrect");
     await page.getByRole("checkbox").check();
     await page.getByRole("button", { name: "Excluir minha conta", exact: true }).click();

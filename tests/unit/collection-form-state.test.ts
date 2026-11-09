@@ -100,7 +100,10 @@ describe("collection form state", () => {
     assert.equal(failed.idempotencyKey, "stable-key");
     assert.match(failed.error ?? "", /tente novamente/i);
 
-    const next = startNewCollectionAttempt(failed, () => "new-key");
+    // An intentional new attempt cannot discard an unresolved prior submission.
+    assert.throws(() => startNewCollectionAttempt(failed, () => "new-key"), /CONFIRMATION_UNRESOLVED/);
+    const rejected = failCollectionSubmission(beginCollectionSubmission(review), "Solicitação inválida.", "invalid");
+    const next = startNewCollectionAttempt(rejected, () => "new-key");
     assert.equal(next.phase, "editing");
     assert.equal(next.idempotencyKey, "new-key");
     assert.ok(next.occurredAt);

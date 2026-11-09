@@ -1,0 +1,38 @@
+{
+  "name": "transient-members-error-320",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-transient-members-error-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 968,
+      "height": 724,
+      "extent": 1693
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "p",
+    "x": 33,
+    "y": 379.953125,
+    "width": 254,
+    "height": 134.390625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

@@ -1,0 +1,12 @@
+import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { dirname, resolve, sep } from 'node:path';
+const source = resolve(process.argv[2] ?? 'missing');
+const destination = resolve(process.cwd(), '.accounts-validation/navigation-runtime/localappdata/HidroFlorestas/accounts-postgresql/node_modules/@embedded-postgres/windows-x64');
+if (!source.replaceAll('\\', '/').endsWith('/node_modules/@embedded-postgres/windows-x64') || lstatSync(source).isSymbolicLink()) throw new Error('BINARY_SOURCE_REFUSED');
+if (!destination.startsWith(process.cwd() + sep) || existsSync(destination)) throw new Error('BINARY_DESTINATION_REFUSED');
+const digest = createHash('sha256').update(readFileSync(resolve(source, 'native/bin/postgres.exe'))).digest('hex');
+if (digest !== 'db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0') throw new Error('BINARY_DIGEST_MISMATCH');
+mkdirSync(dirname(destination), { recursive: true });
+cpSync(source, destination, { recursive: true, force: false, errorOnExist: true });
+console.log(JSON.stringify({ copied: 'pinned-binary-package-only', postgresExeSha256: digest, credentialsCopied: false }));

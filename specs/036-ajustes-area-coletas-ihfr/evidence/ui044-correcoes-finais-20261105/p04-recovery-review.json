@@ -1,0 +1,66 @@
+{
+  "id": "UI044-P04-RECOVERY-PATCH-REVIEW",
+  "executor": "/root/o0_guards",
+  "at": "2026-11-06T01:26:23.941483+00:00",
+  "phase": "F1 to prospective F2 recovery patch static review",
+  "status": "PASS_STATIC_RECOVERY_PATCH",
+  "overall_final_qa": "PENDING_F2_CI_AND_RUNTIME_EVIDENCE",
+  "independence": {
+    "authored_product_tests_config_spec036": false,
+    "reviewed_author": "/root/p03_tests",
+    "write_scope": "handoffs/p04 only"
+  },
+  "F1": "921b5ff153865816922b0f509bfda0642a9f4085",
+  "observed_root_head": "921b5ff153865816922b0f509bfda0642a9f4085",
+  "F2": null,
+  "path": "tests/e2e/collection-registration.spec.ts",
+  "patch": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/p03-collection-registration-f1.patch",
+    "sha256": "2d1371bdaa92842465929aa73bde8a3a84df0fc3c0d38b4490df2fbb6d00dc4c",
+    "single_path": true
+  },
+  "author_receipt": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery/receipt.json",
+    "sha256": "940acb950c0ca6c2f6263f752b7f0bdb5b3d6545a8200f3e8fb826680e4a78f5"
+  },
+  "preimage": {
+    "sha256": "8b514f616a61d3f80e064139108158418a5da9cd06a42db45a91f591bca2f8e5",
+    "git_blob": "e3d0a22776d9cc29fb527babce72789515a081c9",
+    "bytes": 16394,
+    "verified_directly_from_F1": true
+  },
+  "postimage": {
+    "sha256": "d3fe0fa25f60a98e8ebdd4bb0c0e6a9c13730deac4d7e3a233bc42e8bf4b0a82",
+    "git_blob": "6b0cb8ffe8a5735e2859e2644ff9b26053d3a8da",
+    "bytes": 17825,
+    "verified_directly_from_worker": true
+  },
+  "root_file_observation": "POSTIMAGE",
+  "finding_resolution": {
+    "cause": "The full detail article now includes legitimate IHFR reading. The old metadata-only IHFR prohibition used the entire article.",
+    "resolution": "The IHFR prohibition and immutable metadata dates are now scoped to the record block. Internal-field exclusions continue across the complete article.",
+    "product_changes": false,
+    "config_changes": false,
+    "fixtures_changes": false
+  },
+  "non_weakening_proof": [
+    "Exactly one named article and exactly one record are required before active/inactive negative assertions.",
+    "Visible Registro heading and Imutável badge prove the selected record is the intended metadata block.",
+    "Both original active occurrence/confirmation assertions remain with exact values; inactive occurrence assertion remains.",
+    "IHFR remains forbidden in record, while the full article still forbids userId, confirmationKey and observations.",
+    "Global privacy and metadata IHFR prohibition are additionally checked after reload and for the inactive laboratory.",
+    "Role loop [0,1,2], login and navigation contexts, readonly expectation and no edit/delete controls remain.",
+    "Exact contextual Voltar à área href is additionally checked for active and inactive contexts.",
+    "No skip, relaxed timeout, changed fixture, product/config edit, retry addition or removed privacy term appears in the patch."
+  ],
+  "findings": [],
+  "checks_by_this_reviewer": [
+    "Read complete one-path diff and author receipt.",
+    "Compared patch/receipt SHA256 with supplied hashes.",
+    "Compared preimage bytes/SHA256/git blob directly with F1.",
+    "Compared postimage bytes/SHA256/git blob directly with worker and observed root pre/post state."
+  ],
+  "tests_by_this_reviewer": "NOT_RUN; P00 executes scoped composition checks and official CI.",
+  "ci_F1": "FAIL retained; this static approval does not reinterpret F1 as PASS.",
+  "next": "P00 composes/publishes F2 under existing guards; qualify final F2 with official CI and supplied artifacts. Static F1 receipts remain immutable."
+}

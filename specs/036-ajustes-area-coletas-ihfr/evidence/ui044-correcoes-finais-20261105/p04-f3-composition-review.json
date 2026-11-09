@@ -1,0 +1,134 @@
+{
+  "id": "P04-F3-COMPOSITION-SUPPLEMENT",
+  "status": "PASS_INTEGRITY_AND_COMPOSED_CHECK_EVIDENCE",
+  "at_utc": "2026-11-06T03:07:38.571929+00:00",
+  "executor": "/root/o0_guards",
+  "source_patch_review_sha256": "49e661ddbbfb05519d0f392b0832a30a2677f0e023aecc384012b20c0ca8262b",
+  "composed_local_receipt": {
+    "path": "/workspace/scratch/100be1d812fa/repo/specs/036-ajustes-area-coletas-ihfr/evidence/ui044-correcoes-finais-20261105/p00-f3-recovery-local.json",
+    "sha256": "0ba4324d71dd010cbfca27a998ad5f08990e4c61c2af547bf90bf67ce042ac13",
+    "content": {
+      "id": "P00_UI044_F3_RECOVERY_LOCAL_COMPOSITION",
+      "executor": "/root (P00)",
+      "at": "2026-11-06T03:06:57.787781+00:00",
+      "parent": {
+        "head": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+        "tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+        "root_head_observed": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+        "worktree": "/workspace/scratch/100be1d812fa/wt-p03",
+        "worktree_head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369"
+      },
+      "environment": {
+        "os": "Linux",
+        "node": "v24.22.1",
+        "npm": "11.9.0"
+      },
+      "composition": {
+        "at": "2026-11-06T03:06:23.098663+00:00",
+        "integrator": "/root (P00)",
+        "parent": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+        "patch_sha256": "bee0ad8d3a11bf8c214bf467ce445a3757acbb3d8f5eef40aa48e85105375471",
+        "preimages": "PASS4/4 exact F3",
+        "postimages": "PASS4/4 exact P03",
+        "files": [
+          {
+            "path": "tests/e2e/support/frontend-mission-evidence.ts",
+            "preimage_sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+            "preimage_git_blob": "1344dfba41b0f1caf840e3d002167ce8499aa9f3",
+            "postimage_sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+            "postimage_git_blob": "3c7d6e3dbeefa89f4b2dc3ff800a7a0ef1de09ad"
+          },
+          {
+            "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+            "preimage_sha256": "6eb67271131140d93ac3aea01f6d1c7b1f8c36bef130fd540a0686d020902725",
+            "preimage_git_blob": "01fabe38f6d4b0099025d6be6b0b2b0662994491",
+            "postimage_sha256": "a7cd122b50e3344e7ae95f736d1c101c0c373f571f9cd7cf22272e7982240844",
+            "postimage_git_blob": "9beff71c56f9c266ab9efb24ce54cf127b3dfb8c"
+          },
+          {
+            "path": "tests/e2e/support/ui044-final-corrections.ts",
+            "preimage_sha256": "832af7cce12fec0a5dfb17b865fda3b1f86fe7c517ceaea2a293c1af20a2433b",
+            "preimage_git_blob": "60496289430ca289ec6a5e00361ed36fe1c038e8",
+            "postimage_sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+            "postimage_git_blob": "fe64c8b5ba5cdc3f5839b3008b41a82132693d6a"
+          },
+          {
+            "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+            "preimage_sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+            "preimage_git_blob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+            "postimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+            "postimage_git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b"
+          }
+        ],
+        "apply_check": 0,
+        "apply": 0,
+        "diff_check": 0,
+        "technical_delta_paths": [
+          "tests/e2e/frontend-mission-evidence.spec.ts",
+          "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+          "tests/e2e/support/frontend-mission-evidence.ts",
+          "tests/e2e/support/ui044-final-corrections.ts"
+        ],
+        "CI": "NOT_RUN on successor"
+      },
+      "checks": [
+        {
+          "command": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "started_at": "2026-11-06T03:06:29.384808+00:00",
+          "ended_at": "2026-11-06T03:06:39.690851+00:00",
+          "exit_code": 0,
+          "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> hidro-florestas-fullstack@0.1.0 typecheck\n> tsc --noEmit\n\n"
+        },
+        {
+          "command": [
+            "npx",
+            "--no-install",
+            "eslint",
+            "tests/e2e/support/frontend-mission-evidence.ts",
+            "tests/e2e/frontend-mission-evidence.spec.ts",
+            "tests/e2e/support/ui044-final-corrections.ts",
+            "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+          ],
+          "started_at": "2026-11-06T03:06:29.384680+00:00",
+          "ended_at": "2026-11-06T03:06:31.771908+00:00",
+          "exit_code": 0,
+          "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+        }
+      ],
+      "scope": "Only4 reserved test/helper paths plus current-cycle Spec036 evidence; product and guard bytes identical F3",
+      "documentary_review_postimages": "8/8 exact; p04-f3-spec-review.json",
+      "runtime": "Successor browser/RC15/Codex/P04 terminal pending; no PASS transfer",
+      "browser_restriction": "Previously blocked before page; no escalation retry or bypass",
+      "merge": false,
+      "deploy": false
+    }
+  },
+  "four_root_postimages": [
+    {
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+      "matches_reviewed_postimage": true
+    },
+    {
+      "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "sha256": "a7cd122b50e3344e7ae95f736d1c101c0c373f571f9cd7cf22272e7982240844",
+      "matches_reviewed_postimage": true
+    },
+    {
+      "path": "tests/e2e/support/ui044-final-corrections.ts",
+      "sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+      "matches_reviewed_postimage": true
+    },
+    {
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+      "matches_reviewed_postimage": true
+    }
+  ],
+  "reviewer_action": "Read the P00 receipt, independently checked its SHA256 and all four root postimages. No test or audited-file mutation performed. This records the composed checks completed after the immutable static patch review.",
+  "limits": "CI/browser on the successor SHA, complete matrix and final P04 remain pending; no O3 PASS or merge/deploy authorization."
+}

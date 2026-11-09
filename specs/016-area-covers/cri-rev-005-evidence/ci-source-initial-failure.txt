@@ -1,0 +1,28 @@
+Run 39056678227, SHA 60eaa4224c7cbd7d28a591e8a295b31022e4859a
+✖ failing tests:
+
+test at tests\integration\area-covers.test.ts:2:6728
+✖ CRI-REV-002 simultaneous eligible requests respect per-user active quota (819.5017ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'INTERNAL_ERROR'
+  -   'RATE_LIMITED'
+    ]
+
+      at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:57:104)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:19:426)
+      at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'INTERNAL_ERROR' ],
+    expected: [ 'RATE_LIMITED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+[2026-10-17T18:10:38.935Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=1 duration_ms=107970
+IMP-006 sanitized gate log: C:\Users\RUNNER~1\AppData\Local\Temp\hidroflorestas-imp006-gate-0KtBbh\integration-attempt-1.log

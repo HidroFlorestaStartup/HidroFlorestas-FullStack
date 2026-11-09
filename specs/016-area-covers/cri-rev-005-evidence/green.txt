@@ -1,0 +1,11 @@
+﻿✔ CRI-REV-005 RED/GREEN: real area serializer matches the closed AreaListResponse schema (3.5126ms)
+✔ CRI-REV-005: OpenAPI published example is valid and cover is required on area list (0.2371ms)
+✔ CRI-REV-005: unexpected or private fields are rejected at both object levels (0.182ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 484.2403

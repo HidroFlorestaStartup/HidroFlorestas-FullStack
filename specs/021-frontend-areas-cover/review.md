@@ -1,0 +1,30 @@
+# REVIEW de consistência — PLAN
+Análise SpecKit após tasks:12FR/4SC,19tarefas. FR001/002→T007–009;FR003/004/005→T004/010/011;FR006/007/008/009→T005/012–014;FR010→T009/011/014;FR011→T004/015;FR012→T016–019. SC001→T009/015;SC002→T011;SC003→T014;SC004→T016–019.
+Constituição PASS: semschema/API/ciência/governança novas, fontes classificadas, featureprópria, testes reais/fakes delimitados e publicação porPR. Sem conflito material identificado no desenho.
+Plano inclui todos os consumidores e matriz8 alcançável semprivilegiarficticiamente. Hipótese de sucesso prematuro requer RED antes de fix.
+Revisor independente do PLAN ainda solicitado; execução/reviewruntime pendentes.
+
+Revisão independente de domínio já recebida antes do PLAN: preservar expectedRevision original e replay compatível antes da revisão atual; STALE_REVISION/EXPIRED somente quando autoritativos; confirm replay pode devolver ausência atual com revisão positiva; remoção cancelada conserva tentativa. Plano incorpora os candidatos de status e descarte de tentativa incerta, dependentes de RED. Revisão documental efetiva deste diretório ainda pendente.
+
+## Análise independente antes do commit PLAN
+
+mission_context, somente leitura sobre HEADbase7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d:0P1/P2 materiais,12FR/4SC/19tarefas com cobertura documental completa, sem tarefas órfãs/violação de constituição. Pré-requisitos SpecKit PASS; hooks ausentes. LOWs editoriais ajustados: nome STALE_REVISION e repetição da mesma seleção incerta, distinguindo resets explícitos por nova seleção/sucesso/remoção confirmada. Limite: nenhuma suíte nova ou implementação validada ainda.
+
+Evento posterior ao preflight de14:20Z: CI fase4 run39267705060/job118111516392 terminou FAIL em Integration. RegressionSetup e Unit PASS; CRI-REV-002 quota concorrente recebeu INTERNAL_ERROR em vez de RATE_LIMITED, com conflitos40001/P2034 registrados. Os12gates seguintes não executaram. Artefato12192554979 ZIP conferido, SHA25618f1bec27a42ae84c049d69ee634c402a61b53d041f706acfbf60c7fbe886566. Nenhuma alteração de backend/teste/guard para conseguir PASS; rerun pelo conector também403. Usuário indicará CLI autenticado; PRs/review/rerun seguem pendentes de acesso, código da fase5 pode continuar. O FAIL será preservado e novo resultado deverá ser conferido no HEAD exato.
+## REVIEW final local — fonte e3a9c09, documental6448f21
+
+Consistência SpecKit: check-prerequisites --json --require-spec --require-tasks --include-tasks PASS, hooks ausentes;12FR/4SC/19tarefas mantêm cobertura completa. FR009 cobre novoRED17/T013–14; nenhuma entidade/contrato novo. Nenhum achado CRITICAL/HIGH ou lacuna material remanescente no escopo local. FR012/SC004/T019 ainda dependem publicação/CI exato/recibo, não de novo produto. Qualificação de altura900 responsivos vs1280×720 funcional corrigida em contracts.
+
+Revisor separado phase4_tests comparou blocos completos: AreaForm lógica/payload/locks/geo/revisão manual idênticos à base7b8, incluindo48 atributos JSX funcionais; AreaList efeito inteiro/abort/[laboratoryId,attempt] e10 atributos funcionais preservados. SHA256 AreaForm EBD133BD18109A9D6362A5FA27227590BF069D2D05275217E6ACCC4D5E86FF5C; AreaList DA1D38D960A20CEA0BF6BC0C195FF3E57ACF0ACA0888E3E0C2E75545BDA5E7BE. DetalheSSR revisado independentemente SHA25634FC7F969F7F3CDAC872C7982365B24F8D16E96CB6AAB52ACAA293C8D9D43BA6, requireAuth/service/notFound/projeção/opcionais/date/links/mapa preservados. Limite: análise estática, não suíte feita pelos revisores.
+
+visual_contracts revisou fonte6abd312..e3a9c09 e34 PNGafter+6before: quatro perfis, matriz8, foco4, progresso4, recarga, confirmação com bytes pendentes e erro de metadados terminal.0P1/P2 novos. Quebra interna de título em320 e placeholder estreito desktop aparecem antes; não são regressões atribuídas ao diff.114 hashes atuais conferidos,56PNG+56JSON+2logs. Root também inspecionou bitmaps de lista1440/form320texto200/progresso375 e metadados. Emulação Chromium140/Playwright1.55.1, tiles bloqueados, capa transporte fake; sem alegar leitor de tela/dispositivo/WCAGintegral/provedor real.
+
+Achados tratados: P1 omissão do fechamento do efeito detectada por compilador+revisor, restaurada1e75; status vazio oculto removido da consulta acessível corrigido6abd; P2 recarga com falha mantendo loading demonstradoRED17 e corrigidoe3a9c09. Todos mantêm histórico; compilação/erro de seletor não contam como defeitos de domínio.
+
+Revisão limitada de sanitização:143textosUTF8semBOM,8 regras locais sem formatos suspeitos; não scanner universal. Log candidate-first ainda tinhaANSI/UUIDsintético; root removeuANSI/aliouUUID preservando resultados e acrescentou manifests aos5arquivos históricos semmanifest antes da publicação. Nenhum dado real publicado.
+
+Rodada oficial completa na fonte congelada6448f21:15PASS, snapshot1b80704bd9e8ae7cac1050da260d1efcccc17421591b85289f4852817f64b025,15:09:16.998Z–15:20:20.224Z. [Journal/logs/hashes](evidence/local-full-reviewed/). Nenhuma mudança funcional após essa rodada; atualizações posteriores são documentais/sanitização. CI do HEAD que será publicado continua obrigatório.
+
+## REVIEW focal OBS-UI-02 — 2026-10-19
+Revisor independente /root/review_visual (somente leitura) conferiu o delta, precondições dos testes e bitmaps/JSON. Achado material prévio: pendingPreview durante DELETE podia restaurar sucesso por onLoad anterior; demonstrado em RED e corrigido após remoção aceita. RECOMENDACAO final: sem novo achado material em d5028f3. Região viva/alerta e protocolo/OCC íntegros; neutro versus verde condicionado à conclusão real, sem inferência por mensagem. Cancelamento permanece antes dos resets.
+Executor confirmou RED151PASS/3FAIL e GREEN154E2E com Build/Typecheck/Lint/RegressionSetup. Revisão visual de11PNG+JSON confirmou estados e foco320/375/768/1440; todos viewport, com rolagem/escala declaradas. Quebra de título adjacente em320/200% já existia no RED, fora deste ajuste. Limites de emulação, cinco gates locais versus15remotos pendentes e publicação constam no adendo PLAN/EXECUTE/REVIEW de implementation-evidence.md. Aceite humano e resposta @codex review não são presumidos.

@@ -1,0 +1,141 @@
+.shell { height: 100dvh; min-height: 100dvh; display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; background: #f5f8f6; color: #183c2c; font-family: var(--font-poppins), Arial, sans-serif; overflow-wrap: anywhere; }
+.header { position: relative; top: 0; z-index: 30; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 12px 24px; border-bottom: 1px solid #dce6df; background: #fff; }
+.brand { display: inline-flex; min-height: 44px; align-items: center; flex-shrink: 0; border-radius: 8px; }
+.brand img { width: 150px; height: auto; }
+.headerInfo { display: flex; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; gap: 16px; }
+.identity { display: none; min-width: 0; max-width: 220px; font-size: .875rem; }
+.identity small { display: block; color: #486354; font-size: .75rem; }
+.accountLinks { display: none; flex-wrap: wrap; align-items: center; gap: 8px; }
+.accountLink { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid #d2ded5; border-radius: 10px; font-size: .8125rem; font-weight: 600; text-decoration: none; color: #285c43; }
+.accountLink:hover { background: #edf5ef; }
+.accountDanger { color: #a12626; }
+.mobileAccount { position: relative; margin-left: auto; }
+.mobileAccount summary { display: flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border: 1px solid #d2ded5; border-radius: 10px; cursor: pointer; font-size: .875rem; font-weight: 600; list-style: none; }
+.mobileAccount summary::-webkit-details-marker { display: none; }
+.accountMenu { position: absolute; right: 0; top: calc(100% + 8px); width: min(320px, calc(100vw - 32px)); max-height: 65dvh; overflow: auto; padding: 16px; border: 1px solid #d2ded5; border-radius: 16px; background: #fff; box-shadow: 0 12px 32px #183c2c20; }
+.accountMenu p { margin-bottom: 12px; font-size: .875rem; font-weight: 600; }
+.accountMenu nav { display: grid; gap: 8px; }
+.frame { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.content { order: 0; flex: 1; min-width: 0; min-height: 0; overflow: auto; scroll-padding-block: 8px; padding: 24px 16px 32px; outline-offset: -3px; }
+.contentInner { max-width: 1200px; min-width: 0; margin-inline: auto; }
+.rail { position: relative; order: 1; flex: 0 0 auto; z-index: 20; display: flex; flex-wrap: wrap; align-items: stretch; border-top: 1px solid #d2ded5; background: #fff; padding: 8px 4px calc(8px + env(safe-area-inset-bottom)); }
+.railLink { display: flex; flex: 1 0 auto; min-width: max-content; overflow-wrap: normal; min-height: 52px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; padding: 8px 4px; color: #42634e; font-size: .75rem; font-weight: 600; line-height: 1.35; text-align: center; text-decoration: none; }
+.railLink svg { flex-shrink: 0; }
+.railLink:hover { background: #edf5ef; }
+.railLink[aria-current="page"] { color: #fff; background: #236548; }
+.context { margin-bottom: 24px; padding: 20px; border: 1px solid #dce6df; border-radius: 20px; background: #fff; }
+.contextLabel { color: #87621d; font-size: .75rem; font-weight: 700; }
+.context h2 { margin-top: 6px; font-size: 1.25rem; font-weight: 700; }
+.contextRole { margin-top: 8px; color: #486354; font-size: .875rem; }
+.contextNav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.contextNav a { display: inline-flex; flex: 1 1 100px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 10px 12px; border: 1px solid #d2ded5; border-radius: 10px; color: #285c43; font-size: .875rem; font-weight: 600; text-decoration: none; }
+.contextNav a[aria-current="page"] { background: #236548; color: #fff; border-color: #236548; }
+.contextNav svg { flex-shrink: 0; }
+.header :is(a,summary):focus-visible, .rail a:focus-visible, .contextNav a:focus-visible, .skip:focus-visible { outline: 3px solid #9a6b10; outline-offset: 3px; }
+.skip { position: fixed; top: 8px; left: 8px; z-index: 60; transform: translateY(-180%); padding: 12px 16px; border-radius: 10px; background: #fff; color: #183c2c; font-weight: 700; }
+.skip:focus { transform: translateY(0); }
+@media (min-width: 768px) {
+  .shell { height: auto; display: block; overflow: visible; }
+  .header { position: sticky; }
+  .frame { flex-direction: row; align-items: flex-start; }
+  .accountLinks { display: flex; }
+  .mobileAccount { display: none; }
+  .rail { order: 0; position: sticky; top: 110px; inset-inline: auto; bottom: auto; flex: 0 0 144px; flex-direction: column; gap: 8px; margin: 24px 0 0 16px; padding: 12px; border: 1px solid #dce6df; border-radius: 20px; }
+  .railLink { flex: none; min-width: 0; overflow-wrap: anywhere; min-height: 64px; padding: 12px 6px; }
+  .mobileExit { display: none; }
+  .content { overflow: visible; padding: 24px 24px 48px; }
+}
+@media (min-width: 1024px) { .identity { display: flex; flex-direction: column; } }
+@media (max-width: 399px) { .header { padding-inline: 16px; gap: 8px; } .brand img { width: 130px; } .context { padding: 16px; } .contextNav a { flex-basis: 100%; } .rail { flex-wrap: wrap; } .railLink { flex-basis: auto; font-size: .6875rem; } }
+
+/* UI-035: one authorised context rail, not a second navigation above content. */
+.laboratoryLayout { min-width: 0; }
+.laboratoryPage { min-width: 0; padding-bottom: calc(160px + env(safe-area-inset-bottom)); }
+.contextNav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  display: flex; flex-wrap: wrap; align-items: stretch; gap: 2px;
+  /* Keep the same 8px safe-area clearance as the global mobile rail. */
+  margin: 0; padding: 6px 6px calc(8px + env(safe-area-inset-bottom));
+  border-top: 1px solid #c9d9ce; background: #fff;
+  box-shadow: 0 -4px 16px #183c2c18;
+  overflow-x: hidden; overflow-y: auto;
+}
+.contextNav a {
+  display: flex; flex: 1 1 auto; min-width: max-content; min-height: 56px;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; margin: 0; padding: 6px 2px;
+  border: 0; border-radius: 12px; font-size: .6875rem; line-height: 1.25;
+  white-space: nowrap; text-align: center; text-decoration: none;
+  overflow-wrap: normal; color: #285c43;
+}
+.contextNav a[aria-current="page"] { color: #fff; background: #236548; }
+.contextNav a:hover { background: #edf5ef; }
+.contextNav a[aria-current="page"]:hover { background: #236548; }
+.contextNav a:focus-visible { outline: 3px solid #9a6b10; outline-offset: -3px; }
+.contextNav .desktopLabel { display: none; }
+.contextNav .mobileLabel { display: inline; }
+.contextNav svg { width: 19px; height: 19px; }
+/* Anchor the viewport-bounded menu to the full right-aligned action group.
+   Anchoring to Conta alone subtracts the Sair control width and clips the menu. */
+.accountActions { position: relative; display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+.accountDisclosure { position: static; }
+.accountDisclosure summary {
+  display: flex; min-width: 44px; min-height: 44px; gap: 6px;
+  align-items: center; justify-content: center; padding: 8px 12px;
+  border: 1px solid #d2ded5; border-radius: 10px; list-style: none;
+  color: #285c43; font-size: .8125rem; font-weight: 600; cursor: pointer;
+}
+.accountDisclosure summary::-webkit-details-marker { display: none; }
+.accountDisclosure[open] summary, .accountDisclosure summary:hover { background: #edf5ef; }
+.accountDisclosure summary:focus-visible, .headerExit:focus-visible { outline: 3px solid #9a6b10; outline-offset: 3px; }
+.accountDisclosure .accountMenu { z-index: 50; }
+.accountDisclosure .accountMenu nav { display: grid; gap: 8px; }
+.accountActions .headerExit { min-height: 44px; gap: 6px; }
+@media (max-width: 767px) {
+  .content { scroll-padding-block-end: calc(140px + env(safe-area-inset-bottom)); }
+  .context { margin-bottom: 14px; padding: 12px 16px; }
+  .context h2 { margin-top: 3px; font-size: 1.0625rem; }
+  .contextRole { margin-top: 4px; font-size: .8125rem; }
+  .header { padding: 8px 12px; gap: 8px; }
+  .headerInfo { gap: 8px; }
+  .headerExit .exitLabel { display: none; }
+  .accountActions .headerExit { width: 44px; justify-content: center; padding: 8px; }
+}
+@media (min-width: 768px) {
+  .laboratoryLayout { display: grid; grid-template-columns: 176px minmax(0, 1fr); gap: 24px; align-items: start; }
+  .laboratoryPage { padding-bottom: 0; }
+  .contextNav {
+    position: sticky; top: 110px; right: auto; bottom: auto; left: auto;
+    display: flex; flex-direction: column; gap: 6px;
+    width: 176px; overflow: visible; padding: 12px; margin: 0;
+    border: 1px solid #dce6df; border-radius: 20px; box-shadow: none;
+  }
+  .contextNav a {
+    flex: none; flex-direction: row; justify-content: flex-start;
+    width: 100%; min-height: 52px; gap: 8px; padding: 10px 8px;
+    font-size: .8125rem; white-space: normal; text-align: left;
+  }
+  .contextNav .desktopLabel { display: inline; }
+  .contextNav .mobileLabel { display: none; }
+  .contextNav .contextReturn { border-bottom: 1px solid #dce6df; border-radius: 8px; }
+}
+@media (max-width: 399px) {
+  .contextNav a { font-size: .625rem; gap: 2px; }
+  .brand img { width: 124px; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Preserve the user identity in the desktop header as in UI-01. */
+  .identity { display: flex; flex-direction: column; }
+  .headerInfo { gap: 10px; }
+  .header { gap: 12px; }
+  .identity { max-width: 155px; font-size: .8125rem; overflow: hidden; }
+  .identity strong, .identity small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+
+/* At 200% text scale, controls keep whole words and wrap into two rows
+   instead of overlapping adjacent destinations. No text-size suppression. */
+@media (max-width: 767px) {
+  .contextNav { max-height: 36dvh; }
+  .contextNav a { overflow-wrap: normal; }
+}

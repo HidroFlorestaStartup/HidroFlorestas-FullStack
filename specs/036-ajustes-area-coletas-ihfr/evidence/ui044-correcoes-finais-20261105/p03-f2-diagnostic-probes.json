@@ -1,0 +1,409 @@
+{
+  "classification": "Synthetic Node evidence for instrumentation; not F2 cause or Chromium runtime",
+  "scripts": [
+    {
+      "executed_path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.mjs",
+      "sha256": "7c37a1042810afbe8d8bd17e58c3be0e84f4297fea19bdc5dd32873b44c55838",
+      "exact_source": "import { writeFile } from \"node:fs/promises\";\nimport { createContext, runInContext } from \"node:vm\";\nimport { strict as assert } from \"node:assert\";\nconst imported = await import(\"../../../repo/tests/e2e/support/frontend-mission-evidence.ts\");\nconst { waitForMissionRender } = imported.default ?? imported;\n\nif (process.env.HF_UI044_F2_PROBE !== \"1\") throw new Error(\"EXPLICIT_SYNTHETIC_PROBE_REQUIRED\");\nconst records = [];\nfor (const kind of [\"idle\", \"finite-resolves\", \"finite-pending\", \"raf-pending\", \"message-pending\"]) {\n  const events = [];\n  const log = event => events.push(event);\n  let state = \"running\";\n  let complete;\n  const finished = new Promise(resolve => { complete = resolve; });\n  const animation = {\n    get playState() { return state; },\n    effect: { getComputedTiming: () => ({ endTime: 300 }) },\n    get finished() { log(\"animation.finished:await\"); return finished; },\n  };\n  const context = createContext({\n    __name: (fn, name) => Object.defineProperty(fn, \"name\", { value: name, configurable: true }),\n    document: {\n      getAnimations: () => {\n        log(\"getAnimations\");\n        return kind.startsWith(\"finite-\") && state === \"running\" ? [animation] : [];\n      },\n    },\n    requestAnimationFrame: callback => {\n      log(\"rAF:scheduled\");\n      if (kind !== \"raf-pending\") setImmediate(() => { log(\"rAF:executed\"); callback(); });\n    },\n    MessageChannel: class {\n      constructor() {\n        const channel = this;\n        this.port1 = { onmessage: null, close() {} };\n        this.port2 = {\n          postMessage() {\n            log(\"message:posted\");\n            if (kind !== \"message-pending\") setImmediate(() => {\n              log(\"message:delivered\"); channel.port1.onmessage();\n            });\n          },\n          close() {},\n        };\n      }\n    },\n  });\n  if (kind === \"finite-resolves\") setImmediate(() => { state = \"finished\"; complete(); });\n  const promise = runInContext(`(${waitForMissionRender.toString()})()`, context);\n  let done = false;\n  promise.then(() => { done = true; log(\"resolved\"); });\n  // Bounded diagnostic observation, not a changed test timeout or fallback.\n  for (let turn = 0; turn < 8; turn++) await new Promise(resolve => setImmediate(resolve));\n  assert.equal(done, kind === \"idle\" || kind === \"finite-resolves\");\n  records.push({ kind, resolvedAfterEightNodeTurns: done, events });\n}\nconst report = {\n  status: \"PASS_CONTROL_FLOW_ONLY\",\n  scope: \"Exact imported official function evaluated with explicitly synthetic Node VM dependencies; no browser, product, DB, network or CI rerun.\",\n  limitation: \"Demonstrates which await blocks when a primitive does not complete. Does not identify which primitive failed in F2, nor prove a browser bug or product fix.\",\n  records,\n};\nawait writeFile(new URL(\"./probe-node-wait.json\", import.meta.url), JSON.stringify(report, null, 2) + \"\\n\");\nconsole.log(JSON.stringify(report, null, 2));\n"
+    },
+    {
+      "executed_path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.mjs",
+      "sha256": "0b575b02d1ed63a1caf7cbd82d41f9c9fd0720ad6faa89becffbc954d4a01d1b",
+      "exact_source": "import { strict as assert } from \"node:assert\";\nimport { createContext, runInContext } from \"node:vm\";\nimport { performance } from \"node:perf_hooks\";\nimport { writeFile } from \"node:fs/promises\";\n\nif (process.env.HF_UI044_F2_PROBE !== \"1\") throw new Error(\"EXPLICIT_SYNTHETIC_PROBE_REQUIRED\");\nconst officialModule = await import(\"../../../repo/tests/e2e/support/frontend-mission-evidence.ts\");\nconst targetModule = await import(\"../../../wt-p03/tests/e2e/support/ui044-final-corrections.ts\");\nconst { waitForMissionRender } = officialModule.default ?? officialModule;\nconst { installUI044RenderObservation } = targetModule.default ?? targetModule;\nconst cases = [\"idle\", \"finite-resolves\", \"finite-rejects\", \"finite-pending\", \"raf-pending\", \"message-pending\", \"cancelled-frame\", \"invalid-frame\", \"callback-error\", \"callback-receiver\", \"message-constructor\", \"native-error\", \"console-error\", \"finite-inspection-error\", \"message-listener-error\"];\n\nasync function exercise(kind, observed) {\n  const trace = [];\n  const observations = [];\n  const ports = [];\n  const cancelled = new Set();\n  let frameId = 0;\n  let playState = \"running\";\n  let finish;\n  let reject;\n  let status = \"PENDING\";\n  const finished = new Promise((resolve, fail) => { finish = resolve; reject = fail; });\n  const animation = {\n    get playState() { return playState; },\n    get pending() { if (kind === \"finite-inspection-error\") throw new Error(\"DIAGNOSTIC_INSPECTION_SENTINEL\"); return false; },\n    currentTime: 0, timeline: { currentTime: 0 },\n    effect: { target: { tagName: \"BUTTON\" }, getComputedTiming: () => ({ endTime: 300 }) },\n    get finished() { return finished; },\n  };\n  let host;\n  class Port {\n    listeners = new Set();\n    started = false;\n    closed = false;\n    handler = null;\n    addEventListener(name, listener) { assert.equal(name, \"message\"); if (kind === \"message-listener-error\") throw new Error(\"DIAGNOSTIC_LISTENER_SENTINEL\"); this.listeners.add(listener); }\n    removeEventListener(name, listener) { assert.equal(name, \"message\"); this.listeners.delete(listener); }\n    set onmessage(handler) { this.handler = handler; this.started = true; trace.push(\"port-start\"); }\n    get onmessage() { return this.handler; }\n    close() { this.closed = true; trace.push(\"port-close\"); }\n    deliver() {\n      if (!this.started || this.closed) return;\n      trace.push(\"message-delivered\");\n      const event = { data: null, target: this };\n      for (const listener of this.listeners) listener.call(this, event);\n      this.handler?.call(this, event);\n    }\n  }\n  class NativeMessageChannel {\n    constructor() {\n      trace.push(\"channel-created\");\n      this.port1 = new Port();\n      this.port2 = new Port();\n      this.port2.postMessage = () => {\n        trace.push(\"message-posted\");\n        if (kind !== \"message-pending\") setImmediate(() => this.port1.deliver());\n      };\n      ports.push(this.port1, this.port2);\n    }\n  }\n  const nativeAnimations = function () {\n    trace.push(\"getAnimations\");\n    if (kind === \"native-error\") throw new Error(\"NATIVE_SENTINEL\");\n    return kind.startsWith(\"finite-\") && playState === \"running\" ? [animation] : [];\n  };\n  host = {\n    // tsx's emitted helper changes function names only; no async semantics.\n    __name: (fn, name) => Object.defineProperty(fn, \"name\", { value: name, configurable: true }),\n    console: { info: value => { if (kind === \"console-error\") throw new Error(\"DIAGNOSTIC_CONSOLE_SENTINEL\"); observations.push(JSON.parse(value.replace(/^UI044_RENDER_OBSERVATION /, \"\"))); } },\n    performance, innerWidth: 390, innerHeight: 844,\n    document: Object.assign(Object.create({ getAnimations: nativeAnimations }), { visibilityState: \"visible\" }),\n    requestAnimationFrame: function (callback) {\n      if (typeof callback !== \"function\") throw new TypeError(\"NATIVE_INVALID_CALLBACK\");\n      const id = ++frameId;\n      trace.push(`frame-scheduled:${id}`);\n      if (kind !== \"raf-pending\") setImmediate(() => {\n        if (cancelled.has(id)) return;\n        trace.push(`frame-delivered:${id}`);\n        try { callback.call(kind === \"callback-receiver\" ? host.receiver : host.window, 123.75); }\n        catch (error) { trace.push(`callback-error:${error.message}`); }\n      });\n      return id;\n    },\n    cancelAnimationFrame: id => { cancelled.add(id); trace.push(`frame-cancelled:${id}`); },\n    MessageChannel: NativeMessageChannel,\n    receiver: {},\n    recordCallback: (receiver, timestamp) => {\n      trace.push(`callback-receiver:${receiver === host.receiver}:timestamp:${timestamp}`);\n      assert.equal(receiver, host.receiver);\n      assert.equal(timestamp, 123.75);\n    },\n  };\n  const context = createContext(host);\n  runInContext(\"window = globalThis\", context);\n  if (kind === \"partial-install\") {\n    const frames = host.requestAnimationFrame;\n    Object.defineProperty(host, \"requestAnimationFrame\", { configurable: true, enumerable: true, get: () => frames, set: () => { throw new Error(\"PARTIAL_INSTALL_SENTINEL\"); } });\n  }\n  const descriptors = {\n    animations: Object.getOwnPropertyDescriptor(host.document, \"getAnimations\"),\n    frames: Object.getOwnPropertyDescriptor(host, \"requestAnimationFrame\"),\n    channel: Object.getOwnPropertyDescriptor(host, \"MessageChannel\"),\n  };\n  const install = () => runInContext(`(${installUI044RenderObservation.toString()})({ head: \"synthetic-no-product\", diagnosis: false, actions: false, profile: \"member\" })`, context);\n  if (kind === \"partial-install\") {\n    assert.throws(install, /PARTIAL_INSTALL_SENTINEL/);\n    assert.deepEqual(Object.getOwnPropertyDescriptor(host.document, \"getAnimations\"), descriptors.animations);\n    assert.deepEqual(Object.getOwnPropertyDescriptor(host, \"requestAnimationFrame\"), descriptors.frames);\n    assert.deepEqual(Object.getOwnPropertyDescriptor(host, \"MessageChannel\"), descriptors.channel);\n    assert.equal(host.__ui044RestoreRenderObservation, undefined);\n    return { status: \"INSTALL_REJECTED_AND_ROLLED_BACK\", descriptorsRestored: true, observations };\n  }\n  if (observed) install();\n  assert.equal(host.MessageChannel.prototype, NativeMessageChannel.prototype);\n  if (kind === \"cancelled-frame\") runInContext(\"cancelAnimationFrame(requestAnimationFrame(() => { throw Error('CANCELLED_CALLBACK_RAN'); }))\", context);\n  if (kind === \"invalid-frame\") assert.throws(() => host.requestAnimationFrame(null), /NATIVE_INVALID_CALLBACK/);\n  if (kind === \"callback-error\") runInContext(\"requestAnimationFrame(() => { throw Error('CALLBACK_SENTINEL'); })\", context);\n  if (kind === \"callback-receiver\") runInContext(\"requestAnimationFrame(function (timestamp) { recordCallback(this, timestamp); })\", context);\n  if (kind === \"message-constructor\") {\n    const channel = runInContext(\"(() => { class Child extends MessageChannel {} const channel = new Child(); if (Object.getPrototypeOf(channel) !== Child.prototype) throw Error('LOST_NEW_TARGET'); return channel; })()\", context);\n    assert.ok(channel instanceof NativeMessageChannel);\n    assert.equal(channel.port1.started, false, \"Observation does not start an idle port\");\n  }\n  if (kind === \"finite-resolves\" || kind === \"finite-inspection-error\") setImmediate(() => { playState = \"finished\"; finish(); });\n  if (kind === \"finite-rejects\") setImmediate(() => { playState = \"idle\"; reject(new Error(\"CANCELLED_SYNTHETIC_ANIMATION\")); });\n  const promise = runInContext(`(${waitForMissionRender.toString()})()`, context);\n  promise.then(() => { status = \"RESOLVED\"; trace.push(\"wait-resolved\"); }, error => { status = `REJECTED:${error.message}`; trace.push(status); });\n  for (let turn = 0; turn < 8; turn++) await new Promise(resolve => setImmediate(resolve));\n  if (observed) runInContext(\"__ui044RestoreRenderObservation()\", context);\n  assert.deepEqual(Object.getOwnPropertyDescriptor(host.document, \"getAnimations\"), descriptors.animations);\n  assert.deepEqual(Object.getOwnPropertyDescriptor(host, \"requestAnimationFrame\"), descriptors.frames);\n  assert.deepEqual(Object.getOwnPropertyDescriptor(host, \"MessageChannel\"), descriptors.channel);\n  assert.equal(host.document.getAnimations, nativeAnimations);\n  assert.equal(host.__ui044RestoreRenderObservation, undefined);\n  for (const port of ports) assert.equal(port.listeners.size, 0);\n  return { status, trace, observations, descriptorsRestored: true, listenersRemoved: true };\n}\n\nconst results = [];\nfor (const kind of cases) {\n  const plain = await exercise(kind, false);\n  const observed = await exercise(kind, true);\n  assert.equal(observed.status, plain.status, kind);\n  assert.deepEqual(observed.trace, plain.trace, kind);\n  const expected = kind.endsWith(\"-pending\") ? \"PENDING\" : kind === \"native-error\" ? \"REJECTED:NATIVE_SENTINEL\" : \"RESOLVED\";\n  assert.equal(observed.status, expected, kind);\n  if (kind === \"finite-pending\") assert.equal(observed.observations.findLast(event => event.event === \"animations-sampled\").counters.finite, 1);\n  if (kind === \"raf-pending\") assert.equal(observed.observations.findLast(event => event.event === \"observer-restored\").counters.frames, 0);\n  if (kind === \"message-pending\") {\n    const counters = observed.observations.findLast(event => event.event === \"observer-restored\").counters;\n    assert.equal(counters.frames, 2);\n    assert.equal(counters.channels, 1);\n    assert.equal(counters.messages, 0);\n  }\n  results.push({ kind, equivalentNativeTrace: true, ...observed });\n}\nresults.push({ kind: \"partial-install\", ...await exercise(\"partial-install\", true) });\nconst report = {\n  status: \"PASS_SYNTHETIC_OBSERVER_EQUIVALENCE\",\n  assertions: \"Same imported official wait, with and without the exact imported observer; same native trace, completion/rejection/pending state, RAF IDs/cancellation, native exceptions, descriptors and listener cleanup.\",\n  limitation: \"Deterministic Node VM primitives. Does not prove browser implementation equivalence, F2 root cause, application runtime or CI succession. Pending cases are controlled fixtures, never claimed as F2 RED.\",\n  cases: results,\n};\nawait writeFile(new URL(\"./probe-observer-equivalence.json\", import.meta.url), JSON.stringify(report, null, 2) + \"\\n\");\nconsole.log(JSON.stringify({ status: report.status, cases: results.map(({ kind, status }) => ({ kind, status })) }, null, 2));\n"
+    }
+  ],
+  "results": [
+    {
+      "source_file": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-node-wait.json",
+      "source_sha256": "5eeae9c5e014f3a16f850f34da127434525c4928d0b91220ce1d78a700af89d5",
+      "format": "summary omits repeated observation events; exact source hash preserved",
+      "summary": {
+        "status": "PASS_CONTROL_FLOW_ONLY",
+        "scope": "Exact imported official function evaluated with explicitly synthetic Node VM dependencies; no browser, product, DB, network or CI rerun.",
+        "limitation": "Demonstrates which await blocks when a primitive does not complete. Does not identify which primitive failed in F2, nor prove a browser bug or product fix.",
+        "records": [
+          {
+            "kind": "idle",
+            "resolvedAfterEightNodeTurns": true,
+            "events": [
+              "getAnimations",
+              "rAF:scheduled",
+              "rAF:executed",
+              "rAF:scheduled",
+              "rAF:executed",
+              "message:posted",
+              "message:delivered",
+              "getAnimations",
+              "resolved"
+            ]
+          },
+          {
+            "kind": "finite-resolves",
+            "resolvedAfterEightNodeTurns": true,
+            "events": [
+              "getAnimations",
+              "animation.finished:await",
+              "getAnimations",
+              "rAF:scheduled",
+              "rAF:executed",
+              "rAF:scheduled",
+              "rAF:executed",
+              "message:posted",
+              "message:delivered",
+              "getAnimations",
+              "resolved"
+            ]
+          },
+          {
+            "kind": "finite-pending",
+            "resolvedAfterEightNodeTurns": false,
+            "events": [
+              "getAnimations",
+              "animation.finished:await"
+            ]
+          },
+          {
+            "kind": "raf-pending",
+            "resolvedAfterEightNodeTurns": false,
+            "events": [
+              "getAnimations",
+              "rAF:scheduled"
+            ]
+          },
+          {
+            "kind": "message-pending",
+            "resolvedAfterEightNodeTurns": false,
+            "events": [
+              "getAnimations",
+              "rAF:scheduled",
+              "rAF:executed",
+              "rAF:scheduled",
+              "rAF:executed",
+              "message:posted"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_file": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f2/probe-observer-equivalence.json",
+      "source_sha256": "d8e3f46beb4531d748afb523b96d4a66661f09e429f3a4fe8ecad2474b273e3f",
+      "format": "summary omits repeated observation events; exact source hash preserved",
+      "summary": {
+        "status": "PASS_SYNTHETIC_OBSERVER_EQUIVALENCE",
+        "assertions": "Same imported official wait, with and without the exact imported observer; same native trace, completion/rejection/pending state, RAF IDs/cancellation, native exceptions, descriptors and listener cleanup.",
+        "limitation": "Deterministic Node VM primitives. Does not prove browser implementation equivalence, F2 root cause, application runtime or CI succession. Pending cases are controlled fixtures, never claimed as F2 RED.",
+        "cases": [
+          {
+            "kind": "idle",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "finite-resolves",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "finite-rejects",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "finite-pending",
+            "equivalentNativeTrace": true,
+            "status": "PENDING",
+            "trace": [
+              "getAnimations"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "raf-pending",
+            "equivalentNativeTrace": true,
+            "status": "PENDING",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "message-pending",
+            "equivalentNativeTrace": true,
+            "status": "PENDING",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "cancelled-frame",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "frame-scheduled:1",
+              "frame-cancelled:1",
+              "getAnimations",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "frame-scheduled:3",
+              "frame-delivered:3",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "invalid-frame",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "callback-error",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "frame-scheduled:1",
+              "getAnimations",
+              "frame-scheduled:2",
+              "frame-delivered:1",
+              "callback-error:CALLBACK_SENTINEL",
+              "frame-delivered:2",
+              "frame-scheduled:3",
+              "frame-delivered:3",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "callback-receiver",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "frame-scheduled:1",
+              "getAnimations",
+              "frame-scheduled:2",
+              "frame-delivered:1",
+              "callback-receiver:true:timestamp:123.75",
+              "frame-delivered:2",
+              "frame-scheduled:3",
+              "frame-delivered:3",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "message-constructor",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "channel-created",
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "native-error",
+            "equivalentNativeTrace": true,
+            "status": "REJECTED:NATIVE_SENTINEL",
+            "trace": [
+              "getAnimations",
+              "REJECTED:NATIVE_SENTINEL"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "console-error",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "finite-inspection-error",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "message-listener-error",
+            "equivalentNativeTrace": true,
+            "status": "RESOLVED",
+            "trace": [
+              "getAnimations",
+              "frame-scheduled:1",
+              "frame-delivered:1",
+              "frame-scheduled:2",
+              "frame-delivered:2",
+              "channel-created",
+              "port-start",
+              "message-posted",
+              "message-delivered",
+              "port-close",
+              "port-close",
+              "getAnimations",
+              "wait-resolved"
+            ],
+            "descriptorsRestored": true,
+            "listenersRemoved": true
+          },
+          {
+            "kind": "partial-install",
+            "status": "INSTALL_REJECTED_AND_ROLLED_BACK",
+            "descriptorsRestored": true
+          }
+        ]
+      }
+    }
+  ]
+}

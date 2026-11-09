@@ -1,0 +1,15 @@
+{
+  "control": "scheduler-held-before-commit",
+  "beforeCommit": [],
+  "afterCommit": [
+    {
+      "phase": "dom-mutation",
+      "alertPresent": true
+    },
+    {
+      "phase": "focus-alert",
+      "alertPresent": true
+    }
+  ],
+  "alertFocused": true
+}

@@ -1,0 +1,238 @@
+{
+  "mission": "HF-POS-20261021-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "observedUtc": "2026-10-21T23:59:25Z",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "connection": "HidroFlorestaStartup",
+  "refs": [
+    {
+      "ref": "refs/heads/development",
+      "sha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+    },
+    {
+      "ref": "refs/heads/docs/handoff-pos-consolidacao-20261021",
+      "sha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093"
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+    }
+  ],
+  "driftFromMission": false,
+  "rulesets": {
+    "result": [],
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/rulesets"
+  },
+  "classicBranchProtection": {
+    "status": 403,
+    "error": "Resource not accessible by integration",
+    "absenceInferred": false
+  },
+  "branchMetadata": {
+    "branch": "development",
+    "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+    "protected": false,
+    "url": "https://api.github.com/repos/HidroFlorestaStartup/HidroFlorestas-FullStack/branches/development",
+    "protectionsChanged": false
+  },
+  "sourceArchive": {
+    "sha256": "0017dfdd150641344665c3b49abea9d5fbd5bc28f30935bd9e62cda40550db40",
+    "role": "historical context, not current baseline"
+  },
+  "delegation": {
+    "launcher": "collaboration.spawn_agent",
+    "realAgents": [
+      "/root/backend_historicos",
+      "/root/frontend_ux",
+      "/root/operacao_vercel"
+    ],
+    "concurrentSlotsIncludingCoordinator": 4
+  },
+  "historicalRc": {
+    "head": "e44711d0407dbde06577bd61890f53457aa0a26a",
+    "run": 39600889091,
+    "attempt": 1,
+    "job": 119224780858,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39600889091",
+    "gates": [
+      {
+        "gate": "RegressionSetup",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:37:41.245Z",
+        "endedUtc": "2026-10-21T12:37:48.997Z"
+      },
+      {
+        "gate": "Unit",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:37:49.286Z",
+        "endedUtc": "2026-10-21T12:38:18.061Z"
+      },
+      {
+        "gate": "Integration",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:38:18.381Z",
+        "endedUtc": "2026-10-21T12:40:14.342Z"
+      },
+      {
+        "gate": "Migration",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:40:14.605Z",
+        "endedUtc": "2026-10-21T12:40:30.005Z"
+      },
+      {
+        "gate": "Contract",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:40:30.309Z",
+        "endedUtc": "2026-10-21T12:40:33.821Z"
+      },
+      {
+        "gate": "R1",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:40:34.104Z",
+        "endedUtc": "2026-10-21T12:40:45.293Z"
+      },
+      {
+        "gate": "Build",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:40:45.544Z",
+        "endedUtc": "2026-10-21T12:41:12.362Z"
+      },
+      {
+        "gate": "Typecheck",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:41:12.651Z",
+        "endedUtc": "2026-10-21T12:41:22.869Z"
+      },
+      {
+        "gate": "Lint",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:41:23.133Z",
+        "endedUtc": "2026-10-21T12:41:42.650Z"
+      },
+      {
+        "gate": "E2E",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:41:42.907Z",
+        "endedUtc": "2026-10-21T12:54:45.866Z"
+      },
+      {
+        "gate": "Https",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:54:46.194Z",
+        "endedUtc": "2026-10-21T12:55:31.130Z"
+      },
+      {
+        "gate": "Deletion",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:55:31.385Z",
+        "endedUtc": "2026-10-21T12:55:46.755Z"
+      },
+      {
+        "gate": "Ihfr",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:55:47.051Z",
+        "endedUtc": "2026-10-21T12:57:05.203Z"
+      },
+      {
+        "gate": "Bootstrap",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:57:05.505Z",
+        "endedUtc": "2026-10-21T12:57:10.751Z"
+      },
+      {
+        "gate": "SchemaAudit",
+        "result": "PASS",
+        "exitCode": 0,
+        "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+        "startedUtc": "2026-10-21T12:57:11.066Z",
+        "endedUtc": "2026-10-21T12:57:11.902Z"
+      }
+    ],
+    "counts": {
+      "integration": 231,
+      "migration": 37,
+      "contract": 6,
+      "r1": 17,
+      "e2e": 220,
+      "https": 2,
+      "deletion": 3,
+      "ihfr": 6
+    },
+    "codexReview": {
+      "status": "completed",
+      "head": "e44711d0407dbde06577bd61890f53457aa0a26a",
+      "findings": false,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/25#issuecomment-6316104300"
+    },
+    "inheritedPassClaimed": false
+  },
+  "pr26ProgressReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/26#issuecomment-6329298055",
+  "consolidatedUtc": "2026-10-22T00:20:41.025161+00:00",
+  "observedUtcScope": "Initial preflight; later observations carry their source receipts or consolidatedUtc.",
+  "localAgentCommits": [
+    {
+      "agent": "/root/backend_historicos",
+      "sha": "1608d523c89d2440dac45d2a79bc9e1325b1315e",
+      "scope": "backend and synthetic recovery"
+    },
+    {
+      "agent": "/root/backend_historicos",
+      "sha": "4ac27ffd6d9995ca25673703030d2e5aa8e826bf",
+      "scope": "independent operations review"
+    },
+    {
+      "agent": "/root/frontend_ux",
+      "sha": "21b5884cfbd15ce794295fdd00cfc2f07a116743",
+      "scope": "public frontend and selected unit evidence"
+    },
+    {
+      "agent": "/root/operacao_vercel",
+      "sha": "4554c39b7d4f04e4e60898499730faef44f3d23c",
+      "scope": "operations and Vercel metadata"
+    },
+    {
+      "agent": "/root/operacao_vercel",
+      "sha": "65f6902bcc9aaf429c4db9c129a42d927809e929",
+      "scope": "independent integrated review"
+    },
+    {
+      "agent": "/root/frontend_ux",
+      "sha": "8264d7bc8b1d1e625f968b212ef7b06d9eda9014",
+      "scope": "NAV4 failure, geometry inspection and local origin counterproof"
+    }
+  ],
+  "publicationMethod": {
+    "transport": "Connected GitHub Git Data API",
+    "reason": "Git CLI public reads succeeded; authenticated CLI push unavailable.",
+    "localCommitIdsAreRemoteCommitIds": false,
+    "integrityRule": "Published tree SHA must equal final integrated local tree SHA; remote commit identity is recorded separately."
+  }
+}

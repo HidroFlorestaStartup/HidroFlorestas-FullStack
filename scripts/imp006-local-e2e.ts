@@ -8,6 +8,7 @@ import { IHFR_CONTEXTS, IHFR_MEASUREMENT_PAYLOAD } from "../tests/fixtures/ihfr-
 import { setupIHFRDiagnosisFixtures } from "../tests/fixtures/ihfr-diagnosis-fixtures";
 import { selectedImp006DatabaseVariable, withImp006PostgresqlSchema } from "../tests/fixtures/postgresql-schema-lifecycle";
 import { readOnlyImp006Preflight } from "./imp006-test-preflight";
+import { forwardImp006Diagnostics } from "./imp006-gate-diagnostics";
 
 function privateLanAddress() {
   const address = Object.values(networkInterfaces()).flat().find((item) =>
@@ -83,13 +84,14 @@ async function main() {
       IMP006_E2E_MEMBER_ID: IHFR_ACTORS.member,
     };
     const server = spawn(process.execPath, ["node_modules/next/dist/bin/next", "dev", "--hostname", host, "--port", String(port)], { env: { ...env, NODE_ENV: "development" }, stdio: ["ignore", "pipe", "pipe"], windowsHide: true });
-    server.stdout?.on("data", () => {});
-    server.stderr?.on("data", () => {});
+    forwardImp006Diagnostics(server.stdout, env, "Next stdout");
+    forwardImp006Diagnostics(server.stderr, env, "Next stderr");
     let primaryError: unknown;
     let cleanupError: unknown;
     try {
       await ready(`${baseURL}/login`, server);
-      const tests = spawn(process.execPath, ["node_modules/@playwright/test/cli.js", "test", "--config=playwright.imp006.config.ts"], { env: { ...env, NODE_ENV: "test" }, stdio: "inherit", windowsHide: true });
+      const config = process.argv.includes("--initialization-controls") ? "playwright.imp006-controls.config.ts" : "playwright.imp006.config.ts";
+      const tests = spawn(process.execPath, ["node_modules/@playwright/test/cli.js", "test", `--config=${config}`], { env: { ...env, NODE_ENV: "test" }, stdio: "inherit", windowsHide: true });
       const code = await exitCode(tests);
       if (code !== 0) throw new Error(`IMP-006 Playwright failed with exit code ${code}`);
     } catch (error) {

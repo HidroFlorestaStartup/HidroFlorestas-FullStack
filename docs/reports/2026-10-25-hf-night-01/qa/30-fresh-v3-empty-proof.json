@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-25T04:48:44.749Z",
+  "cohort": "v3-fresh",
+  "stage": "after migrations before any test fixtures",
+  "functionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+  "counts": {
+    "migrations": 14,
+    "users": 0,
+    "laboratories": 0,
+    "memberships": 0,
+    "areas": 0,
+    "collections": 0,
+    "audit_events": 0
+  },
+  "referencePublicTables": 0,
+  "clusterIdentifierSha256": "96d58bcd16c0581d7a55106ecea212b56da806ca9488d8f971570dad65f9b700",
+  "databaseTargetsVerifiedLocal": true,
+  "sqlParametersPublished": false,
+  "result": "PASS"
+}

@@ -1,0 +1,41 @@
+[WebServer] npm notice run hidro-florestas-fullstack@0.1.0 dev
+[WebServer] npm notice run next dev --hostname 127.0.0.1 --port 3001
+[WebServer] (node:32328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:28480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:17552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:36064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:36028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › .accounts-validation\drafts-diagnostic.spec.ts:8:5 › diagnostic: capture selection and first save across delayed hydration (4.9s)
+
+
+  1) [chromium] › .accounts-validation\drafts-diagnostic.spec.ts:8:5 › diagnostic: capture selection and first save across delayed hydration
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: {"kind": "editing", "raw": "false"}
+    Received: undefined
+
+      32 |  await page.reload();await observe('after-reload');
+      33 |  await writeFile('.accounts-validation/drafts-hydration-diagnostic.json',JSON.stringify({kind:'synthetic-diagnostic',scripts,observations},null,2));
+    > 34 |  expect(fields['water.hasSpring']).toEqual({kind:'editing',raw:'false'});
+         |                                    ^
+      35 | });
+      36 |
+        at <WORKTREE>\.accounts-validation\drafts-diagnostic.spec.ts:34:36
+
+    Error Context: .accounts-validation\drafts-diagnostic-results\drafts-diagnostic-diagnost-b3c9d-ve-across-delayed-hydration-chromium\error-context.md
+
+  1 failed
+    [chromium] › .accounts-validation\drafts-diagnostic.spec.ts:8:5 › diagnostic: capture selection and first save across delayed hydration

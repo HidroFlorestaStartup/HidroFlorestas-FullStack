@@ -1,0 +1,41 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:mail:r1
+npm notice run node --conditions=react-server --import=tsx --test --test-concurrency=1 --test-name-pattern=R1 tests/integration/mail-outbox.test.ts tests/mail/mail-smtp.test.ts
+IMP-006 schema owned by this run: imp006_test_a59fe8438aca463588347611d39ec4f6
+✔ R1 delayed pre-send result past lease remains recoverable: old worker never starts SMTP (795.6708ms)
+IMP-006 schema owned by this run: imp006_test_3d8aaf7a5b5d44b388346eb4cd6abdc3
+✔ R1 delayed pre-send result past lease after another worker SENT: old worker never starts SMTP (561.4588ms)
+IMP-006 schema owned by this run: imp006_test_c2f41d388feb4a45955fd22fd380a0c5
+✔ R1 successful final fence response delayed past lease cannot start SMTP after recovery (416.3259ms)
+IMP-006 schema owned by this run: imp006_test_38b5239a737a4389882c33c7ebc2f4a8
+✔ R1 near-end lease refuses SMTP after delayed early read and preserves finite recovery (446.3754ms)
+IMP-006 schema owned by this run: imp006_test_2f7a67d88ade4b86ae8e58d3755ec1d9
+✔ R1 near-end lease refuses SMTP after delayed final fence and preserves finite recovery (432.4547ms)
+IMP-006 schema owned by this run: imp006_test_15dd1ff83b894cd0810d3ec8b7b75f3e
+✔ R1 cancel challenge after early read but before final fence prevents SMTP (552.3529ms)
+IMP-006 schema owned by this run: imp006_test_5c242a4b63aa43f28174db6dafd49c03
+✔ R1 invalidate challenge after early read but before final fence prevents SMTP (496.8938ms)
+IMP-006 schema owned by this run: imp006_test_a579243debbd45caa87ffd7604b651d3
+✔ R1 consume challenge after early read but before final fence prevents SMTP (516.6649ms)
+IMP-006 schema owned by this run: imp006_test_b422dde1421849d0a56b4b90dc3c9366
+✔ R1 valid final fence passes operational deadline separately from shorter challenge validity (545.6265ms)
+IMP-006 schema owned by this run: imp006_test_bb51006c4e11408badd6569bf0569b5c
+✔ R1 production database clock fence permits an unexpired real-time claim (494.3938ms)
+IMP-006 schema owned by this run: imp006_test_fe3955f8529f448aa36945a1e13e3e64
+✔ R1 monotonic elapsed time refuses delayed final fence even with application clock behind PostgreSQL (501.8318ms)
+IMP-006 schema owned by this run: imp006_test_b2258f981c4d4ad7803a90b2caf8ca13
+✔ R1 delayed final fence past message validity never starts SMTP (493.3545ms)
+IMP-006 schema owned by this run: imp006_test_48ddce5e64bd4c2e9565be63ee98e421
+✔ R1 delayed final fence past challenge validity never starts SMTP (485.5765ms)
+IMP-006 schema owned by this run: imp006_test_4631b9f3afd84ab5b958c4d0d1128690
+✔ R1 database failure at final fence preserves durable payload and recovery without SMTP (554.9086ms)
+✔ R1 operational deadline after SMTP accepts DATA destroys connection and remains ambiguous (1628.101ms)
+✔ R1 transport deadline is the minimum of SMTP cap, proof validity and operational lease deadline (0.9167ms)
+✔ R1 expired operational deadline or proof never opens SMTP connection (4.4976ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9618.5288

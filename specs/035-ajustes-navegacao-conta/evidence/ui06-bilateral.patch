@@ -1,0 +1,348 @@
+diff --git a/.github/workflows/hf-ui06-bilateral.yml b/.github/workflows/hf-ui06-bilateral.yml
+new file mode 100644
+--- /dev/null
++++ b/.github/workflows/hf-ui06-bilateral.yml
+@@ -0,0 +1,86 @@
++name: UI06 shell bilateral evidence proposal
++on:
++  push:
++    branches: [codex/hf-ui044-ui06-bilateral-20261101]
++permissions:
++  contents: read
++concurrency:
++  group: ui06-shell-${{ github.ref }}
++  cancel-in-progress: false
++jobs:
++  capture:
++    if: >-
++      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
++      github.ref == 'refs/heads/codex/hf-ui044-ui06-bilateral-20261101' &&
++      github.event_name == 'push' && github.event.created == true &&
++      github.event.forced == false && github.run_attempt == 1
++    runs-on: windows-latest
++    timeout-minutes: 35
++    defaults:
++      run:
++        shell: pwsh
++        working-directory: fullstack
++    env:
++      NEXT_TELEMETRY_DISABLED: '1'
++      HF_REVERSE_GEOCODER_URL: ''
++      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
++      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; OpenStreetMap contributors'
++      HF_UI06_STARTER: 'http://127.0.0.1:4173'
++    steps:
++      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
++        with:
++          path: fullstack
++          fetch-depth: 2
++          persist-credentials: false
++      - name: Verify base and Preview guard before any application process
++        run: |
++          $expected='6c61056fe1dc2193e225d935f49b78cb6c6781ed'
++          if ((git rev-parse HEAD^).Trim() -ne $expected) { throw 'Visual candidate must have the frozen composition as its sole parent.' }
++          if (((git rev-list --parents -n 1 HEAD).Trim() -split ' ').Count -ne 2) { throw 'Unexpected parent count.' }
++          $config=Get-Content -Raw vercel.json | ConvertFrom-Json
++          if ($config.git.deploymentEnabled.'codex/hf-ui044-ui06-bilateral-20261101' -cne $false) { throw 'Preview guard absent.' }
++          if ((Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotLike '*.example').Count) { throw 'Private dotenv prohibited.' }
++          foreach ($name in @('DATABASE_URL','TEST_DATABASE_URL','SMTP_USER','SMTP_APP_PASSWORD','CLOUDINARY_URL','CLOUDINARY_API_SECRET')) {
++            if (Test-Path "Env:$name") { throw "Inherited provider/application configuration prohibited: $name" }
++          }
++          $allowed=@('.github/workflows/hf-ui06-bilateral.yml','vercel.json','scripts/hf-ui06-visual.ps1','tests/e2e/hf-ui06-bilateral.spec.ts')
++          $changed=@(git diff --name-only $expected HEAD)
++          if ($changed.Count -ne 4 -or @($changed | Where-Object { $_ -notin $allowed }).Count) { throw 'Unexpected visual patch paths.' }
++      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
++        with:
++          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
++          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
++          path: starter
++          persist-credentials: false
++      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
++        with:
++          node-version: 24.19.0
++      - name: Install locked runtimes
++        run: |
++          npm ci --no-audit --no-fund
++          if ($LASTEXITCODE) { throw 'FullStack install failed.' }
++          npx prisma generate
++          if ($LASTEXITCODE) { throw 'Prisma generate failed.' }
++          npx playwright install chromium
++          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
++          npm install --global bun@1.3.11 --no-audit --no-fund
++          if ($LASTEXITCODE) { throw 'Bun installation failed.' }
++          if ((bun --version).Trim() -ne '1.3.11') { throw 'Unexpected Bun version.' }
++          Push-Location ../starter
++          try {
++            bun install --frozen-lockfile
++            if ($LASTEXITCODE) { throw 'Starter locked install failed.' }
++          } finally { Pop-Location }
++      - name: Capture only the proposed shell comparisons in an owned synthetic runtime
++        run: ./scripts/hf-ui06-visual.ps1
++      - name: Archive durable redacted pairs
++        if: always()
++        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
++        with:
++          name: ui06-shell-${{ github.sha }}-attempt-${{ github.run_attempt }}
++          path: |
++            fullstack/.accounts-validation/ui06/*.png
++            fullstack/.accounts-validation/ui06/*.json
++          include-hidden-files: true
++          if-no-files-found: error
++          retention-days: 14
+diff --git a/scripts/hf-ui06-visual.ps1 b/scripts/hf-ui06-visual.ps1
+new file mode 100644
+--- /dev/null
++++ b/scripts/hf-ui06-visual.ps1
+@@ -0,0 +1,40 @@
++$ErrorActionPreference='Stop'
++if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows' -or $env:GITHUB_RUN_ATTEMPT -ne '1') { throw 'Only the separately authorized fresh hosted attempt is supported.' }
++$ui06Starter=Join-Path (Split-Path (Get-Location) -Parent) 'starter'
++$ui06Process=$null
++function New-Ui06Key { [Convert]::ToBase64String([Security.Cryptography.RandomNumberGenerator]::GetBytes(32)) }
++try {
++  # Existing entrypoint provisions its own private-ACL PostgreSQL. No cached DB/marker/env.
++  & ./scripts/rc-review-validation.ps1 -InitializeCiCluster -Gates RegressionSetup
++  if ($LASTEXITCODE) { throw 'Synthetic regression setup failed.' }
++  $ui06Bun=(Get-Command bun.exe).Source
++  $ui06Process=Start-Process -FilePath $ui06Bun -ArgumentList @('run','dev','--host','127.0.0.1','--port','4173') -WorkingDirectory $ui06Starter -PassThru -WindowStyle Hidden
++  $ui06Ready=$false
++  for ($i=0; $i -lt 90; $i++) {
++    if ($ui06Process.HasExited) { throw 'Starter exited before readiness.' }
++    try { $r=Invoke-WebRequest 'http://127.0.0.1:4173/login' -TimeoutSec 2; if ($r.StatusCode -eq 200) { $ui06Ready=$true; break } } catch {}
++    Start-Sleep -Milliseconds 500
++  }
++  if (-not $ui06Ready) { throw 'Starter readiness failed.' }
++  $env:ACCOUNT_POLICY_ENABLED='1'
++  $env:ACCOUNT_PROOF_ACTIVE_KEY_ID='synthetic'
++  $env:ACCOUNT_PROOF_KEYS=(@{synthetic=(New-Ui06Key)} | ConvertTo-Json -Compress)
++  $env:ACCOUNT_REQUEST_KEY=New-Ui06Key
++  $env:MAIL_PAYLOAD_ACTIVE_KEY_ID='synthetic'
++  $env:MAIL_PAYLOAD_ENCRYPTION_KEYS=(@{synthetic=(New-Ui06Key)} | ConvertTo-Json -Compress)
++  $env:MAIL_IDEMPOTENCY_KEY=New-Ui06Key
++  $env:MAIL_WORKER_SECRET=New-Ui06Key
++  $env:APP_PUBLIC_URL='https://synthetic.example.invalid'
++  $env:ACCOUNT_TRUSTED_INGRESS='local'
++  & ./scripts/accounts-local-postgresql.ps1 -Action Start
++  if ($LASTEXITCODE) { throw 'Owned PostgreSQL start failed.' }
++  # This is a focal capture run, never a replacement or claim of fifteen RC gates.
++  & ./scripts/accounts-local-postgresql.ps1 -Action Run -DatabaseMode Regression -Executable node -CommandArguments @('node_modules/@playwright/test/cli.js','test','tests/e2e/hf-ui06-bilateral.spec.ts','--workers=1','--retries=0')
++  if ($LASTEXITCODE) { throw 'UI06 focal capture failed; no acceptance inferred.' }
++  Push-Location $ui06Starter
++  try { if (git diff --exit-code) { throw 'Starter tracked files changed.' }; if ($LASTEXITCODE) { throw 'Starter source drift.' } }
++  finally { Pop-Location }
++} finally {
++  if ($ui06Process -and -not $ui06Process.HasExited) { & taskkill.exe /PID $ui06Process.Id /T /F | Out-Null }
++  & ./scripts/accounts-local-postgresql.ps1 -Action Stop
++}
+diff --git a/tests/e2e/hf-ui06-bilateral.spec.ts b/tests/e2e/hf-ui06-bilateral.spec.ts
+new file mode 100644
+--- /dev/null
++++ b/tests/e2e/hf-ui06-bilateral.spec.ts
+@@ -0,0 +1,193 @@
++import { test, expect, type Page, type BrowserContext } from "@playwright/test";
++import { randomUUID, createHash } from "node:crypto";
++import { mkdir, writeFile } from "node:fs/promises";
++import { execFileSync } from "node:child_process";
++import { join } from "node:path";
++import bcrypt from "bcrypt";
++import { createAreaFixtureClient } from "../fixtures/areas";
++import { signSessionToken } from "../../src/app/api/server/auth/session";
++
++test.describe.configure({ mode: "serial" });
++test.use({ trace: "off", video: "off", screenshot: "off" });
++test.setTimeout(90_000);
++const starter = "http://127.0.0.1:4173";
++const referenceSha = "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f";
++const frozenComposition = "6c61056fe1dc2193e225d935f49b78cb6c6781ed";
++const archive = join(process.cwd(), ".accounts-validation/ui06");
++const digest = (data: Buffer) => createHash("sha256").update(data).digest("hex");
++const identity = (cwd: string) => ({
++  sha: execFileSync("git", ["rev-parse", "HEAD"], { cwd, encoding: "utf8" }).trim(),
++  tree: execFileSync("git", ["rev-parse", "HEAD^{tree}"], { cwd, encoding: "utf8" }).trim(),
++});
++const viewportCases = [[320,900],[375,900],[390,844],[768,900],[1440,900],[667,375],[844,390]];
++const pairs: object[] = [];
++
++async function prepare(context: BrowserContext, scale: number, blocked: object[]) {
++  await context.route("**/*", async route => {
++    const url = new URL(route.request().url());
++    if (["http://127.0.0.1:3001", starter, "https://fonts.googleapis.com", "https://fonts.gstatic.com"].includes(url.origin))
++      return route.continue();
++    if (["data:", "blob:", "about:"].includes(url.protocol)) return route.continue();
++    // Never archive query strings, headers, bodies, tokens or browser storage.
++    blocked.push({ origin: url.origin, path: url.pathname, method: route.request().method() });
++    await route.abort();
++  });
++  await context.addInitScript(({ scale }) => {
++    document.addEventListener("DOMContentLoaded", () => {
++      const style = document.createElement("style");
++      style.textContent = "html{font-size:" + scale + "%!important}";
++      document.head.append(style);
++    });
++  }, { scale });
++}
++
++async function capture(page: Page, context: BrowserContext, name: string, meta: object, inset: number) {
++  await page.waitForLoadState("networkidle");
++  await page.evaluate(() => document.fonts.ready);
++  const cdp = await context.newCDPSession(page);
++  try {
++    await cdp.send("Emulation.setSafeAreaInsetsOverride", { insets: { bottom: inset, bottomMax: inset } });
++    await cdp.send("DOM.enable");
++    await cdp.send("CSS.enable");
++    const { root } = await cdp.send("DOM.getDocument");
++    const { nodeId } = await cdp.send("DOM.querySelector", { nodeId: root.nodeId, selector: "header" });
++    const rendered = nodeId ? await cdp.send("CSS.getPlatformFontsForNode", { nodeId }) : { fonts: [] };
++    const geometry = await page.evaluate(() => {
++      const rect = (e: Element | null) => e ? JSON.parse(JSON.stringify(e.getBoundingClientRect())) : null;
++      const focused = document.activeElement;
++      const rail = [...document.querySelectorAll("nav")].find(e =>
++        getComputedStyle(e).position === "fixed" && e.getBoundingClientRect().height > 0);
++      return { width: innerWidth, height: innerHeight, devicePixelRatio,
++        rootFontSize: getComputedStyle(document.documentElement).fontSize,
++        computedFont: getComputedStyle(document.body).fontFamily,
++        poppinsLoaded: document.fonts.check('16px "Poppins"'),
++        overflow: document.documentElement.scrollWidth > innerWidth,
++        header: rect(document.querySelector("header")), rail: rect(rail ?? null),
++        railPaddingBottom: rail ? getComputedStyle(rail).paddingBottom : null,
++        focus: focused ? { tag: focused.tagName, rect: rect(focused) } : null };
++    });
++    const png = await page.screenshot({ fullPage: false, animations: "disabled",
++      mask: await page.locator("input, textarea").all() });
++    expect(png.readUInt32BE(16)).toBe(geometry.width);
++    expect(png.readUInt32BE(20)).toBe(geometry.height);
++    await mkdir(archive, { recursive: true });
++    await writeFile(join(archive, name + ".png"), png);
++    await writeFile(join(archive, name + ".json"), JSON.stringify({
++      ...meta, ...geometry, fontsActuallyRendered: rendered.fonts, safeAreaBottom: inset,
++      fullPage: false, pngSha256: digest(png), synthetic: true,
++      run: process.env.GITHUB_RUN_ID, attempt: process.env.GITHUB_RUN_ATTEMPT,
++      route: new URL(page.url()).pathname,
++    }, null, 2) + "\n");
++    return geometry;
++  } finally { await cdp.detach(); }
++}
++
++for (const [width, height] of viewportCases) for (const scale of [100,200]) for (const inset of [0,34]) {
++  test("UI06 shell pairs " + [width,height,scale,inset].join("-"), async ({ browser }, info) => {
++    const suffix = [width,height,scale,inset].join("-");
++    const userId = randomUUID();
++    const db = createAreaFixtureClient(process.env); // Existing owned-database validation, unchanged.
++    const contexts: BrowserContext[] = [];
++    const labName = "HF UI06 synthetic laboratory";
++    try {
++      await db.user.create({ data: { id: userId, email: userId + "@ui06.hidroflorestas.invalid",
++        firstName: "UI06", lastName: "Fixture", password: await bcrypt.hash(randomUUID(),10),
++        status: "ACTIVE", role: "USER", verificationRequired: false } });
++      const results: Record<string, object> = {};
++      for (const source of ["fullstack","starter"]) {
++        const context = await browser.newContext({ viewport: { width,height }, deviceScaleFactor: 1,
++          timezoneId: "America/Fortaleza", locale: "pt-BR", reducedMotion: "reduce", serviceWorkers: "block" });
++        contexts.push(context);
++        const blocked: object[] = [];
++        await prepare(context,scale,blocked);
++        const page = await context.newPage();
++        if (source === "fullstack") {
++          await context.addCookies([{ name: "auth_token", value: signSessionToken(userId),
++            url: String(info.project.use.baseURL) }]);
++          await page.goto(String(info.project.use.baseURL) + "/workspace");
++        } else {
++          await page.goto(starter + "/login");
++          await page.getByRole("button", { name: /Conta sem laboratório/ }).click();
++          await page.getByRole("button", { name: "Entrar", exact: true }).click();
++          await expect(page).toHaveURL(starter + "/workspace");
++        }
++        const code = identity(source === "fullstack" ? process.cwd() : join(process.cwd(),"../starter"));
++        if (source === "starter") expect(code.sha).toBe(referenceSha);
++        const meta = { source, ...code, frozenComposition, textScale: scale, blockedRequests: blocked,
++          fixture: { role: "OWNER", workspace: "empty-then-one-active-lab", areas: 0, collections: 0 },
++          referenceAccountDisclosure: "NOT_PRESENT_IN_PINNED_STARTER" };
++        const take = (state: string, equivalent = true) => capture(page,context,
++          source + "-" + suffix + "-" + state, { ...meta, state, equivalent },inset);
++        await expect(page.getByLabel("Nome do laboratório", { exact: true })).toHaveCount(source === "fullstack" ? 1 : 0);
++        await take("workspace-account-closed");
++        if (source === "fullstack") {
++          const account = page.getByRole("button", { name: "Conta",exact:true });
++          await account.focus();
++          await page.keyboard.press("Enter");
++          await expect(account).toHaveAttribute("aria-expanded","true");
++          await take("workspace-account-open",false);
++          await page.keyboard.press("Escape");
++          await expect(account).toHaveAttribute("aria-expanded","false");
++          await expect(account).toBeFocused();
++        } else {
++          // Record the real structural difference; do not invent a reference Conta menu.
++          await take("workspace-account-open-unavailable",false);
++          await page.getByRole("button", { name: /Criar seu Laboratório IHFR/ }).click();
++        }
++        await page.getByLabel("Nome do laboratório", { exact: true }).fill(labName);
++        await page.getByRole("button", { name: "Criar laboratório",exact:true }).click();
++        const access = page.getByRole("link", { name: source === "starter" ? "Acessar" : "ACESSAR LABORATÓRIO",exact:true });
++        await expect(access).toBeVisible();
++        await access.click();
++        await expect(page).toHaveURL(/\/dashboard\/laboratories\/[^/]+\/?$/);
++        await take("laboratory-account-closed");
++        if (source === "fullstack") {
++          const account = page.getByRole("button",{name:"Conta",exact:true});
++          await account.click();
++          await take("laboratory-account-open",false);
++          await account.press("Escape");
++          await expect(account).toBeFocused();
++        } else await take("laboratory-account-open-unavailable",false);
++        const main = page.locator(source === "fullstack" ? "#application-content" : "#conteudo");
++        const last = main.locator("a[href]:visible,button:enabled:visible,input:enabled:visible").last();
++        await last.focus();
++        await expect(last).toBeFocused();
++        const focused = await take("keyboard-last-control");
++        await page.keyboard.press("Tab");
++        await take("keyboard-next-focus");
++        // Comparison keeps the measured focus/obstruction in JSON for human review.
++        const nav = page.locator("nav:visible").filter({ has: page.getByRole("link",{name:"Áreas",exact:true}) }).first();
++        await nav.getByRole("link",{name:"Áreas",exact:true}).click();
++        await expect(page).toHaveURL(/\/areas\/?$/);
++        await take("navigation-areas");
++        await page.goBack();
++        await expect(page).toHaveURL(/\/dashboard\/laboratories\/[^/]+\/?$/);
++        await take("back");
++        await page.goForward();
++        await expect(page).toHaveURL(/\/areas\/?$/);
++        await take("forward");
++        await page.reload();
++        // Starter creates labs only in its in-memory adapter: reload can discard them.
++        // Capture actual state and exclude this pair from equivalent-data acceptance.
++        await take("reload",false);
++        results[source] = { code, focus: focused, blockedRequests: blocked,
++          accountPairEquivalent: false, reloadPairEquivalent: false };
++        await context.close();
++      }
++      pairs.push({ viewport:{width,height},scale,inset,results,
++        acceptance:"HUMAN_REVIEW_REQUIRED", globalUi06:"PENDING_B_AREA_COLLECTION_IHFR" });
++    } finally {
++      for (const context of contexts) await context.close();
++      const labs = await db.laboratoryRoom.findMany({ where:{userId,name:labName},select:{id:true} });
++      const ids = labs.map(l=>l.id);
++      await db.researchersLinked.deleteMany({where:{userId,laboratoryRoomId:{in:ids}}});
++      await db.laboratoryRoom.deleteMany({where:{userId,id:{in:ids},name:labName}});
++      await db.user.deleteMany({where:{id:userId,email:userId+"@ui06.hidroflorestas.invalid"}});
++      expect(await db.user.count({where:{id:userId}})).toBe(0);
++      await db.$disconnect();
++      await mkdir(archive,{recursive:true});
++      await writeFile(join(archive,"pairs.json"),JSON.stringify({pairs,
++        status:"CAPTURE_PROGRESS_NOT_ACCEPTANCE", ui06BilateralPass:false},null,2)+"\n");
++    }
++  });
++}
+diff --git a/vercel.json b/vercel.json
+--- a/vercel.json
++++ b/vercel.json
+@@ -42,8 +42,8 @@
+       "feat/ajustes-navegacao-conta": false,
+       "feat/ajustes-area-coletas-ihfr": false,
+       "feat/localizacao-endereco-opcional": false,
+-      "docs/handoff-ajustes-interface-20261030": false
++      "docs/handoff-ajustes-interface-20261030": false,
++      "codex/hf-ui044-ui06-bilateral-20261101": false
+     }
+   }
+ }
+-

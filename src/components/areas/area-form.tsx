@@ -4,14 +4,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Crosshair, MapPin, Save } from "lucide-react";
 import { AreaMap } from "./area-map";
-import { pointReducer } from "./area-form-state";
+import { areaDraftReducer, initialAreaDraft, ADDRESS_FIELDS } from "./area-geocoding-state";
+import { coordinateValue, lookupReverseAddress } from "./reverse-address";
+import styles from "./areas.module.css";
 export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
   const router = useRouter();
-  const [point, dispatch] = useReducer(pointReducer, {
-    latitude: "",
-    longitude: "",
-    revision: 0,
-  });
+  const [draft, dispatch] = useReducer(areaDraftReducer, undefined, initialAreaDraft);
+  const point = draft.point;
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [locating, setLocating] = useState(false);
@@ -24,20 +23,37 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       alive.current = false;
     };
   }, []);
-  const latitude =
-    point.latitude.trim() !== "" &&
-    Number.isFinite(Number(point.latitude)) &&
-    Math.abs(Number(point.latitude)) <= 90
-      ? Number(point.latitude)
-      : null;
-  const longitude =
-    point.longitude.trim() !== "" &&
-    Number.isFinite(Number(point.longitude)) &&
-    Math.abs(Number(point.longitude)) <= 180
-      ? Number(point.longitude)
-      : null;
+  const latitude = coordinateValue(point.latitude, 90);
+  const longitude = coordinateValue(point.longitude, 180);
   const select = (lat: string, lng: string) =>
-    dispatch({ type: "edit", latitude: lat, longitude: lng });
+    dispatch({ type: "point-edit", latitude: lat, longitude: lng });
+
+  useEffect(() => {
+    if (latitude === null || longitude === null) return;
+    const revision = point.revision;
+    const controller = new AbortController();
+    let disposed = false;
+    // Debounce typing, cancel earlier fetches and independently check the revision
+    // in the reducer (for races where cancellation arrives too late).
+    const delay = setTimeout(async () => {
+      dispatch({ type: "lookup-start", revision });
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      try {
+        const address = await lookupReverseAddress(latitude, longitude, controller.signal);
+        if (!disposed) dispatch({ type: "lookup-success", revision, address });
+      } catch {
+        if (!disposed) dispatch({ type: "lookup-failed", revision });
+      } finally {
+        clearTimeout(timeout);
+      }
+    }, 650);
+    return () => {
+      disposed = true;
+      clearTimeout(delay);
+      controller.abort();
+    };
+  }, [point.latitude, point.longitude, point.revision, latitude, longitude]);
+
   function locate() {
     if (locating) return;
     if (!navigator.geolocation) {
@@ -90,6 +106,7 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       longitude,
       municipality: form.get("municipality"),
       state: form.get("state"),
+      cep: form.get("cep"),
       landType: form.get("landType"),
       description: form.get("description"),
     };
@@ -120,27 +137,26 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       setSubmitting(false);
     }
   }
-  const inputClass =
-    "mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none placeholder:text-slate-400 focus:border-green-600 focus:ring-4 focus:ring-green-100";
-  const labelClass = "block text-sm font-bold text-slate-700";
+  const inputClass = styles.input;
+  const labelClass = styles.label;
   return (
-    <section className="space-y-6">
-      <div className="flex items-start gap-3">
+    <section className={styles.page}>
+      <div className={styles.formIntro}>
         <Link
           aria-label="Voltar às áreas"
           href={`/dashboard/laboratories/${laboratoryId}/areas`}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-700 text-white hover:bg-amber-800"
+          className={styles.back}
         >
-          <ArrowLeft size={22} />
+          <ArrowLeft size={22} aria-hidden="true" />
         </Link>
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[.18em] text-green-700">
+        <div className={styles.heading}>
+          <p className={styles.eyebrow}>
             Novo ponto
           </p>
-          <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h1 className={styles.title}>
             Nova Área para Monitoramento
           </h1>
-          <p className="mt-2 text-slate-500">
+          <p className={styles.description}>
             Informe os dados e confirme um único ponto no mapa ou pelas
             coordenadas.
           </p>
@@ -148,10 +164,10 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
       </div>
       <form
         onSubmit={submit}
-        className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+        className={styles.form + " " + styles.card}
       >
-        <div className="grid gap-7 p-5 sm:p-7 lg:grid-cols-[1.1fr_.9fr]">
-          <div className="space-y-5">
+        <div className={styles.formGrid}>
+          <div className={styles.fields}>
             <label className={labelClass}>
               Nome da área
               <input
@@ -163,7 +179,7 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
                 className={inputClass}
               />
             </label>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className={styles.fieldGrid}>
               <label className={labelClass}>
                 Latitude
                 <input
@@ -201,27 +217,45 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               type="button"
               disabled={locating}
               onClick={locate}
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-green-600 px-4 py-2.5 font-bold text-green-700 hover:bg-green-50 disabled:opacity-50"
+              className={styles.outline}
             >
-              <Crosshair size={18} />
+              <Crosshair size={18} aria-hidden="true" />
               {locating ? "Obtendo localização…" : "Usar minha localização"}
             </button>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["municipality", "Município"],
-                ["state", "UF"],
-                ["landType", "Tipo de terreno"],
-              ].map(([name, label]) => (
+            <div className={styles.fieldGrid}>
+              {ADDRESS_FIELDS.map((name) => (
                 <label key={name} className={labelClass}>
-                  {label}{" "}
-                  <span className="font-normal text-slate-400">(opcional)</span>
-                  <input name={name} maxLength={100} className={inputClass} />
+                  {name === "municipality" ? "Município" : name === "state" ? "UF" : "CEP"}{" "}
+                  <span className={styles.optional}>(opcional)</span>
+                  <input
+                    name={name}
+                    aria-label={name === "municipality" ? "Município" : name === "state" ? "UF" : "CEP"}
+                    value={draft.address[name]}
+                    onChange={(event) => dispatch({ type: "address-edit", field: name, value: event.target.value })}
+                    maxLength={name === "cep" ? 9 : 100}
+                    pattern={name === "cep" ? "[0-9]{5}-?[0-9]{3}" : undefined}
+                    title={name === "cep" ? "Informe oito dígitos, com ou sem hífen" : undefined}
+                    placeholder={name === "cep" ? "Ex.: 65000-000" : undefined}
+                    className={inputClass}
+                  />
                 </label>
               ))}
+              <label className={labelClass}>
+                Tipo de terreno <span className={styles.optional}>(opcional)</span>
+                <input name="landType" maxLength={100} className={inputClass} />
+              </label>
             </div>
+            <p aria-live="polite" className={styles.mapHelp}>
+              {draft.lookupStatus === "loading" && "Consultando endereço do ponto… "}
+              {draft.lookupStatus === "ready" && "Sugestão recebida. Confira os campos antes de salvar. "}
+              {draft.lookupStatus === "empty" && "Endereço não identificado para este ponto; você pode continuar. "}
+              {draft.lookupStatus === "unavailable" && "Serviço de endereço indisponível; cadastro permitido pelas coordenadas. "}
+              Município, UF e CEP podem ficar vazios ou ser corrigidos manualmente. Ao mudar o ponto,
+              sugestões anteriores são retiradas; dados digitados permanecem para revisão.
+            </p>
             <label className={labelClass}>
               Descrição{" "}
-              <span className="font-normal text-slate-400">(opcional)</span>
+              <span className={styles.optional}>(opcional)</span>
               <textarea
                 name="description"
                 maxLength={2000}
@@ -230,41 +264,41 @@ export function AreaForm({ laboratoryId }: { laboratoryId: string }) {
               />
             </label>
           </div>
-          <div className="min-w-0">
-            <div className="mb-3 flex items-center gap-2 text-sm font-bold text-slate-700">
-              <MapPin className="text-green-600" size={18} /> Selecione o ponto
+          <div className={styles.mapColumn}>
+            <div className={styles.mapTitle}>
+              <MapPin size={18} aria-hidden="true" /> Selecione o ponto
             </div>
             <AreaMap
               latitude={latitude}
               longitude={longitude}
               onSelect={(lat, lng) => select(String(lat), String(lng))}
             />
-            <p className="mt-3 text-xs leading-5 text-slate-500">
+            <p className={styles.mapHelp}>
               Clique no mapa ou digite as coordenadas. Nada será salvo antes da
               confirmação.
             </p>
           </div>
         </div>
-        <div className="border-t border-slate-200 bg-slate-50 px-5 py-4 sm:px-7">
+        <div className={styles.formFooter}>
           <p
             role="status"
             aria-live="polite"
-            className="mb-3 min-h-5 text-sm font-medium text-amber-800"
+            className={styles.status}
           >
             {message}
           </p>
-          <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <div className={styles.actions}>
             <Link
               href={`/dashboard/laboratories/${laboratoryId}/areas`}
-              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-slate-300 px-5 py-2.5 font-bold text-slate-700 hover:bg-white"
+              className={styles.outline}
             >
               Cancelar
             </Link>
             <button
               disabled={submitting}
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-2.5 font-bold text-white shadow-sm hover:bg-green-700 disabled:opacity-50"
+              className={styles.button}
             >
-              <Save size={18} />
+              <Save size={18} aria-hidden="true" />
               {submitting ? "Salvando…" : "Confirmar ponto e cadastrar"}
             </button>
           </div>

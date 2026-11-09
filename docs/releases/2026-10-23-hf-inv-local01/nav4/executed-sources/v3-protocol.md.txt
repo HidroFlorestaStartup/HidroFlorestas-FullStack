@@ -1,0 +1,49 @@
+# NAV4-LOCAL e INV-004 — protocolo local v1
+
+Estado: EM_ANDAMENTO. Missão: HF-INV-20261023-01-LOCAL01. Owner: agent-a-nav4-accounts.
+Registrado antes dos experimentos, em 2026-10-23. Base de produto: c4adfb379e5dc78f27f31b91edbd13f43228d9f9.
+
+## Fontes e alcance
+
+FATO_DOCUMENTADO: a fonte técnica é o prompt/plano da PR28 em f56f73fda1d7bd459a1415bf02df25edc9120674. A projeção histórica NAV4 em [223839c9](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/223839c9ae91591ded8de387144d8c1ee84b5c20/docs/releases/2026-10-21-post-consolidation/evidence/frontend-nav4/nav4-result.json) conserva quatro FAIL, zero PASS, Linux/IMP006/PostgreSQL16.15/porta3000; nenhum status HTTP ou cookie original foi capturado. As sondas 403/200 são posteriores. Não atribuir códigos novos aos quatro FAIL históricos.
+
+INFERENCIA a testar: o fallback de origem compara a URL normalizada pelo Next com Origin127.0.0.1; o ingresso local explícito do runner de contas preserva a origem externa pelo Host e permite o logout autenticado. Uma reprodução nova no Windows não prova retrospectivamente a causa Linux.
+
+## Recursos e segurança
+
+Worktree exclusiva `agent-a`; cluster novo `agent-a-runtime`, LOCALAPPDATA redirecionado somente no processo para raiz privada da missão. Sufixo fixo `HidroFlorestas/accounts-postgresql`, porta55427, dono accounts_owner, marker/ACL do harness intactos. HTTP127.0.0.1:3001, uma instância; browser Chromium do Playwright1.55.1. Cache npm e Prisma próprios. Os diretórios preexistentes accounts/IMP006 não serão lidos nem reutilizados.
+
+Revisão de segurança prévia: nenhum dotenv privado é copiado; processo usa lista permitida de variáveis do sistema e chaves sintéticas efêmeras. SMTP/provedores ausentes. Banco e fixtures somente pelo harness versionado. Não usar InitializeCiCluster, reset, db push ou guards relaxados. Antes de iniciar, verificar portas livres e ausência de material no novo diretório. Teardown remove só fixtures e encerra processos próprios; cluster pode ser preservado parado com marker.
+
+## Schedule fechado
+
+1. Setup: npm ci pelo lockfile, Prisma generate e PostgreSQL nativo pinado17.10.0-beta.17; RegressionSetup no cluster próprio. Registrar versões, SHA/árvore e hashes dos scripts; instalação/rede não é resultado funcional.
+2. NAV4-A/B/A: três boots sequenciais do mesmo Next, mesmo banco e browser. A1: fallback sem ACCOUNT_TRUSTED_INGRESS; B: ingresso local explícito suportado; A2: fallback novamente. Única variável causal: seleção do ingresso. Em cada boot, login sintético real pela API suportada com Originlocalhost:3001, comprovação de sessão autenticada via rota privada, navegação real a /logout em127.0.0.1:3001. A espera-se403 e sessão preservada; B espera-se200, /login e cookie removido. Rejeitar origem externa em todos os boots, com cookie sintético isolado, esperando403 e preservação da sessão. Não alterar headers do browser para fazer logout passar.
+3. NAV4 original: no setup B, executar uma vez os quatro casos existentes frontend-mobile-navigation.spec.ts (375/320px × texto100/200), com timeout90s, assertion5s, zero retries e assertions originais. Registrar toda falha, inclusive infraestrutura. Verificar logout, Back/Forward/reload e acesso posterior segundo o contrato existente.
+4. INV-004: no setup B, três logins de browser em contextos separados: frio normal, quente normal, quente com resposta real de sign-in retida por barreira controlada durante500ms. Sem mock de sucesso. Medir status, ordem resposta→rota, cookie presente e URL final. Exigir200 e /workspace, sem aumentar timeout. Preservar o requisito de URL; latência artificial é contraprova, não reconstrução histórica.
+
+Regra de encerramento: executar cada tentativa definida uma vez; corrigir somente impedimento demonstrado, registrando a tentativa e nova hipótese. Não repetir até verde. Se o negativo A não reproduzir, registrar NAO_REPRODUZIDO/INCONCLUSIVO e não criar patch especulativo. Causa de ambiente/harness só é comprovada na reprodução atual após sessão/jornada real e controle negativo.
+
+## Coleta e validação
+
+Lista fechada: protocolo, fase, caso, horário UTC, duração, pathname, método/status, resultado booleano de sessão/cookie, viewport/texto e versão. Não publicar payloads de conta, headers, cookies, tokens, env, traces, reporter JSON integral ou caminhos internos. Erros públicos usam identificadores estáveis; logs brutos ficam privados. Manifesto inclui somente bytes existentes, sem hash autorreferente. Capturas, se pertinentes, serão inspecionadas e sanitizadas antes de publicação.
+
+Estes experimentos são diagnóstico focal Windows; os quinze gates oficiais e a revisão da composição pertencem à coordenação. Não conferem aceite humano, científico, operacional ou liberação do piloto.
+
+## Adendo pré-runtime — protocolo v3
+
+EVIDENCIA_IMPLEMENTACAO: npm ci isolado concluiu exit0 (553 pacotes); Prisma7.4.2 foi gerado isoladamente; pacote nativo pinado preparou postgres17.10. A primeira preparação falhou antes de iniciar nosso PostgreSQL: porta55427 ocupada por processo preexistente. Nosso initdb/marker novo foi preservado; nenhum banco preexistente foi acessado. TSC inicial encontrou erros somente no novo diagnóstico, corrigidos antes do runtime.
+
+Uma alternativa v2 IMP006/55426 foi desenhada com os helpers existentes, mas NÃO executada. FATO_DOCUMENTADO: a coordenação comunicou nova autorização explícita do usuário para encerrar processos que ocupem portas necessárias, preservando dados; a liberação do processo preexistente pertence à coordenação. Nenhum guard/porta do produto foi alterado.
+
+Schedule v3, definido antes das execuções autenticadas: usar cluster novo accounts55427 e helpers existentes `withImp006PostgresqlSchema` + `setupIHFRDiagnosisFixtures`, que aplicam as migrations de contas em schema descartável marcado. Criar um usuário sintético nesse schema e iniciar UM Next em porta efêmera, como o runner IMP006 existente suporta. Ingresso permanece no fallback em todo esse experimento; não há flags incompatíveis, origens extras ou bypassCSRF.
+
+Contraste A1/B/A2 no MESMO servidor/schema/browser version: A1 usa browser127.0.0.1; B usa browserlocalhost; A2 retorna127.0.0.1. Cada fase executa 375/320px × texto100/200, contextos/cookies novos e logout de browser real. A sessão é emitida pelo loginHTTP real do serviço, via bootstrap sintético cujo Originlocalhost corresponde ao fallback confiável; na faseA o cookie pertence à URL127 consultada e sua autenticação é comprovada em /workspace antes do logout. Esse bootstrap é registrado como controle do harness, não como login UI que teria passado em127. Cada tentativa rejeita ainda origem externa com403, preservando cookie. A espera-se403 no logout e sessão presente; B espera-se200, /login, cookie ausente, Back/reload e rotas privadas protegidas. Uma falha é conservada, e os contextos independentes seguintes continuam uma vez, sem retry.
+
+INV-004 será observado na faseB com três contextos separados: primeiro login de browser após readiness, segundo aquecido e terceiro com resposta real retida500ms. A variável de latência é sintética; não representa reconstrução histórica. O listener da resposta é instalado antes do clique; status, sessão e rota permanecem assertions reais.
+
+Depois do diagnóstico, executar UMA vez os quatro testes originais NAV4 intactos no contexto público de regressão accounts/HTTP3001 com ACCOUNT_TRUSTED_INGRESS=local. O config/guards/assertions/90s/5s/retries0 originais permanecem. Reporter adicional usa projeção fechada, sem serializar config/env/errors/attachments. Audit e Stop somente no cluster da missão. Os resultados destas duas configurações serão identificados separadamente.
+
+Preparação v3: nosso PostgreSQL iniciou com ownership confirmado, mas o collector recusou leituraGit por identidades diferentes entre sandbox e processo com ACL privada. Nenhum teste funcional rodou nesse comando. Ajuste apenas no processo limpo: uma entrada safe.directory exata para esta worktree, sem config global. Variáveis essenciais do SO, inclusive SystemDrive, permanecem na allowlist; nenhum env de aplicação preexistente é herdado. TSC dos scripts novos passou após as correções de tipagem. A preparação será retomada uma vez para testar esse impedimento específico.
+
+Revisão independente pré-runtime pelo agenteC: corrigida a prova de autenticação para exigir documento/workspace200, heading autenticado visível e /api/auth/me200 no mesmojar. URL e presença de cookie isoladamente não bastam. INV-004 passa a capturar eventos de resposta e framenavigated com relógio monotônico, exigindo resposta antes do destino observado, além da assertionURL5s. Findings tratados antes da primeira jornada; nenhum resultado anterior foi reclassificado.

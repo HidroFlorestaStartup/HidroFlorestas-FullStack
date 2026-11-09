@@ -1,0 +1,225 @@
+{
+  "id": "P03_UI044_F3_RECOVERY_T079_T080",
+  "executor": "/root/p03_tests",
+  "reviewer": "/root/o0_guards",
+  "integrator": "/root",
+  "status": "READY_FOR_FINAL_INDEPENDENT_REVIEW",
+  "application_runtime": "PENDING",
+  "successor_ci": "PENDING",
+  "F3_result_preserved": "FAIL",
+  "base": {
+    "head": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+    "tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+    "root_head_observed": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+    "worktree": "/workspace/scratch/100be1d812fa/wt-p03",
+    "worktree_head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369"
+  },
+  "ownership": {
+    "authorized_by": "P00 before editing; explicit focal expansion for official helper, its existing E2E proof file and manage test",
+    "paths": [
+      "tests/e2e/support/frontend-mission-evidence.ts",
+      "tests/e2e/frontend-mission-evidence.spec.ts",
+      "tests/e2e/support/ui044-final-corrections.ts",
+      "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+    ],
+    "other_writers_on_paths": "NONE"
+  },
+  "failure_evidence": {
+    "run": "42150335260/1",
+    "job": "127671758896",
+    "artifact_zip_sha256": "10c1d6abdbd746b6bb3b7158949ab769d8596f0cccb1289dcc0a8df44ee4afb2",
+    "log_sha256": "09b0bfe95258e5a5a8b5945c7ba61d1ac469e409a4795a0c0f61204fd716d9a9",
+    "wait_observations": "115 events, 11 sessions grouped by profile/diagnosis/actions/viewport and sorted by unique sequence. Seven complete20-33ms; four390x844 stop after sample of one finite running CSSTransition with no finished/rejected/channel.",
+    "fifth_failure": "First eligibility GET omitted landUseType; expectedELIGIBLE/receivedINSUFFICIENT_DATA. This occurred before observation installation.",
+    "internal_causes_not_proven": [
+      "Why the concrete CSS transition promise did not settle",
+      "Exact hydration/event ordering that omitted landUseType"
+    ]
+  },
+  "changes": [
+    {
+      "task": "T079",
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "description": "Recheck the same current running+finite predicate after each frame instead of waiting on captured finished promises. Final2rAF+MessageChannel and loop recheck unchanged. No success deadline/fallback/mutation."
+    },
+    {
+      "task": "T079",
+      "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "description": "Three native-browser synthetic regression cases: CSS transition pauses after snapshot; paused old transition plus finite replacement; new finite transition during final barrier. Existing tests preserved byte-for-byte in order."
+    },
+    {
+      "task": "T079",
+      "path": "tests/e2e/support/ui044-final-corrections.ts",
+      "description": "Remove all temporary F3 diagnostic instrumentation; exact hash restored to pre-instrumentationF2, preserving matrix23/assertions/captures."
+    },
+    {
+      "task": "T080",
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "description": "Observe desktop client composition before fills, assert both values after single fill/selection, assert contextual pathname and exact query from first captured eligibility GET. No request filtering by correct query, retry, reselect, forced query or weakenedELIGIBLE."
+    }
+  ],
+  "files": [
+    {
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "preimage_sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+      "preimage_git_blob": "1344dfba41b0f1caf840e3d002167ce8499aa9f3",
+      "postimage_sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+      "postimage_git_blob": "3c7d6e3dbeefa89f4b2dc3ff800a7a0ef1de09ad"
+    },
+    {
+      "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "preimage_sha256": "6eb67271131140d93ac3aea01f6d1c7b1f8c36bef130fd540a0686d020902725",
+      "preimage_git_blob": "01fabe38f6d4b0099025d6be6b0b2b0662994491",
+      "postimage_sha256": "a7cd122b50e3344e7ae95f736d1c101c0c373f571f9cd7cf22272e7982240844",
+      "postimage_git_blob": "9beff71c56f9c266ab9efb24ce54cf127b3dfb8c"
+    },
+    {
+      "path": "tests/e2e/support/ui044-final-corrections.ts",
+      "preimage_sha256": "832af7cce12fec0a5dfb17b865fda3b1f86fe7c517ceaea2a293c1af20a2433b",
+      "preimage_git_blob": "60496289430ca289ec6a5e00361ed36fe1c038e8",
+      "postimage_sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+      "postimage_git_blob": "fe64c8b5ba5cdc3f5839b3008b41a82132693d6a"
+    },
+    {
+      "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "preimage_sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+      "preimage_git_blob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+      "postimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+      "postimage_git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b"
+    }
+  ],
+  "patch_sha256": "bee0ad8d3a11bf8c214bf467ce445a3757acbb3d8f5eef40aa48e85105375471",
+  "validation": [
+    {
+      "command": "HF_UI044_F3_PROBE=1 HF_UI044_WAIT_REVISION=before node --import=tsx /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-resampling.mjs",
+      "exit_code": 1,
+      "status": "RED_FUNCTIONAL_SYNTHETIC",
+      "failed_cases": 3,
+      "passed_cases": 6,
+      "input_sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f"
+    },
+    {
+      "command": "HF_UI044_F3_PROBE=1 HF_UI044_WAIT_REVISION=after node --import=tsx /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-resampling.mjs",
+      "exit_code": 0,
+      "status": "PASS_SYNTHETIC",
+      "passed_cases": 9,
+      "input_sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+      "note": "Rerun after final comment precision adjustment; exact final file hash."
+    },
+    {
+      "command": "npx --no-install eslint tests/e2e/support/frontend-mission-evidence.ts tests/e2e/frontend-mission-evidence.spec.ts tests/e2e/support/ui044-final-corrections.ts tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "exit_code": 0,
+      "status": "PASS_FOCAL",
+      "note": "Subsequent source change was a three-line comment precision adjustment only."
+    },
+    {
+      "command": "npx --no-install tsc --noEmit --strict --skipLibCheck --target ES2022 --module CommonJS --moduleResolution Node --lib ES2022,DOM tests/e2e/support/frontend-mission-evidence.ts tests/e2e/frontend-mission-evidence.spec.ts tests/e2e/support/ui044-final-corrections.ts",
+      "exit_code": 0,
+      "status": "PASS_FOCAL_ONLY",
+      "note": "Full project/manage dependency typecheck remains the integrator gate. Subsequent source change was comment-only."
+    },
+    {
+      "command": "git diff --check 8d5566bea4dcca7d2e48529b2aae3aab28c6e922 -- tests/e2e/support/frontend-mission-evidence.ts tests/e2e/frontend-mission-evidence.spec.ts tests/e2e/support/ui044-final-corrections.ts tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "git apply --check /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/p03-f3-render-wait-and-eligibility.patch",
+      "cwd": "/workspace/scratch/100be1d812fa/repo",
+      "exit_code": 0,
+      "status": "PASS_READ_ONLY_AGAINST_F3"
+    },
+    {
+      "command": "Preservation reconstruction and insertions-only comparison",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "Browser/DB/CI execution",
+      "exit_code": null,
+      "status": "NOT_RUN",
+      "reason": "Existing local Chromium restriction respected; no repeated escalation or bypass. Next authorized CI remains withP00."
+    }
+  ],
+  "review": {
+    "status": "STATIC_REVIEW_NO_OPEN_MATERIAL_FINDINGS_REPORTED; final patch/hash review pending",
+    "independent": "/root/o0_guards",
+    "P00_comment_adjustment": "Applied without functional change; final Node proof rerun"
+  },
+  "scope_guard": [
+    "No product/API/schema/science/auth/fixture/config/runner/provider/dependency/workflow modification",
+    "No timeout increase, disabled check, animation cancellation, blur, extra control scroll, silent retry or success fallback",
+    "No publication, commit, merge or deploy byP03"
+  ],
+  "limitations": [
+    "Node models are explicit counterproofs of snapshot/promise dependence, not Chromium reproduction.",
+    "Three new native-browser regressions are authored butNOT_RUN locally.",
+    "A finite animation that truly remains running continues to block; the patch does not promise success for a permanently moving page.",
+    "T080 establishes the intended client-composition/input/request preconditions; exact earlier input-loss cause remains inference.",
+    "O3 andT079/T080 remain pending final-SHA CI and independent acceptance."
+  ],
+  "related_evidence": {
+    "P02_receipt": "/workspace/scratch/100be1d812fa/handoffs/p02-eligibility-investigation/receipt.json",
+    "P02_receipt_sha256": "713dc2d024d2c7c1f275de94c16a78df5fff7733b6a17782e09612085df0d5a3",
+    "normative_reading": "/workspace/scratch/100be1d812fa/handoffs/render-wait-spec/render-wait-spec.md"
+  },
+  "artifacts": [
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/p03-f3-render-wait-and-eligibility.patch",
+      "sha256": "bee0ad8d3a11bf8c214bf467ce445a3757acbb3d8f5eef40aa48e85105375471"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/causal-report.md",
+      "sha256": "2c320b444befe3ecdbeb25c69b66fe9c1de20e3c4680cae0bc555de48ff7e90f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/preservation.json",
+      "sha256": "57ead8a12dcab2f7d25f09e930b48af3af51bd9187456699690eb80b0a93fcd5"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/preimages.json",
+      "sha256": "5c0cc9c42763c98018a7459080cd89e08cbe3ef404dcc9ff8df340d603f6cb2b"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/f3-observations-sorted.json",
+      "sha256": "43fc8cffa9e55398aaf1e803e1f28ff39a1de19684a229d2d3bcfd5e17ca6018"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-resampling.mjs",
+      "sha256": "20d351f97bb82360105d37c97eb6fbd2a7c2c5544fc51602f71b90f5729d1f62"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-before.json",
+      "sha256": "ee5e5592699bfd2056fb3cbfe44c3c45eb990785e4f664a64491872bd76b65cb"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-before.log",
+      "sha256": "3a4890351dffae9c7cd0aa5381cd529bb60c6efd310b5d002089c0299411a733"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-after.json",
+      "sha256": "67c4859b7357644f8419bd55ebeb1d190db48aae5440bd4b2f5bf4bb09f951e3"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/probe-wait-after.log",
+      "sha256": "0ccf265e3b09c2a3b172c2bee102b149dfd02b85e08a7e57a61557529229b250"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/lint-focal.log",
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/typecheck-focal.log",
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/apply-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "handoff": "P04 confronts patch/preimages/proofs; P00 composes the successor, runs full composed checks and RC15, and evaluates the final SHA before closingT079/T080."
+}

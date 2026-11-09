@@ -1,0 +1,33 @@
+ℹ tests 37
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+IMP-006 schema owned by this run: imp006_test_c4f7d9f3c5c54f8dbebd839ed6b6e458
+✔ IMP-006 migration applies on empty integrated baseline (369.0716ms)
+IMP-006 schema owned by this run: imp006_test_9a562073bc1c49f6a06020a1c12a7fac
+✔ IMP-006 migration preserves legacy rows and performs zero backfill (281.6741ms)
+IMP-006 schema owned by this run: imp006_test_128ff2ad048d4d5b995db33aabcda19d
+✔ IMP-006 score constraint accepts finite domain values and rejects non-finite or out-of-domain values (276.2986ms)
+✔ IMP-006 migration keeps its published slot before the additive account chain (1.4714ms)
+✔ legacy, IMP-005 and additive IMP-006 models coexist (0.4095ms)
+✔ migration is additive, immutable and contains no backfill (0.2855ms)
+✔ all explicit IMP-006 database identifiers are ASCII, unique and PostgreSQL-safe (0.536ms)
+✔ PostgreSQL text arrays normalize independently of driver representation (0.3644ms)
+IMP-006 schema owned by this run: imp006_test_f3d2180b00cf48c1ab0812be0ccd3856
+✔ applied IMP-006 schema has the expected constraints, indexes, triggers and zero backfill (393.5143ms)
+IMP-006 schema owned by this run: imp006_test_f1a1f61dd0134a95b2f18f24de50921a
+✔ a failed transactional migration leaves no IMP-006 objects and can be retried in the same owned schema (398.5249ms)
+✔ mail additive migration preserves legacy identity/status/role/password; nullable fields and constraints (164.8197ms)
+✔ IMP-009 creates revisioned immutable audit storage and removes legacy authority (157.1426ms)
+✔ IMP-009 preflight rolls back cleanly on contradictory legacy authority (117.3716ms)
+ℹ tests 37
+ℹ suites 1
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13651.0236
+[2026-10-13T19:16:00.377Z] END phase=migration attempt=1 target=879442b8b64c schema=public exit=0 duration_ms=13714
+IMP-006 sanitized gate log: <USER>\AppData\Local\Temp\hidroflorestas-imp006-gate-38Rrry\migration-attempt-1.log

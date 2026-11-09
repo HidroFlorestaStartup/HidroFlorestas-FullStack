@@ -1,0 +1,15 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "package": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+  "base": "6c61056fe1dc2193e225d935f49b78cb6c6781ed",
+  "failedHarness": "048de7c50d4070f105fafd4679e2d006105c295e",
+  "starter": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+  "development": "9b8595d232842d401ce81bbc92c54dd543aa2829",
+  "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "A": "ff5db4f820b6351a1cc5b5145c9c8bcaec6a40c5",
+  "B": "1c44058cb45e461c719d514829a4e78d2bf7ee05",
+  "C": "799c00a42d7f3846c3449d3615d263ce0b0e7bd2",
+  "localC": "c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07",
+  "reconciliation": "33d9b8b156bf275cd7f0d122fac0957d7689997a",
+  "qaRefInitiallyAbsent": true
+}

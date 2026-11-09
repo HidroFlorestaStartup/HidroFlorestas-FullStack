@@ -1,0 +1,19 @@
+[WebServer] npm notice run hidro-florestas-fullstack@0.1.0 dev
+[WebServer] npm notice run next dev --hostname 127.0.0.1 --port 3001
+[WebServer] (node:37312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:17156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:37292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [chromium] › tests\e2e\user-administration-read.spec.ts:5:5 › ADMIN lists, searches and opens details while non-admin is denied (3.2s)
+  ok 2 [chromium] › tests\e2e\user-administration-read.spec.ts:27:5 › legacy user administration route redirects to the canonical protected route (647ms)
+
+  2 passed (7.3s)

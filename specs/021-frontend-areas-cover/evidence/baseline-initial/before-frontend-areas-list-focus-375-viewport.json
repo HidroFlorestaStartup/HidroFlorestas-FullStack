@@ -1,0 +1,38 @@
+{
+  "name": "list-focus-375",
+  "screenshot": {
+    "filename": "before-frontend-areas-list-focus-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 208,
+      "height": 755,
+      "extent": 963
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 16,
+    "y": 410,
+    "width": 343,
+    "height": 48
+  },
+  "target": null,
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

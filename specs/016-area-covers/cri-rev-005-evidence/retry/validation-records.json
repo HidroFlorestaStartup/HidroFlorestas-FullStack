@@ -1,0 +1,95 @@
+{
+  "capturedUtc": "2026-10-17T18:42:04.548Z",
+  "head": "4a3ce497bf3fad60a673f0cf130337dca63d2099",
+  "tree": "3ba616fe3b8205fffd9d3d722cfa9c042da07085",
+  "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+  "openapiSha256": "32e5b79cee8e4143f875cc097134a4bf5ff2c5b72d2d5fcadb80e10ebe29aa01",
+  "records": [
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+      "startedUtc": "2026-10-17T18:38:50.101Z",
+      "endedUtc": "2026-10-17T18:38:59.379Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "unit-1792262330101.log",
+      "logSha256": "8d3051cdea99261d94233ce86b31cf2c993e0cf6fba3a48c5fe770fd73d9783a",
+      "summary": [
+        "  ✔ specifies UUID idempotency, API Location, no-store and closed errors (18.28ms)",
+        "  ✔ keeps idempotency isolated per author and sanitizes unexpected store errors (0.4749ms)",
+        "✔ same verified input is deeply deterministic and incompatible manifests fail closed (0.5596ms)",
+        "✔ loads only the hash-verified v0.1.1 manifest as active (1.2009ms)",
+        "✔ IMP-006 diagnostic error preserves cause and SQLSTATE without exposing connection (0.6123ms)",
+        "✔ unexpected migration connection error retains its cause (0.8455ms)",
+        "✔ missing browser response is distinct from an HTTP error (1.0994ms)",
+        "✔ HTTP errors do not trigger missing-response recovery (0.3896ms)",
+        "ℹ tests 296",
+        "ℹ pass 296",
+        "ℹ fail 0",
+        "✔ MAIL-FR-002/TEST-001 strict lazy config for 465/587 and no secret in errors (3.5736ms)",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+      "startedUtc": "2026-10-17T18:38:59.732Z",
+      "endedUtc": "2026-10-17T18:40:25.243Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "integration-1792262339732.log",
+      "logSha256": "ddb81256b1a19ae9a9e713c50990a033974a756147d5ccc6a0ce0c04e174b85d",
+      "summary": [
+        "✔ accounts invalid verification attempts survive errors, exhaust once and cancel encrypted mail (456.8239ms)",
+        "  ✔ keeps user, audit and error payloads allowlisted (3.6246ms)",
+        "✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.8468ms)",
+        "  ✔ returns a generic 500 for internal results and thrown errors (0.7471ms)",
+        "  ✔ maps authentication, authorization, not-found, read-only, conflict and internal errors (1.9537ms)",
+        "✔ sanitizes auth, access, cursor and internal errors (1.6591ms)",
+        "✔ sanitizes every error and applies no-store on both methods (2.5115ms)",
+        "✔ maps access errors and sanitizes internal failures on both routes (2.2721ms)",
+        "  ✔ returns sanitized authentication, authorization, and conflict errors (1.2343ms)",
+        "ℹ tests 218",
+        "ℹ pass 218",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+      "startedUtc": "2026-10-17T18:40:25.504Z",
+      "endedUtc": "2026-10-17T18:40:28.032Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "contract-1792262425504.log",
+      "logSha256": "e943e4d9b3d1b22c2d5835375daf88fed82534c96b5e1b15d35ff29e9031a7e9",
+      "summary": [
+        "✔ real HTTP responses conform to resolved OpenAPI schemas for eligibility, reads, lifecycle and errors (728.9264ms)",
+        "ℹ tests 6",
+        "ℹ pass 6",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "97657d89646d59236ecb403a1716ebbeab9c4760c5c8a568e522cdd1940fd935",
+      "startedUtc": "2026-10-17T18:40:28.345Z",
+      "endedUtc": "2026-10-17T18:40:28.851Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "schemaaudit-1792262428344.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "summary": []
+    }
+  ]
+}

@@ -1,33 +1,40 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { formatCollectionOccurrence } from "@/lib/collection-date-time";
 import type { CollectionAttempt } from "@/types/collection.type";
+import { collectionEditingLocked } from "./collection-form-state";
+import styles from "./collections.module.css";
 
-export function CollectionReview({
-  attempt,
-  onEdit,
-  onConfirm,
-}: {
-  attempt: CollectionAttempt;
-  onEdit: () => void;
-  onConfirm: () => void;
+export function CollectionReview({ attempt, onEdit, onConfirm }: {
+  attempt: CollectionAttempt; onEdit: () => void; onConfirm: () => void;
 }) {
-  const submitting = attempt.phase === "submitting";
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => { heading.current?.focus(); }, []);
+  const confirmed = attempt.phase === "confirmed";
+  const busy = attempt.phase === "submitting" || confirmed;
   return (
-    <section aria-labelledby="collection-review-title" className="space-y-4 rounded-2xl border border-green-200 bg-green-50 p-5">
-      <h2 id="collection-review-title" className="text-xl font-bold">Revisão</h2>
-      <dl className="space-y-3">
-        <div><dt className="font-semibold">Ocorrência em campo</dt><dd>{formatCollectionOccurrence(attempt.occurredAt)}</dd></div>
-        <div><dt className="font-semibold">Laboratório</dt><dd>{attempt.context.laboratory.name}</dd></div>
-        <div><dt className="font-semibold">Área</dt><dd>{attempt.context.area.name}</dd></div>
+    <section aria-labelledby="collection-review-title" className={styles.card} aria-busy={attempt.phase === "submitting"}>
+      <h2 id="collection-review-title" ref={heading} tabIndex={-1} className={styles.sectionTitle}>Revisão</h2>
+      <p className={styles.help}>Revise a coleta antes de confirmar.</p>
+      <dl className={styles.values}>
+        <div><dt>Ocorrência em campo</dt><dd>{formatCollectionOccurrence(attempt.occurredAt)}</dd></div>
+        <div><dt>Laboratório</dt><dd>{attempt.context.laboratory.name}</dd></div>
+        <div><dt>Área</dt><dd>{attempt.context.area.name}</dd></div>
       </dl>
-      <p className="font-semibold">Será registrada por você</p>
-      <p className="text-sm text-slate-600">O identificador e a confirmação serão gerados somente após sua confirmação.</p>
-      {attempt.error && <p role="alert" className="font-semibold text-red-700">{attempt.error}</p>}
-      <div className="flex flex-wrap gap-3">
-        <button type="button" disabled={submitting} onClick={onEdit} className="rounded-xl border border-green-700 px-5 py-3 font-bold text-green-800 disabled:opacity-50">
-          Voltar e corrigir
-        </button>
-        <button type="button" disabled={submitting} onClick={onConfirm} className="rounded-xl bg-green-700 px-5 py-3 font-bold text-white disabled:opacity-50">
-          {submitting ? "Confirmando…" : attempt.error ? "Tentar novamente" : "Confirmar coleta"}
+      <p className={styles.authorship}>Será registrada por você</p>
+      <p className={styles.help}>O identificador e a confirmação serão gerados somente após sua confirmação. Depois de confirmada, a coleta não pode ser editada nem apagada neste fluxo.</p>
+      {attempt.error && <p role="alert" className={styles.error}>{attempt.error}</p>}
+      {attempt.recoveryPending && <p className={styles.notice} id="collection-recovery-help">
+        A tentativa original foi preservada. Enquanto o resultado não for resolvido, não altere os dados nem feche esta página.
+        Repetir envia a mesma chave e os mesmos dados; uma falha não confirma que nada foi salvo.
+      </p>}
+      {confirmed && <p role="status">Coleta confirmada. Abrindo o detalhe…</p>}
+      <div className={styles.actions}>
+        <button type="button" className={styles.secondary} disabled={collectionEditingLocked(attempt)}
+          aria-describedby={attempt.recoveryPending ? "collection-recovery-help" : undefined} onClick={onEdit}>Voltar e corrigir</button>
+        <button type="button" className={styles.primary} disabled={busy} onClick={onConfirm}>
+          {confirmed ? "Coleta confirmada" : busy ? "Confirmando…" : attempt.error ? "Tentar novamente" : "Confirmar coleta"}
         </button>
       </div>
     </section>

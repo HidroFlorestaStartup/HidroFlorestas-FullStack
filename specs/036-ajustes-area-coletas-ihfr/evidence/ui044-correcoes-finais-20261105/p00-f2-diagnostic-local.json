@@ -1,0 +1,26 @@
+{
+  "executor": "/root (P00)",
+  "at": "2026-11-06T02:24:47.320051+00:00",
+  "identity": "prepublication working tree after verified P03 diagnostic patch; no functional recovery claimed",
+  "parent": "3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06",
+  "file": "tests/e2e/support/ui044-final-corrections.ts",
+  "file_sha256": "832af7cce12fec0a5dfb17b865fda3b1f86fe7c517ceaea2a293c1af20a2433b",
+  "environment": "Linux Chat workspace; Node24.22.1; existing lock dependencies",
+  "checks": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "result": "PASS_COMPLETE_TYPECHECK"
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js tests/e2e/support/ui044-final-corrections.ts",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "result": "PASS_FOCAL_LINT"
+    }
+  ],
+  "limits": "No local browser/DB and no official CI result for successor yet"
+}

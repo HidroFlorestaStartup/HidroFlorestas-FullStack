@@ -1,0 +1,38 @@
+{
+  "name": "transient-members-error-1440",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-transient-members-error-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 632,
+      "extent": 632
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "p",
+    "x": 225,
+    "y": 479.609375,
+    "width": 279.859375,
+    "height": 22.390625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

@@ -1,0 +1,52 @@
+{
+  "capturedUtc": "2026-10-17T18:30:35.999Z",
+  "head": "6eb7759a25bf38f43ee58a9202a20a236911d45f",
+  "tree": "77259702189f4f90cbbefe07d8492c50705ca714",
+  "snapshot": "9330f0ba2647e4126125a5cd55e02c7e7fa8d0327580071837ee510b417453d7",
+  "openapiSha256": "32e5b79cee8e4143f875cc097134a4bf5ff2c5b72d2d5fcadb80e10ebe29aa01",
+  "records": [
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "9330f0ba2647e4126125a5cd55e02c7e7fa8d0327580071837ee510b417453d7",
+      "startedUtc": "2026-10-17T18:28:14.918Z",
+      "endedUtc": "2026-10-17T18:28:52.798Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "ihfr-1792261694917.log",
+      "logSha256": "103e932740086671fc6410bd093ef1235bedda288c94c49b673cf0bc0f59d89e",
+      "summary": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "  6 passed (23.9s)"
+      ]
+    },
+    {
+      "gate": "Bootstrap",
+      "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+      "snapshot": "9330f0ba2647e4126125a5cd55e02c7e7fa8d0327580071837ee510b417453d7",
+      "startedUtc": "2026-10-17T18:28:53.135Z",
+      "endedUtc": "2026-10-17T18:28:56.266Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "bootstrap-1792261733135.log",
+      "logSha256": "fe7932e09b137e945cb07609fbee06c5a1104e4115d2a6f64537cf930d54d79d",
+      "summary": []
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "9330f0ba2647e4126125a5cd55e02c7e7fa8d0327580071837ee510b417453d7",
+      "startedUtc": "2026-10-17T18:28:56.553Z",
+      "endedUtc": "2026-10-17T18:28:57.089Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "schemaaudit-1792261736552.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "summary": []
+    }
+  ]
+}

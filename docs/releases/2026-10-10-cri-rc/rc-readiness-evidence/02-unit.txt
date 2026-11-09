@@ -1,0 +1,38 @@
+ℹ tests 291
+ℹ pass 291
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ tests 17
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ duration_ms 7639.5526
+npm notice run hidro-florestas-fullstack@0.1.0 test:mail:unit
+npm notice run node --conditions=react-server --import=tsx --test --test-concurrency=1 tests/mail/*.test.ts
+✔ proofs are CSPRNG text with exact width/high-entropy reset shape (1.912ms)
+✔ verification HMAC binds purpose/challenge/account/email/version and preserves zero (0.7353ms)
+✔ rotation retains old proof key and fails closed when it is removed (0.4766ms)
+✔ request commitments are keyed and purpose-separated; config is lazy/closed (1.0162ms)
+✔ password-change notification is closed, escaped, and has no proof/reset link (1.1873ms)
+✔ MAIL-FR-002/TEST-001 strict lazy config for 465/587 and no secret in errors (1.2649ms)
+✔ MAIL-FR-004 versioned Portuguese HTML/text escape, zero, supplied expiry and trusted origin (1.1975ms)
+✔ AEAD recipient/content confidentiality, AAD, tampering, unknown key, rotation, no fallback (1.9037ms)
+✔ TEST-003 typed failures never return raw provider details (0.2268ms)
+✔ operational evidence redacts secrets and provider headers without environment disclosure (0.4755ms)
+✔ machine trigger protects no/missing/wrong secret, query/body, awaits and redacts failures (13.855ms)
+✔ Nodemailer real implicit TLS: accepted MIME and verify distinct (453.3781ms)
+✔ Nodemailer real required STARTTLS: accepted MIME and verify distinct (338.273ms)
+✔ Nodemailer refuses untrusted certificate, no STARTTLS and bad authentication (344.874ms)
+✔ R1 operational deadline after SMTP accepts DATA destroys connection and remains ambiguous (1515.2964ms)
+✔ R1 transport deadline is the minimum of SMTP cap, proof validity and operational lease deadline (1.0517ms)
+✔ R1 expired operational deadline or proof never opens SMTP connection (4.2035ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3855.462

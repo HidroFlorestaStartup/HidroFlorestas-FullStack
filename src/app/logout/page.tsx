@@ -1,56 +1,34 @@
-'use client';
-
-import Image from "next/image";
-import { useEffect, useState } from "react";
-
-import Logo from '@/assets/logo/logo.png';
+"use client";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/contexts/auth.context";
+import { AccountShell, accountButtonClass } from "@/components/account/account-shell";
 
 export default function LogoutPage() {
-    const { logout } = useAuth();
-    const [errorMessage, setErrorMessage] = useState("");
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        let cancelled = false;
-        void logout().then((result) => {
-            if (!cancelled && !result.success) {
-                setErrorMessage(result.message);
-                setLoading(false);
-            }
-        });
-
-        return () => {
-            cancelled = true;
-        };
-    }, [logout]);
-
-    const retryLogout = async () => {
-        setLoading(true);
-        setErrorMessage("");
-        const result = await logout();
-        if (!result.success) {
-            setErrorMessage(result.message);
-            setLoading(false);
-        }
-    };
-
-    return (
-        <div className="flex items-center justify-center h-screen text-2xl font-bold flex-col">
-            <Image src={Logo} alt="Logo" width={250} height={250} />
-            {loading ? <p>Fazendo logout, aguarde...</p> : null}
-            {errorMessage ? (
-                <div className="text-center" role="alert">
-                    <p>{errorMessage}</p>
-                    <button
-                        type="button"
-                        onClick={() => void retryLogout()}
-                        className="mt-4 rounded bg-green-700 px-4 py-2 text-base text-white"
-                    >
-                        Tentar novamente
-                    </button>
-                </div>
-            ) : null}
-        </div>
-    );
+  const { logout } = useAuth();
+  const initialAttempt = useRef<ReturnType<typeof logout> | null>(null);
+  const retrying = useRef(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    let cancelled = false;
+    // React replays effects in development. Both subscriptions share the same
+    // initial POST; cleanup still prevents updates after real unmount.
+    initialAttempt.current ??= logout();
+    void initialAttempt.current.then(result => {
+      if (!cancelled && !result.success) { setErrorMessage(result.message); setLoading(false); }
+    });
+    return () => { cancelled = true; };
+  }, [logout]);
+  async function retryLogout() {
+    if (retrying.current) return;
+    retrying.current = true; setLoading(true); setErrorMessage("");
+    try {
+      const result = await logout();
+      if (!result.success) { setErrorMessage(result.message); setLoading(false); }
+    } finally { retrying.current = false; }
+  }
+  return <AccountShell title="Saindo da sua conta" description="Encerrando sua sessão no HidroFlorestas.">
+    {loading && <p role="status">Fazendo logout, aguarde...</p>}
+    {errorMessage && <div role="alert"><p>{errorMessage}</p><button type="button" onClick={() => void retryLogout()} disabled={loading} className={accountButtonClass}>Tentar novamente</button></div>}
+  </AccountShell>;
 }

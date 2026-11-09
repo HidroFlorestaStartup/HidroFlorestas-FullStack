@@ -1,0 +1,27 @@
+✖ failing tests:
+
+test at tests\integration\area-covers.test.ts:2:9708
+✖ CRI-REV-002 concurrent hourly quota is checked again after preset (794.1628ms)
+  AssertionError [ERR_ASSERTION]: {"transactionErrors":[{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}},{"name":"PrismaClientKnownRequestError","code":"P2034","meta":{"driverAdapterError":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}},{"name":"PrismaClientKnownRequestError","code":"P2034","meta":{"driverAdapterError":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}}}]}
+  + actual - expected
+
+    [
+  +   'INTERNAL_ERROR'
+  -   'RATE_LIMITED'
+    ]
+
+      at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:82:74)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\integration\area-covers.test.ts:29:96)
+      at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'INTERNAL_ERROR' ],
+    expected: [ 'RATE_LIMITED' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+[2026-10-17T18:32:11.882Z] END phase=integration attempt=1 target=3ca357615da4 schema=public exit=1 duration_ms=117508
+IMP-006 sanitized gate log: C:\Users\RUNNER~1\AppData\Local\Temp\hidroflorestas-imp006-gate-1OlwdK\integration-attempt-1.log

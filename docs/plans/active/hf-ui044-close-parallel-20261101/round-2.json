@@ -1,0 +1,370 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "round": 2,
+  "sha": "d62fb08cf65aca5dc704231f88594030f49279cb",
+  "tree": "b914dee92fcf2072b30747b80f29fc45b2ddcf12",
+  "run": 41353270282,
+  "attempt": 1,
+  "jobs": {
+    "smoke": {
+      "jobId": 124987834531,
+      "execution": "PASS",
+      "artifact": 13102197124,
+      "zipSha256": "2dd3770f35f41c1127b81c4c16efc2b9afe1d5af88f6509b80a8f198bff6aeb5",
+      "zipCrc": "PASS",
+      "entries": 42,
+      "pngEntries": 16,
+      "distinctPngHashes": 11,
+      "pngChunkCrcVerified": 123,
+      "sampleMetadataVerified": 16,
+      "testsPassed": 14,
+      "durationSeconds": 15.2,
+      "scope": "SYNTHETIC_SMOKE_NOT_PRODUCT; SSR geometry and masking only"
+    },
+    "shell": {
+      "jobId": 124988258341,
+      "execution": "FAIL",
+      "artifact": 13102173306,
+      "zipSha256": "8bf7febcda166b52678bc6bebda32cf924760d283cdc6760b90ea3eb5b1ca7d1",
+      "zipCrc": "PASS",
+      "entries": 339,
+      "pngEntries": 168,
+      "distinctPngHashes": 134,
+      "pngChunkCrcVerified": 3275,
+      "sampleMetadataVerified": 168,
+      "plannedCases": 86,
+      "caseExecution": {
+        "PASS": 78,
+        "FAIL": 8
+      },
+      "comparability": {
+        "NON_EQUIVALENT": 67,
+        "INSUFFICIENT_EVIDENCE": 12,
+        "COMPARABLE": 7
+      },
+      "sourceSampleCounts": {
+        "2": 82,
+        "1": 4
+      },
+      "sourceCounts": {
+        "fullstack": 86,
+        "starter": 82
+      },
+      "blockedCases": [
+        "shell-375-900-100-0-reload",
+        "shell-390-844-200-0-reload",
+        "shell-1440-900-100-0-reload",
+        "shell-1440-900-200-0-reload",
+        "shell-667-375-200-0-laboratory-closed",
+        "shell-667-375-200-0-last-control-focus",
+        "shell-667-375-200-0-areas-navigation",
+        "shell-667-375-200-0-forward",
+        "shell-667-375-200-0-reload",
+        "shell-667-375-200-34-laboratory-closed",
+        "shell-667-375-200-34-last-control-focus",
+        "shell-667-375-200-34-areas-navigation",
+        "shell-667-375-200-34-forward",
+        "shell-667-375-200-34-reload"
+      ],
+      "caseQualification": "Playwright wrappers are not material evidence cases; use the durable index and per-source metadata",
+      "playwright": {
+        "passed": 10,
+        "failed": 7
+      },
+      "findings": [
+        "Menu320/text200 visibly fits after owner-only CSS correction; native font/scale and both actions present",
+        "Four starter reload images missing at text200; hard-coded final error expectation failed while native reference loading state was actually shown before reconfiguration",
+        "Six PASS cases have INSUFFICIENT_EVIDENCE in reference landscape main region, which contains no exposed text under prototype header/navigation; UNOBSERVED remains literal",
+        "Two landscape focus assertions failed on the reference; native FullStack44x44 control centerHitTRUE, reference269.5x304 link centerHitFALSE under header/rail"
+      ],
+      "summaryReconciliation": "14 blocked IDs = union of8 executionFAIL and12 comparabilityINSUFFICIENT with6 overlapping. Journal94 case events contains8 repeated IDs; index retains final outcomes, no contradiction",
+      "correctionScope": "A-only harness; keep native ratio1/hit assertions. Reference limitations must be bounded, geometrically demonstrated and explicitly NON_EQUIVALENT; never relabel UNOBSERVED as OBSERVED"
+    },
+    "domain": {
+      "jobId": 124988258322,
+      "execution": "FAIL",
+      "artifact": 13102906085,
+      "zipSha256": "099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548",
+      "zipCrc": "PASS",
+      "entries": 147,
+      "pngEntries": 71,
+      "distinctPngHashes": 70,
+      "pngChunkCrcVerified": 1536,
+      "sampleMetadataVerified": 71,
+      "plannedCases": 75,
+      "caseExecution": {
+        "PASS": 1,
+        "FAIL": 74
+      },
+      "comparability": {
+        "COMPARABLE": 1,
+        "INSUFFICIENT_EVIDENCE": 74
+      },
+      "sourceSampleCounts": {
+        "2": 1,
+        "1": 69,
+        "0": 5
+      },
+      "sourceCounts": {
+        "fullstack": 70,
+        "starter": 1
+      },
+      "blockedCases": [
+        "domain-area-empty-320-900-200",
+        "domain-area-empty-375-900-100",
+        "domain-area-empty-375-900-200",
+        "domain-area-empty-390-844-100",
+        "domain-area-empty-390-844-200",
+        "domain-area-empty-768-900-100",
+        "domain-area-empty-768-900-200",
+        "domain-area-empty-1440-900-100",
+        "domain-area-empty-1440-900-200",
+        "domain-area-empty-667-375-200",
+        "domain-area-empty-844-390-200",
+        "domain-area-populated-320-900-100",
+        "domain-area-populated-320-900-200",
+        "domain-area-populated-375-900-100",
+        "domain-area-populated-375-900-200",
+        "domain-area-populated-390-844-100",
+        "domain-area-populated-390-844-200",
+        "domain-area-populated-768-900-100",
+        "domain-area-populated-768-900-200",
+        "domain-area-populated-1440-900-100",
+        "domain-area-populated-1440-900-200",
+        "domain-area-populated-667-375-200",
+        "domain-area-populated-844-390-200",
+        "domain-collection-record-320-900-100",
+        "domain-collection-record-320-900-200",
+        "domain-collection-record-375-900-100",
+        "domain-collection-record-375-900-200",
+        "domain-collection-record-390-844-100",
+        "domain-collection-record-390-844-200",
+        "domain-collection-record-768-900-100",
+        "domain-collection-record-768-900-200",
+        "domain-collection-record-1440-900-100",
+        "domain-collection-record-1440-900-200",
+        "domain-collection-record-667-375-200",
+        "domain-collection-record-844-390-200",
+        "domain-collection-missing-320-900-100",
+        "domain-collection-missing-320-900-200",
+        "domain-collection-missing-375-900-100",
+        "domain-collection-missing-375-900-200",
+        "domain-collection-missing-390-844-100",
+        "domain-collection-missing-390-844-200",
+        "domain-collection-missing-768-900-100",
+        "domain-collection-missing-768-900-200",
+        "domain-collection-missing-1440-900-100",
+        "domain-collection-missing-1440-900-200",
+        "domain-collection-missing-667-375-200",
+        "domain-collection-missing-844-390-200",
+        "domain-collection-current-320-900-100",
+        "domain-collection-current-320-900-200",
+        "domain-collection-current-375-900-100",
+        "domain-collection-current-375-900-200",
+        "domain-collection-current-390-844-100",
+        "domain-collection-current-390-844-200",
+        "domain-collection-current-768-900-100",
+        "domain-collection-current-768-900-200",
+        "domain-collection-current-1440-900-100",
+        "domain-collection-current-1440-900-200",
+        "domain-collection-current-667-375-200",
+        "domain-collection-current-844-390-200",
+        "domain-qualifier-320-900-0-0",
+        "domain-qualifier-320-900-0-1",
+        "domain-qualifier-320-900-0-2",
+        "domain-qualifier-320-900-0-3",
+        "domain-qualifier-667-375-34-0",
+        "domain-qualifier-667-375-34-1",
+        "domain-qualifier-667-375-34-2",
+        "domain-qualifier-667-375-34-3",
+        "domain-qualifier-844-390-0-0",
+        "domain-qualifier-844-390-0-1",
+        "domain-qualifier-844-390-0-2",
+        "domain-qualifier-844-390-0-3",
+        "domain-keyboard-history-390",
+        "domain-keyboard-history-1440",
+        "domain-reload-390-text200"
+      ],
+      "caseQualification": "Playwright wrappers are not material evidence cases; use the durable index and per-source metadata",
+      "playwright": {
+        "passedWrappers": 75,
+        "failedSummary": 1
+      },
+      "findings": [
+        "Setup now completes;1 bilateral pair,69 single-source cases,5 cases without samples",
+        "74 reference failures occur in navigateDomain after first case. Actual pinned source exposes both primary nav and breadcrumb with Áreas; Chromium counterproof reproduced strict-mode ambiguity and named-nav uniqueness",
+        "5 native qualifier ratio1 assertions failed before capture. No PNG/geometry for those individual failures; no product defect is proven by these receipts",
+        "Real focus-reveal RAF mechanism reproduced in3 viewport classes: readiness before a single scroll preserves ratio1. Attribution to each R2 failure remains INFERENCIA until hosted diagnostic"
+      ],
+      "correctionScope": "B-only named reference navigation, official render readiness before measurement and durable failure diagnostics; no product/scientific/timeout/assertion relaxation"
+    },
+    "rc-ui037": {
+      "jobId": 124987834454,
+      "execution": "PASS",
+      "gatesPassed": 15,
+      "journal": [
+        {
+          "gate": "RegressionSetup",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Unit",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Integration",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Migration",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Contract",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "R1",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Build",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Typecheck",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Lint",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "E2E",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Https",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Deletion",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Ihfr",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "Bootstrap",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        },
+        {
+          "gate": "SchemaAudit",
+          "result": "PASS",
+          "exitCode": 0,
+          "snapshot": "e6a4115743a74e03869f98101661b2e91e33ca9dec08b9a8cec8226144606aae"
+        }
+      ],
+      "e2e": {
+        "passed": 241
+      },
+      "ihfr": {
+        "passed": 6,
+        "counting": "Do not add gate subsets as unique tests"
+      },
+      "artifact": 13102479714,
+      "zipSha256": "90c5c5fe77af91a6179f3fb4c425fbfc1df5b429c3f5d02d9b597e9779b73a82",
+      "zipCrc": "PASS",
+      "entries": 792,
+      "pngEntries": 476,
+      "pngChunkCrcVerified": 9060,
+      "finalVerification": "PASS_AFTER_ALL_FIFTEEN_GATES",
+      "ui037Files": [
+        {
+          "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.png",
+          "bytes": 38898,
+          "sha256": "8a623dbcf81343e317a265a01179cb014318406d85b26e0fa29b0fa4577bd0c7"
+        },
+        {
+          "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-mobile-viewport.json",
+          "bytes": 1327,
+          "sha256": "124b3c35998473bf94c98c65c92b2fd4aa2fa10a22b94149e83164d9104a76fa"
+        },
+        {
+          "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.png",
+          "bytes": 89688,
+          "sha256": "a3b8462db40fae67dd9ffd11cd9a27689922f6aab4ac37bf96879541cb29af01"
+        },
+        {
+          "path": ".accounts-validation/frontend-areas/ui037-frontend-areas-hf-ui037-location-desktop-viewport.json",
+          "bytes": 3652,
+          "sha256": "688af76df0b8e6e544fd325c185c6a8fff6cfe08f86bda5f49cc65fffe39bbf0"
+        }
+      ],
+      "sourceQualification": "Only d62fb08 / b914dee / run41353270282 attempt1; never a runtime on R3"
+    }
+  },
+  "qaHeadsPublished": 2,
+  "qaHeadsAllowed": 3,
+  "configuredQaMinutesSoFar": 220,
+  "configuredQaCeiling": 330,
+  "functionalPublications": 0,
+  "previewDeploymentQuery": {
+    "branch": "codex/hf-ui044-close-20261101",
+    "count": 0,
+    "settingsChanged": false
+  },
+  "review": "Native non-author /root/qa_final independently checked official digests/ZIP/PNG CRC, referenced hashes, index reconciliation and actual images; final review awaits terminal sources",
+  "nextRound": "Only one new QA SHA/attempt remains. Group demonstrated owner corrections; preserve both failed rounds. No fourth documentation SHA if round3 is technical.",
+  "flags": {
+    "UI06_A_EVIDENCE_COMPLETE": false,
+    "UI06_B_EVIDENCE_COMPLETE": false,
+    "UI037_CAPTURE_VERIFIED": true,
+    "COMPOSITION_REGRESSION_PASS": true,
+    "INDEPENDENT_TECHNICAL_REVIEW_COMPLETE": false
+  },
+  "decisions": [
+    "HUMAN_ACCEPTANCE_PENDING",
+    "GEOCODER_OPERATIONAL_PENDING",
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "flagScope": {
+    "UI037_CAPTURE_VERIFIED": "d62fb08cf65aca5dc704231f88594030f49279cb",
+    "COMPOSITION_REGRESSION_PASS": "d62fb08cf65aca5dc704231f88594030f49279cb",
+    "UI06_A_EVIDENCE_COMPLETE": "NOT_YET",
+    "UI06_B_EVIDENCE_COMPLETE": "NOT_YET"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "id": "P03_UI044_F4_RECOVERY_T081",
+  "executor": "/root/p03_tests",
+  "reviewer": "/root/o0_guards",
+  "integrator": "/root",
+  "status": "READY_FOR_FINAL_INDEPENDENT_HASH_REVIEW",
+  "F4_result": "FAIL_PRESERVED",
+  "successor_runtime": "PENDING",
+  "base": {
+    "head": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "tree": "0a74466cc7e521a5eddfb2013f86075323dee9ff",
+    "root_head_observed": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+    "worktree": "/workspace/scratch/100be1d812fa/wt-p03",
+    "worktree_head": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369"
+  },
+  "ownership": [
+    "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+  ],
+  "source": {
+    "run": "42154773481/1",
+    "job": "127686195383",
+    "artifact": "13474109562",
+    "zip_sha256": "c15a4c38645c571b9a8214385e17c9c8c1d949c061022e43ee5bd849620cbc3f",
+    "bytes": 35812738,
+    "zip_crc": "PASS_REPORTED_BY_P00",
+    "log": "/workspace/scratch/100be1d812fa/validation/run42154773481/.accounts-validation/ihfr-1793935451791.log",
+    "log_sha256": "0083de86cf1fcddff437f5010511f0b548e92414dd4a59a9fc1a07c0806301cc",
+    "general_e2e": "244PASS",
+    "ihfr": "5PASS_1FAIL",
+    "new_matrix": "17/23"
+  },
+  "cause": {
+    "observed": "OWNER first eligibility GET omits landUseType; UI contains INSUFFICIENT_DATA, MISSING_LAND_USE_TYPE and INSUFFICIENT_DIMENSION.",
+    "test_gap": "Lifecycle had no observable client-desktop precondition or literal input expectations before state-preservation snapshots. Snapshots can preserve an already empty input.",
+    "product_read": "prepare/closeConfirmation alter confirmation/focus; no explicit field reset found there. landUseType/observedAt setters are onChange handlers.",
+    "not_proven": "Exact time and mechanism of missing input; resize, cancel or hydration are not declared product causes."
+  },
+  "change": {
+    "description": "Extract exact F4 passing desktop precondition into local helper for both tests; anchor lifecycle snapshots to explicit FOREST/date before and after each proof stage, compare after Escape, observe first GET without success filtering and assert contextual path/exact query/200/ELIGIBLE while retaining original UI expectation.",
+    "input_correction": "NONE",
+    "timeouts_and_matrix": "UNCHANGED",
+    "owner_to_admin": "Static sequence resets scale to100 through settle calls and ends at1280x900; ADMIN runtime not reached inF4. Common helper asserts actual DOM composition without changing viewport."
+  },
+  "file": {
+    "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "preimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+    "preimage_git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b",
+    "postimage_sha256": "83c5521a96b17f05cda671b4a48a5822142fcd4b781a7c39809a8129b8cc2c08",
+    "postimage_git_blob": "2e89cbf023c67ed71bcefff02f05ca6d5b401e31",
+    "patch_sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5"
+  },
+  "validation": [
+    {
+      "command": "npx --no-install eslint tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "exit_code": 0,
+      "status": "PASS_FOCAL"
+    },
+    {
+      "command": "git diff --check dee68689bd78a4bd1cd8519cf963396320a7ca5b -- tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "git apply --check /workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/p03-f4-lifecycle-input-preconditions.patch",
+      "cwd": "/workspace/scratch/100be1d812fa/repo",
+      "exit_code": 0,
+      "status": "PASS_READ_ONLY_AGAINST_F4"
+    },
+    {
+      "command": "Exact extraction normalization, insertion-only preservation, input/time-limit sequence comparison and immutable file hash checks",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "Full TSC / composed lint / CI15",
+      "exit_code": null,
+      "status": "PENDING_P00_INTEGRATION_GATE"
+    },
+    {
+      "command": "Local browser / DB / test-suite execution",
+      "exit_code": null,
+      "status": "NOT_RUN",
+      "reason": "No repeated suite; existing browser restriction respected. No synthetic runtime PASS invented."
+    }
+  ],
+  "review": {
+    "status": "P04 reviewed current complete diff without material finding; final hash audit pending",
+    "independent_agent": "/root/o0_guards"
+  },
+  "preservation": "Official wait, three new browser counterproofs, UI044 matrix helper and all other listed P03 test files byte-identicalF4. Existing lifecycle assertions/captures/actions retained after exact extraction normalization.",
+  "scope_guard": [
+    "Only authorized manage test edited",
+    "No product, API, fixture, domain, schema, guards, runner, workflow, provider or dependency mutation",
+    "No reselect, silent retry, timeout increase, skip, forced query, animation cancellation or assertion weakening",
+    "No commit/publication/merge/deploy byP03"
+  ],
+  "limitations": [
+    "F4 recovered wait and first randomUUID case; those successes do not qualify the successor SHA.",
+    "The specific cause of input absence remains unobserved; stronger stage assertions deliberately preserve FAIL if state is lost after preparation.",
+    "New lifecycle checks and remaining6 matrix positions await final-SHA CI."
+  ],
+  "artifacts": [
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/p03-f4-lifecycle-input-preconditions.patch",
+      "sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/causal-report.md",
+      "sha256": "557ea57de1b2d7d161fa3188ed65a03fc3c266f04a76a2230fa00f83e0bf0866"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/preservation.json",
+      "sha256": "92cd8d36dd6be4932d914da40cbc8cf0aa00381845cb59d6144bcb5751bbdc1d"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/preimage.json",
+      "sha256": "1ac4a690d2b3c5f1a40bd36430e4c210a5c86360f09ae794a0b0cee1c53b8587"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/preimage-f4.spec.ts",
+      "sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/lint-focal.log",
+      "sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f4/apply-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "handoff": "P04 final hashes; P00 integrates and runs full composed validation/RC15 before closingT081/O3."
+}

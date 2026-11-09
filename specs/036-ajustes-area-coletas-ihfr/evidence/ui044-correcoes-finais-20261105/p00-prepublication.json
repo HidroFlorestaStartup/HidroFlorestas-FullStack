@@ -1,0 +1,27 @@
+{
+  "id": "P00-PREPUBLICATION",
+  "at": "2026-11-05T21:59:15.143877-03:00",
+  "executor": "/root",
+  "role": "sole coordinator/integrator and author of config/Spec036; NOT final independent QA",
+  "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "branch": "fix/ui044-correcoes-finais-20261105",
+  "O0": "PASS",
+  "O1": "DELTAS_RECEIVED_WITH_EXACT_HASHES",
+  "O2": "COMPOSED_AND_LOCALLY_VALIDATED",
+  "O3": "PENDING CI15, browser artifacts, Codex and P04 on published F",
+  "O4": "NOT_RUN",
+  "review_scope": [
+    "C1 row.currentDiagnosis object condition preserves registered textual zero and no fallback; same two destinations/summary/order",
+    "C2 removes only actions notice; reading components untouched",
+    "C3 server ReactNode slots with stable single controller/dialog, breakpoint SSR consistency, scoped focus/disclosure restoration; runtime still pending",
+    "tests retain lifecycle/assertions and official helpers; larger scenario timeout accounts for added viewport assertions; workflow timeout unchanged",
+    "exact guard insertion verified; no API/schema/auth/science/dependency changes"
+  ],
+  "known_material_findings": [],
+  "independent_review": "PENDING; /root/o0_guards + /root/o0_refs + /root/o0_speckit are real nonauthors; no PASS inferred",
+  "local_validation_receipt_sha256": "7d8e871491b09db12ec5a8bdc678c6c98354f877956c0df09285737a6a557d0c",
+  "publication_rule": "P00 prompt GATES 5–6: publish guarded frozen candidate; CI/Codex/P04 in parallel",
+  "merge": false,
+  "deploy": false,
+  "staged_diff_check_repair": "Raw copied RED log contained trailing whitespace; exact original body preserved in p03-red.json with original SHA256. Worker log untouched. No technical file changed."
+}

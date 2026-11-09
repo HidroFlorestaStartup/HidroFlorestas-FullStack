@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024",
+  "front": "LOCAL",
+  "missionId": "HF-DOC-20261024-LOCAL01",
+  "status": "EVIDENCIAS_LOCAIS_CONCLUIDAS_PARA_CONSUMO",
+  "sourceBaseSha": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "examinedCandidateSha": "00477e961e36416d8d602d36f7e0ee195c487148",
+  "studentReviewSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+  "branch": "docs/hf-doc-local01-20261024",
+  "publication": {
+    "state": "PUBLICACAO_BLOQUEADA_POR_GATILHO",
+    "remoteCommit": null,
+    "pullRequest": null,
+    "delivery": "LOCAL_FILES_AND_LOCAL_COMMIT_ONLY; FINAL_COMMIT_SHA_IN_POST_WRITE_RECEIPT"
+  },
+  "coveredIds": [
+    "IMP-001",
+    "IMP-002",
+    "IMP-003",
+    "IMP-004",
+    "IMP-005",
+    "IMP-006",
+    "IMP-007",
+    "IMP-008",
+    "IMP-009",
+    "IMP-010",
+    "FRONTEIRA-SPEC-010",
+    "CRI-MAIL",
+    "CRI-012",
+    "CRI-013",
+    "CRI-014",
+    "CRI-016"
+  ],
+  "coveredSubcapabilities": [
+    "IMP-001-F01",
+    "IMP-002-C01",
+    "IMP-002-C02",
+    "IMP-002-F03",
+    "IMP-003-C01",
+    "IMP-003-C02",
+    "IMP-003-C03",
+    "IMP-003-C04",
+    "IMP-004-C01",
+    "IMP-004-C02",
+    "IMP-004-C03",
+    "IMP-005-C01",
+    "IMP-005-C02",
+    "IMP-005-C03",
+    "IMP-005-I04",
+    "IMP-005-I05",
+    "IMP-006-01",
+    "IMP-006-02",
+    "IMP-006-03",
+    "IMP-006-04",
+    "IMP-006-05",
+    "IMP-006-06",
+    "IMP-007-01",
+    "IMP-007-02",
+    "IMP-008-01",
+    "IMP-008-02",
+    "IMP-008-03",
+    "IMP-009-01",
+    "IMP-009-02",
+    "IMP-009-03",
+    "IMP-009-04",
+    "IMP-010-01",
+    "FRONTEIRA-SPEC-010",
+    "CRI-MAIL-01",
+    "CRI-012-01",
+    "CRI-012-02",
+    "CRI-013-01",
+    "CRI-014-01",
+    "CRI-016-01",
+    "CRI-016-02"
+  ],
+  "gaps": [
+    {
+      "id": "IMP-001-F01",
+      "gap": "Fronteira inspecionada; não é reauditoria de cadastro/recuperação/exclusão, cookie em produção, provedor de e-mail ou logout global.",
+      "nextAction": "RECOMENDACAO: Adendar o baseline de identidade com as restrições atuais e manter os gates humanos/operacionais próprios."
+    },
+    {
+      "id": "IMP-002-C01",
+      "gap": "Não há evidência produzida nesta missão sobre concorrência real, aplicação remota da migration, latência ou uso humano.",
+      "nextAction": "RECOMENDACAO: Atualizar a linha com fontes imutáveis, mantendo histórico e testes atuais NOT_RUN."
+    },
+    {
+      "id": "IMP-002-C02",
+      "gap": "Inspeção do guard e transações não demonstra execução de exclusão, integridade de base existente ou comportamento físico/assistivo.",
+      "nextAction": "RECOMENDACAO: Adendar o plano com configuração conectada e preservar os limites humanos e remotos."
+    },
+    {
+      "id": "IMP-002-F03",
+      "gap": "NAO_LOCALIZADO é ausência na busca delimitada e coerente com FR-014, não prova de inexistência em qualquer branch nem aprovação de política futura.",
+      "nextAction": "RECOMENDACAO: Manter ingresso indisponível; encaminhar intenção e autoridade em feature própria se houver decisão humana."
+    },
+    {
+      "id": "IMP-003-C01",
+      "gap": "Nenhuma sessão ou navegação foi exercitada nesta missão; autorização foi seguida no código como dados.",
+      "nextAction": "RECOMENDACAO: Adendar dependências já materializadas, evitando conservar estado histórico de placeholder como estado atual."
+    },
+    {
+      "id": "IMP-003-C02",
+      "gap": "Não foi executado backfill nem verificada integridade da instância remota; existência da migration não prova aplicação.",
+      "nextAction": "RECOMENDACAO: Usar rastreabilidade por capacidade e registrar validação histórica separada de estado estático atual."
+    },
+    {
+      "id": "IMP-003-C03",
+      "gap": "Não há prova nova de funcionamento do GPS, tiles externos, coordenadas de uma base existente ou migration remota.",
+      "nextAction": "RECOMENDACAO: Adendar área-ponto conectada e sua precisão; manter mapa territorial/ciência em capacidades distintas."
+    },
+    {
+      "id": "IMP-003-C04",
+      "gap": "Testes frontend-areas incluem cenários UI fake de capa; sua presença não prova upload/Cloudinary real. Não foi executada lista/detalhe nesta missão.",
+      "nextAction": "RECOMENDACAO: Atualizar visão global por subcapacidade e remeter capa a016/021 com gate operacional próprio."
+    },
+    {
+      "id": "IMP-004-C01",
+      "gap": "Inspeção não demonstra data de campo de usuários reais nem cumprimento das metas humanas.",
+      "nextAction": "RECOMENDACAO: Adendar o fluxo conectado sem modificar os limites de edição, exclusão, offline e ciência."
+    },
+    {
+      "id": "IMP-004-C02",
+      "gap": "Transações e cenários A→B→A foram inspecionados como dados; não houve corrida, POST ou recuperação em runtime nesta missão.",
+      "nextAction": "RECOMENDACAO: Atualizar o estado técnico estático e citar evidência023 pelo SHA próprio, sem transportar resultados para a base ou candidata atuais."
+    },
+    {
+      "id": "IMP-004-C03",
+      "gap": "Não se conclui integridade de uma instância remota nem sucesso de trigger executada neste snapshot. Listagem/histórico pertencem a007, não são lacuna da consulta mínima004.",
+      "nextAction": "RECOMENDACAO: Adendar os recortes resolvidos e preservar fronteiras com007 e006."
+    },
+    {
+      "id": "IMP-005-C01",
+      "gap": "A formulação antiga não pode ser corrigida declarando ciência IHFR validada. Legado e schema isolado continuam sem autoridade científica.",
+      "nextAction": "RECOMENDACAO: Adendar contrato técnico, versão e limites de aprovação; encaminhar qualquer mudança científica à autoridade competente."
+    },
+    {
+      "id": "IMP-005-C02",
+      "gap": "Migration/teste versionado não prova aplicação em banco remoto; concorrência/rollback/identidade foram lidos, não exercitados.",
+      "nextAction": "RECOMENDACAO: Atualizar a cadeia persistida e citar contratos005/015 em vez de resumir tudo como models legados sem consumidor."
+    },
+    {
+      "id": "IMP-005-C03",
+      "gap": "SC-006 continua humano. Leitura confirmada tem testes distintos de pixels/capturas da tela em edição; não inferir todas as telas pela matriz visual do formulário.",
+      "nextAction": "RECOMENDACAO: Adendar leitura real com aceites separados e limite científico explícito."
+    },
+    {
+      "id": "IMP-005-I04",
+      "gap": "Bloqueio de histórico SPA fora de Navigation API cancelável não é garantia universal; estudo humano, dispositivo físico e operação externa não foram executados.",
+      "nextAction": "RECOMENDACAO: Integrar a rastreabilidade do incremento no adendo Code-First e manter limitações de browser e aceites."
+    },
+    {
+      "id": "IMP-005-I05",
+      "gap": "Testes nomeiam cenários A→B→A e tiny numbers, mas permanecem NOT_RUN nesta missão. Pixels e asserts unitários não provam todos os dispositivos/leitores de tela.",
+      "nextAction": "RECOMENDACAO: Adendar capacidades atuais com evidência por SHA e registrar validações ausentes sem ampliar ciência ou suporte."
+    },
+    {
+      "id": "IMP-006-01",
+      "gap": "Vetores de engenharia não substituem vetores científicos/testes de campo; G2-SCI permanece pendente.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-006-02",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-006-03",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-006-04",
+      "gap": "Concorrência técnica IHFR observada em código/testes; INV-002 é incidente de quota/emissão de tickets de CAPAS e não prova nem refuta concorrência/recuperação do diagnóstico. Seu controle específico não integra a evidência desta linha.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-006-05",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-006-06",
+      "gap": "Recuperação IHFR é sustentada pelos testes dedicados de idempotência/gerência. O diretório investigations/ihfr contém também controle de quota de capas; nome do diretório não cria equivalência funcional nem evidência de recuperação IHFR.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-007-01",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. SC-008 (tecnologia assistiva) e SC-009 (estudo moderado,90%) continuam NAO_VERIFICADO; nenhuma sessão humana foi executada nesta missão.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-007-02",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. SC-008 (tecnologia assistiva) e SC-009 (estudo moderado,90%) continuam NAO_VERIFICADO; nenhuma sessão humana foi executada nesta missão.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-008-01",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. p95 de 100 leituras, EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) e interação sem tiles permanecem NAO_VERIFICADO no registro da008; nenhuma medição própria nesta missão.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-008-02",
+      "gap": "INV-003/NAV-SETTLE e OBS não têm causa histórica encerrada pelos protocolos atuais; capturas não substituem homologação. p95 de 100 leituras, EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) e interação sem tiles permanecem NAO_VERIFICADO no registro da008; nenhuma medição própria nesta missão.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-008-03",
+      "gap": "Decisões de integração/dados/gráficos e ciência aplicável ainda abertas; não confundir mapa mínimo entregue com toda a visão territorial.",
+      "nextAction": "RECOMENDACAO: preservar como entrega futura dependente de contratos e decisões próprias; não atribuir novo IMP por inferência."
+    },
+    {
+      "id": "IMP-009-01",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-009-02",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. Retorno de conta previamente ativada a PENDING permanece PENDENCIA_DE_DECISAO (spec009 e implementation-evidence); o código conserva o contrato atual que admite essa transição, sem aprovar a recomendação de restringi-la à pré-ativação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-009-03",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-009-04",
+      "gap": "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "IMP-010-01",
+      "gap": "Participantes/protocolo/amostra/tempos/compreensão e autoridade de aceite continuam pendentes. Estado de implementação NAO_APLICAVEL porque IMP-010 é avaliação humana, não capacidade de software a implementar; realização do estudo continua não verificada.",
+      "nextAction": "RECOMENDACAO: manter IMP-010 como pesquisa/aceite de UX e designar responsável/protocolo; nenhum teste automático substitui SC-006/007."
+    },
+    {
+      "id": "FRONTEIRA-SPEC-010",
+      "gap": "Risco de equivalência numérica entre IMP, spec e fase frontend; preservação de TD-017 e refinamento012 precisam aparecer juntos.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-MAIL-01",
+      "gap": "Gate B/SMTP/recebimento/scheduler/operação hospedada pendentes; sem contato a provedor nesta missão.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-012-01",
+      "gap": "Spec012 conserva cabeçalho histórico 'implementação em andamento'; código não é homologação remota nem aceite humano.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-012-02",
+      "gap": "Gate B operacional/humano permanece; não promover relato de recebimento sem consumo a aceite de reset.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-013-01",
+      "gap": "Homologação humana e operação do destino permanecem pendentes; não usar implementação como decisão de apagar dados reais.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-014-01",
+      "gap": "Seleção atual foi inspecionada, não executada; ausência de caso na suíte geral não significa ausência de cobertura dedicada.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-016-01",
+      "gap": "Configuração/feature off e fallback devem ser decididos por destino; nenhum Cloudinary real ou teste foi acionado nesta missão. INV-002 é concorrência de emissão de tickets de CAPAS; controle de duas chamadas em00477e9 não demonstra retrospectivamente a causa histórica e não é teste de recuperação IHFR.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    },
+    {
+      "id": "CRI-016-02",
+      "gap": "Cloudinary, créditos/cleanup real e decisão explícita de capas off/on no piloto permanecem pendentes; G3–G5 não herdam PASS técnico.",
+      "nextAction": "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade."
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/plans/active/hf-doc-20261024/local/plano.md",
+      "bytes": 9021,
+      "sha256": "945e1d7db9e2fbc1a5bfec5b77f10ff614e65129ea9aa37ea7b970fcbf33ea53"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fontes-observadas.json",
+      "bytes": 23968,
+      "sha256": "83fc865c185f79c0874ab0ae5ae98d2667569ce5587471211d9f3e39b41a3a86"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-002-005.json",
+      "bytes": 141994,
+      "sha256": "1246534559b3a9748dc3ec2fde38a1cdaf35732b0a07e8b688f89ecb13406d69"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-002-005.md",
+      "bytes": 168592,
+      "sha256": "c63de0403445b50018b1930fea0e2448c0d1306dd9effd057ac84d3b339cde70"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-006-010.json",
+      "bytes": 144782,
+      "sha256": "e2b2a236b95b53289113a2567c96eedf07559a307a4b974222d3534437fa9781"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-006-010.md",
+      "bytes": 110986,
+      "sha256": "d2ab2394e67deaff8a1f2453b659ae276138c3e5e1afe56ef17376237286a8f7"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/instrumentos-e-configuracao.md",
+      "bytes": 11283,
+      "sha256": "68a05ef759dc03d6ed5f5205e14112167a3bcd5d29a7a3eb6917d7ee802bf6bf"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/manifesto.json",
+      "bytes": 242024,
+      "sha256": "049e5d3f6dc5236f5a0a44863c11b856de88ac100f0d582985d19c3dc0a5b0c6"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/matriz-implementacao.json",
+      "bytes": 259453,
+      "sha256": "a93b1e2c8f033ba364c2991b5e740251b0382832d8a8dba06c0ca6cde06844f2"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/matriz-implementacao.md",
+      "bytes": 393413,
+      "sha256": "0e5e30cddb63e0d3fa789b93215791cd86c1b03ed3f95777f2fe77b3daf94f50"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/readme.md",
+      "bytes": 8349,
+      "sha256": "cc71b1f9138d0b2c3a31e95b2aad1b699160f8ea1647a9c69d93703e68b60d10"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/revisao-independente.md",
+      "bytes": 12413,
+      "sha256": "f9e1198fc6f239641f6f58c315fbe55e028dcfe3d8144f9ae17acfdeb78fefa3"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/topologia-e-conteudo-exclusivo.md",
+      "bytes": 21005,
+      "sha256": "757d7112ebfe2eec596968bb174fb1f49f62200b80ec2e36d787b1d0c90f8fa0"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/validacao.json",
+      "bytes": 1170,
+      "sha256": "6ccca1d5444dbb1f94d78975bc99eed196de73b8c43e67420097cf1878e2f5de"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/verificacao-documental.md",
+      "bytes": 4717,
+      "sha256": "de3c87a5057eecd420999b7e646addfd42ce678a5d1c7e3fca39f9e4c0cb8487"
+    }
+  ],
+  "independentReview": {
+    "logicalReviewer": "L-R",
+    "path": "docs/reviews/20261024-hf-doc-local01/revisao-independente.md",
+    "type": "REAL_NATIVE_SUBAGENT_REVIEW_OF_OTHER_AUTHORS",
+    "humanApproval": false,
+    "remote": "NOT_REQUESTED_PUBLICATION_BLOCKED"
+  },
+  "limits": [
+    "Static inspection and historical consultation only; own functional CI/build/runtime NOT_RUN.",
+    "No approval to merge/close PRs, accept G1-G5 risks, assign owners or operate providers.",
+    "IHFR: CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO, NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO.",
+    "CHAT must compare its base with sourceBaseSha; executable drift requires a new snapshot.",
+    "No local absolute path, own future commit SHA or self hash embedded.",
+    "Document hashes refer to the delivered UTF-8/LF bytes. A checkout with autocrlf may translate newlines: verify raw Git blobs or preserve bytes from the ZIP; do not alter repository configuration."
+  ],
+  "chatConsumption": [
+    "Receive every listed document with relative paths and post-write receipt.",
+    "Recalculate byte sizes and SHA-256; read full matrix and independent review.",
+    "Treat local commit as local; source snapshots do not prove integration into development.",
+    "Complete CHAT-owned synthesis/adenda and preserve human decisions."
+  ]
+}

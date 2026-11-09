@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-NIGHT-01",
+  "component": "students",
+  "recordedAt": "2026-10-25T04:03:14.597Z",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "baseline": {
+    "sha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "branch": "docs/hf-night-students-20261025",
+    "initialStatus": "CLEAN",
+    "sourceSha": "d2168c840937a6120e32467f24cb46383e8dcd29"
+  },
+  "originals": [
+    {
+      "path": "docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md",
+      "sourceSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "sourceBlob": "31394011249d0cc14bef31476e8967e316c5e64c",
+      "bytes": 12674,
+      "sha256": "9c8640cb9fa30b7ef16dfa4c1308377f1287dde5748ce4f9f2dd4c0c69fa0c94",
+      "initiallyAbsent": true,
+      "equalBytes": true
+    },
+    {
+      "path": "docs/reviews/20261024-revisao-thales/proximos-passos.md",
+      "sourceSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "sourceBlob": "0fb8a7f4ac2c07a3bb5079be36c98494a8616fa6",
+      "bytes": 4096,
+      "sha256": "9162b48e44f6c6c7718d9d3c79d9edf58c00b8ef25ea30addee92ce579d61699",
+      "initiallyAbsent": true,
+      "equalBytes": true
+    },
+    {
+      "path": "docs/reviews/20261024-revisao-thales/evidencias.json",
+      "sourceSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "sourceBlob": "9b34016408c0e9693e11e45417d7b368cf783b25",
+      "bytes": 6696,
+      "sha256": "53a1e184ec908037c716d0e9dafd63ca66896e9325d7804b980dc4e2dbda19d6",
+      "initiallyAbsent": true,
+      "equalBytes": true
+    },
+    {
+      "path": "docs/plans/active/revisao-thales-20261024.md",
+      "sourceSha": "d2168c840937a6120e32467f24cb46383e8dcd29",
+      "sourceBlob": "2bd10ed9491182098e332fb2ba9c791f3a18e4df",
+      "bytes": 6156,
+      "sha256": "b5a678b89bb168c00f62facb84a69cf6506ca22be9a756d5abe2385a4e3a15b5",
+      "initiallyAbsent": true,
+      "equalBytes": true
+    }
+  ],
+  "attribution": {
+    "classification": "FATO_DOCUMENTADO",
+    "originalCredit": "Plano original: Codex, por solicitação direta do usuário; relatório destinado a Thales.",
+    "identityLimit": "Identidade humana/autoria de conta Git não inferida por hash ou metadata.",
+    "currentSynthesis": "Agente C, frente documental HF-NIGHT-01"
+  },
+  "findings": [
+    {
+      "id": "RTH-P2-001",
+      "status": "RESOLVIDO_DOCUMENTALMENTE",
+      "classification": "INFERENCIA",
+      "scope": "Adendo C1 e quatro apontadores presentes na base integrada; produto/aceite/operação/ciência não encerrados."
+    },
+    {
+      "id": "RTH-P2-002",
+      "status": "TRATADO_POR_COMPOSICAO_FOCAL",
+      "classification": "INFERENCIA",
+      "scope": "Documentos #27 preservados por #32 e #28 inventariada por SHA; sem merge integral/fechamento de #27/#28. Três documentos novos #28 ausentes; dois paths de adendos preexistentes na base. Nenhum dos cinco conteúdos #28 importado nesta frente."
+    },
+    {
+      "id": "RTH-P3-001",
+      "status": "DOCUMENTADO_SOB_DEMANDA",
+      "classification": "EVIDENCIA_IMPLEMENTACAO",
+      "scope": "Entradas existentes documentadas; sem execução ou promoção a gate."
+    },
+    {
+      "id": "RTH-P3-002",
+      "status": "PROPOSTA_DE_LIMPEZA_FASEADA",
+      "classification": "PROPOSTA",
+      "scope": "Inventário estático e proposta; nenhuma configuração alterada pelo agente C."
+    }
+  ],
+  "composition": {
+    "pr27": {
+      "sourceSha": "223839c9ae91591ded8de387144d8c1ee84b5c20",
+      "ownBaseSha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+      "documentPaths": 206,
+      "equalBlobs": 206,
+      "differingPaths": []
+    },
+    "pr28": {
+      "sourceSha": "f56f73fda1d7bd459a1415bf02df25edc9120674",
+      "uniquePaths": [
+        {
+          "path": "docs/plans/active/investigacoes-intermitentes-20261023/plano-de-execucao.md",
+          "presentInBaseline": false,
+          "sourceBlob": "eaa9f7f7e78dc082d3105fa176baf598f56cc4bb",
+          "baselineBlob": null,
+          "equalToPr28": false
+        },
+        {
+          "path": "docs/plans/active/investigacoes-intermitentes-20261023/preparacao-evidencias.json",
+          "presentInBaseline": false,
+          "sourceBlob": "9cf9332e3460ddfec984aabfc837dee2e171de4c",
+          "baselineBlob": null,
+          "equalToPr28": false
+        },
+        {
+          "path": "docs/plans/active/investigacoes-intermitentes-20261023/prompt-de-execucao.md",
+          "presentInBaseline": false,
+          "sourceBlob": "59b1e9acd7230f6694a8469902e0f16960713b21",
+          "baselineBlob": null,
+          "equalToPr28": false
+        },
+        {
+          "path": "docs/plans/active/pos-consolidacao-frontend-20261021/plano-de-execucao.md",
+          "presentInBaseline": true,
+          "sourceBlob": "bb7da549738d498f9fc12c936949d28a1f102904",
+          "baselineBlob": "3599955996e8f0f1ccfa7b0f9b05369f160e89aa",
+          "equalToPr28": false
+        },
+        {
+          "path": "docs/releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md",
+          "presentInBaseline": true,
+          "sourceBlob": "eed77f9ff74956e958901999d6e3c37f5bfb0233",
+          "baselineBlob": "d8eaf007a602d6daefad4311b2be22075d22669f",
+          "equalToPr28": false
+        }
+      ],
+      "disposition": "OPEN; proposta de encerramento futuro somente após dependentes/conteúdo único/decisão; não executado"
+    },
+    "c1Pointers": [
+      {
+        "path": "PROJECT_CONTEXT.md",
+        "c1PointerPresent": true
+      },
+      {
+        "path": "docs/code-first-prd/implementation/backlog.md",
+        "c1PointerPresent": true
+      },
+      {
+        "path": "docs/code-first-prd/implementation/implementation-plan.md",
+        "c1PointerPresent": true
+      },
+      {
+        "path": "docs/governance/DOCUMENT_REGISTER.md",
+        "c1PointerPresent": true
+      }
+    ]
+  },
+  "pullRequestState": {
+    "classification": "FATO_DOCUMENTADO",
+    "source": "Consulta remota informada pelo coordenador nesta sessão; não repetida por esta autoria.",
+    "merged": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "open": [
+      27,
+      28
+    ],
+    "mutationsByThisAuthor": false
+  },
+  "configuration": {
+    "classification": "EVIDENCIA_IMPLEMENTACAO",
+    "workflow": {
+      "path": ".github/workflows/rc-review.yml",
+      "sha256": "dca78888822af4951b0fa8f633582b1dade37da8b993eb932fae0528fca8b02b",
+      "pushBranches": [
+        "review/015-environmental-drafts",
+        "review/016-area-covers",
+        "review/cri-audit-20261010",
+        "release/cri-rc-20261010",
+        "review/cri-rc-validation-20261012",
+        "feat/frontend-login",
+        "feat/frontend-account",
+        "feat/frontend-workspace-shell",
+        "feat/frontend-laboratory-dashboard",
+        "feat/frontend-areas-cover",
+        "022-fix-concurrency-ihfr",
+        "feat/frontend-collections",
+        "feat/frontend-environmental-drafts",
+        "feat/frontend-ihfr",
+        "feat/frontend-territorial-map",
+        "feat/frontend-user-administration",
+        "feat/frontend-landing-consolidation",
+        "release/frontend-rc-20261021",
+        "fix/investigacoes-intermitentes-20261023-local01"
+      ],
+      "jobPredicateBranches": [
+        "review/015-environmental-drafts",
+        "review/016-area-covers",
+        "review/cri-audit-20261010",
+        "release/cri-rc-20261010",
+        "review/cri-rc-validation-20261012",
+        "feat/frontend-login",
+        "feat/frontend-account",
+        "feat/frontend-workspace-shell",
+        "feat/frontend-laboratory-dashboard",
+        "feat/frontend-areas-cover",
+        "022-fix-concurrency-ihfr",
+        "feat/frontend-collections",
+        "feat/frontend-environmental-drafts",
+        "feat/frontend-ihfr",
+        "feat/frontend-territorial-map",
+        "feat/frontend-user-administration",
+        "feat/frontend-landing-consolidation",
+        "release/frontend-rc-20261021",
+        "fix/investigacoes-intermitentes-20261023-local01"
+      ],
+      "selectorsEqual": true
+    },
+    "vercel": {
+      "path": "vercel.json",
+      "snapshot": "BASELINE_HEAD",
+      "sha256": "292d1f3f54ba54acbe47cc14a29d359494f65d8e6e13cced5fc0bbb308e898fc",
+      "deploymentEnabled": {
+        "development": false,
+        "feat/account-verification-recovery": false,
+        "feat/account-deletion": false,
+        "review/cri-reconciliation-20261010": false,
+        "review/014-account-test-runners": false,
+        "review/015-environmental-drafts": false,
+        "review/016-area-covers": false,
+        "review/cri-audit-20261010": false,
+        "release/cri-rc-20261010": false,
+        "review/cri-rc-validation-20261012": false,
+        "feat/frontend-login": false,
+        "feat/frontend-account": false,
+        "feat/frontend-workspace-shell": false,
+        "feat/frontend-laboratory-dashboard": false,
+        "feat/frontend-areas-cover": false,
+        "022-fix-concurrency-ihfr": false,
+        "feat/frontend-collections": false,
+        "feat/frontend-environmental-drafts": false,
+        "feat/frontend-ihfr": false,
+        "feat/frontend-territorial-map": false,
+        "feat/frontend-user-administration": false,
+        "feat/frontend-landing-consolidation": false,
+        "release/frontend-rc-20261021": false,
+        "fix/investigacoes-intermitentes-20261023-local01": false,
+        "docs/hf-doc-local01-20261024": false,
+        "docs/hf-doc-chat01-20261024": false,
+        "docs/hf-int-doc27-20261024": false
+      }
+    },
+    "staticConsumerScope": {
+      "branch": "fix/investigacoes-intermitentes-20261023-local01",
+      "searchRoots": [
+        ".github",
+        "scripts",
+        "tests",
+        "docs",
+        "vercel.json"
+      ],
+      "excluded": "docs/raw/**",
+      "paths": [
+        ".github/workflows/rc-review.yml",
+        "docs/governance/DOCUMENT_REGISTER.md",
+        "docs/operations/rc-review-ci-runbook.md",
+        "docs/plans/active/investigacoes-intermitentes-20261023/execucao-local-multiagente.md",
+        "docs/plans/active/revisao-thales-20261024.md",
+        "docs/releases/2026-10-23-hf-inv-local01/agent-ledger.json",
+        "docs/releases/2026-10-23-hf-inv-local01/final-report.md",
+        "docs/releases/2026-10-23-hf-inv-local01/preflight.json",
+        "docs/releases/2026-10-23-hf-inv-local01/validation.md",
+        "docs/reviews/20261024-hf-doc-local01/fontes-observadas.json",
+        "docs/reviews/20261024-hf-doc-local01/instrumentos-e-configuracao.md",
+        "docs/reviews/20261024-revisao-thales/evidencias.json",
+        "docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md",
+        "vercel.json"
+      ],
+      "externalConsumers": "NOT_CONSULTED",
+      "rerunOwner": "NAO_ESPECIFICADO"
+    },
+    "mutation": false,
+    "coordinatorGuard": {
+      "classification": "FATO_DOCUMENTADO",
+      "source": "Coordenador adicionou guarda exata na worktree durante esta frente; mudança preservada, sem autoria do agente C.",
+      "path": "vercel.json",
+      "branch": "docs/hf-night-students-20261025",
+      "value": false,
+      "currentSha256": "6c49f5d67a64d8de3bb3b2e9eba15e02f36b34e3e20a7b2476ea6908427525e6",
+      "previousRulesPreserved": true
+    }
+  },
+  "validation": {
+    "originalBinaryEquality": "PASS_4_OF_4",
+    "pr27DocumentBlobComparison": "PASS",
+    "c1Pointers": "PASS_4_OF_4",
+    "jsonSyntax": "PASS",
+    "relativeLinks": "PASS",
+    "whitespace": "PASS_TRACKED_AND_7_NEW_FILES",
+    "scope": "PASS",
+    "functionalTests": "NOT_RUN_DOCUMENTATION_ONLY",
+    "typecheck": "NOT_RUN_DOCUMENTATION_ONLY",
+    "lint": "NOT_RUN_DOCUMENTATION_ONLY",
+    "build": "NOT_RUN_DOCUMENTATION_ONLY",
+    "independentReview": "PASS_DOCUMENTAL_COM_LIMITES — /root; independent-review.md",
+    "relativeLinkCount": 64,
+    "brokenRelativeLinks": [],
+    "allowedPaths": [
+      "PROJECT_CONTEXT.md",
+      "vercel.json",
+      "docs/plans/active/hf-night-students-20261025.md",
+      "docs/plans/active/revisao-thales-20261024.md",
+      "docs/reports/2026-10-25-hf-night-01/students/evidencias.json",
+      "docs/reports/2026-10-25-hf-night-01/students/readme.md",
+      "docs/reviews/20261024-revisao-thales/evidencias.json",
+      "docs/reviews/20261024-revisao-thales/proximos-passos.md",
+      "docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md"
+    ],
+    "unexpectedPaths": [],
+    "contextHistoricalBody": "PASS_CHECKOUT_BYTES_PRESERVED",
+    "secretPatternScan": "PASS_NO_HIGH_CONFIDENCE_PATTERNS",
+    "jsonFilesParsed": 3,
+    "contextPreimageMethod": "git cat-file --filters HEAD:PROJECT_CONTEXT.md",
+    "whitespaceCommands": [
+      {
+        "command": "git diff --check",
+        "exitCode": 0,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/plans/active/hf-night-students-20261025.md",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/plans/active/revisao-thales-20261024.md",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/reports/2026-10-25-hf-night-01/students/evidencias.json",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/reports/2026-10-25-hf-night-01/students/readme.md",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/reviews/20261024-revisao-thales/evidencias.json",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/reviews/20261024-revisao-thales/proximos-passos.md",
+        "exitCode": 1,
+        "output": ""
+      },
+      {
+        "command": "git -c core.autocrlf=false diff --no-index --check -- NUL docs/reviews/20261024-revisao-thales/relatorio-de-revisao.md",
+        "exitCode": 1,
+        "output": ""
+      }
+    ],
+    "noIndexExitExplanation": "For new-file comparisons with NUL, exit1 reports a difference; all seven checks emitted no whitespace diagnostics. Additional trailing-space scan passed.",
+    "trailingWhitespace": []
+  },
+  "scientificBoundary": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "notPerformed": [
+    "commit",
+    "push",
+    "PR mutation",
+    "merge",
+    "deploy",
+    "provider operation",
+    "env value reading",
+    "database",
+    "SMTP",
+    "human acceptance",
+    "scientific validation"
+  ]
+}

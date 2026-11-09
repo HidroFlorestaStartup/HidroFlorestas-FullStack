@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "protocol": "C-1",
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "startedUtc": "2026-10-23T20:56:58.851Z",
+  "timezone": "America/Fortaleza",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+  "dirtyTrackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "untrackedInvestigation": true,
+  "node": "v24.19.0",
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "applicationDelta": "none",
+  "database": "none",
+  "session": "none",
+  "environment": "system-allowlist-no-app-config",
+  "attempts": [
+    {
+      "id": "C-PUBLIC-1",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "none",
+      "startedUtc": "2026-10-23T20:57:04.276Z",
+      "responses": [
+        {
+          "t": 1792789024566,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792789027171,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792789027522,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "16.6133px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 568,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "endedUtc": "2026-10-23T20:57:07.779Z"
+    },
+    {
+      "id": "C-PUBLIC-2",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "initial",
+      "startedUtc": "2026-10-23T20:57:07.787Z",
+      "responses": [
+        {
+          "t": 1792789027991,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792789029602,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792789029815,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "16px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 583,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "endedUtc": "2026-10-23T20:57:10.043Z"
+    },
+    {
+      "id": "C-PUBLIC-3",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "hide",
+      "startedUtc": "2026-10-23T20:57:10.048Z",
+      "responses": [
+        {
+          "t": 1792789030258,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792789031836,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792789032038,
+          "method": "GET",
+          "status": 200,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "16px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 591,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": true,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "endedUtc": "2026-10-23T20:57:12.370Z"
+    }
+  ],
+  "syntheticControls": [
+    {
+      "id": "C-ANIMATION-finite-with-infinite",
+      "explicitlySynthetic": true,
+      "waitedForFinite": true,
+      "resolvedAfterBarrier": true,
+      "ignoredInfinite": true,
+      "status": "PASS"
+    },
+    {
+      "id": "C-ANIMATION-finite-cancelled",
+      "explicitlySynthetic": true,
+      "waitedForFinite": true,
+      "resolvedAfterBarrier": true,
+      "ignoredInfinite": null,
+      "status": "PASS"
+    }
+  ],
+  "files": [
+    {
+      "path": "public-caret-initial.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "inspected": false
+    },
+    {
+      "path": "public-caret-hide.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "inspected": false
+    }
+  ],
+  "status": "PASS",
+  "executedSources": [
+    {
+      "path": "tests/investigations/navigation/run-public.mjs",
+      "bytes": 16887,
+      "sha256": "a8e1ab0bff133ef13310d4af70bb062d54b494d2dbb8733fc516d11351e58034"
+    },
+    {
+      "path": "tests/e2e/frontend-mobile-navigation.spec.ts",
+      "bytes": 17556,
+      "sha256": "481a7afb46beb868196f0325707a70a33c4576239e573f1bf2c300cf9d682dc5"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/navigation/protocol.md",
+      "bytes": 6783,
+      "sha256": "305a5e98c481a377515e7e21a3617595715ebf7c431d502d853adc47aec516f9"
+    }
+  ],
+  "readiness": [
+    {
+      "t": 1792789019242,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792789019511,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792789019776,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792789020036,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792789020294,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792789023076,
+      "status": 200
+    }
+  ],
+  "browserVersion": "140.0.7339.186",
+  "playwrightVersion": "1.55.1",
+  "nextVersion": "16.3.8",
+  "serverCleanup": {
+    "method": "owned-child-tree-only",
+    "stopExitCode": 0,
+    "portReleased": true
+  },
+  "endedUtc": "2026-10-23T20:57:13.254Z"
+}

@@ -1,0 +1,9 @@
+﻿{
+    "utc":  "2026-10-25T04:14:45.1248755Z",
+    "reason":  "prevent possible public tile GETs; only local requests required",
+    "passedBeforeInterruption":  97,
+    "planned":  220,
+    "ownedPlaywrightPid":  9892,
+    "treeVerification":  "listener3001 ancestry and playwright cli classification",
+    "status":  "INTERRUPTION_REQUESTED"
+}

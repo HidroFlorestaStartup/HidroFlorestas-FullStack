@@ -1,0 +1,31 @@
+{
+  "protocolVersion": 1,
+  "endedUtc": "2026-10-23T20:58:14.576Z",
+  "status": "passed",
+  "cases": [
+    {
+      "title": "mobile viewport reading area 375px text100",
+      "status": "passed",
+      "durationMs": 26666,
+      "retry": 0
+    },
+    {
+      "title": "mobile viewport reading area 375px text200",
+      "status": "passed",
+      "durationMs": 22583,
+      "retry": 0
+    },
+    {
+      "title": "mobile viewport reading area 320px text100",
+      "status": "passed",
+      "durationMs": 20524,
+      "retry": 0
+    },
+    {
+      "title": "mobile viewport reading area 320px text200",
+      "status": "passed",
+      "durationMs": 22774,
+      "retry": 0
+    }
+  ]
+}

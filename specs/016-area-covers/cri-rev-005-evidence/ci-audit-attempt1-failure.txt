@@ -1,0 +1,168 @@
+IMP-006 E2E preflight passed: target 3ca357615da4, schema public.
+IMP-006 schema owned by this run: imp006_test_c91e1dbb1281492fa6c974d69b12b15d
+
+Running 6 tests using 1 worker
+
+  x  1 tests\e2e\ihfr-diagnosis-manage.spec.ts:50:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID (2.0m)
+  x  2 tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key (5.4s)
+  x  3 tests\e2e\ihfr-diagnosis-manage.spec.ts:195:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM (5.4s)
+  x  4 tests\e2e\ihfr-diagnosis-manage.spec.ts:209:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal (1.5m)
+  x  5 tests\e2e\ihfr-diagnosis-read.spec.ts:17:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout (5.4s)
+  x  6 tests\e2e\ihfr-diagnosis-read.spec.ts:39:5 › member sees honest absence and inactive laboratory stays read only (5.4s)
+
+
+  1) tests\e2e\ihfr-diagnosis-manage.spec.ts:50:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Fuso da coleta')
+
+
+       at support\collection-occurrence.ts:7
+
+       5 |   const match = /^(.*)([+-]\d{2}:\d{2}|Z)$/.exec(occurredAt);
+       6 |   if (!match) throw new Error("Fixture requires RFC 3339 occurrence with offset");
+    >  7 |   await page.getByLabel("Fuso da coleta").selectOption("manual");
+         |                                           ^
+       8 |   await page.getByLabel("Offset UTC").fill(match[2] === "Z" ? "+00:00" : match[2]);
+       9 |   // Chromium canonicalizes zero seconds in datetime-local; Playwright fill compares
+      10 |   // strings exactly. Use the equivalent browser value, preserving offset/fractions.
+        at fillCollectionOccurrence (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\support\collection-occurrence.ts:7:43)
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-manage.spec.ts:64:33
+
+    Error Context: test-results\ihfr-diagnosis-manage-coll-66c11--without-browser-randomUUID\error-context.md
+
+  2) tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true }).getByText('Nenhum diagnóstico IHFR vigente para esta coleta.', { exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true }).getByText('Nenhum diagnóstico IHFR vigente para esta coleta.', { exact: true })
+
+
+      120 |     const reading = page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true });
+      121 |     const management = page.getByRole("region", { name: "Gerenciar diagnóstico IHFR experimental", exact: true });
+    > 122 |     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
+          |                                                                                                           ^
+      123 |     await management.getByLabel("Uso predominante da terra").selectOption("FOREST");
+      124 |     await management.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+      125 |     await management.getByRole("button", { name: "Verificar elegibilidade" }).click();
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-manage.spec.ts:122:107
+
+    Error Context: test-results\ihfr-diagnosis-manage-OWNE-e2786-recover-with-one-stable-key\error-context.md
+
+  3) tests\e2e\ihfr-diagnosis-manage.spec.ts:195:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByRole('region', { name: 'Diagnóstico IHFR experimental' })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Diagnóstico IHFR experimental' })
+
+
+      201 |     await page.goto(scenario.url);
+      202 |     await expect(page.getByRole("button", { name: /criar diagnóstico|substituir diagnóstico|revogar diagnóstico/i })).toHaveCount(0);
+    > 203 |     await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental" })).toBeVisible();
+          |                                                                                       ^
+      204 |     await page.keyboard.press("Tab");
+      205 |     expect(await page.evaluate(() => document.activeElement !== document.body)).toBe(true);
+      206 |   }
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-manage.spec.ts:203:87
+
+    Error Context: test-results\ihfr-diagnosis-manage-MEMB-a2bce-agement-controls-in-the-DOM\error-context.md
+
+  4) tests\e2e\ihfr-diagnosis-manage.spec.ts:209:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Uso predominante da terra')
+
+
+      212 |   const collectionUrl = required("IMP006_E2E_INCOMPATIBLE_URL");
+      213 |   await page.goto(collectionUrl);
+    > 214 |   await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
+          |                                                      ^
+      215 |   await page.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+      216 |   let sent: Record<string, unknown> | undefined;
+      217 |   await page.route("**/ihfr-diagnosis/diagnoses", async (route) => {
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-manage.spec.ts:214:54
+
+    Error Context: test-results\ihfr-diagnosis-manage-well-71547-hows-a-recoverable-terminal\error-context.md
+
+  5) tests\e2e\ihfr-diagnosis-read.spec.ts:17:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByRole('region', { name: 'Diagnóstico IHFR experimental' })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Diagnóstico IHFR experimental' })
+
+
+      18 |   await page.goto(required("IMP006_E2E_COLLECTION_URL"));
+      19 |   const diagnosis = page.getByRole("region", { name: "Diagnóstico IHFR experimental" });
+    > 20 |   await expect(diagnosis).toBeVisible();
+         |                           ^
+      21 |   await expect(diagnosis.getByText(/Qualidade dos dados:/)).toBeVisible();
+      22 |   for (const component of ["W", "S", "V", "T"]) await expect(diagnosis.getByText(component, { exact: true })).toBeVisible();
+      23 |   for (const label of ["CONTRATO_EXPERIMENTAL", "VALIDACAO_CIENTIFICA_PENDENTE", "SUJEITO_A_RECALIBRACAO", "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"]) await expect(diagnosis.getByText(label, { exact: true })).toBeVisible();
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-read.spec.ts:20:27
+
+    Error Context: test-results\ihfr-diagnosis-read-member-b5102-ccess-and-responsive-layout\error-context.md
+
+  6) tests\e2e\ihfr-diagnosis-read.spec.ts:39:5 › member sees honest absence and inactive laboratory stays read only
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByRole('region', { name: 'Diagnóstico IHFR experimental' }).getByText('Nenhum diagnóstico IHFR vigente para esta coleta.')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Diagnóstico IHFR experimental' }).getByText('Nenhum diagnóstico IHFR vigente para esta coleta.')
+
+
+      39 | test("member sees honest absence and inactive laboratory stays read only", async ({ page }) => {
+      40 |   await page.goto(required("IMP006_E2E_ABSENT_COLLECTION_URL"));
+    > 41 |   await expect(page.getByRole("region", { name: "Diagnóstico IHFR experimental" }).getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+         |                                                                                                                                                    ^
+      42 |   await expect(page.getByText(/Qualidade dos dados:/)).toHaveCount(0);
+      43 |   await page.goto(required("IMP006_E2E_INACTIVE_COLLECTION_URL"));
+      44 |   await expect(page.getByText(/Laboratório inativo.*somente leitura/i).first()).toBeVisible();
+        at D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\e2e\ihfr-diagnosis-read.spec.ts:41:148
+
+    Error Context: test-results\ihfr-diagnosis-read-member-264e7--laboratory-stays-read-only\error-context.md
+
+  6 failed
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:50:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:195:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:209:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal
+    tests\e2e\ihfr-diagnosis-read.spec.ts:17:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout
+    tests\e2e\ihfr-diagnosis-read.spec.ts:39:5 › member sees honest absence and inactive laboratory stays read only
+Error: IMP-006 Playwright failed with exit code 1
+    at <anonymous> (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\scripts\imp006-local-e2e.ts:94:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async withImp006PostgresqlSchema (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+    at async main (D:\a\HidroFlorestas-FullStack\HidroFlorestas-FullStack\scripts\imp006-local-e2e.ts:53:3)

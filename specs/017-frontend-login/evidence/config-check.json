@@ -1,0 +1,8 @@
+{
+  "previewDisabled": true,
+  "previousVercelRulesPreserved": true,
+  "workflowPushTrigger": true,
+  "jobConditionEnabled": true,
+  "existingWorkflowPreserved": true,
+  "screenshotUploadOnly": true
+}

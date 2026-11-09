@@ -1,0 +1,120 @@
+{
+  "iterations": 60,
+  "failures": 0,
+  "shapes": [
+    {
+      "count": 57,
+      "error": {
+        "code": "P2034",
+        "hints": {
+          "aborted": false,
+          "deadlock": true,
+          "notFound": false,
+          "serialization": false,
+          "timeout": false
+        },
+        "keys": [
+          "code",
+          "meta",
+          "clientVersion",
+          "batchRequestIdx",
+          "name"
+        ],
+        "meta": {
+          "driverAdapterError": {
+            "cause": {
+              "hints": {
+                "aborted": false,
+                "deadlock": false,
+                "notFound": false,
+                "serialization": false,
+                "timeout": false
+              },
+              "keys": [
+                "originalCode",
+                "originalMessage",
+                "kind"
+              ],
+              "kind": "TransactionWriteConflict",
+              "originalCode": "40001"
+            },
+            "hints": {
+              "aborted": false,
+              "deadlock": false,
+              "notFound": false,
+              "serialization": false,
+              "timeout": false
+            },
+            "keys": [
+              "name",
+              "cause"
+            ],
+            "name": "DriverAdapterError"
+          },
+          "hints": {
+            "aborted": false,
+            "deadlock": false,
+            "notFound": false,
+            "serialization": false,
+            "timeout": false
+          },
+          "keys": [
+            "modelName",
+            "driverAdapterError"
+          ]
+        },
+        "name": "PrismaClientKnownRequestError"
+      }
+    },
+    {
+      "count": 60,
+      "error": {
+        "code": "RATE_LIMITED",
+        "hints": {
+          "aborted": false,
+          "deadlock": false,
+          "notFound": false,
+          "serialization": false,
+          "timeout": false
+        },
+        "keys": [
+          "code"
+        ],
+        "name": "Error"
+      }
+    },
+    {
+      "count": 3,
+      "error": {
+        "cause": {
+          "hints": {
+            "aborted": false,
+            "deadlock": false,
+            "notFound": false,
+            "serialization": false,
+            "timeout": false
+          },
+          "keys": [
+            "originalCode",
+            "originalMessage",
+            "kind"
+          ],
+          "kind": "TransactionWriteConflict",
+          "originalCode": "40001"
+        },
+        "hints": {
+          "aborted": false,
+          "deadlock": false,
+          "notFound": false,
+          "serialization": false,
+          "timeout": false
+        },
+        "keys": [
+          "name",
+          "cause"
+        ],
+        "name": "DriverAdapterError"
+      }
+    }
+  ]
+}

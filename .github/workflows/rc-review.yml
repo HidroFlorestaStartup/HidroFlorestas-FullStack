@@ -1,0 +1,206 @@
+name: RC review checks
+
+on:
+  push:
+    branches:
+      - review/015-environmental-drafts
+      - review/016-area-covers
+      - review/cri-audit-20261010
+      - release/cri-rc-20261010
+      - review/cri-rc-validation-20261012
+      - feat/frontend-login
+      - feat/frontend-account
+      - feat/frontend-workspace-shell
+      - feat/frontend-laboratory-dashboard
+      - feat/frontend-areas-cover
+      - 022-fix-concurrency-ihfr
+      - feat/frontend-collections
+      - feat/frontend-environmental-drafts
+      - feat/frontend-ihfr
+      - feat/frontend-territorial-map
+      - feat/frontend-user-administration
+      - feat/frontend-landing-consolidation
+      - release/frontend-rc-20261021
+      - fix/investigacoes-intermitentes-20261023-local01
+      - release/hf-close-01-20261025
+      - feat/ajustes-navegacao-conta
+      - feat/ajustes-area-coletas-ihfr
+      - feat/localizacao-endereco-opcional
+      - codex/hf-ui044-composition-qa-20261101
+      - integrate/hf-ui044-aceite-20261105
+      - fix/ui044-correcoes-finais-20261105
+      - fix/geocodificacao-preview-20261106
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rc-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: >-
+      (github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+       github.ref == 'refs/heads/codex/hf-ui044-composition-qa-20261101' &&
+       github.event_name == 'push' && github.event.created == true &&
+       github.event.forced == false && github.run_attempt == 1) ||
+      github.ref_name == 'review/015-environmental-drafts' ||
+      github.ref_name == 'review/016-area-covers' ||
+      github.ref_name == 'review/cri-audit-20261010' ||
+      github.ref_name == 'release/cri-rc-20261010' ||
+      github.ref_name == 'review/cri-rc-validation-20261012' ||
+      github.ref_name == 'feat/frontend-login' ||
+      github.ref_name == 'feat/frontend-account' ||
+      github.ref_name == 'feat/frontend-workspace-shell' ||
+      github.ref_name == 'feat/frontend-laboratory-dashboard' ||
+      github.ref_name == 'feat/frontend-areas-cover' ||
+      github.ref_name == '022-fix-concurrency-ihfr' ||
+      github.ref_name == 'feat/frontend-collections' ||
+      github.ref_name == 'feat/frontend-environmental-drafts' ||
+      github.ref_name == 'feat/frontend-ihfr' ||
+      github.ref_name == 'feat/frontend-territorial-map' ||
+      github.ref_name == 'feat/frontend-user-administration' ||
+      github.ref_name == 'feat/frontend-landing-consolidation' ||
+      github.ref_name == 'release/frontend-rc-20261021' ||
+      github.ref_name == 'fix/investigacoes-intermitentes-20261023-local01' ||
+      github.ref_name == 'release/hf-close-01-20261025' ||
+      github.ref_name == 'feat/ajustes-navegacao-conta' ||
+      github.ref_name == 'feat/ajustes-area-coletas-ihfr' ||
+      github.ref_name == 'feat/localizacao-endereco-opcional' ||
+      github.ref_name == 'integrate/hf-ui044-aceite-20261105' ||
+      github.ref_name == 'fix/ui044-correcoes-finais-20261105' ||
+      github.ref_name == 'fix/geocodificacao-preview-20261106'
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      HF_REVERSE_GEOCODER_URL: ''
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Verify frozen UI-044 composition
+        id: qa_composition
+        if: github.ref == 'refs/heads/codex/hf-ui044-composition-qa-20261101'
+        run: |
+          $ErrorActionPreference = 'Stop'
+          function Invoke-QAGit([string[]]$GitArgs) {
+            $qaText = & git @GitArgs
+            if ($LASTEXITCODE -ne 0) { throw "Git verification failed: $($GitArgs[0])" }
+            $qaText
+          }
+          if ($env:GITHUB_ACTIONS -ne 'true' -or $env:RUNNER_OS -ne 'Windows') { throw 'Wrong runtime.' }
+          $guard = '07755822f5dc75fe2be1d924005d30ed99f64a0b'
+          $expectedProduct = 'a585087dbbe9294c18922e3397c2561f245446c9'
+          $commit = (Invoke-QAGit -GitArgs @('rev-parse','HEAD')).Trim()
+          if ($commit -ne $env:GITHUB_SHA -or (Invoke-QAGit -GitArgs @('rev-parse','HEAD^')).Trim() -ne $guard) { throw 'Candidate identity/parent mismatch.' }
+          $config = Get-Content -Raw vercel.json | ConvertFrom-Json
+          if ($config.git.deploymentEnabled.'codex/hf-ui044-composition-qa-20261101' -ne $false -or @($config.git.deploymentEnabled.PSObject.Properties | Where-Object Value -ne $false).Count) { throw 'Preview guard missing or conflicting.' }
+          if (@(Get-ChildItem -Force -File -Filter '.env*' | Where-Object Name -NotMatch '\.(example|sample)$').Count) { throw 'Unexpected dotenv file.' }
+          $refs = @{
+            'refs/heads/feat/ajustes-navegacao-conta' = '6f236bbe7b5f4d7f9718efaa2c334f7d1520e0a0'
+            'refs/heads/feat/ajustes-area-coletas-ihfr' = '1c44058cb45e461c719d514829a4e78d2bf7ee05'
+            'refs/heads/feat/localizacao-endereco-opcional' = '799c00a42d7f3846c3449d3615d263ce0b0e7bd2'
+            'refs/heads/chore/hf-ui044-ci-preview-guards' = 'a89feceb7fab9bff00fa16efd6e61e553fd9f50c'
+            'refs/heads/development' = '9b8595d232842d401ce81bbc92c54dd543aa2829'
+            'refs/heads/main' = 'beba96fbf6bbaac8771dbb29abea2f9f8f5b0054'
+          }
+          $refs[$env:GITHUB_REF] = $commit
+          $observed = @{}
+          foreach ($line in (Invoke-QAGit -GitArgs (@('ls-remote','https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack.git') + @($refs.Keys)))) {
+            if ($line -match '^([0-9a-f]{40})\s+(.+)$') { $observed[$Matches[2]] = $Matches[1] }
+          }
+          foreach ($ref in $refs.Keys) { if ($observed[$ref] -ne $refs[$ref]) { throw "HEAD drift: $ref" } }
+          $oldIndex = $env:GIT_INDEX_FILE
+          try {
+            $env:GIT_INDEX_FILE = Join-Path $env:RUNNER_TEMP 'hf-ui044-product.index'
+            if (Test-Path -LiteralPath $env:GIT_INDEX_FILE) { throw 'Fresh QA index required.' }
+            Invoke-QAGit -GitArgs @('read-tree','HEAD')
+            foreach ($path in @('.github/workflows/rc-review.yml','vercel.json')) {
+              $blob = (Invoke-QAGit -GitArgs @('rev-parse',($guard+':'+$path))).Trim()
+              Invoke-QAGit -GitArgs @('update-index','--cacheinfo',('100644,'+$blob+','+$path))
+            }
+            $product = (Invoke-QAGit -GitArgs @('write-tree')).Trim()
+            $paths = @(Invoke-QAGit -GitArgs @('diff','--cached','--name-only',$guard))
+            Invoke-QAGit -GitArgs @('diff','--cached','--check',$guard)
+            if ($product -ne $expectedProduct -or $paths.Count -ne 63) { throw 'Frozen composition mismatch.' }
+          } finally {
+            if ($null -eq $oldIndex) { Remove-Item Env:GIT_INDEX_FILE -ErrorAction SilentlyContinue } else { $env:GIT_INDEX_FILE = $oldIndex }
+          }
+          [void](New-Item -ItemType Directory -Path '.accounts-validation' -Force)
+          @{ commit=$commit; candidateTree=(Invoke-QAGit -GitArgs @('rev-parse','HEAD^{tree}')).Trim(); productTree=$product; guard=$guard; paths=63; refs=$observed; runId=$env:GITHUB_RUN_ID; attempt=$env:GITHUB_RUN_ATTEMPT } | ConvertTo-Json -Depth 5 | Set-Content '.accounts-validation/hf-ui044-composition.log' -Encoding utf8
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.19.0
+          cache: npm
+      - name: Install locked dependencies and Chromium
+        run: |
+          node --version
+          npm --version
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE -ne 0) { throw 'Locked installation failed' }
+          npx prisma generate
+          if ($LASTEXITCODE -ne 0) { throw 'Prisma generation failed' }
+          npx playwright install chromium
+          if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed' }
+      - name: Validate with owned synthetic PostgreSQL and current guards
+        run: ./scripts/rc-review-validation.ps1 -InitializeCiCluster
+      - name: Verify UI-044 checkout after gates
+        if: always() && github.ref == 'refs/heads/codex/hf-ui044-composition-qa-20261101' && steps.qa_composition.outcome == 'success'
+        run: |
+          $ErrorActionPreference = 'Stop'
+          git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Tracked working files changed.' }
+          git diff --cached --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Tracked index changed.' }
+          $tree = git write-tree
+          if ($LASTEXITCODE -ne 0) { throw 'Tree verification failed.' }
+          $receipt = Get-Content -Raw '.accounts-validation/hf-ui044-composition.log' | ConvertFrom-Json
+          if ($tree -ne $receipt.candidateTree) { throw 'Candidate tree changed.' }
+          @{ tree=$tree; worktreeIndexUnchanged=$true; runId=$env:GITHUB_RUN_ID; attempt=$env:GITHUB_RUN_ATTEMPT } | ConvertTo-Json | Set-Content '.accounts-validation/hf-ui044-composition-after.log' -Encoding utf8
+      - name: Preserve redacted validation logs
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: rc-validation-${{ github.sha }}
+          path: |
+            .accounts-validation/*.log
+            .accounts-validation/results.jsonl
+            test-results/**/frontend-login-*.png
+            test-results/**/frontend-account-*.png
+            .accounts-validation/frontend-account/*.png
+            test-results/**/frontend-workspace-*.png
+            .accounts-validation/frontend-workspace/*.png
+            .accounts-validation/frontend-mobile-navigation/*.png
+            .accounts-validation/frontend-mobile-navigation/*-geometry.json
+            .accounts-validation/frontend-dashboard/*.png
+            .accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
+            .accounts-validation/frontend-areas/*.png
+            .accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            test-results/**/frontend-collections-*.png
+            test-results/**/frontend-collections-*-viewport.json
+            .accounts-validation/frontend-collections/*-frontend-collections-*.png
+            .accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
+            test-results/**/frontend-environmental-*.png
+            test-results/**/frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            .accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            .accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*.png
+            .accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
+            .accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
+            .accounts-validation/frontend-landing/*-frontend-landing-*.png
+            .accounts-validation/frontend-landing/*-frontend-landing-*-viewport.json
+          if-no-files-found: warn
+          retention-days: 14
+          include-hidden-files: true

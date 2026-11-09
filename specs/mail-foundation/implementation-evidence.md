@@ -347,3 +347,17 @@ Gate integral PASS antes do primeiro staging/commit. Revisão do diff completo e
 - `docs(mail): record R1 validation and Gmail smoke acceptance`: consolidação do runbook, evidência, JSON histórico e T017 neste commit. Seu hash deve ser consultado com `git log -1 --format=%H --grep='^docs(mail): record R1 validation and Gmail smoke acceptance$'`; não se grava o próprio hash dentro do conteúdo para evitar autorreferência/amend em ciclo. Os dois hashes reais constam também da resposta de entrega e do ledger local ignorado.
 
 Conferência posterior: fonte funcional do workspace mantém o fingerprint aedd43d9 e todos os 418 hashes do manifesto; blobs versionados correspondem aos arquivos testados, considerando apenas a normalização de linhas realizada pelo Git. O arquivo mail.zip, incluído no fingerprint vigente pelo coletor existente, é um anexo preexistente fora do Git e não uma dependência de build/runtime; sua exclusão do commit não altera os módulos executados. AGENTS.md permanece alterado pelo bloco gerenciado de next dev, preservado fora do index, assim como os prompts, ZIPs, imp006-final-* e relatórios preexistentes. Nenhum arquivo privado foi staged. Nenhuma modificação funcional por hooks/staging e nenhuma operação remota.
+
+
+## Reconciliação de 2026-10-10
+
+Código e ancestralidade reconfirmados em beba96f no repositório HidroFlorestaStartup/HidroFlorestas-FullStack. Resultados antigos permanecem ligados aos snapshots originais. Verificações desta execução e estado por frente estão na [matriz única](../../docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Testes locais não fecham homologação humana/remota; nenhuma operação externa efetuada.
+
+
+## Regressão integrada CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: suites pertinentes desta feature passaram novamente
+na regressão integrada após 014/015/016. [Comandos, UTC, snapshots e resultados](../016-area-covers/implementation-evidence.md).
+O corte anterior e seus resultados permanecem históricos. Transporte sintético
+e provedor fake não fecham Gate B012/aceite humano013 ou smoke Cloudinary real.
+Não houve operação remota nesta execução.

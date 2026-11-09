@@ -1,0 +1,474 @@
+{
+  "captured_utc": "2026-10-22T00:09:38.662763+00:00",
+  "scope": "historical evidence recovered; no historical rerun",
+  "artifacts": [
+    {
+      "artifact_id": 12212173104,
+      "run_id": 39300023357,
+      "attempt": 1,
+      "head_sha": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357/attempts/1",
+      "zip_bytes": 17714543,
+      "zip_sha256": "9f13f31eb53c7aae476e3e77246c988c142f742c4b20aa671b601350f0154fde",
+      "member_count": 411,
+      "crc_verified": true,
+      "safe_paths_verified": true,
+      "files": [
+        {
+          "path": ".accounts-validation/ihfr-1792434156233.log",
+          "bytes": 11116,
+          "sha256": "dae9b02fb69e9909b9b15334c8710c52208a5b1669acf06fc76dc765f2ccde97",
+          "page_http404_lines": 0,
+          "ihfr_cases_passed": 0,
+          "error_context_members_present": false
+        },
+        {
+          "path": ".accounts-validation/results.jsonl",
+          "bytes": 5332,
+          "sha256": "e361a6472bd98aab6915969f1df535bb3d78fdc93b7ef04f00c7526e9c8598c1",
+          "gates": [
+            {
+              "gate": "RegressionSetup",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:10:07.112Z",
+              "endedUtc": "2026-10-19T18:10:13.721Z"
+            },
+            {
+              "gate": "Unit",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:10:13.944Z",
+              "endedUtc": "2026-10-19T18:10:36.891Z"
+            },
+            {
+              "gate": "Integration",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:10:37.965Z",
+              "endedUtc": "2026-10-19T18:12:16.818Z"
+            },
+            {
+              "gate": "Migration",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:12:17.043Z",
+              "endedUtc": "2026-10-19T18:12:30.120Z"
+            },
+            {
+              "gate": "Contract",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:12:30.339Z",
+              "endedUtc": "2026-10-19T18:12:33.070Z"
+            },
+            {
+              "gate": "R1",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:12:33.291Z",
+              "endedUtc": "2026-10-19T18:12:43.085Z"
+            },
+            {
+              "gate": "Build",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:12:43.287Z",
+              "endedUtc": "2026-10-19T18:13:04.021Z"
+            },
+            {
+              "gate": "Typecheck",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:13:04.251Z",
+              "endedUtc": "2026-10-19T18:13:11.647Z"
+            },
+            {
+              "gate": "Lint",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:13:11.857Z",
+              "endedUtc": "2026-10-19T18:13:30.663Z"
+            },
+            {
+              "gate": "E2E",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:13:30.872Z",
+              "endedUtc": "2026-10-19T18:21:42.386Z"
+            },
+            {
+              "gate": "Https",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:21:42.630Z",
+              "endedUtc": "2026-10-19T18:22:25.261Z"
+            },
+            {
+              "gate": "Deletion",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:22:25.478Z",
+              "endedUtc": "2026-10-19T18:22:36.023Z"
+            },
+            {
+              "gate": "Ihfr",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "FAIL",
+              "exitCode": 1,
+              "startedUtc": "2026-10-19T18:22:36.234Z",
+              "endedUtc": "2026-10-19T18:26:46.890Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact_id": 12213157147,
+      "run_id": 39300023357,
+      "attempt": 2,
+      "head_sha": "3f1eba566a1f4f01e469f75a6c174fd2e602a9d2",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39300023357/attempts/2",
+      "zip_bytes": 17712513,
+      "zip_sha256": "aace111409eabf2e11352d2aaed8801edee40d602c8a53efe215a8f55214d008",
+      "member_count": 413,
+      "crc_verified": true,
+      "safe_paths_verified": true,
+      "files": [
+        {
+          "path": ".accounts-validation/ihfr-1792435561035.log",
+          "bytes": 1082,
+          "sha256": "4eb7aa0d75c70081df60b7e4bc476481c352118c0cd94ba3a0a22d53ccee41c2",
+          "page_http404_lines": 0,
+          "ihfr_cases_passed": 6,
+          "error_context_members_present": false
+        },
+        {
+          "path": ".accounts-validation/results.jsonl",
+          "bytes": 6244,
+          "sha256": "03ba70685a4316811d2fbb9230500ead816df51feb7617b83b88c51f382c70ae",
+          "gates": [
+            {
+              "gate": "RegressionSetup",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:31:05.572Z",
+              "endedUtc": "2026-10-19T18:31:13.456Z"
+            },
+            {
+              "gate": "Unit",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:31:13.737Z",
+              "endedUtc": "2026-10-19T18:31:39.155Z"
+            },
+            {
+              "gate": "Integration",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:31:39.467Z",
+              "endedUtc": "2026-10-19T18:33:34.295Z"
+            },
+            {
+              "gate": "Migration",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:33:34.585Z",
+              "endedUtc": "2026-10-19T18:33:50.301Z"
+            },
+            {
+              "gate": "Contract",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:33:50.573Z",
+              "endedUtc": "2026-10-19T18:33:54.196Z"
+            },
+            {
+              "gate": "R1",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:33:54.481Z",
+              "endedUtc": "2026-10-19T18:34:05.146Z"
+            },
+            {
+              "gate": "Build",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:34:05.432Z",
+              "endedUtc": "2026-10-19T18:34:34.412Z"
+            },
+            {
+              "gate": "Typecheck",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:34:34.707Z",
+              "endedUtc": "2026-10-19T18:34:44.944Z"
+            },
+            {
+              "gate": "Lint",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:34:45.225Z",
+              "endedUtc": "2026-10-19T18:35:06.404Z"
+            },
+            {
+              "gate": "E2E",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:35:06.674Z",
+              "endedUtc": "2026-10-19T18:45:01.305Z"
+            },
+            {
+              "gate": "Https",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:45:01.637Z",
+              "endedUtc": "2026-10-19T18:45:46.038Z"
+            },
+            {
+              "gate": "Deletion",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:45:46.311Z",
+              "endedUtc": "2026-10-19T18:46:00.769Z"
+            },
+            {
+              "gate": "Ihfr",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:46:01.036Z",
+              "endedUtc": "2026-10-19T18:46:55.361Z"
+            },
+            {
+              "gate": "Bootstrap",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:46:55.655Z",
+              "endedUtc": "2026-10-19T18:47:03.013Z"
+            },
+            {
+              "gate": "SchemaAudit",
+              "snapshot": "2cb2e33ec7ac72e97b1ab695353375a3d5ea501135355a7c7459ca19798d902d",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T18:47:03.358Z",
+              "endedUtc": "2026-10-19T18:47:04.357Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact_id": 12287280647,
+      "run_id": 39465856665,
+      "attempt": 1,
+      "head_sha": "85e397bd4271ab07a197ea88db652227e6e392ce",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465856665/attempts/1",
+      "zip_bytes": 20601581,
+      "zip_sha256": "c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e",
+      "member_count": 519,
+      "crc_verified": true,
+      "safe_paths_verified": true,
+      "files": [
+        {
+          "path": ".accounts-validation/ihfr-1792518732781.log",
+          "bytes": 16874,
+          "sha256": "b5fb5e983e5d733d4d15883911d19c3759283073d717ade81ad04593fa62a34f",
+          "page_http404_lines": 6,
+          "ihfr_cases_passed": 0,
+          "error_context_members_present": false
+        },
+        {
+          "path": ".accounts-validation/results.jsonl",
+          "bytes": 5332,
+          "sha256": "e3a5b2347b0b62872593552f4312040cc43c3bd11a918e4150eadc238399c461",
+          "gates": [
+            {
+              "gate": "RegressionSetup",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:35:45.653Z",
+              "endedUtc": "2026-10-20T17:35:53.296Z"
+            },
+            {
+              "gate": "Unit",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:35:53.572Z",
+              "endedUtc": "2026-10-20T17:36:26.277Z"
+            },
+            {
+              "gate": "Integration",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:36:26.595Z",
+              "endedUtc": "2026-10-20T17:38:22.990Z"
+            },
+            {
+              "gate": "Migration",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:38:23.269Z",
+              "endedUtc": "2026-10-20T17:38:38.839Z"
+            },
+            {
+              "gate": "Contract",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:38:39.124Z",
+              "endedUtc": "2026-10-20T17:38:42.658Z"
+            },
+            {
+              "gate": "R1",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:38:42.951Z",
+              "endedUtc": "2026-10-20T17:38:53.221Z"
+            },
+            {
+              "gate": "Build",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:38:53.502Z",
+              "endedUtc": "2026-10-20T17:39:20.715Z"
+            },
+            {
+              "gate": "Typecheck",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:39:20.998Z",
+              "endedUtc": "2026-10-20T17:39:31.144Z"
+            },
+            {
+              "gate": "Lint",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:39:31.407Z",
+              "endedUtc": "2026-10-20T17:39:51.076Z"
+            },
+            {
+              "gate": "E2E",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:39:51.363Z",
+              "endedUtc": "2026-10-20T17:51:12.885Z"
+            },
+            {
+              "gate": "Https",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:51:13.246Z",
+              "endedUtc": "2026-10-20T17:51:57.436Z"
+            },
+            {
+              "gate": "Deletion",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-20T17:51:57.702Z",
+              "endedUtc": "2026-10-20T17:52:12.455Z"
+            },
+            {
+              "gate": "Ihfr",
+              "snapshot": "20cb2e17a3a9e66241a9057a2eda0d8a08d143239958a23a2941bc6b0230224c",
+              "result": "FAIL",
+              "exitCode": 1,
+              "startedUtc": "2026-10-20T17:52:12.782Z",
+              "endedUtc": "2026-10-20T17:56:27.742Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact_id": 12192554979,
+      "run_id": 39267705060,
+      "attempt": 1,
+      "head_sha": "7b8d9c0c8894d4e3e86d35d90b4d1b3d2eab003d",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39267705060/attempts/1",
+      "zip_bytes": 23977,
+      "zip_sha256": "18f1bec27a42ae84c049d69ee634c402a61b53d041f706acfbf60c7fbe886566",
+      "member_count": 4,
+      "crc_verified": true,
+      "safe_paths_verified": true,
+      "files": [
+        {
+          "path": ".accounts-validation/integration-1792419611023.log",
+          "bytes": 32672,
+          "sha256": "15633f883328fd3f5f48246dcd4787e254b4805839f93cc932c3ff5bd1554712",
+          "page_http404_lines": 0,
+          "ihfr_cases_passed": null,
+          "error_context_members_present": false
+        },
+        {
+          "path": ".accounts-validation/results.jsonl",
+          "bytes": 1299,
+          "sha256": "6cc2d7566d83538887b47a91e911e51a032e060a4d7bca487fe3e4a46da27a2f",
+          "gates": [
+            {
+              "gate": "RegressionSetup",
+              "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T14:19:39.494Z",
+              "endedUtc": "2026-10-19T14:19:46.593Z"
+            },
+            {
+              "gate": "Unit",
+              "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+              "result": "PASS",
+              "exitCode": 0,
+              "startedUtc": "2026-10-19T14:19:46.835Z",
+              "endedUtc": "2026-10-19T14:20:10.764Z"
+            },
+            {
+              "gate": "Integration",
+              "snapshot": "9a5dd074aa94a9072903714135ca946991ce80526ec61ef6276953b72b9ba7c6",
+              "result": "FAIL",
+              "exitCode": 1,
+              "startedUtc": "2026-10-19T14:20:11.024Z",
+              "endedUtc": "2026-10-19T14:21:49.823Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

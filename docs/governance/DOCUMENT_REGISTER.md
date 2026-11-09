@@ -1,5 +1,31 @@
 # Registro documental
 
+## Consolidação após aceite final da UI-044 — 06/11/2026
+
+[Plano de encerramento](../plans/active/encerramento-prs-ui044-20261106/plano-de-execucao.md) e [recibo de consolidação](../plans/active/encerramento-prs-ui044-20261106/recibo-de-consolidacao.json): seis PRs substituídas encerradas, conteúdos exclusivos de41/52 preservados e estados atuais conciliados. O [plano da demonstração de26/10](../plans/active/demonstracao-reuniao-20261026.md), [recibo original](../plans/active/recibo-demonstracao-reuniao-20261026.md) e [JSON histórico](../plans/active/demonstracao-reuniao-20261026.json) pertencem ao SHA/deployment daquela execução, sem novo PASS operacional.
+
+O [handoff das três correções](../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md) foi executado pela PR53 e aceito por Pedro; as menções PENDENTE no recibo datado de05/11 são históricas. Os três PNGs e JSON original permanecem por blob. A inclusão dos documentos não homologa o piloto nem valida ciência.
+
+## Aceite UI-044 e handoff das correções finais — 05/11/2026
+
+[Prompt autorizado](../plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md), [plano de publicação](../plans/active/correcoes-finais-ui044-20261105/plano-de-publicacao.md), [recibo](../plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json) e [três prints originais](../plans/active/correcoes-finais-ui044-20261105/evidencias/readme.md): autoridade UX de Pedro registrada nesta conversa e no comentário6671722605 da PR51. Integração #51 concluída em 7bae1f87cb8d6a708b7c4de0b990e82e5a503369; quinze gates PASS e Codex Review pertencem ao head febee101aa, cuja árvore foi preservada no merge. As três correções permanecem PENDENTES e terão PR própria para development. Os textos anteriores são históricos; aceite de usabilidade/design não confere homologação operacional ou científica.
+
+## Integração UI-044 para aceite — 05/11/2026
+
+[Pacote](../releases/2026-11-05-hf-ui044-integration/readme.md), [plano](../plans/active/integracao-ui044-20261105/plano-de-execucao.md), [proveniência](../releases/2026-11-05-hf-ui044-integration/proveniencia.json) e [matriz](../releases/2026-11-05-hf-ui044-integration/matriz-de-reconciliacao.md): preparação autorizada por Pedro nesta conversa; HUMAN_ACCEPTANCE_PENDING. Fontes44–50 reconciliadas por conteúdo; snapshots preservam variantes divergentes. Testes/Preview terão evidência própria e nenhum aceite humano ou científico é antecipado. Sem merge ou limpeza. Histórico anterior preservado abaixo.
+
+## Registro HF-DOC —24/10/2026, continuidade C0→C1
+
+CONCILIACAO_C1_CONCLUIDA_COM_LIMITES: [adendo Code-First](../code-first-prd/implementation/estado-conciliado-20261024.md),
+[plano CHAT](../plans/active/hf-doc-20261024/chat/plano.md) e
+[pacote de conciliação](../reviews/20261024-hf-doc-chat01/readme.md), missão
+HF-DOC-20261024-CHAT02, base c4adfb379e5dc78f27f31b91edbd13f43228d9f9.
+Origem: pedido do usuário de 24/10/2026; coordenação CHAT e três subagentes reais.
+LOCAL consumido com integridade PASS; proveniência do commit local PARTIAL.
+O índice distingue matriz/revisão/validação C1 dos recibos C0 preservados.
+Não concede autoridade normativa, aceite, piloto ou integração remota.
+O inventário anterior permanece integralmente preservado.
+
 ## Escopo deste registro
 
 Este é o registro canônico para o inventário documental. Nesta versão constam os documentos canônicos de governança, planos operacionais, matriz de rastreabilidade, relatórios analíticos, a decisão e o manifesto experimentais da IMP-006, `docs/raw/` como conjunto agregado de evidências históricas imutáveis e o inventário individual dos 13 arquivos do baseline de 2026-08-24. A inclusão individual registra identidade, metadados, integridade e autoridade delimitada, sem promover evidência histórica a validação científica definitiva.
@@ -132,3 +158,248 @@ Use `não especificado` quando a fonte não informar versão, data, responsável
 | `DOC-RAW-014` | `HISTORICO_IMUTAVEL` | Evidência histórica de UX; autoridade depende de aprovação explícita de UX, não identificada nem avaliada nesta etapa. | Histórico imutável. | não especificado | não especificado | 2026-08-24; metadados, identificação estrutural e checksum | `SHA-256:80f2a41632c401a041503d4a001cd498e5e5ff1f8bb15bd47eb6c9151e31ac1b` | 5826 bytes; Markdown (`text/plain`) legível; título interno declarado. Origem, versão documental, data documental e responsável não especificados; nenhuma aprovação ou substituição explicitamente declarada foi identificada na leitura controlada. |
 
 Novos registros, versões, relações de substituição e checksums só devem ser acrescentados quando verificados. O histórico anterior deve ser preservado.
+
+
+## Registro da reconciliação CRI — 2026-10-10
+
+Acrescentados [PLAN-CRI-002](../plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md), estado EM_ANDAMENTO, e [matriz CRI](../plans/active/contas-rascunhos-imagens/matriz-de-estado.md), evidência/coordenação sem autoridade científica. Origem: pedido de execução v1.0 e respostas explícitas do usuário de 2026-10-10; responsável humano não especificado. Os 14 documentos de PLAN-CRI-001 receberam estado atual primeiro e registro de 2026-10-03 preservado. Nenhum arquivo de docs/raw modificado; inclusão não promove propostas históricas.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+Registrados artefatos vivos specs/015-environmental-drafts/** (spec/plan/tasks/modelo/contratos/evidências) e docs/operations/environmental-drafts-runbook.md. Origem: aprovação explícita PD-CRI-005/006 em 2026-10-10; evidência de engenharia local, sem autoridade científica ou encerramento de gates remotos.
+
+
+## Artefatos da entrega local 016 — 2026-10-10
+
+Registro adicional sem renumerar identificadores históricos: specs/016-area-covers/
+(spec/plan/tasks/research/data-model/contracts/quickstart/checklists/evidências)
+e docs/operations/area-covers-runbook.md são artefatos atuais de implementação
+local, com proveniência de decisão identificada; não são homologação nem contrato
+científico. A matriz CRI concentra estado. [Evidências](../../specs/016-area-covers/implementation-evidence.md),
+[runbook](../operations/area-covers-runbook.md). Responsável operacional não especificado.
+
+
+## Handoff consolidado CRI — 2026-10-10
+
+[Handoff](../plans/active/contas-rascunhos-imagens/handoff.md) e
+[inventário](../plans/active/contas-rascunhos-imagens/arquivos-da-entrega.md)
+registram os SHAs funcionais reais, bases/branches, resultados desta execução,
+recursos preservados e passos remotos não autorizados. Estado global
+AGUARDANDO_REVISAO; não são relatórios científicos nem aceite humano presumido.
+
+## Revisão focal posterior CRI — 2026-10-10
+
+Registrados [relatório focal](../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md),
+[evidências novas](../reports/audits/2026-10-10-cri-local-validation.json) e
+[manifesto de bytes](../reports/audits/2026-10-10-cri-local-manifest.json).
+Origem: prompt focal v1.0 indicado pelo usuário; hash/localizador no relatório.
+EVIDENCIA_IMPLEMENTACAO e RECOMENDACAO de engenharia, sem autoridade científica
+ou homologação. Plano focal equivalente mantido em PLAN-CRI-002; oito commits
+preservados. Erratas não reescrevem os JSON ou resultados históricos.
+
+## Release Candidate CRI para revisão — 2026-10-10
+
+FATO_DOCUMENTADO: pedido do usuário autoriza a publicação GitHub sem integração
+ou operação produtiva. Registrados [PLAN-RC-001](../plans/active/preparacao-release-candidate-cri.md),
+[pacote RC](../releases/2026-10-10-cri-rc/readme.md), release-notes, integration-guide,
+production-update-runbook, migration-runbook, review-checklist e publication-evidence.json.
+EVIDENCIA_IMPLEMENTACAO registra preservação/publicação; RECOMENDACAO identifica
+roteiros futuros, sem autoridade científica ou aceite humano. Responsáveis por
+review/banco/deploy/mail/cleanup: não especificado. O handoff anterior é preservado.
+
+## Correções e sincronização da RC — 2026-10-13
+
+Origem: pedido posterior do usuário, com autorização explícita somente para
+merges internos entre branches de revisão. Registrados o
+[plano Spec Kit da pilha](../../specs/015-environmental-drafts/rc-stack-plan.md),
+[evidências de hidratação](../../specs/015-environmental-drafts/hydration-evidence.md),
+[evidências RC-UI-001](../../specs/016-area-covers/rc-ui-001-evidence.md),
+[prontidão cumulativa](../releases/2026-10-10-cri-rc/rc-readiness-20261013.md),
+[runbook CI](../operations/rc-review-ci-runbook.md) e
+[acompanhamento dos checks](../reports/audits/2026-10-13-cri-rc-ci-followup.md).
+Logs/JSON/manifestos ficam nos conjuntos de evidência ligados por esses documentos.
+
+EVIDENCIA_IMPLEMENTACAO: TDD, preservação de11 originais, propagação por merges,
+99d8363 original uma vez, gates locais/CI executados e FAILs preservados. A nova
+documentação não reescreve os snapshots históricos da publicação/revisão inicial.
+RECOMENDACAO técnica/operacional é limitada à revisão e reproduções locais;
+não tem autoridade científica ou valor de homologação real. Estudantes receberam
+solicitação de revisão; aprovação e operadores produtivos permanecem pendentes.
+Main/development, dados existentes e bloqueios de deployment preservados.
+
+## Preparação da incorporação do frontend — 2026-10-18
+
+Origem: pedido de Pedro nesta sessão, com preparação documental e commit local
+autorizados, sem implementação ou publicação. Registrado o acompanhamento
+[PLAN-FRONT-PREP-20261018](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md),
+com [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md),
+[revisão dos PRs](../plans/active/preparacao-incorporacao-frontend-20261018/revisao-dos-prs.md),
+[textos não publicados](../plans/active/preparacao-incorporacao-frontend-20261018/textos-de-encerramento.md),
+[evidências estruturadas](../plans/active/preparacao-incorporacao-frontend-20261018/evidencias.json),
+[plano proposto](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md)
+e [prompt autossuficiente](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md).
+
+Classificações: EVIDENCIA_IMPLEMENTACAO para Git/código/testes; INFERENCIA para
+prontidão técnica; RECOMENDACAO para sequência futura/ações de PR; DECISAO_CONFIRMADA
+somente para a escolha do login por Pedro em resposta nesta sessão. Preparação
+executada por Pedro com seu Codex; execução futura de incorporação por outro
+desenvolvedor, sem transferir a ele as pendências de gestão dos PRs. Nenhum
+registro histórico foi apagado nem homologação real/científica declarada.
+
+## Continuação: conclusão dos PRs CRI — 2026-10-18
+
+Origem: novo pedido expresso de Pedro autorizando gestão de #2–#7 e publicação da
+preparação em branch/PR próprios, sem implementar frontend ou integrar o PR novo.
+Atualizados relatório, revisão dos PRs, acompanhamento, plano e prompt no pacote
+acima; rascunhos de encerramento mantidos como históricos. Acrescentado
+[conclusao-dos-prs.json](../plans/active/preparacao-incorporacao-frontend-20261018/conclusao-dos-prs.json),
+com SHAs/pais/árvores, review efetivamente registrada, comentários, checks e28 paths.
+
+EVIDENCIA_IMPLEMENTACAO: #6/ebbd9cb e #7/e17f64a integrados em development,26 blobs
+da revisão e dois documentos do parecer preservados; #2–#5 fechados sem novo merge.
+Descrição antiga de6/7 preservada integralmente; CHANGES_REQUESTED/thread4 mantidas.
+FATO_DOCUMENTADO: Pedro informou revisão de Luciano, sem criar evento em nome dele.
+DECISAO_CONFIRMADA: autorização de Pedro nesta continuação para essas operações;
+não confere aprovação científica/produtiva. Commit originaldcc54e1 e nove arquivos
+mantidos; conflito aditivo do inventário resolvido preservando ambas as seções.
+Publicação autorizada da branch docs/preparacao-frontend-20261018 e
+[PR8 aberto para development](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/8),
+sem integração automática; revisão do plano e da documentação permanece com Pedro.
+
+## Login integrado e execução autorizada das fases 2 e 3 — 2026-10-18
+
+Origem: pedido explícito de Pedro “sincronização, merges #8/#9 e handoff das fases
+2 e 3”, anexado ao seu Codex em18/10/2026. `DECISAO_CONFIRMADA`: integrar #8/#9,
+publicar novo handoff e autorizar o outro desenvolvedor a implementar/validar/
+commitar/push/abrir ou atualizar PRs das duas fases, sem nova confirmação normal.
+Fases4+ continuam propostas; aceite humano/merge pertencem ao mantenedor.
+
+| Artefato | Estado e alcance atual |
+|---|---|
+| [Prompt das fases2/3](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md) | Novo handoff principal autossuficiente, execução das duas fases autorizada; sem implementação nesta preparação |
+| [Plano de incorporação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md) | Login concluído; fases2/3 autorizadas; PRs empilhados permitidos; histórico e fases4+ como proposta preservados |
+| [Acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md) e [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md) | Continuação da sincronização/revisão/merges/publicação e limites de validação |
+| [Prompt anterior](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao.md) | Histórico da fase1 concluída, com apontador ao novo handoff; corpo original preservado |
+| [Evidência da integração](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-login-e-handoff-fases-2-3.json) | Registro sanitizado de heads/merges/review/CI/equivalência/branches, separado dos JSON históricos |
+
+`EVIDENCIA_IMPLEMENTACAO`: #8 mergecf7f086 e #9 mergeafef5db em development;
+APPROVED de Pedro no head5503082 registrado por Codex autorizado, review5564336503.
+CI exato15 gates PASS; ressalva histórica IHFR292dd95 preservada, causa não
+demonstrada. Sem nova bateria funcional local, homologação real/científica ou
+operação manual de deploy. Mainbeba96f e branches anteriores preservadas.
+PROJECT_CONTEXT recebeu adendo navegacional. Não houve nova decisão técnica
+global ou reclassificação de pendências que exigisse editar TECH_DECISIONS.md
+ou PENDING_DECISIONS.md. Registros antigos permanecem como cortes históricos.
+
+Publicação deste adendo: [PR10](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/10) aberto para development,
+branch docs/handoff-frontend-fases-2-3; sem merge nesta preparação.
+
+## Contas/workspace integrados e handoff das fases 4/5 — 2026-10-19
+
+Origem: pedido anexado de Pedro nesta sessão em19/10/2026, “Revisão e continuação
+— PRs #10/#11/#12 e fases 4/5”. `DECISAO_CONFIRMADA`: integrações/retarget/reviews
+cabíveis e publicação documental autorizados; executor autorizado a concluir as
+duas fases seguintes com validação/commits/push/PRs sem nova confirmação normal.
+Merge futuro e aceite humano do mantenedor; nenhuma implementação4/5 nesta preparação.
+
+| Artefato | Estado e alcance deste adendo |
+|---|---|
+| [Prompt fases4/5](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md) | Handoff autossuficiente; laboratório/dashboard/histórico/membros e áreas/capa; execução de ambas autorizada |
+| [Evidência da integração](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-contas-workspace-e-handoff-fases-4-5.json) | SHAs/pais/árvores/reviews/CI15 gates por head, equivalência cumulativa e limites; JSONs anteriores intactos |
+| [Plano desta continuação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-4-5.md) | Execução e preservação conforme PLANS.md, sem duplicar spec funcional |
+| [Plano global](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md), [acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md) e [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md) | Adendos com integração2/3, autorização4/5 e alcance de validação |
+| [Prompt fases2/3](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-2-3.md) | Execução entregue; apontador ao novo prompt; texto original preservado |
+| PROJECT_CONTEXT.md | Adendo navegacional; cortes anteriores preservados |
+
+`EVIDENCIA_IMPLEMENTACAO`: #10 merge1956a3e, #11 mergef0333fd e #12 mergec33bf50
+em development; retarget12 para development antes de integrar. Reviews assistidas
+de Pedro5566561057/5566567231 nos heads exatos; sem autoaprovação10. CI15/15 PASS
+por head8cacfc9/d555f9e e E2E100/120; oito diferenças documentais entre o head12
+validado e a integração final, produto/testes/configuração idênticos. Main e
+branches preservadas. Sem nova suíte local, aceite visual manual ou causa provada
+dos FAILs históricos. Não surgiu decisão técnica global ou reclassificação que
+exigisse editar TECH_DECISIONS.md/PENDING_DECISIONS.md. docs/raw/** intacto.
+
+Publicação confirmada: [PR documental13](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/13) aberto para development,
+branch docs/handoff-frontend-fases-4-5; prompt pode ser usado sem aguardar merge.
+
+## Integração13–16 e handoff6/7 — 2026-10-20
+
+Origem: pedido anexado de Pedro “Integração dos PRs13–16 e handoff das fases 6 e 7”,
+de 20/10/2026. `DECISAO_CONFIRMADA`: execução futura de ambas autorizada com
+validação/commits/push/PRs; merge futuro e aceite humano com mantenedor.
+
+| Artefato | Estado e alcance |
+|---|---|
+|[Prompt 6/7](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-6-7.md)|Handoff autossuficiente para Coletas e Dados ambientais/drafts; implementação futura|
+|[Plano da continuação](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-6-7.md)|Preparação transversal conforme PLANS.md; sem duplicar spec funcional|
+|[Recibo JSON](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-fases-4-5-correcao-022-e-handoff-fases-6-7.json)|Merges13–16, pais/árvores, bases/heads, reviews reais, checks/journals/equivalência e limites|
+|[Plano global](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-incorporacao.md), [acompanhamento](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-acompanhamento.md), [relatório](../plans/active/preparacao-incorporacao-frontend-20261018/relatorio-de-prontidao.md)|Estado vigente6/7 por adendo; histórico preservado|
+|[Prompt 4/5](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-4-5.md)|Execução entregue; novo destino acrescentado sem apagar instrução móvel/falhas|
+|PROJECT_CONTEXT.md|Apontador à execução 6/7 e corte integrado; estados antigos históricos|
+
+`EVIDENCIA_IMPLEMENTACAO`: development 24be57f, produto/testes/configuração iguais
+a b85edd8 com nove deltas documentais13; main beba96f preservada. Reviews técnicos
+assistidos de Pedro 5581872118/5581887397/5581901183 nos heads exatos; CI 15 PASS dos
+heads14/15/16, sem alegar CI de merge. Sem nova suíte funcional local ou aceite
+visual/manual. Falhas históricas e qualificadores IHFR preservados. docs/raw/**,
+TECH_DECISIONS.md e PENDING_DECISIONS.md intactos: nenhuma decisão material nova
+nesses registros. Publicação/validação final serão acrescidas em adendo.
+
+Publicação deste handoff: [PR documental17](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/17) aberto para development,
+branch docs/handoff-frontend-fases-6-7, sem autoaprovação ou auto-merge.
+Preparação concluída; documentação aguarda revisão do mantenedor.
+
+
+## Adendo vigente — fase6 integrada, fase7 pronta e handoff8/9 — 21/10/2026
+
+DECISAO_CONFIRMADA: Pedro, no pedido desta continuação em21/10/2026, autorizou revisão/integração, reservando o último merge funcional ao seu clique; autorizou próximas duas fases e investigação dos históricos após fase10/consolidação visual.
+
+EVIDENCIA_IMPLEMENTACAO: #17 mergeafde5b0; #18 fase6/Spec023 mergeb7401f1, review técnico assistido5595140337 porPedro. **#19 fase7/Spec024 permanece aberto, Ready, base development, head9e11eca, review técnico assistido5595147901 e estado clean; merge não executado.** Development remota b7401f1; main remota beba96f. Estado local não verificado.
+
+CI dos heads18/19:15gates PASS por head, runs39477040095/39478339091 (tentativa1), E2E182/190, Integration229/231, HTTPS2 e IHFR6. Logs conferidos;25testes focais de apresentação/foco/incerteza passaram com transformação temporária TypeScript→.mjs. Sem nova suíte local completa, aceite humano de produto/acessibilidade, dispositivo físico ou validação científica. Merge18 difere do head18 validado só nos nove documentos herdados de17.
+
+Prompt autoriza executar **fase8 IHFR e fase9 mapa/administração**, validar/commitar/push/abrir todos os PRs sem confirmação de rotina; futuros merges ficam com o mantenedor. O início da8 depende da confirmação do merge manual19. Handoff pode ser lido na branch docs/handoff-frontend-fases-8-9 antes do merge documental. Não tratar7 como integrada nem executar10 nesta rodada.
+
+Históricos inconclusivos ficam **agendados após fase10 e consolidação visual**, com evidências preservadas; regressão material atual não é adiada. Sem declaração de causa/resolução definitiva, deploy, operação real de banco/provedores ou promoção para main.
+
+Referências: [prompt8/9](../plans/active/preparacao-incorporacao-frontend-20261018/prompt-de-execucao-fases-8-9.md), [plano](../plans/active/preparacao-incorporacao-frontend-20261018/plano-de-continuacao-fases-8-9.md), [investigações](../plans/active/preparacao-incorporacao-frontend-20261018/investigacoes-pos-consolidacao-visual.md) e [recibo](../plans/active/preparacao-incorporacao-frontend-20261018/integracao-fase-6-e-prontidao-fase-7-handoff-fases-8-9.json).
+
+
+## Atualização vigente — integração verificada e continuação pós-consolidação — 21/10/2026
+
+DECISAO_CONFIRMADA: pedido atual de Pedro nesta conversa autoriza integrar20, conferir brevemente os merges recentes e preparar próximas duas etapas, incluindo correções necessárias.
+
+EVIDENCIA_IMPLEMENTACAO: #20 integrado em b1f83cfa8e52dd25c6246c584a576553c5e9e131, sem autoaprovação. #19 e frentes21–24 já constam integradas; a RC25 e44711d foi incorporada por5f6266b com árvore idêntica à candidata validada. Os heads21–24 são ancestrais da RC. Após20, apenas dez diferenças documentais; produto/testes/configuração equivalentes à RC. Development remotab1f83cf, mainremotabeba96f; máquina local não verificada.
+
+Logs do run39600889091/tentativa1/job119224780858 conferidos:15gates únicos PASS/exit0, E2E220, Integration231, HTTPS2 e IHFR6; resposta Codex do head sem achados. Checagem breve de integração, sem nova suíte local, nova auditoria completa ou aceite humano/científico. Não foi encontrado bloqueio técnico novo nesse escopo.
+
+RECOMENDACAO materializada no novo prompt: A—investigação/correções de defeitos demonstrados; B—homologação/preparação da entrega. As dez fases visuais têm implementação integrada; não há novas fases visuais11/12. Históricos inconclusivos continuam sem encerramento causal. O relatório25 registra403Vercel e aceites humanos/operacionais pendentes; o provedor não foi reconsultado nesta preparação. A autorização operacional relatada na RC deve ter origem/escopo comprovados no contexto que a executar, sem reabrir consentimento de rotina já comprovado nem fabricar autoridade.
+
+O handoff prepara execução técnica posterior à consolidação e não declara aceite humano da copy/produto/acessibilidade. Não houve deploy solicitado, alteração de main, banco/provedor real ou comunicação a participantes nesta preparação. Merges futuros ficam com o mantenedor; texto anterior preservado como histórico.
+
+Próxima execução: [prompt pós-consolidação](../releases/2026-10-21-frontend-rc/prompt-pos-consolidacao.md) e [recibo da conferência](../releases/2026-10-21-frontend-rc/verificacao-integracao-e-handoff-pos-consolidacao.json).
+
+## Adendo vigente — pacote investigativo local HF-INV — 23/10/2026
+
+`EVIDENCIA_IMPLEMENTACAO`: missão `HF-INV-20261023-01-LOCAL01`, base
+`c4adfb379e5dc78f27f31b91edbd13f43228d9f9`, branch própria
+`fix/investigacoes-intermitentes-20261023-local01`, estado `AGUARDANDO_REVISAO`.
+Os textos anteriores permanecem como histórico. Origem da autorização: pedido
+explícito do usuário para esta missão na sessão de23/10/2026.
+
+| Documento/recorte novo | Papel e limite |
+|---|---|
+| [Plano único](../plans/active/investigacoes-intermitentes-20261023/execucao-local-multiagente.md) | Coordenação transversal PLAN/EXECUTE/REVIEW; sem spec fictícia para defeito não demonstrado |
+| [Índice do pacote](../releases/2026-10-23-hf-inv-local01/readme.md) e [relatório](../releases/2026-10-23-hf-inv-local01/final-report.md) | Entrada navegável, proveniência e critério de conclusão técnica |
+| [Matriz dos incidentes](../releases/2026-10-23-hf-inv-local01/incident-matrix.md) | Nove IDs, contraste entre histórico e reprodução atual, estados causais separados |
+| [Ambiente/protocolos](../releases/2026-10-23-hf-inv-local01/environment-and-protocols.md) e [ledger](../releases/2026-10-23-hf-inv-local01/agent-ledger.json) | Isolamento e delegação nativa real; metadados de runtime não expostos permanecem assim classificados |
+| [NAV4](../releases/2026-10-23-hf-inv-local01/nav4/readme.md), [IHFR/concorrência](../releases/2026-10-23-hf-inv-local01/ihfr/results.md) e [navegação/OBS](../releases/2026-10-23-hf-inv-local01/navigation/report.md) | Fontes executadas, recibos, controles negativos e manifestos estreitos |
+| [Validação](../releases/2026-10-23-hf-inv-local01/validation.md), [revisões](../releases/2026-10-23-hf-inv-local01/review.md) e [handoff](../releases/2026-10-23-hf-inv-local01/operational-handoff.md) | Alcance dos testes/pareceres e pendências operacionais sem envio de e-mail |
+
+Os quinze gates oficiais e Codex remoto do HEAD final são NOT_RUN neste
+fechamento estático; os recibos posteriores serão vinculados por SHA na PR,
+sem herdar PASS histórico. Não há nova decisão científica/técnica de produto
+ou novo owner humano: TECH_DECISIONS e PENDING_DECISIONS não são alterados.
+`docs/raw/**` permanece imutável; piloto/G3–G5 sem homologação por esta entrega.

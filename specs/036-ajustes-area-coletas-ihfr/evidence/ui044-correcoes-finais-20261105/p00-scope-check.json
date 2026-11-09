@@ -1,0 +1,30 @@
+{
+  "executor": "/root",
+  "at": "2026-11-05T21:55:50.736260-03:00",
+  "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "scope_check": "PASS",
+  "changed_technical_paths": [
+    ".github/workflows/rc-review.yml",
+    "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx",
+    "src/components/areas/area-collections.tsx",
+    "src/components/collections/collection-detail-layout.tsx",
+    "src/components/collections/collection-detail.tsx",
+    "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx",
+    "tests/e2e/hf-ui036-area-collections.spec.ts",
+    "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "tests/e2e/ihfr-diagnosis-read.spec.ts",
+    "tests/e2e/support/ui044-final-corrections.ts",
+    "tests/unit/hf-ui044-final-corrections.test.tsx",
+    "vercel.json"
+  ],
+  "extra_paths": "only Spec036 current-cycle artifacts",
+  "historical_task_statuses_preserved": 67,
+  "o0_immutable": "PASS",
+  "diff_check": "PASS",
+  "package_lock_api_science_schema_auth_and_guards_unchanged_except_authorized_names": "PASS by changed-path allowlist and semantic guard receipt",
+  "runtime_gates": "NOT_RUN at prepublication",
+  "worktrees": "worktree /workspace/scratch/100be1d812fa/repo\nHEAD 7bae1f87cb8d6a708b7c4de0b990e82e5a503369\nbranch refs/heads/fix/ui044-correcoes-finais-20261105\n\nworktree /workspace/scratch/100be1d812fa/wt-p01\nHEAD 7bae1f87cb8d6a708b7c4de0b990e82e5a503369\ndetached\n\nworktree /workspace/scratch/100be1d812fa/wt-p02\nHEAD 7bae1f87cb8d6a708b7c4de0b990e82e5a503369\ndetached\n\nworktree /workspace/scratch/100be1d812fa/wt-p03\nHEAD 7bae1f87cb8d6a708b7c4de0b990e82e5a503369\ndetached\n\n",
+  "ignored_file_count": 35907,
+  "locks": [],
+  "cleanup": "NONE; all worker and historical artifacts preserved"
+}

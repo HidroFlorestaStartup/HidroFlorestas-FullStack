@@ -1,0 +1,302 @@
+{
+  "capturedUtc": "2026-10-17T18:06:44.207Z",
+  "head": "f38d43914a01686a376ea1aabf2e96eab1fd1400",
+  "tree": "e0a67d3b76ff46cbfb15b951e484e59efcd0be0a",
+  "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+  "openapiSha256": "32e5b79cee8e4143f875cc097134a4bf5ff2c5b72d2d5fcadb80e10ebe29aa01",
+  "records": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:53:43.799Z",
+      "endedUtc": "2026-10-17T17:54:23.040Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "regressionsetup-1792259623799.log",
+      "logSha256": "42789584f7932284663f3b8df5f4b5e4bdc225614ed19cbbbf8ebf0706190c5b",
+      "summary": [
+        "Accounts database accounts_development: 14 migrations verified; no account data imported.",
+        "Accounts database accounts_regression_test: 14 migrations verified; no account data imported."
+      ]
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:54:23.379Z",
+      "endedUtc": "2026-10-17T17:54:51.469Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "unit-1792259663379.log",
+      "logSha256": "d168f326458b3de8ce7305ccc368ff9b392d080414f0d3ad9dc93a09df6bbf3f",
+      "summary": [
+        "  ✔ specifies UUID idempotency, API Location, no-store and closed errors (14.8127ms)",
+        "  ✔ keeps idempotency isolated per author and sanitizes unexpected store errors (0.5339ms)",
+        "✔ same verified input is deeply deterministic and incompatible manifests fail closed (0.8164ms)",
+        "✔ loads only the hash-verified v0.1.1 manifest as active (1.1792ms)",
+        "✔ IMP-006 diagnostic error preserves cause and SQLSTATE without exposing connection (0.411ms)",
+        "✔ unexpected migration connection error retains its cause (0.8208ms)",
+        "✔ missing browser response is distinct from an HTTP error (1.2005ms)",
+        "✔ HTTP errors do not trigger missing-response recovery (0.3513ms)",
+        "ℹ tests 296",
+        "ℹ pass 296",
+        "ℹ fail 0",
+        "✔ MAIL-FR-002/TEST-001 strict lazy config for 465/587 and no secret in errors (3.0955ms)",
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:54:51.833Z",
+      "endedUtc": "2026-10-17T17:56:25.647Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "integration-1792259691832.log",
+      "logSha256": "bcf36b332f7c29ed60b1c00fb5353437aa38c7e3870660c89633e362864e343a",
+      "summary": [
+        "✔ accounts invalid verification attempts survive errors, exhaust once and cancel encrypted mail (474.3347ms)",
+        "  ✔ keeps user, audit and error payloads allowlisted (3.6418ms)",
+        "✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (0.2015ms)",
+        "  ✔ returns a generic 500 for internal results and thrown errors (0.771ms)",
+        "  ✔ maps authentication, authorization, not-found, read-only, conflict and internal errors (1.6509ms)",
+        "✔ sanitizes auth, access, cursor and internal errors (1.8242ms)",
+        "✔ sanitizes every error and applies no-store on both methods (3.1515ms)",
+        "✔ maps access errors and sanitizes internal failures on both routes (2.2452ms)",
+        "  ✔ returns sanitized authentication, authorization, and conflict errors (1.3401ms)",
+        "ℹ tests 215",
+        "ℹ pass 215",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:56:25.980Z",
+      "endedUtc": "2026-10-17T17:56:38.118Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "migration-1792259785980.log",
+      "logSha256": "fe653e988e124db63b836d3fbaad4e8051a08211145339c27c8aca0db8790836",
+      "summary": [
+        "ℹ tests 37",
+        "ℹ pass 37",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:56:38.423Z",
+      "endedUtc": "2026-10-17T17:56:41.025Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "contract-1792259798423.log",
+      "logSha256": "e211f01d78921e4c0fa98299670d0c943b54828b01b1c8b179bbecd5fa7fecf3",
+      "summary": [
+        "✔ real HTTP responses conform to resolved OpenAPI schemas for eligibility, reads, lifecycle and errors (769.2346ms)",
+        "ℹ tests 6",
+        "ℹ pass 6",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:56:41.354Z",
+      "endedUtc": "2026-10-17T17:56:50.805Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "r1-1792259801354.log",
+      "logSha256": "8485ea2c815425f3ec6c5dc8e6b4b8a7013c1dda443627ae87e0e55b56660fe0",
+      "summary": [
+        "ℹ tests 17",
+        "ℹ pass 17",
+        "ℹ fail 0"
+      ]
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:56:51.104Z",
+      "endedUtc": "2026-10-17T17:58:00.676Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "build-1792259811103.log",
+      "logSha256": "c10a6ab2559d6c6defc767a38a5ac0a0fe21d46dc13256a0302ed67fc7c4d83c",
+      "summary": []
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:58:00.977Z",
+      "endedUtc": "2026-10-17T17:58:03.338Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "typecheck-1792259880977.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "summary": []
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T17:58:03.675Z",
+      "endedUtc": "2026-10-17T18:00:18.678Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "lint-1792259883674.log",
+      "logSha256": "c046e875a13e29b2adf04c0be50610c157160bbd885ac7929b3e3b24cb9aeec4",
+      "summary": [
+        "  10:3  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars",
+        "  1:10  warning  'useAuth' is defined but never used  @typescript-eslint/no-unused-vars",
+        "  12:3  warning  'className' is defined but never used  @typescript-eslint/no-unused-vars",
+        "✖ 3 problems (0 errors, 3 warnings)"
+      ]
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:00:18.997Z",
+      "endedUtc": "2026-10-17T18:03:10.754Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "e2e-1792260018997.log",
+      "logSha256": "97a74b5eeb081aa46a146e0b2cd81aee0e0846cce477dc0a6b187fa008872458",
+      "summary": [
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "  ok 72 [chromium] › tests\\e2e\\user-administration-status.spec.ts:5:5 › status confirmation is keyboard-operable and audited (2.1s)",
+        "[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)",
+        "  72 passed (2.8m)"
+      ]
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:03:11.028Z",
+      "endedUtc": "2026-10-17T18:03:40.662Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "https-1792260191028.log",
+      "logSha256": "bc1dfdc3f4d676e1d3139907adb3ceae4d936463441092e506593ec6ef8719f8",
+      "summary": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "  2 passed (9.8s)"
+      ]
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:03:40.977Z",
+      "endedUtc": "2026-10-17T18:03:50.853Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "deletion-1792260220977.log",
+      "logSha256": "f7a22da2395ec1c3e9851294eabf32c364cd457a01936d52ea083c34a335ee00",
+      "summary": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "  3 passed (5.2s)"
+      ]
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:03:51.137Z",
+      "endedUtc": "2026-10-17T18:04:29.413Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "ihfr-1792260231136.log",
+      "logSha256": "b1c3274ca07b9e7c39416d5000510d6865f9a29c1d2a86ea81a755983f149342",
+      "summary": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "    Error Context: test-results\\ihfr-diagnosis-manage-OWNE-e2786-recover-with-one-stable-key\\error-context.md",
+        "  5 passed (24.6s)"
+      ]
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:05:08.354Z",
+      "endedUtc": "2026-10-17T18:05:44.532Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "ihfr-1792260308353.log",
+      "logSha256": "6343881e0bb8cdb6ac52859552f5201a65e91c85906c0f731d6e351dd8a12b64",
+      "summary": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "  6 passed (22.5s)"
+      ]
+    },
+    {
+      "gate": "Bootstrap",
+      "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:05:44.910Z",
+      "endedUtc": "2026-10-17T18:05:49.162Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "bootstrap-1792260344909.log",
+      "logSha256": "4b3a2b83bdbf1cf31549b78bdd2b1723497fa7d96415c5fdf23317c3407c9deb",
+      "summary": []
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "snapshot": "71d6a8f92d76c7131cdae6817c5715ed12a54284f4b3b45e8ec1d5c939d32e13",
+      "startedUtc": "2026-10-17T18:05:49.494Z",
+      "endedUtc": "2026-10-17T18:05:50.058Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "schemaaudit-1792260349493.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "summary": []
+    }
+  ]
+}

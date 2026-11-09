@@ -1,0 +1,95 @@
+IMP-006 PostgreSQL is already running.
+✔ CRI-REV-002 transaction retries explicit conflict P2034 (151.0712ms)
+✔ CRI-REV-002 transaction retries explicit conflict P2002 (156.4514ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40001 (129.1072ms)
+✔ CRI-REV-002 transaction retries explicit conflict 40P01 (109.351ms)
+✔ CRI-REV-002 transaction retries adapter commit TransactionWriteConflict (112.2404ms)
+✔ CRI-REV-002 transaction retries a PostgreSQL adapter deadlock (112.4989ms)
+✔ CRI-REV-002 transaction retry remains bounded to three and sanitized (368.7242ms)
+✔ CRI-REV-002 transaction does not retry an arbitrary driver or connection error (1.1005ms)
+✔ CRI-REV-005 waits for bounded contention backoff before starting the next transaction (0.8554ms)
+✔ CRI-REV-005 keeps three attempts and only two backoffs on repeated supported conflicts (0.2737ms)
+✔ CRI-REV-005 never backs off or retries arbitrary failures (0.1421ms)
+IMP-006 schema owned by this run: imp006_test_8ead37e0d9f24986bf5c0ce77df4fc76
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"commit","snapshot":[{"tx":"9358","snapshot":"9358:9358:","pid":12980}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"commit","snapshot":[{"tx":"9360","snapshot":"9360:9360:","pid":12980}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"commit","snapshot":[{"tx":"9362","snapshot":"9362:9362:","pid":12980}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"DriverAdapterError","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable commit conflicts resolve the resulting hourly quota (1413.1474ms)
+IMP-006 schema owned by this run: imp006_test_9f8eb348363a467abefe4f046c4e8071
+{"events":[{"operation":"victim","phase":1,"event":"begin"},{"operation":"victim","phase":1,"event":"commit"},{"operation":"victim","phase":2,"event":"begin"},{"operation":"victim","phase":2,"event":"write","snapshot":[{"tx":"9389","snapshot":"9389:9389:","pid":22628}]},{"operation":"competitor-1","event":"commit"},{"operation":"victim","phase":2,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":3,"event":"begin"},{"operation":"victim","phase":3,"event":"write","snapshot":[{"tx":"9391","snapshot":"9391:9391:","pid":22628}]},{"operation":"competitor-2","event":"commit"},{"operation":"victim","phase":3,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":4,"event":"begin"},{"operation":"victim","phase":4,"event":"write","snapshot":[{"tx":"9393","snapshot":"9393:9393:","pid":22628}]},{"operation":"competitor-3","event":"commit"},{"operation":"victim","phase":4,"event":"error","name":"PrismaClientKnownRequestError","code":"P2034","sqlstate":"40001"},{"operation":"victim","phase":5,"event":"begin"},{"operation":"victim","phase":5,"event":"error","name":"Error","code":"RATE_LIMITED"}],"attempts":10,"jobs":40}
+✔ three real Serializable write conflicts resolve the resulting hourly quota (1013.4302ms)
+IMP-006 schema owned by this run: imp006_test_f614fbef58474d9581af74ece0d32de7
+✔ CRI-REV-002 stale, incompatible and expired replay reject before preset or ticket (1083.8974ms)
+IMP-006 schema owned by this run: imp006_test_d7159de0eda24967b687febe756a68fd
+✔ CRI-REV-002 hourly quota independently rejects without provider I/O (1054.3881ms)
+IMP-006 schema owned by this run: imp006_test_b80332a268764aa69026b642c872f813
+✔ CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (722.8325ms)
+IMP-006 schema owned by this run: imp006_test_fef7fcaf730c40a9802384bf71ccfe2e
+✔ CRI-REV-002 revalidates role during preset without an open transaction (719.8069ms)
+IMP-006 schema owned by this run: imp006_test_8194fd4581fc49de82b942d107fed573
+✔ CRI-REV-002 revalidates membership during preset without an open transaction (941.7325ms)
+IMP-006 schema owned by this run: imp006_test_3129c392474344818f87b66a56c06366
+✔ CRI-REV-002 revalidates laboratory during preset without an open transaction (879.5431ms)
+IMP-006 schema owned by this run: imp006_test_4d4f64ed3953430ba052c6aef3358d16
+✔ CRI-REV-002 revalidates account during preset without an open transaction (1004.9934ms)
+IMP-006 schema owned by this run: imp006_test_f4e20c74b92a4351ad58ca3f378278b8
+✔ CRI-REV-002 revalidates revision during preset without an open transaction (1051.3035ms)
+IMP-006 schema owned by this run: imp006_test_a9ffee147e3f4aa7879a5636ac778be9
+✔ CRI-REV-002 simultaneous eligible requests respect per-user active quota (1195.026ms)
+IMP-006 schema owned by this run: imp006_test_51a44c71888c4f3e932711dc0c6e648a
+✔ CRI-REV-002 simultaneous same-key requests converge and changed preset preserves jobs (947.8614ms)
+IMP-006 schema owned by this run: imp006_test_1845fbf8b0d041a2af2fae6cb8eab326
+✔ CRI-REV-002 concurrent hourly quota is checked again after preset (1079.8927ms)
+IMP-006 schema owned by this run: imp006_test_d570c50e2dda428cb3a12a66b21f38ad
+FIX-022 schedule {"events":[{"label":"left","phase":1,"event":"begin"},{"label":"right","phase":1,"event":"begin"},{"label":"left","phase":1,"event":"body-complete"},{"label":"left","phase":1,"event":"commit"},{"label":"right","phase":1,"event":"body-complete"},{"label":"right","phase":1,"event":"commit"},{"label":"left","phase":2,"event":"begin"},{"label":"right","phase":2,"event":"begin"},{"label":"right","phase":2,"event":"body-complete"},{"label":"left","phase":2,"event":"body-complete"},{"label":"left","phase":2,"event":"commit"},{"label":"right","phase":2,"event":"error","error":{"name":"DriverAdapterError","cause":{"kind":"TransactionWriteConflict","originalCode":"40001"}}},{"label":"right","phase":3,"event":"begin"},{"label":"right","phase":3,"event":"error","error":{"name":"Error","code":"RATE_LIMITED"}}],"counts":{"attempts":10,"jobs":40}}
+✔ FIX-022 committed winner is visible after a real Serializable commit conflict (937.047ms)
+IMP-006 schema owned by this run: imp006_test_93180563913b431885a37c70608dc8fb
+✔ FIX-022 final eligibility read preserves eligible after bounded contention (762.0315ms)
+IMP-006 schema owned by this run: imp006_test_eabaffd6c0c04d1694d00abd7c84d304
+✔ FIX-022 final eligibility read preserves read-error after bounded contention (709.0328ms)
+IMP-006 schema owned by this run: imp006_test_4e0e775faf244a19bdbcf382f76b9712
+✔ FIX-022 final eligibility read preserves revoked after bounded contention (733.8111ms)
+IMP-006 schema owned by this run: imp006_test_7b61918bd09849e38d375b5e7eb083ee
+✔ FIX-022 final eligibility read preserves disabled after bounded contention (723.8099ms)
+IMP-006 schema owned by this run: imp006_test_cd314d5c4e5842849910df16078e2d7d
+✔ FIX-022 final eligibility read preserves stale after bounded contention (756.9941ms)
+IMP-006 schema owned by this run: imp006_test_1b5acb8b05be45ed8d7e24584a2c271b
+✔ FIX-022 final eligibility read preserves replay after bounded contention (797.8716ms)
+IMP-006 schema owned by this run: imp006_test_4228d7fca6eb490b9b5ba8c2284c6d09
+✔ FIX-022 final eligibility read preserves preset-changed after bounded contention (777.8449ms)
+IMP-006 schema owned by this run: imp006_test_b27332170b2049419346711161b21e65
+✔ FIX-022 final eligibility read preserves arbitrary after bounded contention (733.1062ms)
+IMP-006 schema owned by this run: imp006_test_4e468d63db5d418db77f9b9d118f3342
+✔ CRI-REV-002 confirmed replay keeps original ticket despite current revision and full active quota (904.1854ms)
+IMP-006 schema owned by this run: imp006_test_babc983fdda942c4ab81aea652e09701
+✔ CRI-REV-002 retries P2034 in transaction 1 without duplicate jobs or repeated I/O (877.2485ms)
+IMP-006 schema owned by this run: imp006_test_947a03c44ad5451fb19b6fe611114ba4
+✔ CRI-REV-002 retries P2002 in transaction 1 without duplicate jobs or repeated I/O (852.663ms)
+IMP-006 schema owned by this run: imp006_test_e3ca699892954eefafbe5022f8d1e8c3
+✔ CRI-REV-002 retries P2034 in transaction 2 without duplicate jobs or repeated I/O (809.3953ms)
+IMP-006 schema owned by this run: imp006_test_cf0af1e550f542fcafbcdce4e93baea3
+✔ CRI-REV-002 retries P2002 in transaction 2 without duplicate jobs or repeated I/O (832.9262ms)
+IMP-006 schema owned by this run: imp006_test_ed395b4ee4204e50b25edaf8252cac26
+✔ CRI-REV-001 config matrix preserves contextual canEdit and exposes only safe availability (987.4209ms)
+IMP-006 schema owned by this run: imp006_test_cb9fea442da94ff39cf498cdf742be95
+✔ CRI-REV-001 real service HTTP contract has safe availability and preserves disabled content refusal (729.2045ms)
+IMP-006 schema owned by this run: imp006_test_9364910d39f2498cb45c5fffed81b0c5
+✔ CRI-REV-001 policy A preserves persisted cover and blocks all provider operations (939.5171ms)
+IMP-006 schema owned by this run: imp006_test_8c4315649af04405a3a2f022a21d4868
+✔ cover authorization uses current laboratory role, validates context, strips EXIF and revokes read (1121.4035ms)
+IMP-006 schema owned by this run: imp006_test_cff933996adf4a0784169dc757527040
+✔ cover replacement preserves old, retries ambiguous upload, conflicts concurrent revisions and ABA removal (1488.4655ms)
+IMP-006 schema owned by this run: imp006_test_48bf7b75a9ba4975909f8a03de2bda5f
+✔ cleanup proves ownership, preserves referenced assets, retries and revisits late resources including raw (1678.2936ms)
+IMP-006 schema owned by this run: imp006_test_8af3f52ac70141058f80617918bc6b22
+✔ contextual ADMIN edits, global ADMIN has no bypass and live revocation/downgrade blocks finalization (1373.7132ms)
+IMP-006 schema owned by this run: imp006_test_c5b45b341c73427cadbb261e3aa54e35
+✔ app expiry, preset changes and both active/hourly quotas cannot publish or issue unbounded signatures (1399.0486ms)
+IMP-006 schema owned by this run: imp006_test_f488dab430d0444ebe6d8501dbac7338
+✔ permitted uploader account deletion rolls back safely then preserves team reading and owned cleanup (1420.8569ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 39683.9148

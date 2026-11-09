@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-25T04:45:05.719Z",
+  "operation": "read-only count in own synthetic regression database",
+  "matchingPersistedEvents": 2,
+  "distinctEventIds": 2,
+  "rawIdsPublished": false,
+  "sqlParametersPublished": false,
+  "conclusion": "two distinct persisted synthetic audit events, not evidence of one UI row rendered twice"
+}

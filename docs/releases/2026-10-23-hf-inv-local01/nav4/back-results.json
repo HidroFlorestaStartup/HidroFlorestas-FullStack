@@ -1,0 +1,1577 @@
+{
+  "protocolVersion": 4,
+  "records": [
+    {
+      "atUtc": "2026-10-23T21:00:23.039Z",
+      "phase": "identity",
+      "kind": "provenance",
+      "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+      "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+      "trackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sources": [
+        {
+          "path": "scripts/hf-inv-nav4-probe.ts",
+          "bytes": 18693,
+          "sha256": "ec416263d4a2e339e1dcf825eb8b58692070fa08a247d4b7e9dcf65f4e2f12d4"
+        },
+        {
+          "path": "scripts/hf-inv-nav4-local.ps1",
+          "bytes": 4735,
+          "sha256": "cc7818e60bb0198d9d56c68276350ea6a8b42c073d928b3e3873ab1657d29529"
+        },
+        {
+          "path": "docs/releases/2026-10-23-hf-inv-local01/nav4/protocol.md",
+          "bytes": 11414,
+          "sha256": "06e2897cea711ee8fbdbe0c2eaba176e95870de4f0ba059b7f0e31e76c6c11a3"
+        }
+      ],
+      "node": "v24.19.0",
+      "platform": "win32",
+      "osRelease": "10.0.26200",
+      "next": "16.3.8",
+      "playwright": "1.55.1",
+      "postgres": "17.10",
+      "applicationDelta": "none",
+      "cluster": "mission-owned-accounts"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:28.801Z",
+      "phase": "official_back",
+      "kind": "readiness",
+      "result": "PASS",
+      "trustedIngress": "fallback",
+      "applicationPort": 3001,
+      "durationMs": 5366
+    },
+    {
+      "atUtc": "2026-10-23T21:00:32.870Z",
+      "phase": "BACK_direct-document_immediate_1",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "immediate",
+      "attempt": 1,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789230160.2
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789230160.2
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789231532.1
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789231532.1
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789232359.2
+        }
+      ],
+      "events": [
+        {
+          "atMs": 10053,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 10055,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 10667,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 10856,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 10886,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 11175,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 11180,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 11323,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 11407,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 11619,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 11825,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 11828,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 11939,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 11963,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 11999,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 12235,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 12435,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 12442,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:33.104Z",
+      "phase": "BACK_direct-document_immediate_1",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:35.203Z",
+      "phase": "BACK_direct-document_immediate_2",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "immediate",
+      "attempt": 2,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789233385.7
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789233385.7
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789234272.3
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789234272.3
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789234661.7
+        }
+      ],
+      "events": [
+        {
+          "atMs": 12939,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 12942,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 13397,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 13430,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 13460,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 13795,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 13799,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 13942,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 13962,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 14101,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 14128,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 14131,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 14258,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 14281,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 14315,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 14548,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 15013,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 15017,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:35.669Z",
+      "phase": "BACK_direct-document_immediate_2",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:37.422Z",
+      "phase": "BACK_direct-document_immediate_3",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "immediate",
+      "attempt": 3,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789235975.2
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789235975.2
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789236608.9
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789236608.9
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789236933.7
+        }
+      ],
+      "events": [
+        {
+          "atMs": 15541,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 15544,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 15976,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 16009,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 16031,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 16120,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 16124,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 16242,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 16257,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 16373,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 16398,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 16402,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 16504,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 16528,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 16573,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 16746,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 16975,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 16979,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:37.630Z",
+      "phase": "BACK_direct-document_immediate_3",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:39.831Z",
+      "phase": "BACK_direct-document_networkidle_1",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "networkidle",
+      "attempt": 1,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789237872.4
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789237872.4
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789238546.3
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789238546.3
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789239342.5
+        }
+      ],
+      "events": [
+        {
+          "atMs": 17427,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 17430,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 17910,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 17942,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 17970,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 18055,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 18060,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 18167,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 18185,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 18281,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 18806,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 18810,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 18902,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 18924,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 18957,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 19128,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 19362,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 19362,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:40.006Z",
+      "phase": "BACK_direct-document_networkidle_1",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:42.127Z",
+      "phase": "BACK_direct-document_networkidle_2",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "networkidle",
+      "attempt": 2,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789240229.1
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789240229.1
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789240833.3
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789240833.3
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789241649.8
+        }
+      ],
+      "events": [
+        {
+          "atMs": 19782,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 19784,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 20194,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 20232,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 20268,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 20340,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 20343,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 20459,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 20474,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 20581,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 21114,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 21117,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 21201,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 21217,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 21258,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 21481,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 21662,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 21667,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:42.305Z",
+      "phase": "BACK_direct-document_networkidle_2",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:44.375Z",
+      "phase": "BACK_direct-document_networkidle_3",
+      "kind": "back_observation",
+      "flow": "direct-document",
+      "mode": "networkidle",
+      "attempt": 3,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789242527.7
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789242527.7
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/logout",
+          "timeOrigin": 1792789243086.4
+        },
+        {
+          "event": "pagehide",
+          "persisted": false,
+          "pathname": "/login",
+          "timeOrigin": 1792789243086.4
+        },
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789243888.8
+        }
+      ],
+      "events": [
+        {
+          "atMs": 22067,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 22070,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 22436,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 22466,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 22482,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 22588,
+          "kind": "document",
+          "pathname": "/logout",
+          "status": 200
+        },
+        {
+          "atMs": 22591,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 22696,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 22710,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 22825,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 23353,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 23356,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 23449,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 23468,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 23487,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 401
+        },
+        {
+          "atMs": 23646,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 24033,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 24037,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:44.666Z",
+      "phase": "BACK_direct-document_networkidle_3",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:45.844Z",
+      "phase": "BACK_primary-link_immediate_1",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "immediate",
+      "attempt": 1,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789244899.8
+        }
+      ],
+      "events": [
+        {
+          "atMs": 24439,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 24440,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 24798,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 24827,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 24848,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 25017,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 25042,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 25128,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 25167,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 25263,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 25515,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 25519,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:46.171Z",
+      "phase": "BACK_primary-link_immediate_1",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:48.296Z",
+      "phase": "BACK_primary-link_immediate_2",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "immediate",
+      "attempt": 2,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789246387
+        }
+      ],
+      "events": [
+        {
+          "atMs": 25951,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 25954,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 26315,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 26345,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 26371,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 26543,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 26582,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 26719,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 26974,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 27130,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 28102,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 28106,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:48.786Z",
+      "phase": "BACK_primary-link_immediate_2",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:50.436Z",
+      "phase": "BACK_primary-link_immediate_3",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "immediate",
+      "attempt": 3,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789249052.1
+        }
+      ],
+      "events": [
+        {
+          "atMs": 28611,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 28613,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 29082,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 29119,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 29151,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 29317,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 29352,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 29487,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 29744,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 29857,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 29972,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 29977,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:50.642Z",
+      "phase": "BACK_primary-link_immediate_3",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:52.458Z",
+      "phase": "BACK_primary-link_networkidle_1",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "networkidle",
+      "attempt": 1,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789250874.9
+        }
+      ],
+      "events": [
+        {
+          "atMs": 30422,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 30425,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 30838,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 30873,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 30890,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 31062,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 31091,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 31243,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 31768,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 31867,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 31999,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 31999,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:52.642Z",
+      "phase": "BACK_primary-link_networkidle_1",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:54.635Z",
+      "phase": "BACK_primary-link_networkidle_2",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "networkidle",
+      "attempt": 2,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789252864
+        }
+      ],
+      "events": [
+        {
+          "atMs": 32412,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 32413,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 32798,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 32827,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 32854,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 33015,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 33048,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 33176,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 33702,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 33835,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 34411,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 34412,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:55.149Z",
+      "phase": "BACK_primary-link_networkidle_2",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:57.904Z",
+      "phase": "BACK_primary-link_networkidle_3",
+      "kind": "back_observation",
+      "flow": "primary-link",
+      "mode": "networkidle",
+      "attempt": 3,
+      "result": "PASS",
+      "pathname": "/login",
+      "sessionStatus": 401,
+      "cookiePresent": false,
+      "returnedToLogin": true,
+      "privateHeadingVisible": false,
+      "privateMenuInteractive": false,
+      "loginFormVisible": true,
+      "history": [
+        {
+          "event": "pageshow",
+          "persisted": false,
+          "pathname": "/workspace",
+          "timeOrigin": 1792789255461.6
+        }
+      ],
+      "events": [
+        {
+          "atMs": 35051,
+          "kind": "document",
+          "pathname": "/workspace",
+          "status": 200
+        },
+        {
+          "atMs": 35054,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 35688,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 35741,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 35781,
+          "kind": "api",
+          "pathname": "/api/auth/me",
+          "status": 200
+        },
+        {
+          "atMs": 36210,
+          "kind": "navigation",
+          "pathname": "/logout"
+        },
+        {
+          "atMs": 36255,
+          "kind": "api",
+          "pathname": "/api/auth/logout",
+          "status": 200
+        },
+        {
+          "atMs": 36422,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 36968,
+          "kind": "navigation",
+          "pathname": "/workspace"
+        },
+        {
+          "atMs": 37105,
+          "kind": "navigation",
+          "pathname": "/login"
+        },
+        {
+          "atMs": 37448,
+          "kind": "document",
+          "pathname": "/login",
+          "status": 200
+        },
+        {
+          "atMs": 37453,
+          "kind": "navigation",
+          "pathname": "/login"
+        }
+      ]
+    },
+    {
+      "atUtc": "2026-10-23T21:00:58.149Z",
+      "phase": "BACK_primary-link_networkidle_3",
+      "kind": "reload_after_back",
+      "result": "PASS",
+      "pathname": "/login"
+    },
+    {
+      "atUtc": "2026-10-23T21:00:59.021Z",
+      "phase": "teardown",
+      "kind": "auth_fixtures",
+      "result": "PASS"
+    }
+  ]
+}

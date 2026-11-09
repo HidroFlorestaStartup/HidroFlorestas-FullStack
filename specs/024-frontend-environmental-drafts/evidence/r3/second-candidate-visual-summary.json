@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "scope": "Readonly review of official phase 7 v2 PNG/JSON evidence and the first failing gate log; no repository edits or additional browser tests.",
+  "status": "PIXELS_REVIEWED_WITH_QUALIFICATIONS_RUN_FAILED_IHFR",
+  "provenance": {
+    "head": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "runId": 39465856665,
+    "attempt": 1,
+    "jobId": 118776943818,
+    "artifactId": 12287280647,
+    "zipSha256": "c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e",
+    "zipBytes": 20601581,
+    "integrityVerificationOwner": "ux_collections"
+  },
+  "runtimeReceipt": {
+    "reviewed": true,
+    "runConclusion": "failure",
+    "gateCounts": {
+      "pass": 12,
+      "fail": 1,
+      "notRun": 2
+    },
+    "e2e": {
+      "pass": 188,
+      "fail": 0,
+      "skip": 0,
+      "notRun": 0
+    },
+    "ihfr": {
+      "pass": 0,
+      "fail": 6
+    },
+    "notRunGates": [
+      "Bootstrap",
+      "SchemaAudit"
+    ],
+    "codexReviewedExactShaWithoutFindings": true,
+    "overallApprovalAsserted": false
+  },
+  "firstFailure": {
+    "log": "ihfr-1792518732781.log",
+    "gate": "Ihfr",
+    "testFile": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+    "testDeclarationLine": 51,
+    "observedBeforeAssertion": "HTTP 404 on initial collection creation page navigation",
+    "routeTemplate": "/dashboard/laboratories/{laboratory}/areas/{area}/collections/new",
+    "laterSymptom": "Waiting for the collection timezone control timed out after 120000ms.",
+    "allSixNavigationsReturned404": true,
+    "browserDiagnostic": {
+      "ready": "complete",
+      "login": false,
+      "occurrence": false,
+      "regions": []
+    },
+    "ihfrPngPresent": false,
+    "ihfrErrorContextPresent": false,
+    "rootCauseEstablishedByThisReview": false,
+    "geometryOrH4CauseAsserted": false
+  },
+  "inventory": {
+    "pngJsonPairs": 54,
+    "applicationPairs": 53,
+    "collectionApplicationPairs": 26,
+    "environmentalApplicationPairs": 27,
+    "applicationMatrixPairs": 48,
+    "applicationFlowPairs": 5,
+    "syntheticPairs": 1,
+    "allDurable": true,
+    "survivedLaterDeletionAndIhfrInvocations": true,
+    "allHeadsMatch": true,
+    "allPngDimensionsMatchMetadata": true,
+    "allMatrixFilenamesMatchScaleAndViewport": true,
+    "allRootFontSizesMatchScales": true,
+    "allPhysicalDeviceFalse": true,
+    "allFullPageFalse": true,
+    "horizontalOverflowObserved": false,
+    "metadataIssueCount": 0,
+    "bothMatricesComplete": true
+  },
+  "pixelReview": {
+    "applicationImagesCovered": 53,
+    "environmentalImagesDirectlyInspected": 27,
+    "collectionImagesDirectlyInspected": 6,
+    "collectionImagesVerifiedByteIdenticalToAlreadyInspectedPhase6": 20,
+    "syntheticImagesVerifiedByteIdenticalAndExcluded": 1,
+    "finalControlFramesCovered": 42,
+    "finalControlFramesWithCompleteTargetVisible": 42,
+    "collectionSamePngHashes": [
+      "frontend-collections-detail-1440-900-100",
+      "frontend-collections-detail-320-900-100",
+      "frontend-collections-detail-375-900-100",
+      "frontend-collections-detail-768-900-100",
+      "frontend-collections-detail-before-320-900-100",
+      "frontend-collections-detail-before-375-900-100",
+      "frontend-collections-detail-before-844-390-200",
+      "frontend-collections-form-1440-900-100",
+      "frontend-collections-form-320-900-100",
+      "frontend-collections-form-320-900-200",
+      "frontend-collections-form-375-900-100",
+      "frontend-collections-form-768-900-100",
+      "frontend-collections-form-844-390-200",
+      "frontend-collections-review-1440-900-100",
+      "frontend-collections-review-320-900-100",
+      "frontend-collections-review-320-900-200",
+      "frontend-collections-review-375-900-100",
+      "frontend-collections-review-768-900-100",
+      "frontend-collections-review-844-390-200",
+      "frontend-collections-uncertain-result"
+    ],
+    "collectionChangedPngsInspected": [
+      "frontend-collections-detail-320-900-200",
+      "frontend-collections-detail-844-390-200",
+      "frontend-collections-detail-before-1440-900-100",
+      "frontend-collections-detail-before-320-900-200",
+      "frontend-collections-detail-before-768-900-100",
+      "frontend-collections-initial-form"
+    ],
+    "beforeFrameMeaning": "Same run before target positioning; not pre-fix evidence.",
+    "collectionBeforeFramesShowingLoading": [
+      [
+        375,
+        900,
+        100
+      ],
+      [
+        768,
+        900,
+        100
+      ],
+      [
+        1440,
+        900,
+        100
+      ]
+    ]
+  },
+  "environmentalMatrix": [
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "Save, final Declivity input, review and confirmation targets are complete. Draft screenshot masks cross bottom navigation. Form and last-field views have document scroll, moving navigation above blank space and the header outside the viewport."
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete. Draft masks cross bottom navigation; form and last-field document scroll leave navigation above blank space. Review retains the normal header and navigation framing."
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete with header and side navigation visible. Last-field and form screenshots are byte-identical because the same viewport contains both targets; masks cross part of the top header."
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "textScale": 100,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete with header and side navigation visible. Last-field and form screenshots are byte-identical. Review visibly distinguishes zero values from not-informed fields."
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "textScale": 200,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four targets are complete. Declivity label and input are above bottom navigation. The form screenshot has document scroll 217px, no visible header and navigation shifted upward above blank space. Confirmation remains fully visible with normal navigation framing."
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "textScale": 200,
+      "statesInspected": [
+        "draft",
+        "last-field",
+        "form",
+        "review"
+      ],
+      "allFourTargetControlsComplete": true,
+      "observation": "All four target controls are complete below the header. The Declivity input is fully visible but its label is partly clipped above the header boundary; confirmation is complete. Screenshot masks can intersect the header."
+    }
+  ],
+  "environmentalMobileDocumentScroll": [
+    {
+      "capture": "frontend-environmental-form-320-900-100",
+      "scrollY": 287
+    },
+    {
+      "capture": "frontend-environmental-form-320-900-200",
+      "scrollY": 217
+    },
+    {
+      "capture": "frontend-environmental-form-375-900-100",
+      "scrollY": 287
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-100",
+      "scrollY": 106
+    },
+    {
+      "capture": "frontend-environmental-last-field-320-900-200",
+      "scrollY": 0
+    },
+    {
+      "capture": "frontend-environmental-last-field-375-900-100",
+      "scrollY": 122
+    }
+  ],
+  "qualifications": [
+    "The run failed in Ihfr after the full E2E suite passed. Complete frontend matrices cannot turn this into an overall successful run.",
+    "No IHFR screenshot or error-context file was uploaded; absence of those files limits visual diagnosis of the HTTP404 failure.",
+    "These pixels precede the later helper changes. The inherited screenshot-disabled/readiness-order limitations remain applicable even though the Codex review on this phase 7 SHA reported no findings.",
+    "Pink screenshot masks cross navigation in the narrow draft views and parts of the header in other views. They do not prove real field overlap or fully unobstructed navigation pixels.",
+    "Some narrow environmental form and last-field frames visibly have the header outside the viewport and navigation displaced above blank space; the metadata document scroll is preserved, not normalized away.",
+    "The landscape final Declivity input is whole but its label is partly above the sticky header boundary.",
+    "The development indicator overlaps part of the first mobile navigation label in some frames.",
+    "The invalid-expanded flow shows the focused required field and inline error. The review flow distinguishes No from Not informed. The confirmed flow shows the top context only, so the screenshot alone does not show the complete confirmed dataset.",
+    "Visible zero and No states do not prove all false/zero/null/absent/partial or precision round trips. Those contracts depend on the separately recorded assertions and HTTP results.",
+    "Physical-device keyboard, assistive technology and manual accessibility acceptance are not established by these emulated static captures."
+  ],
+  "representativeFrameSuggestions": [
+    {
+      "rank": 1,
+      "capture": "frontend-environmental-last-field-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+      "imageSha256": "81019c5ff0ce0a795d5398ff2532b74d5665ed2084c0d102dabaa21a9de17f35",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+      "metadataSha256": "daf41d4337841c26665ac2de385e88642e5b0365e775f545c3edc3ca684a6646",
+      "reason": "Primary narrow-screen final-field evidence: complete Declivity label and masked input above bottom navigation.",
+      "copyRecommendation": "Historical suggestion only; version the equivalent pixels from the final functional candidate, with its exact provenance."
+    },
+    {
+      "rank": 2,
+      "capture": "frontend-environmental-review-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+      "imageSha256": "f803400f7f31b1779d428a1c5cd95819934c151fdb8646134769a6c24eb95aee",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+      "metadataSha256": "cf55c25ebe821016aa42521c2805e9991be2e99fc6a760f90767ae714151f5bb",
+      "reason": "Primary landscape confirmation evidence: complete final confirmation control below the account header.",
+      "copyRecommendation": "Historical suggestion only; version the equivalent pixels from the final functional candidate, with its exact provenance."
+    },
+    {
+      "rank": 3,
+      "capture": "frontend-environmental-form-320-900-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+      "imageSha256": "ec0eb49b34421b2f27aea24b434e00236865d8812d495f9eeedd9fb63861dc43",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+      "metadataSha256": "ca8d7dcb99d2fb595269b25527d9a1b977eb1ce4945682c9cb2264d41f2f68fa",
+      "reason": "Optional limitation evidence: complete review control together with the observed upward displacement of navigation and blank space below.",
+      "copyRecommendation": "Historical suggestion only; version the equivalent pixels from the final functional candidate, with its exact provenance."
+    },
+    {
+      "rank": 4,
+      "capture": "frontend-environmental-last-field-844-390-200",
+      "filename": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+      "imageSha256": "bde9d67c75fe38420a461e94809938678dd9fac578690dae6acf8f139743144f",
+      "metadataFilename": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+      "metadataSha256": "33e56e008c683cea6cff5dfe906fe2360e6bc24a292a9f062113ac7cf88af8cd",
+      "reason": "Optional landscape qualification: complete final input but partly clipped label; prevents overstating all-label visibility.",
+      "copyRecommendation": "Historical suggestion only; version the equivalent pixels from the final functional candidate, with its exact provenance."
+    }
+  ],
+  "metadataAudit": "second-candidate-visual-metadata.json"
+}

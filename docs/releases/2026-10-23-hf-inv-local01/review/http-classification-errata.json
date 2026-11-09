@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "finding": "CLI-D-P2-002",
+  "createdUtc": "2026-10-23T21:46:54.760Z",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "originalReceiptsPreserved": true,
+  "sources": [
+    {
+      "path": "ihfr/run-evidence.json",
+      "sourceHead": "52cdf6ed28b12dfc0428cdf07f042c63f698da5c",
+      "gitBlob": "fa816a071c3b0c267474e67c7b6a98978b28f264",
+      "bytes": 52244,
+      "sha256": "de9ca85080297781717f9fb26db359848e27cfb236e880efcbbf786f5697788c"
+    },
+    {
+      "path": "review/inv005-historical.json",
+      "sourceHead": "52cdf6ed28b12dfc0428cdf07f042c63f698da5c",
+      "gitBlob": "50caa769445b9689aec72ecaeb6199ad421e591c",
+      "bytes": 5391,
+      "sha256": "1c92647c32d2c445da312a41233fe041d04b06a603bf71542f86548c043a0515"
+    },
+    {
+      "path": "ihfr/results.md",
+      "sourceHead": "52cdf6ed28b12dfc0428cdf07f042c63f698da5c",
+      "gitBlob": "e551e6fd571ff8819d3f4adcaf400afd5687b29c",
+      "bytes": 9538,
+      "sha256": "b380ee9849d95f874340a98451b207c533db5ecdfd2124bb96ce04f2e7810ca1"
+    }
+  ],
+  "correction": {
+    "sourceOfCurrentBHttpRows": "Next server route GET lines, not browser request resourceType",
+    "legacyKindDocument": "non-API route GET; document-or-RSC",
+    "legacyDocument200": "dashboard route GET200 counter; excludes login",
+    "legacyDocument404": "dashboard route GET404 counter, not proof of document404 absence",
+    "exactDocumentVsRscCounts": "NOT_OBSERVED",
+    "currentCounterproof": "B: six UI cases pass per run and route GET200 responses do not distinguish document/RSC; C independently observed two main document200 navigations with expected API lookup404. No claim of fifteen observed documents."
+  },
+  "runs": [
+    {
+      "name": "ihfr-cold-1",
+      "uiCounts": {
+        "passed": 6,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "routeGet200FromLegacyDocument200": 15,
+      "routeGet404FromLegacyDocument404": 0,
+      "api404": 2,
+      "totalLogged": 84,
+      "selectedHttpRows": 47,
+      "resourceTypeOfNonApiRouteGets": "DOCUMENT_OR_RSC_NOT_DISTINGUISHED_BY_SERVER_LOG"
+    },
+    {
+      "name": "ihfr-cold-2",
+      "uiCounts": {
+        "passed": 6,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "routeGet200FromLegacyDocument200": 15,
+      "routeGet404FromLegacyDocument404": 0,
+      "api404": 2,
+      "totalLogged": 84,
+      "selectedHttpRows": 47,
+      "resourceTypeOfNonApiRouteGets": "DOCUMENT_OR_RSC_NOT_DISTINGUISHED_BY_SERVER_LOG"
+    },
+    {
+      "name": "ihfr-controls",
+      "uiCounts": {
+        "passed": 2,
+        "failed": 2,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "routeGet200FromLegacyDocument200": 3,
+      "routeGet404FromLegacyDocument404": 0,
+      "api404": 0,
+      "totalLogged": 8,
+      "selectedHttpRows": 8,
+      "resourceTypeOfNonApiRouteGets": "DOCUMENT_OR_RSC_NOT_DISTINGUISHED_BY_SERVER_LOG"
+    }
+  ],
+  "historicalDocument404": {
+    "count": 6,
+    "classificationUnchanged": true,
+    "browserPredicate": "response.request().isNavigationRequest() && response.frame() === page.mainFrame()",
+    "sourceHead": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "sourcePath": "tests/e2e/support/ihfr-diagnostics.ts",
+    "sessionValidity": "NOT_ESTABLISHED",
+    "cause": "INCONCLUSIVO"
+  },
+  "verification": {
+    "noRuntimeReceiptEdited": true,
+    "noUiTestResultChanged": true,
+    "noProductOrTestChange": true,
+    "priorReviewNotTransferred": true
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 2,
+  "inspector": "/root/operacao_vercel",
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "recovery": {
+    "recoveredAtUtc": "2026-10-22T14:22:05.258248Z",
+    "reason": "Executor scratch was lost during a pause before the closing files were published.",
+    "source": "Same official CI artifact, preserved inspection records and coordinator expected-files inventory.",
+    "preResetFrontendHead": "9eadc2e98ecc07bd792330643e2f6b4296d71f75",
+    "preResetIntegratedLocalHead": "585e2c3e9c0775ed049f8bfccc4c706de3ec16c4",
+    "regeneratedDocument": true,
+    "byteIdentityWithPreviousGeneratedDocumentClaimed": false,
+    "originalFilesRecoveredExactly": 104,
+    "newSuiteExecution": false,
+    "newVisualInspection": false
+  },
+  "recordSource": "Preserved collaboration message from the real independent inspector; reconfirmed during recovery without reopening images.",
+  "openedFiles": [
+    {
+      "path": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-provenance-320-900-text200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-provenance-320-900-text200.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-provenance-320-900-text200.png",
+      "bytes": 67414,
+      "sha256": "79326553f89ab10304ab8a442d5be8a14d7e1407cb95a6dcf54e2120b77112cf",
+      "gitBlobSha": "020acf9bba0f603a4fd3360de8d937969cd3e323",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-provenance-320-900-text200-viewport.json"
+    },
+    {
+      "path": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-320-900-text200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-320-900-text200.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-320-900-text200.png",
+      "bytes": 57498,
+      "sha256": "0fa43a0cbb43b8e9ef41c7ed40c5d9450aae7a36165033e2255222fa5e5d5644",
+      "gitBlobSha": "55eb11c8818f07e17e57cce5bf949fd78b9074d6",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-320-900-text200-viewport.json"
+    },
+    {
+      "path": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-320-900-text200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-320-900-text200.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-320-900-text200.png",
+      "bytes": 60720,
+      "sha256": "81aecb0c7d7ba4632300f65d6a69f935e7a7144e1246885972cb778afe310b13",
+      "gitBlobSha": "de217dbcb229e26a1f404fc0b8c8416bb5c2fba5",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-320-900-text200-viewport.json"
+    },
+    {
+      "path": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-667-375-text200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-667-375-text200.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-667-375-text200.png",
+      "bytes": 41960,
+      "sha256": "ed4ece1fd4277793a5320b51679172db33e8700d89f8b8255895819ce8f993cd",
+      "gitBlobSha": "4c3c42ee0829fe4cf74857949a1586933c6afb6f",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 667,
+        "height": 375,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/4d6210392ee8-r0-n0-frontend-ihfr-qualifiers-end-667-375-text200-viewport.json"
+    },
+    {
+      "path": "frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-320-900-200-confirmation.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-320-900-200-confirmation.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-320-900-200-confirmation.png",
+      "bytes": 52470,
+      "sha256": "977d8d01a8754b54ce5bec9868e56c9f3fc4ca4c2a538cb1e5354ea02db1f512",
+      "gitBlobSha": "e1144072fcc66c31ae128cce012222c281a94f2a",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-320-900-200-confirmation-viewport.json"
+    },
+    {
+      "path": "frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-667-375-200-actions.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-667-375-200-actions.png",
+      "artifactPath": ".accounts-validation/frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-667-375-200-actions.png",
+      "bytes": 30752,
+      "sha256": "377184d3517aa474b615a8f9927044859883ac7d1aa7aa83706dcc5ed5589f94",
+      "gitBlobSha": "86cc5d621d2a60a1a51fd7c52c5e9ed33010d399",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 667,
+        "height": 375,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-ihfr/7fce75c2c3ff-r0-n0-frontend-ihfr-management-667-375-200-actions-viewport.json"
+    },
+    {
+      "path": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-detail-320-900-200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-detail-320-900-200.png",
+      "artifactPath": ".accounts-validation/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-detail-320-900-200.png",
+      "bytes": 38428,
+      "sha256": "5c5a64d5315378884ae9791cef547dac7758c7a05bcfb4c93c2b9f499028543f",
+      "gitBlobSha": "2848d12bc7087d74ba673fec27b5e2df685d3d75",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-detail-320-900-200-viewport.json"
+    },
+    {
+      "path": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-dialog-320-900-200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-dialog-320-900-200.png",
+      "artifactPath": ".accounts-validation/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-dialog-320-900-200.png",
+      "bytes": 56051,
+      "sha256": "0e990ce40140797cb26aa9825176ccc78aeeeb5dfa38a4af924a7fa4623c43c1",
+      "gitBlobSha": "e798a732f39c26a02328d42bd2ee6917b52511c3",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-dialog-320-900-200-viewport.json"
+    },
+    {
+      "path": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-overview-copy-320-900-200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-overview-copy-320-900-200.png",
+      "artifactPath": ".accounts-validation/frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-overview-copy-320-900-200.png",
+      "bytes": 50293,
+      "sha256": "d00f846e514da880e037c99aed70f71882b556426a9abaa05063a3f58f65e5c9",
+      "gitBlobSha": "a59c5ff0a834532213605b0b25f7aa937de22715",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 320,
+        "height": 900,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-user-administration/2b8b9bc50dc1-r0-n0-frontend-user-administration-overview-copy-320-900-200-viewport.json"
+    },
+    {
+      "path": "frontend-user-administration/f1c156ead44d-r0-n0-frontend-user-administration-dialog-844-390-200.png",
+      "repositoryPath": "docs/releases/2026-10-21-post-consolidation/evidence/frontend-ci/frontend-user-administration/f1c156ead44d-r0-n0-frontend-user-administration-dialog-844-390-200.png",
+      "artifactPath": ".accounts-validation/frontend-user-administration/f1c156ead44d-r0-n0-frontend-user-administration-dialog-844-390-200.png",
+      "bytes": 36609,
+      "sha256": "b345d96c048089ffc48ce1e852c0c739d5ec0eed37f0a857247d622b46edd5de",
+      "gitBlobSha": "b531b4dfb5a3a099a838ade5a792bc54d1a3fc37",
+      "recoveryMode": "exact-original-bytes",
+      "matchesPreviousBytesSha256AndGitBlob": true,
+      "matchesArtifactBytes": true,
+      "kind": "original-png",
+      "inspector": "/root/operacao_vercel",
+      "opened": true,
+      "inspectionPhase": "before-executor-reset",
+      "reopenedDuringRecovery": false,
+      "dimensions": {
+        "width": 844,
+        "height": 390,
+        "chunks": [
+          "IDAT",
+          "IEND",
+          "IHDR"
+        ]
+      },
+      "evidenceKind": "application-viewport",
+      "relatedMetadataPath": "frontend-user-administration/f1c156ead44d-r0-n0-frontend-user-administration-dialog-844-390-200-viewport.json"
+    }
+  ],
+  "observations": [
+    "Ten original PNGs and their metadata read directly. Root font32px, text200%, fullPage:false, physicalDevice:false; no horizontal document overflow.",
+    "No new material P0–P2 finding demonstrated in this administration/IHFR sample.",
+    "Scientific qualifications and absence of definitive approval legible in captured portions; not all long regions are visible in one image.",
+    "Provenance/hash reflow and confirmation/cancellation actions observed. Native dialog textarea contains synthetic fixture text and may remain visible despite masking.",
+    "Next indicator/masks preserved; no new interaction, native zoom, physical device, screen reader or human acceptance."
+  ],
+  "priorIntegrityReview": {
+    "reviewer": "/root/backend_historicos",
+    "reviewedFrontendHead": "9eadc2e98ecc07bd792330643e2f6b4296d71f75",
+    "result": "No blocking integrity or privacy finding in the prior delivery.",
+    "scope": "108 hashes; 54 PNGs and 50 original JSONs; 253 inventory images; 161 projections; NAV4 172 records and 56 controls; 55 parseable JSONs.",
+    "historicalOnly": true
+  },
+  "limits": [
+    "The previous review does not automatically approve regenerated documents.",
+    "Recovery delta requires its own focused review before integration."
+  ]
+}

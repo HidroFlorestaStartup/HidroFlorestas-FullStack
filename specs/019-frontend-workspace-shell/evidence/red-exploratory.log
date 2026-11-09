@@ -1,0 +1,379 @@
+﻿726:  1) [chromium] › tests\e2e\frontend-workspace.spec.ts:62:7 › workspace and existing consumers at 375px 
+727-
+728-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+729-
+730-    Locator:  locator('main')
+731-    Expected: [32m1[39m
+732-    Received: [31m0[39m
+733-    Timeout:  5000ms
+734-
+735-    Call log:
+736-    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+737-    [2m  - waiting for locator('main')[22m
+738-    [2m    9 × locator resolved to 0 elements[22m
+739-    [2m      - unexpected value "0"[22m
+740-
+741-
+742-      85 |       await page.goto(`${base}${suffix}`); await settled(page); await enlarge(page, width);
+743-      86 |       await expect(page.getByRole("navigation", { name: "Laboratório", exact: true })).toBeVisible();
+744-    > 87 |       await expect(page.locator("main")).toHaveCount(1);
+745-         |                                          ^
+746-      88 |       await expect(page.locator("main").getByRole("heading", { level: 1 })).toBeVisible();
+747-      89 |       await capture(page, info, `consumer-${suffix.slice(1) || "summary"}-${width}`);
+748-      90 |     }
+--
+769:  2) [chromium] › tests\e2e\frontend-workspace.spec.ts:62:7 › workspace and existing consumers at 768px 
+770-
+771-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+772-
+773-    Locator:  locator('main')
+774-    Expected: [32m1[39m
+775-    Received: [31m0[39m
+776-    Timeout:  5000ms
+777-
+778-    Call log:
+779-    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+780-    [2m  - waiting for locator('main')[22m
+781-    [2m    9 × locator resolved to 0 elements[22m
+782-    [2m      - unexpected value "0"[22m
+783-
+784-
+785-      85 |       await page.goto(`${base}${suffix}`); await settled(page); await enlarge(page, width);
+786-      86 |       await expect(page.getByRole("navigation", { name: "Laboratório", exact: true })).toBeVisible();
+787-    > 87 |       await expect(page.locator("main")).toHaveCount(1);
+788-         |                                          ^
+789-      88 |       await expect(page.locator("main").getByRole("heading", { level: 1 })).toBeVisible();
+790-      89 |       await capture(page, info, `consumer-${suffix.slice(1) || "summary"}-${width}`);
+791-      90 |     }
+--
+812:  3) [chromium] › tests\e2e\frontend-workspace.spec.ts:62:7 › workspace and existing consumers at 1440px 
+813-
+814-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+815-
+816-    Locator:  locator('main')
+817-    Expected: [32m1[39m
+818-    Received: [31m0[39m
+819-    Timeout:  5000ms
+820-
+821-    Call log:
+822-    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+823-    [2m  - waiting for locator('main')[22m
+824-    [2m    9 × locator resolved to 0 elements[22m
+825-    [2m      - unexpected value "0"[22m
+826-
+827-
+828-      85 |       await page.goto(`${base}${suffix}`); await settled(page); await enlarge(page, width);
+829-      86 |       await expect(page.getByRole("navigation", { name: "Laboratório", exact: true })).toBeVisible();
+830-    > 87 |       await expect(page.locator("main")).toHaveCount(1);
+831-         |                                          ^
+832-      88 |       await expect(page.locator("main").getByRole("heading", { level: 1 })).toBeVisible();
+833-      89 |       await capture(page, info, `consumer-${suffix.slice(1) || "summary"}-${width}`);
+834-      90 |     }
+--
+855:  4) [chromium] › tests\e2e\frontend-workspace.spec.ts:62:7 › workspace and existing consumers at 320px text200 
+856-
+857-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+858-
+859-    Locator:  locator('main')
+860-    Expected: [32m1[39m
+861-    Received: [31m0[39m
+862-    Timeout:  5000ms
+863-
+864-    Call log:
+865-    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+866-    [2m  - waiting for locator('main')[22m
+867-    [2m    9 × locator resolved to 0 elements[22m
+868-    [2m      - unexpected value "0"[22m
+869-
+870-
+871-      85 |       await page.goto(`${base}${suffix}`); await settled(page); await enlarge(page, width);
+872-      86 |       await expect(page.getByRole("navigation", { name: "Laboratório", exact: true })).toBeVisible();
+873-    > 87 |       await expect(page.locator("main")).toHaveCount(1);
+874-         |                                          ^
+875-      88 |       await expect(page.locator("main").getByRole("heading", { level: 1 })).toBeVisible();
+876-      89 |       await capture(page, info, `consumer-${suffix.slice(1) || "summary"}-${width}`);
+877-      90 |     }
+--
+898:  5) [chromium] › tests\e2e\frontend-workspace.spec.ts:95:5 › settings contains keyboard focus, Escape restores the trigger and close cancels › Expect "poll toBe" 
+899-
+900-    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+901-
+902-    Expected: [32mtrue[39m
+903-    Received: [31mfalse[39m
+904-
+905-    Call Log:
+906-    - Timeout 5000ms exceeded while waiting on the predicate
+907-
+908-      101 |   await expect(dialog.getByText("Zona de perigo")).toBeVisible();
+909-      102 |   await capture(page, info, "settings-focus");
+910-    > 103 |   await expect.poll(() => dialog.evaluate(node => node.contains(document.activeElement))).toBe(true);
+911-          |   ^
+912-      104 |   for (let index = 0; index < 7; index++) {
+913-      105 |     await page.keyboard.press("Tab");
+914-      106 |     expect(await dialog.evaluate(node => node.contains(document.activeElement))).toBe(true);
+915-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:103:3
+916-
+917-    attachment #1: settings-focus (image/png) ──────────────────────────────────────────────────────
+918-    test-results\frontend-workspace-setting-474f5-e-trigger-and-close-cancels-chromium\attachments\settings-focus-7f2d94438d0f784f67cc6741a254a6b0b6823878.png
+919-    ────────────────────────────────────────────────────────────────────────────────────────────────
+920-
+--
+923:  6) [chromium] › tests\e2e\frontend-workspace.spec.ts:112:5 › real owner creates, confirms exact name, deactivates and deletes without implicit selection 
+924-
+925-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+926-
+927-    Locator:  getByRole('heading', { name: 'Seus laboratórios', exact: true })
+928-    Expected: focused
+929-    Received: inactive
+930-    Timeout:  5000ms
+931-
+932-    Call log:
+933-    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+934-    [2m  - waiting for getByRole('heading', { name: 'Seus laboratórios', exact: true })[22m
+935-    [2m    9 × locator resolved to <h2 id="laboratories-title" class="text-2xl font-bold">Seus laboratórios</h2>[22m
+936-    [2m      - unexpected value "inactive"[22m
+937-
+938-
+939-      127 |   let dialog = page.getByRole("dialog");
+940-      128 |   await dialog.getByRole("button", { name: "Desativar laboratório", exact: true }).click();
+941-    > 129 |   await dialog.getByLabel("Nome do laboratório", { exact: true }).fill(`${name} incorreto`);
+942-          |                                                                                       ^
+943-      130 |   await expect(dialog.getByRole("button", { name: "Desativar laboratório", exact: true })).toBeDisabled();
+944-      131 |   await dialog.getByLabel("Nome do laboratório", { exact: true }).fill(name);
+945-      132 |   const deactivated = page.waitForResponse(r => r.url().endsWith(`/api/laboratories/${id}`) && r.request().method() === "PATCH");
+--
+950:  7) [chromium] › tests\e2e\frontend-workspace.spec.ts:142:5 › contextual roles, inactive access, explicit change and history stay real 
+951-
+952-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+953-
+954-    Locator:  getByText('Inativo · Somente leitura', { exact: true })
+955-    Expected: visible
+956-    Received: <element(s) not found>
+957-    Timeout:  5000ms
+958-
+959-    Call log:
+960-    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+961-    [2m  - waiting for getByText('Inativo · Somente leitura', { exact: true })[22m
+962-
+963-
+964-      155 |     await expect(nav.getByRole("link", { name: "Membros", exact: true })).toHaveCount(index === 0 ? 1 : 0);
+965-      156 |     await nav.getByRole("link", { name: "Áreas", exact: true }).click();
+966-    > 157 |     await expect(page).toHaveURL(new RegExp(`${base}/areas$`)); await page.reload();
+967-          |                                                                              ^
+968-      158 |     await expect(page.getByText(laboratoryName, { exact: true })).toBeVisible();
+969-      159 |     await page.goBack(); await expect(page).toHaveURL(new RegExp(`${base}$`));
+970-      160 |     const membership = await context.request.get(`/api/laboratories/${laboratoryId}/memberships`);
+971-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:157:78
+972-
+--
+975:  8) [chromium] › tests\e2e\frontend-workspace.spec.ts:164:5 › global administration uses server capability without bypassing laboratory membership 
+976-
+977-    [31mTest timeout of 30000ms exceeded.[39m
+978-
+979-    Error: locator.click: Test timeout of 30000ms exceeded.
+980-    Call log:
+981-    [2m  - waiting for getByRole('navigation', { name: 'Navegação principal', exact: true }).getByRole('link', { name: 'Administração', exact: true })[22m
+982-
+983-
+984-      167 |   await login(context, info);
+985-      168 |   await page.goto(`/dashboard/laboratories/${AREA_FIXTURES.laboratoryIds[1]}/areas`); await settled(page);
+986-    > 169 |   await expect(page.getByText("OWNER · Inativo · Somente leitura", { exact: true })).toBeVisible();
+987-          |                                                                                                    ^
+988-      170 |   await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Laboratórios", exact: true }).click();
+989-      171 |   await expect(page).toHaveURL(/\/workspace$/);
+990-      172 |   await card(page).getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true }).click();
+991-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:169:144
+992-
+993-    Error Context: test-results\frontend-workspace-global--c9f7e-ssing-laboratory-membership-chromium\error-context.md
+994-
+995:  9) [chromium] › tests\e2e\frontend-workspace.spec.ts:176:5 › mobile account disclosure closes with Escape, navigation and desktop resize 
+996-
+997-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+998-
+999-    Locator:  getByRole('link', { name: 'Alterar senha', exact: true })
+1000-    Expected: [32m0[39m
+1001-    Received: [31m1[39m
+1002-    Timeout:  5000ms
+1003-
+1004-    Call log:
+1005-    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+1006-    [2m  - waiting for getByRole('link', { name: 'Alterar senha', exact: true })[22m
+1007-    [2m    9 × locator resolved to 1 element[22m
+1008-    [2m      - unexpected value "1"[22m
+1009-
+1010-
+1011-      178 |   try {
+1012-      179 |     await db.user.update({ where: { id }, data: { role: "ADMIN" } });
+1013-    > 180 |     await login(context, info, id); await page.goto("/workspace"); await settled(page);
+1014-          |                                                                                ^
+1015-      181 |     await page.getByRole("navigation", { name: "Navegação principal", exact: true }).getByRole("link", { name: "Administração", exact: true }).click();
+1016-      182 |     await expect(page).toHaveURL(/\/admin$/);
+1017-      183 |     for (const width of [375, 768, 1440, 320]) {
+--
+1022:  10) [chromium] › tests\e2e\frontend-workspace.spec.ts:195:5 › transient list loading and error retry recover the real empty workspace 
+1023-
+1024-    Error: expect.toContainText: Error: strict mode violation: getByRole('alert') resolved to 2 elements:
+1025-        1) <p role="alert" class="font-semibold text-red-800">Não foi possível carregar seus laboratórios.</p> aka getByText('Não foi possível carregar')
+1026-        2) <div role="alert" aria-live="assertive" id="__next-route-announcer__"></div> aka locator('[id="__next-route-announcer__"]')
+1027-
+1028-    Call log:
+1029-    [2m  - Expect "toContainText" with timeout 5000ms[22m
+1030-    [2m  - waiting for getByRole('alert')[22m
+1031-    [2m    - locator resolved to <div role="alert" aria-live="assertive" id="__next-route-announcer__"></div>[22m
+1032-    [2m    - unexpected value ""[22m
+1033-
+1034-
+1035-      203 |   await expect(page).toHaveURL(/\/change-password$/); await page.goBack(); await settled(page);
+1036-      204 |   await menu.click(); await page.setViewportSize({ width: 1440, height: 900 });
+1037-    > 205 |   await expect(page.locator('details[open]')).toHaveCount(0);
+1038-          |                                           ^
+1039-      206 |   await expect(page.getByRole("link", { name: "HidroFlorestas — ir ao workspace", exact: true })).toBeFocused();
+1040-      207 |   await expect(page.getByRole("link", { name: "Sair", exact: true })).toHaveCount(1);
+1041-      208 |   await page.setViewportSize({ width: 375, height: 900 });
+1042-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:205:43
+1043-
+1044-    attachment #1: list-loading (image/png) ────────────────────────────────────────────────────────
+--
+1050:  11) [chromium] › tests\e2e\frontend-workspace.spec.ts:211:5 › transient create blocks same-turn duplicate requests and preserves payload 
+1051-
+1052-    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+1053-
+1054-    [32m- Expected  - 0[39m
+1055-    [31m+ Received  + 3[39m
+1056-
+1057-    [2m  Array [[22m
+1058-    [2m    Object {[22m
+1059-    [2m      "name": "IMP-002 E2E Transient create",[22m
+1060-    [2m    },[22m
+1061-    [31m+   Object {[39m
+1062-    [31m+     "name": "IMP-002 E2E Transient create",[39m
+1063-    [31m+   },[39m
+1064-    [2m  ][22m
+1065-
+1066-      222 |     await expect(page.getByRole("alert")).toContainText("Não foi possível carregar"); await capture(page, info, "list-error");
+1067-      223 |     await page.getByRole("button", { name: "Tentar novamente", exact: true }).click();
+1068-    > 224 |     await expect(page.getByText("Você ainda não participa de um laboratório.")).toBeVisible();
+1069-          |                                                                   ^
+1070-      225 |   } finally { release(); }
+1071-      226 | });
+1072-      227 |
+--
+1081:  12) [chromium] › tests\e2e\frontend-workspace.spec.ts:230:5 › transient risk blocks same-turn duplicate PATCH and shows its error inside settings 
+1082-
+1083-    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+1084-
+1085-    [32m- Expected  - 0[39m
+1086-    [31m+ Received  + 3[39m
+1087-
+1088-    [2m  Array [[22m
+1089-    [2m    Object {[22m
+1090-    [2m      "confirmationName": "IMP-003 E2E 0",[22m
+1091-    [2m    },[22m
+1092-    [31m+   Object {[39m
+1093-    [31m+     "confirmationName": "IMP-003 E2E 0",[39m
+1094-    [31m+   },[39m
+1095-    [2m  ][22m
+1096-
+1097-      241 |     payloads.push(route.request().postDataJSON()); await held;
+1098-      242 |     await route.fulfill({ status: 503, json: { success: false, code: "INTERNAL_ERROR", message: "Falha transitória sintética." } });
+1099-    > 243 |   });
+1100-          |      ^
+1101-      244 |   try {
+1102-      245 |     await page.goto("/workspace"); await settled(page);
+1103-      246 |     const name = `${LABORATORY_FIXTURE_PREFIX} Transient create`; await page.getByLabel("Nome do laboratório", { exact: true }).fill(`  ${name}  `);
+--
+1112:  13) [chromium] › tests\e2e\frontend-workspace.spec.ts:250:5 › transient settings read error is accessible in dialog and retry reads real details 
+1113-
+1114-    Error: expect.toContainText: Error: strict mode violation: getByRole('alert') resolved to 2 elements:
+1115-        1) <p role="alert" class="mt-5 rounded-xl bg-red-50 p-3 text-sm font-medium text-red-800">Falha transitória sintética.</p> aka getByText('Falha transitória sintética.')
+1116-        2) <div role="alert" aria-live="assertive" id="__next-route-announcer__"></div> aka locator('[id="__next-route-announcer__"]')
+1117-
+1118-    Call log:
+1119-    [2m  - Expect "toContainText" with timeout 5000ms[22m
+1120-    [2m  - waiting for getByRole('alert')[22m
+1121-    [2m    - locator resolved to <div role="alert" aria-live="assertive" id="__next-route-announcer__"></div>[22m
+1122-    [2m    - unexpected value ""[22m
+1123-
+1124-
+1125-      258 |     if (route.request().method() !== "PATCH") return route.continue();
+1126-      259 |     payloads.push(route.request().postDataJSON()); await held;
+1127-    > 260 |     await route.fulfill({ status: 503, json: { success: false, code: "INTERNAL_ERROR", message: "Falha transitória sintética." } });
+1128-          |                                           ^
+1129-      261 |   });
+1130-      262 |   try {
+1131-      263 |     await page.goto("/workspace"); await settled(page); await card(page).getByRole("button", { name: "Configurações", exact: true }).click();
+1132-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:260:43
+1133-
+1134-    attachment #1: settings-loading (image/png) ────────────────────────────────────────────────────
+--
+1140:  14) [chromium] › tests\e2e\frontend-workspace.spec.ts:267:5 › lost membership between list and settings stays denied without selecting another context 
+1141-
+1142-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+1143-
+1144-    Locator:  getByRole('dialog').getByRole('alert')
+1145-    Expected: visible
+1146-    Received: <element(s) not found>
+1147-    Timeout:  5000ms
+1148-
+1149-    Call log:
+1150-    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+1151-    [2m  - waiting for getByRole('dialog').getByRole('alert')[22m
+1152-
+1153-
+1154-      273 | });
+1155-      274 |
+1156-    > 275 | test("transient settings read error is accessible in dialog and retry reads real details", async ({ page, context }, info) => {
+1157-          |                                                               ^
+1158-      276 |   await login(context, info); let release!: () => void; const held = new Promise<void>(resolve => { release = resolve; }); let failed = false;
+1159-      277 |   await page.route(`**/api/laboratories/${laboratoryId}`, async route => {
+1160-      278 |     if (route.request().method() !== "GET" || failed) return route.continue();
+1161-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:275:63
+1162-
+--
+1165:  15) [chromium] › tests\e2e\frontend-workspace.spec.ts:282:5 › server refuses deleting a laboratory with areas and keeps confirmation recoverable 
+1166-
+1167-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+1168-
+1169-    Locator:  getByRole('dialog').getByRole('alert')
+1170-    Expected: visible
+1171-    Received: <element(s) not found>
+1172-    Timeout:  5000ms
+1173-
+1174-    Call log:
+1175-    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+1176-    [2m  - waiting for getByRole('dialog').getByRole('alert')[22m
+1177-
+1178-
+1179-      288 |     await expect(dialog.getByRole("alert")).toContainText("Falha transitória"); await capture(page, info, "risk-error");
+1180-      289 |     const real = await (await context.request.get(`/api/laboratories/${laboratoryId}`)).json(); expect(real.details.status).toBe("ACTIVE");
+1181-    > 290 |   } finally { release(); }
+1182-          |                           ^
+1183-      291 | });
+1184-      292 |
+1185-      293 | test("transient settings read error is accessible in dialog and retry reads real details", async ({ page, context }, info) => {
+1186-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:290:43
+1187-
+--
+1190:  16) [chromium] › tests\e2e\frontend-workspace.spec.ts:307:5 › transient logout loading and error keep retry connected to the real POST 
+1191-
+1192-    [31mTest timeout of 30000ms exceeded.[39m
+1193-
+1194-    Error: locator.click: Test timeout of 30000ms exceeded.
+1195-    Call log:
+1196-    [2m  - waiting for getByRole('button', { name: 'Tentar novamente', exact: true })[22m
+1197-
+1198-
+1199-      314 |   try {
+1200-      315 |     await page.goto("/workspace"); await settled(page); await expect(card(page)).toBeVisible();
+1201-    > 316 |     await db.researchersLinked.delete({ where: { userId_laboratoryRoomId: key } });
+1202-          |                                                                               ^
+1203-      317 |     removed = true;
+1204-      318 |     const denied = page.waitForResponse(r => r.url().endsWith(`/api/laboratories/${laboratoryId}`));
+1205-      319 |     await card(page).getByRole("button", { name: "Configurações", exact: true }).click(); expect((await denied).status()).toBe(404);
+1206-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:316:79
+1207-
+1208-    attachment #1: logout-loading (image/png) ──────────────────────────────────────────────────────
+1209-    test-results\frontend-workspace-transie-4391a--connected-to-the-real-POST-chromium\attachments\logout-loading-0958a36a2663ce477fa2f79c9bf8949ae58d1297.png
+1210-    ────────────────────────────────────────────────────────────────────────────────────────────────
+1211-
+1212-    attachment #2: logout-error (image/png) ────────────────────────────────────────────────────────

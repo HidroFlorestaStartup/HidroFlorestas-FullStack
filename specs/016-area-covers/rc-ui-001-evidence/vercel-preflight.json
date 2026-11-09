@@ -1,0 +1,29 @@
+{
+  "kind": "read-only-vercel-preflight",
+  "checkedUtc": "2026-10-13T17:54:52.742499+00:00",
+  "projects": [
+    {
+      "id": "prj_DiLVjku1AglHtTXv8ckxg8pBiZR3",
+      "name": "hidro-florestas-full-stack",
+      "framework": "nextjs",
+      "gitProviderOptions": {
+        "createDeployments": "enabled"
+      },
+      "gitForkProtection": true,
+      "link": {
+        "type": "github",
+        "repo": "HidroFlorestas-FullStack",
+        "repoId": 1409854835,
+        "org": "HidroFlorestaStartup",
+        "productionBranch": "main"
+      },
+      "deployHookCount": 0,
+      "recentDeploymentCount": 3,
+      "reviewBranchDeployments": [],
+      "deploymentQueryError": null
+    }
+  ],
+  "error_status": null,
+  "versionedReviewDeploymentEnabled": false,
+  "trackedWorkflowFiles": []
+}

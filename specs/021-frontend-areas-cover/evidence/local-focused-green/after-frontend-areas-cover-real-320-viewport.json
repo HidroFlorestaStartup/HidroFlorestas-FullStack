@@ -1,0 +1,43 @@
+{
+  "name": "cover-real-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-cover-real-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1229,
+      "height": 724,
+      "extent": 3414
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 16,
+    "y": -518,
+    "width": 246.109375,
+    "height": 64
+  },
+  "target": {
+    "x": 16,
+    "y": -6.046875,
+    "width": 288,
+    "height": 907.375
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

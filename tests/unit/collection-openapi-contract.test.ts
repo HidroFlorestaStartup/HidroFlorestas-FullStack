@@ -102,19 +102,23 @@ describe("IMP-004 OpenAPI", () => {
   });
 
   it("keeps handlers and UI limited to POST, GET detail and separately-built navigation", async () => {
-    const [postRouteSource, postHandlerSource, getRouteSource, getHandlerSource, formSource] = await Promise.all([
+    const [postRouteSource, postHandlerSource, getRouteSource, getHandlerSource, formSource, submissionSource] = await Promise.all([
       readFile("src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/route.ts", "utf8"),
       readFile("src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/route.handlers.ts", "utf8"),
       readFile("src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.ts", "utf8"),
       readFile("src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/route.handlers.ts", "utf8"),
       readFile("src/components/collections/collection-form.tsx", "utf8"),
+      readFile("src/components/collections/collection-submission.ts", "utf8"),
     ]);
     assert.match(postRouteSource, /export \{ POST \}/);
     assert.doesNotMatch(postRouteSource, /\b(GET|PATCH|PUT|DELETE)\b/);
     assert.match(getRouteSource, /export \{ GET \}/);
     assert.doesNotMatch(getRouteSource, /\b(POST|PATCH|PUT|DELETE)\b/);
-    assert.match(formSource, /headers\.get\("Location"\)/);
-    assert.match(formSource, /router\.push\(`\/dashboard\/laboratories\/\$\{context\.laboratory\.id\}/);
+    // Keep the original guard across the extracted, pure response parser and UI navigation.
+    assert.match(submissionSource, /response\.headers\.get\(['"]Location['"]\)/);
+    assert.ok(submissionSource.includes("`${apiPath}/${id}`"), "Location must be compared with the contextual endpoint");
+    assert.ok(formSource.includes("const areaPath = `/dashboard/laboratories/${context.laboratory.id}/areas/${context.area.id}`;"));
+    assert.ok(formSource.includes("router.push(`${areaPath}/collections/${id}`)"));
     assert.doesNotMatch(formSource, /router\.push\([^)]*Location/i);
     const allSources = `${postRouteSource}\n${postHandlerSource}\n${getRouteSource}\n${getHandlerSource}`;
     for (const forbidden of ["WaterData", "SoilData", "VegetationData", "TerrainData", "IHFR"])

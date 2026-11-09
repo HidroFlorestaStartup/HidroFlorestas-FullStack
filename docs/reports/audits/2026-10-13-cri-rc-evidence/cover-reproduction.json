@@ -1,0 +1,128 @@
+{
+  "head": "ffd04a240d885cb32eb4d26d4e4881908b003443",
+  "original": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c",
+  "component": "src/components/areas/area-cover.tsx",
+  "sha256": "fdc0aaa42077b0a480c11429147dcb5d583fdc379c76076f603563b34d371858",
+  "sameComponentAsOriginal": true,
+  "framework": "real Next.js route; original AreaCoverEditor/AreaCoverPreview and next/image",
+  "controlledNetwork": "Metadata and image content intercepted; context/auth/read requests use local PostgreSQL; no real Cloudinary",
+  "requests": [
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image",
+      "revision": null,
+      "method": "GET",
+      "kind": "metadata",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image",
+      "revision": null,
+      "method": "GET",
+      "kind": "metadata",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image/content",
+      "revision": "1",
+      "method": "GET",
+      "kind": "content",
+      "status": 503
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image",
+      "revision": null,
+      "method": "GET",
+      "kind": "metadata",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image",
+      "revision": null,
+      "method": "GET",
+      "kind": "metadata",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image",
+      "revision": null,
+      "method": "GET",
+      "kind": "metadata",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/00000000-0000-4000-8000-000000000511/areas/00000000-0000-4000-8000-000000000521/image/content",
+      "revision": "1",
+      "method": "GET",
+      "kind": "content",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "beforeReload": {
+    "contentRequests": 1,
+    "fallbackVisible": true
+  },
+  "afterReload": {
+    "contentRequests": 1,
+    "successVisible": "Capa recarregada.",
+    "fallbackVisible": true,
+    "imageCount": 0
+  },
+  "afterPageReload": {
+    "contentRequests": 2,
+    "image": {
+      "naturalWidth": 30,
+      "naturalHeight": 20,
+      "complete": true,
+      "nextImageAttribute": "1"
+    }
+  },
+  "confirmed": true,
+  "realBackendMetadataStatus": 200,
+  "runtimeDatabase": [
+    {
+      "datname": "accounts_regression_test",
+      "usename": "accounts_owner",
+      "application_name": "",
+      "client_addr": "127.0.0.1/32",
+      "state": "active"
+    },
+    {
+      "datname": "accounts_regression_test",
+      "usename": "accounts_owner",
+      "application_name": "",
+      "client_addr": "127.0.0.1/32",
+      "state": "idle"
+    },
+    {
+      "datname": "accounts_regression_test",
+      "usename": "accounts_owner",
+      "application_name": "",
+      "client_addr": "127.0.0.1/32",
+      "state": "idle"
+    },
+    {
+      "datname": "accounts_regression_test",
+      "usename": "accounts_owner",
+      "application_name": "",
+      "client_addr": "127.0.0.1/32",
+      "state": "idle"
+    },
+    {
+      "datname": "accounts_regression_test",
+      "usename": "accounts_owner",
+      "application_name": "",
+      "client_addr": "127.0.0.1/32",
+      "state": "idle"
+    }
+  ],
+  "remainingFixtures": {
+    "measurements": 0,
+    "users": 0,
+    "laboratories": 0,
+    "memberships": 0,
+    "areas": 0,
+    "collections": 0
+  },
+  "cleanupZero": true
+}

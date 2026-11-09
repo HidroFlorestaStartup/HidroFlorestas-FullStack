@@ -1,0 +1,8 @@
+﻿{
+    "utc":  "2026-10-25T04:17:52.3976427Z",
+    "check":  "compiled browser chunks contain supported synthetic loopback tile URL",
+    "matchingFiles":  1,
+    "result":  "PASS",
+    "rawChunkContentPublished":  false,
+    "meaning":  "confirms inherited local tile configuration; not universal network capture"
+}

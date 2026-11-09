@@ -1,0 +1,76 @@
+{
+  "id": "P00-F4-RECOVERY-LOCAL-COMPOSITION",
+  "at_utc": "2026-11-06T03:37:18.563563+00:00",
+  "integrator": "/root",
+  "parent_sha": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+  "candidate": "F5, uncommitted composed tree; freeze/publication manifest follows",
+  "status": "PASS_LOCAL_SCOPED; F4 FAIL preserved; final runtime PENDING",
+  "patch_sha256": "00f71b5d04282e3e1b695b2b3c51ed70ec18c0e3e829102148e21935f5ce7ea5",
+  "preimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+  "postimage_sha256": "83c5521a96b17f05cda671b4a48a5822142fcd4b781a7c39809a8129b8cc2c08",
+  "technical_delta": [
+    "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+  ],
+  "checks": [
+    {
+      "command": "npm run typecheck",
+      "environment": "Chat Linux Node24.22.1 npm11.9.0",
+      "parent": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+      "scope": "composed F5 uncommitted candidate",
+      "started": "2026-11-06T03:36:39.610178+00:00",
+      "ended": "2026-11-06T03:36:43.561526+00:00",
+      "exit_code": 0,
+      "log": "/workspace/scratch/100be1d812fa/validation/f5-typecheck.log",
+      "log_sha256": "2f3be8e0e6b9d65aa28853afa544bef301ee1d202fd4c9e4f53ea1764772ca74"
+    },
+    {
+      "command": "npx --no-install eslint tests/e2e/ihfr-diagnosis-manage.spec.ts",
+      "environment": "Chat Linux Node24.22.1 npm11.9.0",
+      "parent": "dee68689bd78a4bd1cd8519cf963396320a7ca5b",
+      "scope": "composed F5 uncommitted candidate",
+      "started": "2026-11-06T03:36:39.614666+00:00",
+      "ended": "2026-11-06T03:36:42.437718+00:00",
+      "exit_code": 0,
+      "log": "/workspace/scratch/100be1d812fa/validation/f5-lint.log",
+      "log_sha256": "7125f194612fcff2f454c05d848e7cb71facc1967b4d5017e25b34fdee3ba74f"
+    }
+  ],
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0
+  },
+  "preservation": "Guards, package files, immutable O0 and neighboring tests/helpers byte-identicalF4; original product unchanged sinceF1. All80 F4 task entries retained, T081 added pending. P04 separately audits append-only documents.",
+  "scope_limits": [
+    "No local browser/DB attempt repeated; official CI remains execution surface.",
+    "No additional unit run for test-only successor; prior unit results not transferred to successor.",
+    "npm http-proxy configuration warning retained in logs, no lint finding.",
+    "Final successor RC15,23-case matrix, Codex and independent artifact/PNG QA pending.",
+    "No merge, deploy, cleanup or protected-ref mutation."
+  ],
+  "evidence_copies": [
+    {
+      "name": "p02-f4-eligibility-investigation.json",
+      "sha256": "9c61be8ccfdf08adbf1cdb4d4850570bc8529606bae08176325323700ecde21b"
+    },
+    {
+      "name": "p03-f4-recovery-proofs.json",
+      "sha256": "1b02106e9398268367608954b9665e1394af909753a603e7f10c6d5036e4b556"
+    },
+    {
+      "name": "p03-f4-recovery-receipt.json",
+      "sha256": "0ecaccf8b01ca6161aff46bd51965c33e9a7257bbc9e58a280e15f9d502acc03"
+    },
+    {
+      "name": "p04-f4-causal-review.json",
+      "sha256": "1152723a3c2e13cf0ebf4bf521f1f1df839585078f8c5895f5f319c33c2e1f73"
+    },
+    {
+      "name": "p04-f4-patch-review.json",
+      "sha256": "df603d6eca5be989210d2ed3687d8945713dc18f07392239403976bffd001fe7"
+    },
+    {
+      "name": "recovery-f4.json",
+      "sha256": "3521e59150f57a08b5407a88eba1b91530478c02dd052926b750c8eb2ce09b51"
+    }
+  ]
+}

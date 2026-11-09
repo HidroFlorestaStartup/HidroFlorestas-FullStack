@@ -1,0 +1,155 @@
+{
+  "head": "2909ce33d900331fd05d754b04f3a860eb035056",
+  "since": "2026-10-19T17:08:13.458Z",
+  "records": 5,
+  "snapshots": [
+    "b7c7aa993accff559d51dcf57da7b927aaf34bc03bd30fb70f791a7ae31cdf0f"
+  ],
+  "files": [
+    {
+      "path": "01-regressionsetup.log",
+      "sha256": "4f241e01e5e9912968505b7ac72219055d8b8c9018fc3349976e20095515cad7",
+      "bytes": 1428
+    },
+    {
+      "path": "02-build.log",
+      "sha256": "a2d9a7c09e700b009a3600781154c1cec1b864d5474ec3fc9556f5c44a0c42aa",
+      "bytes": 4516,
+      "original_sha256": "131c6546b5617147c65c5a7f64b2b02c51d84cd001506570a31f614adb9658d4",
+      "original_bytes": 4519
+    },
+    {
+      "path": "03-typecheck.log",
+      "sha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "bytes": 85
+    },
+    {
+      "path": "04-lint.log",
+      "sha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6",
+      "bytes": 642
+    },
+    {
+      "path": "05-e2e.log",
+      "sha256": "ea862bc1cfbd70086920d8970b4bd981829e1da867903f3412f28552861641e6",
+      "bytes": 108923
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-four-links-actual-last-control.png",
+      "sha256": "0cdebf4425b2a87deb252828d98575c3e9230aabec75493e97167a01ba7f2b77",
+      "bytes": 56565
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-four-links-landscape-safe-area34.png",
+      "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+      "bytes": 37795
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-geometry.json",
+      "sha256": "446bd39e3ea2e02f0312ae8a94ddce9ef5ae20c600cc86c9cc3c4f1ac2179b86",
+      "bytes": 24642
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-three-links-actual-last-control.png",
+      "sha256": "54b096568c25fe45c3528a6cfb0cb88b1604aea2003be3d508964037f6a09488",
+      "bytes": 55147
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text100-three-links-landscape-safe-area34.png",
+      "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+      "bytes": 35639
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-four-links-actual-last-control.png",
+      "sha256": "7db9d6d37dd6d70f3f6677373d0cddfa966270d4cb4f7a6b5ceac27c749e7df5",
+      "bytes": 61378
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+      "sha256": "4e2d45d8c0effe2aa5c1767e7d4472b3130cae957e98648b0572b4545169fb1c",
+      "bytes": 36161
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-geometry.json",
+      "sha256": "13dfc9c51f6eca304bc7157e53d599c39fb4b71125ac0307db083e887959767f",
+      "bytes": 24612
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+      "sha256": "14c8327960408ea01b91dc7112c65412ef0abf4846740745e22cf43746c5ea65",
+      "bytes": 58142
+    },
+    {
+      "path": "frontend-mobile-navigation-after-320-text200-three-links-landscape-safe-area34.png",
+      "sha256": "03d09a3ddcd76d1c6edacad4e7966005eea4a63fd4907eda0112554d1678b28f",
+      "bytes": 33052
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-four-links-actual-last-control.png",
+      "sha256": "66e605b6918fadd5247f77c19841291b1b521163df442be4418aae1032b545cf",
+      "bytes": 56718
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-four-links-landscape-safe-area34.png",
+      "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+      "bytes": 37795
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-geometry.json",
+      "sha256": "a4237cfaab4fc3387e1601bbbb0c7bf3d202f8979ad7110e6541bd7d4f29d370",
+      "bytes": 24689
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-three-links-actual-last-control.png",
+      "sha256": "2b4da4efa77aacbaa1b7ced145fe280ded5f3df7a883141b7cd8ddffb05bab32",
+      "bytes": 55206
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text100-three-links-landscape-safe-area34.png",
+      "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+      "bytes": 35639
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-four-links-actual-last-control.png",
+      "sha256": "697ad1a198e417ac9eb07392f8bf811ed354a049b065b9c098c991f23a1cc5f9",
+      "bytes": 62678
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png",
+      "sha256": "4e2d45d8c0effe2aa5c1767e7d4472b3130cae957e98648b0572b4545169fb1c",
+      "bytes": 36161
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-geometry.json",
+      "sha256": "6b1a149e8d9f0cfdc9993d470e16dd07c0242bcbbc666bcb5af5c73decf218eb",
+      "bytes": 24598
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-three-links-actual-last-control.png",
+      "sha256": "d632fd44b5ba64ec1f382d4b742e01ab8107debb4023c4db108cf3fded23c4a0",
+      "bytes": 60953
+    },
+    {
+      "path": "frontend-mobile-navigation-after-375-text200-three-links-landscape-safe-area34.png",
+      "sha256": "03d09a3ddcd76d1c6edacad4e7966005eea4a63fd4907eda0112554d1678b28f",
+      "bytes": 33052
+    },
+    {
+      "path": "frontend-workspace-list-1440.png",
+      "sha256": "34588c7ce553fff2f01ea5a1562ac2e79be2d4b49df68b6eb6622e6ac96aedd4",
+      "bytes": 112743
+    },
+    {
+      "path": "frontend-workspace-list-768.png",
+      "sha256": "0dc92a8d61ad1ce06820006ff35a3732c493449bcd298c0cec5d8d716d44ef57",
+      "bytes": 115483
+    },
+    {
+      "path": "results.jsonl",
+      "sha256": "360d6a09a459abc570f8dee9ce34e20d8980054b04d88e6bf608af966c93abdc",
+      "bytes": 2173,
+      "original_sha256": "41c4b0c927aa7e56f56d6ec64859ea11a5b15fa586399b25c484567e44e7835f",
+      "original_bytes": 2178
+    }
+  ],
+  "checksum_scope": "sha256/bytes identify versioned Git blobs after CRLF-to-LF normalization; original_sha256/original_bytes preserve original archived bytes where different."
+}

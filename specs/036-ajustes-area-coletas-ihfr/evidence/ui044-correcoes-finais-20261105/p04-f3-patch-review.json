@@ -1,0 +1,227 @@
+{
+  "schema": "ui044-p04-recovery-review/v1",
+  "id": "P04-F3-RECOVERY-PATCH",
+  "status": "PASS_STATIC_RECOVERY_PATCH_SCOPED",
+  "overall_ui044_status": "PARTIAL; F3 remains FAIL; successor runtime PENDING",
+  "at_utc": "2026-11-06T03:07:20.287171+00:00",
+  "executor": "/root/o0_guards",
+  "author": "/root/p03_tests",
+  "integrator": "/root",
+  "independence": "Reviewer has no authorship of product, tests, configuration or Spec036. This review writes only its own handoff evidence; suggestions and review do not alter audited files.",
+  "basis": {
+    "head": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+    "tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+    "candidate": "Uncommitted P03 patch against F3, identified by exact four postimages; no successor commit or runtime success inferred."
+  },
+  "patch": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/p03-f3-render-wait-and-eligibility.patch",
+    "sha256": "bee0ad8d3a11bf8c214bf467ce445a3757acbb3d8f5eef40aa48e85105375471",
+    "receipt_path": "/workspace/scratch/100be1d812fa/handoffs/p03/recovery-f3/receipt.json",
+    "receipt_sha256": "feff460505b7a8cb9e6ff485c6b2353b44b7b0964f9d9d689409c718bd8529bc",
+    "preimages_and_postimages": [
+      {
+        "path": "tests/e2e/support/frontend-mission-evidence.ts",
+        "preimage_sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+        "preimage_git_blob": "1344dfba41b0f1caf840e3d002167ce8499aa9f3",
+        "postimage_sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+        "postimage_git_blob": "3c7d6e3dbeefa89f4b2dc3ff800a7a0ef1de09ad"
+      },
+      {
+        "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+        "preimage_sha256": "6eb67271131140d93ac3aea01f6d1c7b1f8c36bef130fd540a0686d020902725",
+        "preimage_git_blob": "01fabe38f6d4b0099025d6be6b0b2b0662994491",
+        "postimage_sha256": "a7cd122b50e3344e7ae95f736d1c101c0c373f571f9cd7cf22272e7982240844",
+        "postimage_git_blob": "9beff71c56f9c266ab9efb24ce54cf127b3dfb8c"
+      },
+      {
+        "path": "tests/e2e/support/ui044-final-corrections.ts",
+        "preimage_sha256": "832af7cce12fec0a5dfb17b865fda3b1f86fe7c517ceaea2a293c1af20a2433b",
+        "preimage_git_blob": "60496289430ca289ec6a5e00361ed36fe1c038e8",
+        "postimage_sha256": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+        "postimage_git_blob": "fe64c8b5ba5cdc3f5839b3008b41a82132693d6a"
+      },
+      {
+        "path": "tests/e2e/ihfr-diagnosis-manage.spec.ts",
+        "preimage_sha256": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+        "preimage_git_blob": "c79384aca4fd71a40da23779cc09397f4e63101c",
+        "postimage_sha256": "d071db85d91c30b71b88f19fc1b83740a7ab595e2035ff83920494c7c8b89d55",
+        "postimage_git_blob": "876b52955217314766d739ce7e833dcd7fb5de6b"
+      }
+    ]
+  },
+  "findings": [],
+  "checks": [
+    {
+      "check": "identity_and_integrity",
+      "status": "PASS",
+      "detail": "Recomputed receipt/patch and all 14 artifact hashes; compared four F3 Git preimages and WT postimages including Git blob IDs. Independently reconstructed each patch in memory against F3: exact four resulting postimages, no extra path."
+    },
+    {
+      "check": "authorized_scope",
+      "status": "PASS",
+      "detail": "Parent explicitly reserved the official helper and its browser proof file before editing; UI044 helper and manage test are P03 owned. The four-path patch changes no product/API/schema/science/auth/fixture/configuration."
+    },
+    {
+      "check": "official_helper_semantics",
+      "status": "PASS_STATIC",
+      "detail": "Only the captured allSettled(finished) branch changes. It awaits one rAF then resamples exactly the current running + finite endTime predicate. Original two-rAF/MessageChannel barrier, after-barrier recheck, one control scroll, focus and hit-test code reconstruct byte for byte."
+    },
+    {
+      "check": "no_success_bypass",
+      "status": "PASS_STATIC",
+      "detail": "No deadline, fallback, retry, animation cancellation, blur, extra scroll or timeout increase. A finite animation that continues running still blocks. Paused/infinite animations retain the original exclusion; new active animations continue to prevent readiness."
+    },
+    {
+      "check": "counterproofs",
+      "status": "PASS_SYNTHETIC_EVIDENCE_REVIEW",
+      "detail": "Read the exact Node probe and outputs. Old imported F3 helper has three functional failures and six passes; final helper hash f7602bfa has nine passes. Expected persistent blocking is tested explicitly. Pause/removal/replacement are controlled model cases, not claims about the observed F3 transition mechanism."
+    },
+    {
+      "check": "native_browser_regressions",
+      "status": "PASS_STATIC; NOT_RUN_RUNTIME",
+      "detail": "Three new synthetic browser cases use native CSS transitions: pause after selection; paused old transition with finite replacement; late finite transition during final barrier. Assertions verify unfinished paused promise, replacement completion, preserved focus and late transition completion. All original test lines are preserved in order; existing late ResizeObserver, geometry, capture and scroll cases remain."
+    },
+    {
+      "check": "diagnostic_removal",
+      "status": "PASS",
+      "detail": "UI044 helper exactly matches F2 SHA256 438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59. No observation wrappers/logging remain; original 23-case matrix, assertions and captures are preserved."
+    },
+    {
+      "check": "eligibility_preparation",
+      "status": "PASS_STATIC",
+      "detail": "New assertions require desktop width, a unique article and unique record/reading blocks with desktop DOM order before a single select/fill. Both values are checked after both interactions. The existing first eligibility response capture is not filtered by the desired query; contextual pathname and exact FOREST query entries are then asserted, retaining 200 and ELIGIBLE. Original lifecycle, privacy and idempotency assertions are insertions-only preserved."
+    },
+    {
+      "check": "related_contract_preservation",
+      "status": "PASS",
+      "detail": "Compared six additional P03 evidence/helper/test files to F3 byte for byte. Root vercel.json, RC workflow, RC15 script, package/lock and Playwright configuration remain byte-identical to F3 at this snapshot."
+    },
+    {
+      "check": "documentary_reviewer_contribution",
+      "status": "PASS_STATIC_DOCUMENTATION_SCOPED",
+      "detail": "Read and hash-verified o0_speckit receipt; independently confirmed its eight audited documentary postimages still match. Its 21 checks preserve O0, all 67 baseline tasks and all 79 F3 tasks; T080 is newly pending. T075–T077/T079/T080 remain pending. No duplicate historical audit was performed by this reviewer."
+    }
+  ],
+  "causal_basis": {
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p04/recovery-f3/causal-review.json",
+    "sha256": "c9ea6f3234e8fbc68772b4ac84d9d0f3a5a57c2f7c13db4028abd3bf005e2cd8",
+    "run": "42150335260/1",
+    "gates": {
+      "PASS": 12,
+      "FAIL": 1,
+      "NOT_RUN": 2
+    },
+    "ihfr": {
+      "passed": 1,
+      "failed": 5
+    },
+    "matrix": "7/23",
+    "trace": "115 events, 11 sessions; seven waits complete, four 390×844 waits stop in captured-finished branch; fifth eligibility failure omits landUseType before observer installation.",
+    "distinction": "The patch removes dependence on a historical promise while preserving current-set readiness. It is a justified candidate for the localized failure, not proof that native F3 paused/replaced/removed the transition, nor that the successor browser now passes."
+  },
+  "synthetic_results": {
+    "executed_by": "/root/p03_tests",
+    "reviewer_action": "Read code, actual JSON/log evidence and verified exact source/artifact hashes; did not rerun tests.",
+    "before": {
+      "source_sha256": "1f42fdaceba56e7251036018f68ebcc2fc1aa3bb85821ea99d6228670d8dfb6f",
+      "exit_code_reported": 1,
+      "passed": 6,
+      "failed": 3
+    },
+    "after": {
+      "source_sha256": "f7602bfa7aa00d724f432d04ea55612bd32374a0850844adc6ffe70c75507c48",
+      "exit_code_reported": 0,
+      "passed": 9,
+      "failed": 0
+    },
+    "cases": [
+      {
+        "case": "pauses-after-snapshot",
+        "before": "FAIL",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 3
+      },
+      {
+        "case": "removed-after-snapshot",
+        "before": "FAIL",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 3
+      },
+      {
+        "case": "replaced-after-snapshot",
+        "before": "FAIL",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 6
+      },
+      {
+        "case": "natural-finish",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 5
+      },
+      {
+        "case": "finite-keeps-running",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": false,
+        "after_frame": null
+      },
+      {
+        "case": "paused-at-entry",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 2
+      },
+      {
+        "case": "infinite-at-entry",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 2
+      },
+      {
+        "case": "animation-during-final-barrier",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 7
+      },
+      {
+        "case": "late-focus",
+        "before": "PASS",
+        "after": "PASS",
+        "after_resolved": true,
+        "after_frame": 2
+      }
+    ]
+  },
+  "author_local_validation": {
+    "source_receipt_sha256": "feff460505b7a8cb9e6ff485c6b2353b44b7b0964f9d9d689409c718bd8529bc",
+    "eslint": "PASS focal four files; subsequent source-only delta was comment precision.",
+    "typescript": "PASS focal three helper/proof paths; full project and manage dependency typecheck remain P00 composed gate.",
+    "diff_and_apply_check": "Author reports exit0; reviewer independently reconstructed patch against F3 without writing repository.",
+    "browser_database_ci": "NOT_RUN by author or reviewer for this recovery."
+  },
+  "documentary_review": {
+    "executor": "/root/o0_speckit",
+    "path": "/workspace/scratch/100be1d812fa/handoffs/p04/spec-recovery-f3.json",
+    "sha256": "1a37c87722434d94e4edd57aa61c3209c7e980430d3317b40e4d96344328af45",
+    "status": "PASS_STATIC_DOCUMENTATION_SCOPED",
+    "independence_disclosure": "No authorship of audited files. Prior O0 crosswalk advisory involvement was disclosed in spec-audit.json; this recovery receipt is read-only review.",
+    "eight_postimages_current": true
+  },
+  "limits": [
+    "No final-SHA RC15, new browser regressions or complete 23-case screenshots/JSON matrix yet; O3/T079/T080 are not closed.",
+    "Node counterproofs are explicit models; absence from a mock document does not claim every native cancellation leaves a promise pending.",
+    "If the real transition remains running indefinitely, this candidate intentionally continues waiting and CI must expose that fact.",
+    "Eligibility preparation makes the expected client/input/request state observable. The exact earlier loss mechanism and interactions before hydration remain unproved; no product repair is claimed.",
+    "F3 failure receipts remain immutable. No old CI or Codex result is transferred to a successor SHA.",
+    "No browser launch, test execution, DB access, escalation, workflow dispatch, publication, review request, merge or deploy was performed by this reviewer."
+  ],
+  "handoff": "Static recovery patch and documentary delta are suitable for P00 composition under their exact hashes and existing local gates. Full final-SHA RC15, Codex and independent visual/runtime audit remain pending; this receipt is not final O3 approval."
+}

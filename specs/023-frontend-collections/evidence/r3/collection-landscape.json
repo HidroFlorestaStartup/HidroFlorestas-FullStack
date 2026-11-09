@@ -1,0 +1,833 @@
+{
+  "scope": "Exact source React SSR of ApplicationShell+CollectionDetail+IHFRDiagnosisManagement; Next Link/Image and auth/navigation hooks adapted only for static rendering; actual CSS modules, generated Tailwind and logo; Arial fallback, no DB/Next server",
+  "browser": "153.0.8010.0",
+  "playwright": "1.55.1",
+  "node": "24.19.0",
+  "notOfficialGate": true,
+  "cases": [
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "original",
+      "rect": {
+        "x": 372.125,
+        "y": 37.453125,
+        "width": 414.875,
+        "height": 92,
+        "top": 37.453125,
+        "right": 787,
+        "bottom": 129.453125,
+        "left": 372.125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 16,
+        "y": 110,
+        "width": 144,
+        "height": 235.171875,
+        "top": 110,
+        "right": 160,
+        "bottom": 345.171875,
+        "left": 16
+      },
+      "fullyInViewport": true,
+      "unobstructed": false,
+      "points": [
+        {
+          "x": 380.2774313416817,
+          "y": 42.31040114796009,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 778.8475686583183,
+          "y": 42.31040114796009,
+          "tag": "A",
+          "className": "s_accountLink",
+          "inside": false
+        },
+        {
+          "x": 380.2774313416817,
+          "y": 124.59584885203991,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 778.8475686583183,
+          "y": 124.59584885203991,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 83.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 41.453125,
+          "tag": "A",
+          "className": "s_accountLink s_accountDanger",
+          "inside": false
+        },
+        {
+          "x": 783,
+          "y": 83.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 125.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 376.125,
+          "y": 83.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 200,
+      "variant": "symmetric",
+      "rect": {
+        "x": 372.125,
+        "y": 149.453125,
+        "width": 414.875,
+        "height": 92,
+        "top": 149.453125,
+        "right": 787,
+        "bottom": 241.453125,
+        "left": 372.125
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 82,
+        "top": 0,
+        "right": 844,
+        "bottom": 82,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 16,
+        "y": 110,
+        "width": 144,
+        "height": 235.171875,
+        "top": 110,
+        "right": 160,
+        "bottom": 345.171875,
+        "left": 16
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 380.2774313416817,
+          "y": 154.3104011479601,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 778.8475686583183,
+          "y": 154.3104011479601,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 380.2774313416817,
+          "y": 236.59584885203992,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 778.8475686583183,
+          "y": 236.59584885203992,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 195.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 153.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 783,
+          "y": 195.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 579.5625,
+          "y": 237.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 376.125,
+          "y": 195.453125,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "rect": {
+        "x": 49,
+        "y": 226.59375,
+        "width": 222,
+        "height": 218,
+        "top": 226.59375,
+        "right": 271,
+        "bottom": 444.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 0,
+        "y": 809.3125,
+        "width": 320,
+        "height": 90.6875,
+        "top": 809.3125,
+        "right": 320,
+        "bottom": 900,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 55.58919692697252,
+          "y": 233.13455072273004,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 264.4108030730275,
+          "y": 233.13455072273004,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 55.58919692697252,
+          "y": 438.05294927726993,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 264.4108030730275,
+          "y": 438.05294927726993,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 230.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 440.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "rect": {
+        "x": 49,
+        "y": 338.59375,
+        "width": 222,
+        "height": 218,
+        "top": 338.59375,
+        "right": 271,
+        "bottom": 556.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 85,
+        "top": 0,
+        "right": 320,
+        "bottom": 85,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 0,
+        "y": 809.3125,
+        "width": 320,
+        "height": 90.6875,
+        "top": 809.3125,
+        "right": 320,
+        "bottom": 900,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 55.58919692697252,
+          "y": 345.13455072273007,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 264.4108030730275,
+          "y": 345.13455072273007,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 55.58919692697252,
+          "y": 550.0529492772699,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 264.4108030730275,
+          "y": 550.0529492772699,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 342.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 267,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 160,
+          "y": 552.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "variant": "original",
+      "rect": {
+        "x": 49,
+        "y": 268.59375,
+        "width": 277,
+        "height": 134,
+        "top": 268.59375,
+        "right": 326,
+        "bottom": 402.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 85,
+        "top": 0,
+        "right": 375,
+        "bottom": 85,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 0,
+        "y": 809.3125,
+        "width": 375,
+        "height": 90.6875,
+        "top": 809.3125,
+        "right": 375,
+        "bottom": 900,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.45826544967966,
+          "y": 274.2136066790321,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 318.54173455032037,
+          "y": 274.2136066790321,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 56.45826544967966,
+          "y": 396.97389332096793,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 318.54173455032037,
+          "y": 396.97389332096793,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 272.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 322,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 398.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 335.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "height": 900,
+      "scale": 200,
+      "variant": "symmetric",
+      "rect": {
+        "x": 49,
+        "y": 380.59375,
+        "width": 277,
+        "height": 134,
+        "top": 380.59375,
+        "right": 326,
+        "bottom": 514.59375,
+        "left": 49
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 85,
+        "top": 0,
+        "right": 375,
+        "bottom": 85,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 0,
+        "y": 809.3125,
+        "width": 375,
+        "height": 90.6875,
+        "top": 809.3125,
+        "right": 375,
+        "bottom": 900,
+        "left": 0
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 56.45826544967966,
+          "y": 386.2136066790321,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 318.54173455032037,
+          "y": 386.2136066790321,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 56.45826544967966,
+          "y": 508.97389332096793,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 318.54173455032037,
+          "y": 508.97389332096793,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 384.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 322,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 187.5,
+          "y": 510.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 53,
+          "y": 447.59375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "variant": "original",
+      "rect": {
+        "x": 586.5625,
+        "y": 115.34375,
+        "width": 208.4375,
+        "height": 47,
+        "top": 115.34375,
+        "right": 795,
+        "bottom": 162.34375,
+        "left": 586.5625
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 73.640625,
+        "top": 0,
+        "right": 844,
+        "bottom": 73.640625,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 16,
+        "y": 110,
+        "width": 144,
+        "height": 170.375,
+        "top": 110,
+        "right": 160,
+        "bottom": 280.375,
+        "left": 16
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 590.5625,
+          "y": 119.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 119.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 590.5625,
+          "y": 158.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 158.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 138.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 119.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 138.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 158.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 590.5625,
+          "y": 138.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "variant": "symmetric",
+      "rect": {
+        "x": 586.5625,
+        "y": 171.34375,
+        "width": 208.4375,
+        "height": 47,
+        "top": 171.34375,
+        "right": 795,
+        "bottom": 218.34375,
+        "left": 586.5625
+      },
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 73.640625,
+        "top": 0,
+        "right": 844,
+        "bottom": 73.640625,
+        "left": 0
+      },
+      "navigationRect": {
+        "x": 16,
+        "y": 110,
+        "width": 144,
+        "height": 170.375,
+        "top": 110,
+        "right": 160,
+        "bottom": 280.375,
+        "left": 16
+      },
+      "fullyInViewport": true,
+      "unobstructed": true,
+      "points": [
+        {
+          "x": 590.5625,
+          "y": 175.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 175.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 590.5625,
+          "y": 214.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 214.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 194.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 175.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 791,
+          "y": 194.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 690.78125,
+          "y": 214.34375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        },
+        {
+          "x": 590.5625,
+          "y": 194.84375,
+          "tag": "A",
+          "className": "c_primary",
+          "inside": true
+        }
+      ]
+    }
+  ]
+}

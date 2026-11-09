@@ -1,0 +1,18 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "utc": "2026-10-25T05:53:53.570Z",
+  "attempt": "territorial-readiness-attempt1.json",
+  "result": "HARNESS_FIXTURE_TRANSACTION_ERROR",
+  "actualFailureStage": "fixture laboratories",
+  "safeDatabaseError": "IMP003_OWNER_INVARIANT",
+  "counterproof": "Separate owned-schema fixture-only reproduction, no Next/browser/HTTP, same failure at laboratoryRoom.create.",
+  "sourceInvariant": "prisma/migrations/20260914000100_area_registration_and_membership_roles/migration.sql:47-53",
+  "cause": "A laboratory committed before its required OWNER membership. The existing deferred constraint validates at transaction commit.",
+  "correction": "Create synthetic laboratories and OWNER memberships in one Prisma transaction, retaining all database constraints and fixture cardinalities.",
+  "cleanup": {
+    "firstAttemptSchema": "REMOVED",
+    "diagnosticLifecycle": "owned teardown completed",
+    "postgres": "STOPPED"
+  },
+  "baselineUnchanged": true
+}

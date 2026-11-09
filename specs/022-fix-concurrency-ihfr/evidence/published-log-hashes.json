@@ -1,0 +1,27 @@
+[
+    {
+        "published":  "cover-regressions.txt",
+        "source":  "green-covers-2.log",
+        "sha256":  "9a49355ac03fc2785a37514f8d2aaaaf1f6e494eeedf6299b6fd9d474ee72f18"
+    },
+    {
+        "published":  "green-covers.txt",
+        "source":  "green-covers-final.log",
+        "sha256":  "013a71aa933e074727b433714474ffca4754dc02567588ee5aa2c3c0803ed1b2"
+    },
+    {
+        "published":  "ihfr-controls.txt",
+        "source":  "ihfr-controls-diagnostic.log",
+        "sha256":  "dcc564e61416cbb0496b182757c1cf2a36d7edccba342c4aeee359f28d77f831"
+    },
+    {
+        "published":  "ihfr-official.txt",
+        "source":  "ihfr-official-final.log",
+        "sha256":  "711caa2772096ac6467c7ace376e4097f8a27023285bfedd427c5a4bb320ce19"
+    },
+    {
+        "published":  "red-covers.txt",
+        "source":  "red-covers-final.log",
+        "sha256":  "4e0d57dee33433fceb7b6f256f6550f9a5c5ae65a4eb83fda1215604c9c453c0"
+    }
+]

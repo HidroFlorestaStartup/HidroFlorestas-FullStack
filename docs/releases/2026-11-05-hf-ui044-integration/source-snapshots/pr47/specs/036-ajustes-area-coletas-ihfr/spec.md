@@ -1,0 +1,107 @@
+# Feature Specification: área, coletas e apresentação IHFR
+
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
+**Feature Branch**: `feat/ajustes-area-coletas-ihfr`
+**Created**: 2026-10-31
+**Status**: Implementação B validada em CI no `CODE_SHA_TESTED=d7586ab95c69c45211e463516080e741bbb3931a` (15/15 gates, run 41252813575/tentativa 1); comparação bilateral UI-06 e aceite ainda pendentes. O histórico abaixo conserva checkpoints anteriores.
+**Input**: UI-02, UI-03, UI-04 e UI-06 em área/coleta, aprovadas no handoff de Pedro #44; divisão confirmada na missão HF-UI-044-G0.
+**Base exata**: `07755822f5dc75fe2be1d924005d30ed99f64a0b`, independente de A/C.
+
+## Fontes e autoridade
+
+[Decisões completas](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/972f9b00189bf09117883913d8c4fa63e69f4d2f/docs/plans/active/ajustes-interface-pos-testes-20261030/decisoes-e-escopo.md), [critérios](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/blob/972f9b00189bf09117883913d8c4fa63e69f4d2f/docs/plans/active/ajustes-interface-pos-testes-20261030/criterios-de-aceite.md), [plano G0](../../docs/plans/active/hf-ui044-g0/plan.md). Starter somente visual: `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f`.
+
+DECISAO_CONFIRMADA: os ajustes UI autorizados. As prioridades abaixo são RECOMENDACAO de execução. Preservar constituição, SOURCE_AUTHORITY e estados do PRD Code-First; apresentação não aprova nem altera o contrato científico.
+
+## User Scenarios & Testing
+
+### US1 — Reencontrar coletas e resultados pela área (P1)
+
+**Teste independente**: abrir uma área com coletas em diferentes datas/offsets, navegar ao detalhe/dados ambientais e retornar.
+
+**Aceite**: a área lista coletas pela ocorrência em campo, mais recente primeiro, e oferece acesso claro aos dados/detalhe. O último IHFR disponível aparece mesmo quando pertence a coleta anterior à mais recente, com origem e datas explícitas. Não mostrar resultado revogado como atual, não inventar resultado zero e não gerar diagnóstico automaticamente.
+
+**INFERENCIA operacional registrada em UI-02, não nova decisão aprovada**: percorrer as coletas pela ocorrência em campo decrescente e obter o primeiro diagnóstico disponível/vigente; empates usam critério estável explicitamente documentado sem modificar o instante original. O executor deve confirmar compatibilidade com os contratos atuais. Data de confirmação ou de cálculo não pode substituir silenciosamente esse critério. Preservar Registrar coleta, acesso ao diagnóstico individual e retorno ao contexto da área.
+
+### US2 — Ler a coleta com composição clara (P1)
+
+**Teste independente**: abrir coleta confirmada e os estados sem dados, com draft e com resultado, em desktop/mobile.
+
+**Aceite**: composição de largura/colunas e hierarquia inspirada no starter; dados e ações reais preservados; diferenças entre ocorrência, confirmação e draft continuam visíveis. Navegação não perde o vínculo com laboratório/área/coleta nem permite editar confirmados por conveniência visual.
+
+### US3 — Entender o resultado e consultar detalhes técnicos (P1)
+
+**Teste independente**: com resultado, expandir/recolher detalhes por teclado; sem dados ambientais confirmados, identificar a ação necessária.
+
+**Aceite**: rótulo experimental curto próximo do resultado e detalhes técnicos acessíveis, contendo proveniência e integralmente CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO. Mensagem humana orienta a falta de dados ambientais confirmados; códigos técnicos não substituem essa orientação. Não apagar qualificadores, mudar fórmulas, manifests, hashes ou critérios científicos.
+
+### Edge Cases
+
+Área sem coletas; nenhuma coleta com IHFR; coleta mais recente sem diagnóstico; múltiplas coletas com datas/offsets equivalentes; resultado revogado/substituído; acesso negado; erro/loading; retorno por histórico; atualização tardia; textos longos e última ação no mobile. Critério de desempate técnico deve ser explícito e testado, sem ser apresentado como nova aprovação de produto.
+
+## Requirements
+
+- **FR-036-001**: aplicar UI-02 com ordenação temporal correta, links e origem do IHFR disponível.
+- **FR-036-002**: aplicar UI-03 preservando estados e dados reais.
+- **FR-036-003**: aplicar UI-04 sem ocultar permanentemente os qualificadores ou mudar ciência.
+- **FR-036-004**: aplicar UI-06 em páginas de área/coleta, comparando os runtimes no mesmo estado.
+- **FR-036-005**: preservar autorização contextual, imutabilidade, drafts pessoais, proveniência e contratos existentes.
+
+Entidades reutilizadas: área, coleta, ocorrência, dados ambientais confirmados, draft pessoal e diagnóstico versionado. Reusar specs 021/023/024/025 conforme seus estados e completar rastreabilidade Code-First no plano, sem atribuir validade científica definitiva.
+
+## Success Criteria
+
+**SC-036-001**: cenários US1–US3 e contraprovas de tempo/estado/acesso passam com evidência por SHA.
+**SC-036-002**: comparação atual em 320, 375/390, 768 e 1440 px, texto 200%, teclado e foco; capturas viewport `fullPage: false` e geometria sem overflow/ação oculta.
+**SC-036-003**: quinze gates preservados e resultados reais registrados, sem rebaixar assertivas para adequar layout.
+**SC-036-004**: diff não contém alteração de motor/fórmula/manifesto científico nem formulário de localização de C.
+
+## Assumptions and limits
+
+API/leituras podem exigir adaptação focal, a demonstrar pelo executor. Qualquer DTO compartilhado com C passa pelo coordenador. Shell pertence a A; não copiar sua branch. UI-07, REV-01–REV-03, provedores, deploy e ciência fora de escopo. [Plano](plan.md), [tarefas](tasks.md), [evidências](implementation-evidence.md).
+
+
+## Registro de implementação — 2026-10-31
+
+**EVIDENCIA_CODIGO**: UI-02 implementada como consulta escopada às coletas confirmadas; usa instante UTC da ocorrência e mantém o offset informado, ordenação decrescente e desempate por UUID decrescente. A seleção do primeiro ponteiro de IHFR vigente nas coletas ordenadas é **INFERENCIA** do handoff, não aprovação científica ou novo requisito normativo. Diagnósticos substituídos/revogados não são inferidos do histórico e a ausência não vira score zero.
+
+**EVIDENCIA_CODIGO**: UI-03 reorganizada em colunas apenas em larguras desktop, mantendo rotas, confirmação imutável, ações ambientais e estados de leitura. Presença de dados ambientais é consulta de existência, independentemente de versão científica; rascunhos não passam por conjuntos confirmados.
+
+**EVIDENCIA_CODIGO**: UI-04 mantém qualificador curto visível e detalhes nativos expansíveis por Enter/Espaço (limites, quatro códigos e proveniência). Falta de medições confirmadas informa a ação adequada e sua natureza, em vez de expor somente o código interno.
+
+**Validação**: código e testes versionados em commits próprios; resultados de execução do HEAD final e comparação simultânea do starter com o FullStack ainda não confirmados. Consultar [evidências](implementation-evidence.md). Nenhuma mudança no contrato científico, persistência, schemas, shell A ou formulário C.
+
+## Critérios de regressão focal após CI 41234289600
+
+**INFERENCIA operacional UI-02 (inalterada):** o último IHFR disponível deve ser selecionado entre diagnósticos CURRENT efetivamente existentes, percorrendo coletas confirmadas ordenadas pelo instante de ocorrência em campo. O teste integrado usa área sintética própria sem diagnósticos preexistentes; a coexistência de outro CURRENT em outra área ou coleta de uma fixture global não autoriza substituir a origem exibida.
+
+**FR-036-003 / SC-036-002:** os quatro qualificadores experimentais completos permanecem legíveis quando os detalhes são abertos por teclado; a expressão humana “Limites do diagnóstico experimental” não pode fragmentar uma palavra na largura 320px com texto a 200%. Não é autorizado reduzir a ampliação, desativar a verificação ou mudar a ciência.
+
+**Estado:** requisito já aprovado e implementado; correções locais e regressões documentadas no plano e nas tarefas. Aceite humano e comparação executada com o starter permanecem independentes dos testes sintéticos de CI.
+
+
+## Estado verificado HF-UI-044-CLOSE-B (2026-11-01)
+
+`EVIDENCIA_IMPLEMENTACAO`: a suíte RC no **código** `d7586ab95c69c45211e463516080e741bbb3931a` terminou 15/15 PASS em [run 41252813575, tentativa 1](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41252813575). As verificações de ocorrências/offsets, links, presença ambiental e qualificadores no cenário sintético constam dos testes e logs desse mesmo código. Capturas verificadas da execução **FullStack** não constituem a comparação bilateral solicitada por FR-036-004/SC-036-002. **T008/T016 continuam NOT_RUN**, pois o starter `cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f` não foi executado em paridade de fixtures/estado/viewport. O impedimento e o mapa de provas estão em [implementation-evidence.md](implementation-evidence.md). Não existe aceite humano, validação científica definitiva ou validação composta com o HEAD A atual.
+
+## Continuidade CLOSE-PARALLEL-02 / B — 2026-11-01
+
+`EVIDENCIA_IMPLEMENTACAO` estática: nova instrumentação focal em `qa/hf-ui044/domain.spec.ts`
+e `domain-fixtures.ts`, fora do testDir oficial. Nenhum arquivo de produto, contrato científico,
+schema, shell A ou formulário C alterado. Base funcional composta `6c61056f`, pacote `22bb9c1b`.
+
+FR-036-004/SC-036-002 são exercitados por75 casos pareados planejados:60 recortes centrais,
+12 capturas individuais de qualificadores, duas jornadas teclado/histórico e uma observação
+de reload. O índice registra também NOT_RUN. A referência preserva seu adapter/mock no próprio
+browser; o FullStack recebe chamadas HTTP nativas autenticadas sobre PostgreSQL owned do runner.
+
+As fontes do starter `cbb954a` mostram ordenação por confirmação e ausência do resumo CURRENT
+na área; scores são predefinidos para demonstração. São diferenças de modelo explicitadas como
+NON_EQUIVALENT, sem alterar a decisão posterior UI-02 ou importar resultados simulados.
+Área vazia/registro/ausência possuem estados semanticamente pareados; a avaliação visual depende
+dos PNG reais. Execução, comparabilidade, requisito e completude são eixos independentes.
+
+Runtime bilateral desta continuidade e inspeção de imagens: NOT_RUN no corte de implementação.
+T008/T016 e novos itens de runtime continuam abertos. `B_VISUAL_READY_FOR_RUNTIME` descreve
+o preparo do código, não `UI06_B_EVIDENCE_COMPLETE`. Aceite humano permanece pendente.

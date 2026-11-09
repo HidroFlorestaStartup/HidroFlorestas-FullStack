@@ -1,0 +1,1019 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:e2e
+npm notice run playwright test
+[2m[WebServer] [22mnpm notice run hidro-florestas-fullstack@0.1.0 dev
+[2m[WebServer] [22mnpm notice run next dev --hostname 127.0.0.1 --port 3001
+[2m[WebServer] [22m(node:45132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 136 tests using 1 worker
+
+(node:41456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:41456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [chromium] › tests\e2e\account-verification-recovery.spec.ts:17:7 › account forms and privacy › verification preserves a zero prefix, announces errors, and obeys server cooldown (657ms)
+  ok   2 [chromium] › tests\e2e\account-verification-recovery.spec.ts:41:7 › account forms and privacy › expired verification offers a resend and a lost session offers legitimate login (713ms)
+  ok   3 [chromium] › tests\e2e\account-verification-recovery.spec.ts:53:7 › account forms and privacy › reset removes the fragment, preserves the proof on GET, and recovers after reload (705ms)
+  ok   4 [chromium] › tests\e2e\account-verification-recovery.spec.ts:71:7 › account forms and privacy › forgot password works by keyboard on mobile and displays a neutral response (1.3s)
+  ok   5 [chromium] › tests\e2e\account-verification-recovery.spec.ts:83:7 › account forms and privacy › a new reset fragment in an existing tab is removed and clears the previous form without consuming it (440ms)
+  ok   6 [chromium] › tests\e2e\account-verification-recovery.spec.ts:193:7 › browser account journeys with a deterministic outbox transport › registers, verifies from received mail, logs out, resumes, and revokes another browser after reset (17.5s)
+  ok   7 [chromium] › tests\e2e\account-verification-recovery.spec.ts:247:7 › browser account journeys with a deterministic outbox transport › an ACTIVE unverified account can reset and then returns to verification (4.2s)
+[2m[WebServer] [22m[browser] Image with src "/_next/static/media/logo-hf.2qtq_rd_sdq39.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[2m[WebServer] [22mRead more: https://nextjs.org/docs/app/api-reference/components/image#loading
+  ok   8 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 375px (4.8s)
+  ok   9 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 768px (4.9s)
+  ok  10 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 1440px (4.8s)
+  ok  11 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 320px with text200 (7.2s)
+  ok  12 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › register is inert before hydration and preserves first input (576ms)
+  ok  13 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › forgot-password is inert before hydration and preserves first input (553ms)
+  ok  14 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › change-password is inert before hydration and preserves first input (583ms)
+  ok  15 [chromium] › tests\e2e\frontend-account.spec.ts:123:5 › signup keeps uncertain attempt, raw password and server errors without field invalidity (854ms)
+  ok  16 [chromium] › tests\e2e\frontend-account.spec.ts:166:5 › shared password visibility has a mobile target and visible keyboard focus (501ms)
+  ok  17 [chromium] › tests\e2e\frontend-account.spec.ts:180:5 › verification loading and invalid-code presentation remain safe (571ms)
+  ok  18 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › forgot-password processing and general error are visible without exposing fields (678ms)
+  ok  19 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › reset-password processing and general error are visible without exposing fields (705ms)
+  ok  20 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › change-password processing and general error are visible without exposing fields (802ms)
+  ok  21 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › delete-account processing and general error are visible without exposing fields (658ms)
+[2m[WebServer] [22m(node:10796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  22 [chromium] › tests\e2e\frontend-dashboard.spec.ts:147:7 › real dashboard, cursor, members and empty context at 375px (4.7s)
+[2m[WebServer] [22m(node:21360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  23 [chromium] › tests\e2e\frontend-dashboard.spec.ts:241:7 › transient transport loading and failures retry real dashboard and members at 375px (1.9s)
+[2m[WebServer] [22m(node:31300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:9812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  24 [chromium] › tests\e2e\frontend-dashboard.spec.ts:147:7 › real dashboard, cursor, members and empty context at 768px (2.7s)
+[2m[WebServer] [22m(node:33860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  25 [chromium] › tests\e2e\frontend-dashboard.spec.ts:241:7 › transient transport loading and failures retry real dashboard and members at 768px (2.0s)
+[2m[WebServer] [22m(node:46480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:10564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  26 [chromium] › tests\e2e\frontend-dashboard.spec.ts:147:7 › real dashboard, cursor, members and empty context at 1440px (2.7s)
+[2m[WebServer] [22m(node:36724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  27 [chromium] › tests\e2e\frontend-dashboard.spec.ts:241:7 › transient transport loading and failures retry real dashboard and members at 1440px (2.1s)
+[2m[WebServer] [22m(node:22492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  28 [chromium] › tests\e2e\frontend-dashboard.spec.ts:147:7 › real dashboard, cursor, members and empty context at 320px text200 (3.4s)
+[2m[WebServer] [22m(node:18972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  29 [chromium] › tests\e2e\frontend-dashboard.spec.ts:241:7 › transient transport loading and failures retry real dashboard and members at 320px text200 (2.6s)
+[2m[WebServer] [22m(node:22568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  30 [chromium] › tests\e2e\frontend-dashboard.spec.ts:306:5 › real membership conflict preserves expectedRole and a delayed real PATCH rejects same-turn duplicate clicks (2.0s)
+[2m[WebServer] [22m(node:22352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:10692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  31 [chromium] › tests\e2e\frontend-dashboard.spec.ts:377:5 › real redirects and global/contextual authority preserve owner-only roles and inactive readOnly (3.1s)
+[2m[WebServer] [22m(node:10624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  32 [chromium] › tests\e2e\frontend-dashboard.spec.ts:482:5 › real summary and refreshed history responses cannot replace an empty context after client navigation from page two (1.9s)
+[2m[WebServer] [22m(node:40608) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:4492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  33 [chromium] › tests\e2e\frontend-dashboard.spec.ts:580:5 › real delayed members from the previous client context cannot replace the selected owner's roster (1.9s)
+[2m[WebServer] [22m(node:16988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:7224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  34 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:95:7 › mobile viewport reading area 375px text100 (15.7s)
+[2m[WebServer] [22m(node:20296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:2684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:4552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  35 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:95:7 › mobile viewport reading area 375px text200 (17.6s)
+[2m[WebServer] [22m(node:9300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  36 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:95:7 › mobile viewport reading area 320px text100 (14.9s)
+[2m[WebServer] [22m(node:36344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:2736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  37 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:95:7 › mobile viewport reading area 320px text200 (17.7s)
+[2m[WebServer] [22m(node:24696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:47000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  38 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 375px (9.2s)
+[2m[WebServer] [22m(node:29556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:9964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  39 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 768px (6.7s)
+[2m[WebServer] [22m(node:22040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17576) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  40 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 1440px (6.7s)
+[2m[WebServer] [22m(node:30240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  41 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 320px text200 (9.4s)
+[2m[WebServer] [22m(node:44288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  42 [chromium] › tests\e2e\frontend-workspace.spec.ts:131:5 › settings contains keyboard focus, Escape restores the trigger and close cancels (1.4s)
+[2m[WebServer] [22m(node:28316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  43 [chromium] › tests\e2e\frontend-workspace.spec.ts:153:5 › real owner creates, confirms exact name, deactivates and deletes without implicit selection (1.9s)
+[2m[WebServer] [22m(node:36364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:7800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:3904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28412) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  44 [chromium] › tests\e2e\frontend-workspace.spec.ts:185:5 › contextual roles, inactive access, explicit change and history stay real (8.5s)
+[2m[WebServer] [22m(node:13316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  45 [chromium] › tests\e2e\frontend-workspace.spec.ts:214:5 › global administration uses server capability without bypassing laboratory membership (5.3s)
+[2m[WebServer] [22m(node:38476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  46 [chromium] › tests\e2e\frontend-workspace.spec.ts:230:5 › mobile account disclosure closes with Escape, navigation and desktop resize (1.5s)
+  ok  47 [chromium] › tests\e2e\frontend-workspace.spec.ts:256:5 › transient list loading and error retry recover the real empty workspace (813ms)
+  ok  48 [chromium] › tests\e2e\frontend-workspace.spec.ts:273:5 › keyboard skip link focuses content without adding a second main (4.6s)
+  ok  49 [chromium] › tests\e2e\frontend-workspace.spec.ts:293:5 › mobile focused content stays between sticky header and bottom navigation with text200 (1.6s)
+  ok  50 [chromium] › tests\e2e\frontend-workspace.spec.ts:307:5 › transient create blocks same-turn duplicate requests and preserves payload (1.3s)
+[2m[WebServer] [22m(node:8028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  51 [chromium] › tests\e2e\frontend-workspace.spec.ts:326:5 › transient risk blocks same-turn duplicate PATCH and shows its error inside settings (1.4s)
+  ok  52 [chromium] › tests\e2e\frontend-workspace.spec.ts:346:5 › transient settings read error is accessible in dialog and retry reads real details (1.4s)
+[2m[WebServer] [22m(node:30916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  53 [chromium] › tests\e2e\frontend-workspace.spec.ts:363:5 › lost membership between list and settings stays denied without selecting another context (2.0s)
+[2m[WebServer] [22m(node:45920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  54 [chromium] › tests\e2e\frontend-workspace.spec.ts:383:5 › server refuses deleting a laboratory with areas and keeps confirmation recoverable (1.3s)
+  ok  55 [chromium] › tests\e2e\frontend-workspace.spec.ts:396:7 › real logout at 375px revokes session and history cannot restore workspace (1.4s)
+  ok  56 [chromium] › tests\e2e\frontend-workspace.spec.ts:396:7 › real logout at 1440px revokes session and history cannot restore workspace (1.3s)
+  ok  57 [chromium] › tests\e2e\frontend-workspace.spec.ts:408:5 › transient logout loading and error keep retry connected to the real POST (961ms)
+(node:43640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:2736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  58 [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes (1.4s)
+[2m[WebServer] [22m(node:13396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  59 [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=true and never requests bytes (3.5s)
+[2m[WebServer] [22m(node:42388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  60 [chromium] › tests\e2e\area-covers.spec.ts:26:5 › cover UI fake: invalid input, lost response retry, mobile keyboard replacement/removal and private preview (1.6s)
+[2m[WebServer] [22m(node:35532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:7832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  61 [chromium] › tests\e2e\area-covers.spec.ts:48:5 › member has reading/fallback only and outsider receives contextual HTTP refusal (2.4s)
+[2m[WebServer] [22m(node:19636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  62 [chromium] › tests\e2e\area-covers.spec.ts:56:5 › reloading a temporarily unavailable cover retries its content at the same revision (1.1s)
+[2m[WebServer] [22m(node:32132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  63 [chromium] › tests\e2e\area-registration.spec.ts:17:5 › backend enforces current role, isolation, ownership privacy and account eligibility (1.1s)
+[2m[WebServer] [22m(node:33640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35460) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  64 [chromium] › tests\e2e\area-registration.spec.ts:43:5 › explicit context and manual registration survive reload without tiles (3.2s)
+[2m[WebServer] [22m(node:26128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  65 [chromium] › tests\e2e\area-registration.spec.ts:53:5 › map selection remains editable and saves only on confirmation (1.2s)
+[2m[WebServer] [22m(node:32956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  66 [chromium] › tests\e2e\area-registration.spec.ts:62:5 › late and denied geolocation preserve edited fields (3.1s)
+[2m[WebServer] [22m(node:9008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  67 [chromium] › tests\e2e\area-registration.spec.ts:71:5 › essential flow and map have usable dimensions across viewports (1.7s)
+[2m[WebServer] [22m(node:41004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:9856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:21656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  68 [chromium] › tests\e2e\area-viewing.spec.ts:26:5 › lists persistent coordinates without an aggregate map and opens one-marker detail (1.1s)
+[2m[WebServer] [22m(node:31696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  69 [chromium] › tests\e2e\area-viewing.spec.ts:38:5 › renders list and detail for every contextual role, including inactive read-only (1.8s)
+[2m[WebServer] [22m(node:28980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  70 [chromium] › tests\e2e\area-viewing.spec.ts:50:5 › keeps list and detail usable on mobile, intermediate and wide viewports (1.8s)
+  ok  71 [chromium] › tests\e2e\authenticated-access.spec.ts:58:7 › authenticated access › rejects syntactically invalid input before credential lookup (14ms)
+  ok  72 [chromium] › tests\e2e\authenticated-access.spec.ts:73:7 › authenticated access › rejects well-formed incorrect and ineligible credentials uniformly (287ms)
+  ok  73 [chromium] › tests\e2e\authenticated-access.spec.ts:98:7 › authenticated access › logs an ACTIVE user into workspace with an exact public DTO and safe cookie (596ms)
+  ok  74 [chromium] › tests\e2e\authenticated-access.spec.ts:136:7 › authenticated access › restores an ACTIVE session across reload and both private trees (783ms)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1215920706'[39m
+[2m[WebServer] [22m}
+  ok  75 [chromium] › tests\e2e\authenticated-access.spec.ts:161:7 › authenticated access › denies missing, malformed, tampered, expired, invalid-payload, and orphan sessions (1.0s)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+  ok  76 [chromium] › tests\e2e\authenticated-access.spec.ts:205:7 › authenticated access › denies sessions for every user that is not ACTIVE (673ms)
+  ok  77 [chromium] › tests\e2e\authenticated-access.spec.ts:220:7 › authenticated access › expires an obsolete cookie through /me without exposing protected fields (22ms)
+  ok  78 [chromium] › tests\e2e\authenticated-access.spec.ts:239:7 › authenticated access › revokes protected access on the next validation after ACTIVE becomes BLOCKED (559ms)
+  ok  79 [chromium] › tests\e2e\authenticated-access.spec.ts:260:7 › authenticated access › logout prevents back, reload, and direct access to both private trees (942ms)
+  ok  80 [chromium] › tests\e2e\authenticated-access.spec.ts:288:7 › authenticated access › repeated logout without a session remains stable (614ms)
+[2m[WebServer] [22m(node:34396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:10128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  81 [chromium] › tests\e2e\collection-registration.spec.ts:37:5 › US1 starts only from the explicit authorized area without persistence (2.0s)
+[2m[WebServer] [22m(node:37844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async NewCollectionPage (src\app\(private)\dashboard\laboratories\[laboratoryId]\areas\[areaId]\collections\new\page.tsx:14:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'3176160840'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m(node:33152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  82 [chromium] › tests\e2e\collection-registration.spec.ts:57:5 › US1 rejects crossed, missing, revoked, ineligible and inactive mutation contexts (1.9s)
+[2m[WebServer] [22m(node:35716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  83 [chromium] › tests\e2e\collection-registration.spec.ts:91:5 › US2 validates an explicit temporal offset in memory without POST (979ms)
+[2m[WebServer] [22m(node:33508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  84 [chromium] › tests\e2e\collection-registration.spec.ts:127:5 › US3 reviews derived authorship and confirms once after a double click (2.3s)
+[2m[WebServer] [22m(node:37984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  85 [chromium] › tests\e2e\collection-registration.spec.ts:160:5 › US3 retries a failed confirmation with the same key and surfaces access loss (732ms)
+  ok  86 [chromium] › tests\e2e\collection-registration.spec.ts:196:5 › US3 converges concurrent real POSTs and rejects a divergent replay (284ms)
+[2m[WebServer] [22m(node:29200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  87 [chromium] › tests\e2e\collection-registration.spec.ts:225:5 › US4 reads a minimal immutable detail for current roles and inactive laboratories (3.8s)
+[2m[WebServer] [22m(node:10228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  88 [chromium] › tests\e2e\collection-registration.spec.ts:247:5 › US4 hides crossed, missing and revoked collection contexts (2.1s)
+[2m[WebServer] [22m(node:38120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:4152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  89 [chromium] › tests\e2e\collection-registration.spec.ts:263:5 › US4 detail remains keyboard-usable across responsive viewports (1.7s)
+[2m[WebServer] [22m(node:18884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  90 [chromium] › tests\e2e\collection-registration.spec.ts:279:5 › US4 completes independent form-to-detail flows in two laboratory contexts (2.3s)
+  ok  91 [chromium] › tests\e2e\create-laboratory.spec.ts:36:7 › minimum laboratory creation › creates with name only and remains visible after reload (1.2s)
+  ok  92 [chromium] › tests\e2e\create-laboratory.spec.ts:54:7 › minimum laboratory creation › rejects client supplied identity (21ms)
+  ok  93 [chromium] › tests\e2e\create-laboratory.spec.ts:60:7 › minimum laboratory creation › enforces five accessible laboratories and exposes the limit in the UI (590ms)
+[2m[WebServer] [22m(node:2612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  94 [chromium] › tests\e2e\create-laboratory.spec.ts:73:7 › minimum laboratory creation › does not expose one user's laboratory to another (442ms)
+[2m[WebServer] [22m(node:26900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  95 [chromium] › tests\e2e\dashboard-history.spec.ts:43:5 › US1 shows real contextual totals, an empty laboratory and the areas destination (2.0s)
+[2m[WebServer] [22m(node:35968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:23752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  96 [chromium] › tests\e2e\dashboard-history.spec.ts:59:5 › US2 traverses more than 20 stable derived items without duplicates and opens real destinations (2.0s)
+[2m[WebServer] [22m(node:41420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  97 [chromium] › tests\e2e\dashboard-history.spec.ts:87:5 › US2 keeps continuation stable and includes a newer source after returning to the first page (1.2s)
+[2m[WebServer] [22m(node:30924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  98 [chromium] › tests\e2e\dashboard-history.spec.ts:119:5 › US3 reloads persisted sources and keeps loading, failure and retry distinct (2.7s)
+[2m[WebServer] [22m(node:33572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  99 [chromium] › tests\e2e\dashboard-history.spec.ts:182:5 › US3 discards a delayed response when the laboratory context changes (956ms)
+[2m[WebServer] [22m(node:33536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 100 [chromium] › tests\e2e\dashboard-history.spec.ts:197:5 › US4 preserves isolation, reauthorization and minimized API payloads (1.1s)
+[2m[WebServer] [22m(node:16936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:9804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 101 [chromium] › tests\e2e\dashboard-history.spec.ts:225:5 › US4 remains keyboard-operable and free of main horizontal overflow (1.5s)
+[2m[WebServer] [22m(node:29136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 102 [chromium] › tests\e2e\environmental-data-read.spec.ts:13:5 › independent read shows provenance, null/zero/false, mobile and desktop without overflow (2.6s)
+[2m[WebServer] [22m(node:34236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 103 [chromium] › tests\e2e\environmental-data-read.spec.ts:25:5 › absence and direct API access distinguish missing data from inaccessible context (1.4s)
+[2m[WebServer] [22m(node:38840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 104 [chromium] › tests\e2e\environmental-data-registration.spec.ts:8:5 › registers through review, rejects invalid values and retries the same operation after lost response (16.2s)
+[2m[WebServer] [22m(node:38720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 105 [chromium] › tests\e2e\environmental-data-registration.spec.ts:39:5 › inactive laboratory only permits reading and has no registration controls (612ms)
+[2m[WebServer] [22m(node:35156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 106 [chromium] › tests\e2e\environmental-drafts.spec.ts:11:5 › unsaved browser history cancellation preserves fields and excessive raw gives feedback (3.8s)
+[2m[WebServer] [22m(node:16752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 107 [chromium] › tests\e2e\environmental-drafts.spec.ts:27:5 › personal draft retries a lost save, resumes partial values, resolves two-tab conflict, discards and confirms on mobile (4.8s)
+[2m[WebServer] [22m(node:37680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 108 [chromium] › tests\e2e\environmental-drafts.spec.ts:49:5 › outsider cannot read draft and inactive laboratory offers only reading (691ms)
+[2m[WebServer] [22m(node:45168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 109 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (new draft) (2.2s)
+[2m[WebServer] [22m(node:23328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 110 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (absent and blank baseline) (2.2s)
+  ok 111 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 375px without horizontal overflow (528ms)
+  ok 112 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 768px without horizontal overflow (548ms)
+  ok 113 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 1440px without horizontal overflow (521ms)
+  ok 114 [chromium] › tests\e2e\frontend-login.spec.ts:23:5 › login reflows at 320px with enlarged root text (906ms)
+  ok 115 [chromium] › tests\e2e\frontend-login.spec.ts:45:5 › login preserves password visibility controls and keyboard order (558ms)
+  ok 116 [chromium] › tests\e2e\frontend-login.spec.ts:76:5 › login is inert until hydration and then accepts the first input (603ms)
+  ok 117 [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error (772ms)
+  ok 118 [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating (716ms)
+  ok 119 [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend (477ms)
+  ok 120 [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend (445ms)
+  ok 121 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only (517ms)
+  ok 122 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only (528ms)
+  ok 123 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: both fields (503ms)
+  ok 124 [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level (547ms)
+[2m[WebServer] [22m(node:38008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 125 [chromium] › tests\e2e\laboratory-context.spec.ts:26:5 › requires explicit selection and keeps laboratory context in links and reloads (2.1s)
+[2m[WebServer] [22m(node:3356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 126 [chromium] › tests\e2e\laboratory-context.spec.ts:40:5 › revoked and cross-laboratory access remain indistinguishable from missing resources (127ms)
+[2m[WebServer] [22m(node:34228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 127 [chromium] › tests\e2e\laboratory-membership-roles.spec.ts:7:5 › owner promotes and demotes; stale role and inactive laboratory reject changes (1.4s)
+[2m[WebServer] [22m(node:11536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 128 [chromium] › tests\e2e\laboratory-membership-roles.spec.ts:25:5 › administrator cannot manage contextual roles (59ms)
+[2m[WebServer] [22m(node:46240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 129 [chromium] › tests\e2e\territorial-map.spec.ts:27:5 › shows one authorized textual item and marker per area and excludes partial collections (1.1s)
+[2m[WebServer] [22m(node:14180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 130 [chromium] › tests\e2e\territorial-map.spec.ts:56:5 › keeps inactive laboratories readable and inaccessible contexts indistinguishable (632ms)
+[2m[WebServer] [22m(node:42220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 131 [chromium] › tests\e2e\territorial-map.spec.ts:75:5 › preserves the complete textual interface without horizontal overflow (1.7s)
+[2m[WebServer] [22m(node:33244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 132 [chromium] › tests\e2e\user-administration-audit.spec.ts:5:5 › successful changes appear in minimized history (1.7s)
+[2m[WebServer] [22m(node:31388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 133 [chromium] › tests\e2e\user-administration-read.spec.ts:5:5 › ADMIN lists, searches and opens details while non-admin is denied (1.5s)
+  ok 134 [chromium] › tests\e2e\user-administration-read.spec.ts:27:5 › legacy user administration route redirects to the canonical protected route (418ms)
+[2m[WebServer] [22m(node:37012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 135 [chromium] › tests\e2e\user-administration-role.spec.ts:5:5 › role promotion is confirmed and self-change controls are rejected by API (1.0s)
+[2m[WebServer] [22m(node:33748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 136 [chromium] › tests\e2e\user-administration-status.spec.ts:5:5 › status confirmation is keyboard-operable and audited (1.9s)
+[2m[WebServer] [22m(node:12580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+  136 passed (5.9m)

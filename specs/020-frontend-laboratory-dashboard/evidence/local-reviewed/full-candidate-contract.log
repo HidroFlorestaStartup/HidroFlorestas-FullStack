@@ -1,0 +1,21 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:contract
+npm notice run node --import=tsx scripts/imp006-test-runner.ts contract
+IMP-006 read-only preflight passed: target 879442b8b64c, schema public, duration_ms=42. Tests may write to isolated schemas.
+[2026-10-19T14:04:35.163Z] START phase=contract attempt=1 target=879442b8b64c schema=public
+✔ account HTTP creation/verification match the exact client contracts and rotate scoped cookies (12.0519ms)
+✔ account HTTP request reset is externally identical for eligible, absent, disabled and limited outcomes (1.8495ms)
+✔ account HTTP password changes expire both sessions and require fresh authentication (1.559ms)
+✔ account HTTP rejects cross-origin work and redacts domain/provider failures (0.8326ms)
+✔ OpenAPI 3.1 schemas reject malformed input and accept well-formed version mismatches (1.9281ms)
+IMP-006 schema owned by this run: imp006_test_f195e747b563465cbd97d3e59abf2eaf
+✔ real HTTP responses conform to resolved OpenAPI schemas for eligibility, reads, lifecycle and errors (847.4818ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2061.9142
+[2026-10-19T14:04:37.286Z] END phase=contract attempt=1 target=879442b8b64c schema=public exit=0 duration_ms=2123
+IMP-006 sanitized gate log: C:\Users\user\AppData\Local\Temp\hidroflorestas-imp006-gate-OEAxC1\contract-attempt-1.log

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-DOC-20261024",
+  "front": "LOCAL",
+  "checkedAtUtc": "2026-10-24T15:52:47.439Z",
+  "ownFunctionalExecution": "NOT_RUN",
+  "applicationBuild": "NOT_RUN",
+  "matrixRows": 40,
+  "uniqueIdsAndFields": "PASS",
+  "matrixMarkdownJsonEquivalence": "PASS",
+  "jsonFilesParsedBeforeReceipt": 7,
+  "localMarkdownLinksResolved": 13,
+  "immutableBlobLinksChecked": 1285,
+  "sourceBlobsReadAndHashed": 500,
+  "sourcePaths": "PASS",
+  "privacyPatternScan": "PASS",
+  "productSchemaDependencyDeltaBaseToCandidate": "ZERO",
+  "newDeltaScope": "TWO_LOCAL_PREFIXES_ONLY",
+  "historicalAndRawPreservation": "PASS_NO_CHANGES_OUTSIDE_SCOPE",
+  "whitespaceTrackedAndStaged": "PASS",
+  "publication": "PUBLICACAO_BLOQUEADA_POR_GATILHO",
+  "remoteReview": "NOT_REQUESTED_PUBLICATION_BLOCKED",
+  "limits": [
+    "Documentary validation only; no application code or project scripts executed.",
+    "No artifact redownload or historical CI digest revalidation.",
+    "Automated links validate paths, not external availability or semantic anchors.",
+    "Final staged diff/whitespace and manual privacy review recorded in plan and independent review."
+  ]
+}

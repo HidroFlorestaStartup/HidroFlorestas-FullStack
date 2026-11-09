@@ -1,0 +1,895 @@
+﻿{
+    "schemaVersion":  "hf-night-qa-baseline/v1",
+    "recordedUtc":  "2026-10-25T05:12:59.091Z",
+    "classification":  "EVIDENCIA_IMPLEMENTACAO",
+    "baseSha":  "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "branch":  "test/hf-night-baseline-20261025",
+    "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+    "frozenManifest":  "13-baseline-fingerprint.json",
+    "fingerprintVerification":  {
+                                    "algorithm":  "SHA256 of JSON.stringify(functionalManifest array), in the order captured",
+                                    "entries":  594,
+                                    "independentRehash":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59"
+                                },
+    "treeDifferenceFromBase":  [
+                                   "vercel.json: deployment Git false rule added by coordinator; no application source change"
+                               ],
+    "platform":  {
+                     "node":  "v24.19.0",
+                     "npm":  "12.0.2",
+                     "platform":  "win32",
+                     "architecture":  "x64",
+                     "windowsRelease":  "10.0.26200",
+                     "powershell":  "5.1.26100.9711",
+                     "totalMemoryBytes":  33777467392,
+                     "availableParallelism":  14
+                 },
+    "latestGateResults":  {
+                              "passed":  15,
+                              "failed":  0,
+                              "total":  15
+                          },
+    "gates":  [
+                  {
+                      "gate":  "RegressionSetup",
+                      "latest":  {
+                                     "attempt":  2,
+                                     "command":  "node --import=tsx scripts/imp006-local-regression-setup.ts",
+                                     "startedUtc":  "2026-10-25T04:46:46.471Z",
+                                     "endedUtc":  "2026-10-25T04:46:52.761Z",
+                                     "durationSeconds":  6.29,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "migrations":  14
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v3 fresh; see 30-fresh-v3-empty-proof.json",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/regressionsetup-1792903606471.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "node --import=tsx scripts/imp006-local-regression-setup.ts",
+                                           "startedUtc":  "2026-10-25T04:04:33.609Z",
+                                           "endedUtc":  "2026-10-25T04:05:07.382Z",
+                                           "durationSeconds":  33.773,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "migrations":  14
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/regressionsetup-1792901073609.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       },
+                                       {
+                                           "attempt":  2,
+                                           "command":  "node --import=tsx scripts/imp006-local-regression-setup.ts",
+                                           "startedUtc":  "2026-10-25T04:46:46.471Z",
+                                           "endedUtc":  "2026-10-25T04:46:52.761Z",
+                                           "durationSeconds":  6.29,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "migrations":  14
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v3 fresh; see 30-fresh-v3-empty-proof.json",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/regressionsetup-1792903606471.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Unit",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:unit",
+                                     "startedUtc":  "2026-10-25T04:02:54.607Z",
+                                     "endedUtc":  "2026-10-25T04:03:17.827Z",
+                                     "durationSeconds":  23.22,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  419,
+                                                    "passed":  419,
+                                                    "failed":  0,
+                                                    "skipped":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "fakes and loopback SMTP, no database required",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/hf-night-private-logs/unit-1792900974607.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:unit",
+                                           "startedUtc":  "2026-10-25T04:02:54.607Z",
+                                           "endedUtc":  "2026-10-25T04:03:17.827Z",
+                                           "durationSeconds":  23.22,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  419,
+                                                          "passed":  419,
+                                                          "failed":  0,
+                                                          "skipped":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "fakes and loopback SMTP, no database required",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/hf-night-private-logs/unit-1792900974607.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Integration",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:integration",
+                                     "startedUtc":  "2026-10-25T04:05:07.767Z",
+                                     "endedUtc":  "2026-10-25T04:07:49.688Z",
+                                     "durationSeconds":  161.921,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  231,
+                                                    "passed":  231,
+                                                    "failed":  0,
+                                                    "skipped":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/integration-1792901107766.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:integration",
+                                           "startedUtc":  "2026-10-25T04:05:07.767Z",
+                                           "endedUtc":  "2026-10-25T04:07:49.688Z",
+                                           "durationSeconds":  161.921,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  231,
+                                                          "passed":  231,
+                                                          "failed":  0,
+                                                          "skipped":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/integration-1792901107766.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Migration",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:migration",
+                                     "startedUtc":  "2026-10-25T04:07:50.002Z",
+                                     "endedUtc":  "2026-10-25T04:08:08.592Z",
+                                     "durationSeconds":  18.59,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  37,
+                                                    "passed":  37,
+                                                    "failed":  0,
+                                                    "skipped":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/migration-1792901270001.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:migration",
+                                           "startedUtc":  "2026-10-25T04:07:50.002Z",
+                                           "endedUtc":  "2026-10-25T04:08:08.592Z",
+                                           "durationSeconds":  18.59,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  37,
+                                                          "passed":  37,
+                                                          "failed":  0,
+                                                          "skipped":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/migration-1792901270001.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Contract",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:contract",
+                                     "startedUtc":  "2026-10-25T04:08:08.915Z",
+                                     "endedUtc":  "2026-10-25T04:08:19.567Z",
+                                     "durationSeconds":  10.652,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  6,
+                                                    "passed":  6,
+                                                    "failed":  0,
+                                                    "skipped":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/contract-1792901288914.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:contract",
+                                           "startedUtc":  "2026-10-25T04:08:08.915Z",
+                                           "endedUtc":  "2026-10-25T04:08:19.567Z",
+                                           "durationSeconds":  10.652,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  6,
+                                                          "passed":  6,
+                                                          "failed":  0,
+                                                          "skipped":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/contract-1792901288914.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "R1",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:mail:r1",
+                                     "startedUtc":  "2026-10-25T04:08:19.888Z",
+                                     "endedUtc":  "2026-10-25T04:08:30.750Z",
+                                     "durationSeconds":  10.862,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  17,
+                                                    "passed":  17,
+                                                    "failed":  0,
+                                                    "skipped":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/r1-1792901299888.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:mail:r1",
+                                           "startedUtc":  "2026-10-25T04:08:19.888Z",
+                                           "endedUtc":  "2026-10-25T04:08:30.750Z",
+                                           "durationSeconds":  10.862,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  17,
+                                                          "passed":  17,
+                                                          "failed":  0,
+                                                          "skipped":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/r1-1792901299888.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ],
+                      "countingNote":  "subset of integration/mail tests; do not add as unique tests"
+                  },
+                  {
+                      "gate":  "Build",
+                      "latest":  {
+                                     "attempt":  2,
+                                     "command":  "npm run build",
+                                     "startedUtc":  "2026-10-25T04:03:52.4642858Z",
+                                     "endedUtc":  "2026-10-25T04:06:30.2686593Z",
+                                     "durationSeconds":  157.7985307,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  null,
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/hf-night-private-logs/10-build-network-retry.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run build",
+                                           "startedUtc":  "2026-10-25T04:02:38.7937081Z",
+                                           "endedUtc":  "2026-10-25T04:02:53.7887263Z",
+                                           "durationSeconds":  14.9844894,
+                                           "exitCode":  1,
+                                           "result":  "FAIL",
+                                           "interpretation":  "FAIL",
+                                           "counts":  null,
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/hf-night-private-logs/8-build.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       },
+                                       {
+                                           "attempt":  2,
+                                           "command":  "npm run build",
+                                           "startedUtc":  "2026-10-25T04:03:52.4642858Z",
+                                           "endedUtc":  "2026-10-25T04:06:30.2686593Z",
+                                           "durationSeconds":  157.7985307,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  null,
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/hf-night-private-logs/10-build-network-retry.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Typecheck",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run typecheck",
+                                     "startedUtc":  "2026-10-25T04:02:11.6643998Z",
+                                     "endedUtc":  "2026-10-25T04:02:20.0051146Z",
+                                     "durationSeconds":  8.3369077,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  null,
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/hf-night-private-logs/06-typecheck.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run typecheck",
+                                           "startedUtc":  "2026-10-25T04:02:11.6643998Z",
+                                           "endedUtc":  "2026-10-25T04:02:20.0051146Z",
+                                           "durationSeconds":  8.3369077,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  null,
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/hf-night-private-logs/06-typecheck.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Lint",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run lint",
+                                     "startedUtc":  "2026-10-25T04:02:38.7937081Z",
+                                     "endedUtc":  "2026-10-25T04:03:11.2057777Z",
+                                     "durationSeconds":  32.3987744,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "errors":  0,
+                                                    "warnings":  2
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/hf-night-private-logs/7-lint.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run lint",
+                                           "startedUtc":  "2026-10-25T04:02:38.7937081Z",
+                                           "endedUtc":  "2026-10-25T04:03:11.2057777Z",
+                                           "durationSeconds":  32.3987744,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "errors":  0,
+                                                          "warnings":  2
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/hf-night-private-logs/7-lint.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "E2E",
+                      "latest":  {
+                                     "attempt":  4,
+                                     "command":  "npm run test:e2e",
+                                     "startedUtc":  "2026-10-25T04:48:45.089Z",
+                                     "endedUtc":  "2026-10-25T04:58:07.990Z",
+                                     "durationSeconds":  562.901,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  220,
+                                                    "passed":  220,
+                                                    "failed":  0,
+                                                    "notRun":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v3 fresh; see 30-fresh-v3-empty-proof.json",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/e2e-1792903725089.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:e2e",
+                                           "startedUtc":  "2026-10-25T04:08:31.055Z",
+                                           "endedUtc":  "2026-10-25T04:14:45.408Z",
+                                           "durationSeconds":  374.353,
+                                           "exitCode":  1,
+                                           "result":  "FAIL",
+                                           "interpretation":  "INCOMPLETE_BY_OPERATOR",
+                                           "counts":  {
+                                                          "planned":  220,
+                                                          "passed":  97,
+                                                          "failedAssertionsReported":  0,
+                                                          "notCompleted":  123
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/e2e-1792901311055.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       },
+                                       {
+                                           "attempt":  2,
+                                           "command":  "npm run test:e2e",
+                                           "startedUtc":  "2026-10-25T04:15:08.963Z",
+                                           "endedUtc":  "2026-10-25T04:24:46.598Z",
+                                           "durationSeconds":  577.635,
+                                           "exitCode":  1,
+                                           "result":  "FAIL",
+                                           "interpretation":  "FAIL: fixture collision, attribution harness change and observed admin focus failure",
+                                           "counts":  {
+                                                          "tests":  220,
+                                                          "passed":  193,
+                                                          "failed":  3,
+                                                          "notRun":  24
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/e2e-1792901708962.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       },
+                                       {
+                                           "attempt":  3,
+                                           "command":  "npm run test:e2e",
+                                           "startedUtc":  "2026-10-25T04:31:25.845Z",
+                                           "endedUtc":  "2026-10-25T04:42:44.223Z",
+                                           "durationSeconds":  678.378,
+                                           "exitCode":  1,
+                                           "result":  "FAIL",
+                                           "interpretation":  "FAIL: NAV4 transition wait and repeated synthetic audit reason",
+                                           "counts":  {
+                                                          "tests":  220,
+                                                          "passed":  218,
+                                                          "failed":  2,
+                                                          "notRun":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/e2e-1792902685845.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       },
+                                       {
+                                           "attempt":  4,
+                                           "command":  "npm run test:e2e",
+                                           "startedUtc":  "2026-10-25T04:48:45.089Z",
+                                           "endedUtc":  "2026-10-25T04:58:07.990Z",
+                                           "durationSeconds":  562.901,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  220,
+                                                          "passed":  220,
+                                                          "failed":  0,
+                                                          "notRun":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v3 fresh; see 30-fresh-v3-empty-proof.json",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/e2e-1792903725089.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Https",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:e2e:https",
+                                     "startedUtc":  "2026-10-25T04:42:46.815Z",
+                                     "endedUtc":  "2026-10-25T04:43:25.325Z",
+                                     "durationSeconds":  38.51,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  2,
+                                                    "passed":  2,
+                                                    "failed":  0,
+                                                    "notRun":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/https-1792903366815.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:e2e:https",
+                                           "startedUtc":  "2026-10-25T04:42:46.815Z",
+                                           "endedUtc":  "2026-10-25T04:43:25.325Z",
+                                           "durationSeconds":  38.51,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  2,
+                                                          "passed":  2,
+                                                          "failed":  0,
+                                                          "notRun":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/https-1792903366815.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Deletion",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "node --import=tsx scripts/account-deletion-e2e.ts",
+                                     "startedUtc":  "2026-10-25T04:43:25.629Z",
+                                     "endedUtc":  "2026-10-25T04:43:36.940Z",
+                                     "durationSeconds":  11.311,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  3,
+                                                    "passed":  3,
+                                                    "failed":  0,
+                                                    "notRun":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/deletion-1792903405629.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "node --import=tsx scripts/account-deletion-e2e.ts",
+                                           "startedUtc":  "2026-10-25T04:43:25.629Z",
+                                           "endedUtc":  "2026-10-25T04:43:36.940Z",
+                                           "durationSeconds":  11.311,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  3,
+                                                          "passed":  3,
+                                                          "failed":  0,
+                                                          "notRun":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/deletion-1792903405629.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Ihfr",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "node --import=tsx scripts/imp006-local-e2e.ts",
+                                     "startedUtc":  "2026-10-25T04:43:37.243Z",
+                                     "endedUtc":  "2026-10-25T04:44:39.502Z",
+                                     "durationSeconds":  62.259,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "tests":  6,
+                                                    "passed":  6,
+                                                    "failed":  0,
+                                                    "notRun":  0
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/ihfr-1792903417243.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "node --import=tsx scripts/imp006-local-e2e.ts",
+                                           "startedUtc":  "2026-10-25T04:43:37.243Z",
+                                           "endedUtc":  "2026-10-25T04:44:39.502Z",
+                                           "durationSeconds":  62.259,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "tests":  6,
+                                                          "passed":  6,
+                                                          "failed":  0,
+                                                          "notRun":  0
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/ihfr-1792903417243.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "Bootstrap",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+                                     "startedUtc":  "2026-10-25T04:44:39.848Z",
+                                     "endedUtc":  "2026-10-25T04:44:43.321Z",
+                                     "durationSeconds":  3.473,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "migrations":  14
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/bootstrap-1792903479848.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+                                           "startedUtc":  "2026-10-25T04:44:39.848Z",
+                                           "endedUtc":  "2026-10-25T04:44:43.321Z",
+                                           "durationSeconds":  3.473,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "migrations":  14
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/bootstrap-1792903479848.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  },
+                  {
+                      "gate":  "SchemaAudit",
+                      "latest":  {
+                                     "attempt":  1,
+                                     "command":  "npm run test:ihfr:audit:assert-zero",
+                                     "startedUtc":  "2026-10-25T04:44:43.589Z",
+                                     "endedUtc":  "2026-10-25T04:44:44.249Z",
+                                     "durationSeconds":  0.66,
+                                     "exitCode":  0,
+                                     "result":  "PASS",
+                                     "interpretation":  "PASS",
+                                     "counts":  {
+                                                    "candidateSchemas":  0,
+                                                    "target":  "selected owned regression database"
+                                                },
+                                     "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                     "cohort":  "v2 owned local; see history",
+                                     "rawLog":  {
+                                                    "privateIgnored":  true,
+                                                    "relativePath":  ".accounts-validation/schemaaudit-1792903483588.log"
+                                                },
+                                     "publishedExcerpt":  "sanitized-excerpts.md"
+                                 },
+                      "attempts":  [
+                                       {
+                                           "attempt":  1,
+                                           "command":  "npm run test:ihfr:audit:assert-zero",
+                                           "startedUtc":  "2026-10-25T04:44:43.589Z",
+                                           "endedUtc":  "2026-10-25T04:44:44.249Z",
+                                           "durationSeconds":  0.66,
+                                           "exitCode":  0,
+                                           "result":  "PASS",
+                                           "interpretation":  "PASS",
+                                           "counts":  {
+                                                          "candidateSchemas":  0,
+                                                          "target":  "selected owned regression database"
+                                                      },
+                                           "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+                                           "cohort":  "v2 owned local; see history",
+                                           "rawLog":  {
+                                                          "privateIgnored":  true,
+                                                          "relativePath":  ".accounts-validation/schemaaudit-1792903483588.log"
+                                                      },
+                                           "publishedExcerpt":  "sanitized-excerpts.md"
+                                       }
+                                   ]
+                  }
+              ],
+    "historyLimits":  [
+                          "Initial E2E interrupted97/220; possible public tile GETs unverified; no assertion failure imputed to interrupted cases",
+                          "Replay2:193PASS/3FAIL/24NOT_RUN; replay3:218PASS/2FAIL; all retained",
+                          "Admin403 focus failed in full replay and1/10focal, standalone1/1passed; later fresh220PASS does not erase this reproduced behavior",
+                          "Replay3 audit selector matched two distinct persisted synthetic events; read-only count confirms reuse; no audit deletion or locator weakening",
+                          "Fresh v3 proof:14migrations, zero users/labs/areas/collections/audit and empty reference before fixtures; final full220PASS retries0",
+                          "No results transferred to feature033, operational homologation, human accessibility or scientific validation"
+                      ],
+    "relatedEvidence":  [
+                            "admin-focus-reproduction.json",
+                            "admin-audit-reuse-count.json",
+                            "24-e2e-third-preflight.json",
+                            "28-fresh-cohort-v3-preinstall.json",
+                            "30-fresh-v3-empty-proof.json",
+                            "sanitized-excerpts.md"
+                        ],
+    "rawLogsPublished":  false,
+    "scientificQualifiers":  [
+                                 "CONTRATO_EXPERIMENTAL",
+                                 "VALIDACAO_CIENTIFICA_PENDENTE",
+                                 "SUJEITO_A_RECALIBRACAO",
+                                 "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                             ],
+    "privacyCorrection":  {
+                              "originalClassification":  "Untracked report-folder logs were not ignored",
+                              "action":  "Moved under ignored private path; bytes/hash preserved before publication",
+                              "index":  "private-log-index.json"
+                          }
+}

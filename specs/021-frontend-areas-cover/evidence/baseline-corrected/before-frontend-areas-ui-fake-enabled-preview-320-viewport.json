@@ -1,0 +1,43 @@
+{
+  "name": "ui-fake-enabled-preview-320",
+  "screenshot": {
+    "filename": "before-frontend-areas-ui-fake-enabled-preview-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1261,
+      "height": 724,
+      "extent": 4752
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 900
+  },
+  "target": {
+    "x": 17,
+    "y": 415,
+    "width": 286,
+    "height": 190.65625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

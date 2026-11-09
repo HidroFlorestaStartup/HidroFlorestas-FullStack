@@ -1,0 +1,507 @@
+# Implementation Plan: área/coletas/IHFR — preparação B
+
+> **Ciclo atual C1–C3 (05/11/2026):** [recibo e evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os estados anteriores abaixo são checkpoints históricos; não qualificam a nova candidata.
+
+**Estado atual CLOSE-PARALLEL-02:** `BLOCKED_WITH_EXACT_FINDINGS / UI06_B_EVIDENCE_INCOMPLETE`; R3 `ebf7e9707d5beba949ae932cdffeb3f9068f8a73`, run 41356318087/1: 9 pares PASS / 3 FAIL / 63 NOT_RUN. Comparação executada parcial; T008/T016 e cobertura integral seguem abertos. Limite de 3/3 esgotado; fechamento atual é documental. [Parecer terminal](evidence/close02-final-findings.md). Os estados e SHAs anteriores abaixo são históricos, não são PASS desta candidata.
+
+**Branch**: `feat/ajustes-area-coletas-ihfr` | **Date**: 2026-10-31 | **Spec**: [spec.md](spec.md)
+**Estado**: IMPLEMENTADO_EM_REVISAO; CI sintética do código B 15/15 PASS em `d7586ab95c69c45211e463516080e741bbb3931a`. Comparação bilateral Lovable × FullStack, composição com A e revisão/aceite independentes pendentes. A documentação mantém seu histórico por SHA.
+
+## Summary and technical context
+
+UI-02/UI-03/UI-04/UI-06 no conteúdo de área/coleta. Base `07755822f5dc75fe2be1d924005d30ed99f64a0b`; development de origem `9b8595d232842d401ce81bbc92c54dd543aa2829`; dependência de integração #45.
+
+Next.js/App Router e TypeScript existentes; PostgreSQL apenas sintético nos testes autorizados. CI preservada Windows/Node 24.19.0/PowerShell. Ler versões locais e contratos reais antes de planejar alterações de consulta. Não redefinir o algoritmo IHFR, persistência confirmada ou autorização. Desempenho quantitativo novo: não especificado.
+
+## Constitution Check
+
+Recorte e decisões aprovados, spec/branch/PR separados, ciência e fonte histórica preservadas. Verificação de implementação e revisão independente pendentes; G0 é mesmo executor sequencial.
+
+## Project Structure and ownership
+
+Documentação exclusiva: `specs/036-ajustes-area-coletas-ihfr/`.
+Pontos de entrada observados na árvore base:
+- `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx`;
+- `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx`;
+- subrotas `environmental-data` da coleta.
+
+Esses caminhos orientam a leitura; o executor deve seguir imports e congelar a lista exata de componentes/leituras e AGENTS aplicáveis antes de editar. Nenhuma inspeção runtime de cada componente é alegada por G0. B controla detalhe da área/coleta; não controla o formulário de localização C nem o shell/layout A.
+
+Testes novos propostos, ainda não criados: `tests/unit/hf-ui036-area-presentation.test.ts` e `tests/e2e/hf-ui036-area-collections.spec.ts`; adequar ao harness existente. DTO/repositórios de áreas, estilos/UI compartilhada, fixtures e configuração exigem um writer alocado pelo coordenador. Vercel/workflow somente leitura.
+
+## Sequência e dependências
+
+1. Preflight por SHA/PR/guardas e ambiente local; completar Spec Kit na reserva 036, rastreabilidade Code-First e mapa de arquivos.
+2. Testar/implementar US1: instantes de ocorrência com offsets, desempate técnico explícito e seleção/exibição correta de resultado disponível e sua origem.
+3. Testar/implementar US2 e US3, sem confundir confirmado/draft, resultado válido/revogado e prova científica.
+4. Comparar starter/FullStack no mesmo estado e viewport; usar fixtures sintéticas, não mocks como produto.
+5. Executar testes focais e os quinze gates existentes; registrar SHA/run/tentativa, falhas e NOT_RUN; atualizar documentação/PR.
+
+Pode iniciar sem aguardar A/C. Quando o shell A estiver pronto, validar a composição com seu contrato antes da integração futura; mudanças compartilhadas são propostas ao coordenador, não absorvidas por merge nesta missão.
+
+## Handoff Git
+
+Pai exato do primeiro commit B: `07755822f5dc75fe2be1d924005d30ed99f64a0b`. Usar a branch existente; não recriar de development sem os guards. Diff exclusivo `git diff 07755822f5dc75fe2be1d924005d30ed99f64a0b...HEAD`; acumulado inicial `git diff 9b8595d232842d401ce81bbc92c54dd543aa2829...HEAD`. PR final para development, dependência #45 explícita.
+
+Integração futura somente autorizada: guards primeiro, conciliar shell/DTO e refazer CI. Se guards sofrer squash/rebase, transportar apenas commits B posteriores à base congelada e revisar a união das configurações. Não executar merge, deploy ou alteração de branch alheia agora.
+
+## Riscos e parada focal
+
+Ordenação textual de datas, misturar último diagnóstico com última coleta, exibir revogado, ocultar qualificadores e alterar confirmação são riscos materiais. Bloquear somente recorte dependente de decisão não resolvida; continuar tarefas independentes. Não implementar UI-07, REV-01–REV-03, ciência ou provedores.
+
+
+## Mapa real de imports, contratos e writer B
+
+Os caminhos abaixo foram confirmados por inspeção do HEAD G0 `353a3fd00bc7d4155ab3fc2f17ad063e7108d68f` e alterados exclusivamente pelo executor B; nenhuma alteração a arquivos compartilhados de A/C foi absorvida.
+
+| Camada | Arquivo exato | Contrato / limitação |
+| --- | --- | --- |
+| Rota área | `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/page.tsx` | `requireAuth`, `areasService.detail`; anexa o componente B, mantém mapa/capa/formulário existente |
+| Leitura B de coleções | `src/app/api/server/collections/area-collections.read.ts` | `authorizeLaboratoryAccess` (READ_AREAS + READ_IHFR_DIAGNOSIS), valida laboratório/área, consulta somente registros completos com ponteiro CURRENT |
+| Projeção pura B | `src/components/areas/area-collections-presentation.ts` | preservar offset RFC3339; instante UTC desc; desempate por UUID desc; primeira coleta com ponteiro vigente |
+| UI B de área | `src/components/areas/area-collections.tsx` | lista, origem do IHFR, links reais para coleta/ambiental/IHFR, ausência explícita; dados de score persistido |
+| Rota coleta | `src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx` | `collectionsService.detail`, `ihfrDiagnosisService.readCurrent`, leitura de existência de medições e `READ_IHFR_DIAGNOSIS`; desktop duas colunas |
+| Leitura presença ambiental B | `src/app/api/server/collections/collection-environmental-presence.read.ts` | `READ_ENVIRONMENTAL_DATA`, contexto completo, `environmentalMeasurementSet` sem parse do payload/versão, para não bloquear leitura de coleta legada |
+| Conteúdo coleta | `src/components/collections/collection-detail.tsx` | mensagem humana, CTA de registro quando ativo; metadados confirmados imutáveis e link ambiental |
+| Resultado | `src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx` | `<details>/<summary>` nativos, quatro qualificadores e proveniência preservados |
+| Gestão de diagnóstico | `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx` | feedback humano traduz razões técnicas; sem mudança de transação/idempotência |
+| Unidade | `tests/unit/hf-ui036-area-presentation.test.ts`, `tests/unit/frontend-ihfr-presentation.test.tsx` | ordem/offset/corrente/ausência/teclado sem motor científico |
+| E2E | `tests/e2e/hf-ui036-area-collections.spec.ts`, `tests/e2e/ihfr-diagnosis-read.spec.ts` | fixtures isoladas PostgreSQL sintético, rota completa, viewports 320/375/390/768/1440 e 200%, máscara em capturas; testes pré-existentes com asserções adaptadas ao disclosure aprovado |
+
+Dependências **somente leitura**: `src/app/api/server/services/areas.service.ts`, `collections.service.ts`, `environmental-data.service.ts`, `ihfr-diagnosis.service.ts`, `src/app/api/server/areas/area.authorization.ts`, `src/lib/collection-date-time.ts`, `prisma/schema.prisma`, `src/types/*`, `src/components/areas/areas.module.css`, `src/components/collections/collections.module.css`. Componentes compartilhados e DTOs pertencentes ao coordenador não sofreram escrita.
+
+Fontes Code-First relacionadas: `docs/code-first-prd/README.md` e `governance/source-policy.md` (**EM_REVISAO**, não normativos); `specs/021-frontend-areas-cover/`, `023-frontend-collections/`, `024-frontend-environmental-drafts/`, `025-frontend-ihfr/`, `docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md` (v0.1 experimental). Fonte de decisão de UI: PR #44 no SHA congelado.
+
+`AGENTS.md` raiz e constituição Spec Kit lidos; não se localizaram `AGENTS.md` aninhados nos diretórios de escrita ou `.specify/extensions.yml`/checklist próprio de 036. `scripts/rc-review-validation.ps1` registra os 15 gates sem alterações. Execução foi via API GitHub, sem checkout atual com dependências Windows/Node 24; o ZIP local de setembro não é HEAD atual e não substitui evidência de runtime.
+
+## Verificações de integração pendentes
+
+1. Comparar FullStack **e starter** com mesmos dados/viewport e registrar imagens reais; fixtures sintéticas da action não constituem tal comparação automaticamente.
+2. Ler conclusão dos 15 gates no SHA final, incluindo o E2E conhecido do shell com texto200, e só marcar PASS com logs. Guardar imagens e geometria criadas pelo harness E2E se o gate as produzir.
+3. A revisão por segundo executor e o aceite humano continuam pendentes; nenhuma ferramenta `spawn_agent` real estava disponível nesta sessão (`NATIVE_SUBAGENTS_UNAVAILABLE`).
+
+## Ciclo corretivo Spec Kit — 2026-10-31 (ANALYZE → PLAN → IMPLEMENT → REVIEW)
+
+### ANALYZE (somente leitura)
+
+- Fonte de execução: run [41234289600](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41234289600), tentativa 1, commit `6cfd15b026055566dda529e2c6964a60ce1de372`. Os 12 primeiros gates passaram; `Ihfr` falhou (4 PASS, 2 FAIL) e `Bootstrap`/`SchemaAudit` não rodaram.
+- Achado UI036-R1: `tests/e2e/ihfr-diagnosis-manage.spec.ts` usava área da fixture IMP-006 com diagnóstico CURRENT preexistente em coleta de ocorrência `now()`, posterior às datas estáticas dos dois registros novos. A lista/seleção do produto estava coerente, mas a expectativa do teste confundia fonte da fixture com fonte criada pela prova.
+- Achado UI036-R2: a leitura em `tests/e2e/ihfr-diagnosis-read.spec.ts` detectou fragmentação de `experimental` pelo helper `expectIHFRScientificWords` em 320px/200%; há uma sequência de paddings em `ExperimentalDiagnosisSummary` e `ScientificNotice`. O reparo anterior de ícone empilhado não recuperou largura suficiente.
+- Checagem de consistência spec → plan → tasks: R1 afeta FR-036-001/SC-036-001; R2 afeta FR-036-003/SC-036-002; ambos cabem na branch B. Não há conflito com a constituição ou decisão científica. T008 (comparação real com starter) permanece pendente; análise de código/screenshot de uma só aplicação não equivale à comparação dos runtimes.
+
+### PLAN (plano focal)
+
+1. Em R1, criar uma nova área via `POST /api/laboratories/{laboratoryId}/areas` autenticado, **dentro do schema PostgreSQL descartável já alocado pelo runner IMP-006**. Realizar nela o fluxo real coleta → medições confirmadas → diagnóstico CURRENT → coleta de campo posterior sem diagnóstico. Comparar ambas as origens na área sem alterar, excluir ou recalibrar fixtures compartilhadas.
+2. Em R2, reduzir somente paddings internos do aviso IHFR no componente da própria B, preservando font-size 200%, texto integral, rótulos científicos, `<details>/<summary>` e os asserts existentes de palavras inteiras/scrollWidth. Nenhuma mudança de layout/shell global.
+3. Validar no HEAD publicado com os **15 gates originais**, banco sintético isolado e artefatos de viewport; classificação individual PASS/FAIL/NOT_RUN por SHA/tentativa. Não corrigir falhas apagando asserts, mudando timeouts ou removendo testes.
+4. REVIEW: verificar diff exclusivo contra `07755822f5dc75fe2be1d924005d30ed99f64a0b`, acumulado contra development atual; confirmar nenhum arquivo de A/C/ci/provedor/ciência alterado; registrar revisão técnica sequencial (não independente por subagente) e pendências visuais/humanas.
+
+**Ambiente:** GitHub API/Actions; sem checkout atualizado neste executor por DNS externo indisponível. Skills `speckit-analyze`, `speckit-plan`, `speckit-implement` e constituição 1.0.0 foram conferidas no repositório, sem executar seus scripts Bash locais. Não existe `.specify/extensions.yml` ou checklist 036 no HEAD inicial.
+
+### REVIEW: achado adicional de texto 200% na UI-02
+
+- Inspeção da captura real da execução `41234289600`, `frontend-collections-area-320-900-200.png` (320px, 200% de texto, viewport `fullPage:false`, `documentWidth=320`) identificou divisão de `ambientais` em `ambientai` + `s` no link de ação da coleta, mesmo sem overflow horizontal. Achado distinto dos dois failures em `Ihfr` e dentro do owner B.
+- PLAN: usar CTA ambiental de largura integral apenas no mobile, ocultando ícone decorativo em telas estreitas, mantendo nome acessível e alinhamento/responsividade desktop. Adicionar asserção real de palavras inteiras no mesmo cenário E2E; conservar o teste de overflow. Não alterar shell A, CSS global, fontes ou harness compartilhado.
+- IMPLEMENT: `src/components/areas/area-collections.tsx` e `tests/e2e/hf-ui036-area-collections.spec.ts`. Teste reportado PASS somente depois da Action no SHA que contiver esse patch.
+
+### Analyze → Plan — regressões finais do run #41251345900
+
+**ANALYZE (evidência real):** run `41251345900`, tentativa 1, SHA `013264106ef990480ae5a3963926527ee04c5e7c`: 12 primeiros gates PASS (incluindo E2E principal e CTA 320/200), `Ihfr` FAIL com 4 passed/2 failed. Primeiro FAIL em `ihfr-diagnosis-manage.spec.ts:202`: link IHFR chegou corretamente à rota com fragmento `#ihfr-diagnosis-heading`, mas teste exigia URL sem fragmento. Segundo FAIL em `ihfr-diagnosis-read.spec.ts:55`: o qualificador longo exibiu viewport ratio 0,720 no cenário landscape 667x375/texto 200%. O conteúdo dispõe de 197px de altura útil por conta do header/nav contextual, e `sm:grid-cols-2` produzia colunas estreitas mesmo com texto ampliado. Nenhum dos FAILs exige alterar o algoritmo, o schema ou o shell.
+
+**PLAN corretivo:** (1) validar a URL completa inclusive o anchor existente, assegurando navegação contextual e ausência de resultado para a coleta recente; (2) manter uma coluna de qualificadores até `lg` em `ScientificNotice`, promovendo duas colunas somente quando houver largura efetiva suficiente, preservando `expect(label).toBeInViewport({ratio:1})`, quatro rótulos e fonte 200%. Não retirar assertions nem alterar viewport. (3) repetir gates reais no commit final, inspeção estática e registro por SHA. Não editar helper compartilhado.
+
+**Evidência de controle:** [Run #41251345900](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251345900), [artefato #13061703054](https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41251345900/artifacts/13061703054), `.accounts-validation/ihfr-1793489228324.log`. Qualificador não precisa ser parcialmente exibido quando 2 colunas se tornam estreitas; layout responsivo de 1 coluna melhora a legibilidade sem reinterpretação científica.
+
+
+## HF-UI-044-CLOSE-B — plano executado e limites de revisão (2026-11-01)
+
+1. **ANALYZE:** reconciliados o escopo #44, os contratos UI-02/03/04/06, os itens T008/T009/T015/T016/T017/T023, o HEAD de B e os HEADs concorrentes A/C; verificado o artefato real 13062377832. A base de comparação Lovable é TanStack com mock em memória; FullStack é Next.js com autorização e PostgreSQL sintético.
+2. **PLAN:** preservar código e testes aprovados, verificar cada registro de `.accounts-validation/results.jsonl` no ZIP oficial e catalogar capturas `fullPage:false` por tela/viewport/estado. Tentar o pareamento sem usar screenshots de Pedro como runtime atual; não editar shell A, formulário C, científico, guardas ou CI.
+3. **IMPLEMENT:** somente reconciliação versionada dentro da reserva `specs/036-ajustes-area-coletas-ihfr/`. Nenhum patch de produto foi justificado por captura comparável; não reexecutar 15 gates indiscriminadamente sobre o mesmo `CODE_SHA_TESTED`. Um novo HEAD documental NÃO herda o PASS da execução anterior.
+4. **REVIEW:** no código `d7586ab...`, run 41252813575/1, journal 15 PASS/0 FAIL/0 NOT_RUN; ZIP íntegro; 77 pares PNG+JSON FullStack B/IHFR com `head` idêntico e `fullPage:false`, viewport documental sem overflow registrado. **Starter executado neste ambiente: NOT_RUN**; falta a mesma fixture/viewport lado a lado. T008/T016 permanecem abertos. T017: PR #47 deve conservar Draft, estado no topo e histórico de tentativas.
+
+**Ambiente e impedimento:** acesso de leitura/escrita ao GitHub, artefato Actions local e inspeção estática da referência de Pedro; sem checkout atual dos dois repositórios neste runtime, sem Bun e sem resolução DNS do GitHub. O ZIP local disponível é histórico (`007-ihfr-evolution`), não representa nenhum dos HEADs de comparação. Não houve Cloud Browser, provedor, migration hospedada ou nova execução browser. `LOCAL_WORKTREES_NOT_OBSERVABLE`; `NATIVE_SUBAGENTS_NOT_AVAILABLE`; nenhuma revisão independente simulada. `B_VISUAL_EVIDENCE_PENDING` por ausência do runtime starter com fixtures equivalentes e da comparação bilateral executada. A validação de consumo pelo shell A requer QA composta read-only e/ou futura integração autorizada, não cherry-pick nesta branch.
+
+## CLOSE-PARALLEL-02 / B — ANALYZE → PLAN → IMPLEMENT → REVIEW
+
+Estado: EM_ANDAMENTO / B_VISUAL_READY_FOR_RUNTIME. Agente nativo `/root/b_visual`,
+worktree própria `hf044-b`, branch `codex/hf044-b-local-20261101`; base6c61056f,
+setup1b6a2d3 e helper A transportado pelo coordenador em f4d551d, sem autoria B desse helper.
+Checkout principal e seu índice não foram alterados por B.
+
+### ANALYZE somente leitura
+
+| ID | Severidade | Fonte | Constatação / tratamento autorizado |
+|---|---|---|---|
+| COV-B1 | HIGH | FR-036-004, T008/T016 | Falta teste bilateral executável de domínio; acrescentar T024–T030 e casos focais. |
+| EQ-B1 | MEDIUM | starter route área cbb954a | Ordena `confirmedAt`, sem resumo CURRENT da área. NON_EQUIVALENT; UI-02 posterior governa o produto. |
+| EQ-B2 | MEDIUM | starter adapter/mock.ts cbb954a | Scores/decomposição predefinidos; mesmo input não prova equivalência científica/numérica. |
+
+Inventário:5 FR,4 SC e23 tarefas prévias. Os nove requisitos têm tarefas; não há requisito
+novo de produto, conflito constitucional, mudança científica ou tarefa sem recorte autorizado.
+Sem `.specify/extensions.yml` ou checklist036. Skills locais analyze/plan/implement lidas;
+pré-requisitos Bash executados com contexto036. O script persiste `.specify/feature.json`
+ignorado na própria worktree; não foi executado setup-plan porque copiaria template sobre plano
+existente. O ciclo foi adaptado manualmente com delta mínimo, sem alegar CLI Spec Kit completa.
+
+### PLAN e reanálise de consistência
+
+1. T024: congelar grade por requisito/estado/viewport em [close02-matrix.json](evidence/close02-matrix.json).
+2. T025: fixtures oficiais de autenticação e APIs reais para laboratório/áreas/coletas/ambientais/IHFR;
+   confirmar mais nova antes da anterior e preservar offsets distintos, replay por chave e origem CURRENT.
+3. T026: testes independentes e coleta incremental durável via helper A. Falha visual isolada deixa recibo
+   sanitizado por id/linha e não interrompe os casos seguros; sumário terminal rejeita FAIL/NOT_RUN/lacunas/fontes UNOBSERVED.
+4. T027/T028: executar job ui-b do coordenador e analisar PNGs reais; comparar hierarquia, tipografia,
+   densidade, navegação e ações. Não publicar aceitação antecipada.
+5. T029/T030: validação estática/revisão própria/commit local, depois resultado factual de runtime
+   e entrega ao revisor não autor. Infraestrutura/configs/guardas pertencem exclusivamente ao coordenador.
+
+Reanálise: cada delta mapeia FR-036-004/SC-036-002; ordenação/origem também FR-036-001;
+qualificadores FR-036-003; autorização/imutabilidade FR-036-005. Sem dependência circular de A:
+B escreveu fixtures/casos contra contrato congelado, depois consumiu helpers somente leitura.
+
+### Implementação e validação local
+
+Grade: cinco estados ×12 layouts =60 pares;12 qualificadores (320x900,667x375/inset34,844x390,
+todos200); duas jornadas teclado/histórico390/1440/200; um reload390/200. São75 pares planejados,
+150 PNG/JSON potenciais, mais um teste de resumo, sem equiparar contagem à aprovação.
+Layout central:320/375/390/768/1440 em100/200 e667x375/844x390 em200.
+
+Captura de área povoada centraliza a seção Coletas confirmadas; registro mantém início da coleta;
+ausência centraliza a mensagem humana; resultado centraliza IHFR. Qualificadores completos são
+rolados e medidos individualmente, com `toBeInViewport({ratio:1})` preservado. Nenhum ajuste de estilo
+ou scroll é aplicado depois da medição para esconder defeito. Escala após client navigation é medida.
+Reload registra antes/depois antes da reconfiguração; perda da fixture em memória no starter é explícita.
+
+Executado localmente com Node24.14 existente: sintaxe TypeScript PASS; ESLint dos dois arquivos PASS;
+descoberta Playwright sem servidor/banco PASS (76 testes). Typecheck focal encontrou inicialmente
+cinco erros de tipo da grade B (corrigidos) e um erro no helper A compartilhado, devolvido ao owner
+(`source` duplicado, shared.ts:180), corrigido por A em6dc3bb1. Typecheck completo oficial e runtime
+domínio cabem ao runner Windows Node24.19.0; não foram declarados executados localmente.
+
+### Setup/cleanup e privacidade
+
+Máquina ui-b exclusiva. Validar runner/ref/attempt e auth fixture vazia antes de setup; login nativo,
+papéis reais USER/OWNER. Adapter de referência só no próprio browser. Não arquivar inputs científicos,
+chaves idempotentes, payloads HTTP, segredos, cookies ou storage. Traces/vídeos/screenshots automáticos off;
+helpers mascaram input/textarea e salvam apenas PNG/JSON sanitizados com SHA/tree/run/attempt.
+
+DELETE laboratório recusa áreas/confirmados, conforme `laboratories.service.ts`. Não desabilitar triggers
+nem falsificar cleanup lógico. Dados sintéticos imutáveis ficam somente no banco owned até Stop/descarte
+do runner, procedimento confirmado pelo coordenador nesta missão. Teardown lógico de dados:
+NOT_APPLICABLE_IMMUTABLE_SYNTHETIC_DATA_RETAINED_UNTIL_OWNED_RUNNER_DISPOSAL;
+browser/CDP são fechados no afterAll; Stop físico é responsabilidade do orquestrador em finally.
+Nenhum PostgreSQL, Bun ou provedor real foi executado/provisionado no host de B.
+
+Critérios de término:75 casos com recibos completos, inspeção real de pares e diferenças, sem erro
+técnico obrigatório ou lacuna, revisão não autora, estado do Git explícito. Até lá T008/T016/T027/T028
+permanecem abertos. HUMAN_ACCEPTANCE_PENDING; qualificadores experimentais IHFR preservados.
+
+**Checagem local adicional:** `tsc --noEmit --incremental false` PASS (exit0), Node24.14 existente, dependências e Prisma generated acessados por junctions somente de leitura. Nenhum generate/typegen ou Node24.19 foi executado aqui; geração e runtime da candidata permanecem com a CI oficial.
+
+### Correção focal pós-revisão não autora — classificação de par incompleto
+
+`EVIDENCIA_IMPLEMENTACAO`: o revisor não autor identificou MEDIUM em `boundedPair`:
+`samples.every(...)` em array vazio retorna true e podia registrar COMPARABLE mesmo
+sem par, embora execution/completeness já impedissem aprovação pelo sumário.
+
+ANALYZE: erro técnico da classificação do recibo, sem mudança de requisito/produto.
+PLAN/IMPLEMENT: exigir exatamente dois samples antes de avaliar fontes/comparabilidade;
+qualquer quantidade diferente de2 acrescenta erro sanitizado e registra FAIL /
+INSUFFICIENT_EVIDENCE / PARTIAL. Preservados asserts, timeouts, grade e sumário fail-closed.
+
+REVIEW: contraprova sintética Node executou a própria declaração boundedPair extraída
+por AST, com dependências de captura substituídas apenas no executor de teste local;
+zero samples, somente FullStack, somente starter, dois completos, dois NON_EQUIVALENT
+e fontes UNOBSERVED:6/6 PASS. Não houve browser, PG ou runtime B local. Relatório em
+`evidence/close02-pair-classification-check.json`. Typecheck completo local e lint B PASS.
+Nova árvore aguarda a rodada corretiva do coordenador; nenhum resultado CI foi herdado.
+
+### R1 runtime e correção do seletor de referência — 2026-11-01
+
+Run41351237110/attempt1, source194e9afafc0e4dbfeb6d9ceb9ca5030565ba6920:
+ui-b falhou no beforeAll aguardando Nome do laboratório no diálogo do starter.
+Artifact13101154606 baixado pelo coordenador e inspecionado também por B na cópia
+local: SHA256 fc05f5e8fcfb36a77a834a08a1cc978d273c69a49c9c3e0c3dd1d4177cb85643,
+CRC PASS,0PNG e75 casos NOT_RUN. Sem prova bilateral produzida. O fluxo chegou ao
+setup de referência depois das chamadas aguardadas da fixture FullStack; isso não
+constitui comparação visual, suíte B aprovada ou aceite.
+
+ANALYZE: em startercbb954a, FieldShell/TextField coloca o asterisco obrigatório
+num span aria-hidden dentro do label. getByLabel exato usa o texto do label com o
+asterisco; o seletor antigo sem asterisco não encontra o controle. PLAN/IMPLEMENT:
+trocar somente a referência por getByRole textbox com nome acessível exato,
+que exclui aria-hidden. Nenhum timeout, assert, produto ou starter alterado.
+
+REVIEW: Chromium sintético153.0.8010.12 local reproduziu a estrutura exata do
+FieldShell/CreateLab: seletor antigo0matches/filltimeout250ms (contraprova RED);
+textbox de nome acessível1match/fillGREEN. Sem Bun/PG ou servidor local dos projetos.
+O limite250ms é exclusivo da contraprova negativa, não altera testes de produto.
+Auditoria estática dos demais seletores e métodos/retornos/versões do adapter não
+demonstrou outro descompasso; não substitui runtime. Prova e recorte em
+`evidence/close02-reference-label-check.json`. Próxima rodada pertence ao coordenador.
+
+### R2 — falhas observadas e delta focal para a última rodada
+
+Fonte d62fb08cf65aca5dc704231f88594030f49279cb / run41353270282/1 / artifact13102906085.
+ZIP auditado por B: digest099d491c57c473222065b4ce8f3b51630f19652840a48fc46289837c8d969548,
+CRC PASS,147entradas/71PNG. Índice75casos:1PASS/74FAIL, um par completo,69samples
+unilaterais e5casos sem sample. Os75 testes de coleta terminaram sem lançar suas falhas
+preservadas; o teste obrigatório de sumário falhou corretamente. Não são75requisitosPASS.
+
+ANALYZE B-R2-NAV:74erros starter na chamada navigateDomain; antes da primeira área o
+dashboard só contém navprincipal com Áreas, mas a página da área acrescenta um breadcrumb
+`nav[aria-label="Trilha de navegação"]` com o mesmo link. O filtro antigo nav:visible+Áreas
+torna-se ambíguo. Contraprova Chromium em320/1440:2matches e strict-mode real; seletor
+pelos nomes oficiais da navegação principal tem1match e clickPASS. IMPLEMENT: nomear
+somente navprincipal desktop/celular visível e exigir count1, preservando navegação cliente
+e fixture em memória, sem first/reload, mudança de produto ou timeout.
+
+ANALYZE B-R2-FOCUS:cinco failures ratio1 FullStack (320indexes1/2,667inset34index2,
+844indexes1/2). Recibos antigos omitiram a geometria do ponto da falha. `keepFocusVisible`
+do shell agenda revealFocus em rAF e ResizeObserver ao abrir/focar summaries; openDetails
+focava o summarydeproveniência imediatamente antes de rolar o qualificador. Contraprova
+com ownScroll/revealFocus reais e waitForMissionRender oficial extraídos por AST reproduziu
+nas3classes a mudança tardia: em667, labeltop182→-545 após RAF; aguardar readiness oficial
+antes do único scroll mantémratio1PASS. **INFERENCIA**: mecanismo explica os5failuresR2,
+mas sua atribuição individual não é prova de produto sem geometria real daquele ponto.
+IMPLEMENT: aguardar waitForMissionRender oficial ao terminar openDetails e ANTES de
+scroll/ratio1. Não se aplica sono fixo, blur, estilo ou rolagem corretiva depois da medição.
+
+Diagnóstico adicional B: persistir classe de erro, localização sanitizada incluindo domain-fixtures.ts,
+viewport/escala, retângulo do qualificador/foco/navs e scrollport, sem texto pessoal, URL, cookie,
+payload ou mensagem bruta de exceção. Falha permanece FAIL/PARTIAL/INSUFFICIENT_EVIDENCE.
+Contraprovas em evidence/close02-round2-counterexamples.json; sixcenários da função boundedPair
+atual continuamPASS (close02-pair-classification-check-r3.json). TSCcompleto local24.14,
+lintB, descoberta76 e whitespacePASS. Sem PG/Bun local e sem execuçãoR3 declarada.
+
+### Diagnóstico executável preservado para R3, inclusive se o requisito falhar
+
+Atendendo à revisão não autora, boundedPair registra uma única imagem de viewport
+mascarada (input/select/textarea; fullPagefalse; animationsallow) depois do erro original,
+sem retry de assert, blur, estilo ou scroll corretivo. JSON dedicado inclui fonte/SHA/tree/
+run/attempt, hashPNG/dimensões, classe/linhahelper e geometria antes/depois do frame,
+IntersectionObserver.intersectionRatio real do qualificador e hit-test do centro.
+O receipt é failure-diagnostic-not-acceptance e mantém FAIL / INSUFFICIENT_EVIDENCE /
+PARTIAL. Não se confunde esse PNG com sample aprovado; se a captura diagnóstica falhar,
+o JSON registra o limite sem aprovar a evidência.
+
+Contraprova Chromium sintética executou a própria boundedPair extraída por AST: assert
+ratio1 falha com alvo fora da viewport; frame667x375 mascarado ehashverificado, ratio0,
+hitfalse; a classificação original continuaFAIL/PARTIAL. Relatório
+`evidence/close02-failure-frame-check.json`. Arquivos sintéticos brutos ficam na área local
+ignorada comhash no relatório, sem pretensão de fonteGit/execução deproduto. TSC/lint/diffPASS.
+Nenhuma alteração a sharedA, configs, produto ou limite de timeout; runtimeR3 ainda pendente.
+
+### Diligência focal pré-R3 — exposição semântica em dois estados centrais
+
+Fonte observada A/R2 no starter667x375/text200: main.top459, header290 ebarra129,
+sem faixa útil de leitura. Os estadosB area-empty ecollection-record capturavam o início
+sem rolar até mensagem vazia/Registro. Ajuste delimitado a esses dois estados: readiness
+oficial, geometria inicial (main/header/faixa/target/ratio/hit), snapshot inicial quando
+mainfora oufaixazero, um único scroll nativo ao alvo em ambasfontes ANTES da medição final,
+e geometria/ratio/hit pós-scroll correlacionados em fixture/index.
+
+Snapshot inicial tem idderivado/arquivos próprios e wrapperliteral
+DIAGNOSTIC_NOT_PLANNED_COVERAGE, comsource/SHA/tree/run/attempt, hashPNG/JSON,
+rawfontRegions e coverageContributionfalse. JSON amostral jáhashado não é reescrito;
+o wrapper e o sampleprincipal referenciam arquivos/hashes por semanticScrollBySource.
+RawUNOBSERVED inicial permaneceUNOBSERVED e não é contado como cobertura da leitura.
+
+Referência inicialocluída usa initialRefOcclusion/NON_EQ explícitos; pós-scroll sobheader/
+nav continuaNON_EQ, com postRatio/postHit/faixareais e o limite literal de que glifosCDP
+não provamlegibilidade. Nenhuma exceção defontes foiacrescentada: qualquerfontgap inesperado
+continuaINSUFFICIENT_EVIDENCE e faz osumárioFAIL. FullStackinitialocluído lançaFAIL após
+preservar snapshot (reasonSOURCE_INITIAL_OBSTRUCTION, nãoclassificado comoreferência).
+FullStackpost exige faixapositiva/hitunobstructed e ratio1 se acaixa doalvo cabe nafaixa;
+se amensagemcaixa for maior que afaixa, exige interseçãopositiva e registra que aleitura
+demanda scroll, sem fingircaixainteira numframe. Todos assertsratio1 dosqualificadores
+científicos preexistentes permanecemintactos. Falha gera frame/diagnóstico anterior.
+
+ContraprovaChromium153 executou afunçãoB e sample/fontcollector reais emDOMsintético nas
+dimensões medidas:4casos (2statesx2sources)PASS. Nativegap191/ratio1/hittrue; referência
+initialtop459/gap0/UNOBSERVEDpreservado; pósratio1/hitfalse/gap0 éNON_EQ e nãorecebeaceite.
+Hashesiniciais mantidos depoisdosampleprincipal. Teste inicialdacontraprova revelou erro
+na própria montagem (margin-collapseeencoding), corrigido somente noexecutor sintético;
+nãofoiatribuídoaoproduto. Prova em evidence/close02-semantic-core-check.json.
+TSCcompleto local/lint/diffPASS; descoberta permanece76; aplicativo/PG/BunlocalNOT_RUN.
+
+## D: correção residual de UI06-B, sem nova rodada hospedada (2026-11-01)
+
+**Escopo:** somente `qa/hf-ui044/domain.spec.ts`, `domain-fixtures.ts`, utilitário geométrico e teste focal de Node, além de tarefas/evidências 036. Nenhum componente de produto, cálculo IHFR, schema, rota, frontend de A/C ou referência Lovable será alterado. A execução R3 `ebf7e970`/`41356318087/1` permanece FAIL e suas 3/3 rodadas consumidas.
+
+**Dependência / gates:** caso 320×900/texto200 da referência: registrar scrollWidth, largura de viewport e culpados sem transferir overflow para a qualidade do produto; caso FullStack 667×375/texto200: um scroll pré-medição considera header/nav efetivos e o scroll-padding 8px/140px, preserva razão exata1/hit; caso starter844×390/texto200: navegação de preparação em1440/100%, viewport requerido aplicado antes da captura e navegação de usuário testada separadamente na dimensão solicitada. Limites explícitos de ações evitam reinício por espera ilimitada; hard timeout residual continua FAIL e exige isolamento owned, nunca apagar 4 fixtures antigas nem sobrescrever recibos.
+
+**Validação planejada:** TSC do helper sem dependências, parser TS dos arquivos reais, testes Node para contraprovas de geometria/overflow, Chromium sintético com scrollport da R3, revisão do diff; runtime com FullStack+starter e CI ficam `NOT_RUN` até orçamento explícito. `NON_EQUIVALENT` é diferença de fonte, não PASS visual. Qualquer `DEFECT_FOUND` exige prova de requisito nativo, não mera falha de captura. Sem subagente real disponível, autoria da correção não é QA independente.
+
+**Integração:** patch isolado sobre QA `ebf7e970` e nova branch com Preview false na primeira árvore, sem push para A/B/C/QA existente. Não reexecutar as 15 lanes da R2 só por documentação, nem herdar seu sucesso no SHA futuro. Owner de CI/guard único; conferir SHA da candidata e ref antes da publicação.
+
+## HF-UI-044-FINAL-PR50-ONE-SHOT — adendo autorizado
+
+DECISAO_CONFIRMADA: missão do usuário de fechamento PR50 autoriza reparo do comparador e até duas rodadas novas, separadas das três históricas esgotadas. Estado inicial PARTIAL; 0/2 rodadas novas. A coordenação controla publicação e CI. Owner B escreve somente domain*, plan/tasks/evidence036; Owner CI controla workflow/runner; QA não autor revisa. Nenhum produto, ciência, starter ou formulário C será alterado.
+
+ANALYZE read-only: 5 FR, 4 SC, 46 tarefas; cobertura documental 9/9; três lacunas HIGH: restart de worker reexecuta beforeAll sobre fixture não vazia; faltam resultados75 no novo SHA; falta QA final. Lacuna MEDIUM: orçamento histórico carecia deste adendo. Sem conflito constitucional detectado. Requisitos FR-036-004/SC-036-002 ligam o coletor a T047–T051; SC-036-003 fica com CI. A semântica real de restart está documentada em https://playwright.dev/docs/test-retries.
+
+RECOMENDACAO técnica executada: um único teste Playwright contém steps de coleta independentes e seu sumário final. Erros ficam no journal; somente o sumário lança depois de percorrer o plano. Prazo por fonte encerra contexto antes de prosseguir; fonte indisponível recebe NOT_RUN explícito, sem reusar silenciosamente fixture nem remover frescor. O coletor usa o limite global existente de24min como teto, reserva tempo para diagnóstico/cleanup e não aumenta timeouts de ação. Focal registra somente os três IDs antigos; matriz registra75. Manifesto/recibos exclusivos usam wx. Evidência de fonte obstruída mantém UNOBSERVED e limitação, sem se tornar aceite visual.
+
+Sequência: T047 análise/plano → T048 coletor/seleção/budgets → T049 contraprovas/typecheck → T050 focal3/matriz75/RC → T051 revisão/convergência. T050/T051 permanecem pendentes até provas próprias por SHA/run. Todos os quatro qualificadores experimentais e ratio1 permanecem exigidos. Consistência antes da implementação: adendo não contradiz FR/SC nem substitui provas R2/R3.
+
+## O3 — primeira rodada nova, 2026-11-02
+
+EVIDENCIA_IMPLEMENTACAO: run41380591865/1 no SHA72a70afdd941e18805a4004571fd3b4df5e52913, treec74a1fed35239e307efb16d3383d807d1f8d83d6, falhou no preflight de b-focal-3. A guarda rejeitou a presença herdada de PGUSER antes de instalar dependências, provisionar PostgreSQL ou iniciar qualquer caso. Nenhum valor de variável foi lido ou registrado neste adendo. O erro secundário do verificador é REQUIRED_EVIDENCE_MISSING; não é falha visual nem de produto.
+
+Orçamento novo:1/2rodadas consumida, uma restante somente após correção material e novoSHA. Focal0/3iniciados; trêsNOT_RUN. Matriz0/75iniciados, jobskipped e75NOT_RUN. RCjobskipped,15gatesNOT_RUN. O artefato13112783454 tem413bytes, SHA2568aa65f28475457d7cd51a7fbd1bf188551db036c9180bd1782e7468aefce9469, CRCverificado e apenas b-verification-summary.json. Não contém índice, pares ou PNGs. Fonte local preservada e recibo em evidence/pr50-round1-runtime.json. R3 e todas as fontes originais permanecem independentes.
+
+RECOMENDACAO O3 autorizada: OwnerCI corrigir somente a neutralização dos defaults libpq do Windows hosted, mantendo as guardas de ambiente e sem modificar códigoB/produto/ciência/shared. Após contraprova eQA não autora, o coordenador poderá publicar o únicoSHAcorretivo e executar a segunda/última rodada. Esta anotação não declara correção validada nem autoriza rerun cego. T050/T051/T052 continuam abertas; O2/O4não alcançados.
+
+## HF-UI-044-PR50-SENIOR-FULLSTACK-FINAL-ONE-ROUND — 2026-11-02
+
+**Estado: EM_ANDAMENTO.** Este adendo governa somente o mandato atual. Os checkpoints anteriores, inclusive os dois runs da PR50, são históricos e imutáveis.
+
+`DECISAO_CONFIRMADA`: o usuário enviou a missão homônima nesta sessão e autorizou implementação consolidada, um único commit/HEAD por push normal na branch `fix/hf-ui044-ui06-b-residual-20261101`, exatamente uma rodada nova/attempt1 no workflow existente e publicação de recibos/review nas PRs #50/#45. Limite configurado90 runner-minutes (20+35+35). Sem rerun ou segundo SHA; se falhar, preservar a falha e encerrar `BLOCKED_WITH_EXACT_FINDINGS`. Sem merge/deploy ou aceite humano/científico.
+
+`EVIDENCIA_IMPLEMENTACAO` O0: worktree existente PR50 íntegra, HEAD58f46fd14b06fb69a2afc8ebf7748e9539537a3e/tree d740dd298a2b740f6d10a952ddf087776852fd53; remoto revalidado idêntico. Base remota e ancestral ebf7e9707d5beba949ae932cdffeb3f9068f8a73. Sem upstream configurado, status tracked/untracked limpo, diff-check sem achados, nenhum lock observado. Ignorados preexistentes: .next, feature.json, next-env.d.ts, node_modules, src/generated. Checkout principal FrenteC c7b023f limpo e preservado. Owners anteriores consultados sem execução ativa; três subagentes nativos atuais, com ownership exclusivo. Skill speckit-implement instalada e prerequisite script da Spec036 executado; sem checklists036, AGENTS aninhado pertinente ou hooks extensions.yml.
+
+Causas atuais: P1 aplica scroll de content cujo range desktop é zero; P2 considera ratio1/hit central suficientes apesar de sobreposição sticky da referência. Não provam defeito funcional do FullStack. Fontes: finding discussion_r4438596010, handoff issuecomment-6568025505 e arquivos reais no HEAD inicial.
+
+**DAG e ownership:** O0 reconciliação (coordenador) → O1 RED/implementação/GREEN (ownerB: domain.spec.ts, domain-geometry.ts, domain-geometry.test.mjs e focais adicionais B) + auditoriaCI read-only (ownerCI) → revisão não autora (ownerQA read-only) → O2 integração/commit/push único (coordenador) → O3 focal3 → matriz75 → RC15 → O4 auditoria dos ZIPs/PNGs/review/handoff. Coordenador escreve somente este plano, tasks e recibos autorizados; um writer por arquivo. shared.ts, fixtures, produto A/B/C, ciência/schema/migrations, workflows, scripts de guard/verification, UI037 e starter permanecem somente leitura nesta implementação.
+
+**Invariantes e provas previstas:** scroll owner selecionado por DOM/computed overflow/conectividade/ranges reais, nunca apenas largura; um delta de planReadableScroll no range do owner correto; content no mobile e document no desktop comprovados em Chromium. Reading-band considera sticky header/rail e retângulo completo, hit/ratio1; alcance insuficiente mantém evidência e FAIL. Referência ocluída preserva PNG e recebe NON_EQUIVALENT/REFERENCE_READING_BAND_OCCLUSION, sem modificação do starter. Fontes/SHA e eixos execução/comparabilidade/requisito/completude separados. Testes RED→GREEN, focal/full TypeScript, lint, puros/negativos de CI e Chromium das próprias rotinas B precedem push. Teste obrigatório inviável recebe NOT_RUN/motivo/risco registrado antes da publicação, sem inventar PASS.
+
+**Integração e limites:** workflow existente já configura20/35/35 e guards de push/ref/attempt1; não alterar se permanecer conforme. Preview false, blobs A86/UI037 e product/scientific paths devem ser iguais ao baseline. Fonte starter fixa cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f somente leitura. Nenhuma prova A nova será alegada. Documentação final pós-CI ficará no handoff/comentários e recibo local, sem segundo commit documental. T056/T057 e históricos de runtime só fecham com prova real no SHA final; aceite visual humano e ciência experimental permanecem pendentes.
+
+### Checkpoint prepublication O1 — código congelado
+
+`EVIDENCIA_IMPLEMENTACAO`: T054/T055 concluídos no recorte local. RED genuíno do baseline58f46fd falhou nos dois findings esperados; GREEN69 testes distintos (24geométricos+6Chromium scrollowner+29contratos/coletor/runner+1Chromium lifecycle+2UI037+7apresentação). TSC completo/focal e lint PASS; contrato final PASS. QA não autora `/root/owner_qa` emitiu `SCOPED_PREPUSH_REVIEW_PASS`, recibo SHA2565f87f27c2d879eeb2f963d678095c0ee4266d96bd9e0b40a4c781b63652c96a1. Sem finding de código bloqueante P1/P2 neste alcance.
+
+QA detectou e corrigiu antes do push uma lacuna do teste: fonte nominal200 ainda16px. Somente o teste foi ajustado para fonte raiz/alvo16/32px com assertivas; novos14recortes/seisChromium PASS e quatroPNGs inspecionados. Provas nominais anteriores/falhas do harness permanecem preservadas e não fundamentam escala200. Range insuficiente rejeita, alvo maior explicita leitura parcial; cinco hitpoints não são prova exaustiva contra toda oclusão. Código de produto e guards intactos. Recibo congelado: [pr50-senior-prepublication.json](evidence/pr50-senior-prepublication.json).
+
+Runtime bilateral local `NOT_RUN` por fixture exclusiva de runner hospedado fresco, sem forjar contexto nem usar banco do operador. Node local24.14 explícito; Node24.19 será exigido no runner. T056/T057 e todos os itens históricos dependentes de runtime continuam abertos neste commit. O2/O3/O4 dependem do único push, run e recibo terminal posterior, sem commit documental adicional.
+
+
+## HF-UI044-PR50 — coordenação única, duas ondas — 2026-11-02
+
+**Estado: EM_ANDAMENTO; Onda 1 iniciada.** DECISAO_CONFIRMADA: mandato enviado pelo usuário no anexo desta sessão, título “D: HF-UI044-PR50 — COORDENAÇÃO ÚNICA, DUAS ONDAS”. Autoriza exatamente uma nova rodada hospedada neste mandato, em um único SHA final, sem rerun, segunda rodada, merge ou deploy. Limites anteriores permanecem históricos. Teto configurado90 runner-minutes: focal3(20) → matriz75(35) → RC15(35), dependentes por sucesso. Nenhum PASS é transferido entre SHAs.
+
+**RECONCILE / EVIDENCIA_IMPLEMENTACAO:** principalC preservado em c7b023f74b6ce1db47ac72e90bf2c51bbc81fd07, sem alterações tracked/untracked. Worktree PR50 existente inicialmente em a290cfc6383dc8fa0a61bd17122f95735da54ce2; fetch exato e fast-forward normal para ea43ad24a8307be6a0c7b183320b460f42dbc32d/tree2f58a09d0655261003bf5831788f2469894b937e, limpo, sem upstream. Remoto confirma mesma branch/SHA e PR50 Draft aberta, base codex/hf-ui044-close-20261101 em ebf7e9707d5beba949ae932cdffeb3f9068f8a73. Correção publicada de contorno não será reaplicada. Codex Review6578723280 deea43ad24 concluído sem achados relevantes; runtime bilateral desse SHA ainda NOT_RUN. Inventário sanitizado local em .accounts-validation/pr50-two-waves/initial-state.json. Artefatos preexistentes ignorados preservados; git status exige execução com acesso ao gitdir compartilhado, sem alterar configuração global.
+
+**Fontes e análise SpecKit:** AGENTS/contexto/TECH_DECISIONS/PLANS/constituição/PRD Code-First/source-policy/SOURCE_AUTHORITY e Spec036; skills instaladas speckit-implement e speckit-analyze. Prerequisite --json --require-tasks --include-tasks PASS na036, sem checklists ou hooks. Análise read-only:5FR/4SC rastreados nas tarefas existentes; lacunas materiais remanescentes são execução bilateral/RC no novo SHA e revisão terminal, cobertas porT060/T061. Nenhum requisito novo de produto/ciência inferido. Mock do starter somente referência visual; diferenças legítimas permanecem NON_EQUIVALENT.
+
+**Onda1 — EXECUTE / ownership:** coordenador root integra e escreve plan.md/tasks.md/evidence/pr50-two-waves-prepublication.json. Agente nativoB /root/b_engineering, High, ownership qa/hf-ui044/domain* (shared.ts excluído) e evidence/pr50-two-waves-b-20261102.md; reproduzir RED/GREEN e corrigir somente defeito demonstrado. /root/ci_safety, High, somente leitura CI/guardas e controles negativos locais; reserva exclusiva antes de eventual patchCI. /root/ux_evidence, High, somente leitura critérios/artefatos, provas isoladas em scratch próprio. Sem coordenadores subordinados ou agentes adicionais de produto. Um writer por arquivo. Não editar produto, ciência, schema/migrations, starter, A/C, docs/raw ou registros canônicos globais.
+
+**Onda2 — REVIEW/QA → CI → INTEGRATE/HANDOFF:** após handoffs e verificações locais/typecheck/lint/Chromium/diff sem finding material, congelar candidata. Revisor QA nativoExtra High não autor, somente leitura, audita independência/diff/contraprovas/CI antes da publicação. Coordenador publica um commit final por fast-forward normal na mesmaPR50, Preview=false e sem skip-ci; confirmar ausência de Actions concorrentes. Solicitar uma vez @codex review do SHA final, salvo parecer já válido no próprio SHA. Observar tentativa1 única; failure bloqueia dependentes. QA não autora audita ZIPs/CRC/SHA/provenance/PNGs,75casos/150fontes/15gates eUI037; conclusão somente após CI eCodex terminais. Relatório factual único/recibo sanitizado nasPR50/45; resultados posteriores no scratch e GitHub, sem push documental adicional. Manter worktrees e decisão de integração para mantenedor.
+
+**Gates e limites:** READY_FOR_MAINTAINER_REVIEW exige focal3,75/75 com evidência completa,15/15no SHA final,UI037 e ambas revisões sem bloqueio. Caso contrário BLOCKED_WITH_EXACT_FINDINGS, sem nova rodada. Preservar HUMAN_ACCEPTANCE_PENDING, GEOCODER_OPERATIONAL_PENDING, CONTRATO_EXPERIMENTAL, VALIDACAO_CIENTIFICA_PENDENTE, SUJEITO_A_RECALIBRACAO e NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO. Revisão humana necessária para aceite/merge/deploy não será simulada. Evidências históricas permanecem nos própriosSHAs/runs.
+
+
+### Encerramento da Onda 1 / congelamento para QA independente
+
+EVIDENCIA_IMPLEMENTACAO: handoffs nativos B (NO_CODE_CHANGE_REQUIRED), CI (CI_READY) e UX recebidos. Nenhum arquivo técnico foi alterado. B reproduziu RED genuíno do helper pai: 0/3 PASS, exit1 esperado; atual GREEN 78/78, exit0, com cartões arredondados, overlays reais, clipping, sticky, scroll owner pelo DOM e fonte16/32px. CI executou21/21, exit0; oito guardas coincidem com a suíteB. Coordenador executou4 testes UI036,3 apresentação IHFR e7 UI037: exit0. Total105 testes distintos PASS, sem somar replays extras nem RED esperado. TypeScript completo/focal PASS; lint exit0, com dois avisos preexistentes em user-profile/white-box. Contrato estático e parserPowerShell PASS. Node local24.14/Chrome156 explicitados; CI exigeNode24.19. O runtime bilateral eRC hospedados permanecem NOT_RUN até a única rodada. Nenhum finding técnico pré-publicação conhecido neste recorte. Observação visual histórica da lateral FS844 foi preservada no reciboUX, sem atribuição de defeito novo ou alteraçãoA/C.
+
+Candidata congelada: somente quatro documentos036 (plan/tasks, reciboB e prepublicationJSON); produto/QA/CI/shared/ciência/UI037 permanecem iguais aea43ad24. T059 concluída; Onda2 iniciada pela QA independente não autoraExtra High. Conta dos comentáriosGitHub confirmada pelo usuário: thalesvalente. Confirmação da API: três runs históricos terminados, nenhumaAction concorrente; nenhuma rodada nova consumida. Recibos locais preservados em.accounts-validation/pr50-two-waves/. Não há autorização para executar uma segunda tentativa mesmo que a primeira falhe.
+
+## HF-UI044-PR50-STARTER-T1T2-RECOVERY — 2026-11-02
+
+Estado: EM_ANDAMENTO; Onda 1. DECISAO_CONFIRMADA: mandato homônimo no anexo do usuário desta sessão autoriza correção exclusivamente QA-T1/T2, até três especialistas nativos simultâneos, duas ondas, uma candidata consolidada e uma nova rodada attempt1 (20+35+35=90 runner-minutes), comentário factual PR50 e síntese PR45. Não autoriza rerun, merge, deploy, alteração do starter/produto/ciência/schema/workflows/guardas. Os mandatos anteriores e seus recibos permanecem históricos.
+
+Objetivo: provar causalmente os dois failures de referência e corrigir apenas contratos de QA comprovadamente incorretos, preservando 75 IDs e fontes/PNGs/JSON. READY_FOR_MAINTAINER_REVIEW depende de focal3/3, matriz75/75 com150samples/75pares, RC15/15, UI037 preservado, QA independente e Codex no SHA final sem finding material. Nenhum PASS histórico é PASS da candidata nova.
+
+RECONCILE / EVIDENCIA_IMPLEMENTACAO: worktree existente PR50 em9a90e9593d45fe7af89d6e37e39a088b69957c13/tree47cedfae6c403bc286948bc76df3fe29f33da988, pai ea43ad24; branch fix/hf-ui044-ui06-b-residual-20261101. Remoto/PR50 Draft aberta confirmados, basePR49 ebf7e970; run41471075927/1 focal3PASS, matriz73PASS/2FAIL, RCskipped. Status tracked/untracked e diff-check limpos; ignorados preexistentes preservados. PrincipalC c7b023f limpo e sem alterações. Git nesta worktree requer acesso além do sandbox; não é defeito de core.bare, configuração global não alterada. Inventário inicial sanitizado e blobs em .accounts-validation/hf-ui044-t1t2-recovery/initial-state.json. Node local24.14/Bun ausente distinguem-se do runner oficial24.19/1.3.11. Processos preexistentes não serão encerrados.
+
+Fontes/autoridade: pedido atual; AGENTS/PLANS/contexto/TECH_DECISIONS/constituição e políticas source-policy/SOURCE_AUTHORITY; Spec036/plan/tasks; código QA e adapter starter fixado cbb954a; CI/artefatos históricos como evidência datada. Skills SpecKit instaladas consultadas; correção de QA da036, sem criar feature ou duplicar specs. FR-036-004/SC-036-002/003/004 cobrem os deltas. Não há nova intenção científica ou de produto inferida.
+
+Ownership e duas ondas: root único coordenador/integrador e writer de domain.spec.ts/plan/tasks/recibos; /root/t1_focus investiga foco e escreve apenas t1-* e scratch/t1; /root/t2_reload investiga reload e escreve apenas t2-* e scratch/t2; /root/ci_audit somente leitura. shared.ts/domain-fixtures.ts permanecem sem edição; mudança indispensável exigiria justificativa e reserva prévia de writer. Onda1: runtime isolado referência, RED/contraprovas, solução mínima comprovada, regressões/TypeScript/lint. Onda2: QA nativa não autora, revisão pré-publicação sem finding material, reconciliação remota, commit/push normal único sem skip-ci/Preview=false, uma CI sequencial e um @codex review, QA terminal dos ZIP/CRC/hash/provenance/PNGs e recibo final. Nenhum coordenador subordinado.
+
+Riscos/pendências: BODY pode representar saída nativa do último foco ou perda indevida; apenas runtime distingue. domcontentloaded não é estado terminalQuery e retry/backoff precisa ser medido. Fonte32→16 é reinstrumentação de teste, não preferência do usuário. Loading/unknown/timeout/redirect/erro inesperado não aprovam404. Negativos próprios devem rejeitar foco perdido/obstrução/ordem incorreta e reload não terminal/erro/ausência de prova/resseed. Falha material local impede push; falha hospedada encerra sem outra rodada. Aceite humano, geocodificador operacional e validação científica conservam gates separados.
+
+Histórico: 2026-11-02 NAO_INICIADO→EM_ANDAMENTO; três agentes nativos realmente convocados na Onda1. Estado anterior73pares/75FullStackPASS permanece histórico. Resultado/verificações/encerramento serão registrados antes do único commit; resultados hospedados posteriores somente no scratch e comentários, sem segundo push documental.
+### Recuperação T1/T2 — Onda1 concluída; Onda2 em revisão
+
+EVIDENCIA_IMPLEMENTACAO: QA_T1_CAUSE_PROVEN no starter real cbb954a:1440/texto200 tem14controles habilitados, Registrar medições último no estado medido (formIHFRposterior pode estar disabled durantefetch); Tab produzBODY/hasFocusfalse/focusoutrelatednull/windowblur, ShiftTab restaura exatamenteação comwindowfocus/focusin.390tem13controles e navmobileapósação; Tab→Resumo→ShiftTab→Registrar. Ordem integral eEnter/Back/Forward dasduasações comprovados. Predicado antigoFAIL1440; contrato novoPASS1440/390, semfoco corretivo. Helper aceita fronteira somentecomordem/assinatura/retorno verificados; produtoFullStack conserva asserçãoTab+nonBODY original. Fases finais de foco distintas sãoNON_EQUIVALENT explícito, não equivalência visual fabricada.
+
+EVIDENCIA_IMPLEMENTACAO: QA_T2_CAUSE_PROVEN: consulta normal chega404após9024ms,lenta15241ms,erro500→OTHER_TERMINAL_STATE9007ms; quatroattempts/retrybackoff1/2/4s. Asserção antiga5sfalha; novoobservador orientadoaestado temteto17s fundamentado em4*1600+7000+1600sessão+2000margem. Loading/unknown/redirect/erro/404oculto/ambiguidade não aprovam.32→16antesreinstrumentação e32apósconfigure comprovados; nenhuma reintrodução de fixture. shared.ts/domain-fixtures.ts intactos.
+
+Rootintegrou somente32linhasQA emdomain.spec.ts ehelpers/testes T1/T2.141testes distintos locaisPASS (70QA+18apresentação/UI037+21CI/guards+18T1+14T2), TypeScript completo/focal e lintfocalPASS. Lint do código completoPASS com2avisos preexistentes; tentativa bruta entroucacheBunlocal e foi interrompida emprocessoowned; comando final exclui somente.accounts-validation local, semalterarconfigoficial. Descobertaoficial --list ficouNOT_RUN porAuthFixtureGuard TEST_DATABASE_CONFIRMATION; nãoforjarcontexto nemreusarbancoreal. ContratoestáticoPR50PASS; SpecKitprerequisitesBash036PASS, semchecklists/hooks. AmbienteNode24.14/Chromium153/Bun1.3.11não éWindowsNode24.19oficial. RuntimeFullStacklocalNOT_RUN.
+
+Onda2: agente nativoExtraHigh nãoautor /root/qa_independent convocado apósfreeze técnico; executarácontraprovas próprias e revisarácausas/diff/segurança/75IDs/arquivos preservados antesdopush. Recibo rastreado: evidence/pr50-t1t2-recovery-prepublication.json. Resultados/hashes/timelines/PNGs e141provas permanecem emscratchdesta missão. Uma nova rodada ainda0/1consumida; nenhumcommit/push/reviewremoto nestecheckpoint. Histórico73pares/75FullStackPASS não é resultado futuro. Critérios finais e pendências humanas/científicas preservados.
+### Onda2 — QA independente aprovada antes da candidata única
+
+EVIDENCIA_IMPLEMENTACAO: /root/qa_independent emitiu PREPUBLICATION_QA_NO_MATERIAL_FINDINGS,22checks própriosPASS (20sintéticos,fluxorealT1/T2 e multicontexto comjornada/preassertsoficiais). Comprovou75IDsbaseline/verifier,24blobsprotegidos,ownership e integridade. Recibo scratch/qa/prepublication.json SHA256f60a2763da73faed624738d96f2b8b0cff62462a673fd5772a24fc63569f27fe. Probe direto inicial comsetupdiferente foi preservado e repetido comjornadaoficial; não é findingdeproduto nemmotivo parafocoartificial. Nenhumaedição técnica posterior à revisão. Corpo do recibo rastreado somente atualizado comresultadoQA epreflight factual.
+
+Remoto/API e gitls-remote conferidos: PR50Draft/head9a90e959/baseebf7e970,quatroruns históricos completed,zeroativos. Conta thalesvalente para comentários confirmada no registro anterior eAPIatual. Coordenador pode publicar umúnicocommit consolidado,sem skip-ci,porFFnormal na mesmabranch; solicitaruma vez @codex review noSHAfinal. CI hospedada ainda0/1consumida nestecheckpoint. Semherdar73pares/75FullStackPASS para novoSHA. Resultadoposterior ficará norecibofinal/comentáriosPR50/45,semsegundocommit documental; merge/deploy/release não autorizados.
+
+## Ciclo C1–C3 — HF-UI044-CORRECOES-FINAIS-20261105
+
+**Estado deste ciclo: EM_ANDAMENTO.** P00 coordena e publica uma única branch `fix/ui044-correcoes-finais-20261105`, com PR Draft para development. Base B=`7bae1f87cb8d6a708b7c4de0b990e82e5a503369`, árvore `0c836da964c377a7d1e6bc8b2331524e931ea901`. [Recibo comum O0](evidence/ui044-correcoes-finais-20261105/o0.json) e [índice de evidências](evidence/ui044-correcoes-finais-20261105/readme.md). Os mandatos/limites de campanhas anteriores acima permanecem históricos; esta execução não os repete nem os declara quitados.
+
+### ANALYZE e autoridade
+
+A decisão atual de Pedro detalha FR-036-001/FR-036-002/FR-036-003/FR-036-005 e SC-036-001/SC-036-002/SC-036-003/SC-036-004. O0 reconfirmou o merge51, a PR52 documental ainda aberta, fontes e três PNGs por blobs/SHA-256, ausência da branch pretendida e checkout isolado limpo. Não há evidência publicada de workers existentes; sessões externas sem publicação não são observáveis. Não importar a branch documental nem as branches antigas como base funcional.
+
+Achados anteriores ao código: os cards já recebem score próprio; o teste de gestão ainda clica no link IHFR removido por C1; o helper de viewport ainda exige qualificadores dentro das ações removidas por C2; C3 exige separar apresentação mantendo o estado único, não inverter o grupo completo. Constituição I–VII preservada; nenhuma decisão nova de produto ou ciência.
+
+### PLAN e ownership
+
+| Frente | Executor real / workspace isolado | Escrita exclusiva |
+|---|---|---|
+| P00 | `/root`, `repo` | spec/plan/tasks/evidence036, `vercel.json`, `.github/workflows/rc-review.yml`, composição e publicação |
+| P01 | `/root/p01_cards`, `wt-p01` | `src/components/areas/area-collections.tsx` |
+| P02 | `/root/p02_detail`, `wt-p02` | page do detalhe, `src/components/collections/collection-detail.tsx`, `src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx`; `src/components/collections/collection-detail-layout.tsx`, reservado no adendo O0 |
+| P03 | `/root/p03_tests`, `wt-p03` | E2E036/read/manage, novo helper `ui044-final-corrections.ts` e unidade `hf-ui044-final-corrections.test.tsx`; nenhum produto/config/spec canônico |
+| P04 | revisão não autora por agente sem autoria nos arquivos auditados | somente parecer e evidências; sem implementação de produto/testes/config |
+
+O0 teve agentes reais `/root/o0_refs`, `/root/o0_speckit`, `/root/o0_guards`. Onda1 usa no máximo três subagentes ativos; não exigir novos filhos enquanto os slots estiverem ocupados. Os workers são detached em B, sem refs remotas. Node_modules do lock é compartilhado somente para leitura, sem instalações por worker.
+
+**DAG:** O0 → P01 || P02 || P03 || P00 docs/guardas → O2 composição P01→P02→P03→P00 → freeze F/tree → CI15 || Codex || P04 → O4 handoff para Pedro. A ordem de composição não serializa a implementação. P02 informa a P03 interfaces/seletores antes dos testes dependentes; conflitos pontuais voltam ao owner.
+
+### IMPLEMENT e validação
+
+A apresentação usa dados já carregados. C2 retira somente a cópia do aviso nas ações. C3 deve manter o client state de gerenciamento único e permitir slots/composição de conteúdo sem transportar código server-only para o cliente. Guias da instalação Next16.3.8 correspondente ao lock foram lidos; hashes e origem estão em O0. Não criar dependências/backend ou duplicar componentes escondidos por breakpoint.
+
+Os comandos reais de Spec Kit `check-prerequisites.sh --json --require-spec --require-tasks --include-tasks`, `setup-plan.sh --json` e `setup-tasks.sh --json`, com `SPECIFY_FEATURE_DIRECTORY=specs/036-ajustes-area-coletas-ihfr`, tiveram exit0. O setup-plan atual preservou o plano existente; o setup-tasks emitiu template/paths sem sobrescrever tarefas. `.specify/feature.json` foi preservado/restaurado; hooks e checklists036 ausentes. Skills apply por análise/edição real, sem alegar slash commands inexistentes. Fluxo enxuto autorizado não cria nova feature, research ou contratos redundantes.
+
+P00 confere preimages B, Git blobs, SHA-256, patch e escopo de cada entrega. Validação local proporcional: diff/check, typecheck/lint e unidades focais. Ambiente Chat Linux/Node24.22.1 não substitui Windows/Node24.19 da CI oficial. Os testes com banco/browser usam apenas a RC oficial e seu PostgreSQL owned; `test:e2e:ihfr:full-ui` não é fallback.
+
+Antes da primeira ref remota, a árvore candidata contém a guarda false da branch exata no Vercel e somente as inserções nominais em push/if RC. Runners/actions/permissões/timeouts/guardas/gates históricos permanecem. P00 reconfirma ref antes de publicar; usa atualização normal e expectativa do SHA quando aplicável. Sem force, merge ou deploy.
+
+### REVIEW, converge e handoff
+
+O3 exige os quinze gates reais de F, capturas/JSON por estado/viewport, revisão de código e QA não autora dos arquivos auditados. Confrontar o baseline visual autenticado de febee101aa quando o estado/viewport corresponder. PASS histórico, testes apenas escritos, ausência de findings ou request pendente não são aprovação do novo SHA. O runner para no primeiro FAIL; os posteriores são NOT_RUN.
+
+Converge compara somente C1–C3 com spec/plan/tasks atualizados. Novos gaps materiais geram tarefas append-only, sem renumerar nem reabrir campanhas históricas. Nenhum capítulo vazio de convergence se não houver gap novo de implementação. Gates ainda aguardando execução permanecem abertos no snapshot de freeze e recebem resultado no recibo da PR do mesmo F; não fazer commit só para recibo e alegar CI antiga.
+
+Riscos principais: score de outra coleta, ausência confundida com zero, duplicação/obsolescência de estado, perda de qualificadores, reordenação visual divergente de DOM/foco, desktop deslocado, seleção de IHFR ausente na suíte E2E geral. Owners/testes focais tratam cada um. Bloqueio localizado não interrompe frente independente. Sem nova decisão humana para as escolhas técnicas já autorizadas; aceite e merge finais continuam do mantenedor.
+
+Histórico do ciclo: 05/11 O0 PASS; P01/P02/P03 compostos sequencialmente com preimages/hashes/postimages idênticos aos recibos. Os oito testes novos demonstraram RED funcional em B (seis falhas por link/aviso redundantes, dois casos já corretos); após composição, 17/17 unidades focais PASS, typecheck completo exit0 e lint exit0 com dois warnings preexistentes fora do delta. Verificação semântica das guardas e diff/check PASS. [Recibos e resultados locais](evidence/ui044-correcoes-finais-20261105/readme.md).
+
+A composição C3 usa uma árvore ativa conforme `matchMedia(80rem)`, com snapshot SSR estável mobile e controlador único acima da disposição. No desktop, as duas pilhas mantêm alturas independentes; o limite de largura original permanece somente no gerenciamento. Ao cruzar o breakpoint, os slots podem remontar: valores/controlador, disclosures abertos, foco lógico e retorno do diálogo são preservados; identidade física dos nós não é requisito. A primeira renderização SSR segue a ordem mobile até hidratar. P03 cobre esse contrato observável sem simular foco de sucesso nem permitir chamadas adicionais por resize.
+
+P04 foi distribuído entre três agentes reais sem autoria de produto/testes/config/Spec: `/root/o0_guards` (C2/C3 e parecer integrado), `/root/o0_refs` (C1/dados/navegação/testes) e `/root/o0_speckit` (consistência Spec Kit/histórico). Pré-revisão em andamento neste snapshot; browser, CI15 e Codex da candidata permanecem NOT_RUN até publicação e execução.
+
+### Recuperação factual após F1
+
+F1 `921b5ff153865816922b0f509bfda0642a9f4085` teve nove gates PASS e E2E FAIL no run42140950096/1; Https/Deletion/Ihfr/Bootstrap/SchemaAudit não executados. O teste legado US4 proibia IHFR no artigo completo, que passou legitimamente a incluir a leitura. P03 recebeu reserva adicional do único teste afetado após demonstração material. O reparo preserva privacidade global e exige Registro único, visível, imutável e sem IHFR; cobre reload/inativo e destinos. P04 não autora conferiu o delta e seus hashes sem findings. Typecheck completo e lint focal PASS. Produto, guards e pipeline permanecem idênticos a F1. [Recibo da recuperação](evidence/ui044-correcoes-finais-20261105/recovery-f1.json).
+
+Converge acrescentou somente T078, preservando o histórico. A próxima publicação é um sucessor normal na mesma branch/PR, motivado pelo defeito real; todos os quinze gates e reviews devem qualificar esse novo SHA. A matriz de layout não chegou a executar em F1. Nenhum resultado terminal do sucessor é antecipado neste commit.
+
+### Recuperação factual após F2
+
+F2 `3a3a9cf65dd09a9cc2e1ad5c63d4c761e2a52d06` teve 12 gates PASS, Ihfr FAIL e Bootstrap/SchemaAudit NOT_RUN no run 42144128465/1. O E2E geral passou 241 testes, confirmando o reparo US4 de F1. O gate Ihfr registrou 2 PASS e 4 timeouts, todos na espera `page.evaluate(waitForMissionRender)` do novo helper UI044, linha 64. A matriz chegou a 7/23 casos. O stack prova o ponto de bloqueio, não o mecanismo interno da espera. P03 investiga/corrige o helper reservado e P04 faz contra-análise não autora; nenhum timeout, helper oficial ou guarda será enfraquecido. [Recibo factual](evidence/ui044-correcoes-finais-20261105/recovery-f2.json).
+
+A candidata diagnóstica acrescenta observadores temporários e logs limitados ao await que travou, mantendo a chamada oficial e todos os asserts/casos. P03 entregou patch com preimage F2 conferido; P04 aprovou somente a instrumentação após tratar rollback parcial, isolamento de falhas de logging e preservação do receiver RAF. Provas Node: 16 casos de equivalência sintética e cinco casos de controle da espera; typecheck completo/lint focal PASS no integrador. Esses resultados não provam causa no Chromium. A publicação seguinte usa a mesma RC15/branch/PR para obter a evidência faltante, sem tocar guards/timeouts ou executar workflows históricos. T079 funcional permanece pendente, inclusive se a observação alterar timing e a execução ficar verde.
+
+### Recuperação factual após F3
+
+F3 `8d5566bea4dcca7d2e48529b2aae3aab28c6e922`, run42150335260/1, preserva 12 gates PASS e E2E geral241/241, mas Ihfr tem1 PASS/5 FAIL e a matriz permanece7/23. Bootstrap/SchemaAudit não executados. Artefato13472578538 tem29.039.558bytes, SHA256 `10c1d6abdbd746b6bb3b7158949ab769d8596f0cccb1289dcc0a8df44ee4afb2`; integridade/CRC conferidos. Codex concluiu no SHA integral sem findings, sem substituir o FAIL de runtime. [Recibo factual](evidence/ui044-correcoes-finais-20261105/recovery-f3.json).
+
+Os115 eventos diagnósticos representam11 sessões; a ordem correta vem de `sequence`, pois a entrega assíncrona do console pode trocar linhas. Sete esperas terminaram; quatro em390×844 ficaram na promessa `finished` capturada de uma CSSTransition running/pending=false/endTime300ms. Nenhuma conclusão/rejeição, nova amostra ou construção de MessageChannel foi registrada nesses quatro casos. A causa interna da promessa pendente não está demonstrada; não atribuir pausa, taxa zero ou defeito do Chromium.
+
+A necessidade material autoriza P03 a reparar somente a observação de prontidão em `frontend-mission-evidence.ts` e acrescentar contraprovas em `frontend-mission-evidence.spec.ts`, conforme adendo de ownership com preimages F3. Reamostrar o mesmo predicado running+endTime finito entre frames; preservar a barreira final de dois rAF+MessageChannel, foco, rolagem única, negativos e timeouts. Retirar o instrumento temporário do helper UI044. P04 confronta o código e contraprovas de pausa/remoção/substituição após a amostra, animação que continua ativa e animação surgida durante a barreira. Prova sintética não substitui a execução browser oficial.
+
+O quinto failure ocorre antes do instrumento: GET de elegibilidade sem `landUseType`, ao contrário de F2, seguido de INSUFFICIENT_DATA. O estado vazio explica o query omitido; a razão interna de a seleção não persistir é inferência. P02 investiga em leitura; P03 reforça a preparação observável do layout e prova os dois campos e o query antes do assert ELIGIBLE, sem repetir seleção silenciosamente, forçar parâmetros ou mudar domínio/fixture. Converge acrescenta T080. P00 integra os deltas revisados, executa verificações locais e publica sucessor normal na mesma branch/PR; O3 continua exigindo quinze gates e matriz completa no SHA sucessor.
+
+### Recuperação factual após F4
+
+F4 `dee68689bd78a4bd1cd8519cf963396320a7ca5b`, run42154773481/1, teve12 gates PASS, E2E geral244/244 e Ihfr5 PASS/1 FAIL; Bootstrap/SchemaAudit NOT_RUN. A matriz avançou a17/23, faltando OWNER vigente nas quatro larguras e ADMIN ausente/vigente. O [recibo F4](evidence/ui044-correcoes-finais-20261105/recovery-f4.json) preserva logs, SHA/digest/CRC e os estados distintos. As três novas contraprovas pertencem à suíte E2E geral aprovada; os quatro bloqueios anteriores não ocorreram. O cenário sem randomUUID passou com a preparação explícita de composição/entrada. Isso qualifica o reparo de espera no próprio F4, sem promover O3 ou transferir resultado ao sucessor.
+
+A falha agora alcançada é o GET OWNER sem landUseType após as provas de viewport. O fluxo OWNER/ADMIN ainda preenche antes de provar composição desktop e valores pretendidos; a matriz pode comparar e preservar um snapshot já vazio. Os helpers de inspeção e o cancelamento do diálogo não contêm reset explícito dos valores; o instante interno da perda permanece não observado. P03 mantém ownership exclusivo de `ihfr-diagnosis-manage.spec.ts` para compartilhar a pré-condição já usada pelo primeiro caso, exigir FOREST/data antes e depois de cada conjunto de inspeções e conferir a query contextual da primeira resposta. Nenhum reselect, query forçada, alteração de domínio/fixture, timeout ou helper de espera. P02 investiga em leitura e P04 revisa sem autoria. P00 compõe e publica um sucessor normal na mesma branch/PR após hashes e checks locais, com nova RC15/Codex/QA integral.

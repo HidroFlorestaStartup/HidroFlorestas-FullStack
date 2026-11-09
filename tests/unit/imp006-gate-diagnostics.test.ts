@@ -4,7 +4,39 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
 import { setTimeout as delay } from "node:timers/promises";
-import { describeImp006Error, redactImp006Diagnostics, runImp006Gate } from "../../scripts/imp006-gate-diagnostics";
+import { PassThrough } from "node:stream";
+import { once } from "node:events";
+import { describeImp006Error, forwardImp006Diagnostics, redactImp006Diagnostics, runImp006Gate } from "../../scripts/imp006-gate-diagnostics";
+
+test("IMP-006 Next output redacts across chunks and flushes the final partial line", async () => {
+  const input = new PassThrough(), output = new PassThrough();
+  let captured = "";
+  output.on("data", chunk => { captured += chunk; });
+  forwardImp006Diagnostics(input, { JWT_SECRET: "synthetic-split-secret" }, "Next", output);
+  const ended = once(input, "end");
+  input.write("jwt=synthetic-split-");
+  assert.equal(captured, "");
+  input.write("secret\nCookie: auth_token=private\n");
+  input.end("last partial line");
+  await ended;
+  assert.match(captured, /Next: jwt=<REDACTED>/);
+  assert.match(captured, /Next: Cookie: <REDACTED>/);
+  assert.match(captured, /Next: last partial line\n$/);
+  assert.doesNotMatch(captured, /synthetic-split-secret|private/);
+});
+
+test("IMP-006 Next output discards an oversized line through its final continuation", async () => {
+  const input = new PassThrough(), output = new PassThrough();
+  let captured = "";
+  output.on("data", chunk => { captured += chunk; });
+  forwardImp006Diagnostics(input, { JWT_SECRET: "hidden-secret-complete-tail" }, "Next", output);
+  const ended = once(input, "end");
+  input.write("x".repeat(1_048_570) + "hidden");
+  input.write("-secret-");
+  input.end("complete-tail\nsafe next line");
+  await ended;
+  assert.equal(captured, "Next: OUTPUT_LINE_LIMIT_EXCEEDED\nNext: safe next line\n");
+});
 
 test("IMP-006 diagnostic output redacts database URLs, tokens and known secrets", () => {
   const env = { DATABASE_URL: "postgresql://owner:private@localhost:5432/test", JWT_SECRET: "jwt-private-key" };

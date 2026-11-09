@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "kind": "first NAV4 failure; closed projection of original list reporter plus complete geometry",
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "executedBy": "/root/backend_historicos",
+  "inspectedBy": "/root/frontend_ux",
+  "testFile": "tests/e2e/frontend-mobile-navigation.spec.ts",
+  "testFileSha256": "b6043ec00f1a51c3a199cee4ab3eaadcd0ba1bd6959b77bd25a9f272dd39cd41",
+  "runtime": {
+    "os": "Linux",
+    "node": "24.19.0",
+    "playwright": "1.55.1",
+    "chromium": "140.0.7339.186",
+    "postgres": "16.15",
+    "dbPort": 55426,
+    "appPort": 3000,
+    "formalMigrations": 14
+  },
+  "originalExecution": {
+    "startUtc": "2026-10-22T00:07:14.987072995Z",
+    "startTimestampSource": "raw log filesystem birth time, not a Playwright startTime",
+    "endUtc": "2026-10-22T00:08:50.433608Z",
+    "endTimestampSource": "raw log final filesystem mtime",
+    "exitCode": 1,
+    "workers": 1,
+    "retries": 0,
+    "passed": 0,
+    "failed": 4,
+    "reporter": "list"
+  },
+  "rawLog": {
+    "retainedOnlyInScratch": true,
+    "filename": "backend-mobile.log",
+    "bytes": 76730,
+    "sha256": "c5d193b7dbc2f8207cbb42fcd98ae63717da96693121da0a9d2c71f1fcc2d4f5"
+  },
+  "cases": [
+    {
+      "width": 375,
+      "textPercent": 100,
+      "status": "failed",
+      "retry": 0,
+      "failure": {
+        "testFile": "tests/e2e/frontend-mobile-navigation.spec.ts",
+        "line": 245,
+        "assertion": "await expect(page).toHaveURL(/\\/login$/)",
+        "timeoutMs": 5000,
+        "received": "http://127.0.0.1:3000/logout",
+        "errorContext": "error-context-375-text100.md"
+      }
+    },
+    {
+      "width": 375,
+      "textPercent": 200,
+      "status": "failed",
+      "retry": 0,
+      "failure": {
+        "testFile": "tests/e2e/frontend-mobile-navigation.spec.ts",
+        "line": 245,
+        "assertion": "await expect(page).toHaveURL(/\\/login$/)",
+        "timeoutMs": 5000,
+        "received": "http://127.0.0.1:3000/logout",
+        "errorContext": "error-context-375-text200.md"
+      }
+    },
+    {
+      "width": 320,
+      "textPercent": 100,
+      "status": "failed",
+      "retry": 0,
+      "failure": {
+        "testFile": "tests/e2e/frontend-mobile-navigation.spec.ts",
+        "line": 245,
+        "assertion": "await expect(page).toHaveURL(/\\/login$/)",
+        "timeoutMs": 5000,
+        "received": "http://127.0.0.1:3000/logout",
+        "errorContext": "error-context-320-text100.md"
+      }
+    },
+    {
+      "width": 320,
+      "textPercent": 200,
+      "status": "failed",
+      "retry": 0,
+      "failure": {
+        "testFile": "tests/e2e/frontend-mobile-navigation.spec.ts",
+        "line": 245,
+        "assertion": "await expect(page).toHaveURL(/\\/login$/)",
+        "timeoutMs": 5000,
+        "received": "http://127.0.0.1:3000/logout",
+        "errorContext": "error-context-320-text200.md"
+      }
+    }
+  ],
+  "geometry": [
+    {
+      "file": "frontend-mobile-navigation-after-320-text100-geometry.json",
+      "records": 43,
+      "controls": 14,
+      "visibleTrue": 14,
+      "hitTrue": 14
+    },
+    {
+      "file": "frontend-mobile-navigation-after-320-text200-geometry.json",
+      "records": 43,
+      "controls": 14,
+      "visibleTrue": 14,
+      "hitTrue": 14
+    },
+    {
+      "file": "frontend-mobile-navigation-after-375-text100-geometry.json",
+      "records": 43,
+      "controls": 14,
+      "visibleTrue": 14,
+      "hitTrue": 14
+    },
+    {
+      "file": "frontend-mobile-navigation-after-375-text200-geometry.json",
+      "records": 43,
+      "controls": 14,
+      "visibleTrue": 14,
+      "hitTrue": 14
+    }
+  ],
+  "classification": {
+    "localExecution": "HARNESS_CONFIG_INCOMPATIBILITY_DEMONSTRATED",
+    "basis": "Missing trusted local ingress in the IMP006/3000 context; installed Next normalizes the loopback hostname to localhost. Same server and handler: Origin 127.0.0.1 gives 403 FORBIDDEN, Origin localhost gives 200 success. Fresh browser reproduces the same safe alert with 403.",
+    "originalFailureUnchanged": true,
+    "productPatch": false,
+    "navigationRerun": false,
+    "officialGateResult": "NOT_RUN",
+    "historicalInv003": "INCONCLUSIVE",
+    "historicalSettleTransitions": "INCONCLUSIVE"
+  },
+  "limits": [
+    "No cookie/session or response code was captured during the original navigation suite; the HTTP codes are from the subsequent focused reproduction.",
+    "All recorded pre-logout controls were visible and hit-testable; the complete navigation suite remains failed.",
+    "Native zoom, physical mobile device, assistive technology, and human pilot acceptance were not run.",
+    "The failed context used PostgreSQL16.15/IMP006 port55426; it is not the official account context PostgreSQL17/port55427."
+  ],
+  "redaction": {
+    "method": "closed allowlist result fields; no environment object, headers, cookies, credential, raw console, or executor metadata",
+    "originalReporterNotPublished": true
+  }
+}

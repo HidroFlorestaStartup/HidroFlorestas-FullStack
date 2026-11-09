@@ -1,0 +1,116 @@
+[
+  {
+    "name": "375-text100-empty-start",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text100-empty-create-focus",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 283,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text100-three-links-start",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 0,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text100-three-links-middle",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 850,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text100-three-links-end",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 850,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  },
+  {
+    "name": "375-text100-three-links-last-control-focus",
+    "width": 375,
+    "height": 900,
+    "text": "16px",
+    "scrollY": 850,
+    "header": {
+      "top": 0,
+      "bottom": 69,
+      "height": 69
+    },
+    "navigation": {
+      "top": 765.3125,
+      "bottom": 900,
+      "height": 134.6875
+    },
+    "safeAreaMethod": "Chromium emulation; no physical display inset",
+    "screenshot": "viewport/fullPage:false"
+  }
+]

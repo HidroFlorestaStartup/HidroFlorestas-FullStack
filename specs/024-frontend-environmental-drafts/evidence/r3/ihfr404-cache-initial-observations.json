@@ -1,0 +1,130 @@
+{
+  "scope": "One Next dev A-to-B restart; same project and .next; synthetic private environment; no database",
+  "runtime": {
+    "node": "v24.19.0",
+    "next": "16.3.8",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "cacheEnabled": true,
+  "inheritedApplicationEnvironment": false,
+  "observations": [
+    {
+      "phase": "A",
+      "event": "ready",
+      "status": 200,
+      "port": 43779,
+      "launcherPid": 87082
+    },
+    {
+      "phase": "A",
+      "event": "probe",
+      "tokenPhase": "A",
+      "status": 200,
+      "moduleSchemaCurrent": true,
+      "runtimeSchemaCurrent": true,
+      "moduleSecretCurrent": true,
+      "runtimeSecretCurrent": true,
+      "moduleSchema": "b978136ef7e7c1a5ed1486caa4e60ecc0bfd1fa3c1342833e991d2fcf57a9b14",
+      "runtimeSchema": "b978136ef7e7c1a5ed1486caa4e60ecc0bfd1fa3c1342833e991d2fcf57a9b14",
+      "moduleSecret": "281558bf3c80b1419422d4a1afa19ae567d84acc1a89004259baac0936f4e86e",
+      "runtimeSecret": "281558bf3c80b1419422d4a1afa19ae567d84acc1a89004259baac0936f4e86e",
+      "authenticated": true,
+      "processId": 87096
+    },
+    {
+      "phase": "A",
+      "event": "stopped",
+      "requestedSignal": "SIGKILL",
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    {
+      "phase": "B",
+      "event": "ready",
+      "status": 200,
+      "port": 41583,
+      "launcherPid": 87121
+    },
+    {
+      "phase": "B",
+      "event": "probe",
+      "tokenPhase": "B",
+      "status": 200,
+      "moduleSchemaCurrent": true,
+      "runtimeSchemaCurrent": true,
+      "moduleSecretCurrent": true,
+      "runtimeSecretCurrent": true,
+      "moduleSchema": "cc597ab45f9f74ee28e530e71e8f8acedd8fc3b4490d9ee01480852773483ef1",
+      "runtimeSchema": "cc597ab45f9f74ee28e530e71e8f8acedd8fc3b4490d9ee01480852773483ef1",
+      "moduleSecret": "5a6a5e8a09f446b41c33b8f7b802b9f9e04f121c26c168a11afb9f09c3ff19ed",
+      "runtimeSecret": "5a6a5e8a09f446b41c33b8f7b802b9f9e04f121c26c168a11afb9f09c3ff19ed",
+      "authenticated": true,
+      "processId": 87134
+    },
+    {
+      "phase": "B",
+      "event": "probe",
+      "tokenPhase": "A",
+      "status": 401,
+      "moduleSchemaCurrent": true,
+      "runtimeSchemaCurrent": true,
+      "moduleSecretCurrent": true,
+      "runtimeSecretCurrent": true,
+      "moduleSchema": "cc597ab45f9f74ee28e530e71e8f8acedd8fc3b4490d9ee01480852773483ef1",
+      "runtimeSchema": "cc597ab45f9f74ee28e530e71e8f8acedd8fc3b4490d9ee01480852773483ef1",
+      "moduleSecret": "5a6a5e8a09f446b41c33b8f7b802b9f9e04f121c26c168a11afb9f09c3ff19ed",
+      "runtimeSecret": "5a6a5e8a09f446b41c33b8f7b802b9f9e04f121c26c168a11afb9f09c3ff19ed",
+      "authenticated": false,
+      "processId": 87134
+    },
+    {
+      "phase": "B",
+      "event": "stopped",
+      "requestedSignal": "SIGTERM",
+      "code": 0,
+      "signal": null
+    }
+  ],
+  "startedAt": "2026-10-20T18:06:18.241Z",
+  "cacheBeforeStopA": {
+    "files": 1,
+    "bytes": 73,
+    "manifest": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "bytes": 73
+      }
+    ]
+  },
+  "cacheBeforeStartB": {
+    "files": 1,
+    "bytes": 73,
+    "manifest": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "bytes": 73
+      }
+    ]
+  },
+  "cacheAfterStopB": {
+    "files": 1,
+    "bytes": 73,
+    "manifest": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "bytes": 73
+      }
+    ]
+  },
+  "passed": true,
+  "conclusion": "No stale private environment reproduced in this one cached A-to-B restart.",
+  "limits": [
+    "One synthetic minimal App Router project on Linux, not the Windows CI application.",
+    "No PostgreSQL/Prisma or application authorization/data guards were executed.",
+    "The cache directory was preserved with nonzero files; cache-hit telemetry is not available, so reused entries versus invalidated/recomputed entries are not distinguished.",
+    "Explicit Turbopack root allows reuse of already-installed dependencies; it differs from the repository's default root.",
+    "A used SIGKILL of its owned Linux process group, analogous to the predecessor gate's Windows taskkill /T /F but not identical platform behavior."
+  ],
+  "completedAt": "2026-10-20T18:06:23.168Z"
+}

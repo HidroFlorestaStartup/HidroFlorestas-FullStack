@@ -1,0 +1,2084 @@
+{
+  "schemaVersion": 1,
+  "protocol": "C-1",
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "startedUtc": "2026-10-23T20:53:17.573Z",
+  "timezone": "America/Fortaleza",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+  "dirtyTrackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "untrackedInvestigation": true,
+  "node": "v24.19.0",
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "applicationDelta": "none",
+  "database": "none",
+  "session": "none",
+  "environment": "system-allowlist-no-app-config",
+  "attempts": [
+    {
+      "id": "C-PUBLIC-1",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "none",
+      "startedUtc": "2026-10-23T20:55:26.307Z",
+      "responses": [
+        {
+          "t": 1792788926602,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788930866,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792788930900,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788931369,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788931662,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788931868,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        }
+      ],
+      "errors": [
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        }
+      ],
+      "status": "FAIL",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "16.6158px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 568,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "failure": "RELOAD_DOCUMENT_NOT_200",
+      "endedUtc": "2026-10-23T20:55:32.050Z"
+    },
+    {
+      "id": "C-PUBLIC-2",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "initial",
+      "startedUtc": "2026-10-23T20:55:32.065Z",
+      "responses": [
+        {
+          "t": 1792788932263,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788933731,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792788933775,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788934247,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788934567,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788934749,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        }
+      ],
+      "errors": [
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        }
+      ],
+      "status": "FAIL",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "16px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 592,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "failure": "RELOAD_DOCUMENT_NOT_200",
+      "endedUtc": "2026-10-23T20:55:34.895Z"
+    },
+    {
+      "id": "C-PUBLIC-3",
+      "phase": "server-after-readiness-fresh-browser-context",
+      "screenshotCaret": "hide",
+      "startedUtc": "2026-10-23T20:55:34.902Z",
+      "responses": [
+        {
+          "t": 1792788935084,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788936502,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "fetch",
+          "documentNavigation": false
+        },
+        {
+          "t": 1792788936533,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788936880,
+          "method": "GET",
+          "status": 200,
+          "route": "/login",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788937090,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        },
+        {
+          "t": 1792788937258,
+          "method": "GET",
+          "status": 500,
+          "route": "/register",
+          "resourceType": "document",
+          "documentNavigation": true
+        }
+      ],
+      "warnings": [
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        },
+        {
+          "type": "error",
+          "category": "other"
+        }
+      ],
+      "errors": [
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        },
+        {
+          "category": "page-error"
+        }
+      ],
+      "status": "FAIL",
+      "beforeSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "17.805px",
+        "animations": [
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          },
+          {
+            "state": "running",
+            "finite": true
+          }
+        ],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "settleMs": 531,
+      "afterSettle": {
+        "width": 375,
+        "height": 900,
+        "font": "32px",
+        "animations": [],
+        "inputsEnabled": true,
+        "documentWidth": 375
+      },
+      "caret": [
+        {
+          "phase": "before",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": false,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "transparent",
+          "inlineCaret": "transparent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "mutation",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": true,
+          "focused": true
+        },
+        {
+          "phase": "after",
+          "caret": "visible-color",
+          "inlineCaret": "absent",
+          "stylePresent": true,
+          "focused": true
+        }
+      ],
+      "control": {
+        "width": 295,
+        "height": 96,
+        "visible": true,
+        "hit": true,
+        "focused": true,
+        "disabled": false
+      },
+      "failure": "RELOAD_DOCUMENT_NOT_200",
+      "endedUtc": "2026-10-23T20:55:37.435Z"
+    }
+  ],
+  "syntheticControls": [
+    {
+      "id": "C-ANIMATION-finite-with-infinite",
+      "explicitlySynthetic": true,
+      "waitedForFinite": true,
+      "resolvedAfterBarrier": true,
+      "ignoredInfinite": true,
+      "status": "PASS"
+    },
+    {
+      "id": "C-ANIMATION-finite-cancelled",
+      "explicitlySynthetic": true,
+      "waitedForFinite": true,
+      "resolvedAfterBarrier": true,
+      "ignoredInfinite": null,
+      "status": "PASS"
+    }
+  ],
+  "files": [
+    {
+      "path": "public-caret-initial.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "inspected": false
+    },
+    {
+      "path": "public-caret-hide.png",
+      "bytes": 51026,
+      "sha256": "7f7417c48f510f0d3cc49d9c16842397f28609364880b1237cb6e128eea141ba",
+      "inspected": false
+    }
+  ],
+  "status": "FAIL",
+  "executedSources": [
+    {
+      "path": "tests/investigations/navigation/run-public.mjs",
+      "bytes": 16887,
+      "sha256": "a8e1ab0bff133ef13310d4af70bb062d54b494d2dbb8733fc516d11351e58034"
+    },
+    {
+      "path": "tests/e2e/frontend-mobile-navigation.spec.ts",
+      "bytes": 17556,
+      "sha256": "481a7afb46beb868196f0325707a70a33c4576239e573f1bf2c300cf9d682dc5"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/navigation/protocol.md",
+      "bytes": 6783,
+      "sha256": "305a5e98c481a377515e7e21a3617595715ebf7c431d502d853adc47aec516f9"
+    }
+  ],
+  "readiness": [
+    {
+      "t": 1792788797980,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788798234,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788798501,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788798763,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788799025,
+      "status": "transport-not-ready",
+      "kind": "TypeError",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "t": 1792788802278,
+      "status": 500
+    },
+    {
+      "t": 1792788802550,
+      "status": 500
+    },
+    {
+      "t": 1792788802843,
+      "status": 500
+    },
+    {
+      "t": 1792788803133,
+      "status": 500
+    },
+    {
+      "t": 1792788803432,
+      "status": 500
+    },
+    {
+      "t": 1792788803723,
+      "status": 500
+    },
+    {
+      "t": 1792788804008,
+      "status": 500
+    },
+    {
+      "t": 1792788804345,
+      "status": 500
+    },
+    {
+      "t": 1792788804624,
+      "status": 500
+    },
+    {
+      "t": 1792788804910,
+      "status": 500
+    },
+    {
+      "t": 1792788805207,
+      "status": 500
+    },
+    {
+      "t": 1792788805493,
+      "status": 500
+    },
+    {
+      "t": 1792788805790,
+      "status": 500
+    },
+    {
+      "t": 1792788806078,
+      "status": 500
+    },
+    {
+      "t": 1792788806365,
+      "status": 500
+    },
+    {
+      "t": 1792788806653,
+      "status": 500
+    },
+    {
+      "t": 1792788806950,
+      "status": 500
+    },
+    {
+      "t": 1792788807237,
+      "status": 500
+    },
+    {
+      "t": 1792788807526,
+      "status": 500
+    },
+    {
+      "t": 1792788807804,
+      "status": 500
+    },
+    {
+      "t": 1792788808085,
+      "status": 500
+    },
+    {
+      "t": 1792788808383,
+      "status": 500
+    },
+    {
+      "t": 1792788808670,
+      "status": 500
+    },
+    {
+      "t": 1792788808960,
+      "status": 500
+    },
+    {
+      "t": 1792788809234,
+      "status": 500
+    },
+    {
+      "t": 1792788809514,
+      "status": 500
+    },
+    {
+      "t": 1792788809797,
+      "status": 500
+    },
+    {
+      "t": 1792788810084,
+      "status": 500
+    },
+    {
+      "t": 1792788810368,
+      "status": 500
+    },
+    {
+      "t": 1792788810664,
+      "status": 500
+    },
+    {
+      "t": 1792788810956,
+      "status": 500
+    },
+    {
+      "t": 1792788811233,
+      "status": 500
+    },
+    {
+      "t": 1792788811512,
+      "status": 500
+    },
+    {
+      "t": 1792788811789,
+      "status": 500
+    },
+    {
+      "t": 1792788812078,
+      "status": 500
+    },
+    {
+      "t": 1792788812362,
+      "status": 500
+    },
+    {
+      "t": 1792788812652,
+      "status": 500
+    },
+    {
+      "t": 1792788812932,
+      "status": 500
+    },
+    {
+      "t": 1792788813217,
+      "status": 500
+    },
+    {
+      "t": 1792788813491,
+      "status": 500
+    },
+    {
+      "t": 1792788813778,
+      "status": 500
+    },
+    {
+      "t": 1792788814059,
+      "status": 500
+    },
+    {
+      "t": 1792788814337,
+      "status": 500
+    },
+    {
+      "t": 1792788814633,
+      "status": 500
+    },
+    {
+      "t": 1792788814918,
+      "status": 500
+    },
+    {
+      "t": 1792788815220,
+      "status": 500
+    },
+    {
+      "t": 1792788815503,
+      "status": 500
+    },
+    {
+      "t": 1792788815788,
+      "status": 500
+    },
+    {
+      "t": 1792788816071,
+      "status": 500
+    },
+    {
+      "t": 1792788816358,
+      "status": 500
+    },
+    {
+      "t": 1792788816634,
+      "status": 500
+    },
+    {
+      "t": 1792788816916,
+      "status": 500
+    },
+    {
+      "t": 1792788817200,
+      "status": 500
+    },
+    {
+      "t": 1792788817490,
+      "status": 500
+    },
+    {
+      "t": 1792788817781,
+      "status": 500
+    },
+    {
+      "t": 1792788818060,
+      "status": 500
+    },
+    {
+      "t": 1792788818349,
+      "status": 500
+    },
+    {
+      "t": 1792788818649,
+      "status": 500
+    },
+    {
+      "t": 1792788818942,
+      "status": 500
+    },
+    {
+      "t": 1792788819218,
+      "status": 500
+    },
+    {
+      "t": 1792788819510,
+      "status": 500
+    },
+    {
+      "t": 1792788819783,
+      "status": 500
+    },
+    {
+      "t": 1792788820076,
+      "status": 500
+    },
+    {
+      "t": 1792788820348,
+      "status": 500
+    },
+    {
+      "t": 1792788820645,
+      "status": 500
+    },
+    {
+      "t": 1792788820934,
+      "status": 500
+    },
+    {
+      "t": 1792788821212,
+      "status": 500
+    },
+    {
+      "t": 1792788821497,
+      "status": 500
+    },
+    {
+      "t": 1792788821785,
+      "status": 500
+    },
+    {
+      "t": 1792788822066,
+      "status": 500
+    },
+    {
+      "t": 1792788822355,
+      "status": 500
+    },
+    {
+      "t": 1792788822639,
+      "status": 500
+    },
+    {
+      "t": 1792788822939,
+      "status": 500
+    },
+    {
+      "t": 1792788823213,
+      "status": 500
+    },
+    {
+      "t": 1792788823492,
+      "status": 500
+    },
+    {
+      "t": 1792788823772,
+      "status": 500
+    },
+    {
+      "t": 1792788824049,
+      "status": 500
+    },
+    {
+      "t": 1792788824334,
+      "status": 500
+    },
+    {
+      "t": 1792788824611,
+      "status": 500
+    },
+    {
+      "t": 1792788824894,
+      "status": 500
+    },
+    {
+      "t": 1792788825175,
+      "status": 500
+    },
+    {
+      "t": 1792788825471,
+      "status": 500
+    },
+    {
+      "t": 1792788825744,
+      "status": 500
+    },
+    {
+      "t": 1792788826036,
+      "status": 500
+    },
+    {
+      "t": 1792788826340,
+      "status": 500
+    },
+    {
+      "t": 1792788826632,
+      "status": 500
+    },
+    {
+      "t": 1792788826922,
+      "status": 500
+    },
+    {
+      "t": 1792788827195,
+      "status": 500
+    },
+    {
+      "t": 1792788827484,
+      "status": 500
+    },
+    {
+      "t": 1792788827765,
+      "status": 500
+    },
+    {
+      "t": 1792788828058,
+      "status": 500
+    },
+    {
+      "t": 1792788828349,
+      "status": 500
+    },
+    {
+      "t": 1792788828642,
+      "status": 500
+    },
+    {
+      "t": 1792788828915,
+      "status": 500
+    },
+    {
+      "t": 1792788829212,
+      "status": 500
+    },
+    {
+      "t": 1792788829510,
+      "status": 500
+    },
+    {
+      "t": 1792788829802,
+      "status": 500
+    },
+    {
+      "t": 1792788830078,
+      "status": 500
+    },
+    {
+      "t": 1792788830360,
+      "status": 500
+    },
+    {
+      "t": 1792788830642,
+      "status": 500
+    },
+    {
+      "t": 1792788830911,
+      "status": 500
+    },
+    {
+      "t": 1792788831179,
+      "status": 500
+    },
+    {
+      "t": 1792788831465,
+      "status": 500
+    },
+    {
+      "t": 1792788831749,
+      "status": 500
+    },
+    {
+      "t": 1792788832023,
+      "status": 500
+    },
+    {
+      "t": 1792788832317,
+      "status": 500
+    },
+    {
+      "t": 1792788832625,
+      "status": 500
+    },
+    {
+      "t": 1792788832918,
+      "status": 500
+    },
+    {
+      "t": 1792788833194,
+      "status": 500
+    },
+    {
+      "t": 1792788833489,
+      "status": 500
+    },
+    {
+      "t": 1792788833771,
+      "status": 500
+    },
+    {
+      "t": 1792788834067,
+      "status": 500
+    },
+    {
+      "t": 1792788834335,
+      "status": 500
+    },
+    {
+      "t": 1792788834616,
+      "status": 500
+    },
+    {
+      "t": 1792788834913,
+      "status": 500
+    },
+    {
+      "t": 1792788835201,
+      "status": 500
+    },
+    {
+      "t": 1792788835493,
+      "status": 500
+    },
+    {
+      "t": 1792788835778,
+      "status": 500
+    },
+    {
+      "t": 1792788836068,
+      "status": 500
+    },
+    {
+      "t": 1792788836350,
+      "status": 500
+    },
+    {
+      "t": 1792788836637,
+      "status": 500
+    },
+    {
+      "t": 1792788836931,
+      "status": 500
+    },
+    {
+      "t": 1792788837196,
+      "status": 500
+    },
+    {
+      "t": 1792788837488,
+      "status": 500
+    },
+    {
+      "t": 1792788837788,
+      "status": 500
+    },
+    {
+      "t": 1792788838072,
+      "status": 500
+    },
+    {
+      "t": 1792788838367,
+      "status": 500
+    },
+    {
+      "t": 1792788838730,
+      "status": 500
+    },
+    {
+      "t": 1792788839072,
+      "status": 500
+    },
+    {
+      "t": 1792788839361,
+      "status": 500
+    },
+    {
+      "t": 1792788839677,
+      "status": 500
+    },
+    {
+      "t": 1792788839991,
+      "status": 500
+    },
+    {
+      "t": 1792788840282,
+      "status": 500
+    },
+    {
+      "t": 1792788840592,
+      "status": 500
+    },
+    {
+      "t": 1792788840873,
+      "status": 500
+    },
+    {
+      "t": 1792788841210,
+      "status": 500
+    },
+    {
+      "t": 1792788841508,
+      "status": 500
+    },
+    {
+      "t": 1792788841808,
+      "status": 500
+    },
+    {
+      "t": 1792788842142,
+      "status": 500
+    },
+    {
+      "t": 1792788842422,
+      "status": 500
+    },
+    {
+      "t": 1792788842703,
+      "status": 500
+    },
+    {
+      "t": 1792788842974,
+      "status": 500
+    },
+    {
+      "t": 1792788843252,
+      "status": 500
+    },
+    {
+      "t": 1792788843548,
+      "status": 500
+    },
+    {
+      "t": 1792788843853,
+      "status": 500
+    },
+    {
+      "t": 1792788844153,
+      "status": 500
+    },
+    {
+      "t": 1792788844446,
+      "status": 500
+    },
+    {
+      "t": 1792788844761,
+      "status": 500
+    },
+    {
+      "t": 1792788845052,
+      "status": 500
+    },
+    {
+      "t": 1792788845352,
+      "status": 500
+    },
+    {
+      "t": 1792788845634,
+      "status": 500
+    },
+    {
+      "t": 1792788845949,
+      "status": 500
+    },
+    {
+      "t": 1792788846250,
+      "status": 500
+    },
+    {
+      "t": 1792788846538,
+      "status": 500
+    },
+    {
+      "t": 1792788846828,
+      "status": 500
+    },
+    {
+      "t": 1792788847128,
+      "status": 500
+    },
+    {
+      "t": 1792788847419,
+      "status": 500
+    },
+    {
+      "t": 1792788847717,
+      "status": 500
+    },
+    {
+      "t": 1792788847995,
+      "status": 500
+    },
+    {
+      "t": 1792788848295,
+      "status": 500
+    },
+    {
+      "t": 1792788848646,
+      "status": 500
+    },
+    {
+      "t": 1792788848943,
+      "status": 500
+    },
+    {
+      "t": 1792788849239,
+      "status": 500
+    },
+    {
+      "t": 1792788849533,
+      "status": 500
+    },
+    {
+      "t": 1792788849862,
+      "status": 500
+    },
+    {
+      "t": 1792788850157,
+      "status": 500
+    },
+    {
+      "t": 1792788850485,
+      "status": 500
+    },
+    {
+      "t": 1792788850773,
+      "status": 500
+    },
+    {
+      "t": 1792788851076,
+      "status": 500
+    },
+    {
+      "t": 1792788851391,
+      "status": 500
+    },
+    {
+      "t": 1792788851686,
+      "status": 500
+    },
+    {
+      "t": 1792788851963,
+      "status": 500
+    },
+    {
+      "t": 1792788852243,
+      "status": 500
+    },
+    {
+      "t": 1792788852548,
+      "status": 500
+    },
+    {
+      "t": 1792788852848,
+      "status": 500
+    },
+    {
+      "t": 1792788853141,
+      "status": 500
+    },
+    {
+      "t": 1792788853437,
+      "status": 500
+    },
+    {
+      "t": 1792788853730,
+      "status": 500
+    },
+    {
+      "t": 1792788854025,
+      "status": 500
+    },
+    {
+      "t": 1792788854311,
+      "status": 500
+    },
+    {
+      "t": 1792788854603,
+      "status": 500
+    },
+    {
+      "t": 1792788854903,
+      "status": 500
+    },
+    {
+      "t": 1792788855195,
+      "status": 500
+    },
+    {
+      "t": 1792788855492,
+      "status": 500
+    },
+    {
+      "t": 1792788855784,
+      "status": 500
+    },
+    {
+      "t": 1792788856084,
+      "status": 500
+    },
+    {
+      "t": 1792788856391,
+      "status": 500
+    },
+    {
+      "t": 1792788856675,
+      "status": 500
+    },
+    {
+      "t": 1792788856967,
+      "status": 500
+    },
+    {
+      "t": 1792788857259,
+      "status": 500
+    },
+    {
+      "t": 1792788857547,
+      "status": 500
+    },
+    {
+      "t": 1792788857846,
+      "status": 500
+    },
+    {
+      "t": 1792788858121,
+      "status": 500
+    },
+    {
+      "t": 1792788858411,
+      "status": 500
+    },
+    {
+      "t": 1792788858715,
+      "status": 500
+    },
+    {
+      "t": 1792788859013,
+      "status": 500
+    },
+    {
+      "t": 1792788859384,
+      "status": 500
+    },
+    {
+      "t": 1792788859682,
+      "status": 500
+    },
+    {
+      "t": 1792788859985,
+      "status": 500
+    },
+    {
+      "t": 1792788860307,
+      "status": 500
+    },
+    {
+      "t": 1792788860597,
+      "status": 500
+    },
+    {
+      "t": 1792788860921,
+      "status": 500
+    },
+    {
+      "t": 1792788861219,
+      "status": 500
+    },
+    {
+      "t": 1792788861526,
+      "status": 500
+    },
+    {
+      "t": 1792788861830,
+      "status": 500
+    },
+    {
+      "t": 1792788862114,
+      "status": 500
+    },
+    {
+      "t": 1792788862431,
+      "status": 500
+    },
+    {
+      "t": 1792788862788,
+      "status": 500
+    },
+    {
+      "t": 1792788863134,
+      "status": 500
+    },
+    {
+      "t": 1792788863425,
+      "status": 500
+    },
+    {
+      "t": 1792788863737,
+      "status": 500
+    },
+    {
+      "t": 1792788864061,
+      "status": 500
+    },
+    {
+      "t": 1792788864365,
+      "status": 500
+    },
+    {
+      "t": 1792788864664,
+      "status": 500
+    },
+    {
+      "t": 1792788864960,
+      "status": 500
+    },
+    {
+      "t": 1792788865295,
+      "status": 500
+    },
+    {
+      "t": 1792788865583,
+      "status": 500
+    },
+    {
+      "t": 1792788865950,
+      "status": 500
+    },
+    {
+      "t": 1792788866288,
+      "status": 500
+    },
+    {
+      "t": 1792788866588,
+      "status": 500
+    },
+    {
+      "t": 1792788866892,
+      "status": 500
+    },
+    {
+      "t": 1792788867190,
+      "status": 500
+    },
+    {
+      "t": 1792788867541,
+      "status": 500
+    },
+    {
+      "t": 1792788867843,
+      "status": 500
+    },
+    {
+      "t": 1792788868638,
+      "status": 500
+    },
+    {
+      "t": 1792788868941,
+      "status": 500
+    },
+    {
+      "t": 1792788869232,
+      "status": 500
+    },
+    {
+      "t": 1792788869529,
+      "status": 500
+    },
+    {
+      "t": 1792788869826,
+      "status": 500
+    },
+    {
+      "t": 1792788870139,
+      "status": 500
+    },
+    {
+      "t": 1792788870451,
+      "status": 500
+    },
+    {
+      "t": 1792788870977,
+      "status": 500
+    },
+    {
+      "t": 1792788871283,
+      "status": 500
+    },
+    {
+      "t": 1792788871574,
+      "status": 500
+    },
+    {
+      "t": 1792788871910,
+      "status": 500
+    },
+    {
+      "t": 1792788872216,
+      "status": 500
+    },
+    {
+      "t": 1792788872503,
+      "status": 500
+    },
+    {
+      "t": 1792788872833,
+      "status": 500
+    },
+    {
+      "t": 1792788873118,
+      "status": 500
+    },
+    {
+      "t": 1792788873430,
+      "status": 500
+    },
+    {
+      "t": 1792788873780,
+      "status": 500
+    },
+    {
+      "t": 1792788874081,
+      "status": 500
+    },
+    {
+      "t": 1792788874415,
+      "status": 500
+    },
+    {
+      "t": 1792788874758,
+      "status": 500
+    },
+    {
+      "t": 1792788875062,
+      "status": 500
+    },
+    {
+      "t": 1792788875670,
+      "status": 500
+    },
+    {
+      "t": 1792788876010,
+      "status": 500
+    },
+    {
+      "t": 1792788876313,
+      "status": 500
+    },
+    {
+      "t": 1792788876624,
+      "status": 500
+    },
+    {
+      "t": 1792788876914,
+      "status": 500
+    },
+    {
+      "t": 1792788877244,
+      "status": 500
+    },
+    {
+      "t": 1792788877555,
+      "status": 500
+    },
+    {
+      "t": 1792788877898,
+      "status": 500
+    },
+    {
+      "t": 1792788878254,
+      "status": 500
+    },
+    {
+      "t": 1792788878564,
+      "status": 500
+    },
+    {
+      "t": 1792788878879,
+      "status": 500
+    },
+    {
+      "t": 1792788879192,
+      "status": 500
+    },
+    {
+      "t": 1792788879517,
+      "status": 500
+    },
+    {
+      "t": 1792788879858,
+      "status": 500
+    },
+    {
+      "t": 1792788880174,
+      "status": 500
+    },
+    {
+      "t": 1792788880489,
+      "status": 500
+    },
+    {
+      "t": 1792788880801,
+      "status": 500
+    },
+    {
+      "t": 1792788881156,
+      "status": 500
+    },
+    {
+      "t": 1792788881461,
+      "status": 500
+    },
+    {
+      "t": 1792788881792,
+      "status": 500
+    },
+    {
+      "t": 1792788882123,
+      "status": 500
+    },
+    {
+      "t": 1792788882455,
+      "status": 500
+    },
+    {
+      "t": 1792788882759,
+      "status": 500
+    },
+    {
+      "t": 1792788883060,
+      "status": 500
+    },
+    {
+      "t": 1792788883357,
+      "status": 500
+    },
+    {
+      "t": 1792788883655,
+      "status": 500
+    },
+    {
+      "t": 1792788883952,
+      "status": 500
+    },
+    {
+      "t": 1792788884257,
+      "status": 500
+    },
+    {
+      "t": 1792788884571,
+      "status": 500
+    },
+    {
+      "t": 1792788884886,
+      "status": 500
+    },
+    {
+      "t": 1792788885195,
+      "status": 500
+    },
+    {
+      "t": 1792788885505,
+      "status": 500
+    },
+    {
+      "t": 1792788885863,
+      "status": 500
+    },
+    {
+      "t": 1792788886145,
+      "status": 500
+    },
+    {
+      "t": 1792788886450,
+      "status": 500
+    },
+    {
+      "t": 1792788886741,
+      "status": 500
+    },
+    {
+      "t": 1792788887052,
+      "status": 500
+    },
+    {
+      "t": 1792788887347,
+      "status": 500
+    },
+    {
+      "t": 1792788887650,
+      "status": 500
+    },
+    {
+      "t": 1792788887958,
+      "status": 500
+    },
+    {
+      "t": 1792788888264,
+      "status": 500
+    },
+    {
+      "t": 1792788888601,
+      "status": 500
+    },
+    {
+      "t": 1792788888906,
+      "status": 500
+    },
+    {
+      "t": 1792788889230,
+      "status": 500
+    },
+    {
+      "t": 1792788889533,
+      "status": 500
+    },
+    {
+      "t": 1792788889836,
+      "status": 500
+    },
+    {
+      "t": 1792788890185,
+      "status": 500
+    },
+    {
+      "t": 1792788890524,
+      "status": 500
+    },
+    {
+      "t": 1792788890840,
+      "status": 500
+    },
+    {
+      "t": 1792788891144,
+      "status": 500
+    },
+    {
+      "t": 1792788891439,
+      "status": 500
+    },
+    {
+      "t": 1792788891744,
+      "status": 500
+    },
+    {
+      "t": 1792788892059,
+      "status": 500
+    },
+    {
+      "t": 1792788892363,
+      "status": 500
+    },
+    {
+      "t": 1792788892668,
+      "status": 500
+    },
+    {
+      "t": 1792788892993,
+      "status": 500
+    },
+    {
+      "t": 1792788893295,
+      "status": 500
+    },
+    {
+      "t": 1792788893635,
+      "status": 500
+    },
+    {
+      "t": 1792788893943,
+      "status": 500
+    },
+    {
+      "t": 1792788894246,
+      "status": 500
+    },
+    {
+      "t": 1792788894534,
+      "status": 500
+    },
+    {
+      "t": 1792788894834,
+      "status": 500
+    },
+    {
+      "t": 1792788895113,
+      "status": 500
+    },
+    {
+      "t": 1792788895405,
+      "status": 500
+    },
+    {
+      "t": 1792788895698,
+      "status": 500
+    },
+    {
+      "t": 1792788896003,
+      "status": 500
+    },
+    {
+      "t": 1792788896309,
+      "status": 500
+    },
+    {
+      "t": 1792788896617,
+      "status": 500
+    },
+    {
+      "t": 1792788896913,
+      "status": 500
+    },
+    {
+      "t": 1792788897212,
+      "status": 500
+    },
+    {
+      "t": 1792788897516,
+      "status": 500
+    },
+    {
+      "t": 1792788897822,
+      "status": 500
+    },
+    {
+      "t": 1792788898128,
+      "status": 500
+    },
+    {
+      "t": 1792788898423,
+      "status": 500
+    },
+    {
+      "t": 1792788898722,
+      "status": 500
+    },
+    {
+      "t": 1792788899031,
+      "status": 500
+    },
+    {
+      "t": 1792788899339,
+      "status": 500
+    },
+    {
+      "t": 1792788899649,
+      "status": 500
+    },
+    {
+      "t": 1792788899974,
+      "status": 500
+    },
+    {
+      "t": 1792788900280,
+      "status": 500
+    },
+    {
+      "t": 1792788900583,
+      "status": 500
+    },
+    {
+      "t": 1792788900873,
+      "status": 500
+    },
+    {
+      "t": 1792788901172,
+      "status": 500
+    },
+    {
+      "t": 1792788901478,
+      "status": 500
+    },
+    {
+      "t": 1792788901787,
+      "status": 500
+    },
+    {
+      "t": 1792788902069,
+      "status": 500
+    },
+    {
+      "t": 1792788902366,
+      "status": 500
+    },
+    {
+      "t": 1792788902683,
+      "status": 500
+    },
+    {
+      "t": 1792788903002,
+      "status": 500
+    },
+    {
+      "t": 1792788903293,
+      "status": 500
+    },
+    {
+      "t": 1792788903589,
+      "status": 500
+    },
+    {
+      "t": 1792788903876,
+      "status": 500
+    },
+    {
+      "t": 1792788904173,
+      "status": 500
+    },
+    {
+      "t": 1792788904470,
+      "status": 500
+    },
+    {
+      "t": 1792788904763,
+      "status": 500
+    },
+    {
+      "t": 1792788905060,
+      "status": 500
+    },
+    {
+      "t": 1792788905348,
+      "status": 500
+    },
+    {
+      "t": 1792788905640,
+      "status": 500
+    },
+    {
+      "t": 1792788905923,
+      "status": 500
+    },
+    {
+      "t": 1792788906233,
+      "status": 500
+    },
+    {
+      "t": 1792788906521,
+      "status": 500
+    },
+    {
+      "t": 1792788906807,
+      "status": 500
+    },
+    {
+      "t": 1792788907100,
+      "status": 500
+    },
+    {
+      "t": 1792788907384,
+      "status": 500
+    },
+    {
+      "t": 1792788907679,
+      "status": 500
+    },
+    {
+      "t": 1792788907990,
+      "status": 500
+    },
+    {
+      "t": 1792788908277,
+      "status": 500
+    },
+    {
+      "t": 1792788908549,
+      "status": 500
+    },
+    {
+      "t": 1792788908840,
+      "status": 500
+    },
+    {
+      "t": 1792788909128,
+      "status": 500
+    },
+    {
+      "t": 1792788910638,
+      "status": 200
+    }
+  ],
+  "browserVersion": "140.0.7339.186",
+  "playwrightVersion": "1.55.1",
+  "nextVersion": "16.3.8",
+  "serverCleanup": {
+    "method": "owned-child-tree-only",
+    "stopExitCode": 0,
+    "portReleased": true
+  },
+  "endedUtc": "2026-10-23T20:55:38.337Z"
+}

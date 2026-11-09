@@ -1,0 +1,43 @@
+{
+  "name": "cover-real-375",
+  "screenshot": {
+    "filename": "after-frontend-areas-cover-real-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 516,
+      "height": 755,
+      "extent": 1797
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 16,
+    "y": -66,
+    "width": 138.0625,
+    "height": 44
+  },
+  "target": {
+    "x": 16,
+    "y": 181.5625,
+    "width": 343,
+    "height": 529.21875
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

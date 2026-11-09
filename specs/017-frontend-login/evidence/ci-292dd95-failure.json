@@ -1,0 +1,151 @@
+{
+  "sha": "292dd9507fe719189da6b5e6cdfd5886b58e2ab6",
+  "runId": 39133729346,
+  "jobId": 117694103465,
+  "attempt": 1,
+  "result": "FAIL",
+  "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39133729346/job/117694103465",
+  "artifact": {
+    "id": 12139660873,
+    "sha256": "8dec0290e8a44dd63e79ed1ddd8fb894a59c627f554d2e2e62f2a27f1ceaffd0",
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39133729346/artifacts/12139660873"
+  },
+  "gates": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T13:58:34.640Z",
+      "endedUtc": "2026-10-18T13:58:41.199Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T13:58:41.418Z",
+      "endedUtc": "2026-10-18T13:59:01.391Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T13:59:01.665Z",
+      "endedUtc": "2026-10-18T14:00:50.523Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:00:50.848Z",
+      "endedUtc": "2026-10-18T14:01:04.398Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:01:04.617Z",
+      "endedUtc": "2026-10-18T14:01:07.326Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:01:07.544Z",
+      "endedUtc": "2026-10-18T14:01:17.512Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:01:17.728Z",
+      "endedUtc": "2026-10-18T14:01:38.375Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:01:38.601Z",
+      "endedUtc": "2026-10-18T14:01:45.674Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:01:45.888Z",
+      "endedUtc": "2026-10-18T14:02:03.455Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:02:03.664Z",
+      "endedUtc": "2026-10-18T14:05:29.945Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:05:30.215Z",
+      "endedUtc": "2026-10-18T14:06:04.763Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:06:04.980Z",
+      "endedUtc": "2026-10-18T14:06:16.958Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "a829e69e30ac074f9d1938203687f4b3270519659b6455d90601a7071bd56383",
+      "startedUtc": "2026-10-18T14:06:17.218Z",
+      "endedUtc": "2026-10-18T14:10:33.490Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17"
+    }
+  ],
+  "notExecuted": [
+    "Bootstrap",
+    "SchemaAudit"
+  ],
+  "ihfrFailedScenarios": 6,
+  "diagnosis": "Expected private IHFR/collection controls were absent. Remote root cause not demonstrated; the same unchanged official harness passed locally (6 tests). No product, fixture, assertion, timeout or guard changed."
+}

@@ -1,0 +1,712 @@
+[
+  {
+    "file": "after-frontend-dashboard-client-late-dashboard-context-375-viewport.json",
+    "sha256": "c271816c21e838b835138637aa36bf2cfa039265e2489841d73711408f13cd65",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-client-late-dashboard-context-375-viewport.png",
+    "sha256": "07347db0085b15601807fc5827b441d68a552662992b732aada58339cd819b66",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-client-late-members-context-375-viewport.json",
+    "sha256": "03ecb1241b9a6ff967d6c053cdd4b91f97497ca651f0e7bd6c6828b04e7cc69b",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-client-late-members-context-375-viewport.png",
+    "sha256": "688514aef6dde1a2cce418eadc254331433fdaedebf86a3f955f9813360de21d",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-1440-viewport.json",
+    "sha256": "e56b148df199adaa200e08ce01b55acb16ddf9fc66f08f2260692c8e23cddb7f",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-1440-viewport.png",
+    "sha256": "f834b40d56a461a36fa2a98b7ae1f17845b561a5e302b4cc9a00fe1959bb818c",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-320-viewport.json",
+    "sha256": "7ca28a1a1ac5a82197f660cf34f3a7ff7bebf015247310242f5f3d71ef43b0b9",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-320-viewport.png",
+    "sha256": "9d1b813cd17078e654ecb27b42a28d0252264ab378921bda9d8acf3f010ceaf7",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-375-viewport.json",
+    "sha256": "6d1f2c4d25134edcd5f7d68083de33d9140c07b53c189efe835e85be685e64d5",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-375-viewport.png",
+    "sha256": "dc2077df26ee431fef8a4bae2b0c15a83946f830b2636dcaa12b0822e59fede9",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-768-viewport.json",
+    "sha256": "6a26974202c7e463a19f515e2f071b1c304e33438f936ccc19bc4c522722c0b3",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-empty-768-viewport.png",
+    "sha256": "b468ed0abf44b9f037e3f37d90896dc1d4cdf9d7e21b1fb8b58b62803ebc36ae",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-1440-viewport.json",
+    "sha256": "4175aaa22506c1d738c827d6cede586657703683ca38a656b5ca77f227e21d19",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-1440-viewport.png",
+    "sha256": "d0cca6053eea5b8b136fc53d4bbe8c103910ce987a2ebdec432dca6cf4b4e952",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-320-viewport.json",
+    "sha256": "5512a187c29cf38e9b8f94670792f0682ef3c3d4e963db93c7f2fc9f6bdeb433",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-320-viewport.png",
+    "sha256": "7354ececadf76d025679729247a184c5aa4198e87619222034115e17b79a2841",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-375-viewport.json",
+    "sha256": "36532835aeeb418cb19cd9e3a3617588b248f35b1380c1b2ec48d7901a6a1d4a",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-375-viewport.png",
+    "sha256": "57a25c3793b1ecdfb086c08d00c9eaae35263cea99394ec330545a71482d8a41",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-768-viewport.json",
+    "sha256": "123c0c88bf9df920f501e7008fbcc9b9993cbfbb4bc3d08b2667be8ec8c61220",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-focus-768-viewport.png",
+    "sha256": "7ffe1b87612a7f4e7f8266dfd39d908ef17257c9b484aff4a758b413ed62cf59",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-1440-viewport.json",
+    "sha256": "7bd92277a52832d7bb258a45482be5b054526ca62e12f0e9d0f44c03db667fd2",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-1440-viewport.png",
+    "sha256": "742e4ed55de18db89365547a7cbac93d9bf34c9b22ab775d98e823a554c3c931",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-320-viewport.json",
+    "sha256": "7a92ec9ac80f659fd99229084c367828cb65b4851f9206d30ef372f2477c2212",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-320-viewport.png",
+    "sha256": "d1e5c72758c1fbe637ef0d87af5e749c8b2a7ebeda0ef0d5c41794ace58284fc",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-375-viewport.json",
+    "sha256": "f6d7393293701e01e1f59e3a29c3ce7a836c2e34444b34520223b47844fee973",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-375-viewport.png",
+    "sha256": "74fb925955af680ab292522936a2a61827fbf69a7c615f274d4964262c5647d7",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-768-viewport.json",
+    "sha256": "c4b8b74f0eebd4f81583b27e18c30ca4dd9544aefe587836f702eaf97d14a6d1",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-history-older-768-viewport.png",
+    "sha256": "a253104fca92e8840614d6b7643f9599d46108ed7ad603e3b0cce2a179f28312",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-1440-viewport.json",
+    "sha256": "df869a6dca0f95adc65c8ef1e8d19f04b801ca21ab779ab6881caae10d14551e",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-1440-viewport.png",
+    "sha256": "fcb62b5d0743332b329e1d05c712547f77bdb0e507d8d770ed8e91ffc05f9b67",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-320-viewport.json",
+    "sha256": "4f231d8265b03a5c5d181a2626730e8f225c533fe51e3792b7b3489460c27c90",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-320-viewport.png",
+    "sha256": "e11136a473febf163e1940f43b73470f782f083eedb76c17214309dce9995056",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-375-viewport.json",
+    "sha256": "3b3935d87e07a3b8590c78d97de6703a0c954bc99dcd14f2c389eb23dea46c49",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-375-viewport.png",
+    "sha256": "43baa77a79501b57a8133941fa15fe5b8ce99bc9e4ab3517ec026d5cb6203e03",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-768-viewport.json",
+    "sha256": "109bfbe337a20a7d2b11ee065345e6dd9e05e5d511b95beaf3ecc3932d28cc0c",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-focus-768-viewport.png",
+    "sha256": "5a03f6e34c7a43f2a2dd5c512425c7c0cbdc196a15fc7567718d6a6a505e6153",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-inactive-320-viewport.json",
+    "sha256": "1520ab0fff9cc877fc99223a64cf46eef46f663ff7a1f32ee2c8c0e668241634",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-inactive-320-viewport.png",
+    "sha256": "76f412f0ebe6fbdb989e2112f7c0a5d3dbce7f10ae0f25ab2339cb92edb17cb3",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-real-conflict-375-viewport.json",
+    "sha256": "5088a12908e0753f70f48f740ceb2d5c1d11e5ee73aac37b01cf3c1cca278812",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-real-conflict-375-viewport.png",
+    "sha256": "a7c9db1606a1a55482bdafd3dd1544e200c0b8229fb470468201903d0e4d589e",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-members-transient-transport-delay-375-viewport.json",
+    "sha256": "d9015254e6f2b5d99a46d495e0a980948579493381055e2852f102a55595f3c7",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-members-transient-transport-delay-375-viewport.png",
+    "sha256": "55481b22c1b8318680c89c0594796f1d03ba5343890ae13f1d54762f8df075cc",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-1440-viewport.json",
+    "sha256": "5045c1da36248c64cedf38d74c00da63a68cb86d1d4c642fcad552d0d05c1111",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-1440-viewport.png",
+    "sha256": "bfa48e9bea476135f6c42dce44e323ca1dae8bb32b57234c8e8045278190da62",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-320-viewport.json",
+    "sha256": "34cdc9d999a171734ceed8a741c6fafb3922a6b0368852f43057b0dbf353cbb0",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-320-viewport.png",
+    "sha256": "7117b3a197e5c3a669b8b02c42d42060d8f532d15a6b70bb42c4eaa327df3353",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-375-viewport.json",
+    "sha256": "493809875527d6ba98c1c4c2b0110d482f60b20594d6e51f19a344c69ab9b790",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-375-viewport.png",
+    "sha256": "1219c6f1dc0abb4b7061c8d3a7d8080bedd8e68e861fe3033d5f5e9f26845107",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-768-viewport.json",
+    "sha256": "30b249a9c16e1501a99034a9cc457e01b6e2392d00f4b2cb4bef114e104a3692",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-summary-768-viewport.png",
+    "sha256": "ea77cd3c68a5e0b4142f23380a3117acd1f9c6f3601a905721e9a9086b024edc",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-1440-viewport.json",
+    "sha256": "6ecb267e1310e9454dd2bde19d5ff143fbc99be0f7bdc3d6d083a87785bd423e",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-1440-viewport.png",
+    "sha256": "2108587a9112e93bc9259814572c23cbaab454da6a86883f5293b9bc3f92bbf7",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-320-viewport.json",
+    "sha256": "16eb238f9fd978d5e11b68580320f4984b3a3ab4f21d8e3cda701abaaf9f3e8e",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-320-viewport.png",
+    "sha256": "4b97c15bbec3c67b153ff2e7be86715def125557d572ab03c0fd53f7f7036ef3",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-375-viewport.json",
+    "sha256": "ae4336d1fc4e99fe20728ac46c71666224bd24ae6dbcc9d0cc9064640d7257df",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-375-viewport.png",
+    "sha256": "31a78045f188543ad9cd3568af55ea41fc65774667011930e2cc2ace31aea657",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-768-viewport.json",
+    "sha256": "ab7a5c5377f8c6b2f6e80cd1d4f091ec1c0cdfc7ae278a9aa5ea174354cf9c67",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-error-768-viewport.png",
+    "sha256": "ff852a17fa3998dc4a4d3fca17fae036074368ae31708829ae16fdd692ff498b",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-1440-viewport.json",
+    "sha256": "b3570b9a60fd3700bed0c9e6e20b164673f59d7b6e136b2c3f81c7d9ccea75d6",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-1440-viewport.png",
+    "sha256": "54dba13a1b50f513ea8f2b2926268c52efa049311249545e59bdc3d44c0129bd",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-320-viewport.json",
+    "sha256": "20625572b1636d35d37acaf06599d153a91e5258726f3c0723a99d8b7512b79c",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-320-viewport.png",
+    "sha256": "a8e793bd434e8c619fdf79ea5d88ab0fc76d75271d3e7c1d5c44653ed0e3aa7c",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-375-viewport.json",
+    "sha256": "7ecc5ba53ceb8bcec9c5fbc8d9d134534ce448c72ffd643ae16b932dd843a62a",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-375-viewport.png",
+    "sha256": "acceda291de385fbb807a3e97617e96a5ec7dd121e1ac58e385c168097330e9d",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-768-viewport.json",
+    "sha256": "9f79489834e7dc5c2f5fe55ca79e2d6db769c249d20a025b0a58437af09c2d37",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-dashboard-loading-768-viewport.png",
+    "sha256": "9128fb062c2eb3a8feb192d84a3b16df8112b0cd8d7e1934b5d8054b937e87d9",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-1440-viewport.json",
+    "sha256": "e54453ba53e6f956bad1cea4498e27751471c29ac65ea8d2c0e5d0758dfdd843",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-1440-viewport.png",
+    "sha256": "587ed787ed054afc015a3758e69eba22f33080f4e9527e283e625d3ad302f339",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-320-viewport.json",
+    "sha256": "589e32c0628811e4442ad204376d6dc702439f0d4bc63083645b4d8b2a20a954",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-320-viewport.png",
+    "sha256": "ee0b9aecb47c64bdd39ff930e09d3318e32da49c73be8a3d09379365c2c49b7e",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-375-viewport.json",
+    "sha256": "c375ac6d7e719606e8a6d9b8e6d08158ed50241bc8d2024f281b25765e9397d0",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-375-viewport.png",
+    "sha256": "b2a26e34fe697b91342bbbd2360536942811558cceec7438f4034f1d74a2561a",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-768-viewport.json",
+    "sha256": "8095ec0d58ae412b3ed821074f9aa1e9db688124ba74a4a96ca3102fb76c09ed",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-error-768-viewport.png",
+    "sha256": "82f11912a8164f803a911c8c2f7414671a51b3675b945581dbee7ee6dc9ff95a",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-1440-viewport.json",
+    "sha256": "53ccff945a6f81609baec9cd3b3d92a01b5b7a35515765677aaa82a24bee79c1",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-1440-viewport.png",
+    "sha256": "44bf64529c36b93ed96686371c5739a539112ae2e07d5a92884aeffd3e4e07af",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-320-viewport.json",
+    "sha256": "06b30958b621dc51f7e368518e71b868104991287625f426bdb2eaf6af5a73bd",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-320-viewport.png",
+    "sha256": "77ffcb6ae92fd461da498fa4d8d8c1a1268a95cba4f15fcdf9b6aca801d79c73",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-375-viewport.json",
+    "sha256": "c6f9cd04683f51e3941ffed694ee14ed3e9209778f21486e49fa05dc59b0a1bc",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-375-viewport.png",
+    "sha256": "c65f0de1ff57fc5b7ec95641f604973b52173b7e4e495919c0c564d3f935cb24",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-768-viewport.json",
+    "sha256": "a9ed1a59f9beb5fbbd0e98f71a1dfc4c66f9859ec88d782666ea68c4ab82c0b1",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "after-frontend-dashboard-transient-members-loading-768-viewport.png",
+    "sha256": "5548a4a2686ba22938b19844fdab2dc0ccb4035daeff2b32ad159ebcf5491452",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "document-deletion-delta-build.log",
+    "sha256": "d4dd379ac568cfc545baec16513588a61d8d92886061919352dd851a6512a896",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-delta-deletion.log",
+    "sha256": "902570ac59bc3ea720bfa69ac7e26c0b5b505cff6e9acf57a8e4c9ab28dcdd99",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-delta-lint.log",
+    "sha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-delta-typecheck.log",
+    "sha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-delta.jsonl",
+    "sha256": "4ce9f2aa5b492ac735b36f1c158d48565c2bf59ed0747e45df644da8602e9548",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-red-1.log",
+    "sha256": "66530c0f43b4ddca935d2aa8badcf6f22293b421038f6e9a1d206a29666a754b",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-red-2.log",
+    "sha256": "f281dac00ac41eb6bf25f712a61c29e64de57bb7c960d7f8214480b0774ddc2b",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "document-deletion-red.jsonl",
+    "sha256": "360ca865bd7dd469862abd54c49282756426be855f4472ea434e9b88ca0aea33",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-empty-create-focus.png",
+    "sha256": "706f2a3244e04edb94afc3d5cb498bfe23c45378c7475b8c9fceea10c0e689e6",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-four-links-actual-last-control.png",
+    "sha256": "0cdebf4425b2a87deb252828d98575c3e9230aabec75493e97167a01ba7f2b77",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-four-links-destination-summary-native.png",
+    "sha256": "f28e5aec5650866b672b883e8d8f0934c2c824793728d572bc30eceaf135a3bd",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-four-links-landscape-safe-area34.png",
+    "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-geometry.json",
+    "sha256": "0b88632b3b7ec8742331967f56e5c0db1e9d84df94085f58a98e977c045c42cc",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-three-links-actual-last-control.png",
+    "sha256": "54b096568c25fe45c3528a6cfb0cb88b1604aea2003be3d508964037f6a09488",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-three-links-back-after-forward-reload.png",
+    "sha256": "4e0c85f82ba9864379a2c00f85a3ac46be22a4d1fd2598cf64af4927df6c0039",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-three-links-destination-summary-native.png",
+    "sha256": "a1b941d32af8c8fb9d312ca2140f2507c2e23a280a645153a65a0097c05438fc",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text100-three-links-landscape-safe-area34.png",
+    "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-empty-create-focus.png",
+    "sha256": "0544a4e32b134a19b25a5d0eb7e5ba0203f364924352dd7b854570acee56dd22",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-four-links-actual-last-control.png",
+    "sha256": "be99f80dc8b61419952efb665829878fc8acf74436498888b8e0108600520361",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-four-links-destination-summary-native.png",
+    "sha256": "db969d7b4009a9f0d452b6b31f9fc657594572c9f5dfc5e93bf3e0b001c62ab5",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-four-links-landscape-safe-area34.png",
+    "sha256": "db363a45f0f90e4fbe5a19170b356778fa7c8857dd8f220278435f14d48fd6e5",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-geometry.json",
+    "sha256": "ea6e73773b5e43f35f6e635caeb004f116f2467195e5b49ddd386aaa08f1b81c",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-three-links-actual-last-control.png",
+    "sha256": "7a8172a85f54167e7fc9b16c7a2e5313f2aa2355c4988a103155b58bbb5ae0ad",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-three-links-back-after-forward-reload.png",
+    "sha256": "421635629a95f2897431f1635b0111528021efb735b872ef281d18da69da4ba0",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-three-links-destination-summary-native.png",
+    "sha256": "2845b359c424c6541c1b7f2aefaa98e685cbca775bd1a65376443e410f3a0ceb",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-320-text200-three-links-landscape-safe-area34.png",
+    "sha256": "f1343fded2982d15e49fbe63d9efde3b818f4ddaaa890b7436ab913c4af5de7c",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-empty-create-focus.png",
+    "sha256": "1c7eb181714758bbe8dc8a916c326c7e0ee034f970f1ffe04ebe790528d5eca5",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-four-links-actual-last-control.png",
+    "sha256": "66e605b6918fadd5247f77c19841291b1b521163df442be4418aae1032b545cf",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-four-links-destination-summary-native.png",
+    "sha256": "b491acdb361b8df10d7b44ca0fbac3edb260932b0f82766961d6eb56169c3867",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-four-links-landscape-safe-area34.png",
+    "sha256": "8f8a879c723c6af736d73d3767cbcb813a4052102b744b06a80336cc16a81524",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-geometry.json",
+    "sha256": "6aab4cc68f20f54acccfab982e357b24e23fd24e527b84d93c743e9ac58f92da",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-three-links-actual-last-control.png",
+    "sha256": "2b4da4efa77aacbaa1b7ced145fe280ded5f3df7a883141b7cd8ddffb05bab32",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-three-links-back-after-forward-reload.png",
+    "sha256": "83c84bf1791d059e2062a994c087dfb6a9b121787e7ea86cd63fd93400d8e98e",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-three-links-destination-summary-native.png",
+    "sha256": "03cff834d13457152b7c3f8622196970c3e4f6bd40ef006f7a6d0750fcb3b196",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text100-three-links-landscape-safe-area34.png",
+    "sha256": "9753c57f987d4879eb1ca25e4761e50ba27bd7a6f20800343c9cd892148b19c0",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-empty-create-focus.png",
+    "sha256": "0f2a9e47402d5cc071cc5183d0528351131606335e8c898bd02dba9c3be5e0e6",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-four-links-actual-last-control.png",
+    "sha256": "7b01bbc6bd6afc4fac5aec829b3a1101f2c34b1fc14a4d4b97ca2cbc2563ffa6",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-four-links-destination-summary-native.png",
+    "sha256": "a19ace7339b3fb83932d3302d4ca66f1cbacd8c14fce583b0b1d57731692113d",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-four-links-landscape-safe-area34.png",
+    "sha256": "db363a45f0f90e4fbe5a19170b356778fa7c8857dd8f220278435f14d48fd6e5",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-geometry.json",
+    "sha256": "75abb9b87a7bcf76bd782374d96f4348bccfffb5bc95ee792e57737a2da122de",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-three-links-actual-last-control.png",
+    "sha256": "338aefea51fba10abd4f0b01b3c6ba284f763b28c1be880b163a0c4b311b67cd",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-three-links-back-after-forward-reload.png",
+    "sha256": "b5b271015701aa5a434c33ed060217f2ae96c06e5a8611d400f037ad7b4eea54",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-three-links-destination-summary-native.png",
+    "sha256": "db8601b009065bc25d3da4f317421a71217b235c41214639ac2451995ee66f37",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "frontend-mobile-navigation-after-375-text200-three-links-landscape-safe-area34.png",
+    "sha256": "f1343fded2982d15e49fbe63d9efde3b818f4ddaaa890b7436ab913c4af5de7c",
+    "basis": "binary-bytes"
+  },
+  {
+    "file": "full-candidate-bootstrap.log",
+    "sha256": "b0a0ecfd3ade0112a3fe9e7c668b6b69973689bfbcc8a7a3b1409805700b0c5f",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-build.log",
+    "sha256": "d23916e97e13c7fd7d188e1025978779ddbf7efa0f0a5f20e908c143177883bc",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-contract.log",
+    "sha256": "4852e71aab1f3b9c588e4cb77a79369de7ed198bc5b450647cf2320dc281bffb",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-deletion.log",
+    "sha256": "9ad033c195362717d318936eb97b496ad6512ff36e62a68de631c2f9bcdcfb50",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-e2e.log",
+    "sha256": "254c84d99c2c58671b978ffaf6e690aa6b37642890d067ac57462ca09319a3f6",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-https.log",
+    "sha256": "5b2b432d4fa7dced86d9a1145599d7049c05b0bc29e3bf6b8f075681117329f3",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-ihfr.log",
+    "sha256": "db8864aa91a2fd2ba949348bffd74bf16d70b14044930bc60816cd25365dd8be",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-integration.log",
+    "sha256": "58c617fbd623e9d068ccec16c47217812ff018b1b6f771c2f8fa45a3af216c22",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-lint.log",
+    "sha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-migration.log",
+    "sha256": "039b5a61c701f6d9271aa25a5510820351e1c33d152554a3c601ca8b6608bcd0",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-r1.log",
+    "sha256": "29f9450938e2440d45c64d20518f87b5959790dedd467574fd7257fe13b2de8f",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-regressionsetup.log",
+    "sha256": "eff7e8b3bbbfc6f5d241356962dbe5089be0f458176f777833b7e35ab9b09562",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-schemaaudit.log",
+    "sha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-typecheck.log",
+    "sha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate-unit.log",
+    "sha256": "66299c9321e2bb571899c4312c6019679e7fecc554e8d9ee2c40aa2ba368ed60",
+    "basis": "UTF-8-LF-without-BOM"
+  },
+  {
+    "file": "full-candidate.jsonl",
+    "sha256": "8770d71734ce1163b0a4a0ba26698bd90b0f856b240c8f4f26eb3bcf9111611f",
+    "basis": "UTF-8-LF-without-BOM"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "hf-synthetic-restore/v2",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "startedUtc": "2026-10-25T05:47:33.400Z",
+  "result": "FAIL",
+  "previousAttempt": "synthetic-restore-attempt1.json",
+  "scope": "synthetic local logical restore only; no hosted recovery claim",
+  "sourceDatabase": "hf_night_restore_source_485ed76a",
+  "targetDatabase": "hf_night_restore_target_485ed76a",
+  "runId": "485ed76a",
+  "stages": [],
+  "sourceAndTargetPreserved": true,
+  "safeErrorCode": "SERVER_BINARY_CHANGED",
+  "failedStage": "preflight",
+  "exitCode": 1,
+  "endedUtc": "2026-10-25T05:47:33.618Z",
+  "durationMs": 218.29109999999997
+}

@@ -1,0 +1,28 @@
+┌─────────────────────────────────────────────────────────┐
+│  Update available 7.4.2 -> 8.0.0-rc.22                  │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+No pending migrations to apply.
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+[2026-10-13T19:14:13.013Z] END phase=accounts-migrate-deploy attempt=1 exit=0 duration_ms=1289
+IMP-006 sanitized gate log: <USER>\AppData\Local\Temp\hidroflorestas-imp006-gate-P8K2Ve\accounts-migrate-deploy-attempt-1.log
+Accounts database accounts_development: 14 migrations verified; no account data imported.
+[2026-10-13T19:14:13.085Z] START phase=accounts-migrate-deploy attempt=1
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "accounts_regression_test", schema "public" at "127.0.0.1:55427"
+
+14 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+[2026-10-13T19:14:14.162Z] END phase=accounts-migrate-deploy attempt=1 exit=0 duration_ms=1077
+IMP-006 sanitized gate log: <USER>\AppData\Local\Temp\hidroflorestas-imp006-gate-xlt1NP\accounts-migrate-deploy-attempt-1.log
+Accounts database accounts_regression_test: 14 migrations verified; no account data imported.
+Accounts development, regression test and empty reference databases are ready on the dedicated cluster.

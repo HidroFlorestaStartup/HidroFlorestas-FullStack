@@ -1,5 +1,16 @@
 # Plano mínimo de implementação
 
+## Adendo de estado —24/10/2026, C1
+
+As tabelas abaixo preservam seus cortes históricos. O [estado conciliado C1](estado-conciliado-20261024.md)
+confrontou C0, o handoff LOCAL real e fontes em c4adfb379e5dc78f27f31b91edbd13f43228d9f9.
+São 30 subcapacidades de IMP-002–009 e10 fronteiras, com oito eixos independentes.
+Implementação estática presente não equivale a homologação, aceite ou ciência;
+C02 é parcial no avatar do popup, ingresso não localizado e Plotly futuro.
+Este adendo compõe a proposta CHAT revisada; incorporação posterior permanece separada;
+não declara merge da #29 nem publicação em development. Não selecionar
+reimplementação pela leitura isolada dos estados antigos de mock/ausência de API.
+
 ## Objetivo técnico da etapa
 
 Evoluir o baseline atual por entregas verticais pequenas e verificáveis, usando uma spec, um

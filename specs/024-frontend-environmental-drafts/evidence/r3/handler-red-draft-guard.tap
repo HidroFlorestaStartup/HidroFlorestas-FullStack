@@ -1,0 +1,50 @@
+TAP version 13
+# Subtest: draft HTTP limits bytes, rejects CSRF/malformed JSON and derives owner from session
+ok 1 - draft HTTP limits bytes, rejects CSRF/malformed JSON and derives owner from session
+  ---
+  duration_ms: 12.381766
+  type: 'test'
+  ...
+# Subtest: confirmation requires paired valid draft headers and forwards the selected revision
+ok 2 - confirmation requires paired valid draft headers and forwards the selected revision
+  ---
+  duration_ms: 2.408016
+  type: 'test'
+  ...
+# Subtest: draft GET, PUT and DELETE reject a changed principal before service access and allow the original principal again
+not ok 3 - draft GET, PUT and DELETE reject a changed principal before service access and allow the original principal again
+  ---
+  duration_ms: 1.632384
+  type: 'test'
+  location: '<auxiliary>/handler-red-draft-guard/tests/integration/environmental-draft-http.test.ts:2:4499'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+
+    200 !== 403
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 403
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (<auxiliary>/handler-red-draft-guard/tests/integration/environmental-draft-http.test.ts:42:38)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: environmental POST rejects a changed principal before persistence and retains the original key and body on return
+ok 4 - environmental POST rejects a changed principal before persistence and retains the original key and body on return
+  ---
+  duration_ms: 1.330226
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 733.463397

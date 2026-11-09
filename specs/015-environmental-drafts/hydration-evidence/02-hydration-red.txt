@@ -1,0 +1,51 @@
+[WebServer] npm notice run hidro-florestas-fullstack@0.1.0 dev
+[WebServer] npm notice run next dev --hostname 127.0.0.1 --port 3001
+[WebServer] (node:36512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:18552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (new draft) (9.4s)
+  -  2 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (absent and blank baseline)
+
+
+  1) [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (new draft)
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  getByLabel('Há nascente')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" with timeout 5000ms
+      - waiting for getByLabel('Há nascente')
+        9 × locator resolved to <select id="water.hasSpring" aria-required="true" aria-invalid="false" name="water.hasSpring" aria-describedby="water.hasSpring-hint" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-slate-900 outline-none focus:border-green-700 focus:ring-2 focus:ring-green-700/20 disabled:bg-slate-100">…</select>
+          - unexpected value "enabled"
+
+
+      68 |   await page.goto(base+"/new",{waitUntil:"commit"});await expect(spring).toBeVisible();
+      69 |   expect(blockedScripts).toBeGreaterThan(0);
+    > 70 |   await expect(spring).toBeDisabled();await expect(infiltration).toBeDisabled();await expect(elevation).toBeDisabled();
+         |                        ^
+      71 |   await expect(save).toBeDisabled();await expect(page.getByRole("button",{name:"Recarregar rascunho",exact:true})).toBeDisabled();
+      72 |   await expect(page.getByRole("button",{name:"Revisar dados",exact:true})).toBeDisabled();
+      73 |   await expect(spring).toHaveValue("");
+        at <WORKTREE>\tests\e2e\environmental-drafts.spec.ts:70:24
+
+    Error Context: test-results\environmental-drafts-slow--8f54c--save-and-reload-new-draft--chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (new draft)
+  1 did not run

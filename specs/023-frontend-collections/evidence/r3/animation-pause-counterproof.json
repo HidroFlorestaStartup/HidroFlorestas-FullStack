@@ -1,0 +1,26 @@
+{
+  "browser": "153.0.8010.0",
+  "playwright": "1.55.1",
+  "scope": "Synthetic WAAPI browser-only counterproof; no application, database, network or credentials",
+  "result": {
+    "pendingPlay": {
+      "state": "running",
+      "pending": true,
+      "end": 80
+    },
+    "pendingPause": {
+      "state": "paused",
+      "pending": true,
+      "end": 80
+    },
+    "originalSelects": true,
+    "revisedSelects": false,
+    "finished": "unresolved_after_250ms",
+    "after": {
+      "state": "paused",
+      "pending": false,
+      "end": 80
+    },
+    "revisedStillIncludesPendingPlay": true
+  }
+}

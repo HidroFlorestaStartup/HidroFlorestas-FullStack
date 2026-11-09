@@ -1,0 +1,39 @@
+{
+  "control": "real-handler-outside-discrete-event-with-selection-transition-and-held-scheduler",
+  "beforeCommit": [
+    {
+      "phase": "read:/api/admin/users/account-a",
+      "alertPresent": false
+    },
+    {
+      "phase": "read:/api/admin/users/account-a/audit",
+      "alertPresent": false
+    },
+    {
+      "phase": "native-raf",
+      "alertPresent": false
+    }
+  ],
+  "afterCommit": [
+    {
+      "phase": "read:/api/admin/users/account-a",
+      "alertPresent": false
+    },
+    {
+      "phase": "read:/api/admin/users/account-a/audit",
+      "alertPresent": false
+    },
+    {
+      "phase": "native-raf",
+      "alertPresent": false
+    },
+    {
+      "phase": "dom-mutation",
+      "alertPresent": true
+    },
+    {
+      "phase": "focus-alert",
+      "alertPresent": true
+    }
+  ]
+}

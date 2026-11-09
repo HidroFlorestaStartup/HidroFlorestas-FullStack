@@ -1,0 +1,961 @@
+{
+  "schemaVersion": 1,
+  "protocol": "C-1",
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "startedUtc": "2026-10-23T20:45:41.278Z",
+  "timezone": "America/Fortaleza",
+  "base": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "head": "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+  "tree": "24baec02321084fc1abedddd6355896a0b81eaa1",
+  "dirtyTrackedPatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "untrackedInvestigation": true,
+  "node": "v24.19.0",
+  "platform": "win32",
+  "osRelease": "10.0.26200",
+  "applicationDelta": "none",
+  "database": "none",
+  "session": "none",
+  "environment": "system-allowlist-no-app-config",
+  "attempts": [],
+  "syntheticControls": [],
+  "files": [],
+  "status": "BLOCKED",
+  "executedSources": [
+    {
+      "path": "tests/investigations/navigation/run-public.mjs",
+      "bytes": 16630,
+      "sha256": "478eb937bf623688e9f0857c3e9a737c0426d6d6d3f7c1c5b68ce17fedb08fac"
+    },
+    {
+      "path": "tests/e2e/frontend-mobile-navigation.spec.ts",
+      "bytes": 17556,
+      "sha256": "481a7afb46beb868196f0325707a70a33c4576239e573f1bf2c300cf9d682dc5"
+    },
+    {
+      "path": "docs/releases/2026-10-23-hf-inv-local01/navigation/protocol.md",
+      "bytes": 6783,
+      "sha256": "305a5e98c481a377515e7e21a3617595715ebf7c431d502d853adc47aec516f9"
+    }
+  ],
+  "readiness": [
+    {
+      "t": 1792788341597,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788341855,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788342108,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788342370,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788342632,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788342888,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788343141,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788343405,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788343672,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788343938,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788344204,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788344455,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788344708,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788344970,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788345225,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788345489,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788345743,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788346001,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788346256,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788346521,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788346788,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788347054,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788347307,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788347567,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788347822,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788348089,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788348345,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788348606,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788348865,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788349120,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788349374,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788349635,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788349904,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788350157,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788350413,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788350669,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788350922,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788351185,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788351437,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788351699,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788351959,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788352215,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788352471,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788352739,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788353003,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788353255,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788353514,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788353770,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788354027,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788354288,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788354553,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788354806,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788355071,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788355343,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788355605,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788355870,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788356122,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788356387,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788356652,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788356903,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788357158,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788357419,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788357670,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788357938,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788358190,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788358458,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788358714,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788358970,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788359236,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788359494,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788359755,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788360021,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788360273,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788360537,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788360793,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788371074,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788381337,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788391606,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788401879,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788412150,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788420523,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788420825,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788421118,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788421396,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788421674,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788421961,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788422240,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788422524,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788422813,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788423096,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788423370,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788423644,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788423922,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788424197,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788424489,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788424769,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788425053,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788425321,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788425601,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788425871,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788426152,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788426445,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788426746,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788427047,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788427328,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788427605,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788427887,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788428155,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788428435,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788428704,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788428969,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788429236,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788429503,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788429790,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788430052,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788430322,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788430585,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788430858,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788431136,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788431419,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788431703,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788431995,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788432295,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788432576,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788432864,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788433139,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788433411,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788433704,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788434002,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788434271,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788434554,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788434826,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788435103,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788435370,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788435635,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788435933,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788436224,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788436503,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788436786,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788437051,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788437320,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788437586,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788437852,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788438121,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788438389,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788438656,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788438928,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788439214,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788439486,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788439754,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788440027,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788440300,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788440576,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788440852,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788441118,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788441387,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788441670,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788441934,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788442217,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788442485,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788442754,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788443018,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788443285,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788443552,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788443841,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788444136,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788444405,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788444685,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788444957,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788445250,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788445532,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788445828,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788446102,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788446386,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788446678,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788446958,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788447239,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788447520,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788447788,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788448057,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788448332,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788448625,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788448918,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788449198,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788449471,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788449755,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788450020,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788450298,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788450595,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788450879,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788451153,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788451431,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788451729,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788452013,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788452292,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788452560,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788452845,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788453137,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788453412,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788453688,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788453955,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788454225,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788454502,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788454795,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788455095,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788455374,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788455661,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788455948,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788456227,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788456503,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788456787,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788457058,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788457318,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788457596,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788457870,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788458162,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788458437,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788458732,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788459003,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788459268,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788459549,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788459825,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788460117,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788460384,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788460667,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788460941,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788461219,
+      "status": "transport-not-ready"
+    },
+    {
+      "t": 1792788461487,
+      "status": "transport-not-ready"
+    }
+  ],
+  "blocker": "SERVER_READINESS_TIMEOUT",
+  "serverCleanup": {
+    "method": "owned-child-tree-only",
+    "stopExitCode": 0,
+    "portReleased": true
+  },
+  "endedUtc": "2026-10-23T20:47:42.145Z"
+}

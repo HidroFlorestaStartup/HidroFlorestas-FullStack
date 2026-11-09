@@ -1,0 +1,152 @@
+[
+    {
+        "file":  "hourly-repeat-1.log",
+        "pass":  true,
+        "sha256":  "b14be097c4d9a17bcc9ca64072ee135c0cbab2fb160eec9ff4f7f900b833b535"
+    },
+    {
+        "file":  "hourly-repeat-10.log",
+        "pass":  true,
+        "sha256":  "38b51f82eb96dd988ce2d15c0f5f4de3b6b5f3ca25a8ca9cb65a6177462f677f"
+    },
+    {
+        "file":  "hourly-repeat-11.log",
+        "pass":  true,
+        "sha256":  "28c7e8ff2cb1f45b41d29c0eaf182f3114c78d7cc4e4766528eb2f7e6462c0fe"
+    },
+    {
+        "file":  "hourly-repeat-12.log",
+        "pass":  true,
+        "sha256":  "e50ef3c9877d20dceb84a167ea14b8498a9ce37dd4c50d198c2541608891fdfd"
+    },
+    {
+        "file":  "hourly-repeat-13.log",
+        "pass":  true,
+        "sha256":  "74d5a18b7f7d2cfca12b36466f1f5a9bfbeb3bfe68395d1cb7158b37e75fbc18"
+    },
+    {
+        "file":  "hourly-repeat-14.log",
+        "pass":  true,
+        "sha256":  "892eafdafc1042833ad8d6dd94d0dd537df9cb68bd39ded52b236c8bc8d73f7c"
+    },
+    {
+        "file":  "hourly-repeat-15.log",
+        "pass":  true,
+        "sha256":  "068f4f757a989dc52520ad6ea7dbc7e5634e968d151fdc394385691c5b1c0f5a"
+    },
+    {
+        "file":  "hourly-repeat-16.log",
+        "pass":  true,
+        "sha256":  "bc7b6b58e63eac122b9e7a184e30233bedb9410d6ff644cdcef399c2ab18f313"
+    },
+    {
+        "file":  "hourly-repeat-17.log",
+        "pass":  true,
+        "sha256":  "93d21699f51eaafd6ef7a4831212ebc711bda0ca0d129edcaf35da66ade7361a"
+    },
+    {
+        "file":  "hourly-repeat-18.log",
+        "pass":  true,
+        "sha256":  "6bff348f0e9f45b292e48adff621c823f5953ac789409520751d01cdfe320b52"
+    },
+    {
+        "file":  "hourly-repeat-19.log",
+        "pass":  true,
+        "sha256":  "64a8ad9d21a586edf49cea8f5d582693fc93637d955dfa83754b1d615121f743"
+    },
+    {
+        "file":  "hourly-repeat-2.log",
+        "pass":  true,
+        "sha256":  "8b3143c13700c803d128db8983100bb3b6434c7297e88885e798f9742311a2f0"
+    },
+    {
+        "file":  "hourly-repeat-20.log",
+        "pass":  true,
+        "sha256":  "3e29ea6e89578b328ad282d58f67924912c8e65ff1b5e4625f6614a070fbdb9d"
+    },
+    {
+        "file":  "hourly-repeat-21.log",
+        "pass":  true,
+        "sha256":  "c795a5ceb8ca59cbc198c636ad7ac8d17d67737ab1733e6b825386ef51d78ebc"
+    },
+    {
+        "file":  "hourly-repeat-22.log",
+        "pass":  true,
+        "sha256":  "3ecce800edae763d78d76d91362184949f096dfddebfe7604863002948dd0079"
+    },
+    {
+        "file":  "hourly-repeat-23.log",
+        "pass":  true,
+        "sha256":  "f52a8562badf20ce82460b28c0271cf75f19bfd37f4f2b76e34bed5ad5d64002"
+    },
+    {
+        "file":  "hourly-repeat-24.log",
+        "pass":  true,
+        "sha256":  "72bc7adb2a562bd83262a9d4bac859940d29b2fadb241ae917f27272927bd6a6"
+    },
+    {
+        "file":  "hourly-repeat-25.log",
+        "pass":  true,
+        "sha256":  "840a0992c2466098140265710eb63633884633c43e4458c407a5647ac735e829"
+    },
+    {
+        "file":  "hourly-repeat-26.log",
+        "pass":  true,
+        "sha256":  "ac09233365c4809a68e2743c1f24165b09e5cd7ad16c21e1722bf3fe0589e49d"
+    },
+    {
+        "file":  "hourly-repeat-27.log",
+        "pass":  true,
+        "sha256":  "40c005efe546563058e7fdbc9811ed2cf572ed52b3db3466d5cbf18a5c0657be"
+    },
+    {
+        "file":  "hourly-repeat-28.log",
+        "pass":  true,
+        "sha256":  "74de59c5fbbea4fa015d5874b1d7210d5882050928493195f4cd14cd6a9e8a3c"
+    },
+    {
+        "file":  "hourly-repeat-29.log",
+        "pass":  true,
+        "sha256":  "ca2a8b137edd16b2c74e3b76eb895d426928411f45d9435ef0ad790054200e7f"
+    },
+    {
+        "file":  "hourly-repeat-3.log",
+        "pass":  true,
+        "sha256":  "a595f210d3cd7a5bc7afca61c4ffec50ee18c226a78251cce8a0eb4b30000c08"
+    },
+    {
+        "file":  "hourly-repeat-30.log",
+        "pass":  true,
+        "sha256":  "e4ac7cf53392f4b70987ad159eb4322f716f995772be74e597f3a50ca010bc1a"
+    },
+    {
+        "file":  "hourly-repeat-4.log",
+        "pass":  true,
+        "sha256":  "34b504223a45a3bcc3e98e7ff228f74e9b8157b61795f81e81cd83cb43b8cd59"
+    },
+    {
+        "file":  "hourly-repeat-5.log",
+        "pass":  true,
+        "sha256":  "22c9c4d10d57d869670c34891e72302b0c166ad5793f90d3b1967536988d3e5a"
+    },
+    {
+        "file":  "hourly-repeat-6.log",
+        "pass":  true,
+        "sha256":  "72f4d66bf7bffdc5cb4eb93d5e8cf1166f47cac4585f48983cc419c129cb72d1"
+    },
+    {
+        "file":  "hourly-repeat-7.log",
+        "pass":  true,
+        "sha256":  "cda8e1456c73f8b9dcd764601481d34f0fb4b1987e2f5354bfacc1c673740830"
+    },
+    {
+        "file":  "hourly-repeat-8.log",
+        "pass":  true,
+        "sha256":  "e2ad307f70ec63218c91e20c6113e17a7ca4657f2de59363b0aa424bf4557e4e"
+    },
+    {
+        "file":  "hourly-repeat-9.log",
+        "pass":  true,
+        "sha256":  "1bb8e603ffc434092e198355f804e87ea7835bc9fa30f3f66aa3c6df7b569cae"
+    }
+]

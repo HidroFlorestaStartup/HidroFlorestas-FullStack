@@ -1,0 +1,394 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "capturedUtc": "2026-10-17T18:54:35.002002+00:00",
+  "snapshotBeforeOwnDocumentationCommit": true,
+  "publication": {
+    "records": [
+      {
+        "pr": 4,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4",
+        "base": "review/015-environmental-drafts",
+        "branch": "review/016-area-covers",
+        "sha": "bf7a2b1ec3dc3026b99c0cb8b2f26e5085ec7bfb",
+        "author": "thalesvalente",
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ],
+        "checks": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059264824/job/117473676768",
+            "name": "validate",
+            "conclusion": null
+          }
+        ],
+        "runs": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059264824",
+            "conclusion": null,
+            "id": 39059264824
+          }
+        ],
+        "reviews": [
+          {
+            "sha": "dace407e51b5034e69e22055658c651147a7caa3",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988",
+            "login": "PedroVitor237",
+            "state": "CHANGES_REQUESTED"
+          },
+          {
+            "sha": "c3172718011ee70d3613387c61b3774601010a85",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5507799247",
+            "login": "thalesvalente",
+            "state": "COMMENTED"
+          },
+          {
+            "sha": "247fe5e1b1a1864968e0c1118c651c95e288bd0b",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5542756039",
+            "login": "thalesvalente",
+            "state": "COMMENTED"
+          }
+        ]
+      },
+      {
+        "pr": 5,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5",
+        "base": "review/016-area-covers",
+        "branch": "review/cri-audit-20261010",
+        "sha": "25d014cadd83216c8c9bf7b0468de279321cae43",
+        "author": "thalesvalente",
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ],
+        "checks": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059318548/job/117473838642",
+            "name": "validate",
+            "conclusion": null
+          }
+        ],
+        "runs": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059318548",
+            "conclusion": null,
+            "id": 39059318548
+          }
+        ],
+        "reviews": []
+      },
+      {
+        "pr": 6,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6",
+        "base": "review/cri-audit-20261010",
+        "branch": "release/cri-rc-20261010",
+        "sha": "4b03798f8d35c5bb3756afc54494661681e4bb59",
+        "author": "thalesvalente",
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ],
+        "checks": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059895003/job/117475503937",
+            "name": "validate",
+            "conclusion": null
+          }
+        ],
+        "runs": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059895003",
+            "conclusion": null,
+            "id": 39059895003
+          }
+        ],
+        "reviews": [
+          {
+            "sha": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5499467293",
+            "login": "PedroVitor237",
+            "state": "CHANGES_REQUESTED"
+          }
+        ]
+      },
+      {
+        "pr": 7,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7",
+        "base": "release/cri-rc-20261010",
+        "branch": "review/cri-rc-validation-20261012",
+        "sha": "61331cf9d824b2de7f801b53c23922d0ef2328dc",
+        "author": "PedroVitor237",
+        "requestedReviewers": [
+          "luciano-mendesz9"
+        ],
+        "checks": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059903710/job/117475529707",
+            "name": "validate",
+            "conclusion": null
+          }
+        ],
+        "runs": [
+          {
+            "status": "in_progress",
+            "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39059903710",
+            "conclusion": null,
+            "id": 39059903710
+          }
+        ],
+        "reviews": []
+      }
+    ],
+    "capturedUtc": "2026-10-17T18:52:19.0471095Z"
+  },
+  "handoff": {
+    "capturedUtc": "2026-10-17T18:33:43.2050466Z",
+    "comments": [
+      {
+        "sha": "8f1f9278b81ba7bcb3588073d29e7642eb32267b",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#issuecomment-6238618015",
+        "pr": 4,
+        "id": 6238618015,
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ]
+      },
+      {
+        "sha": "f825448cbd32fb25436daff3c6e04499c246fbfc",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5#issuecomment-6238618626",
+        "pr": 5,
+        "id": 6238618626,
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ]
+      },
+      {
+        "sha": "6eb7759a25bf38f43ee58a9202a20a236911d45f",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#issuecomment-6238619301",
+        "pr": 6,
+        "id": 6238619301,
+        "requestedReviewers": [
+          "PedroVitor237",
+          "luciano-mendesz9"
+        ]
+      },
+      {
+        "sha": "4ccc54d1dcb2ae25e57e4801f9aa43d23b12e827",
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7#issuecomment-6238619960",
+        "pr": 7,
+        "id": 6238619960,
+        "requestedReviewers": "luciano-mendesz9"
+      }
+    ]
+  },
+  "sourceBaseline": "0b154ce1ea5b2e528c1c84227880060ce452adf7",
+  "rcBaseline": "832560ac0e2b9a50671b871f077472685b1af963",
+  "sourceCommitsBeforeReceipt": [
+    {
+      "sha": "7a5681a32a320a14efaa400fedddad14fa9b60f5",
+      "parents": [
+        "0b154ce1ea5b2e528c1c84227880060ce452adf7"
+      ],
+      "subject": "docs(spec016): planeja paridade contratual CRI-REV-005"
+    },
+    {
+      "sha": "f38d43914a01686a376ea1aabf2e96eab1fd1400",
+      "parents": [
+        "7a5681a32a320a14efaa400fedddad14fa9b60f5"
+      ],
+      "subject": "fix(contracts): reconcilia resumo de capa com OpenAPI e prova paridade Ajv"
+    },
+    {
+      "sha": "60eaa4224c7cbd7d28a591e8a295b31022e4859a",
+      "parents": [
+        "f38d43914a01686a376ea1aabf2e96eab1fd1400"
+      ],
+      "subject": "docs(spec016): registra gates e revisao adversarial CRI-REV-005"
+    },
+    {
+      "sha": "ec2baa8c1c9a4b94fd6f390db3cc21dada690fef",
+      "parents": [
+        "60eaa4224c7cbd7d28a591e8a295b31022e4859a"
+      ],
+      "subject": "docs(spec016): planeja diagnostico do conflito revelado pelo CI"
+    },
+    {
+      "sha": "137825d1c8cfdde1d3e5bd61e663aca05e3b34c5",
+      "parents": [
+        "ec2baa8c1c9a4b94fd6f390db3cc21dada690fef"
+      ],
+      "subject": "test(images): preserva assercoes e captura conflitos sanitizados de quota"
+    },
+    {
+      "sha": "6e038723da8a896ca21743f9dae89cfc37d2f921",
+      "parents": [
+        "137825d1c8cfdde1d3e5bd61e663aca05e3b34c5"
+      ],
+      "subject": "docs(spec016): planeja alvo acessivel do teste IHFR ambiguo"
+    },
+    {
+      "sha": "8f1f9278b81ba7bcb3588073d29e7642eb32267b",
+      "parents": [
+        "6e038723da8a896ca21743f9dae89cfc37d2f921"
+      ],
+      "subject": "test(ihfr): exige mensagem de ausencia na regiao de leitura visivel"
+    },
+    {
+      "sha": "4a3ce497bf3fad60a673f0cf130337dca63d2099",
+      "parents": [
+        "8f1f9278b81ba7bcb3588073d29e7642eb32267b"
+      ],
+      "subject": "docs(spec016): planeja recuo limitado apos esgotamento comprovado de retries"
+    },
+    {
+      "sha": "bf7a2b1ec3dc3026b99c0cb8b2f26e5085ec7bfb",
+      "parents": [
+        "4a3ce497bf3fad60a673f0cf130337dca63d2099"
+      ],
+      "subject": "fix(images): adiciona recuo limitado entre conflitos transacionais"
+    }
+  ],
+  "synchronizationCommits": {
+    "review/cri-audit-20261010": {
+      "sha": "25d014cadd83216c8c9bf7b0468de279321cae43",
+      "parents": [
+        "f825448cbd32fb25436daff3c6e04499c246fbfc",
+        "bf7a2b1ec3dc3026b99c0cb8b2f26e5085ec7bfb"
+      ]
+    },
+    "release/cri-rc-20261010": {
+      "sha": "4b03798f8d35c5bb3756afc54494661681e4bb59",
+      "parents": [
+        "6eb7759a25bf38f43ee58a9202a20a236911d45f",
+        "25d014cadd83216c8c9bf7b0468de279321cae43"
+      ]
+    },
+    "review/cri-rc-validation-20261012": {
+      "sha": "61331cf9d824b2de7f801b53c23922d0ef2328dc",
+      "parents": [
+        "4ccc54d1dcb2ae25e57e4801f9aa43d23b12e827",
+        "4b03798f8d35c5bb3756afc54494661681e4bb59"
+      ]
+    }
+  },
+  "originalCommitsPreservedInRcAndValidation": [
+    "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+    "6bf9f2ba94698516282e482b690fbe5d812088f5",
+    "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+    "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+    "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+    "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+    "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+    "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+    "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+    "d8a32d39572785d87744e2b10c87e79ad019ba46",
+    "539f38d52bba207d2822528d4afd6b936aa64d9f"
+  ],
+  "dependencyCommitPreserved": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "pr7IndependentDiff": {
+    "base": "832560ac0e2b9a50671b871f077472685b1af963",
+    "head": "dc180cb258f9c9fe543a7a5815ab81ea21f8ae93",
+    "files": [
+      "docs/governance/DOCUMENT_REGISTER.md",
+      "docs/plans/completed/revisao-release-candidate-cri-20261012.md",
+      "docs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json",
+      "docs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md",
+      "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+      "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+      "docs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+      "docs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+    ],
+    "diffSha256": "d94966767b272cae0294cceb2cbe91b62a5f61f4b08d7236771c69333e7b067c"
+  },
+  "pr7IndependentDiffStillIdentical": true,
+  "finalDocumentationChecks": "Own receipt and synchronization commits receive new Actions checks. Final refs/checks are recorded in the linked PR comments after they finish; no parent SUCCESS is attributed to a new SHA.",
+  "humanApproval": "PENDING; reviews and unresolved threads remain under reviewer control",
+  "forbiddenOperationsPerformed": [],
+  "newWorktreesOrBranches": [],
+  "scientificState": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "verifiedRuntimeChecks": {
+    "checkedUtc": "2026-10-17T18:56:53.837968+00:00",
+    "checks": [
+      {
+        "pr": 4,
+        "sha": "bf7a2b1ec3dc3026b99c0cb8b2f26e5085ec7bfb",
+        "run": 39059264824,
+        "conclusion": "success"
+      },
+      {
+        "pr": 5,
+        "sha": "25d014cadd83216c8c9bf7b0468de279321cae43",
+        "run": 39059318548,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "selectorFollowup": {
+    "planningCommit": "1d9fb680985fa23c7d3a19a40ee102f72d73a8fb",
+    "priorDocumentationHeads": [
+      {
+        "pr": 4,
+        "sha": "aa9d2ce60a026f95109fc514b191af4668e8f7cc",
+        "run": 39060327579,
+        "conclusion": "success"
+      },
+      {
+        "pr": 5,
+        "sha": "97957a0f0437cd4df29491b27f6e2cd232cd583d",
+        "run": 39060335663,
+        "conclusion": "success"
+      },
+      {
+        "pr": 6,
+        "sha": "2e4576b0dc008ed293d0cbabc3531e8d79dd6083",
+        "run": 39060376048,
+        "conclusion": "failure",
+        "gate": "Ihfr; two matches for global land-use label"
+      },
+      {
+        "pr": 7,
+        "sha": "7e55d0fa371d6caad3835d31b916106c9b972bd0",
+        "run": 39060390506,
+        "conclusion": "success"
+      }
+    ],
+    "validation": "selector-validation.json",
+    "productionChangesSinceBackoff": false,
+    "finalChecks": "Each new publication SHA requires its own checks; final results and reviewer requests are recorded in the stable PR comments. This receipt precedes its own commit."
+  },
+  "publishedCiCheckpoint": "ci-published-checkpoint.json",
+  "auditInconclusiveFailure": "ci-audit-attempt1-failure.txt",
+  "documentationEncodingCorrection": "Portuguese appended text only; no functional input changed. Own final checks are recorded in stable PR comments."
+}

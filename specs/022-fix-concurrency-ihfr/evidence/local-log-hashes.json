@@ -1,0 +1,47 @@
+[
+    {
+        "value":  [
+                      {
+                          "file":  "red-covers-final.log",
+                          "sha256":  "25c45482cfc49a5ad6c322b57d0a8c51e44076f5c04494a81a69ffb05f9cac83"
+                      },
+                      {
+                          "file":  "green-covers-final.log",
+                          "sha256":  "5a87a1aed739430d8e6ab7003a3da9f60fd48d700537cb6e93736a494ab9a840"
+                      },
+                      {
+                          "file":  "green-covers-2.log",
+                          "sha256":  "a9ed53f8ed59a769371cecd4fcde4ca02d348992f639497e1a2a89c1cf8cb091"
+                      },
+                      {
+                          "file":  "unit-final.log",
+                          "sha256":  "c2f2067251d9db9d1f80a85adb410a294abd0ae4d85e536d94de0e1bb94f39d1"
+                      },
+                      {
+                          "file":  "ihfr-official-final.log",
+                          "sha256":  "cf952b200ce25547ffe2f2e17b8ae30e62d1243f9c0575ceaf80f566fcf1ceb1"
+                      },
+                      {
+                          "file":  "ihfr-controls-complete.log",
+                          "sha256":  "2d323104f27a1e50074c2ee3b680ee5831a5bb9fdb6f61cbc76f390630213a0a"
+                      },
+                      {
+                          "file":  "ihfr-controls-diagnostic.log",
+                          "sha256":  "077e65fb696818d41581cb9d665f4f04e68f35f550ae77f5e16b4b1e2c1b7ee6"
+                      },
+                      {
+                          "file":  "baseline-integration.log",
+                          "sha256":  "3dca45f882a706b44f13a77c9c6b21ab97604d8db31ec097b5b5331756581bf5"
+                      },
+                      {
+                          "file":  "regression-integration.log",
+                          "sha256":  "8ebdfff220369cf58230e571cc77b751f5b1727546734dd77937aa7bc8d9c7d3"
+                      }
+                  ],
+        "Count":  9
+    },
+    {
+        "file":  "unit-delivery.log",
+        "sha256":  "c9f23d6b932581e19610bbfdcb80b7e6ab00c7a55381ade0782ccd7bd9b97acd"
+    }
+]

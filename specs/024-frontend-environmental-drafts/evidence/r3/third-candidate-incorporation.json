@@ -1,0 +1,114 @@
+{
+  "operation": "Non-destructive two-parent incorporation; no PR merge, rebase or force-push",
+  "first_parent": "85e397bd4271ab07a197ea88db652227e6e392ce",
+  "second_parent": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+  "automatic_merge_tree": "97743377d688512f261111d5d011518ae04b3393",
+  "conflicts": [],
+  "inherited_files": [
+    {
+      "path": "specs/023-frontend-collections/analysis.md",
+      "blob_sha": "d7a117fbf9db12000901374da939402e9e47764e",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/late-resize-observer-counterproof.json",
+      "blob_sha": "248dd405c6e83dee8537a1920a9405bef9746dc0",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/natural-capture-order-counterproof.json",
+      "blob_sha": "3f5c91aa32e2761475b6188350489b68b6230c2c",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-capture-inventory.json",
+      "blob_sha": "2f768a3efc904b4aa86442d734d48bafdc86f508",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-codex-findings.json",
+      "blob_sha": "4d5e1fa55f6f95c5d8574da0a89a996c520c4d0f",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/second-candidate-receipt.json",
+      "blob_sha": "e78420be3c2846296a15ae5598de89fc711d57b4",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/evidence/r3/third-candidate-independent-review.json",
+      "blob_sha": "a8ee91474bca929e8832283535b1847eeffdca47",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/implementation-evidence.md",
+      "blob_sha": "8fb9ad15eea0b9a6f160845cb6b92e87452733f3",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/plan.md",
+      "blob_sha": "12a6edb1c0ee01e0f244ba522f3b966a575be47c",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/review.md",
+      "blob_sha": "97f8dd21ab7d2eae5172fe3178afe24aed1842c3",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "specs/023-frontend-collections/tasks.md",
+      "blob_sha": "3cf39d5f9cd745e3d21a01cc8068847e268049ac",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "tests/e2e/frontend-collections.spec.ts",
+      "blob_sha": "a0a8791f84b0de0f3d57227a27f93401e1496be6",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "tests/e2e/frontend-mission-evidence.spec.ts",
+      "blob_sha": "01fabe38f6d4b0099025d6be6b0b2b0662994491",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    },
+    {
+      "path": "tests/e2e/support/frontend-mission-evidence.ts",
+      "blob_sha": "1344dfba41b0f1caf840e3d002167ce8499aa9f3",
+      "matches_automatic_merge": true,
+      "matches_phase6": true
+    }
+  ],
+  "scope": "All fourteen inherited files match the conflict-free merge-tree and the exact published phase6 blobs. Additional phase7 changes comprise Spec024 evidence/status plus the failure-only IHFR404 diagnostics and three focused unit tests listed below; no production src changes were added in this incorporation.",
+  "parent_phase6_verified": {
+    "head": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+    "run_id": 39469650449,
+    "attempt": 1,
+    "job_id": 118790047117,
+    "gates_pass": 15,
+    "e2e_pass": 182,
+    "ihfr_pass": 6,
+    "codex": "completed_without_findings",
+    "codex_receipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#issuecomment-6297489682"
+  },
+  "additional_changes_not_in_parent": [
+    "Spec024 evidence and status updates",
+    "Failure-only existing GET probes for the unexplained phase7 v2 IHFR404, with three focused unit tests"
+  ],
+  "documentation_clarification": {
+    "original_commit": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "original_scope": "Every inherited file matches the conflict-free merge-tree and the exact published phase6 blob; additional phase7 changes are Spec024 evidence only.",
+    "reason": "The earlier scope sentence omitted the diagnostic/test changes already listed in additional_changes_not_in_parent. This clarification changes documentation only; original receipt remains in Git history."
+  }
+}

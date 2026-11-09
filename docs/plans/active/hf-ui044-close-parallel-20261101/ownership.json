@@ -1,0 +1,54 @@
+{
+  "mission": "HF-UI-044-CLOSE-PARALLEL-02",
+  "coordinator": {
+    "agentId": "/root",
+    "worktree": "hf044-coord",
+    "ownership": [
+      "qa/hf-ui044/contract.ts",
+      "qa/hf-ui044/playwright.*.config.ts",
+      ".github/workflows/hf-ui044-close.yml",
+      "scripts/hf-ui06-visual.ps1",
+      "scripts/hf-ui044-verify.mjs",
+      "vercel.json",
+      "docs/plans/active/hf-ui044-close-parallel-20261101/**"
+    ]
+  },
+  "workers": [
+    {
+      "agentId": "/root/a_harness",
+      "worktree": "hf044-a",
+      "role": "PROMPT01",
+      "ownership": [
+        "qa/hf-ui044/shared.ts",
+        "qa/hf-ui044/smoke.spec.ts",
+        "qa/hf-ui044/scale-red.mjs",
+        "qa/hf-ui044/shell.spec.ts",
+        "specs/035-ajustes-navegacao-conta/**"
+      ]
+    },
+    {
+      "agentId": "/root/b_visual",
+      "worktree": "hf044-b",
+      "role": "PROMPT02",
+      "ownership": [
+        "qa/hf-ui044/domain.spec.ts",
+        "qa/hf-ui044/domain-fixtures.ts",
+        "specs/036-ajustes-area-coletas-ihfr/**"
+      ]
+    },
+    {
+      "agentId": "/root/c_capture",
+      "worktree": "hf044-c",
+      "role": "PROMPT03",
+      "ownership": [
+        "tests/e2e/hf-ui037-location.spec.ts",
+        "specs/037-localizacao-endereco-opcional/**",
+        "docs/plans/completed/hf-ui044-worktree-reconcile-01.md",
+        "docs/reports/2026-11-01-hf-ui044-worktree-reconcile-01/{readme.md,inventory.json,verification.json}"
+      ]
+    }
+  ],
+  "delegation": "NATIVE_REAL",
+  "reviewer": "NOT_YET_CONVOKED_REQUIRES_FROZEN_FINAL_RUNTIME",
+  "publication": "COORDINATOR_ONLY"
+}

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "feature": "033-admin-access-focus",
+  "recordedAt": "2026-10-25T04:56:39.823Z",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "baselineSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "baselineComponentBlob": "8947bb26b644f911f153c065c75d36aa180ee3e6",
+  "branch": "fix/hf-night-admin-focus-20261025",
+  "files": [
+    {
+      "path": "src/components/user-administration/user-administration-page.tsx",
+      "bytes": 29468,
+      "sha256": "974480ce31b6658fd9a5b0a45769ba497b2a0b01e172e656f3f9136990e2f984"
+    },
+    {
+      "path": "tests/ui/admin-access-focus.spec.ts",
+      "bytes": 19796,
+      "sha256": "465ef913daa922e449e5c3e7e26294571fb1b37597f6d5cac9483bd558f2d643"
+    },
+    {
+      "path": "tests/ui/admin-access-focus.config.ts",
+      "bytes": 395,
+      "sha256": "498c110f2aa29490737be14423665b1dd66edaac5f0fcb8284788a0eb7fc77e9"
+    }
+  ],
+  "proofs": [
+    {
+      "path": "evidence/timing-before.json",
+      "sha256": "1e28286b607b7c71836ab3eef69502df660b56547f8ba3fc2f16a6d0b37bb706"
+    },
+    {
+      "path": "evidence/timing-after.json",
+      "sha256": "5369567a07bb18b3d9081fca8108cb07dc5ad56b87c0dbf089701e36f98eddde"
+    },
+    {
+      "path": "evidence/stale-occurrence-before.json",
+      "sha256": "f96ed36980746dcfbaf0e06364f2e66d0da6c62106dfa4bbaf24f9a41c3da4e6"
+    },
+    {
+      "path": "evidence/stale-occurrence-after.json",
+      "sha256": "619c7609e3e0173cbf2504f1c44805b6d3663076eda7a98ccc7ea3d02a504637"
+    },
+    {
+      "path": "evidence/immediate-response.json",
+      "sha256": "f08dc07afe66daa0d33407188592342d4d6b25dc574f355c103d776f3792ebd6"
+    },
+    {
+      "path": "evidence/real-e2e.json",
+      "sha256": "1cb685d6d6a4c216c7e44493ca21f061ef3265a111b67bd10c559961ab57d45a",
+      "executor": "/root/qa"
+    }
+  ],
+  "checks": {
+    "ui": {
+      "command": "npx playwright test --config tests/ui/admin-access-focus.config.ts",
+      "exitCode": 0,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "duration": "12.2s",
+      "workers": 1,
+      "retries": 0,
+      "mode": "synthetic APIs, real component and CSS; scheduler controls explicitly synthetic; native requestAnimationFrame"
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "lint": {
+      "command": "npx eslint src/components/user-administration/user-administration-page.tsx tests/ui/admin-access-focus.spec.ts tests/ui/admin-access-focus.config.ts",
+      "exitCode": 0,
+      "warnings": 0
+    },
+    "unit": {
+      "command": "node --import=tsx --test tests/unit/frontend-user-administration.test.ts",
+      "exitCode": 0,
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 408.3309,
+      "environment": "outside sandbox after uv_os_get_passwd ENOMEM prevented tsx startup inside sandbox"
+    },
+    "bootstrap": {
+      "command": "npm ci --offline --no-audit --no-fund",
+      "exitCode": 0,
+      "packages": 553,
+      "installScriptsPolicy": "preserved"
+    },
+    "prisma": {
+      "command": "npx prisma generate",
+      "exitCode": 0,
+      "version": "7.4.2",
+      "engine": "QA schema engine binary read-only; own client generated; no database"
+    },
+    "whitespace": "PASS_TRACKED_DIFF",
+    "independentReview": {
+      "result": "PASS_NO_RESIDUAL_FUNCTIONAL_FINDING",
+      "reviewer": "/root/fr015",
+      "source": "native agent message in this session",
+      "uiPassed": 14,
+      "uiFailed": 0,
+      "uiSkipped": 0,
+      "duration": "13.3s",
+      "hashesMatch": true,
+      "documentationReview": "PASS_FINAL_DELTA",
+      "documentationSource": "Native agent /root/fr015 final message after convergence: no residual finding, hashes of 3 code/test files and 5 proofs match, zero open tasks; lint/typecheck/unit referenced as author results, independent UI rerun 14/14 in 13.3s."
+    },
+    "convergence": {
+      "result": "PASS_NO_BUILD_GAPS",
+      "requirements": 6,
+      "successCriteria": 3,
+      "acceptanceScenarios": 6,
+      "technicalDecisions": 5,
+      "constitutionPrinciples": 7,
+      "missing": 0,
+      "partial": 0,
+      "contradicts": 0,
+      "unrequested": 0,
+      "newTasks": 0,
+      "tasksUnchangedDuringAssessment": true,
+      "tasksAssessmentSha256": "0d8c8d7f22b7d0afce94eb5d03d2e492170d5c7a88ce236529d6b687858e7777"
+    },
+    "scope": {
+      "result": "PASS",
+      "paths": [
+        "src/components/user-administration/user-administration-page.tsx",
+        "vercel.json",
+        "specs/033-admin-access-focus/checklists/focus.md",
+        "specs/033-admin-access-focus/checklists/requirements.md",
+        "specs/033-admin-access-focus/contracts/ui.md",
+        "specs/033-admin-access-focus/data-model.md",
+        "specs/033-admin-access-focus/evidence/immediate-response.json",
+        "specs/033-admin-access-focus/evidence/stale-occurrence-after.json",
+        "specs/033-admin-access-focus/evidence/stale-occurrence-before.json",
+        "specs/033-admin-access-focus/evidence/timing-after.json",
+        "specs/033-admin-access-focus/evidence/timing-before.json",
+        "specs/033-admin-access-focus/implementation-evidence.md",
+        "specs/033-admin-access-focus/plan.md",
+        "specs/033-admin-access-focus/quickstart.md",
+        "specs/033-admin-access-focus/research.md",
+        "specs/033-admin-access-focus/spec.md",
+        "specs/033-admin-access-focus/tasks.md",
+        "specs/033-admin-access-focus/validation.json",
+        "tests/ui/admin-access-focus.config.ts",
+        "tests/ui/admin-access-focus.spec.ts",
+        "specs/033-admin-access-focus/evidence/real-e2e.json"
+      ],
+      "unexpectedPaths": []
+    },
+    "relativeLinks": {
+      "result": "PASS",
+      "count": 14,
+      "broken": []
+    },
+    "json": {
+      "result": "PASS",
+      "filesParsed": 8
+    },
+    "trailingWhitespace": {
+      "result": "PASS",
+      "hits": []
+    },
+    "secretPatternScan": {
+      "result": "PASS_NO_HIGH_CONFIDENCE_PATTERNS",
+      "files": []
+    },
+    "codeHashesUnchanged": true,
+    "externalQaRealE2e": {
+      "reviewedSourceSha": "fb1523b4ef77c9dc96c8d1816335b40674aee972",
+      "executor": "/root/qa",
+      "receipt": "evidence/real-e2e.json",
+      "result": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "existingTestUnchanged": true,
+      "ownFreshRuntime": true
+    }
+  },
+  "configuration": {
+    "authorship": "preexisting coordinator edit; not modified by this author",
+    "previousFalseRules": 27,
+    "preserved": true,
+    "exactBranchGuard": true,
+    "falseRules": 28
+  },
+  "limits": {
+    "realQaReproduction": "reported by QA; 1 real full-run FAIL, 1/10 focal FAIL and isolated 1 PASS; not own execution",
+    "causality": "Synthetic controls demonstrate two concrete timing weaknesses; do not universally establish historical or real environment causality.",
+    "humanAcceptance": "NOT_PERFORMED",
+    "realBackendReplay": "External QA executor completed 10/10 for source fb1523b; separate receipt and fingerprint, not own author execution",
+    "ci": "NOT_RUN_FOR_THIS_DELTA",
+    "build": "NOT_RUN_FOCAL_CLIENT_PATCH",
+    "network": "Own author/reviewer synthetic UI runs used fake APIs with egress blocked; external QA replay used owned loopback Next/PostgreSQL. No hosted providers, external SMTP or hosted database were used.",
+    "notChanged": [
+      "existing tests",
+      "API",
+      "server",
+      "authorization",
+      "session",
+      "schema",
+      "dependencies",
+      "docs/raw",
+      "workflow"
+    ]
+  },
+  "externalReplayAddedUtc": "2026-10-25T05:14:52.771Z"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "new-map-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-new-map-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 2750,
+      "height": 724,
+      "extent": 4026
+    }
+  },
+  "active": {
+    "tag": "input",
+    "x": 33,
+    "y": -1165.671875,
+    "width": 254,
+    "height": 74
+  },
+  "target": {
+    "x": 33,
+    "y": 158.703125,
+    "width": 254,
+    "height": 576
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

@@ -1,0 +1,29 @@
+  1) [chromium] › tests\e2e\account-verification-recovery.spec.ts:193:7 › browser account journeys with a deterministic outbox transport › registers, verifies from received mail, logs out, resumes, and revokes another browser after reset
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/workspace$/
+    Received string:  "http://127.0.0.1:3001/verify-email"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        5 × unexpected value "http://127.0.0.1:3001/verify-email"
+
+
+      169 |     await page.getByLabel("Código de verificação").fill(code);
+      170 |     await page.getByRole("button", { name: "Confirmar e-mail" }).click();
+    > 171 |     await expect(page).toHaveURL(/\/workspace$/);
+          |                        ^
+      172 |   }
+      173 |
+      174 |   async function openReset(page: Page, email: string) {
+        at verify (<RUNNER-WORKTREE>\tests\e2e\account-verification-recovery.spec.ts:171:24)
+        at <RUNNER-WORKTREE>\tests\e2e\account-verification-recovery.spec.ts:202:5
+
+    Error Context: test-results\account-verification-recov-4a43f-another-browser-after-reset-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\e2e\account-verification-recovery.spec.ts:193:7 › browser account journeys with a deterministic outbox transport › registers, verifies from received mail, logs out, resumes, and revokes another browser after reset
+  1 did not run
+  68 passed (3.7m)

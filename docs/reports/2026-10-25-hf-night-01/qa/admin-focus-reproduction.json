@@ -1,0 +1,44 @@
+﻿{
+    "baseSha":  "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+    "source":  "tests/e2e/frontend-user-administration.spec.ts",
+    "testLine":  183,
+    "assertionLine":  194,
+    "httpStatusObserved":  403,
+    "alertPresent":  true,
+    "alertRole":  "alert",
+    "alertTabIndex":  -1,
+    "expectedFocused":  true,
+    "observedFocused":  false,
+    "timeoutMs":  5000,
+    "pageSnapshotTopLevelGenericMarkedActive":  true,
+    "activeElementTag":  "NOT_CAPTURED",
+    "trace":  "OFF by existing spec",
+    "screenshot":  "OFF by existing spec",
+    "fullReplay2":  {
+                        "focusFailures":  1,
+                        "didNotRun":  24,
+                        "failed":  3,
+                        "passed":  193
+                    },
+    "isolatedFocal":  {
+                          "passed":  1,
+                          "failed":  0
+                      },
+    "serialExperiment":  {
+                             "passed":  9,
+                             "assertionsChanged":  false,
+                             "failed":  1,
+                             "durationReportedSeconds":  35.7,
+                             "retries":  0,
+                             "planned":  10
+                         },
+    "classification":  "EVIDENCIA_IMPLEMENTACAO: intermittent focus failure reproduced",
+    "rootCause":  "INFERENCIA: requestAnimationFrame may run before state commit; causal mechanism unconfirmed",
+    "rawLogsPrivateIgnored":  [
+                                  "22-admin-403-focal.log",
+                                  "23-admin-403-repeat10.log"
+                              ],
+    "publishedExcerpt":  "sanitized-excerpts.md",
+    "resolution":  "separate feature033; no fix integrated into baselineQA"
+}

@@ -1,0 +1,1856 @@
+[
+    {
+        "id":  "IMP-006-01",
+        "imp":  "IMP-006",
+        "scope":  "Manifestos, parser fechado e avaliador determinístico",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/manifest-loader.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/evaluator.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.contracts.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis.constants.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-math-experimental-v0.1.1.json"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST /api/laboratories/{laboratoryId}/areas/{areaId}/collections/{collectionId}/ihfr-diagnosis/diagnoses invoca handler e serviço; avaliador não tem endpoint público independente.",
+                      "authorization":  "requireAuth; authorizeWrite/authorizeLaboratoryAccess MANAGE_IHFR_DIAGNOSIS, OWNER/ADMIN contextual e laboratório ativo.",
+                      "service":  "loadActiveIHFRManifest verifica hash e congela manifesto; parseIHFRDiagnosisRequest fecha campos; evaluator calcula determinística e explicitamente a versão v0.1.1.",
+                      "persistence":  "Leitura EnvironmentalMeasurementSet ihfr-measurement-v1; novo suplemento fechado deduplicado e diagnóstico versionado no ciclo transacional (006-04).",
+                      "ui":  "IHFRDiagnosisManagement informa uso da terra/origem/observedAt; ScientificNotice mostra quatro qualificadores."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/ihfr-diagnosis-manifest-loader.test.ts",
+                                    "tests/unit/ihfr-diagnosis-evaluator.test.ts",
+                                    "tests/unit/ihfr-diagnosis-input-policy.test.ts",
+                                    "tests/contract/ihfr-diagnosis-api.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO em c4adfb3 e 00477e9: manifestos históricos/ativo com hash verificável, parser fechado e avaliador TypeScript determinístico estão conectados ao serviço experimental; fórmula, scores e pesos não são cientificamente homologados. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Vetores de engenharia não substituem vetores científicos/testes de campo; G2-SCI permanece pendente.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-006-02",
+        "imp":  "IMP-006",
+        "scope":  "Elegibilidade, ausência conhecida e incompatibilidade versionada",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/ihfr-diagnosis.service.ts",
+                                          "symbol":  "IHFRDiagnosisService.eligibility"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/eligibility/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-eligibility.handler.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET .../ihfr-diagnosis/eligibility: outcomes controlados (inclusive INCOMPATIBLE_VERSION) retornam 200; query inválida retorna 400. O terminal idempotente422 pertence ao POST .../diagnoses.",
+                      "authorization":  "requireAuth; READ_IHFR_DIAGNOSIS; vínculo atual e cadeia laboratório→área→coleta.",
+                      "service":  "eligibility distingue coleta não confirmada, ausência do measurement set/slope/landUseType, incompatibilidade e currentDiagnosisId; desconhecidos são inválidos.",
+                      "persistence":  "Consulta CollectionData e EnvironmentalMeasurementSet e ponteiro vigente; nenhuma escrita na elegibilidade.",
+                      "ui":  "Gerência solicita elegibilidade e distingue insuficiência; GET não gera diagnóstico."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/ihfr-diagnosis-eligibility-route.test.ts",
+                                    "tests/unit/ihfr-diagnosis-input-policy.test.ts",
+                                    "tests/integration/ihfr-diagnosis-persisted-insufficiency.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: elegibilidade contextual e insuficiência estão implementadas; ausência não vira zero nem score fabricado. GET /eligibility retorna HTTP 200 com outcome INCOMPATIBLE_VERSION para incompatibilidade controlada e HTTP 400 para query inválida; POST /diagnoses distingue falha estrutural/sintática 400 de seleção bem formada incompatível com terminal idempotente 422 conforme PD-018. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-006-03",
+        "imp":  "IMP-006",
+        "scope":  "Consulta CURRENT e detalhe imutável com DTO mínimo",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/ihfr-diagnosis.service.ts",
+                                          "symbol":  "IHFRDiagnosisService.readCurrent/readDetail"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/current/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/areas/area.authorization.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/ihfr-diagnosis/experimental-diagnosis-summary.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/ihfr-diagnosis/scientific-notice.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET .../current e GET .../diagnoses/{diagnosisId}; seis operações HTTP no contrato, incluindo as demais linhas006.",
+                      "authorization":  "requireAuth; READ_IHFR_DIAGNOSIS, OWNER/ADMIN/MEMBER vinculados; IDs/contexto resolvidos; leitura permitida em laboratório inativo.",
+                      "service":  "readCurrent/readDetail e project derivam área, ciclo, score, classe, qualidade, versões/hash e proveniência permitida.",
+                      "persistence":  "ExperimentalIHFRDiagnosis, CurrentExperimentalIHFRDiagnosis, IHFRDiagnosisLifecycleEvent; legado não é promovido.",
+                      "ui":  "Página de detalhe da coleta chama readCurrent; ExperimentalDiagnosisSummary/NoCurrentDiagnosis/ScientificNotice."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/ihfr-diagnosis-current-route.test.ts",
+                                    "tests/integration/ihfr-diagnosis-detail-route.test.ts",
+                                    "tests/integration/ihfr-diagnosis-read-authorization.test.ts",
+                                    "tests/unit/ihfr-diagnosis-public-dto.test.ts",
+                                    "tests/e2e/ihfr-diagnosis-read.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: consulta experimental vigente e detalhe estão conectados ao serviço/persistência e à página da coleta, com DTO público e ausência explícita; não há interpretação científica definitiva nem promoção de legado. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-006-04",
+        "imp":  "IMP-006",
+        "scope":  "CREATE/REPLACE transacional, suplemento 1:N e vigência única",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/ihfr-diagnosis.service.ts",
+                                          "symbol":  "IHFRDiagnosisService.createOrReplace/writeWithRetry"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-write.handler.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260926000100_ihfr_lifecycle_reference_integrity/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST .../diagnoses com mode CREATE ou REPLACE, versões/hash e Idempotency-Key próprios.",
+                      "authorization":  "requireAuth/authorizeWrite antes do parsing; MANAGE_IHFR_DIAGNOSIS revalidada na transação, OWNER/ADMIN em contexto ativo.",
+                      "service":  "createOrReplace→writeWithRetry; hash do request, expectedCurrentDiagnosisId, lock por coleta e retry de transação; avaliação e resultado terminal atômicos.",
+                      "persistence":  "Suplemento UNIQUE(collectionDataId,payloadHash) reutilizável 1:N; diagnóstico/ledger/eventos imutáveis, ponteiro único; migrations 20260920 e integridade cruzada20260926.",
+                      "ui":  "IHFRDiagnosisManagement confirma criação/substituição e gerencia estado incerto; resultado reabre na coleta."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/ihfr-diagnosis-write-route.test.ts",
+                                    "tests/integration/ihfr-diagnosis-service-lifecycle.test.ts",
+                                    "tests/integration/ihfr-diagnosis-concurrency.test.ts",
+                                    "tests/integration/ihfr-diagnosis-supplement-cardinality.test.ts",
+                                    "tests/migration/ihfr-diagnosis-cross-record-integrity.test.ts",
+                                    "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: CREATE/REPLACE, suplemento deduplicado 1:N, imutabilidade, idempotência e vigência única estão implementados em cadeia; o novo diagnóstico substitui o anterior por evento, sem reescrevê-lo. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Concorrência técnica IHFR observada em código/testes; INV-002 é incidente de quota/emissão de tickets de CAPAS e não prova nem refuta concorrência/recuperação do diagnóstico. Seu controle específico não integra a evidência desta linha.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-006-05",
+        "imp":  "IMP-006",
+        "scope":  "Revogação justificada sem apagar diagnóstico",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/ihfr-diagnosis.service.ts",
+                                          "symbol":  "IHFRDiagnosisService.revoke"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/diagnoses/[diagnosisId]/revocations/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-revocation.handler.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260920000100_ihfr_experimental_diagnosis/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST .../diagnoses/{diagnosisId}/revocations.",
+                      "authorization":  "requireAuth/authorizeWrite; OWNER/ADMIN contextual ativo; diagnóstico e vigente esperado devem pertencer à coleta.",
+                      "service":  "revoke valida motivo fechado/limite, expectedCurrentDiagnosisId, operação e replay; disputa produz conflito.",
+                      "persistence":  "Remove só ponteiro CURRENT; grava evento REVOKED e ledger imutáveis, preserva diagnóstico/suplemento.",
+                      "ui":  "Gerência confirma motivo e reflete ausência de vigente; histórico técnico mantém proveniência."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/ihfr-diagnosis-revocation.test.ts",
+                                    "tests/migration/ihfr-diagnosis-immutability.test.ts",
+                                    "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: revogação autorizada, justificada e idempotente remove vigência e preserva evidências imutáveis; não edita nem exclui o diagnóstico. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-006-06",
+        "imp":  "IMP-006",
+        "scope":  "Recuperação por chave, projeção terminal e fronteira da investigação29",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/006-ihfr-diagnosis/contracts/ihfr-diagnosis-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/governance/ADR-0001-contrato-experimental-ihfr-v0-1.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/ihfr-diagnosis.service.ts",
+                                          "symbol":  "IHFRDiagnosisService.operation"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/ihfr-diagnosis/operations/[idempotencyKey]/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/ihfr-diagnosis/ihfr-diagnosis-operation.handler.ts"
+                                      },
+                                      {
+                                          "sha":  "00477e961e36416d8d602d36f7e0ee195c487148",
+                                          "path":  "docs/releases/2026-10-23-hf-inv-local01/ihfr/results.md",
+                                          "symbol":  "Contexto investigativo INV-001; INV-002 é CAPAS, sem prova de recuperação IHFR"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET .../operations/{idempotencyKey}.",
+                      "authorization":  "requireAuth; READ_IHFR_DIAGNOSIS e chave escopada ao ator/cadeia; não expõe ledger de terceiros.",
+                      "service":  "operation consulta resultado terminal, diferencia replay/ausência e não repete cálculo.",
+                      "persistence":  "IHFRDiagnosisOperation UNIQUE(actorUserId,idempotencyKey), hash e response persistidos; sem nova escrita na recuperação.",
+                      "ui":  "IHFRDiagnosisManagement mantém chave estável e recupera resultado incerto antes de alegar sucesso."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/ihfr-diagnosis-idempotency.test.ts",
+                                    "tests/unit/ihfr-diagnosis-write-response.test.ts",
+                                    "tests/e2e/ihfr-diagnosis-manage.spec.ts"
+                                ],
+                      "selection":  "Integração via tests/integration/*.test.ts; unit via tests/unit/*.test.ts; IHFR E2E só runner/config dedicados. O controle investigativo de quota de CAPAS, embora sob investigations/ihfr, está vinculado à CRI-016-01 e não integra a prova desta recuperação.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-006",
+                         "text":  "AGUARDANDO_DECISOES; model sem API, cálculo ou interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: recuperação terminal por chave própria está implementada. A #29 acrescenta evidência investigativa, sem patch de produto: INV-001 continua causalmente limitado; INV-002 e o teste two-request-quota referem emissão de tickets de CAPAS, não recuperação IHFR. CONTRATO_EXPERIMENTAL; VALIDACAO_CIENTIFICA_PENDENTE; SUJEITO_A_RECALIBRACAO; NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+                     },
+        "gap":  "Recuperação IHFR é sustentada pelos testes dedicados de idempotência/gerência. O diretório investigations/ihfr contém também controle de quota de capas; nome do diretório não cria equivalência funcional nem evidência de recuperação IHFR.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-007-01",
+        "imp":  "IMP-007",
+        "scope":  "Resumo persistido contextual",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/007-dashboard-history/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/007-dashboard-history/contracts/dashboard-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/020-frontend-laboratory-dashboard/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/dashboard/summary/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/dashboard.service.ts",
+                                          "symbol":  "DashboardService.summary"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/areas/area.authorization.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/(private)/dashboard/laboratories/[laboratoryId]/page.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/dashboard/dashboard-summary.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET /api/laboratories/{laboratoryId}/dashboard/summary.",
+                      "authorization":  "requireAuth→authorizeLaboratoryAccess READ_AREAS; conta ACTIVE e vínculo atual; laboratório inativo legível.",
+                      "service":  "DashboardService.summary calcula totais reais de áreas e coletas com campos de confirmação completos.",
+                      "persistence":  "CollectionArea.count e CollectionData.count na transação; sem tabela de resumo ou dados ambientais/IHFR.",
+                      "ui":  "DashboardSummary é montado na página contextual e distingue carregamento/vazio/erro/retry."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/dashboard-service.test.ts",
+                                    "tests/integration/dashboard-routes.test.ts",
+                                    "tests/e2e/dashboard-history.spec.ts",
+                                    "tests/e2e/frontend-dashboard.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: SC-008 na parcela de tecnologia assistiva e SC-009 (estudo moderado com participantes representativos, meta de90%) permanecem pendentes segundo specs/007-dashboard-history/spec.md; teclado/foco/ARIA automáticos não os substituem.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-007",
+                         "text":  "PARCIAL_MOCKADO; composição visual e dados fixos sem fonte persistida.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: o dashboard contextual consulta totais persistidos de áreas e coletas confirmadas, com autorização e estados de interface; não agrega resultados IHFR, dados ambientais, drafts ou capas."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. SC-008 (tecnologia assistiva) e SC-009 (estudo moderado,90%) continuam NAO_VERIFICADO; nenhuma sessão humana foi executada nesta missão.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-007-02",
+        "imp":  "IMP-007",
+        "scope":  "Histórico derivado paginado e navegação à origem",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/007-dashboard-history/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/007-dashboard-history/contracts/dashboard-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/020-frontend-laboratory-dashboard/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/dashboard/history/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/dashboard.service.ts",
+                                          "symbol":  "DashboardService.history"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/dashboard/dashboard.contracts.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/dashboard/dashboard-history.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET /api/laboratories/{laboratoryId}/dashboard/history?cursor=...",
+                      "authorization":  "requireAuth; READ_AREAS antes de validar cursor/consultar fontes; escopo do laboratório atual.",
+                      "service":  "history combina AREA_CREATED e COLLECTION_CONFIRMED, ordenação determinística e página20/cursor; consulta21 de cada fonte.",
+                      "persistence":  "Deriva de CollectionArea.createdAt e CollectionData.confirmedAt; nenhum event store/auditoria nova.",
+                      "ui":  "DashboardHistory pagina, limpa estado por contexto e abre destinos de área/coleta."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/dashboard-contracts.test.ts",
+                                    "tests/unit/dashboard-service.test.ts",
+                                    "tests/integration/dashboard-routes.test.ts",
+                                    "tests/e2e/dashboard-history.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: SC-008 na parcela de tecnologia assistiva e SC-009 (estudo moderado com participantes representativos, meta de90%) permanecem pendentes segundo specs/007-dashboard-history/spec.md; teclado/foco/ARIA automáticos não os substituem.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-007",
+                         "text":  "PARCIAL_MOCKADO; composição visual e dados fixos sem fonte persistida.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: histórico básico é projeção persistida paginada de criação de área e confirmação de coleta, com links para origem; não equivale a auditoria universal nem histórico científico."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. SC-008 (tecnologia assistiva) e SC-009 (estudo moderado,90%) continuam NAO_VERIFICADO; nenhuma sessão humana foi executada nesta missão.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-008-01",
+        "imp":  "IMP-008",
+        "scope":  "Projeção territorial privada de áreas-ponto/coletas",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/008-territorial-map/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/008-territorial-map/contracts/territorial-map-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/026-frontend-territorial-map/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/territorial-map/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/territorial-map.service.ts",
+                                          "symbol":  "TerritorialMapService.read"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/territorial-map/territorial-map.contracts.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/areas/area.authorization.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/(private)/dashboard/laboratories/[laboratoryId]/map/page.tsx"
+                                      },
+                                      {
+                                          "path":  "specs/008-territorial-map/implementation-evidence.md",
+                                          "symbol":  "limites p95/EXPLAIN, tecnologia assistiva e estudo moderado",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET /api/laboratories/{laboratoryId}/territorial-map.",
+                      "authorization":  "requireAuth; READ_AREAS, conta ACTIVE/vínculo atual; leitura em laboratório inativo.",
+                      "service":  "read seleciona somente id/nome/coordenadas de área e coletas confirmadas em uma query contextual.",
+                      "persistence":  "CollectionArea latitude/longitude e CollectionData confirmada; nenhuma migration própria008; não consulta EnvironmentalMeasurementSet/ExperimentalIHFRDiagnosis.",
+                      "ui":  "Página map monta TerritorialMapView; lista/contagem/destinos de coletas vinculados à área."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/territorial-map-service.test.ts",
+                                    "tests/unit/territorial-map-contracts.test.ts",
+                                    "tests/integration/territorial-map-route.test.ts",
+                                    "tests/e2e/territorial-map.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: tecnologia assistiva real e estudo moderado com participantes permanecem pendentes conforme specs/008-territorial-map/implementation-evidence.md; teclado/overflow automatizados não os substituem.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-008",
+                         "text":  "ESPECIFICADO_E_PLANEJADO_DOCUMENTALMENTE; T001–T055 aguardam nova análise independente e a implementação permanece adiada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: o mapa mínimo privado já projeta áreas-ponto e coletas confirmadas do laboratório, com endpoint real e navegação à origem; sem localização própria da coleta, polígonos, camada ambiental ou IHFR."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. p95 de 100 leituras, EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) e interação sem tiles permanecem NAO_VERIFICADO no registro da008; nenhuma medição própria nesta missão.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-008-02",
+        "imp":  "IMP-008",
+        "scope":  "Leaflet, lista equivalente e recuperação visual",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/008-territorial-map/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/008-territorial-map/contracts/territorial-map-api.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/026-frontend-territorial-map/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/territorial-map/territorial-map-view.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/territorial-map/territorial-map.client.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/territorial-map/territorial-map.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/territorial-map/territorial-map-state.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/territorial-map/territorial-map.module.css"
+                                      },
+                                      {
+                                          "path":  "specs/008-territorial-map/implementation-evidence.md",
+                                          "symbol":  "limites p95/EXPLAIN, tecnologia assistiva e estudo moderado",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "Mesma GET territorial-map; não há endpoint/cartografia paralelo criado pela UI.",
+                      "authorization":  "Página getLaboratoryContext + API server-authorized; estados não concedem acesso por frontend.",
+                      "service":  "TerritorialMapService.read e serializeTerritorialArea alimentam mapa/lista.",
+                      "persistence":  "Projeção transitória de fontes existentes; tiles externos não são fonte de registros científicos.",
+                      "ui":  "Leaflet/React-Leaflet, lista textual e markers com teclado; estado de tiles/erro de transporte, retry e foco conforme026."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/territorial-map-state.test.ts",
+                                    "tests/e2e/territorial-map.spec.ts",
+                                    "tests/e2e/frontend-territorial-map.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: tecnologia assistiva real e estudo moderado com participantes permanecem pendentes conforme specs/008-territorial-map/implementation-evidence.md; teclado/overflow automatizados não os substituem.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-008",
+                         "text":  "ESPECIFICADO_E_PLANEJADO_DOCUMENTALMENTE; implementação permanece adiada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: Leaflet/React-Leaflet, lista textual, seleção por teclado e recuperação de erro já existem no mapa mínimo; a inspeção atual não homologa dispositivos, leitor de tela nem aceite visual humano."
+                     },
+        "gap":  "INV-003/NAV-SETTLE e OBS não têm causa histórica encerrada pelos protocolos atuais; capturas não substituem homologação. p95 de 100 leituras, EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) e interação sem tiles permanecem NAO_VERIFICADO no registro da008; nenhuma medição própria nesta missão.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-008-03",
+        "imp":  "IMP-008",
+        "scope":  "Fronteira: Plotly e análises territoriais futuras",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "TECH_DECISIONS.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/008-territorial-map/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/code-first-prd/analysis/gaps-and-open-questions.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "package.json"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/territorial-map.service.ts"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "NAO_IMPLEMENTADO no recorte observado: nenhum endpoint Plotly/analítico identificado.",
+                      "authorization":  "Contrato futuro a definir; autorização do mapa não concede análise científica nova.",
+                      "service":  "TerritorialMapService não calcula nem consulta IHFR ou medidas.",
+                      "persistence":  "Nenhuma tabela/migration Plotly específica; entradas futuras a definir.",
+                      "ui":  "Não há componente Plotly; Leaflet não comprova gráficos analíticos."
+                  },
+        "presentInDevelopment":  false,
+        "presentInCandidate":  false,
+        "implementationState":  "NAO_LOCALIZADO",
+        "tests":  {
+                      "paths":  [
+
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_APLICAVEL: entrega futura.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "TECH_DECISIONS.md",
+                         "location":  "TD-010, decisões confirmadas ainda não implementadas",
+                         "text":  "Adotar Plotly ... em entrega posterior à IMP-009. ... NAO_IMPLEMENTADO.",
+                         "recommendedAddendum":  "FATO_DOCUMENTADO: a direção Plotly e suas pendências permanecem atuais no recorte observado; mapa mínimo entregue não satisfaz gráficos analíticos futuros."
+                     },
+        "gap":  "Decisões de integração/dados/gráficos e ciência aplicável ainda abertas; não confundir mapa mínimo entregue com toda a visão territorial.",
+        "nextAction":  "RECOMENDACAO: preservar como entrega futura dependente de contratos e decisões próprias; não atribuir novo IMP por inferência.",
+        "classification":  "FATO_DOCUMENTADO"
+    },
+    {
+        "id":  "IMP-009-01",
+        "imp":  "IMP-009",
+        "scope":  "Leitura global, filtros, detalhe e DTO mínimo",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/contracts/admin-users.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/027-frontend-user-administration/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/admin/users/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/admin/users/[userId]/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260920000100_remove_legacy_is_admin/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/user-administration.service.ts",
+                                          "symbol":  "UserAdministrationService.list/detail"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/user-administration/global-authority.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/middlewares/admin.middleware.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/user-administration/user-administration-page.tsx"
+                                      },
+                                      {
+                                          "path":  "specs/009-user-administration/implementation-evidence.md",
+                                          "symbol":  "limite de revisão humana assistiva",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET /api/admin/users e GET /api/admin/users/{userId}.",
+                      "authorization":  "requireAdmin→requireAuth→requireGlobalAdmin(role ADMIN); serviço reconsulta ator ACTIVE/ADMIN na transação. ADMIN global difere de ADMIN contextual.",
+                      "service":  "list/detail revalidam autoridade global, fecham query, filtram estado/papel/busca, paginam e projetam campos públicos administrativos sem senha/hash.",
+                      "persistence":  "User selecionado por allowlist e filtros/cursor; User.isAdmin legado removido por migration20260920000100.",
+                      "ui":  "/admin/users monta UserAdministrationPage; alias /dashboard/admin/users preservado; lista/detalhe/filtros/diálogos e erros de versão conforme027."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/user-administration-read-service.test.ts",
+                                    "tests/integration/user-administration-routes.test.ts",
+                                    "tests/e2e/user-administration-read.spec.ts",
+                                    "tests/e2e/frontend-user-administration.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: revisão humana com leitor de tela/tecnologia assistiva permanece pendente conforme specs/009-user-administration/implementation-evidence.md; Playwright/DOM/build não substituem esse gate.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-009",
+                         "text":  "FORA_DO_RECORTE_INICIAL; infraestrutura parcial e sem interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: administração global tem lista/filtros/detalhe e UI conectada, restrita a ADMIN global ACTIVE; role governa autoridade, e isAdmin legado foi removido."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-009-02",
+        "imp":  "IMP-009",
+        "scope":  "Alteração de estado com justificativa/OCC",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/contracts/admin-users.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/027-frontend-user-administration/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/admin/users/[userId]/status/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260919000100_user_administration/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/user-administration.service.ts",
+                                          "symbol":  "UserAdministrationService.changeStatus"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/user-administration/global-authority.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/middlewares/admin.middleware.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/user-administration/user-administration-page.tsx"
+                                      },
+                                      {
+                                          "path":  "specs/009-user-administration/implementation-evidence.md",
+                                          "symbol":  "limite de revisão humana assistiva",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "PATCH /api/admin/users/{userId}/status.",
+                      "authorization":  "requireAdmin→requireAuth→requireGlobalAdmin(role ADMIN); serviço reconsulta ator ACTIVE/ADMIN na transação. ADMIN global difere de ADMIN contextual.",
+                      "service":  "changeStatus proíbe autoalteração, compara expectedRevision/expectedStatus, protege último ADMIN ACTIVE, incrementa revision e audita atomicamente.",
+                      "persistence":  "User.revision e AdministrativeAuditEvent; migration20260919000100 define checks e imutabilidade de auditoria; escrita serializable.",
+                      "ui":  "/admin/users monta UserAdministrationPage; alias /dashboard/admin/users preservado; lista/detalhe/filtros/diálogos e erros de versão conforme027."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/user-administration-status-service.test.ts",
+                                    "tests/integration/user-administration-concurrency.test.ts",
+                                    "tests/integration/user-administration-last-admin.test.ts",
+                                    "tests/e2e/user-administration-status.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: revisão humana com leitor de tela/tecnologia assistiva permanece pendente conforme specs/009-user-administration/implementation-evidence.md; Playwright/DOM/build não substituem esse gate.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-009",
+                         "text":  "FORA_DO_RECORTE_INICIAL; infraestrutura parcial e sem interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: estado de outra conta pode ser alterado por ADMIN global com justificativa e versão esperada; autoalteração e remoção do último ADMIN ACTIVE são protegidas. Não é aprovação manual obrigatória de cadastro."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação. Retorno de conta previamente ativada a PENDING permanece PENDENCIA_DE_DECISAO (spec009 e implementation-evidence); o código conserva o contrato atual que admite essa transição, sem aprovar a recomendação de restringi-la à pré-ativação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-009-03",
+        "imp":  "IMP-009",
+        "scope":  "Alteração de papel global e proteção do último administrador",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/contracts/admin-users.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/027-frontend-user-administration/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/admin/users/[userId]/role/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260919000100_user_administration/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/user-administration.service.ts",
+                                          "symbol":  "UserAdministrationService.changeRole"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/user-administration/global-authority.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/middlewares/admin.middleware.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/user-administration/user-administration-page.tsx"
+                                      },
+                                      {
+                                          "path":  "specs/009-user-administration/implementation-evidence.md",
+                                          "symbol":  "limite de revisão humana assistiva",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "PATCH /api/admin/users/{userId}/role.",
+                      "authorization":  "requireAdmin→requireAuth→requireGlobalAdmin(role ADMIN); serviço reconsulta ator ACTIVE/ADMIN na transação. ADMIN global difere de ADMIN contextual.",
+                      "service":  "changeRole verifica expectedRevision/expectedRole, proíbe autoalteração, protege último administrador ativo e persiste papel+evento na mesma transação.",
+                      "persistence":  "User.revision e AdministrativeAuditEvent; migration20260919000100 define checks e imutabilidade de auditoria; escrita serializable.",
+                      "ui":  "/admin/users monta UserAdministrationPage; alias /dashboard/admin/users preservado; lista/detalhe/filtros/diálogos e erros de versão conforme027."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/user-administration-role-service.test.ts",
+                                    "tests/integration/user-administration-last-admin.test.ts",
+                                    "tests/integration/user-administration-concurrency.test.ts",
+                                    "tests/e2e/user-administration-role.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: revisão humana com leitor de tela/tecnologia assistiva permanece pendente conforme specs/009-user-administration/implementation-evidence.md; Playwright/DOM/build não substituem esse gate.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-009",
+                         "text":  "FORA_DO_RECORTE_INICIAL; infraestrutura parcial e sem interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: papel global de outra conta é mutável com OCC/justificativa/auditoria; isso não muda papéis OWNER/ADMIN/MEMBER do laboratório nem autoriza implicitamente o ADMIN global ao território."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-009-04",
+        "imp":  "IMP-009",
+        "scope":  "Auditoria funcional administrativa, retenção imutável",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/009-user-administration/contracts/admin-users.openapi.yaml"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/027-frontend-user-administration/spec.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/admin/users/[userId]/audit/route.handlers.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20260919000100_user_administration/migration.sql"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/services/user-administration.service.ts",
+                                          "symbol":  "UserAdministrationService.audit"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/user-administration/global-authority.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/middlewares/admin.middleware.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/user-administration/user-administration-page.tsx"
+                                      },
+                                      {
+                                          "path":  "specs/009-user-administration/implementation-evidence.md",
+                                          "symbol":  "limite de revisão humana assistiva",
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET /api/admin/users/{userId}/audit.",
+                      "authorization":  "requireAdmin→requireAuth→requireGlobalAdmin(role ADMIN); serviço reconsulta ator ACTIVE/ADMIN na transação. ADMIN global difere de ADMIN contextual.",
+                      "service":  "audit valida alvo/filtro/cursor e pagina eventos permitidos; eventos before/after/motivo/revision têm trigger de imutabilidade.",
+                      "persistence":  "User.revision e AdministrativeAuditEvent; migration20260919000100 define checks e imutabilidade de auditoria; escrita serializable.",
+                      "ui":  "/admin/users monta UserAdministrationPage; alias /dashboard/admin/users preservado; lista/detalhe/filtros/diálogos e erros de versão conforme027."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/user-administration-audit-service.test.ts",
+                                    "tests/migration/user-administration-migration.test.ts",
+                                    "tests/e2e/user-administration-audit.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: revisão humana com leitor de tela/tecnologia assistiva permanece pendente conforme specs/009-user-administration/implementation-evidence.md; Playwright/DOM/build não substituem esse gate.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-009",
+                         "text":  "FORA_DO_RECORTE_INICIAL; infraestrutura parcial e sem interface conectada.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: auditoria administrativa paginada e imutável registra mudanças de estado/papel; não equivale ao histórico básico do dashboard nem à auditoria científica IHFR."
+                     },
+        "gap":  "Divergência documental do baseline; inspeção estática não reproduziu runtime nem homologação.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "IMP-010-01",
+        "imp":  "IMP-010",
+        "scope":  "Validação humana de UX de acesso: SC-006/SC-007",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/001-authenticated-access/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/001-authenticated-access/quickstart.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/code-first-prd/implementation/backlog.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "specs/001-authenticated-access/spec.md"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "Acesso autenticado é pré-condição; endpoints técnicos não medem tempo/compreensão de participantes.",
+                      "authorization":  "Protocolo humano deve usar participantes/ambiente autorizados e minimizar dados.",
+                      "service":  "NAO_APLICAVEL: estudo de usabilidade, não serviço de produto.",
+                      "persistence":  "Amostra, tempos sem assistência e compreensão devem ser registrados por protocolo humano; não encontrados como aceite atual.",
+                      "ui":  "Fluxos de login e falha são objeto de avaliação; automação de teclado/layout não mede90% de participantes."
+                  },
+        "presentInDevelopment":  false,
+        "presentInCandidate":  false,
+        "implementationState":  "NAO_APLICAVEL",
+        "tests":  {
+                      "paths":  [
+
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO: nenhum estudo de participantes executado ou inferido nesta missão.",
+        "scientificValidation":  "NAO_APLICAVEL à UX do acesso.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "tabela Itens, linha IMP-010",
+                         "text":  "ADIADO_PARA_UX_PRODUTO; SC-006 e SC-007 estão NAO_VERIFICADO.",
+                         "recommendedAddendum":  "FATO_DOCUMENTADO: IMP-010 continua follow-up humano não bloqueante da IMP-001: metas originais de90% (entrada em até2min e compreensão de falhas) estão NAO_VERIFICADO; ausência de aceite não é ausência de autenticação implementada."
+                     },
+        "gap":  "Participantes/protocolo/amostra/tempos/compreensão e autoridade de aceite continuam pendentes. Estado de implementação NAO_APLICAVEL porque IMP-010 é avaliação humana, não capacidade de software a implementar; realização do estudo continua não verificada.",
+        "nextAction":  "RECOMENDACAO: manter IMP-010 como pesquisa/aceite de UX e designar responsável/protocolo; nenhum teste automático substitui SC-006/007.",
+        "classification":  "FATO_DOCUMENTADO"
+    },
+    {
+        "id":  "FRONTEIRA-SPEC-010",
+        "imp":  "FRONTEIRA-SPEC-010",
+        "scope":  "Spec010 cadastro ACTIVE é entrega distinta da IMP-010 de UX",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/010-active-public-signup/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/012-account-verification-recovery/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "TECH_DECISIONS.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/sign-up/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/service.ts",
+                                          "symbol":  "AccountService.signup/login"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/http.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/schema.prisma"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST /api/auth/sign-up (e sign-in para retomada).",
+                      "authorization":  "Cadastro público com política/CSRF/idempotência; estado ACTIVE não dispensa emailVerifiedAt quando verificationRequired.",
+                      "service":  "Rota atual delega AccountService.signup; cria ACTIVE com verificationRequired:true e sessão email-verification até confirmação. AuthService da entrega010 é evidência histórica, não a cadeia atual isolada.",
+                      "persistence":  "User, AccountEmailChallenge, AccountRequest e outbox; 012 refina sessão sem revogar origem histórica TD-017.",
+                      "ui":  "Cadastro→/verify-email; login retoma verificação quando necessário."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/auth-service.test.ts",
+                                    "tests/integration/account-verification-recovery.test.ts",
+                                    "tests/e2e/account-verification-recovery.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "specs/010-active-public-signup/spec.md",
+                         "location":  "US1 e FR-001/FR-002; refinamento posterior em012",
+                         "text":  "Criar conta e entrar imediatamente ... conta nasce ACTIVE.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: o cadastro continua ACTIVE; a cadeia atual passa por AccountService e sessão restrita até verificação segundo012. Esta spec não é a IMP-010 de validação humana de UX."
+                     },
+        "gap":  "Risco de equivalência numérica entre IMP, spec e fase frontend; preservação de TD-017 e refinamento012 precisam aparecer juntos.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-MAIL-01",
+        "imp":  "CRI-MAIL",
+        "scope":  "Fundação mail: outbox, worker e transporte",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/mail-foundation/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/internal/mail/process/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/mail/trigger.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/mail/outbox.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/mail/worker.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/mail/transport.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20261004000100_mail_foundation/migration.sql"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET/POST /api/internal/mail/process.",
+                      "authorization":  "Guard de configuração e Bearer do worker; não é endpoint público de envio nem depende de sessão de participante.",
+                      "service":  "enqueueMail/outbox/worker, leases e fencing; transporte/SMTP validado de forma lazy; recibo SENT/accepted não prova recebimento.",
+                      "persistence":  "MailOutbox e tentativas/locks de envio; payload protegido conforme contrato.",
+                      "ui":  "Sem UI própria; e-mails de verificação/reset/aviso são efeitos das jornadas012/013."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/mail-outbox.test.ts",
+                                    "tests/mail/mail-smtp.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "Mail-foundation/012/013 já têm código integrado ... Gate B de contas e aceite humano de exclusão continuam abertos.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: fundação mail está integrada com outbox/worker/leases/fencing; envio real, recebimento da caixa e scheduler do FullStack exigem provas próprias. Run histórico de outra homologação não comprova o destino atual."
+                     },
+        "gap":  "Gate B/SMTP/recebimento/scheduler/operação hospedada pendentes; sem contato a provedor nesta missão.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-012-01",
+        "imp":  "CRI-012",
+        "scope":  "Verificação e reenvio de e-mail",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/012-account-verification-recovery/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/018-frontend-account/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/email-verification/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/email-verification/confirm/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/email-verification/resend/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/service.ts",
+                                          "symbol":  "signup/verificationState/resend/confirmVerification"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/auth/session.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/account/email-verification-form.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20261004000200_account_verification_recovery/migration.sql"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST sign-up; GET email-verification; POST confirm/resend.",
+                      "authorization":  "Cookie com propósito email-verification, challenge ligado a usuário/versão, CSRF, política e rate limit; privado só após confirmação.",
+                      "service":  "Conta ACTIVE + desafio/outbox atômicos, código protegido/uso único/expiração/reenvio que invalida anterior e retomada legítima.",
+                      "persistence":  "User.emailVerifiedAt/verificationRequired/credentialVersion, AccountEmailChallenge, AccountRequest, rate limits e outbox.",
+                      "ui":  "EmailVerificationForm permite confirmar/reenvio/logout e erros; frontend018 não substitui contrato012."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/contract/account-api.test.ts",
+                                    "tests/integration/account-verification-recovery.test.ts",
+                                    "tests/e2e/account-verification-recovery.spec.ts",
+                                    "tests/e2e/frontend-account.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "Mail-foundation/012/013 já têm código integrado ... Gate B de contas ... continuam abertos.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: verificação/reenvio/sessão restrita/retomada estão implementados; Gate B de recebimento e jornadas humanas no destino não está encerrado. ACTIVE administrativo e autorização de sessão são eixos distintos."
+                     },
+        "gap":  "Spec012 conserva cabeçalho histórico \u0027implementação em andamento\u0027; código não é homologação remota nem aceite humano.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-012-02",
+        "imp":  "CRI-012",
+        "scope":  "Reset/troca de senha e revogação de sessões",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/012-account-verification-recovery/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/018-frontend-account/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/password-reset/request/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/password-reset/confirm/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/change-password/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/service.ts",
+                                          "symbol":  "requestReset/confirmReset/changePassword/passwordChanged"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/auth/session.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/account/password-reset-form.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/account/forgot-password-form.tsx"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "POST password-reset/request, password-reset/confirm e change-password.",
+                      "authorization":  "CSRF/política/rate limits; request genérico sem enumerar conta; proof fechado e uso único; troca requer sessão e senha atual.",
+                      "service":  "requestReset enfileira sem divulgar identidade; confirmReset consome prova e passwordChanged atualiza credentialVersion, invalida desafios/sessões.",
+                      "persistence":  "AccountEmailChallenge/AccountRequest, hash de senha/User.credentialVersion e outbox de aviso.",
+                      "ui":  "ForgotPasswordForm/PasswordResetForm; token em fragmento conforme contrato, sem exigir sessão original para reset."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/account-verification-recovery.test.ts",
+                                    "tests/e2e/account-verification-recovery.spec.ts",
+                                    "tests/e2e/frontend-account.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "reset por link real pendente.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: solicitação/reset/troca e revogação por credentialVersion estão implementados; recebimento, consumo do link em jornada humana e SMTP do destino seguem separados dos testes sintéticos."
+                     },
+        "gap":  "Gate B operacional/humano permanece; não promover relato de recebimento sem consumo a aceite de reset.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-013-01",
+        "imp":  "CRI-013",
+        "scope":  "Exclusão pessoal condicionada e preservação de ciência",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/013-account-deletion/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/auth/account-deletion/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/deletion.http.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/service.ts",
+                                          "symbol":  "deletionState/deletionBlockers/deleteAccount"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/accounts/deletion.contracts.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/account/account-deletion-form.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20261005000100_account_deletion_mail_ownership/migration.sql"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET/DELETE /api/auth/account-deletion.",
+                      "authorization":  "Sessão própria elegível/restrita conforme contrato; CSRF, confirmação e senha atual; revalidação sob lock.",
+                      "service":  "deletionBlockers impede apagar vínculos/autorias científicas; deleteAccount limpa dados pessoais permitidos/draft pessoal e invalida acesso.",
+                      "persistence":  "Transação de User/desafios/requests/mail ownership; restrições de FK preservam domínio e ciência; capa da área não é apagada pela conta.",
+                      "ui":  "AccountDeletionForm mostra bloqueios/consequências e confirma senha; não é exclusão administrativa009."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/account-deletion-contracts.test.ts",
+                                    "tests/integration/account-deletion.test.ts",
+                                    "tests/migration/account-deletion.test.ts",
+                                    "tests/e2e/account-deletion.spec.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "aceite humano de exclusão ... continua aberto.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: exclusão da própria conta existe com senha/confirmacão, bloqueios de vínculos/autorias e limpeza pessoal permitida, sem excluir ciência ou capa de área; aceite humano013 segue pendente."
+                     },
+        "gap":  "Homologação humana e operação do destino permanecem pendentes; não usar implementação como decisão de apagar dados reais.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-014-01",
+        "imp":  "CRI-014",
+        "scope":  "Runners de contas: seleção e fixtures próprias",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/014-account-test-runners/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "playwright.config.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "playwright.account-deletion.config.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "scripts/account-deletion-e2e.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "scripts/accounts-local-postgresql.ps1"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "NAO_APLICAVEL: infraestrutura de verificação, sem capacidade de produto nova.",
+                      "authorization":  "Guards de loopback/banco sintético e fixtures dos runners; nenhuma autorização operacional hospedada.",
+                      "service":  "Suíte geral exclui account-deletion; runner dedicado cria fixtures e mantém cenários/assertions. Preparador compara SQL LF/CRLF sem aceitar alteração de conteúdo.",
+                      "persistence":  "Somente PostgreSQL sintético autorizado quando runner é executado; nada executado nesta missão.",
+                      "ui":  "Playwright próprio; não acrescenta fluxo de usuário."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/e2e/account-deletion.spec.ts",
+                                    "tests/unit/accounts-local-postgresql.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "funcionalidades aprovadas014/015/016 têm evidências locais em runtime.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO:014 corrige seleção/preparação dos testes de contas, preservando fixtures/guards e a suíte dedicada de exclusão; número014 não é novo requisito funcional nem aceite externo."
+                     },
+        "gap":  "Seleção atual foi inspecionada, não executada; ausência de caso na suíte geral não significa ausência de cobertura dedicada.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-016-01",
+        "imp":  "CRI-016",
+        "scope":  "Capa authenticated com proxy contextual e edição OCC",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/016-area-covers/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/021-frontend-areas-cover/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/image/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/image/content/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/image/uploads/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/laboratories/[laboratoryId]/areas/[areaId]/image/uploads/[attemptId]/confirm/route.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/service.ts",
+                                          "symbol":  "AreaCoverService.initiate/confirm/content/remove"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/cloudinary.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/sanitize.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/components/areas/area-cover.tsx"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20261010000200_area_covers/migration.sql"
+                                      },
+                                      {
+                                          "path":  "tests/investigations/ihfr/two-request-quota.test.ts",
+                                          "symbol":  "INV-002: AreaCoverService.initiate/FakeCoverProvider; não é IHFR",
+                                          "sha":  "00477e961e36416d8d602d36f7e0ee195c487148"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "GET/DELETE image, GET image/content, POST uploads e POST uploads/{attemptId}/confirm.",
+                      "authorization":  "requireAuth/CSRF; READ_AREAS leitura; MANAGE_AREA_IMAGE OWNER/ADMIN contextual ativo para mutações; reautoriza após download.",
+                      "service":  "Uma capa privada; tickets/attempt antes de I/O, quota de 3 tentativas ativas e 10 por hora, expectedRevision/CAS, Sharp reencode sem metadados e provider authenticated.",
+                      "persistence":  "AreaCover/CoverUploadAttempt; revisão/asset identity; cadeia de migrations016 não substitui registro legado CollectionArea.image.",
+                      "ui":  "AreaCover: upload/confirmação/remover/retry e fallback;021 consome016 sem converter URL CDN em dado público."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/unit/area-cover-contracts.test.ts",
+                                    "tests/integration/area-cover-http.test.ts",
+                                    "tests/integration/area-cover-provider.test.ts",
+                                    "tests/integration/area-cover-transactions.test.ts",
+                                    "tests/migration/area-covers.test.ts",
+                                    "tests/e2e/area-covers.spec.ts",
+                                    "tests/investigations/ihfr/two-request-quota.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução. Exceção documental: tests/investigations/ihfr/two-request-quota.test.ts verifica CAPAS (AreaCoverService.initiate), é instrumento sob demanda fora dos globs usuais.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "Corte inicial beba96f: DTO/serviço/UI não fazem upload ... Cloudinary não é dependência.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: o recorte016 posterior implementa capa Cloudinary authenticated com proxy autorizado, revisão/OCC, validação e reencode; a linha inicial da matriz é histórica e já tem adendo corrente. Não é galeria, upload público nem provedor homologado."
+                     },
+        "gap":  "Configuração/feature off e fallback devem ser decididos por destino; nenhum Cloudinary real ou teste foi acionado nesta missão. INV-002 é concorrência de emissão de tickets de CAPAS; controle de duas chamadas em00477e9 não demonstra retrospectivamente a causa histórica e não é teste de recuperação IHFR.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    },
+    {
+        "id":  "CRI-016-02",
+        "imp":  "CRI-016",
+        "scope":  "Cleanup por identidade imutável, leases e rollout operacional",
+        "intentSources":  [
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "specs/016-area-covers/spec.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/operations/area-covers-runbook.md"
+                              },
+                              {
+                                  "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                  "path":  "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md"
+                              }
+                          ],
+        "implementationSources":  [
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/service.ts",
+                                          "symbol":  "AreaCoverService.cleanup"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/provider.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/cloudinary.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "src/app/api/server/images/settings.ts"
+                                      },
+                                      {
+                                          "sha":  "c4adfb379e5dc78f27f31b91edbd13f43228d9f9",
+                                          "path":  "prisma/migrations/20261010000200_area_covers/migration.sql"
+                                      }
+                                  ],
+        "chain":  {
+                      "route":  "Cleanup é operação interna/runner, não concessão por UI de participante.",
+                      "authorization":  "Ownership de asset_id/publicId/contexto comprovado, feature flag/config válidas e leases; sem exclusão por URL/prefixo presumido.",
+                      "service":  "cleanup seleciona jobs e revalida identidade/fencing antes de destruir; mismatch fica RECONCILE; não há expiração automática de tombstone.",
+                      "persistence":  "CoverCleanupJob com lease/CAS/retry; area cover persiste independentemente da conta criadora.",
+                      "ui":  "Fallback e indisponibilidade preservam metadados/antiga; operador/monitoramento de créditos não têm aceite humano automático."
+                  },
+        "presentInDevelopment":  true,
+        "presentInCandidate":  true,
+        "implementationState":  "IMPLEMENTADO_VERIFICADO_ESTATICAMENTE",
+        "tests":  {
+                      "paths":  [
+                                    "tests/integration/area-covers.test.ts",
+                                    "tests/integration/area-covers-contention.test.ts",
+                                    "tests/integration/area-cover-provider.test.ts"
+                                ],
+                      "selection":  "package.json: test:unit seleciona tests/unit/*.test.ts e *.test.tsx; scripts/imp006-test-runner.ts seleciona tests/integration/*.test.ts, tests/contract/*.test.ts e tests/migration/*.test.ts; playwright.config.ts seleciona tests/e2e e exclui ihfr-diagnosis-*.spec.ts, full-ui-flow.spec.ts, account-deletion.spec.ts (HTTPS tem exclusão própria). IHFR usa playwright.imp006.config.ts, testMatch ihfr-diagnosis-*.spec.ts; exclusão usa playwright.account-deletion.config.ts. Seleção é inspeção, não execução.",
+                      "execution":  "NOT_RUN",
+                      "consultedEvidence":  [
+
+                                            ]
+                  },
+        "humanAcceptance":  "NAO_VERIFICADO nesta missão; testes/código e recibos anteriores não constituem aceite humano atual.",
+        "scientificValidation":  "NAO_APLICAVEL ao mecanismo técnico; não confere validação científica de dados ou IHFR.",
+        "oldClaim":  {
+                         "path":  "docs/code-first-prd/implementation/backlog.md",
+                         "location":  "Estado corrente do recorte CRI / Incrementos CRI",
+                         "text":  "operação real pendente.",
+                         "recommendedAddendum":  "EVIDENCIA_IMPLEMENTACAO: cleanup016 opera somente sobre identidade imutável comprovada, com leases/reconciliação, sem apagar capa na exclusão da conta. RECOMENDACAO: conservar decisão de rollout/fallback/operador como pendência operacional separada."
+                     },
+        "gap":  "Cloudinary, créditos/cleanup real e decisão explícita de capas off/on no piloto permanecem pendentes; G3–G5 não herdam PASS técnico.",
+        "nextAction":  "RECOMENDACAO: acrescentar adendo datado no CHAT com estes limites e fontes, preservando o texto histórico; não reimplementar esta subcapacidade.",
+        "classification":  "EVIDENCIA_IMPLEMENTACAO"
+    }
+]

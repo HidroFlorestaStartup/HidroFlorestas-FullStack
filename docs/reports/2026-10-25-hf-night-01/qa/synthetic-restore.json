@@ -1,0 +1,427 @@
+{
+  "schemaVersion": "hf-synthetic-restore/v2",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "startedUtc": "2026-10-25T05:51:17.060Z",
+  "result": "FAIL",
+  "previousAttempts": [
+    "synthetic-restore-attempt1.json",
+    "synthetic-restore-attempt2.json"
+  ],
+  "scope": "synthetic local logical restore only; no hosted recovery claim",
+  "sourceDatabase": "hf_night_restore_source_485ed76a",
+  "targetDatabase": "hf_night_restore_target_485ed76a",
+  "runId": "485ed76a",
+  "stages": [
+    {
+      "stage": "pg_dump",
+      "command": "pg_dump --format=custom --no-acl --file <private-dump> --dbname hf_night_restore_source_485ed76a",
+      "durationMs": 228.74170000000004,
+      "exitCode": 0,
+      "spawnErrorCode": null
+    },
+    {
+      "stage": "pg_restore",
+      "command": "pg_restore --single-transaction --exit-on-error --no-owner --no-privileges --dbname hf_night_restore_target_485ed76a <private-dump>",
+      "durationMs": 466.4824,
+      "exitCode": 0,
+      "spawnErrorCode": null
+    }
+  ],
+  "sourceAndTargetPreserved": true,
+  "pg_dumpVersion": "pg_dump (PostgreSQL) 17.11",
+  "pg_restoreVersion": "pg_restore (PostgreSQL) 17.11",
+  "sourceSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "functionalFingerprint": "8bb76bf268fd92b7addfbd5b5f48de2e594599b6e366ab320c0a5cd6703a096d",
+  "databaseSnapshotProvenance": {
+    "sourceSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "functionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+    "cohort": "QA v3 synthetic E2E plus one restore probe created in attempt1"
+  },
+  "clientArchiveSha256": "80379b2c04d51c30225532e0ae04509899141e9957ed096fe749d7fd9df8f82f",
+  "clientArchiveBytes": 381531864,
+  "postgresExeSha256": "db14ddb0efc10b72b57dc29dbce5a719e2755dcd0ae54297d0ea4bbfc75f79a0",
+  "serverVersion": "17.10",
+  "targetPublicTablesBeforeRestore": 0,
+  "sourceAndTargetCreatedIn": "attempt1, owned markers rechecked; source probe preserved, empty target reused",
+  "dump": {
+    "privateIgnored": true,
+    "published": false,
+    "bytes": 120247,
+    "sha256": "2583ba7edc7332561b14a859b58f220d6c5996475903e6cf56ed3698b0988d32"
+  },
+  "migrationChecksums": [
+    {
+      "migration": "20260907120000_unique_laboratory_access_code",
+      "sourceChecksum": "df72aa3c959a70421d2f51f4d6b43b8c985344652ee031611d7eef6871036864",
+      "targetChecksum": "df72aa3c959a70421d2f51f4d6b43b8c985344652ee031611d7eef6871036864",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260914000100_area_registration_and_membership_roles",
+      "sourceChecksum": "0805370fe8cb0739fc0138e93cbf22aa4b45529a1f96d2068b1ec82557d1dc9f",
+      "targetChecksum": "0805370fe8cb0739fc0138e93cbf22aa4b45529a1f96d2068b1ec82557d1dc9f",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260915000100_collection_registration_metadata",
+      "sourceChecksum": "a6c3e3c3923cfc3cc64a53ac3298e225d18024ce44a4d3a2b5e543f64e84bb8d",
+      "targetChecksum": "a6c3e3c3923cfc3cc64a53ac3298e225d18024ce44a4d3a2b5e543f64e84bb8d",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260917000100_environmental_measurement_set",
+      "sourceChecksum": "7bf703f432987b67f8d661a7412738e765b2c34c87bf53055e14818ee201d221",
+      "targetChecksum": "7bf703f432987b67f8d661a7412738e765b2c34c87bf53055e14818ee201d221",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260919000100_user_administration",
+      "sourceChecksum": "1bf5a9081b2c67e3e81a559132c1e8fba83fa4a3d20da65a262db1ac39bfe267",
+      "targetChecksum": "1bf5a9081b2c67e3e81a559132c1e8fba83fa4a3d20da65a262db1ac39bfe267",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260920000100_ihfr_experimental_diagnosis",
+      "sourceChecksum": "0e4159e3396a78caf35a05e2157caebbf7eafb28291dc47ea51a10e9c5cb8da7",
+      "targetChecksum": "0e4159e3396a78caf35a05e2157caebbf7eafb28291dc47ea51a10e9c5cb8da7",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260920000100_remove_legacy_is_admin",
+      "sourceChecksum": "c88273dcb87094d30b5f24024ea9fe8479618148e4784ecc2e6ebebff95b8543",
+      "targetChecksum": "c88273dcb87094d30b5f24024ea9fe8479618148e4784ecc2e6ebebff95b8543",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20260926000100_ihfr_lifecycle_reference_integrity",
+      "sourceChecksum": "aef418aadba30698f977770bb2c9cb6e1230b259a5b0417f38fc41d6652f2fd6",
+      "targetChecksum": "aef418aadba30698f977770bb2c9cb6e1230b259a5b0417f38fc41d6652f2fd6",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261004000100_mail_foundation",
+      "sourceChecksum": "ed83c958b8e95353f627e8df49de476e6a82980c5529e57ec0df12cbed70d6a4",
+      "targetChecksum": "ed83c958b8e95353f627e8df49de476e6a82980c5529e57ec0df12cbed70d6a4",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261004000200_account_verification_recovery",
+      "sourceChecksum": "726513b9fddea53be55e89e14b532102fe0d88a43c845e20495c8676caabceed",
+      "targetChecksum": "726513b9fddea53be55e89e14b532102fe0d88a43c845e20495c8676caabceed",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261004000300_account_rate_limit_actions",
+      "sourceChecksum": "9328d52e5041dfd12b9b84d6e8603c574fce1a103feb88fb8ab060de62d1c402",
+      "targetChecksum": "9328d52e5041dfd12b9b84d6e8603c574fce1a103feb88fb8ab060de62d1c402",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261005000100_account_deletion_mail_ownership",
+      "sourceChecksum": "545114a111851f63283a0b216f427529d68a4b72528eb33a9a25250fbde69895",
+      "targetChecksum": "545114a111851f63283a0b216f427529d68a4b72528eb33a9a25250fbde69895",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261010000100_environmental_drafts",
+      "sourceChecksum": "0bee59c94ef8a3236b9a27750fe1d0e1a6a7a67298ca8f513f9367b33eb39b5b",
+      "targetChecksum": "0bee59c94ef8a3236b9a27750fe1d0e1a6a7a67298ca8f513f9367b33eb39b5b",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    },
+    {
+      "migration": "20261010000200_area_covers",
+      "sourceChecksum": "c6f2a8e99a061a85a06f5ee6374f98a0c07fb25c7ea42df0a1b77fd2a21be65d",
+      "targetChecksum": "c6f2a8e99a061a85a06f5ee6374f98a0c07fb25c7ea42df0a1b77fd2a21be65d",
+      "completedSource": true,
+      "completedTarget": true,
+      "matched": true
+    }
+  ],
+  "tableProof": [
+    {
+      "table": "AccountEmailChallenge",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "AccountRequest",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "AdministrativeAuditEvent",
+      "sourceRows": 8,
+      "targetRows": 8,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "AreaCover",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "CollectionArea",
+      "sourceRows": 1,
+      "targetRows": 1,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "CollectionData",
+      "sourceRows": 1,
+      "targetRows": 1,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "CoverCleanupJob",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "CoverUploadAttempt",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "CurrentExperimentalIHFRDiagnosis",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "EnvironmentalDraft",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "EnvironmentalMeasurementSet",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "ExperimentalIHFRDiagnosis",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "ExperimentalIHFRInputSupplement",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "IHFRDiagnosis",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "IHFRDiagnosisLifecycleEvent",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "IHFRDiagnosisOperation",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "LaboratoryRoom",
+      "sourceRows": 1,
+      "targetRows": 1,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "MailOutbox",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "MailRateLimitBucket",
+      "sourceRows": 24,
+      "targetRows": 24,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "ResearchersLinked",
+      "sourceRows": 1,
+      "targetRows": 1,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "SoilData",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "TerrainData",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "User",
+      "sourceRows": 55,
+      "targetRows": 55,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "VegetationData",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "WaterData",
+      "sourceRows": 0,
+      "targetRows": 0,
+      "rowDigestMatched": true
+    },
+    {
+      "table": "_prisma_migrations",
+      "sourceRows": 14,
+      "targetRows": 14,
+      "rowDigestMatched": true
+    }
+  ],
+  "tableCount": 26,
+  "constraintCatalogHashSource": "264410ceffa3ddade128ee957bb373022f488ec2add16b7274f496717a686850",
+  "constraintCatalogHashTarget": "08b6bcefa5ff3d0a378bc8cdbabec21b517e83d57d82bb61dd06a199afb8fb2d",
+  "foreignKeys": {
+    "source": 47,
+    "target": 47,
+    "catalogDefinitionsAndFlagsMatched": true
+  },
+  "requestedChecks": [
+    {
+      "name": "AccountEmailChallenge_bounds",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "(((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100)) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))",
+      "targetExpression": "((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "AccountRequest_action_check",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((action)::text = ANY ((ARRAY['sign-up'::character varying, 'verification-resend'::character varying, 'password-reset'::character varying])::text[]))",
+      "targetExpression": "((action)::text = ANY (ARRAY[('sign-up'::character varying)::text, ('verification-resend'::character varying)::text, ('password-reset'::character varying)::text]))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "CoverCleanupJob_kind_check",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((kind)::text = ANY ((ARRAY['STAGING'::character varying, 'FINAL'::character varying])::text[]))",
+      "targetExpression": "((kind)::text = ANY (ARRAY[('STAGING'::character varying)::text, ('FINAL'::character varying)::text]))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "CoverCleanupJob_resourceType_check",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((\"resourceType\")::text = ANY ((ARRAY['image'::character varying, 'video'::character varying, 'raw'::character varying])::text[]))",
+      "targetExpression": "((\"resourceType\")::text = ANY (ARRAY[('image'::character varying)::text, ('video'::character varying)::text, ('raw'::character varying)::text]))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "CoverCleanupJob_state_check",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((state)::text = ANY ((ARRAY['PENDING'::character varying, 'PROCESSING'::character varying, 'RECONCILE'::character varying, 'BLOCKED'::character varying])::text[]))",
+      "targetExpression": "((state)::text = ANY (ARRAY[('PENDING'::character varying)::text, ('PROCESSING'::character varying)::text, ('RECONCILE'::character varying)::text, ('BLOCKED'::character varying)::text]))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "CoverUploadAttempt_state_check",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((state)::text = ANY ((ARRAY['ISSUED'::character varying, 'PROCESSING'::character varying, 'CONFIRMED'::character varying, 'FAILED'::character varying])::text[]))",
+      "targetExpression": "((state)::text = ANY (ARRAY[('ISSUED'::character varying)::text, ('PROCESSING'::character varying)::text, ('CONFIRMED'::character varying)::text, ('FAILED'::character varying)::text]))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "MailOutbox_bounds",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "(((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5)) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))",
+      "targetExpression": "((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))",
+      "canonicalDefinitionMatched": false
+    },
+    {
+      "name": "MailRateLimitBucket_bounds",
+      "sourcePresent": true,
+      "targetPresent": true,
+      "sourceValidated": true,
+      "targetValidated": true,
+      "sourceExpression": "((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY ((ARRAY['email-verification'::character varying, 'password-reset'::character varying, 'sign-up'::character varying, 'sign-in'::character varying, 'verification-confirm'::character varying, 'reset-confirm'::character varying, 'change-password'::character varying, 'account-global'::character varying, 'delete-account'::character varying])::text[])))",
+      "targetExpression": "((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY (ARRAY[('email-verification'::character varying)::text, ('password-reset'::character varying)::text, ('sign-up'::character varying)::text, ('sign-in'::character varying)::text, ('verification-confirm'::character varying)::text, ('reset-confirm'::character varying)::text, ('change-password'::character varying)::text, ('account-global'::character varying)::text, ('delete-account'::character varying)::text])))",
+      "canonicalDefinitionMatched": false
+    }
+  ],
+  "triggers": {
+    "sourceCount": 17,
+    "targetCount": 17,
+    "disabledSource": 0,
+    "disabledTarget": 0,
+    "catalogDefinitionsAndEnabledStatesMatched": true
+  },
+  "semanticScope": "Constraints compared after pg_get_constraintdef/pg_get_expr on the same server, with column names/references/validation/deferral/actions; no string rewriting to force equality. Separate invalid-input probes for all eight CHECKs were not run.",
+  "safeErrorCode": "CATALOG_CONSTRAINT_MISMATCH",
+  "failedStage": "target invariants",
+  "exitCode": 1,
+  "endedUtc": "2026-10-25T05:51:18.292Z",
+  "durationMs": 1232.1027
+}

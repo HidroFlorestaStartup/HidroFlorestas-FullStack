@@ -1,0 +1,94 @@
+﻿656:  1) [chromium] › tests\e2e\authenticated-access.spec.ts:136:7 › authenticated access › restores an ACTIVE session across reload and both private trees 
+657-
+658-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+659-
+660-    Locator:  getByRole('heading', { name: 'Olá, Active! 👋 Ambiente de Análises HIDROFLORESTAS', exact: true })
+661-    Expected: visible
+662-    Received: <element(s) not found>
+663-    Timeout:  5000ms
+664-
+665-    Call log:
+666-    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+667-    [2m  - waiting for getByRole('heading', { name: 'Olá, Active! 👋 Ambiente de Análises HIDROFLORESTAS', exact: true })[22m
+668-
+669-
+670-      153 |         exact: true,
+671-      154 |       }),
+672-    > 155 |     ).toBeVisible();
+673-          |       ^
+674-      156 |
+675-      157 |     await page.goto("/dashboard");
+676-      158 |     await expect(page).toHaveURL(/\/workspace$/);
+677-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\authenticated-access.spec.ts:155:7
+678-
+679-    Error Context: test-results\authenticated-access-authe-2f0fa-load-and-both-private-trees-chromium\error-context.md
+--
+681:  2) [chromium] › tests\e2e\frontend-workspace.spec.ts:100:5 › settings contains keyboard focus, Escape restores the trigger and close cancels 
+682-
+683-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+684-
+685-    Locator:  getByRole('dialog').getByRole('button', { name: 'Excluir laboratório', exact: true })
+686-    Expected: focused
+687-    Received: inactive
+688-    Timeout:  5000ms
+689-
+690-    Call log:
+691-    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+692-    [2m  - waiting for getByRole('dialog').getByRole('button', { name: 'Excluir laboratório', exact: true })[22m
+693-    [2m    9 × locator resolved to <button type="button" id="delete-laboratory" class="workspace-module__dP-vpW__danger">Excluir laboratório</button>[22m
+694-    [2m      - unexpected value "inactive"[22m
+695-
+696-
+697-      108 |   await expect.poll(() => dialog.evaluate(node => node.contains(document.activeElement))).toBe(true);
+698-      109 |   await dialog.getByRole("button", { name: "Fechar configurações" }).focus(); await page.keyboard.press("Shift+Tab");
+699-    > 110 |   await expect(dialog.getByRole("button", { name: "Excluir laboratório", exact: true })).toBeFocused();
+700-          |                                                                                          ^
+701-      111 |   await page.keyboard.press("Tab"); await expect(dialog.getByRole("button", { name: "Fechar configurações" })).toBeFocused();
+702-      112 |   for (let index = 0; index < 7; index++) {
+703-      113 |     await page.keyboard.press("Tab");
+704-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:110:90
+--
+712:  3) [chromium] › tests\e2e\frontend-workspace.spec.ts:192:5 › mobile account disclosure closes with Escape, navigation and desktop resize 
+713-
+714-    [31mTest timeout of 30000ms exceeded.[39m
+715-
+716-    Error: locator.focus: Test timeout of 30000ms exceeded.
+717-    Call log:
+718-    [2m  - waiting for getByRole('button', { name: 'Conta', exact: true })[22m
+719-
+720-
+721-      195 |   const menu = page.getByRole("button", { name: "Conta", exact: true });
+722-      196 |   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toHaveCount(0);
+723-    > 197 |   await menu.focus(); await page.keyboard.press("Enter"); await page.keyboard.press("Tab");
+724-          |              ^
+725-      198 |   await expect(page.getByRole("link", { name: "Alterar senha", exact: true })).toBeFocused();
+726-      199 |   await capture(page, info, "mobile-menu-focus");
+727-      200 |   await page.keyboard.press("Escape"); await expect(menu).toBeFocused();
+728-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:197:14
+729-
+730-    Error Context: test-results\frontend-workspace-mobile--5d44a-vigation-and-desktop-resize-chromium\error-context.md
+731-
+732:  4) [chromium] › tests\e2e\frontend-workspace.spec.ts:254:5 › transient create blocks same-turn duplicate requests and preserves payload 
+733-
+734-    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+735-
+736-    Locator: locator('main').getByRole('alert')
+737-    Expected string: [32m"[7mFalha transi[27mtóri[7ma[27m"[39m
+738-    Received string: [31m"[7mNão foi possível carregar seus labora[27mtóri[7mos.[27m"[39m
+739-    Timeout: 5000ms
+740-
+741-    Call log:
+742-    [2m  - Expect "toContainText" with timeout 5000ms[22m
+743-    [2m  - waiting for locator('main').getByRole('alert')[22m
+744-    [2m    8 × locator resolved to <p role="alert" class="workspace-module__dP-vpW__error">Não foi possível carregar seus laboratórios.</p>[22m
+745-    [2m      - unexpected value "Não foi possível carregar seus laboratórios."[22m
+746-
+747-
+748-      266 |     await expect.poll(() => payloads.length).toBeGreaterThan(0); await page.waitForTimeout(100);
+749-      267 |     await capture(page, info, "create-loading"); expect(payloads).toEqual([{ name }]); release();
+750-    > 268 |     await expect(page.locator("main").getByRole("alert")).toContainText("Falha transitória"); await capture(page, info, "create-error");
+751-          |                                                           ^
+752-      269 |     expect((await (await context.request.get("/api/laboratories")).json()).laboratories).toHaveLength(0);
+753-      270 |   } finally { release(); }
+754-      271 | });
+755-        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-workspace.spec.ts:268:59

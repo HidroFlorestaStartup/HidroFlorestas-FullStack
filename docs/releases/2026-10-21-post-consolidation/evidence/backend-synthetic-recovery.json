@@ -1,0 +1,476 @@
+{
+  "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "scope": "owned synthetic Linux PostgreSQL16.15 only; not hosted backup/PITR/restore approval",
+  "started_utc": "2026-10-22T00:05:44.602096+00:00",
+  "ended_utc": "2026-10-22T00:05:49.089909+00:00",
+  "result": "PASS",
+  "source_empty_verified": true,
+  "target_empty_verified": true,
+  "migrations": 14,
+  "source": {
+    "tables": {
+      "AccountEmailChallenge": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AccountRequest": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AdministrativeAuditEvent": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AreaCover": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CollectionArea": {
+        "rows": 2,
+        "digest": "10fcd497ff750d305caad04e319bfb2f"
+      },
+      "CollectionData": {
+        "rows": 4,
+        "digest": "8b9db8de973c6212dfbeeb55ce61f5c6"
+      },
+      "CoverCleanupJob": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CoverUploadAttempt": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CurrentExperimentalIHFRDiagnosis": {
+        "rows": 1,
+        "digest": "c80fd66edb1e186b18216db23f281eaa"
+      },
+      "EnvironmentalDraft": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "EnvironmentalMeasurementSet": {
+        "rows": 2,
+        "digest": "9b377001afb2aee44879de817cc2133d"
+      },
+      "ExperimentalIHFRDiagnosis": {
+        "rows": 3,
+        "digest": "b896676482648165a57821a6e7656e61"
+      },
+      "ExperimentalIHFRInputSupplement": {
+        "rows": 1,
+        "digest": "ff35fcc42318c218c9dae2f8d32fa2bb"
+      },
+      "IHFRDiagnosis": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "IHFRDiagnosisLifecycleEvent": {
+        "rows": 6,
+        "digest": "6039d9bfe7465e39b26922a4071fb47f"
+      },
+      "IHFRDiagnosisOperation": {
+        "rows": 5,
+        "digest": "8dd6674b7034f0ef567350d49bab5aa7"
+      },
+      "LaboratoryRoom": {
+        "rows": 2,
+        "digest": "aca4ed1246e29bb242d0cc021989bba6"
+      },
+      "MailOutbox": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "MailRateLimitBucket": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "ResearchersLinked": {
+        "rows": 6,
+        "digest": "2bd03b75063e68b4f6e484e70c021fa9"
+      },
+      "SoilData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "TerrainData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "User": {
+        "rows": 6,
+        "digest": "f3fa00e4faa78e74ff30b6ba302a34e1"
+      },
+      "VegetationData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "WaterData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "_prisma_migrations": {
+        "rows": 14,
+        "digest": "6129d600520b3018ee552bb99623c6ba"
+      }
+    },
+    "constraints": 120,
+    "migrations": [
+      {
+        "name": "20260907120000_unique_laboratory_access_code",
+        "checksum": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260914000100_area_registration_and_membership_roles",
+        "checksum": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260915000100_collection_registration_metadata",
+        "checksum": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260917000100_environmental_measurement_set",
+        "checksum": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260919000100_user_administration",
+        "checksum": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260920000100_ihfr_experimental_diagnosis",
+        "checksum": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260920000100_remove_legacy_is_admin",
+        "checksum": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260926000100_ihfr_lifecycle_reference_integrity",
+        "checksum": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000100_mail_foundation",
+        "checksum": "ba923a694ae362e114c8ae003224bf5b102139e2c3e7328b09b5d77fa3626029",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000200_account_verification_recovery",
+        "checksum": "4f36b168678d882e9a55e19a255b64e5752d8babc212977b59c162c1e84f6222",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000300_account_rate_limit_actions",
+        "checksum": "65e030a67736ee1bb3b2390e1e4eb54218f8c5882c50e7205b47a8030d52d771",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261005000100_account_deletion_mail_ownership",
+        "checksum": "38c609f75b9789e8cc41f5d490c682155eb0c70cb973d71d52ba2d9aa0380fcd",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261010000100_environmental_drafts",
+        "checksum": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261010000200_area_covers",
+        "checksum": "d6ca4a6b7d79617a83eeccc84b9bf9383d99f5f4dfdee1bae893362563d8003d",
+        "finished": true,
+        "rolled_back": false
+      }
+    ]
+  },
+  "restored": {
+    "tables": {
+      "AccountEmailChallenge": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AccountRequest": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AdministrativeAuditEvent": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "AreaCover": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CollectionArea": {
+        "rows": 2,
+        "digest": "10fcd497ff750d305caad04e319bfb2f"
+      },
+      "CollectionData": {
+        "rows": 4,
+        "digest": "8b9db8de973c6212dfbeeb55ce61f5c6"
+      },
+      "CoverCleanupJob": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CoverUploadAttempt": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "CurrentExperimentalIHFRDiagnosis": {
+        "rows": 1,
+        "digest": "c80fd66edb1e186b18216db23f281eaa"
+      },
+      "EnvironmentalDraft": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "EnvironmentalMeasurementSet": {
+        "rows": 2,
+        "digest": "9b377001afb2aee44879de817cc2133d"
+      },
+      "ExperimentalIHFRDiagnosis": {
+        "rows": 3,
+        "digest": "b896676482648165a57821a6e7656e61"
+      },
+      "ExperimentalIHFRInputSupplement": {
+        "rows": 1,
+        "digest": "ff35fcc42318c218c9dae2f8d32fa2bb"
+      },
+      "IHFRDiagnosis": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "IHFRDiagnosisLifecycleEvent": {
+        "rows": 6,
+        "digest": "6039d9bfe7465e39b26922a4071fb47f"
+      },
+      "IHFRDiagnosisOperation": {
+        "rows": 5,
+        "digest": "8dd6674b7034f0ef567350d49bab5aa7"
+      },
+      "LaboratoryRoom": {
+        "rows": 2,
+        "digest": "aca4ed1246e29bb242d0cc021989bba6"
+      },
+      "MailOutbox": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "MailRateLimitBucket": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "ResearchersLinked": {
+        "rows": 6,
+        "digest": "2bd03b75063e68b4f6e484e70c021fa9"
+      },
+      "SoilData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "TerrainData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "User": {
+        "rows": 6,
+        "digest": "f3fa00e4faa78e74ff30b6ba302a34e1"
+      },
+      "VegetationData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "WaterData": {
+        "rows": 0,
+        "digest": "d41d8cd98f00b204e9800998ecf8427e"
+      },
+      "_prisma_migrations": {
+        "rows": 14,
+        "digest": "6129d600520b3018ee552bb99623c6ba"
+      }
+    },
+    "constraints": 120,
+    "migrations": [
+      {
+        "name": "20260907120000_unique_laboratory_access_code",
+        "checksum": "04b62ac3ca5b45996001a55a3baef169f9c37cd4bfb25ccf822cfcb42f11b32d",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260914000100_area_registration_and_membership_roles",
+        "checksum": "788ee0d1b3178ffad321191224fb809e4577d29f6e8c2e49768bfb3cfe6ae23c",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260915000100_collection_registration_metadata",
+        "checksum": "8bb34c8e027e564b1097f410ba87b38a696e1a92b62300f0cfbd38f6794997f6",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260917000100_environmental_measurement_set",
+        "checksum": "cdcff9738580176bd9abea460cf3cdaa2e7b668ba86d0515317c781e5c64c7ed",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260919000100_user_administration",
+        "checksum": "52e6db223b56ac0a03768b931d1e44381cad8a6025618c9b472f2b20e44a899c",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260920000100_ihfr_experimental_diagnosis",
+        "checksum": "587e6a6ac39f7cf04e905ecdabf1da68e663fea0b05a8d6377cdf00852ade75b",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260920000100_remove_legacy_is_admin",
+        "checksum": "3ab95683b8ce29798ea4c5b68d178f17d46a12f51deecfee3a799870139e838b",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20260926000100_ihfr_lifecycle_reference_integrity",
+        "checksum": "7ba07b60151aa16be2401bd8e9e7561c024fa07d43b88a577d0acfadb5820a95",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000100_mail_foundation",
+        "checksum": "ba923a694ae362e114c8ae003224bf5b102139e2c3e7328b09b5d77fa3626029",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000200_account_verification_recovery",
+        "checksum": "4f36b168678d882e9a55e19a255b64e5752d8babc212977b59c162c1e84f6222",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261004000300_account_rate_limit_actions",
+        "checksum": "65e030a67736ee1bb3b2390e1e4eb54218f8c5882c50e7205b47a8030d52d771",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261005000100_account_deletion_mail_ownership",
+        "checksum": "38c609f75b9789e8cc41f5d490c682155eb0c70cb973d71d52ba2d9aa0380fcd",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261010000100_environmental_drafts",
+        "checksum": "b4c90b3592050c2e75b8ae08137b8d6d6b99d5e43b0f01b051db41aff90e8df2",
+        "finished": true,
+        "rolled_back": false
+      },
+      {
+        "name": "20261010000200_area_covers",
+        "checksum": "d6ca4a6b7d79617a83eeccc84b9bf9383d99f5f4dfdee1bae893362563d8003d",
+        "finished": true,
+        "rolled_back": false
+      }
+    ]
+  },
+  "dump_sha256": "7d3bd6537be19bb7e5becec631400b21a9d3792efc36b557169fbc3cfc0e76af",
+  "dump_bytes": 117810,
+  "restore_seconds": 0.232,
+  "total_seconds": 4.488,
+  "limitations": [
+    "No hosted endpoint read or changed",
+    "No real user data",
+    "No Cloudinary assets or secret-store backups",
+    "No production RPO/RTO/ACL or PITR certification",
+    "PostgreSQL16.15 differs from official Windows/PostgreSQL17 gate",
+    "Schema-only textual equality FAIL: 8 CHECK expressions re-rendered; semantic equivalence not certified"
+  ],
+  "schema_comparison": {
+    "captured_utc": "2026-10-22T00:10:01.202062+00:00",
+    "command": "pg_dump --schema-only --no-owner --no-privileges",
+    "normalization": "remove only per-run restrict/unrestrict meta-command lines",
+    "textual_equality": "FAIL",
+    "source_sha256": "762269321f593ebe2fcfca2acc1af5e84a3beb4ef9ad296ec79540f296c3c638",
+    "restored_sha256": "2272b14e47ca8d8dfd8ee887898dcd141ed9a9e5f36f05499810e534318ac61d",
+    "changed_check_definitions": 8,
+    "differences": [
+      {
+        "name": "AccountEmailChallenge_bounds",
+        "source": "CONSTRAINT \"AccountEmailChallenge_bounds\" CHECK ((((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100)) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))),",
+        "restored": "CONSTRAINT \"AccountEmailChallenge_bounds\" CHECK (((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 100) AND ((\"attemptCount\" >= 0) AND (\"attemptCount\" <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\"))),"
+      },
+      {
+        "name": "AccountRequest_action_check",
+        "source": "CONSTRAINT \"AccountRequest_action_check\" CHECK (((action)::text = ANY ((ARRAY['sign-up'::character varying, 'verification-resend'::character varying, 'password-reset'::character varying])::text[]))),",
+        "restored": "CONSTRAINT \"AccountRequest_action_check\" CHECK (((action)::text = ANY (ARRAY[('sign-up'::character varying)::text, ('verification-resend'::character varying)::text, ('password-reset'::character varying)::text]))),"
+      },
+      {
+        "name": "CoverCleanupJob_kind_check",
+        "source": "CONSTRAINT \"CoverCleanupJob_kind_check\" CHECK (((kind)::text = ANY ((ARRAY['STAGING'::character varying, 'FINAL'::character varying])::text[]))),",
+        "restored": "CONSTRAINT \"CoverCleanupJob_kind_check\" CHECK (((kind)::text = ANY (ARRAY[('STAGING'::character varying)::text, ('FINAL'::character varying)::text]))),"
+      },
+      {
+        "name": "CoverCleanupJob_resourceType_check",
+        "source": "CONSTRAINT \"CoverCleanupJob_resourceType_check\" CHECK (((\"resourceType\")::text = ANY ((ARRAY['image'::character varying, 'video'::character varying, 'raw'::character varying])::text[]))),",
+        "restored": "CONSTRAINT \"CoverCleanupJob_resourceType_check\" CHECK (((\"resourceType\")::text = ANY (ARRAY[('image'::character varying)::text, ('video'::character varying)::text, ('raw'::character varying)::text]))),"
+      },
+      {
+        "name": "CoverCleanupJob_state_check",
+        "source": "CONSTRAINT \"CoverCleanupJob_state_check\" CHECK (((state)::text = ANY ((ARRAY['PENDING'::character varying, 'PROCESSING'::character varying, 'RECONCILE'::character varying, 'BLOCKED'::character varying])::text[]))),",
+        "restored": "CONSTRAINT \"CoverCleanupJob_state_check\" CHECK (((state)::text = ANY (ARRAY[('PENDING'::character varying)::text, ('PROCESSING'::character varying)::text, ('RECONCILE'::character varying)::text, ('BLOCKED'::character varying)::text]))),"
+      },
+      {
+        "name": "CoverUploadAttempt_state_check",
+        "source": "CONSTRAINT \"CoverUploadAttempt_state_check\" CHECK (((state)::text = ANY ((ARRAY['ISSUED'::character varying, 'PROCESSING'::character varying, 'CONFIRMED'::character varying, 'FAILED'::character varying])::text[])))",
+        "restored": "CONSTRAINT \"CoverUploadAttempt_state_check\" CHECK (((state)::text = ANY (ARRAY[('ISSUED'::character varying)::text, ('PROCESSING'::character varying)::text, ('CONFIRMED'::character varying)::text, ('FAILED'::character varying)::text])))"
+      },
+      {
+        "name": "MailOutbox_bounds",
+        "source": "CONSTRAINT \"MailOutbox_bounds\" CHECK ((((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5)) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))),",
+        "restored": "CONSTRAINT \"MailOutbox_bounds\" CHECK (((\"maxAttempts\" >= 1) AND (\"maxAttempts\" <= 5) AND ((attempts >= 0) AND (attempts <= \"maxAttempts\")) AND (\"expiresAt\" > \"createdAt\") AND ((\"contentMac\")::text ~ '^[0-9a-f]{64}$'::text))),"
+      },
+      {
+        "name": "MailRateLimitBucket_bounds",
+        "source": "CONSTRAINT \"MailRateLimitBucket_bounds\" CHECK (((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY ((ARRAY['email-verification'::character varying, 'password-reset'::character varying, 'sign-up'::character varying, 'sign-in'::character varying, 'verification-confirm'::character varying, 'reset-confirm'::character varying, 'change-password'::character varying, 'account-global'::character varying, 'delete-account'::character varying])::text[]))))",
+        "restored": "CONSTRAINT \"MailRateLimitBucket_bounds\" CHECK (((count >= 0) AND (\"windowEnd\" > \"windowStart\") AND ((\"subjectMac\")::text ~ '^[0-9a-f]{64}$'::text) AND ((action)::text = ANY (ARRAY[('email-verification'::character varying)::text, ('password-reset'::character varying)::text, ('sign-up'::character varying)::text, ('sign-in'::character varying)::text, ('verification-confirm'::character varying)::text, ('reset-confirm'::character varying)::text, ('change-password'::character varying)::text, ('account-global'::character varying)::text, ('delete-account'::character varying)::text]))))"
+      }
+    ],
+    "interpretation": "Eight CHECK renderings differ in parentheses / array cast distribution after SQL reparse. No other schema-only lines differ. This is not byte-for-byte schema equality; full semantic/ACL/PITR equivalence remains NOT_RUN."
+  },
+  "isolation": {
+    "cluster": "created fresh in this execution",
+    "bind": "127.0.0.1",
+    "port": 55426,
+    "database_role": "imp006_owner",
+    "operating_system_user": "nobody",
+    "source_database": "hf_pos_backup_source",
+    "restored_database": "hf_pos_backup_restored",
+    "authentication": "SCRAM; ephemeral private password not included",
+    "hosted_connection": false
+  },
+  "migration_checksums_match_source": true
+}

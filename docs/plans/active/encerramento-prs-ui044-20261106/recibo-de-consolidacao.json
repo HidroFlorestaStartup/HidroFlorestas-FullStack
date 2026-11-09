@@ -1,0 +1,179 @@
+{
+  "id": "HF-UI044-CLEANUP-20261106",
+  "date": "2026-11-06",
+  "timezone": "America/Fortaleza",
+  "state": "CONSOLIDACAO_PREPARADA_PARA_INTEGRACAO",
+  "source": "Pedido de Pedro para tratar as oito PRs remanescentes após o aceite e integração das correções53.",
+  "developmentBase": "865054b53e5820582d7956a29dc95fc9a2690bd8",
+  "mainPreserved": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "acceptedCorrections": {
+    "pr": 53,
+    "head": "1f305fbaca25d40b7a75d8aed74622a7e95027b0",
+    "merge": "865054b53e5820582d7956a29dc95fc9a2690bd8",
+    "review": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/53#pullrequestreview-5800053435",
+    "state": "ACEITAS_E_INTEGRADAS",
+    "ci": {
+      "run": 42157996425,
+      "attempt": 1,
+      "gatesPass": 15,
+      "e2ePass": 244,
+      "appliesToNewDocumentHead": false
+    }
+  },
+  "supersededClosed": [
+    {
+      "pr": 44,
+      "state": "closed",
+      "head": "972f9b00189bf09117883913d8c4fa63e69f4d2f",
+      "comment": 6684974555,
+      "merged": false
+    },
+    {
+      "pr": 45,
+      "state": "closed",
+      "head": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905",
+      "comment": 6684979295,
+      "merged": false
+    },
+    {
+      "pr": 46,
+      "state": "closed",
+      "head": "e5d030918bc0c04c321aff42cbc2e3fb6faad256",
+      "comment": 6684983791,
+      "merged": false
+    },
+    {
+      "pr": 47,
+      "state": "closed",
+      "head": "ca1d03b49c214986c7640d80e6e78d8067753ae2",
+      "comment": 6684988032,
+      "merged": false
+    },
+    {
+      "pr": 48,
+      "state": "closed",
+      "head": "641be73e32bcbaed282cac81dec9ae85a52b32de",
+      "comment": 6684992309,
+      "merged": false
+    },
+    {
+      "pr": 50,
+      "state": "closed",
+      "head": "3c9b9c83e3abca48ede0b8c4f03343e4b4aa3698",
+      "comment": 6684997034,
+      "merged": false
+    }
+  ],
+  "sourceHeads": [
+    {
+      "pr": 41,
+      "head": "b2f3133bae6e7e0559eb8d843e67fb112536352c"
+    },
+    {
+      "pr": 44,
+      "head": "972f9b00189bf09117883913d8c4fa63e69f4d2f"
+    },
+    {
+      "pr": 45,
+      "head": "22bb9c1bee446e02b0bf8ce702e0db89b9e74905"
+    },
+    {
+      "pr": 46,
+      "head": "e5d030918bc0c04c321aff42cbc2e3fb6faad256"
+    },
+    {
+      "pr": 47,
+      "head": "ca1d03b49c214986c7640d80e6e78d8067753ae2"
+    },
+    {
+      "pr": 48,
+      "head": "641be73e32bcbaed282cac81dec9ae85a52b32de"
+    },
+    {
+      "pr": 50,
+      "head": "3c9b9c83e3abca48ede0b8c4f03343e4b4aa3698"
+    },
+    {
+      "pr": 52,
+      "head": "71b8c95b7d1d1509b7155a36d65f70289c0a39f3"
+    }
+  ],
+  "provenance55BlobsVerified": true,
+  "unexpectedPreservationDifferences": [],
+  "preservedCopies": [
+    {
+      "pr": 41,
+      "path": "docs/plans/active/demonstracao-reuniao-20261026.json",
+      "sha": "fd9b9560db5994b7165dd30e65ff3c21eed5a058"
+    },
+    {
+      "pr": 41,
+      "path": "docs/plans/active/demonstracao-reuniao-20261026.md",
+      "sha": "23acae84064704fa45e1a19c3593e93f58308eb1"
+    },
+    {
+      "pr": 41,
+      "path": "docs/plans/active/recibo-demonstracao-reuniao-20261026.md",
+      "sha": "8bbb32dbe2925be6471bd78c7344bbf7a4a706aa"
+    },
+    {
+      "pr": 52,
+      "path": "docs/plans/active/correcoes-finais-ui044-20261105/aceite-e-integracao.json",
+      "sha": "3d09611c8c9cec6d18c6eea4e02798fc5d85be19"
+    },
+    {
+      "pr": 52,
+      "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/01-area-link-ihfr-redundante.png",
+      "sha": "de0ac5f15c382ad8bf10efc88851c47a3d4c8a46"
+    },
+    {
+      "pr": 52,
+      "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/02-detalhe-aviso-experimental-duplicado.png",
+      "sha": "ca01b0f2cdb16ea55e07cf3967d7a409edfa6b81"
+    },
+    {
+      "pr": 52,
+      "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/03-mobile-prioridade-leitura-da-coleta.png",
+      "sha": "6b07593ac3b3404ba5ceb5107d056f1494a6fa97"
+    },
+    {
+      "pr": 52,
+      "path": "docs/plans/active/correcoes-finais-ui044-20261105/evidencias/readme.md",
+      "sha": "5360d4e2799806b0d538adb4964cf7a38c986cb3"
+    }
+  ],
+  "historicalTextPreservedInUpdatedDocuments": [
+    "docs/plans/active/correcoes-finais-ui044-20261105/prompt-de-execucao.md",
+    "docs/plans/active/correcoes-finais-ui044-20261105/plano-de-publicacao.md",
+    "docs/plans/active/integracao-ui044-20261105/plano-de-execucao.md",
+    "docs/releases/2026-11-05-hf-ui044-integration/readme.md",
+    "PROJECT_CONTEXT.md",
+    "docs/governance/DOCUMENT_REGISTER.md"
+  ],
+  "guardUnion": {
+    "allFalse": true,
+    "count": 47,
+    "preservedCurrentGuards": true
+  },
+  "integrationTarget": {
+    "pr": 52,
+    "branch": "docs/handoff-ui044-correcoes-finais",
+    "firstParent": "71b8c95b7d1d1509b7155a36d65f70289c0a39f3",
+    "additionalParents": [
+      "865054b53e5820582d7956a29dc95fc9a2690bd8",
+      "b2f3133bae6e7e0559eb8d843e67fb112536352c"
+    ],
+    "method": "Composição pela árvore atual com overlays documentais; não reaplicar versões antigas do produto.",
+    "finalMergeReceipt": "Resultados finais de merge e encerramento41 são registrados na conversa da PR52, após conferir o head publicado."
+  },
+  "applicationChanges": false,
+  "workflowChanges": false,
+  "functionalCiOnNewDocumentHead": "NOT_RUN",
+  "newFunctionalSuiteRepeated": false,
+  "formalSelfApprovalCreated": false,
+  "branchDeletion": false,
+  "deployRequested": false,
+  "providerOrDatabaseOperations": false,
+  "operationalHomologation": false,
+  "scientificApproval": false
+}

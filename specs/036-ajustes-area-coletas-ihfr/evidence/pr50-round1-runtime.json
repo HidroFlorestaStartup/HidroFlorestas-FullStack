@@ -1,0 +1,1093 @@
+{
+  "schema": "hf-ui044-pr50-round1-runtime-v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "recordedDate": "2026-11-02",
+  "mission": "HF-UI-044-FINAL-PR50-ONE-SHOT",
+  "status": "PARTIAL",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "branch": "fix/hf-ui044-ui06-b-residual-20261101",
+  "sha": "72a70afdd941e18805a4004571fd3b4df5e52913",
+  "tree": "c74a1fed35239e307efb16d3383d807d1f8d83d6",
+  "run": {
+    "id": "41380591865",
+    "attempt": 1,
+    "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/41380591865"
+  },
+  "budget": {
+    "maximumNewRounds": 2,
+    "consumedNewRounds": 1,
+    "remainingNewRounds": 1,
+    "historicalRoundsExcluded": 3,
+    "secondRoundConditions": [
+      "material failure identified",
+      "effective correction",
+      "local counterproof",
+      "new distinct SHA",
+      "non-author QA"
+    ],
+    "sameShaRerunAuthorized": false
+  },
+  "causalFailure": {
+    "stage": "runner-preflight",
+    "job": "b-focal-3",
+    "exitCode": 1,
+    "code": "INHERITED_PGUSER_PRESENT_REJECTED",
+    "sanitizedMessage": "Inherited private application configuration prohibited: PGUSER",
+    "secondaryVerifierCode": "REQUIRED_EVIDENCE_MISSING",
+    "classification": "CI_INSTRUMENTATION_ENVIRONMENT_GUARD",
+    "applicationDependenciesInstalled": false,
+    "postgresqlProvisioned": false,
+    "applicationRuntimeStarted": false,
+    "domainCasesStarted": 0,
+    "environmentValuesReadOrRecorded": false,
+    "correctionOwner": "Owner CI",
+    "correctionStatus": "PENDING_LOCAL_COUNTERPROOF_AND_QA",
+    "correctionScope": "neutralize hosted Windows libpq defaults before strict private-environment guard; preserve the guard"
+  },
+  "jobs": [
+    {
+      "name": "b-focal-3",
+      "id": "125070344187",
+      "conclusion": "failure",
+      "startedAt": "2026-11-02T02:59:27Z",
+      "completedAt": "2026-11-02T02:59:58Z",
+      "elapsedSeconds": 31,
+      "planned": 3,
+      "started": 0,
+      "execution": "NOT_RUN",
+      "executionCounts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "NOT_RUN": 3
+      }
+    },
+    {
+      "name": "b-complete-75",
+      "id": "125070488293",
+      "conclusion": "skipped",
+      "planned": 75,
+      "started": 0,
+      "execution": "NOT_RUN",
+      "executionCounts": {
+        "PASS": 0,
+        "FAIL": 0,
+        "NOT_RUN": 75
+      }
+    },
+    {
+      "name": "rc-final",
+      "id": "125070488911",
+      "conclusion": "skipped",
+      "plannedGates": 15,
+      "startedGates": 0,
+      "execution": "NOT_RUN"
+    }
+  ],
+  "focalCases": [
+    {
+      "id": "domain-area-empty-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "PREFLIGHT_FAILED_BEFORE_ANY_CASE"
+    },
+    {
+      "id": "domain-area-empty-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "PREFLIGHT_FAILED_BEFORE_ANY_CASE"
+    },
+    {
+      "id": "domain-area-empty-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "PREFLIGHT_FAILED_BEFORE_ANY_CASE"
+    }
+  ],
+  "completeMatrix": [
+    {
+      "id": "domain-area-empty-320-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-375-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-375-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-390-844-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-390-844-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-768-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-768-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-1440-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-1440-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-empty-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-320-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-375-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-375-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-390-844-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-390-844-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-768-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-768-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-1440-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-1440-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-area-populated-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-320-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-375-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-375-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-390-844-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-390-844-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-768-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-768-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-1440-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-1440-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-record-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-320-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-375-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-375-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-390-844-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-390-844-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-768-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-768-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-1440-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-1440-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-missing-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-320-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-320-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-375-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-375-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-390-844-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-390-844-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-768-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-768-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-1440-900-100",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-1440-900-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-667-375-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-collection-current-844-390-200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-320-900-0-0",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-320-900-0-1",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-320-900-0-2",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-320-900-0-3",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-667-375-34-0",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-667-375-34-1",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-667-375-34-2",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-667-375-34-3",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-844-390-0-0",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-844-390-0-1",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-844-390-0-2",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-qualifier-844-390-0-3",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-keyboard-history-390",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-keyboard-history-1440",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    },
+    {
+      "id": "domain-reload-390-text200",
+      "execution": "NOT_RUN",
+      "sources": {
+        "fullstack": "NOT_RUN",
+        "starter": "NOT_RUN"
+      },
+      "comparability": "INSUFFICIENT_EVIDENCE",
+      "requirement": "HUMAN_DECISION_PENDING",
+      "completeness": "MISSING",
+      "reason": "DEPENDENT_JOB_SKIPPED_AFTER_FOCAL_PREFLIGHT_FAILURE"
+    }
+  ],
+  "artifact": {
+    "id": "13112783454",
+    "sizeBytes": 413,
+    "sha256": "8aa65f28475457d7cd51a7fbd1bf188551db036c9180bd1782e7468aefce9469",
+    "zipCrc": "PASS",
+    "members": [
+      "b-verification-summary.json"
+    ],
+    "pngCount": 0,
+    "indexPresent": false,
+    "pairCount": 0,
+    "summary": {
+      "schema": "hf-ui044-pr50-b-verification-v1",
+      "status": "FAIL",
+      "sha": "72a70afdd941e18805a4004571fd3b4df5e52913",
+      "run": "41380591865",
+      "attempt": "1",
+      "caseSet": "focal-3",
+      "failureCode": "REQUIRED_EVIDENCE_MISSING",
+      "required": 3,
+      "notRun": "REQUIRES_INDEX_INSPECTION",
+      "humanAcceptance": "HUMAN_ACCEPTANCE_PENDING"
+    },
+    "summaryPreservedVerbatim": true,
+    "notRunDerivation": "No index was generated. Actual job steps prove preflight failed and runtime step was skipped; zero cases initiated."
+  },
+  "localEvidence": {
+    "root": "C:/Users/selah/.codex/visualizations/2026/11/02/01a19a28-f5f4-7400-ab66-5c7ac36cfa45/round1",
+    "files": [
+      "focal-job.log",
+      "focal.zip",
+      "jobs.json"
+    ],
+    "verificationByOwnerB": [
+      "ZIP SHA256 and byte size",
+      "all member CRCs",
+      "exact member list and summary JSON",
+      "job conclusions and skipped runtime step",
+      "causal log lines233-248; secondary failure259-265"
+    ]
+  },
+  "tasksStillOpen": [
+    "T050",
+    "T051",
+    "T052",
+    "T008",
+    "T016",
+    "T027",
+    "T028",
+    "T030",
+    "T044",
+    "T045"
+  ],
+  "gates": {
+    "UI06_B_EVIDENCE_COMPLETE": "NOT_RUN",
+    "RC_FINAL_15_GATES": "NOT_RUN",
+    "HUMAN_ACCEPTANCE": "PENDING"
+  },
+  "preservation": {
+    "historicalR3Unchanged": true,
+    "productCodeChangedByThisRecord": false,
+    "domainCodeChangedByThisRecord": false,
+    "scientificContractsChanged": false,
+    "starterChanged": false,
+    "sharedChanged": false,
+    "gitMutationsByOwnerB": false
+  }
+}

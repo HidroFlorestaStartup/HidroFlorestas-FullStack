@@ -1,0 +1,185 @@
+{
+  "mission": "HF-DOC-20261024-CHAT02",
+  "status": "CONSUMED_AND_RECONCILED_TRANSPORT_PASS",
+  "zipBytes": 234461,
+  "zipSha256": "2d598359ce495977bc8869d579ed2403b11dc8d37813803c350a7ed5dae1f7a3",
+  "receiptBytes": 7684,
+  "receiptSha256": "39b98167facfa8a998f8ba498904c7b42fd1526f3f13af6c48f2bab888362786",
+  "archiveEntries": 17,
+  "expandedBytes": 1581874,
+  "securityChecks": [
+    "relative normalized paths",
+    "no duplicates/case collisions",
+    "no links/special files",
+    "no encryption",
+    "16MiB total limit",
+    "8MiB member limit",
+    "250 expansion ratio limit",
+    "CRC"
+  ],
+  "receiptInsideEqualsAttachment": true,
+  "documentChecks": [
+    {
+      "path": "docs/plans/active/hf-doc-20261024/local/plano.md",
+      "bytes": 9021,
+      "sha256": "945e1d7db9e2fbc1a5bfec5b77f10ff614e65129ea9aa37ea7b970fcbf33ea53",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fontes-observadas.json",
+      "bytes": 23968,
+      "sha256": "83fc865c185f79c0874ab0ae5ae98d2667569ce5587471211d9f3e39b41a3a86",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-002-005.json",
+      "bytes": 141994,
+      "sha256": "1246534559b3a9748dc3ec2fde38a1cdaf35732b0a07e8b688f89ecb13406d69",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-002-005.md",
+      "bytes": 168592,
+      "sha256": "c63de0403445b50018b1930fea0e2448c0d1306dd9effd057ac84d3b339cde70",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-006-010.json",
+      "bytes": 144782,
+      "sha256": "e2b2a236b95b53289113a2567c96eedf07559a307a4b974222d3534437fa9781",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/fragmentos/cobertura-imp-006-010.md",
+      "bytes": 110986,
+      "sha256": "d2ab2394e67deaff8a1f2453b659ae276138c3e5e1afe56ef17376237286a8f7",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/instrumentos-e-configuracao.md",
+      "bytes": 11283,
+      "sha256": "68a05ef759dc03d6ed5f5205e14112167a3bcd5d29a7a3eb6917d7ee802bf6bf",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/manifesto.json",
+      "bytes": 242024,
+      "sha256": "049e5d3f6dc5236f5a0a44863c11b856de88ac100f0d582985d19c3dc0a5b0c6",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/matriz-implementacao.json",
+      "bytes": 259453,
+      "sha256": "a93b1e2c8f033ba364c2991b5e740251b0382832d8a8dba06c0ca6cde06844f2",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/matriz-implementacao.md",
+      "bytes": 393413,
+      "sha256": "0e5e30cddb63e0d3fa789b93215791cd86c1b03ed3f95777f2fe77b3daf94f50",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/readme.md",
+      "bytes": 8349,
+      "sha256": "cc71b1f9138d0b2c3a31e95b2aad1b699160f8ea1647a9c69d93703e68b60d10",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/revisao-independente.md",
+      "bytes": 12413,
+      "sha256": "f9e1198fc6f239641f6f58c315fbe55e028dcfe3d8144f9ae17acfdeb78fefa3",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/topologia-e-conteudo-exclusivo.md",
+      "bytes": 21005,
+      "sha256": "757d7112ebfe2eec596968bb174fb1f49f62200b80ec2e36d787b1d0c90f8fa0",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/validacao.json",
+      "bytes": 1170,
+      "sha256": "6ccca1d5444dbb1f94d78975bc99eed196de73b8c43e67420097cf1878e2f5de",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/verificacao-documental.md",
+      "bytes": 4717,
+      "sha256": "de3c87a5057eecd420999b7e646addfd42ce678a5d1c7e3fca39f9e4c0cb8487",
+      "result": "PASS"
+    },
+    {
+      "path": "docs/reviews/20261024-hf-doc-local01/handoff.json",
+      "bytes": 21020,
+      "sha256": "48f52734b5d0b16e7bd7cfc97346e331539e5008fe3d03c7df90866e8503a759",
+      "result": "PASS"
+    }
+  ],
+  "C0": {
+    "preserved": "YES",
+    "originalZipVerified": true,
+    "reportVerified": true,
+    "manifestVerified": true,
+    "treeFilesVerified": 20
+  },
+  "localCommitClaimed": "6f24cb345b8b3a33c46b9b76c3eb6171328296bd",
+  "localCommitObjectAvailable": false,
+  "provenanceStatus": "PARTIAL_COMMIT_OBJECT_UNAVAILABLE",
+  "schemaVersion": 1,
+  "stage": "C1",
+  "recordedAtUtc": "2026-10-24 17:10:43 UTC",
+  "recordedAtAmericaFortaleza": "2026-10-24 14:10:43 -03:00 America/Fortaleza",
+  "LOCAL_BYTES_READ": "YES",
+  "TRANSPORT_INTEGRITY": "PASS",
+  "LOCAL_COMMIT_PROVENANCE": "PARTIAL",
+  "localCommitExplanation": "LOCAL02 informa objeto Git verificado no ambiente de origem. CHAT recebeu16 documentos e recibo, sem objetos commit/tree; não verificou autonomamente autoria/parent/tree do commit6f24cb3. Fontes primárias públicas foram conferidas separadamente. Não existe permalink LOCAL presumido.",
+  "localMatrixParity": {
+    "markdownJsonBlocks": 41,
+    "rowBlocks": 40,
+    "rowsCompared": 40,
+    "result": "PASS",
+    "method": "Um contrato compartilhado e40 blocos JSON equivalentes ao arquivo matriz-implementacao.json; prosa/tabelas confrontadas semanticamente pelas frentes atribuídas."
+  },
+  "handoff": {
+    "declaredDocumentHashes": 15,
+    "verified": "PASS",
+    "excludesSelf": true
+  },
+  "sourceManifest": {
+    "entries": 500,
+    "treePathBlobSizeMatch": "PASS",
+    "errors": [],
+    "method": "full exact-SHA Git trees retained from C0; metadata comparison, not recomputation of 500 raw blobs"
+  },
+  "localReading": {
+    "matrizMarkdownJson": "C-I, C-D, C-COORD e C-R por recortes que cobrem os40 registros; paridade integral automática e leitura semântica dirigida.",
+    "topologia": "C-D e C-R; coordenação incorpora o inventário exato e as limitações.",
+    "instrumentosConfiguracao": "C-D e coordenação; seleção e limites incorporados.",
+    "revisaoIndependenteLocal": "C-I, C-D e C-R; não substitui revisão CHAT.",
+    "handoffManifestoRecibo": "Coordenação e C-R; identidades e limites admitidos."
+  },
+  "primarySourcesReceipt": "fontes-confrontadas-c1.json",
+  "primarySnapshotCount": 247,
+  "ownFunctionalExecution": "NOT_RUN",
+  "nativeSubagents": {
+    "count": 3,
+    "roles": [
+      "C-I",
+      "C-D",
+      "C-R"
+    ],
+    "nativeDelegation": "REAL",
+    "independentReviewer": "C-R sem autoria dos documentos revisados",
+    "nominalReasoningLevel": "NOT_EXPOSED; maior esforço solicitado, sem alteração de configuração global"
+  },
+  "C0History": {
+    "immutableMatrix": "matriz-imp-c0.json",
+    "immutableReview": "revisao-independente.md",
+    "immutableValidation": "validacao-documental.json",
+    "remoteReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/29#issuecomment-6386457414",
+    "zipSha256": "f3db40e3232947d0b13d73f994b1f3677f3d30d4ef6cbace60f1f385b7b25033",
+    "reportSha256": "2f42ac01ee9b810fa505eac0b3b9ec2d9a0dcc5ac7c6404a8341d41ae61171ca",
+    "manifestSha256": "71996928daf464fb1e690a778b3b555c1f01fb2142dd8f0aabfcff47df2ffbfe"
+  }
+}

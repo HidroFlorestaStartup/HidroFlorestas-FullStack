@@ -1,0 +1,38 @@
+{
+  "name": "transient-dashboard-loading-1440",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-transient-dashboard-loading-1440-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 478,
+      "extent": 478
+    }
+  },
+  "target": {
+    "kind": "explicit screenshot target",
+    "tag": "section",
+    "x": 200,
+    "y": 401.015625,
+    "width": 1200,
+    "height": 70.390625
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

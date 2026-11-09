@@ -379,6 +379,7 @@ export class AccountService {
         await tx.mailOutbox.deleteMany({ where: { OR: [{ accountUserId: user.id }, { challengeId: { in: ids } }] } });
         await tx.accountRequest.deleteMany({ where: { OR: [{ userId: user.id }, { challengeId: { in: ids } }] } });
         await tx.accountEmailChallenge.deleteMany({ where: { userId: user.id } });
+        await tx.environmentalDraft.deleteMany({ where: { userId: user.id } });
         await tx.user.delete({ where: { id: user.id } });
         await this.deps.beforeCommit?.();
       }, { isolationLevel: Prisma.TransactionIsolationLevel.Serializable, timeout: 20_000, maxWait: 20_000 });

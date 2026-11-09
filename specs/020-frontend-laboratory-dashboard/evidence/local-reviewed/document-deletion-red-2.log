@@ -1,0 +1,39 @@
+IMP-006 schema owned by this run: imp006_test_63159686c3be41d4874f886752757ae8
+
+Running 3 tests using 1 worker
+
+(node:42208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42208) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\account-deletion.spec.ts:9:5 › normal account: GET and cancellation preserve access; wrong password, keyboard confirmation, deletion and second-session revocation (3.3s)
+(node:31548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\account-deletion.spec.ts:43:5 › restricted account can delete itself while private workspace remains inaccessible (1.0s)
+  ok 3 tests\e2e\account-deletion.spec.ts:51:5 › scientific links and the last active administrator show blockers and offer no destructive form (657ms)
+
+
+  1) tests\e2e\account-deletion.spec.ts:9:5 › normal account: GET and cancellation preserve access; wrong password, keyboard confirmation, deletion and second-session revocation 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m0[39m
+    Received: [31m1[39m
+
+      38 |     expect((await context.cookies()).some(cookie => ["auth_token", "verification_token"].includes(cookie.name))).toBe(false);
+      39 |     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    > 40 |     expect(await page.evaluate(() => localStorage.length + sessionStorage.length)).toBe(0);
+         |                                                                                    ^
+      41 |   } finally { await second.close(); }
+      42 | });
+      43 | test("restricted account can delete itself while private workspace remains inaccessible", async ({ page, context }) => {
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\account-deletion.spec.ts:40:84
+
+    Error Context: test-results\account-deletion-normal-ac-0a318-d-second-session-revocation\error-context.md
+
+  1 failed
+    tests\e2e\account-deletion.spec.ts:9:5 › normal account: GET and cancellation preserve access; wrong password, keyboard confirmation, deletion and second-session revocation 
+  2 passed (6.5s)
+Owned deletion browser gate failed; no credential output.

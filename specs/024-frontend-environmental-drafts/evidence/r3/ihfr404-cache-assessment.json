@@ -1,0 +1,52 @@
+{
+  "run_id": 39465856665,
+  "attempt": 1,
+  "job_id": 118776943818,
+  "head_sha": "85e397bd4271ab07a197ea88db652227e6e392ce",
+  "official": {
+    "e2e": { "pass": 188, "fail": 0 },
+    "ihfr": { "pass": 0, "fail": 6 },
+    "login_status": 200,
+    "protected_navigation_statuses": [404, 404, 404, 404, 404, 404],
+    "root_cause": "UNDETERMINED"
+  },
+  "hypothesis": "Stale private IMP006_TEST_SCHEMA/JWT_SECRET reused from Turbopack persistent cache between owned gate servers",
+  "assessment": "INCONCLUSIVE_NOT_CONFIRMED_NOT_REFUTED",
+  "initial_interpretation_superseded": true,
+  "initial_interpretation_limit": "The initial result.json passed=true covers environment/authentication observations only. Its cached-restart conclusion was excessive: preserved CURRENT had sequence zero and no persisted data files.",
+  "runtime": { "node": "24.19.0", "next": "16.3.8", "platform": "linux", "architecture": "x64", "database": false },
+  "attempts": [
+    {
+      "receipt": "ihfr404-cache-initial-observations.json",
+      "termination_A": "Owned process group SIGKILL",
+      "A_token_A": 200,
+      "B_started": true,
+      "B_module_and_runtime_schema_current": true,
+      "B_module_and_runtime_secret_current": true,
+      "B_token_B": 200,
+      "B_token_A": 401,
+      "cache_before_B": { "files": 1, "bytes": 73, "data_files": 0, "max_sequence_number": 0 },
+      "valid_for_populated_cache_hypothesis": false
+    },
+    {
+      "receipt": "ihfr404-cache-corrected-observations.json",
+      "termination_A": "SIGTERM to owned CLI, NEXT_EXIT_TIMEOUT_MS=10000 in synthetic project only",
+      "A_token_A": 200,
+      "B_started": false,
+      "cache_after_A_exit": { "files": 1, "bytes": 73, "data_files": 0, "max_sequence_number": 0 },
+      "abort_reason": "Populated persistent-cache premise not satisfied",
+      "valid_for_populated_cache_hypothesis": false
+    }
+  ],
+  "limits": [
+    "No persisted compiled-cache data in either attempt",
+    "No cache-hit telemetry",
+    "Linux minimal project differs from Windows CI application",
+    "No Prisma, PostgreSQL or real application authorization/data guards",
+    "Explicit Turbopack root for dependency symlink",
+    "Corrected attempt used graceful shutdown rather than predecessor Windows taskkill /T /F"
+  ],
+  "next_step": "Failure-only safe probes of existing authenticated GET endpoints, each isolated from test cookies; status and contract booleans only",
+  "repository_edits_by_this_diagnosis": false,
+  "additional_trials_planned": false
+}

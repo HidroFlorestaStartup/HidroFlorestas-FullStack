@@ -1,0 +1,22 @@
+{
+  "phase": "cri005diagnostic",
+  "args": [
+    "--conditions=react-server",
+    "--import=tsx",
+    "--test",
+    "--test-concurrency=1",
+    "tests/integration/area-covers.test.ts",
+    "tests/integration/area-cover-provider.test.ts",
+    "tests/integration/area-cover-http.test.ts"
+  ],
+  "snapshot": "7a95946320a8f6b15155d5603963ba35670ba628c28c15eef2ed064f5615f9ff",
+  "startedUtc": "2026-10-17T18:22:39.805Z",
+  "endedUtc": "2026-10-17T18:22:54.973Z",
+  "exitCode": 0,
+  "durationMs": 15001,
+  "logPath": "cri005diagnostic-attempt-1.log",
+  "summary": [
+    "stdout: \u2714 CRI-REV-002 failed preset leaves no pointer, attempt or cleanup job (412.0456ms)"
+  ],
+  "logSha256": "9bcdaac38bd9ad2e186870dedd8b2df8fb6f78e78340192fbcd1e764c92ee768"
+}

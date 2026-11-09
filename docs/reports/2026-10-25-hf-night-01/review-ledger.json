@@ -1,0 +1,427 @@
+{
+  "mission": "HF-NIGHT-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "observedUtc": "2026-10-25T07:19:29Z",
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "baseInitial": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "mainObservedUnchanged": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "reviews": [
+    {
+      "pr": 33,
+      "head": "9a2b757c32f28d2bb5ab505239c175b55fab9f20",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/33",
+      "draft": true,
+      "localReviewer": "/root",
+      "requestCommentId": 6393287247,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6393290312,
+      "receiptCommentId": 6393300993,
+      "completedUtc": "2026-10-25T04:11:34.604938Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0
+    },
+    {
+      "pr": 34,
+      "head": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/34",
+      "draft": true,
+      "localReviewer": "/root",
+      "requestCommentId": 6393322802,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6393325065,
+      "receiptCommentId": 6393333196,
+      "completedUtc": "2026-10-25T04:15:28.011307Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0
+    },
+    {
+      "pr": 35,
+      "head": "c7b16383ec62a38a99306b2bf4181356b3e54d4b",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/35",
+      "draft": true,
+      "localReviewer": "/root/students",
+      "requestCommentId": 6393349741,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6393353321,
+      "receiptCommentId": 6393362937,
+      "completedUtc": "2026-10-25T04:19:00.789085Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0,
+      "scopeLimit": "Este resultado pertence somente a c7b1638; handoff posterior exige review do novo HEAD."
+    },
+    {
+      "pr": 36,
+      "head": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/36",
+      "draft": true,
+      "localReviewer": "/root",
+      "requestCommentId": 6393507019,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6393508799,
+      "receiptCommentId": 6393515309,
+      "completedUtc": "2026-10-25T04:38:05.119709Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0
+    },
+    {
+      "pr": 37,
+      "head": "2341275eac6c60054be00ef81b0e1a84619225ca",
+      "localReviewer": "/root/fr015",
+      "requestCommentId": 6393732783,
+      "summaryCommentId": 6393735267,
+      "receiptCommentId": 6393743676,
+      "completedUtc": "2026-10-25T05:06:40.651918Z",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/37",
+      "draft": true,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0
+    },
+    {
+      "pr": 38,
+      "head": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+      "localReviewer": "/root/fr015",
+      "requestCommentId": 6393860992,
+      "summaryCommentId": 6393863132,
+      "receiptCommentId": 6393871340,
+      "completedUtc": "2026-10-25T05:22:15.169617Z",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/38",
+      "draft": true,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCount": 0,
+      "threadCount": 0,
+      "githubCheckRuns": 0
+    },
+    {
+      "pr": 39,
+      "head": "3e0066ab82a415e04342bd751254ee65cf533dfb",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/39",
+      "draft": true,
+      "localReviewer": "/root/fr015 (030); /root/students (baseline/restore/manifesto); /root (protocolos/staging)",
+      "requestCommentId": 6394373138,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6394375002,
+      "receiptCommentId": null,
+      "completedUtc": "2026-10-25T06:28:48.862318Z",
+      "hasAnyFindings": true,
+      "hasUnresolvedFindings": true,
+      "formalReviewCount": 1,
+      "threadCount": 1,
+      "githubCheckRuns": 0,
+      "receiptReviewId": "PRR_kwDOVAitc88AAAABUEfKrg",
+      "findings": [
+        {
+          "severity": "P2",
+          "threadId": "PRRT_kwDOVAitc86v--4u",
+          "commentId": 4369900482,
+          "path": "scripts/local-readiness.ts",
+          "line": 288,
+          "status": "ADDRESSED_AND_VALIDATED",
+          "description": "Response waiter rejection can be unhandled if navigation fails before awaiting it, interrupting cleanup and failure receipt.",
+          "fixCommit": "aeb54924d2d5e1355d533c0b3cd687337fd75c47",
+          "fixHead": "6b9ed579912ee9ca1590cff41779232ade40d966",
+          "threadResolved": true,
+          "threadResolutionObservedUtc": "2026-10-25T07:14:51Z",
+          "newHeadReview": "completed; no findings observed"
+        }
+      ],
+      "historicalReviewSnapshot": true,
+      "summaryIsMutablePerPr": true,
+      "scopeLimit": "Snapshot real do review3e0066; o comentário de resumo é vivo e agora mostra o HEAD mais recente. Receipt formal e thread preservam o finding antigo."
+    },
+    {
+      "pr": 39,
+      "head": "6b9ed579912ee9ca1590cff41779232ade40d966",
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/39",
+      "draft": true,
+      "localReviewer": "/root/fr015 (18 strict and source/real receipt); /root/students (manifest); /root (publication)",
+      "requestCommentId": 6394763147,
+      "requestCountForSha": 1,
+      "automaticReviewObservedBeforeRequest": false,
+      "codexStatus": "completed",
+      "summaryCommentId": 6394375002,
+      "summaryIsMutablePerPr": true,
+      "receiptCommentId": 6394776686,
+      "completedUtc": "2026-10-25T07:15:43.889901Z",
+      "hasAnyFindings": false,
+      "hasUnresolvedFindings": false,
+      "formalReviewCountOnPr": 1,
+      "formalReviewCountForSha": 0,
+      "threadCountOnPr": 1,
+      "unresolvedThreads": 0,
+      "githubCheckRuns": 0
+    }
+  ],
+  "interpretation": "Resumo e recibo reais do bot lidos junto de reviews e threads; completed sem findings observados não é aprovação humana ou prova universal de ausência de defeitos.",
+  "newPullRequestMerges": 0,
+  "deploysRequested": 0,
+  "oldPullRequests27and28": "OPEN_UNCHANGED",
+  "ciScope": "Consultas dos HEADs33–39 retornaram zero check-runs; workflow conhecido fechado para as candidatas. Resultados locais pertencem aos recibos próprios, sem transferência de CI histórica.",
+  "publicationGuardAudit": {
+    "observedUtc": "2026-10-25T05:46:43.760Z",
+    "base": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "result": "PASS",
+    "records": [
+      {
+        "tree": ".",
+        "branch": "feat/hf-night-01",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "feat/hf-night-01"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/students",
+        "branch": "docs/hf-night-students-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "docs/hf-night-students-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/fr015",
+        "branch": "fix/hf-night-fr015-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "fix/hf-night-fr015-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/qa",
+        "branch": "test/hf-night-baseline-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "test/hf-night-baseline-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/af",
+        "branch": "fix/hf-night-async-focus-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "fix/hf-night-async-focus-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/mail",
+        "branch": "test/hf-night-local-scheduler-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "test/hf-night-local-scheduler-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      },
+      {
+        "tree": ".worktrees/admin",
+        "branch": "fix/hf-night-admin-focus-20261025",
+        "baseFalse": 27,
+        "totalFalse": 28,
+        "extras": [
+          "fix/hf-night-admin-focus-20261025"
+        ],
+        "own": true,
+        "preserved": true,
+        "jsonRestUnchanged": true,
+        "workflowUnchanged": true
+      }
+    ]
+  },
+  "firstPublishedGuardAudit": {
+    "observedUtc": "2026-10-25T05:56:02.650Z",
+    "result": "PASS",
+    "checks": [
+      {
+        "pr": 33,
+        "firstPublishedHead": "9a2b757c32f28d2bb5ab505239c175b55fab9f20",
+        "branch": "docs/hf-night-students-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 34,
+        "firstPublishedHead": "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+        "branch": "fix/hf-night-fr015-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 35,
+        "firstPublishedHead": "c7b16383ec62a38a99306b2bf4181356b3e54d4b",
+        "branch": "feat/hf-night-01",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 36,
+        "firstPublishedHead": "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+        "branch": "fix/hf-night-async-focus-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 37,
+        "firstPublishedHead": "2341275eac6c60054be00ef81b0e1a84619225ca",
+        "branch": "test/hf-night-local-scheduler-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 38,
+        "firstPublishedHead": "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed",
+        "branch": "fix/hf-night-admin-focus-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      },
+      {
+        "pr": 39,
+        "firstPublishedHead": "3e0066ab82a415e04342bd751254ee65cf533dfb",
+        "branch": "test/hf-night-baseline-20261025",
+        "ownGuardFalse": true,
+        "otherConfigMatchesBase": true
+      }
+    ],
+    "qaAdditionalObservationUtc": "2026-10-25T06:25:58Z"
+  },
+  "localComposition": {
+    "branch": "test/hf-night-ui-combined-20261025",
+    "codeCommit": "840cd1b6e51d7adc2fd196d177870ff513d5ad87",
+    "scope": "verification only; no merge candidate or new functionality",
+    "sourceHeads": [
+      "daebd71fef7168d4266ea9a6bb7c928ddc295e9b",
+      "ddd4e82477c03507808f03a6858137d72e3ac9cb",
+      "1dbe3d42e6c4865ce0c49021f1cf98929c5a29ed"
+    ],
+    "appAndUiBlobsMatched": 15,
+    "baseFalse": 27,
+    "sourceGuardFalse": 3,
+    "ownGuardFalse": 1,
+    "totalFalse": 31,
+    "githubReviewScope": "Remote Codex covers the exact source PR heads; this composition has local independent verification and no duplicate PR.",
+    "publicationStatus": "PUBLISHED_VERIFICATION_ONLY",
+    "receiptReviewStatus": "PASS",
+    "publicationHead": "456029f7cbbd5bdd22e35f59ee637b8b0c43a2e0",
+    "publicationObservedUtc": "2026-10-25T07:01:28Z",
+    "localReviewer": "/root/students",
+    "localReviewPath": "docs/reports/2026-10-25-hf-night-01/combined/independent-review.md",
+    "localReviewSha256": "7c8af1c3b18c46ce6407a81bac413e79e8aa12f8deecb467593036f50d1078a6"
+  },
+  "reviewResolutionPolicy": "This is an observed snapshot. The final handoff commit cannot embed its own SHA or subsequent review receipt; resolve it via Git path history and the exact HEAD/receipt in PR35 timeline/body. No review result transfers across SHAs.",
+  "vercelDeploymentObservation": {
+    "observedUtc": "2026-10-25T07:10:31Z",
+    "projectId": "prj_DiLVjku1AglHtTXv8ckxg8pBiZR3",
+    "teamId": "team_YqedIK09zOGFeZ8M84kra0oM",
+    "records": [
+      {
+        "branch": "docs/hf-night-students-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "fix/hf-night-fr015-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "feat/hf-night-01",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "fix/hf-night-async-focus-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "test/hf-night-local-scheduler-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "fix/hf-night-admin-focus-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "test/hf-night-baseline-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      },
+      {
+        "branch": "test/hf-night-ui-combined-20261025",
+        "status": "OBSERVED",
+        "paginationCount": 0,
+        "deploymentsReturned": 0
+      }
+    ],
+    "scope": "Bounded read observation, not universal proof of missing hooks or future deployment impossibility."
+  },
+  "baseFinalObserved": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "remoteRefsObservedUtc": "2026-10-25T07:06:15Z"
+}

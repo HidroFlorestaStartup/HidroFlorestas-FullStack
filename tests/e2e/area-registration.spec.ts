@@ -17,11 +17,11 @@ test.beforeEach(async({context})=>{await context.route('https://tile.openstreetm
 test("backend enforces current role, isolation, ownership privacy and account eligibility",async({context},info)=>{
  await login(context,info,1);
  const created=await context.request.post(api,{data:{name:"IMP-003 E2E API",latitude:90,longitude:-180}});expect(created.status()).toBe(201);const {area}=await created.json();
- expect(area.latitude).toBe(90);expect(area.longitude).toBe(-180);expect(Object.keys(area).sort()).toEqual(["id","name","latitude","longitude","municipality","state","landType","description","createdAt","laboratory","readOnly"].sort());
+ expect(area.latitude).toBe(90);expect(area.longitude).toBe(-180);expect(Object.keys(area).sort()).toEqual(["id","name","latitude","longitude","municipality","state","cep","landType","description","createdAt","laboratory","readOnly"].sort());
  expect(created.headers()["cache-control"]).toBe("no-store");
  const db=createAreaFixtureClient(process.env);
  try{
-  const persisted=await db.collectionArea.findUniqueOrThrow({where:{id:area.id}});expect(persisted.userId).toBe(AREA_FIXTURES.userIds[1]);
+  const persisted=await db.collectionArea.findUniqueOrThrow({where:{id:area.id}});expect(persisted.userId).toBe(AREA_FIXTURES.userIds[1]);expect(persisted.cep).toBeNull();
   await login(context,info,2);
   expect((await context.request.get(api)).status()).toBe(200);
   expect((await context.request.post(api,{data:{name:"IMP-003 E2E forbidden",latitude:0,longitude:0}})).status()).toBe(403);

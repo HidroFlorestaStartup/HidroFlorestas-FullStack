@@ -1,0 +1,53 @@
+{
+  "instrument": "hf-local-readiness/v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "startedUtc": "2026-10-25T05:52:11.030Z",
+  "scope": "manual synthetic local investigation, separate from baseline",
+  "result": "FAIL",
+  "cleanup": {
+    "server": "NOT_STARTED",
+    "browser": "NOT_STARTED",
+    "schema": "REMOVED"
+  },
+  "scientificQualifiers": [
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "privateIgnoredArtifact": ".accounts-validation/hf-night-runtime-v3/localappdata/HidroFlorestas/accounts-postgresql/readiness/1792907531475-152ce511/result.json",
+  "sourceSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "functionalFingerprint": "8bb76bf268fd92b7addfbd5b5f48de2e594599b6e366ab320c0a5cd6703a096d",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64",
+    "windowsRelease": "10.0.26200",
+    "availableParallelism": 14,
+    "totalMemoryBytes": 33777467392,
+    "freeMemoryBytes": 15017684992,
+    "serverMode": "Next dev",
+    "postgres": "owned loopback; actual version recorded in serverVersion"
+  },
+  "limits": {
+    "warmups": 10,
+    "measuredRequests": 100,
+    "targetAreas": 100,
+    "targetCollections": 1000,
+    "noiseAreas": 10,
+    "noiseCollections": 100,
+    "cooperativeBudgetMs": 300000,
+    "cleanupBestEffort": true,
+    "readinessDeadlineMs": 60000,
+    "requestTimeoutMs": 10000,
+    "retries": 0,
+    "budgetDefinition": "checked between steps and aborts HTTP; in-flight database/browser work and cleanup can extend the budget",
+    "publicRawSqlOrParameters": false
+  },
+  "serverVersion": "17.10",
+  "failedStage": "fixtures",
+  "errorCode": "TECHNICAL_FAILURE",
+  "cleanupErrors": [],
+  "endedUtc": "2026-10-25T05:52:13.321Z",
+  "durationMs": 2290.9749
+}

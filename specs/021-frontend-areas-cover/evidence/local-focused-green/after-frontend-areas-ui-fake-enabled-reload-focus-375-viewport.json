@@ -1,0 +1,38 @@
+{
+  "name": "ui-fake-enabled-reload-focus-375",
+  "screenshot": {
+    "filename": "after-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 667,
+      "height": 755,
+      "extent": 1968
+    }
+  },
+  "active": {
+    "tag": "button",
+    "x": 32,
+    "y": 671.375,
+    "width": 168.359375,
+    "height": 44
+  },
+  "target": null,
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

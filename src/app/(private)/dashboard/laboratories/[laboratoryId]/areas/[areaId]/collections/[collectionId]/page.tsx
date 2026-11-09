@@ -2,11 +2,13 @@ import { notFound, redirect } from "next/navigation";
 
 import { AuthBoundaryError, requireAuth } from "@/app/api/server/middlewares/auth.middleware";
 import { CollectionServiceError, collectionsService } from "@/app/api/server/services/collections.service";
-import { CollectionDetail } from "@/components/collections/collection-detail";
+import { createCollectionDetailSlots } from "@/components/collections/collection-detail";
+import { CollectionDetailLayout } from "@/components/collections/collection-detail-layout";
 import { ExperimentalDiagnosisSummary } from "@/components/ihfr-diagnosis/experimental-diagnosis-summary";
 import { NoCurrentDiagnosis } from "@/components/ihfr-diagnosis/no-current-diagnosis";
 import { IHFRDiagnosisManagement } from "@/components/ihfr-diagnosis/ihfr-diagnosis-management";
 import { ihfrDiagnosisService } from "@/app/api/server/services/ihfr-diagnosis.service";
+import { readConfirmedEnvironmentalPresence } from "@/app/api/server/collections/collection-environmental-presence.read";
 import { authorizeLaboratoryAccess } from "@/app/api/server/areas/area.authorization";
 
 export default async function CollectionDetailPage({
@@ -16,6 +18,7 @@ export default async function CollectionDetailPage({
 }) {
   let collection;
   let diagnosis;
+  let environmentalConfirmed = false;
   let canManage = false;
   let diagnosisContext: { laboratoryId: string; areaId: string; collectionId: string };
   try {
@@ -24,6 +27,7 @@ export default async function CollectionDetailPage({
     diagnosisContext = { laboratoryId, areaId, collectionId };
     const result = await collectionsService.detail(principal.id, laboratoryId, areaId, collectionId);
     collection = result.collection;
+    environmentalConfirmed = await readConfirmedEnvironmentalPresence(principal.id, { laboratoryId, areaId, collectionId });
     diagnosis = await ihfrDiagnosisService.readCurrent(principal.id, { laboratoryId, areaId, collectionId });
     const access = await authorizeLaboratoryAccess({ id: principal.id }, laboratoryId, "READ_IHFR_DIAGNOSIS");
     canManage = access.status === "ACTIVE" && access.membershipRole !== "MEMBER";
@@ -33,5 +37,8 @@ export default async function CollectionDetailPage({
     if ((error instanceof CollectionServiceError || code === "NOT_FOUND") && code === "NOT_FOUND") notFound();
     throw new Error("Não foi possível carregar a coleta.");
   }
-  return <div className="space-y-6"><CollectionDetail collection={collection} />{canManage ? <IHFRDiagnosisManagement context={diagnosisContext!} initialDiagnosis={diagnosis} /> : diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />}</div>;
+  const detailSlots = createCollectionDetailSlots({ collection, hasConfirmedEnvironmentalData: environmentalConfirmed });
+  return canManage
+    ? <IHFRDiagnosisManagement key={diagnosisContext!.collectionId} context={diagnosisContext!} initialDiagnosis={diagnosis} detailSlots={detailSlots} />
+    : <CollectionDetailLayout {...detailSlots} reading={diagnosis ? <ExperimentalDiagnosisSummary diagnosis={diagnosis} /> : <NoCurrentDiagnosis />} />;
 }

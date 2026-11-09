@@ -1,0 +1,519 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "capturedUtc": "2026-10-10T19:37:12.016011+00:00",
+  "sourcePrompt": {
+    "file": "HidroFlorestas-FullStack/prompt-revisao-focal-pre-homologacao-hidrofloresta.md",
+    "sha256": "3c0cb8b24423d3fad958156625e846ab6e8e83e06f783b3e8e2292010918cb28",
+    "untrackedPreserved": true
+  },
+  "base": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+  "auditBranch": "audit/cri-local-20261010",
+  "recordingHead": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+  "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+  "functionalFiles": 520,
+  "functionalChanges": [],
+  "envExampleExcludedBySnapshotFilter": {
+    "path": ".env.images.example",
+    "sha256": "0fb4dd654ff67df78a5798060e4d95430b168c529518a5deba66ca4c57f67d70",
+    "blankCredentialsVerified": true,
+    "exactIgnoreExceptionVerified": true
+  },
+  "snapshotComparison": {
+    "method": "Invert only the exact env-example negation and four multiframe assertion lines; preserve every other manifest entry; evaluate LF/CRLF only for these two inputs",
+    "target": "7f540ba4160402d710bbe164dbba630a41f80e58c267dc9a46820446e853b8ce",
+    "verified": false,
+    "matches": [],
+    "historicalSourcesNotMutated": true
+  },
+  "gates": [
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:20:06.820Z",
+      "endedUtc": "2026-10-10T19:20:16.611Z",
+      "durationSeconds": 9.791,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Unit-1791660006820.log",
+      "logSha256": "d8c4032b2474cb46f710635105c57e73916e79421724267150a1870b8766b41b",
+      "testCounts": [
+        291,
+        17
+      ],
+      "logHashVerified": true
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:20:17.095Z",
+      "endedUtc": "2026-10-10T19:21:25.273Z",
+      "durationSeconds": 68.178,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Integration-1791660017095.log",
+      "logSha256": "3f1b039af1eac29fead358d583020a113cc05419c9990f1faa5eb6f4b29aeebf",
+      "testCounts": [
+        187
+      ],
+      "logHashVerified": true
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:21:25.717Z",
+      "endedUtc": "2026-10-10T19:21:36.539Z",
+      "durationSeconds": 10.822,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Migration-1791660085717.log",
+      "logSha256": "40ce70fbdfb3907096636a996ef0d2be945e13d7638d64876ecd42ab15c6e568",
+      "testCounts": [
+        37
+      ],
+      "logHashVerified": true
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:21:36.967Z",
+      "endedUtc": "2026-10-10T19:21:39.364Z",
+      "durationSeconds": 2.397,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Contract-1791660096967.log",
+      "logSha256": "eb4afc94a94471f5e1997122c5f93020f4c25ff8d44867ce48b1b8182219b51c",
+      "testCounts": [
+        6
+      ],
+      "logHashVerified": true
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:21:39.815Z",
+      "endedUtc": "2026-10-10T19:21:48.598Z",
+      "durationSeconds": 8.783,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\R1-1791660099815.log",
+      "logSha256": "dd5ab705ef283fc6e7be6c86fe50745d166a076965d7528bd51684b73ad1f173",
+      "testCounts": [
+        17
+      ],
+      "overlap": {
+        "IntegrationPostgreSQL": 14,
+        "UnitMailLocalSMTP": 3
+      },
+      "logHashVerified": true
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:21:49.022Z",
+      "endedUtc": "2026-10-10T19:21:51.124Z",
+      "durationSeconds": 2.102,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Typecheck-1791660109022.log",
+      "logSha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:21:51.554Z",
+      "endedUtc": "2026-10-10T19:21:59.874Z",
+      "durationSeconds": 8.32,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Lint-1791660111554.log",
+      "logSha256": "2b149e9266f8607bda2f857f6722d50b61057c2b6297827080a1cca1a2c5c78f",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:22:00.304Z",
+      "endedUtc": "2026-10-10T19:22:10.649Z",
+      "durationSeconds": 10.345,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Build-1791660120304.log",
+      "logSha256": "c7d0bcfd4adad9bd3eafaed647d0a8c32f4aa699884f8807a7bc8a1d2e117248",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Bootstrap",
+      "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:22:11.065Z",
+      "endedUtc": "2026-10-10T19:22:18.222Z",
+      "durationSeconds": 7.157,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Bootstrap-1791660131065.log",
+      "logSha256": "7d9d4c8eb15bd604d8bd2873c88de47bd95652a9298a9d6ad033e33cb5315b2c",
+      "logHashVerified": true
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:22:18.703Z",
+      "endedUtc": "2026-10-10T19:24:41.930Z",
+      "durationSeconds": 143.227,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\E2E-1791660138703.log",
+      "logSha256": "1869d10ac041330c495b4888978116db652550d4b337034cd3f555342bb091a3",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:24:42.554Z",
+      "endedUtc": "2026-10-10T19:25:10.713Z",
+      "durationSeconds": 28.159,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Https-1791660282554.log",
+      "logSha256": "2ca6d6492348deef65ccc05507e8c02898abd7a58983ae1781215505512ee706",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:25:11.173Z",
+      "endedUtc": "2026-10-10T19:25:20.193Z",
+      "durationSeconds": 9.02,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Deletion-1791660311173.log",
+      "logSha256": "d0d64fb0e02a4246fe30d922c30efaa9674fb2d2af4da8c6381ed8cede1df7c2",
+      "logHashVerified": true
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "head": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:25:20.661Z",
+      "endedUtc": "2026-10-10T19:25:21.112Z",
+      "durationSeconds": 0.451,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\SchemaAudit-1791660320661.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "logHashVerified": true
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "head": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:26:54.781Z",
+      "endedUtc": "2026-10-10T19:27:03.154Z",
+      "durationSeconds": 8.373,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\Lint-1791660414781.log",
+      "logSha256": "5718e11bbc055cdb95b0c23ff0ed6bd469cbee5378519cd3c84bcf4d40ec57bb",
+      "logHashVerified": true
+    },
+    {
+      "gate": "PresetOffline",
+      "command": "node --conditions=react-server --import=tsx scripts/area-cover-preset.ts .accounts-validation/audit-20261010-1916/preset.json",
+      "head": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:27:26.925Z",
+      "endedUtc": "2026-10-10T19:27:27.319Z",
+      "durationSeconds": 0.394,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\PresetOffline-1791660446925.log",
+      "logSha256": "29d3732d955637919dda333e7ef62c9064f09e7716f6dab62d73e1232e598ac7",
+      "logHashVerified": true
+    },
+    {
+      "gate": "CleanupDryRun",
+      "command": "node --conditions=react-server --import=tsx scripts/area-cover-cleanup.ts",
+      "head": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:27:27.771Z",
+      "endedUtc": "2026-10-10T19:27:28.545Z",
+      "durationSeconds": 0.774,
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\CleanupDryRun-1791660447771.log",
+      "logSha256": "3213c9fbd30eb13b43356ce9f08ebdd66df0e472bc4df2d3c587d05d521b7edb",
+      "logHashVerified": true
+    },
+    {
+      "gate": "CleanupDryRunOwned",
+      "command": "node --conditions=react-server --import=tsx .accounts-validation/audit-20261010-1916/cleanup-owned.ts",
+      "head": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:27:58.728Z",
+      "endedUtc": "2026-10-10T19:27:59.612Z",
+      "durationSeconds": 0.884,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\CleanupDryRunOwned-1791660478728.log",
+      "logSha256": "2b402304e17870fa87cbee7723e699b8a62c2a1e0bbf0a65e680a10cce8b9583",
+      "logHashVerified": true
+    },
+    {
+      "gate": "SchemaAudit",
+      "command": "npm run test:ihfr:audit:assert-zero",
+      "head": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "branch": "audit/cri-local-20261010",
+      "snapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "endedSnapshot": "5f36eb7e02e465741c85e5b3706276d9d153417037dce1193f7b03510d6c286d",
+      "startedUtc": "2026-10-10T19:33:28.625Z",
+      "endedUtc": "2026-10-10T19:33:29.056Z",
+      "durationSeconds": 0.431,
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17/synthetic/no-external-provider",
+      "log": ".accounts-validation\\audit-20261010-1916\\SchemaAudit-1791660808625.log",
+      "logSha256": "d5e6b9f687ca2634bfde22fe8d9e49d77c03c114121944a16a8aff428efc80f8",
+      "logHashVerified": true
+    }
+  ],
+  "historicalRecordChecks": [
+    {
+      "path": "specs/014-account-test-runners/validation-evidence.json",
+      "sha256": "5089c8eeb62531cc62516b3f8f05d577f30c18317b2c0994e08c2a6bcc4005c6",
+      "records": 21,
+      "anomalies": []
+    },
+    {
+      "path": "specs/015-environmental-drafts/validation-evidence.json",
+      "sha256": "414c71f49d1f1eaea247d875c5134bfbc25e24cbe8572711da8cbf04e72b738d",
+      "records": 37,
+      "anomalies": []
+    },
+    {
+      "path": "specs/016-area-covers/validation-evidence.json",
+      "sha256": "2d89ddbccd0d1ea6ac82c21a29c8ee3bd76b459422b3ddaedf4b47b9d41f137b",
+      "records": 31,
+      "anomalies": []
+    }
+  ],
+  "chronologicalCommits": [
+    {
+      "sha": "c59a7b6eb1198e20535356934805f0b93d2e99c2",
+      "parents": [
+        "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+      ],
+      "authorDate": "2026-10-10T13:55:03-03:00",
+      "committerDate": "2026-10-10T13:55:03-03:00",
+      "subject": "docs(plans): reconcilia contas e registra evolução autorizada"
+    },
+    {
+      "sha": "6bf9f2ba94698516282e482b690fbe5d812088f5",
+      "parents": [
+        "c59a7b6eb1198e20535356934805f0b93d2e99c2"
+      ],
+      "authorDate": "2026-10-10T13:56:38-03:00",
+      "committerDate": "2026-10-10T13:56:38-03:00",
+      "subject": "docs(specs): planeja correção dos runners de contas"
+    },
+    {
+      "sha": "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+      "parents": [
+        "6bf9f2ba94698516282e482b690fbe5d812088f5"
+      ],
+      "authorDate": "2026-10-10T14:11:20-03:00",
+      "committerDate": "2026-10-10T14:11:20-03:00",
+      "subject": "fix(accounts): corrige runners e checksums locais de migrations"
+    },
+    {
+      "sha": "26f2bd77568fb7be01ae6347e08a4a2796c917a0",
+      "parents": [
+        "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a"
+      ],
+      "authorDate": "2026-10-10T14:11:38-03:00",
+      "committerDate": "2026-10-10T14:11:38-03:00",
+      "subject": "docs(specs): planeja rascunhos pessoais de medições"
+    },
+    {
+      "sha": "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+      "parents": [
+        "26f2bd77568fb7be01ae6347e08a4a2796c917a0"
+      ],
+      "authorDate": "2026-10-10T14:51:50-03:00",
+      "committerDate": "2026-10-10T14:51:50-03:00",
+      "subject": "feat(drafts): salva medições parciais pessoais com consumo transacional"
+    },
+    {
+      "sha": "1ae3ca51ebb0291751a39c1b2f873431ab09da52",
+      "parents": [
+        "45da350c34f873619a81bb5b3022bf97a1d1bc7c"
+      ],
+      "authorDate": "2026-10-10T14:52:17-03:00",
+      "committerDate": "2026-10-10T14:52:17-03:00",
+      "subject": "docs(specs): planeja capas privadas com ownership e reconciliação"
+    },
+    {
+      "sha": "06fcbe005b7198b0708f280d9844f5edc0c7451d",
+      "parents": [
+        "1ae3ca51ebb0291751a39c1b2f873431ab09da52"
+      ],
+      "authorDate": "2026-10-10T15:27:18-03:00",
+      "committerDate": "2026-10-10T15:27:18-03:00",
+      "subject": "feat(images): integra capas privadas com validação e cleanup próprio"
+    },
+    {
+      "sha": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+      "parents": [
+        "06fcbe005b7198b0708f280d9844f5edc0c7451d"
+      ],
+      "authorDate": "2026-10-10T15:32:01-03:00",
+      "committerDate": "2026-10-10T15:32:01-03:00",
+      "subject": "docs(handoff): consolida evidências, commits e pendências da entrega"
+    },
+    {
+      "sha": "497d2e5326ea33232bf9fbd44442162d77f0a86c",
+      "parents": [
+        "41f33db7ca30db3f9d971999c3f8131f4fc188a0"
+      ],
+      "authorDate": "2026-10-10T16:18:48-03:00",
+      "committerDate": "2026-10-10T16:18:48-03:00",
+      "subject": "docs(audit): registra revisão técnica da entrega local"
+    },
+    {
+      "sha": "d8a32d39572785d87744e2b10c87e79ad019ba46",
+      "parents": [
+        "497d2e5326ea33232bf9fbd44442162d77f0a86c"
+      ],
+      "authorDate": "2026-10-10T16:26:52-03:00",
+      "committerDate": "2026-10-10T16:26:52-03:00",
+      "subject": "docs(audit): corrige estados e rastreabilidade das evidências"
+    }
+  ],
+  "branchCheckpoints": [
+    "014-account-test-runners 857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+    "015-environmental-drafts 45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+    "016-area-covers 41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+    "audit/cri-local-20261010 d8a32d39572785d87744e2b10c87e79ad019ba46",
+    "docs/reconciliacao-cri-20261010 c59a7b6eb1198e20535356934805f0b93d2e99c2",
+    "main beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "origin beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "origin/development beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "origin/main beba96fbf6bbaac8771dbb29abea2f9f8f5b0054"
+  ],
+  "limitations": [
+    "No remote operations in audit; refs are cached",
+    "Historical intermediate byte snapshots are not fully reconstructed",
+    "Cloudinary provider and cover UI use separate fake tests; no authorized live upload",
+    "Original FAIL records preserved; no independent subagent review in this audit"
+  ],
+  "changedFiles": [
+    "PROJECT_CONTEXT.md",
+    "docs/code-first-prd/analysis/current-product-state.md",
+    "docs/governance/DOCUMENT_REGISTER.md",
+    "docs/governance/TRACEABILITY_MATRIX.md",
+    "docs/plans/active/contas-rascunhos-imagens/handoff.md",
+    "docs/plans/active/contas-rascunhos-imagens/imagens-de-areas.md",
+    "docs/plans/active/contas-rascunhos-imagens/matriz-de-estado.md",
+    "docs/plans/active/contas-rascunhos-imagens/rascunhos-ambientais.md",
+    "docs/plans/active/contas-rascunhos-imagens/readme.md",
+    "docs/plans/active/reconciliacao-e-evolucao-contas-rascunhos-imagens.md",
+    "docs/reports/audits/2026-10-10-cri-local-manifest.json",
+    "docs/reports/audits/2026-10-10-cri-local-validation.json",
+    "docs/reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md",
+    "specs/014-account-test-runners/implementation-evidence.md",
+    "specs/014-account-test-runners/spec.md",
+    "specs/015-environmental-drafts/implementation-evidence.md",
+    "specs/015-environmental-drafts/spec.md",
+    "specs/016-area-covers/implementation-evidence.md"
+  ],
+  "resourceRestoration": {
+    "initialPostgreSQL": "STOPPED",
+    "finalPostgreSQL": "STOPPED",
+    "restoredUtcMinute": "2026-10-10T19:33Z",
+    "previousDataPreserved": true
+  },
+  "documentationChecks": {
+    "files": 49,
+    "relativeLinks": 223,
+    "missingTargets": [],
+    "caseErrors": [],
+    "missingAnchors": [],
+    "scope": "Full checkout target/case/anchor checks for CRI package, specs014/015/016, changed markdown and new focal report"
+  }
+}

@@ -1,0 +1,29 @@
+﻿{
+    "utc":  "2026-10-25T04:30:37.0842650Z",
+    "baseSha":  "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+    "functionalFingerprint":  "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+    "thirdRunReason":  "correct previous harness attribution and confirm owned fixture cleanup; not loop until green",
+    "tileUrlTarget":  "loopback only",
+    "attribution":  "canonical OpenStreetMap link plus explicit synthetic QA note",
+    "originalFixtureHelper":  "cleanupAreaFixtures",
+    "fixtureBefore":  {
+                          "laboratories":  0,
+                          "memberships":  0,
+                          "users":  0,
+                          "areas":  0
+                      },
+    "fixtureAfter":  {
+                         "laboratories":  0,
+                         "memberships":  0,
+                         "users":  0,
+                         "areas":  0
+                     },
+    "collisionGuard":  "unchanged create-only, no upsert",
+    "admin403":  "full replay FAIL; standalone focal PASS1; repeat10 PASS9 FAIL1; intermittent focus behavior reproduced, root cause inconclusive",
+    "rawPrivateIgnoredLogs":  [
+                                  "21-owned-fixture-cleanup.log",
+                                  "22-admin-403-focal.log"
+                              ],
+    "baselineAssertionsChanged":  false,
+    "automaticRetries":  0
+}

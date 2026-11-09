@@ -1,0 +1,43 @@
+{
+  "name": "list-768",
+  "screenshot": {
+    "filename": "before-frontend-areas-list-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 783,
+      "extent": 783
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 768,
+    "height": 900
+  },
+  "target": {
+    "x": 265,
+    "y": 500.625,
+    "width": 158.5,
+    "height": 53
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

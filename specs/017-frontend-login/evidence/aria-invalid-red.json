@@ -1,0 +1,45 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "phase": "RED before product correction",
+  "planningCommit": "ee9b98f727d3802108f0b6429246fa1066954c53",
+  "command": "./scripts/rc-review-validation.ps1 -Gates E2E",
+  "officialGate": {
+    "gate": "E2E",
+    "command": "npm run test:e2e",
+    "snapshot": "c9ce4a6f7abda7caa17ce9b233d4d5b4f3126a5b7e87ec80191cc6350fe89122",
+    "startedUtc": "2026-10-18T16:18:36.626Z",
+    "endedUtc": "2026-10-18T16:22:05.210Z",
+    "exitCode": 1,
+    "result": "FAIL",
+    "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+    "log": ".accounts-validation/e2e-1792340316626.log",
+    "logSha256": "b46de12aea24837ed17a43167aad77c1f21f8cc30384681dd632609bb62f9176"
+  },
+  "suite": {
+    "passed": 79,
+    "failed": 7,
+    "loginPassed": 7,
+    "loginFailed": 7
+  },
+  "assertions": "All seven failures expected aria-invalid not true, received true.",
+  "preimage": {
+    "phase": "RED-before-fix",
+    "startedUtc": "2026-10-18T16:19:19.883474+00:00",
+    "head": "ee9b98f727d3802108f0b6429246fa1066954c53",
+    "baseline": "acba40d6dbbef10f1307f858f5db59bf819bbbd4",
+    "files": {
+      "src/app/login/page.tsx": {
+        "sha256Lf": "e051a424320b2779690735ba4b74a678b3fbd90927d043ac4b7bdcbf13796cad"
+      },
+      "tests/e2e/frontend-login.spec.ts": {
+        "sha256Lf": "e3545d192c25d7a0299a974b3d7e05de4ec911059a8745aa97a1606b8011c0fe"
+      }
+    }
+  },
+  "failureExcerpt": "aria-invalid-red.log",
+  "notes": [
+    "Product page unchanged from acba40d. Tests exactly match package candidate.",
+    "Official full RC synthetic environment, original guards and fixtures.",
+    "Raw gate log retained outside Git; assertion excerpt published with input value attributes redacted."
+  ]
+}

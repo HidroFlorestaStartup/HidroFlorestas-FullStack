@@ -1,0 +1,13 @@
+IMP-006 schema owned by this run: imp006_test_9cdb38d1922b4033a0eb82c7a24f0e5e
+
+Running 3 tests using 1 worker
+
+(node:37584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:37584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\account-deletion.spec.ts:9:5 › normal account: GET and cancellation preserve access; wrong password, keyboard confirmation, deletion and second-session revocation (2.7s)
+  ok 2 tests\e2e\account-deletion.spec.ts:34:5 › restricted account can delete itself while private workspace remains inaccessible (939ms)
+  ok 3 tests\e2e\account-deletion.spec.ts:42:5 › scientific links and the last active administrator show blockers and offer no destructive form (711ms)
+
+  3 passed (5.3s)

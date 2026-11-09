@@ -1,0 +1,43 @@
+{
+  "name": "ui-fake-cover-enabledfalse-edittrue-imagefalse",
+  "screenshot": {
+    "filename": "after-frontend-areas-ui-fake-cover-enabledfalse-edittrue-imagefalse-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 520,
+      "height": 755,
+      "extent": 1797
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 375,
+    "height": 900
+  },
+  "target": {
+    "x": 16,
+    "y": 177.5625,
+    "width": 343,
+    "height": 529.21875
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

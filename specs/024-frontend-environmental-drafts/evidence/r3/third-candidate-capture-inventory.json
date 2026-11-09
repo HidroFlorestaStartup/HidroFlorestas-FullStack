@@ -1,0 +1,497 @@
+[
+  {
+    "phase": "frontend-collections",
+    "metadata": "0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed-viewport.json",
+    "png": "0d5bac58cfa9-r0-n0-frontend-collections-control-obstructed.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "synthetic-helper-counterproof",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "395f5887fd7e-r0-n0-frontend-collections-capture-order-before-viewport.json",
+    "png": "395f5887fd7e-r0-n0-frontend-collections-capture-order-before.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "synthetic-helper-counterproof",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-375-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-768-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-844-390-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-detail-before-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-1440-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-320-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-320-900-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-375-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-768-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-form-844-390-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-form-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-1440-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-320-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-320-900-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-375-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-768-900-100-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "5533cd23518e-r0-n0-frontend-collections-review-844-390-200-viewport.json",
+    "png": "5533cd23518e-r0-n0-frontend-collections-review-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "6a598a6884bf-r0-n0-frontend-collections-initial-form-viewport.json",
+    "png": "6a598a6884bf-r0-n0-frontend-collections-initial-form.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-collections",
+    "metadata": "6a598a6884bf-r0-n0-frontend-collections-uncertain-result-viewport.json",
+    "png": "6a598a6884bf-r0-n0-frontend-collections-uncertain-result.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-375-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-768-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-draft-844-390-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-draft-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-1440-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-320-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-375-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-768-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-form-844-390-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-form-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-last-field-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-1440-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-1440-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-320-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-320-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-320-900-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-320-900-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-375-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-375-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-768-900-100-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-768-900-100.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200-viewport.json",
+    "png": "18947fae877f-r0-n0-frontend-environmental-review-844-390-200.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "3da452d49d7d-r0-n0-frontend-environmental-confirmed-viewport.json",
+    "png": "3da452d49d7d-r0-n0-frontend-environmental-confirmed.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "3da452d49d7d-r0-n0-frontend-environmental-review-viewport.json",
+    "png": "3da452d49d7d-r0-n0-frontend-environmental-review.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  },
+  {
+    "phase": "frontend-environmental",
+    "metadata": "44adbbd15533-r0-n0-frontend-environmental-invalid-expanded-viewport.json",
+    "png": "44adbbd15533-r0-n0-frontend-environmental-invalid-expanded.png",
+    "head": "ec4b06e4b27059b1077904e0b67fde498c28b053",
+    "kind": "application-viewport",
+    "png_exists": true,
+    "animations": "allow"
+  }
+]

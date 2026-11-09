@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "missionId": "HF-POS-20261021-01",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "agent": "/root/operacao_vercel",
+  "scope": "Read-only resumption verification after loss of local scratch; historical receipts recovered separately without changing their timestamps.",
+  "collection": {
+    "startedUtc": "2026-10-22T14:16:30Z",
+    "endedUtc": "2026-10-22T14:16:33Z"
+  },
+  "result": "PASS",
+  "recovery": {
+    "baseline": "131ade347258c7820c7a89989ab851769197b486",
+    "branch": "review/hf-pos-recovered-operations-20261022",
+    "originalUnpublishedClosingHead": "585e2c3e9c0775ed049f8bfccc4c706de3ec16c4",
+    "originalUnpublishedClosingTree": "9e2aa35d73e3ec657d0262e1d05df55119c0f513",
+    "verificationMethod": "Reconstructed from surviving conversation stores; byte length, SHA-256 and Git blob SHA-1 independently compared with pre-pause closing manifest.",
+    "files": [
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/evidence/operations-final-verification.json",
+        "bytes": 28435,
+        "gitBlob": "b63ea1b9de046be90811b184f22cecdee2935e15",
+        "sha256": "5f7ab4a3b7fb04f38314eebe94adf809629551c6054df841473f3921c4f7b5cc",
+        "matchesExpectedBytesAndHashes": true,
+        "historicalObservationUtc": "2026-10-22T00:26:01Z"
+      },
+      {
+        "path": "docs/releases/2026-10-21-post-consolidation/independent-review.md",
+        "bytes": 20427,
+        "gitBlob": "c01971d133ebf84cc93de1b9608fc925808fc07a",
+        "sha256": "f5a4aa95f8a08e6a2fc8e40561bc9c0b6dc52a2fb1fa7959bbad1601870bce55",
+        "matchesExpectedBytesAndHashes": true,
+        "historicalEvidencePreserved": true
+      }
+    ],
+    "oldLocalCommitIdsAreNotNewRemoteCommits": true
+  },
+  "github": {
+    "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+    "refs": [
+      {
+        "ref": "refs/heads/main",
+        "sha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+        "matchesPreviousObservation": true
+      },
+      {
+        "ref": "refs/heads/development",
+        "sha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+        "matchesPreviousObservation": true
+      },
+      {
+        "ref": "refs/heads/docs/handoff-pos-consolidacao-20261021",
+        "sha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093",
+        "matchesPreviousObservation": true
+      },
+      {
+        "ref": "refs/heads/docs/pilot-readiness-20261021",
+        "sha": "131ade347258c7820c7a89989ab851769197b486",
+        "matchesPreviousObservation": true
+      }
+    ],
+    "pullRequests": [
+      {
+        "number": 26,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/26",
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "base": "development",
+        "baseSha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+        "head": "docs/handoff-pos-consolidacao-20261021",
+        "headSha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093"
+      },
+      {
+        "number": 27,
+        "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/27",
+        "state": "open",
+        "merged": false,
+        "draft": false,
+        "base": "development",
+        "baseSha": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+        "head": "docs/pilot-readiness-20261021",
+        "headSha": "131ade347258c7820c7a89989ab851769197b486"
+      }
+    ],
+    "publishedHeadAtObservation": "131ade347258c7820c7a89989ab851769197b486",
+    "laterDocumentaryHead": "NOT_YET_PUBLISHED_AT_OBSERVATION"
+  },
+  "vercel": {
+    "project": {
+      "id": "prj_DiLVjku1AglHtTXv8ckxg8pBiZR3",
+      "name": "hidro-florestas-full-stack",
+      "teamId": "team_YqedIK09zOGFeZ8M84kra0oM",
+      "nodeVersion": "24.x",
+      "ssoProtection": {
+        "enabled": true,
+        "deploymentType": "all_except_custom_domains"
+      },
+      "passwordProtectionEnabled": false,
+      "updatedAt": 1792559909754,
+      "latestDeployment": {
+        "id": "dpl_D6LnRpT5xEMJVDRmxYKx2R5EvVji",
+        "url": "hidro-florestas-full-stack-oiqm9fv8f-hidrofloresta-8598.vercel.app",
+        "state": "READY",
+        "target": null,
+        "createdAt": 1792611062081,
+        "gitSha": null,
+        "gitRef": null
+      }
+    },
+    "rc": {
+      "id": "dpl_FZkyCyfvzLVQFG5W9sVCd34ipcdj",
+      "url": "hidro-florestas-full-stack-iuurq9rcv-hidrofloresta-8598.vercel.app",
+      "state": "READY",
+      "target": null,
+      "createdAt": 1792590762616,
+      "gitSha": "5f6266b48d0f9d33571009c0c3981065630bd21e",
+      "gitRef": "development"
+    },
+    "production": {
+      "id": "dpl_FEPNkC3Rg52iaBk8hs1TtutPXJoA",
+      "url": "hidro-florestas-full-stack-34bh8nx2i-hidrofloresta-8598.vercel.app",
+      "state": "READY",
+      "target": "production",
+      "createdAt": 1792559851666,
+      "gitSha": "1ea3cc2552c244e1004f4f733f838e0f9ea62993",
+      "gitRef": "development"
+    },
+    "latestProduction": {
+      "pagination": {
+        "count": 1,
+        "next": 1792559851666,
+        "prev": 1792559851666
+      },
+      "deployments": [
+        {
+          "id": "dpl_FEPNkC3Rg52iaBk8hs1TtutPXJoA",
+          "url": "hidro-florestas-full-stack-34bh8nx2i-hidrofloresta-8598.vercel.app",
+          "state": "READY",
+          "target": "production",
+          "createdAt": 1792559851666,
+          "gitSha": "1ea3cc2552c244e1004f4f733f838e0f9ea62993",
+          "gitRef": "development"
+        }
+      ]
+    },
+    "branchDeployments": {
+      "branch": "docs/pilot-readiness-20261021",
+      "pagination": {
+        "count": 0
+      },
+      "deployments": []
+    },
+    "latestProjectDeployment": {
+      "id": "dpl_D6LnRpT5xEMJVDRmxYKx2R5EvVji",
+      "url": "hidro-florestas-full-stack-oiqm9fv8f-hidrofloresta-8598.vercel.app",
+      "state": "READY",
+      "target": null,
+      "createdAt": 1792611062081,
+      "gitSha": "f85077a6f0c229ea08fd4ce85c80a92c67c48093",
+      "gitRef": "docs/handoff-pos-consolidacao-20261021"
+    },
+    "observedInvariants": {
+      "ssoMetadataUnchanged": true,
+      "rcIdAndShaUnchanged": true,
+      "productionIdAndShaUnchanged": true,
+      "latestProductionUnchanged": true,
+      "noDeploymentForDeliveryBranch": true
+    },
+    "environment": {
+      "reasonForQuery": "The prior observation was more than thirteen hours old; current operational absence claims required fresh metadata.",
+      "decryptRequested": false,
+      "valuesReadOrPublished": false,
+      "entryCount": 11,
+      "uniqueNames": [
+        "DATABASE_URL",
+        "JWT_SECRET",
+        "NEXT_PUBLIC_MAP_ATTRIBUTION",
+        "NEXT_PUBLIC_MAP_TILE_URL",
+        "ROOT_PASSWORD"
+      ],
+      "metadataIncludingIdsTargetsTypesAndTimestampsMatchesPriorReceipt": true,
+      "hiddenProductionEnvCount": 0,
+      "entries": [
+        {
+          "id": "Qop12cGHdoLWjj6M",
+          "key": "NEXT_PUBLIC_MAP_ATTRIBUTION",
+          "target": [
+            "production",
+            "preview",
+            "development"
+          ],
+          "type": "encrypted",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442348378,
+          "updatedAt": 1791442373464
+        },
+        {
+          "id": "iiMJG07MCHJOw39b",
+          "key": "NEXT_PUBLIC_MAP_TILE_URL",
+          "target": [
+            "development",
+            "preview",
+            "production"
+          ],
+          "type": "encrypted",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442310274,
+          "updatedAt": 1791442310274
+        },
+        {
+          "id": "PvNlvQBv117UHpzJ",
+          "key": "DATABASE_URL",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "e1U58cXtdsToarEG",
+          "key": "DATABASE_URL",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "IZjBKjDWrbtOAhkA",
+          "key": "DATABASE_URL",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "dKyOEJj53JDJbXkD",
+          "key": "JWT_SECRET",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "8K2NFeDyLcnGafIc",
+          "key": "JWT_SECRET",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "rGztL7wvjHv59OOL",
+          "key": "JWT_SECRET",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "vs8gNBodsr6M1BxB",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "production"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "skAH06yMFASxrOcK",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "preview"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        },
+        {
+          "id": "YH6bUi9lC0Aev1Zi",
+          "key": "ROOT_PASSWORD",
+          "target": [
+            "development"
+          ],
+          "type": "sensitive",
+          "gitBranch": null,
+          "customEnvironmentIds": [],
+          "createdAt": 1791442235548,
+          "updatedAt": 1791442235548
+        }
+      ],
+      "coreOperationalNamesStillAbsent": [
+        "APP_PUBLIC_URL",
+        "SMTP_HOST",
+        "SMTP_PORT",
+        "SMTP_SECURE",
+        "SMTP_REQUIRE_TLS",
+        "SMTP_USER",
+        "SMTP_APP_PASSWORD",
+        "MAIL_FROM",
+        "MAIL_PAYLOAD_ENCRYPTION_KEYS",
+        "MAIL_PAYLOAD_ACTIVE_KEY_ID",
+        "MAIL_IDEMPOTENCY_KEY",
+        "MAIL_WORKER_SECRET",
+        "ACCOUNT_PROOF_KEYS",
+        "ACCOUNT_PROOF_ACTIVE_KEY_ID",
+        "ACCOUNT_REQUEST_KEY",
+        "ACCOUNT_POLICY_ENABLED",
+        "ACCOUNT_TRUSTED_INGRESS",
+        "ACCOUNT_TESTER_ALLOWLIST"
+      ],
+      "secretEqualityOrDatabaseIsolationVerified": false
+    }
+  },
+  "validation": {
+    "historicalByteRecovery": "PASS",
+    "currentRefsAndVercelMetadata": "PASS",
+    "G3": "BLOCKED",
+    "G4": "BLOCKED",
+    "G5": "BLOCKED",
+    "newDocumentaryHeadFunctionalCi": "NOT_RUN",
+    "newDocumentaryHeadChecks": "NOT_RUN",
+    "newDocumentaryHeadCodex": "NOT_RUN",
+    "priorCiAttribution": "Run 39699435699 attempt 1 and its 15-gate PASS remain exclusively attributed to 131ade347258c7820c7a89989ab851769197b486; historical proof is not a new functional execution.",
+    "docsOnlyPolicy": "Only documentation/receipts may be added under the closing policy. Validate scope, JSON, links, hashes, history, remote tree and actual checks of the new head; request and read its own Codex review. A skip marker never waives a required check."
+  },
+  "readOnly": {
+    "githubWrites": 0,
+    "vercelMutations": 0,
+    "deploymentsCreated": 0,
+    "environmentValuesDecrypted": 0,
+    "smokeRequests": 0,
+    "hostedDatabaseOperations": 0,
+    "functionalSuitesExecuted": 0,
+    "emailSentByThisAgent": 0
+  },
+  "toolSources": [
+    "mcp__codex_apps__github_fetch",
+    "mcp__codex_apps__github_get_pr_info",
+    "mcp__codex_apps__vercel_get_project",
+    "mcp__codex_apps__vercel_get_deployment",
+    "mcp__codex_apps__vercel_list_deployments",
+    "mcp__codex_apps__vercel_filter_project_envs",
+    "git hash-object and local SHA-256/size verification"
+  ],
+  "limits": [
+    "Current absence of branch deployments is a timestamped observation, not a guarantee about future external activity.",
+    "SSO was checked through project metadata; runtime/application authentication and HTTP smoke were not repeated.",
+    "No inference about secret equality, database identities or isolation is made from variable metadata.",
+    "Historical visual/test observations retain their original dates; recovery from matching bytes does not mean a second inspection or execution.",
+    "Recovered backend/frontend deliverables and the final documentary publication remain subject to their separate provenance and scope checks."
+  ]
+}

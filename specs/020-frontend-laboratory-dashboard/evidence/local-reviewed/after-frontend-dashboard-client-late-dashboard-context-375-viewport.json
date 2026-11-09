@@ -1,0 +1,38 @@
+{
+  "name": "client-late-dashboard-context-375",
+  "screenshot": {
+    "filename": "after-frontend-dashboard-client-late-dashboard-context-375-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 755,
+      "extent": 1299
+    }
+  },
+  "target": {
+    "kind": "active element",
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 375,
+    "height": 900
+  },
+  "scrolling": "Preserved viewport after focus/navigation; no screenshot scrolling"
+}

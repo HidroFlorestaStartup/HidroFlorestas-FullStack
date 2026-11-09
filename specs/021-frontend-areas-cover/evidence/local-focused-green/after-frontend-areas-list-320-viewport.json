@@ -1,0 +1,43 @@
+{
+  "name": "list-320",
+  "screenshot": {
+    "filename": "after-frontend-areas-list-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 968,
+      "height": 724,
+      "extent": 2166
+    }
+  },
+  "active": {
+    "tag": "body",
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 900
+  },
+  "target": {
+    "x": 33,
+    "y": 597.75,
+    "width": 220.875,
+    "height": 105
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

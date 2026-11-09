@@ -1,0 +1,457 @@
+{
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "testFile": "tests/e2e/frontend-landing.spec.ts",
+  "testFileSha256": "e87120de0e9f608a72e2e7013d00c6ec0a91c8d3d778d0bfa1eb989cf815ee7a",
+  "runner": "local diagnostic, original tests and assertions; no database; not official 15-gate runner",
+  "node": "24.19.0",
+  "playwright": "1.55.1",
+  "chromium": "140.0.7339.186",
+  "stats": {
+    "startTime": "2026-10-21T23:59:56.392Z",
+    "duration": 14010.151000000002,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "imagesOpened": 21,
+  "files": [
+    {
+      "path": "executed-config.cjs.txt",
+      "sha256": "83be1843caec6c2c9fee5b31dd1df8ac13e990be7835a0d9e933ede42afc0076",
+      "bytes": 1019
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-hero-viewport.json",
+      "sha256": "757e4493a39ff76a6c89401ff6e689257366536315136126fd62e5a13574cfce",
+      "bytes": 452,
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "documentWidth": 1440,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-hero.png",
+      "sha256": "567fe2d0e88a8607e6b967683ba47d925b7c4684f2fe5c46b27167920a3d6a52",
+      "bytes": 131117,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-ihfr-end-viewport.json",
+      "sha256": "d7887f9d57330edaf1a3c9fe1e7531d5749526035b94a184107c615fc886b9d7",
+      "bytes": 455,
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "documentWidth": 1440,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-ihfr-end.png",
+      "sha256": "83df5c26d0286193884f01778f529893af1550e6c6b282b8b2febc8d89252be7",
+      "bytes": 114736,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-ihfr-start-viewport.json",
+      "sha256": "42bfd3f94ed7bcfcc5ec3e98bd4195a7a0d36acb52b2e006bf4d4cda38a5cc28",
+      "bytes": 454,
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "documentWidth": 1440,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-1440x1000-text100-ihfr-start.png",
+      "sha256": "2fe6094456997a73965a4386ff97653a429722dbe0a1db49c47ae2064f837ce5",
+      "bytes": 103680,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text100-hero-viewport.json",
+      "sha256": "87f72d380f759ddff4aaa6d51b21bb8b4c1b3ec1a94e1317334a9d9defb77e70",
+      "bytes": 449,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text100-hero.png",
+      "sha256": "3546d6f09c0ed2556014571e74688871b3670c2858b84321a8ddc24668876091",
+      "bytes": 42700,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text100-ihfr-end-viewport.json",
+      "sha256": "7d523f5602fba44d45fb408565a79be77eb9bf86a8e72d3cf150152baa19c66d",
+      "bytes": 452,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text100-ihfr-end.png",
+      "sha256": "5933710b5288768d14d884a9046c84562fce2bb2dc2365d55d1698eb930c831e",
+      "bytes": 46508,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text100-ihfr-start-viewport.json",
+      "sha256": "c72eb7096eaa583791a3c9876fa617e924957fa285620f4f25c75fd3b39d3715",
+      "bytes": 452,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text100-ihfr-start.png",
+      "sha256": "ad5080a52325b4acd2345ff54a8e9d0285bd75bfca83052c8eff046217b337bd",
+      "bytes": 45735,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text200-hero-viewport.json",
+      "sha256": "fb85b61ec73b24629c7d5fdf23bf2935b95568ef5b62ca58c3e91e566de539bc",
+      "bytes": 449,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 32,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text200-hero.png",
+      "sha256": "805bf665b978eed0e05e237669a395be0ea2a7171d2904f78df6883c468887bc",
+      "bytes": 39454,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-end-viewport.json",
+      "sha256": "4d8903f53c28b86a12e3d3d8355108f1046c5becac5a0b5931cf0d6a8e0b5a8d",
+      "bytes": 452,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 32,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-end.png",
+      "sha256": "98e417a0c9bfc38c10eccc69ad1564a97d3caf3541d02041f3b003e8d77f7b4f",
+      "bytes": 39290,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-heading-viewport.json",
+      "sha256": "a3c2db237dd004f8522e1670491e96c75e7ce5b1a2ec58f34944a76a5199a0ae",
+      "bytes": 452,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 32,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-heading.png",
+      "sha256": "55601f34a4e1282e3011af0fa1e8eecc01b8b2ba8c541c8713c4cbfbd52bf29d",
+      "bytes": 39277,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-start-viewport.json",
+      "sha256": "99ddbd781169f0114798f5adc84d50f3736b9cc832aa61f4f35e5e15f57cf178",
+      "bytes": 452,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 32,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text200-ihfr-start.png",
+      "sha256": "58a3231d99c7dea71163432614a6bfa1109160dbcba627e1db04e911f193fddc",
+      "bytes": 39612,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-320x812-text200-team-viewport.json",
+      "sha256": "542718d89ffb47003a3118cac7f5157027ef86019e71b51a4852984a8892e31d",
+      "bytes": 453,
+      "viewport": {
+        "width": 320,
+        "height": 812,
+        "documentWidth": 320,
+        "rootFontSizePx": 32,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-320x812-text200-team.png",
+      "sha256": "ba9787bf5bda4d6c1aa9ead0032b51808d8a1fc90b459849c2b44ab199396985",
+      "bytes": 38577,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-375x812-text100-hero-viewport.json",
+      "sha256": "8597214efa8d432dfa1f0abe521bc9f894310a2de1058996b6a4aaaf4428c834",
+      "bytes": 449,
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "documentWidth": 375,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-375x812-text100-hero.png",
+      "sha256": "87eb40f4eb0e31e74dcc7caac43fe7256951db33a3f9d6fc97c8fd4a7a63524a",
+      "bytes": 46255,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-375x812-text100-ihfr-end-viewport.json",
+      "sha256": "42223c2c8218afb961ff6f5390fab5e73c5fd5c62164ac09da2c608d3e45b7a2",
+      "bytes": 452,
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "documentWidth": 375,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-375x812-text100-ihfr-end.png",
+      "sha256": "480315d5354e9692964a2494898952ce08125ed56ab71694b8745fbae6fc187d",
+      "bytes": 50147,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-375x812-text100-ihfr-start-viewport.json",
+      "sha256": "fdc3fdab18630e9c2715c7d46334e271bfae856c43285b0b8b1abb8f42a5a092",
+      "bytes": 452,
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "documentWidth": 375,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-375x812-text100-ihfr-start.png",
+      "sha256": "8fc37fb3cd3952e800d15429937802333a902cd02b1fb27a0327edecebf5f7a3",
+      "bytes": 51108,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-hero-viewport.json",
+      "sha256": "12dfbeba31335c8469353a22c39394b402b628bc0defea421a2644ae641c5d9f",
+      "bytes": 450,
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "documentWidth": 768,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-hero.png",
+      "sha256": "f648245c9b577dc8cd9b608a7c24da44275a7e1b58c7c2dff626190671a80bcb",
+      "bytes": 97892,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-ihfr-end-viewport.json",
+      "sha256": "9d63162a7e16e57ed2238d75de82b43a7f4a2d989c5dcc6cf13098c7ec8b3255",
+      "bytes": 453,
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "documentWidth": 768,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-ihfr-end.png",
+      "sha256": "8b8a371ce5626e502a1af820b094274eaaccfb59bf09063581197f03e43e0e07",
+      "bytes": 73161,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-ihfr-start-viewport.json",
+      "sha256": "da8865d9e0a29c02a45319dc4826a7ec0491785306f6c4129938734e19af8480",
+      "bytes": 453,
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "documentWidth": 768,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-768x1024-text100-ihfr-start.png",
+      "sha256": "11e4320ab6f6e1f0ef1791180e00e936063c67d7ee09293c0604f5d97a77fc72",
+      "bytes": 78892,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-812x375-text100-hero-viewport.json",
+      "sha256": "c5f10456a6d9f90d38b4cba226884d07e6e6dd93e4d5aa9327ef4b8dea7e39b8",
+      "bytes": 449,
+      "viewport": {
+        "width": 812,
+        "height": 375,
+        "documentWidth": 812,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-812x375-text100-hero.png",
+      "sha256": "3454d33c5fe05fd5a09723eb06193f3c6a079b39588ea0ef112599d18f6a8c6c",
+      "bytes": 38645,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-812x375-text100-ihfr-end-viewport.json",
+      "sha256": "b52d7d5206ec6ae517895ab068e4b54ebb9967361a8458d2b283881cab56ec45",
+      "bytes": 452,
+      "viewport": {
+        "width": 812,
+        "height": 375,
+        "documentWidth": 812,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-812x375-text100-ihfr-end.png",
+      "sha256": "f8ff6b755b1fa80f545f95a461b8c4f7437ef7e8ffb4cc055de331d9e65f14d7",
+      "bytes": 19356,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-812x375-text100-ihfr-start-viewport.json",
+      "sha256": "98a364a31c17fcaf6e561f7efa52cd94b060d8133c5084d6b9ceaeeb27f2cbaa",
+      "bytes": 452,
+      "viewport": {
+        "width": 812,
+        "height": 375,
+        "documentWidth": 812,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-812x375-text100-ihfr-start.png",
+      "sha256": "77bcc351d8bd4fc310cc02f60333d3cc3b9ae3866d939f2224bd1ac106a27446",
+      "bytes": 29180,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "frontend-landing-keyboard-skip-viewport.json",
+      "sha256": "80a7d5d68bbb2939b6caf5608b98dd4c5178234c8ec4e08377a47561351c9360",
+      "bytes": 446,
+      "viewport": {
+        "width": 375,
+        "height": 812,
+        "documentWidth": 375,
+        "rootFontSizePx": 16,
+        "fullPage": false,
+        "head": "b1f83cfa8e52dd25c6246c584a576553c5e9e131"
+      }
+    },
+    {
+      "path": "frontend-landing-keyboard-skip.png",
+      "sha256": "89dec53b58f6d3620bebef1a52467432fa99e583612436bf81da3368f97138be",
+      "bytes": 39606,
+      "inspection": "OPENED_ORIGINAL_NO_NEW_P1_P2",
+      "note": "Next dev indicator preserved; not treated as application defect."
+    },
+    {
+      "path": "playwright-results.json",
+      "sha256": "bdab1b8f7e7721cfc2649d37cb716b4cdfa66c8481c3867b11c5a8dd91eb4f77",
+      "bytes": 2599
+    }
+  ],
+  "redaction": {
+    "report": "Closed allowlist projection; no config/env/stdout/stderr/attachments/arbitrary metadata.",
+    "runnerSnapshot": "Absolute checkout and scratch paths normalized; source template only, no environment values.",
+    "rawReportCommitted": false,
+    "rawReportPublished": false,
+    "independentReviewFinding": "P1 resolved before first commit: raw Playwright JSON included inherited process environment."
+  }
+}

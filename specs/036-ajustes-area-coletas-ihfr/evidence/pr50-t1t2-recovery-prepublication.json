@@ -1,0 +1,345 @@
+{
+  "schema": "hf-ui044-pr50-t1t2-recovery-prepublication-v1",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "state": "PREPUBLICATION_QA_NO_MATERIAL_FINDINGS_HOSTED_PENDING",
+  "date": "2026-11-02",
+  "baseline": {
+    "sha": "9a90e9593d45fe7af89d6e37e39a088b69957c13",
+    "tree": "47cedfae6c403bc286948bc76df3fe29f33da988",
+    "branch": "fix/hf-ui044-ui06-b-residual-20261101",
+    "basePr49": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73"
+  },
+  "ownership": {
+    "t2": "/root/t2_reload",
+    "coordinator": "root",
+    "ciReadOnly": "/root/ci_audit",
+    "independentQa": "/root/qa_independent",
+    "domainSpecOnlyWriter": "root",
+    "t1": "/root/t1_focus"
+  },
+  "t1": {
+    "qualification": "Last enabled control in observed state, not universal last node. Following IHFR form can be disabled while queries are fetching. Native sequence, Enter, Back, Forward and reverse confirmed.",
+    "cases": [
+      {
+        "id": "domain-keyboard-history-1440",
+        "oldContract": "FAIL",
+        "newContract": "PASS",
+        "effectiveControlCount": 14,
+        "lastEnabledBeforeTab": "Registrar medições",
+        "afterTab": "BODY",
+        "afterTabLabel": "Protótipo · dados sintéticos DemonstraçãoPular para o conteúdoHIDROFLORESTASHF UI06 domain synthetic",
+        "documentHasFocusAfterTab": false,
+        "afterReverse": "Registrar medições",
+        "assessment": {
+          "pass": true,
+          "kind": "NATIVE_DOCUMENT_BOUNDARY_AND_REVERSE_CONFIRMED",
+          "reason": null
+        }
+      },
+      {
+        "id": "domain-keyboard-history-390",
+        "oldContract": "PASS",
+        "newContract": "PASS",
+        "effectiveControlCount": 13,
+        "lastEnabledBeforeTab": "Sair",
+        "afterTab": "A",
+        "afterTabLabel": "Resumo",
+        "documentHasFocusAfterTab": true,
+        "afterReverse": "Registrar medições",
+        "assessment": {
+          "pass": true,
+          "kind": "NEXT_NATIVE_CONTROL_AND_REVERSE_CONFIRMED",
+          "reason": null
+        }
+      }
+    ],
+    "fullstack": "Original Tab and activeElement !== BODY requirement retained",
+    "referenceCapture": "After native Shift+Tab return; source focus phases explicitly NON_EQUIVALENT",
+    "state": "QA_T1_CAUSE_PROVEN"
+  },
+  "t2": {
+    "state": "QA_T2_CAUSE_PROVEN",
+    "budgetBasis": "Four slow reads4*1600 + React Query retry backoff1000+2000+4000 + session read1600 + hydration margin2000 =17000ms",
+    "fullstackRegionAssertionPreserved": true,
+    "cases": [
+      {
+        "scenario": "normal",
+        "oldAssertion": "FAIL",
+        "terminal": {
+          "state": "RESOURCE_NOT_FOUND",
+          "elapsedMs": 9024,
+          "timeoutMs": 17000,
+          "transitions": [
+            {
+              "elapsedMs": 0,
+              "state": "UNOBSERVED",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/a5d2afbb-0252-49fe-9932-c210e580d2ca/areas/b593960c-8655-472a-8230-deb043626b4a/collections/3e132cab-fe21-4fdf-b8ae-c13d2aca1330"
+            },
+            {
+              "elapsedMs": 599,
+              "state": "INITIAL_LOADING",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/a5d2afbb-0252-49fe-9932-c210e580d2ca/areas/b593960c-8655-472a-8230-deb043626b4a/collections/3e132cab-fe21-4fdf-b8ae-c13d2aca1330"
+            },
+            {
+              "elapsedMs": 9024,
+              "state": "RESOURCE_NOT_FOUND",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/a5d2afbb-0252-49fe-9932-c210e580d2ca/areas/b593960c-8655-472a-8230-deb043626b4a/collections/3e132cab-fe21-4fdf-b8ae-c13d2aca1330"
+            }
+          ]
+        },
+        "beforeFontPx": 32,
+        "afterDclFontPx": 16
+      },
+      {
+        "scenario": "slow",
+        "oldAssertion": "FAIL",
+        "terminal": {
+          "state": "RESOURCE_NOT_FOUND",
+          "elapsedMs": 15241,
+          "timeoutMs": 17000,
+          "transitions": [
+            {
+              "elapsedMs": 0,
+              "state": "UNOBSERVED",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/81d6535b-a14e-4f84-91f9-66674f04074f/areas/2e516df8-782a-42f0-a7d6-ea85e1954599/collections/50e7dc00-3429-4242-b7d2-f444b5670710"
+            },
+            {
+              "elapsedMs": 1818,
+              "state": "INITIAL_LOADING",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/81d6535b-a14e-4f84-91f9-66674f04074f/areas/2e516df8-782a-42f0-a7d6-ea85e1954599/collections/50e7dc00-3429-4242-b7d2-f444b5670710"
+            },
+            {
+              "elapsedMs": 15241,
+              "state": "RESOURCE_NOT_FOUND",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/81d6535b-a14e-4f84-91f9-66674f04074f/areas/2e516df8-782a-42f0-a7d6-ea85e1954599/collections/50e7dc00-3429-4242-b7d2-f444b5670710"
+            }
+          ]
+        },
+        "beforeFontPx": 32,
+        "afterDclFontPx": 16
+      },
+      {
+        "scenario": "error500",
+        "oldAssertion": "FAIL",
+        "terminal": {
+          "state": "OTHER_TERMINAL_STATE",
+          "elapsedMs": 9007,
+          "timeoutMs": 17000,
+          "transitions": [
+            {
+              "elapsedMs": 0,
+              "state": "UNOBSERVED",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/83e47ef7-2a4c-45c5-8f12-ee8ddd9211d9/areas/9853ea0d-dcdd-4350-bc91-43c70257eeb6/collections/731eeca2-c282-47ba-94a8-895ceb72f603"
+            },
+            {
+              "elapsedMs": 578,
+              "state": "INITIAL_LOADING",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/83e47ef7-2a4c-45c5-8f12-ee8ddd9211d9/areas/9853ea0d-dcdd-4350-bc91-43c70257eeb6/collections/731eeca2-c282-47ba-94a8-895ceb72f603"
+            },
+            {
+              "elapsedMs": 9007,
+              "state": "OTHER_TERMINAL_STATE",
+              "rootFontPx": 16,
+              "path": "/dashboard/laboratories/83e47ef7-2a4c-45c5-8f12-ee8ddd9211d9/areas/9853ea0d-dcdd-4350-bc91-43c70257eeb6/collections/731eeca2-c282-47ba-94a8-895ceb72f603"
+            }
+          ]
+        },
+        "beforeFontPx": 32,
+        "afterDclFontPx": 16
+      }
+    ],
+    "terminalBudgetMs": 17000,
+    "reinstrumentationFontPx": 32,
+    "reseedAfterReload": false
+  },
+  "localChecks": {
+    "fullTypecheck": "PASS",
+    "ciAndRunnerGuards": 21,
+    "focalTypecheck": "PASS",
+    "repositoryLint": "PASS_0_ERRORS_2_PREEXISTING_WARNINGS",
+    "staticPr50Contract": "PASS",
+    "t1Chromium": 18,
+    "specKitPrerequisites": "PASS_036",
+    "unchangedQaChromium": 70,
+    "fullstackRuntimeLocal": "NOT_RUN_HOSTED_SYNTHETIC_GUARD_NOT_SPOOFED",
+    "lintScratchAttempt": "STOPPED_OWNED_PROCESS_AFTER_SCANNING_GENERATED_DEPENDENCY_CACHE",
+    "hooks": "NONE",
+    "t2Chromium": 14,
+    "checklists036": "NONE",
+    "focalLint": "PASS",
+    "officialDiscovery": "NOT_RUN_AUTH_FIXTURE_GUARD_TEST_DATABASE_CONFIRMATION_REQUIRED",
+    "repositoryLintCommand": "eslint . --ignore-pattern '.accounts-validation/**'",
+    "distinctTestsPass": 141,
+    "presentationAndUi037": 18
+  },
+  "runtime": {
+    "node": "v24.14.0",
+    "starterSha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "providers": "NONE",
+    "bun": "1.3.11",
+    "copyQualifications": "routeTree generated only line endings; one Unicode document not materialized by tar; adapter/routes/lockfile content preserved",
+    "starterTree": "7620e01ca64cd218f55f789b447a3121e44ea815",
+    "githubActionsContextFaked": false,
+    "chromium": "153.0.8010.12",
+    "database": "NONE",
+    "sourceOriginal": "READ_ONLY_CLEAN"
+  },
+  "invariants": {
+    "sharedAndDomainFixtures": "UNCHANGED",
+    "workflowsAndGuards": "UNCHANGED",
+    "preview": false,
+    "A86": "UNCHANGED_BLOBS",
+    "starterOriginal": "UNCHANGED",
+    "matrixIds": 75,
+    "ui037": "UNCHANGED_BLOBS",
+    "historicalPairs73": "PRESERVED_NOT_RECOUNTED_AS_NEW_SHA",
+    "historicalFullstack75": "PRESERVED_NOT_RECOUNTED_AS_NEW_SHA",
+    "product": "UNCHANGED",
+    "scienceSchemaMigrations": "UNCHANGED",
+    "mainC": "UNCHANGED_C7B023F"
+  },
+  "qaFiles": [
+    {
+      "path": "qa/hf-ui044/domain.spec.ts",
+      "sha256": "067c303b24412ffeea6ca32135c122174d4c5260faff4a23c0c8f9c6bff929b5",
+      "bytes": 34633
+    },
+    {
+      "path": "qa/hf-ui044/t1-focus.ts",
+      "sha256": "1c2853a388a491293a3df4011faaeb0aef72a2c494a72b2fbb63b01afa8f0d02",
+      "bytes": 8230
+    },
+    {
+      "path": "qa/hf-ui044/t1-focus-browser.test.mjs",
+      "sha256": "536b62827caf1873f344f07e9ae65348089073beef3129e5c031ae68fb9c8397",
+      "bytes": 8448
+    },
+    {
+      "path": "qa/hf-ui044/t2-reload.ts",
+      "sha256": "274c900ee6bb838db2908936737a707d061d15dd6255c9b4e86f753ffde62375",
+      "bytes": 3645
+    },
+    {
+      "path": "qa/hf-ui044/t2-reload-browser.test.mjs",
+      "sha256": "d695b9a304d77f830371b5e92d5c76539c4a70606c321d52a61405280747ac17",
+      "bytes": 5361
+    }
+  ],
+  "localEvidence": [
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t1/handoff.json",
+      "sha256": "faf7b5febc0c2c817197137cbdf33627228ffaa829be47981c3690aea0be2487",
+      "bytes": 8461
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t1/actual-starter-focus-complete.json",
+      "sha256": "c585367a2d91fdbb82bfc076f067de8f8927444ed2bd80c3810fc254d76baaf2",
+      "bytes": 393663
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t1/synthetic-focus-controls.json",
+      "sha256": "5d70a82ce8f06a7ba7e1c9d55f251a20474dda853e03ad2ab14287371269b4aa",
+      "bytes": 99096
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t1/starter-keyboard-complete-1440.png",
+      "sha256": "5efe3574d5f052fb62618a4399eb77fd8a31420bc65b0d2775ed81e6310af4d2",
+      "bytes": 118796
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t1/starter-keyboard-complete-390.png",
+      "sha256": "fe10c0eadfee3f67e6b59c00406459557312f3cb237a4fb15acd7c783a95762d",
+      "bytes": 36843
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/parecer.md",
+      "sha256": "1cd0a2f00887e5dc5d553af81b53e16f185f4e64fb645b18bdaa97cda1b9f99b",
+      "bytes": 5342
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/runtime-summary.json",
+      "sha256": "c9c59472c0ee24b1d77476fc36a56e1c91be3767dc2e8307a03e7a375722167d",
+      "bytes": 9755
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/normal-terminal-before-reinstrumentation.png",
+      "sha256": "c2722ce2b6a246907218f1220a441227d5bbda6f518584a423135ecbfc192303",
+      "bytes": 27583
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/slow-terminal-before-reinstrumentation.png",
+      "sha256": "c2722ce2b6a246907218f1220a441227d5bbda6f518584a423135ecbfc192303",
+      "bytes": 27583
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/error500-terminal-before-reinstrumentation.png",
+      "sha256": "e58a351d4c27bd58522b3de977d20cae961de8dafb1a1f42db2464e7a2b90196",
+      "bytes": 23592
+    },
+    {
+      "path": ".accounts-validation/hf-ui044-t1t2-recovery/t2/starter-source-integrity.json",
+      "sha256": "13a10029e1fc310cf87a5abfa425f10b55a0a34d8a477cd76a88d8fa9e148c35",
+      "bytes": 53540
+    }
+  ],
+  "hosted": {
+    "publicationGate": "INDEPENDENT_QA_WITHOUT_MATERIAL_FINDING_REQUIRED",
+    "consumed": 0,
+    "configuredMinutes": [
+      20,
+      35,
+      35
+    ],
+    "authorizedNewRounds": 1,
+    "attempt": 1,
+    "matrix": "NOT_RUN_NEW_SHA",
+    "reruns": 0,
+    "rc15": "NOT_RUN_NEW_SHA",
+    "codex": "NOT_REQUESTED_NEW_SHA",
+    "focal": "NOT_RUN_NEW_SHA",
+    "candidateShasMaximum": 1
+  },
+  "pending": [
+    "HUMAN_ACCEPTANCE_PENDING",
+    "GEOCODER_OPERATIONAL_PENDING",
+    "CONTRATO_EXPERIMENTAL",
+    "VALIDACAO_CIENTIFICA_PENDENTE",
+    "SUJEITO_A_RECALIBRACAO",
+    "NAO_APROVADO_COMO_CONTRATO_CIENTIFICO_DEFINITIVO"
+  ],
+  "independentQaReport": {
+    "sha256": "f60a2763da73faed624738d96f2b8b0cff62462a673fd5772a24fc63569f27fe",
+    "matrixIds": 75,
+    "checksPass": 22,
+    "realStarterFlow": "PASS",
+    "protectedBlobs": 24,
+    "author": "/root/qa_independent",
+    "scope": "PREPUSH_NOT_HOSTED_QUALIFICATION",
+    "path": ".accounts-validation/hf-ui044-t1t2-recovery/qa/prepublication.json",
+    "multiContextWithOfficialJourney": "PASS",
+    "ownSynthetic": 20,
+    "state": "PREPUBLICATION_QA_NO_MATERIAL_FINDINGS"
+  },
+  "remotePrepush": {
+    "commentAccount": "thalesvalente",
+    "activeActions": 0,
+    "historicalRuns": [
+      41471075927,
+      41385859316,
+      41381201319,
+      41380591865
+    ],
+    "gitLsRemote": "MATCH",
+    "draft": true,
+    "head": "9a90e9593d45fe7af89d6e37e39a088b69957c13",
+    "base": "ebf7e9707d5beba949ae932cdffeb3f9068f8a73"
+  }
+}

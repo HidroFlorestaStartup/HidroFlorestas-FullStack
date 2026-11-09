@@ -1,0 +1,26 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "runtimeCommit": "99d8363fba4d13a8a02937be1ff2e606d35b3fa6",
+  "typecheck": {
+    "head": "db68cdde3658c460d20929ae47a8e1285120e5ef",
+    "exitCode": 0,
+    "afterProductionBuild": true
+  },
+  "lint": {
+    "head": "db68cdde3658c460d20929ae47a8e1285120e5ef",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 3
+  },
+  "productionBuild": {
+    "runner": "tests/e2e/run-auth-https.mjs",
+    "framework": "Next16.3.8 defaultTurbopack",
+    "result": "PASS",
+    "typescriptErrorsIgnored": false
+  },
+  "fixtureUsersAfterHttps": 0,
+  "minimumAvailableMemoryMB": {
+    "typecheck": 1358,
+    "lint": 2471
+  }
+}

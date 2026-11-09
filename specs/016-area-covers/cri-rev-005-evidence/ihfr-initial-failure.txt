@@ -1,0 +1,53 @@
+IMP-006 E2E preflight passed: target 3ca357615da4, schema public.
+IMP-006 schema owned by this run: imp006_test_6225b44c47864d30ac97b00ea67122e9
+
+Running 6 tests using 1 worker
+
+(node:42008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\ihfr-diagnosis-manage.spec.ts:50:5 › collection, environmental confirmation and IHFR creation work without browser randomUUID (11.9s)
+  x  2 tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key (5.6s)
+(node:45068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 tests\e2e\ihfr-diagnosis-manage.spec.ts:192:5 › MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM (1.2s)
+  ok 4 tests\e2e\ihfr-diagnosis-manage.spec.ts:206:5 › well-formed incompatible version reaches the real API and shows a recoverable terminal (1.5s)
+  ok 5 tests\e2e\ihfr-diagnosis-read.spec.ts:17:5 › member reads the current experimental DTO with labels, keyboard access and responsive layout (1.4s)
+  ok 6 tests\e2e\ihfr-diagnosis-read.spec.ts:39:5 › member sees honest absence and inactive laboratory stays read only (1.1s)
+
+
+  1) tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+
+    Error: expect.toBeVisible: Error: strict mode violation: getByText('Nenhum diagnóstico IHFR vigente para esta coleta.') resolved to 2 elements:
+        1) <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p> aka getByRole('region', { name: 'Diagnóstico IHFR experimental', exact: true }).getByRole('paragraph')
+        2) <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p> aka getByText('Nenhum diagnóstico IHFR').nth(1)
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('Nenhum diagnóstico IHFR vigente para esta coleta.')[22m
+    [2m    2 × locator resolved to <p class="mt-2 text-slate-600">Nenhum diagnóstico IHFR vigente para esta coleta.</p>[22m
+    [2m      - unexpected value "hidden"[22m
+
+
+      117 |     await authenticate(page, actor.id, String(info.project.use.baseURL));
+      118 |     await page.goto(actor.url);
+    > 119 |     await expect(page.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.")).toBeVisible();
+          |                                                                                       ^
+      120 |     await page.getByLabel("Uso predominante da terra").selectOption("FOREST");
+      121 |     await page.getByLabel("Data e hora da observação").fill("2026-09-20T12:00");
+      122 |     await page.getByRole("button", { name: "Verificar elegibilidade" }).click();
+        at C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\e2e\ihfr-diagnosis-manage.spec.ts:119:87
+
+    Error Context: test-results\ihfr-diagnosis-manage-OWNE-e2786-recover-with-one-stable-key\error-context.md
+
+  1 failed
+    tests\e2e\ihfr-diagnosis-manage.spec.ts:110:5 › OWNER and contextual ADMIN create, replace, revoke and recover with one stable key
+  5 passed (24.6s)
+Error: IMP-006 Playwright failed with exit code 1
+    at <anonymous> (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\scripts\imp006-local-e2e.ts:94:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async withImp006PostgresqlSchema (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\tests\fixtures\postgresql-schema-lifecycle.ts:87:5)
+    at async main (C:\projetos\consolidados\HidroFlorestas-cri-review-20261015\scripts\imp006-local-e2e.ts:53:3)

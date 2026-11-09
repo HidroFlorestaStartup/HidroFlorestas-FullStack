@@ -1,0 +1,296 @@
+name: HF UI044 PR50 final one shot
+on:
+  push:
+    branches: [fix/hf-ui044-ui06-b-residual-20261101]
+permissions:
+  contents: read
+concurrency:
+  group: hf-ui044-pr50-final-${{ github.ref }}
+  cancel-in-progress: false
+# Two distinct authorized SHAs maximum: (20 + 35 + 35) * 2 = 180 configured runner-minutes.
+jobs:
+  b-focal-3:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/fix/hf-ui044-ui06-b-residual-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
+          if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Verify complete branch and evidence contract
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --check
+          if ($LASTEXITCODE) { throw 'PR50 static contract failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
+          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
+          path: starter
+          persist-credentials: false
+      - name: Install runner-only Bun and locked starter
+        run: |
+          npm install --global bun@1.3.11 --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Runner Bun installation failed.' }
+          if ((bun --version).Trim() -ne '1.3.11') { throw 'Wrong runner Bun.' }
+          Push-Location ../starter
+          try {
+            if ((git rev-parse HEAD).Trim() -ne 'cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f') { throw 'Wrong starter SHA.' }
+            bun install --frozen-lockfile
+            if ($LASTEXITCODE) { throw 'Starter frozen installation failed.' }
+            bun run typecheck
+            if ($LASTEXITCODE) { throw 'Starter typecheck failed.' }
+          } finally { Pop-Location }
+      - name: Execute real bilateral domain cases
+        run: ./scripts/hf-ui06-visual.ps1 -Suite domain -CaseSet focal-3
+      - name: Verify focal-3 source pairs, provenance and cleanup; preserve summary on failure
+        if: always()
+        run: |
+          node scripts/hf-ui044-b-verify.mjs --archive .accounts-validation/ui06-b-focal-3 --case-set focal-3
+          if ($LASTEXITCODE) { throw 'B evidence gate failed; inspect immutable receipts and summary.' }
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-b-focal-3-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
+            fullstack/.accounts-validation/ui06-b-focal-3/*.png
+            fullstack/.accounts-validation/ui06-b-focal-3/*.json
+            fullstack/.accounts-validation/ui06-b-focal-3/*.jsonl
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  b-complete-75:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/fix/hf-ui044-ui06-b-residual-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    needs: b-focal-3
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
+          if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Verify complete branch and evidence contract
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --check
+          if ($LASTEXITCODE) { throw 'PR50 static contract failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: HidroFlorestaStartup/hidroflorestas-frontend-starter
+          ref: cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f
+          path: starter
+          persist-credentials: false
+      - name: Install runner-only Bun and locked starter
+        run: |
+          npm install --global bun@1.3.11 --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Runner Bun installation failed.' }
+          if ((bun --version).Trim() -ne '1.3.11') { throw 'Wrong runner Bun.' }
+          Push-Location ../starter
+          try {
+            if ((git rev-parse HEAD).Trim() -ne 'cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f') { throw 'Wrong starter SHA.' }
+            bun install --frozen-lockfile
+            if ($LASTEXITCODE) { throw 'Starter frozen installation failed.' }
+            bun run typecheck
+            if ($LASTEXITCODE) { throw 'Starter typecheck failed.' }
+          } finally { Pop-Location }
+      - name: Execute real bilateral domain cases
+        run: ./scripts/hf-ui06-visual.ps1 -Suite domain -CaseSet complete-75
+      - name: Verify complete-75 source pairs, provenance and cleanup; preserve summary on failure
+        if: always()
+        run: |
+          node scripts/hf-ui044-b-verify.mjs --archive .accounts-validation/ui06-b-complete-75 --case-set complete-75
+          if ($LASTEXITCODE) { throw 'B evidence gate failed; inspect immutable receipts and summary.' }
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-b-complete-75-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
+            fullstack/.accounts-validation/ui06-b-complete-75/*.png
+            fullstack/.accounts-validation/ui06-b-complete-75/*.json
+            fullstack/.accounts-validation/ui06-b-complete-75/*.jsonl
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  rc-final:
+    if: >-
+      github.repository == 'HidroFlorestaStartup/HidroFlorestas-FullStack' &&
+      github.ref == 'refs/heads/fix/hf-ui044-ui06-b-residual-20261101' &&
+      github.event_name == 'push' && github.event.forced == false &&
+      github.event.deleted == false && github.run_attempt == 1
+    needs: b-complete-75
+    runs-on: windows-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: fullstack
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      HF_REVERSE_GEOCODER_URL: ''
+      NEXT_PUBLIC_MAP_TILE_URL: 'https://127.0.0.1:1/{z}/{x}/{y}.png'
+      NEXT_PUBLIC_MAP_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: fullstack
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: fullstack/package-lock.json
+      - name: Verify branch, containment and synthetic-only environment
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --runner --sanitize-libpq
+          if ($LASTEXITCODE) { throw 'PR50 runner contract failed.' }
+      - name: Install locked dependencies and Chromium
+        run: |
+          $ErrorActionPreference='Stop'
+          if ((node --version).Trim() -ne 'v24.19.0') { throw 'Wrong runner Node.' }
+          npm ci --no-audit --no-fund
+          if ($LASTEXITCODE) { throw 'Locked installation failed.' }
+          npx playwright install chromium
+          if ($LASTEXITCODE) { throw 'Chromium install failed.' }
+      - name: Verify complete branch and evidence contract
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --check
+          if ($LASTEXITCODE) { throw 'PR50 static contract failed.' }
+      - name: Generate Prisma and Next types; full typecheck
+        run: |
+          npx prisma generate
+          if ($LASTEXITCODE) { throw 'Prisma generation failed.' }
+          npx next typegen
+          if ($LASTEXITCODE) { throw 'Next typegen failed.' }
+          npx tsc --noEmit --incremental false
+          if ($LASTEXITCODE) { throw 'Full typecheck failed.' }
+      - name: Execute exactly fifteen official gates with owned runner PostgreSQL
+        run: |
+          node scripts/hf-ui044-pr50-contract.mjs --runner
+          if ($LASTEXITCODE) { throw 'RC runner environment attestation failed.' }
+          $runnerEnvironment=Get-Content -Raw .accounts-validation/hf-ui044-runner-environment.json | ConvertFrom-Json
+          foreach ($name in $runnerEnvironment.neutralizedNames) { Remove-Item -LiteralPath "Env:$name" -ErrorAction SilentlyContinue }
+          ./scripts/rc-review-validation.ps1 -InitializeCiCluster
+      - name: Verify durable UI037 after later suites and official journal
+        run: node scripts/hf-ui044-verify.mjs
+      - name: Archive allowlisted synthetic evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: hf-ui044-rc-final-${{ github.sha }}-attempt-${{ github.run_attempt }}
+          path: |
+            fullstack/.accounts-validation/hf-ui044-runner-environment.json
+            fullstack/.accounts-validation/*.log
+            fullstack/.accounts-validation/results.jsonl
+            fullstack/test-results/**/frontend-login-*.png
+            fullstack/test-results/**/frontend-account-*.png
+            fullstack/.accounts-validation/frontend-account/*.png
+            fullstack/test-results/**/frontend-workspace-*.png
+            fullstack/.accounts-validation/frontend-workspace/*.png
+            fullstack/.accounts-validation/frontend-mobile-navigation/*.png
+            fullstack/.accounts-validation/frontend-mobile-navigation/*-geometry.json
+            fullstack/.accounts-validation/frontend-dashboard/*.png
+            fullstack/.accounts-validation/frontend-dashboard/*-frontend-dashboard-*-viewport.json
+            fullstack/.accounts-validation/frontend-areas/*.png
+            fullstack/.accounts-validation/frontend-areas/*-frontend-areas-*-viewport.json
+            fullstack/test-results/**/frontend-collections-*.png
+            fullstack/test-results/**/frontend-collections-*-viewport.json
+            fullstack/.accounts-validation/frontend-collections/*-frontend-collections-*.png
+            fullstack/.accounts-validation/frontend-collections/*-frontend-collections-*-viewport.json
+            fullstack/test-results/**/frontend-environmental-*.png
+            fullstack/test-results/**/frontend-environmental-*-viewport.json
+            fullstack/.accounts-validation/frontend-environmental/*-frontend-environmental-*.png
+            fullstack/.accounts-validation/frontend-environmental/*-frontend-environmental-*-viewport.json
+            fullstack/.accounts-validation/frontend-ihfr/*-frontend-ihfr-*.png
+            fullstack/.accounts-validation/frontend-ihfr/*-frontend-ihfr-*-viewport.json
+            fullstack/.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*.png
+            fullstack/.accounts-validation/frontend-territorial-map/*-frontend-territorial-map-*-viewport.json
+            fullstack/.accounts-validation/frontend-user-administration/*-frontend-user-administration-*.png
+            fullstack/.accounts-validation/frontend-user-administration/*-frontend-user-administration-*-viewport.json
+            fullstack/.accounts-validation/frontend-landing/*-frontend-landing-*.png
+            fullstack/.accounts-validation/frontend-landing/*-frontend-landing-*-viewport.json
+            fullstack/.accounts-validation/hf-ui044-final-verification.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

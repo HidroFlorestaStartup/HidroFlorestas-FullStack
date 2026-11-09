@@ -1,0 +1,78 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "scope": "AreaCoverService quota with FakeCoverProvider, not IHFR science",
+  "sourceSha": "08262dc57c1ad365244f9ec6902b1e4be39e2d7d",
+  "functionalFingerprint": "e718647365dfb904eb13c968babdc947963541bf75f239f2f1c266e2c418fa59",
+  "runtime": "QA v3 owned synthetic schemas",
+  "result": "PASS",
+  "counts": {
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0
+  },
+  "nodeTestDurationMs": 2848.959,
+  "wrapperDurationSeconds": 5.8536003,
+  "schedules": [
+    {
+      "winner": "A",
+      "newCalls": 2,
+      "before": {
+        "attempts": 9,
+        "jobs": 36
+      },
+      "after": {
+        "attempts": 10,
+        "jobs": 40
+      },
+      "outcomes": [
+        {
+          "operation": "A",
+          "status": "fulfilled"
+        },
+        {
+          "operation": "B",
+          "status": "rejected",
+          "code": "RATE_LIMITED"
+        }
+      ],
+      "serializationFailures": 1
+    },
+    {
+      "winner": "B",
+      "newCalls": 2,
+      "before": {
+        "attempts": 9,
+        "jobs": 36
+      },
+      "after": {
+        "attempts": 10,
+        "jobs": 40
+      },
+      "outcomes": [
+        {
+          "operation": "A",
+          "status": "rejected",
+          "code": "RATE_LIMITED"
+        },
+        {
+          "operation": "B",
+          "status": "fulfilled"
+        }
+      ],
+      "serializationFailures": 1
+    }
+  ],
+  "cleanup": {
+    "candidateSchemas": 0,
+    "scope": "selected own postgres database",
+    "auditExitCode": 0
+  },
+  "previousAttempt": {
+    "result": "SETUP_FAIL",
+    "fileTestsFailed": 1,
+    "schedulesStarted": 0,
+    "reason": "required react-server export condition missing; existing test unchanged"
+  },
+  "rawLogsPrivateIgnored": true
+}

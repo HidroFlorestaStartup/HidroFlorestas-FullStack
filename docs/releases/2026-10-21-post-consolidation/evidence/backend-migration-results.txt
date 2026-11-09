@@ -1,0 +1,42 @@
+✔ deletion migration preserves all rate bounds, supports deletion limits and restricts mail ownership (86.179399ms)
+✔ deletion migration backfills only provable challenge ownership without changing stored content (75.909144ms)
+✔ accounts migration preserves factual identity and credentials, snapshots only existing compatibility cohort (85.118562ms)
+✔ accounts canonical collisions fail before modifying legacy accounts or adding columns (62.980088ms)
+✔ accounts expression identity uniqueness also protects internal writers with nullable canonical field (77.54863ms)
+✔ accounts additive limits accept all eight actions and preserve mail bounds (79.473242ms)
+✔ accounts request commitments, revisions, scope and referential ownership are constrained (82.202635ms)
+✔ accounts password notification is available without a live consumed challenge (70.115665ms)
+✔ cover migration is additive, enforces complete pointers and preserves area assets when uploader is removed (111.549202ms)
+✔ backfills points and ownership; deferred invariant preserves administrative deletion (88.788068ms)
+✔ invalid legacy coordinates abort without dropping legacy data (50.417801ms)
+✔ recovers a missing creator membership without granting ADMIN (56.841605ms)
+✔ refuses a creator backfill that would exceed five memberships (49.716604ms)
+✔ refuses orphan coordinates before structural changes (46.63261ms)
+✔ IMP-004 collection registration migration (300.846531ms)
+✔ environmental migration preserves parent and legacy, enforces unique/FKs/immutability and rolls back (120.248848ms)
+✔ draft migration is additive and enforces personal uniqueness, positive revision and restricted ownership (102.38015ms)
+✔ IMP-006 rejects cross-record operation, CURRENT and lifecycle references (322.865363ms)
+✔ IMP-006 reference migration preserves valid existing lifecycle rows (166.28149ms)
+✔ IMP-006 reference migration aborts without backfill on invalid existing events (153.082107ms)
+✔ IHFR supplement, diagnosis, operation and event reject UPDATE and DELETE with triggers enabled (342.77605ms)
+✔ IMP-006 migration applies on empty integrated baseline (255.875535ms)
+✔ IMP-006 migration preserves legacy rows and performs zero backfill (170.891741ms)
+✔ IMP-006 score constraint accepts finite domain values and rejects non-finite or out-of-domain values (151.54111ms)
+✔ IMP-006 migration keeps its published slot before the additive account chain (2.004803ms)
+✔ legacy, IMP-005 and additive IMP-006 models coexist (0.763041ms)
+✔ migration is additive, immutable and contains no backfill (0.383168ms)
+✔ all explicit IMP-006 database identifiers are ASCII, unique and PostgreSQL-safe (0.671152ms)
+✔ PostgreSQL text arrays normalize independently of driver representation (0.749941ms)
+✔ applied IMP-006 schema has the expected constraints, indexes, triggers and zero backfill (276.907662ms)
+✔ a failed transactional migration leaves no IMP-006 objects and can be retried in the same owned schema (289.238153ms)
+✔ mail additive migration preserves legacy identity/status/role/password; nullable fields and constraints (108.563616ms)
+✔ IMP-009 creates revisioned immutable audit storage and removes legacy authority (69.011793ms)
+✔ IMP-009 preflight rolls back cleanly on contradictory legacy authority (51.51728ms)
+ℹ tests 37
+ℹ suites 1
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8534.120766

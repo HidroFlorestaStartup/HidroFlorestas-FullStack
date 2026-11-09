@@ -1,0 +1,57 @@
+{
+  "scope": "Failure-only diagnostic observation for the unexplained IHFR404 in phase7 v2; not a root-cause fix or official CI result.",
+  "parent_head": "85e397bd4271ab07a197ea88db652227e6e392ce",
+  "inherited_parent": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+  "runtime": {
+    "node": "24.19.0",
+    "platform": "Linux",
+    "database_used": false,
+    "network": "Owned loopback HTTP stubs only"
+  },
+  "validation": {
+    "focused_unit": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "typecheck": {
+      "exit_code": 0
+    },
+    "lint": {
+      "exit_code": 0,
+      "errors": 0,
+      "preexisting_warnings": 3,
+      "paths": [
+        "src/app/page.tsx",
+        "src/components/user-profile/index.tsx",
+        "src/components/white-box/index.tsx"
+      ]
+    }
+  },
+  "source_sha256": {
+    "tests/e2e/support/ihfr-route-probe.ts": "dc45a8b662657d8015269c208799a26c177354dda4d0103c8a06cc28182ede74",
+    "tests/e2e/support/ihfr-diagnostics.ts": "3d6051219de10590276c2dde3d247c7d96c3562d7248be6289dcf678572d7e0e",
+    "tests/unit/imp006-route-probe.test.ts": "a2b79c4ba210d893c388cdf6633d97da5e89566cd8a61c8c62d5418a2934f4ea"
+  },
+  "observed_contracts": [
+    "Three GET requests retain the initial auth cookie even when /me sends an expiration response; input cookie remains unchanged.",
+    "Raw synthetic private fields and unrecognized error strings do not escape; output maps unknown code to OTHER.",
+    "HTML404 and redirect302 remain distinguishable and redirects are not followed.",
+    "Invalid origin, path or unowned schema causes a skip before any request."
+  ],
+  "unchanged": [
+    "No production source, scientific algorithm, schema, fixture setup, readiness, existing test action or assertion changed.",
+    "No retries added and no existing test timeout, viewport or scale changed.",
+    "A failed gate remains failed; observations run only after an unexpected test failure containing a404."
+  ],
+  "limits": [
+    "The probes are after-failure observations; they do not reconstruct the earlier request or prove the server selected schema.",
+    "The cache hypothesis is inconclusive; no populated persistent cache was obtained in the limited synthetic restart experiment.",
+    "No diagnostic probe outcome from the official Windows app has been observed yet.",
+    "False presence booleans mean not observed in that response, not proof of resource absence; probes use current cookies after failure and the last404 navigation context."
+  ],
+  "review": "Independent readonly review found no material security defect; diagnostic context now tracks the last404 navigation rather than the final page URL."
+}

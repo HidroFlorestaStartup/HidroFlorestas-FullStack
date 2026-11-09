@@ -7,9 +7,12 @@ import { toast } from "sonner";
 import { useAuth } from "@/contexts/auth.context";
 import { AccountShell, accountButtonClass } from "./account-shell";
 import { PasswordField } from "./password-field";
+import { AccountControls, useAccountReady } from "./account-controls";
 import { ACCOUNT_NETWORK_MESSAGE, ACCOUNT_RESPONSE_MESSAGE, parseAccountFailure, parseAccountMessage, readAccountJson, submitAccountRequest } from "./account-client";
 
 export function PasswordResetForm({ authenticated = false }: { authenticated?: boolean }) {
+  const hydrated = useAccountReady();
+  const inFlight = useRef(false);
   const { clearAuthenticatedUser } = useAuth();
   const router = useRouter();
   const [token, setToken] = useState<string | null>(null);
@@ -40,7 +43,7 @@ export function PasswordResetForm({ authenticated = false }: { authenticated?: b
       if (!window.location.hash) return;
       clearTimeout(timeout);
       captureFragment(); proofGeneration.current++;
-      setToken(captured.current?.token ?? null); setReady(true); setBusy(false);
+      setToken(captured.current?.token ?? null); setReady(true); setBusy(false); inFlight.current = false;
       setMessage(""); setError(""); setInvalidProof(false);
       setCurrentPassword(""); setNewPassword(""); setConfirmPassword("");
     };
@@ -52,11 +55,11 @@ export function PasswordResetForm({ authenticated = false }: { authenticated?: b
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (busy || (!authenticated && !token)) return;
+    if (!hydrated || busy || inFlight.current || (!authenticated && !token)) return;
     if (newPassword !== confirmPassword) { setError("A confirmação precisa ser igual à nova senha."); return; }
     if (Array.from(newPassword).length < 15) { setError("Use pelo menos 15 caracteres na nova senha."); return; }
     if (new TextEncoder().encode(newPassword).length > 72) { setError("A senha excede o limite de 72 bytes. Use uma frase um pouco mais curta; acentos e símbolos podem ocupar mais espaço."); return; }
-    setBusy(true); setError("");
+    inFlight.current = true; setBusy(true); setError("");
     const requestGeneration = proofGeneration.current;
     try {
       const response = await submitAccountRequest(authenticated ? "/api/auth/change-password" : "/api/auth/password-reset/confirm", authenticated ? { currentPassword, newPassword, confirmPassword } : { token, newPassword, confirmPassword });
@@ -76,7 +79,7 @@ export function PasswordResetForm({ authenticated = false }: { authenticated?: b
     } catch {
       if (requestGeneration === proofGeneration.current) setError(ACCOUNT_NETWORK_MESSAGE);
     } finally {
-      if (requestGeneration === proofGeneration.current) setBusy(false);
+      if (requestGeneration === proofGeneration.current) { inFlight.current = false; setBusy(false); }
     }
   }
 
@@ -89,11 +92,13 @@ export function PasswordResetForm({ authenticated = false }: { authenticated?: b
       <Link href="/forgot-password" className="mt-5 inline-block font-semibold text-amber-800 underline">Solicitar novo link</Link>
     </div> : null}
     {ready && (authenticated || token) && !message ? <form onSubmit={submit} className="space-y-5" aria-busy={busy}>
+      <AccountControls ready={hydrated} busy={busy} label={authenticated ? "Alterar senha" : "Redefinir senha"}>
       {authenticated ? <PasswordField id="current-password" label="Senha atual" value={currentPassword} onChange={setCurrentPassword} current disabled={busy} /> : null}
       <PasswordField id="new-password" label="Nova senha" value={newPassword} onChange={setNewPassword} describedBy="new-password-help" disabled={busy} />
       <p id="new-password-help" className="text-sm text-gray-700">Use uma frase de pelo menos 15 caracteres, até 72 bytes. Acentos e símbolos podem ocupar mais espaço. Espaços são preservados.</p>
       <PasswordField id="confirm-password" label="Confirmar nova senha" value={confirmPassword} onChange={setConfirmPassword} disabled={busy} />
       <button type="submit" disabled={busy} className={accountButtonClass}>{busy ? "Aguarde…" : authenticated ? "Alterar senha" : "Redefinir senha"}</button>
+      </AccountControls>
     </form> : null}
     {!message ? <Link href={authenticated ? "/workspace" : "/login"} className="mt-6 inline-block font-semibold text-amber-800 underline">{authenticated ? "Voltar para o workspace" : "Voltar para o login"}</Link> : null}
   </AccountShell>;

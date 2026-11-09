@@ -1,0 +1,23 @@
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/environmental-data/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/areas/new
+├ ƒ /dashboard/laboratories/[laboratoryId]/map
+├ ƒ /dashboard/laboratories/[laboratoryId]/members
+├ ○ /delete-account
+├ ○ /forgot-password
+├ ƒ /login
+├ ○ /logout
+├ ○ /register
+├ ○ /reset-password
+├ ○ /verify-email
+└ ƒ /workspace
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

@@ -1,0 +1,118 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "date": "2026-10-21",
+  "timezone": "America/Fortaleza",
+  "authority": {
+    "classification": "DECISAO_CONFIRMADA",
+    "source": "Pedido atual de Pedro nesta conversa",
+    "scope": "Merge20, verificacao breve dos merges recentes e preparacao das duas proximas etapas com correcoes se necessarias"
+  },
+  "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+  "initialDevelopment": "5f6266b48d0f9d33571009c0c3981065630bd21e",
+  "finalDevelopmentAfter20": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "mainRemote": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+  "localStateVerified": false,
+  "merge20": {
+    "head": "e057105f4532b28662249735608e869e3814ef8c",
+    "merge": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+    "parents": [
+      "5f6266b48d0f9d33571009c0c3981065630bd21e",
+      "e057105f4532b28662249735608e869e3814ef8c"
+    ],
+    "tree": "07755ad1848122f6a547f1e6d298d93089416645",
+    "selfApproval": false,
+    "checks": [
+      "Vercel SUCCESS",
+      "Vercel Preview Comments SUCCESS"
+    ]
+  },
+  "recentIntegration": {
+    "pr": 25,
+    "head": "e44711d0407dbde06577bd61890f53457aa0a26a",
+    "merge": "5f6266b48d0f9d33571009c0c3981065630bd21e",
+    "tree": "072a78eef19eb02487d1c92ee04da8cb9c5bd371",
+    "candidateAndMergeTreesEqual": true,
+    "incorporatedHeads": [
+      {
+        "pr": 21,
+        "head": "21988e2d25b3b43d8e299502da535f7d07afba46",
+        "ancestorOfFinalRC": true
+      },
+      {
+        "pr": 22,
+        "head": "9a2b7d451f3523e8efe3130da28c8b12c94f2cce",
+        "ancestorOfFinalRC": true
+      },
+      {
+        "pr": 23,
+        "head": "dfd78f695d855c4d0f0e8e4a68e9e92467cd11f4",
+        "ancestorOfFinalRC": true
+      },
+      {
+        "pr": 24,
+        "head": "61bc4ff6e2d0dfc0fa830b89346fa2f5f79bbc15",
+        "ancestorOfFinalRC": true
+      }
+    ],
+    "codexReceipt": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/25#issuecomment-6316104300",
+    "codexFindingObserved": false
+  },
+  "ci": {
+    "run": 39600889091,
+    "attempt": 1,
+    "job": 119224780858,
+    "status": "completed",
+    "conclusion": "success",
+    "head": "e44711d0407dbde06577bd61890f53457aa0a26a",
+    "gates": 15,
+    "uniqueGates": 15,
+    "allPass": true,
+    "allExitCodesZero": true,
+    "snapshot": "f398422d9513479eb66f1686b02a853f49f373a3412c8376169745c7fd732c00",
+    "e2e": 220,
+    "integration": 231,
+    "https": 2,
+    "ihfr": 6,
+    "logsReadThisPreparation": true,
+    "mergeShaCiClaimed": false
+  },
+  "post20Comparison": {
+    "changedFiles": 10,
+    "scope": "exclusively documentary",
+    "productTestsDependenciesConfigEquivalentToRC": true
+  },
+  "assessment": {
+    "kind": "BRIEF_INTEGRATION_CHECK",
+    "newTechnicalBlockerIdentified": false,
+    "fullNewCodeAudit": false,
+    "newLocalApplicationSuite": false,
+    "allVisualEvidenceReaudited": false,
+    "humanProductAcceptance": false,
+    "scientificValidation": false,
+    "productionHomologation": false
+  },
+  "nextSteps": {
+    "phaseA": "Investigation and fixes only for demonstrated defects",
+    "phaseB": "Homologation and delivery readiness",
+    "notNewVisualPhases11And12": true,
+    "executionPrompt": "prompt-pos-consolidacao.md",
+    "futureMergesByMaintainer": true
+  },
+  "operationalLimits": {
+    "vercel403": "Reported by PR25; not rechecked against provider in this preparation",
+    "humanAcceptances": "Pending own evidence",
+    "operationalAuthorization": "Existing RC records preserve claim; executing context must establish origin and scope",
+    "productionOperationsPerformedThisPreparation": false
+  },
+  "preservation": {
+    "historicalFailuresNotDeclaredResolved": true,
+    "rawDocsUntouched": true,
+    "existingTextsAppendOnly": true
+  },
+  "publication": {
+    "branch": "docs/handoff-pos-consolidacao-20261021",
+    "base": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+    "prStatus": "To be confirmed in PR receipt",
+    "autoMerge": false
+  }
+}

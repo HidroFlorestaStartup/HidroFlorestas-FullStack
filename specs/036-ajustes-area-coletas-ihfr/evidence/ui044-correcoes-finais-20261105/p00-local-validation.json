@@ -1,0 +1,77 @@
+{
+  "executor": "/root",
+  "base": "7bae1f87cb8d6a708b7c4de0b990e82e5a503369",
+  "identity": "composed working tree before documentary freeze; exact technical file hashes",
+  "technical_files_sha256": {
+    ".github/workflows/rc-review.yml": "f9ca15353b5c4e81d598a709531c7ade654d02575c91130b2c986628f7f6852b",
+    "src/app/(private)/dashboard/laboratories/[laboratoryId]/areas/[areaId]/collections/[collectionId]/page.tsx": "87688081b0e7388b726a79c39f46038d6c3517aedb04db503717cf7bd2738f4b",
+    "src/components/areas/area-collections.tsx": "e2d6661e1f38e6788788b81f7a5d743889a0591ec443e7ea7d13c9c278b097d1",
+    "src/components/collections/collection-detail-layout.tsx": "7bb3c8e1d6a25a7269ecf91ccfeb42a8293607938b4df0f21dd94ad24c73c191",
+    "src/components/collections/collection-detail.tsx": "0faba70a683bce1c274d055e0981256a3d2060799c8c97693ca8b34aa714ef8d",
+    "src/components/ihfr-diagnosis/ihfr-diagnosis-management.tsx": "e18cdf5feb9126b225ebb44123c8fa6bed4efaaeadd9b57fd22b3faddc824d3a",
+    "tests/e2e/hf-ui036-area-collections.spec.ts": "549db5e7121144d94430a46cca5c6f396ecbad9fe5ee8944a92567df59e9fc94",
+    "tests/e2e/ihfr-diagnosis-manage.spec.ts": "414a9cde640c6da1cf8dee03a3c2fd4260abc47143c9b585efd2fa3b1f862cc1",
+    "tests/e2e/ihfr-diagnosis-read.spec.ts": "38020bde77a770205bf492dc3fd8a224cc3f971577f3119a497c572854fb2edf",
+    "tests/e2e/support/ui044-final-corrections.ts": "438a10233b99bd40630f284f367d6a1c39d4ef539deb13eceef50dfe58796c59",
+    "tests/unit/hf-ui044-final-corrections.test.tsx": "7a6915554d88ac7144cceee170c1e9448527f725350becdad134cffa239affe3",
+    "vercel.json": "a3d491aabf34839a79f74188791d77ed86a8e9d816cdce8f31ef4717f8e8a53d"
+  },
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "Linux Chat workspace",
+    "prisma": "7.4.2 generated from existing schema without DB connection"
+  },
+  "checks": [
+    {
+      "name": "unit-focal",
+      "command": [
+        "node",
+        "--import=tsx",
+        "--test",
+        "tests/unit/hf-ui036-area-presentation.test.ts",
+        "tests/unit/frontend-ihfr-presentation.test.tsx",
+        "tests/unit/ihfr-diagnosis-read-accessibility.test.tsx",
+        "tests/unit/hf-ui044-final-corrections.test.tsx"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 1.37,
+      "log": "unit-focal.log",
+      "log_sha256": "ad00801307b3b64ec2560658fb40ac7844e7aaa4e791f9ad750b894377bc2573",
+      "output": "✔ frontend IHFR presents persisted values without rounding or deriving a class (12.487246ms)\n✔ frontend IHFR keeps unknown qualifiers and metadata visible with honest fallbacks (4.045055ms)\n✔ frontend IHFR absence explains the experimental boundary without fabricating a score (1.402513ms)\n✔ UI036 sorts by absolute field occurrence, not confirmation or offset text (4.487882ms)\n✔ UI036 tie is deterministic by id, zero is not invented and history pointer is ignored (2.17025ms)\n✔ UI036 filters drafts/legacy incomplete records, preserves declared civil time and rejects invalid source (6.069055ms)\n✔ UI036 current-pointer result, revocation or supersession absence does not reuse history (0.413644ms)\n✔ UI044 C1: distinct persisted score strings belong to their own cards without extra interpretation (35.734906ms)\n✔ UI044 C1: newer collection without diagnosis does not inherit the older summary score (9.9942ms)\n✔ UI044 C1: registered zero is rendered while absence remains absent (presentation fixture, not scientific evaluation) (17.943809ms)\n✔ UI044 C1: absence in all cards preserves the honest summary and both destinations (8.197401ms)\n✔ UI044 C2: managed absent reading owns the only exact scientific notice (7.458448ms)\n✔ UI044 C2: read-only absent reading keeps the notice without management (2.739217ms)\n✔ UI044 C2: managed current reading owns the only exact scientific notice (11.717116ms)\n✔ UI044 C2: read-only current reading keeps the notice without management (6.955861ms)\n✔ read surfaces use labelled regions, semantic value lists and text labels without write controls (17.346263ms)\n✔ normal diagnosis view exposes provenance, versions, lifecycle and UTC dates (11.066745ms)\nℹ tests 17\nℹ suites 0\nℹ pass 17\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1299.518135\n",
+      "at": "2026-11-05T21:52:24.224514-03:00"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 11.01,
+      "log": "typecheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "",
+      "at": "2026-11-05T21:52:33.862346-03:00"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "seconds": 15.72,
+      "log": "lint.log",
+      "log_sha256": "f40921f842ade5df06a96061fee07e9008a78953cd1d10a097f8921f04b361b3",
+      "output": "\n> hidro-florestas-fullstack@0.1.0 lint\n> eslint\n\n\n/workspace/scratch/100be1d812fa/repo/src/components/user-profile/index.tsx\n  1:10  warning  'useAuth' is defined but never used  @typescript-eslint/no-unused-vars\n\n/workspace/scratch/100be1d812fa/repo/src/components/white-box/index.tsx\n  12:3  warning  'className' is defined but never used  @typescript-eslint/no-unused-vars\n\n✖ 2 problems (0 errors, 2 warnings)\n\nnpm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n",
+      "at": "2026-11-05T21:52:38.570455-03:00"
+    }
+  ]
+}

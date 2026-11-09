@@ -1,0 +1,341 @@
+{
+  "id": "HF-UI044-CORRECOES-FINAIS-20261105-RECOVERY-F3",
+  "at": "2026-11-06T02:56:49.179842+00:00",
+  "executor": "/root (P00)",
+  "failed_sha": "8d5566bea4dcca7d2e48529b2aae3aab28c6e922",
+  "failed_tree": "15381c32e37aea5932dab38e6fcd0ff6dadd9d40",
+  "run": 42150335260,
+  "attempt": 1,
+  "job": 127671758896,
+  "artifact": 13472578538,
+  "artifact_sha256": "10c1d6abdbd746b6bb3b7158949ab769d8596f0cccb1289dcc0a8df44ee4afb2",
+  "artifact_bytes": 29039558,
+  "zip_crc": "PASS",
+  "gate_results": [
+    {
+      "gate": "RegressionSetup",
+      "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:27:45.800Z",
+      "endedUtc": "2026-11-06T02:27:51.376Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\regressionsetup-1793932065799.log"
+    },
+    {
+      "gate": "Unit",
+      "command": "npm run test:unit",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:27:51.568Z",
+      "endedUtc": "2026-11-06T02:28:12.150Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\unit-1793932071568.log"
+    },
+    {
+      "gate": "Integration",
+      "command": "npm run test:integration",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:28:12.361Z",
+      "endedUtc": "2026-11-06T02:29:48.201Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\integration-1793932092361.log"
+    },
+    {
+      "gate": "Migration",
+      "command": "npm run test:migration",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:29:48.374Z",
+      "endedUtc": "2026-11-06T02:29:59.682Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\migration-1793932188374.log"
+    },
+    {
+      "gate": "Contract",
+      "command": "npm run test:contract",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:29:59.891Z",
+      "endedUtc": "2026-11-06T02:30:02.677Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\contract-1793932199891.log"
+    },
+    {
+      "gate": "R1",
+      "command": "npm run test:mail:r1",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:30:02.864Z",
+      "endedUtc": "2026-11-06T02:30:18.307Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\r1-1793932202864.log"
+    },
+    {
+      "gate": "Build",
+      "command": "npm run build",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:30:18.476Z",
+      "endedUtc": "2026-11-06T02:30:35.989Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\build-1793932218476.log"
+    },
+    {
+      "gate": "Typecheck",
+      "command": "npm run typecheck",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:30:36.166Z",
+      "endedUtc": "2026-11-06T02:30:43.250Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\typecheck-1793932236166.log"
+    },
+    {
+      "gate": "Lint",
+      "command": "npm run lint",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:30:43.430Z",
+      "endedUtc": "2026-11-06T02:31:00.507Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\lint-1793932243430.log"
+    },
+    {
+      "gate": "E2E",
+      "command": "npm run test:e2e",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:31:00.708Z",
+      "endedUtc": "2026-11-06T02:40:57.622Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\e2e-1793932260708.log"
+    },
+    {
+      "gate": "Https",
+      "command": "npm run test:e2e:https",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:40:57.844Z",
+      "endedUtc": "2026-11-06T02:41:30.706Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": "D:\\a\\HidroFlorestas-FullStack\\HidroFlorestas-FullStack\\.accounts-validation\\https-1793932857843.log"
+    },
+    {
+      "gate": "Deletion",
+      "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:41:30.889Z",
+      "endedUtc": "2026-11-06T02:41:40.792Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation\\deletion-1793932890889.log"
+    },
+    {
+      "gate": "Ihfr",
+      "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+      "snapshot": "cc230a4be61ff79e507fb6d924ca6abc71825b4d213fd8866a0a322c9f594752",
+      "startedUtc": "2026-11-06T02:41:40.996Z",
+      "endedUtc": "2026-11-06T02:48:42.030Z",
+      "exitCode": 1,
+      "result": "FAIL",
+      "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+      "log": ".accounts-validation\\ihfr-1793932900995.log"
+    },
+    {
+      "gate": "Bootstrap",
+      "result": "NOT_RUN"
+    },
+    {
+      "gate": "SchemaAudit",
+      "result": "NOT_RUN"
+    }
+  ],
+  "e2e_general": {
+    "passed": 241,
+    "failed": 0
+  },
+  "ihfr": {
+    "passed": 1,
+    "failed": 5,
+    "render_wait_timeouts": 4,
+    "eligibility_mismatch": 1
+  },
+  "layout_matrix": {
+    "observed": 7,
+    "expected": 23,
+    "missing": [
+      [
+        "owner",
+        false,
+        true,
+        390,
+        100
+      ],
+      [
+        "owner",
+        false,
+        true,
+        320,
+        200
+      ],
+      [
+        "owner",
+        true,
+        true,
+        1440,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        375,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        390,
+        100
+      ],
+      [
+        "owner",
+        true,
+        true,
+        320,
+        200
+      ],
+      [
+        "member",
+        false,
+        false,
+        390,
+        100
+      ],
+      [
+        "member",
+        false,
+        false,
+        320,
+        200
+      ],
+      [
+        "member",
+        true,
+        false,
+        1440,
+        100
+      ],
+      [
+        "member",
+        true,
+        false,
+        390,
+        100
+      ],
+      [
+        "member",
+        true,
+        false,
+        320,
+        200
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        390,
+        100
+      ],
+      [
+        "inactive-owner",
+        false,
+        false,
+        320,
+        200
+      ],
+      [
+        "admin",
+        false,
+        true,
+        375,
+        100
+      ],
+      [
+        "admin",
+        true,
+        true,
+        375,
+        100
+      ],
+      [
+        "inactive-member",
+        false,
+        false,
+        375,
+        100
+      ]
+    ]
+  },
+  "diagnostic_observation": {
+    "source_sha256": "09b0bfe95258e5a5a8b5945c7ba61d1ac469e409a4795a0c0f61204fd716d9a9",
+    "event_count": 115,
+    "session_count": 11,
+    "grouping": "Stable profile/diagnosis/actions/viewport key, one installation and unique sequences enforced; console delivery order is not event order.",
+    "completed_wait_sessions": 7,
+    "blocked_sessions": 4,
+    "blocked_viewport": [
+      390,
+      844
+    ],
+    "blocked_operation": "Promise.allSettled on captured animation.finished; no second animation sample or MessageChannel creation",
+    "observed_animation": {
+      "kind": "CSSTransition",
+      "targetTag": "DIV",
+      "playState": "running",
+      "pending": false,
+      "currentTimeMs": "approximately 16.6",
+      "endTimeMs": 300
+    },
+    "not_established": "Why the native finished promise stayed pending; no attribution to Chromium bug, playback rate, pause, or garbage collection.",
+    "invalid_parser_output": "Original summary assumed console line ordering; retained in scratch but superseded by sequence-ordered corrected summary."
+  },
+  "recovery_plan": {
+    "owner": "/root/p03_tests",
+    "independent_reviewer": "/root/o0_guards",
+    "render": "Re-sample unchanged current active finite animation condition between frames; retain final two-frame/message barrier; remove temporary F3 diagnostic wrapper; add regression counterproofs.",
+    "eligibility": "Separate read-only investigation /root/p02_resize_investigation; observed missing landUseType query, test repair not yet integrated."
+  },
+  "repair_status": "IN_PROGRESS; no final runtime PASS",
+  "successor_gate": "Same branch/PR, full RC15 and Codex plus independent runtime/visual QA on successor SHA; no blind rerun",
+  "merge": false,
+  "deploy": false,
+  "eligibility_investigation": {
+    "path": "p02-f3-eligibility-investigation.json",
+    "sha256": "713dc2d024d2c7c1f275de94c16a78df5fff7733b6a17782e09612085df0d5a3",
+    "state": "PROXIMATE_CAUSE_CONFIRMED_INTERNAL_STATE_LOSS_NOT_PROVEN",
+    "request": "F3 missing landUseType; F2 includes FOREST",
+    "source_files_identical_F2_F3": 11,
+    "error_context": "NOT_AVAILABLE; zero matching ZIP entries"
+  },
+  "independent_causal_review": {
+    "path": "p04-f3-causal-review.json",
+    "sha256": "c9ea6f3234e8fbc68772b4ac84d9d0f3a5a57c2f7c13db4028abd3bf005e2cd8",
+    "status": "FAIL_F3_CONFIRMED_CAUSAL_LOCALIZATION_COMPLETE_REPAIR_PENDING"
+  }
+}

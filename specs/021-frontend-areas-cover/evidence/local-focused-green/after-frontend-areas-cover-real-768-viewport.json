@@ -1,0 +1,43 @@
+{
+  "name": "cover-real-768",
+  "screenshot": {
+    "filename": "after-frontend-areas-cover-real-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 349
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 1788,
+      "extent": 1788
+    }
+  },
+  "active": {
+    "tag": "a",
+    "x": 184,
+    "y": -42.375,
+    "width": 138.0625,
+    "height": 44
+  },
+  "target": {
+    "x": 184,
+    "y": 186,
+    "width": 560,
+    "height": 527.78125
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

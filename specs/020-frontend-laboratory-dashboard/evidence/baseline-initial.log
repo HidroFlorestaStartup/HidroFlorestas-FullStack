@@ -1,0 +1,1536 @@
+npm notice run hidro-florestas-fullstack@0.1.0 test:e2e
+npm notice run playwright test
+[2m[WebServer] [22mnpm notice run hidro-florestas-fullstack@0.1.0 dev
+[2m[WebServer] [22mnpm notice run next dev --hostname 127.0.0.1 --port 3001
+[2m[WebServer] [22m(node:6616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 134 tests using 1 worker
+
+(node:39300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 [chromium] › tests\e2e\account-verification-recovery.spec.ts:17:7 › account forms and privacy › verification preserves a zero prefix, announces errors, and obeys server cooldown (1.4s)
+  ok   2 [chromium] › tests\e2e\account-verification-recovery.spec.ts:41:7 › account forms and privacy › expired verification offers a resend and a lost session offers legitimate login (769ms)
+  ok   3 [chromium] › tests\e2e\account-verification-recovery.spec.ts:53:7 › account forms and privacy › reset removes the fragment, preserves the proof on GET, and recovers after reload (742ms)
+  ok   4 [chromium] › tests\e2e\account-verification-recovery.spec.ts:71:7 › account forms and privacy › forgot password works by keyboard on mobile and displays a neutral response (1.4s)
+  ok   5 [chromium] › tests\e2e\account-verification-recovery.spec.ts:83:7 › account forms and privacy › a new reset fragment in an existing tab is removed and clears the previous form without consuming it (606ms)
+  ok   6 [chromium] › tests\e2e\account-verification-recovery.spec.ts:193:7 › browser account journeys with a deterministic outbox transport › registers, verifies from received mail, logs out, resumes, and revokes another browser after reset (18.0s)
+  ok   7 [chromium] › tests\e2e\account-verification-recovery.spec.ts:247:7 › browser account journeys with a deterministic outbox transport › an ACTIVE unverified account can reset and then returns to verification (4.2s)
+[2m[WebServer] [22m[browser] Image with src "/_next/static/media/logo-hf.2qtq_rd_sdq39.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[2m[WebServer] [22mRead more: https://nextjs.org/docs/app/api-reference/components/image#loading
+  ok   8 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 375px (5.0s)
+  ok   9 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 768px (4.8s)
+  ok  10 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 1440px (4.9s)
+  ok  11 [chromium] › tests\e2e\frontend-account.spec.ts:45:7 › all six account screens fit 320px with text200 (7.2s)
+  ok  12 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › register is inert before hydration and preserves first input (581ms)
+  ok  13 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › forgot-password is inert before hydration and preserves first input (576ms)
+  ok  14 [chromium] › tests\e2e\frontend-account.spec.ts:103:7 › change-password is inert before hydration and preserves first input (587ms)
+  ok  15 [chromium] › tests\e2e\frontend-account.spec.ts:123:5 › signup keeps uncertain attempt, raw password and server errors without field invalidity (995ms)
+  ok  16 [chromium] › tests\e2e\frontend-account.spec.ts:166:5 › shared password visibility has a mobile target and visible keyboard focus (530ms)
+  ok  17 [chromium] › tests\e2e\frontend-account.spec.ts:180:5 › verification loading and invalid-code presentation remain safe (656ms)
+  ok  18 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › forgot-password processing and general error are visible without exposing fields (830ms)
+  ok  19 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › reset-password processing and general error are visible without exposing fields (645ms)
+  ok  20 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › change-password processing and general error are visible without exposing fields (745ms)
+  ok  21 [chromium] › tests\e2e\frontend-account.spec.ts:202:7 › delete-account processing and general error are visible without exposing fields (671ms)
+[2m[WebServer] [22m(node:37804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   22 [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 375px (8.9s)
+(node:41820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:41820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   23 [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 375px (6.7s)
+(node:26972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:3436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   24 [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 768px (6.6s)
+(node:44540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   25 [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 768px (6.7s)
+(node:19440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   26 [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 1440px (6.6s)
+(node:45100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   27 [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 1440px (6.4s)
+(node:28528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44668) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   28 [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 320px text200 (7.0s)
+(node:31528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   29 [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 320px text200 (7.5s)
+(node:32196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   30 [chromium] › tests\e2e\frontend-dashboard.spec.ts:257:5 › real membership conflict preserves expectedRole and a delayed real PATCH rejects same-turn duplicate clicks (6.6s)
+(node:14052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:3448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:4492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  31 [chromium] › tests\e2e\frontend-dashboard.spec.ts:327:5 › real redirects and global/contextual authority preserve owner-only roles and inactive readOnly (4.2s)
+[2m[WebServer] [22m(node:41880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   32 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text100 (8.1s)
+(node:34040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   33 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text200 (11.6s)
+(node:36452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   34 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text100 (11.0s)
+(node:43536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  x   35 [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text200 (8.4s)
+(node:13892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  36 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 375px (9.3s)
+[2m[WebServer] [22m(node:23032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40460) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:4356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40576) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  37 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 768px (6.7s)
+[2m[WebServer] [22m(node:10812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  38 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 1440px (6.8s)
+[2m[WebServer] [22m(node:39772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  39 [chromium] › tests\e2e\frontend-workspace.spec.ts:77:7 › workspace and existing consumers at 320px text200 (9.7s)
+[2m[WebServer] [22m(node:45528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  40 [chromium] › tests\e2e\frontend-workspace.spec.ts:131:5 › settings contains keyboard focus, Escape restores the trigger and close cancels (1.3s)
+[2m[WebServer] [22m(node:42960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  41 [chromium] › tests\e2e\frontend-workspace.spec.ts:153:5 › real owner creates, confirms exact name, deactivates and deletes without implicit selection (1.9s)
+[2m[WebServer] [22m(node:30940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:23164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:41976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:2000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  42 [chromium] › tests\e2e\frontend-workspace.spec.ts:185:5 › contextual roles, inactive access, explicit change and history stay real (9.2s)
+[2m[WebServer] [22m(node:9008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  43 [chromium] › tests\e2e\frontend-workspace.spec.ts:214:5 › global administration uses server capability without bypassing laboratory membership (5.4s)
+[2m[WebServer] [22m(node:24424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  44 [chromium] › tests\e2e\frontend-workspace.spec.ts:230:5 › mobile account disclosure closes with Escape, navigation and desktop resize (1.5s)
+  ok  45 [chromium] › tests\e2e\frontend-workspace.spec.ts:256:5 › transient list loading and error retry recover the real empty workspace (792ms)
+  ok  46 [chromium] › tests\e2e\frontend-workspace.spec.ts:273:5 › keyboard skip link focuses content without adding a second main (4.6s)
+  ok  47 [chromium] › tests\e2e\frontend-workspace.spec.ts:293:5 › mobile focused content stays between sticky header and bottom navigation with text200 (1.6s)
+  ok  48 [chromium] › tests\e2e\frontend-workspace.spec.ts:307:5 › transient create blocks same-turn duplicate requests and preserves payload (1.4s)
+[2m[WebServer] [22m(node:45216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  49 [chromium] › tests\e2e\frontend-workspace.spec.ts:326:5 › transient risk blocks same-turn duplicate PATCH and shows its error inside settings (1.8s)
+  ok  50 [chromium] › tests\e2e\frontend-workspace.spec.ts:346:5 › transient settings read error is accessible in dialog and retry reads real details (1.5s)
+[2m[WebServer] [22m(node:27548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:9812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  51 [chromium] › tests\e2e\frontend-workspace.spec.ts:363:5 › lost membership between list and settings stays denied without selecting another context (2.0s)
+[2m[WebServer] [22m(node:19564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  52 [chromium] › tests\e2e\frontend-workspace.spec.ts:383:5 › server refuses deleting a laboratory with areas and keeps confirmation recoverable (1.6s)
+  ok  53 [chromium] › tests\e2e\frontend-workspace.spec.ts:396:7 › real logout at 375px revokes session and history cannot restore workspace (1.5s)
+  ok  54 [chromium] › tests\e2e\frontend-workspace.spec.ts:396:7 › real logout at 1440px revokes session and history cannot restore workspace (1.3s)
+  ok  55 [chromium] › tests\e2e\frontend-workspace.spec.ts:408:5 › transient logout loading and error keep retry connected to the real POST (913ms)
+(node:38532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  56 [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=false and never requests bytes (1.4s)
+[2m[WebServer] [22m(node:27896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  57 [chromium] › tests\e2e\area-covers.spec.ts:6:40 › CRI-REV-001 disabled cover UI preserves existence=true and never requests bytes (3.5s)
+[2m[WebServer] [22m(node:33112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  58 [chromium] › tests\e2e\area-covers.spec.ts:26:5 › cover UI fake: invalid input, lost response retry, mobile keyboard replacement/removal and private preview (1.3s)
+[2m[WebServer] [22m(node:27112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  59 [chromium] › tests\e2e\area-covers.spec.ts:48:5 › member has reading/fallback only and outsider receives contextual HTTP refusal (2.9s)
+[2m[WebServer] [22m(node:15488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  60 [chromium] › tests\e2e\area-covers.spec.ts:56:5 › reloading a temporarily unavailable cover retries its content at the same revision (1.2s)
+[2m[WebServer] [22m(node:39312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  61 [chromium] › tests\e2e\area-registration.spec.ts:17:5 › backend enforces current role, isolation, ownership privacy and account eligibility (1.0s)
+[2m[WebServer] [22m(node:46436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:3448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:32040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42140) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  62 [chromium] › tests\e2e\area-registration.spec.ts:43:5 › explicit context and manual registration survive reload without tiles (3.3s)
+[2m[WebServer] [22m(node:30788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  63 [chromium] › tests\e2e\area-registration.spec.ts:53:5 › map selection remains editable and saves only on confirmation (1.5s)
+[2m[WebServer] [22m(node:40992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  64 [chromium] › tests\e2e\area-registration.spec.ts:62:5 › late and denied geolocation preserve edited fields (3.4s)
+[2m[WebServer] [22m(node:31016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:12708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  65 [chromium] › tests\e2e\area-registration.spec.ts:71:5 › essential flow and map have usable dimensions across viewports (1.9s)
+[2m[WebServer] [22m(node:43848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  66 [chromium] › tests\e2e\area-viewing.spec.ts:26:5 › lists persistent coordinates without an aggregate map and opens one-marker detail (1.2s)
+[2m[WebServer] [22m(node:22732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:33940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  67 [chromium] › tests\e2e\area-viewing.spec.ts:38:5 › renders list and detail for every contextual role, including inactive read-only (2.5s)
+[2m[WebServer] [22m(node:37624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  68 [chromium] › tests\e2e\area-viewing.spec.ts:50:5 › keeps list and detail usable on mobile, intermediate and wide viewports (2.3s)
+  ok  69 [chromium] › tests\e2e\authenticated-access.spec.ts:58:7 › authenticated access › rejects syntactically invalid input before credential lookup (17ms)
+  ok  70 [chromium] › tests\e2e\authenticated-access.spec.ts:73:7 › authenticated access › rejects well-formed incorrect and ineligible credentials uniformly (346ms)
+  ok  71 [chromium] › tests\e2e\authenticated-access.spec.ts:98:7 › authenticated access › logs an ACTIVE user into workspace with an exact public DTO and safe cookie (661ms)
+  ok  72 [chromium] › tests\e2e\authenticated-access.spec.ts:136:7 › authenticated access › restores an ACTIVE session across reload and both private trees (921ms)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1983042735'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1215920706'[39m
+[2m[WebServer] [22m}
+  ok  73 [chromium] › tests\e2e\authenticated-access.spec.ts:161:7 › authenticated access › denies missing, malformed, tampered, expired, invalid-payload, and orphan sessions (1.4s)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+  ok  74 [chromium] › tests\e2e\authenticated-access.spec.ts:205:7 › authenticated access › denies sessions for every user that is not ACTIVE (829ms)
+  ok  75 [chromium] › tests\e2e\authenticated-access.spec.ts:220:7 › authenticated access › expires an obsolete cookie through /me without exposing protected fields (28ms)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async WorkspaceLayout (src\app\(private)\workspace\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1215920706'[39m
+[2m[WebServer] [22m}
+  ok  76 [chromium] › tests\e2e\authenticated-access.spec.ts:239:7 › authenticated access › revokes protected access on the next validation after ACTIVE becomes BLOCKED (989ms)
+  ok  77 [chromium] › tests\e2e\authenticated-access.spec.ts:260:7 › authenticated access › logout prevents back, reload, and direct access to both private trees (1.3s)
+  ok  78 [chromium] › tests\e2e\authenticated-access.spec.ts:288:7 › authenticated access › repeated logout without a session remains stable (979ms)
+[2m[WebServer] [22m(node:40176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  79 [chromium] › tests\e2e\collection-registration.spec.ts:37:5 › US1 starts only from the explicit authorized area without persistence (2.2s)
+[2m[WebServer] [22m(node:15332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async DashboardLayout (src\app\(private)\dashboard\layout.tsx:4:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'1280655165'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m⨯ Error [AuthBoundaryError]: UNAUTHORIZED
+[2m[WebServer] [22m    at requireAuthWithAdapters (src\app\api\server\middlewares\auth.middleware.ts:26:15)
+[2m[WebServer] [22m    at async NewCollectionPage (src\app\(private)\dashboard\laboratories\[laboratoryId]\areas\[areaId]\collections\new\page.tsx:14:21)
+[2m[WebServer] [22m  [90m24 |[0m
+[2m[WebServer] [22m  [90m25 |[0m     [36mif[0m (!result.success) {
+[2m[WebServer] [22m[31m[1m>[0m [90m26 |[0m         [36mthrow[0m [36mnew[0m [33mAuthBoundaryError[0m(
+[2m[WebServer] [22m  [90m   |[0m               [31m[1m^[0m
+[2m[WebServer] [22m  [90m27 |[0m             result.reason === [32m"UNAUTHENTICATED"[0m ? [32m"UNAUTHORIZED"[0m : [32m"INTERNAL_ERROR"[0m,
+[2m[WebServer] [22m  [90m28 |[0m         );
+[2m[WebServer] [22m  [90m29 |[0m     } {
+[2m[WebServer] [22m  code: [32m'UNAUTHORIZED'[39m,
+[2m[WebServer] [22m  digest: [32m'3176160840'[39m
+[2m[WebServer] [22m}
+[2m[WebServer] [22m(node:29244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  80 [chromium] › tests\e2e\collection-registration.spec.ts:57:5 › US1 rejects crossed, missing, revoked, ineligible and inactive mutation contexts (2.5s)
+  ok  81 [chromium] › tests\e2e\collection-registration.spec.ts:91:5 › US2 validates an explicit temporal offset in memory without POST (1.3s)
+[2m[WebServer] [22m(node:47008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  82 [chromium] › tests\e2e\collection-registration.spec.ts:127:5 › US3 reviews derived authorship and confirms once after a double click (2.7s)
+[2m[WebServer] [22m(node:16024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  83 [chromium] › tests\e2e\collection-registration.spec.ts:160:5 › US3 retries a failed confirmation with the same key and surfaces access loss (1.1s)
+  ok  84 [chromium] › tests\e2e\collection-registration.spec.ts:196:5 › US3 converges concurrent real POSTs and rejects a divergent replay (415ms)
+[2m[WebServer] [22m(node:29804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  85 [chromium] › tests\e2e\collection-registration.spec.ts:225:5 › US4 reads a minimal immutable detail for current roles and inactive laboratories (6.4s)
+[2m[WebServer] [22m(node:33976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:23932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  86 [chromium] › tests\e2e\collection-registration.spec.ts:247:5 › US4 hides crossed, missing and revoked collection contexts (3.0s)
+[2m[WebServer] [22m(node:46540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:13884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  87 [chromium] › tests\e2e\collection-registration.spec.ts:263:5 › US4 detail remains keyboard-usable across responsive viewports (2.2s)
+[2m[WebServer] [22m(node:41612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:21684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:30444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:17108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  88 [chromium] › tests\e2e\collection-registration.spec.ts:279:5 › US4 completes independent form-to-detail flows in two laboratory contexts (3.1s)
+  ok  89 [chromium] › tests\e2e\create-laboratory.spec.ts:36:7 › minimum laboratory creation › creates with name only and remains visible after reload (1.4s)
+  ok  90 [chromium] › tests\e2e\create-laboratory.spec.ts:54:7 › minimum laboratory creation › rejects client supplied identity (34ms)
+  ok  91 [chromium] › tests\e2e\create-laboratory.spec.ts:60:7 › minimum laboratory creation › enforces five accessible laboratories and exposes the limit in the UI (641ms)
+[2m[WebServer] [22m(node:3524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  92 [chromium] › tests\e2e\create-laboratory.spec.ts:73:7 › minimum laboratory creation › does not expose one user's laboratory to another (498ms)
+[2m[WebServer] [22m(node:38324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:8280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:28600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  93 [chromium] › tests\e2e\dashboard-history.spec.ts:43:5 › US1 shows real contextual totals, an empty laboratory and the areas destination (2.8s)
+[2m[WebServer] [22m(node:26908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:1684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  94 [chromium] › tests\e2e\dashboard-history.spec.ts:59:5 › US2 traverses more than 20 stable derived items without duplicates and opens real destinations (2.4s)
+[2m[WebServer] [22m(node:19788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  95 [chromium] › tests\e2e\dashboard-history.spec.ts:87:5 › US2 keeps continuation stable and includes a newer source after returning to the first page (1.6s)
+[2m[WebServer] [22m(node:32224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:19232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  96 [chromium] › tests\e2e\dashboard-history.spec.ts:119:5 › US3 reloads persisted sources and keeps loading, failure and retry distinct (3.7s)
+[2m[WebServer] [22m(node:12504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  97 [chromium] › tests\e2e\dashboard-history.spec.ts:182:5 › US3 discards a delayed response when the laboratory context changes (1.3s)
+[2m[WebServer] [22m(node:46892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:40064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:7136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  98 [chromium] › tests\e2e\dashboard-history.spec.ts:197:5 › US4 preserves isolation, reauthorization and minimized API payloads (1.8s)
+[2m[WebServer] [22m(node:45316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:10476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:38364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:6672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:37084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  99 [chromium] › tests\e2e\dashboard-history.spec.ts:225:5 › US4 remains keyboard-operable and free of main horizontal overflow (2.6s)
+[2m[WebServer] [22m(node:39836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:14104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 100 [chromium] › tests\e2e\environmental-data-read.spec.ts:13:5 › independent read shows provenance, null/zero/false, mobile and desktop without overflow (3.3s)
+[2m[WebServer] [22m(node:7964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:2428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 101 [chromium] › tests\e2e\environmental-data-read.spec.ts:25:5 › absence and direct API access distinguish missing data from inaccessible context (2.0s)
+[2m[WebServer] [22m(node:19112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:16528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:5916) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 102 [chromium] › tests\e2e\environmental-data-registration.spec.ts:8:5 › registers through review, rejects invalid values and retries the same operation after lost response (16.4s)
+[2m[WebServer] [22m(node:31552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 103 [chromium] › tests\e2e\environmental-data-registration.spec.ts:39:5 › inactive laboratory only permits reading and has no registration controls (634ms)
+[2m[WebServer] [22m(node:35960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:10952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:31368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 104 [chromium] › tests\e2e\environmental-drafts.spec.ts:11:5 › unsaved browser history cancellation preserves fields and excessive raw gives feedback (4.1s)
+[2m[WebServer] [22m(node:45532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:22516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:34408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:35620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 105 [chromium] › tests\e2e\environmental-drafts.spec.ts:27:5 › personal draft retries a lost save, resumes partial values, resolves two-tab conflict, discards and confirms on mobile (5.4s)
+[2m[WebServer] [22m(node:29428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:21288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 106 [chromium] › tests\e2e\environmental-drafts.spec.ts:49:5 › outsider cannot read draft and inactive laboratory offers only reading (1.0s)
+[2m[WebServer] [22m(node:44652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 107 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (new draft) (2.4s)
+[2m[WebServer] [22m(node:34384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20200) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:39116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 108 [chromium] › tests\e2e\environmental-drafts.spec.ts:55:44 › slow hydration preserves the first draft save and reload (absent and blank baseline) (2.6s)
+  ok 109 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 375px without horizontal overflow (586ms)
+  ok 110 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 768px without horizontal overflow (558ms)
+  ok 111 [chromium] › tests\e2e\frontend-login.spec.ts:8:7 › login presentation fits 1440px without horizontal overflow (564ms)
+  ok 112 [chromium] › tests\e2e\frontend-login.spec.ts:23:5 › login reflows at 320px with enlarged root text (940ms)
+  ok 113 [chromium] › tests\e2e\frontend-login.spec.ts:45:5 › login preserves password visibility controls and keyboard order (488ms)
+  ok 114 [chromium] › tests\e2e\frontend-login.spec.ts:76:5 › login is inert until hydration and then accepts the first input (585ms)
+  ok 115 [chromium] › tests\e2e\frontend-login.spec.ts:106:5 › login preserves the payload, prevents duplicate submission and announces an error (683ms)
+  ok 116 [chromium] › tests\e2e\frontend-login.spec.ts:161:5 › login submits with Enter and announces a network failure without navigating (743ms)
+  ok 117 [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects incorrect password through the real backend (484ms)
+  ok 118 [chromium] › tests\e2e\frontend-login.spec.ts:210:9 › login with real ineligible credentials › login rejects blocked account through the real backend (518ms)
+  ok 119 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: email only (570ms)
+  ok 120 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: password only (561ms)
+  ok 121 [chromium] › tests\e2e\frontend-login.spec.ts:237:7 › login aria-invalid marks only empty fields: both fields (540ms)
+  ok 122 [chromium] › tests\e2e\frontend-login.spec.ts:269:5 › login aria-invalid keeps a generic HTTP failure at form level (554ms)
+[2m[WebServer] [22m(node:37432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:44196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:27184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:18944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 123 [chromium] › tests\e2e\laboratory-context.spec.ts:26:5 › requires explicit selection and keeps laboratory context in links and reloads (2.1s)
+[2m[WebServer] [22m(node:26016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 124 [chromium] › tests\e2e\laboratory-context.spec.ts:40:5 › revoked and cross-laboratory access remain indistinguishable from missing resources (184ms)
+[2m[WebServer] [22m(node:7344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:11568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:26636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 125 [chromium] › tests\e2e\laboratory-membership-roles.spec.ts:7:5 › owner promotes and demotes; stale role and inactive laboratory reject changes (1.6s)
+  ok 126 [chromium] › tests\e2e\laboratory-membership-roles.spec.ts:25:5 › administrator cannot manage contextual roles (46ms)
+[2m[WebServer] [22m(node:21116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:25484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 127 [chromium] › tests\e2e\territorial-map.spec.ts:27:5 › shows one authorized textual item and marker per area and excludes partial collections (1.1s)
+[2m[WebServer] [22m(node:31104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:29472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 128 [chromium] › tests\e2e\territorial-map.spec.ts:56:5 › keeps inactive laboratories readable and inaccessible contexts indistinguishable (1.1s)
+[2m[WebServer] [22m(node:45856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:45872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:46720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:24676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 129 [chromium] › tests\e2e\territorial-map.spec.ts:75:5 › preserves the complete textual interface without horizontal overflow (2.0s)
+[2m[WebServer] [22m(node:38476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:36804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 130 [chromium] › tests\e2e\user-administration-audit.spec.ts:5:5 › successful changes appear in minimized history (2.3s)
+[2m[WebServer] [22m(node:22876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 131 [chromium] › tests\e2e\user-administration-read.spec.ts:5:5 › ADMIN lists, searches and opens details while non-admin is denied (2.2s)
+  ok 132 [chromium] › tests\e2e\user-administration-read.spec.ts:27:5 › legacy user administration route redirects to the canonical protected route (604ms)
+[2m[WebServer] [22m(node:3020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 133 [chromium] › tests\e2e\user-administration-role.spec.ts:5:5 › role promotion is confirmed and self-change controls are rejected by API (1.3s)
+[2m[WebServer] [22m(node:43532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:43028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:42660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 134 [chromium] › tests\e2e\user-administration-status.spec.ts:5:5 › status confirmation is keyboard-operable and audited (2.5s)
+[2m[WebServer] [22m(node:46464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+  1) [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 375px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Owner IMP007', { exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Owner IMP007', { exact: true })[22m
+
+
+      167 |     const roster = membersSection(page);
+      168 |     await expect(roster.getByRole("listitem")).toHaveCount(3);
+    > 169 |     for (const member of members.memberships) await expect(roster.getByText(member.name, { exact: true })).toBeVisible();
+          |                                                                                                            ^
+      170 |     const owner = members.memberships.find(member => member.role === "OWNER")!;
+      171 |     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
+      172 |     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:169:108
+
+    attachment #1: before-frontend-dashboard-summary-375-viewport.png (image/png) ──────────────────
+    test-results\frontend-dashboard-real-da-f3943--and-empty-context-at-375px-chromium\attachments\before-frontend-dashboard-summary-375-viewport-png-a4051d563a650c857c0469cb741b97c98c96e0af.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-history-focus-375-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-f3943--and-empty-context-at-375px-chromium\attachments\before-frontend-dashboard-history-focus-375-viewport-png-4bf94d4ea74cf220b1d368942b0b60ad560b6687.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-history-older-375-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-f3943--and-empty-context-at-375px-chromium\attachments\before-frontend-dashboard-history-older-375-viewport-png-e1f401af21bf6abdddea8809ada4f0cc2bf9277d.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-real-da-f3943--and-empty-context-at-375px-chromium\error-context.md
+
+  2) [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 375px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')
+    Expected string: [32m"Falha transitória sintética"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')[22m
+
+
+      236 |       await capture(page, info, `transient-members-loading-${width}`);
+      237 |       releaseMembers();
+    > 238 |       await expect(membersSection(page).getByRole("alert")).toContainText("Falha transitória sintética");
+          |                                                             ^
+      239 |       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
+      240 |       await capture(page, info, `transient-members-error-${width}`);
+      241 |       failMembers = false;
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:238:61
+
+    attachment #1: before-frontend-dashboard-transient-dashboard-loading-375-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-467dd-hboard-and-members-at-375px-chromium\attachments\before-frontend-dashboard-transient-dashboard-loading-375-viewport-png-48219c4527081a0b55d5ab6592b41e4a881f4963.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-transient-dashboard-error-375-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-467dd-hboard-and-members-at-375px-chromium\attachments\before-frontend-dashboard-transient-dashboard-error-375-viewport-png-b7a32a03d314609565f2b150875966df32a37aed.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-transient-members-loading-375-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-467dd-hboard-and-members-at-375px-chromium\attachments\before-frontend-dashboard-transient-members-loading-375-viewport-png-5b1ac6a4df80572b39bdb62fe81552c9469a78b9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-transie-467dd-hboard-and-members-at-375px-chromium\error-context.md
+
+  3) [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 768px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Admin IMP007', { exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Admin IMP007', { exact: true })[22m
+
+
+      167 |     const roster = membersSection(page);
+      168 |     await expect(roster.getByRole("listitem")).toHaveCount(3);
+    > 169 |     for (const member of members.memberships) await expect(roster.getByText(member.name, { exact: true })).toBeVisible();
+          |                                                                                                            ^
+      170 |     const owner = members.memberships.find(member => member.role === "OWNER")!;
+      171 |     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
+      172 |     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:169:108
+
+    attachment #1: before-frontend-dashboard-summary-768-viewport.png (image/png) ──────────────────
+    test-results\frontend-dashboard-real-da-bf286--and-empty-context-at-768px-chromium\attachments\before-frontend-dashboard-summary-768-viewport-png-1a09b845a5451f40baf67246aa605752d35627ca.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-history-focus-768-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-bf286--and-empty-context-at-768px-chromium\attachments\before-frontend-dashboard-history-focus-768-viewport-png-df6a828bded0f3de2dc64161567c8b1b4501a207.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-history-older-768-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-bf286--and-empty-context-at-768px-chromium\attachments\before-frontend-dashboard-history-older-768-viewport-png-54726e69163d56f8d97d8edc84b8012f6e1c198a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-real-da-bf286--and-empty-context-at-768px-chromium\error-context.md
+
+  4) [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 768px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')
+    Expected string: [32m"Falha transitória sintética"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')[22m
+
+
+      236 |       await capture(page, info, `transient-members-loading-${width}`);
+      237 |       releaseMembers();
+    > 238 |       await expect(membersSection(page).getByRole("alert")).toContainText("Falha transitória sintética");
+          |                                                             ^
+      239 |       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
+      240 |       await capture(page, info, `transient-members-error-${width}`);
+      241 |       failMembers = false;
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:238:61
+
+    attachment #1: before-frontend-dashboard-transient-dashboard-loading-768-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-3ef04-hboard-and-members-at-768px-chromium\attachments\before-frontend-dashboard-transient-dashboard-loading-768-viewport-png-4409be3ba6ec8d4bbbab8e7cf2cec93e9c66a4e6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-transient-dashboard-error-768-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-3ef04-hboard-and-members-at-768px-chromium\attachments\before-frontend-dashboard-transient-dashboard-error-768-viewport-png-26daff22016aa978cee4a6c7165bca39b996ddba.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-transient-members-loading-768-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-3ef04-hboard-and-members-at-768px-chromium\attachments\before-frontend-dashboard-transient-members-loading-768-viewport-png-a59ee5a033d9e013c1a0b36215e9fa74f816ff48.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-transie-3ef04-hboard-and-members-at-768px-chromium\error-context.md
+
+  5) [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 1440px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Member IMP007', { exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Member IMP007', { exact: true })[22m
+
+
+      167 |     const roster = membersSection(page);
+      168 |     await expect(roster.getByRole("listitem")).toHaveCount(3);
+    > 169 |     for (const member of members.memberships) await expect(roster.getByText(member.name, { exact: true })).toBeVisible();
+          |                                                                                                            ^
+      170 |     const owner = members.memberships.find(member => member.role === "OWNER")!;
+      171 |     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
+      172 |     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:169:108
+
+    attachment #1: before-frontend-dashboard-summary-1440-viewport.png (image/png) ─────────────────
+    test-results\frontend-dashboard-real-da-b5a32-and-empty-context-at-1440px-chromium\attachments\before-frontend-dashboard-summary-1440-viewport-png-e28f1af81ad545f5367a586f68c8a9736f0001e5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-history-focus-1440-viewport.png (image/png) ───────────
+    test-results\frontend-dashboard-real-da-b5a32-and-empty-context-at-1440px-chromium\attachments\before-frontend-dashboard-history-focus-1440-viewport-png-e80a1146e56ce3863bdeeede59848d1cbe02cd62.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-history-older-1440-viewport.png (image/png) ───────────
+    test-results\frontend-dashboard-real-da-b5a32-and-empty-context-at-1440px-chromium\attachments\before-frontend-dashboard-history-older-1440-viewport-png-6612310a81d530ec47d147680ef5b393556bff64.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-real-da-b5a32-and-empty-context-at-1440px-chromium\error-context.md
+
+  6) [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 1440px 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')
+    Expected string: [32m"Falha transitória sintética"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')[22m
+
+
+      236 |       await capture(page, info, `transient-members-loading-${width}`);
+      237 |       releaseMembers();
+    > 238 |       await expect(membersSection(page).getByRole("alert")).toContainText("Falha transitória sintética");
+          |                                                             ^
+      239 |       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
+      240 |       await capture(page, info, `transient-members-error-${width}`);
+      241 |       failMembers = false;
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:238:61
+
+    attachment #1: before-frontend-dashboard-transient-dashboard-loading-1440-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-d769d-board-and-members-at-1440px-chromium\attachments\before-frontend-dashboard-transient-dashboard-loading-1440-viewport-png-7600bf8554198aa2af9300aa3160a747ccd53333.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-transient-dashboard-error-1440-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-d769d-board-and-members-at-1440px-chromium\attachments\before-frontend-dashboard-transient-dashboard-error-1440-viewport-png-4b0487f1f84075b99f01ef2a4087626a1e590406.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-transient-members-loading-1440-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-d769d-board-and-members-at-1440px-chromium\attachments\before-frontend-dashboard-transient-members-loading-1440-viewport-png-48488ab6b8ab2854ef2cbd591dc55e8870d1f152.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-transie-d769d-board-and-members-at-1440px-chromium\error-context.md
+
+  7) [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 320px text200 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Admin IMP007', { exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByText('Admin IMP007', { exact: true })[22m
+
+
+      167 |     const roster = membersSection(page);
+      168 |     await expect(roster.getByRole("listitem")).toHaveCount(3);
+    > 169 |     for (const member of members.memberships) await expect(roster.getByText(member.name, { exact: true })).toBeVisible();
+          |                                                                                                            ^
+      170 |     const owner = members.memberships.find(member => member.role === "OWNER")!;
+      171 |     await expect(roster.getByRole("listitem").filter({ hasText: owner.name }).getByRole("button")).toHaveCount(0);
+      172 |     const promote = roster.getByRole("button", { name: `Promover ${memberName}`, exact: true });
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:169:108
+
+    attachment #1: before-frontend-dashboard-summary-320-viewport.png (image/png) ──────────────────
+    test-results\frontend-dashboard-real-da-ec370-ty-context-at-320px-text200-chromium\attachments\before-frontend-dashboard-summary-320-viewport-png-425a1fe96edd4f9b47677e21a9452c8f02f19ece.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-history-focus-320-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-ec370-ty-context-at-320px-text200-chromium\attachments\before-frontend-dashboard-history-focus-320-viewport-png-b49693c54e7881a5f80291ba7a80f0e410f5b25c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-history-older-320-viewport.png (image/png) ────────────
+    test-results\frontend-dashboard-real-da-ec370-ty-context-at-320px-text200-chromium\attachments\before-frontend-dashboard-history-older-320-viewport-png-3972369e2d2d447c85e3d1aed4b0204a2d1e4f6b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-real-da-ec370-ty-context-at-320px-text200-chromium\error-context.md
+
+  8) [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 320px text200 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')
+    Expected string: [32m"Falha transitória sintética"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')[22m
+
+
+      236 |       await capture(page, info, `transient-members-loading-${width}`);
+      237 |       releaseMembers();
+    > 238 |       await expect(membersSection(page).getByRole("alert")).toContainText("Falha transitória sintética");
+          |                                                             ^
+      239 |       await expect(membersSection(page).getByRole("button", { name: `Promover ${memberName}`, exact: true })).toHaveCount(0);
+      240 |       await capture(page, info, `transient-members-error-${width}`);
+      241 |       failMembers = false;
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:238:61
+
+    attachment #1: before-frontend-dashboard-transient-dashboard-loading-320-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-9f614-nd-members-at-320px-text200-chromium\attachments\before-frontend-dashboard-transient-dashboard-loading-320-viewport-png-89a9b58d98f8b3c7919d0287262f9cb119b5405a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: before-frontend-dashboard-transient-dashboard-error-320-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-9f614-nd-members-at-320px-text200-chromium\attachments\before-frontend-dashboard-transient-dashboard-error-320-viewport-png-8ab9974c1778afc520090bb86b64a3263fa6a3af.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: before-frontend-dashboard-transient-members-loading-320-viewport.png (image/png) 
+    test-results\frontend-dashboard-transie-9f614-nd-members-at-320px-text200-chromium\attachments\before-frontend-dashboard-transient-members-loading-320-viewport-png-0d4e0456907bb525dac6476a6fb23617e665bd93.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-dashboard-transie-9f614-nd-members-at-320px-text200-chromium\error-context.md
+
+  9) [chromium] › tests\e2e\frontend-dashboard.spec.ts:257:5 › real membership conflict preserves expectedRole and a delayed real PATCH rejects same-turn duplicate clicks 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')
+    Expected string: [32m"O registro mudou"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for locator('section').filter({ has: getByRole('heading', { name: 'Membros do laboratório', exact: true }) }).last().getByRole('alert')[22m
+
+
+      281 |     expect(conflict.status()).toBe(409);
+      282 |     expect((await conflict.json()).error.code).toBe("CONFLICT");
+    > 283 |     await expect(roster.getByRole("alert")).toContainText("O registro mudou");
+          |                                             ^
+      284 |     await expect(roster.getByText("Papel atualizado.", { exact: true })).toHaveCount(0);
+      285 |     const demote = roster.getByRole("button", { name: `Rebaixar ${memberName}`, exact: true });
+      286 |     await expect(demote).toBeEnabled();
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-dashboard.spec.ts:283:45
+
+    Error Context: test-results\frontend-dashboard-real-me-923cb--same-turn-duplicate-clicks-chromium\error-context.md
+
+  10) [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text100 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+
+    Locator:  getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })[22m
+    [2m    9 × locator resolved to <button type="button" class="workspace-module__dP-vpW__outline">…</button>[22m
+    [2m      - unexpected value "inactive"[22m
+
+
+      105 |         await capture(page, info, state + "-last-control-focus", records);
+      106 |         await settings.tap(); await expect(page.getByRole("dialog")).toBeVisible(); await page.keyboard.press("Escape");
+    > 107 |         await expect(settings).toBeFocused();
+          |                                ^
+      108 |         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
+      109 |         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
+      110 |         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-mobile-navigation.spec.ts:107:32
+
+    attachment #1: 375-text100-empty-start (image/png) ─────────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-empty-start-b5c4cba550de820f2398261a6630c3e7cfdd1a64.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: 375-text100-empty-create-focus (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-empty-create-focus-7a979729cb05420b8ed306011e6650055b1e2ad1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: 375-text100-three-links-start (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-three-links-start-dbb2afdf54dc99bb0f0a9d254e23823b57b1cba5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: 375-text100-three-links-middle (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-three-links-middle-c7cbec43b7161c85bddaee47ef55b13211500820.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: 375-text100-three-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-three-links-end-9249fb2b40d916dd970ec09a52fb39f9e2833d17.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: 375-text100-three-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\attachments\375-text100-three-links-last-control-focus-ba123cb3b0ccd18cf9529dba600637b8236ae8c3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-mobile-navigation-5988e--reading-area-375px-text100-chromium\error-context.md
+
+  11) [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text200 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+
+    Locator:  getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })[22m
+    [2m    9 × locator resolved to <button type="button" class="workspace-module__dP-vpW__outline">…</button>[22m
+    [2m      - unexpected value "inactive"[22m
+
+
+      105 |         await capture(page, info, state + "-last-control-focus", records);
+      106 |         await settings.tap(); await expect(page.getByRole("dialog")).toBeVisible(); await page.keyboard.press("Escape");
+    > 107 |         await expect(settings).toBeFocused();
+          |                                ^
+      108 |         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
+      109 |         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
+      110 |         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-mobile-navigation.spec.ts:107:32
+
+    attachment #1: 375-text200-empty-start (image/png) ─────────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-empty-start-20e6edebfd94bb72879601de1e8721f2d8336404.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: 375-text200-empty-create-focus (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-empty-create-focus-70c3f7b6608327c2bb57672bb465c961a8cc9b76.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: 375-text200-three-links-start (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-three-links-start-ca03dba629c1dd034061564d67553cb5ab79f47f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: 375-text200-three-links-middle (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-three-links-middle-120166ebc8816ca87b3af2028bbd6181ed9ffe64.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: 375-text200-three-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-three-links-end-02aaf412d8b7e271ffd3a637c20d172b547cab3b.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: 375-text200-three-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-three-links-last-control-focus-cae917b9385c0fef26155b49c0e121811cbf290c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: 375-text200-three-links-landscape (image/png) ───────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-three-links-landscape-45e9219f2e5bc1377fd60ae4995289d299935611.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: 375-text200-four-links-start (image/png) ────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-four-links-start-b7e16ee9ff89193e8ca997eb456bef2e763df233.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: 375-text200-four-links-middle (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-four-links-middle-3172c3a26f4c3b8bc2e34c245f07b99d0daf1563.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: 375-text200-four-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-four-links-end-4a0ae05b93097c20d531f8b71d49f7278173edce.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #11: 375-text200-four-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\attachments\375-text200-four-links-last-control-focus-67f88e934a5267ed6a3d537ec9ac8e60d02c7483.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-mobile-navigation-5f249--reading-area-375px-text200-chromium\error-context.md
+
+  12) [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text100 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+
+    Locator:  getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })[22m
+    [2m    9 × locator resolved to <button type="button" class="workspace-module__dP-vpW__outline">…</button>[22m
+    [2m      - unexpected value "inactive"[22m
+
+
+      105 |         await capture(page, info, state + "-last-control-focus", records);
+      106 |         await settings.tap(); await expect(page.getByRole("dialog")).toBeVisible(); await page.keyboard.press("Escape");
+    > 107 |         await expect(settings).toBeFocused();
+          |                                ^
+      108 |         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
+      109 |         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
+      110 |         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-mobile-navigation.spec.ts:107:32
+
+    attachment #1: 320-text100-empty-start (image/png) ─────────────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-empty-start-991ba24b01628b9c14195d2bb9b174c6af674402.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: 320-text100-empty-create-focus (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-empty-create-focus-3c3a52633d9d1fec19232ceafab0da1597cab1ef.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: 320-text100-three-links-start (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-three-links-start-a6138ea4460b8f0110d436dc09796733fd8d250e.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: 320-text100-three-links-middle (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-three-links-middle-5b3866b8456d6a64dcc10108c7359e693bbc599f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: 320-text100-three-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-three-links-end-19e668347aa463fa94b54e16a182f41c8ebac39d.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: 320-text100-three-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-three-links-last-control-focus-ca31793d681fc9ca54ddb4cf435d51ffccbea72e.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: 320-text100-three-links-landscape (image/png) ───────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-three-links-landscape-0cd34f712a17d904b94e8499845f41ef5936e8c1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: 320-text100-four-links-start (image/png) ────────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-four-links-start-1c4933d734d9b5455086e070eed97bd26eef856a.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: 320-text100-four-links-middle (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-four-links-middle-5ad978aee56e66e07ecd2f9340eff869c1326211.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: 320-text100-four-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-four-links-end-ca9a33ed0a8c0fed0a661d1948d1eeba211e92b5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #11: 320-text100-four-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\attachments\320-text100-four-links-last-control-focus-e1f27dd96e7674194eb93b92f3ff04f212ef0cac.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-mobile-navigation-b5934--reading-area-320px-text100-chromium\error-context.md
+
+  13) [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text200 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeFocused[2m()[22m failed
+
+    Locator:  getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeFocused" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('listitem').filter({ has: getByRole('heading', { name: 'IMP-003 E2E 0', exact: true }) }).getByRole('button', { name: 'Configurações', exact: true })[22m
+    [2m    9 × locator resolved to <button type="button" class="workspace-module__dP-vpW__outline">…</button>[22m
+    [2m      - unexpected value "inactive"[22m
+
+
+      105 |         await capture(page, info, state + "-last-control-focus", records);
+      106 |         await settings.tap(); await expect(page.getByRole("dialog")).toBeVisible(); await page.keyboard.press("Escape");
+    > 107 |         await expect(settings).toBeFocused();
+          |                                ^
+      108 |         await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Tab"); await expect(settings).toBeFocused();
+      109 |         const access = list.getByRole("link", { name: "ACESSAR LABORATÓRIO", exact: true });
+      110 |         await access.click(); await expect(page).toHaveURL(new RegExp("/dashboard/laboratories/" + AREA_FIXTURES.laboratoryIds[0] + "$"));
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-mobile-navigation.spec.ts:107:32
+
+    attachment #1: 320-text200-empty-start (image/png) ─────────────────────────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-empty-start-759847f8c1f3377571ed07187a56837a75864255.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: 320-text200-empty-create-focus (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-empty-create-focus-138138e761e5912d69bd0b7c8120df7a6c3dc0c7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: 320-text200-three-links-start (image/png) ───────────────────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-three-links-start-f568c9bdb211f2e20f204717ab4db22a3f17f06c.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: 320-text200-three-links-middle (image/png) ──────────────────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-three-links-middle-9742c1616fa75a4953a1d7fff8999b49ada56a45.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: 320-text200-three-links-end (image/png) ─────────────────────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-three-links-end-65211fd9744b7cd399319e7bf56e2a7b8287dd9f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: 320-text200-three-links-last-control-focus (image/png) ──────────────────────────
+    test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\attachments\320-text200-three-links-last-control-focus-7e3a7df9a6bdfe7ab07439ad51210752dc468473.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-mobile-navigation-3b07a--reading-area-320px-text200-chromium\error-context.md
+
+  13 failed
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 375px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 375px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 768px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 768px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 1440px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 1440px 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:101:7 › real dashboard, cursor, members and empty context at 320px text200 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:192:7 › transient transport loading and failures retry real dashboard and members at 320px text200 
+    [chromium] › tests\e2e\frontend-dashboard.spec.ts:257:5 › real membership conflict preserves expectedRole and a delayed real PATCH rejects same-turn duplicate clicks 
+    [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text100 
+    [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 375px text200 
+    [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text100 
+    [chromium] › tests\e2e\frontend-mobile-navigation.spec.ts:58:7 › mobile viewport reading area 320px text200 
+  121 passed (7.0m)

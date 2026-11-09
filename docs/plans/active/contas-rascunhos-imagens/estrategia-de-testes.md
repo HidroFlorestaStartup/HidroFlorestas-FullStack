@@ -1,5 +1,23 @@
 # Estratégia de testes futuros
 
+## Estado corrente após entrega local — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: correção focal de runners 014, drafts pessoais 015 e
+capas privadas 016 implementados e validados localmente. Contas/mail existentes
+foram preservados e revalidados. [Matriz única](matriz-de-estado.md) concentra
+requisitos, decisões, cenários, snapshots e pendências; [evidências 016](../../../../specs/016-area-covers/implementation-evidence.md)
+registram a regressão integrada. Gate B012, aceite humano013 e operação/créditos
+Cloudinary continuam pendentes. Estado global AGUARDANDO_REVISAO; entrega local
+não equivale a homologação externa. Seções seguintes preservam os cortes anteriores.
+
+## Reconciliação de 2026-10-10
+
+Execuções atuais e históricas são separadas pela matriz única. O runner real inclui test:mail:unit e test:mail:r1; Unit já inclui Mail, portanto não somar Mail novamente ao total. PostgreSQL local próprio 55427 foi encontrado via harness; ausência no PATH não impediu validação. Nenhum SMTP/upload remoto será executado.
+
+Fonte única de estado/evidências: [matriz de estado](matriz-de-estado.md). Coordenação: [PLAN-CRI-002](../reconciliacao-e-evolucao-contas-rascunhos-imagens.md). Contratos de contas: [spec 012](../../../../specs/012-account-verification-recovery/contracts/accounts.md).
+
+## Registro histórico preservado — 2026-10-03
+
 ## Registro mínimo por caso
 
 Cada evidência deve registrar ID, requisito, nível, fixture sintética, pré-condições, ação, resultado, invariantes, ambiente, SHA/data e estado `PASS`, `FAIL`, `SKIP`, `BLOQUEIO_DE_SETUP` ou `NAO_EXECUTADO`. Relatórios antigos não contam como execução futura.
@@ -60,3 +78,8 @@ Comandos focais para e-mail/drafts/imagens são futuros e devem ser adicionados 
 4. E2E e acessibilidade automatizável.
 5. Smoke controlado de provedores, com limpeza/reconciliação.
 6. Revisão humana de mensagens, política de acesso, privacidade de imagens e operação.
+
+
+### Implementação 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: rascunhos pessoais implementados conforme aprovação PD-CRI-005/006, sem expiração; tabela segregada e consumo transacional. [Spec 015](../../../../specs/015-environmental-drafts/spec.md) e [runbook](../../../operations/environmental-drafts-runbook.md). Histórico de 2026-10-03 acima permanece contextual.

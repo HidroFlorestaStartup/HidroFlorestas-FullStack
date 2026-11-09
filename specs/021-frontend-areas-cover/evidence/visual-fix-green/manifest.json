@@ -1,0 +1,165 @@
+{
+  "head": "d5028f36078641ee78602e66858014e503dc0fd5",
+  "since": "2026-10-19T17:50:02.560Z",
+  "records": 5,
+  "snapshots": [
+    "9ce72c43a37eda0a01781b859fa0bc3bc5b93c340f0ffc2428c47f2fca2c41a1"
+  ],
+  "files": [
+    {
+      "path": "01-regressionsetup.log",
+      "sha256": "c8e504e94a0c502ff2380cfbd9bd317b5f8a5342f0af3c7b5927f7dfdf811427",
+      "bytes": 1428
+    },
+    {
+      "path": "02-build.log",
+      "sha256": "70b1ea8d0d4633f35d2d12e482cb4c1280ce9fbd57f1348546bb8712d3d45127",
+      "bytes": 4517,
+      "original_sha256": "9fe359daba0a4eafe0c48268c67c14de9cfed5a1fb1f712d771c338de7b03c74",
+      "original_bytes": 4520
+    },
+    {
+      "path": "03-typecheck.log",
+      "sha256": "39fc461a592173e82c827307935eaebf40be10cc8c9db3a350443ea3da00b331",
+      "bytes": 85
+    },
+    {
+      "path": "04-lint.log",
+      "sha256": "273e2350f5e4277475e110cd98c98781e149adac33dc0f222d4272f5052b8ac6",
+      "bytes": 642
+    },
+    {
+      "path": "05-e2e.log",
+      "sha256": "dd4ce3440fc98cc03e202f10b4fef4d8be14b33b3164c4fe37231fc7790dc71d",
+      "bytes": 136735
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-confirmed-new-bytes-pending-viewport.json",
+      "sha256": "345f5f0cc3ad9176a1a8c01b2d888df8de176368ecf5e2e5d4d2e2e7ea8d9ab0",
+      "bytes": 874
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-confirmed-new-bytes-pending-viewport.png",
+      "sha256": "6099caabefc3ade1ba6fd9c7eb163725877f5938702ba902a21c5a9fea360abc",
+      "bytes": 58914
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.json",
+      "sha256": "1cbd868debfefbcf904ca7b8fdaaf4b0c453358273bd7c8882ffcdd44453aba0",
+      "bytes": 802
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-1440-viewport.png",
+      "sha256": "934c012d5a904d71617e76379dc32742f6366425f73d04eaf82dfbe0952e1c10",
+      "bytes": 72205
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.json",
+      "sha256": "50c5404190c3aea11adf37f8c3b467f5ce4d794226bc155f8be64b85f8421d3c",
+      "bytes": 792
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-320-viewport.png",
+      "sha256": "3050835fecf891b3252800e723bf89d5a45b8bc10a735ba1fe99d40ffdcc1c41",
+      "bytes": 49206
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.json",
+      "sha256": "6b64e83344a12e4f0b06a206c4fb11982d67a30578f9cdcb0095054eff387ea4",
+      "bytes": 794
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-375-viewport.png",
+      "sha256": "5f01cf6e584988864446ad5440a0fed7f2acdc3bb9aa9581e8ed2c011e2bbcc8",
+      "bytes": 47717
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.json",
+      "sha256": "c227edd960e7a0c55f5c5a7d9ed1a0d6803179650b913c8aab3db11bb31a7acd",
+      "bytes": 799
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-enabled-reload-focus-768-viewport.png",
+      "sha256": "30b8b89a149a1c52ca3a4561b8822f217880c26e994f0e07a79c714fe766a09b",
+      "bytes": 56704
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-metadata-error-after-pending-preview-viewport.json",
+      "sha256": "1a2a79b88bffdaa1e1104c3d18fa5aa87dab08e740bb7b1222ca98a2c0b63a6f",
+      "bytes": 892
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-metadata-error-after-pending-preview-viewport.png",
+      "sha256": "9c136ad1049202418ea8b561116b0387ec188cf64c05f10a3764cf6e66532cb0",
+      "bytes": 60785
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-byte-error-viewport.json",
+      "sha256": "d0cf3fc17cc9b5a2ce5a2f6d2ba5528aaed5ff761dd5cf13b0b45ed6b181e9aa",
+      "bytes": 854
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-byte-error-viewport.png",
+      "sha256": "80e4e819f87621086c86e371e8dee680cce1c3c7959aa3efe36e54159c5f7b83",
+      "bytes": 61673
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-confirmed-loaded-success-viewport.json",
+      "sha256": "7bd61f81a2e0a36119b9acd00bf72feb1861ecddb129d2153732cb72a701a362",
+      "bytes": 882
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-confirmed-loaded-success-viewport.png",
+      "sha256": "e5fef996d6ecd8266f8ea150bc84a224a808366cbe76643bfb51d746b572b1f4",
+      "bytes": 57240
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-loaded-success-viewport.json",
+      "sha256": "6e03791c8129a3b3a74c510fb7e5df5cc2f6d13e7397209c68126ee987fad021",
+      "bytes": 862
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-loaded-success-viewport.png",
+      "sha256": "19e49c77cc9f06621859b8f0e82306b02a981e8d1a48103687746ac7f60ad78e",
+      "bytes": 56667
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-metadata-error-viewport.json",
+      "sha256": "1db947a891919b517c486171802def6e1742e3ddbc66a227269946fbee45da48",
+      "bytes": 860
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-metadata-error-viewport.png",
+      "sha256": "15eeca0b9ca1fd7178872119103b342bdacd7a33c8ba739e0a1fa86567b42a6b",
+      "bytes": 61562
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-removal-error-after-old-load-viewport.json",
+      "sha256": "f5a30caf51ef7956c999e8b9ed609e7a4e4bc99334db36b59d5119513b857804",
+      "bytes": 890
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-removal-error-after-old-load-viewport.png",
+      "sha256": "e73cce8fea2736b6974642e4025f1251c99676091394833006efaa4add141386",
+      "bytes": 57409
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-removal-pending-after-old-load-viewport.json",
+      "sha256": "531480829df17d43acc2706878db9f96f4e41bbcac67eb4613821308921b234e",
+      "bytes": 886
+    },
+    {
+      "path": "after-frontend-areas-ui-fake-visual-removal-pending-after-old-load-viewport.png",
+      "sha256": "83fa669fe478f556ef0537e5215798e81bb1a0c9f3f1f4fb5396e61518ef9339",
+      "bytes": 60455
+    },
+    {
+      "path": "results.jsonl",
+      "sha256": "d6634664e6070452ff03e58aad35e8d0b295d54ad2b4ecae32d45bd3664752ff",
+      "bytes": 2173,
+      "original_sha256": "ad9bf8bde85db772e512d5e5af309c81b318a1f38c8e6da322eff3e9061f26dc",
+      "original_bytes": 2178
+    }
+  ],
+  "checksum_scope": "sha256/bytes identify LF-normalized versioned text blobs; original_sha256/original_bytes preserve original archived bytes where different."
+}

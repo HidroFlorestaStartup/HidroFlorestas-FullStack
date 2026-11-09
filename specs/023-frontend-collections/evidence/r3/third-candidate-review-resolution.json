@@ -1,0 +1,30 @@
+{
+  "head_sha": "5f5d8719e25856b59e84c053cb13d2516dbeac49",
+  "run_id": 39469650449,
+  "attempt": 1,
+  "job_id": 118790047117,
+  "gates_pass": 15,
+  "e2e_pass": 182,
+  "codex_receipt_id": 6297489682,
+  "threads": [
+    {
+      "thread_id": "PRRT_kwDOVAitc86uZA3f",
+      "reply_id": 4328575493,
+      "reply_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328575493",
+      "is_resolved": true
+    },
+    {
+      "thread_id": "PRRT_kwDOVAitc86ucTwz",
+      "reply_id": 4328576124,
+      "reply_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328576124",
+      "is_resolved": true
+    },
+    {
+      "thread_id": "PRRT_kwDOVAitc86ucTw6",
+      "reply_id": 4328576823,
+      "reply_url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/18#discussion_r4328576823",
+      "is_resolved": true
+    }
+  ],
+  "scope": "Resolution of the three evidenced technical findings; no review approval, merge or human acceptance."
+}

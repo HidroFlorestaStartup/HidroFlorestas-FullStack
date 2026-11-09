@@ -1,0 +1,255 @@
+{
+  "viewport": {
+    "width": 375,
+    "height": 900
+  },
+  "text": {
+    "rootFontSizePx": 16,
+    "percentRelativeTo16px": 100,
+    "method": "root-font-size; not browser zoom"
+  },
+  "document": {
+    "width": 375,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  "content": {
+    "scrollTop": 0,
+    "clientHeight": 755,
+    "scrollHeight": 755
+  },
+  "focus": {
+    "tag": "BUTTON",
+    "outlineStyle": "solid",
+    "outlineWidth": "3px",
+    "outlineColor": "rgb(36, 95, 131)"
+  },
+  "control": {
+    "fullyInViewport": true,
+    "unobstructed": true,
+    "rect": {
+      "x": 33,
+      "y": 695.359375,
+      "width": 180.59375,
+      "height": 44,
+      "top": 695.359375,
+      "right": 213.59375,
+      "bottom": 739.359375,
+      "left": 33
+    },
+    "radii": [
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      },
+      {
+        "x": 10,
+        "y": 10
+      }
+    ],
+    "points": [
+      {
+        "x": 37,
+        "y": 699.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 209.59375,
+        "y": 699.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 37,
+        "y": 735.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 209.59375,
+        "y": 735.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 123.296875,
+        "y": 717.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 123.296875,
+        "y": 699.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 209.59375,
+        "y": 717.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 123.296875,
+        "y": 735.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      },
+      {
+        "x": 37,
+        "y": 717.359375,
+        "tag": "BUTTON",
+        "className": "territorial-map-module__lPZwdG__button",
+        "inside": true
+      }
+    ],
+    "scrollContainers": [
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 0,
+          "y": 69,
+          "width": 375,
+          "height": 755.15625,
+          "top": 69,
+          "right": 375,
+          "bottom": 824.15625,
+          "left": 0
+        },
+        "scrollTop": 0,
+        "scrollHeight": 755,
+        "clientHeight": 755,
+        "overflow": "auto",
+        "position": "static",
+        "zIndex": "auto",
+        "padding": "24px 16px 32px",
+        "scrollPadding": "8px auto"
+      },
+      {
+        "tag": "DIV",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 900,
+          "top": 0,
+          "right": 375,
+          "bottom": 900,
+          "left": 0
+        },
+        "scrollTop": 0,
+        "scrollHeight": 900,
+        "clientHeight": 900,
+        "overflow": "hidden",
+        "position": "static",
+        "zIndex": "auto",
+        "padding": "0px",
+        "scrollPadding": "auto"
+      }
+    ],
+    "viewport": {
+      "width": 375,
+      "height": 900,
+      "scrollX": 0,
+      "scrollY": 0,
+      "visualViewport": {
+        "width": 375,
+        "height": 900,
+        "offsetLeft": 0,
+        "offsetTop": 0,
+        "scale": 1
+      }
+    },
+    "activeTag": "BUTTON",
+    "control": {
+      "tag": "BUTTON",
+      "rect": {
+        "x": 33,
+        "y": 695.359375,
+        "width": 180.59375,
+        "height": 44,
+        "top": 695.359375,
+        "right": 213.59375,
+        "bottom": 739.359375,
+        "left": 33
+      },
+      "scrollTop": 0,
+      "scrollHeight": 42,
+      "clientHeight": 42,
+      "overflow": "visible",
+      "position": "static",
+      "zIndex": "auto",
+      "padding": "10px",
+      "scrollPadding": "auto"
+    },
+    "header": {
+      "tag": "HEADER",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 69,
+        "top": 0,
+        "right": 375,
+        "bottom": 69,
+        "left": 0
+      },
+      "scrollTop": 0,
+      "scrollHeight": 68,
+      "clientHeight": 68,
+      "overflow": "visible",
+      "position": "relative",
+      "zIndex": "30",
+      "padding": "12px 16px",
+      "scrollPadding": "auto"
+    },
+    "navigation": {
+      "tag": "NAV",
+      "rect": {
+        "x": 0,
+        "y": 824.15625,
+        "width": 375,
+        "height": 75.84375,
+        "top": 824.15625,
+        "right": 375,
+        "bottom": 900,
+        "left": 0
+      },
+      "scrollTop": 0,
+      "scrollHeight": 75,
+      "clientHeight": 75,
+      "overflow": "visible",
+      "position": "relative",
+      "zIndex": "20",
+      "padding": "8px 4px",
+      "scrollPadding": "auto"
+    }
+  },
+  "screenshot": {
+    "filename": "03bc3985b039-r0-n0-after-frontend-territorial-map-transport-error-focus-375-viewport.png",
+    "fullPage": false,
+    "animations": "allow",
+    "browser": "chromium"
+  },
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "evidenceKind": "application-viewport",
+  "physicalDevice": false,
+  "note": "Official synthetic fixture; form fields masked; no manual accessibility acceptance."
+}

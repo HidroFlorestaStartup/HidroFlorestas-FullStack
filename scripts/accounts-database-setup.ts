@@ -1,7 +1,7 @@
 import { readFile, readdir, mkdir, writeFile, rm } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { Client } from "pg";
-import { createHash } from "node:crypto";
+import { matchesAppliedMigration } from "./accounts-migration-source";
 import { describeImp006Error, runImp006Gate } from "./imp006-gate-diagnostics";
 import { localPostgresqlContext } from "../src/app/api/server/lib/local-postgresql-context";
 
@@ -55,8 +55,8 @@ export async function setupAccountsDatabases() {
             const history = await target.query<{ migration_name: string; checksum: string; finished_at: Date | null; rolled_back_at: Date | null }>("SELECT migration_name,checksum,finished_at,rolled_back_at FROM public._prisma_migrations");
             for (const applied of history.rows.filter((row) => row.rolled_back_at === null)) {
               if (!applied.finished_at || !migrations.includes(applied.migration_name)) throw new Error("Accounts migration history is incomplete or unexpected; preserving database");
-              const checksum = createHash("sha256").update(await readFile(`prisma/migrations/${applied.migration_name}/migration.sql`)).digest("hex");
-              if (checksum !== applied.checksum) throw new Error("An applied accounts migration differs from source; explicit reconciliation is required, database was preserved");
+              const source = await readFile(`prisma/migrations/${applied.migration_name}/migration.sql`);
+              if (!matchesAppliedMigration(source, applied.checksum)) throw new Error("An applied accounts migration differs from source; explicit reconciliation is required, database was preserved");
             }
           }
           if (fresh) {

@@ -1,0 +1,25 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "capturedUtc": "2026-10-13T19:27:09.566583+00:00",
+  "localHeadBeforeDocumentationCommit": "bea938d6db2799c68e05e735abb698e1cede6355",
+  "changedMarkdownLinks": 99,
+  "missingTargets": [],
+  "runtimeIdenticalToTestedHead": true,
+  "testedHead": "9fe2becccf2286da354c3f3fcc6ff9958c28b034",
+  "originalRefsPreserved": {
+    "main": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "014-account-test-runners": "857aeab959c32e9d4fdc8fcd9ebbabba5c5f999a",
+    "015-environmental-drafts": "45da350c34f873619a81bb5b3022bf97a1d1bc7c",
+    "016-area-covers": "41f33db7ca30db3f9d971999c3f8131f4fc188a0",
+    "audit/cri-local-20261010": "539f38d52bba207d2822528d4afd6b936aa64d9f",
+    "docs/reconciliacao-cri-20261010": "c59a7b6eb1198e20535356934805f0b93d2e99c2"
+  },
+  "dependencyCommitOccursOnce": true,
+  "schemaAndRawUnchanged": true,
+  "publishedUpstreamHeads": {
+    "review/015-environmental-drafts": "65516f6d675e8d4ae38f0f860fe93b6dc768dd66",
+    "review/016-area-covers": "8f183983e9134efd651e15fd872209faf4503468",
+    "review/cri-audit-20261010": "52f612ff9c8aed279212ee5ba61581c3d66474cc"
+  },
+  "workflowGitBlob": "dc5e821e3ef6708d81aead7ebb873b03bc122aa2"
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "mission": "HF-INV-20261023-01-LOCAL01",
+  "incident": "INV-005",
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "reviewer": "agent-d-independent-review",
+  "recoveredAtUtc": "2026-10-23T21:18:16Z",
+  "source": {
+    "repository": "HidroFlorestaStartup/HidroFlorestas-FullStack",
+    "head": "85e397bd4271ab07a197ea88db652227e6e392ce",
+    "run": 39465856665,
+    "attempt": 1,
+    "job": 118776943818,
+    "artifact": 12287280647,
+    "artifactUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39465856665/attempts/1",
+    "metadataRecheckedThroughConnectedGitHub": true,
+    "expiredAtRecheck": false,
+    "zipBytes": 20601581,
+    "zipSha256": "c8f87eb327d5bd3a8c7235fdc84a3ef60ab01dfd7fa42bb0cf62ce4468a41e6e",
+    "downloadedDigestMatchesCurrentApi": true,
+    "members": 519,
+    "uncompressedBytes": 21708429,
+    "allMemberCrcVerified": true,
+    "safeMemberPathsVerified": true,
+    "symlinkMembersRefused": true,
+    "maximumUncompressedBytesAllowed": 100000000,
+    "originalLog": ".accounts-validation/ihfr-1792518732781.log",
+    "originalLogBytes": 16874,
+    "originalLogSha256": "b5fb5e983e5d733d4d15883911d19c3759283073d717ade81ad04593fa62a34f"
+  },
+  "recovery": {
+    "localArchiveSearch": "Artifact 12287280647 was not found among the preserved local ZIPs inspected; their historical counterparts for INV-001/002 were present.",
+    "connectedArtifactDownload": "PASS",
+    "defaultLocalTransport": { "result": "FAIL", "code": "EACCES" },
+    "authorizedLocalTransport": "PASS",
+    "processing": "In-memory ZIP identity, central directory, path, size and CRC verification; no member extracted or executed.",
+    "jobLogCheckedSeparately": true,
+    "jobLogLimit": "The aggregate job log records the Ihfr FAIL and its log filename, but does not contain the six detailed route failures.",
+    "signedDownloadUrlPublished": false,
+    "rawLogPublished": false,
+    "historicalCodeExecuted": false
+  },
+  "projectionPolicy": {
+    "kind": "closed field projection, not original log bytes",
+    "uuidPolicy": "All synthetic resource UUIDs replaced by a route-template placeholder; identity equality between placeholders is not asserted.",
+    "included": ["test title", "document route template", "HTTP status", "narrow browser state", "asset-error count"],
+    "excluded": ["environment values", "cookies", "headers", "tokens", "payloads", "absolute paths", "signed URLs", "raw stacks", "images"]
+  },
+  "historicalDocumentFailures": [
+    {
+      "sequence": 1,
+      "test": "collection, environmental confirmation and IHFR creation work without browser randomUUID",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/new",
+      "status": 404,
+      "testStatus": "timedOut"
+    },
+    {
+      "sequence": 2,
+      "test": "OWNER and contextual ADMIN create, replace, revoke and recover with one stable key",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+      "status": 404,
+      "testStatus": "failed"
+    },
+    {
+      "sequence": 3,
+      "test": "MEMBER and linked OWNER in inactive laboratory have no management controls in the DOM",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+      "status": 404,
+      "testStatus": "failed"
+    },
+    {
+      "sequence": 4,
+      "test": "well-formed incompatible version reaches the real API and shows a recoverable terminal",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+      "status": 404,
+      "testStatus": "timedOut"
+    },
+    {
+      "sequence": 5,
+      "test": "member reads the current experimental DTO with labels, keyboard access and responsive layout",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+      "status": 404,
+      "testStatus": "failed"
+    },
+    {
+      "sequence": 6,
+      "test": "member sees honest absence and inactive laboratory stays read only",
+      "path": "/dashboard/laboratories/{synthetic-id}/areas/{synthetic-id}/collections/{synthetic-id}",
+      "status": 404,
+      "testStatus": "failed"
+    }
+  ],
+  "commonBrowserDiagnostic": {
+    "ready": "complete",
+    "loginFormDetected": false,
+    "collectionTimeZoneDetected": false,
+    "regions": [],
+    "assetErrors": [],
+    "sessionValidity": "NOT_ESTABLISHED_BY_THESE_FIELDS"
+  },
+  "interpretation": {
+    "classification": "INFERENCIA",
+    "document404Count": 6,
+    "distinctRouteTemplates": 2,
+    "newCollectionDocument404": 1,
+    "collectionDetailDocument404": 5,
+    "apiLookup404IsSeparate": true,
+    "currentCounterproof": "The two current B IHFR runs exercise these same six named scenarios and both route families, with six passing cases and fifteen dashboard document200 responses per run; C additionally records current document200/API404 in independent jars.",
+    "currentEvidence": ["../ihfr/run-evidence.json", "../navigation/authenticated/observations.json"],
+    "historicalCause": "INCONCLUSIVO",
+    "limitation": "Recovering route templates and current PASS does not establish the historical session, data eligibility, server, readiness or transport mechanism. Earlier C statements that the routes had not been recovered describe its pre-recovery checkpoint."
+  }
+}

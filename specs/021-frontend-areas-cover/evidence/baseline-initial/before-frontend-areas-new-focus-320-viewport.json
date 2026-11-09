@@ -1,0 +1,43 @@
+{
+  "name": "new-focus-320",
+  "screenshot": {
+    "filename": "before-frontend-areas-new-focus-320-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "32px",
+    "percentRelativeTo16px": 200,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 0
+    },
+    "content": {
+      "left": 0,
+      "top": 1584,
+      "height": 724,
+      "extent": 5218
+    }
+  },
+  "active": {
+    "tag": "input",
+    "x": 57,
+    "y": 402,
+    "width": 206,
+    "height": 90
+  },
+  "target": {
+    "x": 57,
+    "y": 402,
+    "width": 206,
+    "height": 90
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

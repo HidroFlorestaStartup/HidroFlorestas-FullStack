@@ -1,0 +1,41 @@
+﻿  1) [chromium] › tests\e2e\frontend-account.spec.ts:40:7 › all six account screens fit 320px with text200 
+
+    Error: forgot-password: titles and submit labels keep whole words
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 3[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   "Recuperar",[39m
+    [31m+ ][39m
+
+      78 |           return broken;
+      79 |         }));
+    > 80 |         expect(brokenWords, `${path}: titles and submit labels keep whole words`).toEqual([]);
+         |                                                                                   ^
+      81 |         if (path === "verify-email") {
+      82 |           const sixDigitsFit = await page.getByLabel("Código de verificação").evaluate(node => {
+      83 |             const style = getComputedStyle(node);
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:80:83
+
+    attachment #1: register-320-text200 (image/png) ────────────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\register-320-text200-1c71f97c282a99e1c390752c45d3ed1cc6071527.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: verify-email-320-text200 (image/png) ────────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\verify-email-320-text200-12c887f79d36b70f13756b0b56c55f832665a7de.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: forgot-password-320-text200 (image/png) ─────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\forgot-password-320-text200-9dcc7657c015eb34d57c2d1357015a52facdbf5f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\error-context.md
+
+  1 failed
+    [chromium] › tests\e2e\frontend-account.spec.ts:40:7 › all six account screens fit 320px with text200 
+  94 passed (3.2m)
+

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "evidenceKind": "playwright-closed-projection",
+  "productHead": "b1f83cfa8e52dd25c6246c584a576553c5e9e131",
+  "testFile": "tests/e2e/frontend-landing.spec.ts",
+  "stats": {
+    "startTime": "2026-10-21T23:59:56.392Z",
+    "duration": 14010.151000000002,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 320x812 text 100%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:00.287Z",
+      "durationMs": 1233,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 375x812 text 100%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:01.881Z",
+      "durationMs": 1220,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 768x1024 text 100%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:03.114Z",
+      "durationMs": 1144,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 1440x1000 text 100%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:04.269Z",
+      "durationMs": 1217,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 320x812 text 200%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:05.507Z",
+      "durationMs": 1658,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing at 812x375 text 100%"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:07.174Z",
+      "durationMs": 1060,
+      "retry": 0
+    },
+    {
+      "titlePath": [
+        "frontend-landing.spec.ts",
+        "public landing supports keyboard access and existing account routes"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "startTime": "2026-10-22T00:00:08.243Z",
+      "durationMs": 2081,
+      "retry": 0
+    }
+  ],
+  "redaction": {
+    "method": "allowlist projection",
+    "omittedEntirely": [
+      "config",
+      "environment",
+      "stdout",
+      "stderr",
+      "attachments",
+      "arbitrary metadata"
+    ],
+    "rawCommitted": false,
+    "rawPublished": false
+  }
+}

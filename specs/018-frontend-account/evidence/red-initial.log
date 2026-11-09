@@ -1,0 +1,213 @@
+﻿  1) [chromium] › tests\e2e\environmental-data-read.spec.ts:13:5 › independent read shows provenance, null/zero/false, mobile and desktop without overflow 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByRole('region', { name: 'Origem da coleta' })
+    Expected string: [32m"00000000-0000-4000-8000-000000000531"[39m
+    Received: <element(s) not found>
+    Timeout: 5000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('region', { name: 'Origem da coleta' })[22m
+
+
+      14 |  for(const actor of F.userIds.slice(0,3)){
+      15 |   await context.addCookies([{name:'auth_token',value:signSessionToken(actor),url:String(info.project.use.baseURL)}]);
+    > 16 |   await page.goto(base);await expect(page.getByRole('region',{name:'Origem da coleta'})).toContainText(F.collectionIds[0]);
+         |                                                                                          ^
+      17 |  }
+      18 |  await expect(page.getByRole('region',{name:'Água',exact:true})).toContainText('Não');await expect(page.getByRole('region',{name:'Terreno',exact:true})).toContainText('Não informado');
+      19 |  await expect(page.getByRole('article',{name:'Dados ambientais da coleta'}).getByText(/Contrato de captura: ihfr-measurement-v1/).first()).toBeVisible();
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\environmental-data-read.spec.ts:16:90
+
+    Error Context: test-results\environmental-data-read-in-7e3a1-nd-desktop-without-overflow-chromium\error-context.md
+
+  2) [chromium] › tests\e2e\environmental-data-registration.spec.ts:8:5 › registers through review, rejects invalid values and retries the same operation after lost response 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  getByRole('heading', { name: 'Registrar dados ambientais', exact: true })
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('heading', { name: 'Registrar dados ambientais', exact: true })[22m
+
+
+       8 | test('registers through review, rejects invalid values and retries the same operation after lost response',async({page,context},info)=>{
+       9 |  await context.addCookies([{name:'auth_token',value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);
+    > 10 |  await page.goto(base+'/new');await expect(page.getByRole('heading',{name:'Registrar dados ambientais',exact:true})).toBeVisible();
+         |                                                                                                                      ^
+      11 |  await page.getByRole('button',{name:'Revisar dados',exact:true}).click();await expect(page.getByText('Revise os campos indicados')).toBeVisible();
+      12 |  await page.getByLabel('Fonte de água').selectOption('RIVER_STREAM');await page.getByLabel('Há nascente').selectOption('false');await page.getByLabel('Disponibilidade hídrica').selectOption('PERMANENT');
+      13 |  await page.getByLabel('Textura do solo').selectOption('SANDY');await page.getByLabel('Taxa de infiltração').fill('0');await page.getByLabel('Compactação').selectOption('LOW');await page.getByLabel('Sinais de erosão').selectOption('NONE');
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\environmental-data-registration.spec.ts:10:118
+
+    Error Context: test-results\environmental-data-registr-a0d5b-eration-after-lost-response-chromium\error-context.md
+
+  3) [chromium] › tests\e2e\environmental-drafts.spec.ts:11:5 › unsaved browser history cancellation preserves fields and excessive raw gives feedback 
+
+    [31mTest timeout of 90000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('link', { name: 'Registrar dados ambientais', exact: true })[22m
+
+
+      11 | test("unsaved browser history cancellation preserves fields and excessive raw gives feedback",async({page,context},info)=>{
+      12 |  await context.addCookies([{name:"auth_token",value:signSessionToken(F.userIds[2]),url:String(info.project.use.baseURL)}]);
+    > 13 |  await page.goto(base);await page.getByRole("link",{name:"Registrar dados ambientais",exact:true}).click();await expect(page).toHaveURL(base+"/new");
+         |                                                                                                    ^
+      14 |  await page.getByLabel("Elevação").click();await page.getByLabel("Elevação").fill("25");await expect(page.getByRole("status")).toContainText("Há alterações não salvas.");
+      15 |  page.once("dialog",d=>d.dismiss());await page.evaluate(()=>history.back());
+      16 |  await expect(page).toHaveURL(base+"/new");await expect(page.getByLabel("Elevação")).toHaveValue("25");
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\environmental-drafts.spec.ts:13:100
+
+    Error Context: test-results\environmental-drafts-unsav-7fb30-xcessive-raw-gives-feedback-chromium\error-context.md
+
+  4) [chromium] › tests\e2e\frontend-account.spec.ts:29:7 › all six account screens fit 320px with text200 
+
+    Error: forgot-password
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      45 |       }
+      46 |       await capture(page, info, `${path}-${width}${width === 320 ? "-text200" : ""}`);
+    > 47 |       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), path).toBe(true);
+         |                                                                                                   ^
+      48 |     }
+      49 |   });
+      50 | }
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:47:99
+
+    attachment #1: register-320-text200 (image/png) ────────────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\register-320-text200-1c71f97c282a99e1c390752c45d3ed1cc6071527.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: verify-email-320-text200 (image/png) ────────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\verify-email-320-text200-12c887f79d36b70f13756b0b56c55f832665a7de.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: forgot-password-320-text200 (image/png) ─────────────────────────────────────────
+    test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\attachments\forgot-password-320-text200-9dcc7657c015eb34d57c2d1357015a52facdbf5f.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\frontend-account-all-six-a-57305-eens-fit-320px-with-text200-chromium\error-context.md
+
+  5) [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › register is inert before hydration and preserves first input 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeDisabled[2m()[22m failed
+
+    Locator:  locator('form input').first()
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeDisabled" with timeout 5000ms[22m
+    [2m  - waiting for locator('form input').first()[22m
+    [2m    9 × locator resolved to <input value="" type="text" required="" id="first-name" name="firstName" placeholder="Seu nome" autocomplete="given-name" class="w-full bg-transparent outline-none placeholder:text-[#858585]"/>[22m
+    [2m      - unexpected value "enabled"[22m
+
+
+      60 |       const input = page.locator("form input").first();
+      61 |       await expect(input).toBeVisible();
+    > 62 |       await expect(input).toBeDisabled();
+         |                           ^
+      63 |       await expect(page.locator('form button[type="submit"]')).toBeDisabled();
+      64 |       release();
+      65 |       await expect(input).toBeEnabled();
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:62:27
+
+    Error Context: test-results\frontend-account-register--185da-n-and-preserves-first-input-chromium\error-context.md
+
+  6) [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › forgot-password is inert before hydration and preserves first input 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeDisabled[2m()[22m failed
+
+    Locator:  locator('form input').first()
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeDisabled" with timeout 5000ms[22m
+    [2m  - waiting for locator('form input').first()[22m
+    [2m    9 × locator resolved to <input value="" required="" type="email" name="email" id="recovery-email" autocomplete="email" class="mt-2 w-full rounded-lg border border-gray-400 bg-gray-50 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-700"/>[22m
+    [2m      - unexpected value "enabled"[22m
+
+
+      60 |       const input = page.locator("form input").first();
+      61 |       await expect(input).toBeVisible();
+    > 62 |       await expect(input).toBeDisabled();
+         |                           ^
+      63 |       await expect(page.locator('form button[type="submit"]')).toBeDisabled();
+      64 |       release();
+      65 |       await expect(input).toBeEnabled();
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:62:27
+
+    Error Context: test-results\frontend-account-forgot-pa-42747-n-and-preserves-first-input-chromium\error-context.md
+
+  7) [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › change-password is inert before hydration and preserves first input 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeDisabled[2m()[22m failed
+
+    Locator:  locator('form input').first()
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toBeDisabled" with timeout 5000ms[22m
+    [2m  - waiting for locator('form input').first()[22m
+    [2m    9 × locator resolved to <input value="" required="" type="password" id="current-password" name="current-password" autocomplete="current-password" class="mt-2 w-full rounded-lg border border-gray-400 bg-gray-50 px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-700 pr-14"/>[22m
+    [2m      - unexpected value "enabled"[22m
+
+
+      60 |       const input = page.locator("form input").first();
+      61 |       await expect(input).toBeVisible();
+    > 62 |       await expect(input).toBeDisabled();
+         |                           ^
+      63 |       await expect(page.locator('form button[type="submit"]')).toBeDisabled();
+      64 |       release();
+      65 |       await expect(input).toBeEnabled();
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:62:27
+
+    Error Context: test-results\frontend-account-change-pa-fc1d2-n-and-preserves-first-input-chromium\error-context.md
+
+  8) [chromium] › tests\e2e\frontend-account.spec.ts:114:5 › shared password visibility has a mobile target and visible keyboard focus 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      119 |   await expect(toggle).toBeFocused();
+      120 |   const box = await toggle.boundingBox();
+    > 121 |   expect(box !== null && box.width >= 44 && box.height >= 44).toBe(true);
+          |                                                               ^
+      122 |   expect(await toggle.evaluate(node => parseFloat(getComputedStyle(node).outlineWidth) > 0)).toBe(true);
+      123 |   await capture(page, info, "password-focus");
+      124 |   await page.keyboard.press("Space"); await expect(password).toHaveAttribute("type", "text");
+        at C:\projetos\consolidados\HidroFlorestas-frontend-login\tests\e2e\frontend-account.spec.ts:121:63
+
+    Error Context: test-results\frontend-account-shared-pa-a9b36--and-visible-keyboard-focus-chromium\error-context.md
+
+  8 failed
+    [chromium] › tests\e2e\environmental-data-read.spec.ts:13:5 › independent read shows provenance, null/zero/false, mobile and desktop without overflow 
+    [chromium] › tests\e2e\environmental-data-registration.spec.ts:8:5 › registers through review, rejects invalid values and retries the same operation after lost response 
+    [chromium] › tests\e2e\environmental-drafts.spec.ts:11:5 › unsaved browser history cancellation preserves fields and excessive raw gives feedback 
+    [chromium] › tests\e2e\frontend-account.spec.ts:29:7 › all six account screens fit 320px with text200 
+    [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › register is inert before hydration and preserves first input 
+    [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › forgot-password is inert before hydration and preserves first input 
+    [chromium] › tests\e2e\frontend-account.spec.ts:53:7 › change-password is inert before hydration and preserves first input 
+    [chromium] › tests\e2e\frontend-account.spec.ts:114:5 › shared password visibility has a mobile target and visible keyboard focus 
+  6 did not run
+  81 passed (5.5m)
+

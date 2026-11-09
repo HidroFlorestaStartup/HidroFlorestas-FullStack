@@ -1,0 +1,62 @@
+{
+  "width": 320,
+  "height": 900,
+  "scrollX": 0,
+  "scrollY": 0,
+  "documentWidth": 320,
+  "activeTag": "BODY",
+  "rootFontSizePx": 32,
+  "header": {
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 85,
+      "top": 0,
+      "right": 320,
+      "bottom": 85,
+      "left": 0
+    },
+    "scrollTop": 0,
+    "clientHeight": 84
+  },
+  "content": {
+    "rect": {
+      "x": 0,
+      "y": 85,
+      "width": 320,
+      "height": 724.3125,
+      "top": 85,
+      "right": 320,
+      "bottom": 809.3125,
+      "left": 0
+    },
+    "scrollTop": 7897,
+    "clientHeight": 724
+  },
+  "navigation": {
+    "rect": {
+      "x": 0,
+      "y": 809.3125,
+      "width": 320,
+      "height": 90.6875,
+      "top": 809.3125,
+      "right": 320,
+      "bottom": 900,
+      "left": 0
+    },
+    "scrollTop": 0,
+    "clientHeight": 90
+  },
+  "textScale": 200,
+  "textScaleSource": "measured-root-font-relative-to-16px-fixture-baseline",
+  "physicalDevice": false,
+  "safeAreaBottom": 0,
+  "safeAreaMethod": "none",
+  "fullPage": false,
+  "animations": "allow",
+  "head": "131ade347258c7820c7a89989ab851769197b486",
+  "scenarioId": "4d6210392ee8",
+  "evidenceKind": "application-viewport",
+  "note": "Synthetic IHFR fixture; form controls masked; viewport may show one part of a long region; not manual accessibility acceptance."
+}

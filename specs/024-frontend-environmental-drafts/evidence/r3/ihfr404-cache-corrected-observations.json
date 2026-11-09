@@ -1,0 +1,87 @@
+{
+  "scope": "One corrected Next dev A-to-B restart after graceful A shutdown; populated persistent cache required; synthetic private environment; no database",
+  "runtime": {
+    "node": "v24.19.0",
+    "next": "16.3.8",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "cacheEnabled": true,
+  "inheritedApplicationEnvironment": false,
+  "nextExitTimeoutMs": 10000,
+  "priorInconclusiveTrial": "../turbopack-env-restart/result.json",
+  "observations": [
+    {
+      "phase": "A",
+      "event": "ready",
+      "status": 200,
+      "port": 38227,
+      "launcherPid": 87553
+    },
+    {
+      "phase": "A",
+      "event": "probe",
+      "tokenPhase": "A",
+      "status": 200,
+      "moduleSchemaCurrent": true,
+      "runtimeSchemaCurrent": true,
+      "moduleSecretCurrent": true,
+      "runtimeSecretCurrent": true,
+      "moduleSchema": "b978136ef7e7c1a5ed1486caa4e60ecc0bfd1fa3c1342833e991d2fcf57a9b14",
+      "runtimeSchema": "b978136ef7e7c1a5ed1486caa4e60ecc0bfd1fa3c1342833e991d2fcf57a9b14",
+      "moduleSecret": "281558bf3c80b1419422d4a1afa19ae567d84acc1a89004259baac0936f4e86e",
+      "runtimeSecret": "281558bf3c80b1419422d4a1afa19ae567d84acc1a89004259baac0936f4e86e",
+      "authenticated": true,
+      "processId": 87594
+    },
+    {
+      "phase": "A",
+      "event": "stopped",
+      "requestedSignal": "SIGTERM",
+      "code": 0,
+      "signal": null
+    }
+  ],
+  "startedAt": "2026-10-20T18:08:22.742Z",
+  "cacheBeforeStopA": {
+    "files": 1,
+    "bytes": 73,
+    "dataFiles": 0,
+    "positiveSequence": false,
+    "currents": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "max_sequence_number": 0,
+        "commit_time": "2026-10-20T18:08:23.467702738Z"
+      }
+    ],
+    "manifest": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "bytes": 73
+      }
+    ]
+  },
+  "cacheBeforeStartB": {
+    "files": 1,
+    "bytes": 73,
+    "dataFiles": 0,
+    "positiveSequence": false,
+    "currents": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "max_sequence_number": 0,
+        "commit_time": "2026-10-20T18:08:23.467702738Z"
+      }
+    ],
+    "manifest": [
+      {
+        "path": "v16.3.8-b0fad0d4/CURRENT",
+        "bytes": 73
+      }
+    ]
+  },
+  "passed": false,
+  "harnessError": "Error: No committed filesystem cache data after graceful A shutdown; B will not start on an unproven cache premise\n    at main (<scratch>/turbopack-env-restart-corrected/run.cjs:164:11)",
+  "completedAt": "2026-10-20T18:08:25.802Z"
+}

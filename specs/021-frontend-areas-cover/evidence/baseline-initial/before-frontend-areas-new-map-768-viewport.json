@@ -1,0 +1,43 @@
+{
+  "name": "new-map-768",
+  "screenshot": {
+    "filename": "before-frontend-areas-new-map-768-viewport.png",
+    "fullPage": false,
+    "browserProject": "chromium"
+  },
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "text": {
+    "rootFontSize": "16px",
+    "percentRelativeTo16px": 100,
+    "method": "computed html font-size; no browser zoom"
+  },
+  "scroll": {
+    "document": {
+      "x": 0,
+      "y": 885
+    },
+    "content": {
+      "left": 0,
+      "top": 0,
+      "height": 1711,
+      "extent": 1711
+    }
+  },
+  "active": {
+    "tag": "input",
+    "x": 213,
+    "y": -251.375,
+    "width": 243,
+    "height": 46
+  },
+  "target": {
+    "x": 213,
+    "y": 263.625,
+    "width": 502,
+    "height": 384
+  },
+  "scrolling": "Element.scrollIntoView: block=center, inline=nearest, behavior=instant"
+}

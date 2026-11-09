@@ -1,5 +1,9 @@
 # Estado atual do produto
 
+## Estado corrente do recorte CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: as funcionalidades aprovadas 014/015/016 têm evidências locais em runtime. O baseline anterior abaixo permanece histórico e não descreve sua implementação atual. Consulte a [matriz corrente](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md). Aceites remotos e humanos permanecem pendentes.
+
 - **Base:** commit `2fe5541c068903fb512474d90f9b2c452c1143b2`
 - **Método:** inspeção estática nas fontes permitidas
 - **Estado do documento:** `EM_REVISAO`
@@ -130,3 +134,29 @@ Riscos descrevem condições atuais ou possíveis efeitos; não constituem requi
 - acessibilidade, erros, responsividade e qualidade têm sinais parciais, sem validação executada;
 - segurança e deploy permanecem com riscos e lacunas explícitos;
 - nenhuma condição insegura, mock, rota quebrada ou alegação comercial é tratada como requisito desejado.
+
+
+## Recorte de contas/rascunhos/capas — 2026-10-10
+
+`EVIDENCIA_IMPLEMENTACAO`: HEAD beba96f contém infraestrutura mail, verificação/recuperação/troca e exclusão da conta; não contém persistência de drafts ou integração de capas. A [matriz de estado](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md) documenta camadas inspecionadas, ancestralidade e validação atual. Recortes de drafts e capas aprovados nesta conversa serão implementados em specs próprias. Não reclassifica todo o baseline Code-First nem concede aprovação normativa ao PRD.
+
+
+## Entrega de rascunhos 015 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: spec 015 entrega rascunho ambiental pessoal de coleta confirmada, separado da medição imutável; salvar/retomar/OCC/descarte, consumo transacional e exclusão pessoal. Aprovação do usuário 2026-10-10 registrada; sem expiração. Ver specs/015-environmental-drafts/ e runbook de rascunhos. Capas 016 seguem próxima entrega; gates remotos 012/013 continuam pendentes.
+
+
+## Entrega integrada CRI 014/015/016 — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: runners focais corrigidos; drafts pessoais e uma capa
+privada por área entregues e validados localmente após aprovação do usuário.
+Não constituem aprovação global do PRD. [Estado/requisitos/pendências](../../plans/active/contas-rascunhos-imagens/matriz-de-estado.md).
+
+## Revisão focal posterior CRI — 2026-10-10
+
+EVIDENCIA_IMPLEMENTACAO: corte final5f36eb7e revalidado com regressão completa;
+sem mudança funcional. Equivalência histórica 7f→5f NÃO VERIFICADA, registrada
+como ressalva em vez de promover PASS antigo. RECOMENDACAO: APTO COM RESSALVAS
+para solicitar homologação; gates externos/humanos seguem pendentes.
+[Relatório, fontes, achados e limites](../../reports/audits/2026-10-10-revisao-focal-cri-pre-homologacao.md).
+Não reclassifica requisitos candidatos ou o baseline global como intenção aprovada.

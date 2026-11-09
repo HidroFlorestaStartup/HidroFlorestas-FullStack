@@ -1,0 +1,761 @@
+{
+  "classification": "EVIDENCIA_IMPLEMENTACAO",
+  "observedAtUtc": "2026-10-18T05:34:29.143022+00:00",
+  "clientDate": "2026-10-18",
+  "clientTimezone": "America/Fortaleza",
+  "decision": "PRONTO PARA PLANEJAR A INCORPORACAO",
+  "decisionClassification": "INFERENCIA",
+  "firstSlice": {
+    "description": "Visual do login preservando autenticacao real",
+    "classification": "DECISAO_CONFIRMADA",
+    "origin": "Resposta de Pedro nesta sessao em 18/10/2026"
+  },
+  "repositories": {
+    "fullstackOrigin": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack.git",
+    "starterOrigin": "https://github.com/HidroFlorestaStartup/hidroflorestas-frontend-starter.git",
+    "excludedLegacyUpstream": "https://github.com/PedroVitor237/HidroFlorestas.git"
+  },
+  "refs": [
+    {
+      "ref": "origin/main",
+      "sha": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+      "tree": "50a5243eceaa5d4d62c145f9f4af3a86d2ea80db"
+    },
+    {
+      "ref": "origin/development",
+      "sha": "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+      "tree": "9cde83df95785cf6115d489ca6e3584268cb6fcc"
+    },
+    {
+      "ref": "0f669b7",
+      "sha": "0f669b79a5e73a329832593229c2557d8b12bbce",
+      "tree": "9cde83df95785cf6115d489ca6e3584268cb6fcc"
+    },
+    {
+      "ref": "origin/release/cri-rc-20261010",
+      "sha": "5ea982374e787e2f9844453add317f3949be4f8a",
+      "tree": "8885a1cf75a3bc134518b2197c3e828002fd8d53"
+    },
+    {
+      "ref": "origin/review/cri-rc-validation-20261012",
+      "sha": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "tree": "caa3b65298c65479f807d629ded8e5b70fa94329"
+    }
+  ],
+  "developmentParents": [
+    "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "0f669b79a5e73a329832593229c2557d8b12bbce"
+  ],
+  "equivalenceOutsideDocs": [
+    {
+      "ref": "0f669b79a5e73a329832593229c2557d8b12bbce",
+      "command": "git diff --name-only 118a3a8 0f669b7 -- . ':!docs'",
+      "changedFilesOutsideDocs": []
+    },
+    {
+      "ref": "5ea982374e787e2f9844453add317f3949be4f8a",
+      "command": "git diff --name-only 118a3a8 5ea9823 -- . ':!docs'",
+      "changedFilesOutsideDocs": []
+    },
+    {
+      "ref": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "command": "git diff --name-only 118a3a8 a01857b -- . ':!docs'",
+      "changedFilesOutsideDocs": []
+    }
+  ],
+  "initialLocals": {
+    "fullstackMain": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "fullstackDevelopment": "beba96fbf6bbaac8771dbb29abea2f9f8f5b0054",
+    "fullstackReview": "b20143adcd5d36fbde381c28ba220881f3f2d53d",
+    "starterMain": "8984bb80a29973c05a5830cb624c60df6ed5d575",
+    "starterCurrent": "22672507dc006fd4e7767ab34d70b70a75357d92"
+  },
+  "localSync": {
+    "fullstackMain": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "action": "already aligned with origin/main"
+    },
+    "fullstackDevelopment": {
+      "before": [
+        0,
+        88
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "action": "fast-forward to own origin/development"
+    },
+    "fullstackReview": {
+      "before": [
+        0,
+        80
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "action": "fast-forward in existing clean worktree to own origin/review"
+    },
+    "starterMain": {
+      "before": [
+        0,
+        6
+      ],
+      "after": [
+        0,
+        0
+      ],
+      "action": "fast-forward in isolated worktree to own upstream/main, equal to origin/main"
+    }
+  },
+  "starter": {
+    "main": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "upstreamMain": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+    "prsMerged": [
+      {
+        "number": 2,
+        "head": "22672507dc006fd4e7767ab34d70b70a75357d92",
+        "mergeSha": "cbb954a7d3cdb6bb08d2a5864541b8aa9605fa0f",
+        "mergedAt": "2026-10-09T23:20:54Z"
+      },
+      {
+        "number": 1,
+        "head": "1472166e9b64433bcd6e6cde543035d93ac1692e",
+        "mergeSha": "570b36d05768fb66abcf627cdefaaeddcccc52d5",
+        "mergedAt": "2026-10-09T22:48:45Z"
+      }
+    ],
+    "untrackedLockfilePreservedSha256": "e3e1790a8eec7dcb26780cd57ec870783dc41877a56ade101f3e165e0c7f26cb"
+  },
+  "prs": [
+    {
+      "number": 2,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/2",
+      "baseRef": "review/cri-reconciliation-20261010",
+      "baseRefOidFromGitHub": "a88d846a64234af3279b1283ae6c459b7658689a",
+      "headRef": "review/014-account-test-runners",
+      "headSha": "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+      "headIsAncestorOfDevelopment": true,
+      "headDevelopmentAheadBehind": [
+        0,
+        83
+      ],
+      "exclusiveCommits": [],
+      "baseDiffFileCount": 15,
+      "treeDiffFileCount": 278,
+      "exclusiveTreeFiles": [],
+      "reviewDecisionFromGraphQL": null,
+      "reviews": [],
+      "commentsRead": 0,
+      "threads": [],
+      "checkRollup": null
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/3",
+      "baseRef": "review/014-account-test-runners",
+      "baseRefOidFromGitHub": "71802095d1e8d03b8548c3fe138eea5d8907e7bd",
+      "headRef": "review/015-environmental-drafts",
+      "headSha": "65516f6d675e8d4ae38f0f860fe93b6dc768dd66",
+      "headIsAncestorOfDevelopment": true,
+      "headDevelopmentAheadBehind": [
+        0,
+        75
+      ],
+      "exclusiveCommits": [],
+      "baseDiffFileCount": 72,
+      "treeDiffFileCount": 227,
+      "exclusiveTreeFiles": [],
+      "reviewDecisionFromGraphQL": null,
+      "reviews": [],
+      "commentsRead": 0,
+      "threads": [],
+      "checkRollup": {
+        "state": "SUCCESS",
+        "contexts": {
+          "nodes": [
+            {
+              "__typename": "CheckRun",
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/38454674811/job/115494215072",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 38454674811,
+                  "runNumber": 5
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4",
+      "baseRef": "review/015-environmental-drafts",
+      "baseRefOidFromGitHub": "65516f6d675e8d4ae38f0f860fe93b6dc768dd66",
+      "headRef": "review/016-area-covers",
+      "headSha": "8856b8570e555eda108182eb0c654a24b336b198",
+      "headIsAncestorOfDevelopment": true,
+      "headDevelopmentAheadBehind": [
+        0,
+        44
+      ],
+      "exclusiveCommits": [],
+      "baseDiffFileCount": 178,
+      "treeDiffFileCount": 65,
+      "exclusiveTreeFiles": [],
+      "reviewDecisionFromGraphQL": "CHANGES_REQUESTED",
+      "reviews": [
+        {
+          "state": "CHANGES_REQUESTED",
+          "sha": "dace407e51b5034e69e22055658c651147a7caa3",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5499177988"
+        },
+        {
+          "state": "COMMENTED",
+          "sha": "c3172718011ee70d3613387c61b3774601010a85",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5507799247"
+        },
+        {
+          "state": "COMMENTED",
+          "sha": "247fe5e1b1a1864968e0c1118c651c95e288bd0b",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#pullrequestreview-5542756039"
+        }
+      ],
+      "commentsRead": 2,
+      "threads": [
+        {
+          "isResolved": false,
+          "isOutdated": true,
+          "path": "src/components/areas/area-cover.tsx",
+          "commentsRead": 3,
+          "urls": [
+            "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4255042102",
+            "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4262167643",
+            "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/4#discussion_r4290653372"
+          ]
+        }
+      ],
+      "checkRollup": {
+        "state": "SUCCESS",
+        "contexts": {
+          "nodes": [
+            {
+              "__typename": "CheckRun",
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39064680132/job/117489722311",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39064680132,
+                  "runNumber": 48
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/5",
+      "baseRef": "review/016-area-covers",
+      "baseRefOidFromGitHub": "8856b8570e555eda108182eb0c654a24b336b198",
+      "headRef": "review/cri-audit-20261010",
+      "headSha": "333abde242950a07686b973d2e715e5ddc68caf7",
+      "headIsAncestorOfDevelopment": true,
+      "headDevelopmentAheadBehind": [
+        0,
+        27
+      ],
+      "exclusiveCommits": [],
+      "baseDiffFileCount": 18,
+      "treeDiffFileCount": 50,
+      "exclusiveTreeFiles": [],
+      "reviewDecisionFromGraphQL": null,
+      "reviews": [],
+      "commentsRead": 2,
+      "threads": [],
+      "checkRollup": {
+        "state": "SUCCESS",
+        "contexts": {
+          "nodes": [
+            {
+              "__typename": "CheckRun",
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39064682644/job/117489730210",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39064682644,
+                  "runNumber": 49
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6",
+      "baseRef": "review/cri-audit-20261010",
+      "baseRefOidFromGitHub": "333abde242950a07686b973d2e715e5ddc68caf7",
+      "headRef": "release/cri-rc-20261010",
+      "headSha": "5ea982374e787e2f9844453add317f3949be4f8a",
+      "headIsAncestorOfDevelopment": false,
+      "headDevelopmentAheadBehind": [
+        1,
+        1
+      ],
+      "exclusiveCommits": [
+        "5ea982374e787e2f9844453add317f3949be4f8a docs(release): registra parecer de aprovação para development"
+      ],
+      "baseDiffFileCount": 51,
+      "treeDiffFileCount": 2,
+      "exclusiveTreeFiles": [
+        "A\tdocs/releases/2026-10-10-cri-rc/2026-10-17-parecer-aprovacao-integracao-development.md",
+        "M\tdocs/releases/2026-10-10-cri-rc/readme.md"
+      ],
+      "reviewDecisionFromGraphQL": "CHANGES_REQUESTED",
+      "reviews": [
+        {
+          "state": "CHANGES_REQUESTED",
+          "sha": "ca80376e6e0f60aac9b94ec598e8e4a7c937d17c",
+          "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/6#pullrequestreview-5499467293"
+        }
+      ],
+      "commentsRead": 3,
+      "threads": [],
+      "checkRollup": {
+        "state": "SUCCESS",
+        "contexts": {
+          "nodes": [
+            {
+              "__typename": "CheckRun",
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39071712863/job/117510517908",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39071712863,
+                  "runNumber": 52
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/pull/7",
+      "baseRef": "release/cri-rc-20261010",
+      "baseRefOidFromGitHub": "0f669b79a5e73a329832593229c2557d8b12bbce",
+      "headRef": "review/cri-rc-validation-20261012",
+      "headSha": "a01857b3d1a44fc0668054d03096d743ba0aede0",
+      "headIsAncestorOfDevelopment": false,
+      "headDevelopmentAheadBehind": [
+        16,
+        1
+      ],
+      "exclusiveCommits": [
+        "a01857b3d1a44fc0668054d03096d743ba0aede0 merge: sincroniza recibo e codificacao documental CRI-REV-005",
+        "4b33a34a9576ea7186993324a47a0ba8a25e24df merge: sincroniza seletores IHFR comprovados pelo CI CRI-REV-005",
+        "7e55d0fa371d6caad3835d31b916106c9b972bd0 merge(validation): sincroniza recibo final CRI-REV-005",
+        "61331cf9d824b2de7f801b53c23922d0ef2328dc merge(validation): sincroniza candidato com recuo transacional testado",
+        "4ccc54d1dcb2ae25e57e4801f9aa43d23b12e827 merge(validation): sincroniza RC contratual e preserva revisao independente",
+        "dc180cb258f9c9fe543a7a5815ab81ea21f8ae93 docs(review): registra handoff e preservação da revisão independente",
+        "934158ead60013a0dde3926372984dead3025cd1 merge(review): recebe fechamento final da RC sem alterar revisão histórica",
+        "94b37a841e9b2d5beb7e392177c6a766ea637aa9 merge(review): sincroniza revisão independente com RC corrigida",
+        "59baff4f5cbe44164014aaf760a0651604177abb docs(ci): preserva falhas, reruns e recibos da revisão final",
+        "5cbd4969ac270a440f1029f9612ed25e9024bf85 docs(review): distingue achados históricos do candidato corrigido",
+        "99a04051cf7f987028c2aa9a4e2256d3de6d7ce1 merge(review): recebe documentação final e prontidão da RC",
+        "8fe53d121eb99f4dcf383a9ee13739f2c1753367 merge(review): sincroniza RC validada preservando relatório independente",
+        "b20143adcd5d36fbde381c28ba220881f3f2d53d docs(review): finalize RC report and published reviews",
+        "f25b7c1f8e770531586dec9ca6bfb47a114b1707 docs(review): record completed RC tests and guarded cleanup",
+        "db68cdde3658c460d20929ae47a8e1285120e5ef docs(review): preserve current audits and reproduced cover finding",
+        "ffd04a240d885cb32eb4d26d4e4881908b003443 docs(review): preserve RC validation recovery checkpoint"
+      ],
+      "baseDiffFileCount": 26,
+      "treeDiffFileCount": 26,
+      "exclusiveTreeFiles": [
+        "M\tdocs/governance/DOCUMENT_REGISTER.md",
+        "A\tdocs/plans/completed/revisao-release-candidate-cri-20261012.md",
+        "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-publication-20261015.json",
+        "A\tdocs/releases/2026-10-10-cri-rc/cri-rev-validation-handoff-20261015.md",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/ci-validation.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr5-attempt1-e2e-failure.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup-evidence/pr7-attempt1-ihfr-failure.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-ci-followup.md",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/browser-results.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/build-typecheck-lint.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-page-reload.png",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-after-reload.png",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/cover-reproduction.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-cleanup.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-server-proof.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/database-tests.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/migration-integrity.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-original.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-patched.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-audit-production.json",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ci.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-explain-source-map-js.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/npm-ls.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/prisma-generate.txt",
+        "A\tdocs/reports/audits/2026-10-13-cri-rc-evidence/unit-mail-summary.json",
+        "A\tdocs/reports/audits/2026-10-13-revisao-release-candidate-cri.md"
+      ],
+      "reviewDecisionFromGraphQL": null,
+      "reviews": [],
+      "commentsRead": 2,
+      "threads": [],
+      "checkRollup": {
+        "state": "SUCCESS",
+        "contexts": {
+          "nodes": [
+            {
+              "__typename": "CheckRun",
+              "name": "validate",
+              "status": "COMPLETED",
+              "conclusion": "SUCCESS",
+              "detailsUrl": "https://github.com/HidroFlorestaStartup/HidroFlorestas-FullStack/actions/runs/39064689472/job/117489752763",
+              "checkSuite": {
+                "workflowRun": {
+                  "databaseId": 39064689472,
+                  "runNumber": 51
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "developmentChecks": {
+    "checks": [
+      {
+        "conclusion": "success",
+        "details_url": "https://vercel.com/github",
+        "head_sha": "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+        "name": "Vercel Preview Comments",
+        "status": "completed"
+      }
+    ],
+    "total_count": 1
+  },
+  "newValidation": {
+    "node": "24.19.0",
+    "source": "118a3a8b6e0f38a3e1085aad9f43e3be7f3eabed",
+    "sourceChanges": "documentation only",
+    "environment": "isolated Linux worktree; no dotenv copied; no real services or databases",
+    "records": [
+      {
+        "gate": "install-node24",
+        "command": "npm ci --no-audit --no-fund",
+        "exitCode": 0,
+        "result": "PASS",
+        "logPath": "/tmp/hidro-prep-npm-ci-node24-escalated.log",
+        "logSha256": "8ce0097a4c4b9aaffacc11ad2ab4a1be8a0067358a82a7337261983b30be7c1b"
+      },
+      {
+        "gate": "generate",
+        "command": "npm exec -- prisma generate",
+        "exitCode": 0,
+        "result": "PASS",
+        "logPath": "/tmp/hidro-prep-prisma-generate.log",
+        "logSha256": "b33f21a116276ad68eacf2e2de7f963a2d31ffb60bdbc3db733d1674b25d5936"
+      },
+      {
+        "gate": "typecheck",
+        "command": "npm run typecheck",
+        "exitCode": 0,
+        "result": "PASS",
+        "logPath": "/tmp/hidro-prep-typecheck.log",
+        "logSha256": "c50ddbdb9782ccd017dc7a1c2e5357727ec4bd0a9f7fb902e05c643aa2c08187"
+      },
+      {
+        "gate": "lint",
+        "command": "npm run lint",
+        "exitCode": 0,
+        "result": "PASS; 0 errors, 3 existing warnings",
+        "logPath": "/tmp/hidro-prep-lint.log",
+        "logSha256": "c0bc5139fae299864c4c321e0ec435a55e589996ce1456155008148081de39c7"
+      },
+      {
+        "gate": "unit-restricted",
+        "command": "npm run test:unit",
+        "exitCode": 1,
+        "result": "FAIL; 3 files; cause not exposed; not reused as test PASS",
+        "logPath": "/tmp/hidro-prep-unit.log",
+        "logSha256": "4e5f217167e489854a326318df6da6fac6b760df7662621e56877c1131ceff08"
+      },
+      {
+        "gate": "unit-authorized",
+        "command": "npm run test:unit",
+        "exitCode": 0,
+        "result": "PASS; 296 Node + 17 synthetic Mail",
+        "logPath": "/tmp/hidro-prep-unit-escalated.log",
+        "logSha256": "7fe68ea8fb28ffc37b9c1450a5e147bfa9831ba5b82ac2eaff21ccde21febea7"
+      },
+      {
+        "gate": "cover-restricted",
+        "command": "node --conditions=react-server --import=tsx --test tests/integration/area-cover-provider.test.ts tests/integration/area-cover-transactions.test.ts",
+        "exitCode": 0,
+        "result": "2 process/file-level records; not proof of 15 scenarios",
+        "logPath": "/tmp/hidro-prep-cover-focal.log",
+        "logSha256": "643304b4d9590754a5545b2e644726fd236a5f0fd5e11abef79f1c444705593d"
+      },
+      {
+        "gate": "cover-authorized",
+        "command": "node --conditions=react-server --import=tsx --test tests/integration/area-cover-provider.test.ts tests/integration/area-cover-transactions.test.ts",
+        "exitCode": 0,
+        "result": "PASS; 15 scenarios; fakes only; no DB",
+        "logPath": "/tmp/hidro-prep-cover-focal-escalated.log",
+        "logSha256": "f10a045bd7873b15131a196177772a0f7c9197459c96c026734c4796a8e86ead"
+      },
+      {
+        "gate": "build-restricted",
+        "command": "npm run build",
+        "exitCode": 1,
+        "result": "FAIL; next/font could not fetch Poppins from Google Fonts",
+        "logPath": "/tmp/hidro-prep-build.log",
+        "logSha256": "a6d78168d1e6df8df7fa4ccb1d98e926c0618074040f1c26c3742bea2e7a36cd"
+      },
+      {
+        "gate": "build-authorized",
+        "command": "npm run build",
+        "exitCode": 1,
+        "result": "FAIL; Turbopack/PostCSS/leaflet.css process port binding Operation not permitted",
+        "logPath": "/tmp/hidro-prep-build-escalated.log",
+        "logSha256": "fa8d92481772d15b8a121696cc1dcf02aff4666f0aa14ae978714412b8f4817d"
+      }
+    ]
+  },
+  "reusedCI": {
+    "approvedCandidate": {
+      "sha": "0f669b79a5e73a329832593229c2557d8b12bbce",
+      "runId": 39064686503,
+      "result": "success",
+      "attempt": 1,
+      "wholeTreeEqualToDevelopment": true
+    },
+    "latestRelease": {
+      "sha": "5ea982374e787e2f9844453add317f3949be4f8a",
+      "runId": 39071712863,
+      "result": "success",
+      "attempt": 1,
+      "artifactId": 12116150353,
+      "artifactSha256": "488dbd526d67f3e414f47eda9be84cb3bf4b2e521e7a76ad84290aece3004227",
+      "records": [
+        {
+          "gate": "RegressionSetup",
+          "command": "node --import=tsx scripts/imp006-local-regression-setup.ts",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:38:59.099Z",
+          "endedUtc": "2026-10-17T21:39:06.893Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "regressionsetup-1792273139099.log"
+        },
+        {
+          "gate": "Unit",
+          "command": "npm run test:unit",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:39:07.222Z",
+          "endedUtc": "2026-10-17T21:39:33.494Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "unit-1792273147222.log"
+        },
+        {
+          "gate": "Integration",
+          "command": "npm run test:integration",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:39:33.816Z",
+          "endedUtc": "2026-10-17T21:41:29.759Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "integration-1792273173816.log"
+        },
+        {
+          "gate": "Migration",
+          "command": "npm run test:migration",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:41:30.024Z",
+          "endedUtc": "2026-10-17T21:41:45.109Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "migration-1792273290024.log"
+        },
+        {
+          "gate": "Contract",
+          "command": "npm run test:contract",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:41:45.373Z",
+          "endedUtc": "2026-10-17T21:41:49.026Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "contract-1792273305373.log"
+        },
+        {
+          "gate": "R1",
+          "command": "npm run test:mail:r1",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:41:49.296Z",
+          "endedUtc": "2026-10-17T21:41:59.402Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "r1-1792273309295.log"
+        },
+        {
+          "gate": "Build",
+          "command": "npm run build",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:41:59.653Z",
+          "endedUtc": "2026-10-17T21:42:25.742Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "build-1792273319653.log"
+        },
+        {
+          "gate": "Typecheck",
+          "command": "npm run typecheck",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:42:26.084Z",
+          "endedUtc": "2026-10-17T21:42:35.762Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "typecheck-1792273346084.log"
+        },
+        {
+          "gate": "Lint",
+          "command": "npm run lint",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:42:36.041Z",
+          "endedUtc": "2026-10-17T21:42:53.499Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "lint-1792273356041.log"
+        },
+        {
+          "gate": "E2E",
+          "command": "npm run test:e2e",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:42:53.758Z",
+          "endedUtc": "2026-10-17T21:46:44.114Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "e2e-1792273373758.log"
+        },
+        {
+          "gate": "Https",
+          "command": "npm run test:e2e:https",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:46:44.500Z",
+          "endedUtc": "2026-10-17T21:47:33.097Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "https-1792273604499.log"
+        },
+        {
+          "gate": "Deletion",
+          "command": "node --import=tsx scripts/account-deletion-e2e.ts",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:47:33.395Z",
+          "endedUtc": "2026-10-17T21:47:45.641Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "deletion-1792273653394.log"
+        },
+        {
+          "gate": "Ihfr",
+          "command": "node --import=tsx scripts/imp006-local-e2e.ts",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:47:45.933Z",
+          "endedUtc": "2026-10-17T21:48:36.354Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "ihfr-1792273665932.log"
+        },
+        {
+          "gate": "Bootstrap",
+          "command": "node --import=tsx scripts/imp006-clean-bootstrap.ts --with-versioned-baseline",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:48:36.621Z",
+          "endedUtc": "2026-10-17T21:48:41.177Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "bootstrap-1792273716621.log"
+        },
+        {
+          "gate": "SchemaAudit",
+          "command": "npm run test:ihfr:audit:assert-zero",
+          "snapshot": "e5db75607e6ac9cb59d609da41f87c426aca06679a11646415c49bd60718794b",
+          "startedUtc": "2026-10-17T21:48:41.446Z",
+          "endedUtc": "2026-10-17T21:48:42.209Z",
+          "exitCode": 0,
+          "result": "PASS",
+          "environment": "Windows/Node24.19/owned-loopback-PostgreSQL17",
+          "log": "schemaaudit-1792273721446.log"
+        }
+      ],
+      "counts": {
+        "nodeUnit": 296,
+        "mailUnit": 17,
+        "integration": 218,
+        "migration": 37,
+        "contract": 6,
+        "r1Overlapping": 17,
+        "e2e": 72,
+        "https": 2,
+        "deletion": 3,
+        "ihfr": 6,
+        "bootstrapMigrations": 14,
+        "remainingManagedTestSchemas": 0
+      }
+    }
+  },
+  "finalRemoteCheck": {
+    "method": "git ls-remote --heads origin for both repositories; GitHub open PRs queried again",
+    "refsUnchanged": true,
+    "prHeadBaseSnapshotUnchanged": true
+  },
+  "notExecuted": [
+    "new local database integration/migrations/bootstrap/E2E/HTTPS/deletion/IHFR (equivalent CI reused)",
+    "starter installation/build/tests/browser (source inspection and historical screenshots only)",
+    "new npm audit",
+    "real providers, hosted migrations, production, deploy",
+    "remote writes including push, PR comments/reviews/close/retarget/thread resolution"
+  ],
+  "documentaryBranch": "docs/preparacao-frontend-20261018"
+}
