@@ -26,3 +26,12 @@
 
 - Reducer `area-geocoding-state.ts` mantém revision do ponto, ignora respostas obsoletas e não substitui valores editados manualmente; cancelamento/debounce são otimizações e não única garantia.
 - Testar manual, dispositivo e mapa; respostas A/B invertidas; CPF/CEP sintético somente; mensagens aria-live.
+
+
+## Ciclo autorizado de teste real — 2026-11-06
+
+Photon escolhido como serviço público para teste moderado, não como contratação/garantia de operação. Fontes primárias consultadas em 2026-11-06: https://github.com/komoot/photon e https://github.com/komoot/photon/blob/master/docs/api-v1.md. A política permite volume razoável, admite limitação/bloqueio por uso excessivo e não garante disponibilidade. Nenhuma chave ou conta paga foi criada.
+
+Duas sondas reais, seriais e identificadas, usando coordenadas públicas (sem localização pessoal): (-3.3925,-44.3589) retornou Itapecuru Mirim/Maranhão/65485-000; (-2.5286,-44.3055) retornou São Luís/MA/65010-410. HTTP 200 em ambas. Isso observa apenas essas amostras e não certifica cobertura/endereço exato.
+
+Resposta é FeatureCollection GeoJSON; adapter anterior não a normalizava. Extrair apenas propriedades da primeira Feature válida: city/town/municipality/village, state e postcode, mantendo precedência dos formatos legados. Não converter POI.name, street ou county em município. Usar a normalização brasileira já existente. Nominatim público não foi ativado: os controles exigidos pela política não estão implementados de forma agregada neste recorte.

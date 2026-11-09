@@ -60,3 +60,27 @@ it("bounds pending upstream requests by a real abort timeout without changing ar
   assert.equal(observedAbort, true);
   assert.equal(response.headers.get("cache-control"), "no-store");
 });
+
+it("adapts Photon on the authenticated proxy, retaining limits and sending only provider headers", async () => {
+  const handler = createReverseGeocodingHandler({
+    authorize: async () => ({}),
+    endpoint: () => "https://photon.komoot.io/reverse?limit=1",
+    fetcher: async (input, init) => {
+      const url = new URL(String(input));
+      assert.equal(url.searchParams.get("limit"), "1");
+      assert.equal(url.searchParams.get("lat"), "-3.3925");
+      assert.equal(url.searchParams.get("lon"), "-44.3589");
+      const headers = new Headers(init?.headers);
+      assert.match(headers.get("user-agent") ?? "", /^HidroFlorestas\/1\.0/);
+      assert.equal(headers.get("authorization"), null);
+      assert.equal(headers.get("cookie"), null);
+      assert.equal(init?.redirect, "error");
+      return Response.json({ type: "FeatureCollection", features: [{
+        type: "Feature", properties: { city: "Itapecuru Mirim", state: "Maranhão", postcode: "65485000", name: "not part of DTO" },
+      }] });
+    },
+  });
+  const response = await handler(request("-3.3925", "-44.3589"));
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), { address: { municipality: "Itapecuru Mirim", state: "MA", cep: "65485-000" } });
+});
