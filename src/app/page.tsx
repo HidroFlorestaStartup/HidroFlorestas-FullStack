@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ClipboardList, FlaskConical, MapPin, Sprout } from "lucide-react";
+import { ArrowRight, ClipboardList, FlaskConical, MapPin } from "lucide-react";
 import logo from "@/assets/logo/logo-hf.png";
-import trees from "@/assets/lading-page/tree-hero-landingpage.png";
+import { MascotAnimation } from "./mascot-animation";
 import styles from "./landing.module.css";
 
 export const metadata: Metadata = {
@@ -49,9 +49,7 @@ export default function LandingPage() {
             <p className={styles.heroNote}>Da observação em campo ao histórico do laboratório.</p>
           </div>
           <figure className={styles.illustration}>
-            <div className={styles.illustrationLabel}><Sprout size={18} aria-hidden="true" /> Água, solo e vegetação</div>
-            <Image src={trees} alt="" sizes="(max-width: 959px) 90vw, 500px" className={styles.trees} preload />
-            <figcaption>O território é o ponto de partida.</figcaption>
+            <MascotAnimation />
           </figure>
         </section>
 
@@ -115,21 +113,41 @@ export default function LandingPage() {
         <section id="equipe" className={`${styles.container} ${styles.section}`} aria-labelledby="team-title">
           <div className={styles.sectionHeading}>
             <p className={styles.eyebrow}>Equipe</p>
-            <h2 id="team-title">Pesquisa e formação, juntas.</h2>
-            <p>Pesquisadores e estudantes do IFMA Campus Itapecuru-Mirim.</p>
+            <h2 id="team-title">Equipe e competências.</h2>
+            <p>Conheça as pessoas envolvidas na ciência, no desenvolvimento e nos dados da plataforma.</p>
           </div>
           <div className={styles.team}>
             <article>
-              <p className={styles.role}>Coordenação do projeto</p>
-              <h3>Fabio Mesquita de Souza</h3>
-              <p>Doutorado em Recursos Florestais / Engenharia Florestal</p>
-              <p className={styles.affiliation}>DERI-ITA · IFMA Campus Itapecuru-Mirim</p>
+              <p className={styles.role}>Pesquisa</p>
+              <h3>Coordenação científica</h3>
+              <ul className={styles.teamNames}>
+                <li>Fábio Mesquita de Souza</li>
+                <li>Iolanda Souza do Carmo</li>
+                <li>Humberto Morais da Silva</li>
+                <li>Horacio Bizerra Vale Neto</li>
+                <li>Antonio Marcos da Penha Santos</li>
+              </ul>
+              <p>Concepção histórica do IHFR.</p>
             </article>
             <article>
-              <p className={styles.role}>Corpo técnico e estudantes</p>
-              <h3>Equipe multidisciplinar</h3>
-              <p>Iolanda S. Carmo, Humberto M. Silva</p>
-              <p className={styles.affiliation}>Bolsistas: Arthur Gabryel, Ana Clara Cunha, Horacio Bizerra</p>
+              <p className={styles.role}>Desenvolvimento</p>
+              <h3>Coordenação de desenvolvimento</h3>
+              <ul className={styles.teamNames}>
+                <li>Pedro Vitor Silva de Brito</li>
+                <li>Ana Clara Cunha Santos</li>
+                <li>Thales Levi Azevedo Valente</li>
+              </ul>
+              <p>Implementação do software e organização do trabalho.</p>
+            </article>
+            <article>
+              <p className={styles.role}>Plataforma</p>
+              <h3>Dados e funcionalidades</h3>
+              <ul className={styles.teamNames}>
+                <li>Luciano Mendes de Almeida</li>
+                <li>Arthur Gabryel Costa Lima</li>
+                <li>Rafael Silva Andrade</li>
+              </ul>
+              <p>Interfaces e estruturação dos dados da plataforma.</p>
             </article>
           </div>
         </section>
