@@ -12,7 +12,7 @@ export function NoCurrentDiagnosis() {
     </div>
     <div className="my-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-[12px] sm:p-4">
       <p className="text-sm font-semibold leading-relaxed">Nenhum diagnóstico IHFR vigente para esta coleta.</p>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">A ausência de diagnóstico não representa um score zero. Um resultado depende de dados suficientes e de uma solicitação autorizada.</p>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">A ausência de diagnóstico não representa um escore zero. Um resultado depende de dados suficientes e de uma solicitação autorizada.</p>
     </div>
     <ScientificNotice />
   </section>;

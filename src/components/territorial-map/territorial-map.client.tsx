@@ -7,6 +7,7 @@ import type { TerritorialArea } from "@/types/territorial-map.type";
 import { mapTileConfig } from "@/components/maps/map-config";
 import { areasWithLocation, classifyTiles, type TileState } from "./territorial-map-state";
 import styles from "./territorial-map.module.css";
+import { MapControls, mapAttributionLabel } from "@/components/maps/map-controls";
 
 const marker = divIcon({ html: '<span style="display:block;width:22px;height:22px;border:3px solid white;border-radius:50%;background:#15803d;box-shadow:0 0 0 2px #14532d"></span>', className: "territorial-point-marker", iconSize: [22, 22], iconAnchor: [11, 11] });
 const selectedMarker = divIcon({ html: '<span style="display:block;width:26px;height:26px;border:4px solid white;border-radius:50%;background:#1d4ed8;box-shadow:0 0 0 3px #1e3a8a"></span>', className: "territorial-point-marker", iconSize: [26, 26], iconAnchor: [13, 13] });
@@ -26,8 +27,9 @@ export default function TerritorialMapClient({ areas, selectedAreaId, onSelect }
   const located = useMemo(() => areasWithLocation(areas), [areas]);
   return <div className={styles.mapContent}>
     <div className={styles.mapFrame} role="region" aria-label="Mapa das áreas do laboratório">
-      <MapContainer center={[-14, -52]} zoom={3} className={styles.mapCanvas} scrollWheelZoom={false}>
-        {config && <TileLayer url={config.url} attribution={config.attribution} eventHandlers={{ loading: () => { counts.current = { loaded: 0, failed: 0 }; setTileState("LOADING"); }, tileload: () => { counts.current.loaded += 1; }, tileerror: () => { counts.current.failed += 1; }, load: () => setTileState(classifyTiles(counts.current.loaded, counts.current.failed)) }} />}
+      <MapContainer center={[-14, -52]} zoom={3} className={styles.mapCanvas} scrollWheelZoom={false} zoomControl={false} attributionControl={false}>
+        <MapControls />
+        {config && <TileLayer url={config.url} attribution={mapAttributionLabel(config.attribution)} eventHandlers={{ loading: () => { counts.current = { loaded: 0, failed: 0 }; setTileState("LOADING"); }, tileload: () => { counts.current.loaded += 1; }, tileerror: () => { counts.current.failed += 1; }, load: () => setTileState(classifyTiles(counts.current.loaded, counts.current.failed)) }} />}
         <Fit areas={areas} />
         {located.map((area) => <Marker key={area.id} position={[area.location!.latitude, area.location!.longitude]} icon={area.id === selectedAreaId ? selectedMarker : marker} title={`Selecionar ${area.name}, área ${area.id}`} alt={`Selecionar ${area.name}, área ${area.id}`} keyboard eventHandlers={{
           click: () => onSelect(area.id),

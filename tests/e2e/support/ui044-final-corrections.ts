@@ -26,7 +26,7 @@ export async function expectUI044Notice(page: Page, state: UI044DetailState) {
   } else {
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await expect(reading.getByText(/Qualidade dos dados:/)).toHaveCount(0);
-    await expect(reading.getByText("Score registrado", { exact: true })).toHaveCount(0);
+    await expect(reading.getByText("Escore registrado", { exact: true })).toHaveCount(0);
   }
   await expect(management.locator("fieldset")).toHaveCount(state.actions ? 1 : 0);
   await expect(page.getByLabel("Uso predominante da terra")).toHaveCount(state.actions ? 1 : 0);
@@ -69,7 +69,7 @@ export async function inspectUI044Detail(page: Page, info: TestInfo, state: UI04
     const record = block("record");
     const environmental = block("environmental");
     const management = actions ? block("actions") : null;
-    const nodes = [header, reading, record, environmental, ...(actions ? [management!] : [])];
+    const nodes = [header, reading, environmental, record, ...(actions ? [management!] : [])];
     const rect = (node: Element) => {
       const b = node.getBoundingClientRect();
       return { x: b.x, y: b.y, width: b.width, height: b.height, right: b.right, bottom: b.bottom };
@@ -90,14 +90,14 @@ export async function inspectUI044Detail(page: Page, info: TestInfo, state: UI04
   // DOM order is tested independently of visual CSS order.
   if (geometry.width < 1280) {
     expect(geometry.domOrder).toEqual(state.actions ? [true, true, true, true] : [true, true, true]);
-    const blocks = [geometry.header, geometry.reading, geometry.record, geometry.environmental, ...(geometry.management ? [geometry.management] : [])];
+    const blocks = [geometry.header, geometry.reading, geometry.environmental, geometry.record, ...(geometry.management ? [geometry.management] : [])];
     for (let index = 1; index < blocks.length; index++) expect(blocks[index - 1].bottom).toBeLessThanOrEqual(blocks[index].y + 1);
   } else {
     // The accepted desktop has independent left metadata and right reading/actions columns.
     expect(geometry.header.right).toBeLessThanOrEqual(geometry.reading.x + 1);
     expect(Math.abs(geometry.header.y - geometry.reading.y)).toBeLessThanOrEqual(2);
-    expect(geometry.header.bottom).toBeLessThanOrEqual(geometry.record.y + 1);
-    expect(geometry.record.bottom).toBeLessThanOrEqual(geometry.environmental.y + 1);
+    expect(geometry.header.bottom).toBeLessThanOrEqual(geometry.environmental.y + 1);
+    expect(geometry.environmental.bottom).toBeLessThanOrEqual(geometry.record.y + 1);
     expect(Math.abs(geometry.header.x - geometry.record.x)).toBeLessThanOrEqual(1);
     expect(Math.abs(geometry.record.x - geometry.environmental.x)).toBeLessThanOrEqual(1);
     expect(geometry.record.right).toBeLessThanOrEqual(geometry.reading.x + 1);

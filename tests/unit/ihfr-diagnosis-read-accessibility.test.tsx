@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { ExperimentalDiagnosisSummary } from "../../src/components/ihfr-diagnosis/experimental-diagnosis-summary";
 import { NoCurrentDiagnosis } from "../../src/components/ihfr-diagnosis/no-current-diagnosis";
 import { publicDiagnosisFixture as diagnosis } from "../fixtures/ihfr-diagnosis-public";
+import { ihfrLabel } from "../../src/components/ihfr-diagnosis/ihfr-presentation";
 
 test("read surfaces use labelled regions, semantic value lists and text labels without write controls", () => {
   const summary = renderToStaticMarkup(<ExperimentalDiagnosisSummary diagnosis={diagnosis} />);
@@ -21,16 +22,16 @@ test("read surfaces use labelled regions, semantic value lists and text labels w
 
 test("normal diagnosis view exposes provenance, versions, lifecycle and UTC dates", () => {
   const summary = renderToStaticMarkup(<ExperimentalDiagnosisSummary diagnosis={diagnosis} />);
-  for (const value of [diagnosis.areaId, diagnosis.collectionId, diagnosis.environmentalMeasurementSetId, diagnosis.inputSupplementId, ...Object.values(diagnosis.versions), diagnosis.lifecycleState, diagnosis.scientificState]) {
+  for (const value of [diagnosis.areaId, diagnosis.collectionId, diagnosis.environmentalMeasurementSetId, diagnosis.inputSupplementId, ...Object.values(diagnosis.versions), ihfrLabel("lifecycle", diagnosis.lifecycleState), ihfrLabel("scientific", diagnosis.scientificState)]) {
     assert.ok(summary.includes(value), value);
   }
   for (const label of ["Área de origem", "Coleta de origem", "Conjunto de medições ambientais", "Suplemento de entrada IHFR", "Contrato de medição", "Contrato de entrada", "Contrato matemático", "Algoritmo", "Hash do contrato", "Calculado em (UTC)", "Vigente desde (UTC)", "Transição de estado em (UTC)"]) assert.ok(summary.includes(label), label);
-  assert.match(summary, /2026-09-20 12:03:00 UTC/);
+  assert.match(summary, /20\/09\/2026 às 12:03/);
   assert.match(summary, /Não se aplica/);
   assert.match(summary, /break-all/);
   for (const lifecycleState of ["SUPERSEDED", "REVOKED"] as const) {
     const historic = renderToStaticMarkup(<ExperimentalDiagnosisSummary diagnosis={{ ...diagnosis, lifecycleState, transitionedAt: "2026-09-21T14:00:00.000Z" }} />);
-    assert.ok(historic.includes(lifecycleState));
-    assert.match(historic, /2026-09-21 14:00:00 UTC/);
+    assert.ok(historic.includes(ihfrLabel("lifecycle", lifecycleState)));
+    assert.match(historic, /21\/09\/2026 às 14:00/);
   }
 });

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { formatIHFRNumber } from "../../src/lib/ui-presentation";
 import { AreaCollections } from "../../src/components/areas/area-collections";
 import type { AreaCollectionItem } from "../../src/components/areas/area-collections-presentation";
 import { IHFRDiagnosisManagement } from "../../src/components/ihfr-diagnosis/ihfr-diagnosis-management";
@@ -34,7 +35,7 @@ function renderCards(rows: AreaCollectionItem[]) {
     ], "each card has exactly its two contextual destinations and no standalone IHFR link");
     assert.ok(text(card).includes(`ID: ${rows[index].id}`));
     assert.ok(card.includes(`dateTime="${rows[index].occurredAt}"`));
-    assert.ok(text(card).includes("Confirmação no sistema (UTC)"));
+    assert.ok(text(card).includes("Confirmação no sistema"));
     assert.ok(text(card).includes(rows[index].currentDiagnosis ? "IHFR vigente" : "Sem IHFR vigente"));
   }
   return { html, cards, summary: /<aside\b[^>]*>([\s\S]*?)<\/aside>/.exec(html)![1] };
@@ -44,8 +45,8 @@ test("UI044 C1: distinct persisted score strings belong to their own cards witho
   const rows = [row("current-a", "0.123456789012345678", 25), row("current-b", "0.876543210987654321", 24)];
   const { cards, summary } = renderCards(rows);
   for (const [index, card] of cards.entries()) {
-    const scores = [...card.matchAll(/<p\b[^>]*>(Score registrado: [\s\S]*?)<\/p>/g)].map(match => text(match[1]));
-    assert.deepEqual(scores, [`Score registrado: ${rows[index].currentDiagnosis!.displayScore}`]);
+    const scores = [...card.matchAll(/<p\b[^>]*>(Escore registrado: [\s\S]*?)<\/p>/g)].map(match => text(match[1]));
+    assert.deepEqual(scores, [`Escore registrado: ${formatIHFRNumber(rows[index].currentDiagnosis!.displayScore)}`]);
     assert.ok(!text(card).includes(rows[1 - index].currentDiagnosis!.displayScore), "another collection's score is never copied");
     assert.doesNotMatch(text(card), /MODERATE|Moderado|proveniência|experimental/i);
   }
@@ -56,8 +57,8 @@ test("UI044 C1: distinct persisted score strings belong to their own cards witho
 
 test("UI044 C1: newer collection without diagnosis does not inherit the older summary score", () => {
   const { cards, summary } = renderCards([row("newest-without", null, 26), row("older-current", "0.42", 25)]);
-  assert.doesNotMatch(text(cards[0]), /Score registrado:|0\.42/);
-  assert.match(text(cards[1]), /Score registrado: 0\.42/);
+  assert.doesNotMatch(text(cards[0]), /Escore registrado:|0\.42/);
+  assert.match(text(cards[1]), /Escore registrado: 0,42/);
   assert.match(text(summary), /Coleta de origem: older-current/);
   assert.ok(!text(summary).includes("newest-without"));
 });
@@ -65,16 +66,16 @@ test("UI044 C1: newer collection without diagnosis does not inherit the older su
 test("UI044 C1: registered zero is rendered while absence remains absent (presentation fixture, not scientific evaluation)", () => {
   for (const score of ["0", "0.000000000000000000"]) {
     const { cards } = renderCards([row("registered-zero", score, 25), row("no-diagnosis", null, 24)]);
-    assert.ok(text(cards[0]).includes(`Score registrado: ${score}`));
-    assert.doesNotMatch(text(cards[1]), /Score registrado:/);
+    assert.ok(text(cards[0]).includes(`Escore registrado: ${formatIHFRNumber(score)}`));
+    assert.doesNotMatch(text(cards[1]), /Escore registrado:/);
   }
 });
 
 test("UI044 C1: absence in all cards preserves the honest summary and both destinations", () => {
   const { cards, summary } = renderCards([row("absent-a", null, 25), row("absent-b", null, 24)]);
-  for (const card of cards) assert.doesNotMatch(text(card), /Score registrado:/);
+  for (const card of cards) assert.doesNotMatch(text(card), /Escore registrado:/);
   assert.match(text(summary), /Nenhum diagnóstico IHFR vigente disponível/);
-  assert.match(text(summary), /Isso não representa score zero/);
+  assert.match(text(summary), /Isso não representa escore zero/);
 });
 
 for (const hasDiagnosis of [false, true]) {
@@ -106,7 +107,7 @@ for (const hasDiagnosis of [false, true]) {
       assert.doesNotMatch(html, /<details\b[^>]*\bopen/);
     } else {
       assert.match(text(html), /Nenhum diagnóstico IHFR vigente para esta coleta/);
-      assert.doesNotMatch(text(html), /Score registrado:/);
+      assert.doesNotMatch(text(html), /Escore registrado:/);
     }
   });
 }

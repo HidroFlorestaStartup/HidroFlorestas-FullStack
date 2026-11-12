@@ -35,7 +35,7 @@ describe("collection date/time adapter", () => {
       const detail = serializeCollectionDetail({ id: "id", occurredAt: reloaded, confirmedAt: clock(), ...context });
       assert.equal(detail.occurredAt, parsed.occurredAt);
       inZone("Pacific/Honolulu", () => {
-        assert.match(formatCollectionOccurrence(detail.occurredAt), new RegExp(`UTC\\${offset[0]}${offset.slice(1)}`));
+        assert.equal(formatCollectionOccurrence(detail.occurredAt), `${local.slice(8, 10)}/${local.slice(5, 7)}/${local.slice(0, 4)} às ${local.slice(11, 16)}`);
         assert.equal(parseCollectionInput({ occurredAt: detail.occurredAt }, clock).occurredAtUtc.toISOString(), clock().toISOString());
       });
     }));
@@ -83,8 +83,8 @@ describe("collection date/time adapter", () => {
     }
   }));
 
-  it("formats the declared civil time deterministically and preserves fractional precision", () => {
-    assert.equal(formatCollectionOccurrence("2026-09-15T09:00:00.123-03:00"), "15/09/2026 09:00:00.123 (UTC-03:00)");
-    assert.equal(formatCollectionOccurrence("2026-09-15T12:00:00.000Z"), "15/09/2026 12:00:00 (UTC+00:00)");
+  it("formats the declared civil time to minutes without exposing fractional precision", () => {
+    assert.equal(formatCollectionOccurrence("2026-09-15T09:00:00.123-03:00"), "15/09/2026 às 09:00");
+    assert.equal(formatCollectionOccurrence("2026-09-15T12:00:00.000Z"), "15/09/2026 às 12:00");
   });
 });

@@ -233,7 +233,7 @@ export function LaboratoryWorkspace() {
       {error && <div><p role="alert" className={styles.error}>{error}</p>{!details && <button type="button" disabled={settingsLoading} className={styles.outline} onClick={() => void openSettings(selected)}>Tentar novamente</button>}</div>}
       {settingsLoading && <p role="status">{details ? "Processando…" : "Carregando informações…"}</p>}
       {details && <>
-        <dl className={styles.details}><div><dt>Criado em</dt><dd>{new Intl.DateTimeFormat("pt-BR").format(new Date(details.createdAt))}</dd></div><div><dt>Status</dt><dd>{details.status === "ACTIVE" ? "Ativo" : "Inativo"}</dd></div></dl>
+        <dl className={styles.details}><div><dt>Criado em</dt><dd>{new Intl.DateTimeFormat("pt-BR").format(new Date(details.createdAt))}</dd></div><div><dt>Estado</dt><dd>{details.status === "ACTIVE" ? "Ativo" : "Inativo"}</dd></div></dl>
         <div>
           <h3 className={styles.sectionTitle}>Membros</h3>
           <ul className={styles.members}>{details.members.map((member, index) => (

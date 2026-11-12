@@ -100,6 +100,6 @@ export function PasswordResetForm({ authenticated = false }: { authenticated?: b
       <button type="submit" disabled={busy} className={accountButtonClass}>{busy ? "Aguarde…" : authenticated ? "Alterar senha" : "Redefinir senha"}</button>
       </AccountControls>
     </form> : null}
-    {!message ? <Link href={authenticated ? "/workspace" : "/login"} className="mt-6 inline-block font-semibold text-amber-800 underline">{authenticated ? "Voltar para o workspace" : "Voltar para o login"}</Link> : null}
+    {!message ? <Link href={authenticated ? "/workspace" : "/login"} className="mt-6 inline-block font-semibold text-amber-800 underline">{authenticated ? "Voltar para a área de trabalho" : "Voltar para o login"}</Link> : null}
   </AccountShell>;
 }

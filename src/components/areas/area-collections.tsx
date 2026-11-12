@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays, ClipboardList, FlaskConical, Leaf } from "lucide-react";
-import { formatCollectionOccurrence } from "@/lib/collection-date-time";
+import { formatCollectionConfirmation, formatCollectionOccurrence } from "@/lib/collection-date-time";
+import { formatIHFRNumber } from "@/lib/ui-presentation";
 import type { AreaCollectionItem } from "./area-collections-presentation";
 import { latestAvailableDiagnosis } from "./area-collections-presentation";
 import { ihfrLabel } from "@/components/ihfr-diagnosis/ihfr-presentation";
@@ -21,18 +22,24 @@ export function AreaCollections({
         </div>
         <span className="rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-900">{rows.length} {rows.length === 1 ? "coleta" : "coletas"}</span>
       </div>
-      <aside aria-label="Último IHFR disponível da área" className="min-w-0 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 sm:p-5">
-        <div className="flex items-center gap-2 font-semibold text-amber-950"><FlaskConical size={19} aria-hidden="true" />Último IHFR experimental disponível</div>
+      <aside aria-label="Último IHFR disponível da área" className="min-w-0 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4 sm:p-5">
+        <div className="flex items-center gap-2 font-semibold text-emerald-950"><FlaskConical size={19} aria-hidden="true" />Último IHFR experimental disponível</div>
         {selected && current ? (
-          <div className="mt-3 space-y-2">
-            <p className="text-base font-semibold text-slate-900">Score registrado: {current.displayScore} · {ihfrLabel("class", current.ihfrClass)} (experimental)</p>
-            <p className="break-words text-sm text-slate-700">Coleta de origem: <span className="break-all font-medium">{selected.id}</span></p>
-            <p className="text-sm text-slate-700">Ocorrência em campo: <time dateTime={selected.occurredAt}>{formatCollectionOccurrence(selected.occurredAt)}</time></p>
-            <p className="text-xs text-amber-900">Diagnóstico vigente desta coleta. Pode ser anterior à coleta mais recente; validação científica pendente.</p>
-            <Link className="inline-flex min-h-11 items-center gap-2 rounded-lg font-semibold text-emerald-900 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + selected.id + "#ihfr-diagnosis-heading"}>Consultar resultado e proveniência <ArrowUpRight size={17} aria-hidden="true" /></Link>
+          <div className="mt-3 grid min-w-0 grid-cols-1 items-start gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-6">
+            <div className="min-w-0 text-emerald-950">
+              <p className="text-sm font-medium">Escore registrado</p>
+              <p className="mt-2 whitespace-nowrap text-4xl font-semibold leading-none tabular-nums sm:text-5xl">{formatIHFRNumber(current.displayScore)}</p>
+            </div>
+            <div className="min-w-0 space-y-2 text-sm leading-relaxed text-slate-700">
+              <p className="font-semibold text-emerald-950">{ihfrLabel("class", current.ihfrClass)} (experimental)</p>
+              <p className="break-words">Coleta de origem: <span className="break-all font-medium">{selected.id}</span></p>
+              <p>Ocorrência em campo: <time dateTime={selected.occurredAt}>{formatCollectionOccurrence(selected.occurredAt)}</time></p>
+              <p>Diagnóstico vigente desta coleta. Pode ser anterior à coleta mais recente; validação científica pendente.</p>
+              <Link className="inline-flex min-h-11 items-center gap-2 rounded-lg font-semibold text-emerald-900 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + selected.id + "#ihfr-diagnosis-heading"}>Consultar resultado e proveniência <ArrowUpRight size={17} className="shrink-0" aria-hidden="true" /></Link>
+            </div>
           </div>
         ) : (
-          <p className="mt-3 text-sm leading-relaxed text-slate-700">Nenhum diagnóstico IHFR vigente disponível para as coletas desta área. Isso não representa score zero; nenhum resultado será calculado automaticamente.</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-700">Nenhum diagnóstico IHFR vigente disponível para as coletas desta área. Isso não representa escore zero; nenhum resultado será calculado automaticamente.</p>
         )}
       </aside>
       {rows.length === 0 ? (
@@ -48,13 +55,13 @@ export function AreaCollections({
               <p className="mt-2 break-all text-xs text-slate-500">ID: {row.id}</p>
               <dl className="mt-3 space-y-2 text-sm">
                 <div><dt className="flex items-center gap-2 text-slate-600"><CalendarDays size={15} aria-hidden="true" />Ocorrência em campo</dt><dd className="mt-1 font-semibold text-slate-900"><time dateTime={row.occurredAt}>{formatCollectionOccurrence(row.occurredAt)}</time></dd></div>
-                <div><dt className="text-slate-600">Confirmação no sistema (UTC)</dt><dd className="mt-1 text-slate-800"><time dateTime={row.confirmedAt}>{new Date(row.confirmedAt).toLocaleString("pt-BR", { timeZone: "UTC", timeZoneName: "short" })}</time></dd></div>
+                <div><dt className="text-slate-600">Confirmação no sistema</dt><dd className="mt-1 text-slate-800"><time dateTime={row.confirmedAt}>{formatCollectionConfirmation(row.confirmedAt, row.occurredAt)}</time></dd></div>
               </dl>
               <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
                 <Link className="inline-flex min-h-11 items-center rounded-xl bg-emerald-800 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + row.id}>Abrir coleta</Link>
                 <Link className="flex min-h-11 w-full min-w-0 max-w-full items-center justify-center rounded-xl border border-emerald-900/20 px-2 py-2 text-center text-sm font-semibold text-emerald-900 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 sm:inline-flex sm:w-auto sm:justify-start sm:gap-1 sm:px-3 sm:text-left" href={base + row.id + "/environmental-data"}><Leaf size={16} className="hidden shrink-0 sm:block" aria-hidden="true" /><span className="break-normal [hyphens:none]">Dados ambientais</span></Link>
                 {row.currentDiagnosis && (
-                  <p className="min-w-0 self-center px-2 py-2 text-sm font-semibold text-slate-900">Score registrado: {row.currentDiagnosis.displayScore}</p>
+                  <p className="min-w-0 self-center px-2 py-2 text-sm font-semibold text-slate-900">Escore registrado: {formatIHFRNumber(row.currentDiagnosis.displayScore)}</p>
                 )}
               </div>
             </li>
