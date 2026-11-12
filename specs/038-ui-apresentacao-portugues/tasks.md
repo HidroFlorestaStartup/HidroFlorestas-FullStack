@@ -25,3 +25,9 @@
 ## Dependências e estratégia
 
 T001 → T002 → T003 → US1/US2/US3 → T011 → T012. US1 e US2 compartilham formatadores; tradução em páginas independentes pode ser revisada após a base. Execução sequencial nesta sessão, sem agentes adicionais. Não há nova API nem mudança científica.
+
+## Continuidade após teste manual — 12/11/2026
+
+- [x] T013 Recolher limites sem diagnóstico e adotar IHFR nos textos de apresentação.
+- [x] T014 Validar comportamento recolhido/expandido, terminologia e verificações locais proporcionais.
+- [x] T015 Preparar publicação incremental na mesma branch/PR56 e atualização do Preview; recibos finais da publicação/conferência no PR e na integração Vercel.

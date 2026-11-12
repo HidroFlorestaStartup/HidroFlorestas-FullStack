@@ -27,7 +27,7 @@ export function AreaCollections({
         {selected && current ? (
           <div className="mt-3 grid min-w-0 grid-cols-1 items-start gap-4 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-6">
             <div className="min-w-0 text-emerald-950">
-              <p className="text-sm font-medium">Escore registrado</p>
+              <p className="text-sm font-medium">IHFR registrado</p>
               <p className="mt-2 whitespace-nowrap text-4xl font-semibold leading-none tabular-nums sm:text-5xl">{formatIHFRNumber(current.displayScore)}</p>
             </div>
             <div className="min-w-0 space-y-2 text-sm leading-relaxed text-slate-700">
@@ -39,7 +39,7 @@ export function AreaCollections({
             </div>
           </div>
         ) : (
-          <p className="mt-3 text-sm leading-relaxed text-slate-700">Nenhum diagnóstico IHFR vigente disponível para as coletas desta área. Isso não representa escore zero; nenhum resultado será calculado automaticamente.</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-700">Nenhum diagnóstico IHFR vigente disponível para as coletas desta área. Isso não representa IHFR igual a zero; nenhum resultado será calculado automaticamente.</p>
         )}
       </aside>
       {rows.length === 0 ? (
@@ -61,7 +61,7 @@ export function AreaCollections({
                 <Link className="inline-flex min-h-11 items-center rounded-xl bg-emerald-800 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href={base + row.id}>Abrir coleta</Link>
                 <Link className="flex min-h-11 w-full min-w-0 max-w-full items-center justify-center rounded-xl border border-emerald-900/20 px-2 py-2 text-center text-sm font-semibold text-emerald-900 hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800 sm:inline-flex sm:w-auto sm:justify-start sm:gap-1 sm:px-3 sm:text-left" href={base + row.id + "/environmental-data"}><Leaf size={16} className="hidden shrink-0 sm:block" aria-hidden="true" /><span className="break-normal [hyphens:none]">Dados ambientais</span></Link>
                 {row.currentDiagnosis && (
-                  <p className="min-w-0 self-center px-2 py-2 text-sm font-semibold text-slate-900">Escore registrado: {formatIHFRNumber(row.currentDiagnosis.displayScore)}</p>
+                  <p className="min-w-0 self-center px-2 py-2 text-sm font-semibold text-slate-900">IHFR registrado: {formatIHFRNumber(row.currentDiagnosis.displayScore)}</p>
                 )}
               </div>
             </li>

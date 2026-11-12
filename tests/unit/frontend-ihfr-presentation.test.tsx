@@ -43,7 +43,9 @@ test("frontend IHFR keeps unknown qualifiers and metadata visible with honest fa
 test("frontend IHFR absence explains the experimental boundary without fabricating a score", () => {
   const html = renderToStaticMarkup(<NoCurrentDiagnosis />);
   assert.match(html, /Nenhum diagnóstico IHFR vigente para esta coleta\./);
-  assert.match(html, /não representa um escore zero/);
+  assert.match(html, /não representa um IHFR igual a zero/);
   for (const label of diagnosis.scientificLabels) assert.ok(html.includes(label));
-  assert.doesNotMatch(html, /Qualidade dos dados:|Escore registrado|0\.00|Resultado simulado|<button/);
+  assert.doesNotMatch(html, /Qualidade dos dados:|IHFR registrado|0\.00|Resultado simulado|<button/);
+  assert.match(html, /<summary[^>]*>Ler mais: limites do diagnóstico experimental<\/summary>/);
+  assert.doesNotMatch(html, /<details[^>]*\sopen/);
 });

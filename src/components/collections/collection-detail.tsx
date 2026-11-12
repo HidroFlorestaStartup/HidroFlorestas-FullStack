@@ -35,7 +35,7 @@ export function createCollectionDetailSlots({ collection, hasConfirmedEnvironmen
         {!hasConfirmedEnvironmentalData ? (
           <div role="status" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950">
             <p className="font-semibold">Não há conjunto de dados ambientais confirmado para esta coleta.</p>
-            <p className="mt-2">Consulte os dados existentes ou registre e confirme as medições para permitir a avaliação experimental. A ausência de dados não significa escore zero.</p>
+            <p className="mt-2">Consulte os dados existentes ou registre e confirme as medições para permitir a avaliação experimental. A ausência de dados não significa IHFR igual a zero.</p>
           </div>
         ) : <p className="text-sm font-medium text-emerald-800">Há dados ambientais confirmados nesta coleta.</p>}
         <div className={styles.actions}>

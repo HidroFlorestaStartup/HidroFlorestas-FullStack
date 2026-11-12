@@ -26,7 +26,7 @@ export async function expectUI044Notice(page: Page, state: UI044DetailState) {
   } else {
     await expect(reading.getByText("Nenhum diagnóstico IHFR vigente para esta coleta.", { exact: true })).toBeVisible();
     await expect(reading.getByText(/Qualidade dos dados:/)).toHaveCount(0);
-    await expect(reading.getByText("Escore registrado", { exact: true })).toHaveCount(0);
+    await expect(reading.getByText("IHFR registrado", { exact: true })).toHaveCount(0);
   }
   await expect(management.locator("fieldset")).toHaveCount(state.actions ? 1 : 0);
   await expect(page.getByLabel("Uso predominante da terra")).toHaveCount(state.actions ? 1 : 0);

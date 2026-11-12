@@ -22,6 +22,7 @@ test.beforeAll(async () => {
 import {createRoot} from 'react-dom/client';
 import {IHFRDiagnosisManagement} from './src/components/ihfr-diagnosis/ihfr-diagnosis-management';
 import {ExperimentalDiagnosisSummary} from './src/components/ihfr-diagnosis/experimental-diagnosis-summary';
+import {NoCurrentDiagnosis} from './src/components/ihfr-diagnosis/no-current-diagnosis';
 import {CollectionDetailLayout} from './src/components/collections/collection-detail-layout';
 import {createCollectionDetailSlots} from './src/components/collections/collection-detail';
 import {AreaCollections} from './src/components/areas/area-collections';
@@ -30,7 +31,7 @@ const diagnosis=${JSON.stringify(diagnosis)},collection=${JSON.stringify(collect
 const slots=createCollectionDetailSlots({collection});
 const view=location.pathname;
 const reading=<ExperimentalDiagnosisSummary diagnosis={diagnosis}/>;
-const content=view==='/map'?<TerritorialMapView laboratoryId="${laboratoryId}"/>:
+const content=view==='/no-diagnosis'?<NoCurrentDiagnosis/>:view==='/map'?<TerritorialMapView laboratoryId="${laboratoryId}"/>:
 view==='/summary'?<AreaCollections laboratoryId="${laboratoryId}" areaId={diagnosis.areaId} rows={[{id:collection.id,occurredAt:collection.occurredAt,occurredAtUtc:'2026-10-30T20:26:34.664Z',confirmedAt:collection.confirmedAt,currentDiagnosis:{id:diagnosis.id,displayScore:'0.49',ihfrClass:'MODERATE'}}]}/>:
 location.search?<CollectionDetailLayout {...slots} reading={reading}/>:
 <IHFRDiagnosisManagement detailSlots={slots} context={{laboratoryId:'${laboratoryId}',areaId:diagnosis.areaId,collectionId:diagnosis.collectionId}} initialDiagnosis={diagnosis}/>;
@@ -91,6 +92,8 @@ for (const width of [320, 375, 768, 1024, 1440]) for (const scale of [100, 200])
     await expect(page.getByText("Moderado", { exact: true })).toBeVisible();
     const reading = page.getByRole("region", { name: "Diagnóstico IHFR experimental", exact: true });
     await expect(reading).toContainText("0,49");
+    await expect(reading.getByText("IHFR registrado", { exact: true })).toBeVisible();
+    await expect(reading).not.toContainText(/\bescore\b|\bscore\b/i);
     for (const value of ["0,63", "0,40", "0,57", "0,36"]) await expect(reading).toContainText(value);
     await expect(reading).not.toContainText(/0\.629999|MODERATE|CURRENT|HIGH/);
     await expect.poll(() => page.locator("[data-collection-detail-block]").evaluateAll(nodes => nodes.map(node => node.getAttribute("data-collection-detail-block")))).toEqual(width >= 1280 ? ["header", "environmental", "record", "reading", "actions"] : ["header", "reading", "environmental", "record", "actions"]);
@@ -115,6 +118,25 @@ for (const width of [320, 375, 768, 1024, 1440]) for (const scale of [100, 200])
     clean();
   });
 }
+
+for (const width of [375, 1440]) test(`absent diagnosis keeps scientific limits collapsed and keyboard accessible: ${width}px`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 900 });
+  const clean = await mount(page, "/no-diagnosis");
+  const disclosure = page.locator("details");
+  const toggle = disclosure.locator("summary");
+  const notice = disclosure.getByText("Limites do diagnóstico experimental", { exact: true });
+  await expect(toggle).toHaveText("Ler mais: limites do diagnóstico experimental");
+  await expect(disclosure).not.toHaveAttribute("open");
+  await expect(notice).not.toBeVisible();
+  await expect(page.getByRole("region")).not.toContainText(/\bescore\b|\bscore\b/i);
+  await toggle.focus();
+  await page.keyboard.press("Enter");
+  await expect(notice).toBeVisible();
+  for (const label of diagnosis.scientificLabels) await expect(disclosure.getByText(label, { exact: true })).toBeVisible();
+  await page.keyboard.press("Enter");
+  await expect(notice).not.toBeVisible();
+  clean();
+});
 
 test("map confirmation is first, bold, concise and keeps complete timestamps", async ({ page }) => {
   const clean = await mount(page, "/map");

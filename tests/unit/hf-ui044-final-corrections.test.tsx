@@ -45,8 +45,8 @@ test("UI044 C1: distinct persisted score strings belong to their own cards witho
   const rows = [row("current-a", "0.123456789012345678", 25), row("current-b", "0.876543210987654321", 24)];
   const { cards, summary } = renderCards(rows);
   for (const [index, card] of cards.entries()) {
-    const scores = [...card.matchAll(/<p\b[^>]*>(Escore registrado: [\s\S]*?)<\/p>/g)].map(match => text(match[1]));
-    assert.deepEqual(scores, [`Escore registrado: ${formatIHFRNumber(rows[index].currentDiagnosis!.displayScore)}`]);
+    const scores = [...card.matchAll(/<p\b[^>]*>(IHFR registrado: [\s\S]*?)<\/p>/g)].map(match => text(match[1]));
+    assert.deepEqual(scores, [`IHFR registrado: ${formatIHFRNumber(rows[index].currentDiagnosis!.displayScore)}`]);
     assert.ok(!text(card).includes(rows[1 - index].currentDiagnosis!.displayScore), "another collection's score is never copied");
     assert.doesNotMatch(text(card), /MODERATE|Moderado|proveniência|experimental/i);
   }
@@ -57,8 +57,8 @@ test("UI044 C1: distinct persisted score strings belong to their own cards witho
 
 test("UI044 C1: newer collection without diagnosis does not inherit the older summary score", () => {
   const { cards, summary } = renderCards([row("newest-without", null, 26), row("older-current", "0.42", 25)]);
-  assert.doesNotMatch(text(cards[0]), /Escore registrado:|0\.42/);
-  assert.match(text(cards[1]), /Escore registrado: 0,42/);
+  assert.doesNotMatch(text(cards[0]), /IHFR registrado:|0\.42/);
+  assert.match(text(cards[1]), /IHFR registrado: 0,42/);
   assert.match(text(summary), /Coleta de origem: older-current/);
   assert.ok(!text(summary).includes("newest-without"));
 });
@@ -66,16 +66,16 @@ test("UI044 C1: newer collection without diagnosis does not inherit the older su
 test("UI044 C1: registered zero is rendered while absence remains absent (presentation fixture, not scientific evaluation)", () => {
   for (const score of ["0", "0.000000000000000000"]) {
     const { cards } = renderCards([row("registered-zero", score, 25), row("no-diagnosis", null, 24)]);
-    assert.ok(text(cards[0]).includes(`Escore registrado: ${formatIHFRNumber(score)}`));
-    assert.doesNotMatch(text(cards[1]), /Escore registrado:/);
+    assert.ok(text(cards[0]).includes(`IHFR registrado: ${formatIHFRNumber(score)}`));
+    assert.doesNotMatch(text(cards[1]), /IHFR registrado:/);
   }
 });
 
 test("UI044 C1: absence in all cards preserves the honest summary and both destinations", () => {
   const { cards, summary } = renderCards([row("absent-a", null, 25), row("absent-b", null, 24)]);
-  for (const card of cards) assert.doesNotMatch(text(card), /Escore registrado:/);
+  for (const card of cards) assert.doesNotMatch(text(card), /IHFR registrado:/);
   assert.match(text(summary), /Nenhum diagnóstico IHFR vigente disponível/);
-  assert.match(text(summary), /Isso não representa escore zero/);
+  assert.match(text(summary), /Isso não representa IHFR igual a zero/);
 });
 
 for (const hasDiagnosis of [false, true]) {
@@ -91,7 +91,7 @@ for (const hasDiagnosis of [false, true]) {
     assert.equal([...html.matchAll(new RegExp(`>${notice}<`, "g"))].length, 1);
     assert.equal([...reading[0][2].matchAll(new RegExp(`>${notice}<`, "g"))].length, 1);
     assert.ok(!text(management[0][2]).includes(notice));
-    if (hasDiagnosis) assert.doesNotMatch(reading[0][2], /<details\b[^>]*\bopen/);
+    assert.doesNotMatch(reading[0][2], /<details\b[^>]*\bopen/);
     assert.equal([...html.matchAll(/<fieldset\b/g)].length, 1, "one observation form");
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
     assert.equal(ids.length, new Set(ids).size, "no duplicate IDs from responsive copies");
@@ -107,7 +107,7 @@ for (const hasDiagnosis of [false, true]) {
       assert.doesNotMatch(html, /<details\b[^>]*\bopen/);
     } else {
       assert.match(text(html), /Nenhum diagnóstico IHFR vigente para esta coleta/);
-      assert.doesNotMatch(text(html), /Escore registrado:/);
+      assert.doesNotMatch(text(html), /IHFR registrado:/);
     }
   });
 }

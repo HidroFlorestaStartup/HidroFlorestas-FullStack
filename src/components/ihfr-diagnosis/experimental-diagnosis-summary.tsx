@@ -24,7 +24,7 @@ export function ExperimentalDiagnosisSummary({ diagnosis }: { diagnosis: PublicD
       </div>
       <dl className="mt-6 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr))]">
         <div className="min-w-0 rounded-2xl bg-emerald-950 p-4 text-white">
-          <dt className="text-xs font-medium text-emerald-100">Escore registrado</dt>
+          <dt className="text-xs font-medium text-emerald-100">IHFR registrado</dt>
           <dd className="mt-2 text-3xl font-semibold tabular-nums">{formatIHFRNumber(diagnosis.displayScore)}</dd>
         </div>
         <div className="min-w-0 rounded-2xl bg-slate-50 p-4">

@@ -38,3 +38,11 @@ A primeira execução de navegador parou antes de carregar a aplicação por res
 O aceite visual do usuário e a decisão de integração permanecem pendentes. Publicação em branch própria e abertura de PR não autorizam merge ou promoção de ambiente.
 
 A primeira tentativa de criar a árvore Git no GitHub foi bloqueada pela revisão automática por exigir autorização explícita para publicação externa das alterações; nessa tentativa, não foi criada branch remota nem PR. Em 12/11/2026, Pedro autorizou explicitamente publicar esta branch no repositório HidroFlorestaStartup/HidroFlorestas-FullStack e abrir PR para development, reservando o merge para sua aprovação. O recibo de publicação e o estado dos checks ficam na descrição do PR e no GitHub.
+
+## Correções após teste manual — 12/11/2026
+
+Base incremental: PR56/head 69e19de. Pedro solicitou manter os limites experimentais recolhidos também sem diagnóstico e adotar IHFR nos rótulos do resultado. Alterados somente quatro componentes de apresentação, expectativas de testes e a documentação desta spec. O aviso conserva seus quatro qualificadores em uma única seção, agora recolhida por padrão também no estado ausente. Ausência continua diferente de IHFR igual a zero.
+
+Validação desta rodada: 434/434 testes gerais + 17/17 de e-mail; 14/14 cenários de navegador com componentes reais (incluindo dois novos casos de abertura/fechamento por teclado sem diagnóstico); build e TypeScript aprovados. Lint sem erros e com os dois avisos preexistentes. Nenhuma ocorrência de Escore/Score como texto público remanescente nos componentes JSX revisados. Valores e nomes internos preservados.
+
+O Preview usa a configuração de teste já autorizada, banco sintético separado e a mesma conta de teste, sem novo seed ou alteração de dados. A conferência hospedada do novo deploy e o aceite manual de Pedro têm recibo separado; a integração Vercel aponta o deploy do head publicado. Nenhum merge ou promoção de produção autorizado.

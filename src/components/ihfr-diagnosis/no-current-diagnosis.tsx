@@ -12,8 +12,11 @@ export function NoCurrentDiagnosis() {
     </div>
     <div className="my-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-[12px] sm:p-4">
       <p className="text-sm font-semibold leading-relaxed">Nenhum diagnóstico IHFR vigente para esta coleta.</p>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">A ausência de diagnóstico não representa um escore zero. Um resultado depende de dados suficientes e de uma solicitação autorizada.</p>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">A ausência de diagnóstico não representa um IHFR igual a zero. Um resultado depende de dados suficientes e de uma solicitação autorizada.</p>
     </div>
-    <ScientificNotice />
+    <details className="group mt-4 min-w-0 rounded-xl border border-amber-200 bg-amber-50/50">
+      <summary className="min-h-11 cursor-pointer rounded-xl px-2 py-3 text-sm font-semibold text-amber-950 sm:px-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">Ler mais: limites do diagnóstico experimental</summary>
+      <div className="px-0 pb-3 sm:px-4"><ScientificNotice /></div>
+    </details>
   </section>;
 }

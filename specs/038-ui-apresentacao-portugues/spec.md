@@ -76,3 +76,9 @@ Coleta e diagnóstico IHFR existentes; nenhuma entidade, campo persistido ou con
 - `RECOMENDACAO`: usar verde esmeralda já adotado pelo sistema e formatação pt-BR com vírgula decimal.
 - Rastreabilidade: CF-PRD-FR-005/FR-013 e specs 008/025/026/036/037 como baseline, sem alterar intenção científica.
 - A branch independente da landing não será incorporada, editada ou sobrescrita.
+
+## Ajustes após teste manual — 12/11/2026
+
+DECISAO_CONFIRMADA: Pedro solicitou nesta conversa e no print image(5).png dois ajustes na mesma branch/PR: manter os limites experimentais em “Ler mais” também quando não houver IHFR gerado e usar IHFR, em vez de Escore/Score, para nomear o resultado na interface. Este adendo substitui somente a terminologia pública anterior; nomes internos e valores científicos permanecem intactos.
+
+Aceite: limites inicialmente recolhidos com e sem diagnóstico, abrindo por teclado/clique e preservando todos os qualificadores; resultado identificado como “IHFR registrado”, inclusive nos cards e na distinção entre ausência e zero. Atualizar o Preview já autorizado para novo teste de Pedro, sem merge.

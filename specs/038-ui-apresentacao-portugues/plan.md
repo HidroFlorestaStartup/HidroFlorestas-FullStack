@@ -45,3 +45,7 @@ Build global aprovado; o erro de tipos anteriormente relatado na rota de logout 
 
 - 12/11/2026: baseline confirmado, anexos inspecionados, dependências instaladas pelo lockfile e implementação iniciada.
 - 12/11/2026: implementação e revisão visual concluídas; 434 + 17 testes unitários e 12 cenários de navegador aprovados. Lint sem erros, typecheck e build aprovados. Evidências e limites em [validation.md](validation.md).
+
+## Continuidade após teste manual — 12/11/2026
+
+Pedro autorizou recolher os limites também sem diagnóstico, adotar IHFR nos rótulos e atualizar o Preview na mesma branch. Plano focal: alterar os quatro componentes de apresentação, adaptar expectativas e testar abertura/fechamento por teclado, publicar commit incremental no PR56 e recriar apenas seu Preview com a configuração de teste existente. Sem alteração científica, backend, dados de teste, permissões ou nomes internos.
