@@ -34,7 +34,7 @@ export default function TopBar({ showProfile, showLogout }: Props) {
   }, []);
 
   return <header id="application-header" className={styles.header}>
-    <Link ref={brand} href="/workspace" className={styles.brand} aria-label="HidroFlorestas — ir ao workspace">
+    <Link ref={brand} href="/workspace" className={styles.brand} aria-label="HidroFlorestas — ir à área de trabalho">
       <Image src={Logo} alt="HidroFlorestas" width={180} loading="eager" />
     </Link>
     <div className={styles.headerInfo}>

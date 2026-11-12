@@ -1,6 +1,6 @@
 "use client";
 
-import { formatCollectionOccurrence } from "@/lib/collection-date-time";
+import { formatCollectionConfirmation, formatCollectionOccurrence } from "@/lib/collection-date-time";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, List, MapPin, MapPinOff, MapPinned, RefreshCw } from "lucide-react";
@@ -179,8 +179,8 @@ function AreaPanel({ laboratoryId, area }: { laboratoryId: string; area: Territo
             <ul className={styles.collectionList}>
               {area.confirmedCollections.map((collection) => (
                 <li key={collection.id} className={styles.collection}>
+                  <p className={styles.description}><strong>Confirmação: <time dateTime={collection.confirmedAt}>{formatCollectionConfirmation(collection.confirmedAt, collection.occurredAt)}</time></strong></p>
                   <p className={styles.description}>Ocorrência: <time dateTime={collection.occurredAt}>{formatCollectionOccurrence(collection.occurredAt)}</time></p>
-                  <p className={styles.description}>Confirmação: <time dateTime={collection.confirmedAt}>{new Date(collection.confirmedAt).toLocaleString("pt-BR")}</time></p>
                   <Link className={styles.textLink} href={`/dashboard/laboratories/${laboratoryId}/areas/${area.id}/collections/${collection.id}`}>
                     Abrir coleta<ArrowUpRight size={18} aria-hidden="true" />
                   </Link>

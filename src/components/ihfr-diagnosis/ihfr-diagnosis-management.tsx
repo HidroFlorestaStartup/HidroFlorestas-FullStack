@@ -1,5 +1,6 @@
 "use client";
 
+import { uiErrorMessage } from "@/lib/ui-presentation";
 import { useEffect, useRef, useState } from "react";
 import { ClipboardCheck, RotateCcw, Settings2, ShieldAlert } from "lucide-react";
 import type { IHFRLandUseType, IHFRRouteContext, PublicDiagnosis } from "@/types/ihfr-diagnosis.type";
@@ -7,7 +8,7 @@ import { IHFR_CONTRACT } from "@/app/api/server/ihfr-diagnosis/ihfr-diagnosis.co
 import { ExperimentalDiagnosisSummary } from "./experimental-diagnosis-summary";
 import { NoCurrentDiagnosis } from "./no-current-diagnosis";
 import { CollectionDetailLayout, type CollectionDetailSlots } from "@/components/collections/collection-detail-layout";
-import { ihfrLabel } from "./ihfr-presentation";
+import { ihfrLabel, ihfrOperationMessage } from "./ihfr-presentation";
 import { LAND_USE_LABELS } from "./land-use-labels";
 import { createClientUuid } from "@/lib/client-uuid";
 
@@ -65,7 +66,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis, detailSlots
       const response = await fetch(`${base}/eligibility${query}`, { cache: "no-store" });
       if (!response.ok) throw new Error("Não foi possível verificar a elegibilidade.");
       setEligibility(await response.json() as EligibilityResponse);
-    } catch (error) { announce(error instanceof Error ? error.message : "Falha ao verificar a elegibilidade.", "alert"); }
+    } catch (error) { announce(uiErrorMessage(error, "Falha ao verificar a elegibilidade."), "alert"); }
     finally { setBusy(false); }
   }
 
@@ -96,7 +97,7 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis, detailSlots
           await reconcileCurrentAndEligibility();
           announce(code === "INCOMPATIBLE_VERSION" ? "Versão incompatível com o contrato experimental ativo." : "O diagnóstico vigente mudou. Estado e elegibilidade atualizados.", "alert");
         } catch { announce("Operação não concluída; não foi possível atualizar o diagnóstico e a elegibilidade.", "alert"); }
-      } else announce(`Operação não concluída: ${code}.`, "alert");
+      } else announce(ihfrOperationMessage(code), "alert");
     } catch { setUnknown(true); announce("Resultado desconhecido. Recupere a operação com a mesma chave.", "alert"); }
     finally { setBusy(false); }
   }
@@ -187,8 +188,8 @@ export function IHFRDiagnosisManagement({ context, initialDiagnosis, detailSlots
       {busy && <p className="mt-3 text-sm text-slate-600">Operação em andamento…</p>}
       {eligibility && <div role="status" aria-atomic="true" className={`mt-4 min-w-0 rounded-2xl border p-4 text-sm ${eligibility.eligible ? "border-emerald-200 bg-emerald-50 text-emerald-950" : "border-amber-200 bg-amber-50 text-amber-950"}`}>
         <p className="flex items-start gap-2 font-semibold"><ClipboardCheck aria-hidden="true" className="mt-0.5 size-4 shrink-0" />{ihfrLabel("eligibility", eligibility.outcome)}</p>
-        <p className="mt-2 break-all text-xs">{eligibility.outcome} · Vigente: {eligibility.hasCurrentDiagnosis ? "sim" : "não"}</p>
-        {eligibility.reasons.length > 0 && <ul className="mt-3 space-y-2">{eligibility.reasons.map((item, index) => <li key={`${item}-${index}`} className="min-w-0 leading-relaxed">{ihfrLabel("reason", item)}<span className="block break-all text-xs">{item}</span></li>)}</ul>}
+        <p className="mt-2 text-xs">Diagnóstico vigente: {eligibility.hasCurrentDiagnosis ? "sim" : "não"}</p>
+        {eligibility.reasons.length > 0 && <ul className="mt-3 space-y-2">{eligibility.reasons.map((item, index) => <li key={`${item}-${index}`} className="min-w-0 leading-relaxed">{ihfrLabel("reason", item)}</li>)}</ul>}
       </div>}
       {diagnosis && <div className="mt-6 min-w-0 rounded-2xl border border-amber-200 bg-amber-50/40 p-[12px] sm:p-4">
         <h3 className="flex flex-wrap items-center gap-2 text-sm font-semibold text-amber-950"><ShieldAlert aria-hidden="true" className="size-4 shrink-0" /><span className="min-w-0 flex-1 basis-40">Revogação do diagnóstico vigente</span></h3>

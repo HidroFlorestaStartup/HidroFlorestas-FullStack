@@ -28,7 +28,7 @@ export default function LogoutPage() {
     } finally { retrying.current = false; }
   }
   return <AccountShell title="Saindo da sua conta" description="Encerrando sua sessão no HidroFlorestas.">
-    {loading && <p role="status">Fazendo logout, aguarde...</p>}
+    {loading && <p role="status">Encerrando sessão, aguarde...</p>}
     {errorMessage && <div role="alert"><p>{errorMessage}</p><button type="button" onClick={() => void retryLogout()} disabled={loading} className={accountButtonClass}>Tentar novamente</button></div>}
   </AccountShell>;
 }

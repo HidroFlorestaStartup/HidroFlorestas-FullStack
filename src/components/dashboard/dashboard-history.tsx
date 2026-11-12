@@ -1,5 +1,6 @@
 "use client";
 
+import { uiErrorMessage } from "@/lib/ui-presentation";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ClipboardCheck, MapPinned, RefreshCw } from "lucide-react";
@@ -32,7 +33,7 @@ export function DashboardHistory({ laboratoryId }: { laboratoryId: string }) {
       if (!signal.aborted) setData(body);
     } catch (cause) {
       if (!signal.aborted) {
-        setError(cause instanceof Error ? cause.message : "Não foi possível carregar o histórico.");
+        setError(uiErrorMessage(cause, "Não foi possível carregar o histórico."));
       }
     }
   }, [cursor, laboratoryId]);
