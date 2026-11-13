@@ -44,10 +44,13 @@
 .secondaryAction { color: var(--green); background: #fff; border-color: #b9c9b9; }
 .secondaryAction:hover { background: #edf3e8; }
 .heroNote { margin-top: 1rem; font-size: .8rem; }
-.illustration { position: relative; margin: 0; padding: 1.5rem 1.25rem 1.25rem; background: #eef2e5; border: 1px solid #e0e7d8; border-radius: 24px; }
-.illustrationLabel { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .5rem; color: #466141; font-size: .8rem; }
-.trees { display: block; width: 100%; height: auto; margin-block: 1.25rem .75rem; }
-.illustration figcaption { color: #4b5f42; text-align: center; font-size: .8rem; }
+.illustration { position: relative; margin: 0; }
+.mascotStage { position: relative; width: 100%; max-width: 560px; margin-inline: auto; aspect-ratio: 960 / 1152; border-radius: 24px; overflow: hidden; }
+.mascotPoster, .mascotVideo { display: block; width: 100%; height: 100%; object-fit: contain; }
+.mascotPoster { transition: opacity .15s ease; }
+.mascotPosterHidden { opacity: 0; }
+.mascotVideo { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
+.mascotVideoReady { opacity: 1; }
 .section { padding-block: 2.5rem; }
 .sectionHeading { max-width: 44rem; margin-bottom: 1.8rem; }
 .sectionHeading h2 { margin-block: .55rem .9rem; }
@@ -79,12 +82,14 @@
 .projectScope dt { font-weight: 600; font-size: .9rem; }
 .projectScope dd { margin-top: .25rem; color: var(--muted); font-size: .85rem; }
 .scopeNote { margin-top: 1rem; font-size: .78rem !important; }
-.team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; padding-bottom: 2rem; }
+.team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; padding-bottom: 2rem; }
 .team article { padding-top: 1.3rem; border-top: 1px solid #ccd7c7; }
 .team h3 { margin-block: .6rem; font-size: 1.2rem; }
+.team article:first-child h3 { color: var(--green); }
 .team p { font-size: .85rem; }
 .team .role { color: var(--ochre); font-size: .78rem; font-weight: 600; }
-.team .affiliation { margin-top: .8rem; font-size: .8rem; }
+.teamNames { display: grid; gap: .35rem; margin-block: 1rem; padding: 0; list-style: none; }
+.teamNames li { color: var(--ink); font-size: .9rem; font-weight: 600; }
 .footer { margin-top: 2rem; padding-block: 2.5rem 1.5rem; color: #e7eee5; background: #203c2d; }
 .footerGrid { display: grid; grid-template-columns: 1fr 1.5fr 1.2fr 1fr; gap: 1.75rem; }
 .footer h2 { margin-bottom: .9rem; color: #f3f5ef; font-size: .85rem; font-weight: 600; letter-spacing: 0; }
@@ -100,10 +105,10 @@
   .hero { grid-template-columns: minmax(0, 1fr); }
   .heroCopy { max-width: 45rem; }
   .illustration { max-width: 42rem; width: 100%; justify-self: center; }
-  .trees { max-height: 360px; object-fit: contain; }
   .steps { grid-template-columns: minmax(0, 1fr); }
   .stepTop { margin-bottom: 1rem; }
   .science, .project { grid-template-columns: minmax(0, 1fr); }
+  .team { grid-template-columns: minmax(0, 1fr); }
   .footerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -125,8 +130,9 @@
   .qualifications ul { padding-left: 18px; }
   .qualifications li { padding-left: 0; }
   .projectScope { padding-left: 1rem; }
-  .team, .footerGrid { grid-template-columns: minmax(0, 1fr); }
+  .footerGrid { grid-template-columns: minmax(0, 1fr); }
   .team h3 { font-size: 1rem; }
+  .page .teamHeading { font-size: 1.125rem; }
   .footer { margin-top: 1rem; }
 }
 

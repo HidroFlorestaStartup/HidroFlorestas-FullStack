@@ -79,7 +79,7 @@ for (const viewport of viewports) {
       if (index === 0 || index === qualifications.length - 1) await capture(page, info, `${name}-ihfr-${index === 0 ? "start" : "end"}`);
     }
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await expect(page.getByText("Fabio Mesquita de Souza", { exact: true })).toBeVisible();
+    await expect(page.getByText("Fábio Mesquita de Souza", { exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "fabio.souza@ifma.edu.br", exact: true })).toHaveAttribute("href", "mailto:fabio.souza@ifma.edu.br");
     if (viewport.textScale === 200) {
       const fragmentedWords = await page.locator("header, main, footer").evaluateAll(roots => {
@@ -99,7 +99,7 @@ for (const viewport of viewports) {
         return fragmented;
       });
       expect(fragmentedWords, "Headings, navigation and prose retain complete words at 200% text").toEqual([]);
-      const teamHeading = page.getByRole("heading", { name: "Equipe multidisciplinar", exact: true });
+      const teamHeading = page.getByRole("heading", { name: "Coordenação de desenvolvimento", exact: true });
       await teamHeading.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
       await expect(teamHeading).toBeInViewport({ ratio: 1 });
       await capture(page, info, `${name}-team`);
