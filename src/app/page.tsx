@@ -113,7 +113,7 @@ export default function LandingPage() {
         <section id="equipe" className={`${styles.container} ${styles.section}`} aria-labelledby="team-title">
           <div className={styles.sectionHeading}>
             <p className={styles.eyebrow}>Equipe</p>
-            <h2 id="team-title">Equipe e competências.</h2>
+            <h2 id="team-title" className={styles.teamHeading}>Equipe e competências.</h2>
             <p>Conheça as pessoas envolvidas na ciência, no desenvolvimento e nos dados da plataforma.</p>
           </div>
           <div className={styles.team}>

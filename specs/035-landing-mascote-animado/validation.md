@@ -76,3 +76,35 @@
 ## Uniformização das três linhas — 2026-11-11
 
 - `DECISAO_CONFIRMADA`: o usuário esclareceu que as três linhas devem ter a mesma cor e espessura. Foi removida a exceção de cor da primeira coluna; todas usam a mesma borda superior de `1px solid #ccd7c7`. O título verde da coordenação científica permanece.
+
+## Revisão para integração — 2026-11-13
+
+`DECISAO_CONFIRMADA`: Pedro solicitou analisar `codex/landing-mascote-animado` e fazer o merge em `development` se a integração estivesse apta. Esta revisão contempla essa autorização; os registros anteriores descrevem a implementação e seus testes de 11/11.
+
+`EVIDENCIA_IMPLEMENTACAO`: integração local sem conflitos entre `development@8a28c0e3eedaa253b00f8ef1794c0a57e169efc6` e a landing em `694ff94ba1cf21716ae3fedfe4487e2cfa8c6bec`, em worktree isolado. As alterações anteriores da apresentação de coletas/IHFR permanecem na candidata. Não há mudança de API, autenticação, dependências, schema, migrations ou cálculo científico.
+
+### Ajustes encontrados na revisão
+
+- Os dois seletores do teste existente da landing ainda esperavam “Fabio Mesquita de Souza” e “Equipe multidisciplinar”. Foram atualizados para “Fábio Mesquita de Souza” e “Coordenação de desenvolvimento”, conforme os textos já implementados.
+- O teste de 320 px com texto a 200% demonstrou rolagem horizontal causada por “competências” no novo título da equipe. O título recebeu uma classe com tamanho de `1.125rem` somente até 479 px, preservando palavras completas e a apresentação desktop. O cenário falhou antes do ajuste e passou depois dele.
+
+### Verificações da candidata combinada
+
+- Instalação congelada: `npm ci --no-audit --no-fund`, aprovada com Node 24.22.1.
+- `npm run build` padrão, com Turbopack e geração do Prisma: aprovado, inclusive a checagem global de tipos. Repetido após o ajuste responsivo, também aprovado. O bloqueio antigo da rota de logout não se reproduziu nesta combinação com a development atual.
+- `npm run typecheck`: aprovado.
+- `npm run lint`: zero erros, com os dois avisos preexistentes em `user-profile` e `white-box`; repetido após o ajuste, com o mesmo resultado.
+- `npm run test:unit`: 434 testes centrais e 17 de e-mail aprovados. A primeira tentativa iniciou antes de terminar a geração do cliente Prisma e falhou por módulo gerado ausente; após a geração, a suíte completa passou sem mudança de código de domínio.
+- Regressão de apresentação `tests/ui/ui-presentation.spec.ts`: 14/14 aprovados, incluindo ordem dos blocos, IHFR, arredondamento, datas e limites científicos recolhidos.
+- Landing pública real, servida pelo build de produção local: 7/7 testes existentes aprovados, com configuração temporária limitada a esse arquivo, sem fixtures ou acesso ao banco. Cobertura: 320, 375, 768 e 1440 px, paisagem 812×375, texto a 200%, qualificadores científicos, teclado e navegação para Login/cadastro. As primeiras tentativas de acesso usaram servidor em outro namespace de execução e receberam conexão recusada; o servidor passou a ser iniciado pelo próprio runner.
+- Sete verificações focais adicionais em Chromium: fallback e equipe em 375/1440 px, movimento reduzido, economia de dados, JavaScript desabilitado, falha de vídeo e suporte a vídeo ausente. Poster visível nos cenários; nenhuma requisição de vídeo nos quatro cenários que o desabilitam; 11 nomes, ordem dos três grupos, bordas uniformes e ausência de overflow. Capturas desktop/mobile inspecionadas.
+- MP4 atual: H.264, 960×1152, 24 fps, 10 segundos, 2.309.436 bytes, sem áudio. Decodificação integral por FFmpeg aprovada.
+- `git diff --check` e inspeção do escopo: aprovados.
+
+### Limites desta revisão
+
+- O Chromium Headless Shell disponível não oferece H.264; o erro `DEMUXER_ERROR_NO_SUPPORTED_STREAMS` acionou corretamente o poster. Reprodução efetiva e dois ciclos não foram reconfirmados neste runtime; a evidência anterior de 11/11 permanece histórica. O Chromium do sistema não iniciou devido à restrição de sockets Unix. Safari físico continua não testado.
+- Não foram repetidas as suítes de integração PostgreSQL, migrations ou E2E autenticado completo, pois esta entrega é da landing pública. Os 14 testes de apresentação usam componentes reais com adaptadores locais, não equivalem ao fluxo autenticado completo.
+- O CI atual não seleciona esta branch para os quinze gates históricos; não se atribui a esta candidata um resultado de CI que não foi executado. O status Vercel do head original estava aprovado.
+
+`INFERENCIA`: apta à integração em `development` com os limites de execução acima. Os resultados atuais substituem a pendência de build global desta entrega, sem reclassificar suas tentativas históricas nem a validação científica do IHFR.

@@ -132,6 +132,7 @@
   .projectScope { padding-left: 1rem; }
   .footerGrid { grid-template-columns: minmax(0, 1fr); }
   .team h3 { font-size: 1rem; }
+  .page .teamHeading { font-size: 1.125rem; }
   .footer { margin-top: 1rem; }
 }
 
