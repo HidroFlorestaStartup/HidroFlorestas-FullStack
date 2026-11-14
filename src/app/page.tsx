@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const challenges = [
-  { number: "01", icon: Layers3, title: "Desafios geológicos", description: "Na Formação Itapecuru, sedimentos argilosos e solos adensados podem dificultar a infiltração da água e a recarga dos aquíferos." },
-  { number: "02", icon: Waves, title: "Salinização de poços", description: "A salinização de poços compromete o acesso à água de qualidade e amplia os desafios das comunidades rurais e quilombolas." },
-  { number: "03", icon: MapPin, title: "Diagnóstico local acessível", description: "Conhecer as condições da água, do solo e da vegetação é um passo importante para planejar o cuidado e a recuperação do território." },
+  { number: "01", icon: Layers3, title: "Desafios Geológicos", description: "A Formação Itapecuru possui sedimentos argilosos de baixa permeabilidade. Solos adensados dificultam a infiltração natural e causam encharcamento e rebaixamento do lençol freático." },
+  { number: "02", icon: Waves, title: "Salinização de Poços", description: "A degradação das áreas de recarga e a concentração capilar de sais em aquíferos rasos resultam na inutilização de poços comunitários por salinização progressiva." },
+  { number: "03", icon: MapPin, title: "Falta de Diagnóstico Local", description: "Inexistência de ferramentas acessíveis e de baixo custo para que comunidades rurais e quilombolas possam medir a infiltração e planejar a recuperação do solo." },
 ];
 
 const solutions = [
@@ -30,9 +30,9 @@ const steps = [
 ];
 
 const territorialReadings = [
-  { icon: Droplets, label: "Água", value: "Disponibilidade e qualidade", context: "Medições" },
-  { icon: Sprout, label: "Solo e vegetação", value: "Condições da área", context: "Observações" },
-  { icon: Activity, label: "IHFR", value: "Leitura integrada dos registros", context: "Histórico" },
+  { icon: Droplets, label: "Segurança hídrica", description: "Mitigar a salinização de poços e aumentar a recarga de aquíferos." },
+  { icon: Sprout, label: "Restauração produtiva (SBN)", description: "Pesquisar Soluções Baseadas na Natureza, como Sistemas Agroflorestais (SAFs), florestas de infiltração e manejo regenerativo." },
+  { icon: Activity, label: "Infiltração de água", description: "Compreender as restrições do solo para apoiar a recuperação do ciclo hidrológico e a resiliência produtiva." },
 ];
 
 const goals = [
@@ -102,10 +102,6 @@ export default function LandingPage() {
               <p className={styles.eyebrow}>Nossa solução</p>
               <h2 id="project-title">Tecnologia, diagnóstico e restauração para o território.</h2>
             </div>
-            <div className={styles.projectCopy}>
-              <p>A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
-              <p>A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.</p>
-            </div>
           </div>
           <div className={styles.solutions}>
             {solutions.map(({ icon: Icon, title, description, detail }) => (
@@ -116,6 +112,10 @@ export default function LandingPage() {
                 {detail && <p className={styles.solutionDetail}>{detail}</p>}
               </article>
             ))}
+          </div>
+          <div className={styles.projectCopy}>
+            <p>A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
+            <p>A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.</p>
           </div>
           <a className={styles.textLink} href="#equipe">Conheça a equipe <ArrowRight size={18} aria-hidden="true" /></a>
         </section>
@@ -138,21 +138,21 @@ export default function LandingPage() {
             </ol>
             <aside className={styles.territorialPanel} aria-labelledby="territorial-title">
               <div className={styles.panelHeader}>
-                <div><p className={styles.eyebrow}>Índice analítico</p><h3 id="territorial-title">IHFR Territorial</h3></div>
-                <span className={styles.panelBadge}>Visão ilustrativa</span>
+                <div><p className={styles.eyebrow}>Conexão com o território</p><h3 id="territorial-title">Do diagnóstico à restauração</h3></div>
+                <span className={styles.panelBadge}>Frentes do projeto</span>
               </div>
-              <ul className={styles.territorialReadings} aria-label="Exemplo de organização das informações territoriais">
-                {territorialReadings.map(({ icon: Icon, label, value, context }) => (
+              <p className={styles.panelIntro}>Os registros ambientais e o IHFR conectam a leitura do território às frentes de pesquisa e atuação do projeto.</p>
+              <ul className={styles.territorialReadings} aria-label="Frentes de aplicação dos registros ambientais">
+                {territorialReadings.map(({ icon: Icon, label, description }) => (
                   <li key={label} className={styles.territorialRow}>
                     <span className={styles.readingIcon}><Icon size={23} aria-hidden="true" /></span>
-                    <div className={styles.readingCopy}><p>{label}</p><strong>{value}</strong></div>
-                    <span className={styles.readingContext}>{context}</span>
+                    <div className={styles.readingCopy}><h4>{label}</h4><p>{description}</p></div>
                   </li>
                 ))}
               </ul>
               <div className={styles.futureIntegration}>
                 <p className={styles.eyebrow}>Integração futura com IA</p>
-                <p>Uma camada assistiva está prevista para apoiar a interpretação dos dados e sua comunicação às comunidades.</p>
+                <p>Integração de uma camada assistiva de inteligência artificial para traduzir dados técnicos em informações acessíveis e apoiar ações comunitárias.</p>
               </div>
             </aside>
           </div>

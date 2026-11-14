@@ -71,8 +71,8 @@ for (const viewport of viewports) {
     await expect(project).toContainText("Proposta de kit simplificado para apoiar o trabalho de coleta.");
     const platform = page.getByRole("region", { name: "Cada registro, no seu contexto." });
     await expect(platform.getByRole("heading", { name: "Consulte o IHFR", exact: true })).toBeVisible();
-    const panel = platform.getByRole("complementary", { name: "IHFR Territorial" });
-    await expect(panel).toContainText("Visão ilustrativa");
+    const panel = platform.getByRole("complementary", { name: "Do diagnóstico à restauração" });
+    await expect(panel).toContainText("Frentes do projeto");
     await expect(panel).toContainText("Integração futura com IA");
     await expect(page.getByRole("main")).not.toContainText(/experimental|validação científica|insuficiência fica explícita/i);
     const goals = page.getByRole("list", { name: "Objetivos de Desenvolvimento Sustentável" });

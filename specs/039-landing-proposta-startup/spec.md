@@ -74,3 +74,13 @@ Visitantes identificam o público proposto, os ODS 6/13/15/10, os mesmos 11 inte
 - Dados de alcance da versão 1 são objetivos do projeto; não comprovação de beneficiários atendidos.
 - O painel é apresentação visual, sem dados pessoais, cálculo ou consulta nova.
 - Esta entrega não autoriza merge em main/development ou promoção de produção.
+
+## Revisão após primeira prévia — 14/11/2026
+
+`DECISAO_CONFIRMADA`: Pedro aprovou a seção Nossa solução e o posicionamento do painel, solicitando três ajustes: textos de O desafio exatamente iguais à versão 1; parágrafos institucionais abaixo dos cards; nome e redação do painel mais coerentes, com maior reaproveitamento da referência 1 e nova redação da IA sem está prevista.
+
+- **FR-008**: preservar literalmente título/subtítulo, três títulos e três descrições de O desafio da versão 1, normalizando somente espaços do JSX.
+- **FR-009**: preservar os dois parágrafos institucionais por texto e posicioná-los após os três cards de soluções, antes do link da equipe.
+- **FR-010**: apresentar o painel como conexão entre diagnóstico e frentes do projeto, sem sugerir índice calculado. Reutilizar salinização/recarga, SAFs/florestas de infiltração/manejo regenerativo e ciclo hidrológico/resiliência. IA continua explicitamente futura, com redação direta.
+
+`RECOMENDACAO`: título Do diagnóstico à restauração, rótulos Conexão com o território e Frentes do projeto, uma introdução conectando IHFR/registros aos objetivos e três descrições completas. Substitui a apresentação anterior de palavras soltas e Visão ilustrativa. O painel permanece no local aprovado.

@@ -25,3 +25,7 @@ PASS antes e depois do desenho: decisão atual de Pedro governa o texto público
 ## Decisões de composição
 
 Paleta verde/ocre, Poppins, espaços e bordas atuais. Título completo da versão 1 com escala local ajustável; nenhum corte ou quebra dentro de palavras. A informação implementada da plataforma fica separada das propostas de kit/SBN e da integração futura com IA. O painel apresenta categorias de registros reais, sem reproduzir classificações de risco ou manejo que não existem hoje. Alcance social descrito como proposta/público potencial.
+
+## Ajuste após prévia
+
+Mesma branch/PR59, incremental sobre dd02396. Copiar textos de O desafio da fonte legada sem reformulação. Mover projectCopy após solutions em duas colunas no desktop e uma no mobile. Nomear o painel Do diagnóstico à restauração e trocar pares de rótulos soltos por objetivos explicados, mantendo posição/paleta e IA futura. Reexecutar build, lint e a suíte existente da landing; conferir ordem e texto literal, capturas desktop/mobile e limites a 200%.

@@ -7,3 +7,7 @@
 - **Decisão**: 70 comunidades/10 mil pessoas são alcance proposto/público potencial do texto legado, e não impacto concluído.
 
 Nenhuma dependência ou escolha tecnológica nova exige pesquisa externa ou agentes adicionais. Fontes textuais/visuais fornecidas por Pedro; estilos e APIs do framework conferidos no repositório e documentação instalada.
+
+## Revisão de linguagem do painel
+
+Após a prévia, Pedro apontou que Índice analítico não correspondia ao conteúdo informativo. A composição atual passa a explicar a conexão entre dados/IHFR e objetivos do projeto sob Do diagnóstico à restauração, sem números/classes de risco fictícios. Reaproveita as frentes e termos da versão 1 e mantém IA como integração futura. Não há mudança de escopo técnico ou de domínio.
