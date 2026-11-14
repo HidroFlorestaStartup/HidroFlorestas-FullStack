@@ -33,6 +33,7 @@ const viewports = [
   { width: 375, height: 812, textScale: 100 },
   { width: 768, height: 1024, textScale: 100 },
   { width: 1440, height: 1000, textScale: 100 },
+  { width: 960, height: 900, textScale: 100 },
   { width: 320, height: 812, textScale: 200 },
   { width: 812, height: 375, textScale: 100 },
 ];
@@ -44,7 +45,7 @@ for (const viewport of viewports) {
     expect(response?.status()).toBe(200);
     if (viewport.textScale === 200) await page.addStyleTag({ content: "html { font-size: 200% !important; }" });
     await expect(page.getByRole("main")).toHaveCount(1);
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Conhecer o território começa com bons registros.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Soluções Inteligentes para Segurança Hídrica e Restauração Florestal");
     const missingAnchors = await page.locator('a[href^="#"]').evaluateAll(links => links
       .map(link => link.getAttribute("href")!.slice(1)).filter(id => !document.getElementById(id)));
     expect(missingAnchors).toEqual([]);
@@ -63,24 +64,23 @@ for (const viewport of viewports) {
       expect(box?.height).toBeGreaterThanOrEqual(44);
       expect(box?.width).toBeGreaterThanOrEqual(44);
     }
-    const science = page.getByRole("region", { name: "IHFR experimental: informação com limites claros." });
-    if (viewport.textScale === 200) {
-      const heading = science.getByRole("heading", { level: 2 });
-      await heading.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
-      await expect(heading).toBeInViewport({ ratio: 1 });
-      await capture(page, info, `${name}-ihfr-heading`);
-    }
-    const qualifications = ["Contrato experimental", "Validação científica pendente", "Sujeito a recalibração", "Não aprovado como contrato científico definitivo"];
-    for (const [index, text] of qualifications.entries()) {
-      const qualification = science.getByText(text, { exact: true });
-      await qualification.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
-      await page.evaluate(waitForMissionRender);
-      await expect(qualification).toBeInViewport({ ratio: 1 });
-      if (index === 0 || index === qualifications.length - 1) await capture(page, info, `${name}-ihfr-${index === 0 ? "start" : "end"}`);
-    }
+    expect(await page.locator('main > section').evaluateAll(nodes => nodes.map(node => node.id || "abertura"))).toEqual(["abertura", "desafio", "projeto", "plataforma", "impacto", "equipe"]);
+    const project = page.getByRole("region", { name: "Tecnologia, diagnóstico e restauração para o território." });
+    await expect(project).toContainText("A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.");
+    await expect(project).toContainText("A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.");
+    await expect(project).toContainText("Proposta de kit simplificado para apoiar o trabalho de coleta.");
+    const platform = page.getByRole("region", { name: "Cada registro, no seu contexto." });
+    await expect(platform.getByRole("heading", { name: "Consulte o IHFR", exact: true })).toBeVisible();
+    const panel = platform.getByRole("complementary", { name: "IHFR Territorial" });
+    await expect(panel).toContainText("Visão ilustrativa");
+    await expect(panel).toContainText("Integração futura com IA");
+    await expect(page.getByRole("main")).not.toContainText(/experimental|validação científica|insuficiência fica explícita/i);
+    const goals = page.getByRole("list", { name: "Objetivos de Desenvolvimento Sustentável" });
+    await expect(goals.getByRole("listitem")).toHaveCount(4);
+    for (const goal of ["ODS 06", "ODS 13", "ODS 15", "ODS 10"]) await expect(goals).toContainText(goal);
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByText("Fábio Mesquita de Souza", { exact: true })).toBeVisible();
-    await expect(page.getByRole("link", { name: "fabio.souza@ifma.edu.br", exact: true })).toHaveAttribute("href", "mailto:fabio.souza@ifma.edu.br");
+    await expect(page.getByRole("link", { name: "hidrofloresta@gmail.com", exact: true })).toHaveAttribute("href", "mailto:hidrofloresta@gmail.com");
     if (viewport.textScale === 200) {
       const fragmentedWords = await page.locator("header, main, footer").evaluateAll(roots => {
         const fragmented: string[] = [];
