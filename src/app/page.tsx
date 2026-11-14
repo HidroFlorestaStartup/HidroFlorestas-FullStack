@@ -1,20 +1,45 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ClipboardList, FlaskConical, MapPin } from "lucide-react";
+import { Activity, ArrowRight, ClipboardList, CloudSun, Droplets, FlaskConical, Layers3, MapPin, Sprout, TreePine, Users, Waves } from "lucide-react";
 import logo from "@/assets/logo/logo-hf.png";
 import { MascotAnimation } from "./mascot-animation";
 import styles from "./landing.module.css";
 
 export const metadata: Metadata = {
-  title: "HidroFlorestas | Monitoramento ambiental por laboratório",
-  description: "Organize áreas, coletas e medições ambientais por laboratório. Conheça o IHFR experimental e seus limites científicos.",
+  title: "HidroFlorestas | Segurança hídrica e restauração florestal",
+  description: "Startup de base científica focada em segurança hídrica, diagnóstico ambiental e restauração produtiva no Maranhão. Conheça o projeto e a plataforma HidroFlorestas.",
 };
+
+const challenges = [
+  { number: "01", icon: Layers3, title: "Desafios Geológicos", description: "A Formação Itapecuru possui sedimentos argilosos de baixa permeabilidade. Solos adensados dificultam a infiltração natural e causam encharcamento e rebaixamento do lençol freático." },
+  { number: "02", icon: Waves, title: "Salinização de Poços", description: "A degradação das áreas de recarga e a concentração capilar de sais em aquíferos rasos resultam na inutilização de poços comunitários por salinização progressiva." },
+  { number: "03", icon: MapPin, title: "Falta de Diagnóstico Local", description: "Inexistência de ferramentas acessíveis e de baixo custo para que comunidades rurais e quilombolas possam medir a infiltração e planejar a recuperação do solo." },
+];
+
+const solutions = [
+  { icon: FlaskConical, title: "Plataforma digital e IHFR", description: "Áreas, coletas e medições ambientais reunidas em um só lugar, com cálculo do IHFR e histórico dos registros de cada laboratório." },
+  { icon: Activity, title: "Observação em campo", description: "Proposta de kit simplificado para apoiar o trabalho de coleta.", detail: "A iniciativa busca facilitar medições locais de infiltração, compactação, salinidade e condições básicas da água." },
+  { icon: Sprout, title: "Restauração produtiva (SBN)", description: "Pesquisa de soluções relacionadas à água, ao solo e à vegetação, com foco em Sistemas Agroflorestais, florestas de infiltração e manejo regenerativo." },
+];
 
 const steps = [
   { number: "01", icon: MapPin, title: "Localize suas áreas", description: "Organize os pontos de monitoramento do laboratório e consulte as coordenadas revisadas no mapa territorial." },
   { number: "02", icon: ClipboardList, title: "Registre o que foi observado", description: "Associe coletas e medições de água, solo, vegetação e terreno à área e ao momento da observação, mantendo a origem dos dados." },
-  { number: "03", icon: FlaskConical, title: "Consulte o IHFR experimental", description: "Acompanhe os diagnósticos e as versões de medição usadas no cálculo. Quando faltam dados, a insuficiência fica explícita." },
+  { number: "03", icon: FlaskConical, title: "Consulte o IHFR", description: "Acompanhe o IHFR e consulte as medições que deram origem ao resultado, mantendo a leitura conectada ao histórico da área." },
+];
+
+const territorialReadings = [
+  { icon: Droplets, label: "Segurança hídrica", description: "Mitigar a salinização de poços e aumentar a recarga de aquíferos." },
+  { icon: Sprout, label: "Restauração produtiva (SBN)", description: "Pesquisar Soluções Baseadas na Natureza, como Sistemas Agroflorestais (SAFs), florestas de infiltração e manejo regenerativo." },
+  { icon: Activity, label: "Infiltração de água", description: "Compreender as restrições do solo para apoiar a recuperação do ciclo hidrológico e a resiliência produtiva." },
+];
+
+const goals = [
+  { number: "06", icon: Droplets, title: "Água Potável e Saneamento" },
+  { number: "13", icon: CloudSun, title: "Ação Contra a Mudança Global do Clima" },
+  { number: "15", icon: TreePine, title: "Vida Terrestre e Manejo do Solo" },
+  { number: "10", icon: Users, title: "Redução das Desigualdades" },
 ];
 
 export default function LandingPage() {
@@ -27,9 +52,10 @@ export default function LandingPage() {
             <Image src={logo} alt="HidroFlorestas" width={200} height={64} sizes="200px" preload />
           </Link>
           <nav className={styles.navigation} aria-label="Navegação da página pública">
+            <a href="#desafio">O desafio</a>
+            <a href="#projeto">Nossa solução</a>
             <a href="#plataforma">A plataforma</a>
-            <a href="#ihfr">IHFR experimental</a>
-            <a href="#projeto">O projeto</a>
+            <a href="#impacto">Impacto social</a>
             <a href="#equipe">Equipe</a>
           </nav>
           <Link className={styles.headerAccess} href="/login">Entrar <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -40,8 +66,8 @@ export default function LandingPage() {
         <section className={`${styles.container} ${styles.hero}`} aria-labelledby="hero-title">
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}><span aria-hidden="true" /> Monitoramento ambiental por laboratório</p>
-            <h1 id="hero-title">Conhecer o território começa com <span>bons registros.</span></h1>
-            <p className={styles.lead}>Reúna áreas, coletas e medições em um só lugar. Acompanhe a origem das informações para construir uma leitura mais cuidadosa do ambiente.</p>
+            <h1 id="hero-title">Soluções Inteligentes para <span>Segurança Hídrica e Restauração Florestal</span></h1>
+            <p className={styles.lead}>Unimos ciência e Soluções Baseadas na Natureza para enfrentar a salinização de poços, favorecer a recarga de aquíferos e promover a resiliência produtiva no Maranhão.</p>
             <div className={styles.actions}>
               <Link href="/login" className={styles.primaryAction}>Acessar plataforma <ArrowRight size={19} aria-hidden="true" /></Link>
               <Link href="/register" className={styles.secondaryAction}>Criar conta</Link>
@@ -53,14 +79,14 @@ export default function LandingPage() {
           </figure>
         </section>
 
-        <section id="plataforma" className={`${styles.container} ${styles.section}`} aria-labelledby="platform-title">
+        <section id="desafio" className={`${styles.container} ${styles.section}`} aria-labelledby="challenge-title">
           <div className={styles.sectionHeading}>
-            <p className={styles.eyebrow}>A plataforma</p>
-            <h2 id="platform-title">Cada registro, no seu contexto.</h2>
-            <p>Um fluxo conectado por laboratório, área e coleta, com histórico para acompanhar o trabalho da equipe.</p>
+            <p className={styles.eyebrow}>O desafio</p>
+            <h2 id="challenge-title">O Paradoxo Hídrico do Médio Itapecuru</h2>
+            <p>Chuva abundante, mas escassez de água potável e solo degradado.</p>
           </div>
           <ol className={styles.steps}>
-            {steps.map(({ number, icon: Icon, title, description }) => (
+            {challenges.map(({ number, icon: Icon, title, description }) => (
               <li key={number} className={styles.step}>
                 <div className={styles.stepTop}><Icon size={25} aria-hidden="true" /><span>{number}</span></div>
                 <h3>{title}</h3>
@@ -70,43 +96,79 @@ export default function LandingPage() {
           </ol>
         </section>
 
-        <section id="ihfr" className={`${styles.container} ${styles.section}`} aria-labelledby="ihfr-title">
-          <div className={styles.science}>
+        <section id="projeto" className={`${styles.container} ${styles.section}`} aria-labelledby="project-title">
+          <div className={styles.projectIntro}>
             <div>
-              <p className={styles.eyebrow}>Ciência em desenvolvimento</p>
-              <h2 id="ihfr-title">IHFR experimental: informação com limites claros.</h2>
-              <p>O Índice HidroFlorestal de Riscos (IHFR) v0.1 organiza uma leitura experimental a partir dos dados registrados. Cada diagnóstico mantém a referência às medições utilizadas.</p>
-              <p>O resultado precisa ser interpretado dentro desses limites. Ele não substitui a avaliação técnica do território nem constitui uma prescrição de manejo.</p>
+              <p className={styles.eyebrow}>Nossa solução</p>
+              <h2 id="project-title">Tecnologia, diagnóstico e restauração para o território.</h2>
             </div>
-            <div className={styles.qualifications}>
-              <h3>Como interpretar o índice</h3>
-              <ul>
-                <li>Contrato experimental</li>
-                <li>Validação científica pendente</li>
-                <li>Sujeito a recalibração</li>
-                <li>Não aprovado como contrato científico definitivo</li>
+          </div>
+          <div className={styles.solutions}>
+            {solutions.map(({ icon: Icon, title, description, detail }) => (
+              <article key={title} className={styles.step}>
+                <div className={styles.solutionIcon}><Icon size={25} aria-hidden="true" /></div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                {detail && <p className={styles.solutionDetail}>{detail}</p>}
+              </article>
+            ))}
+          </div>
+          <div className={styles.projectCopy}>
+            <p>A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
+            <p>A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.</p>
+          </div>
+          <a className={styles.textLink} href="#equipe">Conheça a equipe <ArrowRight size={18} aria-hidden="true" /></a>
+        </section>
+
+        <section id="plataforma" className={`${styles.container} ${styles.section}`} aria-labelledby="platform-title">
+          <div className={styles.sectionHeading}>
+            <p className={styles.eyebrow}>A plataforma</p>
+            <h2 id="platform-title">Cada registro, no seu contexto.</h2>
+            <p>Um fluxo conectado por laboratório, área e coleta, com histórico para acompanhar o trabalho da equipe.</p>
+          </div>
+          <div className={styles.platformLayout}>
+            <ol className={styles.steps}>
+              {steps.map(({ number, icon: Icon, title, description }) => (
+                <li key={number} className={styles.step}>
+                  <div className={styles.stepTop}><Icon size={25} aria-hidden="true" /><span>{number}</span></div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </li>
+              ))}
+            </ol>
+            <aside className={styles.territorialPanel} aria-labelledby="territorial-title">
+              <div className={styles.panelHeader}>
+                <div><p className={styles.eyebrow}>Conexão com o território</p><h3 id="territorial-title">Do diagnóstico à restauração</h3></div>
+              </div>
+              <p className={styles.panelIntro}>Os registros ambientais e o IHFR conectam a leitura do território às frentes de pesquisa e atuação do projeto.</p>
+              <ul className={styles.territorialReadings} aria-label="Frentes de aplicação dos registros ambientais">
+                {territorialReadings.map(({ icon: Icon, label, description }) => (
+                  <li key={label} className={styles.territorialRow}>
+                    <span className={styles.readingIcon}><Icon size={23} aria-hidden="true" /></span>
+                    <div className={styles.readingCopy}><h4>{label}</h4><p>{description}</p></div>
+                  </li>
+                ))}
               </ul>
-              <p>A disponibilidade de um cálculo não significa validação científica.</p>
-            </div>
+            </aside>
           </div>
         </section>
 
-        <section id="projeto" className={`${styles.container} ${styles.section} ${styles.project}`} aria-labelledby="project-title">
-          <div>
-            <p className={styles.eyebrow}>Itapecuru-Mirim · Maranhão</p>
-            <h2 id="project-title">Um projeto de base científica, próximo do território.</h2>
-            <p>A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
-            <p>A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.</p>
-            <a className={styles.textLink} href="#equipe">Conheça a equipe <ArrowRight size={18} aria-hidden="true" /></a>
-          </div>
-          <div className={styles.projectScope}>
-            <h3>Frentes do projeto</h3>
-            <dl>
-              <div><dt>Plataforma de registros</dt><dd>Informações ambientais organizadas e histórico por laboratório.</dd></div>
-              <div><dt>Observação em campo</dt><dd>Proposta de kit simplificado para apoiar o trabalho de coleta.</dd></div>
-              <div><dt>Restauração produtiva</dt><dd>Pesquisa de soluções relacionadas à água, ao solo e à vegetação.</dd></div>
-            </dl>
-            <p className={styles.scopeNote}>As frentes de pesquisa expressam os objetivos do projeto. Resultados e recomendações dependem de avaliação técnica e científica.</p>
+        <section id="impacto" className={`${styles.container} ${styles.section}`} aria-labelledby="impact-title">
+          <div className={styles.impact}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.eyebrow}>Justiça territorial e sustentabilidade</p>
+              <h2 id="impact-title">Para mais de 70 comunidades quilombolas e rurais.</h2>
+              <p>Na Bacia do Rio Itapecuru, a proposta contempla um público potencial de mais de 10 mil pessoas. A HidroFlorestas busca democratizar o conhecimento científico para contribuir com a segurança alimentar e hídrica e a recuperação dos territórios.</p>
+            </div>
+            <ul className={styles.goals} aria-label="Objetivos de Desenvolvimento Sustentável">
+              {goals.map(({ number, icon: Icon, title }) => (
+                <li key={number}>
+                  <Icon size={30} aria-hidden="true" />
+                  <p className={styles.goalNumber}>ODS {number}</p>
+                  <h3>{title}</h3>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -155,9 +217,9 @@ export default function LandingPage() {
 
       <footer className={styles.footer}>
         <div className={`${styles.container} ${styles.footerGrid}`}>
-          <div><p className={styles.footerBrand}>HidroFlorestas</p><p>Registros que aproximam pesquisa e território.</p></div>
+          <div><p className={styles.footerBrand}>HidroFlorestas</p><p>Startup de base científica focada em segurança hídrica, diagnóstico ambiental e restauração produtiva no Maranhão.</p></div>
           <div><h2>Apoio institucional</h2><p>Instituto Federal do Maranhão (IFMA)<br />Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação (PRPGI)<br />Fábrica de Inovação — Campus Itapecuru-Mirim</p></div>
-          <div><h2>Contato</h2><a href="mailto:fabio.souza@ifma.edu.br">fabio.souza@ifma.edu.br</a><p>Unidade proponente: ITA / DERI-ITA</p></div>
+          <div><h2>Contato</h2><a href="mailto:hidrofloresta@gmail.com">hidrofloresta@gmail.com</a><p>Unidade proponente: ITA / DERI-ITA</p></div>
           <div><h2>Projeto</h2><p>Edital PRPGI Nº 180/2025<br />Período de execução:<br /><time dateTime="2026-03-01">01/03/2026</time> a <time dateTime="2026-10-31">31/10/2026</time></p></div>
         </div>
         <div className={`${styles.container} ${styles.copyright}`}>© 2026 HidroFlorestas. Todos os direitos reservados.</div>
