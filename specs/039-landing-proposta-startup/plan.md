@@ -29,3 +29,7 @@ Paleta verde/ocre, Poppins, espaços e bordas atuais. Título completo da versã
 ## Ajuste após prévia
 
 Mesma branch/PR59, incremental sobre dd02396. Copiar textos de O desafio da fonte legada sem reformulação. Mover projectCopy após solutions em duas colunas no desktop e uma no mobile. Nomear o painel Do diagnóstico à restauração e trocar pares de rótulos soltos por objetivos explicados, mantendo posição/paleta e IA futura. Reexecutar build, lint e a suíte existente da landing; conferir ordem e texto literal, capturas desktop/mobile e limites a 200%.
+
+## Equilíbrio visual do painel
+
+Usar alinhamento pelo topo da grade, compactar somente paddings/gaps do painel e retirar badge/bloco de IA. Comparar a posição e altura das colunas em 960/1440 px, incluindo mobile e texto ampliado, sem alturas fixas ou recortes de conteúdo.

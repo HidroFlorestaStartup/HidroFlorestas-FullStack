@@ -72,8 +72,8 @@ for (const viewport of viewports) {
     const platform = page.getByRole("region", { name: "Cada registro, no seu contexto." });
     await expect(platform.getByRole("heading", { name: "Consulte o IHFR", exact: true })).toBeVisible();
     const panel = platform.getByRole("complementary", { name: "Do diagnóstico à restauração" });
-    await expect(panel).toContainText("Frentes do projeto");
-    await expect(panel).toContainText("Integração futura com IA");
+    await expect(panel).not.toContainText("Frentes do projeto");
+    await expect(panel).not.toContainText("Integração futura com IA");
     await expect(page.getByRole("main")).not.toContainText(/experimental|validação científica|insuficiência fica explícita/i);
     const goals = page.getByRole("list", { name: "Objetivos de Desenvolvimento Sustentável" });
     await expect(goals.getByRole("listitem")).toHaveCount(4);

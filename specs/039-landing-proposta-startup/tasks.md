@@ -31,3 +31,8 @@ Dependências: T001 → T002 → T003/T004 → T005 → T006 → T007 → T008. 
 - [x] T010 [US2] Tornar propósito/nome/textos do painel coerentes e reformular IA em src/app/page.tsx.
 - [x] T011 Atualizar estilos e expectativas afetadas em src/app/landing.module.css e tests/e2e/frontend-landing.spec.ts.
 - [x] T012 Conferir a nova composição em navegador e registrar resultados em specs/039-landing-proposta-startup/validation.md.
+
+## Equilíbrio das colunas
+
+- [x] T013 [US2] Retirar badge e chamada de IA de src/app/page.tsx e compactar/alinhá-los em src/app/landing.module.css.
+- [x] T014 Validar medidas/visual das colunas e registrar em specs/039-landing-proposta-startup/validation.md.

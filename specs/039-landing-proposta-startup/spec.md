@@ -84,3 +84,9 @@ Visitantes identificam o público proposto, os ODS 6/13/15/10, os mesmos 11 inte
 - **FR-010**: apresentar o painel como conexão entre diagnóstico e frentes do projeto, sem sugerir índice calculado. Reutilizar salinização/recarga, SAFs/florestas de infiltração/manejo regenerativo e ciclo hidrológico/resiliência. IA continua explicitamente futura, com redação direta.
 
 `RECOMENDACAO`: título Do diagnóstico à restauração, rótulos Conexão com o território e Frentes do projeto, uma introdução conectando IHFR/registros aos objetivos e três descrições completas. Substitui a apresentação anterior de palavras soltas e Visão ilustrativa. O painel permanece no local aprovado.
+
+## Equilíbrio das colunas — 14/11/2026
+
+`DECISAO_CONFIRMADA`: Pedro solicitou retirar Frentes do projeto, aproximar as alturas das duas colunas de A plataforma e iniciar ambas no mesmo nível. Autorizou retirar o bloco de integração futura com IA se necessário.
+
+- **FR-011**: alinhar o início das colunas no desktop, aproximar suas alturas com espaçamentos locais e remover o badge Frentes do projeto. A chamada de IA sai para reduzir o painel, sem substituição por promessa de IA disponível. Preservar as outras descrições e o empilhamento mobile.

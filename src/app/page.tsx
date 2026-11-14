@@ -139,7 +139,6 @@ export default function LandingPage() {
             <aside className={styles.territorialPanel} aria-labelledby="territorial-title">
               <div className={styles.panelHeader}>
                 <div><p className={styles.eyebrow}>Conexão com o território</p><h3 id="territorial-title">Do diagnóstico à restauração</h3></div>
-                <span className={styles.panelBadge}>Frentes do projeto</span>
               </div>
               <p className={styles.panelIntro}>Os registros ambientais e o IHFR conectam a leitura do território às frentes de pesquisa e atuação do projeto.</p>
               <ul className={styles.territorialReadings} aria-label="Frentes de aplicação dos registros ambientais">
@@ -150,10 +149,6 @@ export default function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <div className={styles.futureIntegration}>
-                <p className={styles.eyebrow}>Integração futura com IA</p>
-                <p>Integração de uma camada assistiva de inteligência artificial para traduzir dados técnicos em informações acessíveis e apoiar ações comunitárias.</p>
-              </div>
             </aside>
           </div>
         </section>

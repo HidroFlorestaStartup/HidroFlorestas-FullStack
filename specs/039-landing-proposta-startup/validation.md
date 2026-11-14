@@ -56,3 +56,17 @@ Validação desta rodada:
 - Cards de Nossa solução, equipe, footer e abertura/mascote idênticos por bytes à rodada anterior; nenhuma mudança na UI autenticada.
 
 Os 14 testes da apresentação interna permanecem evidência da primeira rodada; não foram repetidos porque nenhum arquivo desses componentes mudou. Demais limites da primeira rodada permanecem aplicáveis. Atualização na mesma branch/PR59, sem merge ou mudança de produção.
+
+## Equilíbrio das colunas — terceira rodada em 14/11/2026
+
+Base incremental 9814b26. Retirados o selo Frentes do projeto e o bloco de integração futura com IA, conforme autorização de Pedro para aproximar as alturas. Grade alinhada pelo topo; paddings/gaps do painel compactados, sem alturas fixas ou cortes. Demais textos mantidos.
+
+- Build padrão, TypeScript, lint e git diff --check aprovados. Dois avisos preexistentes de lint mantidos.
+- 8/8 testes da landing aprovados, incluindo texto a 200%, teclado e navegação.
+- Medição local em navegador real de produção: diferença entre os topos igual a zero em 960, 1280 e 1440 px.
+- Em 1440/1280 px: coluna dos passos 505,25 px e painel 549,16 px (diferença relativa de 8,69%). Em 960 px: 580,81/617,13 px (6,25%).
+- Em 375 px, blocos empilhados com alturas 582/583,56 px. Em 320 px/texto a 200%, empilhamento mantido e documento com exatamente 320 px, sem overflow.
+- Inspeção visual da captura desktop com alinhamento pelo topo e cinco cenários de geometria aprovados.
+- Demais seções preservadas por bytes; nenhuma mudança de API, dados, fórmulas ou interface autenticada. Validações internas anteriores não foram repetidas nesta alteração local de apresentação.
+
+Atualização na mesma branch/PR59, com revisão visual do usuário pendente e sem merge ou alteração de produção.
