@@ -1,5 +1,6 @@
 "use client";
 
+import { uiErrorMessage } from "@/lib/ui-presentation";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
 import { AlertTriangle, ArrowLeft, CheckCircle2, ChevronLeft, ChevronRight, History, RefreshCw, Search, ShieldCheck, UserCog, Users } from "lucide-react";
@@ -114,7 +115,7 @@ export function UserAdministrationPage() {
     } catch (error) {
       if (!listReads.isCurrent(ticket)) return;
       setPage(null);
-      setListError(error instanceof Error ? error.message : "Não foi possível carregar os usuários.");
+      setListError(uiErrorMessage(error, "Não foi possível carregar os usuários."));
     } finally {
       if (listReads.isCurrent(ticket)) setLoading(false);
     }
@@ -167,7 +168,7 @@ export function UserAdministrationPage() {
       setSelected(body);
       return body as AdminUserDto;
     } catch (error) {
-      if (detailReads.isCurrent(ticket)) setDetailError(error instanceof Error ? error.message : "Não foi possível carregar a conta.");
+      if (detailReads.isCurrent(ticket)) setDetailError(uiErrorMessage(error, "Não foi possível carregar a conta."));
       return null;
     } finally {
       if (detailReads.isCurrent(ticket)) setDetailLoading(false);

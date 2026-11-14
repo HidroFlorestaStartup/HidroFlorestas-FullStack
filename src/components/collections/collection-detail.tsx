@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Leaf, LockKeyhole } from "lucide-react";
-import { formatCollectionOccurrence } from "@/lib/collection-date-time";
+import { formatCollectionConfirmation, formatCollectionOccurrence } from "@/lib/collection-date-time";
 import type { CollectionDetailDto } from "@/types/collection.type";
 import type { CollectionDetailSlots } from "./collection-detail-layout";
 import styles from "./collections.module.css";
@@ -26,7 +26,7 @@ export function createCollectionDetailSlots({ collection, hasConfirmedEnvironmen
           <div><dt>Laboratório</dt><dd>{collection.laboratory.name}</dd></div>
           <div><dt>Área</dt><dd>{collection.area.name}</dd></div>
           <div><dt>Ocorrência em campo</dt><dd>{formatCollectionOccurrence(collection.occurredAt)}</dd></div>
-          <div><dt>Confirmação no sistema</dt><dd><time dateTime={collection.confirmedAt}>{collection.confirmedAt}</time></dd></div>
+          <div><dt>Confirmação no sistema</dt><dd><time dateTime={collection.confirmedAt}>{formatCollectionConfirmation(collection.confirmedAt, collection.occurredAt)}</time></dd></div>
         </dl>
       </div>,
     environmental: <div className={styles.card}>
@@ -35,7 +35,7 @@ export function createCollectionDetailSlots({ collection, hasConfirmedEnvironmen
         {!hasConfirmedEnvironmentalData ? (
           <div role="status" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950">
             <p className="font-semibold">Não há conjunto de dados ambientais confirmado para esta coleta.</p>
-            <p className="mt-2">Consulte os dados existentes ou registre e confirme as medições para permitir a avaliação experimental. A ausência de dados não significa score zero.</p>
+            <p className="mt-2">Consulte os dados existentes ou registre e confirme as medições para permitir a avaliação experimental. A ausência de dados não significa IHFR igual a zero.</p>
           </div>
         ) : <p className="text-sm font-medium text-emerald-800">Há dados ambientais confirmados nesta coleta.</p>}
         <div className={styles.actions}>
@@ -52,7 +52,7 @@ export function CollectionDetail(props: CollectionDetailProps) {
   const { header, record, environmental, metadataClassName } = createCollectionDetailSlots(props);
   return <article aria-labelledby="collection-detail-title" className={metadataClassName}>
     {header}
-    {record}
     {environmental}
+    {record}
   </article>;
 }

@@ -98,7 +98,7 @@ function DeviceCollectionForm({ context, initiatorProof }: { context: Collection
                 </select>
               </div>
               <div className={styles.field}>
-                <label htmlFor="collection-offset">Offset UTC</label>
+                <label htmlFor="collection-offset">Fuso UTC</label>
                 <input id="collection-offset" className={styles.control} value={attempt.occurrenceOffset}
                   readOnly={attempt.useDeviceTimeZone} required aria-describedby="occurredAt-help"
                   placeholder="-03:00" pattern="[+-][0-9]{2}:[0-9]{2}"
@@ -107,7 +107,7 @@ function DeviceCollectionForm({ context, initiatorProof }: { context: Collection
             </div>
             <p id="occurredAt-help" className={styles.help}>
               Sugestão inicial: agora no dispositivo. Segundos e milissegundos são preservados.
-              O offset acompanha a data no fuso do dispositivo. Para outro fuso ou horário repetido,
+              O fuso acompanha a data no fuso do dispositivo. Para outro fuso ou horário repetido,
               selecione Fuso UTC manual (ex.: -03:00). Confira o horário e o fuso na revisão.
             </p>
             {attempt.error && <p id="occurredAt-error" role="alert" className={styles.error}>{attempt.error}</p>}

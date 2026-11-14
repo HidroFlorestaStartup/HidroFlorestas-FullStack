@@ -85,10 +85,10 @@ export function CollectionDetailLayout({ header, record, environmental, metadata
 
   return <article ref={rootRef} aria-labelledby="collection-detail-title" className="min-w-0">
     {desktop ? <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] items-start gap-6">
-      <div className="grid min-w-0 gap-5">{headerBlock}{recordBlock}{environmentalBlock}</div>
+      <div className="grid min-w-0 gap-5">{headerBlock}{environmentalBlock}{recordBlock}</div>
       <div className="grid min-w-0 gap-6">{readingBlock}{actionsBlock}</div>
     </div> : <div className="grid min-w-0 gap-6">
-      {headerBlock}{readingBlock}{recordBlock}{environmentalBlock}{actionsBlock}
+      {headerBlock}{readingBlock}{environmentalBlock}{recordBlock}{actionsBlock}
     </div>}
   </article>;
 }

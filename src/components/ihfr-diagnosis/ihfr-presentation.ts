@@ -13,8 +13,10 @@ const labels: Record<string, Readonly<Record<string, string>>> = {
     MISSING_SLOPE_PERCENT: "A declividade não foi informada nos dados ambientais confirmados.",
     MISSING_LAND_USE_TYPE: "O uso predominante da terra não foi informado.",
     INSUFFICIENT_DIMENSION: "Uma dimensão não possui a quantidade mínima de dados exigida pelo contrato.",
+    INCOMPATIBLE_VERSION: "A versão dos dados é incompatível com o contrato experimental ativo.",
   },
   scientific: {
+    EXPERIMENTAL: "Experimental",
     CONTRATO_EXPERIMENTAL: "Contrato experimental",
     VALIDACAO_CIENTIFICA_PENDENTE: "Validação científica pendente",
     SUJEITO_A_RECALIBRACAO: "Sujeito a recalibração",
@@ -28,3 +30,16 @@ export function ihfrLabel(kind: "class" | "quality" | "lifecycle" | "eligibility
 }
 
 export const COMPONENT_LABELS = { W: "Água", S: "Solo", V: "Vegetação", T: "Território" } as const;
+
+/** Translate public feedback without changing the operation or its internal error code. */
+export function ihfrOperationMessage(code: string): string {
+  const messages: Record<string, string> = {
+    UNAUTHENTICATED: "Sua sessão expirou. Entre novamente para continuar.",
+    FORBIDDEN: "Você não tem permissão para realizar esta operação.",
+    NOT_FOUND: "O registro solicitado não está disponível.",
+    VALIDATION_ERROR: "Revise os dados informados antes de tentar novamente.",
+    INVALID_REQUEST: "Revise os dados informados antes de tentar novamente.",
+    RATE_LIMITED: "Aguarde um momento antes de tentar novamente.",
+  };
+  return Object.hasOwn(messages, code) ? messages[code] : "Não foi possível concluir esta operação. Tente novamente.";
+}

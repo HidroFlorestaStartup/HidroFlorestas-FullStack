@@ -1,0 +1,10 @@
+# Pesquisa técnica e evidências
+
+- `EVIDENCIA_IMPLEMENTACAO`: a landing usa `src/app/page.tsx` e `landing.module.css`; a árvore antiga é um `next/image` no `figure` do herói. Base: `origin/development@bfc4e272165170e605096aa502b054184c76e86e`.
+- `FATO_DOCUMENTADO`: o vídeo fornecido tem 5 minutos, 2688×1536, 24 fps, VP9 com `ALPHA_MODE=1`, sem áudio e 141 MB em disco. A inspeção foi feita com FFmpeg 9.0.2 instalado temporariamente em `/tmp`, sem alteração de dependências do projeto.
+- `RECOMENDACAO` implementada: trecho de 10 s com a saudação, recorte central 1480×1536, saída 960×996/24 fps VP9 alfa. O quadro inicial vira WebP transparente para fallback. O bundle derivado foi medido antes da integração: vídeo cerca de 1,3 MB, poster cerca de 64 KB.
+- `EVIDENCIA_IMPLEMENTACAO`: em teste local, Chromium e Firefox compuseram a transparência corretamente; WebKit reproduziu o VP9 com fundo preto. Para WebKit foi gerado MP4 H.264 de cerca de 911 KB, com fundo `#eef2e5` igual ao cartão, sem áudio. O original transparente e o WebM continuam preservados.
+- A documentação local do Next.js 16.3.8 em `node_modules/next/dist/docs/01-app/02-guides/videos.md` recomenda dimensões reservadas, poster, `muted` e `playsInline` para reprodução automática; `public-folder.md` confirma o serviço de mídia estática. O componente não adiciona player de terceiros.
+- `INFERENCIA`: o ciclo de 10 s é visualmente adequado porque o personagem retorna à pose de repouso após a saudação; o corte pode ser revisto em aceite visual.
+- `FATO_DOCUMENTADO`: o novo arquivo fornecido pelo usuário, `Hifro_Site_5min_2K.mp4`, tem 5 min, 2688×1536, H.264/24 fps, sem áudio e cerca de 300 MB. A cena tem fundo bege e o personagem fica no centro; no segundo 5 ele acena com a mão esquerda.
+- `RECOMENDACAO` implementada para teste: recorte central `1280:1536:704:0`, saída vertical 960×1152, 10 s, H.264 sem áudio e poster WebP. A saída tem 2.309.436 bytes, muito menor que o original, e mantém o aceno enquadrado. Os arquivos transparentes não foram alterados.
