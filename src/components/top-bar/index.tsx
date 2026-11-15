@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, LogOut } from "lucide-react";
 import Logo from "@/assets/logo/logo-hf.png";
+import Mascote from "@/assets/dashboard/mascote.jpeg";
 import { useAuth } from "@/contexts/auth.context";
-import UserProfile from "../user-profile";
+
 import styles from "../shell/shell.module.css";
 
 type Props = { showProfile?: boolean; showLogout?: boolean };
@@ -39,7 +40,7 @@ export default function TopBar({ showProfile, showLogout }: Props) {
     </Link>
     <div className={styles.headerInfo}>
       {showProfile && <div className={styles.identity}><strong>{user?.firstName} {user?.lastName}</strong><small>Ambiente de Análise</small></div>}
-      {showProfile && <div className={styles.identity}><UserProfile image={user?.image} lyrics={[(user?.firstName ?? "").charAt(0), (user?.lastName ?? "").charAt(0)].join("")} /></div>}
+      {showProfile && <div className={styles.identity}><Image src={Mascote} alt="Mascote HidroFlorestas" width={48} height={48} className="h-12 w-12 rounded-full object-cover" /></div>}
       {showLogout && <div className={styles.accountActions}>
         <details ref={menu} className={styles.accountDisclosure}
           onToggle={event => setExpanded(event.currentTarget.open)}
