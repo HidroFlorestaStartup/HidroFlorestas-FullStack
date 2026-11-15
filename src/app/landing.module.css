@@ -51,6 +51,7 @@
 .mascotPosterHidden { opacity: 0; }
 .mascotVideo { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
 .mascotVideoReady { opacity: 1; }
+.mascotName { position: absolute; z-index: 1; top: clamp(.75rem, 3vw, 1.25rem); right: clamp(.75rem, 3vw, 1.25rem); color: var(--green); font-family: inherit; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 650; letter-spacing: -.025em; line-height: 1.25; pointer-events: none; }
 .section { padding-block: 2.5rem; }
 .sectionHeading { max-width: 44rem; margin-bottom: 1.8rem; }
 .sectionHeading h2 { margin-block: .55rem .9rem; }

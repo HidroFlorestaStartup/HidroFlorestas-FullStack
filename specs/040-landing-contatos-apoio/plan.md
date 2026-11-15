@@ -31,3 +31,7 @@ PASS antes e após o desenho: decisão atual registrada, branch/spec próprias, 
 - `specs/040-landing-contatos-apoio/`: especificação, plano, tarefas e evidências desta entrega.
 
 **Structure Decision**: Manter o Server Component da landing e CSS local. Não criar componentes globais nem serviços.
+
+## Complemento — nome do mascote — 2026-11-15
+
+DECISAO_CONFIRMADA: Pedro solicitou “Hifro”, preferencialmente no canto superior direito dentro da animação, na mesma branch. Incluir texto estático em `src/app/mascot-animation.tsx` e regra local em `src/app/landing.module.css`, herdando a fonte e a cor verde da landing. Posicionar acima da imagem e do vídeo; preservar a reprodução e seus estados. Reutilizar a suíte pública existente e conferir visualmente desktop/mobile, texto ampliado e movimento reduzido.

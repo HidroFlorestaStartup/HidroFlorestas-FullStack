@@ -32,3 +32,10 @@
 ## Dependencies & Execution
 
 T001 → T002 → US1 → US2 → T007 → T008. As histórias são verificáveis separadamente; a edição é sequencial porque compartilham os arquivos. Depois do build, lint e inspeção documental podem ser paralelos. MVP: US1, seguido da entrega editorial US2. Não há necessidade de delegação.
+
+## Complemento — nome do mascote — 2026-11-15
+
+- [x] T009 [US3] Exibir Hifro no canto superior direito de src/app/mascot-animation.tsx, com tipografia herdada e estilo local em src/app/landing.module.css.
+- [x] T010 [US3] Validar build, lint e a suíte pública existente; conferir nome sobre vídeo/imagem e registrar resultados em specs/040-landing-contatos-apoio/validation.md.
+
+T009 → T010. Alteração incremental na mesma feature e PR, conforme pedido atual.

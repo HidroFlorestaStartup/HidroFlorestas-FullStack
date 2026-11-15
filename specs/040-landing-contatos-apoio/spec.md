@@ -26,6 +26,15 @@ Como visitante, quero ler a apresentação atual e identificar o apoio instituci
 2. Apoio institucional mantém os nomes atuais e inclui AGiFMA e FAPEMA.
 3. O rodapé não contém a coluna Projeto nem o edital/período antes exibidos nela.
 
+### User Story 3 - Identificar o mascote (Priority: P3)
+
+Como visitante, quero conhecer o nome do mascote apresentado na animação.
+**Why this priority**: Complemento editorial solicitado por Pedro em 2026-11-15, na mesma branch.
+**Independent Test**: Conferir o nome na abertura da landing.
+**Acceptance Scenarios**:
+1. Vejo “Hifro” no canto superior direito, dentro da animação, usando a tipografia e a paleta vigentes.
+2. O nome continua visível com a imagem estática quando a animação não toca, inclusive em telas pequenas e com texto ampliado.
+
 ### Edge Cases
 
 - O e-mail longo deve continuar legível em telas estreitas e texto ampliado.
@@ -42,6 +51,8 @@ Como visitante, quero ler a apresentação atual e identificar o apoio instituci
 - **FR-005**: Atualizar somente a primeira frase institucional para a redação de US2.
 - **FR-006**: Preservar a paleta e a leitura responsiva da landing, além dos fluxos da plataforma.
 
+- **FR-007**: Apresentar “Hifro” dentro da animação, preferencialmente no canto superior direito, sem cobrir o rosto nem mudar a reprodução do vídeo.
+
 ## Success Criteria
 
 ### Measurable Outcomes
@@ -49,6 +60,8 @@ Como visitante, quero ler a apresentação atual e identificar o apoio instituci
 - **SC-001**: Os dois canais exibem os destinos solicitados, sem o e-mail anterior no rodapé.
 - **SC-002**: Os cinco ajustes solicitados estão visíveis, com zero colunas Projeto no rodapé.
 - **SC-003**: A página pode ser lida sem rolagem horizontal em larguras de 320 a 1440 pixels, inclusive a 320 pixels com texto em 200%.
+
+- **SC-004**: O nome permanece legível e contido na animação de 320 a 1440 pixels, inclusive com texto em 200%.
 
 ## Assumptions
 

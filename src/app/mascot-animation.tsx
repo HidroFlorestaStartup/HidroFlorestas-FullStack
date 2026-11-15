@@ -87,6 +87,7 @@ export function MascotAnimation() {
         onLoadedData={() => setReady(true)}
         onError={() => setReady(false)}
       />
+      <span className={styles.mascotName}>Hifro</span>
     </div>
   );
 }
