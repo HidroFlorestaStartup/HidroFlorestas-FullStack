@@ -51,6 +51,7 @@
 .mascotPosterHidden { opacity: 0; }
 .mascotVideo { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
 .mascotVideoReady { opacity: 1; }
+.mascotName { position: absolute; z-index: 1; top: clamp(.75rem, 3vw, 1.25rem); right: clamp(.75rem, 3vw, 1.25rem); color: var(--green); font-family: inherit; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 650; letter-spacing: -.025em; line-height: 1.25; pointer-events: none; }
 .section { padding-block: 2.5rem; }
 .sectionHeading { max-width: 44rem; margin-bottom: 1.8rem; }
 .sectionHeading h2 { margin-block: .55rem .9rem; }
@@ -98,11 +99,15 @@
 .teamNames { display: grid; gap: .35rem; margin-block: 1rem; padding: 0; list-style: none; }
 .teamNames li { color: var(--ink); font-size: .9rem; font-weight: 600; }
 .footer { margin-top: 2rem; padding-block: 2.5rem 1.5rem; color: #e7eee5; background: #203c2d; }
-.footerGrid { display: grid; grid-template-columns: 1fr 1.5fr 1.2fr 1fr; gap: 1.75rem; }
+.footerGrid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr) minmax(0, 1.2fr); gap: 1.75rem; }
 .footer h2 { margin-bottom: .9rem; color: #f3f5ef; font-size: .85rem; font-weight: 600; letter-spacing: 0; }
 .footer p, .footer a { color: #d2ddce; font-size: .75rem; line-height: 1.9; }
 .footer a { display: inline-block; padding-block: .5rem; text-decoration: underline; text-underline-offset: 4px; }
 .footer a[href^="mailto:"] { max-width: 100%; overflow-wrap: anywhere; }
+.contactLinks { display: flex; flex-direction: column; align-items: flex-start; }
+.footer .socialLink { display: inline-flex; align-items: center; gap: .5rem; max-width: 100%; }
+.socialLink svg { flex-shrink: 0; }
+.socialLink span { min-width: 0; }
 .footer .footerBrand { margin-bottom: .8rem; color: #fff; font-weight: 650; font-size: 1.15rem; }
 .copyright { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid #4b6551; color: #c5d2c1; font-size: .7rem; }
 

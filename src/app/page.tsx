@@ -114,7 +114,7 @@ export default function LandingPage() {
             ))}
           </div>
           <div className={styles.projectCopy}>
-            <p>A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
+            <p>A HidroFlorestas é uma startup nascida no IFMA Campus Itapecuru-Mirim, voltada à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.</p>
             <p>A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.</p>
           </div>
           <a className={styles.textLink} href="#equipe">Conheça a equipe <ArrowRight size={18} aria-hidden="true" /></a>
@@ -218,9 +218,22 @@ export default function LandingPage() {
       <footer className={styles.footer}>
         <div className={`${styles.container} ${styles.footerGrid}`}>
           <div><p className={styles.footerBrand}>HidroFlorestas</p><p>Startup de base científica focada em segurança hídrica, diagnóstico ambiental e restauração produtiva no Maranhão.</p></div>
-          <div><h2>Apoio institucional</h2><p>Instituto Federal do Maranhão (IFMA)<br />Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação (PRPGI)<br />Fábrica de Inovação — Campus Itapecuru-Mirim</p></div>
-          <div><h2>Contato</h2><a href="mailto:hidrofloresta@gmail.com">hidrofloresta@gmail.com</a><p>Unidade proponente: ITA / DERI-ITA</p></div>
-          <div><h2>Projeto</h2><p>Edital PRPGI Nº 180/2025<br />Período de execução:<br /><time dateTime="2026-03-01">01/03/2026</time> a <time dateTime="2026-10-31">31/10/2026</time></p></div>
+          <div><h2>Apoio institucional</h2><p>Instituto Federal do Maranhão (IFMA)<br />Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação (PRPGI)<br />Fábrica de Inovação — Campus Itapecuru-Mirim<br />AGiFMA<br />FAPEMA</p></div>
+          <div>
+            <h2>Contato</h2>
+            <div className={styles.contactLinks}>
+              <a href="mailto:startup.hidroflorestas.ifma@gmail.com">startup.hidroflorestas.ifma@gmail.com</a>
+              <a className={styles.socialLink} href="https://www.instagram.com/startup.hidroflorestas/" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M17.5 6.5h.01" />
+                </svg>
+                <span>@startup.<wbr />hidroflorestas</span>
+              </a>
+            </div>
+            <p>Unidade proponente: ITA / DERI-ITA</p>
+          </div>
         </div>
         <div className={`${styles.container} ${styles.copyright}`}>© 2026 HidroFlorestas. Todos os direitos reservados.</div>
       </footer>

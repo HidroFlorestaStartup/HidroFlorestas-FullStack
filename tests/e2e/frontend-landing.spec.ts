@@ -66,7 +66,7 @@ for (const viewport of viewports) {
     }
     expect(await page.locator('main > section').evaluateAll(nodes => nodes.map(node => node.id || "abertura"))).toEqual(["abertura", "desafio", "projeto", "plataforma", "impacto", "equipe"]);
     const project = page.getByRole("region", { name: "Tecnologia, diagnóstico e restauração para o território." });
-    await expect(project).toContainText("A HidroFlorestas é um projeto do IFMA Campus Itapecuru-Mirim voltado à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.");
+    await expect(project).toContainText("A HidroFlorestas é uma startup nascida no IFMA Campus Itapecuru-Mirim, voltada à segurança hídrica, ao diagnóstico ambiental e à restauração produtiva no Maranhão.");
     await expect(project).toContainText("A proposta reúne organização de informações, observação em campo e pesquisa sobre Soluções Baseadas na Natureza. A plataforma é uma parte desse trabalho.");
     await expect(project).toContainText("Proposta de kit simplificado para apoiar o trabalho de coleta.");
     const platform = page.getByRole("region", { name: "Cada registro, no seu contexto." });
@@ -80,7 +80,7 @@ for (const viewport of viewports) {
     for (const goal of ["ODS 06", "ODS 13", "ODS 15", "ODS 10"]) await expect(goals).toContainText(goal);
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByText("Fábio Mesquita de Souza", { exact: true })).toBeVisible();
-    await expect(page.getByRole("link", { name: "hidrofloresta@gmail.com", exact: true })).toHaveAttribute("href", "mailto:hidrofloresta@gmail.com");
+    await expect(page.getByRole("link", { name: "startup.hidroflorestas.ifma@gmail.com", exact: true })).toHaveAttribute("href", "mailto:startup.hidroflorestas.ifma@gmail.com");
     if (viewport.textScale === 200) {
       const fragmentedWords = await page.locator("header, main, footer").evaluateAll(roots => {
         const fragmented: string[] = [];
