@@ -4,16 +4,28 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ImageIcon, RefreshCw, Trash2, Upload } from "lucide-react";
 import { createClientUuid } from "@/lib/client-uuid";
+import { getPresentationAreaCover, type PresentationAreaCover } from "@/lib/presentation-area-covers";
 import type { CoverDto, UploadTicket } from "@/app/api/server/images/contracts";
 import styles from "./cover.module.css";
 
-export function AreaCoverPreview({ apiPath, name, hasImage, revision, featureEnabled = false, retryAttempt = 0, onLoaded, onFailed }: {
+export function AreaCoverPreview({ apiPath, name, hasImage, revision, featureEnabled = false, retryAttempt = 0, presentationCover, onLoaded, onFailed }: {
   apiPath: string; name: string; hasImage: boolean; revision: number; featureEnabled?: boolean;
+  presentationCover?: PresentationAreaCover | null;
   retryAttempt?: number; onLoaded?: () => void; onFailed?: () => void;
 }) {
   const [failed, setFailed] = useState(false);
   // This counter retries browser content without changing the persisted revision.
   const src = `${apiPath}/content?revision=${revision}${retryAttempt > 0 ? `&retry=${retryAttempt}` : ""}`;
+  if (!hasImage && presentationCover && !failed) {
+    return <figure className={styles.illustration}>
+      <Image unoptimized src={presentationCover.src} width={1600} height={900}
+        alt={`Imagem ilustrativa para a área ${name}`} onError={() => setFailed(true)} className={styles.preview} />
+      <figcaption className={styles.credit}>
+        Imagem ilustrativa, recortada · <a href={presentationCover.source} target="_blank" rel="noopener noreferrer">{presentationCover.author}</a>
+        {" · "}<a href={presentationCover.licenseUrl} target="_blank" rel="noopener noreferrer">{presentationCover.license}</a>
+      </figcaption>
+    </figure>;
+  }
   return hasImage && featureEnabled && !failed ? (
     <Image unoptimized src={src} width={1200} height={800} alt={`Capa da área ${name}`}
       onLoad={onLoaded} onError={() => { setFailed(true); onFailed?.(); }} className={styles.preview} />
@@ -78,6 +90,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
   const [previewAttempt, setPreviewAttempt] = useState(0);
   const previewSequence = useRef(0);
   const pendingPreview = useRef<{ attempt: number; purpose: PreviewPurpose } | null>(null);
+  const presentationCover = data && !data.image.hasImage ? getPresentationAreaCover(laboratoryId, areaId) : null;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -208,6 +221,7 @@ export function AreaCoverEditor({ laboratoryId, areaId, name }: { laboratoryId: 
       <AreaCoverPreview key={`${areaId}:${data?.image.revision ?? 0}:${data?.featureEnabled ?? false}:${previewAttempt}`}
         apiPath={apiPath} name={name} hasImage={data?.image.hasImage ?? false} revision={data?.image.revision ?? 0}
         featureEnabled={data?.featureEnabled ?? false} retryAttempt={previewAttempt}
+        presentationCover={presentationCover}
         onLoaded={() => finishPreview(previewAttempt, true)} onFailed={() => finishPreview(previewAttempt, false)} />
       <div className={styles.body}>
         <div className={styles.heading}>

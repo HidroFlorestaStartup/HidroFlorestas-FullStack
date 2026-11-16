@@ -1,0 +1,85 @@
+{
+  "executedAt": "2026-11-16T13:04:59.663933+00:00",
+  "project": "hidden-art-76143033",
+  "branch": "Universo IF",
+  "branchId": "br-green-firefly-b65qnqxd",
+  "database": "hf_ui038_test",
+  "authorization": "Pedro, conversa 2026-11-16; confirmou Universo IF como banco da produção",
+  "sourceBase": "c007f17759f9936ab3139d2ac77192050ae2534c",
+  "validationBranch": "br-falling-moon-b6idu15g",
+  "schemaDiff": "empty",
+  "before": {
+    "users": 3,
+    "laboratories": 2,
+    "areas": 3,
+    "collections": 5
+  },
+  "inserted": {
+    "users": 5,
+    "laboratories": 1,
+    "memberships": 5,
+    "areas": 3,
+    "collections": 12,
+    "measurements": 11,
+    "currentDiagnoses": 9,
+    "supplements": 9,
+    "operations": 9,
+    "lifecycleEvents": 9
+  },
+  "after": {
+    "users": 8,
+    "laboratories": 3,
+    "areas": 6,
+    "collections": 17
+  },
+  "login": {
+    "status": 200,
+    "destination": "/workspace",
+    "account": "hifro@hf.example"
+  },
+  "httpReads": [
+    {
+      "path": "/api/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/memberships",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/territorial-map",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas/d173fe48-cce8-413f-862f-3ab3cfaf7a25/collections/833d8523-62b8-4c8f-87f0-728eeb3c7955/environmental-data",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas/d173fe48-cce8-413f-862f-3ab3cfaf7a25/collections/833d8523-62b8-4c8f-87f0-728eeb3c7955/ihfr-diagnosis/current",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas/d173fe48-cce8-413f-862f-3ab3cfaf7a25",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas/d824d187-0cda-4bf4-85eb-2e408abf5815",
+      "status": 200
+    },
+    {
+      "path": "/api/laboratories/fe08991f-2a66-4873-8f5d-0c950f37bd6e/areas/0a141abb-ae2f-44a5-89e3-6d75da882e39",
+      "status": 200
+    }
+  ],
+  "covers": "prepared-not-uploaded",
+  "applicationChanges": false,
+  "recordingScriptPrepared": false
+}

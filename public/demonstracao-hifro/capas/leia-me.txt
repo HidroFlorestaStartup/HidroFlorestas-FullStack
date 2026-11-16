@@ -1,0 +1,6 @@
+Fotografias ilustrativas — Laboratório Hifro
+
+aviacao.jpg e leite.jpg: Marcelo Cavallari, CC BY-SA 4.0.
+trizidela.jpg: Johan Fredriksson, CC BY-SA 3.0.
+
+Origens, links das licenças e alterações em fontes-e-licencas.json. Derivadas recortadas/redimensionadas/recomprimidas, sem metadados, sob as mesmas licenças das fotos originais. A licença das fotografias não altera a licença do código da plataforma. Não representam as áreas fictícias específicas nem endosso dos fotógrafos.
