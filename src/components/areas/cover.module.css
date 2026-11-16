@@ -1,4 +1,7 @@
 .editor { min-width: 0; overflow: hidden; border-radius: 20px; background: #fff; box-shadow: 0 4px 18px -3px #00000026; color: #3e3e3e; }
+.illustration { min-width: 0; margin: 0; }
+.credit { margin: 0; padding: 8px 12px; background: #edf5ef; color: #42634e; font-size: .6875rem; line-height: 1.5; overflow-wrap: anywhere; }
+.credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .preview { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; max-height: 20rem; object-fit: cover; background: #edf5ef; }
 .placeholder { display: flex; min-width: 0; aspect-ratio: 3 / 2; max-height: 16rem; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; background: #edf5ef; color: #42634e; font-size: .875rem; line-height: 1.6; text-align: center; overflow-wrap: anywhere; }
 .placeholderIcon { width: 40px; height: 40px; flex-shrink: 0; color: #6e937c; }

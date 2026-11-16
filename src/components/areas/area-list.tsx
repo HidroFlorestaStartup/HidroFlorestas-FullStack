@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, MapPin, Plus, RefreshCw, Trees } from "lucide-re
 import type { LaboratoryContext } from "@/app/api/server/areas/area.authorization";
 import type { AreaSummaryDto } from "@/types/area.type";
 import { AreaCoverPreview } from "./area-cover";
+import { getPresentationAreaCover } from "@/lib/presentation-area-covers";
 import styles from "./areas.module.css";
 export function AreaList({ laboratoryId }: { laboratoryId: string }) {
   const [data, setData] = useState<{
@@ -105,14 +106,15 @@ export function AreaList({ laboratoryId }: { laboratoryId: string }) {
               {data.areas.map((area) => (
                 <li key={area.id} className={styles.card + " " + styles.areaCard}>
                   <div className={styles.cover}>
-                    {area.cover?.hasImage ? (
+                    {area.cover?.hasImage || getPresentationAreaCover(laboratoryId, area.id) ? (
                       <AreaCoverPreview
-                        key={`${area.id}:${area.cover.revision}:${area.cover.featureEnabled}`}
+                        key={`${area.id}:${area.cover?.revision ?? 0}:${area.cover?.featureEnabled ?? false}`}
                         apiPath={`/api/laboratories/${laboratoryId}/areas/${area.id}/image`}
                         name={area.name}
-                        hasImage
-                        revision={area.cover.revision}
-                        featureEnabled={area.cover.featureEnabled}
+                        hasImage={area.cover?.hasImage ?? false}
+                        revision={area.cover?.revision ?? 0}
+                        featureEnabled={area.cover?.featureEnabled}
+                        presentationCover={getPresentationAreaCover(laboratoryId, area.id)}
                       />
                     ) : (
                       <div className={styles.placeholder} aria-hidden="true"><Trees size={40} /></div>
