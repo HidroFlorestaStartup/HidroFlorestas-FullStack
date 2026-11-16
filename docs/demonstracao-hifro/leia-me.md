@@ -21,7 +21,7 @@ As fórmulas, classes e limites do IHFR experimental não foram alterados. Resul
 
 ## Capas e próximos passos
 
-[Três capas e suas licenças](capas/leia-me.md) prontas. Upload aguardando confirmação da funcionalidade, por solicitação de Pedro. Roteiro, script Playwright de apresentação e gravação não foram preparados.
+[Três capas e suas licenças](capas/leia-me.md) revistas para o contexto regional: babaçu e cultivo em Itapecuru-Mirim; rio Itapecuru em Rosário. Após falha do envio no teste manual, Pedro autorizou a apresentação estática e exigiu manter os controles. A lista e o detalhe das três áreas usam ilustrações sem capa real, que sempre tem prioridade. A mudança precisa de novo deploy; não altera dados, configurações ou o serviço de upload. Roteiro, script Playwright de apresentação e gravação continuam adiados.
 
 [Inventário com IDs](inventario.json) · [Recibo operacional](recibo.md) · [Especificação e validação](../../specs/041-apresentacao-hifro/validation.md).
 

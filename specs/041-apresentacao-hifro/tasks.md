@@ -25,3 +25,9 @@
 ## Dependências e execução
 
 T001 → T002 → T003 → T004 → T005 → T007. T006 pode avançar enquanto a conferência de dados termina. Execução pela mesma pessoa; US1 verificável pelo login/equipe, US2 pelas consultas das áreas/coletas e US3 pelos arquivos e licenças. Sem roteiro ou automação de gravação.
+
+## Adendo — capas ilustrativas, controles mantidos
+
+- [x] T008 [US3] Rever as fotos para o contexto local; publicar os três JPEGs livres com créditos e o mapa limitado por laboratório/área em public/demonstracao-hifro/capas/ e src/lib/presentation-area-covers.ts.
+- [x] T009 [US3] Usar ilustrações na lista/detalhe sem capa real, preservando controles e estados do serviço em src/components/areas/{area-cover,area-list}.tsx.
+- [x] T010 [US3] Validar renderização, prioridade da capa real, escopo, tipos, lint e build; atualizar documentação e PR65. T008 → T009 → T010.

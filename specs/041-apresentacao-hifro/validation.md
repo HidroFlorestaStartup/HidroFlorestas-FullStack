@@ -33,3 +33,23 @@ Base Git main c007f17759f9936ab3139d2ac77192050ae2534c, incluindo o mascote do c
 Sem testes destrutivos, fluxos de exclusão, gravação ou suite Playwright. Sem novas suítes gerais ou build da aplicação, pois só foram adicionados gerador operacional/documentação/ativos; o produto não mudou. Capas aguardam a confirmação solicitada. Endereços .example são identificadores fictícios de login e não recebem recuperação por e-mail. Credenciais e plano SQL com hashes/código de ingresso permanecem fora de Git.
 
 [Recibo estruturado](../../docs/demonstracao-hifro/recibo.json) e [inventário](../../docs/demonstracao-hifro/inventario.json) identificam os registros criados, sem senhas.
+
+
+## Adendo — capas estáticas e seleção regional
+
+DECISAO_CONFIRMADA: Pedro testou o envio no navegador e forneceu print com “O serviço de imagens está indisponível”. Aceitou a alternativa estática e exigiu manter os botões. Depois apontou a inadequação regional das fotos genéricas; a nova seleção usa babaçu/cultivo identificados na fonte como Itapecuru-Mirim e rio Itapecuru em Rosário, com créditos CC BY-SA 4.0/3.0.
+
+EVIDENCIA_IMPLEMENTACAO: somente apresentação na lista/detalhe para os três pares exatos laboratório/área. Fotos públicas ilustrativas, sem escrita no banco ou simulação de upload. Capa real prevalece, inclusive quando indisponível; erros não são escondidos pela ilustração. Handler de envio, validação de arquivo, revisão/idempotência, recarga/remoção, mensagens e condições dos controles são idênticos à base. Alteração restrita ao frontend, fotos e documentação; sem configuração, migração, dependência, roteiro ou script de gravação.
+
+Validação desta alteração:
+
+- Checklist existente: 16 marcados, zero pendentes; não alterado.
+- Typecheck e lint focal dos três módulos: PASS.
+- Build Next completo com Prisma generate: PASS. Aviso npm preexistente sobre configuração http-proxy; sem erro de build.
+- Verificação local por renderização do componente real: 26 verificações PASS, cobrindo os três ativos/dimensões/ausência de EXIF, igualdade dos arquivos público/documental, rejeição de IDs/laboratórios alheios e propriedades herdadas, prévia ilustrativa com feature ligada/desligada, autoria/licença, prioridade do conteúdo privado/revisão/retry e comportamento original de outra área. Comparação exata comprovou preservação dos handlers e bloco de controles.
+- Contratos existentes de capa: 2/2 testes PASS (revisões fechadas e sanitização/limites de imagem).
+- Fotografias originais inspecionadas; versões 1600×900 com fontes, alterações, licenças e hashes atuais. Novos tamanhos: 299179/436435/259697 bytes. Procedência inicial permanece em selecao-inicial-substituida.json; recibos iniciais preservam suas evidências históricas.
+- Revisão React focal: hooks estáveis, sem novas requisições, prioridade baseada no DTO atual, callbacks de sucesso não usados pela foto estática, dimensões/alt/créditos definidos, leitura condicionada ao fluxo autorizado existente.
+- Diff sem alterações em backend, schema, autenticação, APIs ou handlers do serviço; git diff --check PASS.
+
+Limites atuais: teste visual autenticado da nova versão e teste de upload em produção não executados nesta alteração; o teste manual anterior falhou no serviço. A seleção de arquivo estava disponível, portanto o print não demonstra ausência da feature flag. A causa específica exige investigação de configuração/logs. As imagens estáticas precisam de novo deploy para aparecerem no ambiente principal; esta validação não homologa o serviço Cloudinary. Main/development não são integradas por esta publicação na PR65.
